@@ -1,3 +1,4 @@
+
 {
   "images" : [
     {
@@ -21,3 +22,28 @@
     "author" : "xcode"
   }
 }
+=======
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "LaunchImage.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "LaunchImage@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "LaunchImage@3x.png",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
+>>>>>>> 032ab603ed0f207a8cb13d6c60e7125c942ac4ff

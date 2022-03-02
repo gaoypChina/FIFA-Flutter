@@ -1,3 +1,4 @@
+
 buildscript {
     ext.kotlin_version = '1.3.50'
     repositories {
@@ -27,3 +28,34 @@ subprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+=======
+buildscript {
+    ext.kotlin_version = '1.3.50'
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+    project.evaluationDependsOn(':app')
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+>>>>>>> 032ab603ed0f207a8cb13d6c60e7125c942ac4ff
