@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
@@ -15,7 +17,7 @@ class My{
   late int clubID;
   late int campeonatoID;
   late String campeonatoName;
-  int posicaoChave = 1;
+  late int posicaoChave;
   int scoreGame = 15;
   late double money;
   late String esquemaTatico;
@@ -29,7 +31,7 @@ class My{
     clubID = clubsAllNameList.indexOf(clubName);
     campeonatoName = getLeagueName();
     campeonatoID = getLeagueID();
-    posicaoChave = globalMyPosicaoChave;
+    posicaoChave = getChaveLeague();
     picture = FIFAImages().imageLogo(clubName);
     esquemaTatico = globalMyEsquemaTatico;
     money = globalMyMoney;
@@ -57,6 +59,19 @@ class My{
     late int index = leaguesIndexFromName[getLeagueName()];
     return index;
   }
+
+  int getChaveLeague(){
+    //Search name by index;
+    Map mapLeague = clubNameMap[campeonatoName];
+    int position016 = -1;
+    mapLeague.forEach((key, value) {
+        if (value == clubName) {
+          position016 = key;
+        }
+    });
+    return position016;
+  }
+
   int getExpectativa(){
     int expect = 0;
     List clubsMyLeague = League(index: campeonatoID).allClubsName;

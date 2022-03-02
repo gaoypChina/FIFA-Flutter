@@ -287,7 +287,7 @@ class _HomePageState extends State<HomePage> {
 //                               FUNCTIONS                                //
 ////////////////////////////////////////////////////////////////////////////
   saveMyData(){
-    funcChangeClub(teamName,indexLeague,posicao);
+    funcChangeClub(teamName,indexLeague);
   }
 
   getCustomizedData() async {

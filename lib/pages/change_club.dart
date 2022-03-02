@@ -92,7 +92,7 @@ Widget clubWidget(int clubID){
 
     return GestureDetector(
       onTap: (){
-        funcChangeClub(clubClassification.clubName, clubClassification.indexLeague, clubClassification.chaveClub);
+        funcChangeClub(clubClassification.clubName, clubClassification.indexLeague);
         alreadyChangedClubThisSeason = true;
         Navigator.push(context,MaterialPageRoute(builder: (context) => const Menu()));
       },

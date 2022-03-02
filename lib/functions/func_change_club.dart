@@ -3,10 +3,9 @@ import 'package:fifa/values/club_names.dart';
 
 import '../global_variables.dart';
 
-funcChangeClub(String newClubName, int newLeagueID, int posicao){
+funcChangeClub(String newClubName, int newLeagueID){
 
   globalMyClubName = newClubName;
-  globalMyPosicaoChave = posicao;
   int clubIndex = clubsAllNameList.indexOf(newClubName);
   globalMyClubID = clubIndex;
   Club newClubClass = Club(index: clubIndex);

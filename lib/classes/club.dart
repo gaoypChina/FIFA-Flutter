@@ -71,8 +71,6 @@ class Club{
   }
 
     int getChaveLeague(){
-    String leagueName = League(index: getLeagueID()).name;
-
     //Search name by index;
     Map mapLeague = clubNameMap[leagueName];
     int position = mapLeague.keys.firstWhere((k) => mapLeague[k] == name);
