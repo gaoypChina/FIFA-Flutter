@@ -75,16 +75,18 @@ class My{
   int getExpectativa(){
     int expect = 0;
     List clubsMyLeague = League(index: campeonatoID).allClubsName;
+    late Club myClub;
     List ovr = [];
     for (var element in clubsMyLeague) {
       int clubIndex = clubsAllNameList.indexOf(element);
-      ovr.add(Club(index: clubIndex).getOverall());
+      myClub = Club(index: clubIndex);
+      ovr.add(myClub.getOverall());
     }
     // ordena decrescentemente o ovr dos times da liga
     ovr.sort((b, a) => a.compareTo(b));
     // Ex: eu 73 [80 78 74 73 72 71] -> meu time expectiva = 5 -> 73 > 72+1
     for(int i=0; i< ovr.length;i++) {
-      if (Club(index: clubID).getOverall() > ovr[i] - 1 && expect == 0) {
+      if (myClub.getOverall() > ovr[i] - 1 && expect == 0) {
         expect = i+1;
       }
     }

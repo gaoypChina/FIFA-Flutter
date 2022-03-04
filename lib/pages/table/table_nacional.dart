@@ -24,13 +24,28 @@ class _TableNacionalState extends State<TableNacional> {
   int rodadaMatch = League(index: My().campeonatoID).nClubs-1;
 
   int choosenIcon = 1;
-
+////////////////////////////////////////////////////////////////////////////
+//                               INIT                                     //
+////////////////////////////////////////////////////////////////////////////
+  @override
+  void initState() {
+    doThisOnLaunch();
+    super.initState();
+  }
+  doThisOnLaunch() {
+    //rodada inicial mostrada
+    if(rodada < League(index: My().campeonatoID).nClubs-1){
+      rodadaMatch = rodada;
+    }
+    setState(() {});
+  }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
     double _height = MediaQuery.of(context).size.height;
+
 
     return Scaffold(
 

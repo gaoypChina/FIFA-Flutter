@@ -51,8 +51,9 @@ class League{
   }
   List getAllClubsIDList(){
     List allClubsIndex = [];
-    for(int i=0;i<nClubs;i++){
-      allClubsIndex.add(getClubRealIndex(i));
+    List names = getAllClubsNameList();
+    for (var element in names) {
+      allClubsIndex.add(clubsAllNameList.indexOf(element));
     }
     return allClubsIndex;
   }

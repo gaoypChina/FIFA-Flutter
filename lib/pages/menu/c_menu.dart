@@ -153,7 +153,7 @@ class _MenuState extends State<Menu> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(myClass.clubName,style: EstiloTextoBranco.text20),
+                            Container(width:180,child: Text(myClass.clubName,textAlign: TextAlign.center,style: EstiloTextoBranco.text20)),
                             Text('\nAno: '+ ano.toString(),style: EstiloTextoBranco.text14),
                             Text('Semana: '+ semana.toString(),style: EstiloTextoBranco.text14),
                             Text('Overall da Equipe: ' + Club(index: myClass.clubID).getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text14),

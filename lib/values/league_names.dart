@@ -21,7 +21,7 @@ class LeagueOfficialNames{
 List internationalLeagueNames = [LeagueOfficialNames().championsLeague,LeagueOfficialNames().libertadores];
 
 List leaguesListRealIndex = [
-  1,2,5,7,  9,11,20,21,  50,51,60,61,  62,70,
+  1,2,5,7,  9,11,20,21,  50,51,60,61,  62,70, 80
 ];
 List getAvailableLeaguesNames(){
   List availableLeaguesNames = [];

@@ -85,9 +85,6 @@ class Club{
         }
       }
 
-      // if(index==globalMyClubID){
-      //    jogadores = globalMyJogadores;
-      // }
       return jogadores;
     }
 
@@ -101,7 +98,11 @@ class Club{
         if(isMyTeam){
           ovr += double.parse(globalJogadoresOverall[globalMyJogadores[i]].toString());
           }else{
-          ovr += double.parse(globalJogadoresOverall[jogadores[i]].toString());
+          try{
+            ovr += double.parse(globalJogadoresOverall[jogadores[i]].toString());
+          }catch(e){
+            print('$index $name $jogadores');
+          }
         }
     }
 

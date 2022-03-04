@@ -35,6 +35,9 @@ class _TableInternationalState extends State<TableInternational> {
   }
   onStart(){
     leagueInternational = widget.leagueInternational;
+    if(leagueInternational == LeagueOfficialNames().resto){
+      leagueInternational = LeagueOfficialNames().championsLeague;
+    }
   }
   selectTeams(){
     clubsID = [];
@@ -42,7 +45,8 @@ class _TableInternationalState extends State<TableInternational> {
         for(int i=0; i<32; i++) {
           if(leagueInternational == LeagueOfficialNames().championsLeague) {
             clubsID.add(clubsAllNameList.indexOf(defaultChampionsLeagueClubs[i]));
-          }else{
+          }
+          if(leagueInternational == LeagueOfficialNames().libertadores){
             clubsID.add(clubsAllNameList.indexOf(defaultLibertadoresClubs[i]));
           }
         }

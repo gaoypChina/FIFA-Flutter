@@ -5,11 +5,11 @@ class International{
 
 //INDEX 0
   late String competitionName;
-  List clubIDs =[];
-  List clubsGM =[];
-  List clubsGS =[];
-  List clubsSaldo =[];
-  List clubsPoints =[];
+  List clubIDs = [];
+  List clubsGM = [];
+  List clubsGS = [];
+  List clubsSaldo = [];
+  List clubsPoints = [];
   Map grupos = {};
   Map oitavas = {};
   Map quartas = {};

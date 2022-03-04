@@ -541,21 +541,27 @@ golPorMinuto(double overallMy, double overallAdversario){
 
   void premiacao(){
     double premio=0;
-    int campeonatoID = myClass.campeonatoID;
+    String leagueName = myClass.campeonatoName;
     if(Semana().isJogoCampeonatoNacional){
-      if(campeonatoID==1){premio=2.2;}//premierleague
-      if(campeonatoID==5 || campeonatoID==7 ||campeonatoID==11){premio=2.0;}//italia, espanha, alemanha
-      if(campeonatoID==9){premio=1.8;}//frances
-      if(campeonatoID==20){premio=1.6;}//ocidente
-      if(campeonatoID==21){premio=1.4;}//leste
-      if(campeonatoID==2){premio=1.2;}//championship
-      if(campeonatoID==50){premio=1.4;}//brasileiro
-      if(campeonatoID==51){premio=0.7;}//serie b
-      if(campeonatoID==60){premio=1.1;}//argentina
-      if(campeonatoID==61){premio=1.0;}//sulamerica
-      if(campeonatoID==62){premio=1.1;}//colombia mexico
-      if(campeonatoID==63){premio=1.2;}//mls
-      if(campeonatoID==70){premio=1.0;}//asia}
+      if(leagueName==LeagueOfficialNames().inglaterra1){premio=2.2;}//premierleague
+      else if(leagueName==LeagueOfficialNames().italia1
+          || leagueName==LeagueOfficialNames().espanha1
+          ||leagueName==LeagueOfficialNames().alemanha1){premio=2.0;}//italia, espanha, alemanha
+      else if(leagueName==LeagueOfficialNames().franca1){premio=1.8;}//frances
+      else if(leagueName==LeagueOfficialNames().ligaEuropa){premio=1.6;}//ocidente
+      else if(leagueName==LeagueOfficialNames().lesteEuropeu){premio=1.4;}//leste
+      else if(leagueName==LeagueOfficialNames().inglaterra2){premio=1.2;}//championship
+      else if(leagueName==LeagueOfficialNames().brasil1){premio=1.4;}//brasileiro
+      else if(leagueName==LeagueOfficialNames().brasil2){premio=0.7;}//serie b
+      else if(leagueName==LeagueOfficialNames().argentina){premio=1.1;}//argentina
+      else if(leagueName==LeagueOfficialNames().sulamericano){premio=1.0;}//sulamerica
+      else if(leagueName==LeagueOfficialNames().colombiaMexico){premio=1.1;}//colombia mexico
+      else if(leagueName==LeagueOfficialNames().estadosUnidos){premio=1.2;}//mls
+      else if(leagueName==LeagueOfficialNames().asia){premio=1.0;}//asia}
+      else{
+        premio=1.0;
+      }
+
     }else{
       if(myClass.internationalLeagueName == LeagueOfficialNames().championsLeague){
         premio=3;
@@ -566,6 +572,11 @@ golPorMinuto(double overallMy, double overallAdversario){
         premio=2;
         if(semanaOitavas.contains(rodada) || semanaQuartas.contains(rodada)) premio=2.5;
         if(semanaSemi.contains(rodada) || semanaFinal.contains(rodada)) premio=3.2;
+      }
+      if(myClass.internationalLeagueName == LeagueOfficialNames().resto){
+        premio=1.5;
+        if(semanaOitavas.contains(rodada) || semanaQuartas.contains(rodada)) premio=2;
+        if(semanaSemi.contains(rodada) || semanaFinal.contains(rodada)) premio=3;
       }
     }
 

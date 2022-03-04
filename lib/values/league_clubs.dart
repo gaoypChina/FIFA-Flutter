@@ -123,18 +123,16 @@ Map clubNameMap = {
     12: clubName.portland,13: clubName.seattle,14: clubName.torontofc,15:clubName.vancouver,
   },
   LeagueOfficialNames().asia : {
-    0: clubName.ghuagzhouevergrande,1: clubName.beijingguoan,2: clubName.shandongluneng,3: clubName.shanghaisipg,
-    4: clubName.kashimaantlers,5: clubName.urawareddiamonds,6: clubName.visselkobe,7: clubName.kawasakifrontale,
-    8: clubName.fcseoul,9: clubName.jeonbuk,10: clubName.alnassr,11: clubName.alain,
-    12: clubName.alsadd,13: clubName.alduhail,14: clubName.alahli,15: clubName.alhilal,
+    0: clubName.ghuagzhouevergrande,1: clubName.shanghaisipg,2: clubName.shandongluneng,3: clubName.kawasakifrontale,
+    4: clubName.kashimaantlers,5: clubName.urawareddiamonds,6: clubName.visselkobe,7: clubName.pohang,
+    8: clubName.jeonbuk,9: clubName.alhilal,10: clubName.alnassr,11: clubName.alain,
+    12: clubName.alsadd,13: clubName.alahli,//14: clubName.alduhail,15: clubName.aljazira,
   },
-  LeagueOfficialNames().africa : {
-    0: clubName.alahly,1: 'Espérance',2: 'Kaiser Chiefs',3: 'Mazembe',
-    4: 'Mamelodi Sundowns',5: 'Orlando Pirates',6: clubName.rajacasablanca,7: 'Simba',
-    8: 'Wydad',9: clubName.zamalek
-  },
+
   LeagueOfficialNames().outros : {
-    0: 'Avaí',1: 'Paysandu',2: 'Santa Cruz',3: 'Hull City',
-    4: 'Huracán',5: clubName.alianzalima,
-  }
+    0: clubName.avai,1: clubName.paysandu,2: clubName.santacruz,3: clubName.hullcity,
+    4: clubName.huracan,5: clubName.alianzalima,6: clubName.alahly,
+    7: clubName.zamalek,8: clubName.rajacasablanca,9: clubName.alduhail
+  },
+
 };

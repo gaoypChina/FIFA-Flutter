@@ -233,14 +233,17 @@ class ClubName{
   String visselkobe = "Vissel Kobe";
   String kawasakifrontale = "Kawasaki Frontale";
   String fcseoul = "FC Seoul";
+  String aljazira = "Al Jazira";
   String jeonbuk = "Jeonbuk Hyundai";
   String alnassr = "Al Nassr";
   String alain = "Al Ain-EAU";
-  String alsadd = "Al Sadd-QAT";
-  String alduhail = "Al Duhail-QAT";
+  String alsadd = "Al Sadd";
+  String alduhail = "Al Duhail";
   String alahli = "Al Ahli";
   String alhilal = "Al Hilal";
   String persepolis = "Persepolis";
+  String pohang = "Pohang Steelers";
+  String ulsan = "Ulsan Hyundai";
 
   //Others
   String avai = "Avaí";
@@ -332,15 +335,18 @@ List clubsAllNameList = [
   ClubName().portland,  ClubName().seattle, ClubName().torontofc,  ClubName().vancouver,
 
 
-  ClubName().ghuagzhouevergrande,  ClubName().beijingguoan, ClubName().shandongluneng,  ClubName().shanghaisipg,
+  ClubName().ghuagzhouevergrande,  ClubName().pohang, ClubName().shandongluneng,  ClubName().shanghaisipg,
   ClubName().kashimaantlers,  ClubName().urawareddiamonds, ClubName().visselkobe,  ClubName().kawasakifrontale,
-  ClubName().fcseoul,  ClubName().jeonbuk, ClubName().alnassr,  ClubName().alain,
+  ClubName().aljazira,  ClubName().jeonbuk, ClubName().alnassr,  ClubName().alain,
   ClubName().alsadd,  ClubName().alduhail, ClubName().alahli,  ClubName().alhilal,
 
+  ClubName().fcseoul,ClubName().beijingguoan,ClubName().persepolis,ClubName().ulsan,
+
+
+  ClubName().hullcity,
   'Avaí',
   'Paysandu',
   'Santa Cruz',
-  'Hull City',
   'Huracán',
   'Alianza Lima',
 ];

@@ -8,6 +8,7 @@ import 'package:fifa/values/images.dart';
 import 'package:flutter/material.dart';
 
 import '../values/images.dart';
+import '../values/league_names.dart';
 import 'club_profile.dart';
 
 class RankingClubs extends StatefulWidget {
@@ -21,12 +22,12 @@ class _RankingClubsState extends State<RankingClubs> {
 
   int numberClubsTotal = funcNumberClubsTotal();
 
-  List clubsOVR = []; //criado no init, e reutilizado depois no widget
 
   My myClub = My();
-  String myLeagueName = League(index: My().campeonatoID).name;
-  //Copia as tabelas sem afetar a original
-  List copyClubsName = List.from(clubsAllNameList);
+  String myLeagueName = My().campeonatoName;
+
+  List clubsOVR = []; //criado no init, e reutilizado depois no widget
+  List copyClubsName = [];
 
   bool isLoaded = false;
 
@@ -40,14 +41,17 @@ class _RankingClubsState extends State<RankingClubs> {
     super.initState();
   }
   organizarRanking(){
-
     //REORGANIZA ORDEM
-    for(int i=0; i<numberClubsTotal; i++) {
-      clubsOVR.add(Club(index: i).getOverall());
+    for (var leagueID in leaguesListRealIndex) {//element: 0-70
+      List allClubsIDList = League(index: leagueID).getAllClubsIDList();
+      for(int i=0; i<allClubsIDList.length; i++) {
+        clubsOVR.add(Club(index: allClubsIDList[i]).getOverall());
+        copyClubsName.add(Club(index: allClubsIDList[i]).name);
+      }
     }
 
-    for(int i=0; i<numberClubsTotal-1; i++) {
-      for(int k=i+1; k<numberClubsTotal; k++) {
+    for(int i=0; i<clubsOVR.length-1; i++) {
+      for(int k=i+1; k<clubsOVR.length; k++) {
         if(clubsOVR[k] > clubsOVR[i]){
           late double auxiliarDouble;
           late String auxiliarString;

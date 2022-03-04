@@ -124,7 +124,6 @@ Widget trophyWidget(int i){
     late int qntd;
 
     if(i==0){
-      print(getTrophyImage(My().campeonatoName));
       name = 'Campeonatos Nacionais';
       image = getTrophyImage(My().campeonatoName);
       qntd = HistoricFunctions().myLeagueTitles();

@@ -259,6 +259,8 @@ class FIFAImages{
     if(timeFoto==ClubName().alhilal){          imageLogo='al_hilal';          }
     if(timeFoto==ClubName().persepolis){              imageLogo='persepolis';          }
     if(timeFoto==ClubName().alnassr){              imageLogo='al_nassr';          }
+    if(timeFoto==ClubName().aljazira){              imageLogo='al_jazira';          }
+    if(timeFoto==ClubName().pohang){              imageLogo='pohang';          }
 
     if(timeFoto==ClubName().alahli){          imageLogo='al_ahli';          }
     if(timeFoto==ClubName().rajacasablanca){              imageLogo='raja';          }

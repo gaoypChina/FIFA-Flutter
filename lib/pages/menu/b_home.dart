@@ -220,7 +220,7 @@ class _HomePageState extends State<HomePage> {
                       GestureDetector(
                         onTap:() async{
                           globalSaveNumber++;
-                          if(globalSaveNumber==4){globalSaveNumber=0;}
+                          if(globalSaveNumber==2){globalSaveNumber=0;}
                           await getCustomizedData();
                         },
                         child: Column(
@@ -315,7 +315,7 @@ class _HomePageState extends State<HomePage> {
 
       }catch(e){
         //SE der erro vai pro database padrão
-        print('ERRO');
+        print('ERRO Customized Data, Database: $globalSaveNumber');
         globalSaveNumber = 0;
         await openCSV();
       }
@@ -349,6 +349,7 @@ class _HomePageState extends State<HomePage> {
     await readCSVfunc("colombia");
     await readCSVfunc("adicionados");
     await readCSVfunc("eua");
+    await readCSVfunc("asia");
 
   }
   readCSVfunc(String filename) async {
@@ -413,18 +414,27 @@ class _HomePageState extends State<HomePage> {
 
             //VARIAVEIS GLOBAIS
             int clubIndex = clubsAllNameList.indexOf(club);
-            globalJogadoresClubIndex.add(clubIndex);
+            if(clubIndex >= 0) { //se o clube existir e estiver cadastrado certo
 
-            globalJogadoresIndex.add(indexJog);
-            globalJogadoresName.add(name);
-            globalJogadoresPosition.add(position);
-            globalJogadoresAge.add(age);
-            globalJogadoresOverall.add(overall);
-            indexJog++;
-
+              globalJogadoresClubIndex.add(clubIndex);
+              globalJogadoresIndex.add(indexJog);
+              globalJogadoresName.add(name);
+              globalJogadoresPosition.add(position);
+              globalJogadoresAge.add(age);
+              globalJogadoresOverall.add(overall);
+              indexJog++;
+            }else{
+              //ERRO NA IMPORTAÇÃO DO TIME
+              print('ERRO IMPORTAÇÃO JOGADOR: $name $club ${clubIndex.toString()}');
+            }
+            //test jogadores importados
+            //   if(club == ClubName().aljazira){
+            //     print('$name $position $overall $club ${clubIndex.toString()}');
+            //   }
           }
         }catch(e){
-          //print('ERROR LOADING DATA: ' +e.toString());
+          //print('ERROR LOADING DATA: ');
+          //print('Name: ${_data[line][team * 5 + 1].toString()} Club: ${_data[0][team * 5 + 1]}');
         }
 
       }
