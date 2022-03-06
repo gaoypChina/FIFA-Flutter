@@ -138,7 +138,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
       child: Container(
         padding: const EdgeInsets.all(2),
         color: choosenLeagueIndex == leagueID ? Colors.redAccent: Colors.white54,
-        child: Image.asset('assets/icons/${FIFAImages().campeonatoLogo(leagueID)}.png',height: 50,width: 50,),
+        child: Image.asset(FIFAImages().campeonatoLogo(leagueID),height: 50,width: 50,),
       ),
     );
   }

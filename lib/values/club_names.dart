@@ -248,6 +248,7 @@ class ClubName{
   //Others
   String avai = "Avaí";
   String paysandu = "Paysandu";
+  String portuguesa = "Portuguesa";
   String santacruz = "Santa Cruz";
   String hullcity = "Hull City";
   String huracan = "Huracán";
@@ -257,6 +258,22 @@ class ClubName{
   String alahly = "Al Ahly";
   String zamalek = "Zamalek";
   String rajacasablanca = "Raja Casablanca";
+  String tolima = "Tolima";
+
+  //ainda nao tem
+  /*
+  fc seoul
+  santa cruz
+  avai
+  paysandu
+  al jazira
+  al duhail
+  ulsan hyundai
+  persepolis
+  beijing guoan
+  huracan
+  alianza lima
+   */
 
 }
 
@@ -342,11 +359,16 @@ List clubsAllNameList = [
 
   ClubName().fcseoul,ClubName().beijingguoan,ClubName().persepolis,ClubName().ulsan,
 
-
   ClubName().hullcity,
-  'Avaí',
-  'Paysandu',
-  'Santa Cruz',
-  'Huracán',
-  'Alianza Lima',
+  ClubName().portuguesa,
+  ClubName().alahly,
+  ClubName().zamalek,
+  ClubName().tolima,
+  ClubName().rajacasablanca,
+  ClubName().avai,
+  ClubName().paysandu,
+  ClubName().santacruz,
+  ClubName().huracan,
+  ClubName().alianzalima,
+
 ];

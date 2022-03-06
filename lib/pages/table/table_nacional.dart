@@ -67,7 +67,7 @@ class _TableNacionalState extends State<TableNacional> {
                           const SizedBox(height: 40),
                           Row(
                             children: [
-                              Image.asset('assets/icons/${FIFAImages().campeonatoLogo(choosenLeagueIndex)}.png',height:25,width: 25),
+                              Image.asset(FIFAImages().campeonatoLogo(choosenLeagueIndex),height:25,width: 25),
                               Expanded(child: Text(' Rodada '+ rodada.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text20)),
                             ],
                           ),
@@ -199,7 +199,7 @@ class _TableNacionalState extends State<TableNacional> {
       child: Container(
         padding: const EdgeInsets.all(2),
         color: choosenLeagueIndex == leagueIndex ? Colors.redAccent: Colors.white54,
-        child: Image.asset('assets/icons/${FIFAImages().campeonatoLogo(leagueIndex)}.png',height: 50,width: 50,),
+        child: Image.asset(FIFAImages().campeonatoLogo(leagueIndex),height: 50,width: 50,),
       ),
     );
 }
@@ -274,9 +274,11 @@ Widget matchsWidget(){
     int chaveClub2 = Chaves().chaveIndexAdvCampeonato(rodadaMatch, choosenLeagueIndex, chaveClub1)[0];
     String teamName2 = leagueClass.getClubName(chaveClub2);
 
+    bool showGoals = (rodadaMatch<rodada || semana >= semanasJogosNacionais[leagueClass.nClubs-2]);
+
     late int gol1,gol2;
     //quando chega na rodada max ele acabaria nao mostrando, por isso quando termina o campeonato mostra a ultima rodada
-    if(rodadaMatch<rodada || semana >= semanasJogosNacionais[leagueClass.nClubs-2]) {
+    if(showGoals) {
       List results = globalHistoricLeagueGoalsAll[rodadaMatch][choosenLeagueIndex];
       gol1 = results[chaveClub1];
       gol2 = results[chaveClub2];
@@ -286,9 +288,11 @@ Widget matchsWidget(){
       children: [
         Text(teamName1,textAlign:TextAlign.end,style: EstiloTextoBranco.text14),
         Image.asset('assets/clubs/${FIFAImages().imageLogo(teamName1)}.png',height: 22,width: 22),
-        (rodadaMatch<rodada || semana>rodada ) ? Text(gol1.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text14) : Container(),
+        (showGoals)
+            ? Text(gol1.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text14) : Container(),
         const Text('x',style: EstiloTextoBranco.text16,textAlign: TextAlign.center,),
-        (rodadaMatch<rodada || semana>rodada ) ? Text(gol2.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.text14) : Container(),
+        (showGoals)
+            ? Text(gol2.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.text14) : Container(),
         Image.asset('assets/clubs/${FIFAImages().imageLogo(teamName2)}.png',height: 22,width: 22),
         Text(teamName2,style: EstiloTextoBranco.text14),
       ],

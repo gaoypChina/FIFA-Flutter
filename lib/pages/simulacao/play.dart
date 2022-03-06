@@ -145,7 +145,7 @@ class _PlayState extends State<Play> {
 
                         Column(
                           children: [
-                            Image.asset('assets/icons/${FIFAImages().campeonatoLogo(myClass.campeonatoID)}.png',height: 30,width: 30),
+                            Image.asset(FIFAImages().campeonatoLogo(myClass.campeonatoID),height: 30,width: 30),
                             Text(textRodada,style: EstiloTextoBranco.text16),
                             Text(milis.toString()+'\'',style: EstiloTextoBranco.text16),
                             visitante
@@ -220,7 +220,7 @@ class _PlayState extends State<Play> {
                     customButtonContinue(
                         title: milis>=90 ? 'Próxima Rodada' : 'Substituição',
                         function: (){
-                          if(milis>=90){
+                          if(milis>=90 && finishedMatch){
                             _timer.cancel();
                             //SE FOR A ULTIMA RODADA DO CAMPEONATO MOSTRA A TABELA DE CLASSIFICAÇÃO FINAL
                             if(ultimaRodadaLeague){
@@ -318,7 +318,8 @@ counter (){
         if(semanasJogosNacionais.contains(semana)){
           //salva resultado no histórico
           setHistoricGoalsLeagueMy();
-          Simulate().nationalMatchs(myClass.campeonatoID);//GOLS, AMARELOS, ASSISTS, INJURY ETC...
+          //Simula outras partidas
+          Simulate().nationalMatchs();//GOLS, AMARELOS, ASSISTS, INJURY ETC...
         }else if(semanasGruposInternacionais.contains(semana)){
           Simulate().internationalMatchsGroups();
         }
@@ -332,9 +333,7 @@ counter (){
         //ATUALIZA RODADA
         semana++;
         if(semanasJogosNacionais.contains(semana)) {
-          if(semana < League(index: myClass.campeonatoID).nClubs) {
             rodada = semanasJogosNacionais.indexOf(semana)+1;
-          }
         }
         //Times na champions e libertadores
         if(semana == semanasJogosInternacionais[0]){

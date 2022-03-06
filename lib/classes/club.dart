@@ -1,5 +1,4 @@
 import 'package:fifa/classes/jogador.dart';
-import 'package:fifa/classes/league.dart';
 import 'package:fifa/functions/international_league.dart';
 import 'package:fifa/values/club_names.dart';
 import 'package:fifa/values/league_clubs.dart';

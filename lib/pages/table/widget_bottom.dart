@@ -3,6 +3,7 @@ import 'package:fifa/pages/table/table_mata_mata.dart';
 import 'package:fifa/pages/table/table_matchs.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:flutter/material.dart';
 
@@ -23,12 +24,12 @@ Widget customWidgetBottomBar (BuildContext context,String actualPage, String lea
               onTap: (){
                 functionSetState(LeagueOfficialNames().libertadores);
               },
-              child: Image.asset('assets/icons/championsleague.png',width: 60,height: 60)
+              child: Image.asset(FIFAImages().campeonatoInternacionalLogo(LeagueOfficialNames().championsLeague),width: 60,height: 60)
           ): GestureDetector(
               onTap: (){
                 functionSetState(LeagueOfficialNames().championsLeague);
               },
-              child: Image.asset('assets/icons/libertadores.png',width: 60,height: 60)
+              child: Image.asset(FIFAImages().campeonatoInternacionalLogo(LeagueOfficialNames().libertadores),width: 60,height: 60)
           ),
 
 

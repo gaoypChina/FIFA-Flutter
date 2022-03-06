@@ -128,7 +128,7 @@ class _MyTeamState extends State<MyTeam> {
                       child: ListView.builder(
                           shrinkWrap: true,
                           scrollDirection: Axis.horizontal,
-                          itemCount:  myClub.nJogadores>11 ? 7 : 0,
+                          itemCount:  myClub.nJogadores>11 ? myClub.nJogadores> 18 ? 7 : myClub.nJogadores -11 : 0,
                           itemBuilder: (BuildContext context, int index) {
                             index = index+11;
                             return

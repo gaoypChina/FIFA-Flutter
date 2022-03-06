@@ -13,6 +13,15 @@ class Chaves{
       if(League(index: leagueIndex).nClubs==6){
         chave = Chaves().obterChave6(semana);
       }
+      if(League(index: leagueIndex).nClubs==8){
+        chave = Chaves().obterChave8(semana);
+      }
+      if(League(index: leagueIndex).nClubs==10){
+        chave = Chaves().obterChave10(semana);
+      }
+      if(League(index: leagueIndex).nClubs==12){
+        chave = Chaves().obterChave12(semana);
+      }
       if(League(index: leagueIndex).nClubs==14){
         chave = Chaves().obterChave14(semana);
       }
@@ -55,19 +64,113 @@ class Chaves{
   List obterChave6(int semana) {
     List chave = [];
     if (semana == semanasJogosNacionais[0]) { //verifica o numero do meu time e ve qual a posição dele
-      chave = [0,1,2,3,4,5];
+      chave = [1,4, 2,5, 3,0];
     }
     if (semana == semanasJogosNacionais[1]) { //verifica o numero do meu time e ve qual a posição dele
-      chave = [0,1,2,3,4,5];
+      chave = [0,2, 4,3, 5,1];
     }
     if (semana == semanasJogosNacionais[2]) { //verifica o numero do meu time e ve qual a posição dele
-      chave = [0,1,2,3,4,5];
+      chave = [1,0, 2,3, 5,4];
     }
     if (semana == semanasJogosNacionais[3]) { //verifica o numero do meu time e ve qual a posição dele
-      chave = [0,1,2,3,4,5];
+      chave = [0,5, 2,4, 3,1];
     }
     if (semana == semanasJogosNacionais[4]) { //verifica o numero do meu time e ve qual a posição dele
-      chave = [0,1,2,3,4,5];
+      chave = [1,2, 4,0, 5,3];
+    }
+
+    return chave;
+  }
+  List obterChave8(int semana) {
+    List chave = [];
+    if (semana == semanasJogosNacionais[0]) { //verifica o numero do meu time e ve qual a posição dele
+      chave = [0,1, 2,7, 3,6, 5,4];
+    }
+    if (semana == semanasJogosNacionais[1]) { //verifica o numero do meu time e ve qual a posição dele
+      chave = [1,5, 4,3, 6,2, 7,0];
+    }
+    if (semana == semanasJogosNacionais[2]) { //verifica o numero do meu time e ve qual a posição dele
+      chave = [2,4, 3,1, 5,0, 6,7];
+    }
+    if (semana == semanasJogosNacionais[3]) { //verifica o numero do meu time e ve qual a posição dele
+      chave = [0,3, 1,2, 4,6, 7,5];
+    }
+    if (semana == semanasJogosNacionais[4]) { //verifica o numero do meu time e ve qual a posição dele
+      chave = [2,0, 3,5, 4,7, 6,1];
+    }
+    if (semana == semanasJogosNacionais[5]) { //verifica o numero do meu time e ve qual a posição dele
+      chave = [0,6, 1,4, 3,7, 5,2];
+    }
+    if (semana == semanasJogosNacionais[6]) { //verifica o numero do meu time e ve qual a posição dele
+      chave = [2,3, 4,0, 6,5, 7,1];
+    }
+    return chave;
+  }
+  List obterChave10(int semana) {
+    List chave = [];
+    if (semana == semanasJogosNacionais[0]) { //verifica o numero do meu time e ve qual a posição dele
+      chave = [0,7, 1,2, 3,6, 4,5, 9,8];
+    }
+    if (semana == semanasJogosNacionais[1]) { //verifica o numero do meu time e ve qual a posição dele
+      chave = [2,0, 5,9, 6,4, 7,3, 8,1];
+    }
+    if (semana == semanasJogosNacionais[2]) { //verifica o numero do meu time e ve qual a posição dele
+      chave = [0,8, 1,5, 3,2, 7,6, 9,4];
+    }
+    if (semana == semanasJogosNacionais[3]) { //verifica o numero do meu time e ve qual a posição dele
+      chave = [2,7, 4,1, 5,0, 6,9, 8,3];
+    }
+    if (semana == semanasJogosNacionais[4]) { //verifica o numero do meu time e ve qual a posição dele
+      chave = [0,4, 1,9, 2,6, 3,5, 7,8];
+    }
+    if (semana == semanasJogosNacionais[5]) { //verifica o numero do meu time e ve qual a posição dele
+      chave = [4,3, 5,7, 6,1, 8,2, 9,0];
+    }
+    if (semana == semanasJogosNacionais[6]) { //verifica o numero do meu time e ve qual a posição dele
+      chave = [0,1, 2,5, 3,9, 7,4, 8,6];
+    }
+    if (semana == semanasJogosNacionais[7]) { //verifica o numero do meu time e ve qual a posição dele
+      chave = [0,6, 1,3, 4,2, 5,8, 9,7];
+    }
+    if (semana == semanasJogosNacionais[8]) { //verifica o numero do meu time e ve qual a posição dele
+      chave = [2,9, 3,0, 6,5, 7,1, 8,4];
+    }
+    return chave;
+  }
+  List obterChave12(int semana) {
+    List chave = [];
+    if(semana==semanasJogosNacionais[0]){//verifica o numero do meu time e ve qual a posição dele
+      chave = [1,7, 10,4, 2,9, 5,0, 6,3, 8,11];
+    }
+    if(semana==semanasJogosNacionais[1]){
+      chave = [0,1, 11,2, 3,8, 4,6, 7,10, 9,5];
+    }
+    if(semana==semanasJogosNacionais[2]){
+      chave = [10,1, 2,3, 5,11, 6,7, 8,4, 9,0];
+    }
+    if(semana==semanasJogosNacionais[3]){
+      chave = [0,10, 1,6, 11,9, 3,5, 4,2, 7,8];
+    }
+    if(semana==semanasJogosNacionais[4]){
+      chave = [11,0, 2,7, 5,4, 6,10, 8,1, 9,3];
+    }
+    if(semana==semanasJogosNacionais[5]){
+      chave = [0,6, 1,2, 10,8, 3,11, 4,9, 7,5];
+    }
+    if(semana==semanasJogosNacionais[6]){
+      chave = [11,4, 2,10, 3,0, 5,1, 8,6, 9,7];
+    }
+    if(semana==semanasJogosNacionais[7]){
+      chave = [0,8, 1,9, 10,5, 4,3, 6,2, 7,11];
+    }
+    if(semana==semanasJogosNacionais[8]){
+      chave = [11,1, 2,8, 3,7, 4,0, 5,6, 9,10];
+    }
+    if(semana==semanasJogosNacionais[9]){
+      chave = [1,3, 10,11, 2,0, 6,9, 7,4, 8,5];
+    }
+    if(semana==semanasJogosNacionais[10]){
+      chave = [0,7, 11,6, 3,10, 4,1, 5,2, 9,8];
     }
 
     return chave;

@@ -100,7 +100,7 @@ Color backgroundTextColor(int position, int choosenLeagueIndex , String teamName
   //CLASSIFICAÇÃO
   if(leagueName==LeagueOfficialNames().inglaterra1 || leagueName==LeagueOfficialNames().italia1
       || leagueName==LeagueOfficialNames().espanha1 || leagueName==LeagueOfficialNames().franca1
-      || leagueName==LeagueOfficialNames().alemanha1  || leagueName==LeagueOfficialNames().estadosUnidos
+      || leagueName==LeagueOfficialNames().alemanha1
   ){
     if(position==1){backgroundColor = Colors.indigo;}
     if(position==2){backgroundColor = Colors.indigo;}

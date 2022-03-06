@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
@@ -28,7 +26,7 @@ class My{
 
   My(){
     clubName = globalMyClubName;
-    clubID = clubsAllNameList.indexOf(clubName);
+    clubID = clubsAllNameList.indexOf(globalMyClubName);
     campeonatoName = getLeagueName();
     campeonatoID = getLeagueID();
     posicaoChave = getChaveLeague();
@@ -77,8 +75,8 @@ class My{
     List clubsMyLeague = League(index: campeonatoID).allClubsName;
     late Club myClub;
     List ovr = [];
-    for (var element in clubsMyLeague) {
-      int clubIndex = clubsAllNameList.indexOf(element);
+    for (var nameClub in clubsMyLeague) {
+      int clubIndex = clubsAllNameList.indexOf(nameClub);
       myClub = Club(index: clubIndex);
       ovr.add(myClub.getOverall());
     }

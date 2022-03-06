@@ -13,8 +13,7 @@ class Simulate{
   late int variableGol2;
   List goalsList = List.filled(25, 0);//25 pra garantir que nenhum campeonato tem mais times que isso no futuro
 
-  //todo: colocar em not_play tambem
-  nationalMatchs(int leagueSelected){
+  nationalMatchs(){
 
     int myClubID = My().clubID;
     int myCampeonatoID = My().campeonatoID;
@@ -23,6 +22,9 @@ class Simulate{
       League leagueSelected = League(index: leagueIndex);
 
       int nClubs = leagueSelected.nClubs;
+      //Se a liga estiver em uma semana que ainda tem jogo Ex: Rodada 15 com 10 times nem joga
+      if(semana < semanasJogosNacionais[leagueSelected.nClubs-2]){
+
       List chave = Chaves().obterChave(rodada, leagueIndex);
       for(int nConfronto=0; nConfronto<nClubs/2; nConfronto++){
 
@@ -44,6 +46,7 @@ class Simulate{
         }
 
 
+      }
       }
     }
     //SOMA PRO TOTAL

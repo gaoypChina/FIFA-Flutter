@@ -20,9 +20,11 @@ class LeagueOfficialNames{
 
 List internationalLeagueNames = [LeagueOfficialNames().championsLeague,LeagueOfficialNames().libertadores];
 
+//Pra adicionar uma nova liga adicione o index da liga aqui:
 List leaguesListRealIndex = [
-  1,2,5,7,  9,11,20,21,  50,51,60,61,  62,70, 80
+  1,2,5,7,  9,11,20,21,  50,51,60,61,  62,70, 80, 90
 ];
+
 List getAvailableLeaguesNames(){
   List availableLeaguesNames = [];
   leaguesIndexFromName.forEach((leagueName, leagueID) {

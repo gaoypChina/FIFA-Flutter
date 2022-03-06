@@ -92,12 +92,12 @@ Map clubNameMap = {
     8: clubName.guarani,9: clubName.juventude,10: clubName.nautico,11: clubName.parana,
     12: clubName.pontepreta,13: clubName.sport,14: clubName.vasco,15: clubName.vitoria,
   },
-  LeagueOfficialNames().brasil3 : {
-    0: clubName.avai,1: 'Brasil Pelotas',2: 'Brusque',3: 'CRB',
-    4: 'CSA',5: 'Ituano',6: 'Londrina',7: 'Manaus',
-    8: 'Novorizontino',9: 'Operário-PR',10: 'Paysandu',11: 'Portuguesa',
-    12: 'Remo',13: 'Sampaio Corrêa',14: 'Santa Cruz',15: 'Vila Nova',
-  },
+  // LeagueOfficialNames().brasil3 : {
+  //   0: clubName.avai,1: 'Brasil Pelotas',2: 'Brusque',3: 'CRB',
+  //   4: 'CSA',5: 'Ituano',6: 'Londrina',7: 'Manaus',
+  //   8: 'Novorizontino',9: 'Operário-PR',10: 'Paysandu',11: 'Portuguesa',
+  //   12: 'Remo',13: 'Sampaio Corrêa',14: 'Santa Cruz',15: 'Vila Nova',
+  // },
   LeagueOfficialNames().argentina : {
     0: clubName.argentinojuniors,1: clubName.arsenalsarandi,2: clubName.banfield,3: clubName.bocajuniors,
     4: clubName.colon,5: clubName.defensayjusticia,6: clubName.estudiantes,7: clubName.independiente,
@@ -107,7 +107,7 @@ Map clubNameMap = {
   LeagueOfficialNames().sulamericano : {
     0: clubName.penarol,1: clubName.nacional,2: clubName.olimpia,3: clubName.cerroporteno,
     4: clubName.libertad,5: clubName.colocolo,6: clubName.lau,7: clubName.univcatolica,
-    8: clubName.bolivar,9: clubName.idelvalle,10: clubName.sportingcristal,11: clubName.cienciano,
+    8: clubName.bolivar,9: clubName.idelvalle,10: clubName.sportingcristal,11: clubName.alianzalima,
     12: clubName.barcelonaequ,13: clubName.emelec,14: clubName.ldu,15: clubName.caracas,
   },
   LeagueOfficialNames().colombiaMexico : {
@@ -126,13 +126,13 @@ Map clubNameMap = {
     0: clubName.ghuagzhouevergrande,1: clubName.shanghaisipg,2: clubName.shandongluneng,3: clubName.kawasakifrontale,
     4: clubName.kashimaantlers,5: clubName.urawareddiamonds,6: clubName.visselkobe,7: clubName.pohang,
     8: clubName.jeonbuk,9: clubName.alhilal,10: clubName.alnassr,11: clubName.alain,
-    12: clubName.alsadd,13: clubName.alahli,//14: clubName.alduhail,15: clubName.aljazira,
+    12: clubName.alsadd,13: clubName.alahli,14: clubName.alduhail,15: clubName.aljazira,
   },
 
   LeagueOfficialNames().outros : {
-    0: clubName.avai,1: clubName.paysandu,2: clubName.santacruz,3: clubName.hullcity,
-    4: clubName.huracan,5: clubName.alianzalima,6: clubName.alahly,
-    7: clubName.zamalek,8: clubName.rajacasablanca,9: clubName.alduhail
+    0: clubName.alahly,1: clubName.zamalek,2: clubName.rajacasablanca,3: clubName.hullcity,
+    4: clubName.portuguesa,5: clubName.tolima,6: clubName.cienciano, 7: clubName.avai,
+    8: clubName.santacruz, 9: clubName.persepolis,10: clubName.ulsan,11: clubName.huracan,
   },
 
 };

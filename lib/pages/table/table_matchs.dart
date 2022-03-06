@@ -1,4 +1,5 @@
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/page_controller/table/table_matchs_control.dart';
 import 'package:fifa/pages/table/widget_bottom.dart';
@@ -17,7 +18,10 @@ class TableMatchs extends StatefulWidget {
 class _TableMatchsState extends State<TableMatchs> {
 
   String leagueInternational = '';
-  int rodadaShow = 1;
+  int rodadaShow = semanasGruposInternacionais.contains(semana)
+                    ? semanasGruposInternacionais.indexOf(semana)+1
+                    : semana > semanasGruposInternacionais.last
+                      ? 6 : 1;
 
   ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
@@ -34,6 +38,7 @@ class _TableMatchsState extends State<TableMatchs> {
   Widget build(BuildContext context) {
     double _height = MediaQuery.of(context).size.height;
     double _width = MediaQuery.of(context).size.width;
+
     return Scaffold(
 
       body:  Stack(

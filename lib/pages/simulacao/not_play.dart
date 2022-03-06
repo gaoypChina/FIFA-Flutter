@@ -68,6 +68,10 @@ class _NotPlayState extends State<NotPlay> {
 ////////////////////////////////////////////////////////////////////////////
 onContinueButton(){
   //SIMULA JOGOS DE FASE DE GRUPOS INTERNACIONAIS
+  if(semanasJogosNacionais.contains(semana)){
+    Simulate().nationalMatchs();
+  }
+  //SIMULA JOGOS DE FASE DE GRUPOS INTERNACIONAIS
   if(semanasGruposInternacionais.contains(semana)){
     Simulate().internationalMatchsGroups();
   }
@@ -75,9 +79,7 @@ onContinueButton(){
   semana++;
   //Atualiza a rodada do campeonato
   if(semanasJogosNacionais.contains(semana)) {
-    if(semana < League(index: My().campeonatoID).nClubs) {
       rodada = semanasJogosNacionais.indexOf(semana)+1;
-    }
   }
 
   //Times na champions e libertadores

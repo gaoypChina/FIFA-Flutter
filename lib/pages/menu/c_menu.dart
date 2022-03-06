@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:fifa/pages/menu/b_home.dart';
 import 'package:fifa/classes/chaves.dart';
 import 'package:fifa/global_variables.dart';
@@ -153,7 +151,7 @@ class _MenuState extends State<Menu> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Container(width:180,child: Text(myClass.clubName,textAlign: TextAlign.center,style: EstiloTextoBranco.text20)),
+                            SizedBox(width:180,child: Text(myClass.clubName,textAlign: TextAlign.center,style: EstiloTextoBranco.text20)),
                             Text('\nAno: '+ ano.toString(),style: EstiloTextoBranco.text14),
                             Text('Semana: '+ semana.toString(),style: EstiloTextoBranco.text14),
                             Text('Overall da Equipe: ' + Club(index: myClass.clubID).getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text14),
@@ -276,7 +274,7 @@ class _MenuState extends State<Menu> {
 
                         //CAMPEONATO
                         campeonatoLogo.isNotEmpty
-                            ? Image.asset('assets/icons/$campeonatoLogo.png',height: 90,width: 90)
+                            ? Image.asset(campeonatoLogo,height: 90,width: 90)
                             : const SizedBox(height: 90,width: 90),
                     ]),
 

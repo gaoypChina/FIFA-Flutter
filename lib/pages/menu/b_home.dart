@@ -69,9 +69,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
 
     indexLeague = leaguesListRealIndex[posicaoPais];
-    leagueName = League(index: indexLeague).getName();
-    teamName = League(index: indexLeague).getClubName(posicao);
-    nLeagueTeams = League(index: indexLeague).getNTeams();
+    League leagueClass = League(index: indexLeague);
+    leagueName = leagueClass.name;
+    teamName = leagueClass.getClubName(posicao);
+    nLeagueTeams = leagueClass.nClubs;
 
     return Scaffold(
 
@@ -95,46 +96,55 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
 
-                      InkWell(
-                        onTap: (){
-                          if(posicaoPais>0) {
-                            posicaoPais --;
-                            posicao = 0;
-                          }else{
-                            posicaoPais = leaguesListRealIndex.length-1;
-                          }
-                          setState(() {});
-                        },
-                        child: Image.asset('assets/icons/button_left.png',height: buttonSize,width: buttonSize),
+                      Column(
+                        children: [
+
+                          Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: InkWell(
+                              onTap: (){
+                                if(posicaoPais>0) {
+                                  posicaoPais --;
+                                  posicao = 0;
+                                }else{
+                                  posicaoPais = leaguesListRealIndex.length-1;
+                                }
+                                setState(() {});
+                              },
+                              child: Image.asset('assets/icons/button_left.png',height: buttonSize,width: buttonSize),
+                            ),
+                          ),
+                          InkWell(
+                            onTap: (){
+                              if(posicaoPais< leaguesListRealIndex.length-1) {
+                                posicaoPais ++;
+                                posicao = 0;
+                              }else{
+                                posicaoPais = 0;
+                              }
+                              setState(() {});
+                            },
+                            child: Image.asset('assets/icons/button_right.png',height: buttonSize,width: buttonSize),
+                          ),
+                        ],
                       ),
 
                       Column(
                         children: [
-                          //Escudo
-                          Image.asset('assets/icons/${FIFAImages().campeonatoLogo(indexLeague)}.png',height: 200,width: 200),
+                          //LOGO CAMPEONATO
+                          Image.asset(FIFAImages().campeonatoLogo(indexLeague),height: 170,width: 170),
                           Text(leagueName,style:EstiloTextoBranco.text16),
                         ],
                       ),
 
-                      InkWell(
-                        onTap: (){
-                          if(posicaoPais< leaguesListRealIndex.length-1) {
-                            posicaoPais ++;
-                            posicao = 0;
-                          }else{
-                            posicaoPais = 0;
-                          }
-                          setState(() {});
-                        },
-                        child: Image.asset('assets/icons/button_right.png',height: buttonSize,width: buttonSize),
-                      ),
+
 
                     ],
                   ),
 
 
 
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 40),
                   ///////////
                   //TIME
                   //////////
@@ -142,16 +152,36 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
 
-                      InkWell(
-                        onTap: (){
-                          if(posicao>0) {
-                            posicao --;
-                          }else{
-                            posicao = nLeagueTeams-1;
-                          }
-                          setState(() {});
-                        },
-                        child: Image.asset('assets/icons/button_left.png',height: buttonSize,width: buttonSize),
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: InkWell(
+                              onTap: (){
+                                if(posicao>0) {
+                                  posicao --;
+                                }else{
+                                  posicao = nLeagueTeams-1;
+                                }
+                                setState(() {});
+                              },
+                              child: Image.asset('assets/icons/button_left.png',height: buttonSize,width: buttonSize),
+                            ),
+                          ),
+
+                          InkWell(
+                            onTap: (){
+                              if(posicao<nLeagueTeams-1) {
+                                posicao ++;
+                              }else{
+                                posicao = 0;
+                              }
+                              setState(() {});
+                            },
+                            child: Image.asset('assets/icons/button_right.png',height: buttonSize,width: buttonSize),
+                          ),
+
+                        ],
                       ),
 
                       Column(
@@ -176,18 +206,6 @@ class _HomePageState extends State<HomePage> {
 
                           Text(teamName,style:EstiloTextoBranco.text25),
                         ],
-                      ),
-
-                      InkWell(
-                        onTap: (){
-                          if(posicao<nLeagueTeams-1) {
-                            posicao ++;
-                          }else{
-                            posicao = 0;
-                          }
-                          setState(() {});
-                        },
-                        child: Image.asset('assets/icons/button_right.png',height: buttonSize,width: buttonSize),
                       ),
 
                     ],
@@ -341,7 +359,7 @@ class _HomePageState extends State<HomePage> {
     await readCSVfunc("espanha");
     await readCSVfunc("alemanha");
     await readCSVfunc("franca");
-    await readCSVfunc("outros");
+    await readCSVfunc("europa");
     await readCSVfunc("oriental");
     await readCSVfunc("championship");
     await readCSVfunc("argentina");
@@ -423,14 +441,15 @@ class _HomePageState extends State<HomePage> {
               globalJogadoresAge.add(age);
               globalJogadoresOverall.add(overall);
               indexJog++;
+              //test jogadores importados
+              //   if(club == ClubName().alsadd){
+              //     print('$name $position $overall $club ${clubIndex.toString()}');
+              //   }
             }else{
               //ERRO NA IMPORTAÇÃO DO TIME
+              //Provavelmente falta adicionar o nome do clube em: clubsAllNameList
               print('ERRO IMPORTAÇÃO JOGADOR: $name $club ${clubIndex.toString()}');
             }
-            //test jogadores importados
-            //   if(club == ClubName().aljazira){
-            //     print('$name $position $overall $club ${clubIndex.toString()}');
-            //   }
           }
         }catch(e){
           //print('ERROR LOADING DATA: ');

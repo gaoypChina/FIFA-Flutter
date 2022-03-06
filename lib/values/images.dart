@@ -7,8 +7,9 @@ class FIFAImages{
 
   String campeonatoInternacionalLogo(String campeonatoFoto){
     String imageLogo = '';
-    if(campeonatoFoto==LeagueOfficialNames().championsLeague){       imageLogo = 'championsleague';       }
-    if(campeonatoFoto==LeagueOfficialNames().libertadores){       imageLogo = 'libertadores';       }
+    if(campeonatoFoto==LeagueOfficialNames().championsLeague){       imageLogo = 'assets/league_logos/championsleague.png';       }
+    if(campeonatoFoto==LeagueOfficialNames().libertadores){       imageLogo = 'assets/league_logos/libertadores.png';       }
+    if(campeonatoFoto==LeagueOfficialNames().outros){       imageLogo = 'assets/league_logos/championsleague.png';       }
     return imageLogo;
   }
 
@@ -261,6 +262,7 @@ class FIFAImages{
     if(timeFoto==ClubName().alnassr){              imageLogo='al_nassr';          }
     if(timeFoto==ClubName().aljazira){              imageLogo='al_jazira';          }
     if(timeFoto==ClubName().pohang){              imageLogo='pohang';          }
+    if(timeFoto==ClubName().ulsan){         imageLogo='ulsan';        }
 
     if(timeFoto==ClubName().alahli){          imageLogo='al_ahli';          }
     if(timeFoto==ClubName().rajacasablanca){              imageLogo='raja';          }
@@ -286,13 +288,15 @@ class FIFAImages{
 
     if(timeFoto==ClubName().sunderland){         imageLogo='sunderland';          }
     if(timeFoto==ClubName().idelvalle){         imageLogo='delvalle';          }
+    if(timeFoto==ClubName().portuguesa){         imageLogo='portuguesa';          }
+    if(timeFoto==ClubName().tolima){         imageLogo='tolima';          }
 
     return imageLogo;
   }
   
   String campeonatoLogo(int numeroCampeonato){
     String campeonatoFoto = League(index: numeroCampeonato).getName();
-    String imageLogo = '';
+    String imageLogo = 'championship';
     if(campeonatoFoto==LeagueOfficialNames().inglaterra1){       imageLogo = 'premierleague';       }
     if(campeonatoFoto==LeagueOfficialNames().inglaterra2){       imageLogo = 'championship';       }
     if(campeonatoFoto==LeagueOfficialNames().italia1){       imageLogo = 'seriea';       }
@@ -300,22 +304,22 @@ class FIFAImages{
     if(campeonatoFoto==LeagueOfficialNames().espanha1){       imageLogo = 'laliga2';       }
     if(campeonatoFoto==LeagueOfficialNames().espanha2){       imageLogo = 'laliga2';       }
     if(campeonatoFoto==LeagueOfficialNames().franca1){       imageLogo = 'ligue1';      }
-    if(campeonatoFoto==LeagueOfficialNames().alemanha1){      imageLogo = 'logobundesliga';       }
-    if(campeonatoFoto==LeagueOfficialNames().alemanha2){      imageLogo = 'logobundesliga';       }
-    if(campeonatoFoto==LeagueOfficialNames().ligaEuropa){       imageLogo = 'europaleague';       }
+    if(campeonatoFoto==LeagueOfficialNames().alemanha1){      imageLogo = 'bundesliga';       }
+    if(campeonatoFoto==LeagueOfficialNames().alemanha2){      imageLogo = 'bundesliga';       }
+    if(campeonatoFoto==LeagueOfficialNames().ligaEuropa){       imageLogo = 'liga1';       }
     if(campeonatoFoto==LeagueOfficialNames().lesteEuropeu){     imageLogo = 'leste';       }
     if(campeonatoFoto==LeagueOfficialNames().brasil1){       imageLogo = 'brasileirao';        }
     if(campeonatoFoto==LeagueOfficialNames().brasil2){      imageLogo = 'brasilserieb';       }
     if(campeonatoFoto==LeagueOfficialNames().brasil3){      imageLogo = 'brasileirao';       }
     if(campeonatoFoto==LeagueOfficialNames().paulistao){      imageLogo = 'brasileirao';       }
-    if(campeonatoFoto==LeagueOfficialNames().argentina){       imageLogo = 'logoargentina';       }
-    if(campeonatoFoto==LeagueOfficialNames().sulamericano){       imageLogo = 'logosulamericana';       }
-    if(campeonatoFoto==LeagueOfficialNames().colombiaMexico){       imageLogo = 'logocolombia';       }
-    if(campeonatoFoto==LeagueOfficialNames().estadosUnidos){       imageLogo = 'logomls';       }
-    if(campeonatoFoto==LeagueOfficialNames().asia){       imageLogo = 'logoasialeague';       }
-    if(campeonatoFoto==LeagueOfficialNames().orienteMedio){       imageLogo = 'championship';       }
-    if(campeonatoFoto==LeagueOfficialNames().outros){       imageLogo = 'championship';       }
+    if(campeonatoFoto==LeagueOfficialNames().argentina){       imageLogo = 'argentina';       }
+    if(campeonatoFoto==LeagueOfficialNames().sulamericano){       imageLogo = 'sulamericana';       }
+    if(campeonatoFoto==LeagueOfficialNames().colombiaMexico){       imageLogo = 'colombia';       }
+    if(campeonatoFoto==LeagueOfficialNames().estadosUnidos){       imageLogo = 'mls';       }
+    if(campeonatoFoto==LeagueOfficialNames().asia){       imageLogo = 'asialeague';       }
+    if(campeonatoFoto==LeagueOfficialNames().outros){       imageLogo = 'others';       }
 
+    imageLogo = 'assets/league_logos/$imageLogo.png';
     return imageLogo;
   }
 }
