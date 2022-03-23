@@ -1,16 +1,18 @@
 
-# fifa
+# Fifa 2022
 
-A new Flutter project.
+## Descrição do Projeto 
+  Football Manager em Flutter, para dispositivos Android, ainda em desenvolvimento.
+  
+## Como usar o Projeto 
+  Escolha um time e gerencie sua equipe contratando jogadores para vencer as partidas e consquistar títulos. O aplicativo oferece como diferencial a possibilidade de simular rapidamente as temporadas, sendo ótimo para estudar como o futebol mudaria ao longo dos anos. Além disso, o usuário tem a possibilidade de customizar qualquer time e jogador.
+  
+## Como Executar o projeto
 
-## Getting Started
+Você precisa ter o Flutter devidamente instalado no seu computador, depois disso: 
 
-This project is a starting point for a Flutter application.
+copie o projeto digiando no terminal:
+-git clone https://github.com/Marcos14Almeida/FIFA-Flutter/
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
+Depois rode o código digitando no terminal
+-flutter run
