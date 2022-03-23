@@ -2,7 +2,7 @@
 # Fifa 2022
 
 ## Descrição do Projeto 
-  Football Manager em Flutter, para dispositivos Android, ainda em desenvolvimento.
+  Jogo no estilo Football Manager em Flutter, para dispositivos Android, ainda em desenvolvimento. O arquivo contém centenas de imagens de clubes e ligas oficiais, por isso o arquivo é grande e não está disponível na Play Store.
   
 ## Como usar o Projeto 
   Escolha um time e gerencie sua equipe contratando jogadores para vencer as partidas e consquistar títulos. O aplicativo oferece como diferencial a possibilidade de simular rapidamente as temporadas, sendo ótimo para estudar como o futebol mudaria ao longo dos anos. Além disso, o usuário tem a possibilidade de customizar qualquer time e jogador.
