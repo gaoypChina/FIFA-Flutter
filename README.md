@@ -17,10 +17,10 @@ copie o projeto digiando no terminal:
 Depois rode o código digitando no terminal
 -flutter run
 
-  <figure>
 <p align="center">
   <img src="https://github.com/Marcos14Almeida/FIFA-Flutter/blob/master/screenshot.jpg" width="200" title="Screenshot">
+  </a>
+</p>
+<p align="center">
     <figcaption>Caption goes here</figcaption>
 </p>
-  </figure>
-  </a>
