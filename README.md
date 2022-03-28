@@ -19,7 +19,7 @@ Depois rode o código digitando no terminal
 
 <p align="center">
   <img src="https://github.com/Marcos14Almeida/FIFA-Flutter/blob/master/screenshot.jpg" width="200" title="Screenshot">
-  
-  <b>Some Links:</b><br>
   </a>
 </p>
+
+<h1 align="center">Material Bread</h1>
