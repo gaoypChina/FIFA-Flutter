@@ -18,7 +18,9 @@ Depois rode o código digitando no terminal
 -flutter run
 
 <p align="center">
+  <figure>
   <img src="https://github.com/Marcos14Almeida/FIFA-Flutter/blob/master/screenshot.jpg" width="200" title="Screenshot">
     <figcaption>Caption goes here</figcaption>
+  </figure>
   </a>
 </p>
