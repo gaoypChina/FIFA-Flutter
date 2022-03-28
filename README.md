@@ -22,4 +22,4 @@ Depois rode o código digitando no terminal
   </a>
 </p>
 
-<a align="center">Screenshot</a>
+<h5 align="center">Screenshot</h5>
