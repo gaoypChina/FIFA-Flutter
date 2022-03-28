@@ -17,9 +17,9 @@ copie o projeto digiando no terminal:
 Depois rode o código digitando no terminal
 -flutter run
 
+## Screenshot
+
 <p align="center">
   <img src="https://github.com/Marcos14Almeida/FIFA-Flutter/blob/master/screenshot.jpg" width="200" title="Screenshot">
   </a>
 </p> 
-
-<h4 align="center">Screenshot</h4>
