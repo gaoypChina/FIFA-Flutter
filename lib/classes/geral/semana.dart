@@ -4,12 +4,14 @@ class Semana{
   String semanaStr = semana.toString();
   bool isJogoCampeonatoNacional = semanasJogosNacionais.contains(semana);
   bool isJogoCampeonatoInternacional = semanasJogosInternacionais.contains(semana);
+  bool isJogoGruposInternacional = semanasGruposInternacionais.contains(semana);
+  bool isJogoMataMataInternacional = semanasJogosInternacionais.contains(semana) && !semanasGruposInternacionais.contains(semana);
   String semanaAlternativeStr = semana.toString(); //com o numero da rodada
 
   Semana(){
 
     if(isJogoCampeonatoNacional) {
-      semanaStr = semana.toString();
+      semanaStr = semanasJogosNacionais.indexOf(semana).toString();
     }
     if(semanasJogosCopas.contains(semana)){semanaStr = 'Jogo das Copas';}
     if(semanasGruposInternacionais.contains(semana)){semanaStr = 'Fase de Grupos';}
@@ -23,6 +25,14 @@ class Semana{
       semanaAlternativeStr += ' ${semanasGruposInternacionais.indexOf(semana)+1}';
     }
 
+    }
+
+    updateWeek(){
+      semana++;
+      //Atualiza a rodada do campeonato
+      if(semanasJogosNacionais.contains(semana)) {
+        rodada = semanasJogosNacionais.indexOf(semana)+1;
+      }
     }
 
 }

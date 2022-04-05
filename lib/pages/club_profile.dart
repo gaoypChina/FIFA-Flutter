@@ -1,5 +1,5 @@
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/Jogador.dart';
+import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/popup/popup_player_info.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/values/images.dart';
@@ -19,41 +19,18 @@ class ClubProfile extends StatefulWidget {
 class _ClubProfileState extends State<ClubProfile> {
 
   late Club clubClass;
-
   String show = 'OVR';
-  late double averageAge;
-
   List jogadoresOrganizados = [];
-  ////////////////////////////////////////////////////////////////////////////
-//                               INIT                                     //
-////////////////////////////////////////////////////////////////////////////
-  @override
-  void initState() {
-    setClass();
-    setTitularesEReservas();
-    setAverageAge();
-    setState(() {});
-    super.initState();
-  }
-  setClass(){
-    clubClass = Club(index: widget.clubID);
-  }
-  setTitularesEReservas(){
-    jogadoresOrganizados = clubClass.escalacao;
-  }
-  setAverageAge(){
-    averageAge = 0;
-    for(int i=0; i<clubClass.nJogadores; i++){
-      averageAge += Jogador(index: clubClass.jogadores[i]).age;
-    }
-    averageAge = averageAge / clubClass.nJogadores;
-  }
+
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
     double _width = MediaQuery.of(context).size.width;
+
+    clubClass = Club(index: widget.clubID);
+    jogadoresOrganizados = clubClass.escalacao;
 
     return Scaffold(
 
@@ -78,7 +55,7 @@ class _ClubProfileState extends State<ClubProfile> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text('Overall: '+clubClass.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.text16),
-                            Text('Média Idade: '+averageAge.toStringAsFixed(2), style: EstiloTextoBranco.text16),
+                            Text('Média Idade: '+clubClass.getAverageAge().toStringAsFixed(2), style: EstiloTextoBranco.text16),
                           ],
                         ),
                       ),

@@ -2,7 +2,7 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/values/images.dart';
-import 'package:fifa/functions/update_data_year.dart';
+import 'package:fifa/functions/end_year_updates/update_data_year.dart';
 import 'package:fifa/widgets/button_continue.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';

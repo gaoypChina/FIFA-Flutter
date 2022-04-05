@@ -1,9 +1,7 @@
 import 'package:fifa/classes/geral/semana.dart';
-import 'package:fifa/functions/fim_campeonato_local.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
-import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/functions/simulate_functions.dart';
+import 'package:fifa/functions/simulate/simulate_functions.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/simulacao/end_year.dart';
 import 'package:fifa/widgets/button_continue.dart';
@@ -67,27 +65,16 @@ class _NotPlayState extends State<NotPlay> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
 onContinueButton(){
-  //SIMULA JOGOS DE FASE DE GRUPOS INTERNACIONAIS
-  if(semanasJogosNacionais.contains(semana)){
-    Simulate().nationalMatchs();
-  }
-  //SIMULA JOGOS DE FASE DE GRUPOS INTERNACIONAIS
-  if(semanasGruposInternacionais.contains(semana)){
-    Simulate().internationalMatchsGroups();
-  }
+  //SIMULA JOGOS
+  Simulate().simulateWeek();
 
-  semana++;
-  //Atualiza a rodada do campeonato
-  if(semanasJogosNacionais.contains(semana)) {
-      rodada = semanasJogosNacionais.indexOf(semana)+1;
-  }
+  //atualiza semana
+  Semana().updateWeek();
 
-  //Times na champions e libertadores
-  if(semana == semanasJogosInternacionais[0]){
-    FimDoCampeonatoLocal().setAll032InternationalTeams();
-  }
+  //Define times dos campeonatos internacionais
+  Simulate().setTeamsInternational();
 
-  if(semana == ultimasemana){
+  if(semana == globalUltimaSemana){
     Navigator.of(context).push(MaterialPageRoute(builder: (context) => const EndYear()));
   }else{
     Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Menu()));

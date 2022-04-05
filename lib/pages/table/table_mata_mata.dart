@@ -1,3 +1,4 @@
+import 'package:fifa/functions/mata_mata/mata_mata_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/table/widget_bottom.dart';
 import 'package:fifa/theme/colors.dart';
@@ -86,10 +87,11 @@ class _TableMataMataState extends State<TableMataMata> {
 ////////////////////////////////////////////////////////////////////////////
   Widget phaseTableWidget(int phaseStage) {
       int phaseRows = 9;
-      if(phaseStage==0 || phaseStage==1){phaseRows=8;} //OITAVAS
-      if(phaseStage==2 || phaseStage==3){phaseRows=4;} //QUARTAS
-      if(phaseStage==4 || phaseStage==5){phaseRows=2;} //SEMI
-      if(phaseStage==6){phaseRows=1;} //FINAL
+      int weekShow = 0;
+      if(phaseStage==0 || phaseStage==1){phaseRows=8;weekShow = semanaOitavas.first;} //OITAVAS
+      if(phaseStage==2 || phaseStage==3){phaseRows=4;weekShow = semanaQuartas.first;} //QUARTAS
+      if(phaseStage==4 || phaseStage==5){phaseRows=2;weekShow = semanaSemi.first;} //SEMI
+      if(phaseStage==6){phaseRows=1;weekShow = semanaFinal.first;} //FINAL
 
       //Quando não está no matamata
       if(semana < semanaOitavas.first){
@@ -107,14 +109,14 @@ class _TableMataMataState extends State<TableMataMata> {
       }
       return Column(
         children: [
-          for (int i = 0; i < phaseRows+1; i++)
+          for (int i = -1; i < phaseRows; i++)
           Table(
             columnWidths: const{0: FractionColumnWidth(.35),4: FractionColumnWidth(.35)},
             children: [
-              if (i == 0)
+              if (i == -1)
                 groupTitle(phaseRows)
               else
-                groupRow(i,12,53)
+                groupRow(i, phaseStage, weekShow)
             ],
           )
         ],
@@ -136,22 +138,28 @@ class _TableMataMataState extends State<TableMataMata> {
       ],
     );
   }
-  TableRow groupRow(int i, int clubIndexA, int clubIndexB){
-    String teamNameA = 'Palmeiras';
-    String teamNameB = 'Santos';
-    int golsA = 4;
-    int golsB = 2;
+  TableRow groupRow(int matchRow, int phaseStage, int weekShow){
+    MataMata data = MataMata();
+    data.getData(leagueInternational, data.getSemanaPhase(weekShow),matchRow, phaseStage);
+
+    String teamNameA = data.clubName1;
+    String teamNameB = data.clubName2;
+    int golsA = data.goal1;
+    int golsB = data.goal2;
+
     return  TableRow(
       children: [
-        Text(teamNameA,textAlign:TextAlign.end,style: EstiloTextoBranco.text16),
+        Text(teamNameA,textAlign:TextAlign.end,style: EstiloTextoBranco.text14),
         //Escudo
         Image.asset('assets/clubs/${FIFAImages().imageLogo(teamNameA)}.png',height: 20,width: 20),
 
-        Text(' '+ golsA.toString()+'x'+golsB.toString()+' ',style: EstiloTextoBranco.text16),
+        golsA >= 0
+            ? Text(' '+ golsA.toString()+'x'+golsB.toString()+' ',style: EstiloTextoBranco.text14)
+            : const Text('X',textAlign:TextAlign.center,style: EstiloTextoBranco.text14),
         //Escudo
         Image.asset('assets/clubs/${FIFAImages().imageLogo(teamNameB)}.png',height: 20,width: 20),
 
-        Text(teamNameB,style: EstiloTextoBranco.text16),
+        Text(teamNameB,style: EstiloTextoBranco.text14),
       ],
     );
   }

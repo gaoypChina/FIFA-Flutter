@@ -3,11 +3,12 @@ class LeagueOfficialNames{
   String libertadores = 'Libertadores';
   String resto = 'Resto do Mundo';
 
-  String inglaterra1 = 'Premier League';  String inglaterra2 = 'Championship';
+  String inglaterra1 = 'Premier League';  String inglaterra2 = 'Championship'; String inglaterra3 = 'Championship2';
   String italia1 = 'Serie A TIM';  String italia2 = 'Serie B TIM';
   String espanha1 = 'La Liga';  String espanha2 = 'La Liga2';
   String franca1 = 'Ligue 1'; String franca2 = 'Ligue 2';
   String alemanha1 = 'Bundesliga';  String alemanha2 = 'Bundesliga 2';
+  String ptHol = 'Liga Portugal Holanda';
   String ligaEuropa = 'Liga Europeia';  String lesteEuropeu = 'Leste Europeu';
 
   String brasil1 = 'Brasileirão';  String brasil2 = 'Brasileirão - Série B';String brasil3 = 'Brasileirão - Série C';
@@ -22,7 +23,7 @@ List internationalLeagueNames = [LeagueOfficialNames().championsLeague,LeagueOff
 
 //Pra adicionar uma nova liga adicione o index da liga aqui:
 List leaguesListRealIndex = [
-  1,2,5,7,  9,11,20,21,  50,51,60,61,  62,70, 80, 90
+  1,2,5,7,  9,11,15,20,21,  50,51,52,60,61,  62,70, 80, 85, 90
 ];
 
 List getAvailableLeaguesNames(){
@@ -43,6 +44,7 @@ List leagueNames = [
   LeagueOfficialNames().espanha1,LeagueOfficialNames().espanha2,
   LeagueOfficialNames().franca1,LeagueOfficialNames().franca2,
   LeagueOfficialNames().alemanha1,LeagueOfficialNames().alemanha2,
+  LeagueOfficialNames().ptHol,
   LeagueOfficialNames().ligaEuropa,LeagueOfficialNames().lesteEuropeu,
   LeagueOfficialNames().brasil1,LeagueOfficialNames().brasil2,LeagueOfficialNames().brasil3,
   LeagueOfficialNames().paulistao,
@@ -55,6 +57,7 @@ List leagueNames = [
 Map leaguesIndexFromName = {
   LeagueOfficialNames().inglaterra1: 1,
   LeagueOfficialNames().inglaterra2: 2,
+  LeagueOfficialNames().inglaterra3: 3,
   LeagueOfficialNames().italia1: 5,
   LeagueOfficialNames().italia2: 6,
 
@@ -64,6 +67,7 @@ Map leaguesIndexFromName = {
   LeagueOfficialNames().franca2: 10,
   LeagueOfficialNames().alemanha1: 11,
   LeagueOfficialNames().alemanha2: 12,
+  LeagueOfficialNames().ptHol: 15,
 
   LeagueOfficialNames().ligaEuropa: 20,
   LeagueOfficialNames().lesteEuropeu: 21,

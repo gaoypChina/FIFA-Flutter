@@ -53,13 +53,18 @@ class FimDoCampeonatoLocal{
         globalInternational32ClubsID[indexChampions].add(clubIndexes[i]);
       }
     }
+    if(leagueClass.name == LeagueOfficialNames().ptHol){
+      for(int i=0; i<4; i++){
+        globalInternational32ClubsID[indexChampions].add(clubIndexes[i]);
+      }
+    }
     if(leagueClass.name == LeagueOfficialNames().ligaEuropa){
-      for(int i=0; i<6; i++){
+      for(int i=0; i<4; i++){
         globalInternational32ClubsID[indexChampions].add(clubIndexes[i]);
       }
     }
     if(leagueClass.name == LeagueOfficialNames().lesteEuropeu){
-      for(int i=0; i<6; i++){
+      for(int i=0; i<4; i++){
         globalInternational32ClubsID[indexChampions].add(clubIndexes[i]);
       }
     }

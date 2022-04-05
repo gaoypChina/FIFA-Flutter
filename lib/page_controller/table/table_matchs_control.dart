@@ -54,6 +54,14 @@ class MatchResultInternational{
 
     goals1 = 0;
     goals2 = 0;
+
+    try{
+      goals1 = globalHistoricInternationalGoalsAll[competitionName][rodadaNumber][clubID1];
+      goals2 = globalHistoricInternationalGoalsAll[competitionName][rodadaNumber][clubID2];
+    }catch(e){
+      //print('Significa que a variavel foi chamada em uma rodada que ainda nao foi simulada');
+    }
+
     if(semanaDoJogo < semana) {
       isAlreadyPlayed = true;
     }

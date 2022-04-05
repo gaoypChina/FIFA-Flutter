@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/functions/func_number_clubs_total.dart';
 import 'package:fifa/global_variables.dart';
 
@@ -17,7 +16,9 @@ transferenciaJogador(int id){
 
       double destinyClubOverall = Club(index: randomClubID).getOverall();
       if(destinyClubOverall<playerOverall+7 && destinyClubOverall>playerOverall-7) { //se o clube for mais ou menos daquele potencial
-        globalJogadoresClubIndex[id] = randomClubID; //vende o jogador
+        if(randomClubID != globalMyClubID && id != globalMyClubID){//se não é o meu time
+          globalJogadoresClubIndex[id] = randomClubID; //vende o jogador
+        }
 
         //Jogador player = Jogador(index: id);
         //print('Vendido ${player.name} /${player.clubName} ');
@@ -26,8 +27,8 @@ transferenciaJogador(int id){
 
     }
     }catch(e){
-      Jogador player = Jogador(index: id);
-      print('Erro: Jogador de liga inválida ${player.name} /${player.clubName} ');
+      //Jogador player = Jogador(index: id);
+      //print('Erro: Jogador de liga inválida ${player.name} /${player.clubName} ');
     }
   }
 

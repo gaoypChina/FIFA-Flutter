@@ -1,20 +1,22 @@
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/international.dart';
+import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/functions/end_year_updates/aposentadoria.dart';
 import 'package:fifa/functions/international_league.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/league_names.dart';
 
-import 'end_year_updates/ovr_update.dart';
-import 'end_year_updates/player_transfer.dart';
-import 'end_year_updates/rebaixamento.dart';
+import 'ovr_update.dart';
+import 'player_transfer.dart';
+import 'rebaixamento.dart';
 
 void funcUpdateDataAfterSeason(){
-  saveHistoricalData();
+  saveHistoricalData(); //salva a classificação dos campeonatos
   atualizaStatusJogadores(); //venda, update de overall, idade+1
   trocaClubesRebaixamento();
-  resetData();
+  resetData(); //clear cartoes amarelos, gols, assistencias etc...
   ano++;
 }
 
@@ -48,7 +50,7 @@ saveInternationalLeagueResults(){
 
 saveMyClubData(){
   globalHistoricMyClub[ano] = {
-    'clubID':My().clubID,
+    'clubID': My().clubID,
     'leagueID':My().campeonatoID,
     'players': My().jogadores,
   };
@@ -60,7 +62,6 @@ resetPlayersData(){
   globalJogadoresName = [];
   globalJogadoresClubIndex = [];
   globalJogadoresPosition = [];
-  globalJogadoresNationality = [];
   globalJogadoresAge = [];
   globalJogadoresOverall = [];
 
@@ -74,19 +75,19 @@ resetData(){
   alreadyChangedClubThisSeason = false;
 
   //Zera Status dos jogadores
-  globalJogadoresHealth = List.filled(7000, 1.0);
-  globalJogadoresTotalMatchs = List.filled(7000, 0);
-  globalJogadoresTotalGoals = List.filled(7000, 0);
-  globalJogadoresTotalAssists = List.filled(7000, 0);
-  globalJogadoresLeagueMatchs = List.filled(7000, 0);
-  globalJogadoresLeagueGoals = List.filled(7000, 0);
-  globalJogadoresLeagueAssists = List.filled(7000, 0);
-  globalJogadoresInternationalMatchs = List.filled(7000, 0);
-  globalJogadoresInternationalGoals = List.filled(7000, 0);
-  globalJogadoresInternationalAssists = List.filled(7000, 0);
-  globalJogadoresRedCard = List.filled(7000, 0);
-  globalJogadoresYellowCard = List.filled(7000, 0);
-  globalJogadoresInjury = List.filled(7000, 0);
+  globalJogadoresHealth = List.filled(9900, 1.0);
+  globalJogadoresTotalMatchs = List.filled(9900, 0);
+  globalJogadoresTotalGoals = List.filled(9900, 0);
+  globalJogadoresTotalAssists = List.filled(9900, 0);
+  globalJogadoresLeagueMatchs = List.filled(9900, 0);
+  globalJogadoresLeagueGoals = List.filled(9900, 0);
+  globalJogadoresLeagueAssists = List.filled(9900, 0);
+  globalJogadoresInternationalMatchs = List.filled(9900, 0);
+  globalJogadoresInternationalGoals = List.filled(9900, 0);
+  globalJogadoresInternationalAssists = List.filled(9900, 0);
+  globalJogadoresRedCard = List.filled(9900, 0);
+  globalJogadoresYellowCard = List.filled(9900, 0);
+  globalJogadoresInjury = List.filled(9900, 0);
 
   //Clubes
   //500 = numero com folga de clubes
@@ -102,19 +103,25 @@ resetData(){
 void trocaClubesRebaixamento(){
   funcRebaixamentoLeague(LeagueOfficialNames().inglaterra1,LeagueOfficialNames().inglaterra2,3);
   funcRebaixamentoLeague(LeagueOfficialNames().brasil1,LeagueOfficialNames().brasil2,3);
+  funcRebaixamentoLeague(LeagueOfficialNames().brasil2,LeagueOfficialNames().brasil3,3);
 }
 
 
 void atualizaStatusJogadores(){
   for(int id=0;id<globalJogadoresIndex.length;id++){
 
+    Jogador player = Jogador(index: id);
     //Set New Overall
-    globalJogadoresOverall[id] += newOverall(globalJogadoresAge[id]);
+    newOverall(player);
 
     //+1 Ano de idade
     globalJogadoresAge[id]++;
 
     //Transferencia
     transferenciaJogador(id);
+
+    //aposentadoria
+    funcAposentadoriaJogador(Jogador(index: id));
+
   }
 }

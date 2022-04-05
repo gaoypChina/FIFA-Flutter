@@ -14,9 +14,11 @@ getTrophyImage(String leagueName){
   if(leagueName == LeagueOfficialNames().brasil2){trophyName = 'trophy2division';}
   if(leagueName == LeagueOfficialNames().estadosUnidos){trophyName = 'trophymls';}
   if(leagueName == LeagueOfficialNames().asia){trophyName = 'trophyasia';}
+  if(leagueName == LeagueOfficialNames().outros){trophyName = 'trophyasia';}
 
   if(leagueName == LeagueOfficialNames().libertadores){trophyName = 'trophylibertadores';}
   if(leagueName == LeagueOfficialNames().championsLeague){trophyName = 'trophychampions';}
+  if(leagueName == LeagueOfficialNames().resto){trophyName = 'trophychampions';}
 
   return trophyName;
 }

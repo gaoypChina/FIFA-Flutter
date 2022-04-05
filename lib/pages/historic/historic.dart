@@ -37,9 +37,6 @@ class _HistoricState extends State<Historic> {
 
                   const SizedBox(height: 40),
 
-                  for(int i=0;i<ano-anoInicial;i++)
-                    myHistoricRow(i),
-
 
                   const SizedBox(height: 10),
                   //for(int i=0;i<ano-anoInicial;i++)
@@ -54,7 +51,22 @@ class _HistoricState extends State<Historic> {
                     ],
                   ),
 
-                  const Spacer(),
+                  const SizedBox(height: 20),
+                  const Text('Meu Histórico',style: EstiloTextoBranco.text22),
+                  const SizedBox(height: 8),
+
+                  //TABELA
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          for(int year=anoInicial;year<ano;year++)
+                            yearRow(year),
+                        ],
+                      ),
+                    ),
+                  ),
+
                   //VOLTAR
                   Padding(
                     padding: const EdgeInsets.all(6),
@@ -149,5 +161,28 @@ Widget trophyWidget(int i){
       ],
     );
 }
+
+
+
+  Widget yearRow(int year){
+
+    HistoricClubYear myClubData = HistoricClubYear(year);
+
+    return Row(
+      children: [
+        Text(year.toString(),style: EstiloTextoBranco.text16),
+        Image.asset('assets/clubs/${FIFAImages().imageLogo(myClubData.clubName)}.png',height: 20,width: 20,),
+        SizedBox(
+            width: 150,
+            child: Text(myClubData.clubName,style: EstiloTextoBranco.text14)
+        ),
+        Text('${myClubData.leagueName}: \n${myClubData.internationalLeagueName}: ',style: EstiloTextoBranco.text12),
+        Padding(
+          padding: const EdgeInsets.all(2.0),
+          child: Text('${myClubData.position}º\nVazio',style: EstiloTextoBranco.text14),
+        ),
+      ],
+    );
+  }
 
 }

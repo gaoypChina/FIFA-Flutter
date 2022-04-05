@@ -1,6 +1,6 @@
 import 'package:fifa/database/shared_preferences.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/functions/update_data_year.dart';
+import 'package:fifa/functions/end_year_updates/update_data_year.dart';
 import 'package:fifa/pages/customize_players.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_clubs.dart';
@@ -37,6 +37,7 @@ class _HomePageState extends State<HomePage> {
   late int nLeagueTeams;
 
   late int indexLeague;
+  int indexJog = 0;
 
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
@@ -46,10 +47,12 @@ class _HomePageState extends State<HomePage> {
     doThisOnLaunch();
     super.initState();
   }
+  Map getCloneMap(Map data) {
+    return data.map((k, v) => MapEntry(k, v is Map ? getCloneMap(v) : v));
+  }
   doThisOnLaunch() async {
-    //RESETA LISTA A MOSTRAR CLUBES
-
-    clubNameMap = Map.from(clubNameMapPermanent);
+    //RESETA LISTA ORIGINAL A MOSTRAR CLUBES
+    clubNameMap = getCloneMap(clubNameMapImmutable); //Mapa sem mudar mapa original
 
     ano = anoInicial;
     await openCSV();
@@ -108,6 +111,7 @@ class _HomePageState extends State<HomePage> {
                                   posicao = 0;
                                 }else{
                                   posicaoPais = leaguesListRealIndex.length-1;
+                                  posicao = 0;
                                 }
                                 setState(() {});
                               },
@@ -121,6 +125,7 @@ class _HomePageState extends State<HomePage> {
                                 posicao = 0;
                               }else{
                                 posicaoPais = 0;
+                                posicao = 0;
                               }
                               setState(() {});
                             },
@@ -352,23 +357,39 @@ class _HomePageState extends State<HomePage> {
     resetData();
 
     //READ CSV
+    indexJog = 0;
+    await readCSVfunc("inglaterra");
+    await readCSVfunc("inglaterra2");
+    await readCSVfunc("inglaterra3");
+    await readCSVfunc("italia");
+    await readCSVfunc("italia2");
+    await readCSVfunc("espanha");
+    await readCSVfunc("espanha2");
+    await readCSVfunc("alemanha");
+    await readCSVfunc("alemanha2");
+    await readCSVfunc("franca");
+    await readCSVfunc("franca2");
+    await readCSVfunc("pt_hol");
+    await readCSVfunc("europa_ocidental");
+    await readCSVfunc("leste");
+    await readCSVfunc("outros_europa");
+    await readCSVfunc("outros_europa2");
+
     await readCSVfunc("brasil");
     await readCSVfunc("brasil2");
-    await readCSVfunc("inglaterra");
-    await readCSVfunc("italia");
-    await readCSVfunc("espanha");
-    await readCSVfunc("alemanha");
-    await readCSVfunc("franca");
-    await readCSVfunc("europa");
-    await readCSVfunc("oriental");
-    await readCSVfunc("championship");
+    await readCSVfunc("brasil3");
     await readCSVfunc("argentina");
-    await readCSVfunc("america");
-    await readCSVfunc("colombia");
-    await readCSVfunc("adicionados");
-    await readCSVfunc("eua");
-    await readCSVfunc("asia");
+    await readCSVfunc("sulamericano");
+    await readCSVfunc("outros_america");
 
+    await readCSVfunc("colombia");
+    await readCSVfunc("mexico");
+    await readCSVfunc("eua");
+    await readCSVfunc("eua2");
+
+    await readCSVfunc("asia");
+    await readCSVfunc("asia2");
+    await readCSVfunc("africa");
   }
   readCSVfunc(String filename) async {
     List<List<dynamic>> _data = [];
@@ -384,22 +405,21 @@ class _HomePageState extends State<HomePage> {
       customToast('Erro no arquivo '+ filename);
     }
 
-    int indexJog = 0;
     for(int line=1;line<29;line++){//*Linha 0 é o nome dos times
-      for(int team=0;team<16;team++) {
+      for(int team=0;team<16;team++) { //até 16 times por arquivo
         //Se tiver nome salva o jogador
-        try {
+        try{
           String club = _data[0][team * 5 + 1];
           String name = _data[line][team * 5 + 1].toString();
           String position = _data[line][team * 5 + 2].toString();//VOLMCZAG =>VOL
-          int age = int.parse(_data[line][team * 5 + 3].toString());
+          int age = int.parse(_data[line][team * 5 + 3].toString().substring(0,2));
           int overall = int.parse(_data[line][team * 5 + 4].toString().substring(0,2));
           if (name.isNotEmpty && position.isNotEmpty && age > 10) {
 
             //REMOVE L form last character
             if(name[name.length-1]=='L'){name = name.substring(0, name.length - 1);}
-            name = name.replaceFirst('Mintikkis', 'De Jong');
             if(position.length>3){position = position.substring(0,3);}
+            if(position.contains('GOL')){position='GOL';}
             if(position.contains('LD')){position='LD';}
             if(position.contains('ADD')){position='LD';}
             if(position.contains('ADE')){position='LE';}
@@ -442,18 +462,18 @@ class _HomePageState extends State<HomePage> {
               globalJogadoresOverall.add(overall);
               indexJog++;
               //test jogadores importados
-              //   if(club == ClubName().alsadd){
-              //     print('$name $position $overall $club ${clubIndex.toString()}');
-              //   }
+                //if(club == ClubName().alsadd){
+                //print('JOGADOR: $name $position $overall $club ${clubIndex.toString()}');
+                //}
             }else{
               //ERRO NA IMPORTAÇÃO DO TIME
               //Provavelmente falta adicionar o nome do clube em: clubsAllNameList
-              print('ERRO IMPORTAÇÃO JOGADOR: $name $club ${clubIndex.toString()}');
+              //print('ERRO IMPORTAÇÃO JOGADOR: $name $club ${clubIndex.toString()}');
             }
           }
         }catch(e){
           //print('ERROR LOADING DATA: ');
-          //print('Name: ${_data[line][team * 5 + 1].toString()} Club: ${_data[0][team * 5 + 1]}');
+          //print('ERRO IMPORTAÇÃO:\nName: ${_data[line][team * 5 + 1].toString()} POSIÇÃO: ${_data[line][team * 5 + 2]} Club: ${_data[0][team * 5 + 1]}');
         }
 
       }

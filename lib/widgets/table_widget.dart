@@ -100,7 +100,8 @@ Color backgroundTextColor(int position, int choosenLeagueIndex , String teamName
   //CLASSIFICAÇÃO
   if(leagueName==LeagueOfficialNames().inglaterra1 || leagueName==LeagueOfficialNames().italia1
       || leagueName==LeagueOfficialNames().espanha1 || leagueName==LeagueOfficialNames().franca1
-      || leagueName==LeagueOfficialNames().alemanha1
+      || leagueName==LeagueOfficialNames().alemanha1 || leagueName==LeagueOfficialNames().ptHol
+      || leagueName==LeagueOfficialNames().lesteEuropeu || leagueName==LeagueOfficialNames().ligaEuropa
   ){
     if(position==1){backgroundColor = Colors.indigo;}
     if(position==2){backgroundColor = Colors.indigo;}
@@ -116,8 +117,7 @@ Color backgroundTextColor(int position, int choosenLeagueIndex , String teamName
     if(position==2){backgroundColor = Colors.indigo;}
   }
 
-  if(leagueName==LeagueOfficialNames().lesteEuropeu || leagueName==LeagueOfficialNames().ligaEuropa
-      || leagueName==LeagueOfficialNames().argentina  || leagueName==LeagueOfficialNames().colombiaMexico
+  if(leagueName==LeagueOfficialNames().argentina  || leagueName==LeagueOfficialNames().colombiaMexico
   ){
     for(int i=1; i<6; i++){
       if(position==i){backgroundColor = Colors.indigo;}
@@ -135,7 +135,8 @@ Color backgroundTextColor(int position, int choosenLeagueIndex , String teamName
   }
 
   //REBAIXAMENTO
-  if(leagueName==LeagueOfficialNames().inglaterra1 || leagueName==LeagueOfficialNames().brasil1){
+  if(leagueName==LeagueOfficialNames().inglaterra1 || leagueName==LeagueOfficialNames().brasil1
+      || leagueName==LeagueOfficialNames().brasil2){
     if(position==13){backgroundColor = Colors.red;}
     if(position==14){backgroundColor = Colors.red;}
     if(position==15){backgroundColor = Colors.red;}

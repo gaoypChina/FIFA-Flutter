@@ -3,7 +3,7 @@ import 'package:fifa/classes/historic.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/pages/historic/my_historic.dart';
+import 'package:fifa/pages/historic/historic.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button_continue.dart';
@@ -22,6 +22,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   int choosenLeagueIndex = My().campeonatoID;
   late int nClubs;
   late League league;
+  bool isOnlyChampion = false;
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
@@ -46,6 +47,27 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                   const Text('Histórico das ligas',style: EstiloTextoBranco.text22),
                   const SizedBox(height: 8),
 
+
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      children: [
+                        const Text('Só Campeões',style: EstiloTextoBranco.text16),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: GestureDetector(
+                            onTap: (){
+                              isOnlyChampion = !isOnlyChampion;
+                              setState(() {});
+                            },
+                            child: isOnlyChampion
+                            ? const Icon(Icons.radio_button_checked,color: Colors.white, size: 30)
+                            : const Icon(Icons.radio_button_off,color: Colors.white, size: 30),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
                   //TABELA
                   Expanded(
                     child: SingleChildScrollView(
@@ -76,7 +98,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                     child:  customButtonContinue(
                         title: 'PRÓXIMO',
                         function: (){
-                          Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const HistoricMy()));
+                          Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Historic()));
                         }
                     ),
                   ),
@@ -103,11 +125,15 @@ class _HistoricLeagueState extends State<HistoricLeague> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
   Widget yearRow(int year){
+    int nRows = league.nClubs;
+    if(isOnlyChampion){
+      nRows = 1;
+    }
     return Column(
       children: [
         Text(year.toString(),style: EstiloTextoBranco.text16),
 
-        for(int i=0;i<league.nClubs;i++)
+        for(int i=0;i<nRows;i++)
           classificationRow(year,i),
 
       ],
@@ -120,9 +146,14 @@ class _HistoricLeagueState extends State<HistoricLeague> {
     Club club = Club(index: clubID);
     return Row(
       children: [
-        Text('${(position+1).toString()}- ',style: EstiloTextoBranco.text14),
+        position+1<10
+            ? Text('  ${(position+1).toString()}- ',style: EstiloTextoBranco.text14)
+            : Text('${(position+1).toString()}- ',style: EstiloTextoBranco.text14),
         Image.asset('assets/clubs/${FIFAImages().imageLogo(club.name)}.png',height: 20,width: 20),
-        Text(club.name,style: EstiloTextoBranco.text14),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 4.0),
+          child: Text(club.name,style: EstiloTextoBranco.text14),
+        ),
       ],
     );
   }

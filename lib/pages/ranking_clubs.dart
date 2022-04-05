@@ -6,7 +6,7 @@ import 'package:fifa/functions/func_number_clubs_total.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/images.dart';
 import 'package:flutter/material.dart';
-
+import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 import '../values/images.dart';
 import '../values/league_names.dart';
 import 'club_profile.dart';
@@ -31,6 +31,7 @@ class _RankingClubsState extends State<RankingClubs> {
 
   bool isLoaded = false;
 
+  final ScrollController _scrollController = ScrollController();
 
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
@@ -65,6 +66,12 @@ class _RankingClubsState extends State<RankingClubs> {
     setState(() {});
 
   }
+  @override
+  void dispose() {
+    //Cancelar o timer do envio de email
+    _scrollController.dispose();
+    super.dispose();
+  }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
@@ -91,12 +98,13 @@ class _RankingClubsState extends State<RankingClubs> {
                     const SizedBox(height: 6),
 
                     Expanded(
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            for(int i=0;i<numberClubsTotal;i++)
-                              rowClub(i, copyClubsName[i])
-                          ],
+                      child: DraggableScrollbar.semicircle(
+                        alwaysVisibleScrollThumb: true,
+                        controller: _scrollController,
+                        child: ListView.builder(
+                          controller: _scrollController,
+                          itemCount: numberClubsTotal,
+                            itemBuilder: (c,i) => rowClub(i, copyClubsName[i])
                         ),
                       ),
                     )
@@ -152,7 +160,7 @@ Widget rowClub(int ranking, String clubName){
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 6.0),
+              padding: const EdgeInsets.only(left: 6.0,right: 28),
               child: Text(overall.toStringAsFixed(2),style: EstiloTextoBranco.text16),
             ),
           ],

@@ -274,7 +274,7 @@ Widget matchsWidget(){
     int chaveClub2 = Chaves().chaveIndexAdvCampeonato(rodadaMatch, choosenLeagueIndex, chaveClub1)[0];
     String teamName2 = leagueClass.getClubName(chaveClub2);
 
-    bool showGoals = (rodadaMatch<rodada || semana >= semanasJogosNacionais[leagueClass.nClubs-2]);
+    bool showGoals = (rodadaMatch<rodada || semana > semanasJogosNacionais[leagueClass.nClubs-2]);
 
     late int gol1,gol2;
     //quando chega na rodada max ele acabaria nao mostrando, por isso quando termina o campeonato mostra a ultima rodada

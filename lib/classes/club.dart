@@ -89,16 +89,12 @@ class Club{
 
   double getOverall(){
     double ovr = 0;
-    bool isMyTeam = false;
-    if(index == globalMyClubID) {
-      isMyTeam = true;
-    }
     for (int i=0; i<11;i++) {
-        if(isMyTeam){
-          ovr += double.parse(globalJogadoresOverall[globalMyJogadores[i]].toString());
+        if(index == globalMyClubID){//if is My Team
+            ovr += double.parse(globalJogadoresOverall[globalMyJogadores[i]].toString());
           }else{
           try{
-            ovr += double.parse(globalJogadoresOverall[jogadores[i]].toString());
+            ovr += double.parse(globalJogadoresOverall[escalacao[i]].toString());
           }catch(e){
             print('$index $name $jogadores');
           }
@@ -186,6 +182,16 @@ class Club{
     }
 
     return escalacao;
+  }
+
+  ////////////////////////////////////////////////////////////////////////////
+  getAverageAge(){
+    double averageAge = 0;
+    for(int i=0; i<nJogadores; i++){
+      averageAge += Jogador(index: jogadores[i]).age;
+    }
+    averageAge = averageAge / nJogadores;
+    return averageAge;
   }
 
 }

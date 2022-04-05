@@ -32,7 +32,7 @@ class League{
   }
 
   String getClubName(int indexClub){
-    //indexClub: 0-16
+    //indexClub: 0-12,14,16 ETC...
     Map mapClubs = clubNameMap[name];
     return mapClubs[indexClub];
   }

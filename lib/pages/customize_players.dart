@@ -29,19 +29,13 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
   late int choosenPlayerID;
   late Club club;
 
-  ////////////////////////////////////////////////////////////////////////////
-//                               INIT                                     //
-////////////////////////////////////////////////////////////////////////////
-  @override
-  void initState() {
-    club = Club(index: widget.clubID);
-    super.initState();
-  }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
+
+    club = Club(index: widget.clubID);
 
     return Scaffold(
         resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
@@ -285,8 +279,9 @@ popupText(String title,String variableString, String whichData){
           if(posicaoIndex2 == -1 || posicaoIndex1 ==-1){
             customToast('ERRO NA TROCA\n nome inválido');
           }else{
-            clubNameMapPermanent[leagueName2][posicaoIndex2] = variableString; //novo time1
-            clubNameMapPermanent[leagueName1][posicaoIndex1] = value; //novo time2
+            //TROCA NOME DOS TIMES ASSIM COMO DESEJADO
+            clubNameMap[leagueName2][posicaoIndex2] = variableString; //novo time1
+            clubNameMap[leagueName1][posicaoIndex1] = value; //novo time2
           }
         }
 
@@ -336,10 +331,5 @@ popupNumber(dynamic number, String whichData){
       ),
     );
   }
-
-
-////////////////////////////////////////////////////////////////////////////
-//                           FUNCTIONS                                     //
-////////////////////////////////////////////////////////////////////////////
 
 }

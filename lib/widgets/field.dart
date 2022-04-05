@@ -1,5 +1,5 @@
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/Jogador.dart';
+import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/match.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';

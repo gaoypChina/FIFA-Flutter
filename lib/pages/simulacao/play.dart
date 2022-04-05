@@ -8,8 +8,7 @@ import 'package:fifa/classes/chaves.dart';
 import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/simulacao/fim_campeonato.dart';
-import 'package:fifa/functions/fim_campeonato_local.dart';
-import 'package:fifa/functions/simulate_functions.dart';
+import 'package:fifa/functions/simulate/simulate_functions.dart';
 import 'package:fifa/pages/simulacao/substitution.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
@@ -38,7 +37,6 @@ class _PlayState extends State<Play> {
   int milis = 0;
   bool finishedMatch = false;
   double maxSliderDistance = 200;
-  bool ultimaRodadaLeague = false;
 
   int pontosA=0,pontosB=0;
   String posturaDoTime = 'Normal';
@@ -82,12 +80,12 @@ class _PlayState extends State<Play> {
     globalMatchGoalScorerIDAdv=[];
     globalMatchGoalsMinutesMy = [];
     globalMatchGoalsMinutesAdv = [];
-    globalJogadoresMatchGoals = List.filled(10000, 0);
-    globalJogadoresMatchAssists = List.filled(10000, 0);
-    globalJogadoresMatchRedCards = List.filled(10000, 0);
-    globalJogadoresMatchYellowCards = List.filled(10000, 0);
-    globalJogadoresMatchInjury = List.filled(10000, 0);
-    globalJogadoresMatchHealth = List.filled(10000, 1.0);
+    globalJogadoresMatchGoals = List.filled(14000, 0);
+    globalJogadoresMatchAssists = List.filled(14000, 0);
+    globalJogadoresMatchRedCards = List.filled(14000, 0);
+    globalJogadoresMatchYellowCards = List.filled(14000, 0);
+    globalJogadoresMatchInjury = List.filled(14000, 0);
+    globalJogadoresMatchHealth = List.filled(14000, 1.0);
 
     //Inicia a contagem
     counter();
@@ -125,7 +123,7 @@ class _PlayState extends State<Play> {
           body:  Stack(
               children: [
 
-                Semana().isJogoCampeonatoNacional || !Semana().isJogoCampeonatoInternacional
+                Semana().isJogoCampeonatoNacional
                 ? Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill,)
                   : myClass.internationalLeagueName == LeagueOfficialNames().championsLeague
                       ? Image.asset('assets/icons/fundochampions.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill)
@@ -145,7 +143,9 @@ class _PlayState extends State<Play> {
 
                         Column(
                           children: [
-                            Image.asset(FIFAImages().campeonatoLogo(myClass.campeonatoID),height: 30,width: 30),
+                            Semana().isJogoCampeonatoNacional
+                                ? Image.asset(FIFAImages().campeonatoLogo(myClass.campeonatoID),height: 30,width: 30)
+                                : Image.asset(FIFAImages().campeonatoInternacionalLogo(myClass.internationalLeagueName),height: 35,width: 35),
                             Text(textRodada,style: EstiloTextoBranco.text16),
                             Text(milis.toString()+'\'',style: EstiloTextoBranco.text16),
                             visitante
@@ -223,10 +223,13 @@ class _PlayState extends State<Play> {
                           if(milis>=90 && finishedMatch){
                             _timer.cancel();
                             //SE FOR A ULTIMA RODADA DO CAMPEONATO MOSTRA A TABELA DE CLASSIFICAÇÃO FINAL
+                            //VERIFICA SE É A ULTIMA RODADA
+                            int nRodadas = League(index: myClass.campeonatoID).getNTeams()-1;
+                            bool ultimaRodadaLeague = (rodada==nRodadas && semanasJogosNacionais[nRodadas-1] == semana);
                             if(ultimaRodadaLeague){
                               Navigator.push(context,MaterialPageRoute(builder: (context) => const FimCampeonato()));
                             }else{
-                              if(semana == ultimasemana){
+                              if(semana == globalUltimaSemana){
                                 Navigator.of(context).push(MaterialPageRoute(builder: (context) => const EndYear()));
                               }else{
                                 Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Menu()));
@@ -315,36 +318,30 @@ counter (){
         Simulate().setMatchPlus1(myClubClass);
         Simulate().setMatchPlus1(adversarioClubClass);
 
+        //salva resultado no histórico
         if(semanasJogosNacionais.contains(semana)){
-          //salva resultado no histórico
           setHistoricGoalsLeagueMy();
-          //Simula outras partidas
-          Simulate().nationalMatchs();//GOLS, AMARELOS, ASSISTS, INJURY ETC...
         }else if(semanasGruposInternacionais.contains(semana)){
-          Simulate().internationalMatchsGroups();
+          Simulate().setHistoricGoalsGruposInternational(myClass.internationalLeagueName, myClass.clubID, adversarioClubClass.index,meuGolMarcado, meuGolSofrido);
         }
 
-        //VERIFICA SE É A ULTIMA RODADA
-        int nRodadas = League(index: myClass.campeonatoID).getNTeams()-1;
-        ultimaRodadaLeague = (rodada==nRodadas && semanasJogosNacionais[nRodadas-1] == semana);
+        //SIMULA OUTRAS PARTIDAS
+        Simulate().simulateWeek();
 
         //evita que o set state atualize a rodada na visualização da página
         await Future.delayed(const Duration(milliseconds: 50));
         //ATUALIZA RODADA
-        semana++;
-        if(semanasJogosNacionais.contains(semana)) {
-            rodada = semanasJogosNacionais.indexOf(semana)+1;
-        }
-        //Times na champions e libertadores
-        if(semana == semanasJogosInternacionais[0]){
-          FimDoCampeonatoLocal().setAll032InternationalTeams();
-        }
+        Semana().updateWeek();
+
+        //Define times dos campeonatos internacionais
+        Simulate().setTeamsInternational();
 
         finishedMatch = true;
 
         customToast('FIM DA RODADA');
       }
     }else{
+      //ATUALIZAÇÃO DE PARAMENTROS DA SIMULAÇAO
       updateHealth();
       golPorMinuto(myClubClass.getOverall(), adversarioClubClass.getOverall());
       Simulate().setRedCardsYellowCardsInjury(myClubClass, true);
@@ -595,6 +592,7 @@ golPorMinuto(double overallMy, double overallAdversario){
       } else {
         chavePos2 = chaves[chaves.indexOf(myClass.posicaoChave) - 1];
       }
+       //Simulate().setHistoricGoalsLeague(myClass.campeonatoID, myClass.posicaoChave, chavePos2,meuGolMarcado, meuGolSofrido);
       List goalsList = List.filled(25, 0);
       int chavePos1 = myClass.posicaoChave;//minha chave
       goalsList[chavePos1]  =  meuGolMarcado;
@@ -605,4 +603,5 @@ golPorMinuto(double overallMy, double overallAdversario){
       globalHistoricLeagueGoalsAll[rodada] = Map.from(globalHistoricLeagueGoalsLastRodada);
     }
   }
+
 }
