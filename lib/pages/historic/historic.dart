@@ -1,3 +1,4 @@
+
 import 'package:fifa/classes/historic.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
@@ -36,11 +37,6 @@ class _HistoricState extends State<Historic> {
                 children: [
 
                   const SizedBox(height: 40),
-
-
-                  const SizedBox(height: 10),
-                  //for(int i=0;i<ano-anoInicial;i++)
-                    //tournamentsHistoricColumn(i),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -104,27 +100,10 @@ Widget myHistoricRow(int index){
     int position = 5;
     String teamName = 'Guarani';
   return Row(
+    mainAxisAlignment: MainAxisAlignment.center,
     children: [
       Text(ano.toString()+': '+position.toString()+'º c/'+teamName,style: EstiloTextoBranco.text14),
       Image.asset('assets/clubs/${FIFAImages().imageLogo(teamName)}.png',height: 15,width: 15),
-    ],
-  );
-}
-
-
-///////////////////////////
-Widget tournamentsHistoricColumn(int ano){
-    return Column(
-      children: [
-        for(int i=0;i<16;i++)
-          tournamentsHistoricRow(i, ano+anoInicial),
-      ],
-    );
-}
-Widget tournamentsHistoricRow(int index, int ano){
-  return Row(
-    children: [
-      Text(ano.toString(),style: EstiloTextoBranco.text14),
     ],
   );
 }

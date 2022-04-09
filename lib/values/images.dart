@@ -7,9 +7,9 @@ class FIFAImages{
 
   String campeonatoInternacionalLogo(String campeonatoFoto){
     String imageLogo = '';
-    if(campeonatoFoto==LeagueOfficialNames().championsLeague){       imageLogo = 'assets/league_logos/championsleague.png';       }
+    if(campeonatoFoto==LeagueOfficialNames().championsLeague){       imageLogo = 'assets/league_logos/champions_logo.jpg';       }
     else if(campeonatoFoto==LeagueOfficialNames().libertadores){       imageLogo = 'assets/league_logos/libertadores.png';       }
-    else if(campeonatoFoto==LeagueOfficialNames().outros){       imageLogo = 'assets/league_logos/championsleague.png';       }
+    else if(campeonatoFoto==LeagueOfficialNames().outros){       imageLogo = 'assets/league_logos/champions_logo.jpg';       }
     return imageLogo;
   }
 
@@ -304,6 +304,8 @@ class FIFAImages{
     else if(timeFoto==ClubName().avai){                imageLogo='avai';        }
     else if(timeFoto==ClubName().portuguesa){         imageLogo='portuguesa';          }
     else if(timeFoto==ClubName().santacruz){        imageLogo='santacruz';          }
+    else if(timeFoto==ClubName().mirassol){        imageLogo='mirassol';          }
+
 
     ///////////////////////////////////////////////
     else if(timeFoto==ClubName().argentinojuniors){       imageLogo='argentinosjr';        }
@@ -345,6 +347,13 @@ class FIFAImages{
     else if(timeFoto==ClubName().guaraniPAR){         imageLogo='guarani paraguai';          }
     else if(timeFoto==ClubName().deportivoTachira){         imageLogo='deportivo tachira';          }
     else if(timeFoto==ClubName().theStrongest){         imageLogo='the strongest';          }
+    else if(timeFoto==ClubName().palestino){         imageLogo='palestino';          }
+    else if(timeFoto==ClubName().melgar){         imageLogo='melgar';          }
+    else if(timeFoto==ClubName().montevideo){         imageLogo='montevideo';          }
+    else if(timeFoto==ClubName().laCalera){         imageLogo='la calera';          }
+    else if(timeFoto==ClubName().jorge){         imageLogo='jorge';          }
+    else if(timeFoto==ClubName().alwaysReady){         imageLogo='always ready';          }
+    else if(timeFoto==ClubName().nacionalPAR){         imageLogo='nacional paraguai';          }
 
     else if(timeFoto==ClubName().americadecali){       imageLogo='americacali';        }
     else if(timeFoto==ClubName().atleticonacional){            imageLogo='atleticonacional';     }
@@ -428,6 +437,7 @@ class FIFAImages{
     else if(timeFoto==ClubName().kaizer){         imageLogo='kaizer chiefs';        }
     else if(timeFoto==ClubName().esperance){         imageLogo='esperance';        }
     else if(timeFoto==ClubName().mamelodi){         imageLogo='mamelodi sundowns';        }
+    else if(timeFoto==ClubName().agosto){         imageLogo='1 de agosto';        }
 
 
     return imageLogo;

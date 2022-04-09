@@ -1,5 +1,9 @@
 library globals;
 
+//geral
+int testInitRodada = 1;
+
+
 //MEU
 String globalMyClubName = 'Arsenal';
 int globalMyClubID = 0;
@@ -15,8 +19,6 @@ bool alreadyChangedClubThisSeason = false;
 int globalSaveNumber = 0;
 Map globalSaveData = {};
 
-//geral
-int testInitRodada = 1;
 
 int globalDificuldade = 2;
 int anoInicial = 2022; //ano fixo para contas
@@ -25,12 +27,13 @@ int semana = 1, rodada = 1;
 late int posicao;
 List<int> semanaOitavas = [22,23],
     semanaQuartas = [24,25],
-    semanaSemi = [26],
-    semanaFinal = [27],
-    semanaMundial = [28];
-List semanasJogosInternacionais = [for(var i=16; i<=25; i++) i];
+    semanaSemi = [26,27],
+    semanaFinal = [28],
+    semanaMundial = [29];
+List<int> semanasJogosInternacionais = [for(var i=16; i<=29; i++) i];
 List semanasGruposInternacionais = semanasJogosInternacionais.take(6).toList();
-List semanasJogosNacionais = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+List<int> semanasMataMataInternacionais = semanaOitavas+semanaQuartas+semanaSemi+semanaFinal;
+List<int> semanasJogosNacionais = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 List semanasJogosCopas = [];
 int globalUltimaSemana = semanasJogosInternacionais.last;
 
@@ -38,7 +41,7 @@ int globalUltimaSemana = semanasJogosInternacionais.last;
 Map globalHistoricLeagueGoalsAll = {};
 Map globalHistoricLeagueGoalsLastRodada = {};
 
-Map globalHistoricInternationalGoalsAll = {}; //nao usado ainda
+Map globalHistoricInternationalGoalsAll = {};
 
 Map globalHistoricLeagueClassification = {};
 Map globalHistoricInternationalClassification = {};

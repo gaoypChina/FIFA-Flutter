@@ -4,11 +4,15 @@ import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/historic/historic.dart';
+import 'package:fifa/pages/historic/international_historic.dart';
+import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button_continue.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
+
+import '../../values/historic_champions.dart';
 
 class HistoricLeague extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
@@ -73,8 +77,12 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
-                          for(int year=anoInicial;year<ano;year++)
+
+                          for(int year=ano-1;year>=anoInicial;year--)
                             yearRow(year),
+
+                          for(int year=ano-1;year>ano-60;year--)
+                            yearRowPast(year),
                         ],
                       ),
                     ),
@@ -98,8 +106,12 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                     child:  customButtonContinue(
                         title: 'PRÓXIMO',
                         function: (){
-                          Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Historic()));
-                        }
+                          if(ano>anoInicial){
+                            Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const InternationalHistoric()));
+                          }else{
+                            Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Historic()));
+                          }
+                          }
                     ),
                   ),
                   //VOLTAR
@@ -158,6 +170,53 @@ class _HistoricLeagueState extends State<HistoricLeague> {
     );
   }
 
+  //////////////////////////////////////////
+  //HISTORICOS PASSADOS
+  Widget yearRowPast(int ano){
+    if(isOnlyChampion){
+      return validacao(0, ano);
+    }
+    return Column(
+      children: [
+        for(int position=0;position<16;position++)
+          validacao(position, ano),
+      ],
+    );
+  }
+  Widget validacao(int position, int ano){
+    try {
+      Map results = mapChampions(league.name);
+      String clubName = results[ano][position];
+      int clubID = clubsAllNameList.indexOf(clubName);
+      if(position == 0){
+        return Column(
+          children: [
+
+            Text(ano.toString(),style: EstiloTextoBranco.text16),
+            classificationPastRow(position,clubID),
+          ],
+        );
+      }
+      return classificationPastRow(position,clubID);
+    }catch(e){
+      return Container();
+    }
+  }
+  Widget classificationPastRow(int position, int clubID){
+    Club club = Club(index: clubID);
+   return Row(
+     children: [
+       position+1<10
+           ? Text('  ${(position+1).toString()}- ',style: EstiloTextoBranco.text14)
+           : Text('${(position+1).toString()}- ',style: EstiloTextoBranco.text14),
+       Image.asset('assets/clubs/${FIFAImages().imageLogo(club.name)}.png',height: 20,width: 20),
+       Padding(
+         padding: const EdgeInsets.symmetric(horizontal: 4.0),
+         child: Text(club.name,style: EstiloTextoBranco.text14),
+       ),
+     ],
+   );
+  }
   Widget leagueSelectionRow(int i){
     int leagueID = leaguesListRealIndex[i];
 

@@ -46,6 +46,8 @@ saveInternationalLeagueResults(){
   }
   //salva o resultado final
   globalHistoricInternationalClassification[ano] = allLeaguesClassification;
+  globalHistoricInternationalGoalsAll[ano] = globalInternationalMataMataGoals;
+  globalInternationalMataMataGoals = {};
 }
 
 saveMyClubData(){
@@ -75,19 +77,19 @@ resetData(){
   alreadyChangedClubThisSeason = false;
 
   //Zera Status dos jogadores
-  globalJogadoresHealth = List.filled(9900, 1.0);
-  globalJogadoresTotalMatchs = List.filled(9900, 0);
-  globalJogadoresTotalGoals = List.filled(9900, 0);
-  globalJogadoresTotalAssists = List.filled(9900, 0);
-  globalJogadoresLeagueMatchs = List.filled(9900, 0);
-  globalJogadoresLeagueGoals = List.filled(9900, 0);
-  globalJogadoresLeagueAssists = List.filled(9900, 0);
-  globalJogadoresInternationalMatchs = List.filled(9900, 0);
-  globalJogadoresInternationalGoals = List.filled(9900, 0);
-  globalJogadoresInternationalAssists = List.filled(9900, 0);
-  globalJogadoresRedCard = List.filled(9900, 0);
-  globalJogadoresYellowCard = List.filled(9900, 0);
-  globalJogadoresInjury = List.filled(9900, 0);
+  globalJogadoresHealth = List.filled(14000, 1.0);
+  globalJogadoresTotalMatchs = List.filled(14000, 0);
+  globalJogadoresTotalGoals = List.filled(14000, 0);
+  globalJogadoresTotalAssists = List.filled(14000, 0);
+  globalJogadoresLeagueMatchs = List.filled(14000, 0);
+  globalJogadoresLeagueGoals = List.filled(14000, 0);
+  globalJogadoresLeagueAssists = List.filled(14000, 0);
+  globalJogadoresInternationalMatchs = List.filled(14000, 0);
+  globalJogadoresInternationalGoals = List.filled(14000, 0);
+  globalJogadoresInternationalAssists = List.filled(14000, 0);
+  globalJogadoresRedCard = List.filled(14000, 0);
+  globalJogadoresYellowCard = List.filled(14000, 0);
+  globalJogadoresInjury = List.filled(14000, 0);
 
   //Clubes
   //500 = numero com folga de clubes
@@ -102,6 +104,7 @@ resetData(){
 
 void trocaClubesRebaixamento(){
   funcRebaixamentoLeague(LeagueOfficialNames().inglaterra1,LeagueOfficialNames().inglaterra2,3);
+  funcRebaixamentoLeague(LeagueOfficialNames().espanha1,LeagueOfficialNames().espanha2,3);
   funcRebaixamentoLeague(LeagueOfficialNames().brasil1,LeagueOfficialNames().brasil2,3);
   funcRebaixamentoLeague(LeagueOfficialNames().brasil2,LeagueOfficialNames().brasil3,3);
 }

@@ -1,4 +1,22 @@
 /*
+PARA ADICIONAR NOVOS TIMES:
+
+->values->club_names : String do time
+->values->clubsAllNameList : ID do time
+->values->images : Imagem do Time
+->values->League_clubs : Liga que o clube joga
+
+PARA ADICIONAR NOVAS LIGAS:
+
+->values->League_names : Nome e ID da liga
+->Pages->Simulation-> : Setar o dinheiro que o clube ganha jogando naquela liga
+->values->getTrophyImage : Troféu do torneio
+->values->League_clubs : Clubes dentro da liga
+->values->images : Logo da liga
+
+ */
+
+/*
 
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //

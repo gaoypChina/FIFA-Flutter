@@ -1,5 +1,5 @@
-import 'package:fifa/values/club_names.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/values/clubs_all_names_list.dart';
 
 class Jogador{
 

@@ -3,7 +3,7 @@ import '../../classes/club.dart';
 import '../../global_variables.dart';
 import '../../values/league_names.dart';
 import '../international_league.dart';
-import '../simulate/simulate_functions.dart';
+import '../simulate/match_simulation.dart';
 import 'mata_mata_class.dart';
 
 class MataMataSimulation{
@@ -12,19 +12,32 @@ class MataMataSimulation{
     for (int i = 0; i < internationalLeagueNames.length; i++) {
       String internationalName = funcGetInternationalLeagueNameFromIndex(internationalLeagueIndex: i);
       int matchRowsTotal = MataMata().getMatchRows();
-      int phaseStage = MataMata().getPhaseStage(semana); //jogo de ida ou volta
+      int phaseIdaVolta = MataMata().getPhaseIdaVolta(semana); //jogo de ida ou volta
       for (int matchRows = 0; matchRows<matchRowsTotal; matchRows++) {
-        MataMata data = MataMata();
-        data.getData(internationalName, data.getSemanaPhase(semana),matchRows, phaseStage);
-
-        Simulate().matchSimulation(data.clubID1, data.clubID2);
+        //PEGA OS TIMES QUE VÃO JOGAR
+        MataMata mataMata = MataMata();
+        mataMata.getData(internationalName, mataMata.getSemanaPhase(semana),matchRows, phaseIdaVolta);
+        //SIMULA A PARTIDA EM SI
+        Club club1 = Club(index: mataMata.clubID1);
+        Club club2 = Club(index: mataMata.clubID2);
+        MatchSimulation(club1, club2);
+        //Se a final terminar empatada
+        if(semanaFinal.contains(semana) && mataMata.goal1 == mataMata.goal2){
+          while(semanaFinal.contains(semana) && mataMata.goal1 == mataMata.goal2){
+            MatchSimulation(club1, club2);
+            mataMata.getData(internationalName, mataMata.getSemanaPhase(semana),matchRows, phaseIdaVolta);
+          }
+        }
+        mataMata.getData(internationalName, mataMata.getSemanaPhase(semana),matchRows, phaseIdaVolta);
       }
     }
+
+
   }
 
   setGoals(int clubID1, int clubID2, int goal1, int goal2){
 
-    int phaseStage = MataMata().getPhaseStage(semana);
+    int phaseIdaVolta = MataMata().getPhaseIdaVolta(semana);
     String weekPhase = MataMata().getSemanaPhase(semana);
 
     String internationalName = Club(index: clubID1).internationalLeagueName;
@@ -43,8 +56,9 @@ class MataMataSimulation{
     }
 
     //SALVA VARIAVEL
-    globalInternationalMataMataGoals[internationalName][weekPhase][clubID1][phaseStage] = goal1;
-    globalInternationalMataMataGoals[internationalName][weekPhase][clubID2][phaseStage] = goal2;
+    globalInternationalMataMataGoals[internationalName][weekPhase][clubID1][phaseIdaVolta] = goal1;
+    globalInternationalMataMataGoals[internationalName][weekPhase][clubID2][phaseIdaVolta] = goal2;
   }
+
 
 }

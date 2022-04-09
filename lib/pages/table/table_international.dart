@@ -1,7 +1,7 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/international.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/values/club_names.dart';
+import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/images.dart';
@@ -41,6 +41,7 @@ class _TableInternationalState extends State<TableInternational> {
   }
   selectTeams(){
     clubsID = [];
+    //ANO INICIAL, COM TIMES DEMO
       if(semana<semanasJogosInternacionais[0] && ano==anoInicial){
         for(int i=0; i<32; i++) {
           if(leagueInternational == LeagueOfficialNames().championsLeague) {
@@ -65,9 +66,7 @@ class _TableInternationalState extends State<TableInternational> {
         body:  Stack(
             children: [
 
-              leagueInternational == LeagueOfficialNames().championsLeague
-                  ? Image.asset('assets/icons/fundochampions.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill)
-                  : Image.asset('assets/icons/fundolibertadores.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
+              backgroundInternationalLeague(leagueInternational),
 
               Column(
                 children: [
@@ -113,7 +112,12 @@ class _TableInternationalState extends State<TableInternational> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+Widget backgroundInternationalLeague(String leagueInternational){
+    return leagueInternational == LeagueOfficialNames().championsLeague
+        ? Image.asset('assets/icons/fundochampions.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill)
+        : Image.asset('assets/icons/fundolibertadores.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill);
 
+}
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////

@@ -65,14 +65,9 @@ class _NotPlayState extends State<NotPlay> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
 onContinueButton(){
+
   //SIMULA JOGOS
   Simulate().simulateWeek();
-
-  //atualiza semana
-  Semana().updateWeek();
-
-  //Define times dos campeonatos internacionais
-  Simulate().setTeamsInternational();
 
   if(semana == globalUltimaSemana){
     Navigator.of(context).push(MaterialPageRoute(builder: (context) => const EndYear()));

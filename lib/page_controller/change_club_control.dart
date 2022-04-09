@@ -2,23 +2,32 @@ import 'dart:math';
 
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/functions/func_number_clubs_total.dart';
 
 class OptionsClubs{
 
-  late int team1;
-  late int team2;
-  late int team3;
-  late int team4;
-  late int team5;
-  late int team6;
+  List teams = [];
 
   OptionsClubs(){
-    team1 = Random().nextInt(160);
-    team2 = Random().nextInt(160);
-    team3 = Random().nextInt(160);
-    team4 = Random().nextInt(160);
-    team5 = Random().nextInt(160);
-    team6 = Random().nextInt(160);
+    for(int i=0; i<6 ;i++){
+      teams.add(chooseClub());
+    }
+  }
+
+  int chooseClub(){
+    //Checa se o clube tem alguma liga
+    int clubID = -1;
+    bool clubHasLeague = false;
+    while(!clubHasLeague && !teams.contains(clubID)){
+      try{
+        clubID = Random().nextInt(funcNumberClubsTotal());
+        Club(index: clubID).getChaveLeague();
+        clubHasLeague = true;
+      }catch(e){
+        clubHasLeague = false;
+      }
+    }
+    return clubID;
   }
 
 }

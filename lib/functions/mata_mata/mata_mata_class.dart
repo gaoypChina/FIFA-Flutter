@@ -14,12 +14,13 @@ class MataMata {
   int goal1 = -1;
   int goal2 = -1;
 
-  int phaseStage = 0;
+  int phaseIdaVolta = 0;
   int nInternationalLeagues = internationalLeagueNames.length;
 
   defineClubsOitavas() {
     for (int i = 0; i < nInternationalLeagues; i++) {
       String internationalName = internationalLeagueNames[i];
+
       globalInternationalMataMataClubsID[internationalName] = {};
       List listClubsID = [];
       List clubs32Classification = International(internationalName).getClassification();
@@ -39,35 +40,41 @@ class MataMata {
   }
 
   defineClubsQuartas() {
+    defineClubsPhase('Oitavas','Quartas',8);
+  }
+  defineClubsSemi() {
+    defineClubsPhase('Quartas','Semi',4);
+  }
+  defineClubsFinal() {
+    defineClubsPhase('Semi','Final',2);
+  }
+
+  defineClubsPhase(String previousPhase, String nextPhase, int nClubsNextPhase) {
     for (int i = 0; i < nInternationalLeagues; i++) {
       String internationalName = internationalLeagueNames[i];
 
       List listClubsID = [];
-      List clubsOitavas = globalInternationalMataMataClubsID[internationalName]['Oitavas'];
-      print('DEFINE QUARTAS');
-      print(globalInternationalMataMataClubsID);
-      print(clubsOitavas);
-      print(globalInternationalMataMataGoals[internationalName]['Oitavas']);
+      List clubsPreviousPhase = globalInternationalMataMataClubsID[internationalName][previousPhase];
       //VÊ QUAL DOS DOIS TIMES FEZ MAIS GOLS
-      for (int nConfronto = 0; nConfronto < 8; nConfronto++) {
-        List goals1 = globalInternationalMataMataGoals[internationalName]['Oitavas'][clubsOitavas[nConfronto*2]];
-        List goals2 = globalInternationalMataMataGoals[internationalName]['Oitavas'][clubsOitavas[nConfronto*2+1]];
+      for (int nConfronto = 0; nConfronto < nClubsNextPhase; nConfronto++) {
+        List goals1 = globalInternationalMataMataGoals[internationalName][previousPhase][clubsPreviousPhase[nConfronto*2]];
+        List goals2 = globalInternationalMataMataGoals[internationalName][previousPhase][clubsPreviousPhase[nConfronto*2+1]];
         if(goals1.first + goals1.last == goals2.first + goals2.last){
           //PENALTIS
           int penaltis = Random().nextInt(2);
           if(penaltis==0){
-            listClubsID.add(clubsOitavas[nConfronto*2]);
+            listClubsID.add(clubsPreviousPhase[nConfronto*2]);
           }else{
-            listClubsID.add(clubsOitavas[nConfronto*2+1]);
+            listClubsID.add(clubsPreviousPhase[nConfronto*2+1]);
           }
         }else if(goals1.first + goals1.last > goals2.first + goals2.last){
-          listClubsID.add(clubsOitavas[nConfronto*2]);
+          listClubsID.add(clubsPreviousPhase[nConfronto*2]);
         }else{
-          listClubsID.add(clubsOitavas[nConfronto*2+1]);
+          listClubsID.add(clubsPreviousPhase[nConfronto*2+1]);
         }
       }
       //SALVA A LISTA FINAL
-      globalInternationalMataMataClubsID[internationalName]['Quartas'] = List.from(listClubsID);
+      globalInternationalMataMataClubsID[internationalName][nextPhase] = List.from(listClubsID);
     }
   }
 
@@ -88,17 +95,17 @@ class MataMata {
     return phase;
   }
 
-  int getPhaseStage(int weekSelected) {
+  int getPhaseIdaVolta(int weekSelected) {
     //jogo de ida ou volta
     if (semanaOitavas.first == weekSelected ||
         semanaQuartas.first == weekSelected
         || semanaSemi.first == weekSelected ||
         semanaFinal.first == weekSelected) {
-      phaseStage = 0;
+      phaseIdaVolta = 0;
     } else {
-      phaseStage = 1;
+      phaseIdaVolta = 1;
     }
-    return phaseStage;
+    return phaseIdaVolta;
   }
 
   int getMatchRows() {
@@ -118,11 +125,11 @@ class MataMata {
     return matchRows;
   }
 
-  getData(String internationalName, String weekPhase, int matchRow,int phaseStage) {
+  getData(String internationalName, String weekPhase, int matchRow,int phaseIdaVolta) {
     try {
       final List clubsID = List.from(globalInternationalMataMataClubsID[internationalName][weekPhase]);
 
-      if (phaseStage == 0) {
+      if (phaseIdaVolta == 0) {
         clubID1 = clubsID[matchRow * 2];
         clubID2 = clubsID[matchRow * 2 + 1];
       } else {
@@ -133,8 +140,8 @@ class MataMata {
       clubName1 = Club(index: clubID1).name;
       clubName2 = Club(index: clubID2).name;
       try {
-        goal1 = globalInternationalMataMataGoals[internationalName][weekPhase][clubID1][phaseStage];
-        goal2 = globalInternationalMataMataGoals[internationalName][weekPhase][clubID2][phaseStage];
+        goal1 = globalInternationalMataMataGoals[internationalName][weekPhase][clubID1][phaseIdaVolta];
+        goal2 = globalInternationalMataMataGoals[internationalName][weekPhase][clubID2][phaseIdaVolta];
       } catch (e) {
         //print('Pag. Mata-Mata: Semana ainda não foi simulada');
       }

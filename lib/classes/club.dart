@@ -1,6 +1,6 @@
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/functions/international_league.dart';
-import 'package:fifa/values/club_names.dart';
+import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/images.dart';
@@ -96,7 +96,7 @@ class Club{
           try{
             ovr += double.parse(globalJogadoresOverall[escalacao[i]].toString());
           }catch(e){
-            print('$index $name $jogadores');
+            //print('$index $name $jogadores');
           }
         }
     }

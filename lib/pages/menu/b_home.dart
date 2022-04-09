@@ -2,6 +2,7 @@ import 'package:fifa/database/shared_preferences.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/functions/end_year_updates/update_data_year.dart';
 import 'package:fifa/pages/customize_players.dart';
+import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/values/league_names.dart';
@@ -13,7 +14,6 @@ import 'package:flutter/services.dart';
 import 'c_menu.dart';
 import '../../classes/geral/dificuldade.dart';
 import '../../classes/league.dart';
-import '../../values/club_names.dart';
 import 'package:csv/csv.dart';
 
 import '../../functions/func_change_club.dart';
@@ -378,6 +378,7 @@ class _HomePageState extends State<HomePage> {
     await readCSVfunc("brasil");
     await readCSVfunc("brasil2");
     await readCSVfunc("brasil3");
+    await readCSVfunc("brasil4");
     await readCSVfunc("argentina");
     await readCSVfunc("sulamericano");
     await readCSVfunc("outros_america");
@@ -406,7 +407,7 @@ class _HomePageState extends State<HomePage> {
     }
 
     for(int line=1;line<29;line++){//*Linha 0 é o nome dos times
-      for(int team=0;team<16;team++) { //até 16 times por arquivo
+      for(int team=0;team<26;team++) { //até 24 times por arquivo
         //Se tiver nome salva o jogador
         try{
           String club = _data[0][team * 5 + 1];
@@ -420,35 +421,20 @@ class _HomePageState extends State<HomePage> {
             if(name[name.length-1]=='L'){name = name.substring(0, name.length - 1);}
             if(position.length>3){position = position.substring(0,3);}
             if(position.contains('GOL')){position='GOL';}
-            if(position.contains('LD')){position='LD';}
-            if(position.contains('ADD')){position='LD';}
-            if(position.contains('ADE')){position='LE';}
-            if(position.contains('LE')){position='LE';}
-            if(position.contains('ZAG')){position='ZAG';}
-            if(position.contains('VOL')){position='VOL';}
-            if(position.contains('MEI')){position='MEI';}
-            if(position.contains('MC')){position='MC';}
-            if(position.contains('ATA')){position='ATA';}
-            if(position.contains('SA')){position='ATA';}
-            if(position.contains('PD')){position='PD';}
-            if(position.contains('PE')){position='PE';}
-            if(position.contains('MD')){position='MD';}
-            if(position.contains('ME')){position='ME';}
-
-
-            //RB Leipzig problema na importação
-            //Se tiver uma posição que não existe da pau na hora de organizar a escalação ideal dos times
-            if(position.contains('CAM')){position='MEI';}
-            if(position.contains('CDM')){position='VOL';}
-            if(position.contains('RBC')){position='ZAG';}
-            if(position.contains('CBR')){position='LD';}
-            if(position.contains('CBL')){position='LE';}
-            if(position.contains('LWB')){position='LE';}
-            if(position.contains('RBL')){position='LE';}
-            if(position.contains('CB')){position='ZAG';}
-            if(position.contains('ST')){position='ATA';}
-            if(position.contains('GK')){position='GOL';}
-            if(position.contains('CM')){position='MC';}
+            else if(position.contains('LD')){position='LD';}
+            else if(position.contains('ADD')){position='LD';}
+            else if(position.contains('ADE')){position='LE';}
+            else if(position.contains('LE')){position='LE';}
+            else if(position.contains('ZAG')){position='ZAG';}
+            else if(position.contains('VOL')){position='VOL';}
+            else if(position.contains('MEI')){position='MEI';}
+            else if(position.contains('MC')){position='MC';}
+            else if(position.contains('ATA')){position='ATA';}
+            else if(position.contains('SA')){position='ATA';}
+            else if(position.contains('PD')){position='PD';}
+            else if(position.contains('PE')){position='PE';}
+            else if(position.contains('MD')){position='MD';}
+            else if(position.contains('ME')){position='ME';}
 
             //VARIAVEIS GLOBAIS
             int clubIndex = clubsAllNameList.indexOf(club);
@@ -462,7 +448,7 @@ class _HomePageState extends State<HomePage> {
               globalJogadoresOverall.add(overall);
               indexJog++;
               //test jogadores importados
-                //if(club == ClubName().alsadd){
+                //if(club == ClubName().alwaysReady){
                 //print('JOGADOR: $name $position $overall $club ${clubIndex.toString()}');
                 //}
             }else{

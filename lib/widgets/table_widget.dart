@@ -135,7 +135,9 @@ Color backgroundTextColor(int position, int choosenLeagueIndex , String teamName
   }
 
   //REBAIXAMENTO
-  if(leagueName==LeagueOfficialNames().inglaterra1 || leagueName==LeagueOfficialNames().brasil1
+  if(leagueName==LeagueOfficialNames().inglaterra1
+      || leagueName==LeagueOfficialNames().espanha1
+      || leagueName==LeagueOfficialNames().brasil1
       || leagueName==LeagueOfficialNames().brasil2){
     if(position==13){backgroundColor = Colors.red;}
     if(position==14){backgroundColor = Colors.red;}

@@ -21,5 +21,4 @@ Depois rode o código digitando no terminal
 
 <p align="center">
   <img src="https://github.com/Marcos14Almeida/FIFA-Flutter/blob/master/screenshot.jpg" width="200" title="Screenshot">
-  </a>
 </p> 

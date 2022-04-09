@@ -8,8 +8,12 @@ class GlobalFunctions{
   getInternationalLeagueNumber(String internationalLeague){
     if(internationalLeague == LeagueOfficialNames().championsLeague){
       return 0;
-    }if(internationalLeague == LeagueOfficialNames().libertadores){
+    }
+    if(internationalLeague == LeagueOfficialNames().libertadores){
       return 1;
+    }
+    if(internationalLeague == LeagueOfficialNames().resto){
+      return 2;
     }
     return -1;
   }

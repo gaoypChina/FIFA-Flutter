@@ -1,9 +1,9 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/values/club_names.dart';
 import 'package:fifa/functions/func_number_clubs_total.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/images.dart';
 import 'package:flutter/material.dart';
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
@@ -102,6 +102,7 @@ class _RankingClubsState extends State<RankingClubs> {
                         alwaysVisibleScrollThumb: true,
                         controller: _scrollController,
                         child: ListView.builder(
+                          padding: EdgeInsets.zero,
                           controller: _scrollController,
                           itemCount: numberClubsTotal,
                             itemBuilder: (c,i) => rowClub(i, copyClubsName[i])

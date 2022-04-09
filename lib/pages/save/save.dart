@@ -1,3 +1,4 @@
+import 'package:fifa/classes/save_infos.dart';
 import 'package:fifa/pages/menu/b_home.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/popup/popup_ok_cancel.dart';
@@ -54,9 +55,7 @@ class _SaveState extends State<Save> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
 Widget save(int index){
-    String clubName = 'Botafogo';
-    int ano = 2028;
-    int semana = 3;
+    SaveInfos saveInfos = SaveInfos();
 
     return InkWell(
       onTap:(){
@@ -69,7 +68,7 @@ Widget save(int index){
         child: Stack(
           children: [
 
-            Image.asset('assets/clubs/${FIFAImages().imageLogo(clubName)}.png',height: 25,width: 25),
+            Image.asset('assets/clubs/${FIFAImages().imageLogo(saveInfos.clubName)}.png',height: 25,width: 25),
 
             Row(
               children: [
@@ -79,9 +78,9 @@ Widget save(int index){
                 ),
                 Column(
                   children: [
-                    Text(clubName,style: EstiloTextoBranco.text14),
-                    Text(ano.toString(),style: EstiloTextoBranco.text14),
-                    Text('Semana: '+semana.toString(),style: EstiloTextoBranco.text14),
+                    Text(saveInfos.clubName,style: EstiloTextoBranco.text14),
+                    Text(saveInfos.ano.toString(),style: EstiloTextoBranco.text14),
+                    Text('Semana: '+saveInfos.semana.toString(),style: EstiloTextoBranco.text14),
                   ],
                 )
               ],

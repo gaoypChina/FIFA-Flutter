@@ -47,22 +47,22 @@ class _ChangeClubState extends State<ChangeClub> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          clubWidget(options.team1),
-                          clubWidget(options.team2),
+                          clubWidget(options.teams[0]),
+                          clubWidget(options.teams[1]),
                         ],
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          clubWidget(options.team3),
-                          clubWidget(options.team4),
+                          clubWidget(options.teams[2]),
+                          clubWidget(options.teams[3]),
                         ],
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          clubWidget(options.team5),
-                          clubWidget(options.team6),
+                          clubWidget(options.teams[4]),
+                          clubWidget(options.teams[5]),
                         ],
                       ),
                     ],

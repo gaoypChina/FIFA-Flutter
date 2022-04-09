@@ -16,7 +16,7 @@ transferenciaJogador(int id){
 
       double destinyClubOverall = Club(index: randomClubID).getOverall();
       if(destinyClubOverall<playerOverall+7 && destinyClubOverall>playerOverall-7) { //se o clube for mais ou menos daquele potencial
-        if(randomClubID != globalMyClubID && id != globalMyClubID){//se não é o meu time
+        if(randomClubID != globalMyClubID && currentClubID != globalMyClubID){//se não é o meu time
           globalJogadoresClubIndex[id] = randomClubID; //vende o jogador
         }
 

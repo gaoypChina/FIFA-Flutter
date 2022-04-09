@@ -39,9 +39,7 @@ class _TableMataMataState extends State<TableMataMata> {
       body:  Stack(
           children: [
 
-      leagueInternational == LeagueOfficialNames().championsLeague
-      ? Image.asset('assets/icons/fundochampions.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill)
-            : Image.asset('assets/icons/fundolibertadores.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
+            backgroundInternationalLeague(leagueInternational),
 
             Column(
                 children: [
@@ -85,13 +83,24 @@ class _TableMataMataState extends State<TableMataMata> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Widget backgroundInternationalLeague(String leagueInternational){
+    return leagueInternational == LeagueOfficialNames().championsLeague
+        ? Image.asset('assets/icons/fundochampions.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill)
+        : Image.asset('assets/icons/fundolibertadores.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill);
+
+  }
   Widget phaseTableWidget(int phaseStage) {
       int phaseRows = 9;
       int weekShow = 0;
       if(phaseStage==0 || phaseStage==1){phaseRows=8;weekShow = semanaOitavas.first;} //OITAVAS
-      if(phaseStage==2 || phaseStage==3){phaseRows=4;weekShow = semanaQuartas.first;} //QUARTAS
-      if(phaseStage==4 || phaseStage==5){phaseRows=2;weekShow = semanaSemi.first;} //SEMI
-      if(phaseStage==6){phaseRows=1;weekShow = semanaFinal.first;} //FINAL
+      else if(phaseStage==2 || phaseStage==3){phaseRows=4;weekShow = semanaQuartas.first;} //QUARTAS
+      else if(phaseStage==4 || phaseStage==5){phaseRows=2;weekShow = semanaSemi.first;} //SEMI
+      else if(phaseStage==6){phaseRows=1;weekShow = semanaFinal.first;} //FINAL
+
+      int phaseIdaVolta = 0;
+      if(phaseStage == 1 || phaseStage==3 || phaseStage==5 ){
+        phaseIdaVolta = 1;
+      }
 
       //Quando não está no matamata
       if(semana < semanaOitavas.first){
@@ -116,7 +125,7 @@ class _TableMataMataState extends State<TableMataMata> {
               if (i == -1)
                 groupTitle(phaseRows)
               else
-                groupRow(i, phaseStage, weekShow)
+                groupRow(i, phaseIdaVolta, weekShow)
             ],
           )
         ],
@@ -138,10 +147,12 @@ class _TableMataMataState extends State<TableMataMata> {
       ],
     );
   }
-  TableRow groupRow(int matchRow, int phaseStage, int weekShow){
+  TableRow groupRow(int matchRow, int phaseIdaVolta, int weekShow){
     MataMata data = MataMata();
-    data.getData(leagueInternational, data.getSemanaPhase(weekShow),matchRow, phaseStage);
+    data.getData(leagueInternational, data.getSemanaPhase(weekShow),matchRow, phaseIdaVolta);
 
+    //print(data.clubName1);
+    //print('GOL: ${data.goal1} x ${data.goal2}');
     String teamNameA = data.clubName1;
     String teamNameB = data.clubName2;
     int golsA = data.goal1;
@@ -163,9 +174,6 @@ class _TableMataMataState extends State<TableMataMata> {
       ],
     );
   }
-////////////////////////////////////////////////////////////////////////////
-//                               FUNCTIONS                                //
-////////////////////////////////////////////////////////////////////////////
 
 
 }
