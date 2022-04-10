@@ -69,7 +69,7 @@ onContinueButton(){
   //SIMULA JOGOS
   Simulate().simulateWeek();
 
-  if(semana == globalUltimaSemana){
+  if(semana >= globalUltimaSemana){
     Navigator.of(context).push(MaterialPageRoute(builder: (context) => const EndYear()));
   }else{
     Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Menu()));

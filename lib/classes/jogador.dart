@@ -20,6 +20,14 @@ class Jogador{
   late int yellowCard;
   late int injury;
 
+  late int matchsInternational;
+  late int goalsInternational;
+  late int assistsInternational;
+
+  late int matchsCarrer;
+  late int goalsCarrer;
+  late int assistsCarrer;
+
   Jogador({required this.index}) {
     name = globalJogadoresName[index];
     position = globalJogadoresPosition[index];
@@ -29,12 +37,18 @@ class Jogador{
     clubID = globalJogadoresClubIndex[index];
     clubName = clubsAllNameList[clubID];
     health = globalJogadoresHealth[index];
-    matchs = globalJogadoresTotalMatchs.isNotEmpty ? globalJogadoresTotalMatchs[index] : 0;
-    goals = globalJogadoresTotalGoals.isNotEmpty ? globalJogadoresTotalGoals[index] : 0;
-    assists = globalJogadoresTotalAssists.isNotEmpty ? globalJogadoresTotalAssists[index] : 0;
-    redCard = globalJogadoresRedCard.isNotEmpty ? globalJogadoresRedCard[index] : 0;
-    yellowCard = globalJogadoresYellowCard.isNotEmpty ? globalJogadoresYellowCard[index] : 0;
-    injury = globalJogadoresInjury.isNotEmpty ? globalJogadoresInjury[index] : 0;
+    matchs = globalJogadoresLeagueMatchs[index] ?? 0;
+    goals = globalJogadoresLeagueGoals[index] ?? 0;
+    assists = globalJogadoresLeagueAssists[index] ?? 0;
+    redCard = globalJogadoresRedCard[index] ?? 0;
+    yellowCard = globalJogadoresYellowCard[index] ?? 0;
+    injury = globalJogadoresInjury[index] ?? 0;
+    matchsInternational = globalJogadoresInternationalMatchs[index];
+    goalsInternational = globalJogadoresInternationalGoals[index];
+    assistsInternational = globalJogadoresInternationalAssists[index];
+    matchsCarrer = globalJogadoresCarrerMatchs[index];
+    goalsCarrer = globalJogadoresCarrerGoals[index];
+    assistsCarrer = globalJogadoresCarrerAssists[index];
   }
 
   //////////////////////////////////////////////////////////////////

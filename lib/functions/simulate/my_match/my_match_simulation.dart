@@ -8,7 +8,6 @@ import 'package:fifa/functions/simulate/player_variables/origin/assists.dart';
 import 'package:fifa/functions/simulate/player_variables/origin/goal.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/simulacao/play.dart';
-import 'package:fifa/theme/custom_toast.dart';
 
 class MyMatchSimulation{
 
@@ -83,11 +82,11 @@ class MyMatchSimulation{
     }
     if(Semana().isJogoCampeonatoNacional){
       globalJogadoresLeagueGoals[jogadorID]++;
-    }if(Semana().isJogoCampeonatoInternacional){
+    }else if(Semana().isJogoCampeonatoInternacional){
       globalJogadoresInternationalGoals[jogadorID]++;
     }
-    customToast('GOL: ${Jogador(index: jogadorID).name} ');
     globalJogadoresMatchGoals[jogadorID]++;
+    globalJogadoresCarrerGoals[jogadorID]++;
   }
 
   funcQuemfezAssistencia(int clubMyorAdv){
@@ -101,11 +100,11 @@ class MyMatchSimulation{
       if(clubMyorAdv==2){jogadorID=adversarioEscalacao[quemfez];}
       if(Semana().isJogoCampeonatoNacional){
         globalJogadoresLeagueAssists[jogadorID]++;
-      }else{
+      }else if(Semana().isJogoCampeonatoInternacional){
         globalJogadoresInternationalAssists[jogadorID]++;
       }
       globalJogadoresMatchAssists[jogadorID]++;
-
+      globalJogadoresCarrerAssists[jogadorID]++;
     }
   }
 

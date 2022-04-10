@@ -13,7 +13,8 @@ PARA ADICIONAR NOVAS LIGAS:
 ->values->getTrophyImage : Troféu do torneio
 ->values->League_clubs : Clubes dentro da liga
 ->values->images : Logo da liga
-
+->class League-> Definir se é um campeonato que tem campeonato internacional
+->func rebaixamento
  */
 
 /*

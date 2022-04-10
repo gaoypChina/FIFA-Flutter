@@ -54,6 +54,9 @@ class FIFAImages{
     else if(timeFoto==ClubName().hullcity){         imageLogo='hullcity';          }
     else if(timeFoto==ClubName().brentford){         imageLogo='brentford';          }
     else if(timeFoto==ClubName().portsmouth){         imageLogo='portsmouth';          }
+    else if(timeFoto==ClubName().millwall){         imageLogo='millwall';          }
+    else if(timeFoto==ClubName().wigan){         imageLogo='wigan';          }
+    else if(timeFoto==ClubName().charlton){         imageLogo='charlton';          }
 
     else if(timeFoto==ClubName().atalanta){            imageLogo='atalanta';        }
     else if(timeFoto==ClubName().bologna){            imageLogo='bologna';        }
@@ -82,6 +85,9 @@ class FIFAImages{
     else if(timeFoto==ClubName().crotone){            imageLogo='crotone';        }
     else if(timeFoto==ClubName().brescia){            imageLogo='brescia';        }
     else if(timeFoto==ClubName().pisa){            imageLogo='pisa';        }
+    else if(timeFoto==ClubName().palermo){            imageLogo='palermo';        }
+    else if(timeFoto==ClubName().catania){            imageLogo='catania';        }
+    else if(timeFoto==ClubName().chievo){            imageLogo='chievo';        }
 
     else if(timeFoto==ClubName().athleticbilbao){            imageLogo='athleticbilbao';        }
     else if(timeFoto==ClubName().atleticomadrid){            imageLogo='atleticomadrid';        }
@@ -169,6 +175,7 @@ class FIFAImages{
     else if(timeFoto==ClubName().dijon){            imageLogo='dijon';        }
     else if(timeFoto==ClubName().clermont){            imageLogo='clermont';        }
     else if(timeFoto==ClubName().angers){            imageLogo='angers';        }
+    else if(timeFoto==ClubName().auxerre){            imageLogo='auxerre';        }
 
     else if(timeFoto==ClubName().anderlecht){            imageLogo='anderlecht';        }
     else if(timeFoto==ClubName().brugge){            imageLogo='brugge';        }
@@ -305,6 +312,9 @@ class FIFAImages{
     else if(timeFoto==ClubName().portuguesa){         imageLogo='portuguesa';          }
     else if(timeFoto==ClubName().santacruz){        imageLogo='santacruz';          }
     else if(timeFoto==ClubName().mirassol){        imageLogo='mirassol';          }
+    else if(timeFoto==ClubName().bangu){        imageLogo='bangu';          }
+    else if(timeFoto==ClubName().saocaetano){        imageLogo='sao caetano';          }
+    else if(timeFoto==ClubName().brasiliense){        imageLogo='brasiliense';          }
 
 
     ///////////////////////////////////////////////
@@ -325,6 +335,10 @@ class FIFAImages{
     else if(timeFoto==ClubName().sanlorenzo){          imageLogo='sanlorenzo';          }
     else if(timeFoto==ClubName().talleres){              imageLogo='talleres';          }
     else if(timeFoto==ClubName().velezsarsfield){            imageLogo='velez';         }
+    else if(timeFoto==ClubName().gimnasia){            imageLogo='gimnasia';         }
+    else if(timeFoto==ClubName().tigre){            imageLogo='tigre';         }
+    else if(timeFoto==ClubName().atleticoTucuman){            imageLogo='atletico tucuman';         }
+    else if(timeFoto==ClubName().godoyCruz){            imageLogo='godoy cruz';         }
 
     else if(timeFoto==ClubName().penarol){       imageLogo='penarol';        }
     else if(timeFoto==ClubName().nacional){            imageLogo='nacional';     }
@@ -347,13 +361,14 @@ class FIFAImages{
     else if(timeFoto==ClubName().guaraniPAR){         imageLogo='guarani paraguai';          }
     else if(timeFoto==ClubName().deportivoTachira){         imageLogo='deportivo tachira';          }
     else if(timeFoto==ClubName().theStrongest){         imageLogo='the strongest';          }
-    else if(timeFoto==ClubName().palestino){         imageLogo='palestino';          }
     else if(timeFoto==ClubName().melgar){         imageLogo='melgar';          }
     else if(timeFoto==ClubName().montevideo){         imageLogo='montevideo';          }
     else if(timeFoto==ClubName().laCalera){         imageLogo='la calera';          }
     else if(timeFoto==ClubName().jorge){         imageLogo='jorge';          }
     else if(timeFoto==ClubName().alwaysReady){         imageLogo='always ready';          }
     else if(timeFoto==ClubName().nacionalPAR){         imageLogo='nacional paraguai';          }
+    else if(timeFoto==ClubName().palestino){         imageLogo='palestino';          }
+    else if(timeFoto==ClubName().huachipato){         imageLogo='huachipato';          }
 
     else if(timeFoto==ClubName().americadecali){       imageLogo='americacali';        }
     else if(timeFoto==ClubName().atleticonacional){            imageLogo='atleticonacional';     }
@@ -373,6 +388,11 @@ class FIFAImages{
     else if(timeFoto==ClubName().pumas){          imageLogo='pumas';          }
     else if(timeFoto==ClubName().tigres){              imageLogo='tigres';          }
     else if(timeFoto==ClubName().toluca){            imageLogo='toluca';         }
+    else if(timeFoto==ClubName().tijuana){            imageLogo='tijuana';         }
+    else if(timeFoto==ClubName().atlas){            imageLogo='atlas';         }
+    else if(timeFoto==ClubName().queretaro){            imageLogo='queretaro';         }
+    else if(timeFoto==ClubName().necaxa){            imageLogo='necaxa';         }
+    else if(timeFoto==ClubName().santosLaguna){            imageLogo='santos laguna';         }
 
     else if(timeFoto==ClubName().atlantaunited){       imageLogo='atlanta';        }
     else if(timeFoto==ClubName().minnesota){            imageLogo='minnesota';     }
@@ -438,8 +458,18 @@ class FIFAImages{
     else if(timeFoto==ClubName().esperance){         imageLogo='esperance';        }
     else if(timeFoto==ClubName().mamelodi){         imageLogo='mamelodi sundowns';        }
     else if(timeFoto==ClubName().agosto){         imageLogo='1 de agosto';        }
+    else if(timeFoto==ClubName().usmAlger){         imageLogo='usm alger';        }
+    else if(timeFoto==ClubName().cotonsport){         imageLogo='cotonsport';        }
+    else if(timeFoto==ClubName().enyimba){         imageLogo='enyimba';        }
+    else if(timeFoto==ClubName().etoileSahel){         imageLogo='etoile sahel';        }
+    else if(timeFoto==ClubName().asecMimosas){         imageLogo='asec mimosas';        }
+    else if(timeFoto==ClubName().esSetif){         imageLogo='es setif';        }
 
-
+    //Se o clube não tiver foto poe imagem generica
+    if(imageLogo == 'CLUBE NÃO TEM IMAGEM: $timeFoto'){
+      //print('CLUBE NÃO TEM IMAGEM: $timeFoto');
+      imageLogo = 'generic';
+    }
     return imageLogo;
   }
 
@@ -448,15 +478,15 @@ class FIFAImages{
     String imageLogo = 'championship';
     if(campeonatoFoto==LeagueOfficialNames().inglaterra1){       imageLogo = 'premierleague';       }
     else if(campeonatoFoto==LeagueOfficialNames().inglaterra2){       imageLogo = 'championship';       }
-    else if(campeonatoFoto==LeagueOfficialNames().inglaterra3){       imageLogo = 'championship';       }
+    else if(campeonatoFoto==LeagueOfficialNames().inglaterra3){       imageLogo = 'inglaterra3';       }
     else if(campeonatoFoto==LeagueOfficialNames().italia1){       imageLogo = 'seriea';       }
-    else if(campeonatoFoto==LeagueOfficialNames().italia2){       imageLogo = 'seriea';       }
+    else if(campeonatoFoto==LeagueOfficialNames().italia2){       imageLogo = 'serieb';       }
     else if(campeonatoFoto==LeagueOfficialNames().espanha1){       imageLogo = 'laliga2';       }
     else if(campeonatoFoto==LeagueOfficialNames().espanha2){       imageLogo = 'laliga2';       }
     else if(campeonatoFoto==LeagueOfficialNames().franca1){       imageLogo = 'ligue1';      }
-    else if(campeonatoFoto==LeagueOfficialNames().franca2){       imageLogo = 'ligue1';      }
+    else if(campeonatoFoto==LeagueOfficialNames().franca2){       imageLogo = 'ligue2';      }
     else if(campeonatoFoto==LeagueOfficialNames().alemanha1){      imageLogo = 'bundesliga';       }
-    else if(campeonatoFoto==LeagueOfficialNames().alemanha2){      imageLogo = 'bundesliga';       }
+    else if(campeonatoFoto==LeagueOfficialNames().alemanha2){      imageLogo = 'bundesliga2';       }
     else if(campeonatoFoto==LeagueOfficialNames().ptHol){       imageLogo = 'portugal';       }
     else if(campeonatoFoto==LeagueOfficialNames().ligaEuropa){       imageLogo = 'liga1';       }
     else if(campeonatoFoto==LeagueOfficialNames().lesteEuropeu){     imageLogo = 'leste';       }

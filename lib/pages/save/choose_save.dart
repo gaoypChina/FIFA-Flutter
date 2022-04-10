@@ -1,5 +1,7 @@
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/save/save.dart';
 import 'package:fifa/pages/save/upload.dart';
+import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/button_continue.dart';
 import 'package:fifa/widgets/button_return.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +39,8 @@ class _ChooseSaveState extends State<ChooseSave> {
                   children: [
 
                     const SizedBox(height: 100),
+
+                    Text('Points: ${globalCoachPoints.toString()}',style:EstiloTextoBranco.text16),
 
                     const SizedBox(height: 10),
                     customButtonContinue(

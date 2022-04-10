@@ -7,6 +7,8 @@ import 'package:fifa/widgets/button_continue.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
+import '../../classes/geral/name.dart';
+
 class InternationalHistoric extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
   const InternationalHistoric({Key? key}) : super(key: key);
@@ -161,28 +163,28 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
 
-        const Text('FINAL',style: EstiloTextoBranco.text14),
+        Text(Name().finale.toUpperCase(),style: EstiloTextoBranco.text14),
         for(int idaVolta=0;idaVolta<1;idaVolta++)
           for(int i=0;i<2;i+=2)
-            internationalInternationalHistoricRow(internationalLeagueName,'Final', i, idaVolta, ano),
+            internationalInternationalHistoricRow(internationalLeagueName,Name().finale, i, idaVolta, ano),
 
         const Text('',style: EstiloTextoBranco.text16),
-        const Text('SEMIFINAL',style: EstiloTextoBranco.text14),
+        Text(Name().semifinal.toUpperCase(),style: EstiloTextoBranco.text14),
         for(int idaVolta=0;idaVolta<2;idaVolta++)
           for(int i=0;i<4;i+=2)
-            internationalInternationalHistoricRow(internationalLeagueName,'Semi', i, idaVolta, ano),
+            internationalInternationalHistoricRow(internationalLeagueName,Name().semifinal, i, idaVolta, ano),
 
         const Text('',style: EstiloTextoBranco.text16),
-        const Text('QUARTAS',style: EstiloTextoBranco.text14),
+        Text(Name().quartas.toUpperCase(),style: EstiloTextoBranco.text14),
         for(int idaVolta=0;idaVolta<2;idaVolta++)
           for(int i=0;i<8;i+=2)
-            internationalInternationalHistoricRow(internationalLeagueName,'Quartas', i, idaVolta, ano),
+            internationalInternationalHistoricRow(internationalLeagueName,Name().quartas, i, idaVolta, ano),
 
         const Text('',style: EstiloTextoBranco.text16),
-        const Text('OITAVAS',style: EstiloTextoBranco.text14),
+        Text(Name().oitavas.toUpperCase(),style: EstiloTextoBranco.text14),
         for(int idaVolta=0;idaVolta<2;idaVolta++)
           for(int i=0;i<16;i+=2)
-            internationalInternationalHistoricRow(internationalLeagueName,'Oitavas', i, idaVolta, ano),
+            internationalInternationalHistoricRow(internationalLeagueName,Name().oitavas, i, idaVolta, ano),
 
         const Text('',style: EstiloTextoBranco.text16),
         const Text('',style: EstiloTextoBranco.text16),

@@ -1,3 +1,4 @@
+import 'package:fifa/classes/geral/name.dart';
 import 'package:fifa/global_variables.dart';
 
 class Semana{
@@ -15,10 +16,10 @@ class Semana{
     }
     if(semanasJogosCopas.contains(semana)){semanaStr = 'Jogo das Copas';}
     if(semanasGruposInternacionais.contains(semana)){semanaStr = 'Fase de Grupos';}
-    if(semanaOitavas.contains(semana)){semanaStr = 'Oitavas';}
-    if(semanaQuartas.contains(semana)){semanaStr = 'Quartas';}
-    if(semanaSemi.contains(semana)){semanaStr = 'Semifinal';}
-    if(semanaFinal.contains(semana)){semanaStr = 'Final';}
+    if(semanaOitavas.contains(semana)){semanaStr = Name().oitavas;}
+    if(semanaQuartas.contains(semana)){semanaStr = Name().quartas;}
+    if(semanaSemi.contains(semana)){semanaStr = Name().semifinal;}
+    if(semanaFinal.contains(semana)){semanaStr = Name().finale;}
 
     semanaAlternativeStr = semanaStr;
     if(semanasGruposInternacionais.contains(semana)){

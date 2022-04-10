@@ -14,7 +14,7 @@ void main() {
     int clubID4 = 21;
 
     test('Clubs in the final', () {
-      String previousPhase = 'Semi';
+      String previousPhase = 'Semifinal';
       String nextPhase = 'Final';
       internationalLeagueNames = ['Champions'];
 

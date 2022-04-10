@@ -344,7 +344,8 @@ class _TransfersState extends State<Transfers> {
                       child: const Text('RESETAR', style: EstiloTextoPreto.text16)),
                   GestureDetector(
                       onTap:(){
-                        customToast('Em desenvolvimento');
+                        filterByPosition();
+                        setState(() {});
                         Navigator.pop(context);
                       },
                       child: const Text('OK', style: EstiloTextoPreto.text16)),
@@ -766,9 +767,28 @@ class _TransfersState extends State<Transfers> {
     filterByOVR();
     filterByPrice();
     if (transferParameters.filteredPosition.isNotEmpty) {
-      copyJogadoresID.removeWhere((playerID) =>
-          Jogador(index: playerID).position !=
-          transferParameters.filteredPosition);
+      copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).position != transferParameters.filteredPosition);
     }
-  }
+    if (transferParameters.minAge.text.isNotEmpty) {
+      copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).age < int.parse(transferParameters.minAge.text));
+    }
+    if (transferParameters.maxAge.text.isNotEmpty) {
+      copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).age > int.parse(transferParameters.maxAge.text));
+    }
+    if (transferParameters.minPrice.text.isNotEmpty) {
+      copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).price < int.parse(transferParameters.minPrice.text));
+    }
+    if (transferParameters.maxPrice.text.isNotEmpty) {
+      copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).price > int.parse(transferParameters.maxPrice.text));
+    }
+    if (transferParameters.minOVR.text.isNotEmpty) {
+      copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).overall < int.parse(transferParameters.minOVR.text));
+    }
+    if (transferParameters.maxOVR.text.isNotEmpty) {
+      copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).overall > int.parse(transferParameters.maxOVR.text));
+    }
+}
+}
+
+tryTo(){
 }

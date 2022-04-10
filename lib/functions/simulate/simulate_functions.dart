@@ -32,9 +32,6 @@ class Simulate{
     updateWeek();
 
     setTeamsInternational();
-
-    //SOMA PRO TOTAL
-    updateVariablesTotal();
   }
 
   updateWeek() async{
@@ -119,15 +116,6 @@ class Simulate{
       }
     }
 
-  }
-
-
-  updateVariablesTotal(){
-    for(int i=0; i<globalJogadoresTotalGoals.length; i++){
-      globalJogadoresTotalMatchs[i] = globalJogadoresLeagueMatchs[i]+globalJogadoresInternationalMatchs[i];
-      globalJogadoresTotalGoals[i] = globalJogadoresLeagueGoals[i]+globalJogadoresInternationalGoals[i];
-      globalJogadoresTotalAssists[i] = globalJogadoresLeagueAssists[i]+globalJogadoresInternationalAssists[i];
-    }
   }
 
 }

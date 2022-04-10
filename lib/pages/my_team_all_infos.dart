@@ -46,7 +46,9 @@ class _MyTeamAllInfoState extends State<MyTeamAllInfo> {
                     child: SingleChildScrollView(
                       child: selection==0
                           ? tableWidget0()
-                          : selection==1 ? tableWidget1() : tableWidget2(),
+                          : selection==1 ? tableWidget1()
+                          : selection==2 ? tableWidget2()
+                          : tableWidget3(),
                     ),
                   ),
 
@@ -59,7 +61,7 @@ class _MyTeamAllInfoState extends State<MyTeamAllInfo> {
                       GestureDetector(
                         onTap:(){
                           selection--;
-                          if(selection<0)selection=2;
+                          if(selection<0)selection=3;
                           setState(() {});
                         },
                           child: Image.asset('assets/icons/button_left.png',height: buttonSize,width: buttonSize),
@@ -68,7 +70,7 @@ class _MyTeamAllInfoState extends State<MyTeamAllInfo> {
                       GestureDetector(
                           onTap:(){
                             selection++;
-                            if(selection>=3)selection=0;
+                            if(selection>=4)selection=0;
                             setState(() {});
                           },
                           child: Image.asset('assets/icons/button_right.png',height: buttonSize,width: buttonSize),
@@ -174,7 +176,32 @@ class _MyTeamAllInfoState extends State<MyTeamAllInfo> {
       ],
     );
   }
+  Table tableWidget3(){
+    return Table(
+      columnWidths: const {
+        0: FractionColumnWidth(.09),
+        1: FractionColumnWidth(.45),
+        2: FractionColumnWidth(.1),
+        3: FractionColumnWidth(.1),
+        4: FractionColumnWidth(.1),
+      },
+      children: [
 
+        const TableRow(
+            children: [
+              Text(''),
+              Text('NOME', style: EstiloTextoBranco.text16),
+              Text('J*', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+              Text('G*', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+              Text('A*', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+              Text(''),
+            ]),
+
+        for(int i=0; i<myClass.jogadores.length; i++)
+          playersRow3(i,myClass.jogadores[i])
+      ],
+    );
+  }
   TableRow playersRow0(int row,int playerIndex){
 
     Jogador player = Jogador(index: playerIndex);
@@ -278,6 +305,31 @@ class _MyTeamAllInfoState extends State<MyTeamAllInfo> {
     );
   }
 
+  TableRow playersRow3(int row,int playerIndex){
+
+    Jogador player = Jogador(index: playerIndex);
+    Color background = Colors.transparent;
+    if(row<11){
+      background = Colors.black;
+    }
+
+    return TableRow(
+      decoration: BoxDecoration(
+        color: background,
+      ),
+      children: [
+        Text(player.position, style: EstiloTextoBranco.text16),
+        playerNameWidget(player),
+        Text(player.matchsCarrer.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+        Text(player.goalsCarrer.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+        Text(player.assistsCarrer.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+        Container(
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          child: const Text(''),
+        ),
+      ],
+    );
+  }
 
   Widget playerNameWidget(Jogador player){
 

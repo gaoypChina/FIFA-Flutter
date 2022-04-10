@@ -8,7 +8,7 @@ class SetPoints{
     if(Semana().isJogoCampeonatoNacional){
       pointsNational(indexTeam1,indexTeam2,golTime1,golTime2);
     }
-    else if(Semana().isJogoCampeonatoInternacional) {
+    else if(Semana().isJogoGruposInternacional) {
       pointsGroupInterNational(indexTeam1,indexTeam2,golTime1,golTime2);
     }
 

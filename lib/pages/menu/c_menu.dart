@@ -1,3 +1,5 @@
+import 'package:fifa/classes/geral/semana.dart';
+import 'package:fifa/classes/international.dart';
 import 'package:fifa/pages/menu/b_home.dart';
 import 'package:fifa/classes/chaves.dart';
 import 'package:fifa/global_variables.dart';
@@ -37,8 +39,8 @@ class _MenuState extends State<Menu> {
 
   My myClass = My();
   String adversarioClubName = '';
-  int adversarioClubID = 1;
-  int adversarioPosicao = 1;
+  int adversarioClubID = -1;
+  int adversarioPosicao = -1;
   bool visitante = false;
   late int indexAdv; //de 0-16
   late String campeonatoLogo;
@@ -56,6 +58,8 @@ class _MenuState extends State<Menu> {
       popupexpectativaCall();
     });
 
+    if(semana==1){ globalMyExpectativa = myClass.newExpectativa();}
+
     adversarios();
 
     setCampeonatoLogo();
@@ -63,45 +67,62 @@ class _MenuState extends State<Menu> {
     setState(() {});
   }
 
-  adversarios(){
+  adversarios() {
     //ADVERSARIO CAMPEONATO
-    if(semanasJogosNacionais.contains(semana) && semana < League(index: My().campeonatoID).nClubs){
-    List chaves = Chaves().obterChave(semana,myClass.campeonatoID);
-    if(chaves.isNotEmpty) {
-
-      if (chaves.indexOf(myClass.posicaoChave) % 2 == 0) {
-        indexAdv = chaves[chaves.indexOf(myClass.posicaoChave) + 1];
-      } else {
-        indexAdv = chaves[chaves.indexOf(myClass.posicaoChave) - 1];
-        visitante = true;
-      }
-      adversarioClubID = League(index: myClass.campeonatoID).getClubRealIndex(indexAdv);//indice entre todos os clube
-      adversarioClubName = Club(index: adversarioClubID).name;
-      adversarioPosicao = Classification(leagueIndex: myClass.campeonatoID).getClubPosition(adversarioClubID);
+    if (Semana().isJogoCampeonatoNacional && semana < League(index: myClass.campeonatoID).nClubs) {
+      List chaves = Chaves().obterChave(semana, myClass.campeonatoID);
+      if (chaves.isNotEmpty) {
+        if (chaves.indexOf(myClass.posicaoChave) % 2 == 0) {
+          indexAdv = chaves[chaves.indexOf(myClass.posicaoChave) + 1];
+        } else {
+          indexAdv = chaves[chaves.indexOf(myClass.posicaoChave) - 1];
+          visitante = true;
+        }
+        adversarioClubID = League(index: myClass.campeonatoID).getClubRealIndex(indexAdv); //indice entre todos os clube
+        adversarioClubName = Club(index: adversarioClubID).name;
+        adversarioPosicao = Classification(leagueIndex: myClass.campeonatoID).getClubPosition(adversarioClubID);
       }
     }
     //ADVERSARIO FASE DE GRUPOS CHAMPIONS OU LIBERTADORES
-    if(My().playingInternational.isNotEmpty  && semanasGruposInternacionais.contains(semana)){
-
-      List chaves = Chaves().obterChave(semana,-1);
+    if (My().playingInternational.isNotEmpty && Semana().isJogoGruposInternacional) {
+      List chaves = Chaves().obterChave(semana, -1);
       late int indexAdv; //0-4
-      int minhaPosicaoChave = My().getMyClubInternationalGroupPosition();
+      int minhaPosicaoChave = myClass.getMyClubInternationalGroupPosition();
       if (chaves.indexOf(minhaPosicaoChave) % 2 == 0) {
         indexAdv = chaves[chaves.indexOf(minhaPosicaoChave) + 1];
       } else {
         indexAdv = chaves[chaves.indexOf(minhaPosicaoChave) - 1];
         visitante = true;
       }
-      int indexAdv032 = 4*My().getMyClubInternationalGroup()+indexAdv;
-      if(My().playingInternational == LeagueOfficialNames().championsLeague){
+      int indexAdv032 = 4 * myClass.getMyClubInternationalGroup() + indexAdv;
+      if (myClass.playingInternational == LeagueOfficialNames().championsLeague) {
         adversarioClubID = globalInternational32ClubsID[0][indexAdv032];
       }
-      if(My().playingInternational == LeagueOfficialNames().libertadores){
+      if (myClass.playingInternational == LeagueOfficialNames().libertadores) {
         adversarioClubID = globalInternational32ClubsID[1][indexAdv032];
       }
       adversarioClubName = Club(index: adversarioClubID).name;
-      indexAdv = indexAdv032;
-
+      List clubsID = International(myClass.internationalLeagueName).getClassification();
+      int adversarioPosicao032 = clubsID.indexOf(adversarioClubID);
+      adversarioPosicao = (adversarioPosicao032 % 4)+1;
+    }
+    //FASE DE MATA-MATA
+    if (Semana().isJogoMataMataInternacional) {
+      try {
+        List listIDs = globalInternationalMataMataClubsID[myClass.internationalLeagueName][Semana().semanaStr];
+        if (listIDs.contains(myClass.clubID)) {
+          int myIndex = listIDs.indexOf(myClass.clubID);
+          if (myIndex % 2 == 0) {
+            indexAdv = myIndex + 1;
+          } else {
+            indexAdv = myIndex - 1;
+          }
+          adversarioClubID = listIDs[indexAdv];
+          adversarioClubName = Club(index: adversarioClubID).name;
+        }
+      } catch (e) {
+        print('Variavel: globalInternationalMataMataClubsID ainda nao criada');
+      }
     }
   }
 
@@ -109,7 +130,9 @@ class _MenuState extends State<Menu> {
     if(semanasJogosNacionais.contains(semana) && semana < League(index: My().campeonatoID).nClubs){
       campeonatoLogo = FIFAImages().campeonatoLogo(myClass.campeonatoID);
     }
-    else if(My().playingInternational.isNotEmpty  && semanasGruposInternacionais.contains(semana)){
+    else if(My().playingInternational.isNotEmpty  && Semana().isJogoGruposInternacional){
+      campeonatoLogo = FIFAImages().campeonatoInternacionalLogo(myClass.internationalLeagueName);
+    }else if(My().playingInternational.isNotEmpty  && Semana().isJogoMataMataInternacional){
       campeonatoLogo = FIFAImages().campeonatoInternacionalLogo(myClass.internationalLeagueName);
     }else {
       campeonatoLogo = '';
@@ -256,7 +279,11 @@ class _MenuState extends State<Menu> {
                               //Escudo
                               adversarioClubName.isNotEmpty ? Image.asset('assets/clubs/${FIFAImages().imageLogo(adversarioClubName)}.png',height: 50,width: 50) : Container(),
                               adversarioClubName.isNotEmpty ? Text(adversarioClubName,style: EstiloTextoBranco.text14) : Container(),
-                              adversarioClubName.isNotEmpty ? Text('Posição: '+adversarioPosicao.toString()+'º',style: EstiloTextoBranco.text14) : Container(),
+                              adversarioClubName.isNotEmpty
+                                  ? Semana().isJogoMataMataInternacional
+                                      ? Text(Semana().semanaStr,style: EstiloTextoBranco.text14)
+                                  : Text('Posição: '+adversarioPosicao.toString()+'º',style: EstiloTextoBranco.text14)
+                                  : Container(),
                               adversarioClubName.isNotEmpty ? visitante ? const Text('Fora',style: EstiloTextoBranco.text14) : const Text('Casa',style: EstiloTextoBranco.text14) : Container(),
 
                             ],
@@ -357,21 +384,11 @@ Widget menuButton(String text, Function() function){
 ////////////////////////////////////////////////////////////////////////////
   popupexpectativaCall(){
     //IF RODADA==1
-    if(rodada == semanasJogosNacionais[0]){
+    if(rodada == 1){
       //DEMITIDO
 
-      //Expectativa variables
-      int expectativa = myClass.getExpectativa();
-      String expNacional = expectativa.toString()+'º';
-      String expCompInternacional = myClass.internationalLeagueName;
-      String expInternacional = 'Oitavas';
-      String expLastSeason = 'TEMPORADA PASSADA: RUIM';
       //show POPUP
-      popUpExpectativa(
-          context: context,
-          title: 'Expectativa para a temporada',
-          content: expNacional+"\n\n"+expCompInternacional+"\n"+expInternacional+"\n\n\n"+expLastSeason
-      );
+      popUpExpectativa(context: context);
 
     }
 

@@ -19,12 +19,14 @@ class UpdatePlayerVariableMatch{
     List titularPlayers = setMatchPlus1(clubClass);
     for (int playerID in titularPlayers){
       globalJogadoresLeagueMatchs[playerID]++;
+      globalJogadoresCarrerMatchs[playerID]++;
     }
   }
   updatePlayerMatchInternational(Club clubClass){
     List titularPlayers = setMatchPlus1(clubClass);
     for (int playerID in titularPlayers){
       globalJogadoresInternationalMatchs[playerID]++;
+      globalJogadoresCarrerMatchs[playerID]++;
     }
   }
 

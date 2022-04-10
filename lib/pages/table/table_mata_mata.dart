@@ -1,3 +1,5 @@
+import 'package:fifa/classes/geral/name.dart';
+import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/mata_mata/mata_mata_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/table/widget_bottom.dart';
@@ -133,10 +135,10 @@ class _TableMataMataState extends State<TableMataMata> {
   }
 
   TableRow groupTitle(int phaseRows){
-    String stageName = 'Oitavas';
-    if(phaseRows==4){stageName='Quartas';}
-    if(phaseRows==2){stageName='Semi';}
-    if(phaseRows==1){stageName='Final';}
+    String stageName = Name().oitavas;
+    if(phaseRows==4){stageName=Name().quartas;}
+    if(phaseRows==2){stageName=Name().semifinal;}
+    if(phaseRows==1){stageName=Name().finale;}
     return TableRow(
       children: [
         Text(stageName,style: EstiloTextoBranco.text16),
@@ -160,7 +162,9 @@ class _TableMataMataState extends State<TableMataMata> {
 
     return  TableRow(
       children: [
-        Text(teamNameA,textAlign:TextAlign.end,style: EstiloTextoBranco.text14),
+        Container(
+          color: teamNameA == My().clubName ? Colors.green : Colors.transparent,
+            child: Text(teamNameA,textAlign:TextAlign.end,style: EstiloTextoBranco.text14)),
         //Escudo
         Image.asset('assets/clubs/${FIFAImages().imageLogo(teamNameA)}.png',height: 20,width: 20),
 
@@ -170,7 +174,10 @@ class _TableMataMataState extends State<TableMataMata> {
         //Escudo
         Image.asset('assets/clubs/${FIFAImages().imageLogo(teamNameB)}.png',height: 20,width: 20),
 
-        Text(teamNameB,style: EstiloTextoBranco.text14),
+        Container(
+          color: teamNameB == My().clubName ? Colors.green : Colors.transparent,
+            child: Text(teamNameB,style: EstiloTextoBranco.text14),
+        ),
       ],
     );
   }

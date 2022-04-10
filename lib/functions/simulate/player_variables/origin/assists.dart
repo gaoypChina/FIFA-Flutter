@@ -18,11 +18,13 @@ class Assists{
   saveAssistsNational(int jogadorID){
     if(jogadorID>=0) {
       globalJogadoresLeagueAssists[jogadorID]++;
+      globalJogadoresCarrerAssists[jogadorID]++;
     }
   }
   saveAssistsInternational(int jogadorID){
     if(jogadorID>=0) {
       globalJogadoresInternationalAssists[jogadorID]++;
+      globalJogadoresCarrerAssists[jogadorID]++;
     }
   }
 

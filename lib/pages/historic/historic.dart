@@ -23,8 +23,6 @@ class _HistoricState extends State<Historic> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    //_height = MediaQuery.of(context).size.height;
-    // bottomSize = MediaQuery.of(context).viewInsets.bottom; //=0 SEM O TECLADO
     return Scaffold(
 
         resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela

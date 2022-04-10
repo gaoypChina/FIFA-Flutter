@@ -20,9 +20,10 @@ class GlobalFunctions{
 
   List organizarVariavelLeague(int leagueID, int goalOrYellowOrRed) {
     //Oraganiza em ordem lista de artilheiros, cartoes amarelos ou cartoes amarelos
+    //Mostra no Widget de League Results
 
     List global = [];
-    if(goalOrYellowOrRed==0){global = globalJogadoresTotalGoals;}
+    if(goalOrYellowOrRed==0){global = globalJogadoresLeagueGoals;}
     if(goalOrYellowOrRed==1){global = globalJogadoresYellowCard;}
     if(goalOrYellowOrRed==2){global = globalJogadoresRedCard;}
 

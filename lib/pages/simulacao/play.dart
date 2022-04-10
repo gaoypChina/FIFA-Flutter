@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/dificuldade.dart';
+import 'package:fifa/classes/geral/name.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/chaves.dart';
@@ -15,7 +16,6 @@ import 'package:fifa/pages/simulacao/substitution.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button_continue.dart';
-import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 import '../../classes/my.dart';
@@ -124,11 +124,11 @@ class _PlayState extends State<Play> {
     if(Semana().isJogoCampeonatoNacional) {
       textRodada = 'Rodada ' + rodada.toString() + '/' + (League(index: myClass.campeonatoID).getNTeams()-1).toString();
     }else{
-      textRodada = 'Fase de Grupos';
-      if(semanaOitavas.contains(semana)){textRodada = 'Oitavas';}
-      if(semanaQuartas.contains(semana)){textRodada = 'Quartas';}
-      if(semanaSemi.contains(semana)){textRodada = 'Semi';}
-      if(semanaFinal.contains(semana)){textRodada = 'Final';}
+      textRodada = Name().groupsPhase;
+      if(semanaOitavas.contains(semana)){textRodada = Name().oitavas;}
+      if(semanaQuartas.contains(semana)){textRodada = Name().quartas;}
+      if(semanaSemi.contains(semana)){textRodada = Name().semifinal;}
+      if(semanaFinal.contains(semana)){textRodada = Name().finale;}
     }
 
     return Scaffold(
@@ -284,23 +284,20 @@ class _PlayState extends State<Play> {
                           _timer.cancel();
                           //SE FOR A ULTIMA RODADA DO CAMPEONATO MOSTRA A TABELA DE CLASSIFICAÇÃO FINAL
                           //VERIFICA SE É A ULTIMA RODADA
-                          int nRodadas = League(index: myClass.campeonatoID).getNTeams()-1;
+                          int nRodadas = League(index: myClass.campeonatoID).nClubs-1;
 
                           bool ultimaRodadaLeague = (rodada==nRodadas && semanasJogosNacionais[nRodadas-1] == semana);
                           if(ultimaRodadaLeague){
                             Navigator.push(context,MaterialPageRoute(builder: (context) => const FimCampeonato()));
-                          }else{
-                            if(semana == globalUltimaSemana){
+                          }else if(semana == globalUltimaSemana){
                               Navigator.of(context).push(MaterialPageRoute(builder: (context) => const EndYear()));
-                            }else{
+                          }else{
                               Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Menu()));
-                            }
+
                           }
 
                           //SIMULA OUTRAS PARTIDAS
-                          customToast('Simulando as outras partidas');
                           Simulate().simulateWeek();
-                          customToast('FIM DA RODADA');
 
                         }else{
                           _timer.cancel();
@@ -464,13 +461,13 @@ golPorMinuto(double overallMy, double overallAdversario){
       globalMatchGoalScorerIDAdv.add(jogadorID);
     }
 
-    customToast('GOL: ${Jogador(index: jogadorID).name} ');
     if(Semana().isJogoCampeonatoNacional){
       globalJogadoresLeagueGoals[jogadorID]++;
-    }if(Semana().isJogoCampeonatoInternacional){
+    }else if(Semana().isJogoCampeonatoInternacional){
       globalJogadoresInternationalGoals[jogadorID]++;
     }
     globalJogadoresMatchGoals[jogadorID]++;
+    globalJogadoresCarrerGoals[jogadorID]++;
   }
 
   funcQuemfezAssistencia(int clubMyorAdv){
@@ -484,11 +481,11 @@ golPorMinuto(double overallMy, double overallAdversario){
       if(clubMyorAdv==2){jogadorID=adversarioEscalacao[quemfez];}
       if(Semana().isJogoCampeonatoNacional){
         globalJogadoresLeagueAssists[jogadorID]++;
-      }else{
+      }else if(Semana().isJogoCampeonatoInternacional){
        globalJogadoresInternationalAssists[jogadorID]++;
       }
         globalJogadoresMatchAssists[jogadorID]++;
-
+        globalJogadoresCarrerAssists[jogadorID]++;
     }
   }
 

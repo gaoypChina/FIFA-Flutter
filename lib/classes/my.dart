@@ -1,6 +1,8 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
+import 'package:fifa/functions/international_league.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/images.dart';
@@ -71,29 +73,53 @@ class My{
   }
 
   int getExpectativa(){
+    return globalMyExpectativa;
+  }
+  int newExpectativa(){
     int expect = 0;
     List clubsMyLeague = League(index: campeonatoID).allClubsName;
-    late Club myClub;
+    late Club club;
     List ovr = [];
     for (var nameClub in clubsMyLeague) {
       int clubIndex = clubsAllNameList.indexOf(nameClub);
-      myClub = Club(index: clubIndex);
-      ovr.add(myClub.getOverall());
+      club = Club(index: clubIndex);
+      ovr.add(club.getOverall());
     }
     // ordena decrescentemente o ovr dos times da liga
     ovr.sort((b, a) => a.compareTo(b));
     // Ex: eu 73 [80 78 74 73 72 71] -> meu time expectiva = 5 -> 73 > 72+1
+    Club myClub = Club(index: clubID);
     for(int i=0; i< ovr.length;i++) {
       if (myClub.getOverall() > ovr[i] - 1 && expect == 0) {
-        expect = i+1;
+        expect = i+1;//[0] -> 1ºlugar, [1]-> 2ºlugar
+        return expect;
       }
     }
     return expect;
   }
   String getPlayingInternational(){
     String val = '';
-    if(globalInternational32ClubsID[0].contains(clubID)){val = LeagueOfficialNames().championsLeague;}
-    if(globalInternational32ClubsID[1].contains(clubID)){val = LeagueOfficialNames().libertadores;}
+    //FASE DE GRUPOS
+    if(Semana().isJogoGruposInternacional){
+      if(globalInternational32ClubsID[0].contains(clubID)){val = LeagueOfficialNames().championsLeague;}
+      if(globalInternational32ClubsID[1].contains(clubID)){val = LeagueOfficialNames().libertadores;}
+    }
+    //MATA-MATA
+    if(Semana().isJogoMataMataInternacional){
+      for(int i=0; i<funcNInternationalLeagues();i++){
+        String leagueName = funcGetInternationalLeagueNameFromIndex(internationalLeagueIndex: i);
+        try{
+        List listIDs = globalInternationalMataMataClubsID[leagueName][Semana().semanaStr];
+        if(listIDs.contains(clubID)){
+          val = leagueName;
+        }
+        }catch(e){
+          //print('variavel globalInternationalMataMataClubsID ainda nao criada');
+        }
+
+      }
+    }
+
     return val;
   }
   int getMyClubInternationalPosition032(){

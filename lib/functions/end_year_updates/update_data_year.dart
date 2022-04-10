@@ -1,4 +1,5 @@
 import 'package:fifa/classes/classification.dart';
+import 'package:fifa/classes/historic.dart';
 import 'package:fifa/classes/international.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
@@ -17,6 +18,7 @@ void funcUpdateDataAfterSeason(){
   atualizaStatusJogadores(); //venda, update de overall, idade+1
   trocaClubesRebaixamento();
   resetData(); //clear cartoes amarelos, gols, assistencias etc...
+  saveCoachPoints();
   ano++;
 }
 
@@ -77,19 +79,16 @@ resetData(){
   alreadyChangedClubThisSeason = false;
 
   //Zera Status dos jogadores
-  globalJogadoresHealth = List.filled(14000, 1.0);
-  globalJogadoresTotalMatchs = List.filled(14000, 0);
-  globalJogadoresTotalGoals = List.filled(14000, 0);
-  globalJogadoresTotalAssists = List.filled(14000, 0);
-  globalJogadoresLeagueMatchs = List.filled(14000, 0);
-  globalJogadoresLeagueGoals = List.filled(14000, 0);
-  globalJogadoresLeagueAssists = List.filled(14000, 0);
-  globalJogadoresInternationalMatchs = List.filled(14000, 0);
-  globalJogadoresInternationalGoals = List.filled(14000, 0);
-  globalJogadoresInternationalAssists = List.filled(14000, 0);
-  globalJogadoresRedCard = List.filled(14000, 0);
-  globalJogadoresYellowCard = List.filled(14000, 0);
-  globalJogadoresInjury = List.filled(14000, 0);
+  globalJogadoresHealth = List.filled(globalMaxPlayersPermitted, 1.0);
+  globalJogadoresLeagueMatchs = List.filled(globalMaxPlayersPermitted, 0);
+  globalJogadoresLeagueGoals = List.filled(globalMaxPlayersPermitted, 0);
+  globalJogadoresLeagueAssists = List.filled(globalMaxPlayersPermitted, 0);
+  globalJogadoresInternationalMatchs = List.filled(globalMaxPlayersPermitted, 0);
+  globalJogadoresInternationalGoals = List.filled(globalMaxPlayersPermitted, 0);
+  globalJogadoresInternationalAssists = List.filled(globalMaxPlayersPermitted, 0);
+  globalJogadoresRedCard = List.filled(globalMaxPlayersPermitted, 0);
+  globalJogadoresYellowCard = List.filled(globalMaxPlayersPermitted, 0);
+  globalJogadoresInjury = List.filled(globalMaxPlayersPermitted, 0);
 
   //Clubes
   //500 = numero com folga de clubes
@@ -125,6 +124,12 @@ void atualizaStatusJogadores(){
 
     //aposentadoria
     funcAposentadoriaJogador(Jogador(index: id));
-
   }
+}
+
+saveCoachPoints(){
+  int expectativa = My().getExpectativa();
+  int classificacao = HistoricClubYear(ano).position;
+  double multiplicationFactor = expectativa/classificacao; //Ex: 10/3  12/5
+  globalCoachPoints += (multiplicationFactor*(100/classificacao)).round(); //100,50,33,25,20...
 }

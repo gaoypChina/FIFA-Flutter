@@ -8,11 +8,13 @@ int testInitRodada = 1;
 String globalMyClubName = 'Arsenal';
 int globalMyClubID = 0;
 int globalMyPosicaoChave = 0;
+int globalMyExpectativa = 0;
 String globalMyEsquemaTatico = '4-4-2';
 double globalMyMoney = 0;
 List globalMyLeagueLastResults = [];
 List globalMyJogadores = [];
 
+int globalCoachPoints = 0;
 bool alreadyChangedClubThisSeason = false;
 
 //SAVE
@@ -64,6 +66,7 @@ List globalJogadoresMatchHealth = [];
 
 //Jogadores
 //ALL Players Data
+int globalMaxPlayersPermitted = 14000;
 List globalJogadoresIndex = [];
 List globalJogadoresName = [];
 List globalJogadoresClubIndex = [];
@@ -72,9 +75,9 @@ List globalJogadoresAge = [];
 List globalJogadoresOverall = [];
 
 List globalJogadoresHealth = [];
-List globalJogadoresTotalMatchs = [];
-List globalJogadoresTotalGoals = [];
-List globalJogadoresTotalAssists = [];
+List globalJogadoresCarrerMatchs = List.filled(globalMaxPlayersPermitted, 0);
+List globalJogadoresCarrerGoals = List.filled(globalMaxPlayersPermitted, 0);
+List globalJogadoresCarrerAssists = List.filled(globalMaxPlayersPermitted, 0);
 List globalJogadoresLeagueMatchs = [];
 List globalJogadoresLeagueGoals = [];
 List globalJogadoresLeagueAssists = [];

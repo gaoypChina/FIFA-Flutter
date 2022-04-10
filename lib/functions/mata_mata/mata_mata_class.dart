@@ -5,6 +5,8 @@ import 'package:fifa/classes/international.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/league_names.dart';
 
+import '../../classes/geral/name.dart';
+
 class MataMata {
 
   int clubID1 = -1;
@@ -35,18 +37,18 @@ class MataMata {
         listClubsID[i * 2 + 1] = listClubsID[randomAdv * 2 + 1];
         listClubsID[randomAdv * 2 + 1] = aux;
       }
-      globalInternationalMataMataClubsID[internationalName]['Oitavas'] = List.from(listClubsID);
+      globalInternationalMataMataClubsID[internationalName][Name().oitavas] = List.from(listClubsID);
     }
   }
 
   defineClubsQuartas() {
-    defineClubsPhase('Oitavas','Quartas',8);
+    defineClubsPhase(Name().oitavas,Name().quartas,8);
   }
   defineClubsSemi() {
-    defineClubsPhase('Quartas','Semi',4);
+    defineClubsPhase(Name().quartas,Name().semifinal,4);
   }
   defineClubsFinal() {
-    defineClubsPhase('Semi','Final',2);
+    defineClubsPhase(Name().semifinal,Name().finale,2);
   }
 
   defineClubsPhase(String previousPhase, String nextPhase, int nClubsNextPhase) {
@@ -81,16 +83,16 @@ class MataMata {
   String getSemanaPhase(int week) {
     String phase = '';
     if (semanaOitavas.contains(week)) {
-      phase = 'Oitavas';
+      phase = Name().oitavas;
     }
     if (semanaQuartas.contains(week)) {
-      phase = 'Quartas';
+      phase = Name().quartas;
     }
     if (semanaSemi.contains(week)) {
-      phase = 'Semi';
+      phase = Name().semifinal;
     }
     if (semanaFinal.contains(week)) {
-      phase = 'Final';
+      phase = Name().finale;
     }
     return phase;
   }

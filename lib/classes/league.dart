@@ -13,6 +13,7 @@ class League{
   late int internationalLeagueIndex;
   late String internationalLeagueName;
   late List allClubsName;
+  bool playInternational = false;
 
   League({required this.index}){
     name = getName();
@@ -20,6 +21,14 @@ class League{
     nClubs = allClubsName.length;
     internationalLeagueName = funcGetInternationalLeagueName(indexLeague: index);
     internationalLeagueIndex = funcGetInternationalLeagueIndex(internationalLeagueName: internationalLeagueName);
+    if(name == LeagueOfficialNames().inglaterra1 || name == LeagueOfficialNames().espanha1
+        || name == LeagueOfficialNames().italia1 || name == LeagueOfficialNames().franca1
+        || name == LeagueOfficialNames().alemanha1 || name == LeagueOfficialNames().ptHol
+        || name == LeagueOfficialNames().lesteEuropeu || name == LeagueOfficialNames().ligaEuropa
+        || name == LeagueOfficialNames().brasil1 || name == LeagueOfficialNames().argentina
+        || name == LeagueOfficialNames().sulamericano || name == LeagueOfficialNames().colombiaMexico){
+      playInternational = true;
+    }
   }
 
   ///////////////////////////////////////////////////////////////////

@@ -20,10 +20,12 @@ class Goal{
 
   saveGoalsNational(int jogadorID){
     globalJogadoresLeagueGoals[jogadorID]++;
+    globalJogadoresCarrerGoals[jogadorID]++;
   }
 
   saveGoalsInternational(int jogadorID){
     globalJogadoresInternationalGoals[jogadorID]++;
+    globalJogadoresCarrerGoals[jogadorID]++;
   }
 
   int funcQuemfezgol(){
