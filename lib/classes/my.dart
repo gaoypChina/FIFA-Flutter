@@ -5,15 +5,12 @@ import 'package:fifa/classes/league.dart';
 import 'package:fifa/functions/international_league.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
-import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 
 import '../values/league_clubs.dart';
-
 class My{
 
   String clubName = '';
-  late String picture;
   late int clubID;
   late int campeonatoID;
   late String campeonatoName;
@@ -23,8 +20,6 @@ class My{
   late String esquemaTatico;
   late List jogadores;
   late String playingInternational;
-  late String internationalLeagueName;
-  late int internationalLeagueIndex;
 
   My(){
     clubName = globalMyClubName;
@@ -32,14 +27,15 @@ class My{
     campeonatoName = getLeagueName();
     campeonatoID = getLeagueID();
     posicaoChave = getChaveLeague();
-    picture = FIFAImages().imageLogo(clubName);
     esquemaTatico = globalMyEsquemaTatico;
     money = globalMyMoney;
     jogadores = globalMyJogadores;
     playingInternational = getPlayingInternational();
+  }
+
+  getMyInternationalLeague(){
     League league = League(index: campeonatoID);
-    internationalLeagueName = league.internationalLeagueName;
-    internationalLeagueIndex = league.internationalLeagueIndex;
+    return league.internationalLeagueName;
   }
 
   String getLeagueName(){
@@ -72,7 +68,7 @@ class My{
     return position016;
   }
 
-  int getExpectativa(){
+  int getLastYearExpectativa(){
     return globalMyExpectativa;
   }
   int newExpectativa(){
@@ -105,7 +101,7 @@ class My{
       if(globalInternational32ClubsID[1].contains(clubID)){val = LeagueOfficialNames().libertadores;}
     }
     //MATA-MATA
-    if(Semana().isJogoMataMataInternacional){
+    else if(Semana().isJogoMataMataInternacional){
       for(int i=0; i<funcNInternationalLeagues();i++){
         String leagueName = funcGetInternationalLeagueNameFromIndex(internationalLeagueIndex: i);
         try{

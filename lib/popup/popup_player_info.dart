@@ -40,16 +40,23 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
               children: [
                 Row(
                   children: [
-                    boxInfo('Posição',jogador.position, playerPositionColor(jogador.position)),
                     boxInfo('Overall',jogador.overall.toString(), colorOverallBackground(jogador.overall)),
-                    boxInfo('Idade',jogador.age.toString()),
+                    boxInfo('Posição',jogador.position),
+                    boxInfo('Idade',jogador.age.toString(),ageColor(jogador.age)),
                   ],
                 ),
                 Row(
                   children: [
-                    boxInfo('Jogos',jogador.matchs.toString()),
-                    boxInfo('Gols',jogador.goals.toString()),
-                    boxInfo('Assistências',jogador.assists.toString()),
+                    boxInfo('Jogos Total',jogador.matchsCarrer.toString()),
+                    boxInfo('Gols Total',jogador.goalsCarrer.toString()),
+                    boxInfo('Assis. Total',jogador.assistsCarrer.toString()),
+                  ],
+                ),
+                Row(
+                  children: [
+                    boxInfo('Jogos Liga',jogador.matchsLeague.toString()),
+                    boxInfo('Gols Liga',jogador.goalsLeague.toString()),
+                    boxInfo('Assis. Liga',jogador.assistsLeague.toString()),
                   ],
                 ),
                 Row(
@@ -118,11 +125,21 @@ Widget boxInfo(String title, String number,[Color? backgroundColor]){
 playerPositionColor(String position){
   Color colorBackground = Colors.blue;
   if(position == 'GOL'){colorBackground = Colors.green;}
-  if(position == 'LE' || position == 'LD'){colorBackground = Colors.teal;}
-  if(position == 'ZAG'){colorBackground = Colors.blue;}
-  if(position == 'VOL' || position == 'MC'){colorBackground = Colors.orange;}
-  if(position == 'MEI' || position == 'ME' || position == 'MD'){colorBackground = Colors.purpleAccent;}
-  if(position == 'ATA' || position == 'PE' || position == 'PD'){colorBackground = Colors.red;}
+  else if(position == 'LE' || position == 'LD'){colorBackground = Colors.teal;}
+  else if(position == 'ZAG'){colorBackground = Colors.blue;}
+  else if(position == 'VOL' || position == 'MC'){colorBackground = Colors.orange;}
+  else if(position == 'MEI' || position == 'ME' || position == 'MD'){colorBackground = Colors.purpleAccent;}
+  else if(position == 'ATA' || position == 'PE' || position == 'PD'){colorBackground = Colors.red;}
+  return colorBackground;
+}
+ageColor(int age){
+  Color colorBackground = Colors.green;
+  if(age < 20){colorBackground = Colors.blue;}
+  else if(age <= 25){colorBackground = Colors.blue.shade200;}
+  else if(age <= 30){colorBackground = Colors.red.shade50;}
+  else if(age <= 35){colorBackground = Colors.red.shade200;}
+  else if(age <= 40){colorBackground = Colors.red.shade400;}
+  else{colorBackground = Colors.red;}
   return colorBackground;
 }
 isBuyOrSell(Jogador jogador){

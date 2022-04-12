@@ -1,7 +1,9 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/func_number_clubs_total.dart';
+import 'package:fifa/page_controller/ranking_clubs_control.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/images.dart';
@@ -21,17 +23,11 @@ class RankingClubs extends StatefulWidget {
 class _RankingClubsState extends State<RankingClubs> {
 
   int numberClubsTotal = funcNumberClubsTotal();
-
-
   My myClub = My();
-  String myLeagueName = My().campeonatoName;
-
-  List clubsOVR = []; //criado no init, e reutilizado depois no widget
-  List copyClubsName = [];
+  RankingClubsControl rankingClubs = RankingClubsControl();
+  final ScrollController _scrollController = ScrollController();
 
   bool isLoaded = false;
-
-  final ScrollController _scrollController = ScrollController();
 
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
@@ -42,29 +38,10 @@ class _RankingClubsState extends State<RankingClubs> {
     super.initState();
   }
   organizarRanking(){
-    //REORGANIZA ORDEM
-    for (var leagueID in leaguesListRealIndex) {//element: 0-70
-      List allClubsIDList = League(index: leagueID).getAllClubsIDList();
-      for(int i=0; i<allClubsIDList.length; i++) {
-        clubsOVR.add(Club(index: allClubsIDList[i]).getOverall());
-        copyClubsName.add(Club(index: allClubsIDList[i]).name);
-      }
-    }
-
-    for(int i=0; i<clubsOVR.length-1; i++) {
-      for(int k=i+1; k<clubsOVR.length; k++) {
-        if(clubsOVR[k] > clubsOVR[i]){
-          late double auxiliarDouble;
-          late String auxiliarString;
-          auxiliarDouble = clubsOVR[i];clubsOVR[i] = clubsOVR[k]; clubsOVR[k] = auxiliarDouble;
-          auxiliarString = copyClubsName[i];copyClubsName[i] = copyClubsName[k]; copyClubsName[k] = auxiliarString;
-         }
-      }
-    }
+    rankingClubs.organizarRanking();
 
     isLoaded=true;
     setState(() {});
-
   }
   @override
   void dispose() {
@@ -77,46 +54,39 @@ class _RankingClubsState extends State<RankingClubs> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    //_height = MediaQuery.of(context).size.height;
-    return WillPopScope(//IF GO BACK TO PREVIOUS PAGE
-      onWillPop: () async{
-        return true;
-      },
-      child: Scaffold(
+    return Scaffold(
 
-          resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
-          body:  Stack(
-              children: [
+        body:  Stack(
+            children: [
 
-                Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
+              Images().getWallpaper(),
 
-                isLoaded ? Column(
-                  children: [
+              isLoaded ? Column(
+                children: [
 
-                    const SizedBox(height: 40),
-                    const Text('Ranking de Clubes',style: EstiloTextoBranco.text20),
-                    const SizedBox(height: 6),
+                  const SizedBox(height: 40),
+                  const Text('Ranking de Clubes',style: EstiloTextoBranco.text20),
+                  const SizedBox(height: 6),
 
-                    Expanded(
-                      child: DraggableScrollbar.semicircle(
-                        alwaysVisibleScrollThumb: true,
+                  Expanded(
+                    child: DraggableScrollbar.semicircle(
+                      alwaysVisibleScrollThumb: true,
+                      controller: _scrollController,
+                      child: ListView.builder(
+                        padding: EdgeInsets.zero,
                         controller: _scrollController,
-                        child: ListView.builder(
-                          padding: EdgeInsets.zero,
-                          controller: _scrollController,
-                          itemCount: numberClubsTotal,
-                            itemBuilder: (c,i) => rowClub(i, copyClubsName[i])
-                        ),
+                        itemCount: numberClubsTotal,
+                          itemBuilder: (c,i) => rowClub(i, rankingClubs.copyClubsName[i])
                       ),
-                    )
+                    ),
+                  )
 
 
-                  ],
-                ) : const Center(child: CircularProgressIndicator())
+                ],
+              ) : const Center(child: CircularProgressIndicator())
 
-              ]
-          )
-      ),
+            ]
+        )
     );
   }
 ////////////////////////////////////////////////////////////////////////////
@@ -126,7 +96,7 @@ class _RankingClubsState extends State<RankingClubs> {
 Widget rowClub(int ranking, String clubName){
 
     int realClubIndex = clubsAllNameList.indexOf(clubName);
-    double overall = clubsOVR[ranking];
+    double overall = rankingClubs.clubsOVR[ranking];
 
     //Cor de Fundo
     Color colorBackground = Colors.transparent;

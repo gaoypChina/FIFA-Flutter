@@ -1,4 +1,6 @@
 
+import 'package:fifa/classes/my.dart';
+
 import '../../classes/club.dart';
 import '../../global_variables.dart';
 import '../../values/league_names.dart';
@@ -9,6 +11,7 @@ import 'mata_mata_class.dart';
 class MataMataSimulation{
 
   simulateMatchs(){
+    My myClass = My();
     for (int i = 0; i < internationalLeagueNames.length; i++) {
       String internationalName = funcGetInternationalLeagueNameFromIndex(internationalLeagueIndex: i);
       int matchRowsTotal = MataMata().getMatchRows();
@@ -17,18 +20,21 @@ class MataMataSimulation{
         //PEGA OS TIMES QUE VÃO JOGAR
         MataMata mataMata = MataMata();
         mataMata.getData(internationalName, mataMata.getSemanaPhase(semana),matchRows, phaseIdaVolta);
-        //SIMULA A PARTIDA EM SI
         Club club1 = Club(index: mataMata.clubID1);
         Club club2 = Club(index: mataMata.clubID2);
+        if(club1.index != myClass.clubID && club2.index != myClass.clubID ){
+        //SIMULA A PARTIDA EM SI
         MatchSimulation(club1, club2);
-        //Se a final terminar empatada
+        //Se a final terminar empatada simula de novo -> PENALTIS
         if(semanaFinal.contains(semana) && mataMata.goal1 == mataMata.goal2){
           while(semanaFinal.contains(semana) && mataMata.goal1 == mataMata.goal2){
             MatchSimulation(club1, club2);
             mataMata.getData(internationalName, mataMata.getSemanaPhase(semana),matchRows, phaseIdaVolta);
           }
         }
-        mataMata.getData(internationalName, mataMata.getSemanaPhase(semana),matchRows, phaseIdaVolta);
+
+        }//if not my club
+
       }
     }
 

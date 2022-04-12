@@ -1,10 +1,12 @@
 
 import 'package:fifa/classes/historic.dart';
+import 'package:fifa/classes/historic/top_players_ovr.dart';
+import 'package:fifa/classes/historic/top_scorers.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_trophy_image.dart';
-import 'package:fifa/widgets/button_continue.dart';
+import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 import 'leagues_historic.dart';
@@ -56,6 +58,18 @@ class _HistoricState extends State<Historic> {
                         children: [
                           for(int year=anoInicial;year<ano;year++)
                             yearRow(year),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  SizedBox(
+                    height: 140,
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          for(int year=anoInicial;year<ano;year++)
+                            yearRowTopScorers(year),
                         ],
                       ),
                     ),
@@ -119,7 +133,7 @@ Widget trophyWidget(int i){
     }
     if(i==1){
       name = 'Campeonatos Internacionais';
-      image = getTrophyImage(My().internationalLeagueName);
+      image = getTrophyImage(My().getMyInternationalLeague());
       qntd = 0;
     }
     if(i==2){
@@ -162,4 +176,42 @@ Widget trophyWidget(int i){
     );
   }
 
+  Widget yearRowTopScorers(int year){
+    Map topScorersMap = TopScorers().getDataYear(year);
+    return Padding(
+      padding: const EdgeInsets.only(left: 4.0),
+      child: Column(
+        children: [
+          Text('Artilheiros $year e Melhores Jogadores',style: EstiloTextoBranco.text14),
+          for(int position=0;position<25 && position< topScorersMap.values.length;position++)
+            yearRowTopScorersRow(year,position)
+
+        ],
+      ),
+    );
+  }
+  Widget yearRowTopScorersRow(int year, int position){
+    TopScorers topScorers = TopScorers();
+    topScorers.getInPosition(year, position);
+    TopPlayersOVR topPlayersOVR = TopPlayersOVR();
+    topPlayersOVR.getInPosition(year, position);
+    return             Row(
+      children: [
+        Text('${(position+1).toString()}-',style: EstiloTextoBranco.text14),
+        Image.asset('assets/clubs/${FIFAImages().imageLogo(topScorers.clubName)}.png',height: 20,width: 20),
+        SizedBox(width:130,
+          child: Text(topScorers.playerName,style: EstiloTextoBranco.text14),
+        ),
+        Text(topScorers.playerGoals.toString(),style: EstiloTextoBranco.text14),
+        const SizedBox(width: 15),
+
+        Text('${(position+1).toString()}-',style: EstiloTextoBranco.text14),
+        Image.asset('assets/clubs/${FIFAImages().imageLogo(topPlayersOVR.clubName)}.png',height: 20,width: 20),
+        SizedBox(width:130,
+          child: Text(topPlayersOVR.playerName,style: EstiloTextoBranco.text14),
+        ),
+        Text(topPlayersOVR.playerOVR.toString(),style: EstiloTextoBranco.text14),
+      ],
+    );
+  }
 }

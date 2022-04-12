@@ -19,11 +19,11 @@ class SetPoints{
     if (golTime1 > golTime2) {
       globalClubsLeaguePoints[indexTeam1] += 3;
     }
-    if (golTime1 == golTime2) {
+    else if (golTime1 == golTime2) {
       globalClubsLeaguePoints[indexTeam1] += 1;
       globalClubsLeaguePoints[indexTeam2] += 1;
     }
-    if (golTime1 < golTime2) {
+    else if (golTime1 < golTime2) {
       globalClubsLeaguePoints[indexTeam2] += 3;
     }
 

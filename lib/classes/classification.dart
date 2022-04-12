@@ -23,7 +23,7 @@ class Classification{
     League ligaClass = League(index: leagueIndex);
     int nClubs = ligaClass.nClubs;
     for (int i = 0; i <nClubs; i++) {
-      int clubIndex = ligaClass.getClubRealIndex(i);
+      int clubIndex = ligaClass.getClubRealID(i);
       classificationLeagueIndex.add(clubIndex);
       points.add(Club(index: clubIndex).leaguePoints);
       try {

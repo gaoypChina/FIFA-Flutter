@@ -3,7 +3,7 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/historic/historic.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
-import 'package:fifa/widgets/button_continue.dart';
+import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 

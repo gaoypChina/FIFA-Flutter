@@ -5,7 +5,7 @@ import 'package:fifa/values/images.dart';
 import 'package:fifa/popup/popup_save_all_data.dart';
 import 'package:fifa/popup/poup_edit.dart';
 import 'package:fifa/values/league_clubs.dart';
-import 'package:fifa/widgets/button_continue.dart';
+import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';

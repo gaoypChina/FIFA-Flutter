@@ -1,3 +1,5 @@
+import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
@@ -46,14 +48,13 @@ class _TableNacionalState extends State<TableNacional> {
   Widget build(BuildContext context) {
     double _height = MediaQuery.of(context).size.height;
 
-
     return Scaffold(
 
         resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
         body:  Stack(
             children: [
 
-              Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
+              Images().getWallpaper(),
 
               Column(
                 children: [
@@ -169,18 +170,8 @@ class _TableNacionalState extends State<TableNacional> {
 
               ////////////////////////////////////
               //SELECT LEAGUE
-              Container(
-                padding: EdgeInsets.only(top:_height-50),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      for(int i=0;i<leaguesListRealIndex.length;i++)
-                        leagueRow(i)
-                    ],
-                  ),
-                ),
-              ),
+              selectLeagueWidget(context),
+
             ]
         )
     );
@@ -188,7 +179,20 @@ class _TableNacionalState extends State<TableNacional> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-
+ Widget selectLeagueWidget(BuildContext context){
+    return              Container(
+      padding: EdgeInsets.only(top:Sized(context).height- 50),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            for(int i=0;i<leaguesListRealIndex.length;i++)
+              leagueRow(i)
+          ],
+        ),
+      ),
+    );
+ }
   Widget leagueRow(int league){
     int leagueIndex = leaguesListRealIndex[league];
     return GestureDetector(
@@ -333,7 +337,7 @@ Widget yellowRedCardWidget(int goalOrYellowOrRed){
       children: [
         Image.asset('assets/clubs/${FIFAImages().imageLogo(players.clubName)}.png',height: 20,width: 20,),
         Text(players.name,style: EstiloTextoBranco.text14),
-        goalOrYellowOrRed==0 ? Text(players.goals.toString(),style: EstiloTextoBranco.text16) : goalOrYellowOrRed==1 ? Text(players.yellowCard.toString(),style: EstiloTextoBranco.text16): Text(players.redCard.toString(),style: EstiloTextoBranco.text16),
+        goalOrYellowOrRed==0 ? Text(players.goalsLeague.toString(),style: EstiloTextoBranco.text16) : goalOrYellowOrRed==1 ? Text(players.yellowCard.toString(),style: EstiloTextoBranco.text16): Text(players.redCard.toString(),style: EstiloTextoBranco.text16),
       ],
     );
   }

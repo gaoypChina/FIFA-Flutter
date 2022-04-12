@@ -13,9 +13,9 @@ class Jogador{
   late double price;
   late double health;
 
-  late int matchs;
-  late int goals;
-  late int assists;
+  late int matchsLeague;
+  late int goalsLeague;
+  late int assistsLeague;
   late int redCard;
   late int yellowCard;
   late int injury;
@@ -37,9 +37,9 @@ class Jogador{
     clubID = globalJogadoresClubIndex[index];
     clubName = clubsAllNameList[clubID];
     health = globalJogadoresHealth[index];
-    matchs = globalJogadoresLeagueMatchs[index] ?? 0;
-    goals = globalJogadoresLeagueGoals[index] ?? 0;
-    assists = globalJogadoresLeagueAssists[index] ?? 0;
+    matchsLeague = globalJogadoresLeagueMatchs[index] ?? 0;
+    goalsLeague = globalJogadoresLeagueGoals[index] ?? 0;
+    assistsLeague = globalJogadoresLeagueAssists[index] ?? 0;
     redCard = globalJogadoresRedCard[index] ?? 0;
     yellowCard = globalJogadoresYellowCard[index] ?? 0;
     injury = globalJogadoresInjury[index] ?? 0;
@@ -92,6 +92,8 @@ class Jogador{
     if(overall==93){price = 700.0;}
     if(overall==94){price = 800.0;}
     if(overall==95){price = 1000.0;}
+    if(overall==96){price = 1200.0;}
+    if(overall>=97){price = 1500.0;}
     if (age>=16){price = price*240.0/(age*age);}
     if (age>=32){price = price*0.9;}
     if (age>=35){price = price*0.9;}

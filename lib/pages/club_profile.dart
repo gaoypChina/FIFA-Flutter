@@ -1,12 +1,11 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/popup/popup_player_info.dart';
 import 'package:fifa/theme/colors.dart';
-import 'package:fifa/values/images.dart';
-import 'package:fifa/widgets/button_return.dart';
+import 'package:fifa/widgets/button/button_return.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
-import '../values/images.dart';
 
 class ClubProfile extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
@@ -47,7 +46,7 @@ class _ClubProfileState extends State<ClubProfile> {
                   Row(
                     children: [
                       //Escudo da Equipe
-                      Image.asset('assets/clubs/${FIFAImages().imageLogo(clubClass.name)}.png',height: 80,width: 80),
+                      Image.asset(Images().getEscudo(clubClass.name),height: 80,width: 80),
 
                       const SizedBox(width: 8),
                       Expanded(
@@ -173,9 +172,9 @@ class _ClubProfileState extends State<ClubProfile> {
     double imageSize = 50;
 
     String circleShow = player.overall.toStringAsFixed(0);
-    if(show == 'Jogos'){circleShow = player.matchs.toStringAsFixed(0);}
-    else if(show == 'Gols'){circleShow = player.goals.toStringAsFixed(0);}
-    else if(show == 'Assists'){circleShow = player.assists.toStringAsFixed(0);}
+    if(show == 'Jogos'){circleShow = player.matchsLeague.toStringAsFixed(0);}
+    else if(show == 'Gols'){circleShow = player.goalsLeague.toStringAsFixed(0);}
+    else if(show == 'Assists'){circleShow = player.assistsLeague.toStringAsFixed(0);}
     else if(show == 'Idade'){circleShow = player.age.toStringAsFixed(0);}
 
     return GestureDetector(
@@ -201,9 +200,9 @@ class _ClubProfileState extends State<ClubProfile> {
                   (player.injury >0 || player.redCard >0)
                       ? Opacity(
                       opacity: 0.4,
-                      child: Image.asset('assets/clubs/${FIFAImages().imageLogo(clubClass.name)}1.png')
+                      child: Image.asset(Images().getUniform(clubClass.name))
                   )
-                      : Image.asset('assets/clubs/${FIFAImages().imageLogo(clubClass.name)}1.png'),
+                      : Image.asset(Images().getUniform(clubClass.name)),
 
                   //CIRCULO
                   Container(

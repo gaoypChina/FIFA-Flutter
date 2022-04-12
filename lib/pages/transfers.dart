@@ -6,7 +6,7 @@ import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/background/background_overall.dart';
 import 'package:fifa/values/images.dart';
-import 'package:fifa/widgets/button_return.dart';
+import 'package:fifa/widgets/button/button_return.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 import '../classes/my.dart';
@@ -788,7 +788,4 @@ class _TransfersState extends State<Transfers> {
       copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).overall > int.parse(transferParameters.maxOVR.text));
     }
 }
-}
-
-tryTo(){
 }

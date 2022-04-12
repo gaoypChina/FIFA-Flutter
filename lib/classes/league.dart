@@ -45,8 +45,8 @@ class League{
     Map mapClubs = clubNameMap[name];
     return mapClubs[indexClub];
   }
-  //getClubIndex: 0-257
-  int getClubRealIndex(int indexClub){
+  //getClubID: 0-257
+  int getClubRealID(int indexClub){
     //indexClub: 0-16
     Map mapClubs = clubNameMap[name];
     String clubName = mapClubs[indexClub];
@@ -76,7 +76,7 @@ class League{
     List points = [];
     List saldo = [];
     for(int i=0;i<nClubs;i++){
-      int clubIndex = getClubRealIndex(i);
+      int clubIndex = getClubRealID(i);
       classificationLeagueIndex.add(clubIndex);
       points.add(Club(index: clubIndex).leaguePoints);
       try {

@@ -43,15 +43,20 @@ class ResultGameNacional{
         print("Rodada $rodadaLocal não foi simulada");
       }
 
-      if(gol1 < golAdv){
-        backgroundColor = Colors.red;
-      }else if(gol1 == golAdv){
-        backgroundColor = Colors.amber.withOpacity(0.7);
-      }if(gol1 > golAdv){
-        backgroundColor = Colors.green;
-      }if(placar.isEmpty){
-        backgroundColor = Colors.black12;
-      }
+      backgroundBasedOnResult(gol1,golAdv);
+    }
+  }
+
+  backgroundBasedOnResult(int gol1,int golAdv){
+    if(gol1 < golAdv){
+      backgroundColor = Colors.red;
+    }else if(gol1 == golAdv){
+      backgroundColor = Colors.amber.withOpacity(0.7);
+    }else if(gol1 > golAdv){
+      backgroundColor = Colors.green;
+    }
+    if(placar.isEmpty){
+      backgroundColor = Colors.black12;
     }
   }
 

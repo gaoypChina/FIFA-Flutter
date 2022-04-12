@@ -1,8 +1,9 @@
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/popup/popup_player_info.dart';
 import 'package:fifa/theme/background/background_overall.dart';
-import 'package:fifa/widgets/button_continue.dart';
+import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
@@ -27,12 +28,10 @@ class _MyTeamAllInfoState extends State<MyTeamAllInfo> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-
-        resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
         body:  Stack(
             children: [
 
-              Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
+              Images().getWallpaper(),
 
               Column(
                 children: [
@@ -259,9 +258,9 @@ class _MyTeamAllInfoState extends State<MyTeamAllInfo> {
       children: [
         Text(player.position, style: EstiloTextoBranco.text16),
         playerNameWidget(player),
-        Text(player.matchs.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-        Text(player.goals.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-        Text(player.assists.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text14),
+        Text(player.matchsLeague.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+        Text(player.goalsLeague.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+        Text(player.assistsLeague.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text14),
         Container(
           padding: const EdgeInsets.symmetric(vertical: 10),
           child: const Text(''),

@@ -1,10 +1,12 @@
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/page_controller/calendar_control.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/widgets/button_continue.dart';
+import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/widgets/button/button_return.dart';
 import 'package:flutter/material.dart';
 import 'menu/c_menu.dart';
 import '../values/images.dart';
@@ -34,11 +36,10 @@ class _CalendarState extends State<Calendar> {
     }
 
     return Scaffold(
-
         body:  Stack(
             children: [
 
-              Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
+              Images().getWallpaper(),
 
               Column(
                 children: [
@@ -61,17 +62,11 @@ class _CalendarState extends State<Calendar> {
                     ),
                   ),
 
-                  //VOLTAR
-                  customButtonContinue(
-                      title: 'VOLTAR',
-                      function: (){
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Menu()));
-                      }
-                  ),
-
                 ],
-              )
+              ),
 
+              //VOLTAR
+              returnButton(context),
             ]
         )
     );

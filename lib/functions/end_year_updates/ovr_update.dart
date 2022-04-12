@@ -18,4 +18,8 @@ newOverall(Jogador player){
 
   globalJogadoresOverall[player.index] += randomSum;
 
+  //OVR Máximo permitido
+  if(globalJogadoresOverall[player.index] > 95){
+    globalJogadoresOverall[player.index] = 95;
+  }
 }

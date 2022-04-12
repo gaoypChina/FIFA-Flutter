@@ -2,7 +2,7 @@ import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/values/images.dart';
-import 'package:fifa/widgets/button_continue.dart';
+import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/widgets/table_widget.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
@@ -63,7 +63,7 @@ class _FimCampeonatoState extends State<FimCampeonato> {
                         Column(
                           children: [
                             const Text('Expectativa:',style: EstiloTextoBranco.text14),
-                            Text(myClub.getExpectativa().toString()+'º',style: EstiloTextoBranco.text30),
+                            Text(myClub.getLastYearExpectativa().toString()+'º',style: EstiloTextoBranco.text30),
                           ],
                         ),
 

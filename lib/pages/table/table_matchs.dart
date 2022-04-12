@@ -1,3 +1,4 @@
+import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/images.dart';
@@ -36,9 +37,6 @@ class _TableMatchsState extends State<TableMatchs> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    double _height = MediaQuery.of(context).size.height;
-    double _width = MediaQuery.of(context).size.width;
-
     return Scaffold(
 
       body:  Stack(
@@ -56,8 +54,8 @@ class _TableMatchsState extends State<TableMatchs> {
                   Expanded(
                     child: Container(
                         color: AppColors().greyTransparent,
-                        height: _height*0.9,
-                        width: _width*0.92,
+                        height: Sized(context).height*0.9,
+                        width: Sized(context).width*0.92,
                         child: SingleChildScrollView(child: tableWidget())
                     ),
                   ),

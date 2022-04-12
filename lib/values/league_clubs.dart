@@ -46,7 +46,7 @@ Map clubNameMapImmutable = {
     12: clubName.sheffieldunited,13: clubName.westbromwich, 14: clubName.swansea, 15: clubName.watford,
   },
   LeagueOfficialNames().inglaterra3 : {
-    0: clubName.sunderland,1: clubName.stoke,2: clubName.hullcity,3: clubName.portsmouth,
+    //0: clubName.sunderland,1: clubName.stoke,2: clubName.hullcity,3: clubName.portsmouth,
   },
   LeagueOfficialNames().italia1 : {
     0: clubName.atalanta, 1: clubName.bologna,2: clubName.cagliari,3: clubName.fiorentina,

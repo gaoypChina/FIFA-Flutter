@@ -1,5 +1,7 @@
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/historic.dart';
+import 'package:fifa/classes/historic/top_players_ovr.dart';
+import 'package:fifa/classes/historic/top_scorers.dart';
 import 'package:fifa/classes/international.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
@@ -27,6 +29,7 @@ saveHistoricalData(){
   saveLeagueResults();
   saveInternationalLeagueResults();
   saveMyClubData();
+  saveBestPlayers();
 }
 saveLeagueResults(){
   Map allLeaguesClassification = {};
@@ -58,6 +61,27 @@ saveMyClubData(){
     'leagueID':My().campeonatoID,
     'players': My().jogadores,
   };
+}
+
+saveBestPlayers(){
+  List best = [];
+  List bestID = [];
+  List topScorers = [];
+  List topScorersID = [];
+  //Seleciona os melhores
+  for(int index=0; index<globalJogadoresIndex.length; index++){
+    Jogador player = Jogador(index: index);
+    if(player.goalsLeague > 5){
+      topScorers.add(player.goalsLeague);
+      topScorersID.add(player.index);
+    }
+    if(player.overall > 80){
+      best.add(player.overall);
+      bestID.add(player.index);
+    }
+  }
+  TopScorers().orderAndSave(topScorers, topScorersID);
+  TopPlayersOVR().orderAndSave(best, bestID);
 }
 resetPlayersData(){
   //Reseta só antes de carregar o database
@@ -91,13 +115,12 @@ resetData(){
   globalJogadoresInjury = List.filled(globalMaxPlayersPermitted, 0);
 
   //Clubes
-  //500 = numero com folga de clubes
-  globalClubsLeaguePoints = List.filled(500, 0);
-  globalClubsLeagueGM = List.filled(500, 0);
-  globalClubsLeagueGS = List.filled(500, 0);
-  globalClubsInternationalPoints = List.filled(500, 0);
-  globalClubsInternationalGM = List.filled(500, 0);
-  globalClubsInternationalGS = List.filled(500, 0);
+  globalClubsLeaguePoints = List.filled(globalMaxClubsPermitted, 0);
+  globalClubsLeagueGM = List.filled(globalMaxClubsPermitted, 0);
+  globalClubsLeagueGS = List.filled(globalMaxClubsPermitted, 0);
+  globalClubsInternationalPoints = List.filled(globalMaxClubsPermitted, 0);
+  globalClubsInternationalGM = List.filled(globalMaxClubsPermitted, 0);
+  globalClubsInternationalGS = List.filled(globalMaxClubsPermitted, 0);
   
 }
 
@@ -128,7 +151,7 @@ void atualizaStatusJogadores(){
 }
 
 saveCoachPoints(){
-  int expectativa = My().getExpectativa();
+  int expectativa = My().getLastYearExpectativa();
   int classificacao = HistoricClubYear(ano).position;
   double multiplicationFactor = expectativa/classificacao; //Ex: 10/3  12/5
   globalCoachPoints += (multiplicationFactor*(100/classificacao)).round(); //100,50,33,25,20...

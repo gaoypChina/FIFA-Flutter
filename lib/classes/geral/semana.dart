@@ -15,11 +15,11 @@ class Semana{
       semanaStr = semanasJogosNacionais.indexOf(semana).toString();
     }
     if(semanasJogosCopas.contains(semana)){semanaStr = 'Jogo das Copas';}
-    if(semanasGruposInternacionais.contains(semana)){semanaStr = 'Fase de Grupos';}
-    if(semanaOitavas.contains(semana)){semanaStr = Name().oitavas;}
-    if(semanaQuartas.contains(semana)){semanaStr = Name().quartas;}
-    if(semanaSemi.contains(semana)){semanaStr = Name().semifinal;}
-    if(semanaFinal.contains(semana)){semanaStr = Name().finale;}
+    else if(semanasGruposInternacionais.contains(semana)){semanaStr = 'Fase de Grupos';}
+    else if(semanaOitavas.contains(semana)){semanaStr = Name().oitavas;}
+    else if(semanaQuartas.contains(semana)){semanaStr = Name().quartas;}
+    else if(semanaSemi.contains(semana)){semanaStr = Name().semifinal;}
+    else if(semanaFinal.contains(semana)){semanaStr = Name().finale;}
 
     semanaAlternativeStr = semanaStr;
     if(semanasGruposInternacionais.contains(semana)){

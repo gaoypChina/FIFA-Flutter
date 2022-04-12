@@ -1,20 +1,17 @@
+import 'package:fifa/classes/get_database/local_database.dart';
+import 'package:fifa/classes/get_database/read_csv.dart';
 import 'package:fifa/database/shared_preferences.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/functions/end_year_updates/update_data_year.dart';
 import 'package:fifa/pages/customize_players.dart';
-import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/values/league_names.dart';
-import 'package:fifa/widgets/button_continue.dart';
-import 'package:fifa/theme/custom_toast.dart';
+import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'c_menu.dart';
 import '../../classes/geral/dificuldade.dart';
 import '../../classes/league.dart';
-import 'package:csv/csv.dart';
 
 import '../../functions/func_change_club.dart';
 
@@ -53,16 +50,22 @@ class _HomePageState extends State<HomePage> {
   doThisOnLaunch() async {
     //RESETA LISTA ORIGINAL A MOSTRAR CLUBES
     clubNameMap = getCloneMap(clubNameMapImmutable); //Mapa sem mudar mapa original
+    //Pontos do treinador zera
+    globalCoachPoints = 0;
+
+    globalJogadoresCarrerMatchs = List.filled(globalMaxPlayersPermitted, 0);
+    globalJogadoresCarrerGoals = List.filled(globalMaxPlayersPermitted, 0);
+    globalJogadoresCarrerAssists = List.filled(globalMaxPlayersPermitted, 0);
 
     ano = anoInicial;
-    await openCSV();
+    await ReadCSV().openCSV();
     try {
       await SharedPreferenceHelper().getDatabase();
     }catch(e){
       print('ERROR ON GET DATABASE MAIN MENU'+e.toString());
     }
     globalSaveNumber = (await SharedPreferenceHelper().getsharedSaveNumber())!;
-    getCustomizedData();
+    GetLocalDatabase().getCustomizedData();
     setState(() {});
   }
 ////////////////////////////////////////////////////////////////////////////
@@ -229,10 +232,7 @@ class _HomePageState extends State<HomePage> {
                       }
                   ),
 
-                  const SizedBox(height: 12),
-
-
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 28),
 
 
                   Row(
@@ -244,7 +244,8 @@ class _HomePageState extends State<HomePage> {
                         onTap:() async{
                           globalSaveNumber++;
                           if(globalSaveNumber==2){globalSaveNumber=0;}
-                          await getCustomizedData();
+                          await GetLocalDatabase().getCustomizedData();
+                          setState(() {});
                         },
                         child: Column(
                           children: [
@@ -260,7 +261,7 @@ class _HomePageState extends State<HomePage> {
                       // CUSTOMIZAR
                       GestureDetector(
                         onTap: (){
-                          int clubID = League(index: indexLeague).getClubRealIndex(posicao);
+                          int clubID = League(index: indexLeague).getClubRealID(posicao);
                           Navigator.of(context).push(MaterialPageRoute(builder: (context) => CustomizePlayers(clubID: clubID)));
                         },
                         child: Column(
@@ -313,158 +314,6 @@ class _HomePageState extends State<HomePage> {
     funcChangeClub(teamName,indexLeague);
   }
 
-  getCustomizedData() async {
 
-    if(globalSaveNumber>0) {
-
-      try{
-        globalJogadoresIndex =[];
-        //TIRA OS ESPAÇOS DAS STRINGS
-        for (int i = 0; i < globalSaveData[globalSaveNumber][1].length; i++) {
-          globalSaveData[globalSaveNumber][0][i] = globalSaveData[globalSaveNumber][0][i].toString().trim();
-          globalSaveData[globalSaveNumber][1][i] = globalSaveData[globalSaveNumber][1][i].toString().trim();
-          globalSaveData[globalSaveNumber][2][i] = globalSaveData[globalSaveNumber][2][i].toString().trim();
-          globalSaveData[globalSaveNumber][3][i] = globalSaveData[globalSaveNumber][3][i].toString().trim();
-          globalSaveData[globalSaveNumber][4][i] = globalSaveData[globalSaveNumber][4][i].toString().trim();
-
-          globalJogadoresIndex.add(i);
-        }
-
-      globalJogadoresName = globalSaveData[globalSaveNumber][0];
-      globalJogadoresClubIndex = globalSaveData[globalSaveNumber][1].map(int.parse).toList(); //convert list<string> to list<int>
-      globalJogadoresAge = globalSaveData[globalSaveNumber][2].map(int.parse).toList();//convert list<string> to list<int>
-      globalJogadoresOverall = globalSaveData[globalSaveNumber][3].map(int.parse).toList();//convert list<string> to list<int>
-      globalJogadoresPosition = globalSaveData[globalSaveNumber][4];
-
-      }catch(e){
-        //SE der erro vai pro database padrão
-        print('ERRO Customized Data, Database: $globalSaveNumber');
-        globalSaveNumber = 0;
-        await openCSV();
-      }
-    }else{
-      await openCSV();
-    }
-
-    await SharedPreferenceHelper().savesharedSaveNumber(globalSaveNumber);
-    setState(() {});
-
-  }
-
-  openCSV() async{
-
-    resetPlayersData();
-    resetData();
-
-    //READ CSV
-    indexJog = 0;
-    await readCSVfunc("inglaterra");
-    await readCSVfunc("inglaterra2");
-    await readCSVfunc("inglaterra3");
-    await readCSVfunc("italia");
-    await readCSVfunc("italia2");
-    await readCSVfunc("espanha");
-    await readCSVfunc("espanha2");
-    await readCSVfunc("alemanha");
-    await readCSVfunc("alemanha2");
-    await readCSVfunc("franca");
-    await readCSVfunc("franca2");
-    await readCSVfunc("pt_hol");
-    await readCSVfunc("europa_ocidental");
-    await readCSVfunc("leste");
-    await readCSVfunc("outros_europa");
-    await readCSVfunc("outros_europa2");
-
-    await readCSVfunc("brasil");
-    await readCSVfunc("brasil2");
-    await readCSVfunc("brasil3");
-    await readCSVfunc("brasil4");
-    await readCSVfunc("argentina");
-    await readCSVfunc("sulamericano");
-    await readCSVfunc("outros_america");
-
-    await readCSVfunc("colombia");
-    await readCSVfunc("mexico");
-    await readCSVfunc("eua");
-    await readCSVfunc("eua2");
-
-    await readCSVfunc("asia");
-    await readCSVfunc("asia2");
-    await readCSVfunc("africa");
-  }
-  readCSVfunc(String filename) async {
-    List<List<dynamic>> _data = [];
-    try{
-      final _rawData   = await rootBundle.loadString("assets/csv/$filename.csv");
-      List<List<dynamic>> _listData = const CsvToListConverter().convert(_rawData);
-      _data = _listData;
-    }catch(e){
-      customToast('Arquivo Inexistente: '+ filename);
-    }
-
-    if(_data.length==1){
-      customToast('Erro no arquivo '+ filename);
-    }
-
-    for(int line=1;line<29;line++){//*Linha 0 é o nome dos times
-      for(int team=0;team<26;team++) { //até 24 times por arquivo
-        //Se tiver nome salva o jogador
-        try{
-          String club = _data[0][team * 5 + 1];
-          String name = _data[line][team * 5 + 1].toString();
-          String position = _data[line][team * 5 + 2].toString();//VOLMCZAG =>VOL
-          int age = int.parse(_data[line][team * 5 + 3].toString().substring(0,2));
-          int overall = int.parse(_data[line][team * 5 + 4].toString().substring(0,2));
-          if (name.isNotEmpty && position.isNotEmpty && age > 10) {
-
-            //REMOVE L form last character
-            if(name[name.length-1]=='L'){name = name.substring(0, name.length - 1);}
-            if(position.length>3){position = position.substring(0,3);}
-            if(position.contains('GOL')){position='GOL';}
-            else if(position.contains('LD')){position='LD';}
-            else if(position.contains('ADD')){position='LD';}
-            else if(position.contains('ADE')){position='LE';}
-            else if(position.contains('LE')){position='LE';}
-            else if(position.contains('ZAG')){position='ZAG';}
-            else if(position.contains('VOL')){position='VOL';}
-            else if(position.contains('MEI')){position='MEI';}
-            else if(position.contains('MC')){position='MC';}
-            else if(position.contains('ATA')){position='ATA';}
-            else if(position.contains('SA')){position='ATA';}
-            else if(position.contains('PD')){position='PD';}
-            else if(position.contains('PE')){position='PE';}
-            else if(position.contains('MD')){position='MD';}
-            else if(position.contains('ME')){position='ME';}
-
-            //VARIAVEIS GLOBAIS
-            int clubIndex = clubsAllNameList.indexOf(club);
-            if(clubIndex >= 0) { //se o clube existir e estiver cadastrado certo
-
-              globalJogadoresClubIndex.add(clubIndex);
-              globalJogadoresIndex.add(indexJog);
-              globalJogadoresName.add(name);
-              globalJogadoresPosition.add(position);
-              globalJogadoresAge.add(age);
-              globalJogadoresOverall.add(overall);
-              indexJog++;
-              //test jogadores importados
-                //if(club == ClubName().alwaysReady){
-                //print('JOGADOR: $name $position $overall $club ${clubIndex.toString()}');
-                //}
-            }else{
-              //ERRO NA IMPORTAÇÃO DO TIME
-              //Provavelmente falta adicionar o nome do clube em: clubsAllNameList
-              //print('ERRO IMPORTAÇÃO JOGADOR: $name $club ${clubIndex.toString()}');
-            }
-          }
-        }catch(e){
-          //print('ERROR LOADING DATA: ');
-          //print('ERRO IMPORTAÇÃO:\nName: ${_data[line][team * 5 + 1].toString()} POSIÇÃO: ${_data[line][team * 5 + 2]} Club: ${_data[0][team * 5 + 1]}');
-        }
-
-      }
-    }
-
-  }
 
 }

@@ -1,12 +1,13 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/geral/esquemas_taticos.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/my_team_all_infos.dart';
 import 'package:fifa/popup/popup_player_info.dart';
 import 'package:fifa/values/images.dart';
-import 'package:fifa/widgets/button_continue.dart';
+import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/colors.dart';
-import 'package:fifa/widgets/button_return.dart';
+import 'package:fifa/widgets/button/button_return.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 import '../classes/my.dart';
@@ -99,19 +100,16 @@ class _MyTeamState extends State<MyTeam> {
                         customButtonContinue(
                             title: my.esquemaTatico,
                             function: (){
-                              if(globalMyEsquemaTatico=='4-4-2'){globalMyEsquemaTatico = '4-3-3';}
-                              else if(globalMyEsquemaTatico=='4-3-3'){globalMyEsquemaTatico = '3-4-3';}
-                              else if(globalMyEsquemaTatico=='3-4-3'){globalMyEsquemaTatico = '4-5-1';}
-                              else if(globalMyEsquemaTatico=='4-5-1'){globalMyEsquemaTatico = '4-4-2';}
+                              EsquemaTatico().changeMyEsquema();
                                 setState(() {});
-                            }
+                              }
                             ),
 
                       ],
                     ),
 
                     //Widget do campo
-                    fieldWidget(my.clubName),
+                    fieldWidget(),
 
 
 
@@ -253,11 +251,11 @@ Widget draggable(int playerIndex){
   }
 
 
-Widget fieldWidget(String clubName){
-    if(My().esquemaTatico == '4-4-2') return fieldGameplay442();
-    if(My().esquemaTatico == '4-3-3') return fieldGameplay433();
-    if(My().esquemaTatico == '3-4-3') return fieldGameplay343();
-    if(My().esquemaTatico == '4-5-1') return fieldGameplay451();
+Widget fieldWidget(){
+    if(My().esquemaTatico == EsquemaTatico().e442) return fieldGameplay442();
+    if(My().esquemaTatico == EsquemaTatico().e433) return fieldGameplay433();
+    if(My().esquemaTatico == EsquemaTatico().e433) return fieldGameplay343();
+    if(My().esquemaTatico == EsquemaTatico().e451) return fieldGameplay451();
 
     return Container();
 }
@@ -271,9 +269,9 @@ Widget playerWidgetOVR(int playerIndex){
     double imageSize = 50;
 
     String circleShow = player.overall.toStringAsFixed(0);
-    if(show == 'Jogos'){circleShow = player.matchs.toStringAsFixed(0);}
-    else if(show == 'Gols'){circleShow = player.goals.toStringAsFixed(0);}
-    else if(show == 'Assists'){circleShow = player.assists.toStringAsFixed(0);}
+    if(show == 'Jogos'){circleShow = player.matchsLeague.toStringAsFixed(0);}
+    else if(show == 'Gols'){circleShow = player.goalsLeague.toStringAsFixed(0);}
+    else if(show == 'Assists'){circleShow = player.assistsLeague.toStringAsFixed(0);}
     else if(show == 'Idade'){circleShow = player.age.toStringAsFixed(0);}
 
     return GestureDetector(

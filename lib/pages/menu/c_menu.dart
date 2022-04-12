@@ -1,7 +1,7 @@
+import 'package:fifa/classes/adversario.dart';
 import 'package:fifa/classes/geral/semana.dart';
-import 'package:fifa/classes/international.dart';
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/pages/menu/b_home.dart';
-import 'package:fifa/classes/chaves.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/calendar.dart';
 import 'package:fifa/pages/ranking_clubs.dart';
@@ -13,12 +13,10 @@ import 'package:fifa/pages/transfers.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/values/images.dart';
-import 'package:fifa/values/league_names.dart';
 import 'package:flutter/scheduler.dart';
 import '../../classes/classification.dart';
 import '../../classes/club.dart';
 import '../../classes/geral/dificuldade.dart';
-import '../../classes/league.dart';
 import '../../classes/my.dart';
 import '../my_team.dart';
 import '../../popup/popup_expectativa.dart';
@@ -38,12 +36,7 @@ class Menu extends StatefulWidget {
 class _MenuState extends State<Menu> {
 
   My myClass = My();
-  String adversarioClubName = '';
-  int adversarioClubID = -1;
-  int adversarioPosicao = -1;
-  bool visitante = false;
-  late int indexAdv; //de 0-16
-  late String campeonatoLogo;
+  Adversario adversario = Adversario();
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
@@ -58,86 +51,9 @@ class _MenuState extends State<Menu> {
       popupexpectativaCall();
     });
 
-    if(semana==1){ globalMyExpectativa = myClass.newExpectativa();}
-
-    adversarios();
-
-    setCampeonatoLogo();
+    adversario.getAdversario();
 
     setState(() {});
-  }
-
-  adversarios() {
-    //ADVERSARIO CAMPEONATO
-    if (Semana().isJogoCampeonatoNacional && semana < League(index: myClass.campeonatoID).nClubs) {
-      List chaves = Chaves().obterChave(semana, myClass.campeonatoID);
-      if (chaves.isNotEmpty) {
-        if (chaves.indexOf(myClass.posicaoChave) % 2 == 0) {
-          indexAdv = chaves[chaves.indexOf(myClass.posicaoChave) + 1];
-        } else {
-          indexAdv = chaves[chaves.indexOf(myClass.posicaoChave) - 1];
-          visitante = true;
-        }
-        adversarioClubID = League(index: myClass.campeonatoID).getClubRealIndex(indexAdv); //indice entre todos os clube
-        adversarioClubName = Club(index: adversarioClubID).name;
-        adversarioPosicao = Classification(leagueIndex: myClass.campeonatoID).getClubPosition(adversarioClubID);
-      }
-    }
-    //ADVERSARIO FASE DE GRUPOS CHAMPIONS OU LIBERTADORES
-    if (My().playingInternational.isNotEmpty && Semana().isJogoGruposInternacional) {
-      List chaves = Chaves().obterChave(semana, -1);
-      late int indexAdv; //0-4
-      int minhaPosicaoChave = myClass.getMyClubInternationalGroupPosition();
-      if (chaves.indexOf(minhaPosicaoChave) % 2 == 0) {
-        indexAdv = chaves[chaves.indexOf(minhaPosicaoChave) + 1];
-      } else {
-        indexAdv = chaves[chaves.indexOf(minhaPosicaoChave) - 1];
-        visitante = true;
-      }
-      int indexAdv032 = 4 * myClass.getMyClubInternationalGroup() + indexAdv;
-      if (myClass.playingInternational == LeagueOfficialNames().championsLeague) {
-        adversarioClubID = globalInternational32ClubsID[0][indexAdv032];
-      }
-      if (myClass.playingInternational == LeagueOfficialNames().libertadores) {
-        adversarioClubID = globalInternational32ClubsID[1][indexAdv032];
-      }
-      adversarioClubName = Club(index: adversarioClubID).name;
-      List clubsID = International(myClass.internationalLeagueName).getClassification();
-      int adversarioPosicao032 = clubsID.indexOf(adversarioClubID);
-      adversarioPosicao = (adversarioPosicao032 % 4)+1;
-    }
-    //FASE DE MATA-MATA
-    if (Semana().isJogoMataMataInternacional) {
-      try {
-        List listIDs = globalInternationalMataMataClubsID[myClass.internationalLeagueName][Semana().semanaStr];
-        if (listIDs.contains(myClass.clubID)) {
-          int myIndex = listIDs.indexOf(myClass.clubID);
-          if (myIndex % 2 == 0) {
-            indexAdv = myIndex + 1;
-          } else {
-            indexAdv = myIndex - 1;
-          }
-          adversarioClubID = listIDs[indexAdv];
-          adversarioClubName = Club(index: adversarioClubID).name;
-        }
-      } catch (e) {
-        print('Variavel: globalInternationalMataMataClubsID ainda nao criada');
-      }
-    }
-  }
-
-  setCampeonatoLogo(){
-    if(semanasJogosNacionais.contains(semana) && semana < League(index: My().campeonatoID).nClubs){
-      campeonatoLogo = FIFAImages().campeonatoLogo(myClass.campeonatoID);
-    }
-    else if(My().playingInternational.isNotEmpty  && Semana().isJogoGruposInternacional){
-      campeonatoLogo = FIFAImages().campeonatoInternacionalLogo(myClass.internationalLeagueName);
-    }else if(My().playingInternational.isNotEmpty  && Semana().isJogoMataMataInternacional){
-      campeonatoLogo = FIFAImages().campeonatoInternacionalLogo(myClass.internationalLeagueName);
-    }else {
-      campeonatoLogo = '';
-    }
-
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -169,7 +85,7 @@ class _MenuState extends State<Menu> {
                       children: [
 
                         //Escudo
-                        Image.asset('assets/clubs/${FIFAImages().imageLogo(myClass.clubName)}.png',height: 90,width: 90),
+                        Image.asset(Images().getMyEscudo(),height: 90,width: 90),
 
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -177,14 +93,14 @@ class _MenuState extends State<Menu> {
                             SizedBox(width:180,child: Text(myClass.clubName,textAlign: TextAlign.center,style: EstiloTextoBranco.text20)),
                             Text('\nAno: '+ ano.toString(),style: EstiloTextoBranco.text14),
                             Text('Semana: '+ semana.toString(),style: EstiloTextoBranco.text14),
-                            Text('Overall da Equipe: ' + Club(index: myClass.clubID).getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text14),
                             Text('Dinheiro: \$'+ myClass.money.toStringAsFixed(2)+'mi',style: EstiloTextoBranco.text14),
+                            Text('Overall da Equipe: ' + Club(index: myClass.clubID).getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text14),
                             Text('Valor da Equipe: \$' + myClass.getClubValue().toStringAsFixed(2)+'mi',style: EstiloTextoBranco.text14),
                           ],
                         ),
 
                         //UNIFORME
-                        Image.asset('assets/clubs/${FIFAImages().imageLogo(myClass.clubName)}1.png',height: 100,width: 100),
+                        Image.asset(Images().getMyUniform(),height: 100,width: 100),
 
                       ],
                     ),
@@ -196,8 +112,8 @@ class _MenuState extends State<Menu> {
                         children: [
 
                           menuButton('Jogar',(){
-                            if(adversarioClubName.isNotEmpty){
-                              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Play(adversarioClubID: adversarioClubID, visitante: visitante)));
+                            if(adversario.clubName.isNotEmpty){
+                              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Play(adversarioClubID: adversario.clubID, visitante: adversario.visitante)));
                             }else{
                               Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const NotPlay()));
                             }
@@ -249,7 +165,7 @@ class _MenuState extends State<Menu> {
                                 Expanded(
                                   child: menuButton('Internacional',(){
                                     //Mostra a competição internacional que o time está participando 1º
-                                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableInternational(leagueInternational: My().internationalLeagueName)));
+                                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableInternational(leagueInternational: My().getMyInternationalLeague())));
                                     }),
                                 ),
                                 Expanded(
@@ -277,14 +193,14 @@ class _MenuState extends State<Menu> {
                             children: [
                               const Text('Próximo Adversário',style: EstiloTextoBranco.text14),
                               //Escudo
-                              adversarioClubName.isNotEmpty ? Image.asset('assets/clubs/${FIFAImages().imageLogo(adversarioClubName)}.png',height: 50,width: 50) : Container(),
-                              adversarioClubName.isNotEmpty ? Text(adversarioClubName,style: EstiloTextoBranco.text14) : Container(),
-                              adversarioClubName.isNotEmpty
+                              adversario.clubName.isNotEmpty ? Image.asset('assets/clubs/${FIFAImages().imageLogo(adversario.clubName)}.png',height: 50,width: 50) : Container(),
+                              adversario.clubName.isNotEmpty ? Text(adversario.clubName,style: EstiloTextoBranco.text14) : Container(),
+                              adversario.clubName.isNotEmpty
                                   ? Semana().isJogoMataMataInternacional
                                       ? Text(Semana().semanaStr,style: EstiloTextoBranco.text14)
-                                  : Text('Posição: '+adversarioPosicao.toString()+'º',style: EstiloTextoBranco.text14)
+                                  : Text('Posição: '+adversario.posicao.toString()+'º',style: EstiloTextoBranco.text14)
                                   : Container(),
-                              adversarioClubName.isNotEmpty ? visitante ? const Text('Fora',style: EstiloTextoBranco.text14) : const Text('Casa',style: EstiloTextoBranco.text14) : Container(),
+                              adversario.clubName.isNotEmpty ? adversario.visitante ? const Text('Fora',style: EstiloTextoBranco.text14) : const Text('Casa',style: EstiloTextoBranco.text14) : Container(),
 
                             ],
                           ),
@@ -295,13 +211,13 @@ class _MenuState extends State<Menu> {
                             Text('Rodada: '+rodada.toString(),style: EstiloTextoBranco.text16),
                             const Text('Classificação',style: EstiloTextoBranco.text14),
                             Text(Classification(leagueIndex: myClass.campeonatoID).getClubPosition(myClass.clubID).toString()+'º',style: EstiloTextoBranco.text30),
-                            Text('Expectativa: '+myClass.getExpectativa().toString()+'ºlugar',style: EstiloTextoBranco.text14),
+                            Text('Expectativa: '+myClass.getLastYearExpectativa().toString()+'ºlugar',style: EstiloTextoBranco.text14),
                           ],
                         ),
 
                         //CAMPEONATO
-                        campeonatoLogo.isNotEmpty
-                            ? Image.asset(campeonatoLogo,height: 90,width: 90)
+                        Images().getMyCampeonatoLogo().isNotEmpty
+                            ? Image.asset(Images().getMyCampeonatoLogo(),height: 90,width: 90)
                             : const SizedBox(height: 90,width: 90),
                     ]),
 
@@ -311,7 +227,7 @@ class _MenuState extends State<Menu> {
                       child: Stack(
                         children: [
 
-                          Image.asset('assets/clubs/${FIFAImages().imageLogo(myClass.clubName)}0.jpg',height:  double.maxFinite, width: double.maxFinite,fit: BoxFit.fill,),
+                          Image.asset(Images().getMyStadium(),height:  double.maxFinite, width: double.maxFinite,fit: BoxFit.fill,),
 
                           Container(
                             alignment: Alignment.bottomLeft,

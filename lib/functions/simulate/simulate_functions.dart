@@ -76,10 +76,10 @@ class Simulate{
           List chave = Chaves().obterChave(rodada, leagueIndex);
           for (int nConfronto = 0; nConfronto < nClubs / 2; nConfronto++) {
             int chaveClub1 = chave[nConfronto * 2];
-            int indexTeam1 = leagueSelected.getClubRealIndex(chaveClub1);
+            int indexTeam1 = leagueSelected.getClubRealID(chaveClub1);
             int chaveClub2 = Chaves().chaveIndexAdvCampeonato(
                 rodada, leagueIndex, chaveClub1)[0];
-            int indexTeam2 = leagueSelected.getClubRealIndex(chaveClub2);
+            int indexTeam2 = leagueSelected.getClubRealID(chaveClub2);
 
             //Se não for meu jogo simula
             if (myCampeonatoID != leagueIndex ||

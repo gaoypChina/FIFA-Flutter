@@ -4,25 +4,29 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/functions/simulate/my_match/counter.dart';
 import 'package:fifa/functions/simulate/player_variables/origin/assists.dart';
 import 'package:fifa/functions/simulate/player_variables/origin/goal.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/pages/simulacao/play.dart';
 
 class MyMatchSimulation{
 
-  late int milis;
-  late int meuGolMarcado;
-  late int meuGolSofrido;
-  late int probGM;
-  late int probGS;
+  int milis=0;
+  int meuGolMarcado=0;
+  int meuGolSofrido=0;
+  int probGM=0;
+  int probGS=0;
   late List adversarioEscalacao;
   late My myClass;
+  late Club adversarioClubClass;
 
-  MyMatchSimulation(int milis,int meuGolMarcado,int meuGolSofrido){
-    funcMeuGol(0); //**ARRUMAR
+  MyMatchSimulation(this.myClass,this.adversarioClubClass){
+    adversarioEscalacao = adversarioClubClass.optimizeBestSquadClub();
   }
 
+  updateMilis(int milis){
+    this.milis = milis;
+  }
   golPorMinuto(PosturaDoTimeClass posturaDoTimeClass, double overallMy, double overallAdversario){
 
     //Define a probabilidade de marcar gol GM e de sofrer gol GS
@@ -109,16 +113,13 @@ class MyMatchSimulation{
   }
 
   updateHealth(Club myClubClass, Club adversarioClubClass){
-
     for(int i=0; i<11; i++){
       Jogador myJogador = Jogador(index: globalMyJogadores[i]);
       Jogador adversarioJogador = Jogador(index: adversarioClubClass.escalacao[i]);
 
       updateHealthPlayer(myJogador);
       updateHealthPlayer(adversarioJogador);
-
     }
-
   }
 
   updateHealthPlayer(Jogador player){
@@ -179,6 +180,53 @@ class MyMatchSimulation{
       if(overallEquipeA-overallEquipeB<=-4 && overallEquipeA-overallEquipeB>-6){probGM=12;probGS=26;}
       if(overallEquipeA-overallEquipeB<=-6)                                     {probGM=10;probGS=30;}}
 
+  }
+
+  endMatch(){
+    //VITORIA
+    if(Semana().isJogoCampeonatoNacional) {
+      if (meuGolMarcado > meuGolSofrido) {
+        globalClubsLeaguePoints[myClass.clubID] += 3;
+        globalMyLeagueLastResults.add(3);
+      }
+      //EMPATE
+      if (meuGolMarcado == meuGolSofrido) {
+        globalClubsLeaguePoints[myClass.clubID] += 1;
+        globalClubsLeaguePoints[adversarioClubClass.index] += 1;
+        globalMyLeagueLastResults.add(1);
+      }
+      //DERROTA
+      if (meuGolMarcado < meuGolSofrido) {
+        globalClubsLeaguePoints[adversarioClubClass.index] += 3;
+        globalMyLeagueLastResults.add(0);
+      }
+
+      globalClubsLeagueGM[myClass.clubID] += meuGolMarcado;
+      globalClubsLeagueGS[myClass.clubID] += meuGolSofrido;
+      globalClubsLeagueGM[adversarioClubClass.index] += meuGolSofrido;
+      globalClubsLeagueGS[adversarioClubClass.index] += meuGolMarcado;
+
+    }else if(Semana().isJogoCampeonatoInternacional){
+      if (meuGolMarcado > meuGolSofrido) {
+        globalClubsInternationalPoints[myClass.clubID] += 3;
+        globalMyLeagueLastResults.add(3);
+      }
+      //EMPATE
+      if (meuGolMarcado == meuGolSofrido) {
+        globalClubsInternationalPoints[myClass.clubID] += 1;
+        globalClubsInternationalPoints[adversarioClubClass.index] += 1;
+        globalMyLeagueLastResults.add(1);
+      }
+      //DERROTA
+      if (meuGolMarcado < meuGolSofrido) {
+        globalClubsInternationalPoints[adversarioClubClass.index] += 3;
+        globalMyLeagueLastResults.add(0);
+      }
+      globalClubsInternationalGM[myClass.clubID] += meuGolMarcado;
+      globalClubsInternationalGS[myClass.clubID] += meuGolSofrido;
+      globalClubsInternationalGM[adversarioClubClass.index] += meuGolSofrido;
+      globalClubsInternationalGS[adversarioClubClass.index] += meuGolMarcado;
+    }
   }
 
 }

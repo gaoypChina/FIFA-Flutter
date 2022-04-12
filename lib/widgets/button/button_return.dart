@@ -8,7 +8,7 @@ Widget returnButton(BuildContext context){
   return Container(
     alignment: Alignment.bottomRight,
     height: _height,
-    padding: const EdgeInsets.only(right: 12.0,bottom: 4),
+    padding: const EdgeInsets.only(bottom: 4),
     child:                     //VOLTAR
     customButtonContinue(
         title: 'VOLTAR',

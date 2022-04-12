@@ -1,7 +1,7 @@
 class LeagueOfficialNames{
-  String championsLeague = 'Champions';
-  String libertadores = 'Libertadores';
-  String resto = 'Resto do Mundo';
+  final String championsLeague = 'Champions';
+  final String libertadores = 'Libertadores';
+  final String resto = 'Resto do Mundo';
 
   String inglaterra1 = 'Premier League';  String inglaterra2 = 'Championship'; String inglaterra3 = 'Championship2';
   String italia1 = 'Serie A TIM';  String italia2 = 'Serie B TIM';

@@ -12,10 +12,13 @@ popUpExpectativa({required BuildContext context}){
   //Expectativa variables
 
   My myClass = My();
-  int expectativaPast = myClass.getExpectativa();
+
+  int expectativaPast = myClass.getLastYearExpectativa();
   int expectativa = myClass.newExpectativa();
+  globalMyExpectativa = myClass.newExpectativa();
+
   String expNacional = expectativa.toString()+'º';
-  String expCompInternacional = myClass.internationalLeagueName;
+  String expCompInternacional = myClass.getMyInternationalLeague();
   String expInternacional = '';
   if(expectativa <= 2){ expInternacional = Name().semifinal; }
   else if(expectativa < 4){ expInternacional = Name().quartas; }
@@ -67,7 +70,7 @@ popUpExpectativa({required BuildContext context}){
                     ? Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Image.asset(FIFAImages().campeonatoInternacionalLogo(myClass.internationalLeagueName),height: 35,width: 35),
+                    Image.asset(FIFAImages().campeonatoInternacionalLogo(myClass.getMyInternationalLeague()),height: 35,width: 35),
                     Text('$expCompInternacional:', style: EstiloTextoPreto.text14),
                     Text(expInternacional, style: EstiloTextoPreto.text14),
                   ],

@@ -19,7 +19,7 @@ bool alreadyChangedClubThisSeason = false;
 
 //SAVE
 int globalSaveNumber = 0;
-Map globalSaveData = {};
+Map globalSaveData = {}; //DATABASE DATA
 
 
 int globalDificuldade = 2;
@@ -49,9 +49,11 @@ Map globalHistoricLeagueClassification = {};
 Map globalHistoricInternationalClassification = {};
 
 Map globalHistoricMyClub = {};
+Map globalHistoricBestPlayers = {};
+Map globalHistoricTopScorers = {};
 
 //MATCH SIMULATION
-double matchVelocity = 100;
+double globalMatchVelocity = 100;
 List globalMatchGoalScorerIDMy = [];
 List globalMatchGoalScorerIDAdv = [];
 List globalMatchGoalsMinutesMy = [];
@@ -67,6 +69,8 @@ List globalJogadoresMatchHealth = [];
 //Jogadores
 //ALL Players Data
 int globalMaxPlayersPermitted = 14000;
+int globalMaxClubsPermitted = 500;
+
 List globalJogadoresIndex = [];
 List globalJogadoresName = [];
 List globalJogadoresClubIndex = [];
