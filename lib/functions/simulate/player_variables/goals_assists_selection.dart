@@ -19,6 +19,6 @@ class GoalAssistsSelection{
     Goal().saveGoalsInternational(jogadorID);
 
     jogadorID = Assists().setAssists(clubClass);
-    Assists().saveAssistsNational(jogadorID);
+    Assists().saveAssistsInternational(jogadorID);
   }
 }

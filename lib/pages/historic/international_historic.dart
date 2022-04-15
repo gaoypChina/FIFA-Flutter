@@ -1,6 +1,8 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/pages/historic/historic.dart';
+import 'package:fifa/pages/historic/my_historic.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
@@ -21,6 +23,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
   List<String> possibleYears = [];
   String selectedYear = anoInicial.toString();
   String leagueInternational = LeagueOfficialNames().championsLeague;
+  bool isMataMata = false;
 
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -37,7 +40,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
         body:  Stack(
             children: [
 
-              Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
+              Images().getWallpaper(),
 
               Column(
                 children: [
@@ -51,6 +54,8 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                         internationalLogoSelection(),
                         const SizedBox(width: 6),
                         dropDownButton(),
+                        const SizedBox(width: 6),
+                        phaseSelection(),
                       ],
                     ),
                   ),
@@ -60,7 +65,9 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
                           children: [
-                                internationalInternationalHistoricColumn(int.parse(selectedYear),leagueInternational),
+                                isMataMata
+                                    ? internationalHistoricColumn(int.parse(selectedYear),leagueInternational)
+                                    : groupsClassificationColumn(int.parse(selectedYear),leagueInternational),
                           ],
                         ),
                       ),
@@ -128,37 +135,56 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
       ),
     );
   }
+  Widget phaseSelection(){
+    return GestureDetector(
+      onTap: (){
+        isMataMata = !isMataMata;
+        setState(() { });
+      },
+      child: Container(
+        height: 60,
+        decoration: BoxDecoration(
+          color:Colors.white, //background color of dropdown button
+          border: Border.all(color: Colors.black38, width:2), //border of dropdown button
+          borderRadius: BorderRadius.circular(10),
+        ),
+        padding: const EdgeInsets.all(4.0),
+        alignment: Alignment.center,
+        child: isMataMata ? const Text('MATA-MATA',style: EstiloTextoPreto.text20)
+        : const Text('FASE DE GRUPOS',style: EstiloTextoPreto.text20),
+      ),
+    );
+  }
   Widget internationalLogoSelection(){
     return Container(
+      height: 60,
       decoration: BoxDecoration(
         color:Colors.white, //background color of dropdown button
         border: Border.all(color: Colors.black38, width:2), //border of dropdown button
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(4.0),
-        child: Column(
-          children: [
-            //LIBERTADORES OU CHAMPIONS LEAGUE
-            leagueInternational == LeagueOfficialNames().championsLeague ? GestureDetector(
-                onTap: (){
-                  leagueInternational = LeagueOfficialNames().libertadores;
-                  setState(() {});
-                },
-                child: Image.asset(FIFAImages().campeonatoInternacionalLogo(LeagueOfficialNames().championsLeague),width: 50,height: 50)
-            ): GestureDetector(
-                onTap: (){
-                  leagueInternational = LeagueOfficialNames().championsLeague;
-                  setState(() {});
-                },
-                child: Image.asset(FIFAImages().campeonatoInternacionalLogo(LeagueOfficialNames().libertadores),width: 50,height: 50)
-            ),
-          ],
-        ),
+      padding: const EdgeInsets.all(3.0),
+      child: Column(
+        children: [
+          //LIBERTADORES OU CHAMPIONS LEAGUE
+          leagueInternational == LeagueOfficialNames().championsLeague ? GestureDetector(
+              onTap: (){
+                leagueInternational = LeagueOfficialNames().libertadores;
+                setState(() {});
+              },
+              child: Image.asset(FIFAImages().campeonatoInternacionalLogo(LeagueOfficialNames().championsLeague),width: 50,height: 50)
+          ): GestureDetector(
+              onTap: (){
+                leagueInternational = LeagueOfficialNames().championsLeague;
+                setState(() {});
+              },
+              child: Image.asset(FIFAImages().campeonatoInternacionalLogo(LeagueOfficialNames().libertadores),width: 50,height: 50)
+          ),
+        ],
       ),
     );
   }
-  Widget internationalInternationalHistoricColumn(int ano,String internationalLeagueName){
+  Widget internationalHistoricColumn(int ano,String internationalLeagueName){
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -166,32 +192,32 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
         Text(Name().finale.toUpperCase(),style: EstiloTextoBranco.text14),
         for(int idaVolta=0;idaVolta<1;idaVolta++)
           for(int i=0;i<2;i+=2)
-            internationalInternationalHistoricRow(internationalLeagueName,Name().finale, i, idaVolta, ano),
+            internationalHistoricRow(internationalLeagueName,Name().finale, i, idaVolta, ano),
 
         const Text('',style: EstiloTextoBranco.text16),
         Text(Name().semifinal.toUpperCase(),style: EstiloTextoBranco.text14),
         for(int idaVolta=0;idaVolta<2;idaVolta++)
           for(int i=0;i<4;i+=2)
-            internationalInternationalHistoricRow(internationalLeagueName,Name().semifinal, i, idaVolta, ano),
+            internationalHistoricRow(internationalLeagueName,Name().semifinal, i, idaVolta, ano),
 
         const Text('',style: EstiloTextoBranco.text16),
         Text(Name().quartas.toUpperCase(),style: EstiloTextoBranco.text14),
         for(int idaVolta=0;idaVolta<2;idaVolta++)
           for(int i=0;i<8;i+=2)
-            internationalInternationalHistoricRow(internationalLeagueName,Name().quartas, i, idaVolta, ano),
+            internationalHistoricRow(internationalLeagueName,Name().quartas, i, idaVolta, ano),
 
         const Text('',style: EstiloTextoBranco.text16),
         Text(Name().oitavas.toUpperCase(),style: EstiloTextoBranco.text14),
         for(int idaVolta=0;idaVolta<2;idaVolta++)
           for(int i=0;i<16;i+=2)
-            internationalInternationalHistoricRow(internationalLeagueName,Name().oitavas, i, idaVolta, ano),
+            internationalHistoricRow(internationalLeagueName,Name().oitavas, i, idaVolta, ano),
 
         const Text('',style: EstiloTextoBranco.text16),
         const Text('',style: EstiloTextoBranco.text16),
       ],
     );
   }
-  Widget internationalInternationalHistoricRow(String internationalLeague, String phase, int position, int idaVolta, int ano){
+  Widget internationalHistoricRow(String internationalLeague, String phase, int position, int idaVolta, int ano){
     Map map = globalHistoricInternationalGoalsAll[ano][internationalLeague][phase];
 
     int clubID1 = map.keys.elementAt(position);
@@ -216,7 +242,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset('assets/clubs/${FIFAImages().imageLogo(clubName1)}.png',height: 25,width: 25),
+          Image.asset(Images().getEscudo(clubName1),height: 25,width: 25),
           Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -234,9 +260,78 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
               ],
             ),
           ),
-          Image.asset('assets/clubs/${FIFAImages().imageLogo(clubName2)}.png',height: 25,width: 25),
+          Image.asset(Images().getEscudo(clubName2),height: 25,width: 25),
         ],
       ),
+    );
+  }
+
+  Widget groupsClassificationColumn(int ano,String internationalLeagueName){
+    List clubsID = globalHistoricInternationalClassification[ano][internationalLeagueName];
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Flexible(
+          child: Column(
+            children: [
+              for(int i=0; i< clubsID.length/2; i++)
+                Padding(
+                  padding: EdgeInsets.only(top: i%4==0 ? 16.0 : 0),
+                  child: Column(
+                    children: [
+                      i%4==0 ? Text('Grupo ${(i/4+1).floor()}',style: EstiloTextoBranco.text16) : Container(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Image.asset(Images().getEscudo(Club(index: clubsID[i]).name),width: 25,height: 25),
+                          Container(
+                            width: 140,
+                            color: Club(index: clubsID[i]).name == My().clubName
+                                ? Colors.teal
+                                : i%4==0 || i%4==1 ? Colors.deepPurple
+                                : Colors.transparent,
+                              child: Text(Club(index: clubsID[i]).name,style: EstiloTextoBranco.text16),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                )
+
+            ],
+          ),
+        ),
+
+        Flexible(
+          child: Column(
+            children: [
+              for(int i=(clubsID.length/2).round(); i< clubsID.length; i++)
+                Padding(
+                  padding: EdgeInsets.only(top: i%4==0 ? 16.0 : 0),
+                  child: Column(
+                    children: [
+                      i%4==0 ? Text('Grupo ${(i/4+1).floor()}',style: EstiloTextoBranco.text16) : Container(),
+                      Row(
+                        children: [
+                          Image.asset(Images().getEscudo(Club(index: clubsID[i]).name),width: 25,height: 25),
+                          Container(
+                            width: 140,
+                            color: Club(index: clubsID[i]).name == My().clubName
+                                ? Colors.teal
+                                : i%4==0 || i%4==1 ? Colors.deepPurple
+                                : Colors.transparent,
+                            child: Text(Club(index: clubsID[i]).name,style: EstiloTextoBranco.text16),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                )
+
+            ],
+          ),
+        ),
+      ],
     );
   }
 

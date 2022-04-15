@@ -2,7 +2,6 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/chaves.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/league_clubs.dart';
-import 'package:fifa/functions/globalfunctions.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/league_names.dart';
 
@@ -17,7 +16,7 @@ class MatchResultInternational{
   bool isAlreadyPlayed = false;
 
   MatchResultInternational({required int rodadaNumber, required int groupNumber, required int nConfronto, required String competitionName}){
-    int internationalIndex = GlobalFunctions().getInternationalLeagueNumber(competitionName); //0,1
+    int internationalIndex = getInternationalLeagueNumber(competitionName); //0,1
       //PRA CHAMPIONS E PARA A LIBERTADORES
       int semanaDoJogo = semanasGruposInternacionais[rodadaNumber];
       List chave = Chaves().obterChave(semanaDoJogo, 0);

@@ -10,12 +10,12 @@ class SharedPreferenceHelper {
     return prefs.setInt('sharedSaveNumber', integer);
   }
  ////////LIST
-  Future<bool> saveDatabase() async {
+  Future<bool> savePlayersDatabase() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.setString('sharedSaveContentKEY', jsonEncode(globalSaveData.toString())); // Encode the list here
   }
 
-  getDatabase() async {// Encode the list here
+  getPlayersDatabase() async {// Encode the list here
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? value = prefs.getString('sharedSaveContentKEY');
     value = value!.replaceAll("\"", '');
@@ -54,7 +54,7 @@ class SharedPreferenceHelper {
         }
         listaTemp.add(listaTempStrings);
       }
-      globalSaveData[saveListNumber[numberSave]] = listaTemp;
+      globalSaveData[saveListNumber[numberSave]] = List.from(listaTemp);
     }
 /*
     globalSaveData[1][0] = listOficial[1][0];//nome

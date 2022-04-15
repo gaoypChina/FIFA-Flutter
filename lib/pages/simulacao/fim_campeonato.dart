@@ -1,7 +1,7 @@
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/values/images.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/widgets/table_widget.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -55,7 +55,7 @@ class _FimCampeonatoState extends State<FimCampeonato> {
                       children: [
 
                         //Escudo
-                        Image.asset('assets/clubs/${FIFAImages().imageLogo(myClub.clubName)}.png',height: 60,width: 60),
+                        Image.asset(Images().getMyEscudo(),height: 60,width: 60),
 
                         const SizedBox(width: 10),
 

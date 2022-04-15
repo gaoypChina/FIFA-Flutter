@@ -18,8 +18,9 @@ int globalCoachPoints = 0;
 bool alreadyChangedClubThisSeason = false;
 
 //SAVE
+const globalMaxSavesPermitted = 1;
 int globalSaveNumber = 0;
-Map globalSaveData = {}; //DATABASE DATA
+Map globalSaveData = {}; //DATABASE PLAYERS DATA
 
 
 int globalDificuldade = 2;
@@ -54,6 +55,7 @@ Map globalHistoricTopScorers = {};
 
 //MATCH SIMULATION
 double globalMatchVelocity = 100;
+int globalMatchSubstitutionsLeft = 3;
 List globalMatchGoalScorerIDMy = [];
 List globalMatchGoalScorerIDAdv = [];
 List globalMatchGoalsMinutesMy = [];

@@ -10,6 +10,8 @@ import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:flutter/material.dart';
 
+import '../../classes/my.dart';
+
 class TableInternationalScorers extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
   final String leagueInternational;
@@ -115,12 +117,15 @@ class _TableInternationalScorersState extends State<TableInternationalScorers> {
     Jogador player = Jogador(index: playerID);
     return Row(
       children: [
-          i<10
-              ? Text('  ${i.toString()}- ',style: EstiloTextoBranco.text16)
-              : Text('${i.toString()}- ',style: EstiloTextoBranco.text16),
+          i+1<10
+              ? Text('  ${(i+1).toString()}- ',style: EstiloTextoBranco.text16)
+              : Text('${(i+1).toString()}- ',style: EstiloTextoBranco.text16),
           Image.asset('assets/clubs/${FIFAImages().imageLogo(player.clubName)}.png',height: 25,width:25),
           const SizedBox(width: 6),
-          SizedBox(width:200,child: Text(player.name,style: EstiloTextoBranco.text16)),
+          Container(
+              width:200,
+              color: player.clubID == My().clubID ? Colors.teal : Colors.transparent,
+              child: Text(player.name,style: EstiloTextoBranco.text16)),
           SizedBox(width:20,child: Text(player.matchsInternational.toString(),style: EstiloTextoBranco.text16)),
           const SizedBox(width: 6),
           SizedBox(width:20,child: Text(player.goalsInternational.toString(),style: EstiloTextoBranco.text16)),

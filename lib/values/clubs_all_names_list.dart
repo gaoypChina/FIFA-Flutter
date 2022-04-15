@@ -91,7 +91,7 @@ List clubsAllNameList = [
   ClubName().colon,  ClubName().defensayjusticia,  ClubName().estudiantes,  ClubName().independiente,
   ClubName().lanus,  ClubName().newells,  ClubName().racing,  ClubName().riverplate,
   ClubName().rosariocentral,  ClubName().sanlorenzo,  ClubName().talleres,  ClubName().velezsarsfield,
-  ClubName().huracan,
+  ClubName().huracan,ClubName().gimnasia,ClubName().unionSantaFe,ClubName().godoyCruz,
 
   ClubName().penarol,  ClubName().nacional,  ClubName().olimpia,  ClubName().univcatolica,
   ClubName().libertad,  ClubName().colocolo,  ClubName().lau,  ClubName().cerroporteno,
@@ -99,6 +99,7 @@ List clubsAllNameList = [
   ClubName().barcelonaequ,  ClubName().emelec,  ClubName().ldu,  ClubName().caracas,
   ClubName().alianzalima,ClubName().deportivoTachira,ClubName().universitario,ClubName().guaraniPAR,
   ClubName().theStrongest,ClubName().montevideo,ClubName().jorge,ClubName().alwaysReady,
+  ClubName().palestino,
 
   ClubName().americadecali,  ClubName().atleticonacional, ClubName().deportivocali,  ClubName().junior,
   ClubName().imedellin,  ClubName().oncecaldas, ClubName().millonarios,  ClubName().santafe,
@@ -106,6 +107,8 @@ List clubsAllNameList = [
 
   ClubName().americamex,  ClubName().chivasguadalajara, ClubName().cruzazul,  ClubName().monterrey,
   ClubName().pachuca,  ClubName().pumas, ClubName().tigres,  ClubName().toluca,
+  ClubName().tijuana,  ClubName().santosLaguna, ClubName().puebla,  ClubName().necaxa,
+  ClubName().atlas,  ClubName().queretaro,
 
   ClubName().atlantaunited,  ClubName().columbuscrew, ClubName().dcunited,  ClubName().fcdallas,
   ClubName().intermiami,  ClubName().losangelesfc, ClubName().lagalaxy,  ClubName().minnesota,

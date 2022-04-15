@@ -38,8 +38,8 @@ class Club{
     leagueGM = globalClubsLeagueGM.isNotEmpty ? globalClubsLeagueGM[index] : 0;
     leagueGS = globalClubsLeagueGS.isNotEmpty ? globalClubsLeagueGS[index] : 0;
 
-    internationalLeagueName = funcGetInternationalLeagueName(indexLeague: leagueID);
-    internationalLeagueIndex = funcGetInternationalLeagueIndex(internationalLeagueName: internationalLeagueName);
+    internationalLeagueName = InternationalLeagueManipulation().funcGetInternationalLeagueName(indexLeague: leagueID);
+    internationalLeagueIndex = InternationalLeagueManipulation().funcGetInternationalLeagueIndex(internationalLeagueName: internationalLeagueName);
     try{
       internationalPoints = globalClubsInternationalPoints[index];
       internationalGM = globalClubsInternationalGM[index];
@@ -91,10 +91,10 @@ class Club{
     double ovr = 0;
     for (int i=0; i<11;i++) {
         if(index == globalMyClubID){//if is My Team
-            ovr += double.parse(globalJogadoresOverall[globalMyJogadores[i]].toString());
+            ovr += double.parse(Jogador(index: globalMyJogadores[i]).overall.toString());
           }else{
           try{
-            ovr += double.parse(globalJogadoresOverall[escalacao[i]].toString());
+            ovr += double.parse(Jogador(index: escalacao[i]).overall.toString());
           }catch(e){
             //print('$index $name $jogadores');
           }

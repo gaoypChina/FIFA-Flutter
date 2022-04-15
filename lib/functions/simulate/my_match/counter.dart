@@ -25,46 +25,31 @@ class CounterMatch extends ChangeNotifier{
   int milis = 0;
   late My myClass;
   late Club adversarioClubClass;
+  late Club myClubClass;
   bool finishedMatch = false;
   late MyMatchSimulation myMatchSimulation;
   late PosturaDoTimeClass posturaDoTime;
 
   start(My myClass,Club adversarioClubClass, MyMatchSimulation myMatchSimulation, PosturaDoTimeClass posturaDoTime){
     this.myClass = myClass;
+    myClubClass = Club(index: myClass.clubID);
     this.adversarioClubClass = adversarioClubClass;
     this.myMatchSimulation = myMatchSimulation;
     this.posturaDoTime = posturaDoTime;
   }
 
   simulateMinute () async {
-    Club myClubClass = Club(index: myClass.clubID);
+
+    //ANTES DE COMEÇAR O JOGO
+    if(milis==0){
+      CardsInjury().setMinus1InjuryRedYellowCardAllTeam(myClubClass);
+      CardsInjury().setMinus1InjuryRedYellowCardAllTeam(adversarioClubClass);
+    }
 
       milis+=1;
       if(milis>90){
         milis = 90;
-        if(!finishedMatch){
-          myMatchSimulation.endMatch(); //set vitoria, empate ou derrota
-
-          premiacao(); //dinheiro
-
-          //update poe +1 match pros meus jogadores
-          UpdatePlayerVariableMatch().update(myClubClass);
-          UpdatePlayerVariableMatch().update(adversarioClubClass);
-
-          CardsInjury().setMinus1InjuryRedYellowCardAllTeam(myClubClass);
-          CardsInjury().setMinus1InjuryRedYellowCardAllTeam(adversarioClubClass);
-
-          //salva resultado no histórico
-          if(Semana().isJogoCampeonatoNacional){
-            SaveMatchHistoric().setHistoricGoalsLeagueMy(myMatchSimulation);
-          }else if(Semana().isJogoGruposInternacional){
-            SaveMatchHistoric().setHistoricGoalsGruposInternational(myClass.getMyInternationalLeague(), myClass.clubID, adversarioClubClass.index,myMatchSimulation.meuGolMarcado, myMatchSimulation.meuGolSofrido);
-          }else if(Semana().isJogoMataMataInternacional){
-            SaveMatchHistoric().setHistoricGoalsMataMataInternational(myClass.getMyInternationalLeague(), myClass.clubID, adversarioClubClass.index,myMatchSimulation.meuGolMarcado, myMatchSimulation.meuGolSofrido);
-          }
-
-          finishedMatch = true;
-        }
+        endOfMatch();
       }else{
         //ATUALIZAÇÃO DE PARAMENTROS DA SIMULAÇAO
         myMatchSimulation.updateMilis(milis);
@@ -75,5 +60,33 @@ class CounterMatch extends ChangeNotifier{
 
         notifyListeners();
       }
+  }
+
+  endOfMatch(){
+    Club myClubClass = Club(index: myClass.clubID);
+    if(!finishedMatch){
+      myMatchSimulation.endMatch(); //set vitoria, empate ou derrota
+
+      premiacao(); //dinheiro
+
+      //update poe +1 match pros meus jogadores
+      UpdatePlayerVariableMatch().update(myClubClass);
+      UpdatePlayerVariableMatch().update(adversarioClubClass);
+
+      //salva resultado no histórico
+      saveHistoricResults();
+
+      finishedMatch = true;
+    }
+  }
+
+  saveHistoricResults(){
+    if(Semana().isJogoCampeonatoNacional){
+      SaveMatchHistoric().setHistoricGoalsLeagueMy(myMatchSimulation);
+    }else if(Semana().isJogoGruposInternacional){
+      SaveMatchHistoric().setHistoricGoalsGruposInternational(myClass.getMyInternationalLeague(), myClass.clubID, adversarioClubClass.index,myMatchSimulation.meuGolMarcado, myMatchSimulation.meuGolSofrido);
+    }else if(Semana().isJogoMataMataInternacional){
+      SaveMatchHistoric().setHistoricGoalsMataMataInternational(myClass.getMyInternationalLeague(), myClass.clubID, adversarioClubClass.index,myMatchSimulation.meuGolMarcado, myMatchSimulation.meuGolSofrido);
+    }
   }
 }

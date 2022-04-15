@@ -1,7 +1,6 @@
-import 'package:fifa/functions/func_change_club.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/images.dart';
-import 'package:fifa/page_controller/change_club_control.dart';
+import 'package:fifa/functions/change_club_control.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';

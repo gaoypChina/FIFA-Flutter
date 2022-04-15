@@ -19,7 +19,7 @@ class ResultGameNacional{
   String placar = '';
   Color backgroundColor = Colors.black12;
 
-  ResultGameNacional({required int rodadaLocal, required int clubID}){
+  ResultGameNacional({required int rodadaLocal, required this.clubID}){
 
     club = Club(index: clubID);
     List list = Chaves().chaveIndexAdvCampeonato(rodadaLocal,club.leagueID, club.getChaveLeague());//index 0-16
@@ -30,7 +30,7 @@ class ResultGameNacional{
     clubIDAdv = clubsAllNameList.indexOf(clubNameAdv);
 
     //SÓ MOSTRA PARA RODADAS QUE JÁ ACONTECERAM
-    if(rodadaLocal<rodada || semana >= semanasJogosNacionais[league.nClubs-2]){
+    if(rodadaLocal<rodada || semana > semanasJogosNacionais[league.nClubs-2]){
       //rodadaLocal começa em 1 por isso subtrai 1
 
       int chaveClub1 = Chaves().chaveIndexAdvCampeonato(rodadaLocal, club.leagueID, chaveClubAdv)[0];

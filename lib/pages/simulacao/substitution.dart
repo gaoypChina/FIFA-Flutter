@@ -1,10 +1,13 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
+import 'package:fifa/classes/match.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
-import 'package:fifa/values/images.dart';
+import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
-import 'package:fifa/widgets/field_static.dart';
+import 'package:fifa/widgets/field_size.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
@@ -17,13 +20,13 @@ class Substitution extends StatefulWidget {
 
 class _SubstitutionState extends State<Substitution> {
 
+  My my = My();
   int dragPlayer = -1;
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    My my = My();
     Club myClub = Club(index: my.clubID);
 
     return Scaffold(
@@ -32,23 +35,18 @@ class _SubstitutionState extends State<Substitution> {
         body:  Stack(
             children: [
 
-              Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
+              Images().getWallpaper(),
 
               Column(
                 children: [
 
                   const SizedBox(height: 40),
                   const Text('Substituição',style: EstiloTextoBranco.text30),
+                  Text('${globalMatchSubstitutionsLeft.toString()} restantes',style: EstiloTextoBranco.text16),
 
                   const SizedBox(height: 8),
-                  Stack(
-                    children: [
-                      //Estádio
-                      Image.asset('assets/clubs/${FIFAImages().imageLogo(My().clubName)}0.jpg',height: 420,width: double.infinity,fit:BoxFit.fill),
-
-                      fieldGameplay442(My().clubID),
-
-                    ],
+                  fieldSizeWidget(
+                      fieldGameplay442(),
                   ),
 
                   const Text('Reservas',style: EstiloTextoBranco.text20),
@@ -64,6 +62,26 @@ class _SubstitutionState extends State<Substitution> {
                           return draggable(my.jogadores[index]);
                         }
                     ),
+                  ),
+
+                  const Text('Estratégias',style: EstiloTextoBranco.text20),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: const [
+                      Text('Contra-Atacar',style: EstiloTextoBranco.text12),
+                      Text('Bola Aérea',style: EstiloTextoBranco.text12),
+                      Text('Pressionar',style: EstiloTextoBranco.text12),
+                    ],
+                  ),
+                  const SizedBox(height: 6),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: const [
+                      Text('Marcação Alta',style: EstiloTextoBranco.text12),
+                      Text('Posse de bola',style: EstiloTextoBranco.text12),
+                      Text('Solidez Defensiva',style: EstiloTextoBranco.text12),
+                    ],
                   ),
 
                   const Spacer(),
@@ -102,15 +120,59 @@ class _SubstitutionState extends State<Substitution> {
       onDragCompleted: (){dragPlayer=-1;},
     );
   }
+  Widget draggableTarget(int playerTargetID){
+    return DragTarget(
+      builder: (BuildContext context,
+          List<dynamic> accepted,
+          List<dynamic> rejected,){
+        return playerWidgetOVR(playerTargetID);
+      },
+      onAccept: (data){
+        if(globalMatchSubstitutionsLeft>0){
+          int playerIDData = int.parse(data.toString());
+          int finalPosition1 = globalMyJogadores.indexOf(playerIDData);
+          int finalPosition2 = globalMyJogadores.indexOf(playerTargetID);
+
+          Match matchClass1 = Match(playerID: playerIDData);
+          Match matchClass2 = Match(playerID: playerIDData);
+          if(matchClass1.redCard==0 && matchClass2.redCard == 0){
+              //Troca Jogadores
+              globalMyJogadores[finalPosition1] = playerTargetID;
+              globalMyJogadores[finalPosition2] = playerIDData;
+
+              //-1 Substituição possivel
+              if (finalPosition1 > 10 || finalPosition2 > 10) {
+                globalMatchSubstitutionsLeft--;
+              }
+
+              setState(() {});
+          }else {
+            customToast('Jogadores expulsos não podem ser substítuidos');
+          }
+        }else{
+          customToast('Sem substituições restantes');
+        }
+      },
+    );
+  }
 
   Widget playerWidgetOVR(int playerIndex){
     Jogador player = Jogador(index: playerIndex);
 
+    Match matchClass = Match(playerID: playerIndex);
+
     String name = player.name;
     String position = player.position;
     double imageSize = 50;
+    bool yellowCard = matchClass.yellowCard>0;
+    bool redCard = matchClass.redCard>0;
+    bool injury = matchClass.injury>0;
+    bool goal = matchClass.goals>0;
+    double healthBar = matchClass.health;
 
     String circleShow = player.overall.toStringAsFixed(0);
+
+    if(injury || redCard){healthBar=0;}
 
     return GestureDetector(
       onTap:(){
@@ -131,9 +193,27 @@ class _SubstitutionState extends State<Substitution> {
                   (player.injury >0 || player.redCard >0)
                       ? Opacity(
                       opacity: 0.4,
-                      child: Image.asset('assets/clubs/${FIFAImages().imageLogo(My().clubName)}1.png')
+                      child: Image.asset(Images().getUniform(player.clubName))
                   )
-                      : Image.asset('assets/clubs/${FIFAImages().imageLogo(My().clubName)}1.png'),
+                      : Image.asset(Images().getUniform(player.clubName)),
+
+                  //GOL
+                  Container(
+                    alignment: Alignment.topRight,
+                    child: Container(
+                      height: 12,
+                      width: 12,
+                      margin: const EdgeInsets.all(4),
+                      color: yellowCard ? Colors.yellow : redCard ? Colors.red : Colors.transparent,
+                    ),
+                  ),
+
+                  //BOLA
+                  goal ? Container(
+                      alignment: Alignment.bottomRight,
+                      child: Image.asset('assets/icons/bola.png',height: 20,width: 20)
+                  )
+                      : Container(),
 
                   //CIRCULO
                   Container(
@@ -162,6 +242,15 @@ class _SubstitutionState extends State<Substitution> {
                 ],
               ),
             ),
+            //Barra de saúde
+            SizedBox(
+              width: imageSize+7,
+              child: LinearProgressIndicator(
+                value: healthBar,
+                color: Colors.teal,
+                backgroundColor: Colors.grey,
+              ),
+            ),
             //Nome do jogador
             Container(
                 color: AppColors().greyTransparent,
@@ -175,4 +264,55 @@ class _SubstitutionState extends State<Substitution> {
     );
   }
 
+  Widget fieldGameplay442(){
+    return fieldSizeWidget(
+        Column(
+          children: [
+            //ATACANTES
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                playerWidget(my.jogadores[9]),
+                playerWidget(my.jogadores[10]),
+              ],
+            ),
+            //MEIAS
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                playerWidget(my.jogadores[7]),
+                playerWidget(my.jogadores[8]),
+              ],
+            ),
+            //VOLANTES
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                playerWidget(my.jogadores[5]),
+                playerWidget(my.jogadores[6]),
+              ],
+            ),
+            //ZAGUEIROS
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                playerWidget(my.jogadores[1]),
+                playerWidget(my.jogadores[2]),
+                playerWidget(my.jogadores[3]),
+                playerWidget(my.jogadores[4]),
+              ],
+            ),
+
+            //GOLEIRO
+            playerWidget(my.jogadores[0]),
+
+          ],
+        )
+    );
+
+  }
+
+  Widget playerWidget(int playerID){
+    return dragPlayer<0 ? draggable(playerID): draggableTarget(playerID);
+  }
 }

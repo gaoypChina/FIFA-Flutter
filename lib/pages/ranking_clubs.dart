@@ -1,4 +1,3 @@
-import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
@@ -10,7 +9,6 @@ import 'package:fifa/values/images.dart';
 import 'package:flutter/material.dart';
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 import '../values/images.dart';
-import '../values/league_names.dart';
 import 'club_profile.dart';
 
 class RankingClubs extends StatefulWidget {

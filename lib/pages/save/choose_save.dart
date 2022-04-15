@@ -1,4 +1,5 @@
-import 'package:fifa/global_variables.dart';
+import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/classes/my.dart';
 import 'package:fifa/pages/save/save.dart';
 import 'package:fifa/pages/save/upload.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -20,55 +21,49 @@ class _ChooseSaveState extends State<ChooseSave> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    //double _height = MediaQuery.of(context).size.height;
 
-    return WillPopScope(//IF GO BACK TO PREVIOUS PAGE
-      onWillPop: () async{
-        return true;
-      },
-      child: Scaffold(
+    return Scaffold(
 
-          resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
-          body:  Stack(
-              children: [
+        resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
+        body:  Stack(
+            children: [
 
-                Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
+              Images().getWallpaper(),
 
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
 
-                    const SizedBox(height: 100),
+                  const SizedBox(height: 100),
 
-                    Text('Pontos: ${globalCoachPoints.toString()}',style:EstiloTextoBranco.text16),
+                  Text('Pontos: ${My().scoreGame}',style:EstiloTextoBranco.text16),
 
-                    const SizedBox(height: 10),
-                    customButtonContinue(
-                        title: 'Salvar',
-                        function: (){
-                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Save()));
-                        }
-                    ),
+                  const SizedBox(height: 10),
+                  customButtonContinue(
+                      title: 'Salvar',
+                      function: (){
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Save()));
+                      }
+                  ),
 
-                    const SizedBox(height: 10),
-                    customButtonContinue(
-                        title: 'Carregar',
-                        function: (){
-                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Upload()));
-                        }
-                    ),
+                  const SizedBox(height: 10),
+                  customButtonContinue(
+                      title: 'Carregar',
+                      function: (){
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Upload()));
+                      }
+                  ),
 
-                    const SizedBox(height: 100),
+                  const SizedBox(height: 100),
 
-                  ],
-                ),
+                ],
+              ),
 
-            //BOTAO DE VOLTAR
-            returnButton(context),
+          //BOTAO DE VOLTAR
+          returnButton(context),
 
-              ]
-          )
-      ),
+            ]
+        )
     );
   }
 ////////////////////////////////////////////////////////////////////////////

@@ -22,6 +22,8 @@ class MyMatchSimulation{
 
   MyMatchSimulation(this.myClass,this.adversarioClubClass){
     adversarioEscalacao = adversarioClubClass.optimizeBestSquadClub();
+    //reseta Substituicoes
+    globalMatchSubstitutionsLeft = 3;
   }
 
   updateMilis(int milis){

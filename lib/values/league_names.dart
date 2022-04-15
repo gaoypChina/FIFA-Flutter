@@ -13,10 +13,23 @@ class LeagueOfficialNames{
 
   String brasil1 = 'Brasileirão';  String brasil2 = 'Brasileirão - Série B';String brasil3 = 'Brasileirão - Série C';
   String paulistao = 'Paulistão';
-  String argentina = 'Campeonato Argentino';String sulamericano = 'Sul-Americano';String colombiaMexico = 'Liga Colombia MX';
-  String estadosUnidos = 'MLS';
+  String argentina = 'Campeonato Argentino';String sulamericano = 'Sul-Americano';String colombia = 'Merconorte';
+  String mexico = 'Liga MX';String estadosUnidos = 'MLS';
   String asia = 'Liga Ásia';  String orienteMedio = 'Liga Oriente Médio';  String africa = 'Liga África';
   String outros = 'Outros';
+}
+
+getInternationalLeagueNumber(String internationalLeague){
+  if(internationalLeague == LeagueOfficialNames().championsLeague){
+    return 0;
+  }
+  if(internationalLeague == LeagueOfficialNames().libertadores){
+    return 1;
+  }
+  if(internationalLeague == LeagueOfficialNames().resto){
+    return 2;
+  }
+  return -1;
 }
 
 List internationalLeagueNames = [LeagueOfficialNames().championsLeague,LeagueOfficialNames().libertadores];
@@ -26,7 +39,7 @@ List internationalLeagueNames = [LeagueOfficialNames().championsLeague,LeagueOff
 //ID<50 -> Champions League
 //ID<70 -> Libertadores
 List leaguesListRealIndex = [
-  1,2,5, 7,8,  9,11,15,20,21,  50,51,52,60,61,  62,70, 80, 85, 90
+  1,2,5, 7,8,  9,11,15,20,21,  50,51,52,60,61,62,  70,71, 80, 85, 90
 ];
 
 List getAvailableLeaguesNames(){
@@ -51,8 +64,8 @@ List leagueNames = [
   LeagueOfficialNames().ligaEuropa,LeagueOfficialNames().lesteEuropeu,
   LeagueOfficialNames().brasil1,LeagueOfficialNames().brasil2,LeagueOfficialNames().brasil3,
   LeagueOfficialNames().paulistao,
-  LeagueOfficialNames().argentina,LeagueOfficialNames().sulamericano,LeagueOfficialNames().colombiaMexico,
-  LeagueOfficialNames().estadosUnidos,
+  LeagueOfficialNames().argentina,LeagueOfficialNames().sulamericano,LeagueOfficialNames().colombia,
+  LeagueOfficialNames().mexico,LeagueOfficialNames().estadosUnidos,
   LeagueOfficialNames().asia,LeagueOfficialNames().orienteMedio,LeagueOfficialNames().africa,
   LeagueOfficialNames().outros,
 ];
@@ -81,9 +94,10 @@ Map leaguesIndexFromName = {
   LeagueOfficialNames().paulistao: 53,
   LeagueOfficialNames().argentina: 60,
   LeagueOfficialNames().sulamericano: 61,
-  LeagueOfficialNames().colombiaMexico: 62,
+  LeagueOfficialNames().colombia: 62,
 
-  LeagueOfficialNames().estadosUnidos: 70,
+  LeagueOfficialNames().mexico: 70,
+  LeagueOfficialNames().estadosUnidos: 71,
   LeagueOfficialNames().asia: 80,
   LeagueOfficialNames().orienteMedio: 81,
   LeagueOfficialNames().africa: 85,

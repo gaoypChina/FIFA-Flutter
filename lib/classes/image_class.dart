@@ -14,19 +14,23 @@ class Images{
   String getUniform(String clubName){
     return 'assets/clubs/${FIFAImages().imageLogo(clubName)}1.png';
   }
+  String getStadium(String clubName){
+    return 'assets/clubs/${FIFAImages().imageLogo(clubName)}0.jpg';
+  }
 
   String getMyEscudo(){
     My myClass = My();
     return 'assets/clubs/${FIFAImages().imageLogo(myClass.clubName)}.png';
   }
-  String getMyStadium(){
-    My myClass = My();
-    return 'assets/clubs/${FIFAImages().imageLogo(myClass.clubName)}0.jpg';
-  }
   String getMyUniform(){
     My myClass = My();
     return 'assets/clubs/${FIFAImages().imageLogo(myClass.clubName)}1.png';
   }
+  String getMyStadium(){
+    My myClass = My();
+    return 'assets/clubs/${FIFAImages().imageLogo(myClass.clubName)}0.jpg';
+  }
+
   String getMyCampeonatoLogo(){
     My myClass = My();
     late String campeonatoLogo;

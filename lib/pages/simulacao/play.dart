@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/name.dart';
+import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/geral/semana.dart';
@@ -100,10 +102,11 @@ class _PlayState extends State<Play> {
       textRodada = 'Rodada ' + rodada.toString() + '/' + (League(index: myClass.campeonatoID).getNTeams()-1).toString();
     }else{
       textRodada = Name().groupsPhase;
-      if(semanaOitavas.contains(semana)){textRodada = Name().oitavas;}
-      if(semanaQuartas.contains(semana)){textRodada = Name().quartas;}
-      if(semanaSemi.contains(semana)){textRodada = Name().semifinal;}
-      if(semanaFinal.contains(semana)){textRodada = Name().finale;}
+      if(Semana().isJogoGruposInternacional){textRodada += ' ${Semana().rodadaGroupInternational}'; }
+      else if(semanaOitavas.contains(semana)){textRodada = Name().oitavas;}
+      else if(semanaQuartas.contains(semana)){textRodada = Name().quartas;}
+      else if(semanaSemi.contains(semana)){textRodada = Name().semifinal;}
+      else if(semanaFinal.contains(semana)){textRodada = Name().finale;}
     }
     return Scaffold(
 
@@ -127,7 +130,7 @@ class _PlayState extends State<Play> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           //Escudo time 1
-                          Image.asset('assets/clubs/${FIFAImages().imageLogo(myClubClass.name)}.png',height: 80,width: 80),
+                          Image.asset(Images().getEscudo(myClubClass.name),height: 80,width: 80),
 
                           Column(
                             children: [
@@ -143,7 +146,7 @@ class _PlayState extends State<Play> {
                           ),
 
                           //Escudo time 2
-                          Image.asset('assets/clubs/${FIFAImages().imageLogo(adversarioClubClass.name)}.png',height: 80,width: 80),
+                          Image.asset(Images().getEscudo(adversarioClubClass.name),height: 80,width: 80),
 
                         ],
                       ),
@@ -154,10 +157,10 @@ class _PlayState extends State<Play> {
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start, //Começando a lista do topo
                           children: [
-                            const SizedBox(width: 14),
+                            const SizedBox(width: 15),
                             goalWidget(true),
 
-                            const SizedBox(width: 70),
+                            const SizedBox(width: 15),
                             goalWidget(false),
 
                           ],
@@ -170,7 +173,7 @@ class _PlayState extends State<Play> {
                           children: [
 
                             //Estádio
-                            Image.asset('assets/clubs/${FIFAImages().imageLogo(myClubClass.name)}0.jpg',height: 420,width: double.infinity,fit:BoxFit.fill),
+                            Image.asset(Images().getStadium(myClubClass.name),height: 420,width: double.infinity,fit:BoxFit.fill),
 
                             //Jogadores
                             Row(
@@ -240,7 +243,7 @@ class _PlayState extends State<Play> {
           ],
         ),
     )
-    : const SizedBox(width: 145);
+    : SizedBox(width: (Sized(context).width/2)-15);
   }
   Widget goalWidgetRow(int i,bool isMy){
     late int minuto;
@@ -257,10 +260,10 @@ class _PlayState extends State<Play> {
         Row(
         children: [
           Image.asset('assets/icons/bola.png',height:15,width: 15),
-          SizedBox(width:120,
+          Text(minuto.toString()+'\'  ',style: EstiloTextoBranco.text14),
+          SizedBox(width:135,
               child: Text(playerName,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14)
           ),
-          Text(minuto.toString()+'\'',style: EstiloTextoBranco.text14)
         ],
       );
 
@@ -320,6 +323,7 @@ class _PlayState extends State<Play> {
 ////////////////////////////////////////////////////////////////////////////
  onContinueButton(){
     if(counterMatch.milis>=90 && counterMatch.finishedMatch){
+
       _timer.cancel();
       //SE FOR A ULTIMA RODADA DO CAMPEONATO MOSTRA A TABELA DE CLASSIFICAÇÃO FINAL
       //VERIFICA SE É A ULTIMA RODADA

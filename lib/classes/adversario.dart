@@ -10,7 +10,7 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/league_names.dart';
 
 class Adversario{
-  late String clubName;
+  String clubName = '';
   late int clubID;
   late int posicao;
   bool visitante = false;
@@ -24,11 +24,11 @@ class Adversario{
       getLeagueAdversario();
     }
     //ADVERSARIO FASE DE GRUPOS CHAMPIONS OU LIBERTADORES
-    if (myClass.playingInternational.isNotEmpty && Semana().isJogoGruposInternacional) {
+    else if (myClass.playingInternational.isNotEmpty && Semana().isJogoGruposInternacional) {
       getInternationalAdversario();
     }
     //FASE DE MATA-MATA
-    if (Semana().isJogoMataMataInternacional) {
+    else if (Semana().isJogoMataMataInternacional) {
       getMataMataInternationalAdversario();
     }
   }

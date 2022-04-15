@@ -98,7 +98,7 @@ class Simulate{
 
     int myClubID = My().clubID;
     for(int i=0; i<globalInternational32ClubsID.length; i++) { //champions, libertadores... 2
-      String internationalName = funcGetInternationalLeagueNameFromIndex(internationalLeagueIndex: i);
+      String internationalName = InternationalLeagueManipulation().funcGetInternationalLeagueNameFromIndex(internationalLeagueIndex: i);
       //PRA CHAMPIONS E PARA A LIBERTADORES
       List chave = Chaves().obterChave(semana, 0);
       for (int groupNumber = 0; groupNumber < 8; groupNumber++) {

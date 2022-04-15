@@ -1,5 +1,5 @@
 import 'package:fifa/classes/jogador.dart';
-import 'package:fifa/functions/order_list.dart';
+import 'package:fifa/functions/filter_players.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/popup/popup_player_info.dart';
 import 'package:fifa/theme/colors.dart';
@@ -12,20 +12,6 @@ import 'package:flutter/material.dart';
 import '../classes/my.dart';
 import '../values/images.dart';
 
-class TransferParameters {
-  int ascOrDescAge = 0;
-  int ascOrDescOVR = 0;
-  int ascOrDescMoney = 0;
-  String filteredPosition = '';
-  int page = 0;
-
-  TextEditingController maxAge = TextEditingController();
-  TextEditingController minAge = TextEditingController();
-  TextEditingController maxOVR = TextEditingController();
-  TextEditingController minOVR = TextEditingController();
-  TextEditingController maxPrice = TextEditingController();
-  TextEditingController minPrice = TextEditingController();
-}
 
 class Transfers extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
@@ -35,24 +21,15 @@ class Transfers extends StatefulWidget {
 }
 
 class _TransfersState extends State<Transfers> {
-  TransferParameters transferParameters = TransferParameters();
+  FilterPlayers filterPlayers = FilterPlayers();
 
-  List copyJogadoresID = List.from(globalJogadoresIndex);
-  List copyJogadoresAge = List.from(globalJogadoresAge);
-  List copyJogadoresOVR = List.from(globalJogadoresOverall);
-
-  String searchString = '';
   int showRows = 0;
-
-
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    double bottomSize = MediaQuery.of(context)
-        .viewInsets
-        .bottom; //=0 SEM O TECLADO +-160 com o teclado
+    double bottomSize = MediaQuery.of(context).viewInsets.bottom; //=0 SEM O TECLADO +-160 com o teclado
 
     showRows = 0;
     return Scaffold(
@@ -108,10 +85,10 @@ class _TransfersState extends State<Transfers> {
                       5: FractionColumnWidth(.18),
                     },
                     children: [
-                      for (int i = transferParameters.page * 50;
-                          i < copyJogadoresID.length && showRows < 50;
+                      for (int i = filterPlayers.transferParameters.page * 50;
+                          i < filterPlayers.copyJogadoresID.length && showRows < 50;
                           i++)
-                        playersRow(copyJogadoresID[i])
+                        playersRow(filterPlayers.copyJogadoresID[i])
                     ],
                   ),
                 ),
@@ -123,17 +100,20 @@ class _TransfersState extends State<Transfers> {
                   localButton(
                       title: 'IDADE',
                       function: () {
-                        setAge();
+                        filterPlayers.setAge();
+                        setState(() {});
                       }),
                   localButton(
                       title: 'OVERALL',
                       function: () {
-                        setOverall();
+                        filterPlayers.setOverall();
+                        setState(() {});
                       }),
                   localButton(
                       title: 'PREÇO',
                       function: () {
-                        setPrice();
+                        filterPlayers.setPrice();
+                        setState(() {});
                       }),
                 ],
               ),
@@ -144,9 +124,9 @@ class _TransfersState extends State<Transfers> {
                   //BOTAO ESQUERDA
                   GestureDetector(
                     onTap: () {
-                      transferParameters.page--;
-                      if (transferParameters.page <= 0) {
-                        transferParameters.page = 0;
+                      filterPlayers.transferParameters.page--;
+                      if (filterPlayers.transferParameters.page <= 0) {
+                        filterPlayers.transferParameters.page = 0;
                       } else {
                         customToast('Carregando');
                       }
@@ -159,9 +139,9 @@ class _TransfersState extends State<Transfers> {
                   //BOTAO ESQUERDA
                   GestureDetector(
                     onTap: () {
-                      if ((transferParameters.page + 1) * 50 <
-                          copyJogadoresID.length) {
-                        transferParameters.page++;
+                      if ((filterPlayers.transferParameters.page + 1) * 50 <
+                          filterPlayers.copyJogadoresID.length) {
+                        filterPlayers.transferParameters.page++;
                         customToast('Carregando');
                       }
                       setState(() {});
@@ -271,14 +251,14 @@ class _TransfersState extends State<Transfers> {
                   Column(
                     children: [
                       const Text('MIN', style: EstiloTextoPreto.text14),
-                      widgetTextField(transferParameters.minAge),
+                      widgetTextField(filterPlayers.transferParameters.minAge),
                     ],
                   ),
                   const SizedBox(width: 16),
                   Column(
                     children: [
                       const Text('MAX', style: EstiloTextoPreto.text14),
-                      widgetTextField(transferParameters.maxAge),
+                      widgetTextField(filterPlayers.transferParameters.maxAge),
                     ],
                   ),
                 ],
@@ -292,14 +272,14 @@ class _TransfersState extends State<Transfers> {
                   Column(
                     children: [
                       const Text('MIN', style: EstiloTextoPreto.text14),
-                      widgetTextField(transferParameters.minOVR),
+                      widgetTextField(filterPlayers.transferParameters.minOVR),
                     ],
                   ),
                   const SizedBox(width: 16),
                   Column(
                     children: [
                       const Text('MAX', style: EstiloTextoPreto.text14),
-                      widgetTextField(transferParameters.maxOVR),
+                      widgetTextField(filterPlayers.transferParameters.maxOVR),
                     ],
                   ),
                 ],
@@ -313,14 +293,14 @@ class _TransfersState extends State<Transfers> {
                   Column(
                     children: [
                       const Text('MIN', style: EstiloTextoPreto.text14),
-                      widgetTextField(transferParameters.minPrice),
+                      widgetTextField(filterPlayers.transferParameters.minPrice),
                     ],
                   ),
                   const SizedBox(width: 16),
                   Column(
                     children: [
                       const Text('MAX', style: EstiloTextoPreto.text14),
-                      widgetTextField(transferParameters.maxPrice),
+                      widgetTextField(filterPlayers.transferParameters.maxPrice),
                     ],
                   ),
                 ],
@@ -332,19 +312,19 @@ class _TransfersState extends State<Transfers> {
                 children: [
                   GestureDetector(
                       onTap:(){
-                        transferParameters.minAge=TextEditingController();
-                        transferParameters.maxAge=TextEditingController();
-                        transferParameters.minOVR=TextEditingController();
-                        transferParameters.maxOVR=TextEditingController();
-                        transferParameters.minPrice=TextEditingController();
-                        transferParameters.maxPrice=TextEditingController();
+                        filterPlayers.transferParameters.minAge=TextEditingController();
+                        filterPlayers.transferParameters.maxAge=TextEditingController();
+                        filterPlayers.transferParameters.minOVR=TextEditingController();
+                        filterPlayers.transferParameters.maxOVR=TextEditingController();
+                        filterPlayers.transferParameters.minPrice=TextEditingController();
+                        filterPlayers.transferParameters.maxPrice=TextEditingController();
                         Navigator.pop(context);
                         setState(() {});
                       },
                       child: const Text('RESETAR', style: EstiloTextoPreto.text16)),
                   GestureDetector(
                       onTap:(){
-                        filterByPosition();
+                        filterPlayers.filterByPosition();
                         setState(() {});
                         Navigator.pop(context);
                       },
@@ -388,13 +368,14 @@ class _TransfersState extends State<Transfers> {
               width: 200, child: Text('NAME', style: EstiloTextoBranco.text16)),
           GestureDetector(
               onTap: () {
-                setAge();
+                filterPlayers.setAge();
+                setState(() {});
               },
               child: Row(
                 children: [
                   const Text('IDA', style: EstiloTextoBranco.text16),
-                  transferParameters.ascOrDescAge > 0
-                      ? transferParameters.ascOrDescAge == 2
+                  filterPlayers.transferParameters.ascOrDescAge > 0
+                      ? filterPlayers.transferParameters.ascOrDescAge == 2
                           ? const Icon(Icons.arrow_drop_up,
                               color: Colors.white, size: 15)
                           : const Icon(Icons.arrow_drop_down,
@@ -405,13 +386,14 @@ class _TransfersState extends State<Transfers> {
           const SizedBox(width: 5),
           GestureDetector(
               onTap: () {
-                setOverall();
+                filterPlayers.setOverall();
+                setState(() {});
               },
               child: Row(
                 children: [
                   const Text('OVR', style: EstiloTextoBranco.text16),
-                  transferParameters.ascOrDescOVR > 0
-                      ? transferParameters.ascOrDescOVR == 2
+                  filterPlayers.transferParameters.ascOrDescOVR > 0
+                      ? filterPlayers.transferParameters.ascOrDescOVR == 2
                           ? const Icon(Icons.arrow_drop_up,
                               color: Colors.white, size: 15)
                           : const Icon(Icons.arrow_drop_down,
@@ -422,13 +404,14 @@ class _TransfersState extends State<Transfers> {
           const SizedBox(width: 20),
           GestureDetector(
               onTap: () {
-                setPrice();
+                filterPlayers.setPrice();
+                setState(() {});
               },
               child: Row(
                 children: [
                   const Text(' \$ ', style: EstiloTextoBranco.text16),
-                  transferParameters.ascOrDescMoney > 0
-                      ? transferParameters.ascOrDescMoney == 2
+                  filterPlayers.transferParameters.ascOrDescMoney > 0
+                      ? filterPlayers.transferParameters.ascOrDescMoney == 2
                           ? const Icon(Icons.arrow_drop_up,
                               color: Colors.white, size: 15)
                           : const Icon(Icons.arrow_drop_down,
@@ -453,9 +436,9 @@ class _TransfersState extends State<Transfers> {
     //Get Background color of overall
     Color backgroundOverallColor = colorOverallBackground(player.overall);
 
-    if (searchString.isEmpty ||
-        (searchString.isNotEmpty &&
-            player.name.toLowerCase().contains(searchString.toLowerCase()))) {
+    if (filterPlayers.searchString.isEmpty ||
+        (filterPlayers.searchString.isNotEmpty &&
+            player.name.toLowerCase().contains(filterPlayers.searchString.toLowerCase()))) {
       showRows++;
       return TableRow(
         children: [
@@ -529,7 +512,7 @@ class _TransfersState extends State<Transfers> {
           Expanded(
             child: TextField(
               onChanged: (value) {
-                searchString = value;
+                filterPlayers.searchString = value;
               },
               style: const TextStyle(color: Colors.white),
               decoration: const InputDecoration(
@@ -540,13 +523,13 @@ class _TransfersState extends State<Transfers> {
           ),
           GestureDetector(
               onTap: () {
-                copyJogadoresID = List.from(globalJogadoresIndex);
-                copyJogadoresID.removeWhere((playerID) =>
+                filterPlayers.copyJogadoresID = List.from(globalJogadoresIndex);
+                filterPlayers.copyJogadoresID.removeWhere((playerID) =>
                     !Jogador(index: playerID)
                         .name
                         .toString()
                         .toLowerCase()
-                        .contains(searchString));
+                        .contains(filterPlayers.searchString));
                 setState(() {});
               },
               child: const Icon(Icons.search, color: Colors.white)),
@@ -584,18 +567,18 @@ class _TransfersState extends State<Transfers> {
       child: GestureDetector(
         onTap: () {
           Navigator.pop(context);
-          if (transferParameters.filteredPosition == position) {
-            transferParameters.filteredPosition = "";
+          if (filterPlayers.transferParameters.filteredPosition == position) {
+            filterPlayers.transferParameters.filteredPosition = "";
           } else {
-            transferParameters.filteredPosition = position;
+            filterPlayers.transferParameters.filteredPosition = position;
           }
-          filterByPosition();
+          filterPlayers.filterByPosition();
           customToast('Carregando');
           setState(() {});
         },
         child: Container(
           decoration: BoxDecoration(
-            color: transferParameters.filteredPosition == position
+            color: filterPlayers.transferParameters.filteredPosition == position
                 ? Colors.green
                 : Colors.black,
             borderRadius: const BorderRadius.all(Radius.circular(5.0)),
@@ -609,183 +592,4 @@ class _TransfersState extends State<Transfers> {
     );
   }
 
-////////////////////////////////////////////////////////////////////////////////
-// FUNCTIONS
-////////////////////////////////////////////////////////////////////////////////
-  setOverall() {
-    transferParameters.ascOrDescAge = 0;
-    transferParameters.ascOrDescMoney = 0;
-    transferParameters.ascOrDescOVR++;
-    if (transferParameters.ascOrDescOVR == 3) {
-      transferParameters.ascOrDescOVR = 1;
-    }
-    filterByPosition();
-    customToast('Carregando');
-    setState(() {});
-  }
-
-  setAge() {
-    transferParameters.ascOrDescOVR = 0;
-    transferParameters.ascOrDescMoney = 0;
-    transferParameters.ascOrDescAge++;
-    if (transferParameters.ascOrDescAge == 3) {
-      transferParameters.ascOrDescAge = 1;
-    }
-    filterByPosition();
-    customToast('Carregando');
-    setState(() {});
-  }
-
-  setPrice() {
-    transferParameters.ascOrDescAge = 0;
-    transferParameters.ascOrDescOVR = 0;
-    transferParameters.ascOrDescMoney++;
-    if (transferParameters.ascOrDescMoney == 3) {
-      transferParameters.ascOrDescMoney = 1;
-    }
-    filterByPosition();
-    customToast('Carregando');
-    setState(() {});
-  }
-
-  resetCopyLists() {
-    copyJogadoresID = List.from(globalJogadoresIndex);
-    copyJogadoresAge = List.from(globalJogadoresAge);
-    copyJogadoresOVR = List.from(globalJogadoresOverall);
-    transferParameters.page = 0;
-  }
-
-  filterByAge() {
-    copyJogadoresAge = [];
-    for (var playerID in copyJogadoresID) {
-      Jogador player = Jogador(index: playerID);
-      copyJogadoresAge.add(player.age);
-    }
-    if (transferParameters.ascOrDescAge == 1) {
-      if (searchString.isNotEmpty) {
-        transferParameters.page = 0;
-      } else {
-        resetCopyLists();
-      }
-      List list = Order().listCrescente(
-          listA: copyJogadoresAge,
-          listB: copyJogadoresID,
-          length: copyJogadoresAge.length);
-      copyJogadoresAge = List.from(list[0]);
-      copyJogadoresID = List.from(list[1]);
-    }
-    if (transferParameters.ascOrDescAge == 2) {
-      if (searchString.isNotEmpty) {
-        transferParameters.page = 0;
-      } else {
-        resetCopyLists();
-      }
-      List list = Order().listDecrescente(
-          listA: copyJogadoresAge,
-          listB: copyJogadoresID,
-          length: copyJogadoresAge.length);
-      copyJogadoresAge = List.from(list[0]);
-      copyJogadoresID = List.from(list[1]);
-    }
-  }
-
-  filterByOVR() {
-    copyJogadoresOVR = [];
-    for (var playerID in copyJogadoresID) {
-      Jogador player = Jogador(index: playerID);
-      copyJogadoresOVR.add(player.overall);
-    }
-    if (transferParameters.ascOrDescOVR == 1) {
-      if (searchString.isNotEmpty) {
-        transferParameters.page = 0;
-      } else {
-        resetCopyLists();
-      }
-      List list = Order().listDecrescente(
-          listA: copyJogadoresOVR,
-          listB: copyJogadoresID,
-          length: copyJogadoresOVR.length);
-      copyJogadoresOVR = List.from(list[0]);
-      copyJogadoresID = List.from(list[1]);
-    }
-    if (transferParameters.ascOrDescOVR == 2) {
-      if (searchString.isNotEmpty) {
-        transferParameters.page = 0;
-      } else {
-        resetCopyLists();
-      }
-      List list = Order().listCrescente(
-          listA: copyJogadoresOVR,
-          listB: copyJogadoresID,
-          length: copyJogadoresOVR.length);
-      copyJogadoresOVR = List.from(list[0]);
-      copyJogadoresID = List.from(list[1]);
-    }
-  }
-
-  filterByPrice() {
-    List copyJogadoresPrice = [];
-    for (var playerID in copyJogadoresID) {
-      Jogador player = Jogador(index: playerID);
-      copyJogadoresPrice.add(player.price);
-    }
-    if (transferParameters.ascOrDescMoney == 1) {
-      if (searchString.isNotEmpty) {
-        transferParameters.page = 0;
-      } else {
-        resetCopyLists();
-      }
-      List list = Order().listDecrescente(
-          listA: copyJogadoresPrice,
-          listB: copyJogadoresID,
-          length: copyJogadoresPrice.length);
-      copyJogadoresPrice = List.from(list[0]);
-      copyJogadoresID = List.from(list[1]);
-    }
-    if (transferParameters.ascOrDescMoney == 2) {
-      if (searchString.isNotEmpty) {
-        transferParameters.page = 0;
-      } else {
-        resetCopyLists();
-      }
-      List list = Order().listCrescente(
-          listA: copyJogadoresPrice,
-          listB: copyJogadoresID,
-          length: copyJogadoresPrice.length);
-      copyJogadoresPrice = List.from(list[0]);
-      copyJogadoresID = List.from(list[1]);
-    }
-  }
-
-  filterByPosition() {
-    if (searchString.isNotEmpty) {
-      transferParameters.page = 0;
-    } else {
-      resetCopyLists();
-    }
-    filterByAge();
-    filterByOVR();
-    filterByPrice();
-    if (transferParameters.filteredPosition.isNotEmpty) {
-      copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).position != transferParameters.filteredPosition);
-    }
-    if (transferParameters.minAge.text.isNotEmpty) {
-      copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).age < int.parse(transferParameters.minAge.text));
-    }
-    if (transferParameters.maxAge.text.isNotEmpty) {
-      copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).age > int.parse(transferParameters.maxAge.text));
-    }
-    if (transferParameters.minPrice.text.isNotEmpty) {
-      copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).price < int.parse(transferParameters.minPrice.text));
-    }
-    if (transferParameters.maxPrice.text.isNotEmpty) {
-      copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).price > int.parse(transferParameters.maxPrice.text));
-    }
-    if (transferParameters.minOVR.text.isNotEmpty) {
-      copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).overall < int.parse(transferParameters.minOVR.text));
-    }
-    if (transferParameters.maxOVR.text.isNotEmpty) {
-      copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).overall > int.parse(transferParameters.maxOVR.text));
-    }
-}
 }

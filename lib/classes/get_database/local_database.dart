@@ -7,7 +7,6 @@ class GetLocalDatabase{
   getCustomizedData() async {
 
     if(globalSaveNumber>0) {
-
       try{
         globalJogadoresIndex =[];
         //TIRA OS ESPAÇOS DAS STRINGS
@@ -21,13 +20,14 @@ class GetLocalDatabase{
           globalJogadoresIndex.add(i);
         }
 
-        globalJogadoresName = globalSaveData[globalSaveNumber][0];
-        globalJogadoresClubIndex = globalSaveData[globalSaveNumber][1].map(int.parse).toList(); //convert list<string> to list<int>
-        globalJogadoresAge = globalSaveData[globalSaveNumber][2].map(int.parse).toList();//convert list<string> to list<int>
-        globalJogadoresOverall = globalSaveData[globalSaveNumber][3].map(int.parse).toList();//convert list<string> to list<int>
-        globalJogadoresPosition = globalSaveData[globalSaveNumber][4];
+        globalJogadoresName = List.from(globalSaveData[globalSaveNumber][0]);
+        globalJogadoresClubIndex = List.from(globalSaveData[globalSaveNumber][1].map((e)=>int.parse(e)).toList()); //convert list<string> to list<int>
+        globalJogadoresAge = List.from(globalSaveData[globalSaveNumber][2].map((e)=>int.parse(e)).toList());//convert list<string> to list<int>
+        globalJogadoresOverall = List.from(globalSaveData[globalSaveNumber][3].map((e)=>int.parse(e)).toList());//convert list<string> to list<int>
+        globalJogadoresPosition = List.from(globalSaveData[globalSaveNumber][4]);
 
       }catch(e){
+        print(e);
         //SE der erro vai pro database padrão
         print('ERRO Customized Data, Database: $globalSaveNumber');
         globalSaveNumber = 0;

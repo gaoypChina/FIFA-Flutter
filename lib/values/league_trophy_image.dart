@@ -19,9 +19,13 @@ getTrophyImage(String leagueName){
   if(leagueName == LeagueOfficialNames().brasil1){trophyName = 'trophybrasileirao';}
   if(leagueName == LeagueOfficialNames().brasil2){trophyName = 'trophy2division';}
   if(leagueName == LeagueOfficialNames().brasil3){trophyName = 'trophy2division';}
+  if(leagueName == LeagueOfficialNames().argentina){trophyName = 'trophyliga';}
+  if(leagueName == LeagueOfficialNames().sulamericano){trophyName = 'trophyliga';}
+  if(leagueName == LeagueOfficialNames().colombia){trophyName = 'trophyliga';}
+  if(leagueName == LeagueOfficialNames().mexico){trophyName = 'trophymls';}
   if(leagueName == LeagueOfficialNames().estadosUnidos){trophyName = 'trophymls';}
   if(leagueName == LeagueOfficialNames().asia){trophyName = 'trophyasia';}
-  if(leagueName == LeagueOfficialNames().africa){trophyName = 'trophyasia';}
+  if(leagueName == LeagueOfficialNames().africa){trophyName = 'trophyliga';}
   if(leagueName == LeagueOfficialNames().outros){trophyName = 'trophyasia';}
 
   if(leagueName == LeagueOfficialNames().libertadores){trophyName = 'trophylibertadores';}

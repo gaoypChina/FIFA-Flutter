@@ -2,9 +2,9 @@
 import 'package:fifa/classes/historic.dart';
 import 'package:fifa/classes/historic/top_players_ovr.dart';
 import 'package:fifa/classes/historic/top_scorers.dart';
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_trophy_image.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -31,7 +31,7 @@ class _HistoricState extends State<Historic> {
         body:  Stack(
             children: [
 
-              Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
+              Images().getWallpaper(),
 
               Column(
                 children: [
@@ -109,13 +109,13 @@ class _HistoricState extends State<Historic> {
 ////////////////////////////////////////////////////////////////////////////
 Widget myHistoricRow(int index){
     int ano = index + anoInicial;
-    int position = 5;
-    String teamName = 'Guarani';
+    int position = -1;
+    String clubName = '';
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
-      Text(ano.toString()+': '+position.toString()+'º c/'+teamName,style: EstiloTextoBranco.text14),
-      Image.asset('assets/clubs/${FIFAImages().imageLogo(teamName)}.png',height: 15,width: 15),
+      Text(ano.toString()+': '+position.toString()+'º c/'+clubName,style: EstiloTextoBranco.text14),
+      Image.asset(Images().getEscudo(clubName),height: 15,width: 15),
     ],
   );
 }
@@ -162,7 +162,7 @@ Widget trophyWidget(int i){
     return Row(
       children: [
         Text(year.toString(),style: EstiloTextoBranco.text16),
-        Image.asset('assets/clubs/${FIFAImages().imageLogo(myClubData.clubName)}.png',height: 20,width: 20,),
+        Image.asset(Images().getEscudo(myClubData.clubName),height: 20,width: 20,),
         SizedBox(
             width: 150,
             child: Text(myClubData.clubName,style: EstiloTextoBranco.text14)
@@ -170,7 +170,7 @@ Widget trophyWidget(int i){
         Text('${myClubData.leagueName}: \n${myClubData.internationalLeagueName}: ',style: EstiloTextoBranco.text12),
         Padding(
           padding: const EdgeInsets.all(2.0),
-          child: Text('${myClubData.position}º\nVazio',style: EstiloTextoBranco.text14),
+          child: Text('${myClubData.leaguePosition}º\n${myClubData.internationalLeaguePosition}',style: EstiloTextoBranco.text14),
         ),
       ],
     );
@@ -197,17 +197,21 @@ Widget trophyWidget(int i){
     topPlayersOVR.getInPosition(year, position);
     return             Row(
       children: [
+        //Artilheiros
         Text('${(position+1).toString()}-',style: EstiloTextoBranco.text14),
-        Image.asset('assets/clubs/${FIFAImages().imageLogo(topScorers.clubName)}.png',height: 20,width: 20),
-        SizedBox(width:130,
+        Image.asset(Images().getEscudo(topScorers.clubName),height: 20,width: 20),
+        SizedBox(
+          width:130,
           child: Text(topScorers.playerName,style: EstiloTextoBranco.text14),
         ),
         Text(topScorers.playerGoals.toString(),style: EstiloTextoBranco.text14),
         const SizedBox(width: 15),
 
+        //MELHORES JOGADORES DO MUNDO
         Text('${(position+1).toString()}-',style: EstiloTextoBranco.text14),
-        Image.asset('assets/clubs/${FIFAImages().imageLogo(topPlayersOVR.clubName)}.png',height: 20,width: 20),
-        SizedBox(width:130,
+        Image.asset(Images().getEscudo(topPlayersOVR.clubName),height: 20,width: 20),
+        SizedBox(
+          width:130,
           child: Text(topPlayersOVR.playerName,style: EstiloTextoBranco.text14),
         ),
         Text(topPlayersOVR.playerOVR.toString(),style: EstiloTextoBranco.text14),

@@ -13,7 +13,7 @@ class MataMataSimulation{
   simulateMatchs(){
     My myClass = My();
     for (int i = 0; i < internationalLeagueNames.length; i++) {
-      String internationalName = funcGetInternationalLeagueNameFromIndex(internationalLeagueIndex: i);
+      String internationalName = InternationalLeagueManipulation().funcGetInternationalLeagueNameFromIndex(internationalLeagueIndex: i);
       int matchRowsTotal = MataMata().getMatchRows();
       int phaseIdaVolta = MataMata().getPhaseIdaVolta(semana); //jogo de ida ou volta
       for (int matchRows = 0; matchRows<matchRowsTotal; matchRows++) {

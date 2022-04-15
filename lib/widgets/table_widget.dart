@@ -117,7 +117,7 @@ Color backgroundTextColor(int position, int choosenLeagueIndex , String teamName
     if(position==2){backgroundColor = Colors.indigo;}
   }
 
-  if(leagueName==LeagueOfficialNames().argentina  || leagueName==LeagueOfficialNames().colombiaMexico
+  if(leagueName==LeagueOfficialNames().argentina  || leagueName==LeagueOfficialNames().colombia
   ){
     for(int i=1; i<6; i++){
       if(position==i){backgroundColor = Colors.indigo;}

@@ -1,17 +1,17 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/esquemas_taticos.dart';
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/my_team_all_infos.dart';
 import 'package:fifa/popup/popup_player_info.dart';
-import 'package:fifa/values/images.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/widgets/button/button_return.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/widgets/field_size.dart';
 import 'package:flutter/material.dart';
 import '../classes/my.dart';
-import '../values/images.dart';
 
 class MyTeam extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
@@ -72,7 +72,7 @@ class _MyTeamState extends State<MyTeam> {
           body:  Stack(
               children: [
 
-                Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill,),
+                Images().getWallpaper(),
 
                 Column(
                   children: [
@@ -82,7 +82,7 @@ class _MyTeamState extends State<MyTeam> {
                     Row(
                       children: [
                         //Escudo da Equipe
-                        Image.asset('assets/clubs/${FIFAImages().imageLogo(my.clubName)}.png',height: 80,width: 80),
+                        Image.asset(Images().getMyEscudo(),height: 80,width: 80),
 
                         const SizedBox(width: 8),
                         Expanded(
@@ -219,14 +219,14 @@ class _MyTeamState extends State<MyTeam> {
       ),
     );
   }
-Widget draggable(int playerIndex){
+Widget draggable(int playerID){
     return LongPressDraggable (
-        data: playerIndex,
-        child: playerWidgetOVR(playerIndex),
-        feedback: playerWidgetOVR(playerIndex),
+        data: playerID,
+        child: playerWidgetOVR(playerID),
+        feedback: playerWidgetOVR(playerID),
         childWhenDragging: Container(height:60, width: 60,color:AppColors().greyTransparent),
         onDragStarted: (){
-          dragPlayer=playerIndex;
+          dragPlayer=playerID;
         setState(() {});
         },
       onDragCompleted: (){dragPlayer=-1;},
@@ -254,7 +254,7 @@ Widget draggable(int playerIndex){
 Widget fieldWidget(){
     if(My().esquemaTatico == EsquemaTatico().e442) return fieldGameplay442();
     if(My().esquemaTatico == EsquemaTatico().e433) return fieldGameplay433();
-    if(My().esquemaTatico == EsquemaTatico().e433) return fieldGameplay343();
+    if(My().esquemaTatico == EsquemaTatico().e343) return fieldGameplay343();
     if(My().esquemaTatico == EsquemaTatico().e451) return fieldGameplay451();
 
     return Container();
@@ -267,6 +267,7 @@ Widget playerWidgetOVR(int playerIndex){
     String name = player.name;
     String position = player.position;
     double imageSize = 50;
+    double healthBar = 1;
 
     String circleShow = player.overall.toStringAsFixed(0);
     if(show == 'Jogos'){circleShow = player.matchsLeague.toStringAsFixed(0);}
@@ -296,9 +297,9 @@ Widget playerWidgetOVR(int playerIndex){
                   (player.injury >0 || player.redCard >0)
                       ? Opacity(
                         opacity: 0.4,
-                        child: Image.asset('assets/clubs/${FIFAImages().imageLogo(My().clubName)}1.png')
+                        child: Image.asset(Images().getMyUniform())
                       )
-                      : Image.asset('assets/clubs/${FIFAImages().imageLogo(My().clubName)}1.png'),
+                      : Image.asset(Images().getMyUniform()),
 
                   //CIRCULO
                   Container(
@@ -327,6 +328,15 @@ Widget playerWidgetOVR(int playerIndex){
                 ],
               ),
             ),
+            //Barra de saúde
+            SizedBox(
+              width: imageSize+7,
+              child: LinearProgressIndicator(
+                value: healthBar,
+                color: Colors.teal,
+                backgroundColor: Colors.grey,
+              ),
+            ),
             //Nome do jogador
             Container(
               color: AppColors().greyTransparent,
@@ -342,228 +352,197 @@ Widget playerWidgetOVR(int playerIndex){
 
 
   Widget fieldGameplay442(){
-    return SizedBox(
-      height: 360,
-      child: Stack(
-        children: [
+    return fieldSizeWidget(
+        Column(
+          children: [
+            //ATACANTES
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                playerWidget(my.jogadores[9]),
+                playerWidget(my.jogadores[10]),
+              ],
+            ),
+            //MEIAS
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                playerWidget(my.jogadores[7]),
+                playerWidget(my.jogadores[8]),
+              ],
+            ),
+            //VOLANTES
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                playerWidget(my.jogadores[5]),
+                playerWidget(my.jogadores[6]),
+              ],
+            ),
+            //ZAGUEIROS
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                playerWidget(my.jogadores[1]),
+                playerWidget(my.jogadores[2]),
+                playerWidget(my.jogadores[3]),
+                playerWidget(my.jogadores[4]),
+              ],
+            ),
 
-          //Campo
-          Image.asset('assets/icons/campo metade.png',height:double.infinity,width:double.infinity,fit:BoxFit.fill),
+            //GOLEIRO
+            playerWidget(my.jogadores[0]),
 
-          Column(
-            children: [
-              //ATACANTES
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  dragPlayer<0 ? draggable(my.jogadores[9]): draggableTarget(my.jogadores[9]),
-                  dragPlayer<0 ? draggable(my.jogadores[10]): draggableTarget(my.jogadores[10]),
-                ],
-              ),
-              //MEIAS
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  dragPlayer<0 ? draggable(my.jogadores[7]): draggableTarget(my.jogadores[7]),
-                  dragPlayer<0 ? draggable(my.jogadores[8]): draggableTarget(my.jogadores[8]),
-                ],
-              ),
-              //VOLANTES
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  dragPlayer<0 ? draggable(my.jogadores[5]): draggableTarget(my.jogadores[5]),
-                  dragPlayer<0 ? draggable(my.jogadores[6]): draggableTarget(my.jogadores[6]),
-                ],
-              ),
-              //ZAGUEIROS
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  dragPlayer<0 ? draggable(my.jogadores[1]): draggableTarget(my.jogadores[1]),
-                  dragPlayer<0 ? draggable(my.jogadores[2]): draggableTarget(my.jogadores[2]),
-                  dragPlayer<0 ? draggable(my.jogadores[3]): draggableTarget(my.jogadores[3]),
-                  dragPlayer<0 ? draggable(my.jogadores[4]): draggableTarget(my.jogadores[4]),
-                ],
-              ),
-
-              //GOLEIRO
-              dragPlayer<0 ? draggable(my.jogadores[0]): draggableTarget(my.jogadores[0]),
-
-            ],
-          ),
-        ],
-      ),
+          ],
+        )
     );
 
   }
 
   Widget fieldGameplay433(){
-    return SizedBox(
-      height: 360,
-      child: Stack(
-        children: [
-
-          //Campo
-          Image.asset('assets/icons/campo metade.png',height:double.infinity,width:double.infinity,fit:BoxFit.fill),
-
+    return fieldSizeWidget(
           Column(
             children: [
               //ATACANTES
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  dragPlayer<0 ? draggable(my.jogadores[8]): draggableTarget(my.jogadores[10]),
-                  dragPlayer<0 ? draggable(my.jogadores[9]): draggableTarget(my.jogadores[9]),
-                  dragPlayer<0 ? draggable(my.jogadores[10]): draggableTarget(my.jogadores[8]),
+                  playerWidget(my.jogadores[8]),
+                  playerWidget(my.jogadores[9]),
+                  playerWidget(my.jogadores[10]),
                 ],
               ),
               //MEIAS
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  dragPlayer<0 ? draggable(my.jogadores[7]): draggableTarget(my.jogadores[7]),
+                  playerWidget(my.jogadores[7]),
                 ],
               ),
               //VOLANTES
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  dragPlayer<0 ? draggable(my.jogadores[5]): draggableTarget(my.jogadores[6]),
-                  dragPlayer<0 ? draggable(my.jogadores[6]): draggableTarget(my.jogadores[5]),
+                  playerWidget(my.jogadores[5]),
+                  playerWidget(my.jogadores[6]),
                 ],
               ),
               //ZAGUEIROS
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  dragPlayer<0 ? draggable(my.jogadores[1]): draggableTarget(my.jogadores[4]),
-                  dragPlayer<0 ? draggable(my.jogadores[2]): draggableTarget(my.jogadores[3]),
-                  dragPlayer<0 ? draggable(my.jogadores[3]): draggableTarget(my.jogadores[2]),
-                  dragPlayer<0 ? draggable(my.jogadores[4]): draggableTarget(my.jogadores[1]),
+                  playerWidget(my.jogadores[1]),
+                  playerWidget(my.jogadores[2]),
+                  playerWidget(my.jogadores[3]),
+                  playerWidget(my.jogadores[4]),
                 ],
               ),
 
               //GOLEIRO
-              dragPlayer<0 ? draggable(my.jogadores[0]): draggableTarget(my.jogadores[0]),
+              playerWidget(my.jogadores[0]),
 
             ],
           ),
-        ],
-      ),
     );
 
   }
   Widget fieldGameplay343(){
-    return SizedBox(
-      height: 360,
-      child: Stack(
-        children: [
-
-          //Campo
-          Image.asset('assets/icons/campo metade.png',height:double.infinity,width:double.infinity,fit:BoxFit.fill),
-
+    return fieldSizeWidget(
           Column(
             children: [
               //ATACANTES
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  dragPlayer<0 ? draggable(my.jogadores[10]): draggableTarget(my.jogadores[10]),
-                  dragPlayer<0 ? draggable(my.jogadores[9]): draggableTarget(my.jogadores[9]),
-                  dragPlayer<0 ? draggable(my.jogadores[8]): draggableTarget(my.jogadores[8]),
+                  playerWidget(my.jogadores[8]),
+                  playerWidget(my.jogadores[9]),
+                  playerWidget(my.jogadores[10]),
                 ],
               ),
               //MEIAS
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  dragPlayer<0 ? draggable(my.jogadores[7]): draggableTarget(my.jogadores[7]),
-                  dragPlayer<0 ? draggable(my.jogadores[6]): draggableTarget(my.jogadores[6]),
+                  playerWidget(my.jogadores[7]),
+                  playerWidget(my.jogadores[6]),
                 ],
               ),
               //VOLANTES
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  dragPlayer<0 ? draggable(my.jogadores[5]): draggableTarget(my.jogadores[5]),
-                  dragPlayer<0 ? draggable(my.jogadores[4]): draggableTarget(my.jogadores[4]),
+                  playerWidget(my.jogadores[5]),
+                  playerWidget(my.jogadores[4]),
                 ],
               ),
               //ZAGUEIROS
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  dragPlayer<0 ? draggable(my.jogadores[3]): draggableTarget(my.jogadores[3]),
-                  dragPlayer<0 ? draggable(my.jogadores[2]): draggableTarget(my.jogadores[2]),
-                  dragPlayer<0 ? draggable(my.jogadores[1]): draggableTarget(my.jogadores[1]),
+                  playerWidget(my.jogadores[1]),
+                  playerWidget(my.jogadores[2]),
+                  playerWidget(my.jogadores[3]),
                 ],
               ),
 
               //GOLEIRO
-              dragPlayer<0 ? draggable(my.jogadores[0]): draggableTarget(my.jogadores[0]),
+              playerWidget(my.jogadores[0]),
 
             ],
           ),
-        ],
-      ),
     );
 
   }
   Widget fieldGameplay451(){
-    return SizedBox(
-      height: 360,
-      child: Stack(
-        children: [
-
-          //Campo
-          Image.asset('assets/icons/campo metade.png',height:double.infinity,width:double.infinity,fit:BoxFit.fill),
-
+    return fieldSizeWidget(
           Column(
             children: [
               //ATACANTES
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  dragPlayer<0 ? draggable(my.jogadores[10]): draggableTarget(my.jogadores[10]),
+                  playerWidget(my.jogadores[10]),
                 ],
               ),
               //MEIAS
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  dragPlayer<0 ? draggable(my.jogadores[9]): draggableTarget(my.jogadores[9]),
-                  dragPlayer<0 ? draggable(my.jogadores[8]): draggableTarget(my.jogadores[8]),
-                  dragPlayer<0 ? draggable(my.jogadores[7]): draggableTarget(my.jogadores[7]),
+                  playerWidget(my.jogadores[7]),
+                  playerWidget(my.jogadores[8]),
+                  playerWidget(my.jogadores[9]),
                 ],
               ),
               //VOLANTES
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  dragPlayer<0 ? draggable(my.jogadores[6]): draggableTarget(my.jogadores[6]),
-                  dragPlayer<0 ? draggable(my.jogadores[5]): draggableTarget(my.jogadores[5]),
+                  playerWidget(my.jogadores[5]),
+                  playerWidget(my.jogadores[6]),
                 ],
               ),
               //ZAGUEIROS
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  dragPlayer<0 ? draggable(my.jogadores[4]): draggableTarget(my.jogadores[4]),
-                  dragPlayer<0 ? draggable(my.jogadores[3]): draggableTarget(my.jogadores[3]),
-                  dragPlayer<0 ? draggable(my.jogadores[2]): draggableTarget(my.jogadores[2]),
-                  dragPlayer<0 ? draggable(my.jogadores[1]): draggableTarget(my.jogadores[1]),
+                  playerWidget(my.jogadores[1]),
+                  playerWidget(my.jogadores[2]),
+                  playerWidget(my.jogadores[3]),
+                  playerWidget(my.jogadores[4]),
                 ],
               ),
 
               //GOLEIRO
-              dragPlayer<0 ? draggable(my.jogadores[0]): draggableTarget(my.jogadores[0]),
+              playerWidget(my.jogadores[0]),
 
             ],
           ),
-        ],
-      ),
     );
 
   }
+
+  Widget playerWidget(int playerID){
+    return dragPlayer<0 ? draggable(playerID): draggableTarget(playerID);
+  }
+
 }

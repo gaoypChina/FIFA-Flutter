@@ -1,12 +1,11 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/match.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/textstyle.dart';
-import 'package:fifa/values/images.dart';
 import 'package:flutter/material.dart';
-import '../values/images.dart';
 
 Widget fieldGameplay442(int clubID){
   Club club = Club(index: clubID);
@@ -99,9 +98,9 @@ Widget playerWidgetMatch(int jogadorIndex, String clubName){
             (injury || redCard)
                 ? Opacity(
                   opacity: 0.4,
-                child: Image.asset('assets/clubs/${FIFAImages().imageLogo(clubName)}1.png',height: imageSize,width: imageSize)
+                child: Image.asset(Images().getUniform(clubName),height: imageSize,width: imageSize)
             )
-                : Image.asset('assets/clubs/${FIFAImages().imageLogo(clubName)}1.png',height: imageSize,width: imageSize),
+                : Image.asset(Images().getUniform(clubName),height: imageSize,width: imageSize),
 
             //GOL
             Container(

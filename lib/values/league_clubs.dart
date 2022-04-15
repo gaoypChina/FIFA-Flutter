@@ -21,9 +21,9 @@ List defaultLibertadoresClubs = [
   clubName.atleticopr,clubName.bolivar,clubName.caracas,clubName.libertad,
   clubName.bragantino,clubName.nacional,clubName.velezsarsfield,clubName.estudiantes,
   clubName.atleticomg,clubName.idelvalle,clubName.tolima,clubName.americamg,
-  clubName.bocajuniors,clubName.corinthians,clubName.americamex,clubName.deportivocali,
-  clubName.riverplate,clubName.fortaleza,clubName.colocolo,clubName.junior,
-  clubName.colon,clubName.millonarios,clubName.cerroporteno,clubName.olimpia,
+  clubName.bocajuniors,clubName.corinthians,clubName.alwaysReady,clubName.deportivocali,
+  clubName.riverplate,clubName.fortaleza,clubName.colocolo,clubName.alianzalima,
+  clubName.colon,clubName.penarol,clubName.cerroporteno,clubName.olimpia,
   clubName.flamengo,clubName.univcatolica,clubName.talleres,clubName.sportingcristal,
 ];
 
@@ -123,14 +123,22 @@ Map clubNameMapImmutable = {
   LeagueOfficialNames().sulamericano : {
     0: clubName.penarol,1: clubName.nacional,2: clubName.olimpia,3: clubName.cerroporteno,
     4: clubName.libertad,5: clubName.colocolo,6: clubName.lau,7: clubName.univcatolica,
-    8: clubName.bolivar,9: clubName.idelvalle,10: clubName.sportingcristal,11: clubName.alianzalima,
-    12: clubName.barcelonaequ,13: clubName.emelec,14: clubName.ldu,15: clubName.caracas,
+    8: clubName.bolivar,9: clubName.theStrongest,10: clubName.sportingcristal,11: clubName.alianzalima,
+    12: clubName.jorge,13: clubName.universitario,14: clubName.guaraniPAR,15: clubName.alwaysReady,
   },
-  LeagueOfficialNames().colombiaMexico : {
+  LeagueOfficialNames().colombia : {
     0: clubName.americadecali,1: clubName.atleticonacional,2: clubName.deportivocali,3: clubName.junior,
-    4: clubName.imedellin,5: clubName.oncecaldas,6: clubName.millonarios,7: clubName.santafe,
-    8: clubName.americamex,9: clubName.chivasguadalajara,10: clubName.cruzazul,11: clubName.monterrey,
-    12: clubName.pachuca,13: clubName.pumas,14: clubName.tigres,15: clubName.toluca,
+    4: clubName.imedellin,5: clubName.tolima,6: clubName.millonarios,7: clubName.santafe,
+    8: clubName.caracas,9: clubName.deportivoTachira,
+    10: clubName.barcelonaequ,11: clubName.emelec,12: clubName.ldu,13: clubName.idelvalle,
+  },
+
+  //AMÉRICA DO NORTE
+  LeagueOfficialNames().mexico : {
+    0: clubName.americamex,1: clubName.chivasguadalajara,2: clubName.cruzazul,3: clubName.monterrey,
+    4: clubName.pachuca,5: clubName.pumas,6: clubName.tigres,7: clubName.toluca,
+    8: clubName.tijuana,9: clubName.santosLaguna,10: clubName.puebla,11: clubName.necaxa,
+    12: clubName.atlas,13: clubName.queretaro,
   },
   LeagueOfficialNames().estadosUnidos : {
     0: clubName.atlantaunited,1: clubName.columbuscrew,2:clubName.dcunited,3: clubName.fcdallas,
@@ -138,6 +146,8 @@ Map clubNameMapImmutable = {
     8: clubName.nerevolution,9: clubName.nycity,10: clubName.nyredbulls,11: clubName.orlando,
     12: clubName.portland,13: clubName.seattle,14: clubName.torontofc,15:clubName.vancouver,
   },
+
+  //RESTO DO MUNDO
   LeagueOfficialNames().asia : {
     0: clubName.ghuagzhouevergrande,1: clubName.shanghaisipg,2: clubName.shandongluneng,3: clubName.kawasakifrontale,
     4: clubName.kashimaantlers,5: clubName.urawareddiamonds,6: clubName.visselkobe,7: clubName.pohang,
@@ -150,9 +160,9 @@ Map clubNameMapImmutable = {
     8: clubName.mamelodi,9: clubName.agosto,10:clubName.sydney,11:clubName.melbourneVictory,
   },
   LeagueOfficialNames().outros : {
-    0: clubName.deportivoTachira,1: clubName.guaraniPAR,2: clubName.universitario,3: clubName.theStrongest,
-    4: clubName.cienciano,5: clubName.tolima,6: clubName.sochi, 7: clubName.alwaysReady,
-    8: clubName.alIttihad, 9: clubName.fcSeoul,10: clubName.ulsan,11: clubName.huracan,
+    0: clubName.montevideo,1: clubName.oncecaldas,2: clubName.palestino,3: clubName.cienciano,
+    4: clubName.huracan,5: clubName.fcSeoul, 6: clubName.alIttihad,7: clubName.ulsan,
+    8: clubName.sunderland,9: clubName.cskaSofia,10: clubName.sochi,11: clubName.instanbul,
   },
 
 };

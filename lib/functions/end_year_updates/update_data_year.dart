@@ -43,9 +43,9 @@ saveLeagueResults(){
 }
 saveInternationalLeagueResults(){
   Map allLeaguesClassification = {};
-  int nInternationalLeagues = funcNInternationalLeagues();
+  int nInternationalLeagues = InternationalLeagueManipulation().funcNInternationalLeagues();
   for(int i=0;i<nInternationalLeagues;i++){
-    String internationalLeagueName = funcGetInternationalLeagueNameFromIndex(internationalLeagueIndex: i);
+    String internationalLeagueName = InternationalLeagueManipulation().funcGetInternationalLeagueNameFromIndex(internationalLeagueIndex: i);
     List clubsIDs = International(internationalLeagueName).getClassification();
     allLeaguesClassification[internationalLeagueName] = clubsIDs;
   }
@@ -56,10 +56,11 @@ saveInternationalLeagueResults(){
 }
 
 saveMyClubData(){
+  My my = My();
   globalHistoricMyClub[ano] = {
-    'clubID': My().clubID,
-    'leagueID':My().campeonatoID,
-    'players': My().jogadores,
+    'clubID': my.clubID,
+    'leagueID': my.campeonatoID,
+    'players': my.jogadores,
   };
 }
 
@@ -71,7 +72,7 @@ saveBestPlayers(){
   //Seleciona os melhores
   for(int index=0; index<globalJogadoresIndex.length; index++){
     Jogador player = Jogador(index: index);
-    if(player.goalsLeague > 5){
+    if(player.goalsLeague >= 5){
       topScorers.add(player.goalsLeague);
       topScorersID.add(player.index);
     }
@@ -146,13 +147,13 @@ void atualizaStatusJogadores(){
     transferenciaJogador(id);
 
     //aposentadoria
-    funcAposentadoriaJogador(Jogador(index: id));
+    AposentarJogador(Jogador(index: id));
   }
 }
 
 saveCoachPoints(){
   int expectativa = My().getLastYearExpectativa();
-  int classificacao = HistoricClubYear(ano).position;
+  int classificacao = HistoricClubYear(ano).leaguePosition;
   double multiplicationFactor = expectativa/classificacao; //Ex: 10/3  12/5
   globalCoachPoints += (multiplicationFactor*(100/classificacao)).round(); //100,50,33,25,20...
 }

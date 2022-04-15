@@ -1,9 +1,10 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/historic.dart';
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/pages/historic/historic.dart';
+import 'package:fifa/pages/historic/my_historic.dart';
 import 'package:fifa/pages/historic/international_historic.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
@@ -41,7 +42,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
         body:  Stack(
             children: [
 
-              Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
+              Images().getWallpaper(),
 
               Column(
                 children: [

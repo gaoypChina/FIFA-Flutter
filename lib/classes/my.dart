@@ -15,7 +15,7 @@ class My{
   late int campeonatoID;
   late String campeonatoName;
   late int posicaoChave;
-  int scoreGame = 15;
+  late int scoreGame;
   late double money;
   late String esquemaTatico;
   late List jogadores;
@@ -31,6 +31,7 @@ class My{
     money = globalMyMoney;
     jogadores = globalMyJogadores;
     playingInternational = getPlayingInternational();
+    scoreGame = globalCoachPoints;
   }
 
   getMyInternationalLeague(){
@@ -102,8 +103,8 @@ class My{
     }
     //MATA-MATA
     else if(Semana().isJogoMataMataInternacional){
-      for(int i=0; i<funcNInternationalLeagues();i++){
-        String leagueName = funcGetInternationalLeagueNameFromIndex(internationalLeagueIndex: i);
+      for(int i=0; i<InternationalLeagueManipulation().funcNInternationalLeagues();i++){
+        String leagueName = InternationalLeagueManipulation().funcGetInternationalLeagueNameFromIndex(internationalLeagueIndex: i);
         try{
         List listIDs = globalInternationalMataMataClubsID[leagueName][Semana().semanaStr];
         if(listIDs.contains(clubID)){

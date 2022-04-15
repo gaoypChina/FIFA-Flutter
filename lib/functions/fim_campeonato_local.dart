@@ -7,8 +7,8 @@ import 'package:fifa/values/league_names.dart';
 
 class FimDoCampeonatoLocal{
 
-  int indexChampions = funcGetInternationalLeagueIndex(internationalLeagueName: LeagueOfficialNames().championsLeague);
-  int indexLibertadores = funcGetInternationalLeagueIndex(internationalLeagueName: LeagueOfficialNames().libertadores);
+  int indexChampions = InternationalLeagueManipulation().funcGetInternationalLeagueIndex(internationalLeagueName: LeagueOfficialNames().championsLeague);
+  int indexLibertadores = InternationalLeagueManipulation().funcGetInternationalLeagueIndex(internationalLeagueName: LeagueOfficialNames().libertadores);
 
   setAll032InternationalTeams(){
     globalInternational32ClubsID[indexChampions] = [];
@@ -139,7 +139,7 @@ class FimDoCampeonatoLocal{
       globalInternational32ClubsID[indexLibertadores][26] = clubIndexes[10];
       globalInternational32ClubsID[indexLibertadores][30] = clubIndexes[11];
     }
-    if(leagueClass.name == LeagueOfficialNames().colombiaMexico){
+    if(leagueClass.name == LeagueOfficialNames().colombia){
       globalInternational32ClubsID[indexLibertadores][3] = clubIndexes[0];
     globalInternational32ClubsID[indexLibertadores][7] = clubIndexes[1];
     globalInternational32ClubsID[indexLibertadores][11] = clubIndexes[2];

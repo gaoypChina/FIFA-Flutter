@@ -5,6 +5,7 @@ import 'package:fifa/popup/popup_player_info.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/widgets/button/button_return.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/widgets/field_size.dart';
 import 'package:flutter/material.dart';
 
 class ClubProfile extends StatefulWidget {
@@ -73,7 +74,7 @@ class _ClubProfileState extends State<ClubProfile> {
                   ),
 
                   Container(
-                    height: 110,
+                    height: 90,
                     color: AppColors().greyTransparent,
                     child: ListView.builder(
                         shrinkWrap: true,
@@ -87,7 +88,7 @@ class _ClubProfileState extends State<ClubProfile> {
                   ),
 
                   Container(
-                    height: 110,
+                    height: 90,
                     color: AppColors().greyTransparent,
                     child: ListView.builder(
                         shrinkWrap: true,
@@ -247,14 +248,7 @@ class _ClubProfileState extends State<ClubProfile> {
 
   Widget fieldGameplay442(){
     List jogadoresTitulares = jogadoresOrganizados;
-    return SizedBox(
-      height: 360,
-      child: Stack(
-        children: [
-
-          //Campo
-          Image.asset('assets/icons/campo metade.png',height:double.infinity,width:double.infinity,fit:BoxFit.fill),
-
+    return fieldSizeWidget(
           Column(
             children: [
               //ATACANTES
@@ -297,10 +291,7 @@ class _ClubProfileState extends State<ClubProfile> {
 
             ],
           ),
-        ],
-      ),
     );
-
   }
 
 }

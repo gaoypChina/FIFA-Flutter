@@ -41,7 +41,7 @@ class MatchSimulation{
       UpdatePlayerVariable().setGoalAndAssists(clubClass1);
     }
     for(int i=0; i<variableGol2; i++){
-      UpdatePlayerVariable().setGoalAndAssists(clubClass1);
+      UpdatePlayerVariable().setGoalAndAssists(clubClass2);
     }
 
   }

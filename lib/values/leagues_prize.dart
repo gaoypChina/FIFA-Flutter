@@ -28,8 +28,9 @@ void premiacao(){
     else if(leagueName==LeagueOfficialNames().brasil3){premio=0.7;}//serie c
     else if(leagueName==LeagueOfficialNames().argentina){premio=1.1;}//argentina
     else if(leagueName==LeagueOfficialNames().sulamericano){premio=1.0;}//sulamerica
-    else if(leagueName==LeagueOfficialNames().colombiaMexico){premio=1.1;}//colombia mexico
-    else if(leagueName==LeagueOfficialNames().estadosUnidos){premio=1.2;}//mls
+    else if(leagueName==LeagueOfficialNames().colombia){premio=1.1;}//colombia
+    else if(leagueName==LeagueOfficialNames().mexico){premio=1.3;}//mexico
+    else if(leagueName==LeagueOfficialNames().estadosUnidos){premio=1.4;}//mls
     else if(leagueName==LeagueOfficialNames().asia){premio=1.0;}//asia
     else if(leagueName==LeagueOfficialNames().africa){premio=0.6;}//africa
     else{

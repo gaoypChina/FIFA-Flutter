@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 
 popUpSaveAllData({required BuildContext context}){
+
   showDialog(
     context: context,
     builder: (BuildContext context) {
@@ -16,15 +17,16 @@ popUpSaveAllData({required BuildContext context}){
           mainAxisSize: MainAxisSize.min,
           children: [
 
-            for(int nSave=1; nSave<=3; nSave++)
+            for(int nSave=1; nSave<=globalMaxSavesPermitted; nSave++)
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8.0),
               child: GestureDetector(
                   onTap:() async {
                     globalSaveNumber = nSave;
-                    globalSaveData = {nSave: saveAllData(globalSaveNumber)};
+                    globalSaveData = {};
+                    globalSaveData[globalSaveNumber] = List.from(saveAllData(globalSaveNumber));
                     customToast('Salvo em: Save $nSave');
-                    await SharedPreferenceHelper().saveDatabase();
+                    await SharedPreferenceHelper().savePlayersDatabase();
                     await SharedPreferenceHelper().savesharedSaveNumber(globalSaveNumber);
                     Navigator.of(context).pop();
                     Navigator.of(context).pop();

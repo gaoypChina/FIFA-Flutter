@@ -393,6 +393,7 @@ class FIFAImages{
     else if(timeFoto==ClubName().queretaro){            imageLogo='queretaro';         }
     else if(timeFoto==ClubName().necaxa){            imageLogo='necaxa';         }
     else if(timeFoto==ClubName().santosLaguna){            imageLogo='santos laguna';         }
+    else if(timeFoto==ClubName().puebla){            imageLogo='puebla';         }
 
     else if(timeFoto==ClubName().atlantaunited){       imageLogo='atlanta';        }
     else if(timeFoto==ClubName().minnesota){            imageLogo='minnesota';     }
@@ -496,7 +497,8 @@ class FIFAImages{
     else if(campeonatoFoto==LeagueOfficialNames().paulistao){      imageLogo = 'brasileirao';       }
     else if(campeonatoFoto==LeagueOfficialNames().argentina){       imageLogo = 'argentina';       }
     else if(campeonatoFoto==LeagueOfficialNames().sulamericano){       imageLogo = 'sulamericana';       }
-    else if(campeonatoFoto==LeagueOfficialNames().colombiaMexico){       imageLogo = 'colombia';       }
+    else if(campeonatoFoto==LeagueOfficialNames().colombia){       imageLogo = 'colombia';       }
+    else if(campeonatoFoto==LeagueOfficialNames().mexico){       imageLogo = 'mexico';       }
     else if(campeonatoFoto==LeagueOfficialNames().estadosUnidos){       imageLogo = 'mls';       }
     else if(campeonatoFoto==LeagueOfficialNames().asia){       imageLogo = 'asialeague';       }
     else if(campeonatoFoto==LeagueOfficialNames().africa){       imageLogo = 'africa';       }

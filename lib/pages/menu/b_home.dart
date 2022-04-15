@@ -1,8 +1,11 @@
 import 'package:fifa/classes/get_database/local_database.dart';
 import 'package:fifa/classes/get_database/read_csv.dart';
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/database/shared_preferences.dart';
+import 'package:fifa/functions/change_club_control.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/customize_players.dart';
+import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/values/league_names.dart';
@@ -12,8 +15,6 @@ import 'package:flutter/material.dart';
 import 'c_menu.dart';
 import '../../classes/geral/dificuldade.dart';
 import '../../classes/league.dart';
-
-import '../../functions/func_change_club.dart';
 
 class HomePage extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
@@ -60,7 +61,7 @@ class _HomePageState extends State<HomePage> {
     ano = anoInicial;
     await ReadCSV().openCSV();
     try {
-      await SharedPreferenceHelper().getDatabase();
+      await SharedPreferenceHelper().getPlayersDatabase();
     }catch(e){
       print('ERROR ON GET DATABASE MAIN MENU'+e.toString());
     }
@@ -202,11 +203,11 @@ class _HomePageState extends State<HomePage> {
                             child: Stack(
                               children: [
                                 //Escudo
-                                Image.asset('assets/clubs/${FIFAImages().imageLogo(teamName)}.png',height: 200,width: 200),
+                                Image.asset(Images().getEscudo(teamName),height: 200,width: 200),
                                 //Uniforme
                                 Container(
                                     alignment: Alignment.bottomRight,
-                                    child: Image.asset('assets/clubs/${FIFAImages().imageLogo(teamName)}1.png',height: 100,width: 100)
+                                    child: Image.asset(Images().getUniform(teamName),height: 100,width: 100)
                                 ),
                               ],
                             ),
@@ -242,8 +243,12 @@ class _HomePageState extends State<HomePage> {
                       //DATABASE
                       GestureDetector(
                         onTap:() async{
+                          customToast('Carregando Database...');
                           globalSaveNumber++;
-                          if(globalSaveNumber==2){globalSaveNumber=0;}
+                          if(globalSaveNumber == globalMaxSavesPermitted+1){
+                            globalSaveNumber=0;
+                          }
+                          await SharedPreferenceHelper().getPlayersDatabase();
                           await GetLocalDatabase().getCustomizedData();
                           setState(() {});
                         },

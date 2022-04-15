@@ -4,12 +4,9 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/page_controller/calendar_control.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/button/button_return.dart';
 import 'package:flutter/material.dart';
-import 'menu/c_menu.dart';
-import '../values/images.dart';
 import 'club_profile.dart';
 
 class Calendar extends StatefulWidget {
@@ -89,8 +86,10 @@ Widget adversario(int rodadaLocal){
         child: Column(
           children: [
             Text('Rodada '+(rodadaLocal).toString(),style: EstiloTextoBranco.text16),
-            Image.asset('assets/clubs/${FIFAImages().imageLogo(show.clubNameAdv)}.png',height: 45,width: 45),
-            show.visitante ? Text('FORA ${show.placar}',style: EstiloTextoBranco.text10,textAlign: TextAlign.center) : Text('CASA ${show.placar}',style: EstiloTextoBranco.text10,textAlign: TextAlign.center),
+            Image.asset(Images().getEscudo(show.clubNameAdv),height: 45,width: 45),
+            show.visitante
+                ? Text('FORA ${show.placar}',style: EstiloTextoBranco.text10,textAlign: TextAlign.center)
+                : Text('CASA ${show.placar}',style: EstiloTextoBranco.text10,textAlign: TextAlign.center),
             Text(show.clubNameAdv,overflow: TextOverflow.fade,style: EstiloTextoBranco.text16,textAlign: TextAlign.center),
             const Spacer(),
             ]),

@@ -4,8 +4,8 @@ import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/chaves.dart';
+import 'package:fifa/functions/order_list.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/functions/globalfunctions.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/values/league_names.dart';
@@ -303,15 +303,49 @@ Widget matchsWidget(){
     );
   }
 
+  List organizarVariavelLeague(int leagueID, int goalOrYellowOrRed) {
+    //Oraganiza em ordem lista de artilheiros, cartoes amarelos ou cartoes amarelos
+    //Mostra no Widget de League Results
+
+    List global = [];
+    if(goalOrYellowOrRed==0){global = globalJogadoresLeagueGoals;}
+    if(goalOrYellowOrRed==1){global = globalJogadoresYellowCard;}
+    if(goalOrYellowOrRed==2){global = globalJogadoresRedCard;}
+
+    List copyVariableList = [];
+    List leaguePlayers = [];
+
+    List clubsInLeague = League(index: leagueID).getClassification();
+    for(int index=0; index<globalJogadoresClubIndex.length; index++){
+      if(clubsInLeague.contains(globalJogadoresClubIndex[index])){
+        try {// Na 1ªrodada pode dar pau, pq a lista nao foi criada
+          if (global[index] >= 0) {
+            copyVariableList.add(global[index]);
+            leaguePlayers.add(index);
+          }
+        }catch(e){
+          print('Erro GlobalFunctions().organizarVariavelLeague: '+e.toString());
+        }
+      }
+    }
+    //ARTILHEIROS/lista EM ORDEM
+    leaguePlayers = Order().listDecrescente(listA: copyVariableList, listB: leaguePlayers, length: leaguePlayers.length)[1];
+
+    return leaguePlayers;
+  }
+
 Widget yellowRedCardWidget(int goalOrYellowOrRed){
 
-  List leaguePlayers = GlobalFunctions().organizarVariavelLeague(choosenLeagueIndex,  goalOrYellowOrRed);
+  List leaguePlayers = organizarVariavelLeague(choosenLeagueIndex,  goalOrYellowOrRed);
 
     return Column(
       children: [
         Row(
           children: [
-            goalOrYellowOrRed==0 ? const Text('Artilharia',style: EstiloTextoBranco.text16) : goalOrYellowOrRed==1 ? const Text('Cartão Amarelo',style: EstiloTextoBranco.text16) : const Text('Cartão Vermelho',style: EstiloTextoBranco.text16),
+            goalOrYellowOrRed==0
+                  ? const Text('Artilharia',style: EstiloTextoBranco.text16)
+                  : goalOrYellowOrRed==1 ? const Text('Cartão Amarelo',style: EstiloTextoBranco.text16)
+                : const Text('Cartão Vermelho',style: EstiloTextoBranco.text16),
           ],
         ),
 
@@ -331,13 +365,18 @@ Widget yellowRedCardWidget(int goalOrYellowOrRed){
     );
 }
   TableRow yellowRedCardWidgetRow(int playerID,int goalOrYellowOrRed){
-    Jogador players = Jogador(index: playerID);
+    Jogador player = Jogador(index: playerID);
 
     return TableRow(
       children: [
-        Image.asset('assets/clubs/${FIFAImages().imageLogo(players.clubName)}.png',height: 20,width: 20,),
-        Text(players.name,style: EstiloTextoBranco.text14),
-        goalOrYellowOrRed==0 ? Text(players.goalsLeague.toString(),style: EstiloTextoBranco.text16) : goalOrYellowOrRed==1 ? Text(players.yellowCard.toString(),style: EstiloTextoBranco.text16): Text(players.redCard.toString(),style: EstiloTextoBranco.text16),
+        Image.asset(Images().getEscudo(player.clubName),height: 20,width: 20),
+        Container(
+            color: player.clubID == My().clubID ? Colors.teal : Colors.transparent,
+            child: Text(player.name,style: EstiloTextoBranco.text14)),
+        goalOrYellowOrRed==0
+              ? Text(player.goalsLeague.toString(),style: EstiloTextoBranco.text16)
+              : goalOrYellowOrRed==1 ? Text(player.yellowCard.toString(),style: EstiloTextoBranco.text16)
+            : Text(player.redCard.toString(),style: EstiloTextoBranco.text16),
       ],
     );
   }

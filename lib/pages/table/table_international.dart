@@ -158,7 +158,10 @@ TableRow groupTitle(int groupNumber){
         //Escudo
         Image.asset('assets/clubs/${FIFAImages().imageLogo(clubClass.name)}.png',height: 20,width: 20),
         Container(
-          color: clubClass.name == my.clubName ? Colors.green: Colors.transparent,
+          color: clubClass.name == my.clubName
+              ? Colors.green
+              : i==1 || i==2 ? Colors.deepPurple
+                    : Colors.transparent,
           padding: const EdgeInsets.all(2.0),
           child: Text(clubClass.name,style: EstiloTextoBranco.text16),
         ),

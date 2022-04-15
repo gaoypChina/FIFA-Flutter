@@ -21,7 +21,7 @@ import '../../classes/my.dart';
 import '../my_team.dart';
 import '../../popup/popup_expectativa.dart';
 import '../change_club.dart';
-import '../historic/historic.dart';
+import '../historic/my_historic.dart';
 import '../simulacao/play.dart';
 import '../../theme/textstyle.dart';
 import 'package:flutter/material.dart';

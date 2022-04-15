@@ -1,23 +1,50 @@
+import 'package:fifa/classes/geral/name.dart';
+
 import '../global_variables.dart';
 import 'club.dart';
 import 'league.dart';
 
 class HistoricClubYear{
 
+  late int clubID;
   late String clubName;
+  late int leagueID;
   late String leagueName;
-  late int position;
+  late int leaguePosition;
   late String internationalLeagueName;
+  late String internationalLeaguePosition;
 
   HistoricClubYear(int year){
     Map data = globalHistoricMyClub[year];
-    clubName = Club(index: data['clubID']).name;
-    leagueName = League(index: data['leagueID']).name;
+    clubID = data['clubID'];
+    clubName = Club(index: clubID).name;
+    leagueID = data['leagueID'];
+    leagueName = League(index: leagueID).name;
     List clubsIDs = HistoricFunctions().funcHistoricListAll(year, leagueName);
-    position = clubsIDs.indexOf(data['clubID'])+1;
-    internationalLeagueName = League(index: data['leagueID']).internationalLeagueName;
+    leaguePosition = clubsIDs.indexOf(clubID)+1;
+
+    internationalLeagueName = League(index: leagueID).internationalLeagueName;
+    internationalLeaguePosition = '';
+    checkPositionClubPlayedGroupPhase(year);
+    checkPositionClubPlayedMataMata(year);
+
   }
 
+  checkPositionClubPlayedGroupPhase(int year){
+    List allParticipantsClubsID = globalHistoricInternationalClassification[year][internationalLeagueName];
+    if(allParticipantsClubsID.contains(clubID)){
+      internationalLeaguePosition = Name().groupsPhase;
+    }
+  }
+
+  checkPositionClubPlayedMataMata(int year){
+    Map mataMataPhases = globalHistoricInternationalGoalsAll[year][internationalLeagueName];
+    for(String phases in mataMataPhases.keys){
+      if(mataMataPhases[phases].containsKey(clubID)){
+        internationalLeaguePosition = phases;
+      }
+    }
+  }
 }
 
 class HistoricFunctions{
@@ -25,7 +52,7 @@ class HistoricFunctions{
   int myLeagueTitles(){
     int leagueTitlesQntd = 0;
     for(int year=anoInicial;year<ano;year++){
-      int position = HistoricClubYear(year).position;
+      int position = HistoricClubYear(year).leaguePosition;
       if(position == 1){
         leagueTitlesQntd++;
       }
