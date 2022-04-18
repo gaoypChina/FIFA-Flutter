@@ -12,10 +12,11 @@ class ResultGameNacional{
   bool visitante = false;
   late int clubID;
   late Club club;
-  late String clubNameAdv;
-  late int clubIDAdv;
+  late String clubName2;
+  late int clubID2;
   int gol1 = 0;
-  int golAdv = 0;
+  int gol2 = 0;
+  int victoryDrawLoss310 = 0;
   String placar = '';
   Color backgroundColor = Colors.black12;
 
@@ -23,40 +24,44 @@ class ResultGameNacional{
 
     club = Club(index: clubID);
     List list = Chaves().chaveIndexAdvCampeonato(rodadaLocal,club.leagueID, club.getChaveLeague());//index 0-16
-    int chaveClubAdv = list[0];
+    int chaveClub2 = list[0];
     visitante = list[1];
     League league = League(index: club.leagueID);
-    clubNameAdv = league.getClubName(chaveClubAdv);
-    clubIDAdv = clubsAllNameList.indexOf(clubNameAdv);
+    clubName2 = league.getClubName(chaveClub2);
+    clubID2 = clubsAllNameList.indexOf(clubName2);
 
     //SÓ MOSTRA PARA RODADAS QUE JÁ ACONTECERAM
     if(rodadaLocal<rodada || semana > semanasJogosNacionais[league.nClubs-2]){
       //rodadaLocal começa em 1 por isso subtrai 1
 
-      int chaveClub1 = Chaves().chaveIndexAdvCampeonato(rodadaLocal, club.leagueID, chaveClubAdv)[0];
+      int chaveClub1 = Chaves().chaveIndexAdvCampeonato(rodadaLocal, club.leagueID, chaveClub2)[0];
       try {
         List results = globalHistoricLeagueGoalsAll[rodadaLocal][club.leagueID];
         gol1 = results[chaveClub1];
-        golAdv = results[chaveClubAdv];
-        placar = gol1.toString() + ' x '+ golAdv.toString();
+        gol2 = results[chaveClub2];
+        placar = gol1.toString() + ' x '+ gol2.toString();
       }catch(e){
         print("Rodada $rodadaLocal não foi simulada");
       }
 
-      backgroundBasedOnResult(gol1,golAdv);
+      backgroundBasedOnResult(gol1,gol2);
     }
   }
-
-  backgroundBasedOnResult(int gol1,int golAdv){
-    if(gol1 < golAdv){
+  
+  backgroundBasedOnResult(int gol1,int gol2){
+    if(gol1 < gol2){
       backgroundColor = Colors.red;
-    }else if(gol1 == golAdv){
+      victoryDrawLoss310 = 0;
+    }else if(gol1 == gol2){
       backgroundColor = Colors.amber.withOpacity(0.7);
-    }else if(gol1 > golAdv){
+      victoryDrawLoss310 = 1;
+    }else if(gol1 > gol2){
       backgroundColor = Colors.green;
+      victoryDrawLoss310 = 3;
     }
     if(placar.isEmpty){
       backgroundColor = Colors.black12;
+      victoryDrawLoss310 = -1;
     }
   }
 

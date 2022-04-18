@@ -10,7 +10,7 @@ class Injury{
 
   my(Club clubClass){
     int prob = Random().nextInt(90*100);
-    if(prob<=30) {
+    if(prob<=20) {
       int probJog = Random().nextInt(11); //Posição do jogador [0-11]
       int jogadorID = clubClass.escalacao[probJog];//Posição do jogador [0-11]
       int tempoLesao = Random().nextInt(10) + 1;
@@ -23,7 +23,7 @@ class Injury{
   notMy(Club clubClass, int jogPOS){
 
     int prob = Random().nextInt(110);
-    if(prob<=3) {
+    if(prob<=2) {
       int jogadorID = clubClass.escalacao[jogPOS];
       int tempoLesao = Random().nextInt(10) + 1;
       globalJogadoresInjury[jogadorID] = tempoLesao;

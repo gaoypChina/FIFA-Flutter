@@ -6,8 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
 
-  group('Mata-Mata', ()
-  {
+  group('Mata-Mata', (){
     int clubID1 = 10;
     int clubID2 = 3;
     int clubID3 = 15;

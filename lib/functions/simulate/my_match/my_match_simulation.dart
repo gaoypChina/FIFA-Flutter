@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/semana.dart';
+import 'package:fifa/classes/historic/total_victories.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/simulate/my_match/counter.dart';
@@ -185,22 +186,26 @@ class MyMatchSimulation{
   }
 
   endMatch(){
+    TotalVictories totalVictories = TotalVictories();
     //VITORIA
     if(Semana().isJogoCampeonatoNacional) {
       if (meuGolMarcado > meuGolSofrido) {
         globalClubsLeaguePoints[myClass.clubID] += 3;
         globalMyLeagueLastResults.add(3);
+        totalVictories.add1Victory();
       }
       //EMPATE
       if (meuGolMarcado == meuGolSofrido) {
         globalClubsLeaguePoints[myClass.clubID] += 1;
         globalClubsLeaguePoints[adversarioClubClass.index] += 1;
         globalMyLeagueLastResults.add(1);
+        totalVictories.add1Draw();
       }
       //DERROTA
       if (meuGolMarcado < meuGolSofrido) {
         globalClubsLeaguePoints[adversarioClubClass.index] += 3;
         globalMyLeagueLastResults.add(0);
+        totalVictories.add1Loss();
       }
 
       globalClubsLeagueGM[myClass.clubID] += meuGolMarcado;
@@ -229,6 +234,7 @@ class MyMatchSimulation{
       globalClubsInternationalGM[adversarioClubClass.index] += meuGolSofrido;
       globalClubsInternationalGS[adversarioClubClass.index] += meuGolMarcado;
     }
+
   }
 
 }

@@ -9,7 +9,7 @@ class FIFAImages{
     String imageLogo = '';
     if(campeonatoFoto==LeagueOfficialNames().championsLeague){       imageLogo = 'assets/league_logos/champions_logo.jpg';       }
     else if(campeonatoFoto==LeagueOfficialNames().libertadores){       imageLogo = 'assets/league_logos/libertadores.png';       }
-    else if(campeonatoFoto==LeagueOfficialNames().outros){       imageLogo = 'assets/league_logos/champions_logo.jpg';       }
+    else if(campeonatoFoto==LeagueOfficialNames().resto){       imageLogo = 'assets/league_logos/others.png';       }
     return imageLogo;
   }
 
@@ -57,6 +57,7 @@ class FIFAImages{
     else if(timeFoto==ClubName().millwall){         imageLogo='millwall';          }
     else if(timeFoto==ClubName().wigan){         imageLogo='wigan';          }
     else if(timeFoto==ClubName().charlton){         imageLogo='charlton';          }
+    else if(timeFoto==ClubName().plymouth){         imageLogo='plymouth';          }
 
     else if(timeFoto==ClubName().atalanta){            imageLogo='atalanta';        }
     else if(timeFoto==ClubName().bologna){            imageLogo='bologna';        }
@@ -191,6 +192,7 @@ class FIFAImages{
     else if(timeFoto==ClubName().maritimo){            imageLogo='maritimo';        }
     else if(timeFoto==ClubName().boavista){            imageLogo='boavista';        }
     else if(timeFoto==ClubName().portimonense){            imageLogo='portimonense';        }
+    else if(timeFoto==ClubName().coimbra){            imageLogo='coimbra';        }
     else if(timeFoto==ClubName().ajax){            imageLogo='ajax';        }
     else if(timeFoto==ClubName().feyenoord){            imageLogo='feyenoord';        }
     else if(timeFoto==ClubName().psv){            imageLogo='psv';        }

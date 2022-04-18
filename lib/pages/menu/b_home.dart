@@ -54,6 +54,8 @@ class _HomePageState extends State<HomePage> {
     //Pontos do treinador zera
     globalCoachPoints = 0;
 
+    globalHistoricCoachResults = {};
+
     globalJogadoresCarrerMatchs = List.filled(globalMaxPlayersPermitted, 0);
     globalJogadoresCarrerGoals = List.filled(globalMaxPlayersPermitted, 0);
     globalJogadoresCarrerAssists = List.filled(globalMaxPlayersPermitted, 0);
@@ -87,7 +89,7 @@ class _HomePageState extends State<HomePage> {
         body:  Stack(
             children: [
 
-              Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill,),
+              Images().getWallpaper(),
 
               Column(
                 children: [

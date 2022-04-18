@@ -91,10 +91,10 @@ class Club{
     double ovr = 0;
     for (int i=0; i<11;i++) {
         if(index == globalMyClubID){//if is My Team
-            ovr += double.parse(Jogador(index: globalMyJogadores[i]).overall.toString());
+            ovr += double.parse(Jogador(index: globalMyJogadores[i]).overallDynamic.toString());
           }else{
           try{
-            ovr += double.parse(Jogador(index: escalacao[i]).overall.toString());
+            ovr += double.parse(Jogador(index: escalacao[i]).overallDynamic.toString());
           }catch(e){
             //print('$index $name $jogadores');
           }

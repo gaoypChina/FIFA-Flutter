@@ -11,6 +11,8 @@ import 'package:fifa/widgets/field_size.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
+import '../../classes/geral/esquemas_taticos.dart';
+
 class Substitution extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
   const Substitution({Key? key}) : super(key: key);
@@ -22,16 +24,26 @@ class _SubstitutionState extends State<Substitution> {
 
   My my = My();
   int dragPlayer = -1;
+  Club myClub = Club(index: My().clubID);
+  List originalStartingPlayers = [];
+////////////////////////////////////////////////////////////////////////////
+//                               INIT                                     //
+////////////////////////////////////////////////////////////////////////////
+  @override
+  void initState() {
+    doThisOnLaunch();
+    super.initState();
+  }
+  doThisOnLaunch() {
+    originalStartingPlayers =  my.jogadores.take(11).toList();
+  }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    Club myClub = Club(index: my.clubID);
 
     return Scaffold(
-
-        resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
         body:  Stack(
             children: [
 
@@ -43,10 +55,19 @@ class _SubstitutionState extends State<Substitution> {
                   const SizedBox(height: 40),
                   const Text('Substituição',style: EstiloTextoBranco.text30),
                   Text('${globalMatchSubstitutionsLeft.toString()} restantes',style: EstiloTextoBranco.text16),
+                  //MUDAR ESQUEMA TATICO
+                  customButtonContinue(
+                      title: my.esquemaTatico,
+                      function: (){
+                        EsquemaTatico().changeMyEsquema();
+                        my = My();
+                        setState(() {});
+                      }
+                  ),
 
                   const SizedBox(height: 8),
                   fieldSizeWidget(
-                      fieldGameplay442(),
+                    fieldWidgetSelection(),
                   ),
 
                   const Text('Reservas',style: EstiloTextoBranco.text20),
@@ -59,29 +80,11 @@ class _SubstitutionState extends State<Substitution> {
                         itemCount:  myClub.nJogadores>11 ? myClub.nJogadores> 18 ? 7 : myClub.nJogadores -11 : 0,
                         itemBuilder: (BuildContext context, int index) {
                           index = index+11;
-                          return draggable(my.jogadores[index]);
+                          return dragPlayer<0
+                                  ? draggable(my.jogadores[index])
+                                  : draggableTarget(my.jogadores[index]);
                         }
                     ),
-                  ),
-
-                  const Text('Estratégias',style: EstiloTextoBranco.text20),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: const [
-                      Text('Contra-Atacar',style: EstiloTextoBranco.text12),
-                      Text('Bola Aérea',style: EstiloTextoBranco.text12),
-                      Text('Pressionar',style: EstiloTextoBranco.text12),
-                    ],
-                  ),
-                  const SizedBox(height: 6),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: const [
-                      Text('Marcação Alta',style: EstiloTextoBranco.text12),
-                      Text('Posse de bola',style: EstiloTextoBranco.text12),
-                      Text('Solidez Defensiva',style: EstiloTextoBranco.text12),
-                    ],
                   ),
 
                   const Spacer(),
@@ -130,28 +133,37 @@ class _SubstitutionState extends State<Substitution> {
       onAccept: (data){
         if(globalMatchSubstitutionsLeft>0){
           int playerIDData = int.parse(data.toString());
-          int finalPosition1 = globalMyJogadores.indexOf(playerIDData);
-          int finalPosition2 = globalMyJogadores.indexOf(playerTargetID);
+
+          int finalPosition1 = my.jogadores.indexOf(playerIDData);
+          int finalPosition2 = my.jogadores.indexOf(playerTargetID);
+
 
           Match matchClass1 = Match(playerID: playerIDData);
-          Match matchClass2 = Match(playerID: playerIDData);
-          if(matchClass1.redCard==0 && matchClass2.redCard == 0){
-              //Troca Jogadores
-              globalMyJogadores[finalPosition1] = playerTargetID;
-              globalMyJogadores[finalPosition2] = playerIDData;
+          Match matchClass2 = Match(playerID: playerTargetID);
+          if(matchClass1.redCard==0 && matchClass2.redCard == 0) {
+            //Troca Jogadores
+            globalMyJogadores[finalPosition1] = playerTargetID;
+            globalMyJogadores[finalPosition2] = playerIDData;
 
-              //-1 Substituição possivel
-              if (finalPosition1 > 10 || finalPosition2 > 10) {
-                globalMatchSubstitutionsLeft--;
+            //SUBSTITUIÇÕES RESTANTES
+            List actualPlayers = my.jogadores.take(11).toList();
+            int totalDifferentPlayers = 0;
+            for (int originalID in originalStartingPlayers){
+              if (!actualPlayers.contains(originalID)) {
+                totalDifferentPlayers += 1;
               }
+            }
+            globalMatchSubstitutionsLeft = 3-totalDifferentPlayers;
 
-              setState(() {});
           }else {
             customToast('Jogadores expulsos não podem ser substítuidos');
+            dragPlayer=-1;
           }
         }else{
           customToast('Sem substituições restantes');
+          dragPlayer=-1;
         }
+        setState(() {});
       },
     );
   }
@@ -170,7 +182,7 @@ class _SubstitutionState extends State<Substitution> {
     bool goal = matchClass.goals>0;
     double healthBar = matchClass.health;
 
-    String circleShow = player.overall.toStringAsFixed(0);
+    String circleShow = player.overallDynamic.toStringAsFixed(0);
 
     if(injury || redCard){healthBar=0;}
 
@@ -264,6 +276,13 @@ class _SubstitutionState extends State<Substitution> {
     );
   }
 
+  Widget fieldWidgetSelection(){
+    if(My().esquemaTatico == EsquemaTatico().e442) return fieldGameplay442();
+    if(My().esquemaTatico == EsquemaTatico().e433) return fieldGameplay433();
+
+    return fieldGameplay442();
+  }
+
   Widget fieldGameplay442(){
     return fieldSizeWidget(
         Column(
@@ -311,6 +330,55 @@ class _SubstitutionState extends State<Substitution> {
     );
 
   }
+
+  Widget fieldGameplay433(){
+    return fieldSizeWidget(
+        Column(
+          children: [
+            //ATACANTES
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                playerWidget(my.jogadores[8]),
+                playerWidget(my.jogadores[9]),
+                playerWidget(my.jogadores[10]),
+              ],
+            ),
+            //MEIAS
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                playerWidget(my.jogadores[7]),
+              ],
+            ),
+            //VOLANTES
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                playerWidget(my.jogadores[5]),
+                playerWidget(my.jogadores[6]),
+              ],
+            ),
+            //ZAGUEIROS
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                playerWidget(my.jogadores[1]),
+                playerWidget(my.jogadores[2]),
+                playerWidget(my.jogadores[3]),
+                playerWidget(my.jogadores[4]),
+              ],
+            ),
+
+            //GOLEIRO
+            playerWidget(my.jogadores[0]),
+
+          ],
+        )
+    );
+
+  }
+
 
   Widget playerWidget(int playerID){
     return dragPlayer<0 ? draggable(playerID): draggableTarget(playerID);

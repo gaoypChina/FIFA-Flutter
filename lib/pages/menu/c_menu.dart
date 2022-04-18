@@ -1,6 +1,8 @@
 import 'package:fifa/classes/adversario.dart';
 import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/pages/coach/coach_menu.dart';
+import 'package:fifa/pages/historic/leagues_historic.dart';
 import 'package:fifa/pages/menu/b_home.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/calendar.dart';
@@ -12,7 +14,6 @@ import 'package:fifa/pages/table/table_nacional.dart';
 import 'package:fifa/pages/transfers.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
-import 'package:fifa/values/images.dart';
 import 'package:flutter/scheduler.dart';
 import '../../classes/classification.dart';
 import '../../classes/club.dart';
@@ -20,8 +21,6 @@ import '../../classes/geral/dificuldade.dart';
 import '../../classes/my.dart';
 import '../my_team.dart';
 import '../../popup/popup_expectativa.dart';
-import '../change_club.dart';
-import '../historic/my_historic.dart';
 import '../simulacao/play.dart';
 import '../../theme/textstyle.dart';
 import 'package:flutter/material.dart';
@@ -90,8 +89,8 @@ class _MenuState extends State<Menu> {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(width:180,child: Text(myClass.clubName,textAlign: TextAlign.center,style: EstiloTextoBranco.text20)),
-                            Text('\nAno: '+ ano.toString(),style: EstiloTextoBranco.text14),
+                            SizedBox(width:180,child: Text(myClass.clubName,textAlign: TextAlign.center,style: EstiloTextoBranco.negrito22)),
+                            Text('Ano: '+ ano.toString(),style: EstiloTextoBranco.text14),
                             Text('Semana: '+ semana.toString(),style: EstiloTextoBranco.text14),
                             Text('Dinheiro: \$'+ myClass.money.toStringAsFixed(2)+'mi',style: EstiloTextoBranco.text14),
                             Text('Overall da Equipe: ' + Club(index: myClass.clubID).getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text14),
@@ -126,12 +125,8 @@ class _MenuState extends State<Menu> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 Expanded(
-                                  child: menuButton('Mudar de clube',(){
-                                    if(!alreadyChangedClubThisSeason){
-                                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ChangeClub()));
-                                    }else{
-                                      customToast('Você já mudou de clube essa temporada');
-                                    }
+                                  child: menuButton('Técnico',(){
+                                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CoachMenu()));
                                   }
                                   ),
                                 ),
@@ -148,7 +143,8 @@ class _MenuState extends State<Menu> {
                               children: [
                                 Expanded(
                                   child: menuButton('Histórico',(){
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Historic()));
+                                    customToast('Carregando...');
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HistoricLeague()));
                                   }),
                                 ),
                                 Expanded(
@@ -193,8 +189,8 @@ class _MenuState extends State<Menu> {
                             children: [
                               const Text('Próximo Adversário',style: EstiloTextoBranco.text14),
                               //Escudo
-                              adversario.clubName.isNotEmpty ? Image.asset('assets/clubs/${FIFAImages().imageLogo(adversario.clubName)}.png',height: 50,width: 50) : Container(),
-                              adversario.clubName.isNotEmpty ? Text(adversario.clubName,style: EstiloTextoBranco.text14) : Container(),
+                              adversario.clubName.isNotEmpty ? Image.asset(Images().getEscudo(adversario.clubName),height: 50,width: 50) : Container(),
+                              adversario.clubName.isNotEmpty ? Text(adversario.clubName,style: EstiloTextoBranco.negrito14) : Container(),
                               adversario.clubName.isNotEmpty
                                   ? Semana().isJogoMataMataInternacional
                                       ? Text(Semana().semanaStr,style: EstiloTextoBranco.text14)
@@ -211,14 +207,11 @@ class _MenuState extends State<Menu> {
                             Text('Rodada: '+rodada.toString(),style: EstiloTextoBranco.text16),
                             const Text('Classificação',style: EstiloTextoBranco.text14),
                             Text(Classification(leagueIndex: myClass.campeonatoID).getClubPosition(myClass.clubID).toString()+'º',style: EstiloTextoBranco.text30),
-                            Text('Expectativa: '+myClass.getLastYearExpectativa().toString()+'ºlugar',style: EstiloTextoBranco.text14),
+                            Text('Expectativa: '+myClass.getLastYearExpectativa().toString()+'º',style: EstiloTextoBranco.text14),
                           ],
                         ),
 
-                        //CAMPEONATO
-                        Images().getMyCampeonatoLogo().isNotEmpty
-                            ? Image.asset(Images().getMyCampeonatoLogo(),height: 90,width: 90)
-                            : const SizedBox(height: 90,width: 90),
+
                     ]),
 
                     const SizedBox(height: 4),
@@ -237,6 +230,15 @@ class _MenuState extends State<Menu> {
                                 },
                                 child: const Icon(Icons.close,color:Colors.red,size: 50)
                             ),
+                          ),
+
+                          //CAMPEONATO
+                          Container(
+                            margin: const EdgeInsets.only(right: 8),
+                            alignment: Alignment.topRight,
+                            child: Images().getMyActualCampeonatoLogo().isNotEmpty
+                                ? Image.asset(Images().getMyActualCampeonatoLogo(),height: 60,width: 60)
+                                : const SizedBox(height: 60,width: 60),
                           ),
 
                           //DIFICULDADE

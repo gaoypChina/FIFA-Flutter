@@ -1,4 +1,4 @@
-import 'package:fifa/classes/geral/name.dart';
+import 'package:fifa/classes/expectativa.dart';
 import 'package:fifa/classes/historic.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
@@ -12,29 +12,20 @@ popUpExpectativa({required BuildContext context}){
   //Expectativa variables
 
   My myClass = My();
-
-  int expectativaPast = myClass.getLastYearExpectativa();
-  int expectativa = myClass.newExpectativa();
+  Expectativa expectativaAntiga = Expectativa(myClass);
+  //Calcula nova expectativa para a nova temporada
   globalMyExpectativa = myClass.newExpectativa();
-
-  String expNacional = expectativa.toString()+'º';
-  String expCompInternacional = myClass.getMyInternationalLeague();
-  String expInternacional = '';
-  if(expectativa <= 2){ expInternacional = Name().semifinal; }
-  else if(expectativa < 4){ expInternacional = Name().quartas; }
-  else if(expectativa < 6){ expInternacional = Name().oitavas; }
-  else if(expectativa < 10){ expInternacional = 'Classificar'; }
-  else{ expInternacional = ''; }
+  Expectativa expectativaAtual = Expectativa(myClass);
 
   //TEMPORADA PASSADA
   String expLastSeason = 'TEMPORADA PASSADA: ';
   late HistoricClubYear myClubData;
   if(ano>anoInicial){
     myClubData = HistoricClubYear(ano-1);
-    if(myClubData.leaguePosition > expectativaPast){
-      expLastSeason += 'RUIM \n Resultado: ${myClubData.leaguePosition}º\n Esperado:$expectativaPastº';
+    if(myClubData.leaguePosition > expectativaAntiga.expLastYear){
+      expLastSeason += 'RUIM \n Resultado: ${myClubData.leaguePosition}º\n Esperado:${expectativaAntiga.expLastYear}º';
     }else{
-      expLastSeason += 'BOM \n Resultado: ${myClubData.leaguePosition}º\n Esperado:$expectativaPastº';
+      expLastSeason += 'BOM \n Resultado: ${myClubData.leaguePosition}º\n Esperado:${expectativaAntiga.expLastYear}º';
     }
   }
 
@@ -59,7 +50,7 @@ popUpExpectativa({required BuildContext context}){
                       children: [
                         Image.asset(FIFAImages().campeonatoLogo(myClass.campeonatoID),height: 35,width: 35),
                         Text('${myClass.getLeagueName()}: ', style: EstiloTextoPreto.text14),
-                        Text(expNacional, style: EstiloTextoPreto.text20),
+                        Text(expectativaAtual.expectativaNacional.toString()+'º', style: EstiloTextoPreto.text20),
                       ],
                     ),
 
@@ -71,8 +62,8 @@ popUpExpectativa({required BuildContext context}){
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Image.asset(FIFAImages().campeonatoInternacionalLogo(myClass.getMyInternationalLeague()),height: 35,width: 35),
-                    Text('$expCompInternacional:', style: EstiloTextoPreto.text14),
-                    Text(expInternacional, style: EstiloTextoPreto.text14),
+                    Text('${myClass.getMyInternationalLeague()}:', style: EstiloTextoPreto.text14),
+                    Text(expectativaAtual.expInternacional, style: EstiloTextoPreto.text14),
                   ],
                 )
                 : Container(),

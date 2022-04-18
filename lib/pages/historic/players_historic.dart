@@ -1,24 +1,20 @@
-
-import 'package:fifa/classes/historic.dart';
 import 'package:fifa/classes/historic/top_players_ovr.dart';
 import 'package:fifa/classes/historic/top_scorers.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/values/league_trophy_image.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 import 'leagues_historic.dart';
 
-class Historic extends StatefulWidget {
+class PlayersHistoric extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
-  const Historic({Key? key}) : super(key: key);
+  const PlayersHistoric({Key? key}) : super(key: key);
   @override
-  _HistoricState createState() => _HistoricState();
+  _PlayersHistoricState createState() => _PlayersHistoricState();
 }
 
-class _HistoricState extends State<Historic> {
+class _PlayersHistoricState extends State<PlayersHistoric> {
 
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -38,33 +34,12 @@ class _HistoricState extends State<Historic> {
 
                   const SizedBox(height: 40),
 
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      trophyWidget(0),
-                      trophyWidget(1),
-                      trophyWidget(2),
-                    ],
-                  ),
-
                   const SizedBox(height: 20),
-                  const Text('Meu Histórico',style: EstiloTextoBranco.text22),
+                  const Text('Histórico de jogadores',style: EstiloTextoBranco.text22),
                   const SizedBox(height: 8),
 
-                  //TABELA
-                  Expanded(
-                    child: SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          for(int year=anoInicial;year<ano;year++)
-                            yearRow(year),
-                        ],
-                      ),
-                    ),
-                  ),
 
-                  SizedBox(
-                    height: 140,
+                  Expanded(
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
@@ -107,7 +82,7 @@ class _HistoricState extends State<Historic> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-Widget myHistoricRow(int index){
+Widget myPlayersHistoricRow(int index){
     int ano = index + anoInicial;
     int position = -1;
     String clubName = '';
@@ -121,61 +96,6 @@ Widget myHistoricRow(int index){
 }
 
 ///////////////////////////
-Widget trophyWidget(int i){
-    late String name;
-    late String image;
-    late int qntd;
-
-    if(i==0){
-      name = 'Campeonatos Nacionais';
-      image = getTrophyImage(My().campeonatoName);
-      qntd = HistoricFunctions().myLeagueTitles();
-    }
-    if(i==1){
-      name = 'Campeonatos Internacionais';
-      image = getTrophyImage(My().getMyInternationalLeague());
-      qntd = 0;
-    }
-    if(i==2){
-      name = 'Campeonatos 2ªDivisão';
-      image = 'trophy2division';
-      qntd = 0;
-    }
-    return Column(
-      children: [
-        SizedBox(
-          width: 100,
-            child: Text(name,textAlign:TextAlign.center,style: EstiloTextoBranco.text14)
-        ),
-        Image.asset('assets/trophy/$image.png',height: 100,width: 100),
-        Text(qntd.toString(),style: EstiloTextoBranco.text20),
-      ],
-    );
-}
-
-
-
-  Widget yearRow(int year){
-
-    HistoricClubYear myClubData = HistoricClubYear(year);
-
-    return Row(
-      children: [
-        Text(year.toString(),style: EstiloTextoBranco.text16),
-        Image.asset(Images().getEscudo(myClubData.clubName),height: 20,width: 20,),
-        SizedBox(
-            width: 150,
-            child: Text(myClubData.clubName,style: EstiloTextoBranco.text14)
-        ),
-        Text('${myClubData.leagueName}: \n${myClubData.internationalLeagueName}: ',style: EstiloTextoBranco.text12),
-        Padding(
-          padding: const EdgeInsets.all(2.0),
-          child: Text('${myClubData.leaguePosition}º\n${myClubData.internationalLeaguePosition}',style: EstiloTextoBranco.text14),
-        ),
-      ],
-    );
-  }
-
   Widget yearRowTopScorers(int year){
     Map topScorersMap = TopScorers().getDataYear(year);
     return Padding(
@@ -183,8 +103,22 @@ Widget trophyWidget(int i){
       child: Column(
         children: [
           Text('Artilheiros $year e Melhores Jogadores',style: EstiloTextoBranco.text14),
-          for(int position=0;position<25 && position< topScorersMap.values.length;position++)
-            yearRowTopScorersRow(year,position)
+          Row(
+            children: [
+              Column(
+                children: [
+                  for(int position=0;position<25 && position< topScorersMap.values.length;position++)
+                    yearRowTopScorersRow(year,position)
+                ],
+              ),
+              Column(
+                children: [
+                  for(int position=0;position<25 && position< topScorersMap.values.length;position++)
+                    yearRowBestPlayersRow(year,position)
+                ],
+              ),
+            ],
+          )
 
         ],
       ),
@@ -193,8 +127,6 @@ Widget trophyWidget(int i){
   Widget yearRowTopScorersRow(int year, int position){
     TopScorers topScorers = TopScorers();
     topScorers.getInPosition(year, position);
-    TopPlayersOVR topPlayersOVR = TopPlayersOVR();
-    topPlayersOVR.getInPosition(year, position);
     return             Row(
       children: [
         //Artilheiros
@@ -207,15 +139,24 @@ Widget trophyWidget(int i){
         Text(topScorers.playerGoals.toString(),style: EstiloTextoBranco.text14),
         const SizedBox(width: 15),
 
-        //MELHORES JOGADORES DO MUNDO
-        Text('${(position+1).toString()}-',style: EstiloTextoBranco.text14),
-        Image.asset(Images().getEscudo(topPlayersOVR.clubName),height: 20,width: 20),
-        SizedBox(
-          width:130,
-          child: Text(topPlayersOVR.playerName,style: EstiloTextoBranco.text14),
-        ),
-        Text(topPlayersOVR.playerOVR.toString(),style: EstiloTextoBranco.text14),
       ],
     );
   }
+}
+Widget yearRowBestPlayersRow(int year, int position){
+  TopPlayersOVR topPlayersOVR = TopPlayersOVR();
+  topPlayersOVR.getInPosition(year, position);
+  return Row(
+    children: [
+
+      //MELHORES JOGADORES DO MUNDO
+      Text('${(position+1).toString()}-',style: EstiloTextoBranco.text14),
+      Image.asset(Images().getEscudo(topPlayersOVR.clubName),height: 20,width: 20),
+      SizedBox(
+        width:130,
+        child: Text(topPlayersOVR.playerName,style: EstiloTextoBranco.text14),
+      ),
+      Text(topPlayersOVR.playerOVR.toString(),style: EstiloTextoBranco.text14),
+    ],
+  );
 }

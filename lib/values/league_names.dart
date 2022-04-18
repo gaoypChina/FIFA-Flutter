@@ -103,3 +103,16 @@ Map leaguesIndexFromName = {
   LeagueOfficialNames().africa: 85,
   LeagueOfficialNames().outros: 90,
 };
+
+bool leaguePlayInternationalCompetition(String name){
+  bool playInternational = false;
+  if(name == LeagueOfficialNames().inglaterra1 || name == LeagueOfficialNames().espanha1
+      || name == LeagueOfficialNames().italia1 || name == LeagueOfficialNames().franca1
+      || name == LeagueOfficialNames().alemanha1 || name == LeagueOfficialNames().ptHol
+      || name == LeagueOfficialNames().lesteEuropeu || name == LeagueOfficialNames().ligaEuropa
+      || name == LeagueOfficialNames().brasil1 || name == LeagueOfficialNames().argentina
+      || name == LeagueOfficialNames().sulamericano || name == LeagueOfficialNames().colombia){
+    playInternational = true;
+  }
+  return playInternational;
+}

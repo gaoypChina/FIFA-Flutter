@@ -2,7 +2,7 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/pages/historic/my_historic.dart';
+import 'package:fifa/pages/historic/players_historic.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
@@ -80,7 +80,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                     child:  customButtonContinue(
                         title: 'PRÓXIMO',
                         function: (){
-                          Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Historic()));
+                          Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const PlayersHistoric()));
                         }
                     ),
                   ),

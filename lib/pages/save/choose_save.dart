@@ -1,8 +1,6 @@
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/classes/my.dart';
 import 'package:fifa/pages/save/save.dart';
 import 'package:fifa/pages/save/upload.dart';
-import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/widgets/button/button_return.dart';
 import 'package:flutter/material.dart';
@@ -35,8 +33,6 @@ class _ChooseSaveState extends State<ChooseSave> {
                 children: [
 
                   const SizedBox(height: 100),
-
-                  Text('Pontos: ${My().scoreGame}',style:EstiloTextoBranco.text16),
 
                   const SizedBox(height: 10),
                   customButtonContinue(

@@ -269,7 +269,7 @@ Widget playerWidgetOVR(int playerIndex){
     double imageSize = 50;
     double healthBar = 1;
 
-    String circleShow = player.overall.toStringAsFixed(0);
+    String circleShow = player.overallDynamic.toStringAsFixed(0);
     if(show == 'Jogos'){circleShow = player.matchsLeague.toStringAsFixed(0);}
     else if(show == 'Gols'){circleShow = player.goalsLeague.toStringAsFixed(0);}
     else if(show == 'Assists'){circleShow = player.assistsLeague.toStringAsFixed(0);}

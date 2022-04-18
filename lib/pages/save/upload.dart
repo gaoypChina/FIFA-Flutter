@@ -1,3 +1,4 @@
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/pages/menu/b_home.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/widgets/button/button_return.dart';
@@ -18,36 +19,30 @@ class _UploadState extends State<Upload> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(//IF GO BACK TO PREVIOUS PAGE
-      onWillPop: () async{
-        return true;
-      },
-      child: Scaffold(
+    return Scaffold(
 
-          resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
-          body:  Stack(
-              children: [
+        body:  Stack(
+            children: [
 
-                Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
+              Images().getWallpaper(),
 
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
 
-                    const SizedBox(height: 40),
+                  const SizedBox(height: 40),
 
-                    for(int i=0; i<7;i++)
-                      upload(i),
+                  for(int i=0; i<7;i++)
+                    upload(i),
 
-                  ],
-                ),
+                ],
+              ),
 
-                //BOTAO DE VOLTAR
-                returnButton(context),
+              //BOTAO DE VOLTAR
+              returnButton(context),
 
-              ]
-          )
-      ),
+            ]
+        )
     );
   }
 ////////////////////////////////////////////////////////////////////////////

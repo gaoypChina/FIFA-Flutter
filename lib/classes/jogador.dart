@@ -10,6 +10,7 @@ class Jogador{
   late String clubName;
   late int age;
   late int overall;
+  late int overallDynamic;
   late double price;
   late double health;
 
@@ -32,7 +33,8 @@ class Jogador{
     name = globalJogadoresName[index];
     position = globalJogadoresPosition[index];
     age = globalJogadoresAge[index];
-    overall = setOverall();
+    overall = globalJogadoresOverall[index];
+    overallDynamic = setOverall();
     price = setPreco();
     clubID = globalJogadoresClubIndex[index];
     clubName = clubsAllNameList[clubID];
@@ -55,11 +57,11 @@ class Jogador{
   //                          S E T                               //
   //////////////////////////////////////////////////////////////////
   int setOverall(){
-    int overallPlayer = globalJogadoresOverall[index];
+    int overallNewValue = overall;
     if(globalJogadoresInjury[index]>0 || globalJogadoresRedCard[index]>=1 || globalJogadoresYellowCard[index]>=3){
-      overallPlayer -= 12;
+      return overallNewValue -= 12;
     }
-    return overallPlayer;
+    return overallNewValue;
   }
   double setPreco(){
     double price=0;

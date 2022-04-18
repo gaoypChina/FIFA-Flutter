@@ -49,7 +49,7 @@ class _TransfersState extends State<Transfers> {
                 child: Row(
                   children: [
                     const Text('Transferências',
-                        style: EstiloTextoBranco.text20),
+                        style: EstiloTextoBranco.negrito22),
                     const Spacer(),
                     RichText(
                       text: TextSpan(

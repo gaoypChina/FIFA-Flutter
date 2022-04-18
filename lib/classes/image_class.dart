@@ -31,7 +31,7 @@ class Images{
     return 'assets/clubs/${FIFAImages().imageLogo(myClass.clubName)}0.jpg';
   }
 
-  String getMyCampeonatoLogo(){
+  String getMyActualCampeonatoLogo(){
     My myClass = My();
     late String campeonatoLogo;
     if(semanasJogosNacionais.contains(semana) && semana < League(index: myClass.campeonatoID).nClubs){
@@ -45,6 +45,14 @@ class Images{
       campeonatoLogo = '';
     }
     return campeonatoLogo;
+  }
+  String getMyLeagueLogo(){
+    My myClass = My();
+    return FIFAImages().campeonatoLogo(myClass.campeonatoID);
+  }
+  String getMyInternationalLeagueLogo(){
+    My myClass = My();
+    return FIFAImages().campeonatoInternacionalLogo(myClass.getMyInternationalLeague());
   }
 
   Widget getWallpaper(){

@@ -65,58 +65,59 @@ class ReadCSV{
 
     for(int line=1;line<29;line++){//*Linha 0 é o nome dos times
       for(int team=0;team<26;team++) { //até 24 times por arquivo
-        //Se tiver nome salva o jogador
         try{
+        //Se tiver nome salva o jogador
           String club = _data[0][team * 5 + 1];
           String name = _data[line][team * 5 + 1].toString();
           String position = _data[line][team * 5 + 2].toString();//VOLMCZAG =>VOL
           int age = int.parse(_data[line][team * 5 + 3].toString().substring(0,2));
           int overall = int.parse(_data[line][team * 5 + 4].toString().substring(0,2));
-          if (name.isNotEmpty && position.isNotEmpty && age > 10) {
+            if (name.isNotEmpty && position.isNotEmpty && age > 10) {
 
-            //REMOVE L form last character
-            if(name[name.length-1]=='L'){name = name.substring(0, name.length - 1);}
-            if(position.length>3){position = position.substring(0,3);}
-            if(position.contains('GOL')){position='GOL';}
-            else if(position.contains('LD')){position='LD';}
-            else if(position.contains('ADD')){position='LD';}
-            else if(position.contains('ADE')){position='LE';}
-            else if(position.contains('LE')){position='LE';}
-            else if(position.contains('ZAG')){position='ZAG';}
-            else if(position.contains('VOL')){position='VOL';}
-            else if(position.contains('MEI')){position='MEI';}
-            else if(position.contains('MC')){position='MC';}
-            else if(position.contains('ATA')){position='ATA';}
-            else if(position.contains('SA')){position='ATA';}
-            else if(position.contains('PD')){position='PD';}
-            else if(position.contains('PE')){position='PE';}
-            else if(position.contains('MD')){position='MD';}
-            else if(position.contains('ME')){position='ME';}
+              //REMOVE L form last character
+              if(name[name.length-1]=='L'){name = name.substring(0, name.length - 1);}
+              if(position.length>3){position = position.substring(0,3);}
+              if(position.contains('GOL')){position='GOL';}
+              else if(position.contains('LD')){position='LD';}
+              else if(position.contains('ADD')){position='LD';}
+              else if(position.contains('ADE')){position='LE';}
+              else if(position.contains('LE')){position='LE';}
+              else if(position.contains('ZAG')){position='ZAG';}
+              else if(position.contains('VOL')){position='VOL';}
+              else if(position.contains('MEI')){position='MEI';}
+              else if(position.contains('MC')){position='MC';}
+              else if(position.contains('ATA')){position='ATA';}
+              else if(position.contains('SA')){position='ATA';}
+              else if(position.contains('PD')){position='PD';}
+              else if(position.contains('PE')){position='PE';}
+              else if(position.contains('MD')){position='MD';}
+              else if(position.contains('ME')){position='ME';}
 
-            //VARIAVEIS GLOBAIS
-            int clubIndex = clubsAllNameList.indexOf(club);
-            if(clubIndex >= 0) { //se o clube existir e estiver cadastrado certo
+              //VARIAVEIS GLOBAIS
+              int clubIndex = clubsAllNameList.indexOf(club);
+              if(clubIndex >= 0) { //se o clube existir e estiver cadastrado certo
 
-              globalJogadoresClubIndex.add(clubIndex);
-              globalJogadoresIndex.add(indexJog);
-              globalJogadoresName.add(name);
-              globalJogadoresPosition.add(position);
-              globalJogadoresAge.add(age);
-              globalJogadoresOverall.add(overall);
-              indexJog++;
-              //test jogadores importados
-              //if(club == ClubName().alwaysReady){
-              //print('JOGADOR: $name $position $overall $club ${clubIndex.toString()}');
-              //}
-            }else{
-              //ERRO NA IMPORTAÇÃO DO TIME
-              //Provavelmente falta adicionar o nome do clube em: clubsAllNameList
-              //print('ERRO IMPORTAÇÃO JOGADOR: $name $club ${clubIndex.toString()}');
-            }
-          }
+                globalJogadoresClubIndex.add(clubIndex);
+                globalJogadoresIndex.add(indexJog);
+                globalJogadoresName.add(name);
+                globalJogadoresPosition.add(position);
+                globalJogadoresAge.add(age);
+                globalJogadoresOverall.add(overall);
+                indexJog++;
+                //test jogadores importados
+                //if(club == ClubName().alwaysReady){
+                //print('JOGADOR: $name $position $overall $club ${clubIndex.toString()}');
+                //}
+              }else{
+                //ERRO NA IMPORTAÇÃO DO TIME
+                //Provavelmente falta adicionar o nome do clube em: clubsAllNameList
+                //print('ERRO IMPORTAÇÃO JOGADOR: $name $club ${clubIndex.toString()}');
+              }
+        }
         }catch(e){
+          //Jogador com alguma informação errada
           //print('ERROR LOADING DATA: ');
-          //print('ERRO IMPORTAÇÃO:\nName: ${_data[line][team * 5 + 1].toString()} POSIÇÃO: ${_data[line][team * 5 + 2]} Club: ${_data[0][team * 5 + 1]}');
+          //print('ERRO DADOS DO JOGADOR:\nName: ${_data[line][team * 5 + 1].toString()} POSIÇÃO: ${_data[line][team * 5 + 2]} Club: ${_data[0][team * 5 + 1]}');
         }
 
       }

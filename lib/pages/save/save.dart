@@ -1,3 +1,4 @@
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/save_infos.dart';
 import 'package:fifa/pages/menu/b_home.dart';
 import 'package:fifa/values/images.dart';
@@ -30,7 +31,7 @@ class _SaveState extends State<Save> {
           body:  Stack(
               children: [
 
-                Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
+                Images().getWallpaper(),
 
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,

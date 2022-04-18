@@ -52,6 +52,7 @@ Map globalHistoricInternationalClassification = {};
 Map globalHistoricMyClub = {};
 Map globalHistoricBestPlayers = {};
 Map globalHistoricTopScorers = {};
+Map globalHistoricCoachResults = {};
 
 //MATCH SIMULATION
 double globalMatchVelocity = 100;
@@ -138,4 +139,18 @@ Map positions433 = {
   'PE': [8],
   'PD': [10],
   'ATA': [8,9,10],
+};
+Map positions451 = {
+  'GOL': [0],
+  'LE': [1],
+  'ZAG': [2, 3],
+  'LD': [4],
+  'VOL': [5, 6],
+  'MC': [5, 6, 8],
+  'MD': [8, 9],
+  'MEI': [7,8,9],
+  'ME': [7, 8],
+  'PE': [7],
+  'PD': [9],
+  'ATA': [10],
 };

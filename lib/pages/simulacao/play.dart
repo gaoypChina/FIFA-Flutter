@@ -6,6 +6,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/geral/semana.dart';
+import 'package:fifa/functions/coach/coach_best_results.dart';
 import 'package:fifa/functions/simulate/my_match/counter.dart';
 import 'package:fifa/functions/simulate/my_match/my_match_simulation.dart';
 import 'package:fifa/global_variables.dart';
@@ -342,6 +343,10 @@ class _PlayState extends State<Play> {
       //SIMULA OUTRAS PARTIDAS
       Simulate().simulateWeek();
 
+      //**Só funciona se ja tiver simulado todos os outros jogos
+      //Tem uma dependencia pelo ResultGameNacional
+      CoachBestResults coachBestResults = CoachBestResults();
+      coachBestResults.updateSequence();
     }else{
       _timer.cancel();
       Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Substitution()))

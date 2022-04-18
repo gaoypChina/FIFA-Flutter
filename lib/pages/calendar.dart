@@ -77,7 +77,7 @@ Widget adversario(int rodadaLocal){
 
     return GestureDetector(
       onTap:(){
-        Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: show.clubIDAdv )));
+        Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: show.clubID2 )));
       },
       child: Container(
         width: 120,
@@ -86,11 +86,11 @@ Widget adversario(int rodadaLocal){
         child: Column(
           children: [
             Text('Rodada '+(rodadaLocal).toString(),style: EstiloTextoBranco.text16),
-            Image.asset(Images().getEscudo(show.clubNameAdv),height: 45,width: 45),
+            Image.asset(Images().getEscudo(show.clubName2),height: 45,width: 45),
             show.visitante
                 ? Text('FORA ${show.placar}',style: EstiloTextoBranco.text10,textAlign: TextAlign.center)
                 : Text('CASA ${show.placar}',style: EstiloTextoBranco.text10,textAlign: TextAlign.center),
-            Text(show.clubNameAdv,overflow: TextOverflow.fade,style: EstiloTextoBranco.text16,textAlign: TextAlign.center),
+            Text(show.clubName2,overflow: TextOverflow.fade,style: EstiloTextoBranco.text16,textAlign: TextAlign.center),
             const Spacer(),
             ]),
       ),

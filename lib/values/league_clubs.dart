@@ -163,6 +163,7 @@ Map clubNameMapImmutable = {
     0: clubName.montevideo,1: clubName.oncecaldas,2: clubName.palestino,3: clubName.cienciano,
     4: clubName.huracan,5: clubName.fcSeoul, 6: clubName.alIttihad,7: clubName.ulsan,
     8: clubName.sunderland,9: clubName.cskaSofia,10: clubName.sochi,11: clubName.instanbul,
+    12: clubName.paok,13: clubName.aek,14: clubName.panathinaikos,15: clubName.stPauli,
   },
 
 };

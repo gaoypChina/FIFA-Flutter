@@ -18,6 +18,9 @@ funcChangeClub(String newClubName, int newLeagueID){
   globalMyMoney = ((overall-68)*(overall-68)/5)*0.7;
   My myClass = My();
   globalMyExpectativa = myClass.newExpectativa();
+  //Zera retrospecto de jogos
+  globalHistoricCoachResults['actualSequenceVictory'] = 0;
+  globalHistoricCoachResults['actualSequenceNoLosses'] = 0;
 
 }
 
