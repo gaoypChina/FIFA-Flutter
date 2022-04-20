@@ -1,7 +1,7 @@
 import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/values/images.dart';
 import 'package:fifa/page_controller/table/table_matchs_control.dart';
 import 'package:fifa/pages/table/widget_bottom.dart';
 import 'package:fifa/theme/colors.dart';
@@ -133,14 +133,14 @@ class _TableMatchsState extends State<TableMatchs> {
           color: teamNameA == my.clubName ? Colors.green : Colors.transparent,
             child: Text(teamNameA,textAlign: TextAlign.right,style: EstiloTextoBranco.text16)),
         //Escudo
-        Image.asset('assets/clubs/${FIFAImages().imageLogo(teamNameA)}.png',height: 20,width: 20),
+        Image.asset(Images().getEscudo(teamNameA),height: 20,width: 20),
 
         match.isAlreadyPlayed
             ? Text(golsA.toString()+'x'+golsB.toString(),style: EstiloTextoBranco.text16)
             : const Center(child: Text('x',style: EstiloTextoBranco.text16)),
 
         //Escudo
-        Image.asset('assets/clubs/${FIFAImages().imageLogo(teamNameB)}.png',height: 20,width: 20),
+        Image.asset(Images().getEscudo(teamNameB),height: 20,width: 20),
 
         Container(
             color: teamNameB == my.clubName ? Colors.green : Colors.transparent,

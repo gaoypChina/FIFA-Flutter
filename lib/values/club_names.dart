@@ -477,6 +477,11 @@ class ClubName{
   String queretaro = "Querétaro";
   String puebla = "Puebla";
   String juarez = "Juárez";
+  String morelia = "Morelia";
+  String leonesNegros = "Leones Negros";
+  String atlante = "Atlante";
+  String tampico = "Tampico";
+  String tecos = "Tecos";
 
   //MLS
   String atlantaunited= "Atlanta United";

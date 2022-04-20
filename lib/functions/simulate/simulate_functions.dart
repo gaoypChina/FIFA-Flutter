@@ -18,13 +18,13 @@ class Simulate{
   simulateWeek(){
 
     //SIMULA PARTIDAS
-    if(Semana().isJogoCampeonatoNacional) {
+    if(Semana(semana).isJogoCampeonatoNacional) {
       nationalMatchs();
     }
-    if(Semana().isJogoGruposInternacional){
+    if(Semana(semana).isJogoGruposInternacional){
       internationalMatchsGroups();
     }
-    if(Semana().isJogoMataMataInternacional) {
+    if(Semana(semana).isJogoMataMataInternacional) {
       MataMataSimulation().simulateMatchs();
     }
 

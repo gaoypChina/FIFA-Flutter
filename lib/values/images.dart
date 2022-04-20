@@ -9,7 +9,7 @@ class FIFAImages{
     String imageLogo = '';
     if(campeonatoFoto==LeagueOfficialNames().championsLeague){       imageLogo = 'assets/league_logos/champions_logo.jpg';       }
     else if(campeonatoFoto==LeagueOfficialNames().libertadores){       imageLogo = 'assets/league_logos/libertadores.png';       }
-    else if(campeonatoFoto==LeagueOfficialNames().resto){       imageLogo = 'assets/league_logos/others.png';       }
+    else if(campeonatoFoto==LeagueOfficialNames().resto){       imageLogo = 'assets/league_logos/rest.png';       }
     return imageLogo;
   }
 
@@ -193,6 +193,12 @@ class FIFAImages{
     else if(timeFoto==ClubName().boavista){            imageLogo='boavista';        }
     else if(timeFoto==ClubName().portimonense){            imageLogo='portimonense';        }
     else if(timeFoto==ClubName().coimbra){            imageLogo='coimbra';        }
+    else if(timeFoto==ClubName().rioAve){            imageLogo='rio ave';        }
+    else if(timeFoto==ClubName().belenenses){            imageLogo='belenenses';        }
+    else if(timeFoto==ClubName().pacosDeFerreira){            imageLogo='paços de ferreira';        }
+    else if(timeFoto==ClubName().estoril){            imageLogo='estoril';        }
+    else if(timeFoto==ClubName().nacionalMadeira){            imageLogo='nacional madeira';        }
+    else if(timeFoto==ClubName().famalicao){            imageLogo='famalicao';        }
     else if(timeFoto==ClubName().ajax){            imageLogo='ajax';        }
     else if(timeFoto==ClubName().feyenoord){            imageLogo='feyenoord';        }
     else if(timeFoto==ClubName().psv){            imageLogo='psv';        }

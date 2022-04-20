@@ -20,16 +20,16 @@ class Adversario{
     My myClass = My();
 
     //ADVERSARIO CAMPEONATO
-    if (Semana().isJogoCampeonatoNacional && semana < League(index: myClass.campeonatoID).nClubs) {
+    if (Semana(semana).isJogoCampeonatoNacional && semana < League(index: myClass.campeonatoID).nClubs) {
       getLeagueAdversario();
     }
     //ADVERSARIO FASE DE GRUPOS CHAMPIONS OU LIBERTADORES
-    else if (myClass.playingInternational.isNotEmpty && Semana().isJogoGruposInternacional) {
-      getInternationalAdversario();
+    else if (myClass.playingInternational.isNotEmpty && Semana(semana).isJogoGruposInternacional) {
+      getInternationalAdversario(semana);
     }
     //FASE DE MATA-MATA
-    else if (Semana().isJogoMataMataInternacional) {
-      getMataMataInternationalAdversario();
+    else if (Semana(semana).isJogoMataMataInternacional) {
+      getMataMataInternationalAdversario(semana);
     }
   }
 
@@ -50,7 +50,7 @@ class Adversario{
     }
   }
 
-  getInternationalAdversario(){
+  getInternationalAdversario(int semana){
     My myClass = My();
     late int indexAdv; //0-4
     List chaves = Chaves().obterChave(semana, -1);
@@ -73,17 +73,24 @@ class Adversario{
     int adversarioPosicao032 = clubsID.indexOf(clubID);
     posicao = (adversarioPosicao032 % 4)+1;
   }
-  getMataMataInternationalAdversario(){
+
+  getMataMataInternationalAdversario(int semana){
     My myClass = My();
     late int indexAdv; //de 0-16
     try {
-      List listIDs = globalInternationalMataMataClubsID[myClass.getMyInternationalLeague()][Semana().semanaStr];
+      List listIDs = globalInternationalMataMataClubsID[myClass.getMyInternationalLeague()][Semana(semana).semanaStr];
       if (listIDs.contains(myClass.clubID)) {
         int myIndex = listIDs.indexOf(myClass.clubID);
         if (myIndex % 2 == 0) {
           indexAdv = myIndex + 1;
+          if(!Semana(semana).isJogoIda){
+            visitante = true;
+          }
         } else {
           indexAdv = myIndex - 1;
+          if(Semana(semana).isJogoIda){
+            visitante = true;
+          }
         }
         clubID = listIDs[indexAdv];
         clubName = Club(index: clubID).name;

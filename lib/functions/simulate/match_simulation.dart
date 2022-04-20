@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:fifa/functions/simulate/player_variables/cards_injury_selection.dart';
 import 'package:fifa/functions/simulate/after_simulation/set_points.dart';
 import 'package:fifa/functions/simulate/player_variables/update_player_variables.dart';
+import 'package:fifa/global_variables.dart';
 
 import '../../classes/club.dart';
 import '../../classes/geral/semana.dart';
@@ -63,7 +64,7 @@ class MatchSimulation{
     SetPoints().set(clubClass1.index,clubClass2.index,variableGol1,variableGol2);
 
     //Se for mata-mata
-    if(Semana().isJogoMataMataInternacional){
+    if(Semana(semana).isJogoMataMataInternacional){
       MataMataSimulation().setGoals(clubClass1.index, clubClass2.index, variableGol1, variableGol2);
     }
 

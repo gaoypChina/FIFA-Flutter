@@ -23,7 +23,7 @@ class _NotPlayState extends State<NotPlay> {
   @override
   Widget build(BuildContext context) {
 
-    String weekName = Semana().semanaAlternativeStr;
+    String weekName = Semana(semana).semanaAlternativeStr;
 
     return Scaffold(
         body:  Stack(

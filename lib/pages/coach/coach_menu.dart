@@ -33,6 +33,7 @@ class _CoachMenuState extends State<CoachMenu> {
   @override
   Widget build(BuildContext context) {
     coachBestResults.updateVariables();
+
     return Scaffold(
       body: Stack(
         children: [
@@ -50,12 +51,12 @@ class _CoachMenuState extends State<CoachMenu> {
                   changeClub(context),
                 ],
               ),
+
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
 
-                      const SizedBox(height: 20),
                       Container(
                         color: AppColors().greyTransparent,
                         padding: const EdgeInsets.all(8),
@@ -65,7 +66,6 @@ class _CoachMenuState extends State<CoachMenu> {
                           children: [
                             trophyWidget(0),
                             trophyWidget(1),
-                            trophyWidget(2),
                           ],
                         ),
                       ),
@@ -113,12 +113,11 @@ class _CoachMenuState extends State<CoachMenu> {
                         ),
                       ),
 
-                      const SizedBox(height: 20),
 
 
 
                       //TABELA
-                      Container(
+                      ano > anoInicial ? Container(
                         color: AppColors().greyTransparent,
                         width: Sized(context).width,
                         padding: const EdgeInsets.all(8),
@@ -127,15 +126,13 @@ class _CoachMenuState extends State<CoachMenu> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
 
-                            ano > anoInicial
-                                ? const Text('Time passado',style: EstiloTextoBranco.text16)
-                                : Container(),
+                            const Text('Time passado',style: EstiloTextoBranco.text16),
 
                             for(int year=anoInicial;year<ano;year++)
                               yearRow(year,context),
                           ],
                         ),
-                      ),
+                      ) : Container(),
 
 
                       Row(
@@ -202,12 +199,7 @@ Widget trophyWidget(int i){
   if(i==1){
     name = 'Campeonatos Internacionais';
     image = getTrophyImage(My().getMyInternationalLeague());
-    qntd = 0;
-  }
-  if(i==2){
-    name = 'Campeonatos 2ªDivisão';
-    image = 'trophy2division';
-    qntd = 0;
+    qntd = HistoricFunctions().myInternationalTitle();
   }
   return Column(
     children: [

@@ -13,6 +13,7 @@ class HistoricClubYear{
   late int leaguePosition;
   late String internationalLeagueName;
   late String internationalLeaguePosition;
+  late bool isInternationalChampion;
 
   HistoricClubYear(int year){
     Map data = globalHistoricMyClub[year];
@@ -38,12 +39,27 @@ class HistoricClubYear{
   }
 
   checkPositionClubPlayedMataMata(int year){
+    isInternationalChampion = false;
     Map mataMataPhases = globalHistoricInternationalGoalsAll[year][internationalLeagueName];
     for(String phases in mataMataPhases.keys){
       if(mataMataPhases[phases].containsKey(clubID)){
         internationalLeaguePosition = phases;
+        if(phases == Name().finale){
+          List clubsFinalID = listTeamsInFinal(mataMataPhases[phases]);
+          if(mataMataPhases[phases][clubID].first > mataMataPhases[phases][clubsFinalID[0]].first){
+            isInternationalChampion = true;
+          }
+        }
       }
     }
+  }
+  List listTeamsInFinal(Map mapData){
+    List clubsFinalID = [];
+    for(int finalClubID in mapData.keys){
+      clubsFinalID.add(finalClubID);
+    }
+    clubsFinalID.remove(clubID);
+    return clubsFinalID;
   }
 }
 
@@ -58,6 +74,16 @@ class HistoricFunctions{
       }
     }
     return leagueTitlesQntd;
+  }
+
+  int myInternationalTitle(){
+    int internationalTitlesQntd = 0;
+    for(int year=anoInicial;year<ano;year++) {
+      if(HistoricClubYear(year).isInternationalChampion){
+        internationalTitlesQntd++;
+      }
+    }
+    return internationalTitlesQntd;
   }
 
   List funcHistoricListAll(int year, String leagueName){

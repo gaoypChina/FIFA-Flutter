@@ -37,9 +37,9 @@ class Images{
     if(semanasJogosNacionais.contains(semana) && semana < League(index: myClass.campeonatoID).nClubs){
       campeonatoLogo = FIFAImages().campeonatoLogo(myClass.campeonatoID);
     }
-    else if(myClass.playingInternational.isNotEmpty  && Semana().isJogoGruposInternacional){
+    else if(myClass.playingInternational.isNotEmpty  && Semana(semana).isJogoGruposInternacional){
       campeonatoLogo = FIFAImages().campeonatoInternacionalLogo(myClass.getMyInternationalLeague());
-    }else if(myClass.playingInternational.isNotEmpty  && Semana().isJogoMataMataInternacional){
+    }else if(myClass.playingInternational.isNotEmpty  && Semana(semana).isJogoMataMataInternacional){
       campeonatoLogo = FIFAImages().campeonatoInternacionalLogo(myClass.getMyInternationalLeague());
     }else {
       campeonatoLogo = '';

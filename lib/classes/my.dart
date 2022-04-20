@@ -87,8 +87,8 @@ class My{
     // Ex: eu 73 [80 78 74 73 72 71] -> meu time expectiva = 5 -> 73 > 72+1
     Club myClub = Club(index: clubID);
     for(int i=0; i< ovr.length;i++) {
-      if (myClub.getOverall() > ovr[i] - 1 && expect == 0) {
-        expect = i+1;//[0] -> 1ºlugar, [1]-> 2ºlugar
+      if (myClub.getOverall() > ovr[i] + 0.4 && expect == 0) {
+        expect = i;//[0] -> 1ºlugar, [1]-> 2ºlugar
         return expect;
       }
     }
@@ -97,16 +97,16 @@ class My{
   String getPlayingInternational(){
     String val = '';
     //FASE DE GRUPOS
-    if(Semana().isJogoGruposInternacional){
+    if(Semana(semana).isJogoGruposInternacional){
       if(globalInternational32ClubsID[0].contains(clubID)){val = LeagueOfficialNames().championsLeague;}
       if(globalInternational32ClubsID[1].contains(clubID)){val = LeagueOfficialNames().libertadores;}
     }
     //MATA-MATA
-    else if(Semana().isJogoMataMataInternacional){
+    else if(Semana(semana).isJogoMataMataInternacional){
       for(int i=0; i<InternationalLeagueManipulation().funcNInternationalLeagues();i++){
         String leagueName = InternationalLeagueManipulation().funcGetInternationalLeagueNameFromIndex(internationalLeagueIndex: i);
         try{
-        List listIDs = globalInternationalMataMataClubsID[leagueName][Semana().semanaStr];
+        List listIDs = globalInternationalMataMataClubsID[leagueName][Semana(semana).semanaStr];
         if(listIDs.contains(clubID)){
           val = leagueName;
         }

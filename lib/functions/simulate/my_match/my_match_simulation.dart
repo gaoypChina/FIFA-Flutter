@@ -87,9 +87,9 @@ class MyMatchSimulation{
       jogadorID=adversarioEscalacao[quemfez];
       globalMatchGoalScorerIDAdv.add(jogadorID);
     }
-    if(Semana().isJogoCampeonatoNacional){
+    if(Semana(semana).isJogoCampeonatoNacional){
       globalJogadoresLeagueGoals[jogadorID]++;
-    }else if(Semana().isJogoCampeonatoInternacional){
+    }else if(Semana(semana).isJogoCampeonatoInternacional){
       globalJogadoresInternationalGoals[jogadorID]++;
     }
     globalJogadoresMatchGoals[jogadorID]++;
@@ -105,9 +105,9 @@ class MyMatchSimulation{
       late int jogadorID;
       if(clubMyorAdv==1){jogadorID=myClass.jogadores[quemfez];}
       if(clubMyorAdv==2){jogadorID=adversarioEscalacao[quemfez];}
-      if(Semana().isJogoCampeonatoNacional){
+      if(Semana(semana).isJogoCampeonatoNacional){
         globalJogadoresLeagueAssists[jogadorID]++;
-      }else if(Semana().isJogoCampeonatoInternacional){
+      }else if(Semana(semana).isJogoCampeonatoInternacional){
         globalJogadoresInternationalAssists[jogadorID]++;
       }
       globalJogadoresMatchAssists[jogadorID]++;
@@ -188,7 +188,7 @@ class MyMatchSimulation{
   endMatch(){
     TotalVictories totalVictories = TotalVictories();
     //VITORIA
-    if(Semana().isJogoCampeonatoNacional) {
+    if(Semana(semana).isJogoCampeonatoNacional) {
       if (meuGolMarcado > meuGolSofrido) {
         globalClubsLeaguePoints[myClass.clubID] += 3;
         globalMyLeagueLastResults.add(3);
@@ -213,7 +213,7 @@ class MyMatchSimulation{
       globalClubsLeagueGM[adversarioClubClass.index] += meuGolSofrido;
       globalClubsLeagueGS[adversarioClubClass.index] += meuGolMarcado;
 
-    }else if(Semana().isJogoCampeonatoInternacional){
+    }else if(Semana(semana).isJogoCampeonatoInternacional){
       if (meuGolMarcado > meuGolSofrido) {
         globalClubsInternationalPoints[myClass.clubID] += 3;
         globalMyLeagueLastResults.add(3);

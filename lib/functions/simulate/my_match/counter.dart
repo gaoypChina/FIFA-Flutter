@@ -5,6 +5,7 @@ import 'package:fifa/functions/simulate/after_simulation/historic.dart';
 import 'package:fifa/functions/simulate/my_match/my_match_simulation.dart';
 import 'package:fifa/functions/simulate/player_variables/cards_injury_selection.dart';
 import 'package:fifa/functions/simulate/player_variables/match_selection.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../../../values/leagues_prize.dart';
@@ -81,11 +82,11 @@ class CounterMatch extends ChangeNotifier{
   }
 
   saveHistoricResults(){
-    if(Semana().isJogoCampeonatoNacional){
+    if(Semana(semana).isJogoCampeonatoNacional){
       SaveMatchHistoric().setHistoricGoalsLeagueMy(myMatchSimulation);
-    }else if(Semana().isJogoGruposInternacional){
+    }else if(Semana(semana).isJogoGruposInternacional){
       SaveMatchHistoric().setHistoricGoalsGruposInternational(myClass.getMyInternationalLeague(), myClass.clubID, adversarioClubClass.index,myMatchSimulation.meuGolMarcado, myMatchSimulation.meuGolSofrido);
-    }else if(Semana().isJogoMataMataInternacional){
+    }else if(Semana(semana).isJogoMataMataInternacional){
       SaveMatchHistoric().setHistoricGoalsMataMataInternational(myClass.getMyInternationalLeague(), myClass.clubID, adversarioClubClass.index,myMatchSimulation.meuGolMarcado, myMatchSimulation.meuGolSofrido);
     }
   }

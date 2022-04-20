@@ -6,10 +6,10 @@ import '../../../classes/club.dart';
 class UpdatePlayerVariableMatch{
 
   update(Club clubClass){
-    if(Semana().isJogoCampeonatoNacional){
+    if(Semana(semana).isJogoCampeonatoNacional){
       updatePlayerMatchNational(clubClass);
     }
-    if(Semana().isJogoCampeonatoInternacional) {
+    if(Semana(semana).isJogoCampeonatoInternacional) {
       updatePlayerMatchInternational(clubClass);
     }
   }

@@ -23,7 +23,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
   List<String> possibleYears = [];
   String selectedYear = anoInicial.toString();
   String leagueInternational = LeagueOfficialNames().championsLeague;
-  bool isMataMata = false;
+  bool isMataMata = true;
 
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //

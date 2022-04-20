@@ -1,4 +1,5 @@
 import 'package:fifa/classes/classification.dart';
+import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/historic.dart';
 import 'package:fifa/classes/historic/top_players_ovr.dart';
 import 'package:fifa/classes/historic/top_scorers.dart';
@@ -148,6 +149,11 @@ void atualizaStatusJogadores(){
 
     //aposentadoria
     AposentarJogador(Jogador(index: id));
+
+    //Faz minha nova escalação titular, com base nos melhores jogadores que melhoraram
+    Club newClubClass = Club(index: My().clubID);
+    globalMyJogadores = newClubClass.escalacao; //global MyJogadores tem que ser declarado antes de usar qualquer getOverall();
+    newClubClass.getOverall();
   }
 }
 

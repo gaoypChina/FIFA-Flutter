@@ -8,7 +8,7 @@ void premiacao(){
   My myClass = My();
   double premio=0;
   String leagueName = myClass.campeonatoName;
-  if(Semana().isJogoCampeonatoNacional){
+  if(Semana(semana).isJogoCampeonatoNacional){
     if(leagueName==LeagueOfficialNames().inglaterra1){premio=2.2;}//premierleague
     else if(leagueName==LeagueOfficialNames().inglaterra2){premio=1.2;}//championship
     else if(leagueName==LeagueOfficialNames().inglaterra3){premio=0.7;}//championship

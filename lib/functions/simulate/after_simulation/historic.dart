@@ -13,7 +13,7 @@ class SaveMatchHistoric{
 
   setHistoricGoalsLeagueMy(MyMatchSimulation myMatchSimulation){
     My myClass = My();
-    if(Semana().isJogoCampeonatoNacional){
+    if(Semana(semana).isJogoCampeonatoNacional){
       List chaves = Chaves().obterChave(semana,myClass.campeonatoID);
       late int chavePos2;
       if (chaves.indexOf(myClass.posicaoChave) % 2 == 0) {
@@ -33,7 +33,7 @@ class SaveMatchHistoric{
   }
 
   setHistoricGoalsLeague(int leagueIndex, int chavePos1, int chavePos2,int goal1, int goal2){
-    if(Semana().isJogoCampeonatoNacional){
+    if(Semana(semana).isJogoCampeonatoNacional){
       if(globalHistoricLeagueGoalsLastRodada[leagueIndex]!=null){ //Se existir
         goalsList = globalHistoricLeagueGoalsLastRodada[leagueIndex];//pega as infos da minha partida tambem
       }
@@ -50,7 +50,7 @@ class SaveMatchHistoric{
   }
 
   setHistoricGoalsGruposInternational(String internationalName, int clubID1, int clubID2,int goal1, int goal2){
-    if(Semana().isJogoCampeonatoInternacional){
+    if(Semana(semana).isJogoCampeonatoInternacional){
       int rodadaAtual = semanasGruposInternacionais.indexOf(semana);
       try{ //Se existir
         goalsList = globalHistoricInternationalGoalsAll[internationalName][rodadaAtual];//pega as infos da minha partida tambem

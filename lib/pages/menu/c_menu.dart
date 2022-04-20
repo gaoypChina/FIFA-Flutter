@@ -192,8 +192,8 @@ class _MenuState extends State<Menu> {
                               adversario.clubName.isNotEmpty ? Image.asset(Images().getEscudo(adversario.clubName),height: 50,width: 50) : Container(),
                               adversario.clubName.isNotEmpty ? Text(adversario.clubName,style: EstiloTextoBranco.negrito14) : Container(),
                               adversario.clubName.isNotEmpty
-                                  ? Semana().isJogoMataMataInternacional
-                                      ? Text(Semana().semanaStr,style: EstiloTextoBranco.text14)
+                                  ? Semana(semana).isJogoMataMataInternacional
+                                      ? Text(Semana(semana).semanaStr,style: EstiloTextoBranco.text14)
                                   : Text('Posição: '+adversario.posicao.toString()+'º',style: EstiloTextoBranco.text14)
                                   : Container(),
                               adversario.clubName.isNotEmpty ? adversario.visitante ? const Text('Fora',style: EstiloTextoBranco.text14) : const Text('Casa',style: EstiloTextoBranco.text14) : Container(),

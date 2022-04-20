@@ -3,6 +3,7 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/functions/simulate/player_variables/cards_injury_selection.dart';
 import 'package:fifa/functions/simulate/player_variables/goals_assists_selection.dart';
+import 'package:fifa/global_variables.dart';
 
 import 'match_selection.dart';
 
@@ -21,10 +22,10 @@ class UpdatePlayerVariable{
 
   setGoalAndAssists(Club clubClass){
 
-    if(Semana().isJogoCampeonatoNacional){
+    if(Semana(semana).isJogoCampeonatoNacional){
       GoalAssistsSelection().goalsAssistsNational(clubClass);
     }
-    if(Semana().isJogoCampeonatoInternacional) {
+    if(Semana(semana).isJogoCampeonatoInternacional) {
       GoalAssistsSelection().goalsAssistsInternational(clubClass);
     }
 

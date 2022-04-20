@@ -70,16 +70,6 @@ class International{
       }
     }
   }
-/*
-  finall
-  {
-  timeA: 'Barcelona'
-  timeB: 'Real',
-  GMA: 4,
-  GMB: 2,
-  }
-
-   */
 
 
 

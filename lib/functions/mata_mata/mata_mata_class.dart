@@ -15,6 +15,7 @@ class MataMata {
   String clubName2 = 'Santos';
   int goal1 = -1;
   int goal2 = -1;
+  bool isAlreadyPlayed = false;
 
   int phaseIdaVolta = 0;
   int nInternationalLeagues = internationalLeagueNames.length;
@@ -144,6 +145,9 @@ class MataMata {
       try {
         goal1 = globalInternationalMataMataGoals[internationalName][weekPhase][clubID1][phaseIdaVolta];
         goal2 = globalInternationalMataMataGoals[internationalName][weekPhase][clubID2][phaseIdaVolta];
+        if(goal1>=0 &&  goal2>=0){
+          isAlreadyPlayed = true;
+        }
       } catch (e) {
         //print('Pag. Mata-Mata: Semana ainda não foi simulada');
       }

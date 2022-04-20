@@ -6,6 +6,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/geral/semana.dart';
+import 'package:fifa/classes/my_match_result.dart';
 import 'package:fifa/functions/coach/coach_best_results.dart';
 import 'package:fifa/functions/simulate/my_match/counter.dart';
 import 'package:fifa/functions/simulate/my_match/my_match_simulation.dart';
@@ -99,11 +100,11 @@ class _PlayState extends State<Play> {
   Widget build(BuildContext context) {
 
     String textRodada = '';
-    if(Semana().isJogoCampeonatoNacional) {
+    if(Semana(semana).isJogoCampeonatoNacional) {
       textRodada = 'Rodada ' + rodada.toString() + '/' + (League(index: myClass.campeonatoID).getNTeams()-1).toString();
     }else{
       textRodada = Name().groupsPhase;
-      if(Semana().isJogoGruposInternacional){textRodada += ' ${Semana().rodadaGroupInternational}'; }
+      if(Semana(semana).isJogoGruposInternacional){textRodada += ' ${Semana(semana).rodadaGroupInternational}'; }
       else if(semanaOitavas.contains(semana)){textRodada = Name().oitavas;}
       else if(semanaQuartas.contains(semana)){textRodada = Name().quartas;}
       else if(semanaSemi.contains(semana)){textRodada = Name().semifinal;}
@@ -115,7 +116,7 @@ class _PlayState extends State<Play> {
         body:  Stack(
             children: [
 
-              Semana().isJogoCampeonatoNacional
+              Semana(semana).isJogoCampeonatoNacional
               ? Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill,)
                 : myClass.getMyInternationalLeague() == LeagueOfficialNames().championsLeague
                     ? Image.asset('assets/icons/fundochampions.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill)
@@ -135,14 +136,14 @@ class _PlayState extends State<Play> {
 
                           Column(
                             children: [
-                              Semana().isJogoCampeonatoNacional
+                              Semana(semana).isJogoCampeonatoNacional
                                   ? Image.asset(FIFAImages().campeonatoLogo(myClass.campeonatoID),height: 30,width: 30)
                                   : Image.asset(FIFAImages().campeonatoInternacionalLogo(myClass.getMyInternationalLeague()),height: 35,width: 35),
                               Text(textRodada,style: EstiloTextoBranco.text16),
-                              Text(counterMatch.milis.toString()+'\'',style: EstiloTextoBranco.text16),
                               visitante
                                   ? Text(myMatchSimulation.meuGolSofrido.toString() +'X'+ myMatchSimulation.meuGolMarcado.toString(),style: EstiloTextoBranco.text30)
                                   : Text(myMatchSimulation.meuGolMarcado.toString() +'X'+ myMatchSimulation.meuGolSofrido.toString(),style: EstiloTextoBranco.text30),
+                              Text(counterMatch.milis.toString()+'\'',style: EstiloTextoBranco.text16),
                             ],
                           ),
 
@@ -345,8 +346,9 @@ class _PlayState extends State<Play> {
 
       //**Só funciona se ja tiver simulado todos os outros jogos
       //Tem uma dependencia pelo ResultGameNacional
+      MyLastMatchResult myLastMatchResult = MyLastMatchResult(myClubClass.index, adversarioClubClass.index, myMatchSimulation.meuGolMarcado, myMatchSimulation.meuGolSofrido);
       CoachBestResults coachBestResults = CoachBestResults();
-      coachBestResults.updateSequence();
+      coachBestResults.updateSequence(myLastMatchResult);
     }else{
       _timer.cancel();
       Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Substitution()))
