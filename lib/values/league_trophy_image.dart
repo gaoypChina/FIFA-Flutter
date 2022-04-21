@@ -14,6 +14,7 @@ getTrophyImage(String leagueName){
   if(leagueName == LeagueOfficialNames().franca1){trophyName = 'trophyligue1';}
   if(leagueName == LeagueOfficialNames().franca2){trophyName = 'trophyligue1';}
   if(leagueName == LeagueOfficialNames().ptHol){trophyName = 'trophyportugal';}
+  if(leagueName == LeagueOfficialNames().turquiaGrecia){trophyName = 'trophyportugal';}
   if(leagueName == LeagueOfficialNames().ligaEuropa){trophyName = 'trophyportugal';}
   if(leagueName == LeagueOfficialNames().lesteEuropeu){trophyName = 'trophyrussia';}
   if(leagueName == LeagueOfficialNames().brasil1){trophyName = 'trophybrasileirao';}

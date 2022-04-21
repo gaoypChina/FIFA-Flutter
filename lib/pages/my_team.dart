@@ -3,8 +3,10 @@ import 'package:fifa/classes/geral/esquemas_taticos.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/graphics.dart';
 import 'package:fifa/pages/my_team_all_infos.dart';
 import 'package:fifa/popup/popup_player_info.dart';
+import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/widgets/button/button_return.dart';
@@ -62,125 +64,136 @@ class _MyTeamState extends State<MyTeam> {
     myClub = Club(index: My().clubID);
     my = My();
 
-    return WillPopScope(//IF GO BACK TO PREVIOUS PAGE
-      onWillPop: () async{
-        return true;
-      },
-      child: Scaffold(
+    return Scaffold(
+        body:  Stack(
+            children: [
 
-          resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
-          body:  Stack(
-              children: [
+              Images().getWallpaper(),
 
-                Images().getWallpaper(),
+              Column(
+                children: [
 
-                Column(
-                  children: [
+                  const SizedBox(height: 30),
 
-                    const SizedBox(height: 30),
+                  Row(
+                    children: [
+                      //Escudo da Equipe
+                      Image.asset(Images().getMyEscudo(),height: 80,width: 80),
 
-                    Row(
-                      children: [
-                        //Escudo da Equipe
-                        Image.asset(Images().getMyEscudo(),height: 80,width: 80),
-
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Saldo: \$'+my.money.toStringAsFixed(2)+'mi', style: EstiloTextoBranco.text22),
-                              Text('Overall: '+myClub.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.text16),
-                              Text('Média Idade: '+averageAge.toStringAsFixed(2), style: EstiloTextoBranco.text16),
-                            ],
-                          ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text('Saldo: \$'+my.money.toStringAsFixed(2)+'mi', style: EstiloTextoBranco.text22),
+                            Text('Overall: '+myClub.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.text16),
+                            Text('Média Idade: '+averageAge.toStringAsFixed(2), style: EstiloTextoBranco.text16),
+                          ],
                         ),
+                      ),
 
-                        //MUDAR ESQUEMA TATICO
-                        customButtonContinue(
-                            title: my.esquemaTatico,
-                            function: (){
-                              EsquemaTatico().changeMyEsquema();
+                      //MUDAR ESQUEMA TATICO
+                      Column(
+                        children: [
+                          customButtonContinue(
+                              title: 'Graficos',
+                              function: (){
+                                Navigator.push(context,MaterialPageRoute(builder: (context) => const ClubGraphics()));
+                              }
+                          ),
+                          customButtonContinue(
+                              title: my.esquemaTatico,
+                              function: (){
+                                EsquemaTatico().changeMyEsquema();
                                 setState(() {});
                               }
-                            ),
-
-                      ],
-                    ),
-
-                    //Widget do campo
-                    fieldWidget(),
-
-
-
-                    const       SizedBox(height: 4),
-                    Container(
-                      width: _width,
-                      color: AppColors().greyTransparent,
-                        child: const Text('RESERVAS:', style: EstiloTextoBranco.text22)
-                    ),
-
-                    Container(
-                      height: 90,
-                      color: AppColors().greyTransparent,
-                      child: ListView.builder(
-                          shrinkWrap: true,
-                          scrollDirection: Axis.horizontal,
-                          itemCount:  myClub.nJogadores>11 ? myClub.nJogadores> 18 ? 7 : myClub.nJogadores -11 : 0,
-                          itemBuilder: (BuildContext context, int index) {
-                            index = index+11;
-                            return
-                              dragPlayer<0
-                                  ?  draggable(my.jogadores[index])
-                                  : draggableTarget(my.jogadores[index]);
-                          }
-                      ),
-                    ),
-
-                    Container(
-                      height: 90,
-                      color: AppColors().greyTransparent,
-                      child: ListView.builder(
-                          shrinkWrap: true,
-                          scrollDirection: Axis.horizontal,
-                          itemCount: myClub.nJogadores>18 ? myClub.nJogadores-18 : 0,
-                          itemBuilder: (BuildContext context, int index) {
-                            index = index+18;
-                            return
-                              dragPlayer<0
-                                  ?  draggable(my.jogadores[index])
-                                  : draggableTarget(my.jogadores[index]);
-                          }
-                      ),
-                    ),
-
-                    //FILTRAR POR TÓPICOS
-                    Padding(
-                      padding: const EdgeInsets.only(top:4.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          button(title: 'OVR', function: (){setState(() {});show = 'OVR';}),
-                          button(title: 'Idade', function: (){setState(() {});show = 'Idade';}),
-                          button(title: 'Jogos', function: (){setState(() {});show = 'Jogos';}),
-                          button(title: 'Gols', function: (){setState(() {});show = 'Gols';}),
-                          button(title: 'Assists.', function: (){setState(() {});show = 'Assists';}),
-                          button(title: 'Ver Mais', function: (){
-                            Navigator.push(context,MaterialPageRoute(builder: (context) => const MyTeamAllInfo()));
-                          }),
+                          ),
                         ],
                       ),
+
+
+
+                    ],
+                  ),
+
+                  //Widget do campo
+                  fieldWidget(),
+
+
+                  const       SizedBox(height: 4),
+                  Container(
+                    width: _width,
+                    color: AppColors().greyTransparent,
+                      child: const Text('RESERVAS:', style: EstiloTextoBranco.text22)
+                  ),
+
+                  Container(
+                    height: 90,
+                    color: AppColors().greyTransparent,
+                    child: ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemCount:  myClub.nJogadores>11 ? myClub.nJogadores> 18 ? 7 : myClub.nJogadores -11 : 0,
+                        itemBuilder: (BuildContext context, int index) {
+                          index = index+11;
+                          return
+                            dragPlayer<0
+                                ?  draggable(my.jogadores[index])
+                                : draggableTarget(my.jogadores[index]);
+                        }
                     ),
+                  ),
 
-                  ],
-                ),
+                  Container(
+                    height: 90,
+                    color: AppColors().greyTransparent,
+                    child: ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: myClub.nJogadores>18 ? myClub.nJogadores-18 : 0,
+                        itemBuilder: (BuildContext context, int index) {
+                          index = index+18;
+                          return
+                            dragPlayer<0
+                                ?  draggable(my.jogadores[index])
+                                : draggableTarget(my.jogadores[index]);
+                        }
+                    ),
+                  ),
 
-            //BOTAO DE VOLTAR
-            returnButton(context),
+                  //FILTRAR POR TÓPICOS
+                  Padding(
+                    padding: const EdgeInsets.only(top:4.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        button(title: 'OVR', function: (){setState(() {});show = 'OVR';}),
+                        button(title: 'Idade', function: (){setState(() {});show = 'Idade';}),
+                        button(title: 'Jogos', function: (){setState(() {});show = 'Jogos';}),
+                        button(title: 'Gols', function: (){setState(() {});show = 'Gols';}),
+                        button(title: 'Assists.', function: (){setState(() {});show = 'Assists';}),
+                        button(title: 'Ver Mais', function: (){
+                          Navigator.push(context,MaterialPageRoute(builder: (context) => const MyTeamAllInfo()));
+                        }),
+                      ],
+                    ),
+                  ),
 
-              ]
-          ),
-      ),
+                  button(
+                      title: 'Treinar',
+                      function: (){
+                        customToast('Em desenvolvimento');
+                      }
+                      ),
+
+                ],
+              ),
+
+          //BOTAO DE VOLTAR
+          returnButton(context),
+
+            ]
+        ),
     );
   }
 ////////////////////////////////////////////////////////////////////////////
@@ -249,16 +262,6 @@ Widget draggable(int playerID){
         },
     );
   }
-
-
-Widget fieldWidget(){
-    if(My().esquemaTatico == EsquemaTatico().e442) return fieldGameplay442();
-    if(My().esquemaTatico == EsquemaTatico().e433) return fieldGameplay433();
-    if(My().esquemaTatico == EsquemaTatico().e343) return fieldGameplay343();
-    if(My().esquemaTatico == EsquemaTatico().e451) return fieldGameplay451();
-
-    return Container();
-}
 
 
 Widget playerWidgetOVR(int playerIndex){
@@ -350,19 +353,21 @@ Widget playerWidgetOVR(int playerIndex){
     );
   }
 
+  Widget fieldWidget(){
+    if(My().esquemaTatico == EsquemaTatico().e442) return fieldGameplay442();
+    if(My().esquemaTatico == EsquemaTatico().e433) return fieldGameplay433();
+    if(My().esquemaTatico == EsquemaTatico().e343) return fieldGameplay343();
+    if(My().esquemaTatico == EsquemaTatico().e451) return fieldGameplay451();
+
+    return Container();
+  }
 
   Widget fieldGameplay442(){
     return fieldSizeWidget(
         Column(
           children: [
             //ATACANTES
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                playerWidget(my.jogadores[9]),
-                playerWidget(my.jogadores[10]),
-              ],
-            ),
+            playerWidgetRow([my.jogadores[9],my.jogadores[10]]),
             //MEIAS
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -372,31 +377,14 @@ Widget playerWidgetOVR(int playerIndex){
               ],
             ),
             //VOLANTES
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                playerWidget(my.jogadores[5]),
-                playerWidget(my.jogadores[6]),
-              ],
-            ),
+            playerWidgetRow([my.jogadores[5],my.jogadores[6]]),
             //ZAGUEIROS
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                playerWidget(my.jogadores[1]),
-                playerWidget(my.jogadores[2]),
-                playerWidget(my.jogadores[3]),
-                playerWidget(my.jogadores[4]),
-              ],
-            ),
-
+            playerWidgetRow([my.jogadores[1],my.jogadores[2],my.jogadores[3],my.jogadores[4]]),
             //GOLEIRO
-            playerWidget(my.jogadores[0]),
-
+            playerWidgetRow([my.jogadores[0]]),
           ],
         )
     );
-
   }
 
   Widget fieldGameplay433(){
@@ -404,43 +392,15 @@ Widget playerWidgetOVR(int playerIndex){
           Column(
             children: [
               //ATACANTES
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  playerWidget(my.jogadores[8]),
-                  playerWidget(my.jogadores[9]),
-                  playerWidget(my.jogadores[10]),
-                ],
-              ),
+              playerWidgetRow([my.jogadores[8],my.jogadores[9],my.jogadores[10]]),
               //MEIAS
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  playerWidget(my.jogadores[7]),
-                ],
-              ),
+              playerWidgetRow([my.jogadores[7]]),
               //VOLANTES
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  playerWidget(my.jogadores[5]),
-                  playerWidget(my.jogadores[6]),
-                ],
-              ),
+              playerWidgetRow([my.jogadores[5],my.jogadores[6]]),
               //ZAGUEIROS
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  playerWidget(my.jogadores[1]),
-                  playerWidget(my.jogadores[2]),
-                  playerWidget(my.jogadores[3]),
-                  playerWidget(my.jogadores[4]),
-                ],
-              ),
-
+              playerWidgetRow([my.jogadores[1],my.jogadores[2],my.jogadores[3],my.jogadores[4]]),
               //GOLEIRO
-              playerWidget(my.jogadores[0]),
-
+              playerWidgetRow([my.jogadores[0]]),
             ],
           ),
     );
@@ -451,42 +411,21 @@ Widget playerWidgetOVR(int playerIndex){
           Column(
             children: [
               //ATACANTES
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  playerWidget(my.jogadores[8]),
-                  playerWidget(my.jogadores[9]),
-                  playerWidget(my.jogadores[10]),
-                ],
-              ),
+              playerWidgetRow([my.jogadores[8],my.jogadores[9],my.jogadores[10]]),
               //MEIAS
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  playerWidget(my.jogadores[7]),
                   playerWidget(my.jogadores[6]),
+                  playerWidget(my.jogadores[7]),
                 ],
               ),
               //VOLANTES
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  playerWidget(my.jogadores[5]),
-                  playerWidget(my.jogadores[4]),
-                ],
-              ),
+              playerWidgetRow([my.jogadores[4],my.jogadores[5]]),
               //ZAGUEIROS
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  playerWidget(my.jogadores[1]),
-                  playerWidget(my.jogadores[2]),
-                  playerWidget(my.jogadores[3]),
-                ],
-              ),
-
+              playerWidgetRow([my.jogadores[1],my.jogadores[2],my.jogadores[3]]),
               //GOLEIRO
-              playerWidget(my.jogadores[0]),
+              playerWidgetRow([my.jogadores[0]]),
 
             ],
           ),
@@ -498,47 +437,63 @@ Widget playerWidgetOVR(int playerIndex){
           Column(
             children: [
               //ATACANTES
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  playerWidget(my.jogadores[10]),
-                ],
-              ),
+              playerWidgetRow([my.jogadores[10]]),
               //MEIAS
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  playerWidget(my.jogadores[7]),
-                  playerWidget(my.jogadores[8]),
-                  playerWidget(my.jogadores[9]),
-                ],
-              ),
+              playerWidgetRow([my.jogadores[7],my.jogadores[8],my.jogadores[9]]),
               //VOLANTES
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  playerWidget(my.jogadores[5]),
-                  playerWidget(my.jogadores[6]),
-                ],
-              ),
+              playerWidgetRow([my.jogadores[5],my.jogadores[6]]),
               //ZAGUEIROS
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  playerWidget(my.jogadores[1]),
-                  playerWidget(my.jogadores[2]),
-                  playerWidget(my.jogadores[3]),
-                  playerWidget(my.jogadores[4]),
-                ],
-              ),
-
+              playerWidgetRow([my.jogadores[1],my.jogadores[2],my.jogadores[3],my.jogadores[4]]),
               //GOLEIRO
-              playerWidget(my.jogadores[0]),
-
+              playerWidgetRow([my.jogadores[0]]),
             ],
           ),
     );
 
+  }
+
+  Widget playerWidgetRow(List playersID){
+    if(playersID.length==1) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          playerWidget(playersID[0]),
+        ],
+      );
+    }
+    else if(playersID.length==2) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          playerWidget(playersID[0]),
+          playerWidget(playersID[1]),
+        ],
+      );
+    }
+    else if(playersID.length==3) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          playerWidget(playersID[0]),
+          playerWidget(playersID[1]),
+          playerWidget(playersID[2]),
+        ],
+      );
+    }
+    else if(playersID.length==4) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          playerWidget(playersID[0]),
+          playerWidget(playersID[1]),
+          playerWidget(playersID[2]),
+          playerWidget(playersID[3]),
+        ],
+      );
+    }
+    else{
+      return Container();
+    }
   }
 
   Widget playerWidget(int playerID){

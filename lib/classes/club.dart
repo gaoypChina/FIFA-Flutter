@@ -135,7 +135,21 @@ class Club{
 
         //Escalação 442
         if (positions442[playersPositionNames[j]].contains(nPosicao)) {//Ex: GOL[1,2] contains 0?
-
+          //Se a posicao do jogador é permitida, adiciona na lista de jogadores possíveis
+          permittedPlayersID.add(playersID[j]);
+          permittedPlayersOVR.add(playersOVR[j]);
+        }
+        else if (positions433[playersPositionNames[j]].contains(nPosicao)) {//Ex: GOL[1,2] contains 0?
+          //Se a posicao do jogador é permitida, adiciona na lista de jogadores possíveis
+          permittedPlayersID.add(playersID[j]);
+          permittedPlayersOVR.add(playersOVR[j]);
+        }
+        else if (positions343[playersPositionNames[j]].contains(nPosicao)) {//Ex: GOL[1,2] contains 0?
+          //Se a posicao do jogador é permitida, adiciona na lista de jogadores possíveis
+          permittedPlayersID.add(playersID[j]);
+          permittedPlayersOVR.add(playersOVR[j]);
+        }
+        else if (positions451[playersPositionNames[j]].contains(nPosicao)) {//Ex: GOL[1,2] contains 0?
           //Se a posicao do jogador é permitida, adiciona na lista de jogadores possíveis
           permittedPlayersID.add(playersID[j]);
           permittedPlayersOVR.add(playersOVR[j]);

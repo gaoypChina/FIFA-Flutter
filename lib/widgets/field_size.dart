@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 
 Widget fieldSizeWidget(Widget childrenWidget){
   return SizedBox(
-    height: 330,
+    height: 342,
     child: Stack(
       children: [
         //Campo

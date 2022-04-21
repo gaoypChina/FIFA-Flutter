@@ -181,12 +181,14 @@ class _PlayState extends State<Play> {
                             Row(
                               children: [
                                 SizedBox(
-                                  width: 190,
-                                    child: fieldGameplay442(visitante ? widget.adversarioClubID : myClass.clubID)
+                                  width: Sized(context).width/2,
+                                    height: 420,
+                                    child: visitante ? fieldGameplay442(widget.adversarioClubID) : fieldWidget(),
                                 ),
                                 SizedBox(
-                                    width: 190,
-                                    child: fieldGameplay442(visitante ? myClass.clubID : widget.adversarioClubID)
+                                    width: Sized(context).width/2,
+                                    height: 420,
+                                    child: visitante ? fieldWidget() : fieldGameplay442(widget.adversarioClubID),
                                 ),
                               ],
                             ),

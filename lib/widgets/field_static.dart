@@ -1,4 +1,5 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/geral/esquemas_taticos.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/match.dart';
@@ -7,6 +8,15 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
+Widget fieldWidget(){
+  if(My().esquemaTatico == EsquemaTatico().e442) return fieldGameplay442(My().clubID);
+  if(My().esquemaTatico == EsquemaTatico().e433) return fieldGameplay433(My().clubID);
+  if(My().esquemaTatico == EsquemaTatico().e343) return fieldGameplay343(My().clubID);
+  if(My().esquemaTatico == EsquemaTatico().e451) return fieldGameplay451(My().clubID);
+
+  return Container();
+}
+
 Widget fieldGameplay442(int clubID){
   Club club = Club(index: clubID);
   String clubName = club.name;
@@ -14,61 +24,153 @@ Widget fieldGameplay442(int clubID){
   if(My().clubID == clubID){
     jogadores = globalMyJogadores;
   }
-  return SizedBox(
-    height: 420,
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    children: [
+      //ATACANTES
+      playerWidgetRow([jogadores[9],jogadores[10]],clubName),
+      //MEIAS
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          playerWidgetMatch(jogadores[7],clubName),
+          playerWidgetMatch(jogadores[8],clubName),
+        ],
+      ),
+      //VOLANTES
+      playerWidgetRow([jogadores[5],jogadores[6]],clubName),
+      //ZAGUEIROS
+      playerWidgetRow([jogadores[1],jogadores[2],jogadores[3],jogadores[4]],clubName),
+      //GOLEIRO
+      playerWidgetRow([jogadores[0]],clubName),
 
-        //ATACANTES
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            playerWidgetMatch(jogadores[9],clubName),
-            playerWidgetMatch(jogadores[10],clubName),
-          ],
-        ),
-
-        //MEIAS
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            playerWidgetMatch(jogadores[7],clubName),
-            playerWidgetMatch(jogadores[8],clubName),
-          ],
-        ),
-
-        //VOLANTES
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            playerWidgetMatch(jogadores[5],clubName),
-            playerWidgetMatch(jogadores[6],clubName),
-          ],
-        ),
-
-        //ZAGUEIROS
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            playerWidgetMatch(jogadores[1],clubName),
-            playerWidgetMatch(jogadores[2],clubName),
-            playerWidgetMatch(jogadores[3],clubName),
-            playerWidgetMatch(jogadores[4],clubName),
-          ],
-        ),
-
-        //GOLEIRO
-        playerWidgetMatch(jogadores[0],clubName),
-
-      ],
-    ),
+    ],
   );
+}
 
+
+Widget fieldGameplay433(int clubID){
+  Club club = Club(index: clubID);
+  String clubName = club.name;
+  List jogadores = club.optimizeBestSquadClub();
+  if(My().clubID == clubID){
+    jogadores = globalMyJogadores;
+  }
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    children: [
+      //ATACANTES
+      playerWidgetRow([jogadores[8],jogadores[9],jogadores[10]],clubName),
+      //MEIAS
+      playerWidgetRow([jogadores[7]],clubName),
+      //VOLANTES
+      playerWidgetRow([jogadores[5],jogadores[6]],clubName),
+      //ZAGUEIROS
+      playerWidgetRow([jogadores[1],jogadores[2],jogadores[3],jogadores[4]],clubName),
+      //GOLEIRO
+      playerWidgetRow([jogadores[0]],clubName),
+    ],
+  );
+}
+Widget fieldGameplay343(int clubID){
+  Club club = Club(index: clubID);
+  String clubName = club.name;
+  List jogadores = club.optimizeBestSquadClub();
+  if(My().clubID == clubID){
+    jogadores = globalMyJogadores;
+  }
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    children: [
+      //ATACANTES
+      playerWidgetRow([jogadores[8],jogadores[9],jogadores[10]],clubName),
+      //MEIAS
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          playerWidgetMatch(jogadores[6],clubName),
+          playerWidgetMatch(jogadores[7],clubName),
+        ],
+      ),
+      //VOLANTES
+      playerWidgetRow([jogadores[4],jogadores[5]],clubName),
+      //ZAGUEIROS
+      playerWidgetRow([jogadores[1],jogadores[2],jogadores[3]],clubName),
+      //GOLEIRO
+      playerWidgetRow([jogadores[0]],clubName),
+    ],
+  );
+}
+Widget fieldGameplay451(int clubID){
+  Club club = Club(index: clubID);
+  String clubName = club.name;
+  List jogadores = club.optimizeBestSquadClub();
+  if(My().clubID == clubID){
+    jogadores = globalMyJogadores;
+  }
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    children: [
+      //ATACANTES
+      playerWidgetRow([jogadores[10]],clubName),
+      //MEIAS
+      playerWidgetRow([jogadores[7],jogadores[8],jogadores[9]],clubName),
+      //VOLANTES
+      playerWidgetRow([jogadores[5],jogadores[6]],clubName),
+      //ZAGUEIROS
+      playerWidgetRow([jogadores[1],jogadores[2],jogadores[3],jogadores[4]],clubName),
+      //GOLEIRO
+      playerWidgetRow([jogadores[0]],clubName),
+    ],
+  );
+}
+
+Widget playerWidgetRow(List playersID, String clubName){
+  if(playersID.length==1) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        playerWidgetMatch(playersID[0],clubName),
+      ],
+    );
+  }
+  else if(playersID.length==2) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        playerWidgetMatch(playersID[0],clubName),
+        playerWidgetMatch(playersID[1],clubName),
+      ],
+    );
+  }
+  else if(playersID.length==3) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        playerWidgetMatch(playersID[0],clubName),
+        playerWidgetMatch(playersID[1],clubName),
+        playerWidgetMatch(playersID[2],clubName),
+      ],
+    );
+  }
+  else if(playersID.length==4) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        playerWidgetMatch(playersID[0],clubName),
+        playerWidgetMatch(playersID[1],clubName),
+        playerWidgetMatch(playersID[2],clubName),
+        playerWidgetMatch(playersID[3],clubName),
+      ],
+    );
+  }
+  else{
+    return Container();
+  }
 }
 
 Widget playerWidgetMatch(int jogadorIndex, String clubName){

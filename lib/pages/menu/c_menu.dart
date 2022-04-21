@@ -301,16 +301,9 @@ Widget menuButton(String text, Function() function){
 //                               FUNCTIONS                                //
 ////////////////////////////////////////////////////////////////////////////
   popupexpectativaCall(){
-    //IF RODADA==1
-    if(rodada == 1){
-      //DEMITIDO
-
-      //show POPUP
+    if(rodada == testInitRodada){
       popUpExpectativa(context: context);
-
     }
-
   }
-
 
 }

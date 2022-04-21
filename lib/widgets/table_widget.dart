@@ -98,31 +98,28 @@ Color backgroundTextColor(int position, int choosenLeagueIndex , String teamName
   if(position==0){backgroundColor = Colors.yellowAccent.withOpacity(0.7);}
 
   //CLASSIFICAÇÃO
+  if(leagueName==LeagueOfficialNames().turquiaGrecia
+      || leagueName==LeagueOfficialNames().argentina  || leagueName==LeagueOfficialNames().colombia){
+    if(position==1){backgroundColor = Colors.indigo;}
+  }
+  if(leagueName==LeagueOfficialNames().inglaterra2  || leagueName==LeagueOfficialNames().espanha2
+      || leagueName==LeagueOfficialNames().italia2 || leagueName==LeagueOfficialNames().franca2
+      || leagueName==LeagueOfficialNames().alemanha2
+      || leagueName==LeagueOfficialNames().lesteEuropeu || leagueName==LeagueOfficialNames().ligaEuropa
+      || leagueName==LeagueOfficialNames().brasil2 || leagueName==LeagueOfficialNames().brasil3
+  ){
+    if(position==1){backgroundColor = Colors.indigo;}
+    if(position==2){backgroundColor = Colors.indigo;}
+  }
   if(leagueName==LeagueOfficialNames().inglaterra1 || leagueName==LeagueOfficialNames().italia1
       || leagueName==LeagueOfficialNames().espanha1 || leagueName==LeagueOfficialNames().franca1
       || leagueName==LeagueOfficialNames().alemanha1 || leagueName==LeagueOfficialNames().ptHol
-      || leagueName==LeagueOfficialNames().lesteEuropeu || leagueName==LeagueOfficialNames().ligaEuropa
   ){
     if(position==1){backgroundColor = Colors.indigo;}
     if(position==2){backgroundColor = Colors.indigo;}
     if(position==3){backgroundColor = Colors.indigo;}
   }
 
-  if(leagueName==LeagueOfficialNames().inglaterra2  || leagueName==LeagueOfficialNames().espanha2
-      || leagueName==LeagueOfficialNames().italia2 || leagueName==LeagueOfficialNames().franca2
-      || leagueName==LeagueOfficialNames().alemanha2
-      || leagueName==LeagueOfficialNames().brasil2 || leagueName==LeagueOfficialNames().brasil3
-  ){
-    if(position==1){backgroundColor = Colors.indigo;}
-    if(position==2){backgroundColor = Colors.indigo;}
-  }
-
-  if(leagueName==LeagueOfficialNames().argentina  || leagueName==LeagueOfficialNames().colombia
-  ){
-    for(int i=1; i<6; i++){
-      if(position==i){backgroundColor = Colors.indigo;}
-    }
-  }
   if(leagueName==LeagueOfficialNames().brasil1){
     for(int i=1; i<8; i++){
       if(position==i){backgroundColor = Colors.indigo;}

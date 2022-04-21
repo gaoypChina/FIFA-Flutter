@@ -16,7 +16,7 @@ List clubsAllNameList = [
   ClubName().sheffieldunited,  ClubName().stoke,  ClubName().swansea,  ClubName().watford,
 
   ClubName().hullcity,ClubName().sunderland,ClubName().brentford,ClubName().portsmouth,
-  ClubName().plymouth,ClubName().millwall,
+  ClubName().plymouth,ClubName().millwall,ClubName().huddersfield,ClubName().charlton,
 
   ClubName().atalanta,  ClubName().bologna,  ClubName().cagliari,  ClubName().fiorentina,
   ClubName().genoa,  ClubName().inter,  ClubName().juventus,  ClubName().milan,
@@ -72,6 +72,7 @@ List clubsAllNameList = [
   ClubName().estrelavermelha,  ClubName().partizan,  ClubName().ludogorets,  ClubName().dinamozagreb,
   ClubName().shaktardonetsk,  ClubName().dinamokiev,  ClubName().spartapraga,  ClubName().slaviaPraha,
   ClubName().cskaSofia,ClubName().cluj,ClubName().slovanBratislava,ClubName().ferencvaros,
+  ClubName().steauaBucureste,ClubName().maccabiTelAviv,
 
   //////////////////////////////////////////////////////
   ClubName().palmeiras,  ClubName().atleticogo,  ClubName().atleticomg,  ClubName().atleticopr,
@@ -111,7 +112,7 @@ List clubsAllNameList = [
   ClubName().americamex,  ClubName().chivasguadalajara, ClubName().cruzazul,  ClubName().monterrey,
   ClubName().pachuca,  ClubName().pumas, ClubName().tigres,  ClubName().toluca,
   ClubName().tijuana,  ClubName().santosLaguna, ClubName().puebla,  ClubName().necaxa,
-  ClubName().atlas,  ClubName().queretaro,
+  ClubName().atlas,  ClubName().queretaro, ClubName().leon,  ClubName().juarez,
 
   ClubName().atlantaunited,  ClubName().columbuscrew, ClubName().dcunited,  ClubName().fcdallas,
   ClubName().intermiami,  ClubName().losangelesfc, ClubName().lagalaxy,  ClubName().minnesota,

@@ -5,7 +5,7 @@ int testInitRodada = 1;
 
 
 //MEU
-String globalMyClubName = 'Arsenal';
+String globalMyClubName = '';
 int globalMyClubID = 0;
 int globalMyPosicaoChave = 0;
 int globalMyExpectativa = 0;
@@ -119,12 +119,12 @@ Map positions442 = {
   'LD': [4],
   'VOL': [5, 6],
   'MC': [5, 6, 7, 8],
-  'MD': [8, 10],
-  'MEI': [7, 8],
   'ME': [7, 9],
+  'MEI': [7, 8],
+  'MD': [8, 10],
   'PE': [7, 9],
-  'PD': [8, 10],
   'ATA': [9, 10],
+  'PD': [8, 10],
 };
 Map positions433 = {
   'GOL': [0],
@@ -133,12 +133,12 @@ Map positions433 = {
   'LD': [4],
   'VOL': [5, 6],
   'MC': [5, 6, 7],
-  'MD': [7, 10],
-  'MEI': [7],
   'ME': [5, 8],
+  'MEI': [7],
+  'MD': [7, 10],
   'PE': [8],
-  'PD': [10],
   'ATA': [8,9,10],
+  'PD': [10],
 };
 Map positions451 = {
   'GOL': [0],
@@ -147,10 +147,24 @@ Map positions451 = {
   'LD': [4],
   'VOL': [5, 6],
   'MC': [5, 6, 8],
-  'MD': [8, 9],
-  'MEI': [7,8,9],
   'ME': [7, 8],
+  'MEI': [7,8,9],
+  'MD': [8, 9],
   'PE': [7],
-  'PD': [9],
   'ATA': [10],
+  'PD': [9],
+};
+Map positions343 = {
+  'GOL': [0],
+  'LE': [1],
+  'ZAG': [1, 2, 3],
+  'LD': [3],
+  'VOL': [4, 5],
+  'MC': [4, 5],
+  'ME': [6, 9],
+  'MEI': [6,7],
+  'MD': [7,10],
+  'PE': [6, 9],
+  'ATA': [8,9,10],
+  'PD': [7,10],
 };

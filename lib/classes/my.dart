@@ -92,6 +92,8 @@ class My{
         return expect;
       }
     }
+    //Se tem time pior
+    expect = ovr.length;
     return expect;
   }
   String getPlayingInternational(){

@@ -26,7 +26,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   int choosenLeagueIndex = My().campeonatoID;
   late int nClubs;
   late League league;
-  bool isOnlyChampion = false;
+  int nTeamsSelected = 20;
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
@@ -56,19 +56,59 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
                       children: [
-                        const Text('Só Campeões',style: EstiloTextoBranco.text16),
+                        const Text('Campeão',style: EstiloTextoBranco.text16),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: GestureDetector(
                             onTap: (){
-                              isOnlyChampion = !isOnlyChampion;
+                              nTeamsSelected = 1;
+                              print(nTeamsSelected);
                               setState(() {});
                             },
-                            child: isOnlyChampion
+                            child: nTeamsSelected == 1
                             ? const Icon(Icons.radio_button_checked,color: Colors.white, size: 30)
                             : const Icon(Icons.radio_button_off,color: Colors.white, size: 30),
                           ),
-                        )
+                        ),
+                        const Text('Final',style: EstiloTextoBranco.text16),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: GestureDetector(
+                            onTap: (){
+                              nTeamsSelected = 2;
+                              setState(() {});
+                            },
+                            child: nTeamsSelected ==2
+                                ? const Icon(Icons.radio_button_checked,color: Colors.white, size: 30)
+                                : const Icon(Icons.radio_button_off,color: Colors.white, size: 30),
+                          ),
+                        ),
+                        const Text('G-4',style: EstiloTextoBranco.text16),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: GestureDetector(
+                            onTap: (){
+                              nTeamsSelected = 4;
+                              setState(() {});
+                            },
+                            child: nTeamsSelected == 4
+                                ? const Icon(Icons.radio_button_checked,color: Colors.white, size: 30)
+                                : const Icon(Icons.radio_button_off,color: Colors.white, size: 30),
+                          ),
+                        ),
+                        const Text('G-10',style: EstiloTextoBranco.text16),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: GestureDetector(
+                            onTap: (){
+                              nTeamsSelected = 10;
+                              setState(() {});
+                            },
+                            child: nTeamsSelected == 10
+                                ? const Icon(Icons.radio_button_checked,color: Colors.white, size: 30)
+                                : const Icon(Icons.radio_button_off,color: Colors.white, size: 30),
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -137,10 +177,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
   Widget yearRow(int year){
-    int nRows = league.nClubs;
-    if(isOnlyChampion){
-      nRows = 1;
-    }
+    int nRows = nTeamsSelected;
     return Column(
       children: [
         Text(year.toString(),style: EstiloTextoBranco.text16),
@@ -173,12 +210,9 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   //////////////////////////////////////////
   //HISTORICOS PASSADOS
   Widget yearRowPast(int ano){
-    if(isOnlyChampion){
-      return validacao(0, ano);
-    }
     return Column(
       children: [
-        for(int position=0;position<16;position++)
+        for(int position=0;position<nTeamsSelected;position++)
           validacao(position, ano),
       ],
     );

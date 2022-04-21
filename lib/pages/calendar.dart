@@ -100,133 +100,92 @@ class _CalendarState extends State<Calendar> {
                   style: EstiloTextoBranco.text10, textAlign: TextAlign.center),
           Text(show.clubName2,
               overflow: TextOverflow.fade,
-              style: EstiloTextoBranco.text16,
+              style: EstiloTextoBranco.text14,
               textAlign: TextAlign.center),
           const Spacer(),
         ]),
       ),
     );
     }else{
-      return Container(
-        width: 120,
-        height: 117,
-        color: Colors.black12,
-        child: Text('Semana '+rodadaLocal.toString(), textAlign: TextAlign.center,style: EstiloTextoBranco.text16),
-      );
+      return notPlayWidget(rodadaLocal,'Semana '+rodadaLocal.toString());
     }
   }
 
   Widget adversarioInternational(int semanaLocal) {
     ResultGameInternacional show = ResultGameInternacional(semanaLocal: semanaLocal, clubID: myTeamClass.clubID);
     if(show.hasAdversary && semana >= semanasJogosInternacionais.first) {
-      return GestureDetector(
-        onTap: () {
-          Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: show.clubID2)));
-        },
-        child: Container(
-          width: 120,
-          height: 117,
-          color: show.backgroundColor,
-          child: Column(
-            children: [
-              Text(Semana(semanaLocal).semanaStr,
-                  style: EstiloTextoBranco.text16),
-              SizedBox(
-              height: 45,
-              width: 80,
-                child: Stack(
-                  children: [
-                    show.visitante
-                        ? Image.asset(Images().getStadium(show.clubName2),height: 90, width: 90)
-                        : Container(),
-                    Image.asset(Images().getMyInternationalLeagueLogo(),height: 22, width: 22),
-                    Center(child: Image.asset(Images().getEscudo(show.clubName2),height: 45, width: 45)),
-                  ],
-                ),
-              ),
-              show.visitante
-                  ? Text('FORA ${show.placar}',
-                  style: EstiloTextoBranco.text10, textAlign: TextAlign.center)
-                  : Text('CASA ${show.placar}',
-                  style: EstiloTextoBranco.text10, textAlign: TextAlign.center),
-              Text(show.clubName2,
-                  overflow: TextOverflow.fade,
-                  style: EstiloTextoBranco.text16,
-                  textAlign: TextAlign.center),
-              const Spacer(),
-            ],
-          ),
-        ),
-      );
+      return  playWidget(semanaLocal,show);
     }else{
-      return Container(
-        width: 120,
-        height: 117,
-        color: Colors.black12,
-        child: Column(
-          children: [
-            Text(Semana(semanaLocal).semanaStr, textAlign: TextAlign.center,style: EstiloTextoBranco.text16),
-            Image.asset(Images().getMyInternationalLeagueLogo(),height: 80, width: 80),
-          ],
-        ),
-      );
+      return notPlayWidget(semanaLocal,Semana(semanaLocal).semanaStr,Images().getMyInternationalLeagueLogo());
     }
   }
 
   Widget adversarioMataMata(int semanaLocal) {
     ResultGameInternacional show = ResultGameInternacional(semanaLocal: semanaLocal, clubID: myTeamClass.clubID);
     if(show.hasAdversary && semana >= semanasMataMataInternacionais.first) {
-      return GestureDetector(
-        onTap: () {
-          Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: show.clubID2)));
-        },
-        child: Container(
-          width: 120,
-          height: 117,
-          color: show.backgroundColor,
-          child: Column(
-            children: [
-              Text(Semana(semanaLocal).semanaStr,
-                  style: EstiloTextoBranco.text16),
-              SizedBox(
-                height: 45,
-                width: 80,
-                child: Stack(
-                  children: [
-                    show.visitante
-                        ? Image.asset(Images().getStadium(show.clubName2),height: 90, width: 90)
-                        : Container(),
-                    Image.asset(Images().getMyInternationalLeagueLogo(),height: 22, width: 22),
-                    Center(child: Image.asset(Images().getEscudo(show.clubName2),height: 45, width: 45)),
-                  ],
-                ),
-              ),
-              show.visitante
-                  ? Text('FORA ${show.placar}',
-                  style: EstiloTextoBranco.text10, textAlign: TextAlign.center)
-                  : Text('CASA ${show.placar}',
-                  style: EstiloTextoBranco.text10, textAlign: TextAlign.center),
-              Text(show.clubName2,
-                  overflow: TextOverflow.fade,
-                  style: EstiloTextoBranco.text16,
-                  textAlign: TextAlign.center),
-            ],
-          ),
-        ),
-      );
+      return playWidget(semanaLocal,show);
     }else{
-      return Container(
-          width: 120,
-          height: 117,
-          color: Colors.black12,
-        child: Column(
-          children: [
-            Text(Semana(semanaLocal).semanaStr, textAlign: TextAlign.center,style: EstiloTextoBranco.text16),
-            Image.asset(Images().getMyInternationalLeagueLogo(),height: 80, width: 80),
-          ],
-        ),
-      );
+      return notPlayWidget(semanaLocal,Semana(semanaLocal).semanaStr,Images().getMyInternationalLeagueLogo());
     }
   }
+
+
+
+
+
+Widget playWidget(int semanaLocal, show){
+  return GestureDetector(
+    onTap: () {
+      Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: show.clubID2)));
+    },
+    child: Container(
+      width: 120,
+      height: 117,
+      color: show.backgroundColor,
+      child: Column(
+        children: [
+          Text(Semana(semanaLocal).semanaStr,
+              style: EstiloTextoBranco.text16),
+          SizedBox(
+            height: 45,
+            width: 80,
+            child: Stack(
+              children: [
+                show.visitante
+                    ? Image.asset(Images().getStadium(show.clubName2),height: 90, width: 90)
+                    : Container(),
+                Image.asset(Images().getMyInternationalLeagueLogo(),height: 22, width: 22),
+                Center(child: Image.asset(Images().getEscudo(show.clubName2),height: 45, width: 45)),
+              ],
+            ),
+          ),
+          show.visitante
+              ? Text('FORA ${show.placar}',
+              style: EstiloTextoBranco.text10, textAlign: TextAlign.center)
+              : Text('CASA ${show.placar}',
+              style: EstiloTextoBranco.text10, textAlign: TextAlign.center),
+          Text(show.clubName2,
+              overflow: TextOverflow.fade,
+              style: EstiloTextoBranco.text14,
+              textAlign: TextAlign.center),
+        ],
+      ),
+    ),
+  );
+}
+
+Widget notPlayWidget(int semanaLocal,String title, [String? imageName]){
+  return Container(
+    width: 120,
+    height: 117,
+    color: semana > semanaLocal ? Colors.deepPurple : Colors.black12,
+    child: Column(
+      children: [
+        Text(title, textAlign: TextAlign.center,style: EstiloTextoBranco.text16),
+        imageName != null ? Image.asset(imageName,height: 80, width: 80) : Container(),
+      ],
+    ),
+  );
+}
 
 }

@@ -58,13 +58,18 @@ class FimDoCampeonatoLocal{
         globalInternational32ClubsID[indexChampions].add(clubIndexes[i]);
       }
     }
+    if(leagueClass.name == LeagueOfficialNames().turquiaGrecia){
+      for(int i=0; i<2; i++){
+        globalInternational32ClubsID[indexChampions].add(clubIndexes[i]);
+      }
+    }
     if(leagueClass.name == LeagueOfficialNames().ligaEuropa){
-      for(int i=0; i<4; i++){
+      for(int i=0; i<3; i++){
         globalInternational32ClubsID[indexChampions].add(clubIndexes[i]);
       }
     }
     if(leagueClass.name == LeagueOfficialNames().lesteEuropeu){
-      for(int i=0; i<4; i++){
+      for(int i=0; i<3; i++){
         globalInternational32ClubsID[indexChampions].add(clubIndexes[i]);
       }
     }

@@ -274,10 +274,15 @@ class ClubName{
   String besiktas = "Besiktas";
   String trabzonspor = "Trabzonspor";
   String instanbul = "Instanbul Basaksehir";
+  String bursaspor = "Bursaspor";
+  String sivasspor = "Sivasspor";
+  String adanaspor = "Adanaspor";
+  String eskisehirspor = "Eskisehirspor";
   String olympiacos = "Olympiacos";
   String paok = "PAOK";
   String aek = "AEK";
   String panathinaikos = "Panathinaikos";
+  String aris = "ARIS Tessalônica";
   String apoel = "APOEL";
   //RUSSIA
   String zenit = "Zenit";
@@ -311,6 +316,7 @@ class ClubName{
   String slaviaPraha = "Slavia Praha";
   String viktoriaPlzen = "Viktoria Plzen";
   String ferencvaros = "Ferencvaros";
+  String maccabiTelAviv = "Maccabi Tel Aviv";
 
   //////////////////////////////////////////////////////////////////////////////
   //BRASIL
@@ -363,6 +369,7 @@ class ClubName{
   String ferroviaria = "Ferroviária";
   String gama = "Gama";
   String ibis = "Íbis";
+  String gremioBarueri = "Grêmio Barueri";
   String ituano = "Ituano";
   String ipatinga = "Ipatinga";
   String joinville = "Joinville";

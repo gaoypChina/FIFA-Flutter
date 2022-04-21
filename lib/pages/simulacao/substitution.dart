@@ -277,8 +277,12 @@ class _SubstitutionState extends State<Substitution> {
   }
 
   Widget fieldWidgetSelection(){
-    if(My().esquemaTatico == EsquemaTatico().e442) return fieldGameplay442();
-    if(My().esquemaTatico == EsquemaTatico().e433) return fieldGameplay433();
+    My my = My();
+    if(my.esquemaTatico == EsquemaTatico().e442) {return fieldGameplay442();}
+    else if(my.esquemaTatico == EsquemaTatico().e433) {return fieldGameplay433();}
+    else if(my.esquemaTatico == EsquemaTatico().e343) {return fieldGameplay343();}
+    else if(my.esquemaTatico == EsquemaTatico().e451) {return fieldGameplay451();}
+
 
     return fieldGameplay442();
   }
@@ -288,13 +292,7 @@ class _SubstitutionState extends State<Substitution> {
         Column(
           children: [
             //ATACANTES
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                playerWidget(my.jogadores[9]),
-                playerWidget(my.jogadores[10]),
-              ],
-            ),
+            playerWidgetRow([my.jogadores[9],my.jogadores[10]]),
             //MEIAS
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -304,31 +302,15 @@ class _SubstitutionState extends State<Substitution> {
               ],
             ),
             //VOLANTES
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                playerWidget(my.jogadores[5]),
-                playerWidget(my.jogadores[6]),
-              ],
-            ),
+            playerWidgetRow([my.jogadores[5],my.jogadores[6]]),
             //ZAGUEIROS
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                playerWidget(my.jogadores[1]),
-                playerWidget(my.jogadores[2]),
-                playerWidget(my.jogadores[3]),
-                playerWidget(my.jogadores[4]),
-              ],
-            ),
-
+            playerWidgetRow([my.jogadores[1],my.jogadores[2],my.jogadores[3],my.jogadores[4]]),
             //GOLEIRO
-            playerWidget(my.jogadores[0]),
+            playerWidgetRow([my.jogadores[0]]),
 
           ],
         )
     );
-
   }
 
   Widget fieldGameplay433(){
@@ -336,50 +318,107 @@ class _SubstitutionState extends State<Substitution> {
         Column(
           children: [
             //ATACANTES
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                playerWidget(my.jogadores[8]),
-                playerWidget(my.jogadores[9]),
-                playerWidget(my.jogadores[10]),
-              ],
-            ),
+            playerWidgetRow([my.jogadores[8],my.jogadores[9],my.jogadores[10]]),
+            //MEIAS
+            playerWidgetRow([my.jogadores[7]]),
+            //VOLANTES
+            playerWidgetRow([my.jogadores[5],my.jogadores[6]]),
+            //ZAGUEIROS
+            playerWidgetRow([my.jogadores[1],my.jogadores[2],my.jogadores[3],my.jogadores[4]]),
+            //GOLEIRO
+            playerWidgetRow([my.jogadores[0]]),
+          ],
+        )
+    );
+  }
+
+  Widget fieldGameplay343(){
+    return fieldSizeWidget(
+        Column(
+          children: [
+            //ATACANTES
+            playerWidgetRow([my.jogadores[8],my.jogadores[9],my.jogadores[10]]),
             //MEIAS
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                playerWidget(my.jogadores[6]),
                 playerWidget(my.jogadores[7]),
               ],
             ),
             //VOLANTES
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                playerWidget(my.jogadores[5]),
-                playerWidget(my.jogadores[6]),
-              ],
-            ),
+            playerWidgetRow([my.jogadores[4],my.jogadores[5]]),
             //ZAGUEIROS
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                playerWidget(my.jogadores[1]),
-                playerWidget(my.jogadores[2]),
-                playerWidget(my.jogadores[3]),
-                playerWidget(my.jogadores[4]),
-              ],
-            ),
-
+            playerWidgetRow([my.jogadores[1],my.jogadores[2],my.jogadores[3]]),
             //GOLEIRO
-            playerWidget(my.jogadores[0]),
-
+            playerWidgetRow([my.jogadores[0]]),
           ],
         )
     );
-
   }
 
+  Widget fieldGameplay451(){
+    return fieldSizeWidget(
+        Column(
+          children: [
+            //ATACANTES
+            playerWidgetRow([my.jogadores[10]]),
+            //MEIAS
+            playerWidgetRow([my.jogadores[7],my.jogadores[8],my.jogadores[9]]),
+            //VOLANTES
+            playerWidgetRow([my.jogadores[5],my.jogadores[6]]),
+            //ZAGUEIROS
+            playerWidgetRow([my.jogadores[1],my.jogadores[2],my.jogadores[3],my.jogadores[4]]),
+            //GOLEIRO
+            playerWidgetRow([my.jogadores[0]]),
+          ],
+        )
+    );
+  }
 
+  Widget playerWidgetRow(List playersID){
+    if(playersID.length==1) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          playerWidget(playersID[0]),
+        ],
+      );
+    }
+    else if(playersID.length==2) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          playerWidget(playersID[0]),
+          playerWidget(playersID[1]),
+        ],
+      );
+    }
+    else if(playersID.length==3) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          playerWidget(playersID[0]),
+          playerWidget(playersID[1]),
+          playerWidget(playersID[2]),
+        ],
+      );
+    }
+    else if(playersID.length==4) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          playerWidget(playersID[0]),
+          playerWidget(playersID[1]),
+          playerWidget(playersID[2]),
+          playerWidget(playersID[3]),
+        ],
+      );
+    }
+    else{
+      return Container();
+    }
+  }
   Widget playerWidget(int playerID){
     return dragPlayer<0 ? draggable(playerID): draggableTarget(playerID);
   }
