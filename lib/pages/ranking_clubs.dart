@@ -9,7 +9,7 @@ import 'package:fifa/values/images.dart';
 import 'package:flutter/material.dart';
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 import '../values/images.dart';
-import 'club_profile.dart';
+import 'club_profile/club_profile.dart';
 
 class RankingClubs extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS

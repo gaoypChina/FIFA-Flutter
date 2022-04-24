@@ -1,3 +1,4 @@
+import 'package:fifa/classes/geral/esquemas_taticos.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/functions/international_league.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
@@ -12,6 +13,7 @@ class Club{
   late String name;
   late List jogadores;
   late List escalacao;
+  late String esquemaTatico;
   late int leagueID;
   late String leagueName;
   late String picture;
@@ -31,6 +33,10 @@ class Club{
     picture = FIFAImages().imageLogo(name);
     jogadores = getJogadores();
     nJogadores = jogadores.length;
+    esquemaTatico = EsquemaTatico().e442;
+    if(index == globalMyClubID){
+      esquemaTatico = EsquemaTatico().meuEsquema;
+    }
     escalacao = optimizeBestSquadClub();
     leagueName = getLeagueName();
     leagueID = getLeagueID();
@@ -134,25 +140,36 @@ class Club{
       for (int j = 0; j < playersID.length; j++) {//0-23
 
         //Escalação 442
-        if (positions442[playersPositionNames[j]].contains(nPosicao)) {//Ex: GOL[1,2] contains 0?
-          //Se a posicao do jogador é permitida, adiciona na lista de jogadores possíveis
-          permittedPlayersID.add(playersID[j]);
-          permittedPlayersOVR.add(playersOVR[j]);
+        if(esquemaTatico == EsquemaTatico().e442){
+          if (positions442[playersPositionNames[j]].contains(nPosicao)) {//Ex: GOL[1,2] contains 0?
+            //Se a posicao do jogador é permitida, adiciona na lista de jogadores possíveis
+            permittedPlayersID.add(playersID[j]);
+            permittedPlayersOVR.add(playersOVR[j]);
+          }
         }
-        else if (positions433[playersPositionNames[j]].contains(nPosicao)) {//Ex: GOL[1,2] contains 0?
-          //Se a posicao do jogador é permitida, adiciona na lista de jogadores possíveis
-          permittedPlayersID.add(playersID[j]);
-          permittedPlayersOVR.add(playersOVR[j]);
+        //Escalação 433
+        if(esquemaTatico == EsquemaTatico().e433){
+          if (positions433[playersPositionNames[j]].contains(nPosicao)) {//Ex: GOL[1,2] contains 0?
+            //Se a posicao do jogador é permitida, adiciona na lista de jogadores possíveis
+            permittedPlayersID.add(playersID[j]);
+            permittedPlayersOVR.add(playersOVR[j]);
+          }
         }
-        else if (positions343[playersPositionNames[j]].contains(nPosicao)) {//Ex: GOL[1,2] contains 0?
-          //Se a posicao do jogador é permitida, adiciona na lista de jogadores possíveis
-          permittedPlayersID.add(playersID[j]);
-          permittedPlayersOVR.add(playersOVR[j]);
+        //Escalação 451
+        if(esquemaTatico == EsquemaTatico().e451){
+          if (positions451[playersPositionNames[j]].contains(nPosicao)) {//Ex: GOL[1,2] contains 0?
+            //Se a posicao do jogador é permitida, adiciona na lista de jogadores possíveis
+            permittedPlayersID.add(playersID[j]);
+            permittedPlayersOVR.add(playersOVR[j]);
+          }
         }
-        else if (positions451[playersPositionNames[j]].contains(nPosicao)) {//Ex: GOL[1,2] contains 0?
-          //Se a posicao do jogador é permitida, adiciona na lista de jogadores possíveis
-          permittedPlayersID.add(playersID[j]);
-          permittedPlayersOVR.add(playersOVR[j]);
+        //Escalação 343
+        if(esquemaTatico == EsquemaTatico().e343){
+          if (positions343[playersPositionNames[j]].contains(nPosicao)) {//Ex: GOL[1,2] contains 0?
+            //Se a posicao do jogador é permitida, adiciona na lista de jogadores possíveis
+            permittedPlayersID.add(playersID[j]);
+            permittedPlayersOVR.add(playersOVR[j]);
+          }
         }
       }
 

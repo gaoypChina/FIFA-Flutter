@@ -35,29 +35,31 @@ class ClubName{
   String swansea = "Swansea";
   String watford = "Watford";
 
-  String hullcity = "Hull City";
-  String sunderland = "Sunderland";
-  String portsmouth = "Portsmouth";
   String barnsley = "Barnsley";
   String bolton = "Bolton";
   String blackpool = "Blackpool";
   String bradford = "Bradford";
   String brentford = "Brentford";
+  String bristol = "Bristol City";
   String cardiffCity = "Cardiff City";
   String charlton = "Charlton Athletic";
+  String coventry = "Coventry";
   String huddersfield = "Huddersfield Town";
+  String hullcity = "Hull City";
   String ipswichTown = "Ipswich Town";
+  String luton = "Luton Town";
   String millwall = "Millwall";
+  String notts = "Notts County";
+  String oldham = "Oldham";
+  String oxford = "Oxford";
+  String portsmouth = "Portsmouth";
   String plymouth = "Plymouth Argyle";
   String prestonNorthEnd = "Preston North End";
   String sheffieldWednesday = "Sheffield Wednesday";
+  String sunderland = "Sunderland";
+  String swindon = "Swindon";
   String wigan = "Wigan";
   String wimbledon = "Wimbledon";
-  String coventry = "Coventry";
-  String lutonTown = "Luton Town";
-  String oldham = "Oldham";
-  String oxford = "Oxford";
-  String swindon = "Swindon";
 
   String atalanta  = "Atalanta";
   String bologna   = "Bologna";
@@ -76,21 +78,51 @@ class ClubName{
   String torino    = "Torino";
   String udinese   = "Udinese";
 
+  String alessandria = "Alessandria";
+  String ancona = "Ancona";
+  String ascoli = "Ascoli";
+  String avellino = "Avellino";
+  String bari = "Bari";
   String benevento = "Benevento";
   String brescia = "Brescia";
   String catania = "Catania";
+  String catanzaro = "Catanzaro";
+  String cremonese = "Cremonese";
+  String carpi = "Carpi";
+  String cesena = "Cesena";
   String chievo  = "Chievo";
+  String como = "Como";
   String crotone = "Crotone";
   String empoli  = "Empoli";
+  String foggia  = "Foggia";
+  String frosinone = "Frosinone";
   String hellasVerona = "Hellas Verona";
   String lecce = "Lecce";
+  String lecco = "Lecco";
+  String livorno = "Livorno";
+  String mantova = "Mantova";
+  String messina = "Messina";
+  String modena = "Modena";
   String monza = "Monza";
+  String novara = "Novara";
   String pisa    = "Pisa";
+  String padova  = "Padova";
   String palermo = "Palermo";
   String perugia = "Perugia";
+  String pescara = "Pescara";
+  String piacenza = "Piacenza";
+  String pistoiese = "Pistoiese";
+  String reggina = "Reggina";
+  String reggiana = "Reggiana";
+  String spal = "SPAL";
   String spezia  = "Spezia";
+  String siena  = "Siena";
+  String salernitana  = "Salernitana";
+  String treviso  = "Treviso";
   String venezia = "Venezia FC";
   String vicenza = "Vicenza";
+  String ternana = "Ternana";
+  String varese = "Varese";
 
   String athleticbilbao = "Athletic Bilbao";
   String atleticomadrid = "Atlético Madrid";
@@ -109,29 +141,40 @@ class ClubName{
   String valladolid = "Valladolid";
   String villareal  = "Villarreal";
 
+  String alaves = "Deportivo Alavés";
+  String albacete = "Albacete";
   String almeria = "Almería";
+  String burgos = "Burgos";
+  String castellon = "Castellón";
   String granada = "Granada";
   String cadiz = "Cádiz";
-  String alaves = "Deportivo Alavés";
+  String compostela = "Compostela";
+  String cordoba = "Córdoba";
   String eibar = "Eibar";
   String elche = "Elche";
+  String extremadura = "Extremadura";
   String girona = "Girona FC";
   String hercules = "Hércules";
   String huesca = "Huesca";
   String ibiza = "Ibiza";
   String lasPalmas = "Las Palmas";
+  String lleida = "Lleida Esportiu";
   String leganes = "Leganés";
+  String logrones = "Logroñés";
   String malaga = "Málaga";
   String merida = "Mérida";
   String numancia = "Numancia";
   String realOviedo = "Real Oviedo";
   String sportingGijon = "Sporting de Gijón";
   String mallorca = "Mallorca";
+  String pontevedra = "Pontevedra";
   String racingSantander = "Racing Santander";
   String rayoVallecano = "Rayo Vallecano";
   String zaragoza = "Real Zaragoza";
   String huelva = "Recreativo de Huelva";
   String murcia = "Real Murcia";
+  String salamanca = "Salamanca";
+  String sabadell = "Sabadell";
   String tenerife = "Tenerife";
   String xerez = "Xerez";
 
@@ -155,17 +198,38 @@ class ClubName{
   String aachen = "Aachen";
   String arminiaBiefeld = "Arminia Bielefeld";
   String bochum = "Bochum 1848";
+  String darmstadt = "Darmstadt";
   String duisburg = "Duisburg";
   String dynamoDresden = "Dynamo Dresden";
+  String energieCottbus = "Energie Cottbus";
   String eintrachtBraunschweiger = "Eintracht Braunschweiger";
   String fortunaDusseldorf = "Fortuna Dusseldorf";
+  String hansaRostock = "Hansa Rostock";
+  String greutherFurth = "Greuther Fürth";
   String hannover96 = "Hannover 96";
+  String homburg = "Homburg";
+  String ingolstadt = "Ingolstadt";
   String kaiserslautern = "Kaiserslautern";
+  String kickersOffenbach = "Kickers Offenbach";
+  String karlsruher = "Karlsruher";
   String mainz05 = "Mainz 05";
+  String meidericher = "Meidericher";
   String munique1860 = "Munique 1860";
+  String uerdigen = "Uerdigen";
   String unionBerlin = "Union Berlin";
+  String neunkirchen = "Neunkirchen";
   String nurnberg = "Nurnberg";
+  String oberhausen = "Oberhausen";
+  String paderborn = "Paderborn";
+  String rotWeissEssen = "Rot-Weiss Essen";
+  String saarbrucken = "Saarbrucken";
   String stPauli = "St. Pauli";
+  String stutKickers = "Stuttgarter Kickers";
+  String ulm = "Ulm";
+  String unterhaching = "Unterhaching";
+  String waldhofMannheim = "Waldhof Mannheim";
+  String wattenscheid = "Wattenscheid";
+  String wuppertaler = "Wuppertaler";
 
   String bordeaux = "Bordeaux";
   String lille = "Lille";
@@ -187,18 +251,37 @@ class ClubName{
   String parisFC = "Paris FC";
 
   String amiens = "Amiens";
+  String ajaccio = "Ajaccio";
   String angers = "Angers";
+  String angouleme = "Angoulême";
   String auxerre = "Auxerre";
   String bastia = "Bastia";
-  String stadeBrestois = "Stade Brestois";
+  String brest = "Brest";
+  String cannes = "Cannes";
+  String chamois = "Chamois Niortais";
   String caen = "Caen";
   String clermont = "Clermont";
   String dijon = "Dijon";
+  String evian = "Evian";
+  String gueugnon = "Gueugnon";
   String guingamp = "Guingamp";
+  String grenoble = "Grenoble";
+  String lavallois = "Lavallois";
+  String lehavre = "Le Havre";
+  String lemans = "Le Mans";
+  String martigues = "Martigues";
+  String nancy = "Nancy";
   String lorient = "FC Lorient";
+  String redstar = "Red Star";
+  String rouen = "Rouen";
+  String sedan = "Sedan";
   String sochaux = "Sochaux";
+  String stadeFrancais = "Stade Français";
+  String tours = "Tours";
+  String toulon = "Toulon";
   String troyes = "Troyes";
   String toulouse = "Toulouse";
+  String valenciennes = "Valenciennes";
 
   String benfica = "Benfica";
   String porto = "Porto";
@@ -206,10 +289,13 @@ class ClubName{
   String braga = "Braga";
   String coimbra = "Acadêmica de Coimbra";
   String arouca = "Arouca";
+  String barreirense = "Barreirense";
   String belenenses = "Belenenses";
   String boavista = "Boavista";
   String chaves = "Chaves";
+  String cuf = "Fabril Barreiro";
   String estoril = "Estoril";
+  String espinho = "Espinho";
   String famalicao = "Famalicão";
   String farense = "Farense";
   String feirense = "Feirense";
@@ -222,6 +308,8 @@ class ClubName{
   String portimonense = "Portimonense";
   String rioAve = "Rio Ave";
   String santaClara = "Santa Clara";
+  String salgueiros = "Salgueiros";
+  String varzim = "Varzim";
   String tondela = "Tondela";
   String uniaoLeiria = "União de Leiria";
   String vitoriaguimaraes = "Vitória Guimarães";
@@ -274,10 +362,17 @@ class ClubName{
   String besiktas = "Besiktas";
   String trabzonspor = "Trabzonspor";
   String instanbul = "Instanbul Basaksehir";
-  String bursaspor = "Bursaspor";
-  String sivasspor = "Sivasspor";
   String adanaspor = "Adanaspor";
+  String alanyaspor = "Alanyaspor";
+  String bursaspor = "Bursaspor";
+  String denizlispor = "Denizlispor";
   String eskisehirspor = "Eskisehirspor";
+  String kayserispor = "Kayserispor";
+  String konyaspor = "Konyaspor";
+  String gaziantepspor = "Gaziantepspor";
+  String malatyaspor = "Malatyaspor";
+  String sivasspor = "Sivasspor";
+
   String olympiacos = "Olympiacos";
   String paok = "PAOK";
   String aek = "AEK";
@@ -293,6 +388,21 @@ class ClubName{
   String rubinKazan= "Rubin Kazan";
   String dinamoMoscou= "Dinamo Moscou";
   String sochi = "Sochi";
+  String rostov = "Rostov";
+  String tula = "Arsenal Tula";
+  String ufa = "Ufa";
+  String ural = "Ural";
+  String terekGrozny = "Terek Grozny";
+  String anzhi = "Anzhi";
+  String kubanKrasnodar = "Kuban Krasnodar";
+  String amkar = "Amkar";
+  String moskva = "FK Moskva";
+  String rotor= "Rotor Volgograd";
+  String torpedo = "Torpedo";
+  String krylyaSovetov = "Krylya Sovetov";
+  String vladikavkaz = "Spartak Vladikavkaz";
+  String saturn = "Saturn";
+  String shinnik = "Shinnik";
   //EX-URSS
   String shaktardonetsk = "Shaktar Donetsk";
   String dinamokiev = "Dinamo Kiev";
@@ -356,27 +466,36 @@ class ClubName{
 
   String abc = "ABC";
   String americaRN = "América RN";
+  String americaRJ= "América RJ";
+  String anapolina = "Anapolina";
   String avai = "Avaí";
   String bangu = "Bangu";
   String botafogoSP = "Botafogo SP";
+  String botafogoPB = "Botafogo PB";
   String brasilPelotas = "Brasil de Pelotas";
   String brasiliense = "Brasiliense";
   String brusque = "Brusque";
   String campinense = "Campinense";
   String caxias = "Caxias do Sul";
+  String comercial = "Comercial";
   String crb = "CRB";
   String csa = "CSA";
+  String desportiva = "Desportiva";
   String ferroviaria = "Ferroviária";
   String gama = "Gama";
   String ibis = "Íbis";
+  String interLimeira = "Inter de Limeira";
   String gremioBarueri = "Grêmio Barueri";
   String ituano = "Ituano";
   String ipatinga = "Ipatinga";
   String joinville = "Joinville";
   String gremioNovorizontino = "Grêmio Novorizontino";
   String londrina = "Londrina";
+  String malutrom = "Malutrom";
   String manaus = "Manaus";
   String mirassol = "Mirassol";
+  String mixto = "Mixto";
+  String nacionalAM = "Nacional AMAZ";
   String operarioPR = "Operário-PR";
   String operarioms = "Operário-MS";
   String paulista = "Paulista Jundiaí";
@@ -386,10 +505,14 @@ class ClubName{
   String santacruz = "Santa Cruz";
   String saocaetano = "São Caetano";
   String santoandre = "Santo André";
+  String saojose = "São José";
   String sampaio = "Sampaio Corrêa";
   String tombense = "Tombense";
   String uniaoSaoJoao = "Uniao São João";
+  String uberlandia = "Uberlândia";
   String vilaNova = "Vila Nova";
+  String tiradentes = "Tiradentes";
+  String xvpiracicaba = "XV Piracicaba";
 
 
   //////////////////////////////////////////////////////////////////////////////
@@ -524,6 +647,8 @@ class ClubName{
   String beijingguoan = "Beijing Guoan";
   String shandongluneng = "Shandong Luneng";
   String shanghaisipg = "Shanghai SIPG";
+  String shenzhen = "Shenzhen";
+  String dalian = "Dalian";
   //JAPAO
   String kashimaantlers = "Kashima Antlers";
   String urawareddiamonds = "Urawa Red Diamonds";
@@ -535,6 +660,7 @@ class ClubName{
   String yokohamaMarinos = "Yokohama F. Marinos";
   String fcTokyo = "FC Tokyo";
   String jubiloIwata = "Jubilo Iwata";
+  String nagoya = "Nagoya Grampus";
   //COREIA
   String jeonbuk = "Jeonbuk Hyundai";
   String pohang = "Pohang Steelers";
@@ -543,9 +669,11 @@ class ClubName{
   String suwonSamsung = "Suwon Samsung";
   String ulsan = "Ulsan Hyundai";
   String seognam = "Seongnam";
+  String busan = "Busan";
   //RESTO ASIA
   String buriramUnited = "Buriram United";
   String thai = "Thai Farmers Bank";
+  String becToroSasana = "BEC Tero Sasana";
 
   //ORIENTE MÉDIO
   //ARABIA SAUDITA
@@ -560,11 +688,21 @@ class ClubName{
   String aljazira = "Al Jazira";
   String alsadd = "Al Sadd";
   String alWahda = "Al Wahda";
+  String eljaish = "El-Jaish";
+  String ummSalal = "Umm Salal";
   //IRÃ
   String persepolis = "Persepolis";
   String sepahan = "Sepahan";
   String zobAhan = "Zob Ahan";
   String esteghlal = "Esteghlal";
+  String pasTehran = "Pas Tehran";
+  //UZBEQUISTÃO
+  String bunyodkor = "Bunyodkor";
+  String pakhtakor = "Pakhtakor";
+  //IRAQUE/KUWAIT
+  String alKamarah = "Al-Kamarah";
+  String alQadisiya = "Al Qadisiya";
+
 
   //////////////////////////////////////////////////////////////////////////////
   //OCEANIA
@@ -572,6 +710,7 @@ class ClubName{
   String sydney = "Sydney FC";
   String sydneyWanderers = "Sydney Wanderers";
   String auckland = "Auckland City";
+  String adelaide = "Adelaide United";
 
   //AFRICA
   String mazembe = "Mazembe";

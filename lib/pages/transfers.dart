@@ -1,7 +1,9 @@
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/functions/filter_players.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/popup/popup_player_info.dart';
+import 'package:fifa/theme/background/background_age.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/background/background_overall.dart';
@@ -448,7 +450,7 @@ class _TransfersState extends State<Transfers> {
             ],
           ),
           Image.asset(
-              'assets/clubs/${FIFAImages().imageLogo(player.clubName)}.png',
+            Images().getEscudo(player.clubName),
               height: 20,
               width: 20),
           //Text(player.index.toString(), style: EstiloTextoBranco.text16),
@@ -470,7 +472,10 @@ class _TransfersState extends State<Transfers> {
                   fontSize: 16,
                 )),
           ),
-          Text(player.age.toString(), style: EstiloTextoBranco.text16),
+          Container(
+              color:colorAgeBackground(player.age),
+              padding: const EdgeInsets.all(4),
+              child: Text(player.age.toString(), textAlign:TextAlign.center,style: EstiloTextoPreto.text16)),
           Container(
               color: backgroundOverallColor,
               padding: const EdgeInsets.all(4),

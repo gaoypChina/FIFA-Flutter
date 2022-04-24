@@ -19,7 +19,7 @@ import '../../classes/classification.dart';
 import '../../classes/club.dart';
 import '../../classes/geral/dificuldade.dart';
 import '../../classes/my.dart';
-import '../my_team.dart';
+import '../club_profile/my_team.dart';
 import '../../popup/popup_expectativa.dart';
 import '../simulacao/play.dart';
 import '../../theme/textstyle.dart';

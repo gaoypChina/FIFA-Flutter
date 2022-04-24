@@ -1,4 +1,3 @@
-import 'package:fifa/classes/adversario.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/chaves.dart';
 import 'package:fifa/classes/geral/semana.dart';
@@ -162,7 +161,9 @@ class ResultGameInternacional{
             placar = '';
           }
 
-        }catch(e){}
+        }catch(e){
+          //print('row nao existe');
+        }
       }
     }
 

@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/theme/background/background_age.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/background/background_overall.dart';
@@ -42,7 +43,7 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
                   children: [
                     boxInfo('Overall',jogador.overall.toString(), colorOverallBackground(jogador.overall)),
                     boxInfo('Posição',jogador.position),
-                    boxInfo('Idade',jogador.age.toString(),ageColor(jogador.age)),
+                    boxInfo('Idade',jogador.age.toString(),colorAgeBackground(jogador.age)),
                   ],
                 ),
                 Row(
@@ -130,16 +131,6 @@ playerPositionColor(String position){
   else if(position == 'VOL' || position == 'MC'){colorBackground = Colors.orange;}
   else if(position == 'MEI' || position == 'ME' || position == 'MD'){colorBackground = Colors.purpleAccent;}
   else if(position == 'ATA' || position == 'PE' || position == 'PD'){colorBackground = Colors.red;}
-  return colorBackground;
-}
-ageColor(int age){
-  Color colorBackground = Colors.green;
-  if(age < 20){colorBackground = Colors.blue;}
-  else if(age <= 25){colorBackground = Colors.blue.shade200;}
-  else if(age <= 30){colorBackground = Colors.red.shade50;}
-  else if(age <= 35){colorBackground = Colors.red.shade200;}
-  else if(age <= 40){colorBackground = Colors.red.shade400;}
-  else{colorBackground = Colors.red;}
   return colorBackground;
 }
 isBuyOrSell(Jogador jogador){

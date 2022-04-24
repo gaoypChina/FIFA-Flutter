@@ -1,23 +1,25 @@
+import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
-import 'package:fifa/classes/my.dart';
 import 'package:fifa/popup/popup_player_info.dart';
+import 'package:fifa/theme/background/background_age.dart';
 import 'package:fifa/theme/background/background_overall.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/widgets/button/button_return.dart';
 import 'package:flutter/material.dart';
 
-class MyTeamAllInfo extends StatefulWidget {
+class AllInfoClub extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
-  const MyTeamAllInfo({Key? key}) : super(key: key);
+  final Club club;
+  const AllInfoClub({Key? key, required this.club}) : super(key: key);
   @override
-  _MyTeamAllInfoState createState() => _MyTeamAllInfoState();
+  _AllInfoClubState createState() => _AllInfoClubState();
 }
 
-class _MyTeamAllInfoState extends State<MyTeamAllInfo> {
+class _AllInfoClubState extends State<AllInfoClub> {
 
-  My myClass = My();
   double buttonSize = 50;
   int selection = 0;
 
@@ -36,18 +38,17 @@ class _MyTeamAllInfoState extends State<MyTeamAllInfo> {
               Column(
                 children: [
 
-                  const SizedBox(height: 40),
-
-                  Container(
-                    height: 600,
-                    color: AppColors().greyTransparent,
-                    padding: const EdgeInsets.symmetric(horizontal: 6),
-                    child: SingleChildScrollView(
-                      child: selection==0
-                          ? tableWidget0()
-                          : selection==1 ? tableWidget1()
-                          : selection==2 ? tableWidget2()
-                          : tableWidget3(),
+                  Expanded(
+                    child: Container(
+                      color: AppColors().greyTransparent,
+                      padding: const EdgeInsets.symmetric(horizontal: 6),
+                      child: SingleChildScrollView(
+                        child: selection==0
+                            ? tableWidget0()
+                            : selection==1 ? tableWidget1()
+                            : selection==2 ? tableWidget2()
+                            : tableWidget3(),
+                      ),
                     ),
                   ),
 
@@ -76,18 +77,8 @@ class _MyTeamAllInfoState extends State<MyTeamAllInfo> {
                       ),
                     ],
                   ),
-                  const Spacer(),
 
-                  //VOLTAR
-                  Padding(
-                    padding: const EdgeInsets.all(6),
-                    child:  customButtonContinue(
-                        title: 'VOLTAR',
-                        function: (){
-                          Navigator.pop(context);
-                        }
-                    ),
-                  ),
+                  const SizedBox(height: 80),
 
 
                 ],
@@ -119,8 +110,8 @@ class _MyTeamAllInfoState extends State<MyTeamAllInfo> {
         Text(''),
         ]),
 
-        for(int i=0; i<myClass.jogadores.length; i++)
-          playersRow0(i,myClass.jogadores[i])
+        for(int i=0; i<widget.club.escalacao.length; i++)
+          playersRow0(i,widget.club.escalacao[i])
       ],
     );
   }
@@ -145,8 +136,8 @@ class _MyTeamAllInfoState extends State<MyTeamAllInfo> {
               Text(''),
             ]),
 
-        for(int i=0; i<myClass.jogadores.length; i++)
-          playersRow0(i,myClass.jogadores[i])
+        for(int i=0; i<widget.club.escalacao.length; i++)
+          playersRow0(i,widget.club.escalacao[i])
       ],
     );
   }
@@ -170,8 +161,8 @@ class _MyTeamAllInfoState extends State<MyTeamAllInfo> {
               Text(''),
             ]),
 
-        for(int i=0; i<myClass.jogadores.length; i++)
-          playersRow0(i,myClass.jogadores[i])
+        for(int i=0; i<widget.club.escalacao.length; i++)
+          playersRow0(i,widget.club.escalacao[i])
       ],
     );
   }
@@ -196,8 +187,8 @@ class _MyTeamAllInfoState extends State<MyTeamAllInfo> {
               Text(''),
             ]),
 
-        for(int i=0; i<myClass.jogadores.length; i++)
-          playersRow3(i,myClass.jogadores[i])
+        for(int i=0; i<widget.club.jogadores.length; i++)
+          playersRow3(i,widget.club.jogadores[i])
       ],
     );
   }
@@ -223,7 +214,10 @@ class _MyTeamAllInfoState extends State<MyTeamAllInfo> {
       children: [
         Text(player.position, style: EstiloTextoBranco.text16),
         playerNameWidget(player),
-        Text(player.age.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+        Container(
+            color: colorAgeBackground(player.age),
+            padding: const EdgeInsets.all(4),
+            child: Text(player.age.toString(), textAlign:TextAlign.center,style: EstiloTextoPreto.text16)),
         Container(
             color: colorOverallBackground(player.overall),
             padding: const EdgeInsets.all(4),

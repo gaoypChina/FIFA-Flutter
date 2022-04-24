@@ -4,6 +4,7 @@ import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/match.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/popup/popup_player_info.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
@@ -189,6 +190,11 @@ class _SubstitutionState extends State<Substitution> {
     return GestureDetector(
       onTap:(){
         //PLAYER INFOS
+        popUpOkShowPlayerInfos(
+            context: context,
+            playerID: player.index,
+            funcSetState: (){setState(() {});}
+        );
       },
       child: Center(
         child: Column(

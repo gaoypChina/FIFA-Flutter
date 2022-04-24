@@ -117,13 +117,13 @@ class FIFAImages{
     else if(timeFoto==ClubName().granada){    imageLogo='granada';}
     else if(timeFoto==ClubName().ibiza){    imageLogo='ibiza';}
     else if(timeFoto==ClubName().lasPalmas){    imageLogo='las palmas';}
-    else if(timeFoto==ClubName().leganes){    imageLogo='leganes';}
+    //else if(timeFoto==ClubName().leganes){    imageLogo='leganes';}
     else if(timeFoto==ClubName().malaga){    imageLogo='malaga';}
     else if(timeFoto==ClubName().mallorca){    imageLogo='mallorca';}
     else if(timeFoto==ClubName().rayoVallecano){    imageLogo='rayo';}
     else if(timeFoto==ClubName().sportingGijon){    imageLogo='sporting gijon';}
     else if(timeFoto==ClubName().tenerife){    imageLogo='tenerife';}
-    else if(timeFoto==ClubName().realOviedo){    imageLogo='real oviedo';}
+    //else if(timeFoto==ClubName().realOviedo){    imageLogo='real oviedo';}
     else if(timeFoto==ClubName().zaragoza){    imageLogo='zaragoza';}
 
     else if(timeFoto==ClubName().moenchengladbach){    imageLogo='borussia';}
@@ -143,14 +143,14 @@ class FIFAImages{
     else if(timeFoto==ClubName().werderbremen){    imageLogo='werderbremen';}
     else if(timeFoto==ClubName().wolfsburg){    imageLogo='wolfsburg';}
 
-    else if(timeFoto==ClubName().arminiaBiefeld){    imageLogo='arminia biefeld';}
+    //else if(timeFoto==ClubName().arminiaBiefeld){    imageLogo='arminia biefeld';}
     else if(timeFoto==ClubName().dynamoDresden){    imageLogo='dynamo dresden';}
-    else if(timeFoto==ClubName().fortunaDusseldorf){    imageLogo='fortuna dusseldorf';}
+    //else if(timeFoto==ClubName().fortunaDusseldorf){    imageLogo='fortuna dusseldorf';}
     else if(timeFoto==ClubName().kaiserslautern){    imageLogo='kaiserslautern';}
     else if(timeFoto==ClubName().hannover96){    imageLogo='hannover96';}
     else if(timeFoto==ClubName().mainz05){    imageLogo='mainz';}
     else if(timeFoto==ClubName().nurnberg){    imageLogo='nurnberg';}
-    else if(timeFoto==ClubName().unionBerlin){    imageLogo='union berlin';}
+    //else if(timeFoto==ClubName().unionBerlin){    imageLogo='union berlin';}
     else if(timeFoto==ClubName().stPauli){    imageLogo='st pauli';}
 
     else if(timeFoto==ClubName().bordeaux){    imageLogo='bordeaux';}
@@ -169,7 +169,7 @@ class FIFAImages{
 
     else if(timeFoto==ClubName().angers){    imageLogo='angers';}
     else if(timeFoto==ClubName().auxerre){    imageLogo='auxerre';}
-    else if(timeFoto==ClubName().stadeBrestois){    imageLogo='brestois';}
+    //else if(timeFoto==ClubName().brest){    imageLogo='brestois';}
     else if(timeFoto==ClubName().caen){    imageLogo='caen';}
     else if(timeFoto==ClubName().clermont){    imageLogo='clermont';}
     else if(timeFoto==ClubName().dijon){    imageLogo='dijon';}
@@ -448,7 +448,7 @@ class FIFAImages{
     else if(timeFoto==ClubName().fcTokyo){ imageLogo='fc tokyo';}
     else if(timeFoto==ClubName().cerezoOsaka){ imageLogo='cerezo osaka';}
     else if(timeFoto==ClubName().gambaOsaka){ imageLogo='gamba osaka';}
-    else if(timeFoto==ClubName().kashiwaReysol){ imageLogo='kashiwa';}
+    //else if(timeFoto==ClubName().kashiwaReysol){ imageLogo='kashiwa';}
     else if(timeFoto==ClubName().yokohamaMarinos){ imageLogo='yokohama';}
     else if(timeFoto==ClubName().fcSeoul){ imageLogo='fc seoul';}
     else if(timeFoto==ClubName().suwonSamsung){ imageLogo='suwon samsung';}

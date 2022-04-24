@@ -48,7 +48,7 @@ List clubsAllNameList = [
   ClubName().psg,  ClubName().reims,  ClubName().rennes,  ClubName().saintetienne,
   ClubName().metz,ClubName().toulouse,ClubName().angers,ClubName().lens,
 
-  ClubName().strasbourg,ClubName().stadeBrestois,ClubName().dijon,ClubName().caen,
+  ClubName().strasbourg,ClubName().brest,ClubName().dijon,ClubName().caen,
 
 
   ClubName().benfica,  ClubName().porto,  ClubName().sporting,  ClubName().braga,

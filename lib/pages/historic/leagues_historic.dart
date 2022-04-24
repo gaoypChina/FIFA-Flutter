@@ -24,9 +24,9 @@ class HistoricLeague extends StatefulWidget {
 class _HistoricLeagueState extends State<HistoricLeague> {
 
   int choosenLeagueIndex = My().campeonatoID;
-  late int nClubs;
   late League league;
-  int nTeamsSelected = 20;
+  int nTeamsSelected = 0;
+  int nTeamsPastHistoric = 20;
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
@@ -34,7 +34,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   Widget build(BuildContext context) {
 
     league = League(index: choosenLeagueIndex);
-    nClubs = league.nClubs;
+    nTeamsSelected = league.nClubs;
 
     return Scaffold(
 
@@ -212,7 +212,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   Widget yearRowPast(int ano){
     return Column(
       children: [
-        for(int position=0;position<nTeamsSelected;position++)
+        for(int position=0;position<nTeamsPastHistoric;position++)
           validacao(position, ano),
       ],
     );

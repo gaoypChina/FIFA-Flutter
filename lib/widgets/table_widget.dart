@@ -98,8 +98,7 @@ Color backgroundTextColor(int position, int choosenLeagueIndex , String teamName
   if(position==0){backgroundColor = Colors.yellowAccent.withOpacity(0.7);}
 
   //CLASSIFICAÇÃO
-  if(leagueName==LeagueOfficialNames().turquiaGrecia
-      || leagueName==LeagueOfficialNames().argentina  || leagueName==LeagueOfficialNames().colombia){
+  if(leagueName==LeagueOfficialNames().turquiaGrecia){
     if(position==1){backgroundColor = Colors.indigo;}
   }
   if(leagueName==LeagueOfficialNames().inglaterra2  || leagueName==LeagueOfficialNames().espanha2
@@ -119,7 +118,11 @@ Color backgroundTextColor(int position, int choosenLeagueIndex , String teamName
     if(position==2){backgroundColor = Colors.indigo;}
     if(position==3){backgroundColor = Colors.indigo;}
   }
-
+  if(leagueName==LeagueOfficialNames().argentina  || leagueName==LeagueOfficialNames().colombia){
+    for(int i=1; i<6; i++){
+      if(position==i){backgroundColor = Colors.indigo;}
+    }
+  }
   if(leagueName==LeagueOfficialNames().brasil1){
     for(int i=1; i<8; i++){
       if(position==i){backgroundColor = Colors.indigo;}

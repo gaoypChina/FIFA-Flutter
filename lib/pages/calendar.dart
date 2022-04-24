@@ -5,11 +5,10 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/page_controller/calendar_control.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/button/button_return.dart';
 import 'package:flutter/material.dart';
-import 'club_profile.dart';
+import 'club_profile/club_profile.dart';
 
 class Calendar extends StatefulWidget {
   const Calendar({Key? key}) : super(key: key);
