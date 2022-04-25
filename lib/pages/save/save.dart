@@ -1,6 +1,7 @@
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/classes/save_infos.dart';
+import 'package:fifa/page_controller/save/save_infos.dart';
 import 'package:fifa/pages/menu/b_home.dart';
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/popup/popup_ok_cancel.dart';
 import 'package:fifa/widgets/button/button_return.dart';
@@ -64,29 +65,38 @@ Widget save(int index){
           Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const HomePage()));
         });
       },
-      child: Padding(
+      child: Container(
+        color: AppColors().greyTransparent,
         padding: const EdgeInsets.symmetric(vertical: 8.0),
-        child: Stack(
-          children: [
-
-            Image.asset('assets/clubs/${FIFAImages().imageLogo(saveInfos.clubName)}.png',height: 25,width: 25),
-
-            Row(
+        margin: const EdgeInsets.symmetric(vertical: 4.0),
+        child: Align(
+          child: Container(
+            width: 200,
+            alignment: Alignment.center,
+            padding: const EdgeInsets.only(left:40),
+            child: Stack(
               children: [
-                Container(
-                  margin: const EdgeInsets.all(8.0),
-                  child: const Icon(Icons.save,color: Colors.white),
-                ),
-                Column(
+
+                Image.asset(Images().getEscudo(saveInfos.clubName),height: 25,width: 25),
+
+                Row(
                   children: [
-                    Text(saveInfos.clubName,style: EstiloTextoBranco.text14),
-                    Text(saveInfos.ano.toString(),style: EstiloTextoBranco.text14),
-                    Text('Semana: '+saveInfos.semana.toString(),style: EstiloTextoBranco.text14),
+                    Container(
+                      margin: const EdgeInsets.all(8.0),
+                      child: const Icon(Icons.save,color: Colors.white),
+                    ),
+                    Column(
+                      children: [
+                        Text(saveInfos.clubName,style: EstiloTextoBranco.text14),
+                        Text(saveInfos.ano.toString(),style: EstiloTextoBranco.text14),
+                        Text('Semana: '+saveInfos.semana.toString(),style: EstiloTextoBranco.text14),
+                      ],
+                    )
                   ],
-                )
+                ),
               ],
             ),
-          ],
+          ),
         ),
       ),
     );

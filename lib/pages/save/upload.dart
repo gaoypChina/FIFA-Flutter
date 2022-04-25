@@ -1,5 +1,7 @@
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/page_controller/save/upload_infos.dart';
 import 'package:fifa/pages/menu/b_home.dart';
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/widgets/button/button_return.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -49,36 +51,44 @@ class _UploadState extends State<Upload> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
   Widget upload(int index){
-    String clubName = 'Botafogo';
-    int semana = 3;
+    UploadInfos uploadInfos = UploadInfos();
 
     return GestureDetector(
       onTap: (){
         Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const HomePage()));
       },
-      child: Padding(
+      child: Container(
+        color: AppColors().greyTransparent,
         padding: const EdgeInsets.symmetric(vertical: 8.0),
-        child: Stack(
-          children: [
-
-            Image.asset('assets/clubs/${FIFAImages().imageLogo(clubName)}.png',height: 25,width: 25),
-
-            Row(
+        margin: const EdgeInsets.symmetric(vertical: 4.0),
+        child: Align(
+          child: Container(
+            width: 200,
+            alignment: Alignment.center,
+            padding: const EdgeInsets.only(left:40),
+            child: Stack(
               children: [
-                Container(
-                  margin: const EdgeInsets.all(8.0),
-                  child: const Icon(Icons.upload,color: Colors.white),
-                ),
-                Column(
+
+                Image.asset(Images().getEscudo(uploadInfos.clubName),height: 25,width: 25),
+
+                Row(
                   children: [
-                    Text(clubName,style: EstiloTextoBranco.text14),
-                    const Text('2028',style: EstiloTextoBranco.text14),
-                    Text('Semana: '+semana.toString(),style: EstiloTextoBranco.text14),
+                    Container(
+                      margin: const EdgeInsets.all(8.0),
+                      child: const Icon(Icons.upload,color: Colors.white),
+                    ),
+                    Column(
+                      children: [
+                        Text(uploadInfos.clubName,style: EstiloTextoBranco.text14),
+                        const Text('2028',style: EstiloTextoBranco.text14),
+                        Text('Semana: '+uploadInfos.semana.toString(),style: EstiloTextoBranco.text14),
+                      ],
+                    )
                   ],
-                )
+                ),
               ],
             ),
-          ],
+          ),
         ),
       ),
     );

@@ -1,10 +1,9 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
-import 'package:fifa/values/images.dart';
 import 'package:fifa/popup/popup_save_all_data.dart';
 import 'package:fifa/popup/poup_edit.dart';
-import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
@@ -41,8 +40,7 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
         resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
         body:  Stack(
             children: [
-
-              Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
+              Images().getWallpaper(),
 
               Column(
                 children: [
@@ -54,13 +52,10 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                     children: [
                       GestureDetector(
                           onTap:(){
-                            //Mudar Clube de liga
-                            popupText('Substituir pelo time',club.name,'LeagueClub');
-
                           },
-                          child: Image.asset('assets/clubs/${FIFAImages().imageLogo(club.name)}.png',height: 60,width: 60)
+                          child: Image.asset(Images().getEscudo(club.name),height: 60,width: 60)
                       ),
-                      const Text('Customizar Jogadores',style: EstiloTextoBranco.text22),
+                      const Text(' Customizar Jogadores',style: EstiloTextoBranco.text22),
                     ],
                   ),
 
@@ -182,7 +177,7 @@ TableRow playersRow(int i){
               choosenPlayerID = playerID;
               popupText('Novo clube do jogador',player.clubName,'Club');
             },
-            child: Image.asset('assets/clubs/${FIFAImages().imageLogo(player.clubName)}.png',height:30, width: 30)),
+            child: Image.asset(Images().getEscudo(player.clubName),height:30, width: 30)),
 
         //NOME
         InkWell(
@@ -256,35 +251,6 @@ popupText(String title,String variableString, String whichData){
 
         if(whichData=='Name') globalJogadoresName[choosenPlayerID] = value;
 
-        if(whichData=='LeagueClub') {
-
-          //GET POSIÇÃO DO CLUBNAME MAP
-          int posicaoIndex1 = -1;
-          String leagueName1 = Club(index: clubsAllNameList.indexOf(variableString)).leagueName;
-          Map map1 = clubNameMap[leagueName1];
-          map1.forEach((key, value) {
-            if(value==variableString){
-              posicaoIndex1 = key;
-            }
-          });
-          String leagueName2 = Club(index: clubsAllNameList.indexOf(value)).leagueName;
-          int posicaoIndex2 = -1;
-          Map map2 = clubNameMap[leagueName2];
-          map2.forEach((key, valueName) {
-            if(valueName==value){
-              posicaoIndex2 = key;
-            }
-          });
-          //TROCA
-          if(posicaoIndex2 == -1 || posicaoIndex1 ==-1){
-            customToast('ERRO NA TROCA\n nome inválido');
-          }else{
-            //TROCA NOME DOS TIMES ASSIM COMO DESEJADO
-            clubNameMap[leagueName2][posicaoIndex2] = variableString; //novo time1
-            clubNameMap[leagueName1][posicaoIndex1] = value; //novo time2
-          }
-        }
-
             setState(() {});
 
       }
@@ -300,7 +266,7 @@ popupNumber(dynamic number, String whichData){
         functionOK: (valueStr){
           int value = int.parse(valueStr);
           if(whichData=='Idade' && value<45 && value>=16) globalJogadoresAge[choosenPlayerID] = value;
-          if(whichData=='Overall' && value<100 && value>50) globalJogadoresOverall[choosenPlayerID] = value;
+          if(whichData=='Overall' && value<100 && value>40) globalJogadoresOverall[choosenPlayerID] = value;
           setState(() {});
         }
     );

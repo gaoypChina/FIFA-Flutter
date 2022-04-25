@@ -1,4 +1,5 @@
 import 'package:fifa/classes/geral/name.dart';
+import 'package:fifa/values/league_divisions.dart';
 
 import '../global_variables.dart';
 import 'club.dart';
@@ -32,25 +33,35 @@ class HistoricClubYear{
   }
 
   checkPositionClubPlayedGroupPhase(int year){
-    List allParticipantsClubsID = globalHistoricInternationalClassification[year][internationalLeagueName];
-    if(allParticipantsClubsID.contains(clubID)){
-      internationalLeaguePosition = Name().groupsPhase;
+    try {
+      List allParticipantsClubsID = globalHistoricInternationalClassification[year][internationalLeagueName];
+      if (allParticipantsClubsID.contains(clubID)) {
+        internationalLeaguePosition = Name().groupsPhase;
+      }
+    }catch(e){
+      //print('O clube joga um campeonato internacional que nao existe Ex: Resto do mundo);
     }
   }
 
   checkPositionClubPlayedMataMata(int year){
     isInternationalChampion = false;
-    Map mataMataPhases = globalHistoricInternationalGoalsAll[year][internationalLeagueName];
-    for(String phases in mataMataPhases.keys){
-      if(mataMataPhases[phases].containsKey(clubID)){
-        internationalLeaguePosition = phases;
-        if(phases == Name().finale){
-          List clubsFinalID = listTeamsInFinal(mataMataPhases[phases]);
-          if(mataMataPhases[phases][clubID].first > mataMataPhases[phases][clubsFinalID[0]].first){
-            isInternationalChampion = true;
+
+    try {
+      Map mataMataPhases = globalHistoricInternationalGoalsAll[year][internationalLeagueName];
+      for (String phases in mataMataPhases.keys) {
+        if (mataMataPhases[phases].containsKey(clubID)) {
+          internationalLeaguePosition = phases;
+          if (phases == Name().finale) {
+            List clubsFinalID = listTeamsInFinal(mataMataPhases[phases]);
+            if (mataMataPhases[phases][clubID].first >
+                mataMataPhases[phases][clubsFinalID[0]].first) {
+              isInternationalChampion = true;
+            }
           }
         }
       }
+    }catch(e){
+      //print('O clube joga um campeonato internacional que nao existe Ex: Resto do mundo);
     }
   }
   List listTeamsInFinal(Map mapData){
@@ -62,6 +73,8 @@ class HistoricClubYear{
     return clubsFinalID;
   }
 }
+
+
 
 class HistoricFunctions{
 
@@ -93,6 +106,22 @@ class HistoricFunctions{
     return classificationIDs;
   }
 
+  int funcHistoricListFromClubID(int year, String leagueName, int clubID){
+    List divisionsNames = Divisions().leagueDivisionsStructure(leagueName);
+    for(String division in divisionsNames){
+      List classificationIDs = funcHistoricListAll(year, division);
+      if(classificationIDs.contains(clubID)){
+        int position = classificationIDs.indexOf(clubID) + 1;
+        if(Divisions().is2ndDivision(division)){
+          position += 20;
+        }
+        else if(Divisions().is3ndDivision(division)){
+          position += 40;
+        }
+        return position;
+      }
+    }
+    return 0;
+  }
+
 }
-
-

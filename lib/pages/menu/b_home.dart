@@ -4,6 +4,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/database/shared_preferences.dart';
 import 'package:fifa/functions/change_club_control.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/configuration/configuration.dart';
 import 'package:fifa/pages/customize_players.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/values/images.dart';
@@ -13,7 +14,6 @@ import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 import 'c_menu.dart';
-import '../../classes/geral/dificuldade.dart';
 import '../../classes/league.dart';
 
 class HomePage extends StatefulWidget {
@@ -273,32 +273,26 @@ class _HomePageState extends State<HomePage> {
                         },
                         child: Column(
                           children: const [
-                            Icon(Icons.miscellaneous_services,color:Colors.white,size:40),
-                            Text('Customizar',style: EstiloTextoBranco.underline14)
+                            Icon(Icons.edit,color:Colors.white,size:40),
+                            Text('Editar time',style: EstiloTextoBranco.underline14)
                           ],
                         ),
                       ),
 
-                      //DIFICULDADE
+                      //////////////
+                      // CONFIGURAÇÕES
                       GestureDetector(
-                        onTap:(){
-                          globalDificuldade++;
-                          if(globalDificuldade==5){
-                            globalDificuldade=0;
-                          }
-                          setState(() {});
+                        onTap: (){
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Configuration()));
                         },
-                        child: SizedBox(
-                          width:70,
-                          child: Column(
-                            children: [
-                              const Icon(Icons.star,color:Colors.white,size:40),
-                              const Text('Dificuldade',style: EstiloTextoBranco.underline14),
-                              Text(DificuldadeClass().getName(),style: EstiloTextoBranco.underline14),
-                            ],
-                          ),
+                        child: Column(
+                          children: const [
+                            Icon(Icons.miscellaneous_services,color:Colors.white,size:40),
+                            Text('Configurações',style: EstiloTextoBranco.underline14),
+                          ],
                         ),
                       ),
+
                     ],
                   ),
 

@@ -118,38 +118,3 @@ bool leaguePlayInternationalCompetition(String name){
   }
   return playInternational;
 }
-
-String league1stDivision(String name){
-  String international1stDivison = name;
-  if(name == LeagueOfficialNames().inglaterra2 || name == LeagueOfficialNames().inglaterra3){
-    international1stDivison = LeagueOfficialNames().inglaterra1;
-  }
-  else if(name == LeagueOfficialNames().italia2){
-    international1stDivison = LeagueOfficialNames().italia1;
-  }
-  else if(name == LeagueOfficialNames().espanha2){
-    international1stDivison = LeagueOfficialNames().espanha1;
-  }
-  else if(name == LeagueOfficialNames().franca2){
-    international1stDivison = LeagueOfficialNames().franca1;
-  }
-  else if(name == LeagueOfficialNames().alemanha2){
-    international1stDivison = LeagueOfficialNames().alemanha1;
-  }
-  else if(name == LeagueOfficialNames().brasil2 || name == LeagueOfficialNames().brasil3){
-    international1stDivison = LeagueOfficialNames().brasil1;
-  }
-  return international1stDivison;
-}
-
-bool is2ndDivision(String name){
-  if(name == LeagueOfficialNames().inglaterra2 || name == LeagueOfficialNames().inglaterra3
-  || name == LeagueOfficialNames().italia2
-  || name == LeagueOfficialNames().espanha2
-  || name == LeagueOfficialNames().franca2
-  || name == LeagueOfficialNames().alemanha2
-  || name == LeagueOfficialNames().brasil2 || name == LeagueOfficialNames().brasil3){
-    return true;
-  }
-  return false;
-}

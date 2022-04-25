@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/geral/dificuldade.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 
@@ -15,7 +16,7 @@ funcChangeClub(String newClubName, int newLeagueID){
   Club newClubClass = Club(index: clubID);
   globalMyJogadores = newClubClass.escalacao; //global MyJogadores tem que ser declarado antes de usar qualquer getOverall();
   double overall = newClubClass.getOverall();
-  globalMyMoney = ((overall-68)*(overall-68)/5)*0.7;
+  globalMyMoney = ((overall-68)*(overall-68)/5)*0.7*DificuldadeClass().getDificuldadeMultiplicationValue();
   My myClass = My();
   globalMyExpectativa = myClass.newExpectativa();
   //Zera retrospecto de jogos

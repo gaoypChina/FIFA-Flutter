@@ -14,6 +14,7 @@ double globalMyMoney = 0;
 List globalMyLeagueLastResults = [];
 List globalMyJogadores = [];
 
+String globalCoachName = 'Eu';
 int globalCoachPoints = 0;
 bool alreadyChangedClubThisSeason = false;
 
@@ -23,20 +24,24 @@ int globalSaveNumber = 0;
 Map globalSaveData = {}; //DATABASE PLAYERS DATA
 
 
+bool globalLeagueIdaVolta = false;
+bool globalHasSoundEffects = false;
+
 int globalDificuldade = 2;
 int anoInicial = 2022; //ano fixo para contas
 int ano = 2022;
 int semana = 1, rodada = 1;
+int globalNMaxRodadasNacional = globalLeagueIdaVolta ? 30 : 15;
 late int posicao;
-List<int> semanaOitavas = [22,23],
-    semanaQuartas = [24,25],
-    semanaSemi = [26,27],
-    semanaFinal = [28],
-    semanaMundial = [29];
-List<int> semanasJogosInternacionais = [for(var i=16; i<=29; i++) i];
+List<int> semanaOitavas = [semanasJogosInternacionais.first+6,semanasJogosInternacionais.first+7],
+    semanaQuartas = [semanasJogosInternacionais.first+8,semanasJogosInternacionais.first+9],
+    semanaSemi = [semanasJogosInternacionais.first+10,semanasJogosInternacionais.first+11],
+    semanaFinal = [semanasJogosInternacionais.first+12],
+    semanaMundial = [semanasJogosInternacionais.last];
+List<int> semanasJogosInternacionais = [for(var i=semanasJogosNacionais.last+1; i<=semanasJogosNacionais.last+13; i++) i];
 List semanasGruposInternacionais = semanasJogosInternacionais.take(6).toList();
 List<int> semanasMataMataInternacionais = semanaOitavas+semanaQuartas+semanaSemi+semanaFinal;
-List<int> semanasJogosNacionais = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+List<int> semanasJogosNacionais = [for(var i=1; i<=globalNMaxRodadasNacional; i++) i];
 List semanasJogosCopas = [];
 int globalUltimaSemana = semanasJogosInternacionais.last;
 

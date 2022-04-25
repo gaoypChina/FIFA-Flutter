@@ -149,17 +149,16 @@ void atualizaStatusJogadores(){
 
     //aposentadoria
     AposentarJogador(Jogador(index: id));
-
-    //Faz minha nova escalação titular, com base nos melhores jogadores que melhoraram
-    Club newClubClass = Club(index: My().clubID);
-    globalMyJogadores = newClubClass.escalacao; //global MyJogadores tem que ser declarado antes de usar qualquer getOverall();
-    newClubClass.getOverall();
   }
+  //Faz minha nova escalação titular, com base nos melhores jogadores que melhoraram
+  Club newClubClass = Club(index: My().clubID);
+  globalMyJogadores = newClubClass.escalacao; //global MyJogadores tem que ser declarado antes de usar qualquer getOverall();
+  newClubClass.getOverall();
 }
 
 saveCoachPoints(){
   int expectativa = My().getLastYearExpectativa();
   int classificacao = HistoricClubYear(ano).leaguePosition;
-  double multiplicationFactor = expectativa/classificacao; //Ex: 10/3  12/5
+  double multiplicationFactor = (expectativa+1)/(classificacao+1); //Ex: 10/3  12/5
   globalCoachPoints += (multiplicationFactor*(100/classificacao)).round(); //100,50,33,25,20...
 }

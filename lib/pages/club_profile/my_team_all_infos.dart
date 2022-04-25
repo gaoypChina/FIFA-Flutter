@@ -4,10 +4,8 @@ import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/popup/popup_player_info.dart';
 import 'package:fifa/theme/background/background_age.dart';
 import 'package:fifa/theme/background/background_overall.dart';
-import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
-import 'package:fifa/widgets/button/button_return.dart';
 import 'package:flutter/material.dart';
 
 class AllInfoClub extends StatefulWidget {

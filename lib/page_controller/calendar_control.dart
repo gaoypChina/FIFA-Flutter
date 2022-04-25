@@ -126,7 +126,7 @@ class ResultGameInternacional{
     //RESULTADO MATA-MATAS
     else if(semanasMataMataInternacionais.contains(semanaLocal)){
       int idaVolta = 1;
-      if(Semana(semanaLocal).isJogoIda){
+      if(Semana(semanaLocal).isJogoIdaMataMata){
         idaVolta = 0;
       }
       for(int matchRow=0; matchRow<8; matchRow++){

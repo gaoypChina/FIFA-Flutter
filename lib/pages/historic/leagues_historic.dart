@@ -25,16 +25,13 @@ class _HistoricLeagueState extends State<HistoricLeague> {
 
   int choosenLeagueIndex = My().campeonatoID;
   late League league;
-  int nTeamsSelected = 0;
-  int nTeamsPastHistoric = 20;
+  int nTeamsSelected = 4;
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-
     league = League(index: choosenLeagueIndex);
-    nTeamsSelected = league.nClubs;
 
     return Scaffold(
 
@@ -49,69 +46,22 @@ class _HistoricLeagueState extends State<HistoricLeague> {
 
                   const SizedBox(height: 40),
                   const Text('Histórico das ligas',style: EstiloTextoBranco.text22),
-                  const SizedBox(height: 8),
 
 
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        const Text('Campeão',style: EstiloTextoBranco.text16),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: GestureDetector(
-                            onTap: (){
-                              nTeamsSelected = 1;
-                              print(nTeamsSelected);
-                              setState(() {});
-                            },
-                            child: nTeamsSelected == 1
-                            ? const Icon(Icons.radio_button_checked,color: Colors.white, size: 30)
-                            : const Icon(Icons.radio_button_off,color: Colors.white, size: 30),
-                          ),
-                        ),
-                        const Text('Final',style: EstiloTextoBranco.text16),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: GestureDetector(
-                            onTap: (){
-                              nTeamsSelected = 2;
-                              setState(() {});
-                            },
-                            child: nTeamsSelected ==2
-                                ? const Icon(Icons.radio_button_checked,color: Colors.white, size: 30)
-                                : const Icon(Icons.radio_button_off,color: Colors.white, size: 30),
-                          ),
-                        ),
-                        const Text('G-4',style: EstiloTextoBranco.text16),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: GestureDetector(
-                            onTap: (){
-                              nTeamsSelected = 4;
-                              setState(() {});
-                            },
-                            child: nTeamsSelected == 4
-                                ? const Icon(Icons.radio_button_checked,color: Colors.white, size: 30)
-                                : const Icon(Icons.radio_button_off,color: Colors.white, size: 30),
-                          ),
-                        ),
-                        const Text('G-10',style: EstiloTextoBranco.text16),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: GestureDetector(
-                            onTap: (){
-                              nTeamsSelected = 10;
-                              setState(() {});
-                            },
-                            child: nTeamsSelected == 10
-                                ? const Icon(Icons.radio_button_checked,color: Colors.white, size: 30)
-                                : const Icon(Icons.radio_button_off,color: Colors.white, size: 30),
-                          ),
-                        ),
+                        selectButton('1º', 1),
+                        selectButton('G-2', 2),
+                        selectButton('G-4', 4),
+                        selectButton('G-10', 10),
+                        selectButton('Tudo', 20),
                       ],
                     ),
                   ),
+
                   //TABELA
                   Expanded(
                     child: SingleChildScrollView(
@@ -176,8 +126,31 @@ class _HistoricLeagueState extends State<HistoricLeague> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Widget selectButton(String text,int nteams){
+    return Column(
+      children: [
+        Text(text,style: EstiloTextoBranco.text16),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: GestureDetector(
+            onTap: (){
+              nTeamsSelected = nteams;
+              setState(() {});
+            },
+            child: nTeamsSelected == nteams
+                ? const Icon(Icons.radio_button_checked,color: Colors.white, size: 28)
+                : const Icon(Icons.radio_button_off,color: Colors.white, size: 28),
+          ),
+        ),
+      ],
+    );
+  }
+
   Widget yearRow(int year){
     int nRows = nTeamsSelected;
+    if(league.nClubs < nTeamsSelected){
+      nRows = league.nClubs;
+    }
     return Column(
       children: [
         Text(year.toString(),style: EstiloTextoBranco.text16),
@@ -198,7 +171,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
         position+1<10
             ? Text('  ${(position+1).toString()}- ',style: EstiloTextoBranco.text14)
             : Text('${(position+1).toString()}- ',style: EstiloTextoBranco.text14),
-        Image.asset('assets/clubs/${FIFAImages().imageLogo(club.name)}.png',height: 20,width: 20),
+        Image.asset(Images().getEscudo(club.name),height: 20,width: 20),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 4.0),
           child: Text(club.name,style: EstiloTextoBranco.text14),
@@ -212,7 +185,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   Widget yearRowPast(int ano){
     return Column(
       children: [
-        for(int position=0;position<nTeamsPastHistoric;position++)
+        for(int position=0;position<nTeamsSelected;position++)
           validacao(position, ano),
       ],
     );

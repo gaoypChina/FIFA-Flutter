@@ -10,29 +10,31 @@ class Chaves{
   List obterChave(int semana, int leagueIndex){
     List chave = [];
     if(semanasJogosNacionais.contains(semana)){
+      //verify is jogo volta
+      int calculateWeek = semana;
       if(League(index: leagueIndex).nClubs==6){
-        chave = Chaves().obterChave6(semana);
+        chave = Chaves().obterChave6(calculateWeek);
       }
       else if(League(index: leagueIndex).nClubs==8){
-        chave = Chaves().obterChave8(semana);
+        chave = Chaves().obterChave8(calculateWeek);
       }
       else if(League(index: leagueIndex).nClubs==10){
-        chave = Chaves().obterChave10(semana);
+        chave = Chaves().obterChave10(calculateWeek);
       }
       else if(League(index: leagueIndex).nClubs==12){
-        chave = Chaves().obterChave12(semana);
+        chave = Chaves().obterChave12(calculateWeek);
       }
       else if(League(index: leagueIndex).nClubs==14){
-        chave = Chaves().obterChave14(semana);
+        chave = Chaves().obterChave14(calculateWeek);
       }
       else if(League(index: leagueIndex).nClubs==16){
-        chave = Chaves().obterChave16(semana);
+        chave = Chaves().obterChave16(calculateWeek);
       }
       else if(League(index: leagueIndex).nClubs==18){
-        chave = Chaves().obterChave18(semana);
+        chave = Chaves().obterChave18(calculateWeek);
       }
       else if(League(index: leagueIndex).nClubs==20){
-        chave = Chaves().obterChave20(semana);
+        chave = Chaves().obterChave20(calculateWeek);
       }
     }
     else if(semanasJogosInternacionais.contains(semana)){

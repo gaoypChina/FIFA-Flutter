@@ -1,3 +1,4 @@
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/custom_toast.dart';
@@ -5,6 +6,7 @@ import 'package:fifa/values/images.dart';
 import 'package:fifa/functions/end_year_updates/update_data_year.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/widgets/loader.dart';
 import 'package:flutter/material.dart';
 import '../menu/c_menu.dart';
 
@@ -18,6 +20,7 @@ class EndYear extends StatefulWidget {
 class _EndYearState extends State<EndYear> {
 
   My myTeamClass = My();
+  bool loading = false;
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
@@ -30,12 +33,9 @@ class _EndYearState extends State<EndYear> {
         body: Stack(
             children: [
 
-              Image.asset(
-                  'assets/icons/wallpaper.png', height: double.infinity,
-                  width: double.infinity,
-                  fit: BoxFit.fill),
+              Images().getWallpaper(),
 
-              Column(
+              loading ? Column(
                 children: [
 
                   const SizedBox(height: 40),
@@ -51,6 +51,8 @@ class _EndYearState extends State<EndYear> {
                       function: () {
 
                         customToast('Carregando nova temporada');
+                        loading = true;
+                        setState(() {});
                         funcUpdateDataAfterSeason();
 
                         Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Menu()));
@@ -58,7 +60,7 @@ class _EndYearState extends State<EndYear> {
                   ),
 
                 ],
-              )
+              ) : loader(),
 
             ]
         )

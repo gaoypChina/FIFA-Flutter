@@ -4,7 +4,8 @@ import 'package:fifa/global_variables.dart';
 class Semana{
   String semanaStr = semana.toString();
   int rodadaGroupInternational = 1;
-  bool isJogoIda = true;
+  bool isJogoIdaMataMata = true;
+  bool isJogoIdaLeague = true;
   bool isJogoCampeonatoNacional = semanasJogosNacionais.contains(semana);
   bool isJogoCampeonatoInternacional = semanasJogosInternacionais.contains(semana);
   bool isJogoGruposInternacional = semanasGruposInternacionais.contains(semana);
@@ -15,6 +16,10 @@ class Semana{
 
     if(isJogoCampeonatoNacional) {
       semanaStr = semanasJogosNacionais.indexOf(weekToCalculate).toString();
+      //TODO: ARRUMAR
+      if(globalLeagueIdaVolta && semanasJogosNacionais.indexOf(weekToCalculate) > (globalNMaxRodadasNacional-1/2).round()){
+        isJogoIdaLeague = false;
+      }
     }
     if(semanasJogosCopas.contains(weekToCalculate)){semanaStr = 'Jogo das Copas';}
     else if(semanasGruposInternacionais.contains(weekToCalculate)){
@@ -37,9 +42,9 @@ class Semana{
     verifyIsMataMataIdaOrVolta(int weekToCalculate){
       if(semanaOitavas.first == weekToCalculate || semanaQuartas.first == weekToCalculate
           || semanaSemi.first == weekToCalculate || semanaSemi.first == weekToCalculate){
-        isJogoIda = true;
+        isJogoIdaMataMata = true;
       }else{
-        isJogoIda = false;
+        isJogoIdaMataMata = false;
       }
     }
 

@@ -2,18 +2,12 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/esquemas_taticos.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
-import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/club_profile/field_draggable.dart';
-import 'package:fifa/pages/club_profile/field_static.dart';
 import 'package:fifa/pages/club_profile/graphics.dart';
 import 'package:fifa/pages/club_profile/my_team_all_infos.dart';
-import 'package:fifa/popup/popup_player_info.dart';
-import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
-import 'package:fifa/theme/colors.dart';
 import 'package:fifa/widgets/button/button_return.dart';
 import 'package:fifa/theme/textstyle.dart';
-import 'package:fifa/widgets/field_size.dart';
 import 'package:flutter/material.dart';
 import '../../classes/my.dart';
 
@@ -57,7 +51,6 @@ class _MyTeamState extends State<MyTeam> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    double _width = MediaQuery.of(context).size.width;
     myClub = Club(index: My().clubID);
     my = My();
 

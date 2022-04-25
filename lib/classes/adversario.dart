@@ -83,12 +83,12 @@ class Adversario{
         int myIndex = listIDs.indexOf(myClass.clubID);
         if (myIndex % 2 == 0) {
           indexAdv = myIndex + 1;
-          if(!Semana(semana).isJogoIda){
+          if(!Semana(semana).isJogoIdaMataMata){
             visitante = true;
           }
         } else {
           indexAdv = myIndex - 1;
-          if(Semana(semana).isJogoIda){
+          if(Semana(semana).isJogoIdaMataMata){
             visitante = true;
           }
         }

@@ -23,9 +23,9 @@ popUpExpectativa({required BuildContext context}){
   if(ano>anoInicial){
     myClubData = HistoricClubYear(ano-1);
     if(myClubData.leaguePosition > expectativaAntiga.expLastYear){
-      expLastSeason += 'RUIM \n Resultado: ${myClubData.leaguePosition}º\n Esperado:${expectativaAntiga.expLastYear}º';
+      expLastSeason += 'RUIM \n Resultado: ${myClubData.leaguePosition}º\n Esperado: ${expectativaAntiga.expLastYear}º';
     }else{
-      expLastSeason += 'BOM \n Resultado: ${myClubData.leaguePosition}º\n Esperado:${expectativaAntiga.expLastYear}º';
+      expLastSeason += 'BOM \n Resultado: ${myClubData.leaguePosition}º\n Esperado: ${expectativaAntiga.expLastYear}º';
     }
   }
 

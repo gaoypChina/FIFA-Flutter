@@ -7,12 +7,10 @@ import 'package:fifa/theme/background/background_age.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/background/background_overall.dart';
-import 'package:fifa/values/images.dart';
 import 'package:fifa/widgets/button/button_return.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 import '../classes/my.dart';
-import '../values/images.dart';
 
 
 class Transfers extends StatefulWidget {

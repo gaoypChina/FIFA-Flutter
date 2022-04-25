@@ -389,6 +389,8 @@ class ClubName{
   String dinamoMoscou= "Dinamo Moscou";
   String sochi = "Sochi";
   String rostov = "Rostov";
+  String khimki = "Khimki";
+  String orenburg = "Orenburg";
   String tula = "Arsenal Tula";
   String ufa = "Ufa";
   String ural = "Ural";
@@ -396,6 +398,7 @@ class ClubName{
   String anzhi = "Anzhi";
   String kubanKrasnodar = "Kuban Krasnodar";
   String amkar = "Amkar";
+  String spartakNalchik = "Spartak Nalchik";
   String moskva = "FK Moskva";
   String rotor= "Rotor Volgograd";
   String torpedo = "Torpedo";
@@ -472,6 +475,7 @@ class ClubName{
   String bangu = "Bangu";
   String botafogoSP = "Botafogo SP";
   String botafogoPB = "Botafogo PB";
+  String boaesporte = "Boa Esporte";
   String brasilPelotas = "Brasil de Pelotas";
   String brasiliense = "Brasiliense";
   String brusque = "Brusque";
@@ -484,6 +488,7 @@ class ClubName{
   String ferroviaria = "Ferroviária";
   String gama = "Gama";
   String ibis = "Íbis";
+  String icasa = "Icasa";
   String interLimeira = "Inter de Limeira";
   String gremioBarueri = "Grêmio Barueri";
   String ituano = "Ituano";
@@ -491,6 +496,7 @@ class ClubName{
   String joinville = "Joinville";
   String gremioNovorizontino = "Grêmio Novorizontino";
   String londrina = "Londrina";
+  String macae = "Macaé";
   String malutrom = "Malutrom";
   String manaus = "Manaus";
   String mirassol = "Mirassol";

@@ -68,6 +68,9 @@ class _ClubProfileState extends State<ClubProfile>  with TickerProviderStateMixi
                           ),
                         ),
 
+                        Image.asset(Images().getStadium(clubClass.name),height: 80,width: 100),
+                        const SizedBox(width: 8),
+
                       ],
                     ),
 
