@@ -39,7 +39,7 @@ List internationalLeagueNames = [LeagueOfficialNames().championsLeague,LeagueOff
 //ID<50 -> Champions League
 //ID<70 -> Libertadores
 List leaguesListRealIndex = [
-  1,2,5, 7,8,  9,11,15,16, 20,21,  50,51,52,60,61,62,  70,71, 80, 85, 90
+  1,2,5,6, 7,8,  9,11,15,16, 20,21,    50,51,52,60,61,62,   70,71,  80, 85, 90
 ];
 
 List getAvailableLeaguesNames(){

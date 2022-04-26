@@ -317,7 +317,7 @@ class FIFAImages{
     else if(timeFoto==ClubName().remo){    imageLogo='remo'; }
     else if(timeFoto==ClubName().paysandu){  imageLogo='paysandu';  }
     else if(timeFoto==ClubName().manaus){  imageLogo='manaus';  }
-    else if(timeFoto==ClubName().vilaNova){  imageLogo='vila nova';  }
+    else if(timeFoto==ClubName().vilanova){  imageLogo='vila nova';  }
     else if(timeFoto==ClubName().abc){  imageLogo='abc';  }
     else if(timeFoto==ClubName().avai){imageLogo='avai';}
     else if(timeFoto==ClubName().portuguesa){ imageLogo='portuguesa';  }

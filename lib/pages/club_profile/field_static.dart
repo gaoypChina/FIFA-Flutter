@@ -52,7 +52,7 @@ class _StaticFieldState extends State<StaticField> {
                 child: ListView.builder(
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
-                    itemCount:  clubClass.nJogadores>11 ? 7 : 0,
+                    itemCount:  clubClass.nJogadores>11 ? clubClass.nJogadores> 18 ? 7 : clubClass.nJogadores -11 : 0,
                     itemBuilder: (BuildContext context, int index) {
                       index = index+11;
                       return playerWidgetOVR(jogadoresOrganizados[index]);
@@ -138,11 +138,14 @@ class _StaticFieldState extends State<StaticField> {
   Widget playerWidgetOVR(int playerIndex){
     Jogador player = Jogador(index: playerIndex);
 
+    int positionNumber = jogadoresOrganizados.indexOf(player.index);
+    player.isPlayerInRightPosition(positionNumber);
+
     String name = player.name;
     String position = player.position;
     double imageSize = 50;
 
-    String circleShow = player.overall.toStringAsFixed(0);
+    String circleShow = player.overallDynamic.toStringAsFixed(0);
     if(show == 'Jogos'){circleShow = player.matchsLeague.toStringAsFixed(0);}
     else if(show == 'Gols'){circleShow = player.goalsLeague.toStringAsFixed(0);}
     else if(show == 'Assists'){circleShow = player.assistsLeague.toStringAsFixed(0);}

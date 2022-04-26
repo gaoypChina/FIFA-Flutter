@@ -14,4 +14,15 @@ class EsquemaTatico{
     else if(globalMyEsquemaTatico==e451){globalMyEsquemaTatico = e442;}
   }
 
+  Map getMyPositionsMap(){
+    if(globalMyEsquemaTatico==e442){return positions442;}
+    else if(globalMyEsquemaTatico==e433){return positions433;}
+    else if(globalMyEsquemaTatico==e343){return positions343;}
+    else if(globalMyEsquemaTatico==e451){return positions451;}
+    return positions442;
+  }
+  Map getPositionsMap(){
+    return positions442;
+  }
+
 }

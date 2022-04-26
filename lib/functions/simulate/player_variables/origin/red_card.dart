@@ -9,8 +9,14 @@ import '../../../../classes/club.dart';
 
 class RedCard{
   my(Club clubClass){
+    //Se for o meu time
+    List escalacao = clubClass.escalacao;
+    if(clubClass.index == globalMyClubID) {
+      escalacao = globalMyJogadores;
+    }
+
     int probJog = Random().nextInt(11); //Posição do jogador [0-11]
-    int jogadorID = clubClass.escalacao[probJog];//Posição do jogador [0-11]
+    int jogadorID = escalacao[probJog];//Posição do jogador [0-11]
     globalJogadoresRedCard[jogadorID]++;
     globalJogadoresMatchRedCards[jogadorID]++;
 

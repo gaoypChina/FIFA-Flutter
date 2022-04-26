@@ -31,6 +31,7 @@ class Simulate{
     //APÓS A SIMULAÇÃO
     updateWeek();
 
+
     setTeamsInternational();
   }
 

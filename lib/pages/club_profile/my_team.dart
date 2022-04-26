@@ -117,7 +117,7 @@ class _MyTeamState extends State<MyTeam> {
                     Expanded(
                       child: TabBarView(
                         children: [
-                          const FieldDraggable(),
+                          FieldDraggable(notifyParent: notifyParent),
                           ClubGraphics(club: myClub),
                           AllInfoClub(club: myClub),
                         ],
@@ -137,4 +137,9 @@ class _MyTeamState extends State<MyTeam> {
     );
   }
 
+  notifyParent(){
+    setState(() {
+      print('ok');
+    });
+  }
 }

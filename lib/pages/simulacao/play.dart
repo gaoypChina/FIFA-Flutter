@@ -76,8 +76,8 @@ class _PlayState extends State<Play> {
 
     adversarioClubClass = Club(index: widget.adversarioClubID);
     //Reseta os indicadores da partida
-    globalMatchGoalScorerIDMy=[];
-    globalMatchGoalScorerIDAdv=[];
+    globalMatchGoalScorerIDMy = [];
+    globalMatchGoalScorerIDAdv = [];
     globalMatchGoalsMinutesMy = [];
     globalMatchGoalsMinutesAdv = [];
     globalJogadoresMatchGoals = List.filled(globalMaxPlayersPermitted, 0);
@@ -91,7 +91,6 @@ class _PlayState extends State<Play> {
     visitante = widget.visitante;
     myClubClass.name = visitante ? Club(index: widget.adversarioClubID).name : myClass.clubName;
     adversarioClubClass.name = visitante ? myClass.clubName : Club(index: widget.adversarioClubID).name;
-
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -152,6 +151,23 @@ class _PlayState extends State<Play> {
 
                         ],
                       ),
+
+                      visitante
+                          ? Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(adversarioClubClass.getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text16),
+                          Text(' x ',style: EstiloTextoBranco.text16),
+                          Text(myClubClass.getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text16),
+                        ],
+                      ) : Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(myClubClass.getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text16),
+                          Text(' x ',style: EstiloTextoBranco.text16),
+                          Text(adversarioClubClass.getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text16),
+                        ],
+                      )  ,
 
                       //GOLS MARCADOS
                       SizedBox(

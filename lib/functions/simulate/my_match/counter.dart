@@ -40,7 +40,6 @@ class CounterMatch extends ChangeNotifier{
   }
 
   simulateMinute () async {
-
     //ANTES DE COMEÇAR O JOGO
     if(milis==0){
       CardsInjury().setMinus1InjuryRedYellowCardAllTeam(myClubClass);
@@ -76,6 +75,9 @@ class CounterMatch extends ChangeNotifier{
 
       //salva resultado no histórico
       saveHistoricResults();
+
+      //Reseta a saude de todos os jogadores
+      globalJogadoresHealth = List.filled(globalMaxPlayersPermitted, 1.0);
 
       finishedMatch = true;
     }

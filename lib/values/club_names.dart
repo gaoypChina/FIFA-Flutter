@@ -504,6 +504,7 @@ class ClubName{
   String nacionalAM = "Nacional AMAZ";
   String operarioPR = "Operário-PR";
   String operarioms = "Operário-MS";
+  String oeste = "Oeste";
   String paulista = "Paulista Jundiaí";
   String portuguesa = "Portuguesa";
   String paysandu = "Paysandu";
@@ -516,7 +517,8 @@ class ClubName{
   String tombense = "Tombense";
   String uniaoSaoJoao = "Uniao São João";
   String uberlandia = "Uberlândia";
-  String vilaNova = "Vila Nova";
+  String uniaobarbarense = "União Barbarense";
+  String vilanova = "Vila Nova";
   String tiradentes = "Tiradentes";
   String xvpiracicaba = "XV Piracicaba";
 

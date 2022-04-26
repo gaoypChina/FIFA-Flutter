@@ -14,7 +14,12 @@ class Goal{
         quemfez = funcQuemfezgol();
       }
     }
-    int jogadorID=clubClass.escalacao[quemfez];
+    //Se for o meu time
+    List escalacao = clubClass.escalacao;
+    if(clubClass.index == globalMyClubID) {
+      escalacao = globalMyJogadores;
+    }
+    int jogadorID = escalacao[quemfez];
     return jogadorID;
   }
 

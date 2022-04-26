@@ -62,218 +62,211 @@ class _MenuState extends State<Menu> {
 
     myClass = My();
 
-    return WillPopScope(//IF GO BACK TO PREVIOUS PAGE
-      onWillPop: () async{
-        return false;
-      },
-      child: Scaffold(
+    return Scaffold(
+        body:  Stack(
+            children: [
 
-          resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
-          body:  Stack(
-              children: [
+              Image.asset('assets/icons/wallpaper blue.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
 
-                Image.asset('assets/icons/wallpaper blue.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
+              Column(
 
-                Column(
+                children: [
 
-                  children: [
+                  const SizedBox(height: 40),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
 
-                    const SizedBox(height: 40),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      //Escudo
+                      Image.asset(Images().getMyEscudo(),height: 90,width: 90),
+
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(width:180,child: Text(myClass.clubName,textAlign: TextAlign.center,style: EstiloTextoBranco.negrito22)),
+                          Text('Ano: '+ ano.toString(),style: EstiloTextoBranco.text14),
+                          Text('Semana: '+ semana.toString(),style: EstiloTextoBranco.text14),
+                          Text('Dinheiro: \$'+ myClass.money.toStringAsFixed(2)+'mi',style: EstiloTextoBranco.text14),
+                          Text('Overall da Equipe: ' + Club(index: myClass.clubID).getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text14),
+                          Text('Valor da Equipe: \$' + myClass.getClubValue().toStringAsFixed(2)+'mi',style: EstiloTextoBranco.text14),
+                        ],
+                      ),
+
+                      //UNIFORME
+                      Image.asset(Images().getMyUniform(),height: 100,width: 100),
+
+                    ],
+                  ),
+
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
 
-                        //Escudo
-                        Image.asset(Images().getMyEscudo(),height: 90,width: 90),
+                        menuButton('Jogar',(){
+                          if(adversario.clubName.isNotEmpty){
+                            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Play(adversarioClubID: adversario.clubID, visitante: adversario.visitante)));
+                          }else{
+                            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const NotPlay()));
+                          }
+                        }),
+                        menuButton('Tabela',(){
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const TableNacional()));
+                        }),
 
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Expanded(
+                                child: menuButton('Técnico',(){
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CoachMenu()));
+                                }
+                                ),
+                              ),
+                              Expanded(
+                                child: menuButton('Meu Time',(){
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const MyTeam()))
+                                      .then((value) {setState(() {});});
+                                }),
+                              ),
+
+                            ]),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Expanded(
+                                child: menuButton('Histórico',(){
+                                  customToast('Carregando...');
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HistoricLeague()));
+                                }),
+                              ),
+                              Expanded(
+                                child: menuButton('Ranking',(){
+                                  customToast('Carregando...');
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RankingClubs()))
+                                      .then((value) {setState(() {});});
+                                }),
+                              ),
+                            ]),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Expanded(
+                                child: menuButton('Internacional',(){
+                                  //Mostra a competição internacional que o time está participando 1º
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableInternational(leagueInternational: My().getMyInternationalLeague())));
+                                  }),
+                              ),
+                              Expanded(
+                                child: menuButton('Transferências',(){
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Transfers()))
+                                      .then((value) {setState(() {});});
+                                }),
+                              ),
+                            ]),
+
+
+                      ]),
+                  ),
+
+
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(context,MaterialPageRoute(builder: (context) => const Calendar()));
+                        },
+                        child: Column(
                           children: [
-                            SizedBox(width:180,child: Text(myClass.clubName,textAlign: TextAlign.center,style: EstiloTextoBranco.negrito22)),
-                            Text('Ano: '+ ano.toString(),style: EstiloTextoBranco.text14),
-                            Text('Semana: '+ semana.toString(),style: EstiloTextoBranco.text14),
-                            Text('Dinheiro: \$'+ myClass.money.toStringAsFixed(2)+'mi',style: EstiloTextoBranco.text14),
-                            Text('Overall da Equipe: ' + Club(index: myClass.clubID).getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text14),
-                            Text('Valor da Equipe: \$' + myClass.getClubValue().toStringAsFixed(2)+'mi',style: EstiloTextoBranco.text14),
+                            const Text('Próximo Adversário',style: EstiloTextoBranco.text14),
+                            //Escudo
+                            adversario.clubName.isNotEmpty ? Image.asset(Images().getEscudo(adversario.clubName),height: 50,width: 50) : Container(),
+                            adversario.clubName.isNotEmpty ? Text(adversario.clubName,style: EstiloTextoBranco.negrito14) : Container(),
+                            adversario.clubName.isNotEmpty
+                                ? Semana(semana).isJogoMataMataInternacional
+                                    ? Text(Semana(semana).semanaStr,style: EstiloTextoBranco.text14)
+                                : Text('Posição: '+adversario.posicao.toString()+'º',style: EstiloTextoBranco.text14)
+                                : Container(),
+                            adversario.clubName.isNotEmpty ? adversario.visitante ? const Text('Fora',style: EstiloTextoBranco.text14) : const Text('Casa',style: EstiloTextoBranco.text14) : Container(),
+
                           ],
                         ),
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text('Rodada: '+rodada.toString(),style: EstiloTextoBranco.text16),
+                          const Text('Classificação',style: EstiloTextoBranco.text14),
+                          Text(Classification(leagueIndex: myClass.campeonatoID).getClubPosition(myClass.clubID).toString()+'º',style: EstiloTextoBranco.text30),
+                          Text('Expectativa: '+myClass.getLastYearExpectativa().toString()+'º',style: EstiloTextoBranco.text14),
+                        ],
+                      ),
 
-                        //UNIFORME
-                        Image.asset(Images().getMyUniform(),height: 100,width: 100),
+
+                  ]),
+
+                  const SizedBox(height: 4),
+                  //ESTÁDIO
+                  Expanded(
+                    child: Stack(
+                      children: [
+
+                        Image.asset(Images().getMyStadium(),height:  double.maxFinite, width: double.maxFinite,fit: BoxFit.fill,),
+
+                        Container(
+                          alignment: Alignment.bottomLeft,
+                          child: GestureDetector(
+                              onTap:(){
+                                Navigator.push(context,MaterialPageRoute(builder: (context) => const HomePage()));
+                              },
+                              child: const Icon(Icons.close,color:Colors.red,size: 50)
+                          ),
+                        ),
+
+                        //CAMPEONATO
+                        Container(
+                          margin: const EdgeInsets.only(right: 8),
+                          alignment: Alignment.topRight,
+                          child: Images().getMyActualCampeonatoLogo().isNotEmpty
+                              ? Image.asset(Images().getMyActualCampeonatoLogo(),height: 60,width: 60)
+                              : const SizedBox(height: 60,width: 60),
+                        ),
+
+                        //DIFICULDADE
+                        Container(
+                          alignment: Alignment.bottomCenter,
+                          child: GestureDetector(
+                              onTap:(){
+                              },
+                              child: Text('Dificuldade: '+DificuldadeClass().getName(),style: EstiloTextoBranco.text12),
+                          ),
+                        ),
+
+                          //SAVE
+                          Container(
+                            alignment: Alignment.bottomRight,
+                            child: GestureDetector(
+                                onTap:(){
+                                  Navigator.push(context,MaterialPageRoute(builder: (context) => const ChooseSave()));
+                                },
+                                child: const Icon(Icons.save,color:Colors.white,size: 50)
+                            ),
+                        ),
 
                       ],
                     ),
-
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-
-                          menuButton('Jogar',(){
-                            if(adversario.clubName.isNotEmpty){
-                              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Play(adversarioClubID: adversario.clubID, visitante: adversario.visitante)));
-                            }else{
-                              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const NotPlay()));
-                            }
-                          }),
-                          menuButton('Tabela',(){
-                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => const TableNacional()));
-                          }),
-
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Expanded(
-                                  child: menuButton('Técnico',(){
-                                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CoachMenu()));
-                                  }
-                                  ),
-                                ),
-                                Expanded(
-                                  child: menuButton('Meu Time',(){
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const MyTeam()))
-                                        .then((value) {setState(() {});});
-                                  }),
-                                ),
-
-                              ]),
-                          Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Expanded(
-                                  child: menuButton('Histórico',(){
-                                    customToast('Carregando...');
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HistoricLeague()));
-                                  }),
-                                ),
-                                Expanded(
-                                  child: menuButton('Ranking',(){
-                                    customToast('Carregando...');
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RankingClubs()))
-                                        .then((value) {setState(() {});});
-                                  }),
-                                ),
-                              ]),
-                          Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                Expanded(
-                                  child: menuButton('Internacional',(){
-                                    //Mostra a competição internacional que o time está participando 1º
-                                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableInternational(leagueInternational: My().getMyInternationalLeague())));
-                                    }),
-                                ),
-                                Expanded(
-                                  child: menuButton('Transferências',(){
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Transfers()))
-                                        .then((value) {setState(() {});});
-                                  }),
-                                ),
-                              ]),
-
-
-                        ]),
-                    ),
-
-
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        GestureDetector(
-                          onTap: (){
-                            Navigator.push(context,MaterialPageRoute(builder: (context) => const Calendar()));
-                          },
-                          child: Column(
-                            children: [
-                              const Text('Próximo Adversário',style: EstiloTextoBranco.text14),
-                              //Escudo
-                              adversario.clubName.isNotEmpty ? Image.asset(Images().getEscudo(adversario.clubName),height: 50,width: 50) : Container(),
-                              adversario.clubName.isNotEmpty ? Text(adversario.clubName,style: EstiloTextoBranco.negrito14) : Container(),
-                              adversario.clubName.isNotEmpty
-                                  ? Semana(semana).isJogoMataMataInternacional
-                                      ? Text(Semana(semana).semanaStr,style: EstiloTextoBranco.text14)
-                                  : Text('Posição: '+adversario.posicao.toString()+'º',style: EstiloTextoBranco.text14)
-                                  : Container(),
-                              adversario.clubName.isNotEmpty ? adversario.visitante ? const Text('Fora',style: EstiloTextoBranco.text14) : const Text('Casa',style: EstiloTextoBranco.text14) : Container(),
-
-                            ],
-                          ),
-                        ),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Text('Rodada: '+rodada.toString(),style: EstiloTextoBranco.text16),
-                            const Text('Classificação',style: EstiloTextoBranco.text14),
-                            Text(Classification(leagueIndex: myClass.campeonatoID).getClubPosition(myClass.clubID).toString()+'º',style: EstiloTextoBranco.text30),
-                            Text('Expectativa: '+myClass.getLastYearExpectativa().toString()+'º',style: EstiloTextoBranco.text14),
-                          ],
-                        ),
-
-
-                    ]),
-
-                    const SizedBox(height: 4),
-                    //ESTÁDIO
-                    Expanded(
-                      child: Stack(
-                        children: [
-
-                          Image.asset(Images().getMyStadium(),height:  double.maxFinite, width: double.maxFinite,fit: BoxFit.fill,),
-
-                          Container(
-                            alignment: Alignment.bottomLeft,
-                            child: GestureDetector(
-                                onTap:(){
-                                  Navigator.push(context,MaterialPageRoute(builder: (context) => const HomePage()));
-                                },
-                                child: const Icon(Icons.close,color:Colors.red,size: 50)
-                            ),
-                          ),
-
-                          //CAMPEONATO
-                          Container(
-                            margin: const EdgeInsets.only(right: 8),
-                            alignment: Alignment.topRight,
-                            child: Images().getMyActualCampeonatoLogo().isNotEmpty
-                                ? Image.asset(Images().getMyActualCampeonatoLogo(),height: 60,width: 60)
-                                : const SizedBox(height: 60,width: 60),
-                          ),
-
-                          //DIFICULDADE
-                          Container(
-                            alignment: Alignment.bottomCenter,
-                            child: GestureDetector(
-                                onTap:(){
-                                },
-                                child: Text('Dificuldade: '+DificuldadeClass().getName(),style: EstiloTextoBranco.text12),
-                            ),
-                          ),
-
-                            //SAVE
-                            Container(
-                              alignment: Alignment.bottomRight,
-                              child: GestureDetector(
-                                  onTap:(){
-                                    Navigator.push(context,MaterialPageRoute(builder: (context) => const ChooseSave()));
-                                  },
-                                  child: const Icon(Icons.save,color:Colors.white,size: 50)
-                              ),
-                          ),
-
-                        ],
-                      ),
-                    ),
+                  ),
 
 
 
-                  ],
-                )
+                ],
+              )
 
-              ]
-          )
-      ),
+            ]
+        )
     );
   }
 ////////////////////////////////////////////////////////////////////////////

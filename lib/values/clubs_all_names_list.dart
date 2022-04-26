@@ -24,7 +24,7 @@ List clubsAllNameList = [
   ClubName().sampdoria,  ClubName().sassuolo,  ClubName().torino,  ClubName().udinese,
 
   ClubName().hellasVerona,ClubName().brescia,ClubName().crotone,ClubName().benevento,
-  ClubName().empoli,ClubName().spezia,
+  ClubName().empoli,ClubName().spezia,ClubName().lecce,ClubName().monza,
 
   ClubName().athleticbilbao,  ClubName().atleticomadrid,  ClubName().barcelona,  ClubName().celtavigo,
   ClubName().espanyol,  ClubName().getafe,  ClubName().granada,  ClubName().levante,
@@ -41,7 +41,7 @@ List clubsAllNameList = [
   ClubName().augsburg,  ClubName().herthaberlim,  ClubName().hoffenheim,  ClubName().rbleipzig,
   ClubName().schalke04,  ClubName().stuttgart,  ClubName().werderbremen,  ClubName().wolfsburg,
 
-  ClubName().stPauli,ClubName().hannover96,ClubName().kaiserslautern,
+  ClubName().stPauli,ClubName().hannover96,ClubName().kaiserslautern,ClubName().unionBerlin,
 
   ClubName().bordeaux,  ClubName().lille,  ClubName().lyon,  ClubName().monaco,
   ClubName().montpellier,  ClubName().nantes,  ClubName().nice,  ClubName().olympiquemarselha,
@@ -87,7 +87,7 @@ List clubsAllNameList = [
 
   ClubName().avai, ClubName().paysandu, ClubName().santacruz, ClubName().portuguesa,
   ClubName().brusque,ClubName().crb,ClubName().csa,ClubName().manaus,
-  ClubName().sampaio,ClubName().vilaNova,ClubName().brasilPelotas,ClubName().ituano,
+  ClubName().sampaio,ClubName().vilanova,ClubName().brasilPelotas,ClubName().ituano,
   ClubName().gremioNovorizontino,ClubName().mirassol,ClubName().operarioPR,
   ClubName().londrina,ClubName().remo,ClubName().abc,
 

@@ -7,8 +7,14 @@ import '../../../../global_variables.dart';
 
 class YellowCard{
   my(Club clubClass){
+    //Se for o meu time
+    List escalacao = clubClass.escalacao;
+    if(clubClass.index == globalMyClubID) {
+      escalacao = globalMyJogadores;
+    }
+
     int probJog = Random().nextInt(11); //Posição do jogador [0-11]
-    int jogadorID = clubClass.escalacao[probJog]; //Posição do jogador [0-11]
+    int jogadorID = escalacao[probJog]; //Posição do jogador [0-11]
     globalJogadoresYellowCard[jogadorID]++;
     globalJogadoresMatchYellowCards[jogadorID]++;
 

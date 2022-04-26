@@ -185,8 +185,8 @@ class _AllInfoClubState extends State<AllInfoClub> {
               Text(''),
             ]),
 
-        for(int i=0; i<widget.club.jogadores.length; i++)
-          playersRow3(i,widget.club.jogadores[i])
+        for(int i=0; i<widget.club.escalacao.length; i++)
+          playersRow3(i,widget.club.escalacao[i])
       ],
     );
   }

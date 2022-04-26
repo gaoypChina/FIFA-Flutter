@@ -2,7 +2,6 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/page_controller/save/upload_infos.dart';
 import 'package:fifa/pages/menu/b_home.dart';
 import 'package:fifa/theme/colors.dart';
-import 'package:fifa/values/images.dart';
 import 'package:fifa/widgets/button/button_return.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';

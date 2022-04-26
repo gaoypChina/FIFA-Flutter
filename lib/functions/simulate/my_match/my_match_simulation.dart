@@ -143,6 +143,9 @@ class MyMatchSimulation{
     { globalJogadoresMatchHealth[globalID] += 0.001;  }
     //NO INTERVALO
     if(milis==45) globalJogadoresMatchHealth[globalID] += 0.15;
+
+    //Globalmente
+    globalJogadoresHealth[globalID] = globalJogadoresMatchHealth[globalID];
   }
 
   void funcPosturaTime(PosturaDoTimeClass posturaDoTime,double overallEquipeA, double overallEquipeB){

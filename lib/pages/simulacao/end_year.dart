@@ -2,7 +2,6 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/custom_toast.dart';
-import 'package:fifa/values/images.dart';
 import 'package:fifa/functions/end_year_updates/update_data_year.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -27,15 +26,13 @@ class _EndYearState extends State<EndYear> {
   @override
   Widget build(BuildContext context) {
 
-    My myClass = My();
-
     return Scaffold(
         body: Stack(
             children: [
 
               Images().getWallpaper(),
 
-              loading ? Column(
+              !loading ? Column(
                 children: [
 
                   const SizedBox(height: 40),
@@ -43,16 +40,18 @@ class _EndYearState extends State<EndYear> {
                   const SizedBox(height: 10),
 
                   //Escudo
-                  Image.asset('assets/clubs/${FIFAImages().imageLogo(myClass.clubName)}.png',height: 90,width: 90),
+                  Image.asset(Images().getMyEscudo(),height: 90,width: 90),
                   const Spacer(),
                   //VOLTAR
                   customButtonContinue(
                       title: 'CONTINUAR',
-                      function: () {
+                      function: () async {
 
                         customToast('Carregando nova temporada');
                         loading = true;
                         setState(() {});
+                        //AWAIT Só pra dar o set state antes e mostrar a pagina carregando
+                        await Future.delayed(const Duration(milliseconds: 10), () {});
                         funcUpdateDataAfterSeason();
 
                         Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Menu()));

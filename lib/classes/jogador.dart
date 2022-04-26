@@ -1,3 +1,4 @@
+import 'package:fifa/classes/geral/esquemas_taticos.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 
@@ -33,12 +34,12 @@ class Jogador{
     name = globalJogadoresName[index];
     position = globalJogadoresPosition[index];
     age = globalJogadoresAge[index];
+    health = globalJogadoresHealth[index];
     overall = globalJogadoresOverall[index];
     overallDynamic = setOverall();
     price = setPreco();
     clubID = globalJogadoresClubIndex[index];
     clubName = clubsAllNameList[clubID];
-    health = globalJogadoresHealth[index];
     matchsLeague = globalJogadoresLeagueMatchs[index] ?? 0;
     goalsLeague = globalJogadoresLeagueGoals[index] ?? 0;
     assistsLeague = globalJogadoresLeagueAssists[index] ?? 0;
@@ -59,10 +60,41 @@ class Jogador{
   int setOverall(){
     int overallNewValue = overall;
     if(globalJogadoresInjury[index]>0 || globalJogadoresRedCard[index]>=1 || globalJogadoresYellowCard[index]>=3){
-      return overallNewValue -= 12;
+      overallNewValue -= 12;
     }
+    else if(health<0.1){
+      overallNewValue -= 5;
+    }else if(health<0.2){
+      overallNewValue -= 4;
+    }else if(health<0.3){
+      overallNewValue -= 3;
+    }else if(health<0.5){
+      overallNewValue -= 2;
+    }else if(health<0.7){
+      overallNewValue -= 1;
+    }
+
     return overallNewValue;
   }
+
+  isPlayerInRightPosition(int position){
+    List possiblePositions = getPlayerValidPositions();
+    if(!possiblePositions.contains(position) && position<11){
+      overallDynamic -= 8;
+    }
+  }
+  List getPlayerValidPositions(){
+    Map positionsMap;
+    if(clubID == globalMyClubID){
+      positionsMap = EsquemaTatico().getMyPositionsMap();
+    }else{
+      positionsMap = EsquemaTatico().getPositionsMap();
+    }
+    List possiblePositions = positionsMap[position];
+    return possiblePositions;
+  }
+
+
   double setPreco(){
     double price=0;
     //adiciona preço

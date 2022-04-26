@@ -97,10 +97,15 @@ class Club{
     double ovr = 0;
     for (int i=0; i<11;i++) {
         if(index == globalMyClubID){//if is My Team
-            ovr += double.parse(Jogador(index: globalMyJogadores[i]).overallDynamic.toString());
+          //check Position
+          Jogador player = Jogador(index: globalMyJogadores[i]);
+          player.isPlayerInRightPosition(i);
+            ovr += double.parse(player.overallDynamic.toString());
           }else{
           try{
-            ovr += double.parse(Jogador(index: escalacao[i]).overallDynamic.toString());
+            Jogador player = Jogador(index: escalacao[i]);
+            player.isPlayerInRightPosition(i);
+            ovr += double.parse(player.overallDynamic.toString());
           }catch(e){
             //print('$index $name $jogadores');
           }
@@ -115,7 +120,6 @@ class Club{
     //1ªLista com todos os jogador da posicao 0 -> GOL
     //Organiza na lista o que tem melhor overall
     //salva o com melhor overall
-
 
 
     List playersPositionNames = []; //lista com a posição de todos os jogadores: Ex:[GOL, MEI, ZAG, VOL...]

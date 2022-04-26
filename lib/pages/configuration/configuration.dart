@@ -19,7 +19,7 @@ class Configuration extends StatefulWidget {
 class _ConfigurationState extends State<Configuration> {
 
   ConfigurationState config = ConfigurationState();
-  double spaceBetweenWidgets = 25;
+  double spaceBetweenWidgets = 20;
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
@@ -30,42 +30,49 @@ class _ConfigurationState extends State<Configuration> {
         children: [
           Images().getWallpaper(),
 
-          Padding(
+          Container(
+            height: Sized(context).height-50,
             padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
 
-                const SizedBox(height: 60),
-                coachName(),
-                SizedBox(height: spaceBetweenWidgets),
-                language(),
-                SizedBox(height: spaceBetweenWidgets),
-                turns(config),
-                SizedBox(height: spaceBetweenWidgets),
-                dificulty(),
-                SizedBox(height: spaceBetweenWidgets),
-                soundEffects(config),
-                SizedBox(height: spaceBetweenWidgets),
-                nTeamsPerLeague(),
-                SizedBox(height: spaceBetweenWidgets),
-                nTeamsClassified(),
-                SizedBox(height: spaceBetweenWidgets),
-                nTeamsRelegated(),
-                SizedBox(height: spaceBetweenWidgets),
-                changeClubs(),
-                SizedBox(height: spaceBetweenWidgets),
-                initialMoney(),
-                SizedBox(height: spaceBetweenWidgets),
-                userTerms(),
-                SizedBox(height: spaceBetweenWidgets),
-                GestureDetector(
-                  onTap: (){
-                  },
-                  child: const Text('teste',style: EstiloTextoBranco.text16),
-                )
+                  const SizedBox(height: 60),
+                  coachName(),
+                  SizedBox(height: spaceBetweenWidgets),
+                  language(),
+                  SizedBox(height: spaceBetweenWidgets),
+                  turns(config),
+                  SizedBox(height: spaceBetweenWidgets),
+                  dificulty(),
+                  SizedBox(height: spaceBetweenWidgets),
+                  soundEffects(config),
+                  SizedBox(height: spaceBetweenWidgets),
+                  nTeamsPerLeague(),
+                  SizedBox(height: spaceBetweenWidgets),
+                  nTeamsClassified(),
+                  SizedBox(height: spaceBetweenWidgets),
+                  nTeamsRelegated(),
+                  SizedBox(height: spaceBetweenWidgets),
+                  changeClubs(),
+                  SizedBox(height: spaceBetweenWidgets),
+                  initialMoney(),
+                  SizedBox(height: spaceBetweenWidgets),
+                  allowCards(config),
+                  SizedBox(height: spaceBetweenWidgets),
+                  allowInjuries(config),
+                  SizedBox(height: spaceBetweenWidgets),
+                  userTerms(),
+                  SizedBox(height: spaceBetweenWidgets),
+                  GestureDetector(
+                    onTap: (){
+                    },
+                    child: const Text('teste',style: EstiloTextoBranco.text16),
+                  )
 
-              ],
+                ],
+              ),
             ),
           ),
 
@@ -95,6 +102,7 @@ class _ConfigurationState extends State<Configuration> {
         children: [
           const Expanded(child: Text('Nome do Treinador',style: EstiloTextoBranco.negrito16)),
           Text(config.coachName,style: EstiloTextoBranco.text16),
+          const SizedBox(width: 20),
         ],
       ),
     );
@@ -231,12 +239,50 @@ Widget soundEffects(ConfigurationState config){
     );
   }
 
+  Widget allowCards(ConfigurationState config){
+    return Row(
+        children: [
+          const SizedBox(
+            width: 200,
+            child: Text('Permitir cartões amarelos e vermelhos',style: EstiloTextoBranco.negrito16),
+          ),
+
+          const Spacer(),
+          Switch(
+              value: config.hasCards,
+              onChanged: (value) {
+                setState(() {
+                  config.changeCardsState();
+                });
+              }),
+        ]
+    );
+  }
+  Widget allowInjuries(ConfigurationState config){
+    return Row(
+        children: [
+          const SizedBox(
+            width: 200,
+            child: Text('Permitir jogadores lesionados',style: EstiloTextoBranco.negrito16),
+          ),
+          const Spacer(),
+          Switch(
+              value: config.hasInjuries,
+              onChanged: (value) {
+                setState(() {
+                  config.changeInjuryState();
+                });
+              }),
+        ]
+    );
+  }
+
   Widget userTerms(){
     return Column(
       children: [
         GestureDetector(
             onTap:(){
-
+              config.openTerms();
             },
             child: const Text('Termos de Uso',style: EstiloTextoBranco.negrito16),
         ),

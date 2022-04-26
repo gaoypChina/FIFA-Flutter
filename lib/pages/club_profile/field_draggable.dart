@@ -14,7 +14,8 @@ import 'package:flutter/material.dart';
 import '../../theme/textstyle.dart';
 
 class FieldDraggable extends StatefulWidget {
-  const FieldDraggable({Key? key}) : super(key: key);
+  final Function() notifyParent;
+  FieldDraggable({Key? key, required this.notifyParent}) : super(key: key);
   @override
   State<FieldDraggable> createState() => _FieldDraggableState();
 }
@@ -122,7 +123,10 @@ class _FieldDraggableState extends State<FieldDraggable> {
     popUpOkShowPlayerInfos(
         context: context,
         playerID: player.index,
-        funcSetState: (){setState(() {});}
+        funcSetState: (){
+          setState(() {});
+          widget.notifyParent();
+        }
     );
   }
 ////////////////////////////////////////////////////////////////////////////
@@ -178,6 +182,9 @@ class _FieldDraggableState extends State<FieldDraggable> {
         //Troca Jogadores
         globalMyJogadores[finalPosition1] = playerTargetID;globalMyJogadores[finalPosition2] = playerIDData;
         setState(() {});
+        dragPlayer=-1;
+
+        widget.notifyParent();
       },
     );
   }
@@ -186,10 +193,13 @@ class _FieldDraggableState extends State<FieldDraggable> {
   Widget playerWidgetOVR(int playerIndex){
     Jogador player = Jogador(index: playerIndex);
 
+    int positionNumber = my.jogadores.indexOf(player.index);
+    player.isPlayerInRightPosition(positionNumber);
+
     String name = player.name;
     String position = player.position;
     double imageSize = 50;
-    double healthBar = 1;
+    double healthBar = player.health;
 
     String circleShow = player.overallDynamic.toStringAsFixed(0);
     if(show == 'Jogos'){circleShow = player.matchsLeague.toStringAsFixed(0);}

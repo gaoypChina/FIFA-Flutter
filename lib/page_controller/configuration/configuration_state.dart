@@ -1,8 +1,11 @@
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/page_controller/configuration/open_url.dart';
 
 class ConfigurationState{
   bool hasSoundEffect = globalHasSoundEffects;
   bool turnIdaEVolta = globalLeagueIdaVolta;
+  bool hasCards = globalHasCards;
+  bool hasInjuries = globalHasInjuries;
   String coachName = globalCoachName;
 
   changeSoundEffectSwitchState(){
@@ -25,7 +28,17 @@ class ConfigurationState{
       semanasJogosNacionais = [for(var i=1; i<=globalNMaxRodadasNacional; i++) i];
       semanasJogosCopas = [];
       globalUltimaSemana = semanasJogosInternacionais.last;
-
   }
 
+  changeCardsState(){
+    hasCards = !hasCards;
+  }
+  changeInjuryState(){
+    hasInjuries = !hasInjuries;
+  }
+
+  openTerms(){
+    final Uri _url = Uri.parse('https://www.davaiapp.com');
+    funcOpenLink(_url);
+  }
 }

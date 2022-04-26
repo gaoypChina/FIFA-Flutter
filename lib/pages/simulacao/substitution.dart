@@ -56,6 +56,7 @@ class _SubstitutionState extends State<Substitution> {
                   const SizedBox(height: 40),
                   const Text('Substituição',style: EstiloTextoBranco.text30),
                   Text('${globalMatchSubstitutionsLeft.toString()} restantes',style: EstiloTextoBranco.text16),
+                  Text('Overall: '+myClub.getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text16),
                   //MUDAR ESQUEMA TATICO
                   customButtonContinue(
                       title: my.esquemaTatico,
@@ -157,13 +158,18 @@ class _SubstitutionState extends State<Substitution> {
             globalMatchSubstitutionsLeft = 3-totalDifferentPlayers;
 
           }else {
-            customToast('Jogadores expulsos não podem ser substítuidos');
-            dragPlayer=-1;
+            if(finalPosition1<11 && finalPosition2<11){//se forem titulares pode mudar
+              //Troca Jogadores
+              globalMyJogadores[finalPosition1] = playerTargetID;
+              globalMyJogadores[finalPosition2] = playerIDData;
+            }else{
+              customToast('Jogadores expulsos não podem ser substítuidos');
+            }
           }
         }else{
           customToast('Sem substituições restantes');
-          dragPlayer=-1;
         }
+        dragPlayer=-1;
         setState(() {});
       },
     );
@@ -171,6 +177,9 @@ class _SubstitutionState extends State<Substitution> {
 
   Widget playerWidgetOVR(int playerIndex){
     Jogador player = Jogador(index: playerIndex);
+
+    int positionNumber = my.jogadores.indexOf(player.index);
+    player.isPlayerInRightPosition(positionNumber);
 
     Match matchClass = Match(playerID: playerIndex);
 

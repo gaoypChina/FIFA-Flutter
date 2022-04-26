@@ -20,7 +20,7 @@ Widget fieldWidget(){
 Widget fieldGameplay442(int clubID){
   Club club = Club(index: clubID);
   String clubName = club.name;
-  List jogadores = club.optimizeBestSquadClub();
+  List jogadores = club.escalacao;
   if(My().clubID == clubID){
     jogadores = globalMyJogadores;
   }
@@ -52,7 +52,7 @@ Widget fieldGameplay442(int clubID){
 Widget fieldGameplay433(int clubID){
   Club club = Club(index: clubID);
   String clubName = club.name;
-  List jogadores = club.optimizeBestSquadClub();
+  List jogadores = club.escalacao;
   if(My().clubID == clubID){
     jogadores = globalMyJogadores;
   }
@@ -75,7 +75,7 @@ Widget fieldGameplay433(int clubID){
 Widget fieldGameplay343(int clubID){
   Club club = Club(index: clubID);
   String clubName = club.name;
-  List jogadores = club.optimizeBestSquadClub();
+  List jogadores = club.escalacao;
   if(My().clubID == clubID){
     jogadores = globalMyJogadores;
   }
@@ -104,7 +104,7 @@ Widget fieldGameplay343(int clubID){
 Widget fieldGameplay451(int clubID){
   Club club = Club(index: clubID);
   String clubName = club.name;
-  List jogadores = club.optimizeBestSquadClub();
+  List jogadores = club.escalacao;
   if(My().clubID == clubID){
     jogadores = globalMyJogadores;
   }
