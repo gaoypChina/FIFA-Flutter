@@ -62,6 +62,7 @@ class SharedPreferenceHelper {
     globalSaveData[1][2] = listOficial[1][2];//age
     globalSaveData[1][3] = listOficial[1][3];//overall
     globalSaveData[1][4] = listOficial[1][4];//position
+    globalSaveData[1][4] = listOficial[1][5];//nationality
 */
 
 

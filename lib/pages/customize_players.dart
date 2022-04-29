@@ -1,6 +1,7 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/popup/popup_save_all_data.dart';
 import 'package:fifa/popup/poup_edit.dart';
@@ -65,19 +66,19 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                   Container(
                     color: AppColors().greyTransparent,
                     child: Row(
-                      children: const[
-                        SizedBox(width: 8),
-                        Text('POS',style: EstiloTextoBranco.text16),
-                        SizedBox(width: 25),
+                      children: [
+                        const SizedBox(width: 8),
+                        const Text('POS',style: EstiloTextoBranco.text16),
+                        const SizedBox(width: 25),
                         SizedBox(width:170,
-                            child: Text('NOME',style: EstiloTextoBranco.text16)
+                            child: Text(Translation(context).text.name.toUpperCase(),style: EstiloTextoBranco.text16)
                         ),
-                        SizedBox(width: 4),
-                        Text('IDA',style: EstiloTextoBranco.text16),
-                        SizedBox(width: 12),
-                        Text('OVR',style: EstiloTextoBranco.text16),
-                        SizedBox(width: 14),
-                        Text('PREÇO',style: EstiloTextoBranco.text16),
+                        const SizedBox(width: 4),
+                        const Text('IDA',style: EstiloTextoBranco.text16),
+                        const SizedBox(width: 12),
+                        const Text('OVR',style: EstiloTextoBranco.text16),
+                        const SizedBox(width: 14),
+                        Text(Translation(context).text.price.toUpperCase(),style: EstiloTextoBranco.text16),
                       ],
                     ),
                   ),
@@ -104,11 +105,12 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                   ),
 
 
+                  const SizedBox(height: 8),
                   //CUSTOMIZE
                   Row(
                     children: [
                       buttonDesign(
-                          title: 'Idade +1',
+                          title: '${Translation(context).text.age} +1',
                           function: (){
                             setState(() {});
                             for(int i=0; i<globalJogadoresAge.length; i++){
@@ -118,7 +120,7 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                       ),
 
                       buttonDesign(
-                          title: 'Idade -1',
+                          title: '${Translation(context).text.age} -1',
                           function: (){
                             setState(() {});
                             for(int i=0; i<globalJogadoresAge.length; i++){
@@ -135,7 +137,7 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                   Padding(
                   padding: const EdgeInsets.all(8),
                   child: customButtonContinue(
-                      title: 'SALVAR PERMANENTEMENTE',
+                      title: Translation(context).text.save,
                       function: (){
                         //Salva os dados
                         popUpSaveAllData(context: context);

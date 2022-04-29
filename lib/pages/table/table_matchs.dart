@@ -6,6 +6,8 @@ import 'package:fifa/page_controller/table/table_matchs_control.dart';
 import 'package:fifa/pages/table/widget_bottom.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/theme/translation.dart';
+import 'package:fifa/values/league_names.dart';
 import 'package:flutter/material.dart';
 
 class TableMatchs extends StatefulWidget {
@@ -42,9 +44,7 @@ class _TableMatchsState extends State<TableMatchs> {
       body:  Stack(
           children: [
 
-      leagueInternational == 'Champions'
-      ? Image.asset('assets/icons/fundochampions.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill)
-            : Image.asset('assets/icons/fundolibertadores.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
+            backgroundInternationalLeague(leagueInternational),
 
             Column(
                 children: [
@@ -80,6 +80,11 @@ class _TableMatchsState extends State<TableMatchs> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Widget backgroundInternationalLeague(String leagueInternational){
+    return leagueInternational == LeagueOfficialNames().championsLeague
+        ? Image.asset('assets/icons/fundochampions.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill)
+        : Image.asset('assets/icons/fundolibertadores.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill);
+  }
   Widget tableWidget() {
     return Column(
       children: [
@@ -110,7 +115,7 @@ class _TableMatchsState extends State<TableMatchs> {
     if(groupNumber==7){groupLetter='H';}
     return TableRow(
       children: [
-        Text('\nGrupo ' + groupLetter,style: EstiloTextoBranco.text16),
+        Text('\n${Translation(context).text.group} ' + groupLetter,style: EstiloTextoBranco.text16),
         Container(),
         Container(),
         Container(),
@@ -167,7 +172,7 @@ class _TableMatchsState extends State<TableMatchs> {
         //RODADA
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child: Text('Rodada: $rodadaShow',style: EstiloTextoBranco.text22),
+          child: Text('${Translation(context).text.matchWeek}: $rodadaShow',style: EstiloTextoBranco.text22),
         ),
 
         //BOTAO DIREITA

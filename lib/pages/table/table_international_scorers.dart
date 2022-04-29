@@ -6,6 +6,7 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/table/widget_bottom.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:flutter/material.dart';
@@ -64,7 +65,7 @@ class _TableInternationalScorersState extends State<TableInternationalScorers> {
                             Row(
                               children: [
                                 Container(width:260,alignment:Alignment.center,
-                                    child: const Text('Artilheiros',style: EstiloTextoBranco.text16)),
+                                    child: Text(Translation(context).text.topScorers,style: EstiloTextoBranco.text16)),
                                 const Text('J   G    A',style: EstiloTextoBranco.text16),
 
                               ],

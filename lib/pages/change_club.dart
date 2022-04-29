@@ -1,8 +1,11 @@
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/functions/change_club_control.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/widgets/button/button_return.dart';
 import 'package:flutter/material.dart';
 
 import 'menu/c_menu.dart';
@@ -31,15 +34,14 @@ class _ChangeClubState extends State<ChangeClub> {
         body:  Stack(
             children: [
 
-              Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
+              Images().getWallpaper(),
 
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
 
                   const SizedBox(height: 40),
-                  const Text('Mudar de time',style: EstiloTextoBranco.text30),
-
+                  Text(Translation(context).text.enterNewClub,style: EstiloTextoBranco.text30),
 
                   Column(
                     children: [
@@ -64,19 +66,16 @@ class _ChangeClubState extends State<ChangeClub> {
                           clubWidget(options.teams[5]),
                         ],
                       ),
+                      const SizedBox(height: 40),
                     ],
                   ),
 
-                  //VOLTAR
-                  customButtonContinue(
-                      title: 'VOLTAR',
-                      function: (){
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Menu()));
-                      }
-                  ),
 
                 ],
-              )
+              ),
+
+              //VOLTAR
+              returnButton(context),
 
             ]
         )
@@ -105,7 +104,7 @@ Widget clubWidget(int clubID){
             children: [
               Image.asset('assets/clubs/${FIFAImages().imageLogo(clubClassification.clubName)}.png',height: 130,width: 130),
               Text(clubClassification.clubName,textAlign:TextAlign.center,style: EstiloTextoBranco.text20),
-              Text('Posição: '+clubClassification.posicaoTabela.toString()+'º',style: EstiloTextoBranco.text14)
+              Text('${Translation(context).text.position}: '+clubClassification.posicaoTabela.toString()+'º',style: EstiloTextoBranco.text14)
             ],
           ),
         ),

@@ -56,5 +56,6 @@ saveAllData(int i){
     globalJogadoresClubIndex,
     globalJogadoresAge,
     globalJogadoresOverall,
-    globalJogadoresPosition];
+    globalJogadoresPosition,
+    globalJogadoresNationality];
 }

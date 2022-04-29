@@ -5,7 +5,7 @@ import 'package:fifa/functions/simulate/simulate_functions.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/simulacao/end_year.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
-import 'package:fifa/widgets/table_widget.dart';
+import 'package:fifa/pages/table/table_widget.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 

@@ -4,6 +4,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/page_controller/club_profile/data_graphics.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/league_trophy_image.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -39,7 +40,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-                const Text('Desempenho',style: EstiloTextoBranco.text16),
+                Text(Translation(context).text.performance,style: EstiloTextoBranco.text16),
                 graphics(dataGraphics),
 
                 totalTrophyWidget(widget.club,dataGraphics),
@@ -70,11 +71,15 @@ Widget graphics(DataGraphics dataGraphics){
           series: <ChartSeries>[
             // Initialize line series
             LineSeries<ClassificationData, String>(
-              xAxisName: 'Anos',
-              yAxisName: 'Posição',
+              xAxisName: Translation(context).text.years,
+              yAxisName: Translation(context).text.position,
               dataSource: dataGraphics.data,
               enableTooltip: true,
-              xValueMapper: (ClassificationData data, _) => data.year.toString(),
+              xValueMapper: (ClassificationData data, _) =>
+              //Para mostrar apertura e clausura
+              data.year.toString().substring(5) == '5'
+                  ? data.year.toString()     //ano.5 -> ano.5
+                  : data.year.toInt().toString(), //ano.0 -> ano
               yValueMapper: (ClassificationData data, _) => data.position,
               dataLabelSettings:const DataLabelSettings(isVisible : true,color: Colors.white),
               markerSettings: const MarkerSettings(
@@ -103,7 +108,7 @@ Widget totalTrophyWidget(Club club, DataGraphics dataGraphics){
         //TITULOS
         Column(
           children: [
-            const Text('Títulos',style: EstiloTextoBranco.text16),
+            Text(Translation(context).text.titles,style: EstiloTextoBranco.text16),
             Image.asset('assets/trophy/${getTrophyImage(club.leagueName)}.png',height: 100,width: 100),
             Text(dataGraphics.nTitulos.toString(),style: EstiloTextoBranco.text16),
           ],
@@ -111,24 +116,24 @@ Widget totalTrophyWidget(Club club, DataGraphics dataGraphics){
 
         Column(
           children: [
-            const Text('Média',style: EstiloTextoBranco.text16),
+            Text(Translation(context).text.average,style: EstiloTextoBranco.text16),
             Text(dataGraphics.averagePosition.toString()+'º',style: EstiloTextoBranco.text16),
-            const Text('Últimos 10 anos',style: EstiloTextoBranco.text16),
+            Text(Translation(context).text.last10Years,style: EstiloTextoBranco.text16),
           ],
         ),
         Column(
           children: [
             const Text('G-4',style: EstiloTextoBranco.text16),
             Text(dataGraphics.g4Years.toString(),style: EstiloTextoBranco.text16),
-            const Text('anos',style: EstiloTextoBranco.text16),
+            Text(Translation(context).text.years,style: EstiloTextoBranco.text16),
           ],
         ),
 
         Column(
           children: [
-            const Text('2ªdivisão',style: EstiloTextoBranco.text16),
+            Text(Translation(context).text.division2,style: EstiloTextoBranco.text16),
             Text(dataGraphics.n2ndivision.toString(),style: EstiloTextoBranco.text16),
-            const Text('anos',style: EstiloTextoBranco.text16),
+            Text(Translation(context).text.years,style: EstiloTextoBranco.text16),
           ],
         ),
 

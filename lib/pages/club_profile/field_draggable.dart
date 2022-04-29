@@ -8,6 +8,7 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/popup/popup_player_info.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/field_size.dart';
 import 'package:flutter/material.dart';
 
@@ -15,14 +16,13 @@ import '../../theme/textstyle.dart';
 
 class FieldDraggable extends StatefulWidget {
   final Function() notifyParent;
-  FieldDraggable({Key? key, required this.notifyParent}) : super(key: key);
+  const FieldDraggable({Key? key, required this.notifyParent}) : super(key: key);
   @override
   State<FieldDraggable> createState() => _FieldDraggableState();
 }
 
 class _FieldDraggableState extends State<FieldDraggable> {
 
-  Club myClub = Club(index: My().clubID);
   My my = My();
   String show = 'OVR';
 
@@ -34,6 +34,8 @@ class _FieldDraggableState extends State<FieldDraggable> {
 
   @override
   Widget build(BuildContext context) {
+
+    Club myClub = Club(index: my.clubID);
 
     return Scaffold(
       body: Stack(
@@ -50,7 +52,7 @@ class _FieldDraggableState extends State<FieldDraggable> {
               Container(
                   width: Sized(context).width,
                   color: AppColors().greyTransparent,
-                  child: const Text('RESERVAS:', style: EstiloTextoBranco.text22)
+                  child: Text('${Translation(context).text.substitutes}:', style: EstiloTextoBranco.text22)
               ),
 
               Container(
@@ -94,10 +96,10 @@ class _FieldDraggableState extends State<FieldDraggable> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     button(title: 'OVR', function: (){setState(() {});show = 'OVR';}),
-                    button(title: 'Idade', function: (){setState(() {});show = 'Idade';}),
-                    button(title: 'Jogos', function: (){setState(() {});show = 'Jogos';}),
-                    button(title: 'Gols', function: (){setState(() {});show = 'Gols';}),
-                    button(title: 'Assists.', function: (){setState(() {});show = 'Assists';}),
+                    button(title: Translation(context).text.age, function: (){setState(() {});show = 'Idade';}),
+                    button(title: Translation(context).text.matchs, function: (){setState(() {});show = 'Jogos';}),
+                    button(title: Translation(context).text.goals, function: (){setState(() {});show = 'Gols';}),
+                    button(title: Translation(context).text.assists, function: (){setState(() {});show = 'Assists';}),
                   ],
                 ),
               ),

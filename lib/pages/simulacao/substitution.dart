@@ -7,6 +7,7 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/popup/popup_player_info.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/widgets/field_size.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -54,9 +55,9 @@ class _SubstitutionState extends State<Substitution> {
                 children: [
 
                   const SizedBox(height: 40),
-                  const Text('Substituição',style: EstiloTextoBranco.text30),
+                  Text(Translation(context).text.substitution,style: EstiloTextoBranco.text30),
                   Text('${globalMatchSubstitutionsLeft.toString()} restantes',style: EstiloTextoBranco.text16),
-                  Text('Overall: '+myClub.getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text16),
+                  Text('${Translation(context).text.overall}: '+myClub.getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text16),
                   //MUDAR ESQUEMA TATICO
                   customButtonContinue(
                       title: my.esquemaTatico,
@@ -72,7 +73,7 @@ class _SubstitutionState extends State<Substitution> {
                     fieldWidgetSelection(),
                   ),
 
-                  const Text('Reservas',style: EstiloTextoBranco.text20),
+                  Text(Translation(context).text.substitutes,style: EstiloTextoBranco.text20),
                   Container(
                     height: 90,
                     color: AppColors().greyTransparent,

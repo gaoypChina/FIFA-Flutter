@@ -4,6 +4,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/popup/popup_player_info.dart';
 import 'package:fifa/theme/colors.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/field_size.dart';
 import 'package:flutter/material.dart';
 
@@ -43,7 +44,7 @@ class _StaticFieldState extends State<StaticField> {
               Container(
                   width: Sized(context).width,
                   color: AppColors().greyTransparent,
-                  child: const Text('RESERVAS:', style: EstiloTextoBranco.text22)
+                  child: Text('${Translation(context).text.substitutes}:', style: EstiloTextoBranco.text22)
               ),
 
               Container(
@@ -81,10 +82,10 @@ class _StaticFieldState extends State<StaticField> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     button(title: 'OVR', function: (){setState(() {});show = 'OVR';}),
-                    button(title: 'Idade', function: (){setState(() {});show = 'Idade';}),
-                    button(title: 'Jogos', function: (){setState(() {});show = 'Jogos';}),
-                    button(title: 'Gols', function: (){setState(() {});show = 'Gols';}),
-                    button(title: 'Assists.', function: (){setState(() {});show = 'Assists';}),
+                    button(title: Translation(context).text.age, function: (){setState(() {});show = 'Idade';}),
+                    button(title: Translation(context).text.matchs, function: (){setState(() {});show = 'Jogos';}),
+                    button(title: Translation(context).text.goals, function: (){setState(() {});show = 'Gols';}),
+                    button(title: Translation(context).text.assists, function: (){setState(() {});show = 'Assists';}),
                   ],
                 ),
               ),

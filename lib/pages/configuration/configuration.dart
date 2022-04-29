@@ -6,6 +6,7 @@ import 'package:fifa/page_controller/configuration/configuration_state.dart';
 import 'package:fifa/popup/popup_select_club.dart';
 import 'package:fifa/popup/poup_edit.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_return.dart';
 import 'package:flutter/material.dart';
 
@@ -68,7 +69,7 @@ class _ConfigurationState extends State<Configuration> {
                   GestureDetector(
                     onTap: (){
                     },
-                    child: const Text('teste',style: EstiloTextoBranco.text16),
+                    child: Text(Translation(context).text.test(config.coachName),style: EstiloTextoBranco.text16),
                   )
 
                 ],
@@ -89,7 +90,7 @@ class _ConfigurationState extends State<Configuration> {
       onTap:(){
         popupEdit(
             context: context,
-            title: 'Nome de Treinador',
+            title: Translation(context).text.coachName,
             variable: config.coachName,
             intOrString: true,
             maxNcharacters: 30,
@@ -109,9 +110,10 @@ class _ConfigurationState extends State<Configuration> {
   }
 
   Widget language(){
-    return Column(
-      children: const [
-        Text('Idioma',style: EstiloTextoBranco.negrito16),
+    return Row(
+      children: [
+        Expanded(child: Text(Translation(context).text.languageSelection,style: EstiloTextoBranco.negrito16)),
+        Text(Translation(context).text.language,style: EstiloTextoBranco.text16),
       ],
     );
   }
@@ -132,7 +134,7 @@ class _ConfigurationState extends State<Configuration> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Icon(Icons.star,color:Colors.white,size:40),
-              const Text('Dificuldade',style: EstiloTextoBranco.underline14),
+              Text(Translation(context).text.difficulty,style: EstiloTextoBranco.underline14),
               Text(DificuldadeClass().getName(),style: EstiloTextoBranco.underline14),
             ],
           ),
@@ -144,7 +146,7 @@ Widget soundEffects(ConfigurationState config){
 
     return Row(
       children: [
-        const Expanded(child: Text('Efeitos Sonoros',style: EstiloTextoBranco.negrito16)),
+        Expanded(child: Text(Translation(context).text.soundEffects,style: EstiloTextoBranco.negrito16)),
 
         Switch(
         value: config.hasSoundEffect,
@@ -162,8 +164,8 @@ Widget soundEffects(ConfigurationState config){
   Widget turns(ConfigurationState config){
     return Row(
         children: [
-          const Expanded(
-              child: Text('Turno de Ida e Volta',style: EstiloTextoBranco.negrito16),
+          Expanded(
+              child: Text(Translation(context).text.turnsN,style: EstiloTextoBranco.negrito16),
           ),
 
           Switch(
@@ -179,9 +181,9 @@ Widget soundEffects(ConfigurationState config){
 
   Widget initialMoney(){
     return Row(
-      children: const [
-        Expanded(child: Text('Dinheiro inicial',style: EstiloTextoBranco.negrito16)),
-        Text('Padrão',style: EstiloTextoBranco.underline14),
+      children: [
+        Expanded(child: Text(Translation(context).text.initialMoney,style: EstiloTextoBranco.negrito16)),
+        const Text('Padrão',style: EstiloTextoBranco.underline14),
 
       ],
     );
@@ -194,7 +196,7 @@ Widget soundEffects(ConfigurationState config){
           onTap:(){
 
           },
-          child: const Text('Nº de times na Liga',style: EstiloTextoBranco.negrito16),
+          child: Text(Translation(context).text.nTeamsLeague,style: EstiloTextoBranco.negrito16),
         ),
       ],
     );
@@ -207,7 +209,7 @@ Widget soundEffects(ConfigurationState config){
           onTap:(){
 
           },
-          child: const Text('Nº de times classificados',style: EstiloTextoBranco.negrito16),
+          child: Text(Translation(context).text.nTeamsClassified,style: EstiloTextoBranco.negrito16),
         ),
       ],
     );
@@ -220,7 +222,7 @@ Widget soundEffects(ConfigurationState config){
           onTap:(){
 
           },
-          child: const Text('Nº de times rebaixados',style: EstiloTextoBranco.negrito16),
+          child: Text(Translation(context).text.nTeamsRelegated,style: EstiloTextoBranco.negrito16),
         ),
       ],
     );
@@ -233,7 +235,7 @@ Widget soundEffects(ConfigurationState config){
           onTap:(){
             popUpSelectClub(originalContext: context);
           },
-          child: const Text('Mudar Clubes',style: EstiloTextoBranco.negrito16),
+          child: Text(Translation(context).text.changeClubs,style: EstiloTextoBranco.negrito16),
         ),
       ],
     );
@@ -242,9 +244,9 @@ Widget soundEffects(ConfigurationState config){
   Widget allowCards(ConfigurationState config){
     return Row(
         children: [
-          const SizedBox(
+          SizedBox(
             width: 200,
-            child: Text('Permitir cartões amarelos e vermelhos',style: EstiloTextoBranco.negrito16),
+            child: Text(Translation(context).text.allowCards,style: EstiloTextoBranco.negrito16),
           ),
 
           const Spacer(),
@@ -261,9 +263,9 @@ Widget soundEffects(ConfigurationState config){
   Widget allowInjuries(ConfigurationState config){
     return Row(
         children: [
-          const SizedBox(
+          SizedBox(
             width: 200,
-            child: Text('Permitir jogadores lesionados',style: EstiloTextoBranco.negrito16),
+            child: Text(Translation(context).text.allowInjuries,style: EstiloTextoBranco.negrito16),
           ),
           const Spacer(),
           Switch(
@@ -284,7 +286,7 @@ Widget soundEffects(ConfigurationState config){
             onTap:(){
               config.openTerms();
             },
-            child: const Text('Termos de Uso',style: EstiloTextoBranco.negrito16),
+            child: Text(Translation(context).text.userTerms,style: EstiloTextoBranco.negrito16),
         ),
       ],
     );

@@ -14,6 +14,7 @@ import 'package:fifa/pages/table/table_nacional.dart';
 import 'package:fifa/pages/transfers.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:flutter/scheduler.dart';
 import '../../classes/classification.dart';
 import '../../classes/club.dart';
@@ -84,11 +85,11 @@ class _MenuState extends State<Menu> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(width:180,child: Text(myClass.clubName,textAlign: TextAlign.center,style: EstiloTextoBranco.negrito22)),
-                          Text('Ano: '+ ano.toString(),style: EstiloTextoBranco.text14),
-                          Text('Semana: '+ semana.toString(),style: EstiloTextoBranco.text14),
-                          Text('Dinheiro: \$'+ myClass.money.toStringAsFixed(2)+'mi',style: EstiloTextoBranco.text14),
-                          Text('Overall da Equipe: ' + Club(index: myClass.clubID).getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text14),
-                          Text('Valor da Equipe: \$' + myClass.getClubValue().toStringAsFixed(2)+'mi',style: EstiloTextoBranco.text14),
+                          Text('${Translation(context).text.year}: '+ ano.toString(),style: EstiloTextoBranco.text14),
+                          Text('${Translation(context).text.week}: '+ semana.toString(),style: EstiloTextoBranco.text14),
+                          Text('${Translation(context).text.money}: \$'+ myClass.money.toStringAsFixed(2)+'mi',style: EstiloTextoBranco.text14),
+                          Text('${Translation(context).text.clubOverall}: ' + Club(index: myClass.clubID).getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text14),
+                          Text('${Translation(context).text.clubValue}: \$' + myClass.getClubValue().toStringAsFixed(2)+'mi',style: EstiloTextoBranco.text14),
                         ],
                       ),
 
@@ -104,14 +105,14 @@ class _MenuState extends State<Menu> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
 
-                        menuButton('Jogar',(){
+                        menuButton(Translation(context).text.play,(){
                           if(adversario.clubName.isNotEmpty){
                             Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Play(adversarioClubID: adversario.clubID, visitante: adversario.visitante)));
                           }else{
                             Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const NotPlay()));
                           }
                         }),
-                        menuButton('Tabela',(){
+                        menuButton(Translation(context).text.table,(){
                           Navigator.of(context).push(MaterialPageRoute(builder: (context) => const TableNacional()));
                         }),
 
@@ -119,13 +120,13 @@ class _MenuState extends State<Menu> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Expanded(
-                                child: menuButton('Técnico',(){
+                                child: menuButton(Translation(context).text.coach,(){
                                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CoachMenu()));
                                 }
                                 ),
                               ),
                               Expanded(
-                                child: menuButton('Meu Time',(){
+                                child: menuButton(Translation(context).text.myClub,(){
                                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => const MyTeam()))
                                       .then((value) {setState(() {});});
                                 }),
@@ -136,13 +137,13 @@ class _MenuState extends State<Menu> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Expanded(
-                                child: menuButton('Histórico',(){
+                                child: menuButton(Translation(context).text.historic,(){
                                   customToast('Carregando...');
                                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HistoricLeague()));
                                 }),
                               ),
                               Expanded(
-                                child: menuButton('Ranking',(){
+                                child: menuButton(Translation(context).text.ranking,(){
                                   customToast('Carregando...');
                                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RankingClubs()))
                                       .then((value) {setState(() {});});
@@ -153,13 +154,13 @@ class _MenuState extends State<Menu> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Expanded(
-                                child: menuButton('Internacional',(){
+                                child: menuButton(Translation(context).text.international,(){
                                   //Mostra a competição internacional que o time está participando 1º
                                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableInternational(leagueInternational: My().getMyInternationalLeague())));
                                   }),
                               ),
                               Expanded(
-                                child: menuButton('Transferências',(){
+                                child: menuButton(Translation(context).text.transfers,(){
                                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Transfers()))
                                       .then((value) {setState(() {});});
                                 }),
@@ -181,16 +182,18 @@ class _MenuState extends State<Menu> {
                         },
                         child: Column(
                           children: [
-                            const Text('Próximo Adversário',style: EstiloTextoBranco.text14),
+                             Text(Translation(context).text.nextAdversary,style: EstiloTextoBranco.text14),
                             //Escudo
                             adversario.clubName.isNotEmpty ? Image.asset(Images().getEscudo(adversario.clubName),height: 50,width: 50) : Container(),
                             adversario.clubName.isNotEmpty ? Text(adversario.clubName,style: EstiloTextoBranco.negrito14) : Container(),
                             adversario.clubName.isNotEmpty
                                 ? Semana(semana).isJogoMataMataInternacional
                                     ? Text(Semana(semana).semanaStr,style: EstiloTextoBranco.text14)
-                                : Text('Posição: '+adversario.posicao.toString()+'º',style: EstiloTextoBranco.text14)
+                                : Text('${Translation(context).text.position}: '+adversario.posicao.toString()+'º',style: EstiloTextoBranco.text14)
                                 : Container(),
-                            adversario.clubName.isNotEmpty ? adversario.visitante ? const Text('Fora',style: EstiloTextoBranco.text14) : const Text('Casa',style: EstiloTextoBranco.text14) : Container(),
+                            adversario.clubName.isNotEmpty ? adversario.visitante
+                                ? Text(Translation(context).text.away,style: EstiloTextoBranco.text14)
+                                : Text(Translation(context).text.home,style: EstiloTextoBranco.text14) : Container(),
 
                           ],
                         ),
@@ -198,10 +201,10 @@ class _MenuState extends State<Menu> {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text('Rodada: '+rodada.toString(),style: EstiloTextoBranco.text16),
-                          const Text('Classificação',style: EstiloTextoBranco.text14),
+                          Text('${Translation(context).text.matchWeek}: '+rodada.toString(),style: EstiloTextoBranco.text16),
+                          Text(Translation(context).text.classification,style: EstiloTextoBranco.text14),
                           Text(Classification(leagueIndex: myClass.campeonatoID).getClubPosition(myClass.clubID).toString()+'º',style: EstiloTextoBranco.text30),
-                          Text('Expectativa: '+myClass.getLastYearExpectativa().toString()+'º',style: EstiloTextoBranco.text14),
+                          Text('${Translation(context).text.expectation}: '+myClass.getLastYearExpectativa().toString()+'º',style: EstiloTextoBranco.text14),
                         ],
                       ),
 
@@ -238,10 +241,11 @@ class _MenuState extends State<Menu> {
                         //DIFICULDADE
                         Container(
                           alignment: Alignment.bottomCenter,
+                          padding: const EdgeInsets.only(bottom:4),
                           child: GestureDetector(
                               onTap:(){
                               },
-                              child: Text('Dificuldade: '+DificuldadeClass().getName(),style: EstiloTextoBranco.text12),
+                              child: Text('${Translation(context).text.difficulty}: '+DificuldadeClass().getName(),style: EstiloTextoBranco.text12),
                           ),
                         ),
 

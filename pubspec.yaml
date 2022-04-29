@@ -29,7 +29,24 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
+  csv: ^5.0.1
+  draggable_scrollbar: ^0.1.0
+  file_picker: ^4.5.1
+  flutter_lints: ^1.0.4
+  fluttertoast: ^8.0.9
+  path_provider: ^2.0.9
+  permission_handler: ^9.2.0
+  pie_chart: ^5.3.0
+  provider: ^6.0.2
+  shared_preferences: ^2.0.13
+  sqflite: ^2.0.2+1
+  syncfusion_flutter_charts: ^20.1.51
+  url_launcher: ^6.1.0
+  country_icons: ^2.0.2
+  intl: ^0.17.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -44,26 +61,14 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  csv: ^5.0.1
-  draggable_scrollbar: ^0.1.0
-  file_picker: ^4.5.1
-  flutter_lints: ^1.0.4
-  fluttertoast: ^8.0.9
-  path_provider: ^2.0.9
-  permission_handler: ^9.2.0
-  pie_chart: ^5.3.0
-  provider: ^6.0.2
-  shared_preferences: ^2.0.13
-  sqflite: ^2.0.2+1
-  syncfusion_flutter_charts: ^20.1.50
-  url_launcher: ^6.1.0
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
-
+  generate: true
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.

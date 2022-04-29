@@ -12,6 +12,7 @@ import 'package:fifa/pages/coach/coach_past_club.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/league_trophy_image.dart';
 import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart';
@@ -43,11 +44,11 @@ class _CoachMenuState extends State<CoachMenu> {
           Column(
             children: [
               const SizedBox(height: 40),
-              const Text('Menu do Técnico',style: EstiloTextoBranco.text30),
+              Text(Translation(context).text.coachMenu,style: EstiloTextoBranco.text30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Text('Pontos: ${my.scoreGame} ',style: EstiloTextoBranco.text16),
+                  Text('${Translation(context).text.points}: ${my.scoreGame} ',style: EstiloTextoBranco.text16),
                   changeClub(context),
                 ],
               ),
@@ -64,8 +65,8 @@ class _CoachMenuState extends State<CoachMenu> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            trophyWidget(0),
-                            trophyWidget(1),
+                            trophyWidget(context,0),
+                            trophyWidget(context,1),
                           ],
                         ),
                       ),
@@ -94,7 +95,7 @@ class _CoachMenuState extends State<CoachMenu> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text('Expectativa',style: EstiloTextoBranco.text20),
+                            Text(Translation(context).text.expectation,style: EstiloTextoBranco.text20),
                             Row(
                               children: [
                                 Image.asset(Images().getMyLeagueLogo(),height: 25,width: 25),
@@ -138,15 +139,15 @@ class _CoachMenuState extends State<CoachMenu> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          sequenceWidget('Maior vitória', coachBestResults.maxVictory, coachBestResults.maxVictoryClubID,coachBestResults.maxVictoryClubAdvID),
-                          sequenceWidget('Maior derrota', coachBestResults.maxLoss, coachBestResults.maxLossClubID,coachBestResults.maxLossClubAdvID),
+                          sequenceWidget(Translation(context).text.biggestVictory, coachBestResults.maxVictory, coachBestResults.maxVictoryClubID,coachBestResults.maxVictoryClubAdvID),
+                          sequenceWidget(Translation(context).text.biggestDefeat, coachBestResults.maxLoss, coachBestResults.maxLossClubID,coachBestResults.maxLossClubAdvID),
                         ],
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          sequenceWidget('Maior sequência sem perder', coachBestResults.maxSequenceNoLosses.toString(), coachBestResults.maxSequenceNoLossesClubID),
-                          sequenceWidget('Maior sequência de vitórias',coachBestResults.maxSequenceVictory.toString(), coachBestResults.maxSequenceVictoryClubID),
+                          sequenceWidget(Translation(context).text.sequenceNoDefeats, coachBestResults.maxSequenceNoLosses.toString(), coachBestResults.maxSequenceNoLossesClubID),
+                          sequenceWidget(Translation(context).text.sequenceVictories,coachBestResults.maxSequenceVictory.toString(), coachBestResults.maxSequenceVictoryClubID),
                         ],
                       ),
 
@@ -180,24 +181,24 @@ Widget changeClub(BuildContext context){
               customToast('Você já mudou de clube essa temporada');
             }
           },
-          child: const Text('Mudar de Clube',style: EstiloTextoBranco.text16),
+          child: Text(Translation(context).text.enterNewClub,style: EstiloTextoBranco.text16),
         ),
       ),
     ],
   );
 }
-Widget trophyWidget(int i){
+Widget trophyWidget(BuildContext context, int i){
   late String name;
   late String image;
   late int qntd;
 
   if(i==0){
-    name = 'Campeonatos Nacionais';
+    name = Translation(context).text.nationalChampionship;
     image = getTrophyImage(My().campeonatoName);
     qntd = HistoricFunctions().myLeagueTitles();
   }
   if(i==1){
-    name = 'Campeonatos Internacionais';
+    name = Translation(context).text.internationalChampionship;
     image = getTrophyImage(My().getMyInternationalLeague());
     qntd = HistoricFunctions().myInternationalTitle();
   }
@@ -207,6 +208,7 @@ Widget trophyWidget(int i){
           width: 100,
           child: Text(name,textAlign:TextAlign.center,style: EstiloTextoBranco.text14)
       ),
+      SizedBox(height: 4),
       Image.asset('assets/trophy/$image.png',height: 100,width: 100),
       Text(qntd.toString(),style: EstiloTextoBranco.text20),
     ],

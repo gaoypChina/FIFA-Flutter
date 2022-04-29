@@ -14,6 +14,7 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/simulacao/fim_campeonato.dart';
 import 'package:fifa/functions/simulate/simulate_functions.dart';
 import 'package:fifa/pages/simulacao/substitution.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
@@ -100,7 +101,7 @@ class _PlayState extends State<Play> {
 
     String textRodada = '';
     if(Semana(semana).isJogoCampeonatoNacional) {
-      textRodada = 'Rodada ' + rodada.toString() + '/' + (League(index: myClass.campeonatoID).getNTeams()-1).toString();
+      textRodada = '${Translation(context).text.matchWeek} ' + rodada.toString() + '/' + (League(index: myClass.campeonatoID).getNTeams()-1).toString();
     }else{
       textRodada = Name().groupsPhase;
       if(Semana(semana).isJogoGruposInternacional){textRodada += ' ${Semana(semana).rodadaGroupInternational}'; }
@@ -152,23 +153,6 @@ class _PlayState extends State<Play> {
                         ],
                       ),
 
-                      visitante
-                          ? Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(adversarioClubClass.getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text16),
-                          Text(' x ',style: EstiloTextoBranco.text16),
-                          Text(myClubClass.getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text16),
-                        ],
-                      ) : Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(myClubClass.getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text16),
-                          Text(' x ',style: EstiloTextoBranco.text16),
-                          Text(adversarioClubClass.getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text16),
-                        ],
-                      )  ,
-
                       //GOLS MARCADOS
                       SizedBox(
                         height: 90,
@@ -217,7 +201,7 @@ class _PlayState extends State<Play> {
                       tacticsWidget(),
 
 
-                      const Text('Velocidade do Jogo',style: EstiloTextoBranco.text14),
+                      Text(Translation(context).text.gameVelocity,style: EstiloTextoBranco.text14),
                       Slider(
                         activeColor: Colors.green,
                         value: globalMatchVelocity,
@@ -232,7 +216,9 @@ class _PlayState extends State<Play> {
                       ),
 
                       customButtonContinue(
-                          title: counterMatch.milis>=90 ? 'Próxima Rodada' : 'Substituição',
+                          title: counterMatch.milis>=90
+                              ? Translation(context).text.nextMatchWeek
+                              : Translation(context).text.substitution,
                           function: onContinueButton,
                       ),
 
@@ -322,13 +308,13 @@ class _PlayState extends State<Play> {
                       child: Image.asset('assets/icons/very offensive.png',height: 35))),
               Column(
                 children: [
-                  const Text('Marcar',style: EstiloTextoBranco.text16),
+                  Text(Translation(context).text.scoreProbability,style: EstiloTextoBranco.text16),
                   Text('${myMatchSimulation.probGM.toString()}%',style: EstiloTextoBranco.text16),
                 ],
               ),
               Column(
                 children: [
-                  const Text('Sofrer',style: EstiloTextoBranco.text16),
+                  Text(Translation(context).text.takeProbability,style: EstiloTextoBranco.text16),
                   Text('${myMatchSimulation.probGS.toString()}%',style: EstiloTextoBranco.text16),
                 ],
               ),

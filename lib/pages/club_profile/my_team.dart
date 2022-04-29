@@ -5,6 +5,7 @@ import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/pages/club_profile/field_draggable.dart';
 import 'package:fifa/pages/club_profile/graphics.dart';
 import 'package:fifa/pages/club_profile/my_team_all_infos.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/widgets/button/button_return.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -77,9 +78,9 @@ class _MyTeamState extends State<MyTeam> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('Saldo: \$'+my.money.toStringAsFixed(2)+'mi', style: EstiloTextoBranco.text22),
-                              Text('Overall: '+myClub.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.text16),
-                              Text('Média Idade: '+averageAge.toStringAsFixed(2), style: EstiloTextoBranco.text16),
+                              Text('${Translation(context).text.money}: \$'+my.money.toStringAsFixed(2)+'mi', style: EstiloTextoBranco.text22),
+                              Text('${Translation(context).text.overall}: '+myClub.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.text16),
+                              Text('${Translation(context).text.avgAge}: '+averageAge.toStringAsFixed(2), style: EstiloTextoBranco.text16),
                             ],
                           ),
                         ),
@@ -102,13 +103,13 @@ class _MyTeamState extends State<MyTeam> {
                       ],
                     ),
 
-                    const SizedBox(
+                    SizedBox(
                       height: 30,
                       child: TabBar(
                         tabs: [
-                          Tab(text: 'Elenco',),
-                          Tab(text: 'Histórico'),
-                          Tab(text: 'Classificação'),
+                          Tab(text: Translation(context).text.cast),
+                          Tab(text: Translation(context).text.historic),
+                          Tab(text: Translation(context).text.allInfos),
                         ],
                       ),
                     ),
@@ -138,8 +139,6 @@ class _MyTeamState extends State<MyTeam> {
   }
 
   notifyParent(){
-    setState(() {
-      print('ok');
-    });
+    setState(() {});
   }
 }

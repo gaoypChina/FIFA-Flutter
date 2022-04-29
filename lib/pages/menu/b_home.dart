@@ -7,6 +7,7 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/configuration/configuration.dart';
 import 'package:fifa/pages/customize_players.dart';
 import 'package:fifa/theme/custom_toast.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/values/league_names.dart';
@@ -107,192 +108,86 @@ class _HomePageState extends State<HomePage> {
 
                       Column(
                         children: [
-
                           Padding(
                             padding: const EdgeInsets.all(12.0),
-                            child: InkWell(
-                              onTap: (){
-                                if(posicaoPais>0) {
-                                  posicaoPais --;
-                                  posicao = 0;
-                                }else{
-                                  posicaoPais = leaguesListRealIndex.length-1;
-                                  posicao = 0;
-                                }
-                                setState(() {});
-                              },
-                              child: Image.asset('assets/icons/button_left.png',height: buttonSize,width: buttonSize),
-                            ),
-                          ),
-                          InkWell(
-                            onTap: (){
-                              if(posicaoPais< leaguesListRealIndex.length-1) {
-                                posicaoPais ++;
+                            child: leftButton(onTap: (){
+                              if(posicaoPais>0) {
+                                posicaoPais --;
                                 posicao = 0;
                               }else{
-                                posicaoPais = 0;
+                                posicaoPais = leaguesListRealIndex.length-1;
                                 posicao = 0;
                               }
-                              setState(() {});
-                            },
-                            child: Image.asset('assets/icons/button_right.png',height: buttonSize,width: buttonSize),
+                            }),
                           ),
+
+                          rightButton(onTap: (){
+                            if(posicaoPais< leaguesListRealIndex.length-1) {
+                              posicaoPais ++;
+                              posicao = 0;
+                            }else{
+                              posicaoPais = 0;
+                              posicao = 0;
+                            }
+                          }),
                         ],
                       ),
 
-                      Column(
-                        children: [
-                          //LOGO CAMPEONATO
-                          Image.asset(FIFAImages().campeonatoLogo(indexLeague),height: 170,width: 170),
-                          Text(leagueName,style:EstiloTextoBranco.text16),
-                        ],
-                      ),
 
-
-
+                      leagueLogoAndName(),
                     ],
                   ),
 
-
-
                   const SizedBox(height: 40),
-                  ///////////
+                  /////////////////////////////////////////
                   //TIME
-                  //////////
+                  /////////////////////////////////////////
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
 
                       Column(
                         children: [
+
                           Padding(
                             padding: const EdgeInsets.all(12.0),
-                            child: InkWell(
-                              onTap: (){
-                                if(posicao>0) {
-                                  posicao --;
-                                }else{
-                                  posicao = nLeagueTeams-1;
-                                }
-                                setState(() {});
-                              },
-                              child: Image.asset('assets/icons/button_left.png',height: buttonSize,width: buttonSize),
-                            ),
+                            child: leftButton(onTap: (){
+                              if(posicao>0) {
+                                posicao --;
+                              }else{
+                                posicao = nLeagueTeams-1;
+                              }
+                            }),
                           ),
 
-                          InkWell(
-                            onTap: (){
-                              if(posicao<nLeagueTeams-1) {
-                                posicao ++;
-                              }else{
-                                posicao = 0;
-                              }
-                              setState(() {});
-                            },
-                            child: Image.asset('assets/icons/button_right.png',height: buttonSize,width: buttonSize),
-                          ),
+                          rightButton(onTap: (){
+                            if(posicao<nLeagueTeams-1) {
+                              posicao ++;
+                            }else{
+                              posicao = 0;
+                            }
+                          }),
 
                         ],
                       ),
-
-                      Column(
-                        children: [
 
                           //ESCUDO E UNIFORME
-                          SizedBox(
-                            height: 200,
-                            width: 200,
-                            child: Stack(
-                              children: [
-                                //Escudo
-                                Image.asset(Images().getEscudo(teamName),height: 200,width: 200),
-                                //Uniforme
-                                Container(
-                                    alignment: Alignment.bottomRight,
-                                    child: Image.asset(Images().getUniform(teamName),height: 100,width: 100)
-                                ),
-                              ],
-                            ),
-                          ),
-
-                          Text(teamName,style:EstiloTextoBranco.text25),
-                        ],
-                      ),
+                          clubLogoAndKitStack(),
 
                     ],
                   ),
 
 
                   const SizedBox(height: 30),
-
-                  ////////////////
-                  //BOTAO PRA CONTINUAR
-                  customButtonContinue(
-                      title: 'Continuar',
-                      function: () async{
-                        saveMyData();
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Menu()));
-                      }
-                  ),
-
+                  continueButton(),
                   const SizedBox(height: 28),
-
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children:[
-
-                      //DATABASE
-                      GestureDetector(
-                        onTap:() async{
-                          customToast('Carregando Database...');
-                          globalSaveNumber++;
-                          if(globalSaveNumber == globalMaxSavesPermitted+1){
-                            globalSaveNumber=0;
-                          }
-                          await SharedPreferenceHelper().getPlayersDatabase();
-                          await GetLocalDatabase().getCustomizedData();
-                          setState(() {});
-                        },
-                        child: Column(
-                          children: [
-                            const Icon(Icons.save,color:Colors.white,size:40),
-                            globalSaveNumber==0
-                        ? const Text('Database padrão',style: EstiloTextoBranco.underline14)
-                              : Text('Database: '+globalSaveNumber.toString(),style: EstiloTextoBranco.underline14),
-                          ],
-                        ),
-                      ),
-
-                      //////////////
-                      // CUSTOMIZAR
-                      GestureDetector(
-                        onTap: (){
-                          int clubID = League(index: indexLeague).getClubRealID(posicao);
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => CustomizePlayers(clubID: clubID)));
-                        },
-                        child: Column(
-                          children: const [
-                            Icon(Icons.edit,color:Colors.white,size:40),
-                            Text('Editar time',style: EstiloTextoBranco.underline14)
-                          ],
-                        ),
-                      ),
-
-                      //////////////
-                      // CONFIGURAÇÕES
-                      GestureDetector(
-                        onTap: (){
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Configuration()));
-                        },
-                        child: Column(
-                          children: const [
-                            Icon(Icons.miscellaneous_services,color:Colors.white,size:40),
-                            Text('Configurações',style: EstiloTextoBranco.underline14),
-                          ],
-                        ),
-                      ),
-
+                      database(),
+                      editClub(),
+                      configurations(),
                     ],
                   ),
 
@@ -307,6 +202,124 @@ class _HomePageState extends State<HomePage> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Widget rightButton({required Function onTap}){
+    return GestureDetector(
+      onTap: (){
+        onTap();
+        setState(() {});
+      },
+      child: Image.asset('assets/icons/button_right.png',height: buttonSize,width: buttonSize),
+    );
+  }
+  Widget leftButton({required Function onTap}){
+    return GestureDetector(
+      onTap: (){
+        onTap();
+        setState(() {});
+      },
+      child: Image.asset('assets/icons/button_left.png',height: buttonSize,width: buttonSize),
+    );
+  }
+  Widget leagueLogoAndName(){
+    return Column(
+      children: [
+        //LOGO CAMPEONATO
+        Image.asset(FIFAImages().campeonatoLogo(indexLeague),height: 170,width: 170),
+        Text(leagueName,style:EstiloTextoBranco.text16),
+      ],
+    );
+  }
+
+
+Widget clubLogoAndKitStack(){
+    return  Column(
+      children: [
+        SizedBox(
+          height: 200,
+          width: 200,
+          child: Stack(
+            children: [
+              //Escudo
+              Image.asset(Images().getEscudo(teamName),height: 200,width: 200),
+              //Uniforme
+              Container(
+                  alignment: Alignment.bottomRight,
+                  child: Image.asset(Images().getUniform(teamName),height: 100,width: 100)
+              ),
+            ],
+          ),
+        ),
+        Text(teamName,style:EstiloTextoBranco.text25),
+      ],
+    );
+}
+
+Widget continueButton(){
+    return
+      customButtonContinue(
+          title: Translation(context).text.continueButton,
+          function: () async{
+            saveMyData();
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Menu()));
+          }
+      );
+}
+
+Widget database(){
+    return
+      GestureDetector(
+        onTap:() async{
+          customToast('Carregando Database...');
+          globalSaveNumber++;
+          if(globalSaveNumber == globalMaxSavesPermitted+1){
+            globalSaveNumber=0;
+          }
+          await SharedPreferenceHelper().getPlayersDatabase();
+          await GetLocalDatabase().getCustomizedData();
+          setState(() {});
+        },
+        child: Column(
+          children: [
+            const Icon(Icons.save,color:Colors.white,size:40),
+            globalSaveNumber==0
+                ? const Text('Database padrão',style: EstiloTextoBranco.underline14)
+                : Text('Database: '+globalSaveNumber.toString(),style: EstiloTextoBranco.underline14),
+          ],
+        ),
+      );
+}
+
+
+Widget editClub(){
+  return
+    GestureDetector(
+      onTap: (){
+        int clubID = League(index: indexLeague).getClubRealID(posicao);
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => CustomizePlayers(clubID: clubID)));
+      },
+      child: Column(
+        children: [
+          const Icon(Icons.edit,color:Colors.white,size:40),
+          Text(Translation(context).text.editTeam,style: EstiloTextoBranco.underline14)
+        ],
+      ),
+    );
+}
+
+Widget configurations(){
+    return GestureDetector(
+      onTap: (){
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Configuration()));
+      },
+      child: Column(
+        children: [
+          const Icon(Icons.miscellaneous_services,color:Colors.white,size:40),
+          Text(Translation(context).text.configuration,style: EstiloTextoBranco.underline14),
+        ],
+      ),
+    );
+}
+
 
 ////////////////////////////////////////////////////////////////////////////
 //                               FUNCTIONS                                //

@@ -6,6 +6,7 @@ import 'package:fifa/theme/background/background_age.dart';
 import 'package:fifa/theme/background/background_overall.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:flutter/material.dart';
 
 class AllInfoClub extends StatefulWidget {
@@ -98,14 +99,14 @@ class _AllInfoClubState extends State<AllInfoClub> {
       },
       children: [
 
-        const TableRow(
+        TableRow(
       children: [
-        Text(''),
-        Text('NOME', style: EstiloTextoBranco.text16),
-        Text('IDA', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-        Text('OVR', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-        Text('\$', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-        Text(''),
+        const Text(''),
+        Text(Translation(context).text.name, style: EstiloTextoBranco.text16),
+        const Text('IDA', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+        const Text('OVR', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+        const Text('\$', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+        const Text(''),
         ]),
 
         for(int i=0; i<widget.club.escalacao.length; i++)

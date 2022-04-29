@@ -1,6 +1,7 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/international.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/global_variables.dart';
@@ -136,7 +137,7 @@ TableRow groupTitle(int groupNumber){
         const Text('',style: EstiloTextoBranco.text16),
         SizedBox(
           width: 200,
-          child: Text('\nGrupo ' + groupLetter,style: EstiloTextoBranco.text16),
+          child: Text('\n${Translation(context).text.group} ' + groupLetter,style: EstiloTextoBranco.text16),
         ),
         const Text('\nPTS ',style: EstiloTextoBranco.text16),
         const Text('\n GM ',style: EstiloTextoBranco.text16),

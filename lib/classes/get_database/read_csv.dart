@@ -26,28 +26,34 @@ class ReadCSV{
     await readCSVfunc("alemanha2");
     await readCSVfunc("franca");
     await readCSVfunc("franca2");
-    await readCSVfunc("pt_hol");
+
+    await readCSVfunc("portugal");
+    await readCSVfunc("holanda_belgica");
+    await readCSVfunc("turquia_grecia");
     await readCSVfunc("europa_ocidental");
-    await readCSVfunc("leste");
-    await readCSVfunc("outros_europa");
-    await readCSVfunc("outros_europa2");
+    await readCSVfunc("nordicos");
+    await readCSVfunc("urss");
+    await readCSVfunc("europa_leste");
+    await readCSVfunc("europa_outros");
 
     await readCSVfunc("brasil");
     await readCSVfunc("brasil2");
     await readCSVfunc("brasil3");
     await readCSVfunc("brasil4");
     await readCSVfunc("argentina");
+    await readCSVfunc("argentina2");
     await readCSVfunc("sulamericano");
-    await readCSVfunc("outros_america");
+    await readCSVfunc("sulamericano2");
+    await readCSVfunc("merconorte");
 
-    await readCSVfunc("colombia");
     await readCSVfunc("mexico");
     await readCSVfunc("eua");
     await readCSVfunc("eua2");
 
     await readCSVfunc("asia");
-    await readCSVfunc("asia2");
+    await readCSVfunc("oriente_medio");
     await readCSVfunc("africa");
+    await readCSVfunc("oceania");
   }
   readCSVfunc(String filename) async {
     List<List<dynamic>> _data = [];
@@ -72,10 +78,14 @@ class ReadCSV{
           String position = _data[line][team * 5 + 2].toString();//VOLMCZAG =>VOL
           int age = int.parse(_data[line][team * 5 + 3].toString().substring(0,2));
           int overall = int.parse(_data[line][team * 5 + 4].toString().substring(0,2));
+
             if (name.isNotEmpty && position.isNotEmpty && age > 10) {
 
               //REMOVE L form last character
               if(name[name.length-1]=='L'){name = name.substring(0, name.length - 1);}
+              //Se logo de cara aparecer uma dessas posições ja salva como prioridade
+              if(position.contains('LD')){position='LD';}
+              if(position.contains('LE')){position='LE';}
               if(position.length>3){position = position.substring(0,3);}
               if(position.contains('GOL')){position='GOL';}
               else if(position.contains('LD')){position='LD';}
@@ -103,9 +113,14 @@ class ReadCSV{
                 globalJogadoresPosition.add(position);
                 globalJogadoresAge.add(age);
                 globalJogadoresOverall.add(overall);
+                if(filename.contains('brasil')) {
+                  globalJogadoresNationality.add('Brazil');
+                }else{
+                  globalJogadoresNationality.add('England');
+                }
                 indexJog++;
                 //test jogadores importados
-                //if(club == ClubName().alwaysReady){
+                //if(club == ClubName().saocaetano){
                 //print('JOGADOR: $name $position $overall $club ${clubIndex.toString()}');
                 //}
               }else{

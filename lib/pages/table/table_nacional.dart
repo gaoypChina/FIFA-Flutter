@@ -6,10 +6,11 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/chaves.dart';
 import 'package:fifa/functions/order_list.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/values/league_names.dart';
-import 'package:fifa/widgets/table_widget.dart';
+import 'package:fifa/pages/table/table_widget.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
@@ -58,6 +59,7 @@ class _TableNacionalState extends State<TableNacional> {
 
               Column(
                 children: [
+                  const SizedBox(height: 30),
                   Container(
                     height: _height-50,
                     color: AppColors().greyTransparent,
@@ -65,11 +67,10 @@ class _TableNacionalState extends State<TableNacional> {
                       child: Column(
                         children: [
 
-                          const SizedBox(height: 40),
                           Row(
                             children: [
                               Image.asset(FIFAImages().campeonatoLogo(choosenLeagueIndex),height:25,width: 25),
-                              Expanded(child: Text(' Rodada '+ rodada.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text20)),
+                              Expanded(child: Text(' ${Translation(context).text.matchWeek} '+ rodada.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text20)),
                             ],
                           ),
 
@@ -236,7 +237,7 @@ Widget matchsWidget(){
               child: const Icon(Icons.arrow_left,color:Colors.white,size:50)
           ),
 
-          Expanded(child: Text('Rodada '+rodadaMatch.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text16)),
+          Expanded(child: Text('${Translation(context).text.matchWeek} '+rodadaMatch.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text16)),
 
           GestureDetector(
               onTap:(){
@@ -343,9 +344,9 @@ Widget yellowRedCardWidget(int goalOrYellowOrRed){
         Row(
           children: [
             goalOrYellowOrRed==0
-                  ? const Text('Artilharia',style: EstiloTextoBranco.text16)
-                  : goalOrYellowOrRed==1 ? const Text('Cartão Amarelo',style: EstiloTextoBranco.text16)
-                : const Text('Cartão Vermelho',style: EstiloTextoBranco.text16),
+                  ? Text(Translation(context).text.topScorers,style: EstiloTextoBranco.text16)
+                  : goalOrYellowOrRed==1 ? Text(Translation(context).text.yellowCards,style: EstiloTextoBranco.text16)
+                : Text(Translation(context).text.redCards,style: EstiloTextoBranco.text16),
           ],
         ),
 

@@ -33,7 +33,7 @@ int globalDificuldade = 2; //2-> médio
 int anoInicial = 2022; //ano fixo para contas
 int ano = 2022;
 int semana = 1, rodada = 1;
-int globalNMaxRodadasNacional = globalLeagueIdaVolta ? 30 : 15;
+int globalNMaxRodadasNacional = globalLeagueIdaVolta ? 38 : 19;
 late int posicao;
 List<int> semanaOitavas = [semanasJogosInternacionais.first+6,semanasJogosInternacionais.first+7],
     semanaQuartas = [semanasJogosInternacionais.first+8,semanasJogosInternacionais.first+9],
@@ -87,6 +87,7 @@ List globalJogadoresClubIndex = [];
 List globalJogadoresPosition = [];
 List globalJogadoresAge = [];
 List globalJogadoresOverall = [];
+List globalJogadoresNationality = [];
 
 List globalJogadoresHealth = [];
 List globalJogadoresCarrerMatchs = List.filled(globalMaxPlayersPermitted, 0);

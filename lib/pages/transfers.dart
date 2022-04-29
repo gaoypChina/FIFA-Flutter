@@ -7,6 +7,7 @@ import 'package:fifa/theme/background/background_age.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/background/background_overall.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_return.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
@@ -33,13 +34,10 @@ class _TransfersState extends State<Transfers> {
 
     showRows = 0;
     return Scaffold(
-        resizeToAvoidBottomInset:
-            false, //Evita um overlay quando o layout é maior que a tela
+        resizeToAvoidBottomInset: false, //Evita um overlay quando o layout é maior que a tela
         body: Stack(children: [
-          Image.asset('assets/icons/wallpaper.png',
-              height: double.infinity,
-              width: double.infinity,
-              fit: BoxFit.fill),
+
+          Images().getWallpaper(),
 
           Column(
             children: [
@@ -48,14 +46,13 @@ class _TransfersState extends State<Transfers> {
                 padding: const EdgeInsets.all(4.0),
                 child: Row(
                   children: [
-                    const Text('Transferências',
-                        style: EstiloTextoBranco.negrito22),
+                     Text(Translation(context).text.transfers, style: EstiloTextoBranco.negrito22),
                     const Spacer(),
                     RichText(
                       text: TextSpan(
                         children: <TextSpan>[
-                          const TextSpan(
-                              text: 'Saldo: ', style: EstiloTextoBranco.text16),
+                          TextSpan(
+                              text: '${Translation(context).text.money}: ', style: EstiloTextoBranco.text16),
                           TextSpan(
                               text: '\$ ${My().money.toStringAsFixed(2)} mi',
                               style: EstiloTextoVerde.text20),
@@ -98,19 +95,19 @@ class _TransfersState extends State<Transfers> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   localButton(
-                      title: 'IDADE',
+                      title: Translation(context).text.age.toUpperCase(),
                       function: () {
                         filterPlayers.setAge();
                         setState(() {});
                       }),
                   localButton(
-                      title: 'OVERALL',
+                      title: Translation(context).text.overall.toUpperCase(),
                       function: () {
                         filterPlayers.setOverall();
                         setState(() {});
                       }),
                   localButton(
-                      title: 'PREÇO',
+                      title: Translation(context).text.price.toUpperCase(),
                       function: () {
                         filterPlayers.setPrice();
                         setState(() {});
@@ -163,7 +160,7 @@ class _TransfersState extends State<Transfers> {
                         children: [
                           Image.asset('assets/icons/assists.png',
                               height: 40, width: 40),
-                          const Text('POSIÇÃO',
+                          Text(Translation(context).text.position,
                               style: EstiloTextoBranco.text14),
                         ],
                       ),
@@ -237,27 +234,27 @@ class _TransfersState extends State<Transfers> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
             children: [
-              const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Text('Filtrar', style: EstiloTextoPreto.text16),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(Translation(context).text.filter, style: EstiloTextoPreto.text16),
               ),
               const SizedBox(height: 16),
               Row(
                 children: [
-                  const SizedBox(
+                  SizedBox(
                     width: 100,
-                    child: Text('IDADE', style: EstiloTextoPreto.text16),
+                    child: Text(Translation(context).text.age.toUpperCase(), style: EstiloTextoPreto.text16),
                   ),
                   Column(
                     children: [
-                      const Text('MIN', style: EstiloTextoPreto.text14),
+                      Text(Translation(context).text.min.toUpperCase(), style: EstiloTextoPreto.text14),
                       widgetTextField(filterPlayers.transferParameters.minAge),
                     ],
                   ),
                   const SizedBox(width: 16),
                   Column(
                     children: [
-                      const Text('MAX', style: EstiloTextoPreto.text14),
+                      Text(Translation(context).text.max.toUpperCase(), style: EstiloTextoPreto.text14),
                       widgetTextField(filterPlayers.transferParameters.maxAge),
                     ],
                   ),
@@ -265,20 +262,20 @@ class _TransfersState extends State<Transfers> {
               ),
               Row(
                 children: [
-                  const SizedBox(
+                  SizedBox(
                     width: 100,
-                      child: Text('OVERALL', style: EstiloTextoPreto.text16),
+                      child: Text(Translation(context).text.overall.toUpperCase(), style: EstiloTextoPreto.text16),
                   ),
                   Column(
                     children: [
-                      const Text('MIN', style: EstiloTextoPreto.text14),
+                      Text(Translation(context).text.min.toUpperCase(), style: EstiloTextoPreto.text14),
                       widgetTextField(filterPlayers.transferParameters.minOVR),
                     ],
                   ),
                   const SizedBox(width: 16),
                   Column(
                     children: [
-                      const Text('MAX', style: EstiloTextoPreto.text14),
+                      Text(Translation(context).text.max.toUpperCase(), style: EstiloTextoPreto.text14),
                       widgetTextField(filterPlayers.transferParameters.maxOVR),
                     ],
                   ),
@@ -286,20 +283,20 @@ class _TransfersState extends State<Transfers> {
               ),
               Row(
                 children: [
-                  const SizedBox(
+                  SizedBox(
                     width: 100,
-                    child: Text('PREÇO', style: EstiloTextoPreto.text16),
+                    child: Text(Translation(context).text.price.toUpperCase(), style: EstiloTextoPreto.text16),
                   ),
                   Column(
                     children: [
-                      const Text('MIN', style: EstiloTextoPreto.text14),
+                      Text(Translation(context).text.min.toUpperCase(), style: EstiloTextoPreto.text14),
                       widgetTextField(filterPlayers.transferParameters.minPrice),
                     ],
                   ),
                   const SizedBox(width: 16),
                   Column(
                     children: [
-                      const Text('MAX', style: EstiloTextoPreto.text14),
+                      Text(Translation(context).text.max.toUpperCase(), style: EstiloTextoPreto.text14),
                       widgetTextField(filterPlayers.transferParameters.maxPrice),
                     ],
                   ),
@@ -321,7 +318,7 @@ class _TransfersState extends State<Transfers> {
                         Navigator.pop(context);
                         setState(() {});
                       },
-                      child: const Text('RESETAR', style: EstiloTextoPreto.text16)),
+                      child: Text(Translation(context).text.reset, style: EstiloTextoPreto.text16)),
                   GestureDetector(
                       onTap:(){
                         filterPlayers.filterByPosition();
@@ -518,9 +515,9 @@ class _TransfersState extends State<Transfers> {
                 filterPlayers.searchString = value;
               },
               style: const TextStyle(color: Colors.white),
-              decoration: const InputDecoration(
-                hintText: 'Nome do Jogador',
-                hintStyle: TextStyle(color: Colors.grey),
+              decoration: InputDecoration(
+                hintText: Translation(context).text.playersNameSearch,
+                hintStyle: const TextStyle(color: Colors.grey),
               ),
             ),
           ),

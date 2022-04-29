@@ -1,0 +1,135 @@
+{
+  "test": "Oi {username}",
+
+  "@_FIRST_PAGE": {
+  },
+  "continueButton": "Continuar",
+  "editTeam": "Editar Time",
+  "configuration": "Configuração",
+
+  "@_CONFIGURATION_PAGE": {
+  },
+  "coachName": "Nome do treinador",
+  "languageSelection": "Idioma",
+  "language": "Português",
+  "turnsN": "Turnos de Ida e Volta?",
+  "difficulty": "Dificuldade",
+  "soundEffects": "Efeitos Sonoros",
+  "nTeamsLeague": "Nº times na Liga",
+  "nTeamsClassified": "Nº clubes classificados por liga",
+  "nTeamsRelegated": "Nº clubes rebaixados por liga",
+  "changeClubs": "Mudar clubes",
+  "initial money": "Dinheiro Inicial",
+  "allowCards": "Permitir cartões",
+  "allowInjuries": "Permitir jogadores machucados",
+  "userTerms": "Termos de Uso",
+
+  "@_CUSTOMIZE_PLAYERS_PAGE": {
+  },
+  "customizePlayers": "Customizar Jogadores",
+  "save": "Salvar",
+  "load": "Carregar",
+
+
+  "@_MENU_PAGE": {
+  },
+  "year": "Ano",
+  "week": "Semana",
+  "money": "Dinheiro",
+  "clubOverall": "Overall da Equipe",
+  "clubValue": "Valor da Equipe",
+
+  "play": "Jogar",
+  "table": "Tabela",
+  "coach": "Técnico",
+  "myClub": "Meu Time",
+  "historic": "Histórico",
+  "ranking": "Ranking",
+  "international": "Internacional",
+  "transfers": "Transferências",
+
+  "nextAdversary": "Próximo Adversário",
+  "position": "Posição",
+  "home": "Casa",
+  "away": "Fora",
+
+  "matchWeek": "Rodada",
+  "classification": "Classificação",
+  "expectation": "Expectativa",
+
+  "returnTo": "Voltar",
+
+  "@_TRANSFERS_PAGE": {
+  },
+  "playersNameSearch": "Nome do Jogador",
+  "age": "Idade",
+  "overall": "Overall",
+  "name": "Nome",
+  "price": "Preço",
+  "filter": "Filtrar",
+  "max": "Max",
+  "min": "Min",
+  "reset": "Resetar",
+
+  "@_RANKING_CLUBS_PAGE": {
+  },
+  "rankingClubs": "Ranking de Clubes",
+
+  "@_NATIONAL_TABLE_PAGE": {
+  },
+  "topScorers": "Artilheiros",
+  "assists": "Assistências",
+  "redCards": "Cartões Vermelhos",
+  "yellowCards": "Cartões Amarelos",
+
+  "@_MY_CLUB_PAGE": {
+  },
+  "cast": "Jogadores",
+  "allInfos": "Ver Mais",
+  "matchs": "Jogos",
+  "goals": "Gols",
+  "substitutes": "Reservas",
+  "avgAge": "Média de Idade",
+
+  "@_CLUB_HISTORIC_GRAPH_PAGE": {
+  },
+  "performance": "Desempenho",
+  "average": "Média",
+  "last10Years": "Últimos 10 anos",
+  "title": "Título",
+  "titles": "Títulos",
+  "division2": "2ª Divisão",
+
+  "@_COACH_PAGE": {
+  },
+  "coachMenu": "Menu do Técnico",
+  "enterNewClub": "Mudar de clube",
+  "points": "Pontos",
+  "nationalChampionship": "Campeonatos Nacionais",
+  "internationalChampionship": "Campeonatos Internacionais",
+  "biggestVictory": "Maior vitória",
+  "biggestDefeat": "Maior derrota",
+  "sequenceNoDefeats": "Maior sequência sem perder",
+  "sequenceVictories": "Maior sequência de vitórias",
+
+  "@_CALENDAR_PAGE": {
+  },
+  "calendar": "Calendário",
+
+  "@_PLAY_PAGE": {
+  },
+  "gameVelocity": "Velocidade do jogo",
+  "scoreProbability": "Marcar",
+  "takeProbability": "Sofrer",
+  "substitution": "Substituição",
+  "nextMatch": "Próxima Rodada",
+
+  "@_INTERNATIONAL_PAGE": {
+  },
+  "group": "Grupo",
+
+
+
+
+  "last": "last"
+}

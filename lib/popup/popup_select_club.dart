@@ -77,8 +77,9 @@ popUpSelectClub({required BuildContext originalContext}){
   Widget selectClubWidget(Function setState){
 
     List clubsIDs = League(index: popupConfig.choosenLeagueIndex).getAllClubsIDList();
+    print(clubsIDs.length);
     return  Container(
-      height: 250,
+      height: 310,
       width: 250,
       margin: const EdgeInsets.all(4),
       child: GridView.count(

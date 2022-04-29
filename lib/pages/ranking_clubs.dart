@@ -4,6 +4,7 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/func_number_clubs_total.dart';
 import 'package:fifa/page_controller/ranking_clubs_control.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/images.dart';
 import 'package:flutter/material.dart';
@@ -63,7 +64,7 @@ class _RankingClubsState extends State<RankingClubs> {
                 children: [
 
                   const SizedBox(height: 40),
-                  const Text('Ranking de Clubes',style: EstiloTextoBranco.text20),
+                  Text(Translation(context).text.rankingClubs,style: EstiloTextoBranco.text20),
                   const SizedBox(height: 6),
 
                   Expanded(

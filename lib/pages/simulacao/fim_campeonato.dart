@@ -3,7 +3,7 @@ import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
-import 'package:fifa/widgets/table_widget.dart';
+import 'package:fifa/pages/table/table_widget.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 

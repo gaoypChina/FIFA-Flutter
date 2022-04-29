@@ -1,4 +1,5 @@
 import 'package:fifa/classes/geral/name.dart';
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/mata_mata/mata_mata_class.dart';
 import 'package:fifa/global_variables.dart';
@@ -89,8 +90,8 @@ class _TableMataMataState extends State<TableMataMata> {
     return leagueInternational == LeagueOfficialNames().championsLeague
         ? Image.asset('assets/icons/fundochampions.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill)
         : Image.asset('assets/icons/fundolibertadores.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill);
-
   }
+
   Widget phaseTableWidget(int phaseStage) {
       int phaseRows = 9;
       int weekShow = 0;
@@ -166,13 +167,13 @@ class _TableMataMataState extends State<TableMataMata> {
           color: teamNameA == My().clubName ? Colors.green : Colors.transparent,
             child: Text(teamNameA,textAlign:TextAlign.end,style: EstiloTextoBranco.text14)),
         //Escudo
-        Image.asset('assets/clubs/${FIFAImages().imageLogo(teamNameA)}.png',height: 20,width: 20),
+        Image.asset(Images().getEscudo(teamNameA),height: 20,width: 20),
 
         golsA >= 0
             ? Text(' '+ golsA.toString()+'x'+golsB.toString()+' ',style: EstiloTextoBranco.text14)
             : const Text('X',textAlign:TextAlign.center,style: EstiloTextoBranco.text14),
         //Escudo
-        Image.asset('assets/clubs/${FIFAImages().imageLogo(teamNameB)}.png',height: 20,width: 20),
+        Image.asset(Images().getEscudo(teamNameB),height: 20,width: 20),
 
         Container(
           color: teamNameB == My().clubName ? Colors.green : Colors.transparent,

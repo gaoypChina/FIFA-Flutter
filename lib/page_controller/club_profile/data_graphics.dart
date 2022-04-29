@@ -1,3 +1,4 @@
+import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/historic.dart';
 import 'package:fifa/global_variables.dart';
@@ -7,7 +8,7 @@ import 'package:fifa/values/league_divisions.dart';
 class ClassificationData {
   ClassificationData(this.year, this.position);
 
-  final int year;
+  final double year;
   final int position;
 }
 
@@ -29,9 +30,13 @@ class DataGraphics{
   }
 
   defineSimulationClassification(Club club){
-    for(int year=anoInicial; year<ano; year++){
+    //Posição Ano Atual
+    int currentPosition = Classification(leagueIndex: club.leagueID).getClubPosition(club.index);
+    data.add(ClassificationData(ano.toDouble(), currentPosition));
+    //Posição anos simulados
+    for(double year=ano-1; year>=anoInicial; year--){
       try {
-        int position = HistoricFunctions().funcHistoricListFromClubID(year, club.leagueName, club.index);
+        int position = HistoricFunctions().funcHistoricListFromClubID(year.toInt(), club.leagueName, club.index);
         data.add(ClassificationData(year, position));
         addTitlesCount(position);
         addG4Count(position);
@@ -43,11 +48,11 @@ class DataGraphics{
     }
   }
   defineHistoricClassification(Club club){
-    Map results = mapChampions(Divisions().league1stDivisionName(club.leagueName));
+    Map<double,dynamic> results = mapChampions(Divisions().league1stDivisionName(club.leagueName));
     //SE NÃO TEM DADOS
     ifHistoricDataDontExist(results);
 
-    for(int year in results.keys){
+    for(double year in results.keys){
       if(results[year].contains(club.name)){
         int position = results[year].indexOf(club.name)+1;
         data.add(ClassificationData(year, position));
@@ -64,7 +69,7 @@ class DataGraphics{
   ifHistoricDataDontExist(Map results){
     //CRIA UM ARRAY COM VALORES NEUTROS PARA MOSTRAR ALGUM GRAFICO
     if(results.isEmpty){
-      for(int year=1; year<10; year++) {
+      for(double year=1; year<10; year++) {
         data.add(ClassificationData(anoInicial - year, 21));
       }
     }

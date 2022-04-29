@@ -1,3 +1,4 @@
+import 'package:fifa/theme/translation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,7 @@ Widget returnButton(BuildContext context){
     padding: const EdgeInsets.only(bottom: 4),
     child:                     //VOLTAR
     customButtonContinue(
-        title: 'VOLTAR',
+        title: Translation(context).text.returnTo,
         function: (){
           Navigator.pop(context);
         }

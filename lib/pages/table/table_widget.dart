@@ -1,12 +1,13 @@
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:flutter/material.dart';
 
-import '../theme/colors.dart';
+import '../../theme/colors.dart';
 
 Widget tabelaClassificacaoWidget(int choosenLeagueIndex){
   return Column(
@@ -58,7 +59,6 @@ TableRow rowTableNacional(int i,int choosenLeagueIndex){
 TableRow rowTableNacionalLayout(int position, int indexClub, choosenLeagueIndex) {
   Club clubClass = Club(index: indexClub);
   String clubName = clubClass.name;
-  String image = clubClass.picture;
   int points = clubClass.leaguePoints;
   int golsMarcados = clubClass.leagueGM;
   int golsSofridos = clubClass.leagueGS;
@@ -70,7 +70,7 @@ TableRow rowTableNacionalLayout(int position, int indexClub, choosenLeagueIndex)
   return TableRow(
     children: [
       Text((position+1).toString()+'-',style: EstiloTextoBranco.text14),
-      Image.asset('assets/clubs/$image.png',height: 25,width: 25),
+      Image.asset(Images().getEscudo(clubClass.name),height: 25,width: 25),
       Container(
           width:170,
           padding: const EdgeInsets.all(2),
@@ -91,7 +91,8 @@ TableRow rowTableNacionalLayout(int position, int indexClub, choosenLeagueIndex)
 
 Color backgroundTextColor(int position, int choosenLeagueIndex , String teamName){
 
-  String leagueName = League(index: choosenLeagueIndex).name;
+  League league = League(index: choosenLeagueIndex);
+  String leagueName = league.name;
   Color backgroundColor = Colors.transparent;
 
   //1ºCOLOCADO
@@ -140,9 +141,9 @@ Color backgroundTextColor(int position, int choosenLeagueIndex , String teamName
       || leagueName==LeagueOfficialNames().italia1
       || leagueName==LeagueOfficialNames().brasil1
       || leagueName==LeagueOfficialNames().brasil2){
-    if(position==13){backgroundColor = Colors.red;}
-    if(position==14){backgroundColor = Colors.red;}
-    if(position==15){backgroundColor = Colors.red;}
+    if(position==league.nClubs-3){backgroundColor = Colors.red;}
+    if(position==league.nClubs-2){backgroundColor = Colors.red;}
+    if(position==league.nClubs-1){backgroundColor = Colors.red;}
   }
   if(teamName==My().clubName){backgroundColor = Colors.teal;}
 

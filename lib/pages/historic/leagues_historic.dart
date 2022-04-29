@@ -192,8 +192,9 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   }
   Widget validacao(int position, int ano){
     try {
-      Map results = mapChampions(league.name);
-      String clubName = results[ano][position];
+      Map<double,dynamic> results = mapChampions(league.name);
+      List yearData = results[ano.toDouble()];
+      String clubName = yearData[position];
       if(position == 0){
         return Column(
           children: [

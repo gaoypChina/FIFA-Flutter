@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/theme/background/background_age.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/theme/custom_toast.dart';
@@ -31,6 +32,8 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
             insetPadding: const EdgeInsets.symmetric(horizontal: 0),
             title: Row(
               children: [
+                funcFlagsList(jogador.nationality, 30,40),
+                const SizedBox(width: 6),
                 Expanded(child: Text(jogador.name,style: EstiloTextoPreto.text22)),
                 //Escudo da Equipe
                 Image.asset('assets/clubs/${FIFAImages().imageLogo(jogador.clubName)}.png',height: 40,width: 40),
@@ -162,10 +165,14 @@ onTapSell(Jogador jogador){
 onTapBuy(Jogador jogador){
   if(globalMyJogadores.length<32) {
     if (globalMyMoney > jogador.price) {
-      globalMyMoney -= jogador.price;
-      globalJogadoresClubIndex[jogador.index] = My().clubID;
-      globalMyJogadores.add(jogador.index);
-      customToast('Jogador comprado');
+      if(Club(index: jogador.clubID).nJogadores>15){
+        globalMyMoney -= jogador.price;
+        globalJogadoresClubIndex[jogador.index] = globalMyClubID;
+        globalMyJogadores.add(jogador.index);
+        customToast('Jogador comprado');
+      }else{
+        customToast('O outro clube vai ficar sem jogadores disponíveis');
+      }
     } else {
       customToast('Sem dinheiro disponível');
     }

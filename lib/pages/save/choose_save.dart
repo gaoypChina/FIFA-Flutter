@@ -1,6 +1,7 @@
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/pages/save/save.dart';
 import 'package:fifa/pages/save/upload.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/widgets/button/button_return.dart';
 import 'package:flutter/material.dart';
@@ -36,7 +37,7 @@ class _ChooseSaveState extends State<ChooseSave> {
 
                   const SizedBox(height: 10),
                   customButtonContinue(
-                      title: 'Salvar',
+                      title: Translation(context).text.save,
                       function: (){
                         Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Save()));
                       }
@@ -44,7 +45,7 @@ class _ChooseSaveState extends State<ChooseSave> {
 
                   const SizedBox(height: 10),
                   customButtonContinue(
-                      title: 'Carregar',
+                      title: Translation(context).text.load,
                       function: (){
                         Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Upload()));
                       }

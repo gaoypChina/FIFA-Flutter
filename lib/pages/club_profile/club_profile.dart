@@ -3,6 +3,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/pages/club_profile/field_static.dart';
 import 'package:fifa/pages/club_profile/graphics.dart';
 import 'package:fifa/pages/club_profile/my_team_all_infos.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_return.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
@@ -62,8 +63,8 @@ class _ClubProfileState extends State<ClubProfile>  with TickerProviderStateMixi
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('Overall: '+clubClass.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.text16),
-                              Text('Média Idade: '+clubClass.getAverageAge().toStringAsFixed(2), style: EstiloTextoBranco.text16),
+                              Text('${Translation(context).text.overall}: '+clubClass.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.text16),
+                              Text('${Translation(context).text.avgAge}: '+clubClass.getAverageAge().toStringAsFixed(2), style: EstiloTextoBranco.text16),
                             ],
                           ),
                         ),
@@ -78,10 +79,10 @@ class _ClubProfileState extends State<ClubProfile>  with TickerProviderStateMixi
                       height: 30,
                       child: TabBar(
                         controller: _tabController,
-                        tabs: const [
-                          Tab(text: 'Elenco',),
-                          Tab(text: 'Histórico'),
-                          Tab(text: 'Classificação'),
+                        tabs: [
+                          Tab(text: Translation(context).text.cast),
+                          Tab(text: Translation(context).text.historic),
+                          Tab(text: Translation(context).text.allInfos),
                         ],
                       ),
                     ),

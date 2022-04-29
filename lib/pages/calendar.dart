@@ -6,6 +6,7 @@ import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/page_controller/calendar_control.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_return.dart';
 import 'package:flutter/material.dart';
 import 'club_profile/club_profile.dart';
@@ -32,9 +33,8 @@ class _CalendarState extends State<Calendar> {
 
       Column(
         children: [
-          const SizedBox(height: 40),
-          const Text('Calendário',style: EstiloTextoBranco.text30),
-          const SizedBox(height: 10),
+          const SizedBox(height: 30),
+          Text(Translation(context).text.calendar,style: EstiloTextoBranco.text30),
           Container(
             margin: const EdgeInsets.all(8),
             height: Sized(context).height-130,
@@ -51,6 +51,7 @@ class _CalendarState extends State<Calendar> {
               ),
             ),
           ),
+          const SizedBox(height: 40),
         ],
       ),
 
@@ -78,7 +79,7 @@ class _CalendarState extends State<Calendar> {
         height: 117,
         color: show.backgroundColor,
         child: Column(children: [
-          Text('Rodada ' + (rodadaLocal).toString(),style: EstiloTextoBranco.text16),
+          Text('${Translation(context).text.matchWeek} ' + (rodadaLocal).toString(),style: EstiloTextoBranco.text16),
           SizedBox(
             height: 45,
             width: 80,
@@ -93,9 +94,9 @@ class _CalendarState extends State<Calendar> {
             ),
           ),
           show.visitante
-              ? Text('FORA ${show.placar}',
+              ? Text('${Translation(context).text.away.toUpperCase()} ${show.placar}',
                   style: EstiloTextoBranco.text10, textAlign: TextAlign.center)
-              : Text('CASA ${show.placar}',
+              : Text('${Translation(context).text.home.toUpperCase()} ${show.placar}',
                   style: EstiloTextoBranco.text10, textAlign: TextAlign.center),
           Text(show.clubName2,
               overflow: TextOverflow.fade,

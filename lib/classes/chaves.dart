@@ -275,55 +275,55 @@ class Chaves{
   List obterChave18(int semana){
     List chave = [];
     if(semana==semanasJogosNacionais[0]){//verifica o numero do meu time e ve qual a posição dele
-      chave = [2,7, 11,1, 12,6, 14,9, 15,3, 16,10, 18,13, 4,8, 5,0];
+      chave = [2,7, 11,1, 12,6, 14,9, 15,3, 16,10, 17,13, 4,8, 5,0];
     }
     else if(semana==semanasJogosNacionais[1]){
-      chave = [1,14, 13,16, 0,4, 3,18, 6,5, 7,11, 8,15, 9,12, 10,2];
+      chave = [1,14, 13,16, 0,4, 3,17, 6,5, 7,11, 8,15, 9,12, 10,2];
     }
     else if(semana==semanasJogosNacionais[2]){
-      chave = [1,9, 2,13, 11,10, 14,7, 15,0, 16,3, 18,8, 4,6, 5,12];
+      chave = [1,9, 2,13, 11,10, 14,7, 15,0, 16,3, 17,8, 4,6, 5,12];
     }
     else if(semana==semanasJogosNacionais[3]){
-      chave = [1,7, 2,3, 4,12, 5,9, 6,15, 8,16, 10,14, 11,13, 0,18];
+      chave = [1,7, 2,3, 4,12, 5,9, 6,15, 8,16, 10,14, 11,13, 0,17];
     }
     else if(semana==semanasJogosNacionais[4]){
-      chave = [1,10, 2,8, 11,3, 4,5, 18,6, 7,9, 15,12, 14,13, 16,0];
+      chave = [1,10, 2,8, 11,3, 4,5, 17,6, 7,9, 15,12, 14,13, 16,0];
     }
     else if(semana==semanasJogosNacionais[5]){
-      chave = [13,1, 0,2, 3,14, 9,4, 5,15, 6,16, 10,7, 8,11, 12,18];
+      chave = [13,1, 0,2, 3,14, 9,4, 5,15, 6,16, 10,7, 8,11, 12,17];
     }
     else if(semana==semanasJogosNacionais[6]){
-      chave = [1,3, 2,6, 15,4, 18,5, 7,13, 14,8, 10,9, 11,0, 16,12];
+      chave = [1,3, 2,6, 15,4, 17,5, 7,13, 14,8, 10,9, 11,0, 16,12];
     }
     else if(semana==semanasJogosNacionais[7]){
-      chave = [8,1, 12,2, 3,7, 4,18, 5,16, 6,11, 9,15, 0,14, 13,10];
+      chave = [8,1, 12,2, 3,7, 4,17, 5,16, 6,11, 9,15, 0,14, 13,10];
     }
     else if(semana==semanasJogosNacionais[8]){
-      chave = [1,0, 2,5, 10,3, 16,4, 14,6, 7,8, 13,9, 11,12, 18,15];
+      chave = [1,0, 2,5, 10,3, 16,4, 14,6, 7,8, 13,9, 11,12, 17,15];
     }
     else if(semana==semanasJogosNacionais[9]){
-      chave = [6,1, 4,2, 3,13, 5,11, 0,7, 8,10, 9,18, 12,14, 15,16];
+      chave = [6,1, 4,2, 3,13, 5,11, 0,7, 8,10, 9,17, 12,14, 15,16];
     }
     else if(semana==semanasJogosNacionais[10]){
-      chave = [1,12, 2,15, 3,9, 11,4, 14,5, 7,6, 13,8, 10,0, 16,18];
+      chave = [1,12, 2,15, 3,9, 11,4, 14,5, 7,6, 13,8, 10,0, 16,17];
     }
     else if(semana==semanasJogosNacionais[11]){
-      chave = [5,1, 18,2, 8,3, 4,14, 6,10, 12,7, 9,16, 15,11, 0,13];
+      chave = [5,1, 17,2, 8,3, 4,14, 6,10, 12,7, 9,16, 15,11, 0,13];
     }
     else if(semana==semanasJogosNacionais[12]){
-      chave = [1,4, 2,16, 3,0, 7,5, 13,6, 8,9, 10,12, 11,18, 14,15];
+      chave = [1,4, 2,16, 3,0, 7,5, 13,6, 8,9, 10,12, 11,17, 14,15];
     }
     else if(semana==semanasJogosNacionais[13]){
-      chave = [15,1, 9,2, 6,3, 4,7, 5,10, 0,8, 16,11, 12,13, 18,14];
+      chave = [15,1, 9,2, 6,3, 4,7, 5,10, 0,8, 16,11, 12,13, 17,14];
     }
     else if(semana==semanasJogosNacionais[14]){
-      chave = [1,18, 11,2, 3,12, 10,4, 13,5, 8,6, 7,15, 0,9, 14,16];
+      chave = [1,17, 11,2, 3,12, 10,4, 13,5, 8,6, 7,15, 0,9, 14,16];
     }
     else if(semana==semanasJogosNacionais[15]){
-      chave = [16,1, 2,14, 5,3, 4,13, 6,0, 18,7, 12,8, 11,9, 15,10];
+      chave = [16,1, 2,14, 5,3, 4,13, 6,0, 17,7, 12,8, 11,9, 15,10];
     }
     else if(semana==semanasJogosNacionais[16]){
-      chave = [1,2, 3,4, 7,16, 8,5, 9,6, 10,18, 14,11, 0,12, 13,15];
+      chave = [1,2, 3,4, 7,16, 8,5, 9,6, 10,17, 14,11, 0,12, 13,15];
     }
     return chave;
   }
@@ -351,7 +351,7 @@ class Chaves{
       chave = [3,5, 19,1, 0,12, 15,10, 8,18, 13,6, 11,9, 2,4, 7,17, 14,16];
     }
     else if(semana==semanasJogosNacionais[7]){
-      chave = [3,9, 17,11, 6,14, 16,8, 9,13, 10,2, 7,4, 5,12, 18,0, 1,15];
+      chave = [3,19, 17,11, 6,14, 16,8, 9,13, 10,2, 7,4, 5,12, 18,0, 1,15];
     }
     else if(semana==semanasJogosNacionais[8]){
       chave = [8,6, 4,18, 13,17, 11,16, 14,7, 0,1, 2,3, 19,5, 15,9, 12,10];

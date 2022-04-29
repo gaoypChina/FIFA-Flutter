@@ -1,0 +1,161 @@
+{
+
+
+  "test": "default {username}",
+  "@test": {
+    "description": "Name of user",
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    }
+  },
+
+  "@_FIRST_PAGE": {
+  },
+  "continueButton": "Continue",
+  "editTeam": "Edit Team",
+  "configuration": "Configuration",
+
+  "@_CONFIGURATION_PAGE": {
+  },
+  "coachName": "Coach Name",
+  "languageSelection": "Language",
+  "language": "English",
+  "@language": {
+    "description": "Current language"
+  },
+  "turnsN": "Turns with 2 rounds?",
+  "difficulty": "Difficulty",
+  "soundEffects": "Sound Effects",
+  "nTeamsLeague": "Nº of teams per league",
+  "nTeamsClassified": "Nº of teams classified per league",
+  "nTeamsRelegated": "Nº of teams relegated per league",
+  "changeClubs": "Change clubs",
+  "initialMoney": "Initial money",
+  "allowCards": "Allow yellow and red cards",
+  "allowInjuries": "Allow injured players",
+  "userTerms": "User Terms",
+
+  "@_CUSTOMIZE_PLAYERS_PAGE": {
+  },
+  "customizePlayers": "Customize Players",
+  "save": "Save",
+  "load": "Load",
+
+
+  "@_MENU_PAGE": {
+  },
+  "year": "Year",
+  "years": "Years",
+  "week": "Week",
+  "money": "Money",
+  "clubOverall": "Club Overall",
+  "clubValue": "Club Value",
+
+  "play": "Play",
+  "table": "Table",
+  "coach": "Coach",
+  "myClub": "My Club",
+  "historic": "Historic",
+  "ranking": "Ranking",
+  "international": "International",
+  "transfers": "Transfers",
+
+  "nextAdversary": "Next Adversary",
+  "position": "Position",
+  "home": "Home",
+  "away": "Away",
+
+  "matchWeek": "Match Week",
+  "classification": "Classification",
+  "expectation": "Expectation",
+
+  "returnTo": "Return",
+
+  "@_TRANSFERS_PAGE": {
+  },
+  "playersNameSearch": "Player's name",
+  "age": "Age",
+  "overall": "Overall",
+  "name": "Name",
+  "price": "Price",
+  "filter": "Filter",
+  "max": "Max",
+  "min": "Min",
+  "reset": "Reset",
+
+  "@_RANKING_CLUBS_PAGE": {
+  },
+  "rankingClubs": "Clubs Ranking",
+
+  "@_NATIONAL_TABLE_PAGE": {
+  },
+  "topScorers": "Top Scorers",
+  "assists": "Assists",
+  "redCards": "Red Cards",
+  "yellowCards": "Yellow Cards",
+
+  "@_MY_CLUB_PAGE": {
+  },
+  "cast": "Players",
+  "allInfos": "All Infos",
+  "matchs": "Matchs",
+  "goals": "Goals",
+  "substitutes": "Substitutes",
+  "avgAge": "Avg. Age",
+
+  "@_CLUB_HISTORIC_GRAPH_PAGE": {
+  },
+  "performance": "Performance",
+  "average": "Average",
+  "last10Years": "Last 10 years",
+  "title": "Title",
+  "titles": "Titles",
+  "division2": "2nd Division",
+
+  "@_COACH_PAGE": {
+  },
+  "coachMenu": "Coach Menu",
+  "enterNewClub": "Enter new club",
+  "points": "Points",
+  "nationalChampionship": "National Championship",
+  "internationalChampionship": "International Championship",
+  "biggestVictory": "Biggest victory",
+  "biggestDefeat": "Biggest defeat",
+  "sequenceNoDefeats": "Largest sequence without defeats",
+  "sequenceVictories": "Largest sequence winning",
+
+  "@_CALENDAR_PAGE": {
+  },
+  "calendar": "Calendar",
+
+  "@_PLAY_PAGE": {
+  },
+  "gameVelocity": "Game Velocity",
+  "scoreProbability": "To score",
+  "takeProbability": "To take",
+  "substitution": "Substitution",
+  "nextMatchWeek": "Next Match Week",
+
+  "@_INTERNATIONAL_PAGE": {
+  },
+  "group": "Group",
+
+
+
+
+
+
+
+
+
+
+
+
+
+  "last": "last",
+  "@last": {
+    "description": "last"
+  }
+}
