@@ -187,6 +187,9 @@ TableRow playersRow(int i){
             choosenPlayerID = playerID;
             popupText('Alterar nome',player.name,'Name');
           },
+          onDoubleTap: (){
+            customToast(player.name+player.nationality+player.imageUrl);
+          },
           child: SizedBox(
               width: 200,
               child: Text(player.name,style: EstiloTextoBranco.text16)

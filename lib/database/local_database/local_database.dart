@@ -1,6 +1,7 @@
-import 'package:fifa/classes/get_database/read_csv.dart';
-import 'package:fifa/database/shared_preferences.dart';
+import 'package:fifa/database/local_database/shared_preferences.dart';
 import 'package:fifa/global_variables.dart';
+
+import '../csv/read_csv.dart';
 
 class GetLocalDatabase{
 

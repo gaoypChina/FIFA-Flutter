@@ -2,6 +2,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/pages/table/table_widget.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -30,19 +31,17 @@ class _FimCampeonatoState extends State<FimCampeonato> {
         return true;
       },
       child: Scaffold(
-
-          resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
           body:  Stack(
               children: [
 
-                Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
+                Images().getWallpaper(),
 
                 Column(
                   children: [
 
                     const SizedBox(height: 40),
 
-                    const Text('Classificação Final',style:EstiloTextoBranco.text20),
+                    Text(Translation(context).text.finalClassification,style:EstiloTextoBranco.text20),
                     const SizedBox(height: 8),
 
                     //TABELA
@@ -62,7 +61,7 @@ class _FimCampeonatoState extends State<FimCampeonato> {
                         //EXPECTATIVA
                         Column(
                           children: [
-                            const Text('Expectativa:',style: EstiloTextoBranco.text14),
+                            Text('${Translation(context).text.expectation}:',style: EstiloTextoBranco.text14),
                             Text(myClub.getLastYearExpectativa().toString()+'º',style: EstiloTextoBranco.text30),
                           ],
                         ),
@@ -72,7 +71,7 @@ class _FimCampeonatoState extends State<FimCampeonato> {
                         //CLASSIFICAÇÃO FINAL
                         Column(
                           children: [
-                            const Text('Classificação',style: EstiloTextoBranco.text14),
+                            Text(Translation(context).text.classification,style: EstiloTextoBranco.text14),
                             Text(Classification(leagueIndex: myClub.campeonatoID).getClubPosition(myClub.clubID).toString()+'º',style: EstiloTextoBranco.text30),
                           ],
                         ),
@@ -85,7 +84,7 @@ class _FimCampeonatoState extends State<FimCampeonato> {
                     Padding(
                       padding: const EdgeInsets.all(6),
                       child:  customButtonContinue(
-                          title: 'PRÓXIMO',
+                          title: Translation(context).text.nextMatchWeek,
                           function: (){
                             Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Menu()));
                           }

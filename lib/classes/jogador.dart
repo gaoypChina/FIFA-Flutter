@@ -8,6 +8,7 @@ class Jogador{
   late String name;
   late String position;
   late String nationality;
+  late String imageUrl;
   late int clubID;
   late String clubName;
   late int age;
@@ -38,6 +39,7 @@ class Jogador{
     health = globalJogadoresHealth[index];
     overall = globalJogadoresOverall[index];
     nationality = globalJogadoresNationality[index];
+    imageUrl = globalJogadoresImageUrl[index];
     overallDynamic = setOverall();
     price = setPreco();
     clubID = globalJogadoresClubIndex[index];

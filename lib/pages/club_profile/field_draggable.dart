@@ -4,10 +4,11 @@ import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/functions/check_internet.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/popup/popup_player_info.dart';
+import 'package:fifa/theme/background/background_position.dart';
 import 'package:fifa/theme/colors.dart';
-import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/field_size.dart';
 import 'package:flutter/material.dart';
@@ -64,10 +65,7 @@ class _FieldDraggableState extends State<FieldDraggable> {
                     itemCount:  myClub.nJogadores>11 ? myClub.nJogadores> 18 ? 7 : myClub.nJogadores -11 : 0,
                     itemBuilder: (BuildContext context, int index) {
                       index = index+11;
-                      return
-                        dragPlayer<0
-                            ?  draggable(my.jogadores[index])
-                            : draggableTarget(my.jogadores[index]);
+                      return dragPlayerSelection(index);
                     }
                 ),
               ),
@@ -81,10 +79,7 @@ class _FieldDraggableState extends State<FieldDraggable> {
                     itemCount: myClub.nJogadores>18 ? myClub.nJogadores-18 : 0,
                     itemBuilder: (BuildContext context, int index) {
                       index = index+18;
-                      return
-                        dragPlayer<0
-                            ?  draggable(my.jogadores[index])
-                            : draggableTarget(my.jogadores[index]);
+                      return dragPlayerSelection(index);
                     }
                 ),
               ),
@@ -102,13 +97,6 @@ class _FieldDraggableState extends State<FieldDraggable> {
                     button(title: Translation(context).text.assists, function: (){setState(() {});show = 'Assists';}),
                   ],
                 ),
-              ),
-
-              button(
-                  title: 'Treinar',
-                  function: (){
-                    customToast('Em desenvolvimento');
-                  }
               ),
               
             ],
@@ -131,9 +119,19 @@ class _FieldDraggableState extends State<FieldDraggable> {
         }
     );
   }
+
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Widget dragPlayerSelection(int index){
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 2.0),
+      child: dragPlayer<0
+          ?  draggable(my.jogadores[index])
+          : draggableTarget(my.jogadores[index]),
+    );
+  }
+
   button({required String title, required Function()? function}) {
     return InkWell(
       onTap: function,
@@ -233,7 +231,7 @@ class _FieldDraggableState extends State<FieldDraggable> {
                       opacity: 0.4,
                       child: Image.asset(Images().getMyUniform())
                   )
-                      : Image.asset(Images().getMyUniform()),
+                      : globalHasInternet ? Image.network(player.imageUrl) : Image.asset(Images().getMyUniform()),
 
                   //CIRCULO
                   Container(
@@ -252,11 +250,8 @@ class _FieldDraggableState extends State<FieldDraggable> {
 
                   //POSIÇÃO
                   Container(
-                    alignment: Alignment.bottomLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.all(3.0),
-                      child: Text(position,style: EstiloTextoBranco.text14),
-                    ),
+                      alignment: Alignment.bottomLeft,
+                      child: positionContainer(position),
                   ),
 
                 ],

@@ -2,7 +2,9 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/popup/popup_player_info.dart';
+import 'package:fifa/theme/background/background_position.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/field_size.dart';
@@ -56,7 +58,10 @@ class _StaticFieldState extends State<StaticField> {
                     itemCount:  clubClass.nJogadores>11 ? clubClass.nJogadores> 18 ? 7 : clubClass.nJogadores -11 : 0,
                     itemBuilder: (BuildContext context, int index) {
                       index = index+11;
-                      return playerWidgetOVR(jogadoresOrganizados[index]);
+                      return Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 2.0),
+                        child: playerWidgetOVR(jogadoresOrganizados[index]),
+                      );
                     }
                 ),
               ),
@@ -70,7 +75,9 @@ class _StaticFieldState extends State<StaticField> {
                     itemCount: clubClass.nJogadores>18 ? clubClass.nJogadores-18 : 0,
                     itemBuilder: (BuildContext context, int index) {
                       index = index+18;
-                      return playerWidgetOVR(jogadoresOrganizados[index]);
+                      return Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 2.0),
+                          child: playerWidgetOVR(jogadoresOrganizados[index]));
                     }
                 ),
               ),
@@ -177,7 +184,7 @@ class _StaticFieldState extends State<StaticField> {
                       opacity: 0.4,
                       child: Image.asset(Images().getUniform(clubClass.name))
                   )
-                      : Image.asset(Images().getUniform(clubClass.name)),
+                      : globalHasInternet ? Image.network(player.imageUrl) : Image.asset(Images().getMyUniform()),
 
                   //CIRCULO
                   Container(
@@ -197,10 +204,7 @@ class _StaticFieldState extends State<StaticField> {
                   //POSIÇÃO
                   Container(
                     alignment: Alignment.bottomLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.all(3.0),
-                      child: Text(position,style: EstiloTextoBranco.text14),
-                    ),
+                    child: positionContainer(position),
                   ),
 
                 ],

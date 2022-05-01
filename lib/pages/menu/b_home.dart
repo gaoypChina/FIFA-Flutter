@@ -1,7 +1,6 @@
-import 'package:fifa/classes/get_database/local_database.dart';
-import 'package:fifa/classes/get_database/read_csv.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/database/shared_preferences.dart';
+import 'package:fifa/database/local_database/local_database.dart';
+import 'package:fifa/database/local_database/shared_preferences.dart';
 import 'package:fifa/functions/change_club_control.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/configuration/configuration.dart';
@@ -14,6 +13,7 @@ import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
+import '../../database/csv/read_csv.dart';
 import 'c_menu.dart';
 import '../../classes/league.dart';
 

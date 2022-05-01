@@ -23,11 +23,14 @@ const globalMaxSavesPermitted = 1;
 int globalSaveNumber = 0;
 Map globalSaveData = {}; //DATABASE PLAYERS DATA
 
-
+bool globalHasInternet = true;
 bool globalLeagueIdaVolta = false;
 bool globalHasSoundEffects = false;
-bool globalHasCards = false;
-bool globalHasInjuries = false;
+bool globalHasCards = true;
+bool globalHasInjuries = true;
+bool globalAllEqualOverall = false;
+bool globalSeeProbabilities = true;
+double globalInitialMoney = 0;
 
 int globalDificuldade = 2; //2-> médio
 int anoInicial = 2022; //ano fixo para contas
@@ -88,6 +91,7 @@ List globalJogadoresPosition = [];
 List globalJogadoresAge = [];
 List globalJogadoresOverall = [];
 List globalJogadoresNationality = [];
+List globalJogadoresImageUrl = [];
 
 List globalJogadoresHealth = [];
 List globalJogadoresCarrerMatchs = List.filled(globalMaxPlayersPermitted, 0);

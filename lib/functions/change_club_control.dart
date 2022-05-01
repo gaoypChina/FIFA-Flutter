@@ -17,6 +17,9 @@ funcChangeClub(String newClubName, int newLeagueID){
   globalMyJogadores = newClubClass.escalacao; //global MyJogadores tem que ser declarado antes de usar qualquer getOverall();
   double overall = newClubClass.getOverall();
   globalMyMoney = ((overall-68)*(overall-68)/5)*0.7*DificuldadeClass().getDificuldadeMultiplicationValue();
+  if(globalInitialMoney>0){
+    globalMyMoney = globalInitialMoney;
+  }
   My myClass = My();
   globalMyExpectativa = myClass.newExpectativa();
   //Zera retrospecto de jogos

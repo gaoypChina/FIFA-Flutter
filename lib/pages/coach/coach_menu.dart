@@ -79,9 +79,6 @@ class _CoachMenuState extends State<CoachMenu> {
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             pieChart(coachHistoricData.dataPieChartMap()),
-                            victoryDrawLoses('V',coachHistoricData.victory.toString()),
-                            victoryDrawLoses('E',coachHistoricData.draw.toString()),
-                            victoryDrawLoses('D',coachHistoricData.loss.toString()),
                             victoryDrawLoses('%',coachHistoricData.pointsPercentage.toStringAsFixed(1)),
                           ],
                         ),
@@ -178,7 +175,7 @@ Widget changeClub(BuildContext context){
             if(!alreadyChangedClubThisSeason){
               Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ChangeClub()));
             }else{
-              customToast('Você já mudou de clube essa temporada');
+              customToast(Translation(context).text.alreadyChangedYourClub);
             }
           },
           child: Text(Translation(context).text.enterNewClub,style: EstiloTextoBranco.text16),
@@ -208,7 +205,7 @@ Widget trophyWidget(BuildContext context, int i){
           width: 100,
           child: Text(name,textAlign:TextAlign.center,style: EstiloTextoBranco.text14)
       ),
-      SizedBox(height: 4),
+      const SizedBox(height: 4),
       Image.asset('assets/trophy/$image.png',height: 100,width: 100),
       Text(qntd.toString(),style: EstiloTextoBranco.text20),
     ],

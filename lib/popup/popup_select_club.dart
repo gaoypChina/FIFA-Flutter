@@ -4,6 +4,7 @@ import 'package:fifa/classes/league.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/values/league_names.dart';
@@ -74,10 +75,9 @@ popUpSelectClub({required BuildContext originalContext}){
     );
   }
 
-  Widget selectClubWidget(Function setState){
+  Widget selectClubWidget(BuildContext context, Function setState){
 
     List clubsIDs = League(index: popupConfig.choosenLeagueIndex).getAllClubsIDList();
-    print(clubsIDs.length);
     return  Container(
       height: 310,
       width: 250,
@@ -92,7 +92,7 @@ popUpSelectClub({required BuildContext originalContext}){
               if(popupConfig.clicked){
                 popupConfig.clickedClub = gridClub;
                 popupConfig.changeClubs();
-              customToast('Changed Club: ${popupConfig.originalClub.name} -> ${popupConfig.clickedClub.name}');
+              customToast('${Translation(context).text.changedClubTo}: ${popupConfig.originalClub.name} -> ${popupConfig.clickedClub.name}');
               }else{
                 popupConfig.originalClub = Club(index: gridClub.index);
               }
@@ -121,13 +121,13 @@ popUpSelectClub({required BuildContext originalContext}){
       return StatefulBuilder(
         builder: (context, Function setState) {
         return AlertDialog(
-          title: const Text('Selecionar Clube',style: EstiloTextoPreto.text16),
+          title: Text(Translation(context).text.selectClub,style: EstiloTextoPreto.text16),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
 
               selectLeagueWidget(setState),
-              selectClubWidget(setState),
+              selectClubWidget(context,setState),
 
             ],
           ),

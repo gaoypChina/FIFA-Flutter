@@ -5,6 +5,7 @@ import 'package:fifa/classes/match.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/popup/popup_player_info.dart';
+import 'package:fifa/theme/background/background_position.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/translation.dart';
@@ -164,11 +165,11 @@ class _SubstitutionState extends State<Substitution> {
               globalMyJogadores[finalPosition1] = playerTargetID;
               globalMyJogadores[finalPosition2] = playerIDData;
             }else{
-              customToast('Jogadores expulsos não podem ser substítuidos');
+              customToast(Translation(context).text.redCardPlayersCantBeReplaced);
             }
           }
         }else{
-          customToast('Sem substituições restantes');
+          customToast(Translation(context).text.noSubstitutionLeft);
         }
         dragPlayer=-1;
         setState(() {});
@@ -261,10 +262,7 @@ class _SubstitutionState extends State<Substitution> {
                   //POSIÇÃO
                   Container(
                     alignment: Alignment.bottomLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.all(3.0),
-                      child: Text(position,style: EstiloTextoBranco.text14),
-                    ),
+                    child: positionContainer(position),
                   ),
 
                 ],

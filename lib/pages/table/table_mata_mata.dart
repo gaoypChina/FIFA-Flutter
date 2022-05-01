@@ -6,7 +6,6 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/table/widget_bottom.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
-import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:flutter/material.dart';
 

@@ -57,116 +57,117 @@ class _TableNacionalState extends State<TableNacional> {
 
               Images().getWallpaper(),
 
-              Column(
-                children: [
-                  const SizedBox(height: 30),
-                  Container(
-                    height: _height-50,
-                    color: AppColors().greyTransparent,
-                    child: SingleChildScrollView(
-                      child: Column(
-                        children: [
+              Container(
+                margin: const EdgeInsets.only(bottom: 40),
+                child: Column(
+                  children: [
+                    const SizedBox(height: 30),
+                    Container(
+                      height: _height-80,
+                      color: AppColors().greyTransparent,
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
 
-                          Row(
-                            children: [
-                              Image.asset(FIFAImages().campeonatoLogo(choosenLeagueIndex),height:25,width: 25),
-                              Expanded(child: Text(' ${Translation(context).text.matchWeek} '+ rodada.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text20)),
-                            ],
-                          ),
-
-                          ///////////////////
-                          //CLASSIFICAÇÃO
-                          ///////////////////
-                          tabelaClassificacaoWidget(choosenLeagueIndex),
-
-                          ///////////////////
-                          //PRÓXIMAS PARTIDAS
-                          ///////////////////
-                          const SizedBox(height: 8),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-
-                          SizedBox(
-                            width: 70,
-                            child: Column(
+                            Row(
                               children: [
-                                //Matchs - VERSUS
-                                Container(
-                                  color: choosenIcon==1 ? Colors.teal : Colors.transparent,
-                                  padding: const EdgeInsets.all(2),
-                                  child: GestureDetector(
-                                    onTap:(){
-                                      choosenIcon = 1;
-                                      setState(() {});
-                                    },
-                                    child: Image.asset('assets/icons/versus.png',height:50),
-                                  ),
-                                ),
-                                //Artilheiro
-                                Container(
-                                  color: choosenIcon==2 ? Colors.teal : Colors.transparent,
-                                  padding: const EdgeInsets.all(2),
-                                  child: GestureDetector(
-                                    onTap:(){
-                                      choosenIcon = 2;
-                                      setState(() {});
-                                      //Navigator.push(context,MaterialPageRoute(builder: (context) => Artilheiros(choosenLeagueIndex:choosenLeagueIndex)));
-                                    },
-                                    child: Image.asset('assets/icons/artilheiro.png',height:50),
-                                  ),
-                                ),
-                                //YELLOW CARDS
-                                Container(
-                                  color: choosenIcon==3 ? Colors.teal : Colors.transparent,
-                                  padding: const EdgeInsets.all(2),
-                                  child: GestureDetector(
-                                    onTap:(){
-                                      choosenIcon = 3;
-                                      setState(() {});
-                                    },
-                                    child: Image.asset('assets/icons/cartao-amarelo.png',height:50),
-                                  ),
-                                ),
-                                //RED CARDS
-                                Container(
-                                  color: choosenIcon==4 ? Colors.teal : Colors.transparent,
-                                  padding: const  EdgeInsets.all(2),
-                                  child: GestureDetector(
-                                    onTap:(){
-                                      choosenIcon = 4;
-                                      setState(() {});
-                                    },
-                                    child: Image.asset('assets/icons/cartao-vermelho.png',height:50),
-                                  ),
-                                ),
-
+                                Image.asset(FIFAImages().campeonatoLogo(choosenLeagueIndex),height:25,width: 25),
+                                Expanded(child: Text(' ${Translation(context).text.matchWeek} '+ rodada.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text20)),
                               ],
                             ),
-                          ),
 
+                            ///////////////////
+                            //CLASSIFICAÇÃO
+                            ///////////////////
+                            tabelaClassificacaoWidget(choosenLeagueIndex),
 
-                          Expanded(
-                            child: Container(
-                              color: AppColors().greyTransparent,
-                              child: choosenIcon==1 ? matchsWidget()
-                                  : choosenIcon==2 ? yellowRedCardWidget(0)
-                                            : choosenIcon==3 ? yellowRedCardWidget(1)
-                                            : choosenIcon==4 ? yellowRedCardWidget(2) : Container(),
+                            ///////////////////
+                            //PRÓXIMAS PARTIDAS
+                            ///////////////////
+                            const SizedBox(height: 8),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+
+                            SizedBox(
+                              width: 70,
+                              child: Column(
+                                children: [
+                                  //Matchs - VERSUS
+                                  Container(
+                                    color: choosenIcon==1 ? Colors.teal : Colors.transparent,
+                                    padding: const EdgeInsets.all(2),
+                                    child: GestureDetector(
+                                      onTap:(){
+                                        choosenIcon = 1;
+                                        setState(() {});
+                                      },
+                                      child: Image.asset('assets/icons/versus.png',height:50),
+                                    ),
+                                  ),
+                                  //Artilheiro
+                                  Container(
+                                    color: choosenIcon==2 ? Colors.teal : Colors.transparent,
+                                    padding: const EdgeInsets.all(2),
+                                    child: GestureDetector(
+                                      onTap:(){
+                                        choosenIcon = 2;
+                                        setState(() {});
+                                        //Navigator.push(context,MaterialPageRoute(builder: (context) => Artilheiros(choosenLeagueIndex:choosenLeagueIndex)));
+                                      },
+                                      child: Image.asset('assets/icons/artilheiro.png',height:50),
+                                    ),
+                                  ),
+                                  //YELLOW CARDS
+                                  Container(
+                                    color: choosenIcon==3 ? Colors.teal : Colors.transparent,
+                                    padding: const EdgeInsets.all(2),
+                                    child: GestureDetector(
+                                      onTap:(){
+                                        choosenIcon = 3;
+                                        setState(() {});
+                                      },
+                                      child: Image.asset('assets/icons/cartao-amarelo.png',height:50),
+                                    ),
+                                  ),
+                                  //RED CARDS
+                                  Container(
+                                    color: choosenIcon==4 ? Colors.teal : Colors.transparent,
+                                    padding: const  EdgeInsets.all(2),
+                                    child: GestureDetector(
+                                      onTap:(){
+                                        choosenIcon = 4;
+                                        setState(() {});
+                                      },
+                                      child: Image.asset('assets/icons/cartao-vermelho.png',height:50),
+                                    ),
+                                  ),
+
+                                ],
+                              ),
                             ),
-                          ),
 
 
-                        ],
-                      ),
+                            Expanded(
+                              child: Container(
+                                color: AppColors().greyTransparent,
+                                child: choosenIcon==1 ? matchsWidget()
+                                    : choosenIcon==2 ? yellowRedCardWidget(0)
+                                              : choosenIcon==3 ? yellowRedCardWidget(1)
+                                              : choosenIcon==4 ? yellowRedCardWidget(2) : Container(),
+                              ),
+                            ),
 
-                          const SizedBox(height: 40),
 
-                        ],
+                          ],
+                        ),
+
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
 
               ////////////////////////////////////
@@ -292,13 +293,13 @@ Widget matchsWidget(){
     return TableRow(
       children: [
         Text(teamName1,textAlign:TextAlign.end,style: EstiloTextoBranco.text14),
-        Image.asset('assets/clubs/${FIFAImages().imageLogo(teamName1)}.png',height: 22,width: 22),
+        Image.asset(Images().getEscudo(teamName1),height: 22,width: 22),
         (showGoals)
             ? Text(gol1.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text14) : Container(),
         const Text('x',style: EstiloTextoBranco.text16,textAlign: TextAlign.center,),
         (showGoals)
             ? Text(gol2.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.text14) : Container(),
-        Image.asset('assets/clubs/${FIFAImages().imageLogo(teamName2)}.png',height: 22,width: 22),
+        Image.asset(Images().getEscudo(teamName2),height: 22,width: 22),
         Text(teamName2,style: EstiloTextoBranco.text14),
       ],
     );
@@ -325,7 +326,7 @@ Widget matchsWidget(){
             leaguePlayers.add(index);
           }
         }catch(e){
-          print('Erro GlobalFunctions().organizarVariavelLeague: '+e.toString());
+          print('Error GlobalFunctions().organizarVariavelLeague: '+e.toString());
         }
       }
     }

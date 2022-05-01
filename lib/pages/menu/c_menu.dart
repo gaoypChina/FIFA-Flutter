@@ -1,6 +1,7 @@
 import 'package:fifa/classes/adversario.dart';
 import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/functions/check_internet.dart';
 import 'package:fifa/pages/coach/coach_menu.dart';
 import 'package:fifa/pages/historic/leagues_historic.dart';
 import 'package:fifa/pages/menu/b_home.dart';
@@ -45,11 +46,13 @@ class _MenuState extends State<Menu> {
     doThisOnLaunch();
     super.initState();
   }
-  doThisOnLaunch() {
+  doThisOnLaunch() async{
     //POPUP DE EXPECTATIVA QUANDO COMEÇA NOVA TEMPORADA
     SchedulerBinding.instance!.addPostFrameCallback((_) {
       popupexpectativaCall();
     });
+
+    globalHasInternet = await funcCheckInternet();
 
     adversario.getAdversario();
 
@@ -138,13 +141,13 @@ class _MenuState extends State<Menu> {
                             children: [
                               Expanded(
                                 child: menuButton(Translation(context).text.historic,(){
-                                  customToast('Carregando...');
+                                  customToast(Translation(context).text.loading);
                                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HistoricLeague()));
                                 }),
                               ),
                               Expanded(
                                 child: menuButton(Translation(context).text.ranking,(){
-                                  customToast('Carregando...');
+                                  customToast(Translation(context).text.loading);
                                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RankingClubs()))
                                       .then((value) {setState(() {});});
                                 }),

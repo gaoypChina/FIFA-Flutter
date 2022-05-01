@@ -6,6 +6,7 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/historic/players_historic.dart';
 import 'package:fifa/pages/historic/international_historic.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
@@ -35,7 +36,6 @@ class _HistoricLeagueState extends State<HistoricLeague> {
 
     return Scaffold(
 
-        resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
         body:  Stack(
             children: [
 
@@ -45,7 +45,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                 children: [
 
                   const SizedBox(height: 40),
-                  const Text('Histórico das ligas',style: EstiloTextoBranco.text22),
+                  Text(Translation(context).text.leagueHistoric,style: EstiloTextoBranco.text22),
 
 
                   Padding(
@@ -57,7 +57,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                         selectButton('G-2', 2),
                         selectButton('G-4', 4),
                         selectButton('G-10', 10),
-                        selectButton('Tudo', 20),
+                        selectButton(Translation(context).text.all, 20),
                       ],
                     ),
                   ),
@@ -92,9 +92,9 @@ class _HistoricLeagueState extends State<HistoricLeague> {
 
                   //VOLTAR
                   Padding(
-                    padding: const EdgeInsets.all(6),
+                    padding: const EdgeInsets.all(4),
                     child:  customButtonContinue(
-                        title: 'PRÓXIMO',
+                        title: Translation(context).text.next,
                         function: (){
                           if(ano>anoInicial){
                             Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const InternationalHistoric()));
@@ -108,7 +108,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                   Padding(
                     padding: const EdgeInsets.all(6),
                     child:  customButtonContinue(
-                        title: 'VOLTAR',
+                        title: Translation(context).text.returnTo,
                         function: (){
                           Navigator.pop(context);
                         }

@@ -1,3 +1,4 @@
+import 'package:fifa/theme/translation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -29,14 +30,14 @@ void popupEdit({
         ),
         actions: <Widget>[
           ElevatedButton(
-            child: const Text("Cancelar"),
+            child: Text(Translation(context).text.cancel),
             onPressed: () {
               Navigator.of(context).pop();
             },
           ),
           // define os botões na base do dialogo
           ElevatedButton(
-            child: const Text("Salvar"),
+            child: Text(Translation(context).text.save),
             onPressed: () {
               functionOK!(variable);
               Navigator.of(context).pop();

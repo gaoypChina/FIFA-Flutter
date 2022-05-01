@@ -4,7 +4,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/pages/club_profile/field_draggable.dart';
 import 'package:fifa/pages/club_profile/graphics.dart';
-import 'package:fifa/pages/club_profile/my_team_all_infos.dart';
+import 'package:fifa/pages/club_profile/all_infos_club.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/widgets/button/button_return.dart';
@@ -120,7 +120,7 @@ class _MyTeamState extends State<MyTeam> {
                         children: [
                           FieldDraggable(notifyParent: notifyParent),
                           ClubGraphics(club: myClub),
-                          AllInfoClub(club: myClub),
+                          AllInfosClub(club: myClub),
                         ],
                       ),
                     ),

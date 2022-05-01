@@ -1,5 +1,6 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/functions/order_list.dart';
 import 'package:fifa/global_variables.dart';
@@ -7,7 +8,6 @@ import 'package:fifa/pages/table/widget_bottom.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
-import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:flutter/material.dart';
 
@@ -121,7 +121,7 @@ class _TableInternationalScorersState extends State<TableInternationalScorers> {
           i+1<10
               ? Text('  ${(i+1).toString()}- ',style: EstiloTextoBranco.text16)
               : Text('${(i+1).toString()}- ',style: EstiloTextoBranco.text16),
-          Image.asset('assets/clubs/${FIFAImages().imageLogo(player.clubName)}.png',height: 25,width:25),
+          Image.asset(Images().getEscudo(player.clubName),height: 25,width:25),
           const SizedBox(width: 6),
           Container(
               width:200,

@@ -8,6 +8,7 @@ ClubName _name = ClubName();
     Map<double,dynamic> champions = {};
     if(leagueName == LeagueOfficialNames().inglaterra1){
       champions = {
+        //2022: [_name.manchestercity,_name.liverpool,_name.chelsea,_name.tottenham,_name.arsenal,_name.manchesterunited,],
         2021: [_name.manchestercity,_name.manchesterunited,_name.liverpool,_name.chelsea,_name.leicester,_name.westham,_name.tottenham,_name.arsenal,_name.everton,_name.leedsunited,          _name.astonvilla,_name.newcastle,_name.wolves,_name.crystalpalace,_name.southampton,_name.brighton,_name.burnley,_name.fulham,_name.westbromwich,_name.sheffieldunited],
         2020: [_name.liverpool,_name.manchestercity,_name.manchesterunited,_name.chelsea,_name.leicester,_name.tottenham,_name.wolves,_name.arsenal,_name.sheffieldunited,_name.burnley,       _name.southampton,_name.everton,_name.newcastle,_name.crystalpalace,_name.brighton,_name.westham,_name.astonvilla,_name.bournemouth,_name.watford,_name.norwich],
         2019: [_name.manchestercity,_name.liverpool,_name.chelsea,_name.tottenham,_name.arsenal,_name.manchesterunited,_name.wolves,_name.everton,_name.leicester,_name.westham,               _name.watford,_name.crystalpalace,_name.newcastle,_name.bournemouth,_name.burnley,_name.southampton,_name.brighton,_name.cardiffCity,_name.fulham,_name.huddersfield],
@@ -140,7 +141,7 @@ ClubName _name = ClubName();
     }
     else if(leagueName == LeagueOfficialNames().espanha1){
       champions = {
-        //2022: [_name.realmadrid,_name.sevilla],
+        //2022: [_name.realmadrid,_name.barcelona,_name.sevilla,_name.atleticomadrid,],
         2021: [_name.atleticomadrid,_name.realmadrid,_name.barcelona,_name.sevilla,_name.realsociedad,_name.realbetis,_name.villareal,_name.celtavigo,_name.granada,_name.athleticbilbao,    _name.osasuna,_name.cadiz,_name.valencia,_name.levante,_name.getafe,_name.alaves,_name.elche,_name.huesca,_name.valladolid,_name.eibar],
         2020: [_name.realmadrid,_name.barcelona,_name.atleticomadrid,_name.sevilla,_name.villareal,_name.realsociedad,_name.granada,_name.getafe,_name.valencia,_name.osasuna,               _name.athleticbilbao,_name.levante,_name.valladolid,_name.eibar,_name.realbetis,_name.alaves,_name.celtavigo,_name.leganes,_name.mallorca,_name.espanyol],
         2019: [_name.barcelona,_name.atleticomadrid,_name.realmadrid,_name.valencia,_name.getafe,_name.sevilla,_name.espanyol,_name.athleticbilbao,_name.realsociedad,_name.realbetis,       _name.alaves,_name.eibar,_name.leganes,_name.villareal,_name.levante,_name.valladolid,_name.celtavigo,_name.girona,_name.huesca,_name.rayoVallecano],
@@ -242,6 +243,7 @@ ClubName _name = ClubName();
     }
     else if(leagueName == LeagueOfficialNames().italia1){
       champions = {
+        //2022: [_name.inter,_name.milan,_name.juventus,_name.napoli,_name.roma,_name.lazio,_name.atalanta],
         2021: [_name.inter,_name.milan,_name.atalanta,_name.juventus,_name.napoli,_name.lazio,_name.roma,_name.sassuolo,_name.sampdoria,_name.hellasVerona, _name.genoa,_name.bologna,_name.fiorentina,_name.udinese,_name.spezia,_name.cagliari,_name.torino,_name.benevento,_name.crotone,_name.parma],
         2020: [_name.juventus,_name.inter,_name.lazio,_name.atalanta,_name.roma,_name.milan,_name.napoli,_name.sassuolo,_name.fiorentina,_name.parma,       _name.hellasVerona,_name.bologna,_name.cagliari,_name.udinese,_name.sampdoria,_name.torino,_name.genoa,_name.lecce,_name.brescia,_name.spal],
         2019: [_name.juventus,_name.napoli,_name.atalanta,_name.inter,_name.milan,_name.roma,_name.torino,_name.lazio,_name.sampdoria,_name.bologna,        _name.sassuolo,_name.udinese,_name.spal,_name.parma,_name.cagliari,_name.fiorentina,_name.genoa,_name.empoli,_name.frosinone,_name.chievo],
@@ -375,6 +377,7 @@ ClubName _name = ClubName();
     }
     else if(leagueName == LeagueOfficialNames().franca1){
       champions = {
+        //2022: [_name.psg,_name.olympiquemarselha,_name.rennes,_name.lyon,_name.nice,_name.monaco,_name.lille],
         2021: [_name.lille,_name.psg,_name.monaco,_name.lyon,_name.olympiquemarselha,_name.rennes,_name.lens,_name.montpellier,_name.nice,_name.metz,                     _name.saintetienne,_name.bordeaux,_name.angers,_name.reims,_name.strasbourg,_name.lorient,_name.brest,_name.nantes,_name.nimes,_name.dijon],
         2020: [_name.psg,_name.olympiquemarselha,_name.rennes,_name.lille,_name.nice,_name.reims,_name.montpellier,_name.monaco,_name.lyon,_name.angers,                  _name.strasbourg,_name.bordeaux,_name.nantes,_name.brest,_name.metz,_name.saintetienne,_name.dijon,_name.nimes,_name.amiens,_name.toulouse],
         2019: [_name.psg,_name.lille,_name.lyon,_name.saintetienne,_name.olympiquemarselha,_name.montpellier,_name.nice,_name.reims,_name.nimes,_name.rennes,             _name.strasbourg,_name.nantes,_name.angers,_name.bordeaux,_name.amiens,_name.toulouse,_name.monaco,_name.dijon,_name.caen,_name.guingamp],
@@ -508,6 +511,7 @@ ClubName _name = ClubName();
     }
     else if(leagueName == LeagueOfficialNames().turquiaGrecia) {
       champions = {
+        //2022: [_name.trabzonspor,_name.instanbul],
         2021: [_name.besiktas,_name.galatasaray,_name.fenerbahce,_name.trabzonspor,_name.sivasspor],
         2020: [_name.instanbul,_name.trabzonspor,_name.besiktas,_name.sivasspor,_name.alanyaspor],
         2019: [_name.galatasaray,_name.instanbul,_name.besiktas,_name.trabzonspor,_name.malatyaspor,_name.fenerbahce],
@@ -565,6 +569,7 @@ ClubName _name = ClubName();
     }
     else if(leagueName == LeagueOfficialNames().lesteEuropeu){
       champions = {
+        //2022: [_name.zenit,_name.dinamoMoscou,_name.sochi,_name.krasnodar],
         2021: [_name.zenit,_name.spartakmoscou,_name.lokomotivMoscou,_name.rubinKazan,_name.sochi,  _name.cska,_name.dinamoMoscou,_name.khimki,_name.rostov,_name.krasnodar],
         2020: [_name.zenit,_name.lokomotivMoscou,_name.krasnodar,_name.cska,_name.rostov,         _name.dinamoMoscou,_name.spartakmoscou,_name.tula,_name.ufa,_name.rubinKazan,_name.ural,_name.sochi],
         2019: [_name.zenit,_name.lokomotivMoscou,_name.krasnodar,_name.cska,_name.spartakmoscou,  _name.tula,_name.orenburg,_name.terekGrozny,_name.rostov,_name.ural,_name.rubinKazan,_name.dinamoMoscou,_name.krylyaSovetov,_name.ufa],

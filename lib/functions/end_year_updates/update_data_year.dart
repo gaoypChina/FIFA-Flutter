@@ -95,6 +95,7 @@ resetPlayersData(){
   globalJogadoresAge = [];
   globalJogadoresOverall = [];
   globalJogadoresNationality = [];
+  globalJogadoresImageUrl = [];
 
   //Limpa histórico
   globalHistoricLeagueClassification = {};

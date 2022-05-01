@@ -18,9 +18,12 @@ class DataGraphics{
   int n2ndivision = 0;
   int g4Years = 0;
   int averagePosition = 0;
+  int currentPosition = 0;
   List<ClassificationData> data=[];
 
   getData(Club club){
+    //Posição Ano Atual
+    currentPosition = Classification(leagueIndex: club.leagueID).getClubPosition(club.index);
     //novas temporadas
     defineSimulationClassification(club);
     //historico de campeoes
@@ -30,9 +33,6 @@ class DataGraphics{
   }
 
   defineSimulationClassification(Club club){
-    //Posição Ano Atual
-    int currentPosition = Classification(leagueIndex: club.leagueID).getClubPosition(club.index);
-    data.add(ClassificationData(ano.toDouble(), currentPosition));
     //Posição anos simulados
     for(double year=ano-1; year>=anoInicial; year--){
       try {

@@ -1,9 +1,11 @@
 import 'package:fifa/classes/geral/semana.dart';
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/simulate/simulate_functions.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/simulacao/end_year.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/pages/table/table_widget.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -29,13 +31,13 @@ class _NotPlayState extends State<NotPlay> {
         body:  Stack(
             children: [
 
-              Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
+              Images().getWallpaper(),
 
               Column(
                 children: [
 
                   const SizedBox(height: 40),
-                  Text('Semana: '+weekName,style: EstiloTextoBranco.text30),
+                  Text('${Translation(context).text.week}: '+weekName,style: EstiloTextoBranco.text30),
                   const SizedBox(height: 10),
 
                   //TABELA
@@ -46,7 +48,7 @@ class _NotPlayState extends State<NotPlay> {
                   Padding(
                     padding: const EdgeInsets.all(6),
                     child:  customButtonContinue(
-                        title: 'CONTINUAR',
+                        title: Translation(context).text.nextMatchWeek,
                         function: (){
                           onContinueButton();
                         }

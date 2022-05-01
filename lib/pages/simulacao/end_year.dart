@@ -3,6 +3,7 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/functions/end_year_updates/update_data_year.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/loader.dart';
@@ -36,7 +37,7 @@ class _EndYearState extends State<EndYear> {
                 children: [
 
                   const SizedBox(height: 40),
-                  Text('Fim do ano: ' + ano.toString(),style: EstiloTextoBranco.text30),
+                  Text('${Translation(context).text.endOfYear}: ' + ano.toString(),style: EstiloTextoBranco.text30),
                   const SizedBox(height: 10),
 
                   //Escudo
@@ -44,10 +45,10 @@ class _EndYearState extends State<EndYear> {
                   const Spacer(),
                   //VOLTAR
                   customButtonContinue(
-                      title: 'CONTINUAR',
+                      title: Translation(context).text.next,
                       function: () async {
 
-                        customToast('Carregando nova temporada');
+                        customToast(Translation(context).text.loadingNewSeason);
                         loading = true;
                         setState(() {});
                         //AWAIT Só pra dar o set state antes e mostrar a pagina carregando

@@ -1,4 +1,5 @@
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:flutter/material.dart';
 
 
@@ -12,7 +13,7 @@ popUpOkCancelar({required BuildContext context, required String title, required 
         content: Text(content, style:  EstiloTextoPreto.text14,),
         actions: <Widget>[
           TextButton(
-              child: const Text("Cancelar",style: EstiloTextoPreto.text16,),
+              child: Text(Translation(context).text.cancel,style: EstiloTextoPreto.text16,),
               onPressed: (){
                 Navigator.of(context).pop();
               }

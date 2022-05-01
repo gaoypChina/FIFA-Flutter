@@ -4,20 +4,21 @@ import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/popup/popup_player_info.dart';
 import 'package:fifa/theme/background/background_age.dart';
 import 'package:fifa/theme/background/background_overall.dart';
+import 'package:fifa/theme/background/background_position.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:flutter/material.dart';
 
-class AllInfoClub extends StatefulWidget {
+class AllInfosClub extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
   final Club club;
-  const AllInfoClub({Key? key, required this.club}) : super(key: key);
+  const AllInfosClub({Key? key, required this.club}) : super(key: key);
   @override
-  _AllInfoClubState createState() => _AllInfoClubState();
+  _AllInfosClubState createState() => _AllInfosClubState();
 }
 
-class _AllInfoClubState extends State<AllInfoClub> {
+class _AllInfosClubState extends State<AllInfosClub> {
 
   double buttonSize = 50;
   int selection = 0;
@@ -125,14 +126,14 @@ class _AllInfoClubState extends State<AllInfoClub> {
       },
       children: [
 
-        const TableRow(
+        TableRow(
             children: [
-              Text(''),
-              Text('NOME', style: EstiloTextoBranco.text16),
-              Text('J', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              Text('G', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              Text('A', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              Text(''),
+              const Text(''),
+              Text(Translation(context).text.name, style: EstiloTextoBranco.text16),
+              const Text('J', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+              const Text('G', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+              const Text('A', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+              const Text(''),
             ]),
 
         for(int i=0; i<widget.club.escalacao.length; i++)
@@ -150,14 +151,14 @@ class _AllInfoClubState extends State<AllInfoClub> {
         4: FractionColumnWidth(.1),
       },
       children: [
-        const       TableRow(
+        TableRow(
             children: [
-              Text(''),
-              Text('NOME', style: EstiloTextoBranco.text16),
-              Text('+', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              Text('Ama', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              Text('Ver', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              Text(''),
+              const Text(''),
+              Text(Translation(context).text.name, style: EstiloTextoBranco.text16),
+              const Text('+', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+              const Text('Ama', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+              const Text('Ver', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+              const Text(''),
             ]),
 
         for(int i=0; i<widget.club.escalacao.length; i++)
@@ -176,14 +177,14 @@ class _AllInfoClubState extends State<AllInfoClub> {
       },
       children: [
 
-        const TableRow(
+        TableRow(
             children: [
-              Text(''),
-              Text('NOME', style: EstiloTextoBranco.text16),
-              Text('J*', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              Text('G*', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              Text('A*', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              Text(''),
+              const Text(''),
+              Text(Translation(context).text.name, style: EstiloTextoBranco.text16),
+              const Text('J*', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+              const Text('G*', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+              const Text('A*', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+              const Text(''),
             ]),
 
         for(int i=0; i<widget.club.escalacao.length; i++)
@@ -211,7 +212,7 @@ class _AllInfoClubState extends State<AllInfoClub> {
         color: background,
       ),
       children: [
-        Text(player.position, style: EstiloTextoBranco.text16),
+        positionContainer(player.position),
         playerNameWidget(player),
         Container(
             color: colorAgeBackground(player.age),
@@ -249,7 +250,7 @@ class _AllInfoClubState extends State<AllInfoClub> {
         color: background,
       ),
       children: [
-        Text(player.position, style: EstiloTextoBranco.text16),
+        positionContainer(player.position),
         playerNameWidget(player),
         Text(player.matchsLeague.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
         Text(player.goalsLeague.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
@@ -276,7 +277,7 @@ class _AllInfoClubState extends State<AllInfoClub> {
         color: background,
       ),
       children: [
-        Text(player.position, style: EstiloTextoBranco.text16),
+        positionContainer(player.position),
         playerNameWidget(player),
         Text(player.injury.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
         Container(
@@ -310,7 +311,7 @@ class _AllInfoClubState extends State<AllInfoClub> {
         color: background,
       ),
       children: [
-        Text(player.position, style: EstiloTextoBranco.text16),
+        positionContainer(player.position),
         playerNameWidget(player),
         Text(player.matchsCarrer.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
         Text(player.goalsCarrer.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
@@ -337,8 +338,9 @@ class _AllInfoClubState extends State<AllInfoClub> {
             funcSetState: (){setState(() {});}
             );
       },
-      child: SizedBox(
+      child: Container(
           width: 170,
+          margin: const EdgeInsets.only(left: 6),
           child: Text(player.name, style: TextStyle(
             color: nameColor,
             fontFamily: 'Roboto',

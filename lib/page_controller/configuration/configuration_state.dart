@@ -5,7 +5,10 @@ class ConfigurationState{
   bool hasSoundEffect = globalHasSoundEffects;
   bool turnIdaEVolta = globalLeagueIdaVolta;
   bool hasCards = globalHasCards;
+  bool allEqualPlayersOverall = globalAllEqualOverall;
   bool hasInjuries = globalHasInjuries;
+  bool seeProbability = globalSeeProbabilities;
+  double initialMoney = globalInitialMoney;
   String coachName = globalCoachName;
 
   changeSoundEffectSwitchState(){
@@ -35,6 +38,17 @@ class ConfigurationState{
   }
   changeInjuryState(){
     hasInjuries = !hasInjuries;
+  }
+  changeAllEqualPlayersOverallState(){
+    allEqualPlayersOverall = !allEqualPlayersOverall;
+  }
+  changeSeeProbabilityState(){
+    seeProbability = !seeProbability;
+  }
+
+  setInitialMoney(double value){
+    initialMoney = value;
+    globalInitialMoney = value;
   }
 
   openTerms(){

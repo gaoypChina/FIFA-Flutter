@@ -2,7 +2,7 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/pages/club_profile/field_static.dart';
 import 'package:fifa/pages/club_profile/graphics.dart';
-import 'package:fifa/pages/club_profile/my_team_all_infos.dart';
+import 'package:fifa/pages/club_profile/all_infos_club.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_return.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -93,7 +93,7 @@ class _ClubProfileState extends State<ClubProfile>  with TickerProviderStateMixi
                         children: [
                           StaticField(clubID: widget.clubID),
                           ClubGraphics(club: clubClass),
-                          AllInfoClub(club: clubClass),
+                          AllInfosClub(club: clubClass),
                         ],
                       ),
                     ),

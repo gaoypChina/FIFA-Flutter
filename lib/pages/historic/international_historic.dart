@@ -3,6 +3,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/historic/players_historic.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
@@ -35,8 +36,6 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
       possibleYears.add(year.toString());
     }
     return Scaffold(
-
-        resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
         body:  Stack(
             children: [
 
@@ -78,7 +77,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                   Padding(
                     padding: const EdgeInsets.all(6),
                     child:  customButtonContinue(
-                        title: 'PRÓXIMO',
+                        title: Translation(context).text.next,
                         function: (){
                           Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const PlayersHistoric()));
                         }
@@ -88,7 +87,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                   Padding(
                     padding: const EdgeInsets.all(6),
                     child:  customButtonContinue(
-                        title: 'VOLTAR',
+                        title: Translation(context).text.returnTo,
                         function: (){
                           Navigator.pop(context);
                         }

@@ -4,6 +4,7 @@ import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
 import 'package:flutter/material.dart';
 
@@ -18,14 +19,17 @@ popUpExpectativa({required BuildContext context}){
   Expectativa expectativaAtual = Expectativa(myClass);
 
   //TEMPORADA PASSADA
-  String expLastSeason = 'TEMPORADA PASSADA: ';
+  String expLastSeason = '${Translation(context).text.lastSeason.toUpperCase()}: ';
   late HistoricClubYear myClubData;
   if(ano>anoInicial){
     myClubData = HistoricClubYear(ano-1);
+    //TEXTO DO POPUP
+    String result = ' ${Translation(context).text.result}: ${myClubData.leaguePosition}º';
+    String goal = ' ${Translation(context).text.expected}: ${expectativaAntiga.expLastYear}º';
     if(myClubData.leaguePosition > expectativaAntiga.expLastYear){
-      expLastSeason += 'RUIM \n Resultado: ${myClubData.leaguePosition}º\n Esperado: ${expectativaAntiga.expLastYear}º';
+      expLastSeason += '${Translation(context).text.bad.toUpperCase()} \n$result\n$goal';
     }else{
-      expLastSeason += 'BOM \n Resultado: ${myClubData.leaguePosition}º\n Esperado: ${expectativaAntiga.expLastYear}º';
+      expLastSeason += '${Translation(context).text.good.toUpperCase()} \n$result\n$goal';
     }
   }
 
@@ -34,7 +38,7 @@ popUpExpectativa({required BuildContext context}){
     builder: (BuildContext context) {
       // retorna um objeto do tipo Dialog
       return AlertDialog(
-        title: const Text('Expectativa para a temporada',style: EstiloTextoPreto.text16),
+        title: Text(Translation(context).text.seasonGoals,style: EstiloTextoPreto.text16),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [

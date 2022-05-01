@@ -3,8 +3,10 @@ import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/page_controller/configuration/configuration_state.dart';
+import 'package:fifa/popup/popup_initial_money.dart';
 import 'package:fifa/popup/popup_select_club.dart';
 import 'package:fifa/popup/poup_edit.dart';
+import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_return.dart';
@@ -44,11 +46,11 @@ class _ConfigurationState extends State<Configuration> {
                   SizedBox(height: spaceBetweenWidgets),
                   language(),
                   SizedBox(height: spaceBetweenWidgets),
-                  turns(config),
+                  soundEffects(config),
                   SizedBox(height: spaceBetweenWidgets),
                   dificulty(),
                   SizedBox(height: spaceBetweenWidgets),
-                  soundEffects(config),
+                  initialMoney(),
                   SizedBox(height: spaceBetweenWidgets),
                   nTeamsPerLeague(),
                   SizedBox(height: spaceBetweenWidgets),
@@ -58,18 +60,22 @@ class _ConfigurationState extends State<Configuration> {
                   SizedBox(height: spaceBetweenWidgets),
                   changeClubs(),
                   SizedBox(height: spaceBetweenWidgets),
-                  initialMoney(),
+                  turns(config),
                   SizedBox(height: spaceBetweenWidgets),
                   allowCards(config),
                   SizedBox(height: spaceBetweenWidgets),
                   allowInjuries(config),
+                  SizedBox(height: spaceBetweenWidgets),
+                  equalOverallAllPlayers(),
+                  SizedBox(height: spaceBetweenWidgets),
+                  seeProbability(),
                   SizedBox(height: spaceBetweenWidgets),
                   userTerms(),
                   SizedBox(height: spaceBetweenWidgets),
                   GestureDetector(
                     onTap: (){
                     },
-                    child: Text(Translation(context).text.test(config.coachName),style: EstiloTextoBranco.text16),
+                    child: Text('teste',style: EstiloTextoBranco.text16),
                   )
 
                 ],
@@ -101,7 +107,7 @@ class _ConfigurationState extends State<Configuration> {
       },
       child: Row(
         children: [
-          const Expanded(child: Text('Nome do Treinador',style: EstiloTextoBranco.negrito16)),
+          Expanded(child: Text(Translation(context).text.coachName,style: EstiloTextoBranco.negrito16)),
           Text(config.coachName,style: EstiloTextoBranco.text16),
           const SizedBox(width: 20),
         ],
@@ -180,64 +186,75 @@ Widget soundEffects(ConfigurationState config){
   }
 
   Widget initialMoney(){
-    return Row(
-      children: [
-        Expanded(child: Text(Translation(context).text.initialMoney,style: EstiloTextoBranco.negrito16)),
-        const Text('Padrão',style: EstiloTextoBranco.underline14),
-
-      ],
+    return GestureDetector(
+      onTap: (){
+        popUpInitialMoney(
+            context: context,
+            function: (value){
+              config.initialMoney = value.initialMoney;
+            }
+        );
+        },
+      child: Row(
+        children: [
+          Expanded(child: Text(Translation(context).text.initialMoney,style: EstiloTextoBranco.negrito16)),
+          config.initialMoney>0
+              ? Text(config.initialMoney.toString(),style: EstiloTextoBranco.underline14)
+              : Text('Padrão',style: EstiloTextoBranco.underline14),
+        ],
+      ),
     );
   }
 
   Widget nTeamsPerLeague(){
-    return Column(
-      children: [
-        GestureDetector(
-          onTap:(){
-
-          },
-          child: Text(Translation(context).text.nTeamsLeague,style: EstiloTextoBranco.negrito16),
-        ),
-      ],
+    return GestureDetector(
+      onTap:(){
+        customToast('Em desenvolvimento');
+      },
+      child: Row(
+        children: [
+          Expanded(child: Text(Translation(context).text.nTeamsLeague,style: EstiloTextoBranco.negrito16)),
+        ],
+      ),
     );
   }
 
   Widget nTeamsClassified(){
-    return Column(
-      children: [
-        GestureDetector(
-          onTap:(){
-
-          },
-          child: Text(Translation(context).text.nTeamsClassified,style: EstiloTextoBranco.negrito16),
-        ),
-      ],
+    return GestureDetector(
+        onTap:(){
+          customToast('Em desenvolvimento');
+        },
+      child: Row(
+        children: [
+          Expanded(child: Text(Translation(context).text.nTeamsClassified,style: EstiloTextoBranco.negrito16)),
+        ],
+      ),
     );
   }
 
   Widget nTeamsRelegated(){
-    return Column(
-      children: [
-        GestureDetector(
-          onTap:(){
-
-          },
-          child: Text(Translation(context).text.nTeamsRelegated,style: EstiloTextoBranco.negrito16),
-        ),
-      ],
+    return GestureDetector(
+      onTap:(){
+        customToast('Em desenvolvimento');
+      },
+      child: Row(
+        children: [
+          Expanded(child: Text(Translation(context).text.nTeamsRelegated,style: EstiloTextoBranco.negrito16)),
+        ],
+      ),
     );
   }
 
   Widget changeClubs(){
-    return Column(
-      children: [
-        GestureDetector(
-          onTap:(){
-            popUpSelectClub(originalContext: context);
-          },
-          child: Text(Translation(context).text.changeClubs,style: EstiloTextoBranco.negrito16),
-        ),
-      ],
+    return GestureDetector(
+      onTap:(){
+        popUpSelectClub(originalContext: context);
+      },
+      child: Row(
+        children: [
+          Expanded(child: Text(Translation(context).text.changeClubs,style: EstiloTextoBranco.negrito16)),
+        ],
+      ),
     );
   }
 
@@ -279,6 +296,42 @@ Widget soundEffects(ConfigurationState config){
     );
   }
 
+  Widget equalOverallAllPlayers(){
+    return Row(
+      children: [
+        SizedBox(
+          width: 200,
+          child: Text(Translation(context).text.allPlayersEqual,style: EstiloTextoBranco.negrito16),
+        ),
+        const Spacer(),
+        Switch(
+            value: config.allEqualPlayersOverall,
+            onChanged: (value) {
+              setState(() {
+                config.changeAllEqualPlayersOverallState();
+              });
+            }),
+      ],
+    );
+  }
+  Widget seeProbability(){
+    return Row(
+      children: [
+        SizedBox(
+          width: 200,
+          child: Text(Translation(context).text.seeProbability,style: EstiloTextoBranco.negrito16),
+        ),
+        const Spacer(),
+        Switch(
+            value: config.seeProbability,
+            onChanged: (value) {
+              setState(() {
+                config.changeSeeProbabilityState();
+              });
+            }),
+      ],
+    );
+  }
   Widget userTerms(){
     return Column(
       children: [

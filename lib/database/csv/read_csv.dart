@@ -20,6 +20,7 @@ class ReadCSV{
     await readCSVfunc("inglaterra3");
     await readCSVfunc("italia");
     await readCSVfunc("italia2");
+    await readCSVfunc("italia3");
     await readCSVfunc("espanha");
     await readCSVfunc("espanha2");
     await readCSVfunc("alemanha");
@@ -31,6 +32,7 @@ class ReadCSV{
     await readCSVfunc("holanda_belgica");
     await readCSVfunc("turquia_grecia");
     await readCSVfunc("europa_ocidental");
+    await readCSVfunc("europa_ocidental2");
     await readCSVfunc("nordicos");
     await readCSVfunc("urss");
     await readCSVfunc("europa_leste");
@@ -43,7 +45,9 @@ class ReadCSV{
     await readCSVfunc("argentina");
     await readCSVfunc("argentina2");
     await readCSVfunc("sulamericano");
+    await readCSVfunc("chile");
     await readCSVfunc("sulamericano2");
+    await readCSVfunc("colombia");
     await readCSVfunc("merconorte");
 
     await readCSVfunc("mexico");
@@ -51,6 +55,7 @@ class ReadCSV{
     await readCSVfunc("eua2");
 
     await readCSVfunc("asia");
+    await readCSVfunc("japao");
     await readCSVfunc("oriente_medio");
     await readCSVfunc("africa");
     await readCSVfunc("oceania");
@@ -71,37 +76,25 @@ class ReadCSV{
 
     for(int line=1;line<29;line++){//*Linha 0 é o nome dos times
       for(int team=0;team<26;team++) { //até 24 times por arquivo
+        int nVariables = 7;
         try{
         //Se tiver nome salva o jogador
-          String club = _data[0][team * 5 + 1];
-          String name = _data[line][team * 5 + 1].toString();
-          String position = _data[line][team * 5 + 2].toString();//VOLMCZAG =>VOL
-          int age = int.parse(_data[line][team * 5 + 3].toString().substring(0,2));
-          int overall = int.parse(_data[line][team * 5 + 4].toString().substring(0,2));
+          String club = _data[0][team * nVariables + 1];
+          String name = _data[line][team * nVariables + 1].toString();
+          String position = _data[line][team * nVariables + 2].toString();//VOLMCZAG =>VOL
+          int age = int.parse(_data[line][team * nVariables + 3].toString().substring(0,2));
+          int overall = int.parse(_data[line][team * nVariables + 4].toString().substring(0,2));
+          String nationality = _data[line][team * nVariables + 5].toString();
+          String imagePlayer = _data[line][team * nVariables + 6].toString();
 
             if (name.isNotEmpty && position.isNotEmpty && age > 10) {
 
               //REMOVE L form last character
               if(name[name.length-1]=='L'){name = name.substring(0, name.length - 1);}
-              //Se logo de cara aparecer uma dessas posições ja salva como prioridade
-              if(position.contains('LD')){position='LD';}
-              if(position.contains('LE')){position='LE';}
-              if(position.length>3){position = position.substring(0,3);}
-              if(position.contains('GOL')){position='GOL';}
-              else if(position.contains('LD')){position='LD';}
-              else if(position.contains('ADD')){position='LD';}
-              else if(position.contains('ADE')){position='LE';}
-              else if(position.contains('LE')){position='LE';}
-              else if(position.contains('ZAG')){position='ZAG';}
-              else if(position.contains('VOL')){position='VOL';}
-              else if(position.contains('MEI')){position='MEI';}
-              else if(position.contains('MC')){position='MC';}
-              else if(position.contains('ATA')){position='ATA';}
-              else if(position.contains('SA')){position='ATA';}
-              else if(position.contains('PD')){position='PD';}
-              else if(position.contains('PE')){position='PE';}
-              else if(position.contains('MD')){position='MD';}
-              else if(position.contains('ME')){position='ME';}
+              //CORRIGE A POSIÇÃO
+              position = correctPlayerPostion(position);
+
+              imagePlayer = correctImageUrl(imagePlayer);
 
               //VARIAVEIS GLOBAIS
               int clubIndex = clubsAllNameList.indexOf(club);
@@ -113,15 +106,13 @@ class ReadCSV{
                 globalJogadoresPosition.add(position);
                 globalJogadoresAge.add(age);
                 globalJogadoresOverall.add(overall);
-                if(filename.contains('brasil')) {
-                  globalJogadoresNationality.add('Brazil');
-                }else{
-                  globalJogadoresNationality.add('England');
-                }
+                globalJogadoresNationality.add(nationality);
+                globalJogadoresImageUrl.add(imagePlayer);
                 indexJog++;
+
                 //test jogadores importados
                 //if(club == ClubName().saocaetano){
-                //print('JOGADOR: $name $position $overall $club ${clubIndex.toString()}');
+                //print('JOGADOR: $name $position $overall $nationality $imagePlayer       ...$club ${clubIndex.toString()}');
                 //}
               }else{
                 //ERRO NA IMPORTAÇÃO DO TIME
@@ -138,6 +129,42 @@ class ReadCSV{
       }
     }
 
+  }
+
+  correctImageUrl(String imagePlayer){
+    if(imagePlayer.contains('wiki')){
+      imagePlayer = imagePlayer.substring(5,);
+      imagePlayer = 'https://cdn.soccerwiki.org/images/player/' + imagePlayer;
+    }
+    else{
+      imagePlayer = imagePlayer.substring(1,);
+      imagePlayer = 'https://cdn.sofifa.net/players/' + imagePlayer;
+    }
+    return imagePlayer;
+  }
+
+  correctPlayerPostion(String position){
+
+    //Se logo de cara aparecer uma dessas posições ja salva como prioridade
+    if(position.contains('LD')){position='LD';}
+    if(position.contains('LE')){position='LE';}
+    if(position.length>3){position = position.substring(0,3);}
+    if(position.contains('GOL')){position='GOL';}
+    else if(position.contains('LD')){position='LD';}
+    else if(position.contains('ADD')){position='LD';}
+    else if(position.contains('ADE')){position='LE';}
+    else if(position.contains('LE')){position='LE';}
+    else if(position.contains('ZAG')){position='ZAG';}
+    else if(position.contains('VOL')){position='VOL';}
+    else if(position.contains('MEI')){position='MEI';}
+    else if(position.contains('MC')){position='MC';}
+    else if(position.contains('ATA')){position='ATA';}
+    else if(position.contains('SA')){position='ATA';}
+    else if(position.contains('PD')){position='PD';}
+    else if(position.contains('PE')){position='PE';}
+    else if(position.contains('MD')){position='MD';}
+    else if(position.contains('ME')){position='ME';}
+    return position;
   }
 
 }

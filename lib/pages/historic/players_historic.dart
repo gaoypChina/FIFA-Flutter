@@ -2,6 +2,7 @@ import 'package:fifa/classes/historic/top_players_ovr.dart';
 import 'package:fifa/classes/historic/top_scorers.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
@@ -22,8 +23,6 @@ class _PlayersHistoricState extends State<PlayersHistoric> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-        resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
         body:  Stack(
             children: [
 
@@ -35,7 +34,7 @@ class _PlayersHistoricState extends State<PlayersHistoric> {
                   const SizedBox(height: 40),
 
                   const SizedBox(height: 20),
-                  const Text('Histórico de jogadores',style: EstiloTextoBranco.text22),
+                  Text(Translation(context).text.playersHistoric,style: EstiloTextoBranco.text22),
                   const SizedBox(height: 8),
 
 
@@ -54,7 +53,7 @@ class _PlayersHistoricState extends State<PlayersHistoric> {
                   Padding(
                     padding: const EdgeInsets.all(6),
                     child:  customButtonContinue(
-                        title: 'PRÓXIMO',
+                        title: Translation(context).text.next,
                         function: (){
                           Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const HistoricLeague()));
                         }
@@ -64,7 +63,7 @@ class _PlayersHistoricState extends State<PlayersHistoric> {
                   Padding(
                       padding: const EdgeInsets.all(6),
                       child:  customButtonContinue(
-                          title: 'VOLTAR',
+                          title: Translation(context).text.returnTo,
                           function: (){
                             Navigator.pop(context);
                           }
@@ -89,7 +88,7 @@ Widget myPlayersHistoricRow(int index){
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
-      Text(ano.toString()+': '+position.toString()+'º c/'+clubName,style: EstiloTextoBranco.text14),
+      Text(ano.toString()+': '+position.toString()+'º - '+clubName,style: EstiloTextoBranco.text14),
       Image.asset(Images().getEscudo(clubName),height: 15,width: 15),
     ],
   );
@@ -102,7 +101,7 @@ Widget myPlayersHistoricRow(int index){
       padding: const EdgeInsets.only(left: 4.0),
       child: Column(
         children: [
-          Text('Artilheiros $year e Melhores Jogadores',style: EstiloTextoBranco.text14),
+          Text('${Translation(context).text.topScorers} $year ${Translation(context).text.and} ${Translation(context).text.bestPlayers}',style: EstiloTextoBranco.text14),
           Row(
             children: [
               Column(

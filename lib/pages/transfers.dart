@@ -1,9 +1,11 @@
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/functions/filter_players.dart';
+import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/popup/popup_player_info.dart';
 import 'package:fifa/theme/background/background_age.dart';
+import 'package:fifa/theme/background/background_position.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/background/background_overall.dart';
@@ -125,7 +127,7 @@ class _TransfersState extends State<Transfers> {
                       if (filterPlayers.transferParameters.page <= 0) {
                         filterPlayers.transferParameters.page = 0;
                       } else {
-                        customToast('Carregando');
+                        customToast(Translation(context).text.loading);
                       }
                       setState(() {});
                     },
@@ -139,7 +141,7 @@ class _TransfersState extends State<Transfers> {
                       if ((filterPlayers.transferParameters.page + 1) * 50 <
                           filterPlayers.copyJogadoresID.length) {
                         filterPlayers.transferParameters.page++;
-                        customToast('Carregando');
+                        customToast(Translation(context).text.loading);
                       }
                       setState(() {});
                     },
@@ -441,13 +443,11 @@ class _TransfersState extends State<Transfers> {
         children: [
           Row(
             children: [
-              Text(player.position, style: EstiloTextoBranco.text16),
+              positionContainer(player.position),
             ],
           ),
           Image.asset(
-            Images().getEscudo(player.clubName),
-              height: 20,
-              width: 20),
+            Images().getEscudo(player.clubName),height: 20,width: 20),
           //Text(player.index.toString(), style: EstiloTextoBranco.text16),
           GestureDetector(
             onTap: () {
@@ -460,12 +460,18 @@ class _TransfersState extends State<Transfers> {
                   });
               setState(() {});
             },
-            child: Text(player.name,
-                style: TextStyle(
-                  color: nameColor,
-                  fontFamily: 'Roboto',
-                  fontSize: 16,
-                )),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(player.name, style: TextStyle(color: nameColor,fontFamily: 'Roboto',fontSize: 16,)),
+                Row(
+                  children: [
+                    funcFlagsList(player.nationality, 7, 10),
+                    Text(player.nationality, style: TextStyle(color: nameColor,fontFamily: 'Roboto',fontSize: 10,)),
+                  ],
+                ),
+              ],
+            ),
           ),
           Container(
               color:colorAgeBackground(player.age),
@@ -511,6 +517,10 @@ class _TransfersState extends State<Transfers> {
         children: [
           Expanded(
             child: TextField(
+              textInputAction: TextInputAction.done,
+              onSubmitted: (term){
+                onSearchString();
+              },
               onChanged: (value) {
                 filterPlayers.searchString = value;
               },
@@ -523,13 +533,7 @@ class _TransfersState extends State<Transfers> {
           ),
           GestureDetector(
               onTap: () {
-                filterPlayers.copyJogadoresID = List.from(globalJogadoresIndex);
-                filterPlayers.copyJogadoresID.removeWhere((playerID) =>
-                    !Jogador(index: playerID)
-                        .name
-                        .toString()
-                        .toLowerCase()
-                        .contains(filterPlayers.searchString));
+                onSearchString();
                 setState(() {});
               },
               child: const Icon(Icons.search, color: Colors.white)),
@@ -573,7 +577,7 @@ class _TransfersState extends State<Transfers> {
             filterPlayers.transferParameters.filteredPosition = position;
           }
           filterPlayers.filterByPosition();
-          customToast('Carregando');
+          customToast(Translation(context).text.loading);
           setState(() {});
         },
         child: Container(
@@ -590,6 +594,16 @@ class _TransfersState extends State<Transfers> {
         ),
       ),
     );
+  }
+
+  onSearchString(){
+    filterPlayers.copyJogadoresID = List.from(globalJogadoresIndex);
+    filterPlayers.copyJogadoresID.removeWhere((playerID) =>
+    !Jogador(index: playerID)
+        .name
+        .toString()
+        .toLowerCase()
+        .contains(filterPlayers.searchString));
   }
 
 }

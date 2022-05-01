@@ -38,14 +38,19 @@ class _ClubGraphicsState extends State<ClubGraphics> {
 
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Column(
-              children: [
-                Text(Translation(context).text.performance,style: EstiloTextoBranco.text16),
-                graphics(dataGraphics),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Text(Translation(context).text.performance,style: EstiloTextoBranco.text16),
+                  graphics(dataGraphics),
 
-                totalTrophyWidget(widget.club,dataGraphics),
+                  totalTrophyWidget(widget.club,dataGraphics),
 
-              ],
+                  currentPosition(dataGraphics),
+
+
+                ],
+              ),
             ),
           ),
 
@@ -110,36 +115,55 @@ Widget totalTrophyWidget(Club club, DataGraphics dataGraphics){
           children: [
             Text(Translation(context).text.titles,style: EstiloTextoBranco.text16),
             Image.asset('assets/trophy/${getTrophyImage(club.leagueName)}.png',height: 100,width: 100),
-            Text(dataGraphics.nTitulos.toString(),style: EstiloTextoBranco.text16),
+            Text(dataGraphics.nTitulos.toString(),style: EstiloTextoBranco.text20),
           ],
         ),
 
         Column(
           children: [
             Text(Translation(context).text.average,style: EstiloTextoBranco.text16),
-            Text(dataGraphics.averagePosition.toString()+'º',style: EstiloTextoBranco.text16),
             Text(Translation(context).text.last10Years,style: EstiloTextoBranco.text16),
+            const SizedBox(height: 10),
+            Text(dataGraphics.averagePosition.toString()+'º',style: EstiloTextoBranco.text20),
           ],
         ),
         Column(
           children: [
             const Text('G-4',style: EstiloTextoBranco.text16),
-            Text(dataGraphics.g4Years.toString(),style: EstiloTextoBranco.text16),
             Text(Translation(context).text.years,style: EstiloTextoBranco.text16),
+            const SizedBox(height: 10),
+            Text(dataGraphics.g4Years.toString(),style: EstiloTextoBranco.text20),
           ],
         ),
 
         Column(
           children: [
             Text(Translation(context).text.division2,style: EstiloTextoBranco.text16),
-            Text(dataGraphics.n2ndivision.toString(),style: EstiloTextoBranco.text16),
             Text(Translation(context).text.years,style: EstiloTextoBranco.text16),
+            const SizedBox(height: 10),
+            Text(dataGraphics.n2ndivision.toString(),style: EstiloTextoBranco.text20),
           ],
         ),
 
       ],
     ),
   );
+}
+
+Widget currentPosition(DataGraphics dataGraphics){
+    return                 Container(
+      width: Sized(context).width,
+      color: AppColors().greyTransparent,
+      margin: const EdgeInsets.all(4),
+      padding: const EdgeInsets.all(4),
+      child: Column(
+        children: [
+          Text(Translation(context).text.position,style: EstiloTextoBranco.text16),
+          Text(widget.club.leagueName,style: EstiloTextoBranco.text16),
+          Text(dataGraphics.currentPosition.toString()+'º',style: EstiloTextoBranco.text20),
+        ],
+      ),
+    );
 }
 
 }

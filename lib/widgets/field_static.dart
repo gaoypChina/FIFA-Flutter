@@ -185,24 +185,28 @@ Widget playerWidgetMatch(int jogadorIndex, String clubName){
   bool goal = matchClass.goals>0;
   double healthBar = matchClass.health;
   double imageSize = 40;
+  double headSize = 17;
 
   if(injury || redCard){healthBar=0;}
 
   return Column(
     children: [
-
       SizedBox(
-        height: imageSize,
+        height: imageSize+headSize-5,
         width: imageSize,
         child: Stack(
           children: [
             //Uniforme
-            (injury || redCard)
-                ? Opacity(
-                  opacity: 0.4,
-                child: Image.asset(Images().getUniform(clubName),height: imageSize,width: imageSize)
-            )
+            Container(
+              margin: EdgeInsets.only(top: headSize-5),
+              child: (injury || redCard)
+                    ? Opacity(
+                        opacity: 0.4,
+                        child: Image.asset(Images().getUniform(clubName),height: imageSize,width: imageSize)
+                    )
                 : Image.asset(Images().getUniform(clubName),height: imageSize,width: imageSize),
+            ),
+
 
             //GOL
             Container(
@@ -221,6 +225,12 @@ Widget playerWidgetMatch(int jogadorIndex, String clubName){
                   child: Image.asset('assets/icons/bola.png',height: 20,width: 20)
                   )
                 : Container(),
+
+            Container(
+                alignment: Alignment.topCenter,
+                child: globalHasInternet ? Image.network(jogadorClass.imageUrl,height: headSize,width: headSize) : Container(),
+            ),
+
           ],
         ),
       ),

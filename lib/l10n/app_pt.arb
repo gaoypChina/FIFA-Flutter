@@ -19,9 +19,11 @@
   "nTeamsClassified": "Nº clubes classificados por liga",
   "nTeamsRelegated": "Nº clubes rebaixados por liga",
   "changeClubs": "Mudar clubes",
-  "initial money": "Dinheiro Inicial",
+  "initialMoney": "Dinheiro Inicial",
   "allowCards": "Permitir cartões",
   "allowInjuries": "Permitir jogadores machucados",
+  "allPlayersEqual": "Todos os jogadores com overall igual",
+  "seeProbability": "Ver probabilidade",
   "userTerms": "Termos de Uso",
 
   "@_CUSTOMIZE_PLAYERS_PAGE": {
@@ -29,11 +31,13 @@
   "customizePlayers": "Customizar Jogadores",
   "save": "Salvar",
   "load": "Carregar",
+  "cancel": "Cancelar",
 
 
   "@_MENU_PAGE": {
   },
   "year": "Ano",
+  "years": "Anos",
   "week": "Semana",
   "money": "Dinheiro",
   "clubOverall": "Overall da Equipe",
@@ -55,6 +59,7 @@
 
   "matchWeek": "Rodada",
   "classification": "Classificação",
+  "finalClassification": "Classificação Final",
   "expectation": "Expectativa",
 
   "returnTo": "Voltar",
@@ -122,11 +127,96 @@
   "scoreProbability": "Marcar",
   "takeProbability": "Sofrer",
   "substitution": "Substituição",
-  "nextMatch": "Próxima Rodada",
+  "nextMatchWeek": "Próxima Rodada",
+
+  "@_SUBSTITUTION_PAGE": {
+  },
+  "noSubstitutionLeft": "Sem substituições restantes (0)",
+  "redCardPlayersCantBeReplaced": "Jogadores expulsos não podem ser substítuidos",
+
+  "@_END_YEAR_PAGE": {
+  },
+  "loadingNewSeason": "Carregando nova temporada",
+  "endOfYear": "Fim do Ano",
 
   "@_INTERNATIONAL_PAGE": {
   },
   "group": "Grupo",
+
+
+  "@_HISTORIC": {
+  },
+  "@_HISTORIC_NATIONAL_PAGE": {
+  },
+  "leagueHistoric": "Histórico das ligas",
+  "all": "Tudo",
+  "next": "Próximo",
+
+  "@_HISTORIC_PLAYERS_PAGE": {
+  },
+  "playersHistoric": "Histórico de jogadores",
+  "and": "e",
+  "bestPlayers": "Melhores jogadores",
+
+  "@_HISTORIC_INTERNATIONAL_PAGE": {
+  },
+
+
+
+
+  "@_POPUP": {
+  },
+  "loading": "Carregando",
+  "alreadyChangedYourClub": "Você já mudou de clube essa temporada",
+
+  "@_POPUP_INITIAL_MONEY": {
+  },
+  "inMillions": "em milhões",
+
+  "@_POPUP_EXPECTATIONS": {
+  },
+  "lastSeason": "Temporada Passada",
+  "seasonGoals": "Objetivos da temporada",
+  "good": "Bom",
+  "bad": "Ruim",
+  "result": "Resultado",
+  "expected": "Experado",
+
+  "@_POPUP_SAVE_ALL_DATA": {
+  },
+  "saveWhereQuestion": "Onde você quer salvar?",
+  "saveWhereAnswer": "Salvo em",
+
+  "@_POPUP_SELECT_CLUB": {
+  },
+  "selectClub": "Select Club",
+  "changedClubTo": "Change club to:",
+
+  "@_POPUP_ALL_PLAYERS_DATA": {
+  },
+  "carrerMatchs": "Jogos carreira",
+  "carrerGoals": "Gols carreira",
+  "carrerAssists": "Assis. carreira",
+  "leagueMatchs": "Jogos liga",
+  "leagueGoals": "Gols liga",
+  "leagueAssists": "Assis. liga",
+  "value": "Valor",
+  "injuryMatchs": "Partidas machucado",
+  "buy": "Comprar",
+  "sell": "Vender",
+  "cancelledPurchase": "Compra cancelada",
+  "playerSoldTo": "Jogador vendido para",
+  "playerBought": "Jogador comprado",
+  "moneyNotEnough": "Você não tem dinheiro suficiente",
+  "otherTeamWillHaveNoPlayersLeft": "O outro clube vai ficar sem jogadores disponíveis",
+  "limitNPlayersReached": "Limite de jogadores atingido (32)",
+  "notEnoughPlayersLeftToSell": "Você não tem jogadores suficientes para poder vender",
+
+
+
+
+
+
 
 
 

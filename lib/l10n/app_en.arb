@@ -11,6 +11,7 @@
     }
   },
 
+
   "@_FIRST_PAGE": {
   },
   "continueButton": "Continue",
@@ -35,6 +36,8 @@
   "initialMoney": "Initial money",
   "allowCards": "Allow yellow and red cards",
   "allowInjuries": "Allow injured players",
+  "allPlayersEqual": "All Players with equal overall",
+  "seeProbability": "See probability",
   "userTerms": "User Terms",
 
   "@_CUSTOMIZE_PLAYERS_PAGE": {
@@ -42,6 +45,7 @@
   "customizePlayers": "Customize Players",
   "save": "Save",
   "load": "Load",
+  "cancel": "Cancel",
 
 
   "@_MENU_PAGE": {
@@ -69,6 +73,7 @@
 
   "matchWeek": "Match Week",
   "classification": "Classification",
+  "finalClassification": "Final Classification",
   "expectation": "Expectation",
 
   "returnTo": "Return",
@@ -138,13 +143,88 @@
   "substitution": "Substitution",
   "nextMatchWeek": "Next Match Week",
 
+  "@_SUBSTITUTION_PAGE": {
+  },
+  "noSubstitutionLeft": "No substitutions left (0)",
+  "redCardPlayersCantBeReplaced": "Players with red cards can't be replaced",
+
+  "@_END_YEAR_PAGE": {
+  },
+  "loadingNewSeason": "Loading new season",
+  "endOfYear": "End of year",
+
   "@_INTERNATIONAL_PAGE": {
   },
   "group": "Group",
 
 
 
+  "@_HISTORIC": {
+  },
+  "@_HISTORIC_NATIONAL_PAGE": {
+  },
+  "leagueHistoric": "League Historic",
+  "all": "All",
+  "next": "Next",
+  "@_HISTORIC_PLAYERS_PAGE": {
+  },
+  "playersHistoric": "Players Historic",
+  "and": "and",
+  "bestPlayers": "Best players",
 
+  "@_HISTORIC_INTERNATIONAL_PAGE": {
+  },
+
+
+
+
+  "@_POPUP": {
+  },
+  "loading": "Loading",
+  "alreadyChangedYourClub": "You already changed your club this season",
+
+  "@_POPUP_INITIAL_MONEY": {
+  },
+  "inMillions": "in millions",
+
+  "@_POPUP_EXPECTATIONS": {
+  },
+  "lastSeason": "Last Season",
+  "seasonGoals": "Season's goals",
+  "good": "Good",
+  "bad": "Bad",
+  "result": "Result",
+  "expected": "Expected",
+
+  "@_POPUP_SAVE_ALL_DATA": {
+  },
+  "saveWhereQuestion": "Where do you want to save it?",
+  "saveWhereAnswer": "Saved in",
+
+  "@_POPUP_SELECT_CLUB": {
+  },
+  "selectClub": "Select Club",
+  "changedClubTo": "Change club to:",
+
+  "@_POPUP_ALL_PLAYERS_DATA": {
+  },
+  "carrerMatchs": "Carrer matchs",
+  "carrerGoals": "Carrer goals",
+  "carrerAssists": "Carrer assists",
+  "leagueMatchs": "League matchs",
+  "leagueGoals": "League goals",
+  "leagueAssists": "League assists",
+  "value": "Value",
+  "injuryMatchs": "Injuried Matchs",
+  "buy": "Buy",
+  "sell": "Sell",
+  "cancelledPurchase": "Cancelled purchase",
+  "playerSoldTo": "Player sold to",
+  "playerBought": "Player bought",
+  "moneyNotEnough": "You are without money",
+  "otherTeamWillHaveNoPlayersLeft": "The other team will have no players left",
+  "limitNPlayersReached": "Number of maximum players reached (32)",
+  "notEnoughPlayersLeftToSell": "You don't have enough players to sell",
 
 
 
