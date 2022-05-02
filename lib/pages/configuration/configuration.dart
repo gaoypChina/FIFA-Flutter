@@ -29,62 +29,64 @@ class _ConfigurationState extends State<Configuration> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          Images().getWallpaper(),
+      body: Container(
+        decoration: Images().getWallpaperContainerDecoration(),
+        child: Stack(
+          children: [
 
-          Container(
-            height: Sized(context).height-50,
-            padding: const EdgeInsets.all(8.0),
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+            Container(
+              height: Sized(context).height-50,
+              padding: const EdgeInsets.all(8.0),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
 
-                  const SizedBox(height: 60),
-                  coachName(),
-                  SizedBox(height: spaceBetweenWidgets),
-                  language(),
-                  SizedBox(height: spaceBetweenWidgets),
-                  soundEffects(config),
-                  SizedBox(height: spaceBetweenWidgets),
-                  dificulty(),
-                  SizedBox(height: spaceBetweenWidgets),
-                  initialMoney(),
-                  SizedBox(height: spaceBetweenWidgets),
-                  nTeamsPerLeague(),
-                  SizedBox(height: spaceBetweenWidgets),
-                  nTeamsClassified(),
-                  SizedBox(height: spaceBetweenWidgets),
-                  nTeamsRelegated(),
-                  SizedBox(height: spaceBetweenWidgets),
-                  changeClubs(),
-                  SizedBox(height: spaceBetweenWidgets),
-                  turns(config),
-                  SizedBox(height: spaceBetweenWidgets),
-                  allowCards(config),
-                  SizedBox(height: spaceBetweenWidgets),
-                  allowInjuries(config),
-                  SizedBox(height: spaceBetweenWidgets),
-                  equalOverallAllPlayers(),
-                  SizedBox(height: spaceBetweenWidgets),
-                  seeProbability(),
-                  SizedBox(height: spaceBetweenWidgets),
-                  userTerms(),
-                  SizedBox(height: spaceBetweenWidgets),
-                  GestureDetector(
-                    onTap: (){
-                    },
-                    child: Text('teste',style: EstiloTextoBranco.text16),
-                  )
+                    const SizedBox(height: 60),
+                    coachName(),
+                    SizedBox(height: spaceBetweenWidgets),
+                    language(),
+                    SizedBox(height: spaceBetweenWidgets),
+                    soundEffects(config),
+                    SizedBox(height: spaceBetweenWidgets),
+                    dificulty(),
+                    SizedBox(height: spaceBetweenWidgets),
+                    initialMoney(),
+                    SizedBox(height: spaceBetweenWidgets),
+                    nTeamsPerLeague(),
+                    SizedBox(height: spaceBetweenWidgets),
+                    nTeamsClassified(),
+                    SizedBox(height: spaceBetweenWidgets),
+                    nTeamsRelegated(),
+                    SizedBox(height: spaceBetweenWidgets),
+                    changeClubs(),
+                    SizedBox(height: spaceBetweenWidgets),
+                    turns(config),
+                    SizedBox(height: spaceBetweenWidgets),
+                    allowCards(config),
+                    SizedBox(height: spaceBetweenWidgets),
+                    allowInjuries(config),
+                    SizedBox(height: spaceBetweenWidgets),
+                    equalOverallAllPlayers(),
+                    SizedBox(height: spaceBetweenWidgets),
+                    seeProbability(),
+                    SizedBox(height: spaceBetweenWidgets),
+                    userTerms(),
+                    SizedBox(height: spaceBetweenWidgets),
+                    GestureDetector(
+                      onTap: (){
+                      },
+                      child: const Text('teste',style: EstiloTextoBranco.text16),
+                    )
 
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
 
-          returnButton(context),
-        ],
+            returnButton(context),
+          ],
+        ),
       ),
     );
   }
@@ -200,7 +202,7 @@ Widget soundEffects(ConfigurationState config){
           Expanded(child: Text(Translation(context).text.initialMoney,style: EstiloTextoBranco.negrito16)),
           config.initialMoney>0
               ? Text(config.initialMoney.toString(),style: EstiloTextoBranco.underline14)
-              : Text('Padrão',style: EstiloTextoBranco.underline14),
+              : Text(Translation(context).text.standard,style: EstiloTextoBranco.underline14),
         ],
       ),
     );
@@ -209,7 +211,7 @@ Widget soundEffects(ConfigurationState config){
   Widget nTeamsPerLeague(){
     return GestureDetector(
       onTap:(){
-        customToast('Em desenvolvimento');
+        customToast(Translation(context).text.inDevelopment);
       },
       child: Row(
         children: [
@@ -222,7 +224,7 @@ Widget soundEffects(ConfigurationState config){
   Widget nTeamsClassified(){
     return GestureDetector(
         onTap:(){
-          customToast('Em desenvolvimento');
+          customToast(Translation(context).text.inDevelopment);
         },
       child: Row(
         children: [
@@ -235,7 +237,7 @@ Widget soundEffects(ConfigurationState config){
   Widget nTeamsRelegated(){
     return GestureDetector(
       onTap:(){
-        customToast('Em desenvolvimento');
+        customToast(Translation(context).text.inDevelopment);
       },
       child: Row(
         children: [

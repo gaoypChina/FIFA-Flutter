@@ -3,29 +3,31 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme/colors.dart';
 
-Widget tabelaClassificacaoWidget(int choosenLeagueIndex){
+Widget tabelaClassificacaoWidget(BuildContext context,int choosenLeagueIndex){
   return Column(
     children: [
       Container(
         color: AppColors().greyTransparent,
         child: Row(
-          children: const [
-            SizedBox(width: 220),
-            Text('PTS',style:EstiloTextoBranco.text14),
-            SizedBox(width: 8),
-            Text('GM ',style:EstiloTextoBranco.text14),
-            SizedBox(width: 8),
-            Text('GS ',style:EstiloTextoBranco.text14),
-            SizedBox(width: 8),
-            Text('SG ',style:EstiloTextoBranco.text14),
-            SizedBox(width: 12),
-            Text('OVR',style: EstiloTextoBranco.text14),
+          children: [
+            const SizedBox(width: 220),
+            Text(Translation(context).text.points3,style:EstiloTextoBranco.text14),
+            const SizedBox(width: 10),
+            Text(Translation(context).text.goalsFor3,style:EstiloTextoBranco.text14),
+            const SizedBox(width: 15),
+            Text(Translation(context).text.goalsAgainst,style:EstiloTextoBranco.text14),
+            const SizedBox(width: 15),
+            Text(Translation(context).text.goalDifference3,style:EstiloTextoBranco.text14),
+            const SizedBox(width: 15),
+            Text(Translation(context).text.ovr3,style: EstiloTextoBranco.text14),
           ],
         ),
       ),
@@ -42,7 +44,7 @@ Widget tabelaClassificacaoWidget(int choosenLeagueIndex){
           },
           children: [
             for(int i=0; i<League(index:choosenLeagueIndex).nClubs;i++)
-              rowTableNacional(i,choosenLeagueIndex),
+              rowTableNacional(context, i,choosenLeagueIndex),
           ],
         ),
       ),
@@ -50,13 +52,13 @@ Widget tabelaClassificacaoWidget(int choosenLeagueIndex){
   );
 }
 
-TableRow rowTableNacional(int i,int choosenLeagueIndex){
+TableRow rowTableNacional(BuildContext context, int i,int choosenLeagueIndex){
   List classificationClubsIndexes = Classification(leagueIndex: choosenLeagueIndex).classificationClubsIndexes;
   int fullClubIndex = classificationClubsIndexes[i];
-  return rowTableNacionalLayout(i,fullClubIndex, choosenLeagueIndex);
+  return rowTableNacionalLayout(context, i,fullClubIndex, choosenLeagueIndex);
 }
 
-TableRow rowTableNacionalLayout(int position, int indexClub, choosenLeagueIndex) {
+TableRow rowTableNacionalLayout(BuildContext context, int position, int indexClub, choosenLeagueIndex) {
   Club clubClass = Club(index: indexClub);
   String clubName = clubClass.name;
   int points = clubClass.leaguePoints;
@@ -70,12 +72,21 @@ TableRow rowTableNacionalLayout(int position, int indexClub, choosenLeagueIndex)
   return TableRow(
     children: [
       Text((position+1).toString()+'-',style: EstiloTextoBranco.text14),
-      Image.asset(Images().getEscudo(clubClass.name),height: 25,width: 25),
-      Container(
-          width:170,
-          padding: const EdgeInsets.all(2),
-          color: backgroundColor,
-          child: Text(clubName,style: EstiloTextoBranco.text16)
+      GestureDetector(
+        onTap: (){
+          goToClubProfilePage(context,clubClass);
+          },
+          child: Image.asset(Images().getEscudo(clubClass.name),height: 25,width: 25)),
+      GestureDetector(
+        onTap: (){
+          goToClubProfilePage(context,clubClass);
+        },
+        child: Container(
+            width:170,
+            padding: const EdgeInsets.all(2),
+            color: backgroundColor,
+            child: Text(clubName,style: EstiloTextoBranco.text16)
+        ),
       ),
       Center(child: Text(points.toString(),style: EstiloTextoBranco.text14)),
       Center(child: Text(golsMarcados.toString(),style: EstiloTextoBranco.text14)),
@@ -87,7 +98,9 @@ TableRow rowTableNacionalLayout(int position, int indexClub, choosenLeagueIndex)
   );
 }
 
-
+goToClubProfilePage(BuildContext context, Club clubClass){
+  Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: clubClass.index)));
+}
 
 Color backgroundTextColor(int position, int choosenLeagueIndex , String teamName){
 

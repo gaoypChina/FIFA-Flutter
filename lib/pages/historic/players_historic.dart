@@ -23,58 +23,52 @@ class _PlayersHistoricState extends State<PlayersHistoric> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body:  Stack(
+        body:  Container(
+          decoration: Images().getWallpaperContainerDecoration(),
+          child: Column(
             children: [
 
-              Images().getWallpaper(),
+              const SizedBox(height: 50),
 
-              Column(
-                children: [
-
-                  const SizedBox(height: 40),
-
-                  const SizedBox(height: 20),
-                  Text(Translation(context).text.playersHistoric,style: EstiloTextoBranco.text22),
-                  const SizedBox(height: 8),
+              Text(Translation(context).text.playersHistoric,style: EstiloTextoBranco.text22),
+              const SizedBox(height: 8),
 
 
-                  Expanded(
-                    child: SingleChildScrollView(
-                      child: Column(
-                        children: [
-                          for(int year=anoInicial;year<ano;year++)
-                            yearRowTopScorers(year),
-                        ],
-                      ),
-                    ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      for(int year=anoInicial;year<ano;year++)
+                        yearRowTopScorers(year),
+                    ],
                   ),
-
-                  //VOLTAR
-                  Padding(
-                    padding: const EdgeInsets.all(6),
-                    child:  customButtonContinue(
-                        title: Translation(context).text.next,
-                        function: (){
-                          Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const HistoricLeague()));
-                        }
-                    ),
-                  ),
-                  //VOLTAR
-                  Padding(
-                      padding: const EdgeInsets.all(6),
-                      child:  customButtonContinue(
-                          title: Translation(context).text.returnTo,
-                          function: (){
-                            Navigator.pop(context);
-                          }
-                      ),
-                    ),
-
-
-                ],
+                ),
               ),
 
-            ]
+              //VOLTAR
+              Padding(
+                padding: const EdgeInsets.all(6),
+                child:  customButtonContinue(
+                    title: Translation(context).text.next,
+                    function: (){
+                      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const HistoricLeague()));
+                    }
+                ),
+              ),
+              //VOLTAR
+              Padding(
+                  padding: const EdgeInsets.all(6),
+                  child:  customButtonContinue(
+                      title: Translation(context).text.returnTo,
+                      function: (){
+                        Navigator.pop(context);
+                      }
+                  ),
+                ),
+
+
+            ],
+          ),
         )
     );
   }

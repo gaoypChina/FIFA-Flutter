@@ -13,7 +13,8 @@ import 'package:flutter/material.dart';
 class AllInfosClub extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
   final Club club;
-  const AllInfosClub({Key? key, required this.club}) : super(key: key);
+  final Function() notifyParent;
+  const AllInfosClub({Key? key, required this.club, required this.notifyParent}) : super(key: key);
   @override
   _AllInfosClubState createState() => _AllInfosClubState();
 }
@@ -46,8 +47,8 @@ class _AllInfosClubState extends State<AllInfosClub> {
                         child: selection==0
                             ? tableWidget0()
                             : selection==1 ? tableWidget1()
-                            : selection==2 ? tableWidget2()
-                            : tableWidget3(),
+                            : selection==2 ? tableWidget3()
+                            : tableWidget2(),
                       ),
                     ),
                   ),
@@ -104,8 +105,8 @@ class _AllInfosClubState extends State<AllInfosClub> {
       children: [
         const Text(''),
         Text(Translation(context).text.name, style: EstiloTextoBranco.text16),
-        const Text('IDA', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-        const Text('OVR', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+        Text(Translation(context).text.age3, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+        Text(Translation(context).text.ovr3, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
         const Text('\$', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
         const Text(''),
         ]),
@@ -130,9 +131,9 @@ class _AllInfosClubState extends State<AllInfosClub> {
             children: [
               const Text(''),
               Text(Translation(context).text.name, style: EstiloTextoBranco.text16),
-              const Text('J', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              const Text('G', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              const Text('A', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+              Text(Translation(context).text.playedP, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+              Text(Translation(context).text.goalsG, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+              Text(Translation(context).text.assistsA, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
               const Text(''),
             ]),
 
@@ -181,9 +182,9 @@ class _AllInfosClubState extends State<AllInfosClub> {
             children: [
               const Text(''),
               Text(Translation(context).text.name, style: EstiloTextoBranco.text16),
-              const Text('J*', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              const Text('G*', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              const Text('A*', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+              Text('${Translation(context).text.playedP}*', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+              Text('${Translation(context).text.goalsG}*', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+              Text('${Translation(context).text.assistsA}*', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
               const Text(''),
             ]),
 
@@ -203,7 +204,7 @@ class _AllInfosClubState extends State<AllInfosClub> {
     if(selection==1){
       return playersRow1(row,playerIndex);
     }
-    if(selection==2){
+    if(selection==3){
       return playersRow2(row,playerIndex);
     }
 
@@ -254,7 +255,7 @@ class _AllInfosClubState extends State<AllInfosClub> {
         playerNameWidget(player),
         Text(player.matchsLeague.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
         Text(player.goalsLeague.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-        Text(player.assistsLeague.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text14),
+        Text(player.assistsLeague.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
         Container(
           padding: const EdgeInsets.symmetric(vertical: 10),
           child: const Text(''),
@@ -335,7 +336,10 @@ class _AllInfosClubState extends State<AllInfosClub> {
         popUpOkShowPlayerInfos(
             context: context,
             playerID: player.index,
-            funcSetState: (){setState(() {});}
+            funcSetState: (){
+              setState(() {});
+              widget.notifyParent();
+            }
             );
       },
       child: Container(

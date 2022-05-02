@@ -184,8 +184,9 @@ Widget playerWidgetMatch(int jogadorIndex, String clubName){
   bool injury = matchClass.injury>0;
   bool goal = matchClass.goals>0;
   double healthBar = matchClass.health;
-  double imageSize = 40;
-  double headSize = 17;
+  double imageSize = 38;
+  double headSize = 22;
+  double bottomBarWidth = imageSize+22;
 
   if(injury || redCard){healthBar=0;}
 
@@ -237,7 +238,7 @@ Widget playerWidgetMatch(int jogadorIndex, String clubName){
 
       //Barra de saúde
       SizedBox(
-        width: imageSize+7,
+        width: bottomBarWidth,
         child: LinearProgressIndicator(
           value: healthBar,
           color: Colors.teal,
@@ -248,7 +249,7 @@ Widget playerWidgetMatch(int jogadorIndex, String clubName){
       Container(
           color: Colors.black87,
           padding: const EdgeInsets.all(4),
-          width: imageSize+7,
+          width: bottomBarWidth,
           child: Text(name,textAlign:TextAlign.center,style: EstiloTextoBranco.text8)
       ),
     ],

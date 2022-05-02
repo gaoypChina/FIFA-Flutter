@@ -41,7 +41,7 @@ class _NotPlayState extends State<NotPlay> {
                   const SizedBox(height: 10),
 
                   //TABELA
-                  tabelaClassificacaoWidget(My().campeonatoID),
+                  tabelaClassificacaoWidget(context,My().campeonatoID),
 
                   const Spacer(),
                   //VOLTAR

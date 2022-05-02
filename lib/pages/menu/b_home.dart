@@ -85,117 +85,110 @@ class _HomePageState extends State<HomePage> {
     nLeagueTeams = leagueClass.nClubs;
 
     return Scaffold(
-
-        resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
-        body:  Stack(
+        body:  Container(
+          decoration: Images().getWallpaperContainerDecoration(),
+          child: Column(
             children: [
 
-              Images().getWallpaper(),
+              const SizedBox(height: 80),
+              const Text('FIFA 22',style: EstiloTextoBranco.text40),
+              const SizedBox(height: 20),
 
-              Column(
+              ////////////
+              //PAIS
+              ////////////
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
 
-                  const SizedBox(height: 80),
-                  const Text('FIFA 22',style: EstiloTextoBranco.text40),
-                  const SizedBox(height: 20),
-
-                  ////////////
-                  //PAIS
-                  ////////////
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  Column(
                     children: [
-
-                      Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: leftButton(onTap: (){
-                              if(posicaoPais>0) {
-                                posicaoPais --;
-                                posicao = 0;
-                              }else{
-                                posicaoPais = leaguesListRealIndex.length-1;
-                                posicao = 0;
-                              }
-                            }),
-                          ),
-
-                          rightButton(onTap: (){
-                            if(posicaoPais< leaguesListRealIndex.length-1) {
-                              posicaoPais ++;
-                              posicao = 0;
-                            }else{
-                              posicaoPais = 0;
-                              posicao = 0;
-                            }
-                          }),
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: leftButton(onTap: (){
+                          if(posicaoPais>0) {
+                            posicaoPais --;
+                            posicao = 0;
+                          }else{
+                            posicaoPais = leaguesListRealIndex.length-1;
+                            posicao = 0;
+                          }
+                        }),
                       ),
 
-
-                      leagueLogoAndName(),
+                      rightButton(onTap: (){
+                        if(posicaoPais< leaguesListRealIndex.length-1) {
+                          posicaoPais ++;
+                          posicao = 0;
+                        }else{
+                          posicaoPais = 0;
+                          posicao = 0;
+                        }
+                      }),
                     ],
                   ),
 
-                  const SizedBox(height: 40),
-                  /////////////////////////////////////////
-                  //TIME
-                  /////////////////////////////////////////
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+                  leagueLogoAndName(),
+                ],
+              ),
+
+              const SizedBox(height: 40),
+              /////////////////////////////////////////
+              //TIME
+              /////////////////////////////////////////
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+
+                  Column(
                     children: [
 
-                      Column(
-                        children: [
-
-                          Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: leftButton(onTap: (){
-                              if(posicao>0) {
-                                posicao --;
-                              }else{
-                                posicao = nLeagueTeams-1;
-                              }
-                            }),
-                          ),
-
-                          rightButton(onTap: (){
-                            if(posicao<nLeagueTeams-1) {
-                              posicao ++;
-                            }else{
-                              posicao = 0;
-                            }
-                          }),
-
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: leftButton(onTap: (){
+                          if(posicao>0) {
+                            posicao --;
+                          }else{
+                            posicao = nLeagueTeams-1;
+                          }
+                        }),
                       ),
 
-                          //ESCUDO E UNIFORME
-                          clubLogoAndKitStack(),
+                      rightButton(onTap: (){
+                        if(posicao<nLeagueTeams-1) {
+                          posicao ++;
+                        }else{
+                          posicao = 0;
+                        }
+                      }),
 
                     ],
                   ),
 
-
-                  const SizedBox(height: 30),
-                  continueButton(),
-                  const SizedBox(height: 28),
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children:[
-                      database(),
-                      editClub(),
-                      configurations(),
-                    ],
-                  ),
-
+                      //ESCUDO E UNIFORME
+                      clubLogoAndKitStack(),
 
                 ],
-              )
+              ),
 
-            ]
+
+              const SizedBox(height: 30),
+              continueButton(),
+              const SizedBox(height: 28),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children:[
+                  database(),
+                  editClub(),
+                  configurations(),
+                ],
+              ),
+
+
+            ],
+          ),
         )
     );
   }

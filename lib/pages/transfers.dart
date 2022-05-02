@@ -1,5 +1,7 @@
+import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
+import 'package:fifa/classes/words.dart';
 import 'package:fifa/functions/filter_players.dart';
 import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/global_variables.dart';
@@ -37,159 +39,172 @@ class _TransfersState extends State<Transfers> {
     showRows = 0;
     return Scaffold(
         resizeToAvoidBottomInset: false, //Evita um overlay quando o layout é maior que a tela
-        body: Stack(children: [
+        body: Container(
+          decoration: Images().getWallpaperContainerDecoration(),
+          child: Stack(children: [
 
-          Images().getWallpaper(),
-
-          Column(
-            children: [
-              const SizedBox(height: 32),
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: Row(
-                  children: [
-                     Text(Translation(context).text.transfers, style: EstiloTextoBranco.negrito22),
-                    const Spacer(),
-                    RichText(
-                      text: TextSpan(
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: '${Translation(context).text.money}: ', style: EstiloTextoBranco.text16),
-                          TextSpan(
-                              text: '\$ ${My().money.toStringAsFixed(2)} mi',
-                              style: EstiloTextoVerde.text20),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: searchNameBar(),
-              ),
-
-              playersRowTitle(), //titulo da tabela
-              Container(
-                height: bottomSize > 0 ? 280 : 400,
-                color: AppColors().greyTransparent,
-                padding: const EdgeInsets.symmetric(horizontal: 6),
-                child: SingleChildScrollView(
-                  child: Table(
-                    columnWidths: const {
-                      0: FractionColumnWidth(.09),
-                      1: FractionColumnWidth(.07),
-                      2: FractionColumnWidth(.5),
-                      5: FractionColumnWidth(.18),
-                    },
+            Column(
+              children: [
+                const SizedBox(height: 32),
+                Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Row(
                     children: [
-                      for (int i = filterPlayers.transferParameters.page * 50;
-                          i < filterPlayers.copyJogadoresID.length && showRows < 50;
-                          i++)
-                        playersRow(filterPlayers.copyJogadoresID[i])
+                       Text(Translation(context).text.transfers, style: EstiloTextoBranco.negrito22),
+                      const Spacer(),
+                      RichText(
+                        text: TextSpan(
+                          children: <TextSpan>[
+                            TextSpan(
+                                text: '${Translation(context).text.money}: ', style: EstiloTextoBranco.text16),
+                            TextSpan(
+                                text: '\$ ${My().money.toStringAsFixed(2)} mi',
+                                style: EstiloTextoVerde.text20),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
-              ),
-              //FILTRAR
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  localButton(
-                      title: Translation(context).text.age.toUpperCase(),
-                      function: () {
-                        filterPlayers.setAge();
-                        setState(() {});
-                      }),
-                  localButton(
-                      title: Translation(context).text.overall.toUpperCase(),
-                      function: () {
-                        filterPlayers.setOverall();
-                        setState(() {});
-                      }),
-                  localButton(
-                      title: Translation(context).text.price.toUpperCase(),
-                      function: () {
-                        filterPlayers.setPrice();
-                        setState(() {});
-                      }),
-                ],
-              ),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  //BOTAO ESQUERDA
-                  GestureDetector(
-                    onTap: () {
-                      filterPlayers.transferParameters.page--;
-                      if (filterPlayers.transferParameters.page <= 0) {
-                        filterPlayers.transferParameters.page = 0;
-                      } else {
-                        customToast(Translation(context).text.loading);
-                      }
-                      setState(() {});
-                    },
-                    child: const Icon(Icons.arrow_left,
-                        color: Colors.white, size: 50),
-                  ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: searchNameBar(),
+                ),
 
-                  //BOTAO ESQUERDA
-                  GestureDetector(
-                    onTap: () {
-                      if ((filterPlayers.transferParameters.page + 1) * 50 <
-                          filterPlayers.copyJogadoresID.length) {
-                        filterPlayers.transferParameters.page++;
-                        customToast(Translation(context).text.loading);
-                      }
-                      setState(() {});
-                    },
-                    child: const Icon(Icons.arrow_right,
-                        color: Colors.white, size: 50),
-                  ),
-                  //ESCOLHA DE POSIÇÃO
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: () {
-                        showModalBottomSheet(
-                            context: context,
-                            builder: (context) {
-                              return filterByPositionWidget();
-                            });
+                playersRowTitle(), //titulo da tabela
+                Container(
+                  height: bottomSize > 0 ? 280 : 400,
+                  color: AppColors().greyTransparent,
+                  padding: const EdgeInsets.symmetric(horizontal: 6),
+                  child: SingleChildScrollView(
+                    child: Table(
+                      columnWidths: const {
+                        0: FractionColumnWidth(.09),
+                        1: FractionColumnWidth(.07),
+                        2: FractionColumnWidth(.5),
+                        5: FractionColumnWidth(.18),
                       },
-                      child: Column(
-                        children: [
-                          Image.asset('assets/icons/assists.png',
-                              height: 40, width: 40),
-                          Text(Translation(context).text.position,
-                              style: EstiloTextoBranco.text14),
-                        ],
-                      ),
+                      children: [
+                        for (int i = filterPlayers.transferParameters.page * 50;
+                            i < filterPlayers.copyJogadoresID.length && showRows < 50;
+                            i++)
+                          playersRow(filterPlayers.copyJogadoresID[i])
+                      ],
                     ),
                   ),
+                ),
+                //FILTRAR
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    localButton(
+                        title: Translation(context).text.age.toUpperCase(),
+                        function: () {
+                          filterPlayers.setAge();
+                          setState(() {});
+                        }),
+                    localButton(
+                        title: Translation(context).text.overall.toUpperCase(),
+                        function: () {
+                          filterPlayers.setOverall();
+                          setState(() {});
+                        }),
+                    localButton(
+                        title: Translation(context).text.price.toUpperCase(),
+                        function: () {
+                          filterPlayers.setPrice();
+                          setState(() {});
+                        }),
+                  ],
+                ),
 
-                  GestureDetector(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    //BOTAO ESQUERDA
+                    GestureDetector(
                       onTap: () {
-                    showModalBottomSheet(
-                        isScrollControlled: true,
-                        context: context,
-                        builder: (context) {
-                          return maxMinSelectionWidget();
-                        });
-                  },
-                  child: const Icon(Icons.filter_alt, size: 35, color: Colors.white),
-                  ),
+                        filterPlayers.transferParameters.page--;
+                        if (filterPlayers.transferParameters.page <= 0) {
+                          filterPlayers.transferParameters.page = 0;
+                        } else {
+                          customToast(Translation(context).text.loading);
+                        }
+                        setState(() {});
+                      },
+                      child: const Icon(Icons.arrow_left,
+                          color: Colors.white, size: 50),
+                    ),
+
+                    //BOTAO ESQUERDA
+                    GestureDetector(
+                      onTap: () {
+                        if ((filterPlayers.transferParameters.page + 1) * 50 <
+                            filterPlayers.copyJogadoresID.length) {
+                          filterPlayers.transferParameters.page++;
+                          customToast(Translation(context).text.loading);
+                        }
+                        setState(() {});
+                      },
+                      child: const Icon(Icons.arrow_right,
+                          color: Colors.white, size: 50),
+                    ),
+                    //ESCOLHA DE POSIÇÃO
+                    Expanded(
+                      child: GestureDetector(
+                        onTap: () {
+                          showModalBottomSheet(
+                              context: context,
+                              builder: (context) {
+                                return filterByPositionWidget();
+                              });
+                        },
+                        child: Column(
+                          children: [
+                            Image.asset('assets/icons/assists.png',
+                                height: 40, width: 40),
+                            Text(Translation(context).text.position,
+                                style: EstiloTextoBranco.text14),
+                          ],
+                        ),
+                      ),
+                    ),
+
+                    GestureDetector(
+                      onTap: () {
+                        showModalBottomSheet(
+                            isScrollControlled: true,
+                            context: context,
+                            builder: (context) {
+                              return filterByCountry();
+                            });
+                      },
+                      child: const Icon(Icons.flag, size: 35, color: Colors.white),
+                    ),
+
+                    GestureDetector(
+                        onTap: () {
+                      showModalBottomSheet(
+                          isScrollControlled: true,
+                          context: context,
+                          builder: (context) {
+                            return maxMinSelectionWidget();
+                          });
+                    },
+                    child: const Icon(Icons.filter_alt, size: 35, color: Colors.white),
+                    ),
 
 
-                ],
-              ),
-            ],
-          ),
+                  ],
+                ),
+              ],
+            ),
 
-          //BOTAO DE VOLTAR
-          returnButton(context),
-        ]));
+            //BOTAO DE VOLTAR
+            returnButton(context),
+          ]),
+        ));
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
@@ -228,6 +243,61 @@ class _TransfersState extends State<Transfers> {
       ),
     );
   }
+
+  Widget filterByCountry() {
+    return Container(
+      padding: const EdgeInsets.all(8),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(Translation(context).text.countryFilter,style: EstiloTextoPreto.text16),
+          SizedBox(
+            height: Sized(context).height/3,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  for(String name in globalCountryNames)
+                    countryRow(name),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+  Widget countryRow(String name){
+    return Container(
+      color: filterPlayers.transferParameters.filteredCountry == name ? Colors.green.shade200 : Colors.transparent,
+      child: GestureDetector(
+        onTap: (){
+          Navigator.pop(context);
+          if (filterPlayers.transferParameters.filteredCountry == name) {
+            filterPlayers.transferParameters.filteredCountry = "";
+          } else {
+            filterPlayers.transferParameters.filteredCountry = name;
+          }
+          filterPlayers.filterByCountry();
+          customToast(Translation(context).text.loading);
+          setState(() {});
+        },
+        child: Container(
+          margin: const EdgeInsets.symmetric(vertical: 6),
+          child: Row(
+            children: [
+              funcFlagsList(name, 25, 35),
+              const SizedBox(width: 8),
+              SizedBox(
+                  width: Sized(context).width-100,
+                  child: Text(name,style: EstiloTextoPreto.text16),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
  Widget maxMinSelectionWidget() {
     return Container(
       height: 280 + 240,

@@ -1,6 +1,7 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/popup/popup_create_player.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/popup/popup_save_all_data.dart';
@@ -74,9 +75,9 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                             child: Text(Translation(context).text.name.toUpperCase(),style: EstiloTextoBranco.text16)
                         ),
                         const SizedBox(width: 4),
-                        const Text('IDA',style: EstiloTextoBranco.text16),
+                        Text(Translation(context).text.age3,style: EstiloTextoBranco.text16),
                         const SizedBox(width: 12),
-                        const Text('OVR',style: EstiloTextoBranco.text16),
+                        Text(Translation(context).text.ovr3,style: EstiloTextoBranco.text16),
                         const SizedBox(width: 14),
                         Text(Translation(context).text.price.toUpperCase(),style: EstiloTextoBranco.text16),
                       ],
@@ -109,6 +110,21 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                   //CUSTOMIZE
                   Row(
                     children: [
+
+                      buttonDesign(
+                          title: Translation(context).text.createPlayer,
+                          function: (){
+                            setState(() {});
+                            popUpCreatePlayer(
+                                context: context,
+                                club: club,
+                                function: (){
+                                  setState(() {});
+                                }
+                            );
+                          }
+                      ),
+
                       buttonDesign(
                           title: '${Translation(context).text.age} +1',
                           function: (){

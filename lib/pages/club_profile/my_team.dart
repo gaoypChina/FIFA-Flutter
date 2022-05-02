@@ -67,7 +67,6 @@ class _MyTeamState extends State<MyTeam> {
                   children: [
 
                     const SizedBox(height: 30),
-
                     Row(
                       children: [
                         //Escudo da Equipe
@@ -120,7 +119,7 @@ class _MyTeamState extends State<MyTeam> {
                         children: [
                           FieldDraggable(notifyParent: notifyParent),
                           ClubGraphics(club: myClub),
-                          AllInfosClub(club: myClub),
+                          AllInfosClub(notifyParent: notifyParent, club: myClub),
                         ],
                       ),
                     ),

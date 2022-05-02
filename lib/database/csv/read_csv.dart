@@ -1,3 +1,4 @@
+import 'package:fifa/classes/player_basic.dart';
 import 'package:fifa/functions/end_year_updates/update_data_year.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/custom_toast.dart';
@@ -100,14 +101,16 @@ class ReadCSV{
               int clubIndex = clubsAllNameList.indexOf(club);
               if(clubIndex >= 0) { //se o clube existir e estiver cadastrado certo
 
-                globalJogadoresClubIndex.add(clubIndex);
-                globalJogadoresIndex.add(indexJog);
-                globalJogadoresName.add(name);
-                globalJogadoresPosition.add(position);
-                globalJogadoresAge.add(age);
-                globalJogadoresOverall.add(overall);
-                globalJogadoresNationality.add(nationality);
-                globalJogadoresImageUrl.add(imagePlayer);
+                PlayerBasicInfo playerBasicInfo = PlayerBasicInfo();
+                playerBasicInfo.clubID = clubIndex;
+                playerBasicInfo.playerID = indexJog;
+                playerBasicInfo.name = name;
+                playerBasicInfo.position = position;
+                playerBasicInfo.age = age;
+                playerBasicInfo.overall = overall;
+                playerBasicInfo.nationality = nationality;
+                playerBasicInfo.imagePlayer = imagePlayer;
+                playerBasicInfo.createNewPlayerToDatabase();
                 indexJog++;
 
                 //test jogadores importados

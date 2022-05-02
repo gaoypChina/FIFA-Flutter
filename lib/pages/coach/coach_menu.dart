@@ -8,6 +8,7 @@ import 'package:fifa/functions/coach/coach_best_results.dart';
 import 'package:fifa/functions/coach/coach_historic_data.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/change_club.dart';
+import 'package:fifa/pages/coach/coach_achievements.dart';
 import 'package:fifa/pages/coach/coach_past_club.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
@@ -31,131 +32,132 @@ class _CoachMenuState extends State<CoachMenu> {
   Expectativa expectativa = Expectativa(My());
   CoachBestResults coachBestResults = CoachBestResults();
 
+////////////////////////////////////////////////////////////////////////////
+//                               BUILD                                    //
+////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
     coachBestResults.updateVariables();
 
     return Scaffold(
-      body: Stack(
-        children: [
+      body: Container(
+        decoration: Images().getWallpaperContainerDecoration(),
+        child: Column(
+          children: [
+            const SizedBox(height: 40),
+            Text(Translation(context).text.coachMenu,style: EstiloTextoBranco.text30),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text('${Translation(context).text.points}: ${my.scoreGame} ',style: EstiloTextoBranco.text16),
+                changeClub(context),
+                coachAchievements(context),
 
-          Images().getWallpaper(),
+              ],
+            ),
 
-          Column(
-            children: [
-              const SizedBox(height: 40),
-              Text(Translation(context).text.coachMenu,style: EstiloTextoBranco.text30),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Text('${Translation(context).text.points}: ${my.scoreGame} ',style: EstiloTextoBranco.text16),
-                  changeClub(context),
-                ],
-              ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
 
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
-                    children: [
-
-                      Container(
-                        color: AppColors().greyTransparent,
-                        padding: const EdgeInsets.all(8),
-                        margin: const EdgeInsets.all(8),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            trophyWidget(context,0),
-                            trophyWidget(context,1),
-                          ],
-                        ),
+                    Container(
+                      color: AppColors().greyTransparent,
+                      padding: const EdgeInsets.all(8),
+                      margin: const EdgeInsets.all(8),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          trophyWidget(context,0),
+                          trophyWidget(context,1),
+                        ],
                       ),
+                    ),
 
-                      Container(
-                        color: AppColors().greyTransparent,
-                        padding: const EdgeInsets.all(8),
-                        margin: const EdgeInsets.all(8),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            pieChart(coachHistoricData.dataPieChartMap()),
-                            victoryDrawLoses('%',coachHistoricData.pointsPercentage.toStringAsFixed(1)),
-                          ],
-                        ),
+                    Container(
+                      color: AppColors().greyTransparent,
+                      padding: const EdgeInsets.all(8),
+                      margin: const EdgeInsets.all(8),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          pieChart(coachHistoricData.dataPieChartMap()),
+                          victoryDrawLoses('%',coachHistoricData.pointsPercentage.toStringAsFixed(1)),
+                        ],
                       ),
+                    ),
 
-                      Container(
-                        color: AppColors().greyTransparent,
-                        width: Sized(context).width,
-                        padding: const EdgeInsets.all(8),
-                        margin: const EdgeInsets.all(8),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(Translation(context).text.expectation,style: EstiloTextoBranco.text20),
-                            Row(
-                              children: [
-                                Image.asset(Images().getMyLeagueLogo(),height: 25,width: 25),
-                                const SizedBox(width: 4),
-                                Text('${my.campeonatoName}: ${expectativa.expectativaNacional.toString()}º',style: EstiloTextoBranco.text16),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Image.asset(Images().getMyInternationalLeagueLogo(),height: 25,width: 25),
-                                const SizedBox(width: 4),
-                                Text('${my.getMyInternationalLeague()}: ${expectativa.expInternacional.toString()}',style: EstiloTextoBranco.text16),
-                              ],
-                            ),
+                    Container(
+                      color: AppColors().greyTransparent,
+                      width: Sized(context).width,
+                      padding: const EdgeInsets.all(8),
+                      margin: const EdgeInsets.all(8),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(Translation(context).text.expectation,style: EstiloTextoBranco.text20),
+                          Row(
+                            children: [
+                              Image.asset(Images().getMyLeagueLogo(),height: 25,width: 25),
+                              const SizedBox(width: 4),
+                              Text('${my.campeonatoName}: ${expectativa.expectativaNacional.toString()}º',style: EstiloTextoBranco.text16),
                             ],
-                        ),
-                      ),
-
-
-
-
-                      //TABELA
-                      ano > anoInicial ? Container(
-                        color: AppColors().greyTransparent,
-                        width: Sized(context).width,
-                        padding: const EdgeInsets.all(8),
-                        margin: const EdgeInsets.all(8),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-
-                            const Text('Time passado',style: EstiloTextoBranco.text16),
-
-                            for(int year=anoInicial;year<ano;year++)
-                              yearRow(year,context),
+                          ),
+                          Row(
+                            children: [
+                              Image.asset(Images().getMyInternationalLeagueLogo(),height: 25,width: 25),
+                              const SizedBox(width: 4),
+                              Text('${my.getMyInternationalLeague()}: ${expectativa.expInternacional.toString()}',style: EstiloTextoBranco.text16),
+                            ],
+                          ),
                           ],
-                        ),
-                      ) : Container(),
+                      ),
+                    ),
 
 
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+
+                    //TABELA
+                    ano > anoInicial ? Container(
+                      color: AppColors().greyTransparent,
+                      width: Sized(context).width,
+                      padding: const EdgeInsets.all(8),
+                      margin: const EdgeInsets.all(8),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
                         children: [
-                          sequenceWidget(Translation(context).text.biggestVictory, coachBestResults.maxVictory, coachBestResults.maxVictoryClubID,coachBestResults.maxVictoryClubAdvID),
-                          sequenceWidget(Translation(context).text.biggestDefeat, coachBestResults.maxLoss, coachBestResults.maxLossClubID,coachBestResults.maxLossClubAdvID),
+
+                          const Text('Time passado',style: EstiloTextoBranco.text16),
+
+                          for(int year=anoInicial;year<ano;year++)
+                            yearRow(year,context),
                         ],
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          sequenceWidget(Translation(context).text.sequenceNoDefeats, coachBestResults.maxSequenceNoLosses.toString(), coachBestResults.maxSequenceNoLossesClubID),
-                          sequenceWidget(Translation(context).text.sequenceVictories,coachBestResults.maxSequenceVictory.toString(), coachBestResults.maxSequenceVictoryClubID),
-                        ],
-                      ),
+                    ) : Container(),
 
 
-                    ],
-                  ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        sequenceWidget(Translation(context).text.biggestVictory, coachBestResults.maxVictory, coachBestResults.maxVictoryClubID,coachBestResults.maxVictoryClubAdvID),
+                        sequenceWidget(Translation(context).text.biggestDefeat, coachBestResults.maxLoss, coachBestResults.maxLossClubID,coachBestResults.maxLossClubAdvID),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        sequenceWidget(Translation(context).text.sequenceNoDefeats, coachBestResults.maxSequenceNoLosses.toString(), coachBestResults.maxSequenceNoLossesClubID),
+                        sequenceWidget(Translation(context).text.sequenceVictories,coachBestResults.maxSequenceVictory.toString(), coachBestResults.maxSequenceVictoryClubID),
+                      ],
+                    ),
+
+
+                  ],
                 ),
               ),
-            ],
-          ),
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -179,6 +181,24 @@ Widget changeClub(BuildContext context){
             }
           },
           child: Text(Translation(context).text.enterNewClub,style: EstiloTextoBranco.text16),
+        ),
+      ),
+    ],
+  );
+}
+Widget coachAchievements(BuildContext context){
+  return Column(
+    children: [
+      Container(
+        color: AppColors().greyTransparent,
+        padding: const EdgeInsets.all(8),
+        margin: const EdgeInsets.all(8),
+        child: GestureDetector(
+          onTap:(){
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CoachAchievements()));
+              customToast(Translation(context).text.inDevelopment);
+          },
+          child: Text(Translation(context).text.coachAchievements,style: EstiloTextoBranco.text16),
         ),
       ),
     ],

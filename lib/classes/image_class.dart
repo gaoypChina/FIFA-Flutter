@@ -59,4 +59,12 @@ class Images{
     return Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill);
   }
 
+  BoxDecoration getWallpaperContainerDecoration(){
+    return const BoxDecoration(
+      image: DecorationImage(
+        image: AssetImage('assets/icons/wallpaper.png'),
+        fit: BoxFit.cover,
+      ),
+    );
+  }
 }

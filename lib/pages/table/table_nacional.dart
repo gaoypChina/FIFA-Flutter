@@ -47,11 +47,8 @@ class _TableNacionalState extends State<TableNacional> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    double _height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-
-        resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
         body:  Stack(
             children: [
 
@@ -63,7 +60,7 @@ class _TableNacionalState extends State<TableNacional> {
                   children: [
                     const SizedBox(height: 30),
                     Container(
-                      height: _height-80,
+                      height: Sized(context).height-80,
                       color: AppColors().greyTransparent,
                       child: SingleChildScrollView(
                         child: Column(
@@ -79,7 +76,7 @@ class _TableNacionalState extends State<TableNacional> {
                             ///////////////////
                             //CLASSIFICAÇÃO
                             ///////////////////
-                            tabelaClassificacaoWidget(choosenLeagueIndex),
+                            tabelaClassificacaoWidget(context,choosenLeagueIndex),
 
                             ///////////////////
                             //PRÓXIMAS PARTIDAS

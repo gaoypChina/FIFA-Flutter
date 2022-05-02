@@ -21,28 +21,29 @@ class _UploadState extends State<Upload> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        body:  Container(
+          decoration: Images().getWallpaperContainerDecoration(),
+          child: Stack(
+              children: [
 
-        body:  Stack(
-            children: [
+                Container(
+                  margin: const EdgeInsets.only(top: 40),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
 
-              Images().getWallpaper(),
+                      for(int i=0; i<7;i++)
+                        upload(i),
 
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                    ],
+                  ),
+                ),
 
-                  const SizedBox(height: 40),
+                //BOTAO DE VOLTAR
+                returnButton(context),
 
-                  for(int i=0; i<7;i++)
-                    upload(i),
-
-                ],
-              ),
-
-              //BOTAO DE VOLTAR
-              returnButton(context),
-
-            ]
+              ]
+          ),
         )
     );
   }

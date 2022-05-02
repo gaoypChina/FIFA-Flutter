@@ -73,7 +73,6 @@ class _MenuState extends State<Menu> {
               Image.asset('assets/icons/wallpaper blue.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
 
               Column(
-
                 children: [
 
                   const SizedBox(height: 40),

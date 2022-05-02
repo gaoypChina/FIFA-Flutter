@@ -34,6 +34,7 @@
   "nTeamsRelegated": "Nº of teams relegated per league",
   "changeClubs": "Change clubs",
   "initialMoney": "Initial money",
+  "standard": "Standard",
   "allowCards": "Allow yellow and red cards",
   "allowInjuries": "Allow injured players",
   "allPlayersEqual": "All Players with equal overall",
@@ -46,6 +47,7 @@
   "save": "Save",
   "load": "Load",
   "cancel": "Cancel",
+  "createPlayer": "Create player",
 
 
   "@_MENU_PAGE": {
@@ -83,12 +85,14 @@
   "playersNameSearch": "Player's name",
   "age": "Age",
   "overall": "Overall",
+  "nationality": "Nationality",
   "name": "Name",
   "price": "Price",
   "filter": "Filter",
   "max": "Max",
   "min": "Min",
   "reset": "Reset",
+  "countryFilter": "Filter by country",
 
   "@_RANKING_CLUBS_PAGE": {
   },
@@ -122,6 +126,7 @@
   "@_COACH_PAGE": {
   },
   "coachMenu": "Coach Menu",
+  "coachAchievements": "Achievements",
   "enterNewClub": "Enter new club",
   "points": "Points",
   "nationalChampionship": "National Championship",
@@ -130,6 +135,26 @@
   "biggestDefeat": "Biggest defeat",
   "sequenceNoDefeats": "Largest sequence without defeats",
   "sequenceVictories": "Largest sequence winning",
+
+  "@_COACH_PAST_CLUB_PAGE": {
+  },
+  "elenco": "Players",
+  "myTransfers": "My Transfers",
+  "bought": "Bought",
+  "sold": "Sold",
+
+  "@_COACH_ACHIEVEMENTS_PAGE": {
+  },
+  "play100matchs": "Play 100 matchs",
+  "win100matchs": "Win 100 matchs",
+  "win1nationalChampionship": "Win 1 national championship",
+  "win5nationalChampionship": "Win 5 national championships",
+  "win1internationalChampionship": "Win 1 international championship",
+  "sellExpensivePlayer": "Sell a player for more than 100mi",
+  "bestTeamInTheWorld": "Have the best team in the world",
+  "play5seasons": "Play 5 seasons",
+  "play10seasons": "Play 10 seasons",
+  "invencibles": "Don't lose a match during the season",
 
   "@_CALENDAR_PAGE": {
   },
@@ -226,12 +251,28 @@
   "limitNPlayersReached": "Number of maximum players reached (32)",
   "notEnoughPlayersLeftToSell": "You don't have enough players to sell",
 
+  "@_SIGLAS": {
+  },
+  "wonW": "W",
+  "drawnD": "D",
+  "lostL": "L",
+  "goalsG": "G",
+  "assistsA": "A",
+  "playedP": "P",
+  "ovr3": "OVR",
+  "pos3": "POS",
+  "age3": "AGE",
+  "points3": "PTS",
+  "goalDifference3": "GD",
+  "goalsFor3": "GF",
+  "goalsAgainst": "GA",
 
 
 
 
 
 
+  "inDevelopment": "In development",
 
 
   "last": "last",

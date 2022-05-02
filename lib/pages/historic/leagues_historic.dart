@@ -35,91 +35,85 @@ class _HistoricLeagueState extends State<HistoricLeague> {
     league = League(index: choosenLeagueIndex);
 
     return Scaffold(
-
-        body:  Stack(
+        body:  Container(
+          decoration: Images().getWallpaperContainerDecoration(),
+          child: Column(
             children: [
 
-              Images().getWallpaper(),
-
-              Column(
-                children: [
-
-                  const SizedBox(height: 40),
-                  Text(Translation(context).text.leagueHistoric,style: EstiloTextoBranco.text22),
+              const SizedBox(height: 40),
+              Text(Translation(context).text.leagueHistoric,style: EstiloTextoBranco.text22),
 
 
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        selectButton('1º', 1),
-                        selectButton('G-2', 2),
-                        selectButton('G-4', 4),
-                        selectButton('G-10', 10),
-                        selectButton(Translation(context).text.all, 20),
-                      ],
-                    ),
-                  ),
-
-                  //TABELA
-                  Expanded(
-                    child: SingleChildScrollView(
-                      child: Column(
-                        children: [
-
-                          for(int year=ano-1;year>=anoInicial;year--)
-                            yearRow(year),
-
-                          for(int year=ano-1;year>ano-60;year--)
-                            yearRowPast(year),
-                        ],
-                      ),
-                    ),
-                  ),
-
-                  ////////////////////////////////////
-                  //SELECT LEAGUE
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                          for(int i=0;i<leaguesListRealIndex.length;i++)
-                            leagueSelectionRow(i)
-                      ],
-                    ),
-                  ),
-
-                  //VOLTAR
-                  Padding(
-                    padding: const EdgeInsets.all(4),
-                    child:  customButtonContinue(
-                        title: Translation(context).text.next,
-                        function: (){
-                          if(ano>anoInicial){
-                            Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const InternationalHistoric()));
-                          }else{
-                            Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const PlayersHistoric()));
-                          }
-                          }
-                    ),
-                  ),
-                  //VOLTAR
-                  Padding(
-                    padding: const EdgeInsets.all(6),
-                    child:  customButtonContinue(
-                        title: Translation(context).text.returnTo,
-                        function: (){
-                          Navigator.pop(context);
-                        }
-                    ),
-                  ),
-
-
-                ],
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    selectButton('1º', 1),
+                    selectButton('G-2', 2),
+                    selectButton('G-4', 4),
+                    selectButton('G-10', 10),
+                    selectButton(Translation(context).text.all, 20),
+                  ],
+                ),
               ),
 
-            ]
+              //TABELA
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+
+                      for(int year=ano-1;year>=anoInicial;year--)
+                        yearRow(year),
+
+                      for(int year=ano-1;year>ano-60;year--)
+                        yearRowPast(year),
+                    ],
+                  ),
+                ),
+              ),
+
+              ////////////////////////////////////
+              //SELECT LEAGUE
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                      for(int i=0;i<leaguesListRealIndex.length;i++)
+                        leagueSelectionRow(i)
+                  ],
+                ),
+              ),
+
+              //VOLTAR
+              Padding(
+                padding: const EdgeInsets.all(4),
+                child:  customButtonContinue(
+                    title: Translation(context).text.next,
+                    function: (){
+                      if(ano>anoInicial){
+                        Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const InternationalHistoric()));
+                      }else{
+                        Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const PlayersHistoric()));
+                      }
+                      }
+                ),
+              ),
+              //VOLTAR
+              Padding(
+                padding: const EdgeInsets.all(6),
+                child:  customButtonContinue(
+                    title: Translation(context).text.returnTo,
+                    function: (){
+                      Navigator.pop(context);
+                    }
+                ),
+              ),
+
+
+            ],
+          ),
         )
     );
   }

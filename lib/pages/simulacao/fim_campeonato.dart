@@ -45,7 +45,7 @@ class _FimCampeonatoState extends State<FimCampeonato> {
                     const SizedBox(height: 8),
 
                     //TABELA
-                    tabelaClassificacaoWidget(My().campeonatoID),
+                    tabelaClassificacaoWidget(context,My().campeonatoID),
 
                     const Spacer(),
 

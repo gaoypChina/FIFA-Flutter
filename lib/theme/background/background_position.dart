@@ -1,6 +1,5 @@
 
 import 'package:fifa/theme/textstyle.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 Widget positionContainer(String position){
@@ -17,7 +16,7 @@ Widget positionContainer(String position){
 Color colorPositionBackground(String position){
   Color colorBackground = Colors.green;
   if(position == 'GOL'){colorBackground = Colors.purple;}
-  else if(position == 'LE' || position == 'LD'){colorBackground = Color(0xFF035821);}
+  else if(position == 'LE' || position == 'LD'){colorBackground = const Color(0xFF035821);}
   else if(position == 'ZAG'){colorBackground = Colors.green.shade500;}
   else if(position == 'VOL' || position == 'MC'){colorBackground = Colors.blue;}
   else if(position == 'MEI' || position == 'ME' || position == 'MD'){colorBackground = Colors.orange.shade400;}

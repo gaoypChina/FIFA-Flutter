@@ -93,7 +93,7 @@ class _ClubProfileState extends State<ClubProfile>  with TickerProviderStateMixi
                         children: [
                           StaticField(clubID: widget.clubID),
                           ClubGraphics(club: clubClass),
-                          AllInfosClub(club: clubClass),
+                          AllInfosClub(club: clubClass,notifyParent: (){},),
                         ],
                       ),
                     ),

@@ -176,23 +176,30 @@ class _PlayState extends State<Play> {
 
                             //Estádio
                             Image.asset(Images().getStadium(myClubClass.name),height: 420,width: double.infinity,fit:BoxFit.fill),
-
+                            InteractiveViewer(
+                              panEnabled: true, // Set it to false to prevent panning.
+                              minScale: 0.5,
+                              maxScale: 4,
+                              child:
                             //Jogadores
-                            Row(
-                              children: [
-                                SizedBox(
-                                  width: Sized(context).width/2,
-                                    height: 420,
-                                    child: visitante ? fieldGameplay442(widget.adversarioClubID) : fieldWidget(),
-                                ),
-                                SizedBox(
-                                    width: Sized(context).width/2,
-                                    height: 420,
-                                    child: visitante ? fieldWidget() : fieldGameplay442(widget.adversarioClubID),
-                                ),
-                              ],
+                            SingleChildScrollView(
+                              scrollDirection: Axis.horizontal,
+                              child: Row(
+                                children: [
+                                  SizedBox(
+                                    width: Sized(context).width-30,
+                                      height: 425,
+                                      child: visitante ? fieldGameplay442(widget.adversarioClubID) : fieldWidget(),
+                                  ),
+                                  SizedBox(
+                                      width: Sized(context).width,
+                                      height: 425,
+                                      child: visitante ? fieldWidget() : fieldGameplay442(widget.adversarioClubID),
+                                  ),
+                                ],
+                              ),
                             ),
-
+                            ),
                           ],
                         ),
                       ),

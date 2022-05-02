@@ -8,6 +8,7 @@ class TransferParameters {
   int ascOrDescOVR = 0;
   int ascOrDescMoney = 0;
   String filteredPosition = '';
+  String filteredCountry = '';
   int page = 0;
 
   TextEditingController maxAge = TextEditingController();
@@ -166,6 +167,9 @@ class FilterPlayers{
     }
   }
 
+  filterByCountry(){
+    filterByPosition();
+  }
   filterByPosition() {
     if (searchString.isNotEmpty) {
       transferParameters.page = 0;
@@ -177,6 +181,9 @@ class FilterPlayers{
     filterByPrice();
     if (transferParameters.filteredPosition.isNotEmpty) {
       copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).position != transferParameters.filteredPosition);
+    }
+    if (transferParameters.filteredCountry.isNotEmpty) {
+      copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).nationality != transferParameters.filteredCountry);
     }
     if (transferParameters.minAge.text.isNotEmpty) {
       copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).age < int.parse(transferParameters.minAge.text));

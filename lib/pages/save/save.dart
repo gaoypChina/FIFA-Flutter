@@ -21,35 +21,29 @@ class _SaveState extends State<Save> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(//IF GO BACK TO PREVIOUS PAGE
-      onWillPop: () async{
-        return true;
-      },
-      child: Scaffold(
-
-          resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
-          body:  Stack(
+    return Scaffold(
+        body:  Container(
+          decoration: Images().getWallpaperContainerDecoration(),
+          child: Stack(
               children: [
 
-                Images().getWallpaper(),
-
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-
-                    const SizedBox(height: 40),
-
-                    for(int i=0; i<7;i++)
-                      save(i),
-                  ],
+                Container(
+                  margin: const EdgeInsets.only(top: 40),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      for(int i=0; i<7;i++)
+                        save(i),
+                    ],
+                  ),
                 ),
 
           //BOTAO DE VOLTAR
           returnButton(context),
 
               ]
-          )
-      ),
+          ),
+        )
     );
   }
 ////////////////////////////////////////////////////////////////////////////

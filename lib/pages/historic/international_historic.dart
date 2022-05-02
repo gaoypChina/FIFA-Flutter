@@ -36,69 +36,64 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
       possibleYears.add(year.toString());
     }
     return Scaffold(
-        body:  Stack(
+        body:  Container(
+          decoration: Images().getWallpaperContainerDecoration(),
+          child: Column(
             children: [
 
-              Images().getWallpaper(),
+              const SizedBox(height: 40),
 
-              Column(
-                children: [
-
-                  const SizedBox(height: 40),
-
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: Row(
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Row(
+                  children: [
+                    internationalLogoSelection(),
+                    const SizedBox(width: 6),
+                    dropDownButton(),
+                    const SizedBox(width: 6),
+                    phaseSelection(),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
                       children: [
-                        internationalLogoSelection(),
-                        const SizedBox(width: 6),
-                        dropDownButton(),
-                        const SizedBox(width: 6),
-                        phaseSelection(),
+                            isMataMata
+                                ? internationalHistoricColumn(int.parse(selectedYear),leagueInternational)
+                                : groupsClassificationColumn(int.parse(selectedYear),leagueInternational),
                       ],
                     ),
                   ),
-                  Expanded(
-                    child: SingleChildScrollView(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                                isMataMata
-                                    ? internationalHistoricColumn(int.parse(selectedYear),leagueInternational)
-                                    : groupsClassificationColumn(int.parse(selectedYear),leagueInternational),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-
-                  //PRÓXIMO
-                  Padding(
-                    padding: const EdgeInsets.all(6),
-                    child:  customButtonContinue(
-                        title: Translation(context).text.next,
-                        function: (){
-                          Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const PlayersHistoric()));
-                        }
-                    ),
-                  ),
-                  //VOLTAR
-                  Padding(
-                    padding: const EdgeInsets.all(6),
-                    child:  customButtonContinue(
-                        title: Translation(context).text.returnTo,
-                        function: (){
-                          Navigator.pop(context);
-                        }
-                    ),
-                  ),
-
-
-                ],
+                ),
               ),
 
-            ]
+              //PRÓXIMO
+              Padding(
+                padding: const EdgeInsets.all(6),
+                child:  customButtonContinue(
+                    title: Translation(context).text.next,
+                    function: (){
+                      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const PlayersHistoric()));
+                    }
+                ),
+              ),
+              //VOLTAR
+              Padding(
+                padding: const EdgeInsets.all(6),
+                child:  customButtonContinue(
+                    title: Translation(context).text.returnTo,
+                    function: (){
+                      Navigator.pop(context);
+                    }
+                ),
+              ),
+
+
+            ],
+          ),
         )
     );
   }

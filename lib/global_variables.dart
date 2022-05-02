@@ -124,6 +124,7 @@ Map globalInternationalMataMataGoals = {};
 
 /////////////////////
 //POSITIONS
+List<String> globalAllPositions = ['GOL','ZAG','LE','LD','VOL','MC','MEI','ME','MD','PE','ATA','PD'];
 Map positions442 = {
   'GOL': [0],
   'LE': [1],

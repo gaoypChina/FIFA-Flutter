@@ -20,6 +20,7 @@
   "nTeamsRelegated": "Nº clubes rebaixados por liga",
   "changeClubs": "Mudar clubes",
   "initialMoney": "Dinheiro Inicial",
+  "standard": "Padrão",
   "allowCards": "Permitir cartões",
   "allowInjuries": "Permitir jogadores machucados",
   "allPlayersEqual": "Todos os jogadores com overall igual",
@@ -32,6 +33,7 @@
   "save": "Salvar",
   "load": "Carregar",
   "cancel": "Cancelar",
+  "createPlayer": "Criar jogador",
 
 
   "@_MENU_PAGE": {
@@ -69,12 +71,14 @@
   "playersNameSearch": "Nome do Jogador",
   "age": "Idade",
   "overall": "Overall",
+  "nationality": "Nacionalidade",
   "name": "Nome",
   "price": "Preço",
   "filter": "Filtrar",
   "max": "Max",
   "min": "Min",
   "reset": "Resetar",
+  "countryFilter": "Filtrar por país",
 
   "@_RANKING_CLUBS_PAGE": {
   },
@@ -108,6 +112,7 @@
   "@_COACH_PAGE": {
   },
   "coachMenu": "Menu do Técnico",
+  "coachAchievements": "Conquistas",
   "enterNewClub": "Mudar de clube",
   "points": "Pontos",
   "nationalChampionship": "Campeonatos Nacionais",
@@ -116,6 +121,26 @@
   "biggestDefeat": "Maior derrota",
   "sequenceNoDefeats": "Maior sequência sem perder",
   "sequenceVictories": "Maior sequência de vitórias",
+
+  "@_COACH_PAST_CLUB_PAGE": {
+  },
+  "elenco": "Elenco",
+  "myTransfers": "Minhas transferências",
+  "bought": "Comprado",
+  "sold": "Vendido",
+
+  "@_COACH_ACHIEVEMENTS_PAGE": {
+  },
+  "play100matchs": "Jogue 100 partidas",
+  "win100matchs": "Vença 100 partidas",
+  "win1nationalChampionship": "Vença 1 campeonato nacional",
+  "win5nationalChampionship": "Vença 5 campeonatos nacionais",
+  "win1internationalChampionship": "Vença 1 campeonato international",
+  "sellExpensivePlayer": "Venda um jogador por mais de 100mi",
+  "bestTeamInTheWorld": "Tenha a melhor equipe do mundo",
+  "play5seasons": "Jogue 5 temporadas",
+  "play10seasons": "Jogue 10 temporadas",
+  "invencibles": "Termine a temporada invicto",
 
   "@_CALENDAR_PAGE": {
   },
@@ -189,8 +214,8 @@
 
   "@_POPUP_SELECT_CLUB": {
   },
-  "selectClub": "Select Club",
-  "changedClubTo": "Change club to:",
+  "selectClub": "Selecione um time",
+  "changedClubTo": "Clube trocado:",
 
   "@_POPUP_ALL_PLAYERS_DATA": {
   },
@@ -214,10 +239,27 @@
 
 
 
+  "@_SIGLAS": {
+  },
+  "wonW": "V",
+  "drawnD": "E",
+  "lostL": "D",
+  "goalsG": "G",
+  "assistsA": "A",
+  "playedP": "J",
+  "ovr3": "OVR",
+  "pos3": "POS",
+  "age3": "IDA",
+  "points3": "PTS",
+  "goalDifference3": "SG",
+  "goalsFor3": "GM",
+  "goalsAgainst": "GS",
 
 
 
 
+
+  "inDevelopment": "Em desenvolvimento",
 
 
 

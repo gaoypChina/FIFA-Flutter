@@ -22,38 +22,36 @@ class _ChooseSaveState extends State<ChooseSave> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-
-        resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
         body:  Stack(
             children: [
+              Container(
+                decoration: Images().getWallpaperContainerDecoration(),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
 
-              Images().getWallpaper(),
+                    const SizedBox(height: 100),
 
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
+                    const SizedBox(height: 10),
+                    customButtonContinue(
+                        title: Translation(context).text.save,
+                        function: (){
+                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Save()));
+                        }
+                    ),
 
-                  const SizedBox(height: 100),
+                    const SizedBox(height: 10),
+                    customButtonContinue(
+                        title: Translation(context).text.load,
+                        function: (){
+                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Upload()));
+                        }
+                    ),
 
-                  const SizedBox(height: 10),
-                  customButtonContinue(
-                      title: Translation(context).text.save,
-                      function: (){
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Save()));
-                      }
-                  ),
+                    const SizedBox(height: 100),
 
-                  const SizedBox(height: 10),
-                  customButtonContinue(
-                      title: Translation(context).text.load,
-                      function: (){
-                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Upload()));
-                      }
-                  ),
-
-                  const SizedBox(height: 100),
-
-                ],
+                  ],
+                ),
               ),
 
           //BOTAO DE VOLTAR
