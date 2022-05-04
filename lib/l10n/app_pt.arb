@@ -34,6 +34,15 @@
   "load": "Carregar",
   "cancel": "Cancelar",
   "createPlayer": "Criar jogador",
+  "editPlayer": "Editar jogador",
+  "changePosition": "Mudar Posição",
+  "changePlayersName": "Mudar Nome do jogador",
+  "changePlayersClub": "Mudar de Clube",
+  "clubDoesntExist": "Clube não existe",
+  "invalidPosition": "Posição inválida",
+  "newValueTo": "Novo valor para",
+  "delete": "Deletar",
+  "deletePlayer": "Deletar jogador",
 
 
   "@_MENU_PAGE": {
@@ -68,6 +77,7 @@
 
   "@_TRANSFERS_PAGE": {
   },
+  "player": "Jogador",
   "playersNameSearch": "Nome do Jogador",
   "age": "Idade",
   "overall": "Overall",
@@ -82,7 +92,8 @@
 
   "@_RANKING_CLUBS_PAGE": {
   },
-  "rankingClubs": "Ranking de Clubes",
+  "rankingGlobalClubs": "Ranking Global",
+  "rankingNationalClubs": "Ranking Nacional",
 
   "@_NATIONAL_TABLE_PAGE": {
   },

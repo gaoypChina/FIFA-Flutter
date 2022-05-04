@@ -41,64 +41,83 @@ class _FieldDraggableState extends State<FieldDraggable> {
       body: Stack(
         children: [
           Images().getWallpaper(),
-          Column(
-            children: [
+          SingleChildScrollView(
+            child: Column(
+              children: [
 
-              //Widget do campo
-              fieldWidget(),
+                //Widget do campo
+                fieldWidget(),
 
+                const SizedBox(height: 4),
+                Container(
+                    width: Sized(context).width,
+                    color: AppColors().greyTransparent,
+                    child: Text('${Translation(context).text.substitutes}:', style: EstiloTextoBranco.text22)
+                ),
 
-              const       SizedBox(height: 4),
-              Container(
-                  width: Sized(context).width,
+                Container(
+                  height: 90,
                   color: AppColors().greyTransparent,
-                  child: Text('${Translation(context).text.substitutes}:', style: EstiloTextoBranco.text22)
-              ),
-
-              Container(
-                height: 90,
-                color: AppColors().greyTransparent,
-                child: ListView.builder(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    itemCount:  myClub.nJogadores>11 ? myClub.nJogadores> 18 ? 7 : myClub.nJogadores -11 : 0,
-                    itemBuilder: (BuildContext context, int index) {
-                      index = index+11;
-                      return dragPlayerSelection(index);
-                    }
+                  child: ListView.builder(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount:  myClub.nJogadores>11 ? myClub.nJogadores> 18 ? 7 : myClub.nJogadores -11 : 0,
+                      itemBuilder: (BuildContext context, int index) {
+                        index = index+11;
+                        return dragPlayerSelection(index);
+                      }
+                  ),
                 ),
-              ),
 
-              Container(
-                height: 90,
-                color: AppColors().greyTransparent,
-                child: ListView.builder(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: myClub.nJogadores>18 ? myClub.nJogadores-18 : 0,
-                    itemBuilder: (BuildContext context, int index) {
-                      index = index+18;
-                      return dragPlayerSelection(index);
-                    }
+                Container(
+                  height: 90,
+                  color: AppColors().greyTransparent,
+                  child: ListView.builder(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: myClub.nJogadores>18 ? myClub.nJogadores-18 : 0,
+                      itemBuilder: (BuildContext context, int index) {
+                        index = index+18;
+                        return dragPlayerSelection(index);
+                      }
+                  ),
                 ),
-              ),
 
-              //FILTRAR POR TÓPICOS
-              Padding(
-                padding: const EdgeInsets.only(top:4.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    button(title: 'OVR', function: (){setState(() {});show = 'OVR';}),
-                    button(title: Translation(context).text.age, function: (){setState(() {});show = 'Idade';}),
-                    button(title: Translation(context).text.matchs, function: (){setState(() {});show = 'Jogos';}),
-                    button(title: Translation(context).text.goals, function: (){setState(() {});show = 'Gols';}),
-                    button(title: Translation(context).text.assists, function: (){setState(() {});show = 'Assists';}),
-                  ],
+                //FILTRAR POR TÓPICOS
+                Padding(
+                  padding: const EdgeInsets.only(top:4.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      button(title: Translation(context).text.ovr3, function: (){setState(() {});show = 'OVR';}),
+                      button(title: Translation(context).text.age, function: (){setState(() {});show = 'Idade';}),
+                      button(title: 'Auto-organize',
+                          function: (){
+                            setState(() {});
+                            myClub.optimizeBestSquadClub();
+                            globalMyJogadores = myClub.escalacao;
+                            widget.notifyParent();
+                            my = My();
+
+                          }),
+                    ],
+                  ),
                 ),
-              ),
-              
-            ],
+                Padding(
+                  padding: const EdgeInsets.only(top:4.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      button(title: Translation(context).text.matchs, function: (){setState(() {});show = 'Jogos';}),
+                      button(title: Translation(context).text.goals, function: (){setState(() {});show = 'Gols';}),
+                      button(title: Translation(context).text.assists, function: (){setState(() {});show = 'Assists';}),
+                    ],
+                  ),
+                ),
+
+                const SizedBox(height: 60),
+              ],
+            ),
           ),
         ],
       ),
@@ -138,9 +157,7 @@ class _FieldDraggableState extends State<FieldDraggable> {
         padding: const EdgeInsets.all(6),
         decoration: const BoxDecoration(
           color: Colors.black38,
-          borderRadius: BorderRadius.all(
-              Radius.circular(10.0) //                 <--- border radius here
-          ),
+          borderRadius: BorderRadius.all(Radius.circular(10.0)),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -197,7 +214,7 @@ class _FieldDraggableState extends State<FieldDraggable> {
 
     String name = player.name;
     String position = player.position;
-    double imageSize = 50;
+    double imageSize = 57;
     double healthBar = player.health;
 
     String circleShow = player.overallDynamic.toStringAsFixed(0);
@@ -219,18 +236,20 @@ class _FieldDraggableState extends State<FieldDraggable> {
 
             //OVR
             SizedBox(
-              height: imageSize-5,
-              width: imageSize,
+              height: imageSize-15,
+              width: imageSize+15 ,
               child: Stack(
                 children: [
 
                   //Uniforme
-                  (player.injury >0 || player.redCard >0)
-                      ? Opacity(
-                      opacity: 0.4,
-                      child: Image.asset(Images().getMyUniform())
-                  )
-                      : globalHasInternet ? Image.network(player.imageUrl) : Image.asset(Images().getMyUniform()),
+                  Center(
+                   child: (player.injury >0 || player.redCard >0)
+                        ? Opacity(
+                        opacity: 0.4,
+                        child: Image.asset(Images().getMyUniform())
+                    )
+                        : globalHasInternet ? Image.network(player.imageUrl) : Image.asset(Images().getMyUniform()),
+                  ),
 
                   //CIRCULO
                   Container(
@@ -258,7 +277,7 @@ class _FieldDraggableState extends State<FieldDraggable> {
             ),
             //Barra de saúde
             SizedBox(
-              width: imageSize+7,
+              width: imageSize+20,
               child: LinearProgressIndicator(
                 value: healthBar,
                 color: Colors.teal,
@@ -268,7 +287,7 @@ class _FieldDraggableState extends State<FieldDraggable> {
             //Nome do jogador
             Container(
                 color: AppColors().greyTransparent,
-                width: 80,
+                width: imageSize+20,
                 child: Text(name,textAlign: TextAlign.center,style: EstiloTextoBranco.text10)
             ),
 
@@ -283,6 +302,7 @@ class _FieldDraggableState extends State<FieldDraggable> {
     if(My().esquemaTatico == EsquemaTatico().e433) return fieldGameplay433();
     if(My().esquemaTatico == EsquemaTatico().e343) return fieldGameplay343();
     if(My().esquemaTatico == EsquemaTatico().e451) return fieldGameplay451();
+    if(My().esquemaTatico == EsquemaTatico().e541) return fieldGameplay541();
 
     return Container();
   }
@@ -329,8 +349,8 @@ class _FieldDraggableState extends State<FieldDraggable> {
         ],
       ),
     );
-
   }
+
   Widget fieldGameplay343(){
     return fieldSizeWidget(
       Column(
@@ -355,8 +375,8 @@ class _FieldDraggableState extends State<FieldDraggable> {
         ],
       ),
     );
-
   }
+
   Widget fieldGameplay451(){
     return fieldSizeWidget(
       Column(
@@ -374,7 +394,25 @@ class _FieldDraggableState extends State<FieldDraggable> {
         ],
       ),
     );
+  }
 
+  Widget fieldGameplay541(){
+    return fieldSizeWidget(
+      Column(
+        children: [
+          //ATACANTES
+          playerWidgetRow([my.jogadores[10]]),
+          //MEIAS
+          playerWidgetRow([my.jogadores[8],my.jogadores[9]]),
+          //VOLANTES
+          playerWidgetRow([my.jogadores[6],my.jogadores[7]]),
+          //ZAGUEIROS
+          playerWidgetRow([my.jogadores[1],my.jogadores[2],my.jogadores[3],my.jogadores[4],my.jogadores[5]]),
+          //GOLEIRO
+          playerWidgetRow([my.jogadores[0]]),
+        ],
+      ),
+    );
   }
 
   Widget playerWidgetRow(List playersID){
@@ -413,6 +451,18 @@ class _FieldDraggableState extends State<FieldDraggable> {
           playerWidget(playersID[1]),
           playerWidget(playersID[2]),
           playerWidget(playersID[3]),
+        ],
+      );
+    }
+    else if(playersID.length==5) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          playerWidget(playersID[0]),
+          playerWidget(playersID[1]),
+          playerWidget(playersID[2]),
+          playerWidget(playersID[3]),
+          playerWidget(playersID[4]),
         ],
       );
     }

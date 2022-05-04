@@ -3,7 +3,7 @@ import 'package:fifa/theme/translation.dart';
 import 'package:flutter/material.dart';
 
 
-popUpOkCancelar({required BuildContext context, required String title, required String content, required Function()? function}){
+popUpOkCancel({required BuildContext context, required String title, required String content, required Function()? function}){
   showDialog(
     context: context,
     builder: (BuildContext context) {

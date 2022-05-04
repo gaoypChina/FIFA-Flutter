@@ -58,7 +58,9 @@ class Images{
   Widget getWallpaper(){
     return Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill);
   }
-
+  String getGenericPlayerPicture(){
+    return 'assets/icons/generic_user.png';
+  }
   BoxDecoration getWallpaperContainerDecoration(){
     return const BoxDecoration(
       image: DecorationImage(

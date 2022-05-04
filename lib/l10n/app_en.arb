@@ -48,6 +48,15 @@
   "load": "Load",
   "cancel": "Cancel",
   "createPlayer": "Create player",
+  "editPlayer": "Edit player",
+  "changePosition": "Change position",
+  "changePlayersName": "Change players name",
+  "changePlayersClub": "Change club",
+  "clubDoesntExist": "Club doesn't exist",
+  "invalidPosition": "Invalid position",
+  "newValueTo": "New Value to",
+  "delete": "Delete",
+  "deletePlayer": "Delete player",
 
 
   "@_MENU_PAGE": {
@@ -82,6 +91,7 @@
 
   "@_TRANSFERS_PAGE": {
   },
+  "player": "Player",
   "playersNameSearch": "Player's name",
   "age": "Age",
   "overall": "Overall",
@@ -96,7 +106,8 @@
 
   "@_RANKING_CLUBS_PAGE": {
   },
-  "rankingClubs": "Clubs Ranking",
+  "rankingGlobalClubs": "Ranking Global",
+  "rankingNationalClubs": "Ranking National",
 
   "@_NATIONAL_TABLE_PAGE": {
   },

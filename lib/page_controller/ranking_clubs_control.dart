@@ -1,13 +1,16 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/league.dart';
+import 'package:fifa/classes/my.dart';
+import 'package:fifa/values/league_divisions.dart';
 import 'package:fifa/values/league_names.dart';
 
 class RankingClubsControl{
 
-  List clubsOVR = []; //criado no init, e reutilizado depois no widget
+  List clubsOVR = []; //criado no init
   List copyClubsName = [];
+  List copyClubsNameNational = [];
 
-  organizarRanking(){
+  organizeRanking(){
 
     //REORGANIZA ORDEM
     for (var leagueID in leaguesListRealIndex) {//element: 0-70
@@ -29,6 +32,17 @@ class RankingClubsControl{
       }
     }
 
+  }
+
+  organizeNationalRanking(){
+    copyClubsNameNational = List.from(copyClubsName);
+    List allClubsName = [];
+    List divisionsName = Divisions().leagueDivisionsStructure(My().campeonatoName);
+    for(String leagueName in divisionsName){
+        int leagueIndex = leaguesIndexFromName[leagueName];
+        allClubsName += League(index: leagueIndex).allClubsName;
+    }
+    copyClubsNameNational.removeWhere((element) => !allClubsName.contains(element) );
   }
 
 }

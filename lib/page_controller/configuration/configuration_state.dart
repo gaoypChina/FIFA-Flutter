@@ -1,3 +1,5 @@
+import 'package:fifa/classes/player_basic.dart';
+import 'package:fifa/database/csv/read_csv.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/page_controller/configuration/open_url.dart';
 
@@ -39,11 +41,22 @@ class ConfigurationState{
   changeInjuryState(){
     hasInjuries = !hasInjuries;
   }
+
   changeAllEqualPlayersOverallState(){
     allEqualPlayersOverall = !allEqualPlayersOverall;
+    globalAllEqualOverall = !globalAllEqualOverall;
+    if(globalAllEqualOverall){
+      for(int id in globalJogadoresIndex){
+        globalJogadoresOverall[id] = 75;
+      }
+    }else{
+      ReadCSV().openCSV();
+    }
   }
+
   changeSeeProbabilityState(){
     seeProbability = !seeProbability;
+    globalSeeProbabilities = !globalSeeProbabilities;
   }
 
   setInitialMoney(double value){

@@ -73,12 +73,6 @@ class _ConfigurationState extends State<Configuration> {
                     SizedBox(height: spaceBetweenWidgets),
                     userTerms(),
                     SizedBox(height: spaceBetweenWidgets),
-                    GestureDetector(
-                      onTap: (){
-                      },
-                      child: const Text('teste',style: EstiloTextoBranco.text16),
-                    )
-
                   ],
                 ),
               ),
@@ -160,6 +154,7 @@ Widget soundEffects(ConfigurationState config){
         value: config.hasSoundEffect,
         onChanged: (value) {
           setState(() {
+            customToast(Translation(context).text.inDevelopment);
             config.hasSoundEffect = value;
             globalHasSoundEffects = !globalHasSoundEffects;
           });
@@ -179,6 +174,7 @@ Widget soundEffects(ConfigurationState config){
           Switch(
               value: config.turnIdaEVolta,
               onChanged: (value) {
+                customToast(Translation(context).text.inDevelopment);
                 setState(() {
                   config.changeTurnSwitchState();
                 });
@@ -272,6 +268,7 @@ Widget soundEffects(ConfigurationState config){
           Switch(
               value: config.hasCards,
               onChanged: (value) {
+                customToast(Translation(context).text.inDevelopment);
                 setState(() {
                   config.changeCardsState();
                 });
@@ -290,6 +287,7 @@ Widget soundEffects(ConfigurationState config){
           Switch(
               value: config.hasInjuries,
               onChanged: (value) {
+                customToast(Translation(context).text.inDevelopment);
                 setState(() {
                   config.changeInjuryState();
                 });

@@ -13,6 +13,7 @@ Widget fieldWidget(){
   if(My().esquemaTatico == EsquemaTatico().e433) return fieldGameplay433(My().clubID);
   if(My().esquemaTatico == EsquemaTatico().e343) return fieldGameplay343(My().clubID);
   if(My().esquemaTatico == EsquemaTatico().e451) return fieldGameplay451(My().clubID);
+  if(My().esquemaTatico == EsquemaTatico().e541) return fieldGameplay541(My().clubID);
 
   return Container();
 }
@@ -124,7 +125,29 @@ Widget fieldGameplay451(int clubID){
     ],
   );
 }
-
+Widget fieldGameplay541(int clubID){
+  Club club = Club(index: clubID);
+  String clubName = club.name;
+  List jogadores = club.escalacao;
+  if(My().clubID == clubID){
+    jogadores = globalMyJogadores;
+  }
+  return Column(
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    children: [
+      //ATACANTES
+      playerWidgetRow([jogadores[10]],clubName),
+      //MEIAS
+      playerWidgetRow([jogadores[7],jogadores[8]],clubName),
+      //VOLANTES
+      playerWidgetRow([jogadores[5],jogadores[6]],clubName),
+      //ZAGUEIROS
+      playerWidgetRow([jogadores[1],jogadores[2],jogadores[3],jogadores[4],jogadores[5]],clubName),
+      //GOLEIRO
+      playerWidgetRow([jogadores[0]],clubName),
+    ],
+  );
+}
 Widget playerWidgetRow(List playersID, String clubName){
   if(playersID.length==1) {
     return Row(
@@ -165,6 +188,19 @@ Widget playerWidgetRow(List playersID, String clubName){
         playerWidgetMatch(playersID[1],clubName),
         playerWidgetMatch(playersID[2],clubName),
         playerWidgetMatch(playersID[3],clubName),
+      ],
+    );
+  }
+  else if(playersID.length==5) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        playerWidgetMatch(playersID[0],clubName),
+        playerWidgetMatch(playersID[1],clubName),
+        playerWidgetMatch(playersID[2],clubName),
+        playerWidgetMatch(playersID[3],clubName),
+        playerWidgetMatch(playersID[4],clubName),
       ],
     );
   }

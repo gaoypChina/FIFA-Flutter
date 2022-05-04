@@ -270,7 +270,7 @@ class _SubstitutionState extends State<Substitution> {
             ),
             //Barra de saúde
             SizedBox(
-              width: imageSize+7,
+              width: imageSize+15,
               child: LinearProgressIndicator(
                 value: healthBar,
                 color: Colors.teal,
@@ -280,7 +280,7 @@ class _SubstitutionState extends State<Substitution> {
             //Nome do jogador
             Container(
                 color: AppColors().greyTransparent,
-                width: 80,
+                width: imageSize+15,
                 child: Text(name,textAlign: TextAlign.center,style: EstiloTextoBranco.text10)
             ),
 
@@ -296,7 +296,7 @@ class _SubstitutionState extends State<Substitution> {
     else if(my.esquemaTatico == EsquemaTatico().e433) {return fieldGameplay433();}
     else if(my.esquemaTatico == EsquemaTatico().e343) {return fieldGameplay343();}
     else if(my.esquemaTatico == EsquemaTatico().e451) {return fieldGameplay451();}
-
+    else if(my.esquemaTatico == EsquemaTatico().e541) {return fieldGameplay541();}
 
     return fieldGameplay442();
   }
@@ -389,7 +389,24 @@ class _SubstitutionState extends State<Substitution> {
         )
     );
   }
-
+  Widget fieldGameplay541(){
+    return fieldSizeWidget(
+      Column(
+        children: [
+          //ATACANTES
+          playerWidgetRow([my.jogadores[10]]),
+          //MEIAS
+          playerWidgetRow([my.jogadores[8],my.jogadores[9]]),
+          //VOLANTES
+          playerWidgetRow([my.jogadores[6],my.jogadores[7]]),
+          //ZAGUEIROS
+          playerWidgetRow([my.jogadores[1],my.jogadores[2],my.jogadores[3],my.jogadores[4],my.jogadores[5]]),
+          //GOLEIRO
+          playerWidgetRow([my.jogadores[0]]),
+        ],
+      ),
+    );
+  }
   Widget playerWidgetRow(List playersID){
     if(playersID.length==1) {
       return Row(
@@ -426,6 +443,18 @@ class _SubstitutionState extends State<Substitution> {
           playerWidget(playersID[1]),
           playerWidget(playersID[2]),
           playerWidget(playersID[3]),
+        ],
+      );
+    }
+    else if(playersID.length==5) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          playerWidget(playersID[0]),
+          playerWidget(playersID[1]),
+          playerWidget(playersID[2]),
+          playerWidget(playersID[3]),
+          playerWidget(playersID[4]),
         ],
       );
     }

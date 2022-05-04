@@ -16,11 +16,10 @@ class ClubProfile extends StatefulWidget {
   _ClubProfileState createState() => _ClubProfileState();
 }
 
-class _ClubProfileState extends State<ClubProfile>  with TickerProviderStateMixin {
+class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin {
 
 
   late Club clubClass;
-
   late TabController _tabController;
 
   ///////////////////////////////////////////////////////////////////////////
@@ -30,6 +29,11 @@ class _ClubProfileState extends State<ClubProfile>  with TickerProviderStateMixi
   void initState() {
     _tabController = TabController(vsync: this, length: 3);
     super.initState();
+  }
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //

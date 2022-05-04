@@ -47,7 +47,7 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
                   height: 80,width: 80,
                   child: Stack(
                     children: [
-                      Image.network(jogador.imageUrl,height: 80,width: 80),
+                      globalHasInternet ? Image.network(jogador.imageUrl,height: 80,width: 80) : Image.asset(Images().getGenericPlayerPicture(),height: 80,width: 80),
                       Container(alignment: Alignment.bottomRight,child: funcFlagsList(jogador.nationality, 20,30)),
                     ],
                   ),

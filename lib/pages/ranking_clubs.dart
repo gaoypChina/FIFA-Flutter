@@ -1,3 +1,4 @@
+import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
@@ -10,6 +11,7 @@ import 'package:fifa/values/images.dart';
 import 'package:flutter/material.dart';
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 import '../values/images.dart';
+import '../widgets/loader.dart';
 import 'club_profile/club_profile.dart';
 
 class RankingClubs extends StatefulWidget {
@@ -19,11 +21,12 @@ class RankingClubs extends StatefulWidget {
   _RankingClubsState createState() => _RankingClubsState();
 }
 
-class _RankingClubsState extends State<RankingClubs> {
+class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMixin  {
 
   int numberClubsTotal = funcNumberClubsTotal();
   My myClub = My();
   RankingClubsControl rankingClubs = RankingClubsControl();
+  late TabController _tabController;
   final ScrollController _scrollController = ScrollController();
 
   bool isLoaded = false;
@@ -37,8 +40,10 @@ class _RankingClubsState extends State<RankingClubs> {
     super.initState();
   }
   organizarRanking(){
-    rankingClubs.organizarRanking();
+    rankingClubs.organizeRanking();
+    rankingClubs.organizeNationalRanking();
 
+    _tabController = TabController(vsync: this, length: 2);
     isLoaded=true;
     setState(() {});
   }
@@ -46,6 +51,7 @@ class _RankingClubsState extends State<RankingClubs> {
   void dispose() {
     //Cancelar o timer do envio de email
     _scrollController.dispose();
+    _tabController.dispose();
     super.dispose();
   }
 ////////////////////////////////////////////////////////////////////////////
@@ -60,29 +66,38 @@ class _RankingClubsState extends State<RankingClubs> {
 
               Images().getWallpaper(),
 
-              isLoaded ? Column(
-                children: [
+              isLoaded ? DefaultTabController(
+                length: 2,
+                child: Column(
+                  children: [
 
-                  const SizedBox(height: 40),
-                  Text(Translation(context).text.rankingClubs,style: EstiloTextoBranco.text20),
-                  const SizedBox(height: 6),
+                    const SizedBox(height: 40),
 
-                  Expanded(
-                    child: DraggableScrollbar.semicircle(
-                      alwaysVisibleScrollThumb: true,
-                      controller: _scrollController,
-                      child: ListView.builder(
-                        padding: EdgeInsets.zero,
-                        controller: _scrollController,
-                        itemCount: numberClubsTotal,
-                          itemBuilder: (c,i) => rowClub(i, rankingClubs.copyClubsName[i])
+                    SizedBox(
+                      height: 30,
+                      child: TabBar(
+                        controller: _tabController,
+                        tabs: [
+                          Tab(text: Translation(context).text.rankingGlobalClubs),
+                          Tab(text: Translation(context).text.rankingNationalClubs),
+                        ],
                       ),
                     ),
-                  )
+                    Expanded(
+                      child: TabBarView(
+                        controller: _tabController,
+                        children: [
+                          listAllRankingClubs(),
+                          listNationalRankingClubs(),
+                        ],
+                      ),
+                    ),
 
 
-                ],
-              ) : const Center(child: CircularProgressIndicator())
+
+                  ],
+                ),
+              ) : loader(),
 
             ]
         )
@@ -91,11 +106,34 @@ class _RankingClubsState extends State<RankingClubs> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-
+Widget listAllRankingClubs(){
+    return                     DraggableScrollbar.semicircle(
+      alwaysVisibleScrollThumb: true,
+      controller: _scrollController,
+      child: ListView.builder(
+          padding: EdgeInsets.zero,
+          controller: _scrollController,
+          itemCount: rankingClubs.copyClubsName.length,
+          itemBuilder: (c,i) => rowClub(i, rankingClubs.copyClubsName[i])
+      ),
+    );
+}
+  Widget listNationalRankingClubs(){
+    return                     DraggableScrollbar.semicircle(
+      alwaysVisibleScrollThumb: true,
+      controller: _scrollController,
+      child: ListView.builder(
+          padding: EdgeInsets.zero,
+          controller: _scrollController,
+          itemCount: rankingClubs.copyClubsNameNational.length,
+          itemBuilder: (c,i) => rowClub(i, rankingClubs.copyClubsNameNational[i])
+      ),
+    );
+  }
 Widget rowClub(int ranking, String clubName){
 
     int realClubIndex = clubsAllNameList.indexOf(clubName);
-    double overall = rankingClubs.clubsOVR[ranking];
+    double overall = Club(index: realClubIndex).getOverall();
 
     //Cor de Fundo
     Color colorBackground = Colors.transparent;

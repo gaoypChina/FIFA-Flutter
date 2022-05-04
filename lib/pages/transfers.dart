@@ -183,6 +183,7 @@ class _TransfersState extends State<Transfers> {
                       child: const Icon(Icons.flag, size: 35, color: Colors.white),
                     ),
 
+                    const SizedBox(width: 20),
                     GestureDetector(
                         onTap: () {
                       showModalBottomSheet(
@@ -195,7 +196,7 @@ class _TransfersState extends State<Transfers> {
                     child: const Icon(Icons.filter_alt, size: 35, color: Colors.white),
                     ),
 
-
+                    const SizedBox(width: 20),
                   ],
                 ),
               ],
@@ -431,10 +432,12 @@ class _TransfersState extends State<Transfers> {
       color: AppColors().greyTransparent,
       child: Row(
         children: [
-          const Text('POS', style: EstiloTextoBranco.text16),
-          const SizedBox(width: 16),
-          const SizedBox(
-              width: 200, child: Text('NAME', style: EstiloTextoBranco.text16)),
+          const SizedBox(width: 5),
+          Text(Translation(context).text.pos3, style: EstiloTextoBranco.text16),
+          const SizedBox(width: 11),
+          SizedBox(
+              width: 210,
+              child: Text(Translation(context).text.player, style: EstiloTextoBranco.text16)),
           GestureDetector(
               onTap: () {
                 filterPlayers.setAge();
@@ -442,7 +445,7 @@ class _TransfersState extends State<Transfers> {
               },
               child: Row(
                 children: [
-                  const Text('IDA', style: EstiloTextoBranco.text16),
+                  Text(Translation(context).text.age3, style: EstiloTextoBranco.text16),
                   filterPlayers.transferParameters.ascOrDescAge > 0
                       ? filterPlayers.transferParameters.ascOrDescAge == 2
                           ? const Icon(Icons.arrow_drop_up,
@@ -460,7 +463,7 @@ class _TransfersState extends State<Transfers> {
               },
               child: Row(
                 children: [
-                  const Text('OVR', style: EstiloTextoBranco.text16),
+                  Text(Translation(context).text.ovr3, style: EstiloTextoBranco.text16),
                   filterPlayers.transferParameters.ascOrDescOVR > 0
                       ? filterPlayers.transferParameters.ascOrDescOVR == 2
                           ? const Icon(Icons.arrow_drop_up,
@@ -543,17 +546,22 @@ class _TransfersState extends State<Transfers> {
               ],
             ),
           ),
+          //IDADE
           Container(
               color:colorAgeBackground(player.age),
               padding: const EdgeInsets.all(4),
+              margin: const EdgeInsets.symmetric(horizontal: 2),
               child: Text(player.age.toString(), textAlign:TextAlign.center,style: EstiloTextoPreto.text16)),
+          //OVERALL
           Container(
               color: backgroundOverallColor,
               padding: const EdgeInsets.all(4),
+              margin: const EdgeInsets.symmetric(horizontal: 2),
               child: Center(
                 child: Text(player.overall.toStringAsFixed(0),
                     style: EstiloTextoPreto.text16),
               )),
+          //PREÇO
           Text(' ${player.price.toStringAsFixed(2)} mi',
               style: player.price > My().money
                   ? EstiloTextoVermelho.text14

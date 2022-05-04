@@ -143,38 +143,21 @@ class Club{
     List<int> permittedPlayersOVR = [];
       for (int j = 0; j < playersID.length; j++) {//0-23
 
-        //Escalação 442
-        if(esquemaTatico == EsquemaTatico().e442){
-          if (positions442[playersPositionNames[j]].contains(nPosicao)) {//Ex: GOL[1,2] contains 0?
+        //PEGA O MAPA DE POSIÇÕES A PARTIR DO ESQUEMA TÁTICO
+        Map positions = {};
+        EsquemaTatico esquemaTaticoClass = EsquemaTatico();
+        if(index == globalMyClubID){
+          positions = esquemaTaticoClass.getMyPositionsMap();
+        }else{
+          positions = esquemaTaticoClass.getPositionsMap();
+        }
+          //VERIFICA SE A POSIÇÃO DO JOGADOR É PERMITIDA
+          if (positions[playersPositionNames[j]].contains(nPosicao)) {//Ex: GOL[1,2] contains 0?
             //Se a posicao do jogador é permitida, adiciona na lista de jogadores possíveis
             permittedPlayersID.add(playersID[j]);
             permittedPlayersOVR.add(playersOVR[j]);
           }
-        }
-        //Escalação 433
-        if(esquemaTatico == EsquemaTatico().e433){
-          if (positions433[playersPositionNames[j]].contains(nPosicao)) {//Ex: GOL[1,2] contains 0?
-            //Se a posicao do jogador é permitida, adiciona na lista de jogadores possíveis
-            permittedPlayersID.add(playersID[j]);
-            permittedPlayersOVR.add(playersOVR[j]);
-          }
-        }
-        //Escalação 451
-        if(esquemaTatico == EsquemaTatico().e451){
-          if (positions451[playersPositionNames[j]].contains(nPosicao)) {//Ex: GOL[1,2] contains 0?
-            //Se a posicao do jogador é permitida, adiciona na lista de jogadores possíveis
-            permittedPlayersID.add(playersID[j]);
-            permittedPlayersOVR.add(playersOVR[j]);
-          }
-        }
-        //Escalação 343
-        if(esquemaTatico == EsquemaTatico().e343){
-          if (positions343[playersPositionNames[j]].contains(nPosicao)) {//Ex: GOL[1,2] contains 0?
-            //Se a posicao do jogador é permitida, adiciona na lista de jogadores possíveis
-            permittedPlayersID.add(playersID[j]);
-            permittedPlayersOVR.add(playersOVR[j]);
-          }
-        }
+
       }
 
     //no final organiza pelo que tem maior overall

@@ -1,7 +1,15 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/classes/player_basic.dart';
+import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/popup/popup_create_player.dart';
+import 'package:fifa/popup/popup_edit_nationality.dart';
+import 'package:fifa/popup/popup_ok_cancel.dart';
+import 'package:fifa/theme/background/background_age.dart';
+import 'package:fifa/theme/background/background_overall.dart';
+import 'package:fifa/theme/background/background_position.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/popup/popup_save_all_data.dart';
@@ -69,33 +77,31 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                     child: Row(
                       children: [
                         const SizedBox(width: 8),
-                        const Text('POS',style: EstiloTextoBranco.text16),
-                        const SizedBox(width: 25),
+                        Text(Translation(context).text.pos3,style: EstiloTextoBranco.text16),
+                        const SizedBox(width: 90),
                         SizedBox(width:170,
                             child: Text(Translation(context).text.name.toUpperCase(),style: EstiloTextoBranco.text16)
                         ),
-                        const SizedBox(width: 4),
                         Text(Translation(context).text.age3,style: EstiloTextoBranco.text16),
-                        const SizedBox(width: 12),
+                        const SizedBox(width: 5),
                         Text(Translation(context).text.ovr3,style: EstiloTextoBranco.text16),
-                        const SizedBox(width: 14),
-                        Text(Translation(context).text.price.toUpperCase(),style: EstiloTextoBranco.text16),
                       ],
                     ),
                   ),
 
                   Container(
-                    height: 400,
+                    height: Sized(context).height/2,
                     padding: const EdgeInsets.symmetric(horizontal: 6),
                     color: AppColors().greyTransparent,
                     child: SingleChildScrollView(
                       child: Table(
                         columnWidths: const {
                           0: FractionColumnWidth(.09),
-                          1: FractionColumnWidth(.07),
-                          2: FractionColumnWidth(.45),
-                          5: FractionColumnWidth(.18),
-                          6: FractionColumnWidth(.001),//container to create vertical spacing
+                          1: FractionColumnWidth(.1),
+                          2: FractionColumnWidth(.08),
+                          3: FractionColumnWidth(.5),
+                          6: FractionColumnWidth(.07),
+                          7: FractionColumnWidth(.001),//container to create vertical spacing
                         },
                         children: [
                           for(int i=0;i<club.nJogadores;i++)
@@ -185,58 +191,91 @@ TableRow playersRow(int i){
         InkWell(
             onTap:(){
               choosenPlayerID = playerID;
-              popupText('Alterar posição',player.position,'Position');
+              popupText(Translation(context).text.changePosition,player.position,'Position');
             },
-            child: Text(player.position,style: EstiloTextoBranco.text16)),
+            child: positionContainer(player.position),
+        ),
 
         //CLUB
         InkWell(
             onTap:(){
               choosenPlayerID = playerID;
-              popupText('Novo clube do jogador',player.clubName,'Club');
+              popupText(Translation(context).text.changePlayersClub,player.clubName,'Club');
             },
             child: Image.asset(Images().getEscudo(player.clubName),height:30, width: 30)),
 
-        //NOME
+        //NATIONALITY
         InkWell(
-          onTap:(){
-            choosenPlayerID = playerID;
-            popupText('Alterar nome',player.name,'Name');
-          },
-          onDoubleTap: (){
-            customToast(player.name+player.nationality+player.imageUrl);
-          },
-          child: SizedBox(
-              width: 200,
-              child: Text(player.name,style: EstiloTextoBranco.text16)
+            onTap:(){
+              choosenPlayerID = playerID;
+              popUpEditNationality(
+                  context: context,
+                  player: player,
+                  function: (){
+                    setState(() {});
+              });
+            },
+            child: funcFlagsList(player.nationality, 20, 30),
+        ),
+
+        //NOME
+        Container(
+          margin: const EdgeInsets.only(left: 8.0),
+          child: InkWell(
+            onTap:(){
+              choosenPlayerID = playerID;
+              popupText(Translation(context).text.changePlayersName,player.name,'Name');
+            },
+            child: SizedBox(
+                width: 200,
+                child: Text(player.name,style: EstiloTextoBranco.text16)
+            ),
           ),
         ),
 
         //IDADE
-        SizedBox(
+        Container(
           width: 22,
+          color: colorAgeBackground(player.age),
+          margin: const EdgeInsets.symmetric(horizontal: 2),
           child: InkWell(
               onTap:(){
                 choosenPlayerID = playerID;
                 popupNumber(player.age,'Idade');
 
               },
-              child: Text(player.age.toStringAsFixed(0),style: EstiloTextoBranco.text16)),
+              child: Center(child: Text(player.age.toStringAsFixed(0),style: EstiloTextoPreto.text16))),
         ),
 
         //OVERALL
-        SizedBox(
+        Container(
           width: 22,
+          color: colorOverallBackground(player.overall),
+          margin: const EdgeInsets.symmetric(horizontal: 2),
           child: InkWell(
               onTap:(){
                 choosenPlayerID = playerID;
                 popupNumber(globalJogadoresOverall[playerID],'Overall');
               },
-              child: Text(player.overall.toStringAsFixed(0),style: EstiloTextoBranco.text16)),
+              child: Center(child: Text(player.overall.toStringAsFixed(0),style: EstiloTextoPreto.text16))),
         ),
 
-        //PREÇO
-        Text(player.price.toStringAsFixed(2)+'mi',style: EstiloTextoBranco.text16),
+        //DELETE
+        InkWell(
+          onTap:(){
+            popUpOkCancel(
+                context: context,
+                title: Translation(context).text.deletePlayer+'?',
+                content: '',
+                function: (){
+                  PlayerBasicInfo playerBasic = PlayerBasicInfo();
+                  playerBasic.deletePlayerFromDatabase(player.index);
+                  setState(() {});
+                }
+            );
+          },
+          child: const Center(child: Icon(Icons.close,color: Colors.red),),
+        ),
 
         Container(
           padding: const EdgeInsets.symmetric(vertical: 20),
@@ -267,7 +306,7 @@ popupText(String title,String variableString, String whichData){
          if(whichData=='Position' && positions442.containsKey(value)) {
             globalJogadoresPosition[choosenPlayerID] = value;
          }else if(whichData=='Position' && !positions442.containsKey(value)){
-            customToast('Posição Inválida');
+            customToast(Translation(context).text.invalidPosition);
           }
 
         if(whichData=='Name') globalJogadoresName[choosenPlayerID] = value;
@@ -280,7 +319,7 @@ popupText(String title,String variableString, String whichData){
 popupNumber(dynamic number, String whichData){
     popupEdit(
         context: context,
-        title: 'Novo valor para '+whichData,
+        title: Translation(context).text.newValueTo+' '+whichData,
         variable: number,
         intOrString: true,
         maxNcharacters: 22,

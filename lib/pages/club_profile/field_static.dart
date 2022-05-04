@@ -38,7 +38,6 @@ class _StaticFieldState extends State<StaticField> {
           Column(
             children: [
 
-
               //Widget do campo
               fieldGameplay442(),
 
@@ -151,7 +150,7 @@ class _StaticFieldState extends State<StaticField> {
 
     String name = player.name;
     String position = player.position;
-    double imageSize = 50;
+    double imageSize = 57;
 
     String circleShow = player.overallDynamic.toStringAsFixed(0);
     if(show == 'Jogos'){circleShow = player.matchsLeague.toStringAsFixed(0);}
@@ -173,18 +172,20 @@ class _StaticFieldState extends State<StaticField> {
 
             //OVR
             SizedBox(
-              height: imageSize-5,
-              width: imageSize,
+              height: imageSize-15,
+              width: imageSize+15 ,
               child: Stack(
                 children: [
 
                   //Uniforme
-                  (player.injury >0 || player.redCard >0)
-                      ? Opacity(
-                      opacity: 0.4,
-                      child: Image.asset(Images().getUniform(clubClass.name))
-                  )
-                      : globalHasInternet ? Image.network(player.imageUrl) : Image.asset(Images().getMyUniform()),
+                  Center(
+                    child: (player.injury >0 || player.redCard >0)
+                        ? Opacity(
+                        opacity: 0.4,
+                        child: Image.asset(Images().getUniform(player.clubName))
+                    )
+                        : globalHasInternet ? Image.network(player.imageUrl) : Image.asset(Images().getUniform(player.clubName)),
+                  ),
 
                   //CIRCULO
                   Container(
@@ -213,7 +214,7 @@ class _StaticFieldState extends State<StaticField> {
             //Nome do jogador
             Container(
                 color: AppColors().greyTransparent,
-                width: 80,
+                width: imageSize+20,
                 child: Text(name,textAlign: TextAlign.center,style: EstiloTextoBranco.text10)
             ),
 

@@ -313,18 +313,18 @@ class _PlayState extends State<Play> {
                   child: Opacity(
                       opacity:posturaDoTime.value == posturaDoTime.ataque ? 1: 0.5,
                       child: Image.asset('assets/icons/very offensive.png',height: 35))),
-              Column(
+              globalSeeProbabilities ? Column(
                 children: [
                   Text(Translation(context).text.scoreProbability,style: EstiloTextoBranco.text16),
                   Text('${myMatchSimulation.probGM.toString()}%',style: EstiloTextoBranco.text16),
                 ],
-              ),
-              Column(
+              ) : Container(),
+              globalSeeProbabilities ? Column(
                 children: [
                   Text(Translation(context).text.takeProbability,style: EstiloTextoBranco.text16),
                   Text('${myMatchSimulation.probGS.toString()}%',style: EstiloTextoBranco.text16),
                 ],
-              ),
+              ) : Container(),
             ],
           ),
         ),

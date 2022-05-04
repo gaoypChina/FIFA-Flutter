@@ -54,7 +54,7 @@ Widget save(int index){
 
     return InkWell(
       onTap:(){
-        popUpOkCancelar(context: context, title: 'Deseja Salvar', content: 'Sim ou não?',function: (){
+        popUpOkCancel(context: context, title: 'Deseja Salvar', content: 'Sim ou não?',function: (){
           Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const HomePage()));
         });
       },
