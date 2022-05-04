@@ -1,3 +1,4 @@
+import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/database/local_database/local_database.dart';
 import 'package:fifa/database/local_database/shared_preferences.dart';
@@ -12,6 +13,7 @@ import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/widgets/stars.dart';
 import 'package:flutter/material.dart';
 import '../../database/csv/read_csv.dart';
 import 'c_menu.dart';
@@ -34,7 +36,8 @@ class _HomePageState extends State<HomePage> {
   late String leagueName;
   late String teamName;
   late int nLeagueTeams;
-
+  late int clubID;
+  late Club club;
   late int indexLeague;
   int indexJog = 0;
 
@@ -82,7 +85,9 @@ class _HomePageState extends State<HomePage> {
     League leagueClass = League(index: indexLeague);
     leagueName = leagueClass.name;
     teamName = leagueClass.getClubName(posicao);
+    clubID = League(index: indexLeague).getClubRealID(posicao);
     nLeagueTeams = leagueClass.nClubs;
+    club = Club(index: clubID);
 
     return Scaffold(
         body:  Container(
@@ -167,7 +172,7 @@ class _HomePageState extends State<HomePage> {
                   ),
 
                       //ESCUDO E UNIFORME
-                      clubLogoAndKitStack(),
+                      clubLogoAndKitStack(club),
 
                 ],
               ),
@@ -217,14 +222,15 @@ class _HomePageState extends State<HomePage> {
     return Column(
       children: [
         //LOGO CAMPEONATO
-        Image.asset(FIFAImages().campeonatoLogo(indexLeague),height: 170,width: 170),
+        Image.asset(FIFAImages().campeonatoLogo(indexLeague),height: 160,width: 160),
+        const SizedBox(height: 8),
         Text(leagueName,style:EstiloTextoBranco.text16),
       ],
     );
   }
 
 
-Widget clubLogoAndKitStack(){
+Widget clubLogoAndKitStack(Club club){
     return  Column(
       children: [
         SizedBox(
@@ -232,20 +238,23 @@ Widget clubLogoAndKitStack(){
           width: 200,
           child: Stack(
             children: [
+              //Image.asset(Images().getStadium(club.name),height: 200,width: 200,fit: BoxFit.fill,),
               //Escudo
-              Image.asset(Images().getEscudo(teamName),height: 200,width: 200),
+              Image.asset(Images().getEscudo(club.name),height: 200,width: 200),
               //Uniforme
               Container(
                   alignment: Alignment.bottomRight,
-                  child: Image.asset(Images().getUniform(teamName),height: 100,width: 100)
+                  child: Image.asset(Images().getUniform(club.name),height: 100,width: 100)
               ),
             ],
           ),
         ),
-        Text(teamName,style:EstiloTextoBranco.text25),
+        Text(club.name,style:EstiloTextoBranco.text25),
+        starsWidget(convertOverallToStars(club.getOverall())),
       ],
     );
 }
+
 
 Widget continueButton(){
     return
@@ -287,7 +296,6 @@ Widget editClub(){
   return
     GestureDetector(
       onTap: (){
-        int clubID = League(index: indexLeague).getClubRealID(posicao);
         Navigator.of(context).push(MaterialPageRoute(builder: (context) => CustomizePlayers(clubID: clubID)));
       },
       child: Column(

@@ -6,7 +6,7 @@ int testInitRodada = 1;
 
 //MEU
 String globalMyClubName = '';
-int globalMyClubID = 0;
+int globalMyClubID = -1;
 int globalMyPosicaoChave = 0;
 int globalMyExpectativa = 0;
 String globalMyEsquemaTatico = '4-4-2';
