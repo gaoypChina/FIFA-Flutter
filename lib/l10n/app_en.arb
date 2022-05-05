@@ -58,7 +58,8 @@
   "delete": "Delete",
   "deletePlayer": "Delete player",
 
-
+  "@_000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000": {
+  },
   "@_MENU_PAGE": {
   },
   "year": "Year",
@@ -102,12 +103,13 @@
   "max": "Max",
   "min": "Min",
   "reset": "Reset",
+  "positionsFilter": "Filter by Position",
   "countryFilter": "Filter by country",
 
   "@_RANKING_CLUBS_PAGE": {
   },
-  "rankingGlobalClubs": "Ranking Global",
-  "rankingNationalClubs": "Ranking National",
+  "rankingGlobalClubs": "Global Ranking",
+  "rankingNationalClubs": "National Ranking",
 
   "@_NATIONAL_TABLE_PAGE": {
   },
@@ -138,10 +140,14 @@
   },
   "coachMenu": "Coach Menu",
   "coachAchievements": "Achievements",
-  "enterNewClub": "Enter new club",
+  "changeClub": "Change club",
   "points": "Points",
   "nationalChampionship": "National Championship",
   "internationalChampionship": "International Championship",
+  "victories": "Victories",
+  "draws": "Draws",
+  "losses": "Defeats",
+  "pastTeams": "Past Teams",
   "biggestVictory": "Biggest victory",
   "biggestDefeat": "Biggest defeat",
   "sequenceNoDefeats": "Largest sequence without defeats",
@@ -181,6 +187,7 @@
 
   "@_SUBSTITUTION_PAGE": {
   },
+  "substitutionLeft": "substituições restantes",
   "noSubstitutionLeft": "No substitutions left (0)",
   "redCardPlayersCantBeReplaced": "Players with red cards can't be replaced",
 
@@ -262,6 +269,26 @@
   "limitNPlayersReached": "Number of maximum players reached (32)",
   "notEnoughPlayersLeftToSell": "You don't have enough players to sell",
 
+  "@_POPUP_SAVE_DATA": {
+  },
+  "wantsTosaveFile": "Do you want to save this file?",
+
+  "@_1111111111111111111111111122222222222222222222222222111111111111111111111111111111111111111": {
+  },
+  "@_TOAST": {
+  },
+  "injuried": "Injuried",
+  "sentOff": "Sent Off",
+  "groupStage": "Group Stage",
+  "knockoutStage": "Knockout Stage",
+  "oitavas": "Round of 16",
+  "quartas": "Round of 8",
+  "semi": "Semifinals",
+  "finale": "Final",
+
+
+  "@_1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111": {
+  },
   "@_SIGLAS": {
   },
   "wonW": "W",
@@ -277,9 +304,17 @@
   "goalDifference3": "GD",
   "goalsFor3": "GF",
   "goalsAgainst": "GA",
+  "redCards3": "RED",
+  "yellowCards3": "YEL",
 
 
-
+  "@_DIFFICULTY_CLASS": {
+  },
+  "amateur": "Amateur",
+  "easy": "Easy",
+  "medium": "Medium",
+  "hard": "Hard",
+  "expert": "Expert",
 
 
 

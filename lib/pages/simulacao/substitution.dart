@@ -57,7 +57,7 @@ class _SubstitutionState extends State<Substitution> {
 
                   const SizedBox(height: 40),
                   Text(Translation(context).text.substitution,style: EstiloTextoBranco.text30),
-                  Text('${globalMatchSubstitutionsLeft.toString()} restantes',style: EstiloTextoBranco.text16),
+                  Text('${globalMatchSubstitutionsLeft.toString()} ${Translation(context).text.substitutionLeft}',style: EstiloTextoBranco.text16),
                   Text('${Translation(context).text.overall}: '+myClub.getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text16),
                   //MUDAR ESQUEMA TATICO
                   customButtonContinue(
@@ -96,7 +96,7 @@ class _SubstitutionState extends State<Substitution> {
                   Padding(
                     padding: const EdgeInsets.all(6),
                     child:  customButtonContinue(
-                        title: 'VOLTAR',
+                        title: Translation(context).text.returnTo.toUpperCase(),
                         function: (){
                           Navigator.pop(context);
                         }

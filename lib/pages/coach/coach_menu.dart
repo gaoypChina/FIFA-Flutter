@@ -1,5 +1,6 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/expectativa.dart';
+import 'package:fifa/classes/geral/name.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/historic.dart';
 import 'package:fifa/classes/image_class.dart';
@@ -81,7 +82,7 @@ class _CoachMenuState extends State<CoachMenu> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          pieChart(coachHistoricData.dataPieChartMap()),
+                          pieChart(coachHistoricData.dataPieChartMap(context)),
                           victoryDrawLoses('%',coachHistoricData.pointsPercentage.toStringAsFixed(1)),
                         ],
                       ),
@@ -107,7 +108,7 @@ class _CoachMenuState extends State<CoachMenu> {
                             children: [
                               Image.asset(Images().getMyInternationalLeagueLogo(),height: 25,width: 25),
                               const SizedBox(width: 4),
-                              Text('${my.getMyInternationalLeague()}: ${expectativa.expInternacional.toString()}',style: EstiloTextoBranco.text16),
+                              Text('${my.getMyInternationalLeague()}: ${Name().showTranslated(context, expectativa.expInternacional.toString())}',style: EstiloTextoBranco.text16),
                             ],
                           ),
                           ],
@@ -127,7 +128,7 @@ class _CoachMenuState extends State<CoachMenu> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
 
-                          const Text('Time passado',style: EstiloTextoBranco.text16),
+                          Text(Translation(context).text.pastTeams,style: EstiloTextoBranco.text16),
 
                           for(int year=anoInicial;year<ano;year++)
                             yearRow(year,context),
@@ -180,7 +181,7 @@ Widget changeClub(BuildContext context){
               customToast(Translation(context).text.alreadyChangedYourClub);
             }
           },
-          child: Text(Translation(context).text.enterNewClub,style: EstiloTextoBranco.text16),
+          child: Text(Translation(context).text.changeClub,style: EstiloTextoBranco.text16),
         ),
       ),
     ],
@@ -233,7 +234,7 @@ Widget trophyWidget(BuildContext context, int i){
 }
 
 Widget pieChart(Map<String,double> dataMap){
-  return                   SizedBox(
+  return  SizedBox(
     height: 100,
     child: PieChart(
       dataMap: dataMap,
@@ -298,13 +299,13 @@ Widget yearRow(int year, BuildContext context){
         Text(year.toString(),style: EstiloTextoBranco.text16),
         Image.asset(Images().getEscudo(myClubData.clubName),height: 20,width: 20,),
         SizedBox(
-            width: 150,
+            width: Sized(context).width*0.3,
             child: Text(myClubData.clubName,style: EstiloTextoBranco.text14)
         ),
         Text('${myClubData.leagueName}: \n${myClubData.internationalLeagueName}: ',style: EstiloTextoBranco.text12),
         Padding(
           padding: const EdgeInsets.all(2.0),
-          child: Text('${myClubData.leaguePosition}º\n${myClubData.internationalLeaguePosition}',style: EstiloTextoBranco.text14),
+          child: Text('${myClubData.leaguePosition}º\n${Name().showTranslated(context, myClubData.internationalLeaguePosition)}', overflow: TextOverflow.clip,style: EstiloTextoBranco.text14),
         ),
       ],
     ),

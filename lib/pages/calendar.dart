@@ -107,7 +107,7 @@ class _CalendarState extends State<Calendar> {
       ),
     );
     }else{
-      return notPlayWidget(rodadaLocal,'Semana '+rodadaLocal.toString());
+      return notPlayWidget(rodadaLocal,'${Translation(context).text.week} '+rodadaLocal.toString());
     }
   }
 
@@ -116,7 +116,7 @@ class _CalendarState extends State<Calendar> {
     if(show.hasAdversary && semana >= semanasJogosInternacionais.first) {
       return  playWidget(semanaLocal,show);
     }else{
-      return notPlayWidget(semanaLocal,Semana(semanaLocal).semanaStr,Images().getMyInternationalLeagueLogo());
+      return notPlayWidget(semanaLocal,Semana(semanaLocal).getTranslated(context),Images().getMyInternationalLeagueLogo());
     }
   }
 
@@ -125,7 +125,7 @@ class _CalendarState extends State<Calendar> {
     if(show.hasAdversary && semana >= semanasMataMataInternacionais.first) {
       return playWidget(semanaLocal,show);
     }else{
-      return notPlayWidget(semanaLocal,Semana(semanaLocal).semanaStr,Images().getMyInternationalLeagueLogo());
+      return notPlayWidget(semanaLocal,Semana(semanaLocal).getTranslated(context),Images().getMyInternationalLeagueLogo());
     }
   }
 
@@ -144,8 +144,7 @@ Widget playWidget(int semanaLocal, show){
       color: show.backgroundColor,
       child: Column(
         children: [
-          Text(Semana(semanaLocal).semanaStr,
-              style: EstiloTextoBranco.text16),
+          Text(Semana(semanaLocal).getTranslated(context),style: EstiloTextoBranco.text16),
           SizedBox(
             height: 45,
             width: 80,
@@ -160,9 +159,9 @@ Widget playWidget(int semanaLocal, show){
             ),
           ),
           show.visitante
-              ? Text('FORA ${show.placar}',
+              ? Text('${Translation(context).text.away.toUpperCase()} ${show.placar}',
               style: EstiloTextoBranco.text10, textAlign: TextAlign.center)
-              : Text('CASA ${show.placar}',
+              : Text('${Translation(context).text.home.toUpperCase()} ${show.placar}',
               style: EstiloTextoBranco.text10, textAlign: TextAlign.center),
           Text(show.clubName2,
               overflow: TextOverflow.fade,

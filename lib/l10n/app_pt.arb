@@ -44,7 +44,8 @@
   "delete": "Deletar",
   "deletePlayer": "Deletar jogador",
 
-
+  "@_000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000": {
+  },
   "@_MENU_PAGE": {
   },
   "year": "Ano",
@@ -88,6 +89,7 @@
   "max": "Max",
   "min": "Min",
   "reset": "Resetar",
+  "positionsFilter": "Filtrar por posição",
   "countryFilter": "Filtrar por país",
 
   "@_RANKING_CLUBS_PAGE": {
@@ -124,10 +126,14 @@
   },
   "coachMenu": "Menu do Técnico",
   "coachAchievements": "Conquistas",
-  "enterNewClub": "Mudar de clube",
+  "changeClub": "Mudar de clube",
   "points": "Pontos",
   "nationalChampionship": "Campeonatos Nacionais",
   "internationalChampionship": "Campeonatos Internacionais",
+  "victories": "Vitórias",
+  "draws": "Empates",
+  "losses": "Derrotas",
+  "pastTeams": "Times passados",
   "biggestVictory": "Maior vitória",
   "biggestDefeat": "Maior derrota",
   "sequenceNoDefeats": "Maior sequência sem perder",
@@ -167,6 +173,7 @@
 
   "@_SUBSTITUTION_PAGE": {
   },
+  "substitutionLeft": "substituições restantes",
   "noSubstitutionLeft": "Sem substituições restantes (0)",
   "redCardPlayersCantBeReplaced": "Jogadores expulsos não podem ser substítuidos",
 
@@ -248,8 +255,27 @@
   "limitNPlayersReached": "Limite de jogadores atingido (32)",
   "notEnoughPlayersLeftToSell": "Você não tem jogadores suficientes para poder vender",
 
+  "@_POPUP_SAVE_DATA": {
+  },
+  "wantsTosaveFile": "Deseja salvar o arquivo?",
+
+  "@_1111111111111111111111111122222222222222222222222222111111111111111111111111111111111111111": {
+  },
+  "@_TOAST": {
+  },
+  "injuried": "Machucado",
+  "sentOff": "Expulso",
+
+  "groupStage": "Fase de Grupos",
+  "knockoutStage": "Mata-Mata",
+  "oitavas": "Oitavas",
+  "quartas": "Quartas",
+  "semi": "Semifinais",
+  "finale": "Final",
 
 
+  "@_1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111": {
+  },
   "@_SIGLAS": {
   },
   "wonW": "V",
@@ -265,8 +291,17 @@
   "goalDifference3": "SG",
   "goalsFor3": "GM",
   "goalsAgainst": "GS",
+  "redCards3": "VER",
+  "yellowCards3": "AMA",
 
 
+  "@_DIFFICULTY_CLASS": {
+  },
+  "amateur": "Amador",
+  "easy": "Fácil",
+  "medium": "Médio",
+  "hard": "Difícil",
+  "expert": "Expert",
 
 
 

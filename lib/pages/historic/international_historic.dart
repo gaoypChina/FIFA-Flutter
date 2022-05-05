@@ -144,8 +144,8 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
         ),
         padding: const EdgeInsets.all(4.0),
         alignment: Alignment.center,
-        child: isMataMata ? const Text('MATA-MATA',style: EstiloTextoPreto.text20)
-        : const Text('FASE DE GRUPOS',style: EstiloTextoPreto.text20),
+        child: isMataMata ? Text(Translation(context).text.knockoutStage.toUpperCase(),style: EstiloTextoPreto.text20)
+        : Text(Translation(context).text.groupStage.toUpperCase(),style: EstiloTextoPreto.text20),
       ),
     );
   }
@@ -183,25 +183,25 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
 
-        Text(Name().finale.toUpperCase(),style: EstiloTextoBranco.text14),
+        Text(Name().showTranslated(context, Name().finale).toUpperCase(),style: EstiloTextoBranco.text14),
         for(int idaVolta=0;idaVolta<1;idaVolta++)
           for(int i=0;i<2;i+=2)
             internationalHistoricRow(internationalLeagueName,Name().finale, i, idaVolta, ano),
 
         const Text('',style: EstiloTextoBranco.text16),
-        Text(Name().semifinal.toUpperCase(),style: EstiloTextoBranco.text14),
+        Text(Name().showTranslated(context, Name().semifinal).toUpperCase(),style: EstiloTextoBranco.text14),
         for(int idaVolta=0;idaVolta<2;idaVolta++)
           for(int i=0;i<4;i+=2)
             internationalHistoricRow(internationalLeagueName,Name().semifinal, i, idaVolta, ano),
 
         const Text('',style: EstiloTextoBranco.text16),
-        Text(Name().quartas.toUpperCase(),style: EstiloTextoBranco.text14),
+        Text(Name().showTranslated(context, Name().quartas).toUpperCase(),style: EstiloTextoBranco.text14),
         for(int idaVolta=0;idaVolta<2;idaVolta++)
           for(int i=0;i<8;i+=2)
             internationalHistoricRow(internationalLeagueName,Name().quartas, i, idaVolta, ano),
 
         const Text('',style: EstiloTextoBranco.text16),
-        Text(Name().oitavas.toUpperCase(),style: EstiloTextoBranco.text14),
+        Text(Name().showTranslated(context, Name().oitavas).toUpperCase(),style: EstiloTextoBranco.text14),
         for(int idaVolta=0;idaVolta<2;idaVolta++)
           for(int i=0;i<16;i+=2)
             internationalHistoricRow(internationalLeagueName,Name().oitavas, i, idaVolta, ano),
@@ -273,7 +273,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                   padding: EdgeInsets.only(top: i%4==0 ? 16.0 : 0),
                   child: Column(
                     children: [
-                      i%4==0 ? Text('Grupo ${(i/4+1).floor()}',style: EstiloTextoBranco.text16) : Container(),
+                      i%4==0 ? Text('${Translation(context).text.group} ${(i/4+1).floor()}',style: EstiloTextoBranco.text16) : Container(),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -304,7 +304,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                   padding: EdgeInsets.only(top: i%4==0 ? 16.0 : 0),
                   child: Column(
                     children: [
-                      i%4==0 ? Text('Grupo ${(i/4+1).floor()}',style: EstiloTextoBranco.text16) : Container(),
+                      i%4==0 ? Text('${Translation(context).text.group} ${(i/4+1).floor()}',style: EstiloTextoBranco.text16) : Container(),
                       Row(
                         children: [
                           Image.asset(Images().getEscudo(Club(index: clubsID[i]).name),width: 25,height: 25),

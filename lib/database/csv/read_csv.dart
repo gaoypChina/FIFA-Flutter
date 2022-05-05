@@ -1,6 +1,5 @@
 import 'package:fifa/classes/player_basic.dart';
 import 'package:fifa/functions/end_year_updates/update_data_year.dart';
-import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:flutter/services.dart';

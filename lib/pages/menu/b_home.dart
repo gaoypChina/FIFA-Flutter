@@ -85,7 +85,7 @@ class _HomePageState extends State<HomePage> {
     League leagueClass = League(index: indexLeague);
     leagueName = leagueClass.name;
     teamName = leagueClass.getClubName(posicao);
-    clubID = League(index: indexLeague).getClubRealID(posicao);
+    clubID = leagueClass.getClubRealID(posicao);
     nLeagueTeams = leagueClass.nClubs;
     club = Club(index: clubID);
 
@@ -271,7 +271,7 @@ Widget database(){
     return
       GestureDetector(
         onTap:() async{
-          customToast('Carregando Database...');
+          customToast('${Translation(context).text.loading} Database...');
           globalSaveNumber++;
           if(globalSaveNumber == globalMaxSavesPermitted+1){
             globalSaveNumber=0;

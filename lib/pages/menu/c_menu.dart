@@ -247,7 +247,7 @@ class _MenuState extends State<Menu> {
                           child: GestureDetector(
                               onTap:(){
                               },
-                              child: Text('${Translation(context).text.difficulty}: '+DificuldadeClass().getName(),style: EstiloTextoBranco.text12),
+                              child: Text('${Translation(context).text.difficulty}: '+DificuldadeClass().getNameTranslated(context),style: EstiloTextoBranco.text12),
                           ),
                         ),
 

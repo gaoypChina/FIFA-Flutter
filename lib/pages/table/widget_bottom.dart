@@ -4,6 +4,7 @@ import 'package:fifa/pages/table/table_mata_mata.dart';
 import 'package:fifa/pages/table/table_matchs.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,14 @@ class WidgetBottomInternational{
   String partidas = 'Partidas';
   String matamata = 'Mata-Mata';
   String artilheiros = 'Artilheiros';
+
+  getTranslation(BuildContext context, String word){
+    if(word == 'Classificação'){word = Translation(context).text.classification;}
+    if(word == 'Partidas'){word = Translation(context).text.matchs;}
+    if(word == 'Mata-Mata'){word = Translation(context).text.knockoutStage;}
+    if(word == 'Artilheiros'){word = Translation(context).text.topScorers;}
+    return word;
+  }
 }
 Widget customWidgetBottomBar (BuildContext context,String actualPage, String leagueInternational,Function(String leagueInternational) functionSetState){
   return                     //BOTTOM BAR
@@ -44,7 +53,7 @@ Widget customWidgetBottomBar (BuildContext context,String actualPage, String lea
                 child: Container(
                   color: actualPage == WidgetBottomInternational().classificacao ? Colors.black26 : Colors.transparent,
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(WidgetBottomInternational().classificacao,style: EstiloTextoPreto.text16),
+                  child: Text(WidgetBottomInternational().getTranslation(context, WidgetBottomInternational().classificacao),style: EstiloTextoPreto.text16),
                 ),
             ),
             GestureDetector(
@@ -54,7 +63,7 @@ Widget customWidgetBottomBar (BuildContext context,String actualPage, String lea
                 child: Container(
                   color: actualPage == WidgetBottomInternational().partidas ? Colors.black26 : Colors.transparent,
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(WidgetBottomInternational().partidas,style: EstiloTextoPreto.text16),
+                  child: Text(WidgetBottomInternational().getTranslation(context, WidgetBottomInternational().partidas),style: EstiloTextoPreto.text16),
                 ),
             ),
             GestureDetector(
@@ -64,7 +73,7 @@ Widget customWidgetBottomBar (BuildContext context,String actualPage, String lea
                 child: Container(
                   color: actualPage == WidgetBottomInternational().matamata ? Colors.black26 : Colors.transparent,
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(WidgetBottomInternational().matamata,style: EstiloTextoPreto.text16),
+                  child: Text(WidgetBottomInternational().getTranslation(context, WidgetBottomInternational().matamata),style: EstiloTextoPreto.text16),
                 ),
             ),
             GestureDetector(
@@ -74,7 +83,7 @@ Widget customWidgetBottomBar (BuildContext context,String actualPage, String lea
               child: Container(
                 color: actualPage == WidgetBottomInternational().artilheiros ? Colors.black26 : Colors.transparent,
                 padding: const EdgeInsets.all(8.0),
-                child: Text(WidgetBottomInternational().artilheiros,style: EstiloTextoPreto.text16),
+                child: Text(WidgetBottomInternational().getTranslation(context, WidgetBottomInternational().artilheiros),style: EstiloTextoPreto.text16),
               ),
             ),
           ],

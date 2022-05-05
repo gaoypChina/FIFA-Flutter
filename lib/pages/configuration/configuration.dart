@@ -137,7 +137,7 @@ class _ConfigurationState extends State<Configuration> {
             children: [
               const Icon(Icons.star,color:Colors.white,size:40),
               Text(Translation(context).text.difficulty,style: EstiloTextoBranco.underline14),
-              Text(DificuldadeClass().getName(),style: EstiloTextoBranco.underline14),
+              Text(DificuldadeClass().getNameTranslated(context),style: EstiloTextoBranco.underline14),
             ],
           ),
         ),

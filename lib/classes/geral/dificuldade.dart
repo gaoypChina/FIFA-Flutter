@@ -1,10 +1,18 @@
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/theme/translation.dart';
+import 'package:flutter/cupertino.dart';
 
 class DificuldadeClass{
-  List<String> names = ['Amador','Fácil','Médio','Difícil','Expert'];
+  List<String> names = ['Amateur','Easy','Medium','Hard','Expert'];
 
-  getName(){
-    return names[globalDificuldade];
+  getNameTranslated(BuildContext context){
+    if(globalDificuldade == 0){return Translation(context).text.amateur;}
+    else if(globalDificuldade == 1){return Translation(context).text.easy;}
+    else if(globalDificuldade == 2){return Translation(context).text.medium;}
+    else if(globalDificuldade == 3){return Translation(context).text.hard;}
+    else{
+      return Translation(context).text.expert;
+    }
   }
 
   double getDificuldadeMultiplicationValue(){

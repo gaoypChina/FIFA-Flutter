@@ -215,9 +215,9 @@ class _TransfersState extends State<Transfers> {
       height: 200,
       child: Column(
         children: [
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text('Filtrar por qual posição?',style: EstiloTextoPreto.text16),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(Translation(context).text.positionsFilter,style: EstiloTextoPreto.text16),
           ),
           SizedBox(
             height: 150,

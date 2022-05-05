@@ -1,5 +1,6 @@
 import 'package:fifa/classes/geral/name.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:flutter/cupertino.dart';
 
 class Semana{
   String semanaStr = semana.toString();
@@ -23,7 +24,7 @@ class Semana{
     }
     if(semanasJogosCopas.contains(weekToCalculate)){semanaStr = 'Jogo das Copas';}
     else if(semanasGruposInternacionais.contains(weekToCalculate)){
-      semanaStr = 'Fase de Grupos';
+      semanaStr = Name().groupsPhase;
       rodadaGroupInternational = semanasGruposInternacionais.indexOf(weekToCalculate)+1;}
     else if(semanaOitavas.contains(weekToCalculate)){semanaStr = Name().oitavas;    }
     else if(semanaQuartas.contains(weekToCalculate)){semanaStr = Name().quartas;}
@@ -46,6 +47,10 @@ class Semana{
       }else{
         isJogoIdaMataMata = false;
       }
+    }
+
+    getTranslated(BuildContext context){
+      return Name().showTranslated(context, semanaStr);
     }
 
 }

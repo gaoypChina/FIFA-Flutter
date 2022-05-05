@@ -157,8 +157,8 @@ class _AllInfosClubState extends State<AllInfosClub> {
               const Text(''),
               Text(Translation(context).text.name, style: EstiloTextoBranco.text16),
               const Text('+', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              const Text('Ama', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              const Text('Ver', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+              Text(Translation(context).text.yellowCards3, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+              Text(Translation(context).text.redCards3, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
               const Text(''),
             ]),
 

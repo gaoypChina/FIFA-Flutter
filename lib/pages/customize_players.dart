@@ -65,7 +65,8 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                           },
                           child: Image.asset(Images().getEscudo(club.name),height: 60,width: 60)
                       ),
-                      const Text(' Customizar Jogadores',style: EstiloTextoBranco.text22),
+                      const SizedBox(width: 8),
+                      Text(Translation(context).text.customizePlayers,style: EstiloTextoBranco.text22),
                     ],
                   ),
 

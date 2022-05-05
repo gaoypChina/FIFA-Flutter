@@ -1,9 +1,9 @@
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/database/sql.dart';
 import 'package:fifa/page_controller/save/save_infos.dart';
 import 'package:fifa/pages/menu/b_home.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/popup/popup_ok_cancel.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_return.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
@@ -55,7 +55,7 @@ Widget save(int index){
 
     return InkWell(
       onTap:(){
-        popUpOkCancel(context: context, title: 'Deseja Salvar', content: 'Sim ou não?',function: (){
+        popUpOkCancel(context: context, title: Translation(context).text.wantsTosaveFile, content: '',function: (){
           Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const HomePage()));
         });
       },
@@ -83,7 +83,7 @@ Widget save(int index){
                       children: [
                         Text(saveInfos.clubName,style: EstiloTextoBranco.text14),
                         Text(saveInfos.ano.toString(),style: EstiloTextoBranco.text14),
-                        Text('Semana: '+saveInfos.semana.toString(),style: EstiloTextoBranco.text14),
+                        Text('${Translation(context).text.week}: '+saveInfos.semana.toString(),style: EstiloTextoBranco.text14),
                       ],
                     )
                   ],

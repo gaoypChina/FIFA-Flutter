@@ -40,7 +40,7 @@ class _ChangeClubState extends State<ChangeClub> {
                 children: [
 
                   const SizedBox(height: 40),
-                  Text(Translation(context).text.enterNewClub,style: EstiloTextoBranco.text30),
+                  Text(Translation(context).text.changeClub,style: EstiloTextoBranco.text30),
 
                   Column(
                     children: [

@@ -4,7 +4,6 @@ import 'package:fifa/classes/player_basic.dart';
 import 'package:fifa/classes/words.dart';
 import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:flutter/material.dart';

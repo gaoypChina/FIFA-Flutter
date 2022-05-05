@@ -19,16 +19,17 @@ class RedCard{
     int jogadorID = escalacao[probJog];//Posição do jogador [0-11]
     globalJogadoresRedCard[jogadorID]++;
     globalJogadoresMatchRedCards[jogadorID]++;
-
-    customToast('EXPULSO: ${Jogador(index: jogadorID).name} ');
   }
+
   notMy(Club clubClass,int jogPOS) {
     int jogadorID = clubClass.escalacao[jogPOS];
     globalJogadoresRedCard[jogadorID]++;
   }
+
   minus1(int jogadorID){
     if(globalJogadoresRedCard[jogadorID]>0){
       globalJogadoresRedCard[jogadorID]--;
     }
   }
+
 }

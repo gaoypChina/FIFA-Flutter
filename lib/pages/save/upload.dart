@@ -2,6 +2,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/page_controller/save/upload_infos.dart';
 import 'package:fifa/pages/menu/b_home.dart';
 import 'package:fifa/theme/colors.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_return.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
@@ -81,7 +82,7 @@ class _UploadState extends State<Upload> {
                       children: [
                         Text(uploadInfos.clubName,style: EstiloTextoBranco.text14),
                         const Text('2028',style: EstiloTextoBranco.text14),
-                        Text('Semana: '+uploadInfos.semana.toString(),style: EstiloTextoBranco.text14),
+                        Text('${Translation(context).text.week}: '+uploadInfos.semana.toString(),style: EstiloTextoBranco.text14),
                       ],
                     )
                   ],
