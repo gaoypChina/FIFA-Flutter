@@ -172,7 +172,7 @@ class _PlayState extends State<Play> {
                           children: [
 
                             //Estádio
-                            Image.asset(Images().getStadium(myClubClass.name),height: 420,width: double.infinity,fit:BoxFit.fill),
+                            Image.asset(Images().getStadium(myClubClass.name),height: 430,width: double.infinity,fit:BoxFit.fill),
                             InteractiveViewer(
                               panEnabled: true, // Set it to false to prevent panning.
                               minScale: 0.5,
@@ -185,12 +185,12 @@ class _PlayState extends State<Play> {
                                 children: [
                                   SizedBox(
                                     width: Sized(context).width-30,
-                                      height: 425,
+                                      height: 430,
                                       child: visitante ? fieldGameplay442(widget.adversarioClubID) : fieldWidget(),
                                   ),
                                   SizedBox(
                                       width: Sized(context).width,
-                                      height: 425,
+                                      height: 430,
                                       child: visitante ? fieldWidget() : fieldGameplay442(widget.adversarioClubID),
                                   ),
                                 ],

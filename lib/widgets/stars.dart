@@ -14,6 +14,9 @@ convertOverallToStars(double overall){
   else if(overall >= 84){star = 5;}
   return star;
 }
+Widget starsWidgetFromOverall(double overall){
+  return starsWidget(convertOverallToStars(overall));
+}
 Widget starsWidget(double star){
 
   return Row(

@@ -28,6 +28,8 @@ class Transfers extends StatefulWidget {
 class _TransfersState extends State<Transfers> {
   FilterPlayers filterPlayers = FilterPlayers();
 
+  bool showMatchsGoalsAssists = false;
+
   int showRows = 0;
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -72,7 +74,11 @@ class _TransfersState extends State<Transfers> {
                   child: searchNameBar(),
                 ),
 
-                playersRowTitle(), //titulo da tabela
+                //titulo da tabela
+                showMatchsGoalsAssists
+                    ? playersRowTitle2()
+                    : playersRowTitle1(),
+                //TABELA
                 Container(
                   height: bottomSize > 0 ? 280 : 400,
                   color: AppColors().greyTransparent,
@@ -89,7 +95,9 @@ class _TransfersState extends State<Transfers> {
                         for (int i = filterPlayers.transferParameters.page * 50;
                             i < filterPlayers.copyJogadoresID.length && showRows < 50;
                             i++)
-                          playersRow(filterPlayers.copyJogadoresID[i])
+                          showMatchsGoalsAssists
+                              ? playersRow2(filterPlayers.copyJogadoresID[i])
+                              : playersRow1(filterPlayers.copyJogadoresID[i])
                       ],
                     ),
                   ),
@@ -147,9 +155,18 @@ class _TransfersState extends State<Transfers> {
                         }
                         setState(() {});
                       },
-                      child: const Icon(Icons.arrow_right,
-                          color: Colors.white, size: 50),
+                      child: const Icon(Icons.arrow_right,color: Colors.white, size: 50),
                     ),
+
+                    //BOTAO BOLA
+                    GestureDetector(
+                      onTap: () {
+                        showMatchsGoalsAssists = !showMatchsGoalsAssists;
+                        setState(() {});
+                      },
+                      child: Image.asset('assets/icons/bola.png',height:40,width: 40,),
+                    ),
+
                     //ESCOLHA DE POSIÇÃO
                     Expanded(
                       child: GestureDetector(
@@ -223,20 +240,8 @@ class _TransfersState extends State<Transfers> {
             height: 150,
             child: Wrap(
               children: [
-                bottomSheetButton(position: 'GOL'),
-                bottomSheetButton(position: 'LE'),
-                bottomSheetButton(position: 'LD'),
-                bottomSheetButton(position: 'ZAG'),
-                bottomSheetButton(
-                  position: 'VOL',
-                ),
-                bottomSheetButton(position: 'MC'),
-                bottomSheetButton(position: 'ME'),
-                bottomSheetButton(position: 'MD'),
-                bottomSheetButton(position: 'MEI'),
-                bottomSheetButton(position: 'PE'),
-                bottomSheetButton(position: 'PD'),
-                bottomSheetButton(position: 'ATA'),
+                for(String positionName in globalAllPositions)
+                  bottomSheetButton(position: positionName),
               ],
             ),
           ),
@@ -427,7 +432,7 @@ class _TransfersState extends State<Transfers> {
     );
   }
 
-  Widget playersRowTitle() {
+  Widget playersRowTitle1() {
     return Container(
       color: AppColors().greyTransparent,
       child: Row(
@@ -496,7 +501,27 @@ class _TransfersState extends State<Transfers> {
     );
   }
 
-  TableRow playersRow(int playerIndex) {
+  Widget playersRowTitle2() {
+    return Container(
+      color: AppColors().greyTransparent,
+      child: Row(
+        children: [
+          const SizedBox(width: 5),
+          Text(Translation(context).text.pos3, style: EstiloTextoBranco.text16),
+          const SizedBox(width: 11),
+          SizedBox(
+              width: 220,
+              child: Text(Translation(context).text.player, style: EstiloTextoBranco.text16)),
+          Text(Translation(context).text.playedP, style: EstiloTextoBranco.text16),
+          const SizedBox(width: 20),
+          Text(Translation(context).text.goalsG, style: EstiloTextoBranco.text16),
+          const SizedBox(width: 38),
+          Text(Translation(context).text.assistsA, style: EstiloTextoBranco.text16),
+        ],
+      ),
+    );
+  }
+  TableRow playersRow1(int playerIndex) {
     Jogador player = Jogador(index: playerIndex);
     Color nameColor = Colors.white;
     if (player.injury > 0) {
@@ -566,6 +591,81 @@ class _TransfersState extends State<Transfers> {
               style: player.price > My().money
                   ? EstiloTextoVermelho.text14
                   : EstiloTextoBranco.text14),
+        ],
+      );
+    } else {
+      return TableRow(children: [
+        Container(),
+        Container(),
+        Container(),
+        Container(),
+        Container(),
+        Container(),
+        Container(),
+      ]);
+    }
+  }
+
+  TableRow playersRow2(int playerIndex) {
+    Jogador player = Jogador(index: playerIndex);
+    Color nameColor = Colors.white;
+
+    if (filterPlayers.searchString.isEmpty ||
+        (filterPlayers.searchString.isNotEmpty &&
+            player.name.toLowerCase().contains(filterPlayers.searchString.toLowerCase()))) {
+      showRows++;
+      return TableRow(
+        children: [
+          Row(
+            children: [
+              positionContainer(player.position),
+            ],
+          ),
+          Image.asset(Images().getEscudo(player.clubName),height: 20,width: 20),
+          //Text(player.index.toString(), style: EstiloTextoBranco.text16),
+          GestureDetector(
+            onTap: () {
+              //comprar  jogador
+              popUpOkShowPlayerInfos(
+                  context: context,
+                  playerID: player.index,
+                  funcSetState: () {
+                    setState(() {});
+                  });
+              setState(() {});
+            },
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(player.name, style: TextStyle(color: nameColor,fontFamily: 'Roboto',fontSize: 16,)),
+                Row(
+                  children: [
+                    funcFlagsList(player.nationality, 7, 10),
+                    Text(player.nationality, style: TextStyle(color: nameColor,fontFamily: 'Roboto',fontSize: 10,)),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          //JOGOS
+          Container(
+              padding: const EdgeInsets.all(4),
+              margin: const EdgeInsets.symmetric(horizontal: 2),
+              child: Text(player.matchsCarrer.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16)),
+          //GOLS
+          Container(
+              padding: const EdgeInsets.all(4),
+              margin: const EdgeInsets.symmetric(horizontal: 2),
+              child: Center(
+                child: Text(player.goalsCarrer.toString(),style: EstiloTextoBranco.text16),
+              )),
+          //ASSISTENCIAS
+          Container(
+              padding: const EdgeInsets.all(4),
+              margin: const EdgeInsets.symmetric(horizontal: 2),
+              child: Center(
+                child: Text(player.assistsCarrer.toString(),style: EstiloTextoBranco.text16),
+              )),
         ],
       );
     } else {

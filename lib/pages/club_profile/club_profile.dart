@@ -6,6 +6,7 @@ import 'package:fifa/pages/club_profile/all_infos_club.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_return.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/widgets/stars.dart';
 import 'package:flutter/material.dart';
 
 class ClubProfile extends StatefulWidget {
@@ -67,6 +68,7 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
+                              starsWidgetFromOverall(clubClass.getOverall()),
                               Text('${Translation(context).text.overall}: '+clubClass.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.text16),
                               Text('${Translation(context).text.avgAge}: '+clubClass.getAverageAge().toStringAsFixed(2), style: EstiloTextoBranco.text16),
                             ],

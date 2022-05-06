@@ -250,7 +250,7 @@ Widget clubLogoAndKitStack(Club club){
           ),
         ),
         Text(club.name,style:EstiloTextoBranco.text25),
-        starsWidget(convertOverallToStars(club.getOverall())),
+        starsWidgetFromOverall(club.getOverall()),
       ],
     );
 }

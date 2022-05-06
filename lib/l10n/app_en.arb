@@ -233,7 +233,7 @@
   "@_POPUP_EXPECTATIONS": {
   },
   "lastSeason": "Last Season",
-  "seasonGoals": "Season's goals",
+  "seasonGoals": "Season's objectives",
   "good": "Good",
   "bad": "Bad",
   "result": "Result",
@@ -285,6 +285,7 @@
   "quartas": "Round of 8",
   "semi": "Semifinals",
   "finale": "Final",
+  "qualify": "Qualify",
 
 
   "@_1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111": {

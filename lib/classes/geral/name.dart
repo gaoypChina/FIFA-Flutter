@@ -7,6 +7,7 @@ class Name{
   String quartas = 'Quartas';
   String semifinal = 'Semifinal';
   String finale = 'Final';
+  String qualify = 'Classificar';
 
   showTranslated(BuildContext context, String word){
     if(word == groupsPhase){word = Translation(context).text.groupStage;}
@@ -14,6 +15,7 @@ class Name{
     if(word == quartas){word = Translation(context).text.quartas;}
     if(word == semifinal){word = Translation(context).text.semi;}
     if(word == finale){word = Translation(context).text.finale;}
+    if(word == qualify){word = Translation(context).text.qualify;}
     return word;
   }
 }

@@ -15,7 +15,7 @@ class Expectativa{
       if(expectativaNacional <= 2){ expInternacional = Name().semifinal; }
       else if(expectativaNacional < 4){ expInternacional = Name().quartas; }
       else if(expectativaNacional < 6){ expInternacional = Name().oitavas; }
-      else if(expectativaNacional < 10){ expInternacional = 'Classificar'; }
+      else if(expectativaNacional < 10){ expInternacional = Name().qualify; }
     }
 
   }

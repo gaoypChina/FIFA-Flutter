@@ -1,4 +1,5 @@
 import 'package:fifa/classes/expectativa.dart';
+import 'package:fifa/classes/geral/name.dart';
 import 'package:fifa/classes/historic.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
@@ -67,7 +68,7 @@ popUpExpectativa({required BuildContext context}){
                   children: [
                     Image.asset(FIFAImages().campeonatoInternacionalLogo(myClass.getMyInternationalLeague()),height: 35,width: 35),
                     Text('${myClass.getMyInternationalLeague()}:', style: EstiloTextoPreto.text14),
-                    Text(expectativaAtual.expInternacional, style: EstiloTextoPreto.text14),
+                    Text(Name().showTranslated(context, expectativaAtual.expInternacional), style: EstiloTextoPreto.text14),
                   ],
                 )
                 : Container(),

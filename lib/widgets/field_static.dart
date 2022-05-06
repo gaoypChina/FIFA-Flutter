@@ -220,9 +220,9 @@ Widget playerWidgetMatch(int jogadorIndex, String clubName){
   bool injury = matchClass.injury>0;
   bool goal = matchClass.goals>0;
   double healthBar = matchClass.health;
-  double imageSize = 38;
+  double imageSize = 36;
   double headSize = 22;
-  double bottomBarWidth = imageSize+22;
+  double bottomBarWidth = imageSize+45;
 
   if(injury || redCard){healthBar=0;}
 
@@ -284,9 +284,9 @@ Widget playerWidgetMatch(int jogadorIndex, String clubName){
       //Nome do jogador
       Container(
           color: Colors.black87,
-          padding: const EdgeInsets.all(4),
+          padding: const EdgeInsets.all(2),
           width: bottomBarWidth,
-          child: Text(name,textAlign:TextAlign.center,style: EstiloTextoBranco.text8)
+          child: Text(name,textAlign:TextAlign.center,overflow:TextOverflow.clip,style: EstiloTextoBranco.text10)
       ),
     ],
   );
