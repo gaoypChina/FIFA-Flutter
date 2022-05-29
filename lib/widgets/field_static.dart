@@ -220,7 +220,7 @@ Widget playerWidgetMatch(int jogadorIndex, String clubName){
   bool injury = matchClass.injury>0;
   bool goal = matchClass.goals>0;
   double healthBar = matchClass.health;
-  double imageSize = 36;
+  double imageSize = 38;
   double headSize = 22;
   double bottomBarWidth = imageSize+45;
 

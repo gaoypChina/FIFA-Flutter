@@ -130,6 +130,7 @@ resetData(){
 
 void trocaClubesRebaixamento(){
   funcRebaixamentoLeague(LeagueOfficialNames().inglaterra1,LeagueOfficialNames().inglaterra2,3);
+  funcRebaixamentoLeague(LeagueOfficialNames().inglaterra2,LeagueOfficialNames().inglaterra3,3);
   funcRebaixamentoLeague(LeagueOfficialNames().espanha1,LeagueOfficialNames().espanha2,3);
   funcRebaixamentoLeague(LeagueOfficialNames().italia1,LeagueOfficialNames().italia2,3);
   funcRebaixamentoLeague(LeagueOfficialNames().alemanha1,LeagueOfficialNames().alemanha2,3);

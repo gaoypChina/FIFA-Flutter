@@ -39,7 +39,7 @@ List internationalLeagueNames = [LeagueOfficialNames().championsLeague,LeagueOff
 //ID<50 -> Champions League
 //ID<70 -> Libertadores
 List leaguesListRealIndex = [
-  1,2,5,6, 7,8,  9,11,12,15,16, 20,21,    50,51,52,60,61,62,   70,71,  80, 85, 90
+  1,2,3,5,6, 7,8,  9,11,12,15,16, 20,21,    50,51,52,60,61,62,   70,71,  80, 85, 90
 ];
 
 List getAvailableLeaguesNames(){
@@ -55,13 +55,14 @@ List getAvailableLeaguesNames(){
 int nLeaguesTotal = leaguesListRealIndex.length;
 
 List leagueNames = [
-  LeagueOfficialNames().inglaterra1,LeagueOfficialNames().inglaterra2,
+  LeagueOfficialNames().inglaterra1,LeagueOfficialNames().inglaterra2,LeagueOfficialNames().inglaterra3,
   LeagueOfficialNames().italia1,LeagueOfficialNames().italia2,
   LeagueOfficialNames().espanha1,LeagueOfficialNames().espanha2,
   LeagueOfficialNames().franca1,LeagueOfficialNames().franca2,
   LeagueOfficialNames().alemanha1,LeagueOfficialNames().alemanha2,
   LeagueOfficialNames().ptHol,LeagueOfficialNames().turquiaGrecia,
   LeagueOfficialNames().ligaEuropa,LeagueOfficialNames().lesteEuropeu,
+
   LeagueOfficialNames().brasil1,LeagueOfficialNames().brasil2,LeagueOfficialNames().brasil3,
   LeagueOfficialNames().paulistao,
   LeagueOfficialNames().argentina,LeagueOfficialNames().sulamericano,LeagueOfficialNames().colombia,

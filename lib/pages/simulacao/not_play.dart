@@ -1,3 +1,4 @@
+import 'package:fifa/classes/geral/name.dart';
 import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
@@ -37,7 +38,7 @@ class _NotPlayState extends State<NotPlay> {
                 children: [
 
                   const SizedBox(height: 40),
-                  Text('${Translation(context).text.week}: '+weekName,style: EstiloTextoBranco.text30),
+                  Text('${Translation(context).text.week}: '+Name().showTranslated(context, weekName),style: EstiloTextoBranco.text30),
                   const SizedBox(height: 10),
 
                   //TABELA

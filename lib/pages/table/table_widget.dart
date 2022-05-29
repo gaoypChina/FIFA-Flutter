@@ -115,7 +115,8 @@ Color backgroundTextColor(int position, int choosenLeagueIndex , String teamName
   if(leagueName==LeagueOfficialNames().turquiaGrecia){
     if(position==1){backgroundColor = Colors.indigo;}
   }
-  if(leagueName==LeagueOfficialNames().inglaterra2  || leagueName==LeagueOfficialNames().espanha2
+  if(leagueName==LeagueOfficialNames().inglaterra2 || leagueName==LeagueOfficialNames().inglaterra3
+      || leagueName==LeagueOfficialNames().espanha2
       || leagueName==LeagueOfficialNames().italia2 || leagueName==LeagueOfficialNames().franca2
       || leagueName==LeagueOfficialNames().alemanha2
       || leagueName==LeagueOfficialNames().lesteEuropeu || leagueName==LeagueOfficialNames().ligaEuropa
@@ -150,6 +151,7 @@ Color backgroundTextColor(int position, int choosenLeagueIndex , String teamName
 
   //REBAIXAMENTO
   if(leagueName==LeagueOfficialNames().inglaterra1
+      || leagueName==LeagueOfficialNames().inglaterra2
       || leagueName==LeagueOfficialNames().espanha1
       || leagueName==LeagueOfficialNames().italia1
       || leagueName==LeagueOfficialNames().brasil1

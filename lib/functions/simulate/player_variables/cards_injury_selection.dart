@@ -4,7 +4,6 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/functions/simulate/player_variables/origin/injury.dart';
 import 'package:fifa/functions/simulate/player_variables/origin/red_card.dart';
 import 'package:fifa/functions/simulate/player_variables/origin/yellow_card.dart';
-import 'package:flutter/cupertino.dart';
 
 import '../../../global_variables.dart';
 

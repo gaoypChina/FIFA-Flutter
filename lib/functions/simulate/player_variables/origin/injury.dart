@@ -1,10 +1,6 @@
 import 'dart:math';
 
-import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/theme/custom_toast.dart';
-import 'package:fifa/theme/translation.dart';
-import 'package:flutter/cupertino.dart';
 
 import '../../../../classes/club.dart';
 

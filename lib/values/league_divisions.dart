@@ -2,8 +2,8 @@ import 'package:fifa/values/league_names.dart';
 
 class Divisions{
 
-  List leagueDivisionsStructure(String leagueName){
-    List leagueNames = [];
+  List<String> leagueDivisionsStructure(String leagueName){
+    List<String> leagueNames = [];
     leagueNames = [LeagueOfficialNames().inglaterra1,LeagueOfficialNames().inglaterra2,LeagueOfficialNames().inglaterra3];
     if(checkDivision(leagueNames,leagueName)){
       return leagueNames;

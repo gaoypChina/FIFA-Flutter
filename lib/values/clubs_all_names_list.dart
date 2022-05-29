@@ -17,15 +17,18 @@ List clubsAllNameList = [
 
   ClubName().hullcity,ClubName().sunderland,ClubName().brentford,ClubName().portsmouth,
   ClubName().plymouth,ClubName().millwall,ClubName().huddersfield,ClubName().charlton,
+  ClubName().bristol,ClubName().prestonNorthEnd,ClubName().bolton,
+  ClubName().cardiffCity,ClubName().rotherham,ClubName().ipswichTown,
   //italia
-  ClubName().atalanta,  ClubName().bologna,  ClubName().cagliari,  ClubName().fiorentina,
+  ClubName().atalanta,  ClubName().bologna,  ClubName().cremonese,  ClubName().fiorentina,
   ClubName().genoa,  ClubName().inter,  ClubName().juventus,  ClubName().milan,
-  ClubName().lazio,  ClubName().napoli,  ClubName().parma,  ClubName().roma,
+  ClubName().lazio,  ClubName().napoli,  ClubName().roma,  ClubName().salernitana,
   ClubName().sampdoria,  ClubName().sassuolo,  ClubName().torino,  ClubName().udinese,
 
-  ClubName().hellasVerona,ClubName().brescia,ClubName().crotone,ClubName().benevento,
-  ClubName().empoli,ClubName().spezia,ClubName().lecce,ClubName().monza,
-  ClubName().perugia,ClubName().spal,ClubName().venezia,ClubName().pisa,
+  ClubName().bari,ClubName().brescia,ClubName().benevento,ClubName().cagliari,
+  ClubName().crotone,ClubName().empoli,ClubName().hellasVerona,ClubName().lecce,
+  ClubName().monza,ClubName().palermo,ClubName().parma,ClubName().perugia,
+  ClubName().pisa,ClubName().spal,ClubName().spezia,ClubName().venezia,
   //espanha
   ClubName().athleticbilbao,  ClubName().atleticomadrid,  ClubName().barcelona,  ClubName().celtavigo,
   ClubName().espanyol,  ClubName().getafe,  ClubName().granada,  ClubName().levante,
@@ -35,7 +38,8 @@ List clubsAllNameList = [
   ClubName().alaves,ClubName().almeria,ClubName().cadiz,ClubName().elche,
   ClubName().girona,ClubName().ibiza,ClubName().lacoruna,ClubName().lasPalmas,
   ClubName().zaragoza,ClubName().malaga,ClubName().mallorca,ClubName().rayoVallecano,
-  ClubName().sportingGijon,ClubName().tenerife,
+  ClubName().sportingGijon,ClubName().tenerife,ClubName().elche,ClubName().leganes,
+  ClubName().eibar,
   //alemanha
   ClubName().moenchengladbach,  ClubName().borussiadortmund,  ClubName().bayernmunique,  ClubName().bayerleverkusen,
   ClubName().colonia,  ClubName().eintrachtfrankfurt,  ClubName().freiburg,  ClubName().hamburgo,
@@ -99,7 +103,7 @@ List clubsAllNameList = [
   ClubName().sampaio,ClubName().vilanova,ClubName().brasilPelotas,ClubName().ituano,
   ClubName().gremioNovorizontino,ClubName().mirassol,ClubName().operarioPR,
   ClubName().londrina,ClubName().remo,ClubName().abc,ClubName().saocaetano,ClubName().santoandre,
-  ClubName().mirassol,ClubName().botafogoSP,
+  ClubName().mirassol,ClubName().botafogoSP,ClubName().botafogoPB,ClubName().caxias,
 
   //argentina
   ClubName().argentinojuniors,  ClubName().arsenalsarandi,  ClubName().banfield,  ClubName().bocajuniors,
