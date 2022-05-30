@@ -41,16 +41,16 @@ Map clubNameMapImmutable = {
     16: clubName.tottenham,17: clubName.southampton,18: clubName.westham,19: clubName.wolves,
   },
   LeagueOfficialNames().inglaterra2 : {
-    0: clubName.birmigham,1: clubName.blackburn,2: clubName.sunderland,3: clubName.burnley,
-    4: clubName.hullcity,5: clubName.derbycount,6: clubName.huddersfield,7: clubName.middlesbrough,
-    8: clubName.norwich,9: clubName.portsmouth,10: clubName.qpr, 11: clubName.prestonNorthEnd,
-    12: clubName.reading,13: clubName.sheffieldunited, 14: clubName.stoke, 15: clubName.swansea,
-    16: clubName.watford,17:clubName.westbromwich,
+    0: clubName.birmigham,1: clubName.blackburn,2: clubName.burnley,3: clubName.bristol,
+    4: clubName.cardiffCity,5: clubName.coventry,6: clubName.huddersfield,7: clubName.hullcity,
+    8: clubName.luton,9: clubName.middlesbrough,10: clubName.norwich, 11: clubName.qpr,
+    12: clubName.prestonNorthEnd,13: clubName.reading, 14: clubName.sheffieldunited, 15: clubName.stoke,
+    16: clubName.sunderland,17:clubName.swansea,18: clubName.watford,19:clubName.westbromwich,
 
   },
   LeagueOfficialNames().inglaterra3 : {
-    0:clubName.bristol,1:clubName.cardiffCity,2: clubName.ipswichTown, 3: clubName.charlton,
-    4:clubName.plymouth, 5:clubName.rotherham
+    0:clubName.blackpool,1:clubName.charlton,2: clubName.derbycount, 3: clubName.ipswichTown,
+    4:clubName.peterborough, 5:clubName.plymouth,6:clubName.portsmouth, 7:clubName.rotherham,
   },
   LeagueOfficialNames().italia1 : {
     0: clubName.atalanta, 1: clubName.bologna,2: clubName.cremonese,3: clubName.empoli,
@@ -63,6 +63,7 @@ Map clubNameMapImmutable = {
     0: clubName.bari, 1: clubName.benevento,2: clubName.brescia,3: clubName.cagliari,
     4: clubName.crotone,5: clubName.genoa,6: clubName.palermo,7: clubName.parma,
     8: clubName.perugia,9: clubName.pisa,10: clubName.spal,11: clubName.venezia,
+    12: clubName.ascoli,13: clubName.frosinone,14: clubName.como,15: clubName.reggina,
   },
   LeagueOfficialNames().espanha1 : {
     0: clubName.almeria,1: clubName.athleticbilbao,2: clubName.atleticomadrid,3: clubName.barcelona,
@@ -86,13 +87,14 @@ Map clubNameMapImmutable = {
   LeagueOfficialNames().alemanha2 : {
     0: clubName.dynamoDresden,1: clubName.fortunaDusseldorf,2: clubName.arminiaBiefeld,3: clubName.kaiserslautern,
     4: clubName.nurnberg,5: clubName.stPauli,6: clubName.hannover96,7: clubName.hamburgo,
+    8: clubName.darmstadt,9: clubName.paderborn,
   },
   LeagueOfficialNames().franca1 : {
-    0: clubName.angers,1: clubName.auxerre,2: clubName.bordeaux,3: clubName.brest,
-    4: clubName.clermont,5: clubName.lens,6: clubName.lille,7: clubName.lorient,
-    8: clubName.lyon,9: clubName.montpellier,10: clubName.monaco,11: clubName.nantes,
-    12: clubName.nice,13: clubName.olympiquemarselha,14: clubName.psg,15: clubName.reims,
-    16: clubName.rennes,17: clubName.saintetienne,18: clubName.strasbourg,19: clubName.toulouse,
+    0: clubName.ajaccio,1: clubName.angers,2: clubName.auxerre,3: clubName.bordeaux,
+    4: clubName.brest,5: clubName.clermont,6: clubName.lens,7: clubName.lille,
+    8: clubName.lorient,9: clubName.lyon,10: clubName.monaco,11: clubName.montpellier,
+    12: clubName.nantes,13: clubName.nice,14: clubName.olympiquemarselha,15: clubName.psg,
+    16: clubName.reims,17: clubName.rennes,18: clubName.strasbourg,19: clubName.toulouse,
   },
   LeagueOfficialNames().ptHol : {
     0: clubName.benfica,1: clubName.porto,2: clubName.sporting,3: clubName.braga,
@@ -150,16 +152,17 @@ Map clubNameMapImmutable = {
   },
   LeagueOfficialNames().sulamericano : {
     0: clubName.cerroporteno,1: clubName.olimpia,2: clubName.guaraniPAR,3: clubName.libertad,
-    4: clubName.nacional,5: clubName.penarol,6: clubName.colocolo,7: clubName.lau,
-    8: clubName.univcatolica,9: clubName.bolivar,10: clubName.theStrongest,11: clubName.alwaysReady,
-    12: clubName.alianzalima,13: clubName.jorge,14: clubName.sportingcristal,15: clubName.universitario,
-    16: clubName.palestino,17: clubName.cienciano,18: clubName.montevideo,19: clubName.oncecaldas,
+    4: clubName.colocolo,5: clubName.lau,6: clubName.palestino,7: clubName.univcatolica,
+    8: clubName.alwaysReady,9: clubName.bolivar,10: clubName.theStrongest,11: clubName.alianzalima,
+    12: clubName.cienciano,13: clubName.jorge,14: clubName.melgar,15: clubName.sportingcristal,
+    16: clubName.universitario,17: clubName.montevideo,18: clubName.nacional,19: clubName.penarol,
   },
   LeagueOfficialNames().colombia : {
     0: clubName.americadecali,1: clubName.atleticonacional,2: clubName.deportivocali,3: clubName.junior,
     4: clubName.imedellin,5: clubName.tolima,6: clubName.millonarios,7: clubName.santafe,
-    8: clubName.caracas,9: clubName.deportivoTachira,
-    10: clubName.barcelonaequ,11: clubName.emelec,12: clubName.ldu,13: clubName.idelvalle,
+    8: clubName.oncecaldas,
+    9: clubName.caracas,10: clubName.deportivoTachira,11: clubName.laGuaira,
+    12: clubName.barcelonaequ,13: clubName.emelec,14: clubName.ldu,15: clubName.idelvalle,
   },
 
   //AMÉRICA DO NORTE
@@ -191,8 +194,8 @@ Map clubNameMapImmutable = {
   LeagueOfficialNames().outros : {
     0: clubName.alIttihad,1: clubName.alWahda,2: clubName.fcSeoul,3: clubName.ulsan,
     4: clubName.vardar,5: clubName.slovanBratislava, 6: clubName.helsinki,7: clubName.laskLinz,
-    8: clubName.maccabiTelAviv,9: clubName.metz,10: clubName.caen,11: clubName.troyes,
-    12: clubName.genk,13: clubName.midtjylland,
+    8: clubName.maccabiTelAviv,9: clubName.caen,10: clubName.metz,11: clubName.troyes,
+    12: clubName.saintetienne,13: clubName.genk,14: clubName.midtjylland,15: clubName.gilVicente
   },
 
 };

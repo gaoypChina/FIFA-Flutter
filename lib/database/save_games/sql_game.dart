@@ -3,19 +3,20 @@ import 'dart:math';
 
 import 'package:fifa/database/key_names.dart';
 import 'package:fifa/database/local_database/shared_preferences.dart';
-import 'package:fifa/database/player_save_data.dart';
+import 'package:fifa/database/save_games/basic_game_infos.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'package:flutter/widgets.dart';
 
-class SaveSQL{
+class SaveSQLGame{
 //https://docs.flutter.dev/cookbook/persistence/sqlite
 
   //VÁRIAVEIS UNIVERSAIS
-  String databasePath = 'teste0000.db';
+  String databasePath = 'testes0000.db';
   final String tablePlayerSaveData = 'players';
+  int saveGameNumber = 0;
 
   static Database? _database;
   Future<Database> get database async {
@@ -28,19 +29,19 @@ class SaveSQL{
   }
 
   checkDatabaseSize(){
-    var file = File('/data/user/0/com.marcos.fifa/databases/teste000$globalSaveNumber.db');
+    var file = File('/data/user/0/com.marcos.fifa/databases/testes000$saveGameNumber.db');
     int bytes = file.lengthSync();
     if (bytes <= 0) return "0 B";
     const suffixes = ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
     var i = (log(bytes) / log(1024)).floor();
     String value = ((bytes / pow(1024, i)).toStringAsFixed(2)) + ' ' + suffixes[i];
-    customToast('Database $globalSaveNumber\nSize: $value');
+    customToast('Database $saveGameNumber\nSize: $value');
   }
 
   Future setDatabasePath() async {
     //DEPENDENDO DO SAVE, SALVA EM UM DATABASE DIFERENTE
-    globalSaveNumber = (await SharedPreferenceHelper().getsharedSaveNumber())!;
-    databasePath =  'teste000$globalSaveNumber.db';
+    saveGameNumber = (await SharedPreferenceHelper().getsharedSaveGameNumber())!;
+    databasePath =  'testes000$saveGameNumber.db';
   }
 
   Future<Database> initDB() async{
@@ -58,13 +59,7 @@ class SaveSQL{
       onCreate: (db, version) {
         return db.execute(
           'CREATE TABLE IF NOT EXISTS $tablePlayerSaveData(${KeyNames().idKey} INTEGER PRIMARY KEY AUTOINCREMENT,'
-              ' ${KeyNames().nameKey} TEXT,'
-              ' ${KeyNames().ageKey} INTEGER,'
-              ' ${KeyNames().positionKey} TEXT,'
-              ' ${KeyNames().clubIDKey} INTEGER,'
-              ' ${KeyNames().overallKey} INTEGER,'
-              ' ${KeyNames().nationalityKey} TEXT,'
-              ' ${KeyNames().imagePlayerKey} TEXT'
+              ' ${KeyNames().yearKey} INTEGER'
               ')',
         );
       },
@@ -72,7 +67,7 @@ class SaveSQL{
     return database;
   }
 
-  Future<void> insertPlayerSaveData(PlayerSaveData players) async {
+  Future<void> insertPlayerSaveData(BasicGameInfos players) async {
     final db = await database;
 
     await db.insert(
@@ -82,7 +77,7 @@ class SaveSQL{
     );
   }
 
-  Future<void> updatePlayerSaveData(PlayerSaveData players) async {
+  Future<void> updatePlayerSaveData(BasicGameInfos players) async {
     // Get a reference to the database.
     final db = await database;
 
@@ -97,31 +92,18 @@ class SaveSQL{
     );
   }
 
-  Future<List<PlayerSaveData>> funcPlayerSavedDataResult() async {
+  Future<List<BasicGameInfos>> funcPlayerSavedDataResult() async {
     final db = await database;
 
     final List<Map<String, dynamic>> maps = await db.query(tablePlayerSaveData);
 
     // Convert the List<Map<String, dynamic> into a List<PlayerSaveData>.
     return List.generate(maps.length, (i) {
-      return PlayerSaveData(
+      return BasicGameInfos(
         id: maps[i][KeyNames().idKey],
-        name: maps[i][KeyNames().nameKey],
-        age: maps[i][KeyNames().ageKey],
-        clubID: maps[i][KeyNames().clubIDKey],
-        position: maps[i][KeyNames().positionKey],
-        overall: maps[i][KeyNames().overallKey],
-        nationality: maps[i][KeyNames().nationalityKey],
-        imagePlayer: maps[i][KeyNames().imagePlayerKey],
+        year: maps[i][KeyNames().yearKey],
       );
     });
-  }
-
-  printDatabaseValues() async{
-    List<PlayerSaveData> list = await funcPlayerSavedDataResult();
-    for (PlayerSaveData row in list){
-      print(row.printToString());
-    }
   }
 
   Future<void> deletePlayerSaveData(int id) async {
@@ -138,56 +120,23 @@ class SaveSQL{
     );
   }
 
-  //Funçao de teste se o database esta criado corretamente
-  test() async {
-    var fido = PlayerSaveData(
-      id: 0,
-      name: 'Messi',
-      age: 35,
-      clubID: 2,
-      overall: 91,
-      position: 'ATA',
-      nationality: 'Argentina',
-      imagePlayer: 'unknown',
-    );
-
-
-    printDatabaseValues();
-    await deletePlayerSaveData(0);
-
-  }
-
 
   ///////////////////////////////////////////////////////////////////////////
   saveAllPlayersToDatabase(){
-    for (int i=0; i<globalJogadoresIndex.length;i++){
-      PlayerSaveData player = PlayerSaveData(
-        id: globalJogadoresIndex[i],
-        name: globalJogadoresName[i],
-        age: globalJogadoresAge[i],
-        clubID: globalJogadoresClubIndex[i],
-        overall: globalJogadoresOverall[i],
-        position: globalJogadoresPosition[i],
-        nationality: globalJogadoresNationality[i],
-        imagePlayer: globalJogadoresImageUrl[i],
+      BasicGameInfos gameInfos = BasicGameInfos(
+        id: saveGameNumber,
+        year: ano,
       );
 
-      insertPlayerSaveData(player);
-    }
+      insertPlayerSaveData(gameInfos);
   }
 
   Future getAllPlayerFromDatabase() async{
-    List<PlayerSaveData> list = await funcPlayerSavedDataResult();
+    List<BasicGameInfos> list = await funcPlayerSavedDataResult();
     if(list.isNotEmpty){
-      for (PlayerSaveData row in list){
+      for (BasicGameInfos row in list){
         globalJogadoresIndex[row.id] = row.id;
-        globalJogadoresName[row.id] = row.name;
-        globalJogadoresAge[row.id] = row.age;
-        globalJogadoresClubIndex[row.id] = row.clubID;
-        globalJogadoresOverall[row.id] = row.overall;
-        globalJogadoresPosition[row.id] = row.position;
-        globalJogadoresNationality[row.id] = row.nationality;
-        globalJogadoresImageUrl[row.id] = row.imagePlayer;
+        globalJogadoresName[row.id] = row.year;
       }
     }
 

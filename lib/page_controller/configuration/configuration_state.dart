@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:fifa/database/csv/read_csv.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/page_controller/configuration/open_url.dart';
@@ -7,6 +9,7 @@ class ConfigurationState{
   bool turnIdaEVolta = globalLeagueIdaVolta;
   bool hasCards = globalHasCards;
   bool allEqualPlayersOverall = globalAllEqualOverall;
+  bool randomPlayersOverall = globalRandomPlayersOverall;
   bool hasInjuries = globalHasInjuries;
   bool seeProbability = globalSeeProbabilities;
   double initialMoney = globalInitialMoney;
@@ -52,6 +55,46 @@ class ConfigurationState{
       ReadCSV().openCSV();
     }
   }
+
+  changeAllRandomPlayersOverallState(){
+    randomPlayersOverall = !randomPlayersOverall;
+    globalRandomPlayersOverall = !globalRandomPlayersOverall;
+    if(globalRandomPlayersOverall){
+      for(int id in globalJogadoresIndex){
+        int probLucky = Random().nextInt(50);
+        int prob = 55+Random().nextInt(39);
+        if(prob>88){
+          if(probLucky < 49){
+            prob -= 7;
+          }
+        }
+        if(prob>85){
+          if(probLucky < 47){
+            prob -= 5;
+          }
+        }
+        if(prob>81){
+          if(probLucky < 42){
+            prob -= 3;
+          }
+        }
+
+        //Ajusta um pouco pela idade
+        if(globalJogadoresAge[id]<19){
+          prob -= 8;
+        }else if(globalJogadoresAge[id]<23){
+          prob -= 5;
+        }else if(globalJogadoresAge[id]>35){
+          prob -= 5;
+        }
+
+        globalJogadoresOverall[id] = prob;
+      }
+    }else{
+      ReadCSV().openCSV();
+    }
+  }
+
 
   changeSeeProbabilityState(){
     seeProbability = !seeProbability;

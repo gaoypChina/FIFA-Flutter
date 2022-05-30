@@ -86,9 +86,10 @@ class _TransfersState extends State<Transfers> {
                   child: SingleChildScrollView(
                     child: Table(
                       columnWidths: const {
-                        0: FractionColumnWidth(.09),
+                        0: FractionColumnWidth(.08),
                         1: FractionColumnWidth(.07),
-                        2: FractionColumnWidth(.5),
+                        3: FractionColumnWidth(.1),
+                        4: FractionColumnWidth(.1),
                         5: FractionColumnWidth(.18),
                       },
                       children: [
@@ -441,7 +442,7 @@ class _TransfersState extends State<Transfers> {
           Text(Translation(context).text.pos3, style: EstiloTextoBranco.text16),
           const SizedBox(width: 11),
           SizedBox(
-              width: 210,
+              width: 200,
               child: Text(Translation(context).text.player, style: EstiloTextoBranco.text16)),
           GestureDetector(
               onTap: () {
@@ -478,7 +479,7 @@ class _TransfersState extends State<Transfers> {
                       : Container(),
                 ],
               )),
-          const SizedBox(width: 20),
+          const SizedBox(width: 25),
           GestureDetector(
               onTap: () {
                 filterPlayers.setPrice();
@@ -508,14 +509,14 @@ class _TransfersState extends State<Transfers> {
         children: [
           const SizedBox(width: 5),
           Text(Translation(context).text.pos3, style: EstiloTextoBranco.text16),
-          const SizedBox(width: 11),
+          const SizedBox(width: 10),
           SizedBox(
-              width: 220,
+              width: 210,
               child: Text(Translation(context).text.player, style: EstiloTextoBranco.text16)),
           Text(Translation(context).text.playedP, style: EstiloTextoBranco.text16),
-          const SizedBox(width: 20),
+          const SizedBox(width: 25),
           Text(Translation(context).text.goalsG, style: EstiloTextoBranco.text16),
-          const SizedBox(width: 38),
+          const SizedBox(width: 44),
           Text(Translation(context).text.assistsA, style: EstiloTextoBranco.text16),
         ],
       ),
@@ -648,24 +649,15 @@ class _TransfersState extends State<Transfers> {
             ),
           ),
           //JOGOS
-          Container(
-              padding: const EdgeInsets.all(4),
-              margin: const EdgeInsets.symmetric(horizontal: 2),
-              child: Text(player.matchsCarrer.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16)),
+          Text(player.matchsCarrer.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
           //GOLS
-          Container(
-              padding: const EdgeInsets.all(4),
-              margin: const EdgeInsets.symmetric(horizontal: 2),
-              child: Center(
-                child: Text(player.goalsCarrer.toString(),style: EstiloTextoBranco.text16),
-              )),
+          Center(
+            child: Text(player.goalsCarrer.toString(),style: EstiloTextoBranco.text16),
+          ),
           //ASSISTENCIAS
-          Container(
-              padding: const EdgeInsets.all(4),
-              margin: const EdgeInsets.symmetric(horizontal: 2),
-              child: Center(
-                child: Text(player.assistsCarrer.toString(),style: EstiloTextoBranco.text16),
-              )),
+          Center(
+            child: Text(player.assistsCarrer.toString(),style: EstiloTextoBranco.text16),
+          ),
         ],
       );
     } else {

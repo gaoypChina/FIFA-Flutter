@@ -19,7 +19,7 @@ int globalCoachPoints = 0;
 bool alreadyChangedClubThisSeason = false;
 
 //SAVE
-const globalMaxSavesPermitted = 1;
+const globalMaxSavesPermitted = 2;
 int globalSaveNumber = 0;
 Map globalSaveData = {}; //DATABASE PLAYERS DATA
 
@@ -29,6 +29,7 @@ bool globalHasSoundEffects = false;
 bool globalHasCards = true;
 bool globalHasInjuries = true;
 bool globalAllEqualOverall = false;
+bool globalRandomPlayersOverall = false;
 bool globalSeeProbabilities = true;
 double globalInitialMoney = 0;
 

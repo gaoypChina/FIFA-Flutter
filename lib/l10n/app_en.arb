@@ -38,6 +38,7 @@
   "allowCards": "Allow yellow and red cards",
   "allowInjuries": "Allow injured players",
   "allPlayersEqual": "All Players with equal overall",
+  "allPlayersRandom": "All Players with random overall",
   "seeProbability": "See probability",
   "userTerms": "User Terms",
 

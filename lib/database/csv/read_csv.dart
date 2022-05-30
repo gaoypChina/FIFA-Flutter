@@ -18,6 +18,7 @@ class ReadCSV{
     await readCSVfunc("inglaterra");
     await readCSVfunc("inglaterra2");
     await readCSVfunc("inglaterra3");
+    await readCSVfunc("inglaterra4");
     await readCSVfunc("italia");
     await readCSVfunc("italia2");
     await readCSVfunc("italia3");

@@ -177,7 +177,7 @@ class CountryNames {
   String get tuvalu => 'Tuvalu';
   String get uganda => 'Uganda';
   String get ukraine => 'Ukraine';
-  String get uae => '	United Arab Emirates';
+  String get uae => 'United Arab Emirates';
   String get unitedStates => 'United States';
   String get uruguay => 'Uruguay';
   String get uzbekistan => 'Uzbekistan';

@@ -69,10 +69,13 @@ class _ConfigurationState extends State<Configuration> {
                     SizedBox(height: spaceBetweenWidgets),
                     equalOverallAllPlayers(),
                     SizedBox(height: spaceBetweenWidgets),
+                    randomPlayersOverall(),
+                    SizedBox(height: spaceBetweenWidgets),
                     seeProbability(),
                     SizedBox(height: spaceBetweenWidgets),
                     userTerms(),
                     SizedBox(height: spaceBetweenWidgets),
+                    test(),
                   ],
                 ),
               ),
@@ -314,6 +317,24 @@ Widget soundEffects(ConfigurationState config){
       ],
     );
   }
+  Widget randomPlayersOverall(){
+    return Row(
+      children: [
+        SizedBox(
+          width: 200,
+          child: Text(Translation(context).text.allPlayersRandom,style: EstiloTextoBranco.negrito16),
+        ),
+        const Spacer(),
+        Switch(
+            value: config.randomPlayersOverall,
+            onChanged: (value) {
+              setState(() {
+                config.changeAllRandomPlayersOverallState();
+              });
+            }),
+      ],
+    );
+  }
   Widget seeProbability(){
     return Row(
       children: [
@@ -344,4 +365,17 @@ Widget soundEffects(ConfigurationState config){
       ],
     );
   }
+
+  Widget test(){
+    return Column(
+      children: [
+        GestureDetector(
+          onTap:() async{
+          },
+          child: const Text('Test',style: EstiloTextoBranco.negrito16),
+        ),
+      ],
+    );
+  }
+
 }

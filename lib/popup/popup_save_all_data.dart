@@ -5,6 +5,8 @@ import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:flutter/material.dart';
 
+import '../database/sql.dart';
+
 
 popUpSaveAllData({required BuildContext context}){
 
@@ -24,13 +26,14 @@ popUpSaveAllData({required BuildContext context}){
               child: GestureDetector(
                   onTap:() async {
                     globalSaveNumber = nSave;
-                    globalSaveData = {};
-                    globalSaveData[globalSaveNumber] = List.from(saveAllData(globalSaveNumber));
-                    customToast('${Translation(context).text.saveWhereAnswer}: Save $nSave');
-                    await SharedPreferenceHelper().savePlayersDatabase();
                     await SharedPreferenceHelper().savesharedSaveNumber(globalSaveNumber);
+                    customToast('${Translation(context).text.saveWhereAnswer}: Save $nSave');
+
                     Navigator.of(context).pop();
                     Navigator.of(context).pop();
+
+                    await SaveSQL().saveAllPlayersToDatabase();
+                    customToast('done');
                   },
                   child: Text('${Translation(context).text.save} $nSave', style:  EstiloTextoPreto.underline14,)
               ),
@@ -50,15 +53,4 @@ popUpSaveAllData({required BuildContext context}){
     },
   );
 
-}
-
-saveAllData(int i){
-  return [globalJogadoresName,
-    globalJogadoresClubIndex,
-    globalJogadoresAge,
-    globalJogadoresOverall,
-    globalJogadoresPosition,
-    globalJogadoresNationality,
-    globalJogadoresImageUrl,
-  ];
 }

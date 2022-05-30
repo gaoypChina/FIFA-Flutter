@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 convertOverallToStars(double overall){
   double star = 0;
-  if(overall < 66){star = 0.5;}
-  if(overall < 68){star = 1;}
+  if(overall < 60){star = 0;}
+  else if(overall < 66){star = 0.5;}
+  else if(overall < 68){star = 1;}
   else if(overall < 70){star = 1.5;}
   else if(overall < 72){star = 2;}
   else if(overall < 74){star = 2.5;}
@@ -14,6 +15,7 @@ convertOverallToStars(double overall){
   else if(overall >= 84){star = 5;}
   return star;
 }
+
 Widget starsWidgetFromOverall(double overall){
   return starsWidget(convertOverallToStars(overall));
 }
@@ -21,6 +23,15 @@ Widget starsWidget(double star){
 
   return Row(
     children: [
+      star == 0 ? Row(
+        children: const [
+          Icon(Icons.star_outline,color: Colors.white),
+          Icon(Icons.star_outline,color: Colors.white),
+          Icon(Icons.star_outline,color: Colors.white),
+          Icon(Icons.star_outline,color: Colors.white),
+          Icon(Icons.star_outline,color: Colors.white),
+        ],
+      )  : Container(),
       star == 0.5 ? Row(
         children: const [
           Icon(Icons.star_half,color: Colors.white),

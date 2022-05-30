@@ -1,7 +1,7 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/database/local_database/local_database.dart';
 import 'package:fifa/database/local_database/shared_preferences.dart';
+import 'package:fifa/database/select_database.dart';
 import 'package:fifa/functions/change_club_control.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/configuration/configuration.dart';
@@ -15,7 +15,6 @@ import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/stars.dart';
 import 'package:flutter/material.dart';
-import '../../database/csv/read_csv.dart';
 import 'c_menu.dart';
 import '../../classes/league.dart';
 
@@ -65,14 +64,9 @@ class _HomePageState extends State<HomePage> {
     globalJogadoresCarrerAssists = List.filled(globalMaxPlayersPermitted, 0);
 
     ano = anoInicial;
-    await ReadCSV().openCSV();
-    try {
-      await SharedPreferenceHelper().getPlayersDatabase();
-    }catch(e){
-      print('ERROR ON GET DATABASE MAIN MENU'+e.toString());
-    }
-    globalSaveNumber = (await SharedPreferenceHelper().getsharedSaveNumber())!;
-    GetLocalDatabase().getCustomizedData();
+
+    await SelectDatabase().load();
+
     setState(() {});
   }
 ////////////////////////////////////////////////////////////////////////////
@@ -271,13 +265,15 @@ Widget database(){
     return
       GestureDetector(
         onTap:() async{
-          customToast('${Translation(context).text.loading} Database...');
           globalSaveNumber++;
           if(globalSaveNumber == globalMaxSavesPermitted+1){
             globalSaveNumber=0;
           }
-          await SharedPreferenceHelper().getPlayersDatabase();
-          await GetLocalDatabase().getCustomizedData();
+          await SharedPreferenceHelper().savesharedSaveNumber(globalSaveNumber);
+
+          customToast('${Translation(context).text.loading} Database $globalSaveNumber...');
+          await SelectDatabase().load();
+
           setState(() {});
         },
         child: Column(

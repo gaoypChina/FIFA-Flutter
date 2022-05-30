@@ -6,6 +6,7 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/values/league_divisions.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:flutter/material.dart';
 
@@ -115,12 +116,8 @@ Color backgroundTextColor(int position, int choosenLeagueIndex , String teamName
   if(leagueName==LeagueOfficialNames().turquiaGrecia){
     if(position==1){backgroundColor = Colors.indigo;}
   }
-  if(leagueName==LeagueOfficialNames().inglaterra2 || leagueName==LeagueOfficialNames().inglaterra3
-      || leagueName==LeagueOfficialNames().espanha2
-      || leagueName==LeagueOfficialNames().italia2 || leagueName==LeagueOfficialNames().franca2
-      || leagueName==LeagueOfficialNames().alemanha2
+  if( Divisions().is2ndDivision(leagueName) || Divisions().is3ndDivision(leagueName)
       || leagueName==LeagueOfficialNames().lesteEuropeu || leagueName==LeagueOfficialNames().ligaEuropa
-      || leagueName==LeagueOfficialNames().brasil2 || leagueName==LeagueOfficialNames().brasil3
   ){
     if(position==1){backgroundColor = Colors.indigo;}
     if(position==2){backgroundColor = Colors.indigo;}
@@ -150,12 +147,8 @@ Color backgroundTextColor(int position, int choosenLeagueIndex , String teamName
   }
 
   //REBAIXAMENTO
-  if(leagueName==LeagueOfficialNames().inglaterra1
-      || leagueName==LeagueOfficialNames().inglaterra2
-      || leagueName==LeagueOfficialNames().espanha1
-      || leagueName==LeagueOfficialNames().italia1
-      || leagueName==LeagueOfficialNames().brasil1
-      || leagueName==LeagueOfficialNames().brasil2){
+  List<String> divisionsNames = Divisions().leagueDivisionsStructure(leagueName);
+  if(divisionsNames.length > 1 && leagueName != divisionsNames.last){
     if(position==league.nClubs-3){backgroundColor = Colors.red;}
     if(position==league.nClubs-2){backgroundColor = Colors.red;}
     if(position==league.nClubs-1){backgroundColor = Colors.red;}
