@@ -2,7 +2,6 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:fifa/database/key_names.dart';
-import 'package:fifa/database/local_database/shared_preferences.dart';
 import 'package:fifa/database/save_games/basic_game_infos.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/custom_toast.dart';
@@ -14,16 +13,15 @@ class SaveSQLGame{
 //https://docs.flutter.dev/cookbook/persistence/sqlite
 
   //VÁRIAVEIS UNIVERSAIS
-  String databasePath = 'testes0000.db';
-  final String tablePlayerSaveData = 'players';
-  int saveGameNumber = 0;
+  String databasePath = 'testex0005.db';
+  final String tableSaveData = 'infos_table';
+  late int saveGameNumber;
 
   static Database? _database;
   Future<Database> get database async {
-    await setDatabasePath();
     if (_database != null && _database!.path.contains(databasePath)) return _database!;
 
-    //print('creating Database');
+    print('creating Database $databasePath');
     _database = await initDB();
     return _database!;
   }
@@ -38,11 +36,6 @@ class SaveSQLGame{
     customToast('Database $saveGameNumber\nSize: $value');
   }
 
-  Future setDatabasePath() async {
-    //DEPENDENDO DO SAVE, SALVA EM UM DATABASE DIFERENTE
-    saveGameNumber = (await SharedPreferenceHelper().getsharedSaveGameNumber())!;
-    databasePath =  'testes000$saveGameNumber.db';
-  }
 
   Future<Database> initDB() async{
     // Avoid errors caused by flutter upgrade.
@@ -58,8 +51,16 @@ class SaveSQLGame{
 
       onCreate: (db, version) {
         return db.execute(
-          'CREATE TABLE IF NOT EXISTS $tablePlayerSaveData(${KeyNames().idKey} INTEGER PRIMARY KEY AUTOINCREMENT,'
-              ' ${KeyNames().yearKey} INTEGER'
+          'CREATE TABLE IF NOT EXISTS $tableSaveData(${KeyNames().idKey} INTEGER PRIMARY KEY AUTOINCREMENT,'
+              ' ${KeyNames().yearKey} INTEGER,'
+              ' ${KeyNames().weekKey} INTEGER,'
+              ' ${KeyNames().rodadaKey} INTEGER,'
+              ' ${KeyNames().moneyKey} DOUBLE,'
+              ' ${KeyNames().difficultyKey} INTEGER,'
+              ' ${KeyNames().expectativaKey} INTEGER,'
+              ' ${KeyNames().coachPointsKey} INTEGER,'
+              ' ${KeyNames().coachNameKey} STRING,'
+              ' ${KeyNames().myClubIDKey} INTEGER'
               ')',
         );
       },
@@ -67,43 +68,29 @@ class SaveSQLGame{
     return database;
   }
 
-  Future<void> insertPlayerSaveData(BasicGameInfos players) async {
+  Future<void> insertSaveData(BasicGameInfos infos) async {
     final db = await database;
 
     await db.insert(
-      tablePlayerSaveData,
-      players.toMap(),
+      tableSaveData,
+      infos.toMap(),
       conflictAlgorithm: ConflictAlgorithm.replace,
     );
   }
 
-  Future<void> updatePlayerSaveData(BasicGameInfos players) async {
+  Future<void> updateSaveData(BasicGameInfos infos) async {
     // Get a reference to the database.
     final db = await database;
 
     // Update the given PlayerSaveData.
     await db.update(
-      tablePlayerSaveData,
-      players.toMap(),
+      tableSaveData,
+      infos.toMap(),
       // Ensure that the PlayerSaveData has a matching id.
       where: 'id = ?',
       // Pass the PlayerSaveData's id as a whereArg to prevent SQL injection.
-      whereArgs: [players.id],
+      whereArgs: [infos.id],
     );
-  }
-
-  Future<List<BasicGameInfos>> funcPlayerSavedDataResult() async {
-    final db = await database;
-
-    final List<Map<String, dynamic>> maps = await db.query(tablePlayerSaveData);
-
-    // Convert the List<Map<String, dynamic> into a List<PlayerSaveData>.
-    return List.generate(maps.length, (i) {
-      return BasicGameInfos(
-        id: maps[i][KeyNames().idKey],
-        year: maps[i][KeyNames().yearKey],
-      );
-    });
   }
 
   Future<void> deletePlayerSaveData(int id) async {
@@ -112,7 +99,7 @@ class SaveSQLGame{
 
     // Remove the PlayerSaveData from the database.
     await db.delete(
-      tablePlayerSaveData,
+      tableSaveData,
       // Use a `where` clause to delete a specific favorite.
       where: 'id = ?',
       // Pass the PlayerSaveData's id as a whereArg to prevent SQL injection.
@@ -120,26 +107,64 @@ class SaveSQLGame{
     );
   }
 
+  Future<List<BasicGameInfos>> funcSavedDataResult() async {
+    final db = await database;
+
+    final List<Map<String, dynamic>> maps = await db.query(tableSaveData);
+
+    // Convert the List<Map<String, dynamic> into a List<PlayerSaveData>.
+    return List.generate(maps.length, (i) {
+      return BasicGameInfos(
+        id: maps[i][KeyNames().idKey],
+        myClubID: maps[i][KeyNames().myClubIDKey],
+        year: maps[i][KeyNames().yearKey],
+        week: maps[i][KeyNames().weekKey],
+        rodada0: maps[i][KeyNames().rodadaKey],
+        money: maps[i][KeyNames().moneyKey],
+        difficulty: maps[i][KeyNames().difficultyKey],
+        expectativa: maps[i][KeyNames().expectativaKey],
+        coachPoints: maps[i][KeyNames().coachPointsKey],
+        coachName: maps[i][KeyNames().coachNameKey],
+      );
+    });
+
+  }
 
   ///////////////////////////////////////////////////////////////////////////
-  saveAllPlayersToDatabase(){
-      BasicGameInfos gameInfos = BasicGameInfos(
-        id: saveGameNumber,
-        year: ano,
-      );
-
-      insertPlayerSaveData(gameInfos);
+  BasicGameInfos dataModel(int saveGameNumberLocal){
+    saveGameNumber = saveGameNumberLocal;
+    return BasicGameInfos(
+      id: saveGameNumberLocal,
+      myClubID: globalMyClubID,
+      year: ano,
+      week: semana,
+      rodada0: rodada,
+      money: globalMyMoney,
+      difficulty: globalDificuldade,
+      expectativa: globalMyExpectativa,
+      coachPoints: globalCoachPoints,
+      coachName: globalCoachName,
+    );
+  }
+  saveGameToDatabase(int saveGameNumberLocal){
+    BasicGameInfos gameInfos = dataModel(saveGameNumberLocal);
+    insertSaveData(gameInfos);
+  }
+  updateGameToDatabase(int saveGameNumberLocal){
+    BasicGameInfos gameInfos = dataModel(saveGameNumberLocal);
+    updateSaveData(gameInfos);
   }
 
-  Future getAllPlayerFromDatabase() async{
-    List<BasicGameInfos> list = await funcPlayerSavedDataResult();
+
+  Future<BasicGameInfos> getGameFromDatabase(int gameSave) async{
+    List<BasicGameInfos> list = await funcSavedDataResult();
     if(list.isNotEmpty){
-      for (BasicGameInfos row in list){
-        globalJogadoresIndex[row.id] = row.id;
-        globalJogadoresName[row.id] = row.year;
-      }
+      BasicGameInfos basicGameInfos = list[gameSave];
+      return basicGameInfos;
     }
-
+    throw Exception('Save don\'t exist');
   }
+
+
 
 }

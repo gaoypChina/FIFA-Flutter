@@ -20,7 +20,7 @@ class Divisions{
     if(checkDivision(leagueNames,leagueName)){
       return leagueNames;
     }
-    leagueNames = [LeagueOfficialNames().franca1,LeagueOfficialNames().franca2];
+    leagueNames = [LeagueOfficialNames().franca1];
     if(checkDivision(leagueNames,leagueName)){
       return leagueNames;
     }

@@ -14,6 +14,7 @@ Image funcFlagsList(String country, double _height, double _width){
   else if(country == Words.country.angola){code = Image.asset('icons/flags/png/ao.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.algeria){code = Image.asset('icons/flags/png/dz.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.andorra){code = Image.asset('icons/flags/png/ad.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.antiguaBarbuda){code = Image.asset('icons/flags/png/ag.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.argentina){code = Image.asset('icons/flags/png/ar.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.armenia){code = Image.asset('icons/flags/png/am.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.aruba){code = Image.asset('icons/flags/png/aw.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
@@ -45,17 +46,18 @@ Image funcFlagsList(String country, double _height, double _width){
   else if(country == Words.country.chad){code = Image.asset('icons/flags/png/ro.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.china){code = Image.asset('icons/flags/png/cn.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.chile){code = Image.asset('icons/flags/png/cl.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
-  else if(country == Words.country.chipre){code = Image.asset('icons/flags/png/cy.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
-  else if(country == Words.country.cuba){code = Image.asset('icons/flags/png/cu.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.colombia){code = Image.asset('icons/flags/png/co.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.comoros){code = Image.asset('icons/flags/png/km.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.congo){code = Image.asset('icons/flags/png/cg.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.congoRD){code = Image.asset('icons/flags/png/cd.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.costaRica){code = Image.asset('icons/flags/png/cr.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.cuba){code = Image.asset('icons/flags/png/cu.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.croatia){code = Image.asset('icons/flags/png/hr.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.cyprus){code = Image.asset('icons/flags/png/cy.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.czechRepublic){code = Image.asset('icons/flags/png/cz.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.denmark){code = Image.asset('icons/flags/png/dk.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.djibouti){code = Image.asset('icons/flags/png/dj.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.dominica){code = Image.asset('icons/flags/png/dm.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.dominicanRepublic){code = Image.asset('icons/flags/png/do.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.ecuador){code = Image.asset('icons/flags/png/ec.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.egypt){code = Image.asset('icons/flags/png/eg.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
@@ -71,12 +73,14 @@ Image funcFlagsList(String country, double _height, double _width){
   else if(country == Words.country.georgia){code = Image.asset('icons/flags/png/ge.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.ghana){code = Image.asset('icons/flags/png/gh.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.germany){code = Image.asset('icons/flags/png/de.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.grenada){code = Image.asset('icons/flags/png/gd.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.greece){code = Image.asset('icons/flags/png/gr.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.guatemala){code = Image.asset('icons/flags/png/gt.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.guyana){code = Image.asset('icons/flags/png/gy.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.guinea){code = Image.asset('icons/flags/png/gn.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.guineaEquatorial){code = Image.asset('icons/flags/png/gq.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.guineaBissau){code = Image.asset('icons/flags/png/gw.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
-  else if(country == Words.country.greece){code = Image.asset('icons/flags/png/gr.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.haiti){code = Image.asset('icons/flags/png/ht.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.honduras){code = Image.asset('icons/flags/png/hn.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.hungary){code = Image.asset('icons/flags/png/hu.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.iceland){code = Image.asset('icons/flags/png/is.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
@@ -93,11 +97,14 @@ Image funcFlagsList(String country, double _height, double _width){
   else if(country == Words.country.jordan){code = Image.asset('icons/flags/png/jo.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.kazakhstan){code = Image.asset('icons/flags/png/kz.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.kenya){code = Image.asset('icons/flags/png/ke.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.kiribati){code = Image.asset('icons/flags/png/ki.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.kosovo){code = Image.asset('icons/flags/png/xk.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.kyrgyzstan){code = Image.asset('icons/flags/png/kg.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.laos){code = Image.asset('icons/flags/png/la.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.latvia){code = Image.asset('icons/flags/png/lv.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.lebanon){code = Image.asset('icons/flags/png/lb.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.lesoto){code = Image.asset('icons/flags/png/ls.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.libya){code = Image.asset('icons/flags/png/ly.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.liechtenstein){code = Image.asset('icons/flags/png/li.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.lithuania){code = Image.asset('icons/flags/png/lt.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.liberia){code = Image.asset('icons/flags/png/lr.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
@@ -110,9 +117,11 @@ Image funcFlagsList(String country, double _height, double _width){
   else if(country == Words.country.malawi){code = Image.asset('icons/flags/png/mw.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.malta){code = Image.asset('icons/flags/png/mt.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.mauritania){code = Image.asset('icons/flags/png/mr.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.mauritius){code = Image.asset('icons/flags/png/mu.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.mexico){code = Image.asset('icons/flags/png/mx.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.micronesia){code = Image.asset('icons/flags/png/fm.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.moldova){code = Image.asset('icons/flags/png/md.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.monaco){code = Image.asset('icons/flags/png/mc.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.montenegro){code = Image.asset('icons/flags/png/me.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.mongolia){code = Image.asset('icons/flags/png/mn.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.morocco){code = Image.asset('icons/flags/png/ma.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
@@ -122,12 +131,15 @@ Image funcFlagsList(String country, double _height, double _width){
   else if(country == Words.country.nauru){code = Image.asset('icons/flags/png/nr.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.netherlands){code = Image.asset('icons/flags/png/nl.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.nepal){code = Image.asset('icons/flags/png/np.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.nicaragua){code = Image.asset('icons/flags/png/ni.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.niger){code = Image.asset('icons/flags/png/ne.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.nigeria){code = Image.asset('icons/flags/png/ng.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.newZealand){code = Image.asset('icons/flags/png/nz.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.norway){code = Image.asset('icons/flags/png/no.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.northKorea){code = Image.asset('icons/flags/png/nz.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.northernIreland){code = Image.asset('icons/flags/png/gg.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.oman){code = Image.asset('icons/flags/png/om.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.pakistan){code = Image.asset('icons/flags/png/pk.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.panama){code = Image.asset('icons/flags/png/pa.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.papua){code = Image.asset('icons/flags/png/pg.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.paraguay){code = Image.asset('icons/flags/png/py.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
@@ -141,11 +153,13 @@ Image funcFlagsList(String country, double _height, double _width){
   else if(country == Words.country.russia){code = Image.asset('icons/flags/png/ru.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.rwanda){code = Image.asset('icons/flags/png/rw.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.sanMarino){code = Image.asset('icons/flags/png/sm.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.samoa){code = Image.asset('icons/flags/png/ws.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.senegal){code = Image.asset('icons/flags/png/sn.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.serbia){code = Image.asset('icons/flags/png/rs.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.scotland){code = Image.asset('icons/flags/png/gb-sct.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.seychelles){code = Image.asset('icons/flags/png/sc.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.sierraLeone){code = Image.asset('icons/flags/png/sl.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.singapore){code = Image.asset('icons/flags/png/sg.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.slovakia){code = Image.asset('icons/flags/png/sk.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.slovenia){code = Image.asset('icons/flags/png/si.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.somalia){code = Image.asset('icons/flags/png/so.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
@@ -157,12 +171,14 @@ Image funcFlagsList(String country, double _height, double _width){
   else if(country == Words.country.switzerland){code = Image.asset('icons/flags/png/ch.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.syria){code = Image.asset('icons/flags/png/sy.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.stKitts){code = Image.asset('icons/flags/png/kn.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.stLucia){code = Image.asset('icons/flags/png/lc.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.srilanka){code = Image.asset('icons/flags/png/lk.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.sudan){code = Image.asset('icons/flags/png/sd.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.suriname){code = Image.asset('icons/flags/png/sr.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.taiwan){code = Image.asset('icons/flags/png/tw.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.timor){code = Image.asset('icons/flags/png/tl.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.tajikistan){code = Image.asset('icons/flags/png/tj.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.tanzania){code = Image.asset('icons/flags/png/tz.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.thailand){code = Image.asset('icons/flags/png/th.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.trinidadTobago){code = Image.asset('icons/flags/png/tt.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.togo){code = Image.asset('icons/flags/png/tg.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}

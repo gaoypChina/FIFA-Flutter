@@ -60,10 +60,10 @@ Map clubNameMapImmutable = {
     16: clubName.sassuolo,17: clubName.spezia,18: clubName.torino,19: clubName.udinese,
   },
   LeagueOfficialNames().italia2 : {
-    0: clubName.bari, 1: clubName.benevento,2: clubName.brescia,3: clubName.cagliari,
-    4: clubName.crotone,5: clubName.genoa,6: clubName.palermo,7: clubName.parma,
-    8: clubName.perugia,9: clubName.pisa,10: clubName.spal,11: clubName.venezia,
-    12: clubName.ascoli,13: clubName.frosinone,14: clubName.como,15: clubName.reggina,
+    0: clubName.ascoli, 1: clubName.bari,2: clubName.benevento,3: clubName.brescia,
+    4: clubName.cagliari,5: clubName.como,6: clubName.crotone,7: clubName.frosinone,
+    8: clubName.genoa,9: clubName.palermo,10: clubName.parma,11: clubName.perugia,
+    12: clubName.pisa,13: clubName.reggina,14: clubName.spal,15: clubName.venezia,
   },
   LeagueOfficialNames().espanha1 : {
     0: clubName.almeria,1: clubName.athleticbilbao,2: clubName.atleticomadrid,3: clubName.barcelona,
@@ -85,9 +85,9 @@ Map clubNameMapImmutable = {
     16: clubName.werderbremen,17: clubName.wolfsburg,
   },
   LeagueOfficialNames().alemanha2 : {
-    0: clubName.dynamoDresden,1: clubName.fortunaDusseldorf,2: clubName.arminiaBiefeld,3: clubName.kaiserslautern,
-    4: clubName.nurnberg,5: clubName.stPauli,6: clubName.hannover96,7: clubName.hamburgo,
-    8: clubName.darmstadt,9: clubName.paderborn,
+    0: clubName.arminiaBiefeld,1: clubName.darmstadt,2: clubName.dynamoDresden,3: clubName.fortunaDusseldorf,
+    4: clubName.hamburgo,5: clubName.hannover96,6: clubName.kaiserslautern,7: clubName.nurnberg,
+    8: clubName.paderborn,9: clubName.stPauli,
   },
   LeagueOfficialNames().franca1 : {
     0: clubName.ajaccio,1: clubName.angers,2: clubName.auxerre,3: clubName.bordeaux,
@@ -195,7 +195,8 @@ Map clubNameMapImmutable = {
     0: clubName.alIttihad,1: clubName.alWahda,2: clubName.fcSeoul,3: clubName.ulsan,
     4: clubName.vardar,5: clubName.slovanBratislava, 6: clubName.helsinki,7: clubName.laskLinz,
     8: clubName.maccabiTelAviv,9: clubName.caen,10: clubName.metz,11: clubName.troyes,
-    12: clubName.saintetienne,13: clubName.genk,14: clubName.midtjylland,15: clubName.gilVicente
+    12: clubName.saintetienne,13: clubName.genk,14: clubName.midtjylland,15: clubName.gilVicente,
+    16: clubName.persepolis,17: clubName.atleticoTucuman,
   },
 
 };

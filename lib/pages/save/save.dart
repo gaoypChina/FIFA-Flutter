@@ -1,8 +1,12 @@
+import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/page_controller/save/save_infos.dart';
+import 'package:fifa/database/save_games/basic_game_infos.dart';
+import 'package:fifa/database/save_games/sql_game.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/menu/b_home.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/popup/popup_ok_cancel.dart';
+import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_return.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -17,12 +21,40 @@ class Save extends StatefulWidget {
 
 class _SaveState extends State<Save> {
 
+  List<BasicGameInfos> basicGameInfos = [];
+
+////////////////////////////////////////////////////////////////////////////
+//                               INIT                                     //
+////////////////////////////////////////////////////////////////////////////
+  @override
+  void initState() {
+    checkSaves();
+    super.initState();
+  }
+  checkSaves() async{
+
+    basicGameInfos = [];
+    for(int i=0; i<globalMaxPossibleSaves;i++){
+      try {
+        BasicGameInfos basicGameInfo = await SaveSQLGame().getGameFromDatabase(i);
+        print(basicGameInfo.id.toString()+'ano: '+basicGameInfo.year.toString());
+        basicGameInfos.add(basicGameInfo);
+      }catch(e){
+        //print('save $i don\'t exist');
+      }
+    }
+    setState((){});
+  }
+
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //ADD SAVE
+      floatingActionButton: floatingButton(),
+
         body:  Container(
           decoration: Images().getWallpaperContainerDecoration(),
           child: Stack(
@@ -33,8 +65,13 @@ class _SaveState extends State<Save> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      for(int i=0; i<7;i++)
-                        save(i),
+
+                      Text(Translation(context).text.save,style: EstiloTextoBranco.text30),
+                      Expanded(child: Column(children: [
+                        for(int i=0; i<basicGameInfos.length;i++)
+                          save(i),
+                      ],)),
+
                     ],
                   ),
                 ),
@@ -50,12 +87,36 @@ class _SaveState extends State<Save> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-Widget save(int index){
-    SaveInfos saveInfos = SaveInfos();
+  Widget floatingButton(){
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 50.0),
+      child: FloatingActionButton(
+          child: const Icon(Icons.plus_one),
+          onPressed: () async{
+            if(basicGameInfos.length < globalMaxPossibleSaves) {
+              //Salva até 10 jogos
+              await SaveSQLGame().saveGameToDatabase(basicGameInfos.length);
+              checkSaves();
+            }else{
+              customToast('Limite atingido');
+            }
+          }),
+    );
+  }
 
-    return InkWell(
+Widget save(int gameSaveNumber) {
+  BasicGameInfos saveInfo = basicGameInfos[gameSaveNumber];
+  Club club = Club(index: saveInfo.myClubID);
+
+  return InkWell(
       onTap:(){
-        popUpOkCancel(context: context, title: Translation(context).text.wantsTosaveFile, content: '',function: (){
+        popUpOkCancel(
+            context: context,
+            title: Translation(context).text.wantsTosaveFile,
+            content: '',
+            function: (){
+              SaveSQLGame().updateGameToDatabase(gameSaveNumber);
+              checkSaves();
           Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const HomePage()));
         });
       },
@@ -71,7 +132,7 @@ Widget save(int index){
             child: Stack(
               children: [
 
-                Image.asset(Images().getEscudo(saveInfos.clubName),height: 25,width: 25),
+                Image.asset(Images().getEscudo(club.name),height: 25,width: 25),
 
                 Row(
                   children: [
@@ -81,9 +142,9 @@ Widget save(int index){
                     ),
                     Column(
                       children: [
-                        Text(saveInfos.clubName,style: EstiloTextoBranco.text14),
-                        Text(saveInfos.ano.toString(),style: EstiloTextoBranco.text14),
-                        Text('${Translation(context).text.week}: '+saveInfos.semana.toString(),style: EstiloTextoBranco.text14),
+                        Text(club.name,style: EstiloTextoBranco.text14),
+                        Text(saveInfo.year.toString(),style: EstiloTextoBranco.text14),
+                        Text('${Translation(context).text.week}: '+saveInfo.week.toString(),style: EstiloTextoBranco.text14),
                       ],
                     )
                   ],

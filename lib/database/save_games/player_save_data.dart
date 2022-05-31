@@ -10,7 +10,6 @@ class PlayerSaveData {
   final String nationality;
   final String imagePlayer;
 
-
   PlayerSaveData({
     required this.id,
     required this.name,

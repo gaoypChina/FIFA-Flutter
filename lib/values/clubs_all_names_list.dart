@@ -114,6 +114,7 @@ List clubsAllNameList = [
   ClubName().lanus,  ClubName().newells,  ClubName().racing,  ClubName().riverplate,
   ClubName().rosariocentral,  ClubName().sanlorenzo,  ClubName().talleres,  ClubName().velezsarsfield,
   ClubName().huracan,ClubName().gimnasia,ClubName().unionSantaFe,ClubName().godoyCruz,
+  ClubName().atleticoTucuman,
 
   ClubName().penarol,  ClubName().nacional,  ClubName().montevideo,
   ClubName().olimpia,  ClubName().libertad,ClubName().cerroporteno,ClubName().guaraniPAR,

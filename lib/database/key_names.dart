@@ -11,4 +11,15 @@ class KeyNames{
 
 
   final String yearKey = 'year';
+  final String myClubIDKey = 'myClubID';
+  final String weekKey = 'week';
+  final String rodadaKey = 'rodada';
+  final String moneyKey = 'money';
+  final String difficultyKey = 'difficulty';
+  final String expectativaKey = 'expectativa';
+  final String coachPointsKey = 'coachPoints';
+  final String coachNameKey = 'coachName';
+
+
+  final String myPlayersEscalacaoKey = 'players';
 }

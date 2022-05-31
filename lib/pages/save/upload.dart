@@ -1,6 +1,9 @@
+import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/page_controller/save/upload_infos.dart';
-import 'package:fifa/pages/menu/b_home.dart';
+import 'package:fifa/database/save_games/basic_game_infos.dart';
+import 'package:fifa/database/save_games/sql_game.dart';
+import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_return.dart';
@@ -15,6 +18,32 @@ class Upload extends StatefulWidget {
 }
 
 class _UploadState extends State<Upload> {
+
+
+  List<BasicGameInfos> basicGameInfos = [];
+
+////////////////////////////////////////////////////////////////////////////
+//                               INIT                                     //
+////////////////////////////////////////////////////////////////////////////
+  @override
+  void initState() {
+    checkSaves();
+    super.initState();
+  }
+  checkSaves() async{
+
+    basicGameInfos = [];
+    for(int i=0; i<globalMaxPossibleSaves;i++){
+      try {
+        BasicGameInfos basicGameInfo = await SaveSQLGame().getGameFromDatabase(i);
+        print(basicGameInfo.id.toString()+'ano: '+basicGameInfo.year.toString());
+        basicGameInfos.add(basicGameInfo);
+      }catch(e){
+        //print('save $i don\'t exist');
+      }
+    }
+    setState((){});
+  }
 
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -33,8 +62,11 @@ class _UploadState extends State<Upload> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
 
-                      for(int i=0; i<7;i++)
-                        upload(i),
+                      Text(Translation(context).text.load,style: EstiloTextoBranco.text30),
+                      Expanded(child: Column(children: [
+                        for(int i=0; i<basicGameInfos.length;i++)
+                          upload(i),
+                      ],))
 
                     ],
                   ),
@@ -51,12 +83,14 @@ class _UploadState extends State<Upload> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-  Widget upload(int index){
-    UploadInfos uploadInfos = UploadInfos();
+  Widget upload(int gameSaveNumber){
+    BasicGameInfos saveInfo = basicGameInfos[gameSaveNumber];
+    Club club = Club(index: saveInfo.myClubID);
 
     return GestureDetector(
       onTap: (){
-        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const HomePage()));
+        saveInfo.uploadData();
+        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Menu()));
       },
       child: Container(
         color: AppColors().greyTransparent,
@@ -70,7 +104,7 @@ class _UploadState extends State<Upload> {
             child: Stack(
               children: [
 
-                Image.asset(Images().getEscudo(uploadInfos.clubName),height: 25,width: 25),
+                Image.asset(Images().getEscudo(club.name),height: 25,width: 25),
 
                 Row(
                   children: [
@@ -80,9 +114,9 @@ class _UploadState extends State<Upload> {
                     ),
                     Column(
                       children: [
-                        Text(uploadInfos.clubName,style: EstiloTextoBranco.text14),
-                        const Text('2028',style: EstiloTextoBranco.text14),
-                        Text('${Translation(context).text.week}: '+uploadInfos.semana.toString(),style: EstiloTextoBranco.text14),
+                        Text(club.name,style: EstiloTextoBranco.text14),
+                        Text(saveInfo.year.toString(),style: EstiloTextoBranco.text14),
+                        Text('${Translation(context).text.week}: '+saveInfo.week.toString(),style: EstiloTextoBranco.text14),
                       ],
                     )
                   ],

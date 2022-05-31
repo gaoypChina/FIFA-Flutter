@@ -5,9 +5,7 @@ int testInitRodada = 1;
 
 
 //MEU
-String globalMyClubName = '';
 int globalMyClubID = -1;
-int globalMyPosicaoChave = 0;
 int globalMyExpectativa = 0;
 String globalMyEsquemaTatico = '4-4-2';
 double globalMyMoney = 0;
@@ -20,8 +18,8 @@ bool alreadyChangedClubThisSeason = false;
 
 //SAVE
 const globalMaxSavesPermitted = 2;
+const int globalMaxPossibleSaves = 10;
 int globalSaveNumber = 0;
-Map globalSaveData = {}; //DATABASE PLAYERS DATA
 
 bool globalHasInternet = true;
 bool globalLeagueIdaVolta = false;

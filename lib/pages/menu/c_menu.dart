@@ -48,7 +48,7 @@ class _MenuState extends State<Menu> {
   }
   doThisOnLaunch() async{
     //POPUP DE EXPECTATIVA QUANDO COMEÇA NOVA TEMPORADA
-    SchedulerBinding.instance!.addPostFrameCallback((_) {
+    SchedulerBinding.instance.addPostFrameCallback((_) {
       popupexpectativaCall();
     });
 

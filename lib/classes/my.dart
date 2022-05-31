@@ -22,8 +22,8 @@ class My{
   late String playingInternational;
 
   My(){
-    clubName = globalMyClubName;
-    clubID = clubsAllNameList.indexOf(globalMyClubName);
+    clubID = globalMyClubID;
+    clubName = clubsAllNameList[globalMyClubID];
     campeonatoName = getLeagueName();
     campeonatoID = getLeagueID();
     posicaoChave = getChaveLeague();
