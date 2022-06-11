@@ -265,14 +265,23 @@ Widget database(){
     return
       GestureDetector(
         onTap:() async{
-          globalSaveNumber++;
-          if(globalSaveNumber == globalMaxSavesPermitted+1){
-            globalSaveNumber=0;
-          }
-          await SharedPreferenceHelper().savesharedSaveNumber(globalSaveNumber);
+          bool sucessLoadingDatabase = false;
+          while(!sucessLoadingDatabase){
+            globalSaveNumber++;
+            if(globalSaveNumber == globalMaxSavesPermitted+1){
+              globalSaveNumber=0;
+            }
+            await SharedPreferenceHelper().savesharedSaveNumber(globalSaveNumber);
 
-          customToast('${Translation(context).text.loading} Database $globalSaveNumber...');
-          await SelectDatabase().load();
+            customToast('${Translation(context).text.loading} Database $globalSaveNumber...');
+            try {
+              await SelectDatabase().load();
+              sucessLoadingDatabase = true;
+            }catch(e){
+              customToast('Erro no carregamento do Database $globalSaveNumber');
+            }
+
+          }
 
           setState(() {});
         },

@@ -196,7 +196,7 @@ Map clubNameMapImmutable = {
     4: clubName.vardar,5: clubName.slovanBratislava, 6: clubName.helsinki,7: clubName.laskLinz,
     8: clubName.maccabiTelAviv,9: clubName.caen,10: clubName.metz,11: clubName.troyes,
     12: clubName.saintetienne,13: clubName.genk,14: clubName.midtjylland,15: clubName.gilVicente,
-    16: clubName.persepolis,17: clubName.atleticoTucuman,
+    16: clubName.persepolis,17: clubName.atleticoTucuman,18: clubName.molde,19: clubName.ferencvaros,
   },
 
 };

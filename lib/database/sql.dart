@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:fifa/database/key_names.dart';
 import 'package:fifa/database/local_database/shared_preferences.dart';
 import 'package:fifa/database/save_games/player_save_data.dart';
+import 'package:fifa/functions/end_year_updates/update_data_year.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:sqflite/sqflite.dart';
@@ -178,15 +179,19 @@ class SaveSQL{
   Future getAllPlayerFromDatabase() async{
     List<PlayerSaveData> list = await funcPlayerSavedDataResult();
     if(list.isNotEmpty){
+
+      resetPlayersData();
+      resetData();
+
       for (PlayerSaveData row in list){
-        globalJogadoresIndex[row.id] = row.id;
-        globalJogadoresName[row.id] = row.name;
-        globalJogadoresAge[row.id] = row.age;
-        globalJogadoresClubIndex[row.id] = row.clubID;
-        globalJogadoresOverall[row.id] = row.overall;
-        globalJogadoresPosition[row.id] = row.position;
-        globalJogadoresNationality[row.id] = row.nationality;
-        globalJogadoresImageUrl[row.id] = row.imagePlayer;
+        globalJogadoresIndex.add(row.id);
+        globalJogadoresName.add(row.name);
+        globalJogadoresAge.add(row.age);
+        globalJogadoresClubIndex.add(row.clubID);
+        globalJogadoresOverall.add(row.overall);
+        globalJogadoresPosition.add(row.position);
+        globalJogadoresNationality.add(row.nationality);
+        globalJogadoresImageUrl.add(row.imagePlayer);
       }
     }
 

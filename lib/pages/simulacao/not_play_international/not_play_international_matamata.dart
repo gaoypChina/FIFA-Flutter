@@ -1,0 +1,120 @@
+import 'package:fifa/classes/geral/name.dart';
+import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/classes/league.dart';
+import 'package:fifa/classes/my.dart';
+import 'package:fifa/functions/mata_mata/mata_mata_class.dart';
+import 'package:fifa/global_variables.dart';
+import 'package:fifa/theme/textstyle.dart';
+import 'package:flutter/material.dart';
+
+  Widget notPlayShowInternationalMataMata(BuildContext context){
+
+    return SingleChildScrollView(
+      child: Column(
+          children: [
+                Column(
+                children: [
+                  for(int phaseStage = 0; phaseStage < 7; phaseStage++)
+                    phaseTableWidget(phaseStage)
+                ],
+              ),
+          ],
+        ),
+    );
+  }
+
+////////////////////////////////////////////////////////////////////////////
+//                               WIDGETS                                  //
+////////////////////////////////////////////////////////////////////////////
+Widget phaseTableWidget(int phaseStage) {
+  int phaseRows = 9;
+  int weekShow = 0;
+  if(phaseStage==0 || phaseStage==1){phaseRows=8;weekShow = semanaOitavas.first;} //OITAVAS
+  else if(phaseStage==2 || phaseStage==3){phaseRows=4;weekShow = semanaQuartas.first;} //QUARTAS
+  else if(phaseStage==4 || phaseStage==5){phaseRows=2;weekShow = semanaSemi.first;} //SEMI
+  else if(phaseStage==6){phaseRows=1;weekShow = semanaFinal.first;} //FINAL
+
+  int phaseIdaVolta = 0;
+  if(phaseStage == 1 || phaseStage==3 || phaseStage==5 ){
+    phaseIdaVolta = 1;
+  }
+
+  //Quando não está no matamata
+  if(semana < semanaOitavas.first){
+    return Container();
+  }
+  //Quando já está no matamata
+  if(semana < semanaQuartas.first && phaseStage>=2){
+    return Container();
+  }
+  if(semana < semanaSemi.first && phaseStage>=4){
+    return Container();
+  }
+  if(semana < semanaFinal.first && phaseStage==6){
+    return Container();
+  }
+  return Column(
+    children: [
+      for (int i = -1; i < phaseRows; i++)
+        Table(
+          columnWidths: const{0: FractionColumnWidth(.35),4: FractionColumnWidth(.35)},
+          children: [
+            if (i == -1)
+              groupTitle(phaseRows)
+            else
+              groupRow(i, phaseIdaVolta, weekShow)
+          ],
+        )
+    ],
+  );
+}
+
+TableRow groupTitle(int phaseRows){
+  String stageName = Name().oitavas;
+  if(phaseRows==4){stageName=Name().quartas;}
+  if(phaseRows==2){stageName=Name().semifinal;}
+  if(phaseRows==1){stageName=Name().finale;}
+  return TableRow(
+    children: [
+      Text(stageName,style: EstiloTextoBranco.text16),
+      Container(),
+      Container(),
+      Container(),
+      Container(),
+    ],
+  );
+}
+TableRow groupRow(int matchRow, int phaseIdaVolta, int weekShow){
+  MataMata data = MataMata();
+  String leagueInternational = League(index: My().campeonatoID).internationalLeagueName;
+  data.getData(leagueInternational, data.getSemanaPhase(weekShow),matchRow, phaseIdaVolta);
+
+  //print(data.clubName1);
+  //print('GOL: ${data.goal1} x ${data.goal2}');
+  String teamNameA = data.clubName1;
+  String teamNameB = data.clubName2;
+  int golsA = data.goal1;
+  int golsB = data.goal2;
+
+  return  TableRow(
+    children: [
+      Container(
+          color: teamNameA == My().clubName ? Colors.green : Colors.transparent,
+          child: Text(teamNameA,textAlign:TextAlign.end,style: EstiloTextoBranco.text14)),
+      //Escudo
+      Image.asset(Images().getEscudo(teamNameA),height: 20,width: 20),
+
+      golsA >= 0
+          ? Text(' '+ golsA.toString()+'x'+golsB.toString()+' ',style: EstiloTextoBranco.text14)
+          : const Text('X',textAlign:TextAlign.center,style: EstiloTextoBranco.text14),
+      //Escudo
+      Image.asset(Images().getEscudo(teamNameB),height: 20,width: 20),
+
+      Container(
+        color: teamNameB == My().clubName ? Colors.green : Colors.transparent,
+        child: Text(teamNameB,style: EstiloTextoBranco.text14),
+      ),
+    ],
+  );
+}
+

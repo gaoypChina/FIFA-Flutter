@@ -22,7 +22,7 @@ class PlayerBasicInfo{
   }
 
   deletePlayerFromDatabase(int playerID){
-    globalJogadoresIndex.remove(playerID);
+    globalJogadoresIndex.removeAt(playerID);
     globalJogadoresClubIndex.removeAt(playerID);
     globalJogadoresName.removeAt(playerID);
     globalJogadoresPosition.removeAt(playerID);

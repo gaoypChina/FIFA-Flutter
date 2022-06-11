@@ -1,16 +1,22 @@
 import 'package:fifa/classes/geral/name.dart';
 import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/classes/league.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/simulate/simulate_functions.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/simulacao/end_year.dart';
+import 'package:fifa/pages/simulacao/not_play_international/not_play_international_groups.dart';
+import 'package:fifa/pages/simulacao/not_play_international/not_play_international_matamata.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/pages/table/table_widget.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
+
+import '../../widgets/background/background_international_league.dart';
 
 class NotPlay extends StatefulWidget {
   const NotPlay({Key? key}) : super(key: key);
@@ -32,7 +38,9 @@ class _NotPlayState extends State<NotPlay> {
         body:  Stack(
             children: [
 
-              Images().getWallpaper(),
+              Semana(semana).isJogoCampeonatoNacional
+                  ? Images().getWallpaper()
+                  : backgroundInternationalLeague(League(index: My().campeonatoID).internationalLeagueName),
 
               Column(
                 children: [
@@ -40,11 +48,16 @@ class _NotPlayState extends State<NotPlay> {
                   const SizedBox(height: 40),
                   Text('${Translation(context).text.week}: '+Name().showTranslated(context, weekName),style: EstiloTextoBranco.text30),
                   const SizedBox(height: 10),
-
                   //TABELA
-                  tabelaClassificacaoWidget(context,My().campeonatoID),
+                  Expanded(
+                      child: Semana(semana).isJogoCampeonatoNacional
+                          ? tabelaClassificacaoWidget(context,My().campeonatoID)
+                          : Semana(semana).isJogoMataMataInternacional
+                          ? notPlayShowInternationalMataMata(context)
+                          : notPlayShowInternationalGroups(context),
+                  ),
 
-                  const Spacer(),
+
                   //VOLTAR
                   Padding(
                     padding: const EdgeInsets.all(6),
@@ -67,6 +80,8 @@ class _NotPlayState extends State<NotPlay> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+
+
 onContinueButton(){
 
   //SIMULA JOGOS

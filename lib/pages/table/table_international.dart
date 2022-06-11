@@ -1,4 +1,5 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/international.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/theme/translation.dart';
@@ -10,6 +11,7 @@ import 'package:fifa/pages/table/widget_bottom.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/league_names.dart';
+import 'package:fifa/widgets/background/background_international_league.dart';
 import 'package:flutter/material.dart';
 
 class TableInternational extends StatefulWidget {
@@ -55,7 +57,6 @@ class _TableInternationalState extends State<TableInternational> {
       }else{
         clubsID = International(leagueInternational).getClassification();
       }
-
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -113,15 +114,6 @@ class _TableInternationalState extends State<TableInternational> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-Widget backgroundInternationalLeague(String leagueInternational){
-    return leagueInternational == LeagueOfficialNames().championsLeague
-        ? Image.asset('assets/icons/fundochampions.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill)
-        : Image.asset('assets/icons/fundolibertadores.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill);
-
-}
-////////////////////////////////////////////////////////////////////////////
-//                               WIDGETS                                  //
-////////////////////////////////////////////////////////////////////////////
 TableRow groupTitle(int groupNumber){
     String groupLetter = 'A';
     if(groupNumber==1){groupLetter='B';}
@@ -157,7 +149,7 @@ TableRow groupTitle(int groupNumber){
       children: [
         Text(i.toString()+'-',style: EstiloTextoBranco.text16),
         //Escudo
-        Image.asset('assets/clubs/${FIFAImages().imageLogo(clubClass.name)}.png',height: 20,width: 20),
+        Image.asset(Images().getEscudo(clubClass.name),height: 20,width: 20),
         Container(
           color: clubClass.name == my.clubName
               ? Colors.green

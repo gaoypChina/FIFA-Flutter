@@ -71,7 +71,7 @@ class Club{
 
   int getLeagueID() {
     //SEARCH IN ALL LEAGUES
-    late int index = leaguesIndexFromName[getLeagueName()];
+    int index = leaguesIndexFromName[getLeagueName()];
     return index;
   }
 

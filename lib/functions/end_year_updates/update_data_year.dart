@@ -73,7 +73,7 @@ saveBestPlayers(){
   //Seleciona os melhores
   for(int index=0; index<globalJogadoresIndex.length; index++){
     Jogador player = Jogador(index: index);
-    if(player.goalsLeague >= 5){
+    if(player.goalsLeague >= 2 || topScorers.length<100){
       topScorers.add(player.goalsLeague);
       topScorersID.add(player.index);
     }

@@ -1,5 +1,7 @@
+import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/player_basic.dart';
 import 'package:fifa/functions/end_year_updates/update_data_year.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:flutter/services.dart';
@@ -60,6 +62,8 @@ class ReadCSV{
     await readCSVfunc("oriente_medio");
     await readCSVfunc("africa");
     await readCSVfunc("oceania");
+
+    deleteRepeatedPlayers();
   }
   readCSVfunc(String filename) async {
     List<List<dynamic>> _data = [];
@@ -132,6 +136,18 @@ class ReadCSV{
       }
     }
 
+  }
+
+  deleteRepeatedPlayers() {
+    List<String> namesOrdened = List.from(globalJogadoresName);
+    namesOrdened.sort();
+     for (int id1 = 0; id1 < namesOrdened.length-1; id1++) {
+       if (namesOrdened[id1] == namesOrdened[id1+1]) {
+         int realID = globalJogadoresName.indexOf(namesOrdened[id1]);
+         PlayerBasicInfo playerBasicInfo = PlayerBasicInfo();
+         playerBasicInfo.deletePlayerFromDatabase(realID);
+       }
+    }
   }
 
   correctImageUrl(String imagePlayer){

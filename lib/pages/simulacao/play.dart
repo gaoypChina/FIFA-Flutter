@@ -105,7 +105,9 @@ class _PlayState extends State<Play> {
     }else{
       textRodada = Name().groupsPhase;
       if(Semana(semana).isJogoGruposInternacional){textRodada += ' ${Semana(semana).rodadaGroupInternational}'; }
-      else if(Semana(semana).isJogoMataMataInternacional){textRodada = Name().showTranslated(context, textRodada);}
+      else if(Semana(semana).isJogoMataMataInternacional){
+        textRodada = Semana(semana).semanaStr;
+      }
     }
     return Scaffold(
 

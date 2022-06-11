@@ -60,6 +60,7 @@ class International{
   ordenaPontuacaoGrupo(int groupNumber){
     //Organiza em ordem decrescente
     dynamic help;
+    print(clubsPoints);
     for(int i=groupNumber*4;i<groupNumber*4+3;i++){
       for(int k=i+1;k<groupNumber*4+4 ;k++){
         if(clubsPoints[i]<clubsPoints[k] || (clubsPoints[i]==clubsPoints[k] && clubsSaldo[i] < clubsSaldo[k])){

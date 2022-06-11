@@ -8,6 +8,7 @@ import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/league_names.dart';
+import 'package:fifa/widgets/background/background_international_league.dart';
 import 'package:flutter/material.dart';
 
 class TableMatchs extends StatefulWidget {
@@ -80,11 +81,6 @@ class _TableMatchsState extends State<TableMatchs> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-  Widget backgroundInternationalLeague(String leagueInternational){
-    return leagueInternational == LeagueOfficialNames().championsLeague
-        ? Image.asset('assets/icons/fundochampions.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill)
-        : Image.asset('assets/icons/fundolibertadores.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill);
-  }
   Widget tableWidget() {
     return Column(
       children: [

@@ -42,7 +42,7 @@ class _MyTeamState extends State<MyTeam> {
   }
   setAverageAge(){
     averageAge = 0;
-    for(int i=0; i<myClub.nJogadores; i++){
+    for(int i=0; i<my.jogadores.length; i++){
       averageAge += Jogador(index: my.jogadores[i]).age;
     }
     averageAge = averageAge / myClub.nJogadores;
