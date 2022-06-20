@@ -80,7 +80,7 @@ List globalJogadoresMatchHealth = [];
 
 //Jogadores
 //ALL Players Data
-int globalMaxPlayersPermitted = 14000;
+int globalMaxPlayersPermitted = 20000;
 int globalMaxClubsPermitted = 500;
 
 List globalJogadoresIndex = [];

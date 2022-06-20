@@ -1,6 +1,7 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
+import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/popup/popup_player_info.dart';
 import 'package:fifa/theme/background/background_age.dart';
 import 'package:fifa/theme/background/background_overall.dart';
@@ -96,13 +97,15 @@ class _AllInfosClubState extends State<AllInfosClub> {
     return Table(
       columnWidths: const {
         0: FractionColumnWidth(.09),
-        1: FractionColumnWidth(.45),
-        4: FractionColumnWidth(.18),
+        1: FractionColumnWidth(.1),
+        2: FractionColumnWidth(.42),
+        5: FractionColumnWidth(.14),
       },
       children: [
 
         TableRow(
       children: [
+        const Text(''),
         const Text(''),
         Text(Translation(context).text.name, style: EstiloTextoBranco.text16),
         Text(Translation(context).text.age3, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
@@ -120,15 +123,17 @@ class _AllInfosClubState extends State<AllInfosClub> {
     return Table(
       columnWidths: const {
         0: FractionColumnWidth(.09),
-        1: FractionColumnWidth(.45),
-        2: FractionColumnWidth(.1),
+        1: FractionColumnWidth(.09),
+        2: FractionColumnWidth(.45),
         3: FractionColumnWidth(.1),
         4: FractionColumnWidth(.1),
+        5: FractionColumnWidth(.1),
       },
       children: [
 
         TableRow(
             children: [
+              const Text(''),
               const Text(''),
               Text(Translation(context).text.name, style: EstiloTextoBranco.text16),
               Text(Translation(context).text.playedP, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
@@ -146,14 +151,16 @@ class _AllInfosClubState extends State<AllInfosClub> {
     return Table(
       columnWidths: const {
         0: FractionColumnWidth(.09),
-        1: FractionColumnWidth(.45),
-        2: FractionColumnWidth(.1),
+        1: FractionColumnWidth(.09),
+        2: FractionColumnWidth(.45),
         3: FractionColumnWidth(.1),
         4: FractionColumnWidth(.1),
+        5: FractionColumnWidth(.1),
       },
       children: [
         TableRow(
             children: [
+              const Text(''),
               const Text(''),
               Text(Translation(context).text.name, style: EstiloTextoBranco.text16),
               const Text('+', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
@@ -171,15 +178,17 @@ class _AllInfosClubState extends State<AllInfosClub> {
     return Table(
       columnWidths: const {
         0: FractionColumnWidth(.09),
-        1: FractionColumnWidth(.45),
-        2: FractionColumnWidth(.1),
+        1: FractionColumnWidth(.09),
+        2: FractionColumnWidth(.45),
         3: FractionColumnWidth(.1),
         4: FractionColumnWidth(.1),
+        5: FractionColumnWidth(.1),
       },
       children: [
 
         TableRow(
             children: [
+              const Text(''),
               const Text(''),
               Text(Translation(context).text.name, style: EstiloTextoBranco.text16),
               Text('${Translation(context).text.playedP}*', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
@@ -214,6 +223,10 @@ class _AllInfosClubState extends State<AllInfosClub> {
       ),
       children: [
         positionContainer(player.position),
+        Container(
+          padding: const EdgeInsets.all(4),
+          child: funcFlagsList(player.nationality, 20, 20),
+        ),
         playerNameWidget(player),
         Container(
             color: colorAgeBackground(player.age),
@@ -252,6 +265,7 @@ class _AllInfosClubState extends State<AllInfosClub> {
       ),
       children: [
         positionContainer(player.position),
+        funcFlagsList(player.nationality, 20, 20),
         playerNameWidget(player),
         Text(player.matchsLeague.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
         Text(player.goalsLeague.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
@@ -279,6 +293,7 @@ class _AllInfosClubState extends State<AllInfosClub> {
       ),
       children: [
         positionContainer(player.position),
+        funcFlagsList(player.nationality, 20, 20),
         playerNameWidget(player),
         Text(player.injury.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
         Container(
@@ -313,6 +328,7 @@ class _AllInfosClubState extends State<AllInfosClub> {
       ),
       children: [
         positionContainer(player.position),
+        funcFlagsList(player.nationality, 20, 20),
         playerNameWidget(player),
         Text(player.matchsCarrer.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
         Text(player.goalsCarrer.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),

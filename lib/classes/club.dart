@@ -1,6 +1,7 @@
 import 'package:fifa/classes/geral/esquemas_taticos.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/functions/international_league.dart';
+import 'package:fifa/values/club_country.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/global_variables.dart';
@@ -11,6 +12,7 @@ class Club{
 
   late int index;
   late String name;
+  late String nationality;
   late List jogadores;
   late List escalacao;
   late String esquemaTatico;
@@ -53,6 +55,8 @@ class Club{
     }catch(e){
       internationalPoints =0;internationalGM=0;internationalGS=0;
     }
+
+    nationality = ClubCountry().countryName(name);
   }
 
   String getLeagueName() {
@@ -202,6 +206,23 @@ class Club{
     return escalacao;
   }
 
+  Map nPlayersPerPositions(){
+    List<String> positionsMyPlayers = [];
+    Map positionsCount = {};
+    for (int j = 0; j < jogadores.length; j++) { //0-23
+      Jogador jogadorClass = Jogador(index: jogadores[j]);
+      positionsMyPlayers.add(jogadorClass.position);
+    }
+    for (int index = 0; index < globalAllPositions.length; index++) {
+      positionsCount[globalAllPositions[index]] = 0;
+      for (var positionMyPlayer in positionsMyPlayers) {
+        if(positionMyPlayer == globalAllPositions[index]){
+          positionsCount[globalAllPositions[index]]++;
+        }
+      }
+    }
+    return positionsCount;
+  }
   ////////////////////////////////////////////////////////////////////////////
   getAverageAge(){
     double averageAge = 0;

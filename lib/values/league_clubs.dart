@@ -145,7 +145,7 @@ Map clubNameMapImmutable = {
   },
   LeagueOfficialNames().argentina : {
     0: clubName.argentinojuniors,1: clubName.banfield,2: clubName.bocajuniors,3: clubName.colon,
-    4: clubName.defensayjusticia,5: clubName.estudiantes,6: clubName.gimnasia,7: clubName.godoyCruz,
+    4: clubName.defensayjusticia,5: clubName.estudiantes,6: clubName.gimnasia,7: clubName.godoycruz,
     8: clubName.huracan,9: clubName.independiente,10: clubName.lanus,11: clubName.newells,
     12: clubName.racing,13: clubName.riverplate,14: clubName.rosariocentral,15:clubName.sanlorenzo,
     16: clubName.talleres,17:clubName.velezsarsfield,

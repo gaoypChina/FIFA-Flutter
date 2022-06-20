@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
@@ -7,18 +9,19 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/popup/popup_create_player.dart';
 import 'package:fifa/popup/popup_edit_nationality.dart';
 import 'package:fifa/popup/popup_ok_cancel.dart';
+import 'package:fifa/popup/popup_save_all_data.dart';
+import 'package:fifa/popup/popup_transfer_player_club.dart';
+import 'package:fifa/popup/poup_edit.dart';
 import 'package:fifa/theme/background/background_age.dart';
 import 'package:fifa/theme/background/background_overall.dart';
 import 'package:fifa/theme/background/background_position.dart';
-import 'package:fifa/theme/translation.dart';
-import 'package:fifa/values/clubs_all_names_list.dart';
-import 'package:fifa/popup/popup_save_all_data.dart';
-import 'package:fifa/popup/poup_edit.dart';
-import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/theme/translation.dart';
+import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:flutter/material.dart';
+
 import '../classes/jogador.dart';
 
 class CustomizePlayers extends StatefulWidget {
@@ -70,9 +73,18 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                     ],
                   ),
 
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        for(int i=0;i<club.nPlayersPerPositions().keys.length;i++)
+                          Text(' '+club.nPlayersPerPositions().keys.elementAt(i)+': '+club.nPlayersPerPositions().values.elementAt(i).toString(),style: EstiloTextoBranco.text16)
+                      ],
+                    ),
+                  ),
 
                   const SizedBox(height: 4),
-                  //SHOW TABLE PLAYERS
+                  //SHOW TABLE PLAYERS TITLE
                   Container(
                     color: AppColors().greyTransparent,
                     child: Row(
@@ -90,6 +102,7 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                     ),
                   ),
 
+                  //SHOW TABLE PLAYERS CONTENT
                   Container(
                     height: Sized(context).height/2,
                     padding: const EdgeInsets.symmetric(horizontal: 6),
@@ -200,8 +213,17 @@ TableRow playersRow(int i){
         //CLUB
         InkWell(
             onTap:(){
-              choosenPlayerID = playerID;
-              popupText(Translation(context).text.changePlayersClub,player.clubName,'Club');
+              PopupConfig popupConfig = PopupConfig();
+              popupConfig.choosenPlayerID = playerID;
+              popUpChangePlayerClub(originalContext: context, popupConfig: popupConfig );
+
+              Timer.periodic(const Duration(milliseconds: 100), (timer) {
+                if (popupConfig.popupClosed) {
+                  setState((){});
+                  timer.cancel();
+                }
+              });
+
             },
             child: Image.asset(Images().getEscudo(player.clubName),height:30, width: 30)),
 
@@ -296,14 +318,6 @@ popupText(String title,String variableString, String whichData){
       intOrString: true,
       maxNcharacters: 22,
       functionOK: (value){
-        if(whichData=='Club' && clubsAllNameList.contains(value)) {
-          int clubID = clubsAllNameList.indexOf(value);
-          globalJogadoresClubIndex[choosenPlayerID] = clubID;
-        }
-        if(whichData=='Club' && !clubsAllNameList.contains(value)){
-          customToast('Clube Inexistente');
-        }
-
          if(whichData=='Position' && positions442.containsKey(value)) {
             globalJogadoresPosition[choosenPlayerID] = value;
          }else if(whichData=='Position' && !positions442.containsKey(value)){

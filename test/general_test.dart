@@ -13,6 +13,5 @@ void main() {
       expect(list, myPlayers);
     });
 
-
   });
 }

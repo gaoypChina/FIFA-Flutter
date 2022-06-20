@@ -39,6 +39,9 @@ PARA ADICIONAR NOVAS LIGAS:
 //##########################################################################
 for(int i=0; i<x; i++){}
 
+//SHORTCUT
+Ctrl+Shift+O = Automatically remove unused imports
+
 //POPUP WHEN ENTER PAGE
 schedulerBinding.instance!.addPostFrameCallback((_) {
       popupCall();

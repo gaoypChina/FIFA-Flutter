@@ -1,6 +1,7 @@
-import 'package:fifa/classes/jogador.dart';
+import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/player_basic.dart';
 import 'package:fifa/functions/end_year_updates/update_data_year.dart';
+import 'package:fifa/functions/random_players.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
@@ -63,7 +64,12 @@ class ReadCSV{
     await readCSVfunc("africa");
     await readCSVfunc("oceania");
 
+    customToast('Deleting Duplicated Players');
     deleteRepeatedPlayers();
+    customToast('Loading Custom Players');
+    addRandomPlayers();
+    customToast('Done');
+
   }
   readCSVfunc(String filename) async {
     List<List<dynamic>> _data = [];
@@ -150,6 +156,21 @@ class ReadCSV{
     }
   }
 
+  addRandomPlayers(){
+    for(int i=0;i<clubsAllNameList.length;i++){
+      try {
+        Club club = Club(index: i);
+        while (club.jogadores.length < 21) {
+          customToast('ADDING TO: ${club.name}');
+          AddRandomPlayer(club: club);
+          club = Club(index: i);
+        }
+      }catch(e){
+        //print(clube não existe);
+      }
+    }
+  }
+
   correctImageUrl(String imagePlayer){
     if(imagePlayer.contains('wiki')){
       imagePlayer = imagePlayer.substring(5,);
@@ -165,8 +186,8 @@ class ReadCSV{
   correctPlayerPostion(String position){
 
     //Se logo de cara aparecer uma dessas posições ja salva como prioridade
-    if(position.contains('LD')){position='LD';}
-    if(position.contains('LE')){position='LE';}
+    if(position.contains('LD') && position.contains('MD')){position='LD';}
+    if(position.contains('LE') && position.contains('ME')){position='LE';}
     if(position.length>3){position = position.substring(0,3);}
     if(position.contains('GOL')){position='GOL';}
     else if(position.contains('LD')){position='LD';}

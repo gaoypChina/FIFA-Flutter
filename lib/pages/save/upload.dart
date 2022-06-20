@@ -1,13 +1,11 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/database/save_games/basic_game_infos.dart';
-import 'package:fifa/database/save_games/sql_game.dart';
-import 'package:fifa/global_variables.dart';
+import 'package:fifa/page_controller/save/save_controller.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/theme/colors.dart';
+import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_return.dart';
-import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
 class Upload extends StatefulWidget {
@@ -19,29 +17,18 @@ class Upload extends StatefulWidget {
 
 class _UploadState extends State<Upload> {
 
-
-  List<BasicGameInfos> basicGameInfos = [];
+  SaveController saveController = SaveController();
 
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
-    checkSaves();
+    updateLayout();
     super.initState();
   }
-  checkSaves() async{
-
-    basicGameInfos = [];
-    for(int i=0; i<globalMaxPossibleSaves;i++){
-      try {
-        BasicGameInfos basicGameInfo = await SaveSQLGame().getGameFromDatabase(i);
-        print(basicGameInfo.id.toString()+'ano: '+basicGameInfo.year.toString());
-        basicGameInfos.add(basicGameInfo);
-      }catch(e){
-        //print('save $i don\'t exist');
-      }
-    }
+  updateLayout() async{
+    await saveController.getSaves();
     setState((){});
   }
 
@@ -64,7 +51,7 @@ class _UploadState extends State<Upload> {
 
                       Text(Translation(context).text.load,style: EstiloTextoBranco.text30),
                       Expanded(child: Column(children: [
-                        for(int i=0; i<basicGameInfos.length;i++)
+                        for(int i=0; i<saveController.basicGameInfos.length;i++)
                           upload(i),
                       ],))
 
@@ -84,12 +71,12 @@ class _UploadState extends State<Upload> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
   Widget upload(int gameSaveNumber){
-    BasicGameInfos saveInfo = basicGameInfos[gameSaveNumber];
-    Club club = Club(index: saveInfo.myClubID);
+    saveController.getIndividualGameSaveInfos(gameSaveNumber);
+    Club club = Club(index: saveController.basicGameInfo.myClubID);
 
     return GestureDetector(
       onTap: (){
-        saveInfo.uploadData();
+        saveController.getData(gameSaveNumber);
         Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Menu()));
       },
       child: Container(
@@ -115,8 +102,8 @@ class _UploadState extends State<Upload> {
                     Column(
                       children: [
                         Text(club.name,style: EstiloTextoBranco.text14),
-                        Text(saveInfo.year.toString(),style: EstiloTextoBranco.text14),
-                        Text('${Translation(context).text.week}: '+saveInfo.week.toString(),style: EstiloTextoBranco.text14),
+                        Text(saveController.basicGameInfo.year.toString(),style: EstiloTextoBranco.text14),
+                        Text('${Translation(context).text.week}: '+saveController.basicGameInfo.week.toString(),style: EstiloTextoBranco.text14),
                       ],
                     )
                   ],

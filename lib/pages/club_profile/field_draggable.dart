@@ -212,7 +212,7 @@ class _FieldDraggableState extends State<FieldDraggable> {
     int positionNumber = my.jogadores.indexOf(player.index);
     player.isPlayerInRightPosition(positionNumber);
 
-    String name = player.name;
+    String name = player.nameResume;
     String position = player.position;
     double imageSize = 57;
     double healthBar = player.health;

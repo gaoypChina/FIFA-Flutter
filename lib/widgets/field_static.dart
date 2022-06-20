@@ -214,7 +214,7 @@ Widget playerWidgetMatch(int jogadorIndex, String clubName){
   Match matchClass = Match(playerID: jogadorIndex);
   Jogador jogadorClass = Jogador(index: jogadorIndex);
 
-  String name = jogadorClass.name;
+  String name = jogadorClass.nameResume;
   bool yellowCard = matchClass.yellowCard>0;
   bool redCard = matchClass.redCard>0;
   bool injury = matchClass.injury>0;
@@ -222,7 +222,7 @@ Widget playerWidgetMatch(int jogadorIndex, String clubName){
   double healthBar = matchClass.health;
   double imageSize = 38;
   double headSize = 22;
-  double bottomBarWidth = imageSize+45;
+  double bottomBarWidth = imageSize+38;
 
   if(injury || redCard){healthBar=0;}
 

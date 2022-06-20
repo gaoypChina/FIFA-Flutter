@@ -10,7 +10,6 @@ import 'package:fifa/pages/simulacao/end_year.dart';
 import 'package:fifa/pages/simulacao/not_play_international/not_play_international_groups.dart';
 import 'package:fifa/pages/simulacao/not_play_international/not_play_international_matamata.dart';
 import 'package:fifa/theme/translation.dart';
-import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/pages/table/table_widget.dart';
 import 'package:fifa/theme/textstyle.dart';

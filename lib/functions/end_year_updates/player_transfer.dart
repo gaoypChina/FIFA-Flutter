@@ -1,8 +1,23 @@
 import 'dart:math';
 
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/functions/func_number_clubs_total.dart';
 import 'package:fifa/global_variables.dart';
+
+class TransferRules{
+  late Jogador player;
+  late Club playerClub;
+  late Club destinyClub;
+  TransferRules({required this.player,required this.playerClub,required this.destinyClub});
+
+  bool isSameCountry(){
+    return false;
+  }
+
+
+
+}
 
 transferenciaJogador(int id){
 

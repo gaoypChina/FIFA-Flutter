@@ -1,6 +1,3 @@
-
-import 'dart:convert';
-
 import 'package:fifa/database/key_names.dart';
 import 'package:fifa/global_variables.dart';
 
@@ -29,6 +26,9 @@ class BasicGameInfos{
     required this.coachName,
 });
 
+  printData(){
+    print('ID: $id MYCLUBID: $myClubID YEAR: $year WEEK: $week MONEY: $money');
+  }
   // Convert a Favorite into a Map. The keys must correspond to the names of the
   // columns in the database.
   Map<String, dynamic> toMap() {
@@ -46,7 +46,23 @@ class BasicGameInfos{
     };
   }
 
-  uploadData(){
+  BasicGameInfos toClass(List<Map<String, dynamic>> maps, int i){
+    return BasicGameInfos(
+      id: maps[i][KeyNames().idKey],
+      myClubID: maps[i][KeyNames().myClubIDKey],
+      year: maps[i][KeyNames().yearKey],
+      week: maps[i][KeyNames().weekKey],
+      rodada0: maps[i][KeyNames().rodadaKey],
+      money: maps[i][KeyNames().moneyKey],
+      difficulty: maps[i][KeyNames().difficultyKey],
+      expectativa: maps[i][KeyNames().expectativaKey],
+      coachPoints: maps[i][KeyNames().coachPointsKey],
+      coachName: maps[i][KeyNames().coachNameKey],
+    );
+  }
+
+
+  saveGlobally(){
     globalMyClubID = myClubID;
     ano = year;
     semana = week;
@@ -56,8 +72,6 @@ class BasicGameInfos{
     globalMyExpectativa = expectativa;
     globalCoachPoints = coachPoints;
     globalCoachName = coachName;
-    //List<int> list = json.decode(myPlayers);
-    //globalMyJogadores = list;
   }
 
 }

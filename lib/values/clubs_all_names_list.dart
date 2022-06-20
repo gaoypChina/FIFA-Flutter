@@ -113,7 +113,7 @@ List clubsAllNameList = [
   ClubName().colon,  ClubName().defensayjusticia,  ClubName().estudiantes,  ClubName().independiente,
   ClubName().lanus,  ClubName().newells,  ClubName().racing,  ClubName().riverplate,
   ClubName().rosariocentral,  ClubName().sanlorenzo,  ClubName().talleres,  ClubName().velezsarsfield,
-  ClubName().huracan,ClubName().gimnasia,ClubName().unionSantaFe,ClubName().godoyCruz,
+  ClubName().huracan,ClubName().gimnasia,ClubName().unionSantaFe,ClubName().godoycruz,
   ClubName().atleticoTucuman,
 
   ClubName().penarol,  ClubName().nacional,  ClubName().montevideo,

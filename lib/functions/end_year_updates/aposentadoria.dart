@@ -29,7 +29,7 @@ class AposentarJogador{
     globalJogadoresAge[player.index] = randomAge;
   }
   updatePlayerOVR(Jogador player){
-    int randomOVR = Random().nextInt(5)+16;//16-20
+    int randomOVR = Random().nextInt(7)+10;//10-17
     globalJogadoresOverall[player.index] = player.overall - randomOVR;
   }
 

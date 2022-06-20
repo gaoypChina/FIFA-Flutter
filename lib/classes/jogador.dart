@@ -6,6 +6,7 @@ class Jogador{
 
   late int index;
   late String name;
+  late String nameResume;
   late String position;
   late String nationality;
   late String imageUrl;
@@ -34,6 +35,7 @@ class Jogador{
 
   Jogador({required this.index}) {
     name = globalJogadoresName[index];
+    nameResume = resumeName();
     position = globalJogadoresPosition[index];
     age = globalJogadoresAge[index];
     health = globalJogadoresHealth[index];
@@ -58,6 +60,13 @@ class Jogador{
     assistsCarrer = globalJogadoresCarrerAssists[index];
   }
 
+  String resumeName(){
+    try{
+      return name.split(' ')[0][0] +'. '+name.split(' ')[1];
+    }catch(e){
+      return name;
+    }
+  }
   //////////////////////////////////////////////////////////////////
   //                          S E T                               //
   //////////////////////////////////////////////////////////////////

@@ -3,7 +3,7 @@ import 'dart:math';
 
 import 'package:fifa/database/key_names.dart';
 import 'package:fifa/database/local_database/shared_preferences.dart';
-import 'package:fifa/database/save_games/player_save_data.dart';
+import 'package:fifa/database/save_games/player_save/player_save_data.dart';
 import 'package:fifa/functions/end_year_updates/update_data_year.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/custom_toast.dart';
@@ -113,7 +113,7 @@ class SaveSQL{
         position: maps[i][KeyNames().positionKey],
         overall: maps[i][KeyNames().overallKey],
         nationality: maps[i][KeyNames().nationalityKey],
-        imagePlayer: maps[i][KeyNames().imagePlayerKey],
+        imageUrl: maps[i][KeyNames().imagePlayerKey],
       );
     });
   }
@@ -139,24 +139,6 @@ class SaveSQL{
     );
   }
 
-  //Funçao de teste se o database esta criado corretamente
-  test() async {
-    var fido = PlayerSaveData(
-      id: 0,
-      name: 'Messi',
-      age: 35,
-      clubID: 2,
-      overall: 91,
-      position: 'ATA',
-      nationality: 'Argentina',
-      imagePlayer: 'unknown',
-    );
-
-
-    printDatabaseValues();
-    await deletePlayerSaveData(0);
-  }
-
 
   ///////////////////////////////////////////////////////////////////////////
   saveAllPlayersToDatabase(){
@@ -169,7 +151,7 @@ class SaveSQL{
         overall: globalJogadoresOverall[i],
         position: globalJogadoresPosition[i],
         nationality: globalJogadoresNationality[i],
-        imagePlayer: globalJogadoresImageUrl[i],
+        imageUrl: globalJogadoresImageUrl[i],
       );
 
       insertPlayerSaveData(player);
@@ -191,7 +173,7 @@ class SaveSQL{
         globalJogadoresOverall.add(row.overall);
         globalJogadoresPosition.add(row.position);
         globalJogadoresNationality.add(row.nationality);
-        globalJogadoresImageUrl.add(row.imagePlayer);
+        globalJogadoresImageUrl.add(row.imageUrl);
       }
     }
 

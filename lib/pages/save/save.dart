@@ -1,15 +1,14 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/database/save_games/basic_game_infos.dart';
-import 'package:fifa/database/save_games/sql_game.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/page_controller/save/save_controller.dart';
 import 'package:fifa/pages/menu/b_home.dart';
-import 'package:fifa/theme/colors.dart';
 import 'package:fifa/popup/popup_ok_cancel.dart';
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
+import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_return.dart';
-import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
 class Save extends StatefulWidget {
@@ -21,31 +20,20 @@ class Save extends StatefulWidget {
 
 class _SaveState extends State<Save> {
 
-  List<BasicGameInfos> basicGameInfos = [];
+  SaveController saveController = SaveController();
 
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
-    checkSaves();
+    updateLayout();
     super.initState();
   }
-  checkSaves() async{
-
-    basicGameInfos = [];
-    for(int i=0; i<globalMaxPossibleSaves;i++){
-      try {
-        BasicGameInfos basicGameInfo = await SaveSQLGame().getGameFromDatabase(i);
-        print(basicGameInfo.id.toString()+'ano: '+basicGameInfo.year.toString());
-        basicGameInfos.add(basicGameInfo);
-      }catch(e){
-        //print('save $i don\'t exist');
-      }
-    }
+  updateLayout() async{
+    await saveController.getSaves();
     setState((){});
   }
-
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
@@ -68,7 +56,7 @@ class _SaveState extends State<Save> {
 
                       Text(Translation(context).text.save,style: EstiloTextoBranco.text30),
                       Expanded(child: Column(children: [
-                        for(int i=0; i<basicGameInfos.length;i++)
+                        for(int i=0; i<saveController.basicGameInfos.length;i++)
                           save(i),
                       ],)),
 
@@ -93,10 +81,10 @@ class _SaveState extends State<Save> {
       child: FloatingActionButton(
           child: const Icon(Icons.plus_one),
           onPressed: () async{
-            if(basicGameInfos.length < globalMaxPossibleSaves) {
+            if(saveController.basicGameInfos.length < globalMaxPossibleSaves) {
               //Salva até 10 jogos
-              await SaveSQLGame().saveGameToDatabase(basicGameInfos.length);
-              checkSaves();
+              await saveController.saveData(saveController.basicGameInfos.length);
+              updateLayout();
             }else{
               customToast('Limite atingido');
             }
@@ -105,8 +93,8 @@ class _SaveState extends State<Save> {
   }
 
 Widget save(int gameSaveNumber) {
-  BasicGameInfos saveInfo = basicGameInfos[gameSaveNumber];
-  Club club = Club(index: saveInfo.myClubID);
+    saveController.getIndividualGameSaveInfos(gameSaveNumber);
+  Club club = Club(index: saveController.basicGameInfo.myClubID);
 
   return InkWell(
       onTap:(){
@@ -115,8 +103,8 @@ Widget save(int gameSaveNumber) {
             title: Translation(context).text.wantsTosaveFile,
             content: '',
             function: (){
-              SaveSQLGame().updateGameToDatabase(gameSaveNumber);
-              checkSaves();
+              saveController.updateData(gameSaveNumber);
+              updateLayout();
           Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const HomePage()));
         });
       },
@@ -143,8 +131,8 @@ Widget save(int gameSaveNumber) {
                     Column(
                       children: [
                         Text(club.name,style: EstiloTextoBranco.text14),
-                        Text(saveInfo.year.toString(),style: EstiloTextoBranco.text14),
-                        Text('${Translation(context).text.week}: '+saveInfo.week.toString(),style: EstiloTextoBranco.text14),
+                        Text(saveController.basicGameInfo.year.toString(),style: EstiloTextoBranco.text14),
+                        Text('${Translation(context).text.week}: '+saveController.basicGameInfo.week.toString(),style: EstiloTextoBranco.text14),
                       ],
                     )
                   ],
