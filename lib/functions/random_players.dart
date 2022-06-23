@@ -26,7 +26,7 @@ class AddRandomPlayer{
     playerBasicInfo.age = Random().nextInt(21)+17;
     playerBasicInfo.overall = Random().nextInt(8)-8+club.getOverall().round();
     playerBasicInfo.position = globalAllPositions[Random().nextInt(globalAllPositions.length)];
-    playerBasicInfo.playerID = globalJogadoresIndex.last;
+    playerBasicInfo.playerID = globalJogadoresIndex.last+1;
     playerBasicInfo.clubID = club.index;
     playerBasicInfo.imagePlayer = ReadCSV().correctImageUrl('/notfound_0_120.png');
     playerBasicInfo.nationality = club.nationality;

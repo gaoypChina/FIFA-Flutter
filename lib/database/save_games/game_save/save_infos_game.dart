@@ -37,9 +37,10 @@ class SaveInfosGame extends SaveAbstract{
     SQLModelStructure(sqlModel: sqlModel).updateTable();
   }
 
-  deleteDatabase(int gameSaveNumber){
+  deleteDatabase(int gameSaveNumber) async{
     //CRIA O MODELO DO DATABASE
     SQLModel sqlModel = defineSQLModel(gameSaveNumber);
+    await SQLModelStructure(sqlModel: sqlModel).deleteDataBase();
   }
 
   
@@ -60,7 +61,7 @@ class SaveInfosGame extends SaveAbstract{
   @override
   SQLModel defineSQLModel(int gameSaveNumber){
     SQLModel sqlModel = SQLModel();
-    sqlModel.databasePath = 's2ave$gameSaveNumber.db';
+    sqlModel.databasePath = 's3ave$gameSaveNumber.db';
     sqlModel.tableName = 'infos_table';
     BasicGameInfos basicGameInfos = SaveInfosGame().dataModel(gameSaveNumber);
     sqlModel.object = basicGameInfos;

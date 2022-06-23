@@ -97,13 +97,23 @@ Widget save(int gameSaveNumber) {
   Club club = Club(index: saveController.basicGameInfo.myClubID);
 
   return InkWell(
+    onLongPress: (){
+      popUpOkCancel(
+          context: context,
+          title: Translation(context).text.delete,
+          content: '',
+          function: () async{
+            await saveController.deleteData(gameSaveNumber);
+            updateLayout();
+          });
+    },
       onTap:(){
         popUpOkCancel(
             context: context,
             title: Translation(context).text.wantsTosaveFile,
             content: '',
-            function: (){
-              saveController.updateData(gameSaveNumber);
+            function: () async{
+              await saveController.updateData(gameSaveNumber);
               updateLayout();
           Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const HomePage()));
         });

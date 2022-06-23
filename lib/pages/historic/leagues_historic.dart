@@ -86,30 +86,39 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                 ),
               ),
 
-              //VOLTAR
-              Padding(
-                padding: const EdgeInsets.all(4),
-                child:  customButtonContinue(
-                    title: Translation(context).text.next,
-                    function: (){
-                      if(ano>anoInicial){
-                        Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const InternationalHistoric()));
-                      }else{
-                        Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const PlayersHistoric()));
-                      }
-                      }
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+
+                  //VOLTAR
+                  Padding(
+                    padding: const EdgeInsets.all(6),
+                    child:  customButtonContinue(
+                        title: Translation(context).text.returnTo,
+                        function: (){
+                          Navigator.pop(context);
+                        }
+                    ),
+                  ),
+
+                  //PRÓXIMO
+                  Padding(
+                    padding: const EdgeInsets.all(4),
+                    child:  customButtonContinue(
+                        title: Translation(context).text.next,
+                        function: (){
+                          if(ano>=anoInicial){
+                            Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const InternationalHistoric()));
+                          }else{
+                            Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const PlayersHistoric()));
+                          }
+                        }
+                    ),
+                  ),
+
+                ],
               ),
-              //VOLTAR
-              Padding(
-                padding: const EdgeInsets.all(6),
-                child:  customButtonContinue(
-                    title: Translation(context).text.returnTo,
-                    function: (){
-                      Navigator.pop(context);
-                    }
-                ),
-              ),
+
 
 
             ],

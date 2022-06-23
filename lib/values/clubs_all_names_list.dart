@@ -6,7 +6,7 @@ import 'package:fifa/values/club_names.dart';
 //A ordem vai ser a dos "IDs" no jogo
 List clubsAllNameList = [
   ClubName().arsenal,  ClubName().astonvilla,  ClubName().chelsea,  ClubName().crystalpalace,
-  ClubName().everton,  ClubName().leedsunited,  ClubName().leicester,  ClubName().liverpool,
+  ClubName().everton,  ClubName().leeds,  ClubName().leicester,  ClubName().liverpool,
   ClubName().manchestercity,  ClubName().manchesterunited,  ClubName().newcastle,  ClubName().tottenham,
   ClubName().southampton,  ClubName().westbromwich,  ClubName().westham,  ClubName().wolves,
 
@@ -19,7 +19,7 @@ List clubsAllNameList = [
   ClubName().plymouth,ClubName().millwall,ClubName().huddersfield,ClubName().charlton,
   ClubName().bristol,ClubName().prestonNorthEnd,ClubName().bolton,ClubName().luton,
   ClubName().cardiffCity,ClubName().rotherham,ClubName().ipswichTown,ClubName().coventry,
-  ClubName().peterborough,ClubName().blackpool,
+  ClubName().peterborough,ClubName().blackpool,ClubName().sheffieldWednesday,
   //italia
   ClubName().atalanta,  ClubName().bologna,  ClubName().cremonese,  ClubName().fiorentina,
   ClubName().genoa,  ClubName().inter,  ClubName().juventus,  ClubName().milan,
@@ -63,7 +63,7 @@ List clubsAllNameList = [
   //portugal
   ClubName().benfica,  ClubName().porto,  ClubName().sporting,  ClubName().braga,
   ClubName().boavista,ClubName().maritimo,ClubName().portimonense,ClubName().vitoriaguimaraes,
-  ClubName().coimbra,ClubName().famalicao,ClubName().gilVicente,
+  ClubName().coimbra,ClubName().famalicao,ClubName().gilVicente,ClubName().belenenses,
   //holanda
   ClubName().ajax,  ClubName().feyenoord,  ClubName().psv,ClubName().azAlkmaar,
   ClubName().twente,ClubName().utrecht,ClubName().vitesse,ClubName().heerenveen,
@@ -83,7 +83,7 @@ List clubsAllNameList = [
   ClubName().zenit,  ClubName().cska,  ClubName().krasnodar,  ClubName().spartakmoscou,
   ClubName().sochi,ClubName().rubinKazan,ClubName().lokomotivMoscou,ClubName().dinamoMoscou,
 
-  ClubName().qarabag,ClubName().astana,ClubName().vardar,
+  ClubName().qarabag,ClubName().astana,ClubName().vardar,ClubName().sheriffTiraspol,
   ClubName().estrelavermelha,  ClubName().partizan,  ClubName().ludogorets,  ClubName().cskaSofia,
   ClubName().shaktardonetsk,  ClubName().dinamokiev,  ClubName().spartapraga,  ClubName().slaviaPraha,
   ClubName().dinamozagreb,ClubName().cluj,ClubName().slovanBratislava,ClubName().ferencvaros,
@@ -107,6 +107,8 @@ List clubsAllNameList = [
   ClubName().gremioNovorizontino,ClubName().mirassol,ClubName().operarioPR,
   ClubName().londrina,ClubName().remo,ClubName().abc,ClubName().saocaetano,ClubName().santoandre,
   ClubName().mirassol,ClubName().botafogoSP,ClubName().botafogoPB,ClubName().caxias,
+  ClubName().bangu,ClubName().joinville,ClubName().paulista,ClubName().campinense,
+  ClubName().brasiliense,ClubName().ferroviaria,ClubName().ibis,
 
   //argentina
   ClubName().argentinojuniors,  ClubName().arsenalsarandi,  ClubName().banfield,  ClubName().bocajuniors,
@@ -114,7 +116,7 @@ List clubsAllNameList = [
   ClubName().lanus,  ClubName().newells,  ClubName().racing,  ClubName().riverplate,
   ClubName().rosariocentral,  ClubName().sanlorenzo,  ClubName().talleres,  ClubName().velezsarsfield,
   ClubName().huracan,ClubName().gimnasia,ClubName().unionSantaFe,ClubName().godoycruz,
-  ClubName().atleticoTucuman,
+  ClubName().atleticoTucuman,ClubName().tigre,
 
   ClubName().penarol,  ClubName().nacional,  ClubName().montevideo,
   ClubName().olimpia,  ClubName().libertad,ClubName().cerroporteno,ClubName().guaraniPAR,

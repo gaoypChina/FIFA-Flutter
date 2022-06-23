@@ -102,6 +102,13 @@ class SQLModelStructure{
     );
   }
 
+  deleteDataBase() async{
+    // Get a reference to the database.
+    final db = await database;
+
+    String path = db.path;
+    databaseFactory.deleteDatabase(path);
+  }
 
   Future<List<dynamic>> funcSavedAllDataResult() async {
     final db = await database;

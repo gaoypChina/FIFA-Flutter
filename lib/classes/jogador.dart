@@ -60,6 +60,10 @@ class Jogador{
     assistsCarrer = globalJogadoresCarrerAssists[index];
   }
 
+  printData(){
+    print('ID: $index NAME: $name CLUBNAME: $clubName OVR: $overall IDADE: $age NATIONALITY: $nationality');
+  }
+
   String resumeName(){
     try{
       return name.split(' ')[0][0] +'. '+name.split(' ')[1];

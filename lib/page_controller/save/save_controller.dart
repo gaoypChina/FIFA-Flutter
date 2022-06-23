@@ -1,6 +1,5 @@
 import 'package:fifa/database/save_games/game_save/basic_game_infos.dart';
 import 'package:fifa/database/save_games/game_save/save_infos_game.dart';
-import 'package:fifa/database/save_games/player_save/save_infos_players.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/custom_toast.dart';
 
@@ -34,27 +33,27 @@ class SaveController{
       getIndividualGameSaveInfos(gameSaveNumber);
       basicGameInfo.saveGlobally();
    try{
-      await SaveInfosPlayers().getGameFromDatabase(gameSaveNumber);
+      //await SaveInfosPlayers().getGameFromDatabase(gameSaveNumber);
     }catch(e){
       //print('Error Loading players);
     }
     customToast('Finished Loading');
   }
 
-  saveData(int gameSaveNumber)async{
+  saveData(int gameSaveNumber) async{
     await SaveInfosGame().saveGameToDatabase(gameSaveNumber);
-    await SaveInfosPlayers().saveGameToDatabase(gameSaveNumber);
+    //await SaveInfosPlayers().saveGameToDatabase(gameSaveNumber);
     customToast('Finished Saving');
   }
 
-  updateData(int gameSaveNumber){
-    SaveInfosGame().updateGameToDatabase(gameSaveNumber);
-    SaveInfosPlayers().updateGameToDatabase(gameSaveNumber);
+  updateData(int gameSaveNumber) async{
+    await SaveInfosGame().updateGameToDatabase(gameSaveNumber);
+    //await SaveInfosPlayers().updateGameToDatabase(gameSaveNumber);
     customToast('Finished Saving');
   }
 
-  deleteData(int gameSaveNumber){
-
+  deleteData(int gameSaveNumber) async{
+    await SaveInfosGame().deleteDatabase(gameSaveNumber);
   }
 
 

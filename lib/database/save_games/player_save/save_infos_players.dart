@@ -65,6 +65,7 @@ class SaveInfosPlayers extends SaveAbstract{
         nationality: globalJogadoresNationality[i],
         imageUrl: globalJogadoresImageUrl[i],
       );
+
       await SQLModelStructure(sqlModel: sqlModel).updateTable();
     }
   }
@@ -98,7 +99,7 @@ class SaveInfosPlayers extends SaveAbstract{
   @override
   SQLModel defineSQLModel(int gameSaveNumber){
     SQLModel sqlModel = SQLModel();
-    sqlModel.databasePath = 's2ave$gameSaveNumber.db';
+    sqlModel.databasePath = 's3ave$gameSaveNumber.db';
     sqlModel.tableName = 'players';
     PlayerSaveData playerSaveData = SaveInfosPlayers().dataModel(gameSaveNumber);
     sqlModel.object = playerSaveData;

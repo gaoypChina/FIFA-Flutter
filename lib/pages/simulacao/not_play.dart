@@ -9,6 +9,7 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/simulacao/end_year.dart';
 import 'package:fifa/pages/simulacao/not_play_international/not_play_international_groups.dart';
 import 'package:fifa/pages/simulacao/not_play_international/not_play_international_matamata.dart';
+import 'package:fifa/pages/simulacao/not_play_international/not_play_mundial.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/pages/table/table_widget.dart';
@@ -33,13 +34,16 @@ class _NotPlayState extends State<NotPlay> {
 
     String weekName = Semana(semana).semanaAlternativeStr;
 
+    print(Semana(semana).isJogoMundial);
     return Scaffold(
         body:  Stack(
             children: [
 
               Semana(semana).isJogoCampeonatoNacional
                   ? Images().getWallpaper()
-                  : backgroundInternationalLeague(League(index: My().campeonatoID).internationalLeagueName),
+                  : Semana(semana).isJogoMundial
+                    ? backgroundMundial()
+                    : backgroundInternationalLeague(League(index: My().campeonatoID).internationalLeagueName),
 
               Column(
                 children: [
@@ -51,9 +55,11 @@ class _NotPlayState extends State<NotPlay> {
                   Expanded(
                       child: Semana(semana).isJogoCampeonatoNacional
                           ? tabelaClassificacaoWidget(context,My().campeonatoID)
-                          : Semana(semana).isJogoMataMataInternacional
-                          ? notPlayShowInternationalMataMata(context)
-                          : notPlayShowInternationalGroups(context),
+                          : Semana(semana).isJogoGruposInternacional
+                            ? notPlayShowInternationalGroups(context)
+                            : Semana(semana).isJogoMataMataInternacional
+                              ? notPlayShowInternationalMataMata(context)
+                              : notPlayMundial(context),
                   ),
 
 

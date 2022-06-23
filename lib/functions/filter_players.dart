@@ -67,7 +67,7 @@ class FilterPlayers{
 
   filterByAge() {
     copyJogadoresAge = [];
-    for (var playerID in copyJogadoresID) {
+    for (int playerID=0;playerID < copyJogadoresID.length; playerID++) {
       Jogador player = Jogador(index: playerID);
       copyJogadoresAge.add(player.age);
     }
@@ -101,7 +101,7 @@ class FilterPlayers{
 
   filterByOVR() {
     copyJogadoresOVR = [];
-    for (var playerID in copyJogadoresID) {
+    for (int playerID=0;playerID < copyJogadoresID.length; playerID++) {
       Jogador player = Jogador(index: playerID);
       copyJogadoresOVR.add(player.overall);
     }
@@ -135,7 +135,7 @@ class FilterPlayers{
 
   filterByPrice() {
     List copyJogadoresPrice = [];
-    for (var playerID in copyJogadoresID) {
+    for (int playerID=0;playerID < copyJogadoresID.length; playerID++) {
       Jogador player = Jogador(index: playerID);
       copyJogadoresPrice.add(player.price);
     }

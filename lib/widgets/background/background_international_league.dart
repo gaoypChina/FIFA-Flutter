@@ -6,3 +6,7 @@ Widget backgroundInternationalLeague(String leagueInternational){
       ? Image.asset('assets/icons/fundochampions.png',height: double.maxFinite,width: double.maxFinite,fit: BoxFit.fill)
       : Image.asset('assets/icons/fundolibertadores.png',height: double.maxFinite,width: double.maxFinite,fit: BoxFit.fill);
 }
+
+Widget backgroundMundial(){
+  return Image.asset('assets/icons/fundomundial.png',height: double.maxFinite,width: double.maxFinite,fit: BoxFit.fill);
+}

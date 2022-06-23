@@ -11,6 +11,7 @@ class PlayerBasicInfo{
   String imagePlayer = 'https://i0.wp.com/zblibrary.info/wp-content/uploads/sites/76/2017/03/default-user.png?ssl=1';
 
   createNewPlayerToDatabase(){
+
     globalJogadoresIndex.add(playerID);
     globalJogadoresClubIndex.add(clubID);
     globalJogadoresName.add(name);
@@ -30,5 +31,10 @@ class PlayerBasicInfo{
     globalJogadoresOverall.removeAt(playerID);
     globalJogadoresNationality.removeAt(playerID);
     globalJogadoresImageUrl.removeAt(playerID);
+  }
+
+  reorganizeIndex(){
+    //reorganiza IDs [0,2,3,4]-> [0,1,2,3]
+    globalJogadoresIndex = [for (var i = 0; i < globalJogadoresName.length; i++) i];
   }
 }

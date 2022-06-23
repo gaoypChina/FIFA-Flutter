@@ -1,9 +1,13 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/historic/players_historic.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/values/club_country.dart';
+import 'package:fifa/values/clubs_all_names_list.dart';
+import 'package:fifa/values/historic_champions.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
@@ -32,9 +36,16 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
   @override
   Widget build(BuildContext context) {
     possibleYears = [];
+    if(ano<=anoInicial){
+      selectedYear = (anoInicial-1).toString();
+    }
+    for(int year=0;year<mapChampions(leagueInternational).length-1;year++){
+      possibleYears.add((year+1960).toString());
+    }
     for(int year=anoInicial;year<ano;year++){
       possibleYears.add(year.toString());
     }
+
     return Scaffold(
         body:  Container(
           decoration: Images().getWallpaperContainerDecoration(),
@@ -61,35 +72,43 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
+                        ano > anoInicial ?
                             isMataMata
-                                ? internationalHistoricColumn(int.parse(selectedYear),leagueInternational)
-                                : groupsClassificationColumn(int.parse(selectedYear),leagueInternational),
+                                ? internationalHistoricColumnSimulation(int.parse(selectedYear),leagueInternational)
+                                : groupsClassificationColumnSimulation(int.parse(selectedYear),leagueInternational)
+                        : internationalHistoricColumn(int.parse(selectedYear)),
                       ],
                     ),
                   ),
                 ),
               ),
 
-              //PRÓXIMO
-              Padding(
-                padding: const EdgeInsets.all(6),
-                child:  customButtonContinue(
-                    title: Translation(context).text.next,
-                    function: (){
-                      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const PlayersHistoric()));
-                    }
-                ),
-              ),
-              //VOLTAR
-              Padding(
-                padding: const EdgeInsets.all(6),
-                child:  customButtonContinue(
-                    title: Translation(context).text.returnTo,
-                    function: (){
-                      Navigator.pop(context);
-                    }
-                ),
-              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  //VOLTAR
+                  Padding(
+                    padding: const EdgeInsets.all(6),
+                    child:  customButtonContinue(
+                        title: Translation(context).text.returnTo,
+                        function: (){
+                          Navigator.pop(context);
+                        }
+                    ),
+                  ),
+                  //PRÓXIMO
+                  Padding(
+                    padding: const EdgeInsets.all(6),
+                    child:  customButtonContinue(
+                        title: Translation(context).text.next,
+                        function: (){
+                          Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const PlayersHistoric()));
+                        }
+                    ),
+                  ),
+                ],
+              )
+
 
 
             ],
@@ -178,7 +197,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
       ),
     );
   }
-  Widget internationalHistoricColumn(int ano,String internationalLeagueName){
+  Widget internationalHistoricColumnSimulation(int ano,String internationalLeagueName){
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -260,7 +279,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
     );
   }
 
-  Widget groupsClassificationColumn(int ano,String internationalLeagueName){
+  Widget groupsClassificationColumnSimulation(int ano,String internationalLeagueName){
     List clubsID = globalHistoricInternationalClassification[ano][internationalLeagueName];
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -327,6 +346,31 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
         ),
       ],
     );
+  }
+
+
+  Widget internationalHistoricColumn(int year){
+    Map map = mapChampions(leagueInternational);
+    List list = map[year.toDouble()];
+    return Container(
+              height: 520,
+              child: ListView.builder(
+                itemCount: list.length,
+                itemBuilder: (c,i){
+                    String nationality = ClubCountry().countryName(list[i]);
+                  return         Row(
+                    children: [
+                      Text('${(i+1).toString()}º ',style: EstiloTextoBranco.text16),
+                      const SizedBox(width: 4),
+                      funcFlagsList(nationality, 15, 25),
+                      Image.asset(Images().getEscudo(list[i]),width: 30,height: 30),
+                      const SizedBox(width: 8),
+                      Text(list[i],style: EstiloTextoBranco.text16),
+                    ],
+                  );
+                },
+              ),
+            );
   }
 
 }

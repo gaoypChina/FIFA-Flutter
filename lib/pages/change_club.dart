@@ -1,7 +1,6 @@
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/translation.dart';
-import 'package:fifa/values/images.dart';
 import 'package:fifa/functions/change_club_control.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/button/button_return.dart';
@@ -35,42 +34,44 @@ class _ChangeClubState extends State<ChangeClub> {
 
               Images().getWallpaper(),
 
-              Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
+              SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
 
-                  const SizedBox(height: 40),
-                  Text(Translation(context).text.changeClub,style: EstiloTextoBranco.text30),
+                    const SizedBox(height: 40),
+                    Text(Translation(context).text.changeClub,style: EstiloTextoBranco.text30),
 
-                  Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          clubWidget(options.teams[0]),
-                          clubWidget(options.teams[1]),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          clubWidget(options.teams[2]),
-                          clubWidget(options.teams[3]),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          clubWidget(options.teams[4]),
-                          clubWidget(options.teams[5]),
-                        ],
-                      ),
-                      const SizedBox(height: 40),
-                    ],
-                  ),
+                    Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            clubWidget(options.teams[0]),
+                            clubWidget(options.teams[1]),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            clubWidget(options.teams[2]),
+                            clubWidget(options.teams[3]),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            clubWidget(options.teams[4]),
+                            clubWidget(options.teams[5]),
+                          ],
+                        ),
+                        const SizedBox(height: 40),
+                      ],
+                    ),
 
 
-                ],
+                  ],
+                ),
               ),
 
               //VOLTAR
@@ -101,7 +102,7 @@ Widget clubWidget(int clubID){
           padding: const EdgeInsets.symmetric(vertical: 8.0),
           child: Column(
             children: [
-              Image.asset('assets/clubs/${FIFAImages().imageLogo(clubClassification.clubName)}.png',height: 130,width: 130),
+              Image.asset(Images().getEscudo(clubClassification.clubName),height: 130,width: 130),
               Text(clubClassification.clubName,textAlign:TextAlign.center,style: EstiloTextoBranco.text20),
               Text('${Translation(context).text.position}: '+clubClassification.posicaoTabela.toString()+'º',style: EstiloTextoBranco.text14)
             ],

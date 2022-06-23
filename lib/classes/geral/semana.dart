@@ -7,6 +7,7 @@ class Semana{
   int rodadaGroupInternational = 1;
   bool isJogoIdaMataMata = true;
   bool isJogoIdaLeague = true;
+  bool isJogoMundial = semanaMundial.contains(semana);
   bool isJogoCampeonatoNacional = semanasJogosNacionais.contains(semana);
   bool isJogoCampeonatoInternacional = semanasJogosInternacionais.contains(semana);
   bool isJogoGruposInternacional = semanasGruposInternacionais.contains(semana);
@@ -30,6 +31,7 @@ class Semana{
     else if(semanaQuartas.contains(weekToCalculate)){semanaStr = Name().quartas;}
     else if(semanaSemi.contains(weekToCalculate)){semanaStr = Name().semifinal;}
     else if(semanaFinal.contains(weekToCalculate)){semanaStr = Name().finale;}
+    else if(semanaMundial.contains(weekToCalculate)){semanaStr = 'Mundial';}
 
     verifyIsMataMataIdaOrVolta(weekToCalculate);
 

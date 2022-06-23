@@ -19,18 +19,41 @@ class DataGraphics{
   int g4Years = 0;
   int averagePosition = 0;
   int currentPosition = 0;
+  double points = 0;
   List<ClassificationData> data=[];
+  List<ClassificationData> dataInternational=[];
 
   getData(Club club){
     //Posição Ano Atual
     currentPosition = Classification(leagueIndex: club.leagueID).getClubPosition(club.index);
-    //novas temporadas
+    //novas temporadas ligas
     defineSimulationClassification(club);
-    //historico de campeoes
+    //historico de campeoes ligas
     defineHistoricClassification(club);
 
+    //historico internacional
+    defineHistoricInternational(club);
+
     averagePositionCount(data.take(10).toList());
+
+    calculatePoints();
   }
+
+  defineHistoricInternational(Club club){
+
+    //para cada ano
+    for(var keyYear in mapChampions(club.internationalLeagueName).keys) {
+      List classificationNames = mapChampions(club.internationalLeagueName)[keyYear];
+      //verifica se naquele ano tem o time
+      int position = 32;
+      if(classificationNames.contains(club.name)){
+        position = classificationNames.indexOf(club.name) + 1;
+      }
+      dataInternational.add(ClassificationData(keyYear, position));
+    }
+
+  }
+
 
   defineSimulationClassification(Club club){
     //Posição anos simulados
@@ -130,4 +153,18 @@ class DataGraphics{
     }
     averagePosition = (averagePosition/10).round();
   }
+
+  calculatePoints(){
+    for(ClassificationData classificationData in data){
+      points += classificationData.position;
+    }
+    //Compensa anos sem data
+    if(data.length<60){
+      int yearsWithoutData = 60- data.length ;
+      points += 25 * yearsWithoutData;
+    }
+
+    points = 3000 - points;
+  }
+
 }

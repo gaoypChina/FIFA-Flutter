@@ -4,7 +4,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/page_controller/configuration/configuration_state.dart';
 import 'package:fifa/popup/popup_initial_money.dart';
-import 'package:fifa/popup/popup_select_club.dart';
+import 'package:fifa/popup/popup_change_clubs.dart';
 import 'package:fifa/popup/poup_edit.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -249,7 +249,7 @@ Widget soundEffects(ConfigurationState config){
   Widget changeClubs(){
     return GestureDetector(
       onTap:(){
-        popUpSelectClub(originalContext: context);
+        popUpChangeClub(originalContext: context);
       },
       child: Row(
         children: [

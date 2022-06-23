@@ -2,15 +2,14 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/functions/func_number_clubs_total.dart';
 import 'package:fifa/page_controller/ranking_clubs_control.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
-import 'package:fifa/values/images.dart';
 import 'package:flutter/material.dart';
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
-import '../values/images.dart';
 import '../widgets/loader.dart';
 import 'club_profile/club_profile.dart';
 
@@ -107,7 +106,17 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
 Widget listAllRankingClubs(){
-    return                     DraggableScrollbar.semicircle(
+    return ShaderMask(
+      shaderCallback: (Rect rect) {
+        return const LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [Colors.transparent, Colors.black],
+          stops: [0.97, 1.0], // 10% purple, 80% transparent, 10% purple
+        ).createShader(rect);
+      },
+      blendMode: BlendMode.dstOut,
+      child: DraggableScrollbar.semicircle(
       alwaysVisibleScrollThumb: true,
       controller: _scrollController,
       child: ListView.builder(
@@ -116,10 +125,21 @@ Widget listAllRankingClubs(){
           itemCount: rankingClubs.copyClubsName.length,
           itemBuilder: (c,i) => rowClub(i, rankingClubs.copyClubsName[i])
       ),
+    ),
     );
 }
   Widget listNationalRankingClubs(){
-    return                     DraggableScrollbar.semicircle(
+    return  ShaderMask(
+        shaderCallback: (Rect rect) {
+      return const LinearGradient(
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        colors: [Colors.transparent, Colors.black],
+        stops: [0.97, 1.0], // 10% purple, 80% transparent, 10% purple
+      ).createShader(rect);
+    },
+    blendMode: BlendMode.dstOut,
+    child: DraggableScrollbar.semicircle(
       alwaysVisibleScrollThumb: true,
       controller: _scrollController,
       child: ListView.builder(
@@ -127,28 +147,30 @@ Widget listAllRankingClubs(){
           controller: _scrollController,
           itemCount: rankingClubs.copyClubsNameNational.length,
           itemBuilder: (c,i) => rowClub(i, rankingClubs.copyClubsNameNational[i])
+        ),
       ),
     );
   }
 Widget rowClub(int ranking, String clubName){
 
     int realClubIndex = clubsAllNameList.indexOf(clubName);
-    double overall = Club(index: realClubIndex).getOverall();
+    Club club = Club(index: realClubIndex);
+    double overall = club.getOverall();
 
     //Cor de Fundo
     Color colorBackground = Colors.transparent;
     List listClubsID = League(index: myClub.campeonatoID).getAllClubsIDList();
 
-    if(listClubsID.contains(realClubIndex)){
+    if(listClubsID.contains(club.index)){
       colorBackground = Colors.blue;
     }
-    if(realClubIndex==myClub.clubID){
+    if(club.index==myClub.clubID){
       colorBackground = Colors.redAccent;
     }
 
     return GestureDetector(
       onTap:(){
-        Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: realClubIndex)));
+        Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: club.index)));
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -159,12 +181,13 @@ Widget rowClub(int ranking, String clubName){
                 padding: const EdgeInsets.only(left: 4.0),
                 child: Text((ranking+1).toString()+'º',textAlign:TextAlign.end,style: EstiloTextoBranco.text14)
             ),
-            Image.asset('assets/clubs/${FIFAImages().imageLogo(clubName)}.png',height: 30,width: 30),
+            funcFlagsList(club.nationality, 15, 22),
+            Image.asset(Images().getEscudo(club.name),height: 32,width: 32),
             Expanded(
               child: Container(
                 color: colorBackground,
                   padding: const EdgeInsets.all(4),
-                  child: Text(clubName,style: EstiloTextoBranco.text20)
+                  child: Text(club.name,style: EstiloTextoBranco.text20)
               ),
             ),
             Padding(

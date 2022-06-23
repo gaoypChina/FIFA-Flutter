@@ -768,12 +768,18 @@ class _TransfersState extends State<Transfers> {
 
   onSearchString(){
     filterPlayers.copyJogadoresID = List.from(globalJogadoresIndex);
-    filterPlayers.copyJogadoresID.removeWhere((playerID) =>
-    !Jogador(index: playerID)
-        .name
-        .toString()
-        .toLowerCase()
-        .contains(filterPlayers.searchString));
+    List<int> searchResult = [];
+    for(var id in filterPlayers.copyJogadoresID){
+      try {
+        if (Jogador(index: filterPlayers.copyJogadoresID.indexOf(id)).name.toLowerCase()
+            .contains(filterPlayers.searchString.toLowerCase())) {
+          searchResult.add( Jogador(index: filterPlayers.copyJogadoresID.indexOf(id)).index );
+        }
+      }catch(e){
+        print('Jogador index: $id não existe');
+      }
+    }
+     filterPlayers.copyJogadoresID = List.from(searchResult);
   }
 
 }

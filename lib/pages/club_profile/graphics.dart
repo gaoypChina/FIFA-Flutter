@@ -2,6 +2,7 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/page_controller/club_profile/data_graphics.dart';
+import 'package:fifa/pages/club_profile/compare.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
@@ -23,13 +24,23 @@ class _ClubGraphicsState extends State<ClubGraphics> {
 
   late TooltipBehavior _tooltipBehavior;
 
+  DataGraphics dataGraphics = DataGraphics();
+  
+  ///////////////////////////////////////////////////////////////////////////
+//                               INIT                                     //
+////////////////////////////////////////////////////////////////////////////
+  @override
+  void initState() {
+    dataGraphics.getData(widget.club);
+    super.initState();
+  }
+////////////////////////////////////////////////////////////////////////////
+//                               BUILD                                    //
+////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
 
     _tooltipBehavior = TooltipBehavior( enable: true);
-
-    DataGraphics dataGraphics = DataGraphics();
-    dataGraphics.getData(widget.club);
 
     return Scaffold(
       body: Stack(
@@ -48,7 +59,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
 
                   currentPosition(dataGraphics),
 
-
+                  compare(),
                 ],
               ),
             ),
@@ -61,12 +72,22 @@ class _ClubGraphicsState extends State<ClubGraphics> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+
+  Widget compare(){
+    return GestureDetector(
+      onTap: (){
+        Navigator.push(context,MaterialPageRoute(builder: (context) => Compare(club: widget.club)));
+      },
+      child: const Text('Comparar',style: EstiloTextoBranco.text16),
+    );
+  }
+
 Widget graphics(DataGraphics dataGraphics){
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Container(
         height: 300,
-        width: dataGraphics.data.length*20+50,
+        width: dataGraphics.data.length*23+50,
         color: AppColors().greyTransparent,
         child: SfCartesianChart(
           tooltipBehavior: _tooltipBehavior,
@@ -74,27 +95,29 @@ Widget graphics(DataGraphics dataGraphics){
           // Initialize category axis
           primaryXAxis: CategoryAxis(),
           series: <ChartSeries>[
-            // Initialize line series
-            LineSeries<ClassificationData, String>(
-              xAxisName: Translation(context).text.years,
-              yAxisName: Translation(context).text.position,
-              dataSource: dataGraphics.data,
-              enableTooltip: true,
-              xValueMapper: (ClassificationData data, _) =>
-              //Para mostrar apertura e clausura
-              data.year.toString().substring(5) == '5'
-                  ? data.year.toString()     //ano.5 -> ano.5
-                  : data.year.toInt().toString(), //ano.0 -> ano
-              yValueMapper: (ClassificationData data, _) => data.position,
-              dataLabelSettings:const DataLabelSettings(isVisible : true,color: Colors.white),
-              markerSettings: const MarkerSettings(
-                  isVisible: true,
-                  height: 4,
-                  width: 4,
-                  borderWidth: 3,
-                  borderColor: Colors.white
-              ),
-            )
+              // Initialize line series
+              LineSeries<ClassificationData, String>(
+                xAxisName: Translation(context).text.years,
+                yAxisName: Translation(context).text.position,
+                name: widget.club.name,
+                dataSource: dataGraphics.data,
+                enableTooltip: true,
+                xValueMapper: (ClassificationData data, _) =>
+                //Para mostrar apertura e clausura
+                data.year.toString().substring(5) == '5'
+                    ? data.year.toString()     //ano.5 -> ano.5
+                    : data.year.toInt().toString(), //ano.0 -> ano
+                yValueMapper: (ClassificationData data, _) => data.position,
+                dataLabelSettings:const DataLabelSettings(isVisible : true,color: Colors.white),
+                markerSettings: const MarkerSettings(
+                    isVisible: true,
+                    height: 4,
+                    width: 4,
+                    borderWidth: 3,
+                    borderColor: Colors.white
+                ),
+            ),
+
           ],
         ),
       ),

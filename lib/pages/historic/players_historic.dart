@@ -45,26 +45,33 @@ class _PlayersHistoricState extends State<PlayersHistoric> {
                 ),
               ),
 
-              //VOLTAR
-              Padding(
-                padding: const EdgeInsets.all(6),
-                child:  customButtonContinue(
-                    title: Translation(context).text.next,
-                    function: (){
-                      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const HistoricLeague()));
-                    }
-                ),
-              ),
-              //VOLTAR
-              Padding(
-                  padding: const EdgeInsets.all(6),
-                  child:  customButtonContinue(
-                      title: Translation(context).text.returnTo,
-                      function: (){
-                        Navigator.pop(context);
-                      }
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+
+                  //VOLTAR
+                  Padding(
+                    padding: const EdgeInsets.all(6),
+                    child:  customButtonContinue(
+                        title: Translation(context).text.returnTo,
+                        function: (){
+                          Navigator.pop(context);
+                        }
+                    ),
                   ),
-                ),
+
+                  //PRÓXIMO
+                  Padding(
+                    padding: const EdgeInsets.all(6),
+                    child:  customButtonContinue(
+                        title: Translation(context).text.next,
+                        function: (){
+                          Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const HistoricLeague()));
+                        }
+                    ),
+                  ),
+                ],
+              ),
 
 
             ],

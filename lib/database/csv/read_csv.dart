@@ -18,6 +18,8 @@ class ReadCSV{
 
     //READ CSV
     indexJog = 0;
+    await readCSVfunc("extras");
+
     await readCSVfunc("inglaterra");
     await readCSVfunc("inglaterra2");
     await readCSVfunc("inglaterra3");
@@ -29,11 +31,13 @@ class ReadCSV{
     await readCSVfunc("espanha2");
     await readCSVfunc("alemanha");
     await readCSVfunc("alemanha2");
+    await readCSVfunc("alemanha3");
     await readCSVfunc("franca");
     await readCSVfunc("franca2");
 
     await readCSVfunc("portugal");
-    await readCSVfunc("holanda_belgica");
+    await readCSVfunc("holanda");
+    await readCSVfunc("belgica");
     await readCSVfunc("turquia_grecia");
     await readCSVfunc("europa_ocidental");
     await readCSVfunc("europa_ocidental2");
@@ -64,10 +68,12 @@ class ReadCSV{
     await readCSVfunc("africa");
     await readCSVfunc("oceania");
 
-    customToast('Deleting Duplicated Players');
-    deleteRepeatedPlayers();
+
     customToast('Loading Custom Players');
     addRandomPlayers();
+    //Importante deletar depois de setar todos os usuarios para evitar problemas com ids fora de ordem
+    customToast('Deleting Duplicated Players');
+    deleteRepeatedPlayers();
     customToast('Done');
 
   }
@@ -154,16 +160,34 @@ class ReadCSV{
          playerBasicInfo.deletePlayerFromDatabase(realID);
        }
     }
+    PlayerBasicInfo playerBasicInfo = PlayerBasicInfo();
+    playerBasicInfo.reorganizeIndex(); //reorganiza IDs [0,2,3,4]-> [0,1,2,3]
   }
 
   addRandomPlayers(){
-    for(int i=0;i<clubsAllNameList.length;i++){
+    List orderedList = List.from(globalJogadoresClubIndex);
+    orderedList.sort();
+
+    //Count players occurences per team
+    Map map = {};
+    for (var element in orderedList) {
+      if(!map.containsKey(element)) {
+        map[element] = 1;
+      } else {
+        map[element] +=1;
+      }
+    }
+    //Cria um mapa só com times que tem menos que 21 jogadores
+    map.removeWhere((key, value) => value>21);
+
+    //Acrescenta jogadores nesses times
+    for (var clubID in map.keys) {
       try {
-        Club club = Club(index: i);
+        Club club = Club(index: clubID);
         while (club.jogadores.length < 21) {
-          customToast('ADDING TO: ${club.name}');
+          //customToast('ADDING TO: ${club.name}');
           AddRandomPlayer(club: club);
-          club = Club(index: i);
+          club = Club(index: clubID);
         }
       }catch(e){
         //print(clube não existe);

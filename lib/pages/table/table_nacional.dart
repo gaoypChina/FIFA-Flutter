@@ -12,6 +12,7 @@ import 'package:fifa/theme/colors.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/pages/table/table_widget.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 
 class TableNacional extends StatefulWidget {
@@ -68,6 +69,7 @@ class _TableNacionalState extends State<TableNacional> {
 
                             Row(
                               children: [
+                                backButton(context),
                                 Image.asset(FIFAImages().campeonatoLogo(choosenLeagueIndex),height:25,width: 25),
                                 Expanded(child: Text(' ${Translation(context).text.matchWeek} '+ rodada.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text20)),
                               ],

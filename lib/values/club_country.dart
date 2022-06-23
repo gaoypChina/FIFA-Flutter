@@ -4,14 +4,14 @@ import 'package:fifa/values/club_names.dart';
 class ClubCountry{
 
   String countryName(String clubName){
-    String nationality = Words.country.zimbabwe;
+    String nationality = Words.country.ocean;
     if(clubName==ClubName().arsenal){    nationality=Words.country.england;}
     else if(clubName==ClubName().astonvilla){    nationality=Words.country.england;}
     else if(clubName==ClubName().crystalpalace){    nationality=Words.country.england;}
     else if(clubName==ClubName().chelsea){    nationality=Words.country.england;}
     else if(clubName==ClubName().everton){    nationality=Words.country.england;}
     else if(clubName==ClubName().leicester){    nationality=Words.country.england;}
-    else if(clubName==ClubName().leedsunited){    nationality=Words.country.england;}
+    else if(clubName==ClubName().leeds){    nationality=Words.country.england;}
     else if(clubName==ClubName().liverpool){    nationality=Words.country.england;}
     else if(clubName==ClubName().manchestercity){    nationality=Words.country.england;}
     else if(clubName==ClubName().manchesterunited){    nationality=Words.country.england;}
@@ -354,11 +354,15 @@ class ClubCountry{
     else if(clubName==ClubName().vitoria){    nationality=Words.country.brazil; }
 
     else if(clubName==ClubName().abc){    nationality=Words.country.brazil; }
+    else if(clubName==ClubName().abc){  nationality=Words.country.brazil;  }
+    else if(clubName==ClubName().avai){nationality=Words.country.brazil;}
     else if(clubName==ClubName().bangu){nationality=Words.country.brazil;  }
     else if(clubName==ClubName().americaRJ){nationality=Words.country.brazil;  }
     else if(clubName==ClubName().americaRN){nationality=Words.country.brazil;  }
     else if(clubName==ClubName().botafogoPB){nationality=Words.country.brazil;  }
     else if(clubName==ClubName().botafogoSP){nationality=Words.country.brazil;  }
+    else if(clubName==ClubName().brasiliense){nationality=Words.country.brazil;  }
+    else if(clubName==ClubName().brasilPelotas){    nationality=Words.country.brazil; }
     else if(clubName==ClubName().brusque){  nationality=Words.country.brazil;  }
     else if(clubName==ClubName().campinense){  nationality=Words.country.brazil;  }
     else if(clubName==ClubName().confianca){  nationality=Words.country.brazil;  }
@@ -368,28 +372,26 @@ class ClubCountry{
     else if(clubName==ClubName().gremioNovorizontino){    nationality=Words.country.brazil; }
     else if(clubName==ClubName().crb){    nationality=Words.country.brazil; }
     else if(clubName==ClubName().csa){    nationality=Words.country.brazil; }
+    else if(clubName==ClubName().ferroviaria){    nationality=Words.country.brazil; }
+    else if(clubName==ClubName().gama){    nationality=Words.country.brazil; }
+    else if(clubName==ClubName().ibis){    nationality=Words.country.brazil; }
     else if(clubName==ClubName().joinville){    nationality=Words.country.brazil; }
     else if(clubName==ClubName().londrina){    nationality=Words.country.brazil; }
+    else if(clubName==ClubName().manaus){  nationality=Words.country.brazil;  }
     else if(clubName==ClubName().mirassol){nationality=Words.country.brazil;  }
     else if(clubName==ClubName().operarioPR){    nationality=Words.country.brazil; }
-    else if(clubName==ClubName().brasilPelotas){    nationality=Words.country.brazil; }
-    else if(clubName==ClubName().gama){    nationality=Words.country.brazil; }
-    else if(clubName==ClubName().remo){    nationality=Words.country.brazil; }
     else if(clubName==ClubName().paysandu){  nationality=Words.country.brazil;  }
-    else if(clubName==ClubName().manaus){  nationality=Words.country.brazil;  }
-    else if(clubName==ClubName().vilanova){  nationality=Words.country.brazil;  }
-    else if(clubName==ClubName().abc){  nationality=Words.country.brazil;  }
-    else if(clubName==ClubName().avai){nationality=Words.country.brazil;}
     else if(clubName==ClubName().paulista){nationality=Words.country.brazil;  }
     else if(clubName==ClubName().portuguesa){ nationality=Words.country.brazil;  }
+    else if(clubName==ClubName().remo){    nationality=Words.country.brazil; }
     else if(clubName==ClubName().santacruz){nationality=Words.country.brazil;  }
     else if(clubName==ClubName().sampaio){    nationality=Words.country.brazil; }
     else if(clubName==ClubName().santoandre){nationality=Words.country.brazil;  }
     else if(clubName==ClubName().saocaetano){nationality=Words.country.brazil;  }
     else if(clubName==ClubName().tombense){nationality=Words.country.brazil;  }
     else if(clubName==ClubName().treze){nationality=Words.country.brazil;  }
+    else if(clubName==ClubName().vilanova){  nationality=Words.country.brazil;  }
     else if(clubName==ClubName().voltaredonda){nationality=Words.country.brazil;  }
-    else if(clubName==ClubName().brasiliense){nationality=Words.country.brazil;  }
     else if(clubName==ClubName().xvpiracicaba){nationality=Words.country.brazil;  }
 
 

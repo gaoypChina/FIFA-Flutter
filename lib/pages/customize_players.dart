@@ -73,13 +73,19 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                     ],
                   ),
 
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        for(int i=0;i<club.nPlayersPerPositions().keys.length;i++)
-                          Text(' '+club.nPlayersPerPositions().keys.elementAt(i)+': '+club.nPlayersPerPositions().values.elementAt(i).toString(),style: EstiloTextoBranco.text16)
-                      ],
+                  //N Jogadores
+                  Text('${Translation(context).text.player}: ${club.jogadores.length.toString()}',style: EstiloTextoBranco.text16),
+                  //Jogadores por posição
+                  Container(
+                    margin: const EdgeInsets.symmetric(vertical: 6),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          for(int i=0;i<club.nPlayersPerPositions().keys.length;i++)
+                            Text(' '+club.nPlayersPerPositions().keys.elementAt(i)+': '+club.nPlayersPerPositions().values.elementAt(i).toString(),style: EstiloTextoBranco.text16)
+                        ],
+                      ),
                     ),
                   ),
 

@@ -16,6 +16,7 @@ import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/league_trophy_image.dart';
+import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart';
 
@@ -46,7 +47,12 @@ class _CoachMenuState extends State<CoachMenu> {
         child: Column(
           children: [
             const SizedBox(height: 40),
-            Text(Translation(context).text.coachMenu,style: EstiloTextoBranco.text30),
+            Stack(
+              children: [
+                backButton(context),
+                Center(child: Text(Translation(context).text.coachMenu,style: EstiloTextoBranco.text30)),
+              ],
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [

@@ -1,4 +1,5 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/database/local_database/shared_preferences.dart';
 import 'package:fifa/database/select_database.dart';
@@ -85,108 +86,111 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
         body:  Container(
+          height: Sized(context).height,
           decoration: Images().getWallpaperContainerDecoration(),
-          child: Column(
-            children: [
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
 
-              const SizedBox(height: 80),
-              const Text('FIFA 23',style: EstiloTextoBranco.text40),
-              const SizedBox(height: 20),
+                const SizedBox(height: 80),
+                const Text('FIFA 23',style: EstiloTextoBranco.text40),
+                const SizedBox(height: 20),
 
-              ////////////
-              //PAIS
-              ////////////
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
+                ////////////
+                //PAIS
+                ////////////
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
 
-                  Column(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: leftButton(onTap: (){
-                          if(posicaoPais>0) {
-                            posicaoPais --;
+                    Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: leftButton(onTap: (){
+                            if(posicaoPais>0) {
+                              posicaoPais --;
+                              posicao = 0;
+                            }else{
+                              posicaoPais = leaguesListRealIndex.length-1;
+                              posicao = 0;
+                            }
+                          }),
+                        ),
+
+                        rightButton(onTap: (){
+                          if(posicaoPais< leaguesListRealIndex.length-1) {
+                            posicaoPais ++;
                             posicao = 0;
                           }else{
-                            posicaoPais = leaguesListRealIndex.length-1;
+                            posicaoPais = 0;
                             posicao = 0;
                           }
                         }),
-                      ),
-
-                      rightButton(onTap: (){
-                        if(posicaoPais< leaguesListRealIndex.length-1) {
-                          posicaoPais ++;
-                          posicao = 0;
-                        }else{
-                          posicaoPais = 0;
-                          posicao = 0;
-                        }
-                      }),
-                    ],
-                  ),
+                      ],
+                    ),
 
 
-                  leagueLogoAndName(),
-                ],
-              ),
+                    leagueLogoAndName(),
+                  ],
+                ),
 
-              const SizedBox(height: 40),
-              /////////////////////////////////////////
-              //TIME
-              /////////////////////////////////////////
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
+                const SizedBox(height: 40),
+                /////////////////////////////////////////
+                //TIME
+                /////////////////////////////////////////
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
 
-                  Column(
-                    children: [
+                    Column(
+                      children: [
 
-                      Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: leftButton(onTap: (){
-                          if(posicao>0) {
-                            posicao --;
+                        Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: leftButton(onTap: (){
+                            if(posicao>0) {
+                              posicao --;
+                            }else{
+                              posicao = nLeagueTeams-1;
+                            }
+                          }),
+                        ),
+
+                        rightButton(onTap: (){
+                          if(posicao<nLeagueTeams-1) {
+                            posicao ++;
                           }else{
-                            posicao = nLeagueTeams-1;
+                            posicao = 0;
                           }
                         }),
-                      ),
 
-                      rightButton(onTap: (){
-                        if(posicao<nLeagueTeams-1) {
-                          posicao ++;
-                        }else{
-                          posicao = 0;
-                        }
-                      }),
+                      ],
+                    ),
 
-                    ],
-                  ),
+                        //ESCUDO E UNIFORME
+                        clubLogoAndKitStack(club),
 
-                      //ESCUDO E UNIFORME
-                      clubLogoAndKitStack(club),
-
-                ],
-              ),
+                  ],
+                ),
 
 
-              const SizedBox(height: 30),
-              continueButton(),
-              const SizedBox(height: 28),
+                const SizedBox(height: 30),
+                continueButton(),
+                const SizedBox(height: 28),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children:[
-                  database(),
-                  editClub(),
-                  configurations(),
-                ],
-              ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children:[
+                    database(),
+                    editClub(),
+                    configurations(),
+                  ],
+                ),
 
 
-            ],
+              ],
+            ),
           ),
         )
     );

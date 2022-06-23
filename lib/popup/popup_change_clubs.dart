@@ -40,7 +40,7 @@ class PopupConfig{
   }
 }
 
-popUpSelectClub({required BuildContext originalContext}){
+popUpChangeClub({required BuildContext originalContext}){
 
   PopupConfig popupConfig = PopupConfig();
 

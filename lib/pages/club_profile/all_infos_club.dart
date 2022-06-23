@@ -97,9 +97,11 @@ class _AllInfosClubState extends State<AllInfosClub> {
     return Table(
       columnWidths: const {
         0: FractionColumnWidth(.09),
-        1: FractionColumnWidth(.1),
-        2: FractionColumnWidth(.42),
-        5: FractionColumnWidth(.14),
+        1: FractionColumnWidth(.09),
+        2: FractionColumnWidth(.4),
+        3: FractionColumnWidth(.09),
+        4: FractionColumnWidth(.09),
+        5: FractionColumnWidth(.16),
       },
       children: [
 
@@ -111,7 +113,6 @@ class _AllInfosClubState extends State<AllInfosClub> {
         Text(Translation(context).text.age3, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
         Text(Translation(context).text.ovr3, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
         const Text('\$', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-        const Text(''),
         ]),
 
         for(int i=0; i<widget.club.escalacao.length; i++)
@@ -139,7 +140,6 @@ class _AllInfosClubState extends State<AllInfosClub> {
               Text(Translation(context).text.playedP, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
               Text(Translation(context).text.goalsG, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
               Text(Translation(context).text.assistsA, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              const Text(''),
             ]),
 
         for(int i=0; i<widget.club.escalacao.length; i++)
@@ -166,7 +166,6 @@ class _AllInfosClubState extends State<AllInfosClub> {
               const Text('+', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
               Text(Translation(context).text.yellowCards3, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
               Text(Translation(context).text.redCards3, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              const Text(''),
             ]),
 
         for(int i=0; i<widget.club.escalacao.length; i++)
@@ -194,7 +193,6 @@ class _AllInfosClubState extends State<AllInfosClub> {
               Text('${Translation(context).text.playedP}*', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
               Text('${Translation(context).text.goalsG}*', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
               Text('${Translation(context).text.assistsA}*', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              const Text(''),
             ]),
 
         for(int i=0; i<widget.club.escalacao.length; i++)
@@ -222,11 +220,10 @@ class _AllInfosClubState extends State<AllInfosClub> {
         color: background,
       ),
       children: [
-        positionContainer(player.position),
         Container(
-          padding: const EdgeInsets.all(4),
-          child: funcFlagsList(player.nationality, 20, 20),
-        ),
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            child: positionContainer(player.position)),
+        funcFlagsList(player.nationality, 20, 20),
         playerNameWidget(player),
         Container(
             color: colorAgeBackground(player.age),
@@ -242,10 +239,6 @@ class _AllInfosClubState extends State<AllInfosClub> {
         Text(player.price.toStringAsFixed(2) + 'mi',
             textAlign:TextAlign.center,
             style: EstiloTextoBranco.text14),
-        Container(
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          child: const Text(''),
-        ),
       ],
     );
   }
@@ -264,16 +257,14 @@ class _AllInfosClubState extends State<AllInfosClub> {
         color: background,
       ),
       children: [
-        positionContainer(player.position),
+        Container(
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            child: positionContainer(player.position)),
         funcFlagsList(player.nationality, 20, 20),
         playerNameWidget(player),
         Text(player.matchsLeague.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
         Text(player.goalsLeague.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
         Text(player.assistsLeague.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-        Container(
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          child: const Text(''),
-        ),
       ],
     );
   }
@@ -292,7 +283,9 @@ class _AllInfosClubState extends State<AllInfosClub> {
         color: background,
       ),
       children: [
-        positionContainer(player.position),
+        Container(
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            child: positionContainer(player.position)),
         funcFlagsList(player.nationality, 20, 20),
         playerNameWidget(player),
         Text(player.injury.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
@@ -305,10 +298,6 @@ class _AllInfosClubState extends State<AllInfosClub> {
             width: 15,
           color: Colors.red,
             child: Text(player.redCard.toString(),textAlign:TextAlign.center,style: EstiloTextoPreto.text14)
-        ),
-        Container(
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          child: const Text(''),
         ),
       ],
     );
@@ -327,16 +316,14 @@ class _AllInfosClubState extends State<AllInfosClub> {
         color: background,
       ),
       children: [
-        positionContainer(player.position),
+        Container(
+            padding: const EdgeInsets.symmetric(vertical: 8),
+            child: positionContainer(player.position)),
         funcFlagsList(player.nationality, 20, 20),
         playerNameWidget(player),
         Text(player.matchsCarrer.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
         Text(player.goalsCarrer.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
         Text(player.assistsCarrer.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-        Container(
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          child: const Text(''),
-        ),
       ],
     );
   }

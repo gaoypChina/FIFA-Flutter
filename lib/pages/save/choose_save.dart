@@ -1,6 +1,7 @@
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/pages/save/save.dart';
 import 'package:fifa/pages/save/upload.dart';
+import 'package:fifa/pages/table/table_mundial.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/widgets/button/button_return.dart';
@@ -33,6 +34,14 @@ class _ChooseSaveState extends State<ChooseSave> {
                     const SizedBox(height: 100),
 
                     const SizedBox(height: 10),
+                    customButtonContinue(
+                        title: Translation(context).text.good,
+                        function: (){
+                          Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const TableMundial()));
+                        }
+                    ),
+
+
                     customButtonContinue(
                         title: Translation(context).text.save,
                         function: (){
