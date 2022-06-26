@@ -82,7 +82,7 @@ class ClubName{
   String swindon = "Swindon";
   String tranmere = "Tranmere Rovers";
   String walsall = "Walsall";
-  String wigan = "Wigan";
+  String wigan = "Wigan Athletic";
   String wimbledon = "Wimbledon";
   String wycombe = "Wycombe";
   String wrexham = "Wrexham";
@@ -405,6 +405,7 @@ class ClubName{
   String heerenveen = "Heerenveen";
   String utrecht = "Utrecht";
   String dws = "AFC DWS";
+  String rapidjc = "Rapid JC";
   String spartarotterdam = "Sparta Rotterdam";
 
   //////////////////////////////////////////////////////////////////////////////
@@ -456,6 +457,7 @@ class ClubName{
   String brondby = "Brondby";
   String b1903 = "B1903";
   String b1909 = "B1909";
+  String djurgarden = "Djurgarden";
   String helsinki = "Helsinki";
   String turku = "Turku";
   String aarhus = "Aarhus";
@@ -498,6 +500,7 @@ class ClubName{
   String gornik = "Górnik Zabrze";
   String ruchchorzow = "Ruch Chorzów";
   String poloniabytom = "Polonia Bytom";
+  String gwardia = "Gwardia";
   //TURQUIA
   String galatasaray= "Galatasaray";
   String fenerbahce = "Fenerbahce";

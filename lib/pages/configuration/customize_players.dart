@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/player_basic.dart';
 import 'package:fifa/functions/flags_list.dart';
@@ -19,10 +18,11 @@ import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/widgets/back_button.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:flutter/material.dart';
 
-import '../classes/jogador.dart';
+import '../../classes/jogador.dart';
 
 class CustomizePlayers extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
@@ -54,11 +54,12 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
         body:  Stack(
             children: [
               Images().getWallpaper(),
+              backButtonText(context,Translation(context).text.customizePlayers),
 
               Column(
                 children: [
 
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 80),
 
                   //LOGO DO CLUBE
                   Row(
@@ -66,15 +67,52 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                       GestureDetector(
                           onTap:(){
                           },
-                          child: Image.asset(Images().getEscudo(club.name),height: 60,width: 60)
+                          child: Image.asset(Images().getEscudo(club.name),height: 90,width: 90)
                       ),
                       const SizedBox(width: 8),
-                      Text(Translation(context).text.customizePlayers,style: EstiloTextoBranco.text22),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+
+                          Text(club.name,style: EstiloTextoBranco.negrito22),
+                          //N Jogadores
+                          Text('${Translation(context).text.player}: ${club.jogadores.length.toString()}',style: EstiloTextoBranco.text16),
+
+                          //CUSTOMIZE
+                          Row(
+                            children: [
+
+                              customButtonContinue(
+                                  title: Translation(context).text.save,
+                                  function: (){
+                                    //Salva os dados
+                                    popUpSaveAllData(context: context);
+                                    //Navigator.pop(context);
+                                  }),
+
+                              buttonDesign(
+                                  title: Translation(context).text.createPlayer,
+                                  function: (){
+                                    setState(() {});
+                                    popUpCreatePlayer(
+                                        context: context,
+                                        club: club,
+                                        function: (){
+                                          setState(() {});
+                                        }
+                                    );
+                                  }
+                              ),
+
+                            ],
+                          ),
+
+                        ],
+                      ),
+
                     ],
                   ),
 
-                  //N Jogadores
-                  Text('${Translation(context).text.player}: ${club.jogadores.length.toString()}',style: EstiloTextoBranco.text16),
                   //Jogadores por posição
                   Container(
                     margin: const EdgeInsets.symmetric(vertical: 6),
@@ -83,7 +121,7 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                       child: Row(
                         children: [
                           for(int i=0;i<club.nPlayersPerPositions().keys.length;i++)
-                            Text(' '+club.nPlayersPerPositions().keys.elementAt(i)+': '+club.nPlayersPerPositions().values.elementAt(i).toString(),style: EstiloTextoBranco.text16)
+                            positionsCount(club.nPlayersPerPositions().keys.elementAt(i),club.nPlayersPerPositions().values.elementAt(i)),
                         ],
                       ),
                     ),
@@ -109,85 +147,28 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                   ),
 
                   //SHOW TABLE PLAYERS CONTENT
-                  Container(
-                    height: Sized(context).height/2,
-                    padding: const EdgeInsets.symmetric(horizontal: 6),
-                    color: AppColors().greyTransparent,
-                    child: SingleChildScrollView(
-                      child: Table(
-                        columnWidths: const {
-                          0: FractionColumnWidth(.09),
-                          1: FractionColumnWidth(.1),
-                          2: FractionColumnWidth(.08),
-                          3: FractionColumnWidth(.5),
-                          6: FractionColumnWidth(.07),
-                          7: FractionColumnWidth(.001),//container to create vertical spacing
-                        },
-                        children: [
-                          for(int i=0;i<club.nJogadores;i++)
-                            playersRow(i),
-                        ],
+                  Expanded(
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 6),
+                        color: AppColors().greyTransparent,
+                        child: SingleChildScrollView(
+                          child: Table(
+                            columnWidths: const {
+                              0: FractionColumnWidth(.09),
+                              1: FractionColumnWidth(.1),
+                              2: FractionColumnWidth(.08),
+                              3: FractionColumnWidth(.5),
+                              6: FractionColumnWidth(.07),
+                              7: FractionColumnWidth(.001),//container to create vertical spacing
+                            },
+                            children: [
+                              for(int i=0;i<club.nJogadores;i++)
+                                playersRow(i),
+                            ],
+                          ),
+                        ),
                       ),
-                    ),
                   ),
-
-
-                  const SizedBox(height: 8),
-                  //CUSTOMIZE
-                  Row(
-                    children: [
-
-                      buttonDesign(
-                          title: Translation(context).text.createPlayer,
-                          function: (){
-                            setState(() {});
-                            popUpCreatePlayer(
-                                context: context,
-                                club: club,
-                                function: (){
-                                  setState(() {});
-                                }
-                            );
-                          }
-                      ),
-
-                      buttonDesign(
-                          title: '${Translation(context).text.age} +1',
-                          function: (){
-                            setState(() {});
-                            for(int i=0; i<globalJogadoresAge.length; i++){
-                              globalJogadoresAge[i] += 1;
-                            }
-                          }
-                      ),
-
-                      buttonDesign(
-                          title: '${Translation(context).text.age} -1',
-                          function: (){
-                            setState(() {});
-                            for(int i=0; i<globalJogadoresAge.length; i++){
-                              globalJogadoresAge[i] -= 1;
-                            }
-                          }
-                      ),
-
-                    ],
-                  ),
-
-                  const Spacer(),
-
-                  Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: customButtonContinue(
-                      title: Translation(context).text.save,
-                      function: (){
-                        //Salva os dados
-                        popUpSaveAllData(context: context);
-                        //Navigator.pop(context);
-                      }),
-                  ),
-
-
 
                 ],
               )
@@ -199,6 +180,18 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+Widget positionsCount(String position, int number){
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 2.0),
+      child: Column(
+        children: [
+          Text(position,style: EstiloTextoBranco.text16),
+          Text(number.toString(),style: EstiloTextoBranco.text16),
+        ],
+      ),
+    );
+}
+
 TableRow playersRow(int i){
 
       int playerID = club.jogadores[i];

@@ -11,6 +11,7 @@ import '../classes/league.dart';
 
 class ResultGameNacional{
 
+  bool exists = false;
   late int rodadaLocal;
   bool visitante = false;
   late int clubID;
@@ -43,7 +44,9 @@ class ResultGameNacional{
         gol1 = results[chaveClub1];
         gol2 = results[chaveClub2];
         placar = gol1.toString() + ' x '+ gol2.toString();
+        exists = true;
       }catch(e){
+        exists = false;
         print("Rodada $rodadaLocal não foi simulada");
       }
 

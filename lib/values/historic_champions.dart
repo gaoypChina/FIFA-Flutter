@@ -728,7 +728,7 @@ ClubName _name = ClubName();
         1985: [_name.tunaluso,_name.goytacaz,_name.figueirense,_name.operarioms,_name.fortaleza, _name.catuense,_name.treze,_name.central,_name.americanoRJ,_name.marilia,       _name.rionegro,_name.americamg,_name.vitoriaES,_name.americaSP,_name.crb,],
         1984: [_name.uberlandia,_name.remo,_name.santamaria,_name.botafogoPB,_name.itumbiara,    _name.comercial,_name.central,_name.itabuna,_name.parana,_name.guarani,         _name.desportiva,_name.xvpiracicaba,_name.ceara,_name.sport,_name.maranhao,     _name.voltaredonda,_name.asa,],
         1983: [_name.juventusMooca,_name.csa,_name.joinville,_name.brasilia,_name.central,       _name.londrina,_name.mixto,_name.galicia,_name.guarany,_name.itumbiara,         _name.ferroviario,_name.fortaleza,_name.treze,_name.paysandu,_name.riobrancoES, _name.motoclub,_name.guarani,_name.botafogoSP,_name.uberaba,_name.americanoRJ,    _name.santacruz,_name.bangu,_name.portuguesa,_name.maranhao,_name.operarioms],
-        1982: [_name.campograndeRJ,_name.csa,_name.uberaba,_name.joinville,_name.tiradentes,     _name.mixto,_name.riverPI,_name.itabaiana,_name.fortaleza,_name.ferroviario,      _name.nacional,_name.desportiva,_name.goias,_name.vitoria,_name.taguatinga,     _name.americaRN],
+        1982: [_name.campograndeRJ,_name.csa,_name.uberaba,_name.joinville,_name.tiradentes,     _name.mixto,_name.riverPI,_name.itabaiana,_name.fortaleza,_name.ferroviario,      _name.nacional,_name.desportiva,_name.goias,_name.vitoria,_name.taguatinga,     _name.americaRN,_name.corinthians,_name.atleticopr,_name.americaRJ,_name.vilanova,_name.voltaredonda,_name.campinense,_name.crb,_name.remo,_name.catuense,_name.americanoRJ,_name.juventusMooca,_name.sampaio,_name.botafogoSP,_name.portuguesa,_name.central,_name.palmeiras],
       };
     }
     else if(leagueName == LeagueOfficialNames().brasil3){
@@ -1105,7 +1105,7 @@ ClubName _name = ClubName();
         2011: [_name.barcelona,_name.manchesterunited,_name.realmadrid,_name.schalke04,        _name.shaktardonetsk,_name.chelsea,_name.tottenham,_name.inter,         _name.arsenal,_name.olympiquemarselha,_name.lyon,_name.valencia,_name.roma,_name.copenhague,_name.milan,_name.bayernmunique],
         2010: [_name.inter,_name.bayernmunique,_name.barcelona,_name.lyon,                     _name.cska,_name.manchesterunited,_name.arsenal,_name.bordeaux,         _name.chelsea,_name.fiorentina,_name.stuttgart,_name.realmadrid,_name.sevilla,_name.milan,_name.porto,_name.olympiacos],
         2009: [_name.barcelona,_name.manchesterunited,_name.chelsea,_name.arsenal,             _name.bayernmunique,_name.porto,_name.liverpool,_name.villareal,        _name.lyon,_name.inter,_name.juventus,_name.roma,_name.sporting,_name.atleticomadrid,_name.realmadrid,_name.panathinaikos],
-        2008: [_name.manchesterunited,_name.chelsea,_name.barcelona,_name.liverpool,           _name.roma,_name.fenerbahce,_name.schalke04,_name.arsenal,              _name.porto,_name.celtic,_name.realmadrid,_name.lyon,_name.milan,_name.inter,_name.sevilla,_name.olympiacos,_name.porto,                            ],
+        2008: [_name.manchesterunited,_name.chelsea,_name.barcelona,_name.liverpool,           _name.roma,_name.fenerbahce,_name.schalke04,_name.arsenal,              _name.porto,_name.celtic,_name.realmadrid,_name.lyon,_name.milan,_name.inter,_name.sevilla,_name.olympiacos,                                        ],
         2007: [_name.milan,_name.liverpool,_name.chelsea,_name.manchesterunited,               _name.psv,_name.bayernmunique,_name.valencia,_name.roma,                _name.lyon,_name.lille,_name.celtic,_name.realmadrid,_name.porto,_name.inter,_name.arsenal,_name.barcelona,                                         ],
         2006: [_name.barcelona,_name.arsenal,_name.milan,_name.villareal,                      _name.benfica,_name.juventus,_name.lyon,_name.inter,                    _name.liverpool,_name.chelsea,_name.psv,_name.bayernmunique,_name.ajax,_name.glasgowrangers,_name.realmadrid,_name.werderbremen,                    ],
         2005: [_name.liverpool,_name.milan,_name.chelsea,_name.psv,                            _name.juventus,_name.inter,_name.bayernmunique,_name.lyon,              _name.manchesterunited,_name.porto,_name.werderbremen,_name.monaco,_name.barcelona,_name.arsenal,_name.bayerleverkusen,_name.realmadrid,            ],
@@ -1155,13 +1155,16 @@ ClubName _name = ClubName();
         1961: [_name.benfica,_name.barcelona,_name.rapidviena,_name.hamburgo,            _name.aarhus,_name.hradec,_name.burnley,_name.malmo,                          _name.youngBoys,_name.panathinaikos,_name.ujpest,_name.realmadrid,_name.reims,_name.cskaSofia,_name.fredrikstad,_name.erzgebirgeaue],
         1960: [_name.realmadrid,_name.eintrachtfrankfurt,_name.barcelona,_name.glasgowrangers,  _name.nice,_name.wiener,_name.wolves,_name.spartarotterdam,            _name.jeunesseesch,_name.ifkgoteborg,_name.milan,_name.estrelavermelha,_name.fenerbahce,_name.b1909,_name.interBratislava,_name.youngBoys],
         1959: [_name.realmadrid,_name.reims,_name.atleticomadrid,_name.youngBoys,        _name.standardliege,_name.wiener,_name.erzgebirgeaue,_name.schalke04,         _name.sporting,_name.dukla,_name.cskaSofia,_name.ifkgoteborg,_name.wolves,_name.besiktas,_name.helsinki,_name.mtk],
+        1958: [_name.realmadrid,_name.milan,_name.vasas,_name.manchesterunited,          _name.estrelavermelha,_name.sevilla,_name.ajax,_name.borussiadortmund,        _name.royalAntwerp,_name.norrkoping,_name.erzgebirgeaue,_name.youngBoys,_name.steauaBucureste,_name.aarhus,_name.glasgowrangers,],
+        1957: [_name.realmadrid,_name.fiorentina,_name.manchesterunited,_name.estrelavermelha, _name.nice,_name.grasshoppers,_name.athleticbilbao,_name.cskaSofia,     _name.borussiadortmund,_name.rapidviena,_name.dinamoBucureste,_name.slovanBratislava,_name.glasgowrangers,_name.norrkoping,_name.honved,_name.rapidjc],
+        1956: [_name.realmadrid,_name.reims,_name.hibernian,_name.milan,                 _name.partizan,_name.mtk,_name.rapidviena,_name.djurgarden,                   _name.sporting,_name.anderlecht,_name.servette,_name.rotWeissEssen,_name.psv,_name.aarhus,_name.saarbrucken,_name.gwardia],
       };
     }
 
     if(leagueName == LeagueOfficialNames().libertadores) {
       champions = {
         //2022: [_name.palmeiras,_name.flamengo,_name.atleticomg,_name.riverplate,_name.cerroporteno,_name.bocajuniors],
-        2021: [_name.palmeiras,_name.flamengo,_name.atleticomg,_name.barcelonaequ,      _name.saopaulo,_name.olimpia,_name.riverplate,_name.fluminense,                  _name.cerroporteno,_name.bocajuniors,_name.racing,_name.velezsarsfield,_name.univcatolica,_name.defensayjusticia,_name.argentinojuniors,_name.olimpia],
+        2021: [_name.palmeiras,_name.flamengo,_name.atleticomg,_name.barcelonaequ,      _name.saopaulo,_name.olimpia,_name.riverplate,_name.fluminense,                  _name.cerroporteno,_name.bocajuniors,_name.racing,_name.velezsarsfield,_name.univcatolica,_name.defensayjusticia,_name.argentinojuniors,_name.internacional],
         2020: [_name.palmeiras,_name.santos,_name.riverplate,_name.bocajuniors,         _name.libertad,_name.gremio,_name.nacional,_name.racing,                         _name.ldu,_name.atleticopr,_name.flamengo,_name.delfin,_name.idelvalle,_name.jorge,_name.guaraniPAR,_name.internacional,                    ],
         2019: [_name.flamengo,_name.riverplate,_name.gremio,_name.bocajuniors,          _name.palmeiras,_name.ldu,_name.internacional,_name.cerroporteno,                _name.cruzeiro,_name.olimpia,_name.godoycruz,_name.sanlorenzo,_name.nacional,_name.atleticopr,_name.emelec,_name.libertad,                  ],
         2018: [_name.riverplate,_name.bocajuniors,_name.gremio,_name.palmeiras,         _name.atleticoTucuman,_name.independiente,_name.cruzeiro,_name.colocolo,         _name.estudiantes,_name.libertad,_name.corinthians,_name.flamengo,_name.racing,_name.atleticonacional,_name.cerroporteno,_name.santos,      ],
@@ -1180,7 +1183,7 @@ ClubName _name = ClubName();
         2005: [_name.saopaulo,_name.atleticopr,_name.riverplate,_name.chivasguadalajara,  _name.santos,_name.tigres,_name.banfield,_name.bocajuniors,                    _name.cerroporteno,_name.lau,_name.pachuca,_name.junior,_name.palmeiras,_name.oncecaldas,_name.imedellin,_name.ldu,                         ],
         2004: [_name.oncecaldas,_name.bocajuniors,_name.saopaulo,_name.riverplate,     _name.santos,_name.deportivoTachira,_name.deportivocali,_name.saocaetano,         _name.americamex,_name.sportingcristal,_name.santosLaguna,_name.cruzeiro,_name.rosariocentral,_name.nacional,_name.ldu,_name.barcelonaequ,  ],
         2003: [_name.bocajuniors,_name.santos,_name.americadecali,_name.imedellin,     _name.riverplate,_name.cobreloa,_name.cruzazul,_name.gremio,                      _name.pumas,_name.paysandu,_name.corinthians,_name.racing,_name.deportivocali,_name.nacional,_name.olimpia,_name.cerroporteno,              ],
-        2002: [_name.olimpia,_name.saocaetano,_name.gremio,_name.americamex,           _name.morelia,_name.nacional,_name.saocaetano,_name.bocajuniors,                  _name.elnacional,_name.cobreloa,_name.riverplate,_name.americadecali,_name.wanderers,_name.univcatolica,_name.olmedo,_name.cienciano,       ],
+        2002: [_name.olimpia,_name.saocaetano,_name.gremio,_name.americamex,           _name.bocajuniors,_name.penarol,_name.nacional,_name.morelia,                  _name.elnacional,_name.cobreloa,_name.riverplate,_name.americadecali,_name.wanderers,_name.univcatolica,_name.olmedo,_name.cienciano,       ],
         2001: [_name.bocajuniors,_name.cruzazul,_name.palmeiras,_name.rosariocentral,  _name.americadecali,_name.riverplate,_name.vasco,_name.cruzeiro,                  _name.emelec,_name.cerroporteno,_name.cobreloa,_name.nacional,_name.concepcion,_name.junior,_name.saocaetano,_name.elnacional,              ],
         2000: [_name.bocajuniors,_name.palmeiras,_name.americamex,_name.corinthians,   _name.riverplate,_name.bolivar,_name.atlas,_name.atleticomg,                      _name.cerroporteno,_name.elnacional,_name.americadecali,_name.nacional,_name.atleticopr,_name.rosariocentral,_name.junior,_name.penarol,    ],
         1999: [_name.palmeiras,_name.deportivocali,_name.riverplate,_name.cerroporteno, _name.corinthians,_name.bellavista,_name.estudiantesmerida,_name.velezsarsfield, _name.colocolo,_name.univcatolica,_name.emelec,_name.nacional,_name.ldu,_name.universitario,_name.vasco,_name.jorge,                        ],
@@ -1228,18 +1231,18 @@ ClubName _name = ClubName();
 
     else if(leagueName == LeagueOfficialNames().mundial) {
       champions = {
-        2021: [_name.chelsea,_name.palmeiras],
-        2020: [_name.bayernmunique,_name.tigres],
-        2019: [_name.liverpool,_name.flamengo],
-        2018: [_name.realmadrid,_name.alain],
+        2021: [_name.chelsea,_name.palmeiras,_name.alahly,_name.alhilal,_name.monterrey],
+        2020: [_name.bayernmunique,_name.tigres,_name.alahly,_name.palmeiras],
+        2019: [_name.liverpool,_name.flamengo,_name.monterrey],
+        2018: [_name.realmadrid,_name.alain,_name.riverplate],
         2017: [_name.realmadrid,_name.gremio],
-        2016: [_name.realmadrid,_name.kashimaantlers],
+        2016: [_name.realmadrid,_name.kashimaantlers,_name.atleticonacional],
         2015: [_name.barcelona,_name.riverplate],
         2014: [_name.realmadrid,_name.sanlorenzo],
-        2013: [_name.bayernmunique,_name.rajacasablanca],
+        2013: [_name.bayernmunique,_name.rajacasablanca,_name.atleticomg],
         2012: [_name.corinthians,_name.chelsea],
         2011: [_name.barcelona,_name.santos],
-        2010: [_name.inter,_name.mazembe],
+        2010: [_name.inter,_name.mazembe,_name.internacional],
         2009: [_name.barcelona,_name.estudiantes],
         2008: [_name.manchesterunited,_name.ldu],
         2007: [_name.milan,_name.bocajuniors],

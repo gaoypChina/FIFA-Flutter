@@ -1,11 +1,11 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/pages/club_profile/all_infos_club.dart';
 import 'package:fifa/pages/club_profile/field_static.dart';
 import 'package:fifa/pages/club_profile/graphics.dart';
-import 'package:fifa/pages/club_profile/all_infos_club.dart';
-import 'package:fifa/theme/translation.dart';
-import 'package:fifa/widgets/button/button_return.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/theme/translation.dart';
+import 'package:fifa/widgets/back_button.dart';
 import 'package:fifa/widgets/stars.dart';
 import 'package:flutter/material.dart';
 
@@ -56,7 +56,7 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                 Column(
                   children: [
 
-                    const SizedBox(height: 30),
+                    backButtonText(context, clubClass.name),
 
                     Row(
                       children: [
@@ -69,8 +69,9 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               starsWidgetFromOverall(clubClass.getOverall()),
-                              Text('${Translation(context).text.overall}: '+clubClass.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.text16),
-                              Text('${Translation(context).text.avgAge}: '+clubClass.getAverageAge().toStringAsFixed(2), style: EstiloTextoBranco.text16),
+                              Text('${Translation(context).text.overall}: '+clubClass.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.text14),
+                              Text('${Translation(context).text.avgAge}: '+clubClass.getAverageAge().toStringAsFixed(2), style: EstiloTextoBranco.text14),
+                              Text('${Translation(context).text.player}: '+clubClass.nJogadores.toString(), style: EstiloTextoBranco.text14),
                             ],
                           ),
                         ),
@@ -108,9 +109,6 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
 
                   ],
                 ),
-
-                //BOTAO DE VOLTAR
-                returnButton(context),
 
               ]
           ),

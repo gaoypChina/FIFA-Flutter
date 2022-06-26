@@ -1,9 +1,9 @@
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/global_variables.dart';
-import 'package:fifa/theme/translation.dart';
 import 'package:fifa/functions/change_club_control.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/textstyle.dart';
-import 'package:fifa/widgets/button/button_return.dart';
+import 'package:fifa/theme/translation.dart';
+import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 
 import 'menu/c_menu.dart';
@@ -39,8 +39,7 @@ class _ChangeClubState extends State<ChangeClub> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
 
-                    const SizedBox(height: 40),
-                    Text(Translation(context).text.changeClub,style: EstiloTextoBranco.text30),
+                    backButtonText(context, Translation(context).text.changeClub),
 
                     Column(
                       children: [
@@ -73,9 +72,6 @@ class _ChangeClubState extends State<ChangeClub> {
                   ],
                 ),
               ),
-
-              //VOLTAR
-              returnButton(context),
 
             ]
         )

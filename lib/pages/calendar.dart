@@ -1,14 +1,15 @@
+import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/classes/geral/semana.dart';
-import 'package:fifa/page_controller/calendar_control.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/page_controller/calendar_control.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
-import 'package:fifa/widgets/button/button_return.dart';
+import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
+
 import 'club_profile/club_profile.dart';
 
 class Calendar extends StatefulWidget {
@@ -33,11 +34,10 @@ class _CalendarState extends State<Calendar> {
 
       Column(
         children: [
-          const SizedBox(height: 30),
-          Text(Translation(context).text.calendar,style: EstiloTextoBranco.text30),
+          backButtonText(context, Translation(context).text.calendar),
           Container(
             margin: const EdgeInsets.all(8),
-            height: Sized(context).height-130,
+            height: Sized(context).height-95,
             child: SingleChildScrollView(
               reverse: (Semana(semana).isJogoCampeonatoInternacional) ? true : false,
               child: Wrap(
@@ -51,12 +51,8 @@ class _CalendarState extends State<Calendar> {
               ),
             ),
           ),
-          const SizedBox(height: 40),
         ],
       ),
-
-      //VOLTAR
-      returnButton(context),
     ]));
   }
 

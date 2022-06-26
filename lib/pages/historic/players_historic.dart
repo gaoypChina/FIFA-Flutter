@@ -1,12 +1,12 @@
+import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/historic/top_players_ovr.dart';
 import 'package:fifa/classes/historic/top_scorers.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/theme/translation.dart';
-import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/theme/translation.dart';
+import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
-import 'leagues_historic.dart';
 
 class PlayersHistoric extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
@@ -25,12 +25,11 @@ class _PlayersHistoricState extends State<PlayersHistoric> {
     return Scaffold(
         body:  Container(
           decoration: Images().getWallpaperContainerDecoration(),
+          width: Sized(context).width,
           child: Column(
             children: [
+              backButtonText(context, Translation(context).text.playersHistoric),
 
-              const SizedBox(height: 50),
-
-              Text(Translation(context).text.playersHistoric,style: EstiloTextoBranco.text22),
               const SizedBox(height: 8),
 
 
@@ -44,35 +43,6 @@ class _PlayersHistoricState extends State<PlayersHistoric> {
                   ),
                 ),
               ),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-
-                  //VOLTAR
-                  Padding(
-                    padding: const EdgeInsets.all(6),
-                    child:  customButtonContinue(
-                        title: Translation(context).text.returnTo,
-                        function: (){
-                          Navigator.pop(context);
-                        }
-                    ),
-                  ),
-
-                  //PRÓXIMO
-                  Padding(
-                    padding: const EdgeInsets.all(6),
-                    child:  customButtonContinue(
-                        title: Translation(context).text.next,
-                        function: (){
-                          Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const HistoricLeague()));
-                        }
-                    ),
-                  ),
-                ],
-              ),
-
 
             ],
           ),

@@ -51,7 +51,7 @@ Map clubNameMapImmutable = {
   LeagueOfficialNames().inglaterra3 : {
     0:clubName.blackpool,1:clubName.charlton,2: clubName.derbycount, 3: clubName.ipswichTown,
     4:clubName.peterborough, 5:clubName.plymouth,6:clubName.portsmouth, 7:clubName.rotherham,
-    8:clubName.bolton, 9:clubName.sheffieldWednesday,
+    8:clubName.bolton, 9:clubName.sheffieldWednesday,10:clubName.millwall, 11:clubName.wigan,
   },
   LeagueOfficialNames().italia1 : {
     0: clubName.atalanta, 1: clubName.bologna,2: clubName.cremonese,3: clubName.empoli,
@@ -96,6 +96,10 @@ Map clubNameMapImmutable = {
     8: clubName.lorient,9: clubName.lyon,10: clubName.monaco,11: clubName.montpellier,
     12: clubName.nantes,13: clubName.nice,14: clubName.olympiquemarselha,15: clubName.psg,
     16: clubName.reims,17: clubName.rennes,18: clubName.strasbourg,19: clubName.toulouse,
+  },
+  LeagueOfficialNames().franca2 : {
+    0: clubName.dijon,1: clubName.troyes, 2: clubName.caen,3: clubName.metz,
+    4: clubName.saintetienne,5: clubName.parisFC,6: clubName.nimes,7: clubName.bastia,
   },
   LeagueOfficialNames().ptHol : {
     0: clubName.benfica,1: clubName.porto,2: clubName.sporting,3: clubName.braga,
@@ -197,9 +201,8 @@ Map clubNameMapImmutable = {
   },
   LeagueOfficialNames().outros : {
     0: clubName.ulsan,1: clubName.fcSeoul,2: clubName.alWahda,3: clubName.atleticoTucuman,
-    4: clubName.dijon,5: clubName.laskLinz, 6: clubName.caen,7: clubName.metz,
-    8: clubName.saintetienne,9: clubName.troyes,10: clubName.unionSantaFe,11: clubName.tigre,
-    12: clubName.sheriffTiraspol, 13: clubName.joinville, 14: clubName.paulista, 15: clubName.ibis,
+    4: clubName.sheriffTiraspol, 5: clubName.joinville, 6: clubName.paulista, 7: clubName.ibis,
+    8: clubName.juventusMooca,9: clubName.laskLinz,10: clubName.unionSantaFe,11: clubName.tigre,
   },
 
 };

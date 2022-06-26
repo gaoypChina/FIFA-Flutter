@@ -174,7 +174,10 @@ class ClubCountry{
     else if(clubName==ClubName().wolfsburg){    nationality=Words.country.germany;}
 
     else if(clubName==ClubName().arminiaBiefeld){    nationality=Words.country.germany;}
+    else if(clubName==ClubName().berliner){    nationality=Words.country.germany;}
     else if(clubName==ClubName().dynamoDresden){    nationality=Words.country.germany;}
+    else if(clubName==ClubName().erzgebirgeaue){    nationality=Words.country.germany;}
+    else if(clubName==ClubName().eintrachtBraunschweiger){    nationality=Words.country.germany;}
     else if(clubName==ClubName().fortunaDusseldorf){    nationality=Words.country.germany;}
     else if(clubName==ClubName().kaiserslautern){    nationality=Words.country.germany;}
     else if(clubName==ClubName().hannover96){    nationality=Words.country.germany;}
@@ -187,6 +190,7 @@ class ClubCountry{
     else if(clubName==ClubName().nurnberg){    nationality=Words.country.germany;}
     else if(clubName==ClubName().paderborn){    nationality=Words.country.germany;}
     else if(clubName==ClubName().unionBerlin){    nationality=Words.country.germany;}
+    else if(clubName==ClubName().vorwarts){    nationality=Words.country.germany;}
     else if(clubName==ClubName().stPauli){    nationality=Words.country.germany;}
 
     else if(clubName==ClubName().bordeaux){    nationality=Words.country.france;}
@@ -255,26 +259,45 @@ class ClubCountry{
     else if(clubName==ClubName().utrecht){    nationality=Words.country.netherlands;}
     else if(clubName==ClubName().vitesse){    nationality=Words.country.netherlands;}
     else if(clubName==ClubName().heerenveen){    nationality=Words.country.netherlands;}
+    else if(clubName==ClubName().spartarotterdam){    nationality=Words.country.netherlands;}
 
     else if(clubName==ClubName().celtic){    nationality=Words.country.scotland;}
     else if(clubName==ClubName().glasgowrangers){    nationality=Words.country.scotland;}
     else if(clubName==ClubName().hibernian){    nationality=Words.country.scotland;}
+    else if(clubName==ClubName().aberdeen){    nationality=Words.country.scotland;}
+    else if(clubName==ClubName().kilmarnock){    nationality=Words.country.scotland;}
+    else if(clubName==ClubName().dundalk){    nationality=Words.country.ireland;}
+    else if(clubName==ClubName().shamrock){    nationality=Words.country.ireland;}
+
     else if(clubName==ClubName().rosenborg){    nationality=Words.country.norway;}
     else if(clubName==ClubName().molde){    nationality=Words.country.norway;}
+    else if(clubName==ClubName().lillestrom){    nationality=Words.country.norway;}
+    else if(clubName==ClubName().norrkoping){    nationality=Words.country.sweden;}
     else if(clubName==ClubName().malmo){    nationality=Words.country.sweden;}
+    else if(clubName==ClubName().djurgarden){    nationality=Words.country.sweden;}
+    else if(clubName==ClubName().ifkgoteborg){    nationality=Words.country.sweden;}
     else if(clubName==ClubName().copenhague){    nationality=Words.country.denmark;}
     else if(clubName==ClubName().midtjylland){    nationality=Words.country.denmark;}
+    else if(clubName==ClubName().brondby){    nationality=Words.country.denmark;}
     else if(clubName==ClubName().helsinki){    nationality=Words.country.finland;}
 
     else if(clubName==ClubName().rbsalzburg){    nationality=Words.country.austria;}
     else if(clubName==ClubName().rapidviena){    nationality=Words.country.austria;}
     else if(clubName==ClubName().laskLinz){    nationality=Words.country.austria;}
     else if(clubName==ClubName().sturmGraz){    nationality=Words.country.austria;}
+    else if(clubName==ClubName().austria){    nationality=Words.country.austria;}
     else if(clubName==ClubName().basel){    nationality=Words.country.switzerland;}
     else if(clubName==ClubName().youngBoys){    nationality=Words.country.switzerland;}
     else if(clubName==ClubName().zurich){    nationality=Words.country.switzerland;}
+    else if(clubName==ClubName().grasshoppers){    nationality=Words.country.switzerland;}
+    else if(clubName==ClubName().sion){    nationality=Words.country.switzerland;}
+    else if(clubName==ClubName().servette){    nationality=Words.country.switzerland;}
     else if(clubName==ClubName().legiaWarszawa){    nationality=Words.country.poland;}
     else if(clubName==ClubName().lechPoznan){    nationality=Words.country.poland;}
+    else if(clubName==ClubName().wisla){    nationality=Words.country.poland;}
+    else if(clubName==ClubName().gornik){    nationality=Words.country.poland;}
+    else if(clubName==ClubName().widzew){    nationality=Words.country.poland;}
+    else if(clubName==ClubName().ruchchorzow){    nationality=Words.country.poland;}
 
     else if(clubName==ClubName().galatasaray){    nationality=Words.country.turkey;}
     else if(clubName==ClubName().fenerbahce){    nationality=Words.country.turkey;}
@@ -286,7 +309,10 @@ class ClubCountry{
     else if(clubName==ClubName().aek){    nationality=Words.country.greece;}
     else if(clubName==ClubName().paok){    nationality=Words.country.greece;}
     else if(clubName==ClubName().panathinaikos){    nationality=Words.country.greece;}
+    else if(clubName==ClubName().aris){    nationality=Words.country.greece;}
     else if(clubName==ClubName().apoel){    nationality=Words.country.cyprus;}
+    else if(clubName==ClubName().omonia){    nationality=Words.country.cyprus;}
+    else if(clubName==ClubName().apollon){    nationality=Words.country.cyprus;}
 
     else if(clubName==ClubName().zenit){    nationality=Words.country.russia;}
     else if(clubName==ClubName().cska){    nationality=Words.country.russia;}
@@ -299,27 +325,42 @@ class ClubCountry{
 
     else if(clubName==ClubName().shaktardonetsk){    nationality=Words.country.ukraine;}
     else if(clubName==ClubName().dinamokiev){    nationality=Words.country.ukraine;}
+    else if(clubName==ClubName().dnipro){    nationality=Words.country.ukraine;}
     else if(clubName==ClubName().sheriffTiraspol){    nationality=Words.country.moldova;}
+    else if(clubName==ClubName().tirana){    nationality=Words.country.albania;}
+    else if(clubName==ClubName().tbilisi){    nationality=Words.country.georgia;}
     else if(clubName==ClubName().bate){    nationality=Words.country.belarus;}
     else if(clubName==ClubName().qarabag){    nationality=Words.country.azerbaijan;}
     else if(clubName==ClubName().astana){    nationality=Words.country.kazakhstan;}
 
     else if(clubName==ClubName().estrelavermelha){    nationality=Words.country.serbia;}
     else if(clubName==ClubName().partizan){    nationality=Words.country.serbia;}
+    else if(clubName==ClubName().vojvodina){    nationality=Words.country.serbia;}
+    else if(clubName==ClubName().sarajevo){    nationality=Words.country.bosnia;}
     else if(clubName==ClubName().ludogorets){    nationality=Words.country.bulgaria;}
     else if(clubName==ClubName().cskaSofia){    nationality=Words.country.bulgaria;}
+    else if(clubName==ClubName().loksofia){    nationality=Words.country.bulgaria;}
+    else if(clubName==ClubName().levski){    nationality=Words.country.bulgaria;}
     else if(clubName==ClubName().cluj){    nationality=Words.country.romania;}
     else if(clubName==ClubName().vardar){    nationality=Words.country.macedonia;}
     else if(clubName==ClubName().dinamozagreb){    nationality=Words.country.croatia;}
+    else if(clubName==ClubName().hadjuksplit){    nationality=Words.country.croatia;}
     else if(clubName==ClubName().slovanBratislava){    nationality=Words.country.slovenia;}
     else if(clubName==ClubName().spartapraga){    nationality=Words.country.czechRepublic;}
     else if(clubName==ClubName().slaviaPraha){    nationality=Words.country.czechRepublic;}
     else if(clubName==ClubName().ferencvaros){    nationality=Words.country.hungary;}
+    else if(clubName==ClubName().honved){    nationality=Words.country.hungary;}
+    else if(clubName==ClubName().vasas){    nationality=Words.country.hungary;}
+    else if(clubName==ClubName().ujpest){    nationality=Words.country.hungary;}
+    else if(clubName==ClubName().mtk){    nationality=Words.country.hungary;}
     else if(clubName==ClubName().steauaBucureste){    nationality=Words.country.romania;}
+    else if(clubName==ClubName().dinamoBucureste){    nationality=Words.country.romania;}
+    else if(clubName==ClubName().rapidBucureste){    nationality=Words.country.romania;}
+    else if(clubName==ClubName().pitesti){    nationality=Words.country.romania;}
     else if(clubName==ClubName().maccabiTelAviv){    nationality=Words.country.israel;}
 
     ///////////////////////////////////////////////////////////////////////////
-    else if(clubName==ClubName().atleticomg){       nationality=Words.country.brazil;}
+    if(clubName==ClubName().atleticomg){       nationality=Words.country.brazil;}
     else if(clubName==ClubName().atleticopr){       nationality=Words.country.brazil;}
     else if(clubName==ClubName().bahia){     nationality=Words.country.brazil; }
     else if(clubName==ClubName().botafogo){  nationality=Words.country.brazil; }
@@ -424,12 +465,18 @@ class ClubCountry{
     else if(clubName==ClubName().penarol){       nationality=Words.country.uruguay;}
     else if(clubName==ClubName().nacional){    nationality=Words.country.uruguay;     }
     else if(clubName==ClubName().montevideo){ nationality=Words.country.uruguay;  }
-    else if(clubName==ClubName().olimpia){    nationality=Words.country.paraguay;      }
+    else if(clubName==ClubName().danubio){ nationality=Words.country.uruguay;  }
+    else if(clubName==ClubName().defensor){ nationality=Words.country.uruguay;  }
+    else if(clubName==ClubName().wanderers){ nationality=Words.country.uruguay;  }
+    else if(clubName==ClubName().progreso){ nationality=Words.country.uruguay;  }
+    else if(clubName==ClubName().rentista){ nationality=Words.country.uruguay;  }
 
+    else if(clubName==ClubName().olimpia){    nationality=Words.country.paraguay;      }
     else if(clubName==ClubName().cerroporteno){       nationality=Words.country.paraguay;}
     else if(clubName==ClubName().libertad){nationality=Words.country.paraguay;}
     else if(clubName==ClubName().guaraniPAR){ nationality=Words.country.paraguay;  }
     else if(clubName==ClubName().nacionalPAR){ nationality=Words.country.paraguay;  }
+    else if(clubName==ClubName().soldeamerica){ nationality=Words.country.paraguay;  }
 
     else if(clubName==ClubName().colocolo){    nationality=Words.country.chile;}
     else if(clubName==ClubName().lau){ nationality=Words.country.chile;}
@@ -437,6 +484,10 @@ class ClubCountry{
     else if(clubName==ClubName().palestino){ nationality=Words.country.chile;  }
     else if(clubName==ClubName().huachipato){ nationality=Words.country.chile;  }
     else if(clubName==ClubName().laCalera){ nationality=Words.country.chile;  }
+    else if(clubName==ClubName().cobreloa){ nationality=Words.country.chile;  }
+    else if(clubName==ClubName().concepcion){ nationality=Words.country.chile;  }
+    else if(clubName==ClubName().unionespanola){ nationality=Words.country.chile;  }
+    else if(clubName==ClubName().ohiggins){ nationality=Words.country.chile;  }
 
     else if(clubName==ClubName().alianzalima){ nationality=Words.country.peru;  }
     else if(clubName==ClubName().sportingcristal){       nationality=Words.country.peru; }
@@ -444,19 +495,40 @@ class ClubCountry{
     else if(clubName==ClubName().universitario){ nationality=Words.country.peru;  }
     else if(clubName==ClubName().melgar){ nationality=Words.country.peru;  }
     else if(clubName==ClubName().jorge){ nationality=Words.country.peru;  }
+    else if(clubName==ClubName().unionhuaral){ nationality=Words.country.peru;  }
+    else if(clubName==ClubName().garcilaso){ nationality=Words.country.peru;  }
+    else if(clubName==ClubName().defensorlima){ nationality=Words.country.peru;  }
+    else if(clubName==ClubName().sportboys){ nationality=Words.country.peru;  }
+    else if(clubName==ClubName().unisanmartin){ nationality=Words.country.peru;  }
 
     else if(clubName==ClubName().bolivar){       nationality=Words.country.bolivia; }
     else if(clubName==ClubName().theStrongest){ nationality=Words.country.bolivia;  }
     else if(clubName==ClubName().alwaysReady){ nationality=Words.country.bolivia;  }
+    else if(clubName==ClubName().orientePetrolero){ nationality=Words.country.bolivia;  }
+    else if(clubName==ClubName().sanJoseBOL){ nationality=Words.country.bolivia;  }
+    else if(clubName==ClubName().blooming){ nationality=Words.country.bolivia;  }
+    else if(clubName==ClubName().realpotosi){ nationality=Words.country.bolivia;  }
+    else if(clubName==ClubName().sucre){ nationality=Words.country.bolivia;  }
 
     else if(clubName==ClubName().barcelonaequ){  nationality=Words.country.ecuador;  }
     else if(clubName==ClubName().emelec){  nationality=Words.country.ecuador;  }
     else if(clubName==ClubName().ldu){      nationality=Words.country.ecuador;  }
     else if(clubName==ClubName().idelvalle){ nationality=Words.country.ecuador;  }
+    else if(clubName==ClubName().elnacional){ nationality=Words.country.ecuador;  }
+    else if(clubName==ClubName().delfin){ nationality=Words.country.ecuador;  }
+    else if(clubName==ClubName().depquito){ nationality=Words.country.ecuador;  }
+    else if(clubName==ClubName().espoli){ nationality=Words.country.ecuador;  }
+    else if(clubName==ClubName().olmedo){ nationality=Words.country.ecuador;  }
 
     else if(clubName==ClubName().caracas){    nationality=Words.country.venezuela; }
     else if(clubName==ClubName().laGuaira){ nationality=Words.country.venezuela;  }
     else if(clubName==ClubName().deportivoTachira){ nationality=Words.country.venezuela;  }
+    else if(clubName==ClubName().estudiantesmerida){ nationality=Words.country.venezuela;  }
+    else if(clubName==ClubName().ula){ nationality=Words.country.venezuela;  }
+    else if(clubName==ClubName().minerven){ nationality=Words.country.venezuela;  }
+    else if(clubName==ClubName().maritimoven){ nationality=Words.country.venezuela;  }
+    else if(clubName==ClubName().margarita){ nationality=Words.country.venezuela;  }
+    else if(clubName==ClubName().sancristobal){ nationality=Words.country.venezuela;  }
 
     else if(clubName==ClubName().americadecali){       nationality=Words.country.colombia;}
     else if(clubName==ClubName().atleticonacional){    nationality=Words.country.colombia;     }
@@ -467,6 +539,8 @@ class ClubCountry{
     else if(clubName==ClubName().millonarios){ nationality=Words.country.colombia;}
     else if(clubName==ClubName().santafe){     nationality=Words.country.colombia; }
     else if(clubName==ClubName().tolima){ nationality=Words.country.colombia;  }
+    else if(clubName==ClubName().bucaramanga){    nationality=Words.country.colombia;      }
+    else if(clubName==ClubName().cucuta){ nationality=Words.country.colombia;  }
 
     //////////////////////////////////////////////////////////////////////////////////
     //MÉXICO

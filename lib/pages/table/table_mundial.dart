@@ -5,11 +5,11 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/textstyle.dart';
-import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/historic_champions.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
+import 'package:fifa/widgets/back_button.dart';
 import 'package:fifa/widgets/background/background_international_league.dart';
 import 'package:flutter/material.dart';
 
@@ -44,10 +44,7 @@ class _TableMundialState extends State<TableMundial> {
 
           Column(
             children: [
-              const SizedBox(height: 32),
-              Image.asset(FIFAImages().mundialLogo(), height: 50, width: 50),
-              Text(Translation(context).text.finale,
-                  style: EstiloTextoBranco.negrito22),
+              backButtonText(context,'Mundial'),
               row(),
 
                   Expanded(
@@ -63,8 +60,7 @@ class _TableMundialState extends State<TableMundial> {
                         blendMode: BlendMode.dstOut,
                         child: ListView.builder(
                             itemCount: results.length,
-                            reverse: true,
-                            itemBuilder: (c, i) => finals(i + anoInicial - 62)
+                            itemBuilder: (c, i) => finals((results.keys.first.toInt() - i))
                         ),
                       ),
                   ),
@@ -90,6 +86,7 @@ class _TableMundialState extends State<TableMundial> {
       return Container(
         padding: const EdgeInsets.symmetric(vertical: 4),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(year.toString()+': ',textAlign:TextAlign.center,style: EstiloTextoBranco.text14),
 
@@ -123,38 +120,65 @@ class _TableMundialState extends State<TableMundial> {
     int golsA = data.goal1;
     int golsB = data.goal2;
 
-    return  Column(
+    return  Row(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
 
-            Container(
-                color: teamNameA == My().clubName ? Colors.green : Colors.transparent,
-                child: Text(teamNameA,textAlign:TextAlign.end,style: EstiloTextoBranco.text14)),
-            //Escudo
-            Image.asset(Images().getEscudo(teamNameA),height: 20,width: 20),
+        Flexible(
+            flex: 3,
+            child: Image.asset(FIFAImages().mundialLogo(), height: 80, width: 80)),
 
-            golsA >= 0
-                ? Text(' '+ golsA.toString()+'x'+golsB.toString()+' ',style: EstiloTextoBranco.text14)
-                : const Text('X',textAlign:TextAlign.center,style: EstiloTextoBranco.text14),
-            //Escudo
-            Image.asset(Images().getEscudo(teamNameB),height: 20,width: 20),
+        Flexible(
+          flex: 7,
+          child: Column(
+            children: [
+              Text(ano.toString(),textAlign:TextAlign.end,style: EstiloTextoBranco.negrito22),
+              Row(
+                children: [
 
-            Container(
-              color: teamNameB == My().clubName ? Colors.green : Colors.transparent,
-              child: Text(teamNameB,style: EstiloTextoBranco.text14),
-            ),
+                  //TIME A
+                  Column(
+                    children: [
+                      Row(
+                        children: [
+                          Image.asset(Images().getEscudo(teamNameA),height: 50,width: 50),
+                          Image.asset(Images().getUniform(teamNameA),height: 50,width: 50),
+                        ],
+                      ),
+                      Container(
+                          margin: const EdgeInsets.only(top: 8),
+                          color: teamNameA == My().clubName ? Colors.green : Colors.transparent,
+                          child: Text(teamNameA,textAlign:TextAlign.end,style: EstiloTextoBranco.text16)),
+                    ],
+                  ),
 
-          ],
+
+                  golsA >= 0
+                      ? Text(' '+ golsA.toString()+'x'+golsB.toString()+' ',style: EstiloTextoBranco.text22)
+                      : const Text('X',textAlign:TextAlign.center,style: EstiloTextoBranco.text22),
+
+                  //TIME B
+                  Column(
+                    children: [
+                      Row(
+                        children: [
+                          Image.asset(Images().getUniform(teamNameB),height: 50,width: 50),
+                          Image.asset(Images().getEscudo(teamNameB),height: 50,width: 50),
+                        ],
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(top: 8),
+                        color: teamNameB == My().clubName ? Colors.green : Colors.transparent,
+                        child: Text(teamNameB,style: EstiloTextoBranco.text16),
+                      ),
+                    ],
+                  ),
+
+
+                ],
+              ),
+            ],
+          ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(Images().getUniform(teamNameA),height: 50,width: 50),
-            Image.asset(Images().getUniform(teamNameB),height: 50,width: 50),
-          ],
-        )
       ],
     );
   }

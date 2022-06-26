@@ -3,17 +3,20 @@ import 'dart:math';
 import 'package:fifa/database/csv/read_csv.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/page_controller/configuration/open_url.dart';
+import 'package:fifa/theme/translation.dart';
+import 'package:flutter/material.dart';
 
 class ConfigurationState{
   bool hasSoundEffect = globalHasSoundEffects;
   bool turnIdaEVolta = globalLeagueIdaVolta;
   bool hasCards = globalHasCards;
-  bool allEqualPlayersOverall = globalAllEqualOverall;
-  bool randomPlayersOverall = globalRandomPlayersOverall;
   bool hasInjuries = globalHasInjuries;
   bool seeProbability = globalSeeProbabilities;
   double initialMoney = globalInitialMoney;
   String coachName = globalCoachName;
+
+  List<bool?> states = [false,globalAllEqualOverall,globalRandomPlayersOverall,false];
+  List<String> names = ['','','',''];
 
   changeSoundEffectSwitchState(){
     hasSoundEffect = !hasSoundEffect;
@@ -44,21 +47,52 @@ class ConfigurationState{
     hasInjuries = !hasInjuries;
   }
 
+  setInitialCheckboxState(BuildContext context){
+    if(states[1] == true){
+      setListBool(1);
+    }
+    else if(states[2] == true){
+      setListBool(2);
+    }else{
+      setListBool(0);
+    }
+    names = [Translation(context).text.playersNormalOveerall,
+             Translation(context).text.allPlayersEqual,
+              Translation(context).text.allPlayersRandom,
+            'Jogadores em times aleatórios'];
+  }
+  setListBool(int index){
+    states = List.filled(4, false);
+    states[index] = true;
+  }
+  setStates(int index){
+    setListBool(index);
+    if(index == 0){
+      globalAllEqualOverall = false;
+      globalRandomPlayersOverall = false;
+      ReadCSV().openCSV();
+    }
+    if(index==1){
+      globalAllEqualOverall = true;
+      globalRandomPlayersOverall = false;
+      changeAllEqualPlayersOverallState();
+    }
+    if(index==2){
+      globalAllEqualOverall = false;
+      globalRandomPlayersOverall = true;
+      changeAllRandomPlayersOverallState();
+    }
+  }
+
   changeAllEqualPlayersOverallState(){
-    allEqualPlayersOverall = !allEqualPlayersOverall;
-    globalAllEqualOverall = !globalAllEqualOverall;
     if(globalAllEqualOverall){
       for(int id in globalJogadoresIndex){
         globalJogadoresOverall[id] = 75;
       }
-    }else{
-      ReadCSV().openCSV();
     }
   }
 
   changeAllRandomPlayersOverallState(){
-    randomPlayersOverall = !randomPlayersOverall;
-    globalRandomPlayersOverall = !globalRandomPlayersOverall;
     if(globalRandomPlayersOverall){
       for(int id in globalJogadoresIndex){
         int probLucky = Random().nextInt(50);
@@ -90,8 +124,6 @@ class ConfigurationState{
 
         globalJogadoresOverall[id] = prob;
       }
-    }else{
-      ReadCSV().openCSV();
     }
   }
 

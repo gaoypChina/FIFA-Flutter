@@ -4,13 +4,11 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/pages/historic/players_historic.dart';
-import 'package:fifa/pages/historic/international_historic.dart';
+import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
-import 'package:fifa/widgets/button/button_continue.dart';
-import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 
 import '../../values/historic_champions.dart';
@@ -40,9 +38,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
           child: Column(
             children: [
 
-              const SizedBox(height: 40),
-              Text(Translation(context).text.leagueHistoric,style: EstiloTextoBranco.text22),
-
+              backButtonText(context, Translation(context).text.leagueHistoric),
 
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -85,40 +81,6 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                   ],
                 ),
               ),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-
-                  //VOLTAR
-                  Padding(
-                    padding: const EdgeInsets.all(6),
-                    child:  customButtonContinue(
-                        title: Translation(context).text.returnTo,
-                        function: (){
-                          Navigator.pop(context);
-                        }
-                    ),
-                  ),
-
-                  //PRÓXIMO
-                  Padding(
-                    padding: const EdgeInsets.all(4),
-                    child:  customButtonContinue(
-                        title: Translation(context).text.next,
-                        function: (){
-                          if(ano>=anoInicial){
-                            Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const InternationalHistoric()));
-                          }else{
-                            Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const PlayersHistoric()));
-                          }
-                        }
-                    ),
-                  ),
-
-                ],
-              ),
-
 
 
             ],

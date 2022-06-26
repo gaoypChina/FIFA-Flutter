@@ -271,7 +271,6 @@ class FIFAImages{
 
     else if(timeFoto==ClubName().celtic){    imageLogo='celtic';}
     else if(timeFoto==ClubName().glasgowrangers){    imageLogo='rangers';}
-    else if(timeFoto==ClubName().hibernian){    imageLogo='hibernian';}
     else if(timeFoto==ClubName().rosenborg){    imageLogo='rosenborg';}
     else if(timeFoto==ClubName().molde){    imageLogo='molde';}
     else if(timeFoto==ClubName().malmo){    imageLogo='malmo';}

@@ -19,7 +19,7 @@ List clubsAllNameList = [
   ClubName().plymouth,ClubName().millwall,ClubName().huddersfield,ClubName().charlton,
   ClubName().bristol,ClubName().prestonNorthEnd,ClubName().bolton,ClubName().luton,
   ClubName().cardiffCity,ClubName().rotherham,ClubName().ipswichTown,ClubName().coventry,
-  ClubName().peterborough,ClubName().blackpool,ClubName().sheffieldWednesday,
+  ClubName().peterborough,ClubName().blackpool,ClubName().sheffieldWednesday,ClubName().wigan,
   //italia
   ClubName().atalanta,  ClubName().bologna,  ClubName().cremonese,  ClubName().fiorentina,
   ClubName().genoa,  ClubName().inter,  ClubName().juventus,  ClubName().milan,
@@ -58,8 +58,9 @@ List clubsAllNameList = [
   ClubName().metz,ClubName().toulouse,ClubName().lens,ClubName().monaco,
 
   ClubName().auxerre,ClubName().ajaccio,ClubName().brest,ClubName().caen,
-  ClubName().clermont,ClubName().dijon,ClubName().lorient,
-  ClubName().strasbourg,ClubName().troyes,
+  ClubName().clermont,ClubName().dijon,ClubName().lorient,ClubName().nimes,
+  ClubName().strasbourg,ClubName().troyes,ClubName().parisFC,ClubName().bastia,
+
   //portugal
   ClubName().benfica,  ClubName().porto,  ClubName().sporting,  ClubName().braga,
   ClubName().boavista,ClubName().maritimo,ClubName().portimonense,ClubName().vitoriaguimaraes,
@@ -108,7 +109,7 @@ List clubsAllNameList = [
   ClubName().londrina,ClubName().remo,ClubName().abc,ClubName().saocaetano,ClubName().santoandre,
   ClubName().mirassol,ClubName().botafogoSP,ClubName().botafogoPB,ClubName().caxias,
   ClubName().bangu,ClubName().joinville,ClubName().paulista,ClubName().campinense,
-  ClubName().brasiliense,ClubName().ferroviaria,ClubName().ibis,
+  ClubName().brasiliense,ClubName().ferroviaria,ClubName().ibis,ClubName().juventusMooca,
 
   //argentina
   ClubName().argentinojuniors,  ClubName().arsenalsarandi,  ClubName().banfield,  ClubName().bocajuniors,

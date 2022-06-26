@@ -1,3 +1,4 @@
+import 'package:csv/csv.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/player_basic.dart';
 import 'package:fifa/functions/end_year_updates/update_data_year.dart';
@@ -6,7 +7,6 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:flutter/services.dart';
-import 'package:csv/csv.dart';
 
 class ReadCSV{
   int indexJog = 0;
@@ -34,6 +34,7 @@ class ReadCSV{
     await readCSVfunc("alemanha3");
     await readCSVfunc("franca");
     await readCSVfunc("franca2");
+    await readCSVfunc("franca3");
 
     await readCSVfunc("portugal");
     await readCSVfunc("holanda");
@@ -68,12 +69,12 @@ class ReadCSV{
     await readCSVfunc("africa");
     await readCSVfunc("oceania");
 
-
-    customToast('Loading Custom Players');
-    addRandomPlayers();
     //Importante deletar depois de setar todos os usuarios para evitar problemas com ids fora de ordem
     customToast('Deleting Duplicated Players');
     deleteRepeatedPlayers();
+    customToast('Loading Custom Players');
+    addRandomPlayers();
+    reorganizeIndexIDs();
     customToast('Done');
 
   }
@@ -91,8 +92,8 @@ class ReadCSV{
       customToast('Erro no arquivo '+ filename);
     }
 
-    for(int line=1;line<29;line++){//*Linha 0 é o nome dos times
-      for(int team=0;team<26;team++) { //até 24 times por arquivo
+    for(int line=1;line<30;line++){//*Linha 0 é o nome dos times
+      for(int team=0;team<21;team++) { //até 20 times por arquivo
         int nVariables = 7;
         try{
         //Se tiver nome salva o jogador
@@ -130,9 +131,9 @@ class ReadCSV{
                 indexJog++;
 
                 //test jogadores importados
-                //if(club == ClubName().saocaetano){
-                //print('JOGADOR: $name $position $overall $nationality $imagePlayer       ...$club ${clubIndex.toString()}');
-                //}
+                // if(club == ClubName().arsenal){
+                // print('JOGADOR: $indexJog $name $position $overall $nationality $imagePlayer       ...$club ${clubIndex.toString()}');
+                // }
               }else{
                 //ERRO NA IMPORTAÇÃO DO TIME
                 //Provavelmente falta adicionar o nome do clube em: clubsAllNameList
@@ -160,6 +161,9 @@ class ReadCSV{
          playerBasicInfo.deletePlayerFromDatabase(realID);
        }
     }
+  }
+
+  reorganizeIndexIDs(){
     PlayerBasicInfo playerBasicInfo = PlayerBasicInfo();
     playerBasicInfo.reorganizeIndex(); //reorganiza IDs [0,2,3,4]-> [0,1,2,3]
   }
@@ -177,15 +181,16 @@ class ReadCSV{
         map[element] +=1;
       }
     }
-    //Cria um mapa só com times que tem menos que 21 jogadores
-    map.removeWhere((key, value) => value>21);
+    //Cria um mapa só com times que tem menos que x jogadores
+    map.removeWhere((key, value) => value>=21);
 
     //Acrescenta jogadores nesses times
     for (var clubID in map.keys) {
       try {
         Club club = Club(index: clubID);
+        //print('TIME COM MENOS DE 21 JOGADORES: ${club.name}');
+        //customToast('ADDING PLAYERS TO: ${club.name}');
         while (club.jogadores.length < 21) {
-          //customToast('ADDING TO: ${club.name}');
           AddRandomPlayer(club: club);
           club = Club(index: clubID);
         }

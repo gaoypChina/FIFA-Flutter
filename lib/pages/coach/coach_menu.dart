@@ -46,20 +46,16 @@ class _CoachMenuState extends State<CoachMenu> {
         decoration: Images().getWallpaperContainerDecoration(),
         child: Column(
           children: [
-            const SizedBox(height: 40),
-            Stack(
-              children: [
-                backButton(context),
-                Center(child: Text(Translation(context).text.coachMenu,style: EstiloTextoBranco.text30)),
-              ],
-            ),
+
+            backButtonText(context,Translation(context).text.coachMenu),
+
+            //Botões
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Text('${Translation(context).text.points}: ${my.scoreGame} ',style: EstiloTextoBranco.text16),
                 changeClub(context),
                 coachAchievements(context),
-
               ],
             ),
 

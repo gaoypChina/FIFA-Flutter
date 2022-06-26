@@ -2,11 +2,12 @@ import 'package:fifa/classes/adversario.dart';
 import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/functions/check_internet.dart';
-import 'package:fifa/pages/coach/coach_menu.dart';
-import 'package:fifa/pages/historic/leagues_historic.dart';
-import 'package:fifa/pages/menu/b_home.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/page_controller/calendar_control.dart';
 import 'package:fifa/pages/calendar.dart';
+import 'package:fifa/pages/coach/coach_menu.dart';
+import 'package:fifa/pages/historic/historic_menu.dart';
+import 'package:fifa/pages/menu/b_home.dart';
 import 'package:fifa/pages/ranking_clubs.dart';
 import 'package:fifa/pages/save/choose_save.dart';
 import 'package:fifa/pages/simulacao/not_play.dart';
@@ -16,16 +17,17 @@ import 'package:fifa/pages/transfers.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+
 import '../../classes/classification.dart';
 import '../../classes/club.dart';
 import '../../classes/geral/dificuldade.dart';
 import '../../classes/my.dart';
-import '../club_profile/my_team.dart';
 import '../../popup/popup_expectativa.dart';
-import '../simulacao/play.dart';
 import '../../theme/textstyle.dart';
-import 'package:flutter/material.dart';
+import '../club_profile/my_team.dart';
+import '../simulacao/play.dart';
 
 class Menu extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
@@ -121,11 +123,12 @@ class _MenuState extends State<Menu> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
+
                               Expanded(
-                                child: menuButton(Translation(context).text.coach,(){
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CoachMenu()));
-                                }
-                                ),
+                                child: menuButton(Translation(context).text.international,(){
+                                  //Mostra a competição internacional que o time está participando 1º
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableInternational(leagueInternational: My().getMyInternationalLeague())));
+                                }),
                               ),
                               Expanded(
                                 child: menuButton(Translation(context).text.myClub,(){
@@ -141,7 +144,7 @@ class _MenuState extends State<Menu> {
                               Expanded(
                                 child: menuButton(Translation(context).text.historic,(){
                                   customToast(Translation(context).text.loading);
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HistoricLeague()));
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HistoricMenu()));
                                 }),
                               ),
                               Expanded(
@@ -156,10 +159,10 @@ class _MenuState extends State<Menu> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Expanded(
-                                child: menuButton(Translation(context).text.international,(){
-                                  //Mostra a competição internacional que o time está participando 1º
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableInternational(leagueInternational: My().getMyInternationalLeague())));
-                                  }),
+                                child: menuButton(Translation(context).text.coach,(){
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CoachMenu()));
+                                }
+                                ),
                               ),
                               Expanded(
                                 child: menuButton(Translation(context).text.transfers,(){
@@ -207,6 +210,7 @@ class _MenuState extends State<Menu> {
                           Text(Translation(context).text.classification,style: EstiloTextoBranco.text14),
                           Text(Classification(leagueIndex: myClass.campeonatoID).getClubPosition(myClass.clubID).toString()+'º',style: EstiloTextoBranco.text30),
                           Text('${Translation(context).text.expectation}: '+myClass.getLastYearExpectativa().toString()+'º',style: EstiloTextoBranco.text14),
+                          last5Matchs(),
                         ],
                       ),
 
@@ -296,6 +300,37 @@ Widget menuButton(String text, Function() function){
     ),
   );
 }
+
+Widget last5Matchs(){
+    return SizedBox(
+      height: 25,
+      width: 120,
+      child: ListView.builder(
+          itemCount: 5,
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (c,i)=>resultBox(i)),
+    );
+}
+  Widget resultBox(int i){
+    Color color = Colors.transparent;
+      ResultGameNacional show = ResultGameNacional(rodadaLocal: rodada-i-1, clubID: myClass.clubID);
+      if(show.victoryDrawLoss310 == 3){color = Colors.green;}
+      if(show.victoryDrawLoss310 == 1){color = Colors.grey;}
+      if(show.victoryDrawLoss310 == 0){color = Colors.red;}
+      if(show.exists){
+        return Container(
+          height:20,
+          width: 20,
+          margin: const EdgeInsets.all(2),
+          color: color,
+          child: Center(child: Image.asset(Images().getEscudo(show.clubName2),width: 15,height: 15,)),
+        );
+      }else{
+        return Container();
+      }
+
+
+  }
 ////////////////////////////////////////////////////////////////////////////
 //                               FUNCTIONS                                //
 ////////////////////////////////////////////////////////////////////////////

@@ -2,14 +2,16 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/esquemas_taticos.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
+import 'package:fifa/pages/club_profile/all_infos_club.dart';
 import 'package:fifa/pages/club_profile/field_draggable.dart';
 import 'package:fifa/pages/club_profile/graphics.dart';
-import 'package:fifa/pages/club_profile/all_infos_club.dart';
-import 'package:fifa/theme/translation.dart';
-import 'package:fifa/widgets/button/button_continue.dart';
-import 'package:fifa/widgets/button/button_return.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/theme/translation.dart';
+import 'package:fifa/widgets/back_button.dart';
+import 'package:fifa/widgets/button/button_continue.dart';
+import 'package:fifa/widgets/stars.dart';
 import 'package:flutter/material.dart';
+
 import '../../classes/my.dart';
 
 class MyTeam extends StatefulWidget {
@@ -66,7 +68,7 @@ class _MyTeamState extends State<MyTeam> {
                 Column(
                   children: [
 
-                    const SizedBox(height: 30),
+                    backButtonText(context, myClub.name),
                     Row(
                       children: [
                         //Escudo da Equipe
@@ -77,9 +79,10 @@ class _MyTeamState extends State<MyTeam> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('${Translation(context).text.money}: \$'+my.money.toStringAsFixed(2)+'mi', style: EstiloTextoBranco.text22),
-                              Text('${Translation(context).text.overall}: '+myClub.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.text16),
-                              Text('${Translation(context).text.avgAge}: '+averageAge.toStringAsFixed(2), style: EstiloTextoBranco.text16),
+                              starsWidgetFromOverall(myClub.getOverall()),
+                              Text('${Translation(context).text.overall}: '+myClub.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.text14),
+                              Text('${Translation(context).text.avgAge}: '+averageAge.toStringAsFixed(2), style: EstiloTextoBranco.text14),
+                              Text('${Translation(context).text.player}: '+myClub.nJogadores.toString(), style: EstiloTextoBranco.text14),
                             ],
                           ),
                         ),
@@ -127,9 +130,6 @@ class _MyTeamState extends State<MyTeam> {
 
                   ],
                 ),
-
-            //BOTAO DE VOLTAR
-            returnButton(context),
 
               ]
           ),

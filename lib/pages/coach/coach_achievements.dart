@@ -3,6 +3,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/page_controller/coach/coach_achievements_controller.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 
 class CoachAchievements extends StatefulWidget {
@@ -26,16 +27,13 @@ class _CoachAchievementsState extends State<CoachAchievements> {
       body: Container(
         width: Sized(context).width,
         decoration: Images().getWallpaperContainerDecoration(),
-        child: Container(
-          margin: const EdgeInsets.only(top: 40,left: 8,right: 8),
-          child: Column(
-            children: [
-              Text(Translation(context).text.coachAchievements,style: EstiloTextoBranco.negrito18),
-              const SizedBox(height: 8),
-              for(String word in controller.achievements)
-                row(controller, word)
-            ],
-          ),
+        child: Column(
+          children: [
+            backButtonText(context, Translation(context).text.coachAchievements),
+            const SizedBox(height: 8),
+            for(String word in controller.achievements)
+              row(controller, word)
+          ],
         ),
       )
     );
@@ -45,8 +43,9 @@ class _CoachAchievementsState extends State<CoachAchievements> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
 Widget row(CoachAchievementsController controller, String name){
-  return Padding(
+  return Container(
     padding: const EdgeInsets.symmetric(vertical: 8),
+    margin: const EdgeInsets.only(left: 12,right: 8),
     child: Row(
       children: [
         Padding(

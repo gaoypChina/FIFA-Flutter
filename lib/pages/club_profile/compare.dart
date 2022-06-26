@@ -9,7 +9,6 @@ import 'package:fifa/page_controller/club_profile/data_graphics.dart';
 import 'package:fifa/popup/popup_select_club_compare.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
-import 'package:fifa/values/league_names.dart';
 import 'package:fifa/values/league_trophy_image.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';

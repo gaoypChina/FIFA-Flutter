@@ -1,5 +1,5 @@
 class LeagueOfficialNames{
-  final String championsLeague = 'Champions';
+  final String championsLeague = 'Champions League';
   final String libertadores = 'Libertadores';
   final String resto = 'Resto do Mundo';
   final String mundial = 'Mundial de Clubes da FIFA';
@@ -40,7 +40,7 @@ List internationalLeagueNames = [LeagueOfficialNames().championsLeague,LeagueOff
 //ID<50 -> Champions League
 //ID<70 -> Libertadores
 List leaguesListRealIndex = [
-  1,2,3,5,6, 7,8,  9,11,12,15,16, 20,21,    50,51,52,60,61,62,   70,71,  80, 85, 90
+  1,2,3,5,6, 7,8,  9,10,11,12,15,16, 20,21,    50,51,52,60,61,62,   70,71,  80, 85, 90
 ];
 
 List getAvailableLeaguesNames(){

@@ -7,14 +7,15 @@ import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/popup/popup_player_info.dart';
 import 'package:fifa/theme/background/background_age.dart';
+import 'package:fifa/theme/background/background_overall.dart';
 import 'package:fifa/theme/background/background_position.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
-import 'package:fifa/theme/background/background_overall.dart';
-import 'package:fifa/theme/translation.dart';
-import 'package:fifa/widgets/button/button_return.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/theme/translation.dart';
+import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
+
 import '../classes/my.dart';
 
 
@@ -43,18 +44,17 @@ class _TransfersState extends State<Transfers> {
         resizeToAvoidBottomInset: false, //Evita um overlay quando o layout é maior que a tela
         body: Container(
           decoration: Images().getWallpaperContainerDecoration(),
-          child: Stack(children: [
-
+          child: Stack(
+              children: [
             Column(
               children: [
-                const SizedBox(height: 32),
-                Padding(
-                  padding: const EdgeInsets.all(4.0),
-                  child: Row(
-                    children: [
-                       Text(Translation(context).text.transfers, style: EstiloTextoBranco.negrito22),
-                      const Spacer(),
-                      RichText(
+                Row(
+                  children: [
+                    backButtonText(context, Translation(context).text.transfers),
+                    const Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 16.0),
+                      child: RichText(
                         text: TextSpan(
                           children: <TextSpan>[
                             TextSpan(
@@ -65,8 +65,8 @@ class _TransfersState extends State<Transfers> {
                           ],
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
 
                 Padding(
@@ -80,7 +80,7 @@ class _TransfersState extends State<Transfers> {
                     : playersRowTitle1(),
                 //TABELA
                 Container(
-                  height: bottomSize > 0 ? 280 : 400,
+                  height: bottomSize > 0 ? Sized(context).height*0.3 : Sized(context).height*0.62,
                   color: AppColors().greyTransparent,
                   padding: const EdgeInsets.symmetric(horizontal: 6),
                   child: SingleChildScrollView(
@@ -220,8 +220,6 @@ class _TransfersState extends State<Transfers> {
               ],
             ),
 
-            //BOTAO DE VOLTAR
-            returnButton(context),
           ]),
         ));
   }
@@ -682,7 +680,7 @@ class _TransfersState extends State<Transfers> {
         ),
         borderRadius: const BorderRadius.all(Radius.circular(14.0)),
       ),
-      padding: const EdgeInsets.all(6),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Row(
         children: [
           Expanded(

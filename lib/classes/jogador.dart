@@ -66,7 +66,17 @@ class Jogador{
 
   String resumeName(){
     try{
-      return name.split(' ')[0][0] +'. '+name.split(' ')[1];
+      List split = name.split(' ');
+      String newname = '';
+      if(split.length==1){ //Chiquinho
+        newname = name;
+      }else{
+        for(int i = 1;i<split.length;i++){ //Chiquinho Moraes Santos ->Moraes Santos
+          newname += split[i]+' ';
+        }
+        newname = split[0][0]+'. '+newname;//[0][0] 1ªletra -> C. Moraes Santos
+      }
+      return newname;
     }catch(e){
       return name;
     }

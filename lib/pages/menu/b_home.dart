@@ -6,7 +6,7 @@ import 'package:fifa/database/select_database.dart';
 import 'package:fifa/functions/change_club_control.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/configuration/configuration.dart';
-import 'package:fifa/pages/customize_players.dart';
+import 'package:fifa/pages/configuration/customize_players.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';

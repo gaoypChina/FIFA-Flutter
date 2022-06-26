@@ -8,6 +8,7 @@ import 'package:fifa/page_controller/ranking_clubs_control.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
+import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 import '../widgets/loader.dart';
@@ -70,8 +71,7 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
                 child: Column(
                   children: [
 
-                    const SizedBox(height: 40),
-
+                    backButtonText(context, 'Ranking'),
                     SizedBox(
                       height: 30,
                       child: TabBar(

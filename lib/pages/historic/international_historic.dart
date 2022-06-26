@@ -3,15 +3,13 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/pages/historic/players_historic.dart';
+import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/club_country.dart';
-import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/historic_champions.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
-import 'package:fifa/widgets/button/button_continue.dart';
-import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 
 import '../../classes/geral/name.dart';
@@ -29,18 +27,28 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
   String selectedYear = anoInicial.toString();
   String leagueInternational = LeagueOfficialNames().championsLeague;
   bool isMataMata = true;
-
+////////////////////////////////////////////////////////////////////////////
+//                               INIT                                     //
+////////////////////////////////////////////////////////////////////////////
+  @override
+  void initState() {
+    initialSelectedYear();
+    super.initState();
+  }
+  initialSelectedYear(){
+    if(ano<=anoInicial){
+      selectedYear = (anoInicial-1).toString();
+    }
+  }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
     possibleYears = [];
-    if(ano<=anoInicial){
-      selectedYear = (anoInicial-1).toString();
-    }
-    for(int year=0;year<mapChampions(leagueInternational).length-1;year++){
-      possibleYears.add((year+1960).toString());
+    Iterable<double> yearsKeys = mapChampions(leagueInternational).keys;
+    for(int year=0;year<mapChampions(leagueInternational).length;year++){
+      possibleYears.add((year+yearsKeys.last.toInt()).toString());
     }
     for(int year=anoInicial;year<ano;year++){
       possibleYears.add(year.toString());
@@ -51,8 +59,9 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
           decoration: Images().getWallpaperContainerDecoration(),
           child: Column(
             children: [
+              backButtonText(context, leagueInternational),
 
-              const SizedBox(height: 40),
+              const SizedBox(height: 10),
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -82,34 +91,6 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                   ),
                 ),
               ),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  //VOLTAR
-                  Padding(
-                    padding: const EdgeInsets.all(6),
-                    child:  customButtonContinue(
-                        title: Translation(context).text.returnTo,
-                        function: (){
-                          Navigator.pop(context);
-                        }
-                    ),
-                  ),
-                  //PRÓXIMO
-                  Padding(
-                    padding: const EdgeInsets.all(6),
-                    child:  customButtonContinue(
-                        title: Translation(context).text.next,
-                        function: (){
-                          Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const PlayersHistoric()));
-                        }
-                    ),
-                  ),
-                ],
-              )
-
-
 
             ],
           ),
@@ -352,7 +333,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
   Widget internationalHistoricColumn(int year){
     Map map = mapChampions(leagueInternational);
     List list = map[year.toDouble()];
-    return Container(
+    return SizedBox(
               height: 520,
               child: ListView.builder(
                 itemCount: list.length,

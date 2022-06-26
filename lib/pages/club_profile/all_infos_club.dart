@@ -55,7 +55,7 @@ class _AllInfosClubState extends State<AllInfosClub> {
                   ),
 
 
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 10),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -80,7 +80,7 @@ class _AllInfosClubState extends State<AllInfosClub> {
                     ],
                   ),
 
-                  const SizedBox(height: 80),
+                  const SizedBox(height: 10),
 
 
                 ],

@@ -59,22 +59,21 @@ class _TableNacionalState extends State<TableNacional> {
                 margin: const EdgeInsets.only(bottom: 40),
                 child: Column(
                   children: [
-                    const SizedBox(height: 30),
+                    const SizedBox(height: 32),
+                    Row(
+                      children: [
+                        backButton(context),
+                        Image.asset(FIFAImages().campeonatoLogo(choosenLeagueIndex),height:25,width: 25),
+                        Text(' ${Translation(context).text.matchWeek} '+ rodada.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text20),
+                      ],
+                    ),
+
                     Container(
-                      height: Sized(context).height-80,
+                      height: Sized(context).height-130,
                       color: AppColors().greyTransparent,
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
-
-                            Row(
-                              children: [
-                                backButton(context),
-                                Image.asset(FIFAImages().campeonatoLogo(choosenLeagueIndex),height:25,width: 25),
-                                Expanded(child: Text(' ${Translation(context).text.matchWeek} '+ rodada.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text20)),
-                              ],
-                            ),
-
                             ///////////////////
                             //CLASSIFICAÇÃO
                             ///////////////////
