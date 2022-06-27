@@ -2,7 +2,6 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/page_controller/club_profile/data_graphics.dart';
-import 'package:fifa/pages/club_profile/compare.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
@@ -58,8 +57,6 @@ class _ClubGraphicsState extends State<ClubGraphics> {
                   totalTrophyWidget(widget.club,dataGraphics),
 
                   currentPosition(dataGraphics),
-
-                  compare(),
                 ],
               ),
             ),
@@ -72,15 +69,6 @@ class _ClubGraphicsState extends State<ClubGraphics> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-
-  Widget compare(){
-    return GestureDetector(
-      onTap: (){
-        Navigator.push(context,MaterialPageRoute(builder: (context) => Compare(club: widget.club)));
-      },
-      child: const Text('Comparar',style: EstiloTextoBranco.text16),
-    );
-  }
 
 Widget graphics(DataGraphics dataGraphics){
     return SingleChildScrollView(

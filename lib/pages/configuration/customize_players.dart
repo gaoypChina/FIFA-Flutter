@@ -20,6 +20,7 @@ import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
+import 'package:fifa/widgets/button/button_design.dart';
 import 'package:flutter/material.dart';
 
 import '../../classes/jogador.dart';
@@ -67,7 +68,7 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                       GestureDetector(
                           onTap:(){
                           },
-                          child: Image.asset(Images().getEscudo(club.name),height: 90,width: 90)
+                          child: Image.asset(Images().getEscudo(club.name),height: 80,width: 80)
                       ),
                       const SizedBox(width: 8),
                       Column(
@@ -82,7 +83,7 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                           Row(
                             children: [
 
-                              customButtonContinue(
+                              buttonDesign(
                                   title: Translation(context).text.save,
                                   function: (){
                                     //Salva os dados
@@ -103,6 +104,12 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                                     );
                                   }
                               ),
+
+                              // buttonDesign(
+                              //     title: '4-4-2',
+                              //     function: (){
+                              //     }
+                              //     ),
 
                             ],
                           ),
@@ -185,7 +192,10 @@ Widget positionsCount(String position, int number){
       margin: const EdgeInsets.symmetric(horizontal: 2.0),
       child: Column(
         children: [
-          Text(position,style: EstiloTextoBranco.text16),
+          Container(
+              color: colorPositionBackground(position),
+              padding: const EdgeInsets.symmetric(horizontal: 2.0),
+              child: Text(position,style: EstiloTextoBranco.text16)),
           Text(number.toString(),style: EstiloTextoBranco.text16),
         ],
       ),
@@ -347,29 +357,6 @@ popupNumber(dynamic number, String whichData){
   }
 
 
-  buttonDesign({required String title, required Function()? function}) {
-    return InkWell(
-      onTap: function,
-      child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 10),
-        padding: const EdgeInsets.all(10),
-        decoration: const BoxDecoration(
-          color: Colors.black38,
-          borderRadius: BorderRadius.all(
-              Radius.circular(25.0) //                 <--- border radius here
-          ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              title,
-              style: EstiloTextoBranco.text16,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+
 
 }

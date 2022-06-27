@@ -4,6 +4,7 @@ import 'package:fifa/classes/geral/name.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/historic.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/coach/coach_best_results.dart';
 import 'package:fifa/functions/coach/coach_historic_data.dart';
@@ -11,6 +12,7 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/change_club.dart';
 import 'package:fifa/pages/coach/coach_achievements.dart';
 import 'package:fifa/pages/coach/coach_past_club.dart';
+import 'package:fifa/pages/coach/coachs_ranking.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -53,9 +55,9 @@ class _CoachMenuState extends State<CoachMenu> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text('${Translation(context).text.points}: ${my.scoreGame} ',style: EstiloTextoBranco.text16),
                 changeClub(context),
                 coachAchievements(context),
+                coachPoints(context),
               ],
             ),
 
@@ -90,35 +92,8 @@ class _CoachMenuState extends State<CoachMenu> {
                       ),
                     ),
 
-                    Container(
-                      color: AppColors().greyTransparent,
-                      width: Sized(context).width,
-                      padding: const EdgeInsets.all(8),
-                      margin: const EdgeInsets.all(8),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(Translation(context).text.expectation,style: EstiloTextoBranco.text20),
-                          Row(
-                            children: [
-                              Image.asset(Images().getMyLeagueLogo(),height: 25,width: 25),
-                              const SizedBox(width: 4),
-                              Text('${my.campeonatoName}: ${expectativa.expectativaNacional.toString()}º',style: EstiloTextoBranco.text16),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Image.asset(Images().getMyInternationalLeagueLogo(),height: 25,width: 25),
-                              const SizedBox(width: 4),
-                              Text('${my.getMyInternationalLeague()}: ${Name().showTranslated(context, expectativa.expInternacional.toString())}',style: EstiloTextoBranco.text16),
-                            ],
-                          ),
-                          ],
-                      ),
-                    ),
 
-
-
+                    expectations(),
 
                     //TABELA
                     ano > anoInicial ? Container(
@@ -155,6 +130,15 @@ class _CoachMenuState extends State<CoachMenu> {
                     ),
 
 
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        signWidget('Contratação mais cara', '32.67mi', 2321),
+                        signWidget('Venda mais cara','45.34mi', 1563),
+                      ],
+                    ),
+
+
                   ],
                 ),
               ),
@@ -164,10 +148,24 @@ class _CoachMenuState extends State<CoachMenu> {
       ),
     );
   }
-}
+
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+Widget coachPoints(BuildContext context){
+  return GestureDetector(
+    onTap: (){
+      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CoachRanking()));
+    },
+    child: Container(
+      color: AppColors().greyTransparent,
+      padding: const EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
+      child: Text('${Translation(context).text.points}: ${my.scoreGame} ',style: EstiloTextoBranco.text16),
+
+    ),
+  );
+}
 Widget changeClub(BuildContext context){
   return Column(
     children: [
@@ -261,7 +259,41 @@ Widget victoryDrawLoses(String text, String value){
     ],
   );
 }
-
+Widget expectations(){
+    return Container(
+      color: AppColors().greyTransparent,
+      width: Sized(context).width,
+      padding: const EdgeInsets.all(8),
+      margin: const EdgeInsets.all(8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(Translation(context).text.expectation,style: EstiloTextoBranco.text20),
+          const SizedBox(height: 6),
+          Padding(
+            padding: const EdgeInsets.all(6.0),
+            child: Row(
+              children: [
+                Image.asset(Images().getMyLeagueLogo(),height: 25,width: 25),
+                const SizedBox(width: 8),
+                Text('${my.campeonatoName}: ${expectativa.expectativaNacional.toString()}º',style: EstiloTextoBranco.text16),
+              ],
+            ),
+          ),
+          Padding(
+          padding: const EdgeInsets.all(6.0),
+          child: Row(
+            children: [
+              Image.asset(Images().getMyInternationalLeagueLogo(),height: 25,width: 25),
+              const SizedBox(width: 8),
+              Text('${my.getMyInternationalLeague()}: ${Name().showTranslated(context, expectativa.expInternacional.toString())}',style: EstiloTextoBranco.text16),
+            ],
+          ),
+          ),
+        ],
+      ),
+    );
+}
 Widget sequenceWidget(String text, String value, int clubID, [int? advClubID]){
   return Container(
     decoration: BoxDecoration(
@@ -282,6 +314,37 @@ Widget sequenceWidget(String text, String value, int clubID, [int? advClubID]){
               Text(value,style: EstiloTextoBranco.text30),
               advClubID != null && advClubID !=clubID ? Image.asset(Images().getEscudo(Club(index: advClubID).name),height:40,width: 40) : Container(),
             ],
+          ),
+        ),
+      ],
+    ),
+  );
+}
+Widget signWidget(String text, String value, int playerID){
+  Jogador player = Jogador(index: playerID);
+  return Container(
+    decoration: BoxDecoration(
+      color: AppColors().greyTransparent,
+    ),
+    width: 170,
+    padding: const EdgeInsets.all(4),
+    margin: const EdgeInsets.all(4),
+    child: Column(
+      children: [
+        Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.text14),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 6.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Image.network(player.imageUrl,width: 50,height: 50),
+              Column(
+                children: [
+                  Text(value,style: EstiloTextoBranco.text20),
+                  Container(width:80,child: Text(player.name,maxLines:2,textAlign:TextAlign.center,style: EstiloTextoBranco.text14)),
+                ],
+              ),
+              ],
           ),
         ),
       ],
@@ -312,4 +375,5 @@ Widget yearRow(int year, BuildContext context){
       ],
     ),
   );
+}
 }

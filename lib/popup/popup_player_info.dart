@@ -1,15 +1,20 @@
 import 'dart:math';
 
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/theme/background/background_age.dart';
+import 'package:fifa/theme/background/background_position.dart';
+import 'package:fifa/theme/background/moral_icon.dart';
+import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/background/background_overall.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/values/images.dart';
 import 'package:flutter/material.dart';
 
 import '../global_variables.dart';
@@ -40,63 +45,57 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
         builder: (BuildContext context, setState) {
           return AlertDialog(
             insetPadding: const EdgeInsets.symmetric(horizontal: 0),
-            title: Row(
-              children: [
-                //Escudo da Equipe
-                SizedBox(
-                  height: 80,width: 80,
-                  child: Stack(
+            content:Container(
+              decoration: Images().getWallpaperContainerDecoration(),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  
+                  Row(
                     children: [
-                      globalHasInternet ? Image.network(jogador.imageUrl,height: 80,width: 80) : Image.asset(Images().getGenericPlayerPicture(),height: 80,width: 80),
-                      Container(alignment: Alignment.bottomRight,child: funcFlagsList(jogador.nationality, 20,30)),
-                      Text(jogador.nationality,style: EstiloTextoPreto.text12),
+                      //Escudo da Equipe
+                      SizedBox(
+                        height: 80,width: 80,
+                        child: Stack(
+                          children: [
+                            globalHasInternet ? Image.network(jogador.imageUrl,height: 80,width: 80) : Image.asset(Images().getGenericPlayerPicture(),height: 80,width: 80),
+                            Container(alignment: Alignment.bottomRight,child: funcFlagsList(jogador.nationality, 20,30)),
+                            Text(jogador.nationality,style: EstiloTextoBranco.text12),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 6),
+                      Expanded(child: Column(
+                        children: [
+                          Text(jogador.name,style: EstiloTextoBranco.text22),
+                          mainStatus(context,jogador),
+                        ],
+                      )),
+                      //Escudo da Equipe
+                      Image.asset(Images().getEscudo(jogador.clubName),height: 60,width: 60),
                     ],
                   ),
-                ),
-                const SizedBox(width: 6),
-                Expanded(child: Text(jogador.name,style: EstiloTextoPreto.text22)),
-                //Escudo da Equipe
-                Image.asset(Images().getEscudo(jogador.clubName),height: 60,width: 60),
-              ],
-            ),
-            content:Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Row(
-                  children: [
-                    boxInfo(Translation(context).text.overall,jogador.overall.toString(), colorOverallBackground(jogador.overall)),
-                    boxInfo(Translation(context).text.position,jogador.position),
-                    boxInfo(Translation(context).text.age,jogador.age.toString(),colorAgeBackground(jogador.age)),
-                  ],
-                ),
-                Row(
-                  children: [
-                    boxInfo(Translation(context).text.carrerMatchs,jogador.matchsCarrer.toString()),
-                    boxInfo(Translation(context).text.carrerGoals,jogador.goalsCarrer.toString()),
-                    boxInfo(Translation(context).text.carrerAssists,jogador.assistsCarrer.toString()),
-                  ],
-                ),
-                Row(
-                  children: [
-                    boxInfo(Translation(context).text.leagueMatchs,jogador.matchsLeague.toString()),
-                    boxInfo(Translation(context).text.leagueGoals,jogador.goalsLeague.toString()),
-                    boxInfo(Translation(context).text.leagueAssists,jogador.assistsLeague.toString()),
-                  ],
-                ),
-                Row(
-                  children: [
-                    boxInfo(Translation(context).text.injuryMatchs,jogador.injury.toString()),
-                    boxInfo(Translation(context).text.yellowCards,jogador.yellowCard.toString()),
-                    boxInfo(Translation(context).text.redCards,jogador.redCard.toString()),
-                  ],
-                ),
+
+                  Row(
+                    children: [
+                      positionContainer(jogador.position,size: 60,style: EstiloTextoPreto.text16),
+                      health(context, jogador),
+                      lesoesCartoes(context, jogador),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      carrerStats(context,jogador),
+                      thisSeasonStats(context,jogador),
+                    ],
+                  ),
+
+                  value(context,jogador),
 
 
-                Text('${Translation(context).text.money}: \$'+My().money.toStringAsFixed(2)),
-                Text('${Translation(context).text.value}: \$'+jogador.price.toStringAsFixed(2),
-                    style: (globalMyMoney>jogador.price) ? EstiloTextoVerde.text14 : EstiloTextoVermelho.text14),
 
-              ],
+                ],
+              ),
             ),
             actions: <Widget>[
               TextButton(
@@ -126,6 +125,7 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
 ////////////////////////////////////////////////////////////////////////////
 //                             WIDGET                                     //
 ////////////////////////////////////////////////////////////////////////////
+
 Widget boxInfo(String title, String number,[Color? backgroundColor]){
   backgroundColor = backgroundColor ?? Colors.black26;
 
@@ -137,9 +137,193 @@ Widget boxInfo(String title, String number,[Color? backgroundColor]){
     padding: const EdgeInsets.all(7),
     child: Column(
       children: [
-        Text(title, textAlign:TextAlign.center, style: EstiloTextoPreto.text12),
+        Text(title, textAlign:TextAlign.center, style: EstiloTextoBranco.text12),
         const SizedBox(height: 6),
-        Text(number, style: EstiloTextoPreto.text20),
+        Text(number, style: EstiloTextoBranco.text20),
+      ],
+    ),
+  );
+}
+mainStatus(BuildContext context, Jogador jogador){
+  double sizeIcon = 25;
+  return Column(
+    children: [
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children:[
+          const SizedBox(width:50,child: Text('Overall',style: EstiloTextoBranco.text14)),
+          Container(
+              height:sizeIcon,width: sizeIcon,
+              color: colorOverallBackground(jogador.overall),
+              child: Center(child: Text(jogador.overall.toString(), textAlign:TextAlign.center, style: EstiloTextoPreto.text12)),
+          ),
+        ],
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children:[
+          const SizedBox(width:50,child: Text('Idade',style: EstiloTextoBranco.text14)),
+          Container(
+            height:sizeIcon,width: sizeIcon,
+            color: colorAgeBackground(jogador.age),
+            child: Center(child: Text(jogador.age.toString(), textAlign:TextAlign.center, style: EstiloTextoPreto.text12)),
+          ),
+        ],
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children:[
+          const SizedBox(width:50,child: Text('Moral',style: EstiloTextoBranco.text14)),
+          moralContainer(jogador,size: sizeIcon),
+        ],
+      ),
+    ],
+  );
+}
+
+Widget health(BuildContext context, Jogador jogador){
+  return    Column(
+    children: [
+      const Text('Saúde', style: EstiloTextoBranco.text20),
+      //Barra de saúde
+      SizedBox(
+        width: Sized(context).width*0.3,
+        child: LinearProgressIndicator(
+          value: jogador.health,
+          color: Colors.teal,
+          backgroundColor: Colors.grey,
+        ),
+      ),
+    ],
+  );
+}
+Widget carrerStats(BuildContext context, Jogador jogador){
+  return Container(
+    width: Sized(context).width*0.35,
+    padding: const EdgeInsets.all(4),
+    decoration: blackDecoration(),
+    child: Column(
+      children: [
+
+        const Text('Carreira', style: EstiloTextoBranco.text20),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+
+            Column(
+              children: [
+                const Text('Jogos', style: EstiloTextoBranco.text14),
+                Text(jogador.matchsCarrer.toString(), style: EstiloTextoBranco.text20),
+              ],
+            ),
+            Column(
+              children: [
+                Image.asset('assets/icons/bola.png',height: 15,width: 15),
+                Text(jogador.goalsCarrer.toString(), style: EstiloTextoBranco.text20),
+              ],
+            ),
+            Column(
+              children: [
+                Image.asset('assets/icons/assists.png',height: 15,width: 15),
+                Text(jogador.assistsCarrer.toString(), style: EstiloTextoBranco.text20),
+              ],
+            ),
+          ],
+        ),
+
+      ],
+    ),
+  );
+}
+
+Widget thisSeasonStats(BuildContext context, Jogador jogador){
+  return Container(
+    width: Sized(context).width*0.5,
+    padding: const EdgeInsets.all(4),
+    decoration: blackDecoration(),
+    child: Column(
+      children: [
+
+        const Text('Essa temporada', style: EstiloTextoBranco.text20),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Column(
+              children: [
+                const Text('', style: EstiloTextoBranco.text12),
+                Image.asset(FIFAImages().campeonatoLogo(Club(index: jogador.clubID).leagueID),height: 25,width: 25),
+                Image.asset(FIFAImages().campeonatoInternacionalLogo(Club(index: jogador.clubID).internationalLeagueName),height: 25,width: 25),
+              ],
+            ),
+            Column(
+              children: [
+                const Text('Jogos', style: EstiloTextoBranco.text14),
+                Text(jogador.matchsLeague.toString(), style: EstiloTextoBranco.text20),
+                Text(jogador.matchsInternational.toString(), style: EstiloTextoBranco.text20),
+              ],
+            ),
+            Column(
+              children: [
+                Image.asset('assets/icons/bola.png',height: 15,width: 15),
+                Text(jogador.goalsLeague.toString(), style: EstiloTextoBranco.text20),
+                Text(jogador.goalsInternational.toString(), style: EstiloTextoBranco.text20),
+              ],
+            ),
+            Column(
+              children: [
+                Image.asset('assets/icons/assists.png',height: 15,width: 15),
+                Text(jogador.assistsLeague.toString(), style: EstiloTextoBranco.text20),
+                Text(jogador.assistsInternational.toString(), style: EstiloTextoBranco.text20),
+              ],
+            ),
+          ],
+        ),
+
+      ],
+    ),
+  );
+}
+Widget lesoesCartoes(BuildContext context, Jogador jogador){
+  return SizedBox(
+    width: Sized(context).width*0.3,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+          Column(
+            children: [
+              Container(
+                height: 15,width: 15,color: Colors.white,
+                child: const Center(child: Text('+',style: TextStyle(fontSize: 15,color: Colors.red),)),
+              ),
+              Text(jogador.injury.toString(), style: EstiloTextoBranco.text20),
+            ],
+          ),
+        Column(
+          children: [
+            Container(height: 15,width: 10,color: Colors.yellow),
+            Text(jogador.yellowCard.toString(), style: EstiloTextoBranco.text20),
+          ],
+        ),
+        Column(
+          children: [
+            Container(height: 15,width: 10,color: Colors.red),
+            Text(jogador.redCard.toString(), style: EstiloTextoBranco.text20),
+          ],
+        ),
+      ],
+    ),
+  );
+}
+Widget value(BuildContext context,Jogador jogador){
+  return Container(
+    decoration: blackDecoration(),
+    padding: const EdgeInsets.all(8),
+    margin: const EdgeInsets.all(8),
+    child: Column(
+      children: [
+        Text('${Translation(context).text.money}: \$'+My().money.toStringAsFixed(2),style: EstiloTextoBranco.text14),
+        Text('${Translation(context).text.value}: \$'+jogador.price.toStringAsFixed(2),
+            style: (globalMyMoney>jogador.price) ? EstiloTextoVerde.text14 : EstiloTextoVermelho.text14),
       ],
     ),
   );

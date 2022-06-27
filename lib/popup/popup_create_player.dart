@@ -38,7 +38,7 @@ popUpCreatePlayer({required BuildContext context, required Club club, required F
             content: Form(
               key: _formKey,
               child: SizedBox(
-                height: Sized(context).height/3,
+                height: Sized(context).height*0.3,
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -57,44 +57,70 @@ popUpCreatePlayer({required BuildContext context, required Club club, required F
 
 
                       const SizedBox(height: 8),
-                      Text(Translation(context).text.position+": ", style:  EstiloTextoPreto.text14),
-                      DropdownButton<String>(
-                          value: playerBasicInfo.position,
-                          items: finalResult,
-                        onChanged: (Object? value) {
-                          playerBasicInfo.position = value.toString().toUpperCase();
-                          setState((){});
-                        },
-                      ),
+                      Row(
+                        children: [
+                          Flexible(
+                            flex: 4,
+                            child: Column(
+                              children: [
+                                Text(Translation(context).text.position+": ", style:  EstiloTextoPreto.text14),
+                                DropdownButton<String>(
+                                  value: playerBasicInfo.position,
+                                  items: finalResult,
+                                  onChanged: (Object? value) {
+                                    playerBasicInfo.position = value.toString().toUpperCase();
+                                    setState((){});
+                                  },
+                                ),
+                              ],
+                            ),
+                          ),
 
-                      const SizedBox(height: 8),
-                      Text(Translation(context).text.age+": ", style:  EstiloTextoPreto.text14),
-                      TextFormField(
-                        validator: (value) => value!.isNotEmpty ? int.parse(value) < 16 || int.parse(value) > 44 ? 'Idade inválida' : null : null,
-                        keyboardType: TextInputType.number,
-                        inputFormatters: [
-                          LengthLimitingTextInputFormatter(2), //max number characteres in Description
+                          const SizedBox(width: 16),
+                          Flexible(
+                            flex: 5,
+                            child: Column(
+                              children: [
+                                Text(Translation(context).text.age+": ", style:  EstiloTextoPreto.text14),
+                                TextFormField(
+                                  validator: (value) => value!.isNotEmpty ? int.parse(value) < 16 || int.parse(value) > 44 ? 'Idade inválida' : null : null,
+                                  keyboardType: TextInputType.number,
+                                  inputFormatters: [
+                                    LengthLimitingTextInputFormatter(2), //max number characteres in Description
+                                  ],
+                                  onChanged: (value){
+                                    playerBasicInfo.age = int.parse(value);
+                                  },
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(width: 16),
+
+                          Flexible(
+                            flex: 5,
+                              child: Column(
+                                children: [
+                                  Text(Translation(context).text.overall+": ", style:  EstiloTextoPreto.text14),
+                                  TextFormField(
+                                    keyboardType: TextInputType.number,
+                                    inputFormatters: [
+                                      LengthLimitingTextInputFormatter(2), //max number characteres in Description
+                                    ],
+                                    onChanged: (value){
+                                      playerBasicInfo.overall = int.parse(value);
+                                    },
+                                  ),
+                                ],
+                              ),
+                          ),
+
                         ],
-                        onChanged: (value){
-                          playerBasicInfo.age = int.parse(value);
-                        },
                       ),
 
 
-                      const SizedBox(height: 8),
-                      Text(Translation(context).text.overall+": ", style:  EstiloTextoPreto.text14),
-                      TextFormField(
-                        keyboardType: TextInputType.number,
-                        inputFormatters: [
-                          LengthLimitingTextInputFormatter(2), //max number characteres in Description
-                        ],
-                        onChanged: (value){
-                          playerBasicInfo.overall = int.parse(value);
-                      },
-                      ),
 
-
-                      const SizedBox(height: 8),
+                      const SizedBox(height: 24),
                       Text(Translation(context).text.nationality+": ", style:  EstiloTextoPreto.text14),
                       Row(
                         children: [

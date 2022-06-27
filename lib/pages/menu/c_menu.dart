@@ -143,7 +143,6 @@ class _MenuState extends State<Menu> {
                             children: [
                               Expanded(
                                 child: menuButton(Translation(context).text.historic,(){
-                                  customToast(Translation(context).text.loading);
                                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HistoricMenu()));
                                 }),
                               ),
@@ -315,7 +314,7 @@ Widget last5Matchs(){
     Color color = Colors.transparent;
       ResultGameNacional show = ResultGameNacional(rodadaLocal: rodada-i-1, clubID: myClass.clubID);
       if(show.victoryDrawLoss310 == 3){color = Colors.green;}
-      if(show.victoryDrawLoss310 == 1){color = Colors.grey;}
+      if(show.victoryDrawLoss310 == 1){color = Colors.yellow;}
       if(show.victoryDrawLoss310 == 0){color = Colors.red;}
       if(show.exists){
         return Container(

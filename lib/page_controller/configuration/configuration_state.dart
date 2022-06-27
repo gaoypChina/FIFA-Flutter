@@ -12,11 +12,12 @@ class ConfigurationState{
   bool hasCards = globalHasCards;
   bool hasInjuries = globalHasInjuries;
   bool seeProbability = globalSeeProbabilities;
+  bool randomizePlayers = globalRandomizePlayers;
   double initialMoney = globalInitialMoney;
   String coachName = globalCoachName;
 
-  List<bool?> states = [false,globalAllEqualOverall,globalRandomPlayersOverall,false];
-  List<String> names = ['','','',''];
+  List<bool?> states = [false,globalAllEqualOverall,globalRandomPlayersOverall];
+  List<String> names = ['','',''];
 
   changeSoundEffectSwitchState(){
     hasSoundEffect = !hasSoundEffect;
@@ -46,6 +47,10 @@ class ConfigurationState{
   changeInjuryState(){
     hasInjuries = !hasInjuries;
   }
+  changeRandomizePlayersState(){
+    globalRandomizePlayers = !globalRandomizePlayers;
+    randomizePlayers = globalRandomizePlayers;
+  }
 
   setInitialCheckboxState(BuildContext context){
     if(states[1] == true){
@@ -58,11 +63,10 @@ class ConfigurationState{
     }
     names = [Translation(context).text.playersNormalOveerall,
              Translation(context).text.allPlayersEqual,
-              Translation(context).text.allPlayersRandom,
-            'Jogadores em times aleatórios'];
+              Translation(context).text.allPlayersRandom];
   }
   setListBool(int index){
-    states = List.filled(4, false);
+    states = List.filled(3, false);
     states[index] = true;
   }
   setStates(int index){
@@ -129,8 +133,8 @@ class ConfigurationState{
 
 
   changeSeeProbabilityState(){
-    seeProbability = !seeProbability;
     globalSeeProbabilities = !globalSeeProbabilities;
+    seeProbability = globalSeeProbabilities;
   }
 
   setInitialMoney(double value){

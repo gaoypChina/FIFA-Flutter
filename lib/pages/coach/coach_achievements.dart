@@ -31,8 +31,15 @@ class _CoachAchievementsState extends State<CoachAchievements> {
           children: [
             backButtonText(context, Translation(context).text.coachAchievements),
             const SizedBox(height: 8),
-            for(String word in controller.achievements)
-              row(controller, word)
+            title(),
+
+            Expanded(
+              child: ListView.builder(
+                  padding: EdgeInsets.zero,
+                  itemCount: controller.achievements.length,
+                  itemBuilder: (c,i) => row(controller, controller.achievements[i],300)
+              ),
+            ),
           ],
         ),
       )
@@ -42,7 +49,18 @@ class _CoachAchievementsState extends State<CoachAchievements> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-Widget row(CoachAchievementsController controller, String name){
+  Widget title(){
+    return Row(
+      children: [
+        const SizedBox(width: 40),
+        Text(Translation(context).text.coachAchievements,style: EstiloTextoBranco.negrito16),
+        const Spacer(),
+        Text(Translation(context).text.points,style: EstiloTextoBranco.negrito16),
+        const SizedBox(width: 8),
+      ],
+    );
+  }
+Widget row(CoachAchievementsController controller, String name, int points){
   return Container(
     padding: const EdgeInsets.symmetric(vertical: 8),
     margin: const EdgeInsets.only(left: 12,right: 8),
@@ -53,6 +71,9 @@ Widget row(CoachAchievementsController controller, String name){
             child: Icon(Icons.star,color: controller.achievementsCheck[name]! ? Colors.yellow :Colors.white,size:25),
         ),
         Text(name,style: EstiloTextoBranco.text16),
+        const Spacer(),
+        Text('+'+points.toString(),style: EstiloTextoBranco.text16),
+
       ],
     ),
   );

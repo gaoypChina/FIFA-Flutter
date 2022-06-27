@@ -2,6 +2,7 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/images.dart';
@@ -18,12 +19,31 @@ class MyPlayersHistoric extends StatefulWidget {
 class _MyPlayersHistoricState extends State<MyPlayersHistoric> {
 
   late Club club;
+  List<String> possibleYears = [];
+  String selectedYear = anoInicial.toString();
+  ////////////////////////////////////////////////////////////////////////////
+//                               INIT                                     //
+////////////////////////////////////////////////////////////////////////////
+  @override
+  void initState() {
+    initialSelectedYear();
+    super.initState();
+  }
+  initialSelectedYear(){
+    if(ano<=anoInicial){
+      selectedYear = (anoInicial-1).toString();
+    }
+  }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
 
   @override
   Widget build(BuildContext context) {
+    possibleYears = [];
+    for(int year=anoInicial;year<ano;year++){
+      possibleYears.add(year.toString());
+    }
     club = Club(index: My().clubID);
     return Scaffold(
       body: Stack(
@@ -56,10 +76,15 @@ class _MyPlayersHistoricState extends State<MyPlayersHistoric> {
 ////////////////////////////////////////////////////////////////////////////
 Widget header(){
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        yearSelection(),
-        Image.asset(Images().getEscudo(club.name),width: 50,height: 50),
-        Image.asset(Images().getUniform(club.name),width: 50,height: 50),
+        dropDownButton(),
+        Row(
+          children: [
+            Image.asset(Images().getEscudo(club.name),width: 50,height: 50),
+            Image.asset(Images().getUniform(club.name),width: 50,height: 50),
+          ],
+        ),
         Container(
           padding: const EdgeInsets.all(8),
           margin: const EdgeInsets.all(4),
@@ -86,19 +111,35 @@ Widget header(){
     );
 }
 
-Widget yearSelection(){
-    return InkWell(
-      onTap: (){
-
-      },
-      child: Container(
-        padding: const EdgeInsets.all(4),
-        margin: const EdgeInsets.all(4),
-        decoration: blackDecoration(),
-        child: const Text('2021',style: EstiloTextoBranco.text22),
+  Widget dropDownButton(){
+    return                   Container(
+      decoration: BoxDecoration(
+        color:Colors.white, //background color of dropdown button
+        border: Border.all(color: Colors.black38, width:2), //border of dropdown button
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal:10.0,vertical: 4),
+        child: DropdownButton<String>(
+          value: selectedYear,
+          style: const TextStyle(fontSize: 18, color: Colors.white),
+          iconEnabledColor: Colors.black, //Icon color
+          underline: Container(), //empty line
+          dropdownColor: Colors.white,
+          items: possibleYears.map((value) {
+            return DropdownMenuItem(
+              child: Text(value,style: EstiloTextoPreto.text16),
+              value: value,
+            );
+          }).toList(),
+          onChanged: (value) {
+            setState(() {});
+            selectedYear = value.toString();
+          },
+        ),
       ),
     );
-}
+  }
   Widget bestPlayers(){
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
@@ -129,24 +170,24 @@ Widget yearSelection(){
   }
   Widget field(){
     return Column(
-      children: [
+      children: const [
 
-        const Text('Lista de Jogadores',style: EstiloTextoBranco.text14),
+        Text('Lista de Jogadores',style: EstiloTextoBranco.text14),
       ],
     );
   }
 Widget soldPlayers(){
     return Column(
-      children: [
+      children: const [
 
-        const Text('Vendidos',style: EstiloTextoBranco.text14),
+        Text('Vendidos',style: EstiloTextoBranco.text14),
       ],
     );
 }
   Widget boughtPlayers(){
     return Column(
-      children: [
-        const Text('Comprados',style: EstiloTextoBranco.text14),
+      children: const [
+        Text('Comprados',style: EstiloTextoBranco.text14),
 
       ],
     );

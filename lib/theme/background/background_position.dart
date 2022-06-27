@@ -2,15 +2,15 @@
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
-Widget positionContainer(String position){
+Widget positionContainer(String position,{double size=25,TextStyle style = EstiloTextoBranco.text10}){
   return Container(
-    width: 25,
+    width: size,
     decoration: BoxDecoration(
       color: colorPositionBackground(position),
       borderRadius: const BorderRadius.all(Radius.circular(5.0) ),
     ),
     padding: const EdgeInsets.all(2),
-    child: Text(position, textAlign: TextAlign.center, style: EstiloTextoBranco.text10),
+    child: Text(position, textAlign: TextAlign.center, style: style),
   );
 }
 Color colorPositionBackground(String position){

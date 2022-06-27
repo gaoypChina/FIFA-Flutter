@@ -23,7 +23,7 @@ class Configuration extends StatefulWidget {
 class _ConfigurationState extends State<Configuration> {
 
   ConfigurationState config = ConfigurationState();
-  double spaceBetweenWidgets = 20;
+  double spaceBetweenWidgets = 16;
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
@@ -50,28 +50,30 @@ class _ConfigurationState extends State<Configuration> {
                     SizedBox(height: spaceBetweenWidgets),
                     language(),
                     SizedBox(height: spaceBetweenWidgets),
-                    soundEffects(config),
-                    SizedBox(height: spaceBetweenWidgets),
                     dificulty(),
                     SizedBox(height: spaceBetweenWidgets),
                     initialMoney(),
                     SizedBox(height: spaceBetweenWidgets),
+                    soundEffects(config),
+                    SizedBox(height: spaceBetweenWidgets),
+                    turns(config),
+                    SizedBox(height: spaceBetweenWidgets),
+                    playersOverallCheckbox(),
+                    SizedBox(height: spaceBetweenWidgets),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                      nTeamsClassified(),
-                      changeClubs(),
-                    ],),
+                        nTeamsClassified(),
+                        changeClubs(),
+                      ],),
                     SizedBox(height: spaceBetweenWidgets),
-                    turns(config),
+                    randomizePlayers(),
+                    SizedBox(height: spaceBetweenWidgets),
+                    seeProbability(),
                     SizedBox(height: spaceBetweenWidgets),
                     allowCards(config),
                     SizedBox(height: spaceBetweenWidgets),
                     allowInjuries(config),
-                    SizedBox(height: spaceBetweenWidgets),
-                    playersOverallCheckbox(),
-                    SizedBox(height: spaceBetweenWidgets),
-                    seeProbability(),
                     SizedBox(height: spaceBetweenWidgets),
                     userTerms(),
                     SizedBox(height: spaceBetweenWidgets),
@@ -222,7 +224,7 @@ Widget soundEffects(ConfigurationState config){
               Radius.circular(5.0) //                 <--- border radius here
           ),
         ),
-        child: const Center(child: Text('Configurar Campeonatos',style: EstiloTextoBranco.negrito16)),
+        child: const Center(child: Text('Configurar Campeonatos',textAlign: TextAlign.center,style: EstiloTextoBranco.negrito16)),
       ),
     );
   }
@@ -242,7 +244,7 @@ Widget soundEffects(ConfigurationState config){
               Radius.circular(5.0) //                 <--- border radius here
           ),
         ),
-        child: Center(child: Text(Translation(context).text.changeClubs,style: EstiloTextoBranco.negrito16)),
+        child: Center(child: Text(Translation(context).text.changeClubs,textAlign: TextAlign.center,style: EstiloTextoBranco.negrito16)),
       ),
     );
   }
@@ -307,7 +309,24 @@ Widget soundEffects(ConfigurationState config){
       ],
     );
   }
-
+  Widget randomizePlayers(){
+    return Row(
+      children: [
+        const SizedBox(
+          width: 200,
+          child: Text('Jogadores em times aleatórios',style: EstiloTextoBranco.negrito16),
+        ),
+        const Spacer(),
+        Switch(
+            value: config.randomizePlayers,
+            onChanged: (value) {
+              setState(() {
+                config.changeRandomizePlayersState();
+              });
+            }),
+      ],
+    );
+  }
   Widget seeProbability(){
     return Row(
       children: [

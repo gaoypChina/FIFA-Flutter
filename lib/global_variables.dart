@@ -29,6 +29,7 @@ bool globalHasInjuries = true;
 bool globalAllEqualOverall = false;
 bool globalRandomPlayersOverall = false;
 bool globalSeeProbabilities = true;
+bool globalRandomizePlayers = false;
 double globalInitialMoney = 0;
 
 int globalDificuldade = 2; //2-> médio
@@ -105,6 +106,7 @@ List globalJogadoresInternationalAssists = [];
 List globalJogadoresRedCard = [];
 List globalJogadoresYellowCard = [];
 List globalJogadoresInjury = [];
+List globalJogadoresMoralNames = ['Excelent','Good','Average','Bad','Terrible'];
 
 /////////////////////
 //CLUBS
@@ -120,6 +122,7 @@ List globalClubsInternationalGS = [];
 List globalInternational32ClubsID = [[],[]];//0:Champions, 1:Libertadores
 Map globalInternationalMataMataClubsID = {};
 Map globalInternationalMataMataGoals = {};
+
 
 /////////////////////
 //POSITIONS

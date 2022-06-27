@@ -71,7 +71,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                     const SizedBox(width: 6),
                     dropDownButton(),
                     const SizedBox(width: 6),
-                    phaseSelection(),
+                    int.parse(selectedYear)>=anoInicial ? phaseSelection() : Container(),
                   ],
                 ),
               ),
@@ -81,7 +81,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        ano > anoInicial ?
+                        int.parse(selectedYear) > anoInicial ?
                             isMataMata
                                 ? internationalHistoricColumnSimulation(int.parse(selectedYear),leagueInternational)
                                 : groupsClassificationColumnSimulation(int.parse(selectedYear),leagueInternational)

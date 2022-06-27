@@ -5,7 +5,7 @@ import 'package:fifa/pages/historic/leagues_historic.dart';
 import 'package:fifa/pages/historic/my_players_historic.dart';
 import 'package:fifa/pages/historic/players_historic.dart';
 import 'package:fifa/pages/historic/ranking_best_clubs_history.dart';
-import 'package:fifa/pages/table/table_mundial.dart';
+import 'package:fifa/pages/historic/mundial.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/widgets/back_button.dart';
@@ -81,6 +81,7 @@ class _HistoricMenuState extends State<HistoricMenu> {
 
               //3ªfileira
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   box(
                       'Meus Elencos',
@@ -96,6 +97,7 @@ class _HistoricMenuState extends State<HistoricMenu> {
                         Navigator.push(context,MaterialPageRoute(builder: (context) => const RankingBestClubsHistory()));
                       }
                   ),
+
                 ],
               ),
 
@@ -128,7 +130,7 @@ Widget box(String text, Widget centralWidget, Function function){
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             centralWidget,
-            Text(text,style: EstiloTextoBranco.text16),
+            Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
           ],
         ),
       ),
