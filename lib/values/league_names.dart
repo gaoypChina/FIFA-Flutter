@@ -72,6 +72,7 @@ List leagueNames = [
   LeagueOfficialNames().outros,
 ];
 
+
 Map leaguesIndexFromName = {
   LeagueOfficialNames().inglaterra1: 1,
   LeagueOfficialNames().inglaterra2: 2,
@@ -105,6 +106,38 @@ Map leaguesIndexFromName = {
   LeagueOfficialNames().orienteMedio: 81,
   LeagueOfficialNames().africa: 85,
   LeagueOfficialNames().outros: 90,
+};
+
+Map nTeamsRelegated = {
+  LeagueOfficialNames().inglaterra1: 3,
+  LeagueOfficialNames().inglaterra2: 3,
+  LeagueOfficialNames().italia1: 3,
+
+  LeagueOfficialNames().espanha1: 3,
+  LeagueOfficialNames().franca1: 3,
+  LeagueOfficialNames().alemanha1: 3,
+
+  LeagueOfficialNames().brasil1: 3,
+  LeagueOfficialNames().brasil2: 3,
+};
+
+Map nTeamsClassified = {
+  LeagueOfficialNames().inglaterra1: 4,
+  LeagueOfficialNames().italia1: 4,
+  LeagueOfficialNames().espanha1: 4,
+  LeagueOfficialNames().franca1: 4,
+  LeagueOfficialNames().alemanha1: 4,
+
+  LeagueOfficialNames().ptHol: 4,
+  LeagueOfficialNames().turquiaGrecia: 2,
+
+  LeagueOfficialNames().ligaEuropa: 3,
+  LeagueOfficialNames().lesteEuropeu: 3,
+
+  LeagueOfficialNames().brasil1: 8,
+  LeagueOfficialNames().argentina: 6,
+  LeagueOfficialNames().sulamericano: 12,
+  LeagueOfficialNames().colombia: 6,
 };
 
 bool leaguePlayInternationalCompetition(String name){

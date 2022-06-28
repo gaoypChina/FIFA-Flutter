@@ -6,6 +6,7 @@ import 'package:fifa/pages/historic/my_players_historic.dart';
 import 'package:fifa/pages/historic/players_historic.dart';
 import 'package:fifa/pages/historic/ranking_best_clubs_history.dart';
 import 'package:fifa/pages/historic/mundial.dart';
+import 'package:fifa/pages/simulacao/after_play.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/widgets/back_button.dart';
@@ -34,6 +35,7 @@ class _HistoricMenuState extends State<HistoricMenu> {
           Column(
             children: [
               backButtonText(context,'Menu Histórico'),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -99,6 +101,15 @@ class _HistoricMenuState extends State<HistoricMenu> {
                   ),
 
                 ],
+              ),
+
+              //TESTE
+              box(
+                  'Post Match',
+                  Image.asset('assets/clubs/generic.png',height: 50,),
+                      (){
+                    Navigator.push(context,MaterialPageRoute(builder: (context) => const AfterPlay()));
+                  }
               ),
 
             ],

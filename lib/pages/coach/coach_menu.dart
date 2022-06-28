@@ -205,6 +205,10 @@ Widget coachAchievements(BuildContext context){
     ],
   );
 }
+
+
+
+
 Widget trophyWidget(BuildContext context, int i){
   late String name;
   late String image;
@@ -337,11 +341,13 @@ Widget signWidget(String text, String value, int playerID){
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image.network(player.imageUrl,width: 50,height: 50),
+              globalHasInternet
+                  ? Image.network(player.imageUrl,width: 50,height: 50)
+                  : Image.asset('assets/icons/generic_user.png',width: 50,height: 50),
               Column(
                 children: [
                   Text(value,style: EstiloTextoBranco.text20),
-                  Container(width:80,child: Text(player.name,maxLines:2,textAlign:TextAlign.center,style: EstiloTextoBranco.text14)),
+                  SizedBox(width:80,child: Text(player.name,maxLines:2,textAlign:TextAlign.center,style: EstiloTextoBranco.text14)),
                 ],
               ),
               ],
@@ -364,7 +370,7 @@ Widget yearRow(int year, BuildContext context){
         Text(year.toString(),style: EstiloTextoBranco.text16),
         Image.asset(Images().getEscudo(myClubData.clubName),height: 20,width: 20,),
         SizedBox(
-            width: Sized(context).width*0.3,
+            width: Sized(context).width*0.25,
             child: Text(myClubData.clubName,style: EstiloTextoBranco.text14)
         ),
         Text('${myClubData.leagueName}: \n${myClubData.internationalLeagueName}: ',style: EstiloTextoBranco.text12),

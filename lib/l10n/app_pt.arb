@@ -155,10 +155,17 @@
   "win1nationalChampionship": "Vença 1 campeonato nacional",
   "win5nationalChampionship": "Vença 5 campeonatos nacionais",
   "win1internationalChampionship": "Vença 1 campeonato international",
+  "win3internationalChampionship": "Vença 1 campeonatos international",
   "sellExpensivePlayer": "Venda um jogador por mais de 100mi",
+  "buyExpensivePlayer": "Compre um jogador por mais de 100mi",
   "bestTeamInTheWorld": "Tenha a melhor equipe do mundo",
   "play5seasons": "Jogue 5 temporadas",
   "play10seasons": "Jogue 10 temporadas",
+  "winAll": "Vença tudo na temporada",
+  "bestTeamWorld": "Tenha o melhor time do mundo",
+  "winMundial": "Vença o mundial de clubes",
+  "win6goalsDifference": "Vença por 6+ gols",
+  "haveTopScorer": "Tenha o artilheiro do campeonato",
   "invencibles": "Termine a temporada invicto",
 
   "@_CALENDAR_PAGE": {

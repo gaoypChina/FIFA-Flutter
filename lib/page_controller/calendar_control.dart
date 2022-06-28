@@ -47,7 +47,7 @@ class ResultGameNacional{
         exists = true;
       }catch(e){
         exists = false;
-        print("Rodada $rodadaLocal não foi simulada");
+        //print("Rodada $rodadaLocal não foi simulada");
       }
 
       backgroundBasedOnResult(gol1,gol2);

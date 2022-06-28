@@ -5,6 +5,7 @@ import 'package:fifa/classes/match.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/popup/popup_player_info.dart';
+import 'package:fifa/theme/background/background_overall.dart';
 import 'package:fifa/theme/background/background_position.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
@@ -195,6 +196,7 @@ class _SubstitutionState extends State<Substitution> {
     double healthBar = matchClass.health;
 
     String circleShow = player.overallDynamic.toStringAsFixed(0);
+    Color colorBackground = colorOverallBackground(player.overallDynamic);
 
     if(injury || redCard){healthBar=0;}
 
@@ -253,10 +255,13 @@ class _SubstitutionState extends State<Substitution> {
                   //OVR
                   Container(
                     alignment: Alignment.bottomRight,
-                    child: Padding(
-                      padding: const EdgeInsets.all(3.0),
-                      child: Text(circleShow,style: EstiloTextoPreto.text14),
-                    ),
+                    child: Container(
+                        padding: const EdgeInsets.all(3.0),
+                        decoration: BoxDecoration(
+                          color: colorBackground,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Text(circleShow,style: EstiloTextoPreto.text14)),
                   ),
 
                   //POSIÇÃO

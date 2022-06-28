@@ -414,13 +414,15 @@ class _CompareState extends State<Compare> {
             primaryXAxis: NumericAxis(labelStyle: EstiloTextoBranco.text12),
             primaryYAxis: NumericAxis(labelStyle: EstiloTextoBranco.text12),
             series: <ChartSeries>[
-              histogramSeries(dataGraphics.data, Colors.transparent),
+              dataSource1.isNotEmpty
+                  ? histogramSeries(dataSource1, Colors.transparent)
+                  : histogramSeries(dataSource2, Colors.transparent),
               dataSource1.isNotEmpty
                   ? histogramSeries(dataSource1, Colors.red)
-                  : histogramSeries(dataGraphics.data, Colors.transparent),
+                  : histogramSeries(dataSource2, Colors.transparent),
               dataSource2.isNotEmpty
                   ? histogramSeries(dataSource2, Colors.blue)
-                  : histogramSeries(dataGraphics.data, Colors.transparent),
+                  : histogramSeries(dataSource1, Colors.transparent),
             ]
         ),
       );

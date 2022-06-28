@@ -15,13 +15,25 @@ class CoachRanking extends StatefulWidget {
 class _CoachRankingState extends State<CoachRanking> {
 
   CoachRankingController controller = CoachRankingController();
+
+  ////////////////////////////////////////////////////////////////////////////
+//                               INIT                                     //
+////////////////////////////////////////////////////////////////////////////
+  @override
+  void initState() {
+    organizarRanking();
+    super.initState();
+  }
+  organizarRanking() async {
+    await controller.getStoredDataList();
+    setState(() {});
+  }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Stack(
         children: [
@@ -30,13 +42,15 @@ class _CoachRankingState extends State<CoachRanking> {
             children: [
               backButtonText(context,'Melhores treinadores'),
               title(),
-              Expanded(
+              controller.savedCoachsListSeparated.isNotEmpty
+                  ? Expanded(
                 child: ListView.builder(
                   padding: EdgeInsets.zero,
-                    itemCount: 10,
-                    itemBuilder: (c,i)=> row(i)
+                    itemCount: controller.savedCoachsListSeparated.length,
+                    itemBuilder: (c,i)=> row(i,controller.savedCoachsListSeparated[i])
                 ),
-              ),
+              )
+                  : Container(),
             ],
           ),
         ],
@@ -60,8 +74,8 @@ class _CoachRankingState extends State<CoachRanking> {
     );
   }
 
-  Widget row(int i){
-    controller.getData(i);
+  Widget row(int i,List list){
+    controller.listToClassCoach(list);
     return Container(
         margin: const EdgeInsets.all(4),
         child: Row(
@@ -73,11 +87,11 @@ class _CoachRankingState extends State<CoachRanking> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(controller.name,style: EstiloTextoBranco.negrito16),
+              Text(controller.coach.name,style: EstiloTextoBranco.negrito16),
               Row(
                 children: [
-                  Text(controller.simulationYear.toString(),style: EstiloTextoBranco.text16),
-                  Image.asset(Images().getEscudo(controller.clubName),height:20,width: 20,),
+                  Text(controller.coach.simulationYear.toString(),style: EstiloTextoBranco.text16),
+                  Image.asset(Images().getEscudo(controller.coach.clubName),height:20,width: 20,),
                   ],
               )
             ],
@@ -85,8 +99,8 @@ class _CoachRankingState extends State<CoachRanking> {
         const Spacer(),
         Column(
           children: [
-            Text(controller.points.toString(),style: EstiloTextoBranco.negrito16),
-            Text(controller.date,style: EstiloTextoBranco.text12),
+            Text(controller.coach.points.toString(),style: EstiloTextoBranco.negrito16),
+            Text(controller.coach.date,style: EstiloTextoBranco.text12),
           ],
         )
       ],

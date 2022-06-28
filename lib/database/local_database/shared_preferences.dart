@@ -19,7 +19,7 @@ class SharedPreferenceHelper {
 
   ///////////////////////////////////////////////////////////////////////////
   // SAVED GAMES
-  //////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////
   Future<bool> savesharedSaveGameNumber(int integer) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.setInt('sharedSaveGameNumber', integer);
@@ -30,6 +30,18 @@ class SharedPreferenceHelper {
     return prefs.getInt('sharedSaveGameNumber');
   }
 
+  ///////////////////////////////////////////////////////////////////////////
+  // COACH RANKING
+  ///////////////////////////////////////////////////////////////////////////
+  Future<bool> saveCoachRanking(List<String> ranking) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.setStringList('COACHRANKING', ranking);
+  }
+
+  Future<List<String>?> getCoachRanking() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getStringList('COACHRANKING');
+  }
 
 ///////////////////////////////////////////////////////////////////////////
 // REMOVE

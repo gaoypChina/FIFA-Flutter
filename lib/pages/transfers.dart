@@ -325,7 +325,7 @@ class _TransfersState extends State<Transfers> {
                   Column(
                     children: [
                       Text(Translation(context).text.min.toUpperCase(), style: EstiloTextoPreto.text14),
-                      widgetTextField(filterPlayers.transferParameters.minAge),
+                      widgetTextField(filterPlayers.transferParameters.minAge,autofocus:true),
                     ],
                   ),
                   const SizedBox(width: 16),
@@ -411,7 +411,7 @@ class _TransfersState extends State<Transfers> {
     );
   }
 
-  Widget widgetTextField(TextEditingController controller) {
+  Widget widgetTextField(TextEditingController controller,{bool autofocus = false}) {
     return Container(
       height: 30,
       width: 50,
@@ -423,6 +423,7 @@ class _TransfersState extends State<Transfers> {
       ),
       margin: const EdgeInsets.only(left: 4),
       child: TextField(
+        autofocus: autofocus,
         textAlign: TextAlign.center,
           controller: controller,
           keyboardType: TextInputType.number,

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/historic.dart';
@@ -10,6 +12,7 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/end_year_updates/aposentadoria.dart';
 import 'package:fifa/functions/international_league.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/page_controller/coach/coach_ranking_controller.dart';
 import 'package:fifa/values/league_names.dart';
 
 import 'ovr_update.dart';
@@ -108,6 +111,7 @@ resetData(){
 
   //Zera Status dos jogadores
   globalJogadoresHealth = List.filled(globalMaxPlayersPermitted, 1.0);
+  globalJogadoresMoral = List.filled(globalMaxPlayersPermitted, globalJogadoresMoralNames[Random().nextInt(globalJogadoresMoralNames.length)]);
   globalJogadoresLeagueMatchs = List.filled(globalMaxPlayersPermitted, 0);
   globalJogadoresLeagueGoals = List.filled(globalMaxPlayersPermitted, 0);
   globalJogadoresLeagueAssists = List.filled(globalMaxPlayersPermitted, 0);
@@ -167,4 +171,8 @@ saveCoachPoints(){
   int classificacao = HistoricClubYear(ano).leaguePosition;
   double multiplicationFactor = (expectativa+1)/(classificacao+1); //Ex: 10/3  12/5
   globalCoachPoints += (multiplicationFactor*(100/classificacao)).round(); //100,50,33,25,20...
+
+
+  CoachRankingController controller = CoachRankingController();
+  controller.saveData();
 }

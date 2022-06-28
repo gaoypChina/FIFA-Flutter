@@ -2,7 +2,7 @@ import 'package:fifa/theme/translation.dart';
 import 'package:flutter/cupertino.dart';
 
 class CoachAchievementsController{
-  late List<String> achievements;
+  late Map<String,int> achievements;
   Map<String,bool> achievementsCheck = {};
 
   CoachAchievementsController(BuildContext context){
@@ -13,22 +13,28 @@ class CoachAchievementsController{
   }
 
   achievementsCreateInitialList(BuildContext context){
-    achievements = [
-      Translation(context).text.play100matchs,
-    Translation(context).text.win100matchs,
-    Translation(context).text.win1nationalChampionship,
-    Translation(context).text.win5nationalChampionship,
-    Translation(context).text.win1internationalChampionship,
-    Translation(context).text.sellExpensivePlayer,
-    Translation(context).text.bestTeamInTheWorld,
-    Translation(context).text.play5seasons,
-    Translation(context).text.play10seasons,
-      Translation(context).text.invencibles,
-    ];
+    achievements = {
+    Translation(context).text.play100matchs: 100,
+    Translation(context).text.win100matchs: 150,
+    Translation(context).text.win1nationalChampionship: 50,
+    Translation(context).text.win5nationalChampionship: 300,
+    Translation(context).text.win1internationalChampionship: 150,
+    Translation(context).text.win3internationalChampionship: 400,
+    Translation(context).text.sellExpensivePlayer: 40,
+    Translation(context).text.buyExpensivePlayer: 40,
+    Translation(context).text.bestTeamInTheWorld: 100,
+    Translation(context).text.play5seasons: 50,
+    Translation(context).text.play10seasons: 150,
+    Translation(context).text.winAll: 200,
+    Translation(context).text.winMundial: 200,
+    Translation(context).text.win6goalsDifference: 40,
+    Translation(context).text.haveTopScorer: 30,
+    Translation(context).text.invencibles: 500,
+    };
   }
 
   achievementsCreateCheckMap(){
-    for(String name in achievements) {
+    for(String name in achievements.keys) {
       achievementsCheck[name] = false;
     }
   }

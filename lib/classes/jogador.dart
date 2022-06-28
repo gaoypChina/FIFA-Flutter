@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:fifa/classes/geral/esquemas_taticos.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
@@ -61,7 +59,7 @@ class Jogador{
     matchsCarrer = globalJogadoresCarrerMatchs[index];
     goalsCarrer = globalJogadoresCarrerGoals[index];
     assistsCarrer = globalJogadoresCarrerAssists[index];
-    moral = globalJogadoresMoralNames[Random().nextInt(5)];
+    moral = globalJogadoresMoral[index];
   }
 
   printData(){

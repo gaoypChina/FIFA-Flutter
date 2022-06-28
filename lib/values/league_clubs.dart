@@ -46,7 +46,6 @@ Map clubNameMapImmutable = {
     8: clubName.luton,9: clubName.middlesbrough,10: clubName.norwich, 11: clubName.qpr,
     12: clubName.prestonNorthEnd,13: clubName.reading, 14: clubName.sheffieldunited, 15: clubName.stoke,
     16: clubName.sunderland,17:clubName.swansea,18: clubName.watford,19:clubName.westbromwich,
-
   },
   LeagueOfficialNames().inglaterra3 : {
     0:clubName.blackpool,1:clubName.charlton,2: clubName.derbycount, 3: clubName.ipswichTown,

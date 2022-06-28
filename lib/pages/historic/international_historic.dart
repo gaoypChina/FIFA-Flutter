@@ -26,6 +26,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
   List<String> possibleYears = [];
   String selectedYear = anoInicial.toString();
   String leagueInternational = LeagueOfficialNames().championsLeague;
+  bool isLoaded = false;
   bool isMataMata = true;
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
@@ -39,6 +40,8 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
     if(ano<=anoInicial){
       selectedYear = (anoInicial-1).toString();
     }
+    isLoaded = true;
+    setState((){});
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -53,11 +56,13 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
     for(int year=anoInicial;year<ano;year++){
       possibleYears.add(year.toString());
     }
-
+    if(!possibleYears.contains(selectedYear)){
+      selectedYear = possibleYears.first;
+    }
     return Scaffold(
         body:  Container(
           decoration: Images().getWallpaperContainerDecoration(),
-          child: Column(
+          child: isLoaded ? Column(
             children: [
               backButtonText(context, leagueInternational),
 
@@ -81,7 +86,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        int.parse(selectedYear) > anoInicial ?
+                        int.parse(selectedYear) >= anoInicial ?
                             isMataMata
                                 ? internationalHistoricColumnSimulation(int.parse(selectedYear),leagueInternational)
                                 : groupsClassificationColumnSimulation(int.parse(selectedYear),leagueInternational)
@@ -93,7 +98,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
               ),
 
             ],
-          ),
+          ) : Container(),
         )
     );
   }

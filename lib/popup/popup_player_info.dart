@@ -65,9 +65,10 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
                         ),
                       ),
                       const SizedBox(width: 6),
-                      Expanded(child: Column(
+                      Expanded(
+                       child: Column(
                         children: [
-                          Text(jogador.name,style: EstiloTextoBranco.text22),
+                          Text(jogador.name,style: EstiloTextoBranco.negrito22),
                           mainStatus(context,jogador),
                         ],
                       )),
@@ -76,17 +77,20 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
                     ],
                   ),
 
+                  const SizedBox(height: 12),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       positionContainer(jogador.position,size: 60,style: EstiloTextoPreto.text16),
                       health(context, jogador),
                       lesoesCartoes(context, jogador),
                     ],
                   ),
+                  const SizedBox(height: 12),
                   Row(
                     children: [
-                      carrerStats(context,jogador),
-                      thisSeasonStats(context,jogador),
+                      SizedBox(height: 100,child: carrerStats(context,jogador)),
+                      SizedBox(height: 100,child: thisSeasonStats(context,jogador)),
                     ],
                   ),
 
@@ -126,24 +130,6 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
 //                             WIDGET                                     //
 ////////////////////////////////////////////////////////////////////////////
 
-Widget boxInfo(String title, String number,[Color? backgroundColor]){
-  backgroundColor = backgroundColor ?? Colors.black26;
-
-  return Container(
-    height: title.length>15 ? 80 : 65,
-    width: 100,
-    color: backgroundColor,
-    margin: const EdgeInsets.all(7),
-    padding: const EdgeInsets.all(7),
-    child: Column(
-      children: [
-        Text(title, textAlign:TextAlign.center, style: EstiloTextoBranco.text12),
-        const SizedBox(height: 6),
-        Text(number, style: EstiloTextoBranco.text20),
-      ],
-    ),
-  );
-}
 mainStatus(BuildContext context, Jogador jogador){
   double sizeIcon = 25;
   return Column(
@@ -151,30 +137,35 @@ mainStatus(BuildContext context, Jogador jogador){
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children:[
-          const SizedBox(width:50,child: Text('Overall',style: EstiloTextoBranco.text14)),
           Container(
+            margin: const EdgeInsets.only(right: 4),
               height:sizeIcon,width: sizeIcon,
               color: colorOverallBackground(jogador.overall),
               child: Center(child: Text(jogador.overall.toString(), textAlign:TextAlign.center, style: EstiloTextoPreto.text12)),
           ),
+          const SizedBox(width:50,child: Text('Overall',style: EstiloTextoBranco.text14)),
         ],
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children:[
-          const SizedBox(width:50,child: Text('Idade',style: EstiloTextoBranco.text14)),
           Container(
+            margin: const EdgeInsets.only(right: 4),
             height:sizeIcon,width: sizeIcon,
             color: colorAgeBackground(jogador.age),
             child: Center(child: Text(jogador.age.toString(), textAlign:TextAlign.center, style: EstiloTextoPreto.text12)),
           ),
+          const SizedBox(width:50,child: Text('Idade',style: EstiloTextoBranco.text14)),
         ],
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children:[
-          const SizedBox(width:50,child: Text('Moral',style: EstiloTextoBranco.text14)),
           moralContainer(jogador,size: sizeIcon),
+          Container(
+              width:50,
+              margin: const EdgeInsets.only(left: 4),
+              child: const Text('Moral',style: EstiloTextoBranco.text14)),
         ],
       ),
     ],
@@ -212,20 +203,20 @@ Widget carrerStats(BuildContext context, Jogador jogador){
 
             Column(
               children: [
-                const Text('Jogos', style: EstiloTextoBranco.text14),
-                Text(jogador.matchsCarrer.toString(), style: EstiloTextoBranco.text20),
+                const Text('Jogos', style: EstiloTextoBranco.text12),
+                Text(jogador.matchsCarrer.toString(), style: EstiloTextoBranco.text16),
               ],
             ),
             Column(
               children: [
                 Image.asset('assets/icons/bola.png',height: 15,width: 15),
-                Text(jogador.goalsCarrer.toString(), style: EstiloTextoBranco.text20),
+                Text(jogador.goalsCarrer.toString(), style: EstiloTextoBranco.text16),
               ],
             ),
             Column(
               children: [
                 Image.asset('assets/icons/assists.png',height: 15,width: 15),
-                Text(jogador.assistsCarrer.toString(), style: EstiloTextoBranco.text20),
+                Text(jogador.assistsCarrer.toString(), style: EstiloTextoBranco.text16),
               ],
             ),
           ],
@@ -257,23 +248,23 @@ Widget thisSeasonStats(BuildContext context, Jogador jogador){
             ),
             Column(
               children: [
-                const Text('Jogos', style: EstiloTextoBranco.text14),
-                Text(jogador.matchsLeague.toString(), style: EstiloTextoBranco.text20),
-                Text(jogador.matchsInternational.toString(), style: EstiloTextoBranco.text20),
+                const Text('Jogos', style: EstiloTextoBranco.text12),
+                Text(jogador.matchsLeague.toString(), style: EstiloTextoBranco.text16),
+                Text(jogador.matchsInternational.toString(), style: EstiloTextoBranco.text16),
               ],
             ),
             Column(
               children: [
                 Image.asset('assets/icons/bola.png',height: 15,width: 15),
-                Text(jogador.goalsLeague.toString(), style: EstiloTextoBranco.text20),
-                Text(jogador.goalsInternational.toString(), style: EstiloTextoBranco.text20),
+                Text(jogador.goalsLeague.toString(), style: EstiloTextoBranco.text16),
+                Text(jogador.goalsInternational.toString(), style: EstiloTextoBranco.text16),
               ],
             ),
             Column(
               children: [
                 Image.asset('assets/icons/assists.png',height: 15,width: 15),
-                Text(jogador.assistsLeague.toString(), style: EstiloTextoBranco.text20),
-                Text(jogador.assistsInternational.toString(), style: EstiloTextoBranco.text20),
+                Text(jogador.assistsLeague.toString(), style: EstiloTextoBranco.text16),
+                Text(jogador.assistsInternational.toString(), style: EstiloTextoBranco.text16),
               ],
             ),
           ],

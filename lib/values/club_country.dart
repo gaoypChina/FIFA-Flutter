@@ -621,6 +621,7 @@ class ClubCountry{
     else if(clubName==ClubName().alnassr){      nationality=Words.country.southArabia;  }
     else if(clubName==ClubName().alIttihad){ nationality=Words.country.southArabia;}
     else if(clubName==ClubName().alShabab){ nationality=Words.country.southArabia;}
+    else if(clubName==ClubName().alahli){  nationality=Words.country.southArabia;  }
 
     else if(clubName==ClubName().persepolis){      nationality=Words.country.iran;  }
     else if(clubName==ClubName().melbourneVictory){ nationality=Words.country.australia;}
@@ -629,7 +630,7 @@ class ClubCountry{
 
     //////////////////////////////////////////////////////////////////////////
     //AFRICA
-    else if(clubName==ClubName().alahli){  nationality=Words.country.egypt;  }
+    else if(clubName==ClubName().alahly){  nationality=Words.country.egypt;  }
     else if(clubName==ClubName().zamalek){ nationality=Words.country.egypt;}
     else if(clubName==ClubName().mazembe){ nationality=Words.country.congoRD;}
     else if(clubName==ClubName().rajacasablanca){      nationality=Words.country.morocco;  }

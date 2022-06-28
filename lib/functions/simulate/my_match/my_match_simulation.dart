@@ -19,6 +19,7 @@ class MyMatchSimulation{
   int probGS=0;
   late List adversarioEscalacao;
   late My myClass;
+  Club myClubClass = Club(index: My().clubID);
   late Club adversarioClubClass;
 
   MyMatchSimulation(this.myClass,this.adversarioClubClass){
@@ -26,6 +27,7 @@ class MyMatchSimulation{
     //reseta Substituicoes
     globalMatchSubstitutionsLeft = 3;
   }
+
 
   updateMilis(int milis){
     this.milis = milis;

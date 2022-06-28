@@ -99,16 +99,6 @@ class _PlayState extends State<Play> {
   @override
   Widget build(BuildContext context) {
 
-    String textRodada = '';
-    if(Semana(semana).isJogoCampeonatoNacional) {
-      textRodada = '${Translation(context).text.matchWeek} ' + rodada.toString() + '/' + (League(index: myClass.campeonatoID).getNTeams()-1).toString();
-    }else{
-      textRodada = Name().groupsPhase;
-      if(Semana(semana).isJogoGruposInternacional){textRodada += ' ${Semana(semana).rodadaGroupInternational}'; }
-      else if(Semana(semana).isJogoMataMataInternacional){
-        textRodada = Semana(semana).semanaStr;
-      }
-    }
     return Scaffold(
 
         resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
@@ -127,30 +117,7 @@ class _PlayState extends State<Play> {
 
                       const SizedBox(height: 30),
 
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          //Escudo time 1
-                          Image.asset(Images().getEscudo(myClubClass.name),height: 80,width: 80),
-
-                          Column(
-                            children: [
-                              Semana(semana).isJogoCampeonatoNacional
-                                  ? Image.asset(FIFAImages().campeonatoLogo(myClass.campeonatoID),height: 30,width: 30)
-                                  : Image.asset(FIFAImages().campeonatoInternacionalLogo(myClass.getMyInternationalLeague()),height: 35,width: 35),
-                              Text(textRodada,style: EstiloTextoBranco.text16),
-                              visitante
-                                  ? Text(myMatchSimulation.meuGolSofrido.toString() +'X'+ myMatchSimulation.meuGolMarcado.toString(),style: EstiloTextoBranco.text30)
-                                  : Text(myMatchSimulation.meuGolMarcado.toString() +'X'+ myMatchSimulation.meuGolSofrido.toString(),style: EstiloTextoBranco.text30),
-                              Text(counterMatch.milis.toString()+'\'',style: EstiloTextoBranco.text16),
-                            ],
-                          ),
-
-                          //Escudo time 2
-                          Image.asset(Images().getEscudo(adversarioClubClass.name),height: 80,width: 80),
-
-                        ],
-                      ),
+                      header(),
 
                       //GOLS MARCADOS
                       SizedBox(
@@ -239,6 +206,42 @@ class _PlayState extends State<Play> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Widget header(){
+    String textRodada = '';
+    if(Semana(semana).isJogoCampeonatoNacional) {
+      textRodada = '${Translation(context).text.matchWeek} ' + rodada.toString() + '/' + (League(index: myClass.campeonatoID).getNTeams()-1).toString();
+    }else{
+      textRodada = Name().groupsPhase;
+      if(Semana(semana).isJogoGruposInternacional){textRodada += ' ${Semana(semana).rodadaGroupInternational}'; }
+      else if(Semana(semana).isJogoMataMataInternacional){
+        textRodada = Semana(semana).semanaStr;
+      }
+    }
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        //Escudo time 1
+        Image.asset(Images().getEscudo(myClubClass.name),height: 80,width: 80),
+
+        Column(
+          children: [
+            Semana(semana).isJogoCampeonatoNacional
+                ? Image.asset(FIFAImages().campeonatoLogo(myMatchSimulation.myClass.campeonatoID),height: 30,width: 30)
+                : Image.asset(FIFAImages().campeonatoInternacionalLogo(myMatchSimulation.myClass.getMyInternationalLeague()),height: 35,width: 35),
+            Text(textRodada,style: EstiloTextoBranco.text16),
+            visitante
+                ? Text(myMatchSimulation.meuGolSofrido.toString() +'X'+ myMatchSimulation.meuGolMarcado.toString(),style: EstiloTextoBranco.text30)
+                : Text(myMatchSimulation.meuGolMarcado.toString() +'X'+ myMatchSimulation.meuGolSofrido.toString(),style: EstiloTextoBranco.text30),
+            Text(myMatchSimulation.milis.toString()+'\'',style: EstiloTextoBranco.text16),
+          ],
+        ),
+
+        //Escudo time 2
+        Image.asset(Images().getEscudo(myMatchSimulation.adversarioClubClass.name),height: 80,width: 80),
+
+      ],
+    );
+  }
   Widget goalWidget(bool isTeam1){
     int lengthWidget = myMatchSimulation.meuGolSofrido;
     bool isMy = false;

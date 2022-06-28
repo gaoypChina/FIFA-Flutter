@@ -6,6 +6,8 @@ import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/popup/popup_player_info.dart';
+import 'package:fifa/theme/background/background_age.dart';
+import 'package:fifa/theme/background/background_overall.dart';
 import 'package:fifa/theme/background/background_position.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/translation.dart';
@@ -218,10 +220,11 @@ class _FieldDraggableState extends State<FieldDraggable> {
     double healthBar = player.health;
 
     String circleShow = player.overallDynamic.toStringAsFixed(0);
-    if(show == 'Jogos'){circleShow = player.matchsLeague.toStringAsFixed(0);}
-    else if(show == 'Gols'){circleShow = player.goalsLeague.toStringAsFixed(0);}
-    else if(show == 'Assists'){circleShow = player.assistsLeague.toStringAsFixed(0);}
-    else if(show == 'Idade'){circleShow = player.age.toStringAsFixed(0);}
+    Color colorBackground = colorOverallBackground(player.overallDynamic);
+    if(show == 'Jogos'){circleShow = player.matchsLeague.toStringAsFixed(0);colorBackground = Colors.transparent;}
+    else if(show == 'Gols'){circleShow = player.goalsLeague.toStringAsFixed(0);colorBackground = Colors.transparent;}
+    else if(show == 'Assists'){circleShow = player.assistsLeague.toStringAsFixed(0);colorBackground = Colors.transparent;}
+    else if(show == 'Idade'){circleShow = player.age.toStringAsFixed(0);colorBackground = colorAgeBackground(player.age);}
 
     return GestureDetector(
       onTap:(){
@@ -260,10 +263,13 @@ class _FieldDraggableState extends State<FieldDraggable> {
                   //OVR
                   Container(
                     alignment: Alignment.bottomRight,
-                    child: Padding(
-                      padding: const EdgeInsets.all(3.0),
-                      child: Text(circleShow,style: EstiloTextoPreto.text14),
-                    ),
+                    child: Container(
+                        padding: const EdgeInsets.all(3.0),
+                        decoration: BoxDecoration(
+                          color: colorBackground,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Text(circleShow,style: EstiloTextoPreto.text14)),
                   ),
 
                   //POSIÇÃO

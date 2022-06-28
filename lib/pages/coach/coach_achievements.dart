@@ -37,7 +37,7 @@ class _CoachAchievementsState extends State<CoachAchievements> {
               child: ListView.builder(
                   padding: EdgeInsets.zero,
                   itemCount: controller.achievements.length,
-                  itemBuilder: (c,i) => row(controller, controller.achievements[i],300)
+                  itemBuilder: (c,i) => row(controller.achievements.keys.elementAt(i)),
               ),
             ),
           ],
@@ -60,7 +60,7 @@ class _CoachAchievementsState extends State<CoachAchievements> {
       ],
     );
   }
-Widget row(CoachAchievementsController controller, String name, int points){
+Widget row(String name){
   return Container(
     padding: const EdgeInsets.symmetric(vertical: 8),
     margin: const EdgeInsets.only(left: 12,right: 8),
@@ -72,7 +72,7 @@ Widget row(CoachAchievementsController controller, String name, int points){
         ),
         Text(name,style: EstiloTextoBranco.text16),
         const Spacer(),
-        Text('+'+points.toString(),style: EstiloTextoBranco.text16),
+        Text('+'+controller.achievements[name].toString(),style: EstiloTextoBranco.text16),
 
       ],
     ),

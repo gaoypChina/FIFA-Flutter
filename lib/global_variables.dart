@@ -2,6 +2,7 @@ library globals;
 
 //geral
 int testInitRodada = 1;
+int gLOBALMAXCLUBSINSIDELEAGUE = 20;
 
 
 //MEU
@@ -93,6 +94,7 @@ List globalJogadoresOverall = [];
 List globalJogadoresNationality = [];
 List globalJogadoresImageUrl = [];
 
+List globalJogadoresMoral = [];
 List globalJogadoresHealth = [];
 List globalJogadoresCarrerMatchs = List.filled(globalMaxPlayersPermitted, 0);
 List globalJogadoresCarrerGoals = List.filled(globalMaxPlayersPermitted, 0);
@@ -116,6 +118,10 @@ List globalClubsLeagueGS = [];
 List globalClubsInternationalPoints = [];
 List globalClubsInternationalGM = [];
 List globalClubsInternationalGS = [];
+
+//LEAGUES CONFIGURATION
+Map globalLeagueRelegated = {};
+Map globalLeagueClassified = {};
 
 ///////////////////////////
 //CHAMPIONS E LIBERTADORES

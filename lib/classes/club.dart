@@ -1,5 +1,6 @@
 import 'package:fifa/classes/geral/esquemas_taticos.dart';
 import 'package:fifa/classes/jogador.dart';
+import 'package:fifa/functions/contries_continents.dart';
 import 'package:fifa/functions/international_league.dart';
 import 'package:fifa/values/club_country.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
@@ -13,6 +14,7 @@ class Club{
   late int index;
   late String name;
   late String nationality;
+  late String continent;
   late List jogadores;
   late List escalacao;
   late String esquemaTatico;
@@ -57,6 +59,7 @@ class Club{
     }
 
     nationality = ClubCountry().countryName(name);
+    continent = Continents().funcCountryContinents(nationality);
   }
 
   String getLeagueName() {

@@ -169,10 +169,17 @@
   "win1nationalChampionship": "Win 1 national championship",
   "win5nationalChampionship": "Win 5 national championships",
   "win1internationalChampionship": "Win 1 international championship",
+  "win3internationalChampionship": "Win 3 international championships",
   "sellExpensivePlayer": "Sell a player for more than 100mi",
+  "buyExpensivePlayer": "Buy a player for more than 100mi",
   "bestTeamInTheWorld": "Have the best team in the world",
   "play5seasons": "Play 5 seasons",
   "play10seasons": "Play 10 seasons",
+  "winAll": "Win all trophies in the season",
+  "winMundial": "Win FIFA World Cup of Clubs",
+  "bestTeamWorld": "Have the best team in the world",
+  "win6goalsDifference": "Win by 6+ goals",
+  "haveTopScorer": "Have the top scorer of the championship",
   "invencibles": "Don't lose a match during the season",
 
   "@_CALENDAR_PAGE": {
