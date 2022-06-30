@@ -3,6 +3,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/club_country.dart';
@@ -28,6 +29,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
   String leagueInternational = LeagueOfficialNames().championsLeague;
   bool isLoaded = false;
   bool isMataMata = true;
+  bool isList = false;
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
@@ -74,13 +76,14 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                   children: [
                     internationalLogoSelection(),
                     const SizedBox(width: 6),
-                    dropDownButton(),
+                    !isList ? dropDownButton() : Container(),
                     const SizedBox(width: 6),
-                    int.parse(selectedYear)>=anoInicial ? phaseSelection() : Container(),
+                    !isList && int.parse(selectedYear)>=anoInicial ? phaseSelection() : Container(),
+                    inListForm(),
                   ],
                 ),
               ),
-              Expanded(
+              !isList ? Expanded(
                 child: SingleChildScrollView(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -92,10 +95,10 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                                 : groupsClassificationColumnSimulation(int.parse(selectedYear),leagueInternational)
                         : internationalHistoricColumn(int.parse(selectedYear)),
                       ],
-                    ),
+                    ) ,
                   ),
                 ),
-              ),
+              ) : listViewChampions(),
 
             ],
           ) : Container(),
@@ -169,17 +172,42 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
           leagueInternational == LeagueOfficialNames().championsLeague ? GestureDetector(
               onTap: (){
                 leagueInternational = LeagueOfficialNames().libertadores;
+                if(isList){
+                  customToast(Translation(context).text.loading);
+                }
                 setState(() {});
               },
               child: Image.asset(FIFAImages().campeonatoInternacionalLogo(LeagueOfficialNames().championsLeague),width: 50,height: 50)
           ): GestureDetector(
               onTap: (){
                 leagueInternational = LeagueOfficialNames().championsLeague;
+                if(isList){
+                  customToast(Translation(context).text.loading);
+                }
                 setState(() {});
               },
               child: Image.asset(FIFAImages().campeonatoInternacionalLogo(LeagueOfficialNames().libertadores),width: 50,height: 50)
           ),
         ],
+      ),
+    );
+  }
+  Widget inListForm(){
+    return Container(
+      height: 60,
+      decoration: BoxDecoration(
+        color:Colors.white, //background color of dropdown button
+        border: Border.all(color: Colors.black38, width:2), //border of dropdown button
+        borderRadius: BorderRadius.circular(10),
+      ),
+      padding: const EdgeInsets.symmetric(horizontal:10.0,vertical: 4),
+      child: GestureDetector(
+          onTap: (){
+            customToast(Translation(context).text.loading);
+            isList = !isList;
+            setState(() {});
+          },
+          child: Center(child: Text(Translation(context).text.lista,textAlign:TextAlign.center,style: EstiloTextoPreto.text14))
       ),
     );
   }
@@ -359,4 +387,82 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
             );
   }
 
+  Widget listViewChampions(){
+    Map map = mapChampions(leagueInternational);
+    List mapKeys = [];
+    map.forEach((key, value) {
+      mapKeys.add(key);
+    });
+    return
+      Expanded(
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                //ANO
+                for(double key in map.keys)
+                  Container(
+                      height: 30,
+                      width: 97,
+                      margin: const EdgeInsets.symmetric(vertical: 4),
+                      child: Center(child: Text(key.toStringAsFixed(0),style: EstiloTextoBranco.negrito18)),
+                  ),
+              ],
+            ),
+
+            Expanded(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+
+                    for(double key in map.keys)
+                      Container(
+                        margin: const EdgeInsets.symmetric(vertical: 4,horizontal: 6),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            for(var position in map[key])
+                              positionListClub(map[key], map[key].indexOf(position))
+                          ],
+                        ),
+                      )
+                  ],
+                ),
+              ),
+            ),
+
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget positionListClub(List list, int position){
+    String nationality = ClubCountry().countryName(list[position]);
+    return Container(
+      width: 85,
+      margin: (position+1 == 2 || position+1 == 4 || position+1 == 8 || position+1 == 16)
+        ? const EdgeInsets.only(bottom:12) : EdgeInsets.zero,
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Text('${(position+1).toString()}º ',style: EstiloTextoBranco.text16),
+              const SizedBox(width: 4),
+              funcFlagsList(nationality, 12, 15),
+              Image.asset(Images().getEscudo(list[position]),width: 25,height: 25),
+              const SizedBox(width: 8),
+              //Text(list[position],style: EstiloTextoBranco.text16),
+            ],
+          ),
+          Text(list[position],style: EstiloTextoBranco.text8),
+        ],
+      ),
+    );
+  }
 }

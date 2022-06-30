@@ -175,6 +175,7 @@ Widget changeClub(BuildContext context){
         margin: const EdgeInsets.all(8),
         child: GestureDetector(
           onTap:(){
+            customToast(Translation(context).text.loading);
             if(!alreadyChangedClubThisSeason){
               Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ChangeClub()));
             }else{

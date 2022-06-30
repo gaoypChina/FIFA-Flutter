@@ -122,7 +122,7 @@ funcCountryContinents(String country){
   else if(country == Words.country.malta){code = europa;}
   else if(country == Words.country.mauritania){code = africa;}
   else if(country == Words.country.mauritius){code = africa;}
-  else if(country == Words.country.mexico){code = europa;}
+  else if(country == Words.country.mexico){code = americaNorte;}
   else if(country == Words.country.micronesia){code = oceania;}
   else if(country == Words.country.moldova){code = europa;}
   else if(country == Words.country.monaco){code = europa;}

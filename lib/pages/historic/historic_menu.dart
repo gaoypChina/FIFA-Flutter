@@ -36,80 +36,91 @@ class _HistoricMenuState extends State<HistoricMenu> {
             children: [
               backButtonText(context,'Menu Histórico'),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
 
-                  box(
-                      'Nacional',
-                      Image.asset(FIFAImages().campeonatoLogo(1),height: 50,),
-                          (){
-                        Navigator.push(context,MaterialPageRoute(builder: (context) => const HistoricLeague()));
-                      }
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+
+                          box(
+                              'Nacional',
+                              Image.asset(FIFAImages().campeonatoLogo(1),height: 50,),
+                                  (){
+                                Navigator.push(context,MaterialPageRoute(builder: (context) => const HistoricLeague()));
+                              }
+                          ),
+                          box(
+                              'Internacional',
+                              Image.asset(FIFAImages().campeonatoInternacionalLogo('Champions League'),height: 50,),
+                                  (){
+                                Navigator.push(context,MaterialPageRoute(builder: (context) => const InternationalHistoric()));
+                              }
+                          ),
+
+                        ],
+                      ),
+
+                      //2ªfileira
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+
+                          box(
+                              'Jogadores',
+                              Image.asset('assets/icons/generic_user.png',height: 50,),
+                                  (){
+                                Navigator.push(context,MaterialPageRoute(builder: (context) => const PlayersHistoric()));
+                              }
+                          ),
+                          box(
+                              'Mundial',
+                              Image.asset('assets/league_logos/mundial.png',height: 50,),
+                                  (){
+                                Navigator.push(context,MaterialPageRoute(builder: (context) => const TableMundial()));
+                              }
+                          ),
+
+                        ],
+                      ),
+
+                      //3ªfileira
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          box(
+                              'Meus Elencos',
+                              Image.asset('assets/icons/generic_user.png',height: 50,),
+                                  (){
+                                Navigator.push(context,MaterialPageRoute(builder: (context) => const MyPlayersHistoric()));
+                              }
+                          ),
+                          box(
+                              'Melhores clubes da história',
+                              Image.asset('assets/clubs/generic.png',height: 50,),
+                                  (){
+                                Navigator.push(context,MaterialPageRoute(builder: (context) => const RankingBestClubsHistory()));
+                              }
+                          ),
+
+                        ],
+                      ),
+
+                      //TESTE
+                      box(
+                          'Post Match',
+                          Image.asset('assets/clubs/generic.png',height: 50,),
+                              (){
+                            Navigator.push(context,MaterialPageRoute(builder: (context) => const AfterPlay()));
+                          }
+                      ),
+
+
+                    ],
                   ),
-                  box(
-                      'Internacional',
-                      Image.asset(FIFAImages().campeonatoInternacionalLogo('Champions League'),height: 50,),
-                          (){
-                        Navigator.push(context,MaterialPageRoute(builder: (context) => const InternationalHistoric()));
-                      }
-                  ),
-
-                ],
-              ),
-
-              //2ªfileira
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-
-                  box(
-                      'Jogadores',
-                      Image.asset('assets/icons/generic_user.png',height: 50,),
-                          (){
-                        Navigator.push(context,MaterialPageRoute(builder: (context) => const PlayersHistoric()));
-                      }
-                  ),
-                  box(
-                      'Mundial',
-                      Image.asset('assets/league_logos/mundial.png',height: 50,),
-                          (){
-                        Navigator.push(context,MaterialPageRoute(builder: (context) => const TableMundial()));
-                      }
-                  ),
-
-                ],
-              ),
-
-              //3ªfileira
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  box(
-                      'Meus Elencos',
-                      Image.asset('assets/icons/generic_user.png',height: 50,),
-                          (){
-                        Navigator.push(context,MaterialPageRoute(builder: (context) => const MyPlayersHistoric()));
-                      }
-                  ),
-                  box(
-                      'Melhores clubes da história',
-                      Image.asset('assets/clubs/generic.png',height: 50,),
-                          (){
-                        Navigator.push(context,MaterialPageRoute(builder: (context) => const RankingBestClubsHistory()));
-                      }
-                  ),
-
-                ],
-              ),
-
-              //TESTE
-              box(
-                  'Post Match',
-                  Image.asset('assets/clubs/generic.png',height: 50,),
-                      (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context) => const AfterPlay()));
-                  }
+                ),
               ),
 
             ],

@@ -93,7 +93,7 @@ Map clubNameMapImmutable = {
     0: clubName.ajaccio,1: clubName.angers,2: clubName.auxerre,3: clubName.bordeaux,
     4: clubName.brest,5: clubName.clermont,6: clubName.lens,7: clubName.lille,
     8: clubName.lorient,9: clubName.lyon,10: clubName.monaco,11: clubName.montpellier,
-    12: clubName.nantes,13: clubName.nice,14: clubName.olympiquemarselha,15: clubName.psg,
+    12: clubName.nantes,13: clubName.nice,14: clubName.om,15: clubName.psg,
     16: clubName.reims,17: clubName.rennes,18: clubName.strasbourg,19: clubName.toulouse,
   },
   LeagueOfficialNames().franca2 : {
@@ -115,7 +115,7 @@ Map clubNameMapImmutable = {
   LeagueOfficialNames().ligaEuropa : {
     0: clubName.anderlecht,1: clubName.brugge,2: clubName.standardliege,3: clubName.slaviaPraha,
     4: clubName.spartapraga,5: clubName.zurich,6: clubName.youngBoys,7: clubName.legiaWarszawa,
-    8: clubName.celtic,9: clubName.glasgowrangers,10: clubName.rosenborg,11: clubName.malmo,
+    8: clubName.celtic,9: clubName.rangers,10: clubName.rosenborg,11: clubName.malmo,
     12: clubName.copenhague,13: clubName.rbsalzburg,14: clubName.rapidviena,15: clubName.basel,
     16: clubName.genk,17: clubName.midtjylland,18: clubName.molde,19: clubName.helsinki,
   },
@@ -179,7 +179,7 @@ Map clubNameMapImmutable = {
     12: clubName.santosLaguna,13: clubName.tigres,14: clubName.tijuana,15: clubName.toluca,
   },
   LeagueOfficialNames().estadosUnidos : {
-    0: clubName.atlantaunited,1: clubName.columbuscrew,2:clubName.dcunited,3: clubName.fcdallas,
+    0: clubName.atlanta,1: clubName.columbuscrew,2:clubName.dcunited,3: clubName.fcdallas,
     4: clubName.intermiami,5: clubName.losangelesfc,6: clubName.lagalaxy,7: clubName.minnesota,
     8: clubName.nerevolution,9: clubName.nycity,10: clubName.nyredbulls,11: clubName.orlando,
     12: clubName.portland,13: clubName.seattle,14: clubName.torontofc,15:clubName.vancouver,
@@ -187,7 +187,7 @@ Map clubNameMapImmutable = {
 
   //RESTO DO MUNDO
   LeagueOfficialNames().asia : {
-    0: clubName.ghuagzhouevergrande,1: clubName.shanghaisipg,2: clubName.shandongluneng,3: clubName.kawasakifrontale,
+    0: clubName.evergrande,1: clubName.shanghaisipg,2: clubName.shandongluneng,3: clubName.kawasakifrontale,
     4: clubName.kashimaantlers,5: clubName.urawareddiamonds,6: clubName.visselkobe,7: clubName.pohang,
     8: clubName.jeonbuk,9: clubName.alhilal,10: clubName.alnassr,11: clubName.alain,
     12: clubName.alsadd,13: clubName.alahli,14: clubName.alduhail,15: clubName.aljazira,

@@ -59,7 +59,6 @@ class _ClubGraphicsState extends State<ClubGraphics> {
                       style: EstiloTextoBranco.text16),
                   bestPlayers(),
                   last5Matchs(),
-                  next5Matchs(),
 
                   graphics(dataGraphics),
 
@@ -153,7 +152,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
               Text(Translation(context).text.last10Years,
                   style: EstiloTextoBranco.text16),
               const SizedBox(height: 10),
-              Text(dataGraphics.averagePosition.toString() + 'º',
+              Text(dataGraphics.averagePosition10years.toString() + 'º',
                   style: EstiloTextoBranco.text20),
             ],
           ),
@@ -217,17 +216,6 @@ class _ClubGraphicsState extends State<ClubGraphics> {
     );
   }
 
-  Widget next5Matchs() {
-    return SizedBox(
-      height: 25,
-      width: 120,
-      child: ListView.builder(
-          itemCount: 5,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (c, i) => resultBoxFuture(i)),
-    );
-  }
-
   Widget last5Matchs() {
     return SizedBox(
       height: 25,
@@ -237,23 +225,6 @@ class _ClubGraphicsState extends State<ClubGraphics> {
           scrollDirection: Axis.horizontal,
           itemBuilder: (c, i) => resultBox(i)),
     );
-  }
-
-  Widget resultBoxFuture(int i) {
-    Color color = Colors.transparent;
-    ResultGameNacional show = ResultGameNacional(rodadaLocal: rodada + i - 1, clubID: widget.club.index);
-    if (show.exists) {
-      return Container(
-        height: 20,
-        width: 20,
-        margin: const EdgeInsets.all(2),
-        color: color,
-        child: Center(child: Image.asset(
-          Images().getEscudo(show.clubName2), width: 15, height: 15,)),
-      );
-    } else {
-      return Container();
-    }
   }
 
 

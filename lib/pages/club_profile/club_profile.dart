@@ -1,6 +1,7 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/pages/club_profile/all_infos_club.dart';
+import 'package:fifa/pages/club_profile/club_calendar.dart';
 import 'package:fifa/pages/club_profile/compare.dart';
 import 'package:fifa/pages/club_profile/field_static.dart';
 import 'package:fifa/pages/club_profile/graphics.dart';
@@ -30,7 +31,7 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
-    _tabController = TabController(vsync: this, length: 3);
+    _tabController = TabController(vsync: this, length: 4);
     super.initState();
   }
   @override
@@ -47,7 +48,7 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
     clubClass = Club(index: widget.clubID);
 
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
 
           body:  Stack(
@@ -93,6 +94,7 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                           Tab(text: Translation(context).text.cast),
                           Tab(text: Translation(context).text.historic),
                           Tab(text: Translation(context).text.allInfos),
+                          Tab(text: Translation(context).text.calendar),
                         ],
                       ),
                     ),
@@ -103,7 +105,8 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                         children: [
                           StaticField(clubID: widget.clubID),
                           ClubGraphics(club: clubClass),
-                          AllInfosClub(club: clubClass,notifyParent: (){},),
+                          AllInfosClub(club: clubClass,notifyParent: (){}),
+                          ClubCalendar(club: clubClass),
                         ],
                       ),
                     ),

@@ -7,8 +7,10 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/page_controller/club_profile/data_graphics.dart';
 import 'package:fifa/popup/popup_select_club_compare.dart';
+import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_trophy_image.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
@@ -31,12 +33,14 @@ class _CompareState extends State<Compare> {
   DataGraphics dataGraphicsCompare = DataGraphics();
   My my = My();
   late Club club2;
+  late Club club;
 
   ///////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
+    club = Club(index: my.clubID);
     club2 = widget.club;
     dataGraphics.getData(club2);
     dataGraphicsCompare.getData(Club(index: my.clubID));
@@ -49,8 +53,6 @@ class _CompareState extends State<Compare> {
   Widget build(BuildContext context) {
     _tooltipBehavior = TooltipBehavior( enable: true);
 
-    Club club = Club(index: my.clubID);
-
     return Scaffold(
 
         body:  Stack(
@@ -61,28 +63,39 @@ class _CompareState extends State<Compare> {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-
-                    const SizedBox(height: 40),
+                    backButtonText(context, Translation(context).text.compare),
                     header(),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 20),
+                      child: rowNumbers(
+                        Translation(context).text.pointsTotal,
+                        dataGraphicsCompare.pointsTotal.toStringAsFixed(0),
+                        dataGraphics.pointsTotal.toStringAsFixed(0),
+                        EstiloTextoBranco.negrito22
+                      ),
+                    ),
 
+                    const Divider(color: Colors.white),
                     Expanded(
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
 
+                            nationalTitle(),
+                            nationalComparation(),
                             graphics(dataGraphics,dataGraphicsCompare),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                totalTrophyWidget(club,dataGraphicsCompare),
-                                totalTrophyWidget(club2,dataGraphics),
-                              ],
-                            ),
-                            graphics2(dataGraphics,dataGraphicsCompare),
-
                             histogramNational(dataGraphics,dataGraphicsCompare),
+
+                            const Divider(color: Colors.white),
+                            internationalTitle(),
+                            internationalComparation(),
+                            graphics2(dataGraphics,dataGraphicsCompare),
                             histogramInternational(dataGraphics,dataGraphicsCompare),
 
+
+                            const Divider(color: Colors.white),
+                            mundialTitle(),
+                            mundialComparation(),
                           ],
                         ),
                       ),
@@ -99,16 +112,13 @@ class _CompareState extends State<Compare> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
   Widget header(){
-    My my = My();
-    Club club = Club(index: my.clubID);
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
 
-        backButton(context),
-
         Column(
           children: [
+
             Row(
               children: [
                 Container(
@@ -118,9 +128,10 @@ class _CompareState extends State<Compare> {
                     shape: BoxShape.circle,
                   ),
                 ),
-                Text(club.name,style: EstiloTextoBranco.text20),
+                Text(club.name,style: EstiloTextoBranco.text16),
               ],
             ),
+
             Row(
               children: [
 
@@ -130,7 +141,7 @@ class _CompareState extends State<Compare> {
                   children: [
                     Text(club.getOverall().toStringAsFixed(1),style: EstiloTextoBranco.text20),
                     funcFlagsList(club.nationality, 15, 25),
-                    changeClub(),
+                    changeClub(isClubLeft: true),
                   ],
                 ),
 
@@ -139,7 +150,13 @@ class _CompareState extends State<Compare> {
           ],
         ),
 
-
+        Column(
+          children: [
+            selectYearwidget(context, 2022),
+            selectYearwidget(context, 1960),
+          ],
+        ),
+        //TIME 2
         Column(
           children: [
             Row(
@@ -151,7 +168,7 @@ class _CompareState extends State<Compare> {
                     shape: BoxShape.circle,
                   ),
                 ),
-                Text(club2.name,style: EstiloTextoBranco.text20),
+                Text(club2.name,style: EstiloTextoBranco.text16),
               ],
             ),
             Row(
@@ -161,7 +178,7 @@ class _CompareState extends State<Compare> {
                   children: [
                     Text(club2.getOverall().toStringAsFixed(1),style: EstiloTextoBranco.text20),
                     funcFlagsList(club2.nationality, 15, 25),
-                    changeClub(),
+                    changeClub(isClubLeft: false),
                   ],
                 ),
 
@@ -171,21 +188,43 @@ class _CompareState extends State<Compare> {
             ),
           ],
         ),
-
       ],
     );
   }
 
-  Widget changeClub(){
+  Widget selectYearwidget(BuildContext context, int year){
+    return GestureDetector(
+      onTap: (){
+        customToast(Translation(context).text.inDevelopment);
+      },
+      child: Container(
+        color: AppColors().greyTransparent,
+        padding: const EdgeInsets.all(8),
+        margin: const EdgeInsets.all(8),
+        child: year>=2022
+            ? Text('Até: '+year.toString(),style: EstiloTextoBranco.text12)
+            : Text('Desde: '+year.toString(),style: EstiloTextoBranco.text12),
+
+      ),
+    );
+  }
+
+  Widget changeClub({required bool isClubLeft}){
     return GestureDetector(
       onTap: (){
         PopupSelectClub popupConfig = PopupSelectClub();
         popUpSelectClub(originalContext: context, popupConfig: popupConfig);
         Timer.periodic(const Duration(milliseconds: 100), (timer) {
           if (popupConfig.popupClosed) {
-            club2=popupConfig.newClub;
-            dataGraphics = DataGraphics();
-            dataGraphics.getData(popupConfig.newClub);
+            if(isClubLeft){
+              club=popupConfig.newClub;
+              dataGraphicsCompare = DataGraphics();
+              dataGraphicsCompare.getData(popupConfig.newClub);
+            }else{
+              club2=popupConfig.newClub;
+              dataGraphics = DataGraphics();
+              dataGraphics.getData(popupConfig.newClub);
+            }
             setState((){});
             timer.cancel();
           }
@@ -268,9 +307,9 @@ class _CompareState extends State<Compare> {
     );
   }
 
-  Widget totalTrophyWidget(Club club, DataGraphics dataGraphics){
+  Widget nationalComparation(){
     return Container(
-      width: Sized(context).width*0.4,
+      width: Sized(context).width*0.9,
       color: AppColors().greyTransparent,
       margin: const EdgeInsets.all(4),
       padding: const EdgeInsets.all(4),
@@ -278,57 +317,156 @@ class _CompareState extends State<Compare> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
 
-          //Pontos
-          Text(Translation(context).text.points,style: EstiloTextoBranco.text16),
-          Text(dataGraphics.points.toStringAsFixed(0),style: EstiloTextoBranco.text20),
-
+          rowNumbers(Translation(context).text.points, dataGraphicsCompare.pointsNational.toStringAsFixed(0), dataGraphics.pointsNational.toStringAsFixed(0),EstiloTextoBranco.negrito22),
           //TITULOS
-          Column(
+          Row(
             children: [
-              Text(Translation(context).text.titles,style: EstiloTextoBranco.text16),
               Image.asset('assets/trophy/${getTrophyImage(club.leagueName)}.png',height: 100,width: 100),
+              Text(dataGraphicsCompare.nTitulos.toString(),style: EstiloTextoBranco.text20),
+
+              Expanded(child: Text(Translation(context).text.titles,textAlign:TextAlign.center,style: EstiloTextoBranco.text16)),
+
               Text(dataGraphics.nTitulos.toString(),style: EstiloTextoBranco.text20),
+              Image.asset('assets/trophy/${getTrophyImage(club2.leagueName)}.png',height: 100,width: 100),
             ],
           ),
 
-          Column(
-            children: [
-              const SizedBox(height: 10),
-              Text(Translation(context).text.average,style: EstiloTextoBranco.text16),
-              Text(Translation(context).text.last10Years,style: EstiloTextoBranco.text16),
-              Text(dataGraphics.averagePosition.toString()+'º',style: EstiloTextoBranco.text20),
-            ],
+          rowNumbers(
+            Translation(context).text.actualPosition,
+            dataGraphicsCompare.currentPosition.toString()+'º',
+            dataGraphics.currentPosition.toString()+'º',
           ),
-          Column(
-            children: [
-              const SizedBox(height: 10),
-              const Text('G-4',style: EstiloTextoBranco.text16),
-              Text(dataGraphics.g4Years.toString(),style: EstiloTextoBranco.text20),
-            ],
+          const SizedBox(height: 10),
+
+          rowNumbers(
+              Translation(context).text.average+' '+Translation(context).text.last5Years,
+              dataGraphicsCompare.averagePosition5years.toString()+'º',
+              dataGraphics.averagePosition5years.toString()+'º',
           ),
 
-          Column(
-            children: [
-              const SizedBox(height: 10),
-              Text(Translation(context).text.division2,style: EstiloTextoBranco.text16),
-              Text(dataGraphics.n2ndivision.toString(),style: EstiloTextoBranco.text20),
-            ],
+          rowNumbers(
+              Translation(context).text.average+' '+Translation(context).text.last10Years,
+              dataGraphicsCompare.averagePosition10years.toString()+'º',
+              dataGraphics.averagePosition10years.toString()+'º',
           ),
+          rowNumbers(
+              Translation(context).text.average+' '+Translation(context).text.total,
+              dataGraphicsCompare.averagePositionTotal.toString()+'º',
+              dataGraphics.averagePositionTotal.toString()+'º',
+          ),
+
+          rowNumbers('G-4', dataGraphicsCompare.g4Years.toString(), dataGraphics.g4Years.toString()),
+          rowNumbers('G-10', dataGraphicsCompare.g10Years.toString(), dataGraphics.g10Years.toString()),
+          rowNumbers(Translation(context).text.division2, dataGraphicsCompare.n2ndivision.toString(), dataGraphics.n2ndivision.toString()),
+
 
         ],
       ),
     );
   }
 
+  Widget internationalComparation(){
+    return Container(
+      width: Sized(context).width*0.9,
+      color: AppColors().greyTransparent,
+      margin: const EdgeInsets.all(4),
+      padding: const EdgeInsets.all(4),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
 
+          rowNumbers(Translation(context).text.points, dataGraphicsCompare.pointsInternational.toStringAsFixed(0), dataGraphics.pointsInternational.toStringAsFixed(0),EstiloTextoBranco.negrito22),
+          //TITULOS
+          Row(
+            children: [
+              Image.asset('assets/trophy/${getTrophyImage(club.internationalLeagueName)}.png',height: 100,width: 100),
+              Text(dataGraphicsCompare.nTitulosInternational.toString(),style: EstiloTextoBranco.text20),
+
+              Expanded(child: Text(Translation(context).text.titles,textAlign:TextAlign.center,style: EstiloTextoBranco.text16)),
+
+              Text(dataGraphics.nTitulosInternational.toString(),style: EstiloTextoBranco.text20),
+              Image.asset('assets/trophy/${getTrophyImage(club2.internationalLeagueName)}.png',height: 100,width: 100),
+            ],
+          ),
+
+          rowNumbers(
+            Translation(context).text.finals,
+            dataGraphicsCompare.finalsInternational.toString(),
+            dataGraphics.finalsInternational.toString(),
+          ),
+
+          rowNumbers(
+            Translation(context).text.semis,
+            dataGraphicsCompare.semifinalsInternational.toString(),
+            dataGraphics.semifinalsInternational.toString(),
+          ),
+          rowNumbers(
+            Translation(context).text.round8,
+            dataGraphicsCompare.round8International.toString(),
+            dataGraphics.round8International.toString(),
+          ),
+          rowNumbers(
+            Translation(context).text.round16,
+            dataGraphicsCompare.round16International.toString(),
+            dataGraphics.round16International.toString(),
+          ),
+          rowNumbers(
+            Translation(context).text.participations,
+            dataGraphicsCompare.participationInternational.toString(),
+            dataGraphics.participationInternational.toString(),
+          ),
+
+
+        ],
+      ),
+    );
+  }
+
+  Widget rowNumbers(String text, String info1, String info2,[TextStyle _style = EstiloTextoBranco.text20]){
+    double _width = 80;
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 4),
+      child: Row(
+        children: [
+          const SizedBox(height: 10),
+          SizedBox(width:_width,child: Text(info1,textAlign:TextAlign.center,style: _style)),
+          Expanded(child: Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.text16)),
+          SizedBox(width:_width,child: Text(info2,textAlign:TextAlign.center,style: _style)),
+        ],
+      ),
+    );
+  }
+  Widget nationalTitle(){
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Image.asset(FIFAImages().campeonatoLogo(club.leagueID),height: 40,width: 40),
+        Text(Translation(context).text.nationalLeague,style: EstiloTextoBranco.negrito22),
+        Image.asset(FIFAImages().campeonatoLogo(club2.leagueID),height: 40,width: 40),
+      ],
+    );
+  }
+  Widget internationalTitle(){
+    return Container(
+      margin: const EdgeInsets.only(top:20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Image.asset(FIFAImages().campeonatoInternacionalLogo(club.internationalLeagueName),height: 40,width: 40),
+          Text(Translation(context).text.international,style: EstiloTextoBranco.negrito22),
+          Image.asset(FIFAImages().campeonatoInternacionalLogo(club2.internationalLeagueName),height: 40,width: 40),
+        ],
+      ),
+    );
+  }
   Widget graphics2(DataGraphics dataGraphics,DataGraphics dataGraphicsCompare){
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Container(
         height: 300,
-        width: dataGraphics.data.length > dataGraphicsCompare.data.length
-              ? dataGraphics.data.length*23+50
-              : dataGraphicsCompare.data.length*23+50 ,
+        width: dataGraphics.dataInternational.length > dataGraphicsCompare.dataInternational.length
+              ? dataGraphics.dataInternational.length*23+50
+              : dataGraphicsCompare.dataInternational.length*23+50 ,
         color: AppColors().greyTransparent,
         child: SfCartesianChart(
           tooltipBehavior: _tooltipBehavior,
@@ -342,7 +480,7 @@ class _CompareState extends State<Compare> {
               color: Colors.blue,
               xAxisName: Translation(context).text.years,
               yAxisName: Translation(context).text.position,
-              name: My().clubName,
+              name: club.name,
               dataSource: dataGraphicsCompare.dataInternational,
               enableTooltip: true,
               xValueMapper: (ClassificationData data, _) => data.year.toInt().toString(), //ano.0 -> ano
@@ -437,5 +575,56 @@ class _CompareState extends State<Compare> {
         dataSource: dataSource,
         binInterval: 2,
         yValueMapper: (ClassificationData data, _) => data.position);
+  }
+
+  Widget mundialTitle(){
+    return Container(
+      margin: const EdgeInsets.only(top:20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Image.asset('assets/league_logos/mundial.png',height: 40,width: 40),
+          Text(Translation(context).text.mundial,style: EstiloTextoBranco.negrito22),
+          Image.asset('assets/league_logos/mundial.png',height: 40,width: 40),
+        ],
+      ),
+    );
+  }
+
+  Widget mundialComparation(){
+    return Container(
+      width: Sized(context).width*0.9,
+      color: AppColors().greyTransparent,
+      margin: const EdgeInsets.all(4),
+      padding: const EdgeInsets.all(4),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+
+          rowNumbers(Translation(context).text.points, dataGraphicsCompare.pointsmundial.toStringAsFixed(0), dataGraphics.pointsmundial.toStringAsFixed(0),EstiloTextoBranco.negrito22),
+          //TITULOS
+          Row(
+            children: [
+              Image.asset('assets/trophy/${getTrophyImage(club.internationalLeagueName)}.png',height: 100,width: 100),
+              Text(dataGraphicsCompare.nTitulosMundial.toString(),style: EstiloTextoBranco.text20),
+
+              Expanded(child: Text(Translation(context).text.titles,textAlign:TextAlign.center,style: EstiloTextoBranco.text16)),
+
+              Text(dataGraphics.nTitulosMundial.toString(),style: EstiloTextoBranco.text20),
+              Image.asset('assets/trophy/${getTrophyImage(club2.internationalLeagueName)}.png',height: 100,width: 100),
+            ],
+          ),
+
+
+          rowNumbers(
+            Translation(context).text.finals,
+            dataGraphicsCompare.finalsMundial.toString(),
+            dataGraphics.finalsMundial.toString(),
+          ),
+
+
+        ],
+      ),
+    );
   }
 }

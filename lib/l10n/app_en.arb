@@ -110,8 +110,9 @@
 
   "@_RANKING_CLUBS_PAGE": {
   },
-  "rankingGlobalClubs": "Global Ranking",
-  "rankingNationalClubs": "National Ranking",
+  "rankingGlobalClubs": "Global",
+  "rankingNationalClubs": "National",
+  "rankingContinentalClubs": "Continental",
 
   "@_NATIONAL_TABLE_PAGE": {
   },
@@ -128,15 +129,26 @@
   "goals": "Goals",
   "substitutes": "Substitutes",
   "avgAge": "Avg. Age",
+  "compare": "Compare",
 
   "@_CLUB_HISTORIC_GRAPH_PAGE": {
   },
   "performance": "Performance",
   "average": "Average",
+  "actualPosition": "Actual Position",
   "last10Years": "Last 10 years",
+  "last5Years": "Last 5 years",
+  "division2": "2nd Division",
+  "pointsTotal": "Total Points",
+  "total": "Total",
   "title": "Title",
   "titles": "Titles",
-  "division2": "2nd Division",
+  "finals": "Finals",
+  "semis": "Semifinals",
+  "round8": "Round 8",
+  "round16": "Round 16",
+  "participations": "Participations",
+  "mundial": "Mundial",
 
   "@_COACH_PAGE": {
   },
@@ -145,6 +157,7 @@
   "changeClub": "Change club",
   "points": "Points",
   "nationalChampionship": "National Championship",
+  "nationalLeague": "National League",
   "internationalChampionship": "International Championship",
   "victories": "Victories",
   "draws": "Draws",
@@ -194,6 +207,11 @@
   "substitution": "Substitution",
   "nextMatchWeek": "Next Match Week",
 
+  "@_AFTER_PLAY_PAGE": {
+  },
+  "players": "Players",
+  "timeline": "Timeline",
+
   "@_SUBSTITUTION_PAGE": {
   },
   "substitutionLeft": "substituições restantes",
@@ -226,6 +244,8 @@
 
   "@_HISTORIC_INTERNATIONAL_PAGE": {
   },
+  "champions": "Champions",
+  "lista": "List",
 
 
 

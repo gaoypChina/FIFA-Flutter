@@ -1,6 +1,7 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/league_divisions.dart';
 import 'package:fifa/values/league_names.dart';
 
@@ -9,6 +10,7 @@ class RankingClubsControl{
   List clubsOVR = []; //criado no init
   List copyClubsName = [];
   List copyClubsNameNational = [];
+  List copyClubsNameContinental = [];
 
   organizeRanking(){
 
@@ -43,6 +45,19 @@ class RankingClubsControl{
         allClubsName += League(index: leagueIndex).allClubsName;
     }
     copyClubsNameNational.removeWhere((element) => !allClubsName.contains(element) );
+  }
+
+  organizeContinentalRanking(){
+    copyClubsNameContinental = List.from(copyClubsName);
+    String myContinent = Club(index: My().clubID).continent;
+    List allClubsName = [];
+    for(String clubName in copyClubsName){
+      int leagueIndex = clubsAllNameList.indexOf(clubName);
+      if(Club(index: leagueIndex).continent.contains(myContinent)){
+        allClubsName.add(clubName);
+      }
+    }
+    copyClubsNameContinental.removeWhere((element) => !allClubsName.contains(element) );
   }
 
 }

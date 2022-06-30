@@ -42,8 +42,9 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
   organizarRanking(){
     rankingClubs.organizeRanking();
     rankingClubs.organizeNationalRanking();
+    rankingClubs.organizeContinentalRanking();
 
-    _tabController = TabController(vsync: this, length: 2);
+    _tabController = TabController(vsync: this, length: 3);
     isLoaded=true;
     setState(() {});
   }
@@ -67,7 +68,7 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
               Images().getWallpaper(),
 
               isLoaded ? DefaultTabController(
-                length: 2,
+                length: 3,
                 child: Column(
                   children: [
 
@@ -78,6 +79,7 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
                         controller: _tabController,
                         tabs: [
                           Tab(text: Translation(context).text.rankingGlobalClubs),
+                          Tab(text: Translation(context).text.rankingContinentalClubs),
                           Tab(text: Translation(context).text.rankingNationalClubs),
                         ],
                       ),
@@ -86,8 +88,9 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
                       child: TabBarView(
                         controller: _tabController,
                         children: [
-                          listAllRankingClubs(),
-                          listNationalRankingClubs(),
+                          listRanking(rankingClubs.copyClubsName),
+                          listRanking(rankingClubs.copyClubsNameContinental),
+                          listRanking(rankingClubs.copyClubsNameNational),
                         ],
                       ),
                     ),
@@ -105,7 +108,7 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-Widget listAllRankingClubs(){
+  Widget listRanking(List listClubs){
     return ShaderMask(
       shaderCallback: (Rect rect) {
         return const LinearGradient(
@@ -117,40 +120,18 @@ Widget listAllRankingClubs(){
       },
       blendMode: BlendMode.dstOut,
       child: DraggableScrollbar.semicircle(
-      alwaysVisibleScrollThumb: true,
-      controller: _scrollController,
-      child: ListView.builder(
-          padding: EdgeInsets.zero,
-          controller: _scrollController,
-          itemCount: rankingClubs.copyClubsName.length,
-          itemBuilder: (c,i) => rowClub(i, rankingClubs.copyClubsName[i])
-      ),
-    ),
-    );
-}
-  Widget listNationalRankingClubs(){
-    return  ShaderMask(
-        shaderCallback: (Rect rect) {
-      return const LinearGradient(
-        begin: Alignment.topCenter,
-        end: Alignment.bottomCenter,
-        colors: [Colors.transparent, Colors.black],
-        stops: [0.97, 1.0], // 10% purple, 80% transparent, 10% purple
-      ).createShader(rect);
-    },
-    blendMode: BlendMode.dstOut,
-    child: DraggableScrollbar.semicircle(
-      alwaysVisibleScrollThumb: true,
-      controller: _scrollController,
-      child: ListView.builder(
-          padding: EdgeInsets.zero,
-          controller: _scrollController,
-          itemCount: rankingClubs.copyClubsNameNational.length,
-          itemBuilder: (c,i) => rowClub(i, rankingClubs.copyClubsNameNational[i])
+        alwaysVisibleScrollThumb: true,
+        controller: _scrollController,
+        child: ListView.builder(
+            padding: EdgeInsets.zero,
+            controller: _scrollController,
+            itemCount: listClubs.length,
+            itemBuilder: (c,i) => rowClub(i, listClubs[i])
         ),
       ),
     );
   }
+
 Widget rowClub(int ranking, String clubName){
 
     int realClubIndex = clubsAllNameList.indexOf(clubName);

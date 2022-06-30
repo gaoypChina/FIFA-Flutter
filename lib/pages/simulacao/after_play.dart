@@ -3,15 +3,19 @@ import 'package:fifa/classes/geral/name.dart';
 import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
+import 'package:fifa/theme/background/background_position.dart';
+import 'package:fifa/theme/background/moral_icon.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
+import 'package:fifa/widgets/best_player_box/best_player_box.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +26,7 @@ class AfterPlay extends StatefulWidget {
   State<AfterPlay> createState() => _AfterPlayState();
 }
 
-class _AfterPlayState extends State<AfterPlay> {
+class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
 
   String name1 = 'CSKA';
   String name2 = 'Celtic';
@@ -31,36 +35,76 @@ class _AfterPlayState extends State<AfterPlay> {
   bool visitante = false;
   My myClass = My();
   Club myClubClass = Club(index: My().clubID);
+  late TabController _tabController;
+
+  ///////////////////////////////////////////////////////////////////////////
+//                               INIT                                     //
+////////////////////////////////////////////////////////////////////////////
+  @override
+  void initState() {
+    _tabController = TabController(vsync: this, length: 2);
+    super.initState();
+  }
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          Images().getWallpaper(),
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        body: Stack(
+          children: [
+            Images().getWallpaper(),
 
-          Column(
-            children: [
-              const SizedBox(height: 30),
-              header(),
-              statistics(),
-              classification(),
-              weekMatchs(),
-              const Spacer(),
-              customButtonContinue(
-                title: Translation(context).text.nextMatchWeek,
-                function: (){
-                  Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Menu()));
-                },
-              ),
+            Column(
+              children: [
+                const SizedBox(height: 30),
+                header(),
+                SizedBox(
+                  height: 30,
+                  child: TabBar(
+                    controller: _tabController,
+                    tabs: [
+                      Tab(text: Translation(context).text.timeline),
+                      Tab(text: Translation(context).text.players),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: TabBarView(
+                    controller: _tabController,
+                    children: [
+                      statistics(),
+                      playerStatistics(),
+                    ],
+                  ),
+                ),
+                Row(
+                  children: [
+                    bestPlayerBox('Melhor Jogador', Jogador(index: 32)),
+                    Expanded(child: classification()),
+                  ],
+                ),
+                weekMatchs(),
+                customButtonContinue(
+                  title: Translation(context).text.nextMatchWeek,
+                  function: (){
+                    Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Menu()));
+                  },
+                ),
 
-            ],
-          ),
+              ],
+            ),
 
 
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -131,9 +175,42 @@ Widget statistics(){
     );
   }
 
+  Widget playerStatistics(){
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Column(
+          children: [
+            playerRow(Jogador(index: 12)),
+            playerRow(Jogador(index: 15)),
+          ],
+        ),
+        Column(
+          children: [
+            playerRow(Jogador(index: 12)),
+            playerRow(Jogador(index: 15)),
+          ],
+        ),
+      ],
+    );
+  }
+  Widget playerRow(Jogador player){
+    return Row(
+      children: [
+          const SizedBox(width: 4),
+          positionContainer(player.position),
+          const SizedBox(width: 4),
+          moralContainer(player,size: 20),
+          const SizedBox(width: 4),
+          SizedBox(width:100,child: Text(player.name,style: EstiloTextoBranco.text14)),
+          const SizedBox(width: 4),
+      ],
+    );
+  }
   Widget classification(){
+    int nTeams = 12;
       return Container(
-        height: 5*40,
+        height: 5*36,
         color: AppColors().greyTransparent,
         margin: const EdgeInsets.all(4),
         child: Column(
@@ -142,7 +219,7 @@ Widget statistics(){
             //TITLE
             Row(
               children: [
-                Container(width:15),
+                Container(width:30),
                 const Expanded(child: Text('Nome',style:EstiloTextoBranco.text14)),
                 const SizedBox(width:30,child: Text('PTS',style:EstiloTextoBranco.text14)),
                 const SizedBox(width:30,child: Text('OVR',style:EstiloTextoBranco.text14)),
@@ -150,11 +227,11 @@ Widget statistics(){
             ),
             //CONTENT
             Container(
-              height: 5*30,
+              height: 5*25,
               margin: const EdgeInsets.all(4),
               child: ListView.builder(
                   padding: EdgeInsets.zero,
-                  itemCount: 5,
+                  itemCount: nTeams,
                   itemBuilder: (c,i)=>classificationRow(i)
               ),
             ),
@@ -167,11 +244,11 @@ Widget statistics(){
     String clubName1 = 'Chelsea';
     return Row(
       children: [
-        SizedBox(width:15,child: Text((i+1).toString()+'º',style:EstiloTextoBranco.text14)),
+        SizedBox(width:25,child: Text((i+1).toString()+'º',style:EstiloTextoBranco.text14)),
         Image.asset(Images().getEscudo(clubName1),height: 25,width: 25,),
-        SizedBox(width:150,child: Text(clubName1,style:EstiloTextoBranco.text14)),
+        Expanded(child: Text(clubName1,style:EstiloTextoBranco.text14)),
         const SizedBox(width:30,child: Text('6',style:EstiloTextoBranco.text14)),
-        const SizedBox(width:30,child: const Text('76.8',style:EstiloTextoBranco.text14)),
+        const SizedBox(width:30,child: Text('76.8',style:EstiloTextoBranco.text14)),
       ],
     );
   }

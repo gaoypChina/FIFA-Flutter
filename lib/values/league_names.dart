@@ -1,9 +1,12 @@
 class LeagueOfficialNames{
   final String championsLeague = 'Champions League';
   final String libertadores = 'Libertadores';
+  final String concacaf = 'Concacaf champions';
+  final String asiaafricaChampionsLeague = 'World Champions League';
   final String resto = 'Resto do Mundo';
   final String mundial = 'Mundial de Clubes da FIFA';
 
+  //LIGAS
   String inglaterra1 = 'Premier League';  String inglaterra2 = 'Championship'; String inglaterra3 = 'Championship2';
   String italia1 = 'Serie A TIM';  String italia2 = 'Serie B TIM';
   String espanha1 = 'La Liga';  String espanha2 = 'La Liga2';
@@ -18,6 +21,20 @@ class LeagueOfficialNames{
   String mexico = 'Liga MX';String estadosUnidos = 'MLS';
   String asia = 'Liga Ásia';  String orienteMedio = 'Liga Oriente Médio';  String africa = 'Liga África';
   String outros = 'Outros';
+
+  //COPAS
+  String englandCup = 'FA Cup';String italyCup = 'Coppa Italia';String spainCup = 'Copa del Rey';
+  String germanyCup = 'DFB Pokal';String franceCup = 'Coupe de France';
+  String portugalCup = 'Taça de Portugal';String turkeyCup = 'Turkiye Kupasi';
+  String ligaEuropaCup = 'Copa da Europa';String eastEuropeCup = 'Leste Europeu Copa';
+
+  String brazilCup = 'Copa do Brasil';String argentinaCup = 'Copa Argentina';
+  String sulamericanaCup = 'Copa Argentina';String merconorteCup = 'Copa Merconorte';
+
+  String mexicoCup = 'Copa MX';String usaCup = 'MLS Cup';
+  String asiaCup = 'Asia Cup';String africaCup = 'África Cup';
+  String othersCup = 'Outros Cup';
+
 }
 
 getInternationalLeagueNumber(String internationalLeague){

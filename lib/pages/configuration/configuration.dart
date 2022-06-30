@@ -50,7 +50,7 @@ class _ConfigurationState extends State<Configuration> {
                     SizedBox(height: spaceBetweenWidgets),
                     language(),
                     SizedBox(height: spaceBetweenWidgets),
-                    dificulty(),
+                    difficulty(),
                     SizedBox(height: spaceBetweenWidgets),
                     initialMoney(),
                     SizedBox(height: spaceBetweenWidgets),
@@ -123,7 +123,7 @@ class _ConfigurationState extends State<Configuration> {
     );
   }
 
-  Widget dificulty(){
+  Widget difficulty(){
     return
       GestureDetector(
         onTap:(){
@@ -321,6 +321,7 @@ Widget soundEffects(ConfigurationState config){
             value: config.randomizePlayers,
             onChanged: (value) {
               setState(() {
+                customToast(Translation(context).text.inDevelopment);
                 config.changeRandomizePlayersState();
               });
             }),

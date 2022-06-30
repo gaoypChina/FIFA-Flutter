@@ -1,5 +1,6 @@
 import 'package:fifa/classes/adversario.dart';
 import 'package:fifa/classes/geral/semana.dart';
+import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/functions/check_internet.dart';
 import 'package:fifa/global_variables.dart';
@@ -74,205 +75,209 @@ class _MenuState extends State<Menu> {
 
               Image.asset('assets/icons/wallpaper blue.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
 
-              Column(
-                children: [
+              SizedBox(
+                height: Sized(context).height,
+                width: Sized(context).width,
+                child: Column(
+                  children: [
 
-                  const SizedBox(height: 40),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-
-                      //Escudo
-                      Image.asset(Images().getMyEscudo(),height: 90,width: 90),
-
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(width:180,child: Text(myClass.clubName,textAlign: TextAlign.center,style: EstiloTextoBranco.negrito22)),
-                          Text('${Translation(context).text.year}: '+ ano.toString(),style: EstiloTextoBranco.text14),
-                          Text('${Translation(context).text.week}: '+ semana.toString(),style: EstiloTextoBranco.text14),
-                          Text('${Translation(context).text.money}: \$'+ myClass.money.toStringAsFixed(2)+'mi',style: EstiloTextoBranco.text14),
-                          Text('${Translation(context).text.clubOverall}: ' + Club(index: myClass.clubID).getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text14),
-                          Text('${Translation(context).text.clubValue}: \$' + myClass.getClubValue().toStringAsFixed(2)+'mi',style: EstiloTextoBranco.text14),
-                        ],
-                      ),
-
-                      //UNIFORME
-                      Image.asset(Images().getMyUniform(),height: 100,width: 100),
-
-                    ],
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                    const SizedBox(height: 40),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
 
-                        menuButton(Translation(context).text.play,(){
-                          if(adversario.clubName.isNotEmpty){
-                            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Play(adversarioClubID: adversario.clubID, visitante: adversario.visitante)));
-                          }else{
-                            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const NotPlay()));
-                          }
-                        }),
-                        menuButton(Translation(context).text.table,(){
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const TableNacional()));
-                        }),
+                        //Escudo
+                        Image.asset(Images().getMyEscudo(),height: 90,width: 90),
 
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-
-                              Expanded(
-                                child: menuButton(Translation(context).text.international,(){
-                                  //Mostra a competição internacional que o time está participando 1º
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableInternational(leagueInternational: My().getMyInternationalLeague())));
-                                }),
-                              ),
-                              Expanded(
-                                child: menuButton(Translation(context).text.myClub,(){
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const MyTeam()))
-                                      .then((value) {setState(() {});});
-                                }),
-                              ),
-
-                            ]),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Expanded(
-                                child: menuButton(Translation(context).text.historic,(){
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HistoricMenu()));
-                                }),
-                              ),
-                              Expanded(
-                                child: menuButton(Translation(context).text.ranking,(){
-                                  customToast(Translation(context).text.loading);
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RankingClubs()))
-                                      .then((value) {setState(() {});});
-                                }),
-                              ),
-                            ]),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Expanded(
-                                child: menuButton(Translation(context).text.coach,(){
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CoachMenu()));
-                                }
-                                ),
-                              ),
-                              Expanded(
-                                child: menuButton(Translation(context).text.transfers,(){
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Transfers()))
-                                      .then((value) {setState(() {});});
-                                }),
-                              ),
-                            ]),
-
-
-                      ]),
-                  ),
-
-
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      GestureDetector(
-                        onTap: (){
-                          Navigator.push(context,MaterialPageRoute(builder: (context) => const Calendar()));
-                        },
-                        child: Column(
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                             Text(Translation(context).text.nextAdversary,style: EstiloTextoBranco.text14),
-                            //Escudo
-                            adversario.clubName.isNotEmpty ? Image.asset(Images().getEscudo(adversario.clubName),height: 50,width: 50) : Container(),
-                            adversario.clubName.isNotEmpty ? Text(adversario.clubName,style: EstiloTextoBranco.negrito14) : Container(),
-                            adversario.clubName.isNotEmpty
-                                ? Semana(semana).isJogoMataMataInternacional
-                                    ? Text(Semana(semana).semanaStr,style: EstiloTextoBranco.text14)
-                                : Text('${Translation(context).text.position}: '+adversario.posicao.toString()+'º',style: EstiloTextoBranco.text14)
-                                : Container(),
-                            adversario.clubName.isNotEmpty ? adversario.visitante
-                                ? Text(Translation(context).text.away,style: EstiloTextoBranco.text14)
-                                : Text(Translation(context).text.home,style: EstiloTextoBranco.text14) : Container(),
-
+                            SizedBox(width:180,child: Text(myClass.clubName,textAlign: TextAlign.center,style: EstiloTextoBranco.negrito22)),
+                            Text('${Translation(context).text.year}: '+ ano.toString(),style: EstiloTextoBranco.text14),
+                            Text('${Translation(context).text.week}: '+ semana.toString(),style: EstiloTextoBranco.text14),
+                            Text('${Translation(context).text.money}: \$'+ myClass.money.toStringAsFixed(2)+'mi',style: EstiloTextoBranco.text14),
+                            Text('${Translation(context).text.clubOverall}: ' + Club(index: myClass.clubID).getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text14),
+                            Text('${Translation(context).text.clubValue}: \$' + myClass.getClubValue().toStringAsFixed(2)+'mi',style: EstiloTextoBranco.text14),
                           ],
                         ),
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Text('${Translation(context).text.matchWeek}: '+rodada.toString(),style: EstiloTextoBranco.text16),
-                          Text(Translation(context).text.classification,style: EstiloTextoBranco.text14),
-                          Text(Classification(leagueIndex: myClass.campeonatoID).getClubPosition(myClass.clubID).toString()+'º',style: EstiloTextoBranco.text30),
-                          Text('${Translation(context).text.expectation}: '+myClass.getLastYearExpectativa().toString()+'º',style: EstiloTextoBranco.text14),
-                          last5Matchs(),
-                        ],
-                      ),
 
-
-                  ]),
-
-                  const SizedBox(height: 4),
-                  //ESTÁDIO
-                  Expanded(
-                    child: Stack(
-                      children: [
-
-                        Image.asset(Images().getMyStadium(),height:  double.maxFinite, width: double.maxFinite,fit: BoxFit.fill,),
-
-                        Container(
-                          alignment: Alignment.bottomLeft,
-                          child: GestureDetector(
-                              onTap:(){
-                                Navigator.push(context,MaterialPageRoute(builder: (context) => const HomePage()));
-                              },
-                              child: const Icon(Icons.close,color:Colors.red,size: 50)
-                          ),
-                        ),
-
-                        //CAMPEONATO
-                        Container(
-                          margin: const EdgeInsets.only(right: 8),
-                          alignment: Alignment.topRight,
-                          child: Images().getMyActualCampeonatoLogo().isNotEmpty
-                              ? Image.asset(Images().getMyActualCampeonatoLogo(),height: 60,width: 60)
-                              : const SizedBox(height: 60,width: 60),
-                        ),
-
-                        //DIFICULDADE
-                        Container(
-                          alignment: Alignment.bottomCenter,
-                          padding: const EdgeInsets.only(bottom:4),
-                          child: GestureDetector(
-                              onTap:(){
-                              },
-                              child: Text('${Translation(context).text.difficulty}: '+DificuldadeClass().getNameTranslated(context),style: EstiloTextoBranco.text12),
-                          ),
-                        ),
-
-                          //SAVE
-                          Container(
-                            alignment: Alignment.bottomRight,
-                            child: GestureDetector(
-                                onTap:(){
-                                  Navigator.push(context,MaterialPageRoute(builder: (context) => const ChooseSave()));
-                                },
-                                child: const Icon(Icons.save,color:Colors.white,size: 50)
-                            ),
-                        ),
+                        //UNIFORME
+                        Image.asset(Images().getMyUniform(),height: 100,width: 100),
 
                       ],
                     ),
-                  ),
+
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+
+                          menuButton(Translation(context).text.play,(){
+                            if(adversario.clubName.isNotEmpty){
+                              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Play(adversarioClubID: adversario.clubID, visitante: adversario.visitante)));
+                            }else{
+                              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const NotPlay()));
+                            }
+                          }),
+                          menuButton(Translation(context).text.table,(){
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => const TableNacional()));
+                          }),
+
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+
+                                Expanded(
+                                  child: menuButton(Translation(context).text.international,(){
+                                    //Mostra a competição internacional que o time está participando 1º
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableInternational(leagueInternational: My().getMyInternationalLeague())));
+                                  }),
+                                ),
+                                Expanded(
+                                  child: menuButton(Translation(context).text.myClub,(){
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const MyTeam()))
+                                        .then((value) {setState(() {});});
+                                  }),
+                                ),
+
+                              ]),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Expanded(
+                                  child: menuButton(Translation(context).text.historic,(){
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const HistoricMenu()));
+                                  }),
+                                ),
+                                Expanded(
+                                  child: menuButton(Translation(context).text.ranking,(){
+                                    customToast(Translation(context).text.loading);
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RankingClubs()))
+                                        .then((value) {setState(() {});});
+                                  }),
+                                ),
+                              ]),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Expanded(
+                                  child: menuButton(Translation(context).text.coach,(){
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CoachMenu()));
+                                  }
+                                  ),
+                                ),
+                                Expanded(
+                                  child: menuButton(Translation(context).text.transfers,(){
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Transfers()))
+                                        .then((value) {setState(() {});});
+                                  }),
+                                ),
+                              ]),
+
+
+                        ]),
+                    ),
+
+
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(context,MaterialPageRoute(builder: (context) => const Calendar()));
+                          },
+                          child: Column(
+                            children: [
+                               Text(Translation(context).text.nextAdversary,style: EstiloTextoBranco.text14),
+                              //Escudo
+                              adversario.clubName.isNotEmpty ? Image.asset(Images().getEscudo(adversario.clubName),height: 50,width: 50) : Container(),
+                              adversario.clubName.isNotEmpty ? Text(adversario.clubName,style: EstiloTextoBranco.negrito14) : Container(),
+                              adversario.clubName.isNotEmpty
+                                  ? Semana(semana).isJogoMataMataInternacional
+                                      ? Text(Semana(semana).semanaStr,style: EstiloTextoBranco.text14)
+                                  : Text('${Translation(context).text.position}: '+adversario.posicao.toString()+'º',style: EstiloTextoBranco.text14)
+                                  : Container(),
+                              adversario.clubName.isNotEmpty ? adversario.visitante
+                                  ? Text(Translation(context).text.away,style: EstiloTextoBranco.text14)
+                                  : Text(Translation(context).text.home,style: EstiloTextoBranco.text14) : Container(),
+
+                            ],
+                          ),
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Text('${Translation(context).text.matchWeek}: '+rodada.toString(),style: EstiloTextoBranco.text16),
+                            Text(Translation(context).text.classification,style: EstiloTextoBranco.text14),
+                            Text(Classification(leagueIndex: myClass.campeonatoID).getClubPosition(myClass.clubID).toString()+'º',style: EstiloTextoBranco.text30),
+                            Text('${Translation(context).text.expectation}: '+myClass.getLastYearExpectativa().toString()+'º',style: EstiloTextoBranco.text14),
+                            last5Matchs(),
+                          ],
+                        ),
+
+
+                    ]),
+
+                    const SizedBox(height: 4),
+                    //ESTÁDIO
+                    Expanded(
+                      child: Stack(
+                        children: [
+
+                          Image.asset(Images().getMyStadium(),height:  double.maxFinite, width: double.maxFinite,fit: BoxFit.fill,),
+
+                          Container(
+                            alignment: Alignment.bottomLeft,
+                            child: GestureDetector(
+                                onTap:(){
+                                  Navigator.push(context,MaterialPageRoute(builder: (context) => const HomePage()));
+                                },
+                                child: const Icon(Icons.close,color:Colors.red,size: 50)
+                            ),
+                          ),
+
+                          //CAMPEONATO
+                          Container(
+                            margin: const EdgeInsets.only(right: 8),
+                            alignment: Alignment.topRight,
+                            child: Images().getMyActualCampeonatoLogo().isNotEmpty
+                                ? Image.asset(Images().getMyActualCampeonatoLogo(),height: 60,width: 60)
+                                : const SizedBox(height: 60,width: 60),
+                          ),
+
+                          //DIFICULDADE
+                          Container(
+                            alignment: Alignment.bottomCenter,
+                            padding: const EdgeInsets.only(bottom:4),
+                            child: GestureDetector(
+                                onTap:(){
+                                },
+                                child: Text('${Translation(context).text.difficulty}: '+DificuldadeClass().getNameTranslated(context),style: EstiloTextoBranco.text12),
+                            ),
+                          ),
+
+                            //SAVE
+                            Container(
+                              alignment: Alignment.bottomRight,
+                              child: GestureDetector(
+                                  onTap:(){
+                                    Navigator.push(context,MaterialPageRoute(builder: (context) => const ChooseSave()));
+                                  },
+                                  child: const Icon(Icons.save,color:Colors.white,size: 50)
+                              ),
+                          ),
+
+                        ],
+                      ),
+                    ),
 
 
 
-                ],
-              )
+                  ],
+                ),
+              ),
 
             ]
         )

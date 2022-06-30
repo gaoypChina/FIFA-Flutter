@@ -53,7 +53,7 @@ List clubsAllNameList = [
   ClubName().hannover96,ClubName().paderborn,ClubName().stPauli,ClubName().unionBerlin,
   //frança
   ClubName().angers,ClubName().bordeaux,  ClubName().lille,  ClubName().lyon,
-  ClubName().montpellier,  ClubName().nantes,  ClubName().nice,  ClubName().olympiquemarselha,
+  ClubName().montpellier,  ClubName().nantes,  ClubName().nice,  ClubName().om,
   ClubName().psg,  ClubName().reims,  ClubName().rennes,  ClubName().saintetienne,
   ClubName().metz,ClubName().toulouse,ClubName().lens,ClubName().monaco,
 
@@ -73,7 +73,7 @@ List clubsAllNameList = [
   ClubName().olympiacos,ClubName().aek,ClubName().paok,ClubName().panathinaikos,ClubName().apoel,
 
   ClubName().anderlecht,  ClubName().brugge,  ClubName().standardliege,ClubName().genk,ClubName().gent,
-  ClubName().celtic,  ClubName().glasgowrangers,
+  ClubName().celtic,  ClubName().rangers,
   ClubName().rbsalzburg,  ClubName().rapidviena,ClubName().laskLinz,
   ClubName().basel,ClubName().youngBoys,ClubName().zurich,
   ClubName().rosenborg,  ClubName().malmo, ClubName().copenhague,  ClubName().midtjylland,
@@ -142,13 +142,13 @@ List clubsAllNameList = [
   ClubName().tijuana,  ClubName().santosLaguna, ClubName().puebla,  ClubName().necaxa,
   ClubName().atlas,  ClubName().queretaro, ClubName().leon,  ClubName().juarez,
 
-  ClubName().atlantaunited,  ClubName().columbuscrew, ClubName().dcunited,  ClubName().fcdallas,
+  ClubName().atlanta,  ClubName().columbuscrew, ClubName().dcunited,  ClubName().fcdallas,
   ClubName().intermiami,  ClubName().losangelesfc, ClubName().lagalaxy,  ClubName().minnesota,
   ClubName().nerevolution,  ClubName().nycity, ClubName().nyredbulls,  ClubName().orlando,
   ClubName().portland,  ClubName().seattle, ClubName().torontofc,  ClubName().vancouver,
 
   ///////////////////////////////////////////
-  ClubName().ghuagzhouevergrande,  ClubName().pohang, ClubName().shandongluneng,  ClubName().shanghaisipg,
+  ClubName().evergrande,  ClubName().pohang, ClubName().shandongluneng,  ClubName().shanghaisipg,
   ClubName().kashimaantlers,  ClubName().urawareddiamonds, ClubName().visselkobe,  ClubName().kawasakifrontale,
   ClubName().aljazira,  ClubName().jeonbuk, ClubName().alnassr,  ClubName().alain,
   ClubName().alsadd,  ClubName().alduhail, ClubName().alahli,  ClubName().alhilal,

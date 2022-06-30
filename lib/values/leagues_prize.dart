@@ -34,6 +34,28 @@ void premiacao(){
     else if(leagueName==LeagueOfficialNames().estadosUnidos){premio=1.4;}//mls
     else if(leagueName==LeagueOfficialNames().asia){premio=1.0;}//asia
     else if(leagueName==LeagueOfficialNames().africa){premio=0.6;}//africa
+
+    //PREMIAÇÕES COPAS
+    else if(leagueName==LeagueOfficialNames().englandCup){premio=0.6;}
+    else if(leagueName==LeagueOfficialNames().italyCup){premio=0.6;}
+    else if(leagueName==LeagueOfficialNames().spainCup){premio=0.6;}
+    else if(leagueName==LeagueOfficialNames().germanyCup){premio=0.6;}
+    else if(leagueName==LeagueOfficialNames().franceCup){premio=0.6;}
+    else if(leagueName==LeagueOfficialNames().portugalCup){premio=0.6;}
+    else if(leagueName==LeagueOfficialNames().turkeyCup){premio=0.6;}
+    else if(leagueName==LeagueOfficialNames().ligaEuropaCup){premio=0.6;}
+    else if(leagueName==LeagueOfficialNames().eastEuropeCup){premio=0.6;}
+    else if(leagueName==LeagueOfficialNames().brazilCup){premio=0.6;}
+    else if(leagueName==LeagueOfficialNames().argentinaCup){premio=0.6;}
+    else if(leagueName==LeagueOfficialNames().sulamericanaCup){premio=0.6;}
+    else if(leagueName==LeagueOfficialNames().merconorteCup){premio=0.6;}
+    else if(leagueName==LeagueOfficialNames().mexicoCup){premio=0.6;}
+    else if(leagueName==LeagueOfficialNames().usaCup){premio=0.6;}
+    else if(leagueName==LeagueOfficialNames().asiaCup){premio=0.6;}
+    else if(leagueName==LeagueOfficialNames().africaCup){premio=0.6;}
+    else if(leagueName==LeagueOfficialNames().othersCup){premio=0.6;}
+
+
     else{
       premio=1.0;
     }

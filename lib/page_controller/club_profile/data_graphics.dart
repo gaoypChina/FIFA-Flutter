@@ -4,6 +4,7 @@ import 'package:fifa/classes/historic.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/historic_champions.dart';
 import 'package:fifa/values/league_divisions.dart';
+import 'package:fifa/values/league_names.dart';
 
 class ClassificationData {
   ClassificationData(this.year, this.position);
@@ -17,11 +18,29 @@ class DataGraphics{
   int nTitulos = 0;
   int n2ndivision = 0;
   int g4Years = 0;
-  int averagePosition = 0;
+  int g10Years = 0;
+  int averagePosition5years = 0;
+  int averagePosition10years = 0;
+  int averagePositionTotal = 0;
   int currentPosition = 0;
-  double points = 0;
+  double pointsNational = 0;
   List<ClassificationData> data=[];
+  //INTERNATIONAL
   List<ClassificationData> dataInternational=[];
+  int nTitulosInternational = 0;
+  int finalsInternational = 0;
+  int semifinalsInternational = 0;
+  int round8International = 0;
+  int round16International = 0;
+  int participationInternational = 0;
+  double pointsInternational = 0;
+  //MUNDIAL
+  List<ClassificationData> dataMundial=[];
+  int nTitulosMundial = 0;
+  int finalsMundial = 0;
+  double pointsmundial = 0;
+  //TOTAL
+  double pointsTotal = 0;
 
   getData(Club club){
     //Posição Ano Atual
@@ -31,26 +50,20 @@ class DataGraphics{
     //historico de campeoes ligas
     defineHistoricClassification(club);
 
-    //historico internacional
-    defineHistoricInternational(club);
-
-    averagePositionCount(data.take(10).toList());
+    averagePosition10years = averagePositionCount(data.take(10).toList());
+    averagePosition5years = averagePositionCount(data.take(5).toList());
+    averagePositionTotal = averagePositionCount(data.toList());
 
     calculatePoints();
-  }
 
-  defineHistoricInternational(Club club){
+    //historico internacional
+    defineHistoricInternational(club);
+    participationsInternational();
+    calculatePointsInternational();
 
-    //para cada ano
-    for(var keyYear in mapChampions(club.internationalLeagueName).keys) {
-      List classificationNames = mapChampions(club.internationalLeagueName)[keyYear];
-      //verifica se naquele ano tem o time
-      int position = 32;
-      if(classificationNames.contains(club.name)){
-        position = classificationNames.indexOf(club.name) + 1;
-      }
-      dataInternational.add(ClassificationData(keyYear, position));
-    }
+    //historico mundial
+    defineHistoricMundial(club);
+    pointsTotal = pointsNational+pointsInternational+pointsmundial;
 
   }
 
@@ -62,7 +75,7 @@ class DataGraphics{
         int position = HistoricFunctions().funcHistoricListFromClubID(year.toInt(), club.leagueName, club.index);
         data.add(ClassificationData(year, position));
         addTitlesCount(position);
-        addG4Count(position);
+        addGxCount(position);
         add2ndDivisionCount(position);
       }catch(e){
         data.add(ClassificationData(year, 21));
@@ -92,7 +105,7 @@ class DataGraphics{
               int position = divisionMapResults[year].indexOf(club.name) + 1 + (divisionNumber - 1) * 20;
               data.add(ClassificationData(year, position));
               addTitlesCount(position);
-              addG4Count(position);
+              addGxCount(position);
               add2ndDivisionCount(position);
               yearSet = true;
             }
@@ -140,31 +153,130 @@ class DataGraphics{
       n2ndivision ++;
     }
   }
-  addG4Count(int position){
+  addGxCount(int position){
     if(position <= 4){
       g4Years ++;
     }
+    if(position <= 10){
+      g10Years ++;
+    }
   }
 
-  averagePositionCount(List<ClassificationData> dataLast10Years){
-    averagePosition=0;
-    for(ClassificationData data in dataLast10Years){
+  int averagePositionCount(List<ClassificationData> dataLastxYears){
+    int averagePosition = 0;
+    for(ClassificationData data in dataLastxYears){
       averagePosition += data.position;
     }
-    averagePosition = (averagePosition/10).round();
+    averagePosition = (averagePosition/dataLastxYears.length).round();
+
+    return averagePosition;
   }
 
   calculatePoints(){
     for(ClassificationData classificationData in data){
-      points += classificationData.position;
+      pointsNational += classificationData.position;
     }
     //Compensa anos sem data
     if(data.length<60){
       int yearsWithoutData = 60- data.length ;
-      points += 25 * yearsWithoutData;
+      pointsNational += 25 * yearsWithoutData;
     }
 
-    points = 3000 - points;
+    pointsNational = 3000 - pointsNational;
   }
 
+
+
+  /////////////////////////////////////////////////////////////////////////////
+  // INTERNATIONAL
+  ////////////////////////////////////////////////////////////////////////////
+  defineHistoricInternational(Club club){
+
+    //para cada ano
+    for(var keyYear in mapChampions(club.internationalLeagueName).keys) {
+      List classificationNames = mapChampions(club.internationalLeagueName)[keyYear];
+      //verifica se naquele ano tem o time
+      int position = 32;
+      if(classificationNames.contains(club.name)){
+        position = classificationNames.indexOf(club.name) + 1;
+      }
+      dataInternational.add(ClassificationData(keyYear, position));
+    }
+
+  }
+
+  participationsInternational(){
+    for(ClassificationData classificationData in dataInternational){
+      if(classificationData.position<32){
+        participationInternational++;
+      }
+      if(classificationData.position==1){
+        nTitulosInternational++;
+      }
+      if(classificationData.position<=2){
+        finalsInternational++;
+      }
+      if(classificationData.position<=4){
+        semifinalsInternational++;
+      }
+      if(classificationData.position<=8){
+        round8International++;
+      }
+      if(classificationData.position<=16){
+        round16International++;
+      }
+    }
+  }
+
+  calculatePointsInternational(){
+    pointsInternational = 0;
+      for(ClassificationData classificationData in dataInternational){
+        pointsInternational += classificationData.position*2;
+        pointsInternational = addWeight(pointsInternational,classificationData.position, 1, 25);
+        pointsInternational = addWeight(pointsInternational,classificationData.position, 4, 10);
+        pointsInternational = addWeight(pointsInternational,classificationData.position, 8, 5);
+        pointsInternational = addWeight(pointsInternational,classificationData.position, 16, 2);
+      }
+      //Compensa anos sem data
+      if(data.length<65){
+        int yearsWithoutData = 65 - dataInternational.length ;
+        pointsInternational += 65 * yearsWithoutData;
+      }
+
+      pointsInternational = 9000 - pointsInternational;
+  }
+  double addWeight(double points, int positionData, int position, int weight){
+    if(positionData<=position){
+      return points - weight;
+    }
+    return points;
+  }
+
+
+/////////////////////////////////////////////////////////////////////////////
+// MUNDIAL
+////////////////////////////////////////////////////////////////////////////
+  defineHistoricMundial(Club club){
+    pointsmundial = 0;
+    //para cada ano
+    for(var keyYear in mapChampions(LeagueOfficialNames().mundial).keys) {
+      List classificationNames = mapChampions(LeagueOfficialNames().mundial)[keyYear];
+      //verifica se naquele ano tem o time
+
+      int position = 8;
+      if(classificationNames.contains(club.name)){
+        position = classificationNames.indexOf(club.name) + 1;
+        if(position==1){
+          nTitulosMundial +=1;
+          pointsmundial += 200;
+        }
+        if(position<=2){
+          finalsMundial +=1;
+          pointsmundial += 50;
+        }
+      }
+      dataMundial.add(ClassificationData(keyYear, position));
+    }
+
+  }
 }
