@@ -132,7 +132,7 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
         Column(
           children: [
             Semana(semana).isJogoCampeonatoNacional
-                ? Image.asset(FIFAImages().campeonatoLogo(myClubClass.leagueID),height: 30,width: 30)
+                ? Image.asset(FIFAImages().campeonatoLogo(myClubClass.leagueName),height: 30,width: 30)
                 : Image.asset(FIFAImages().campeonatoInternacionalLogo(LeagueOfficialNames().libertadores),height: 35,width: 35),
             Text(textRodada,style: EstiloTextoBranco.text16),
             visitante

@@ -41,8 +41,8 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
   }
   organizarRanking(){
     rankingClubs.organizeRanking();
-    rankingClubs.organizeNationalRanking();
-    rankingClubs.organizeContinentalRanking();
+    rankingClubs.organizeMyNationalRanking();
+    rankingClubs.organizeMyContinentalRanking();
 
     _tabController = TabController(vsync: this, length: 3);
     isLoaded=true;

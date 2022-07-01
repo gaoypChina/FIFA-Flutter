@@ -110,8 +110,8 @@ class _MyTeamState extends State<MyTeam> {
                       child: TabBar(
                         tabs: [
                           Tab(text: Translation(context).text.cast),
-                          Tab(text: Translation(context).text.historic),
                           Tab(text: Translation(context).text.allInfos),
+                          Tab(text: Translation(context).text.historic),
                         ],
                       ),
                     ),
@@ -121,8 +121,8 @@ class _MyTeamState extends State<MyTeam> {
                       child: TabBarView(
                         children: [
                           FieldDraggable(notifyParent: notifyParent),
-                          ClubGraphics(club: myClub),
                           AllInfosClub(notifyParent: notifyParent, club: myClub),
+                          ClubGraphics(club: myClub),
                         ],
                       ),
                     ),

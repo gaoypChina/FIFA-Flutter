@@ -48,6 +48,7 @@ class _TableNacionalState extends State<TableNacional> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
+    String leagueName = League(index: choosenLeagueIndex).getName();
 
     return Scaffold(
         body:  Stack(
@@ -63,7 +64,7 @@ class _TableNacionalState extends State<TableNacional> {
                     Row(
                       children: [
                         backButton(context),
-                        Image.asset(FIFAImages().campeonatoLogo(choosenLeagueIndex),height:25,width: 25),
+                        Image.asset(FIFAImages().campeonatoLogo(leagueName),height:25,width: 25),
                         Text(' ${Translation(context).text.matchWeek} '+ rodada.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text20),
                       ],
                     ),
@@ -194,16 +195,17 @@ class _TableNacionalState extends State<TableNacional> {
     );
  }
   Widget leagueRow(int league){
-    int leagueIndex = leaguesListRealIndex[league];
+    int leagueID = leaguesListRealIndex[league];
+    String leagueName = League(index: leagueID).getName();
     return GestureDetector(
       onTap: (){
-        choosenLeagueIndex = leagueIndex;
+        choosenLeagueIndex = leagueID;
         setState(() {});
       },
       child: Container(
         padding: const EdgeInsets.all(2),
-        color: choosenLeagueIndex == leagueIndex ? Colors.redAccent: Colors.white54,
-        child: Image.asset(FIFAImages().campeonatoLogo(leagueIndex),height: 50,width: 50,),
+        color: choosenLeagueIndex == leagueID ? Colors.redAccent: Colors.white54,
+        child: Image.asset(FIFAImages().campeonatoLogo(leagueName),height: 50,width: 50,),
       ),
     );
 }

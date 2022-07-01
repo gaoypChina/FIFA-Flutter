@@ -11,6 +11,7 @@ import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
+import 'package:fifa/values/league_names.dart';
 import 'package:fifa/values/league_trophy_image.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
@@ -440,9 +441,9 @@ class _CompareState extends State<Compare> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Image.asset(FIFAImages().campeonatoLogo(club.leagueID),height: 40,width: 40),
+        Image.asset(FIFAImages().campeonatoLogo(club.leagueName),height: 40,width: 40),
         Text(Translation(context).text.nationalLeague,style: EstiloTextoBranco.negrito22),
-        Image.asset(FIFAImages().campeonatoLogo(club2.leagueID),height: 40,width: 40),
+        Image.asset(FIFAImages().campeonatoLogo(club2.leagueName),height: 40,width: 40),
       ],
     );
   }
@@ -605,13 +606,13 @@ class _CompareState extends State<Compare> {
           //TITULOS
           Row(
             children: [
-              Image.asset('assets/trophy/${getTrophyImage(club.internationalLeagueName)}.png',height: 100,width: 100),
+              Image.asset('assets/trophy/${getTrophyImage(LeagueOfficialNames().mundial)}.png',height: 100,width: 100),
               Text(dataGraphicsCompare.nTitulosMundial.toString(),style: EstiloTextoBranco.text20),
 
               Expanded(child: Text(Translation(context).text.titles,textAlign:TextAlign.center,style: EstiloTextoBranco.text16)),
 
               Text(dataGraphics.nTitulosMundial.toString(),style: EstiloTextoBranco.text20),
-              Image.asset('assets/trophy/${getTrophyImage(club2.internationalLeagueName)}.png',height: 100,width: 100),
+              Image.asset('assets/trophy/${getTrophyImage(LeagueOfficialNames().mundial)}.png',height: 100,width: 100),
             ],
           ),
 

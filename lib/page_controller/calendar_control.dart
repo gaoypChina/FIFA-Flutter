@@ -3,6 +3,7 @@ import 'package:fifa/classes/chaves.dart';
 import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/functions/mata_mata/mata_mata_class.dart';
 import 'package:fifa/page_controller/table/table_matchs_control.dart';
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +13,7 @@ import '../classes/league.dart';
 class ResultGameNacional{
 
   bool exists = false;
+  bool hasAdversary = true;
   late int rodadaLocal;
   bool visitante = false;
   late int clubID;
@@ -22,7 +24,7 @@ class ResultGameNacional{
   int gol2 = 0;
   int victoryDrawLoss310 = 0;
   String placar = '';
-  Color backgroundColor = Colors.black12;
+  Color backgroundColor = AppColors().greyTransparent;
 
   ResultGameNacional({required int rodadaLocal, required this.clubID}){
 
@@ -51,6 +53,12 @@ class ResultGameNacional{
       }
 
       backgroundBasedOnResult(gol1,gol2);
+
+
+    }
+
+    if(league.nClubs<=rodadaLocal){
+      hasAdversary = false;
     }
 
 
@@ -89,7 +97,7 @@ class ResultGameInternacional{
   int gol2 = 0;
   int victoryDrawLoss310 = 0;
   String placar = '';
-  Color backgroundColor = Colors.black12;
+  Color backgroundColor = AppColors().greyTransparent;
   bool hasAdversary = false;
   bool isAlreadyPlayed = false;
 

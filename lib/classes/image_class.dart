@@ -35,7 +35,7 @@ class Images{
     My myClass = My();
     late String campeonatoLogo;
     if(semanasJogosNacionais.contains(semana) && semana < League(index: myClass.campeonatoID).nClubs){
-      campeonatoLogo = FIFAImages().campeonatoLogo(myClass.campeonatoID);
+      campeonatoLogo = FIFAImages().campeonatoLogo(myClass.campeonatoName);
     }
     else if(myClass.playingInternational.isNotEmpty  && Semana(semana).isJogoGruposInternacional){
       campeonatoLogo = FIFAImages().campeonatoInternacionalLogo(myClass.getMyInternationalLeague());
@@ -48,7 +48,7 @@ class Images{
   }
   String getMyLeagueLogo(){
     My myClass = My();
-    return FIFAImages().campeonatoLogo(myClass.campeonatoID);
+    return FIFAImages().campeonatoLogo(myClass.campeonatoName);
   }
   String getMyInternationalLeagueLogo(){
     My myClass = My();

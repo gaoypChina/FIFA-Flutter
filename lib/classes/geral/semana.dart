@@ -13,6 +13,7 @@ class Semana{
   bool isJogoGruposInternacional = semanasGruposInternacionais.contains(semana);
   bool isJogoMataMataInternacional = semanasMataMataInternacionais.contains(semana);
   String semanaAlternativeStr = semana.toString(); //com o numero da rodada
+  String semanaCalendarStr = semana.toString();
 
   Semana(int weekToCalculate){
 
@@ -38,6 +39,11 @@ class Semana{
     semanaAlternativeStr = semanaStr;
     if(semanasGruposInternacionais.contains(weekToCalculate)){
       semanaAlternativeStr += ' ${semanasGruposInternacionais.indexOf(weekToCalculate)+1}';
+    }
+
+    semanaCalendarStr = semanaStr;
+    if(semanasJogosNacionais.contains(weekToCalculate)){
+      semanaCalendarStr = 'Rodada ' + (int.parse(semanaStr)+1).toString();
     }
 
     }

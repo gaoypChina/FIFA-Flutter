@@ -18,16 +18,17 @@ class PopupSelectClub{
 popUpSelectClub({required BuildContext originalContext,required PopupSelectClub popupConfig}){
 
   Widget leagueRow(Function setState,int league){
-    int leagueIndex = leaguesListRealIndex[league];
+    int leagueID = leaguesListRealIndex[league];
+    String leagueName = League(index: leagueID).getName();
     return GestureDetector(
       onTap: (){
-        popupConfig.choosenLeagueIndex = leagueIndex;
+        popupConfig.choosenLeagueIndex = leagueID;
         setState((){});
       },
       child: Container(
         padding: const EdgeInsets.all(2),
-        color: popupConfig.choosenLeagueIndex == leagueIndex ? Colors.redAccent: Colors.white54,
-        child: Image.asset(FIFAImages().campeonatoLogo(leagueIndex),height: 50,width: 50,),
+        color: popupConfig.choosenLeagueIndex == leagueID ? Colors.redAccent: Colors.white54,
+        child: Image.asset(FIFAImages().campeonatoLogo(leagueName),height: 50,width: 50,),
       ),
     );
   }

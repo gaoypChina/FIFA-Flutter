@@ -191,6 +191,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   }
   Widget leagueSelectionRow(int i){
     int leagueID = leaguesListRealIndex[i];
+    String leagueName = League(index: leagueID).getName();
 
     return GestureDetector(
       onTap: (){
@@ -200,7 +201,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
       child: Container(
         padding: const EdgeInsets.all(2),
         color: choosenLeagueIndex == leagueID ? Colors.redAccent: Colors.white54,
-        child: Image.asset(FIFAImages().campeonatoLogo(leagueID),height: 50,width: 50,),
+        child: Image.asset(FIFAImages().campeonatoLogo(leagueName),height: 50,width: 50,),
       ),
     );
   }

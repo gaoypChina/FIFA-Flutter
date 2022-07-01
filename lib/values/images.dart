@@ -1,4 +1,3 @@
-import 'package:fifa/classes/league.dart';
 import 'package:fifa/values/club_names.dart';
 
 import 'league_names.dart';
@@ -284,8 +283,10 @@ class FIFAImages{
     else if(timeFoto==ClubName().malmo){    imageLogo='malmo';}
     else if(timeFoto==ClubName().aik){    imageLogo='aik';}
     else if(timeFoto==ClubName().ifkgoteborg){    imageLogo='ifk';}
+    else if(timeFoto==ClubName().norrkoping){    imageLogo='norrkoping';}
     else if(timeFoto==ClubName().copenhague){    imageLogo='copenhague';}
     else if(timeFoto==ClubName().midtjylland){    imageLogo='midtjylland';}
+    else if(timeFoto==ClubName().aarhus){    imageLogo='aarhus';}
     else if(timeFoto==ClubName().brondby){    imageLogo='brondby';}
     else if(timeFoto==ClubName().helsinki){    imageLogo='hjk helsinki';}
 
@@ -293,11 +294,13 @@ class FIFAImages{
     else if(timeFoto==ClubName().rbsalzburg){    imageLogo='rbsalzburg';}
     else if(timeFoto==ClubName().rapidviena){    imageLogo='rapidviena';}
     else if(timeFoto==ClubName().austria){    imageLogo='austria';}
+    else if(timeFoto==ClubName().tirol){    imageLogo='tirol';}
     else if(timeFoto==ClubName().laskLinz){    imageLogo='lask';}
     else if(timeFoto==ClubName().basel){    imageLogo='basel';}
     else if(timeFoto==ClubName().youngBoys){    imageLogo='young boys';}
     else if(timeFoto==ClubName().zurich){    imageLogo='zurich';}
     else if(timeFoto==ClubName().grasshoppers){    imageLogo='grasshopper';}
+    else if(timeFoto==ClubName().servette){    imageLogo='servette';}
     else if(timeFoto==ClubName().legiaWarszawa){    imageLogo='legia';}
     else if(timeFoto==ClubName().lechPoznan){    imageLogo='lech';}
     else if(timeFoto==ClubName().gornik){    imageLogo='gornik';}
@@ -334,6 +337,7 @@ class FIFAImages{
     else if(timeFoto==ClubName().bate){    imageLogo='bate';}
     else if(timeFoto==ClubName().qarabag){    imageLogo='qarabag';}
     else if(timeFoto==ClubName().astana){    imageLogo='astana';}
+    else if(timeFoto==ClubName().tbilisi){    imageLogo='tbilisi';}
     else if(timeFoto==ClubName().zalgiris){    imageLogo='zalgiris';}
 
     else if(timeFoto==ClubName().estrelavermelha){    imageLogo='estrelavermelha';}
@@ -354,6 +358,7 @@ class FIFAImages{
     else if(timeFoto==ClubName().honved){    imageLogo='honved';}
     else if(timeFoto==ClubName().mtk){    imageLogo='mtk';}
     else if(timeFoto==ClubName().ujpest){    imageLogo='ujpest';}
+    else if(timeFoto==ClubName().vasas){    imageLogo='vasas';}
     else if(timeFoto==ClubName().steauaBucureste){    imageLogo='steaua bucareste';}
     else if(timeFoto==ClubName().dinamoBucureste){    imageLogo='dinamo bucuresti';}
     else if(timeFoto==ClubName().maccabiTelAviv){    imageLogo='maccabi tel aviv';}
@@ -644,36 +649,40 @@ class FIFAImages{
     return imageLogo;
   }
 
-  String campeonatoLogo(int numeroCampeonato){
-    String campeonatoFoto = League(index: numeroCampeonato).getName();
+  String campeonatoLogo(String leagueName){
     String imageLogo = 'championship';
-    if(campeonatoFoto==LeagueOfficialNames().inglaterra1){       imageLogo = 'premierleague';       }
-    else if(campeonatoFoto==LeagueOfficialNames().inglaterra2){       imageLogo = 'championship';       }
-    else if(campeonatoFoto==LeagueOfficialNames().inglaterra3){       imageLogo = 'inglaterra3';       }
-    else if(campeonatoFoto==LeagueOfficialNames().italia1){       imageLogo = 'italia1';       }
-    else if(campeonatoFoto==LeagueOfficialNames().italia2){       imageLogo = 'italia2';       }
-    else if(campeonatoFoto==LeagueOfficialNames().espanha1){       imageLogo = 'laliga';       }
-    else if(campeonatoFoto==LeagueOfficialNames().espanha2){       imageLogo = 'laliga2';       }
-    else if(campeonatoFoto==LeagueOfficialNames().franca1){       imageLogo = 'ligue1';      }
-    else if(campeonatoFoto==LeagueOfficialNames().franca2){       imageLogo = 'ligue2';      }
-    else if(campeonatoFoto==LeagueOfficialNames().alemanha1){      imageLogo = 'bundesliga';       }
-    else if(campeonatoFoto==LeagueOfficialNames().alemanha2){      imageLogo = 'bundesliga2';       }
-    else if(campeonatoFoto==LeagueOfficialNames().ptHol){       imageLogo = 'portugal';       }
-    else if(campeonatoFoto==LeagueOfficialNames().turquiaGrecia){       imageLogo = 'turquia';       }
-    else if(campeonatoFoto==LeagueOfficialNames().ligaEuropa){       imageLogo = 'liga1';       }
-    else if(campeonatoFoto==LeagueOfficialNames().lesteEuropeu){     imageLogo = 'leste';       }
-    else if(campeonatoFoto==LeagueOfficialNames().brasil1){       imageLogo = 'brasileirao';}
-    else if(campeonatoFoto==LeagueOfficialNames().brasil2){      imageLogo = 'brasilserieb';       }
-    else if(campeonatoFoto==LeagueOfficialNames().brasil3){      imageLogo = 'brasilseriec';       }
-    else if(campeonatoFoto==LeagueOfficialNames().paulistao){      imageLogo = 'brasileirao';       }
-    else if(campeonatoFoto==LeagueOfficialNames().argentina){       imageLogo = 'argentina';       }
-    else if(campeonatoFoto==LeagueOfficialNames().sulamericano){       imageLogo = 'sulamericana';       }
-    else if(campeonatoFoto==LeagueOfficialNames().colombia){       imageLogo = 'colombia';       }
-    else if(campeonatoFoto==LeagueOfficialNames().mexico){       imageLogo = 'mexico';       }
-    else if(campeonatoFoto==LeagueOfficialNames().estadosUnidos){       imageLogo = 'mls';       }
-    else if(campeonatoFoto==LeagueOfficialNames().asia){       imageLogo = 'asialeague';       }
-    else if(campeonatoFoto==LeagueOfficialNames().africa){       imageLogo = 'africa';       }
-    else if(campeonatoFoto==LeagueOfficialNames().outros){       imageLogo = 'others';       }
+    if(leagueName==LeagueOfficialNames().inglaterra1){       imageLogo = 'premierleague';       }
+    else if(leagueName==LeagueOfficialNames().inglaterra2){       imageLogo = 'championship';       }
+    else if(leagueName==LeagueOfficialNames().inglaterra3){       imageLogo = 'inglaterra3';       }
+    else if(leagueName==LeagueOfficialNames().italia1){       imageLogo = 'italia1';       }
+    else if(leagueName==LeagueOfficialNames().italia2){       imageLogo = 'italia2';       }
+    else if(leagueName==LeagueOfficialNames().espanha1){       imageLogo = 'laliga';       }
+    else if(leagueName==LeagueOfficialNames().espanha2){       imageLogo = 'laliga2';       }
+    else if(leagueName==LeagueOfficialNames().franca1){       imageLogo = 'ligue1';      }
+    else if(leagueName==LeagueOfficialNames().franca2){       imageLogo = 'ligue2';      }
+    else if(leagueName==LeagueOfficialNames().alemanha1){      imageLogo = 'bundesliga';       }
+    else if(leagueName==LeagueOfficialNames().alemanha2){      imageLogo = 'bundesliga2';       }
+    else if(leagueName==LeagueOfficialNames().ptHol){       imageLogo = 'portugal';       }
+    else if(leagueName==LeagueOfficialNames().turquiaGrecia){       imageLogo = 'turquia';       }
+    else if(leagueName==LeagueOfficialNames().ligaEuropa){       imageLogo = 'liga1';       }
+    else if(leagueName==LeagueOfficialNames().lesteEuropeu){     imageLogo = 'leste';       }
+    else if(leagueName==LeagueOfficialNames().brasil1){       imageLogo = 'brasileirao';}
+    else if(leagueName==LeagueOfficialNames().brasil2){      imageLogo = 'brasilserieb';       }
+    else if(leagueName==LeagueOfficialNames().brasil3){      imageLogo = 'brasilseriec';       }
+    else if(leagueName==LeagueOfficialNames().paulistao){      imageLogo = 'brasileirao';       }
+    else if(leagueName==LeagueOfficialNames().argentina){       imageLogo = 'argentina';       }
+    else if(leagueName==LeagueOfficialNames().sulamericano){       imageLogo = 'sulamericana';       }
+    else if(leagueName==LeagueOfficialNames().colombia){       imageLogo = 'colombia';       }
+    else if(leagueName==LeagueOfficialNames().mexico){       imageLogo = 'mexico';       }
+    else if(leagueName==LeagueOfficialNames().estadosUnidos){       imageLogo = 'mls';       }
+    else if(leagueName==LeagueOfficialNames().asia){       imageLogo = 'asialeague';       }
+    else if(leagueName==LeagueOfficialNames().africa){       imageLogo = 'africa';       }
+    else if(leagueName==LeagueOfficialNames().outros){       imageLogo = 'others';       }
+
+    else if(leagueName==LeagueOfficialNames().championsLeague){       imageLogo = 'championsleague_branco';       }
+    else if(leagueName==LeagueOfficialNames().libertadores){       imageLogo = 'libertadores';       }
+    else if(leagueName==LeagueOfficialNames().resto){       imageLogo = 'rest';       }
+    else if(leagueName==LeagueOfficialNames().mundial){       imageLogo = 'mundial';       }
 
     imageLogo = 'assets/league_logos/$imageLogo.png';
     return imageLogo;

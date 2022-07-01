@@ -217,10 +217,11 @@ class _HomePageState extends State<HomePage> {
     );
   }
   Widget leagueLogoAndName(){
+    String leagueName = League(index: indexLeague).getName();
     return Column(
       children: [
         //LOGO CAMPEONATO
-        Image.asset(FIFAImages().campeonatoLogo(indexLeague),height: 160,width: 160),
+        Image.asset(FIFAImages().campeonatoLogo(leagueName),height: 160,width: 160),
         const SizedBox(height: 8),
         Text(leagueName,style:EstiloTextoBranco.text16),
       ],

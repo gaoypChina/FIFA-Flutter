@@ -33,5 +33,7 @@ getTrophyImage(String leagueName){
   if(leagueName == LeagueOfficialNames().championsLeague){trophyName = 'trophychampions';}
   if(leagueName == LeagueOfficialNames().resto){trophyName = 'trophychampions';}
 
+  if(leagueName == LeagueOfficialNames().mundial){trophyName = 'trophymundial';}
+
   return trophyName;
 }

@@ -53,7 +53,7 @@ popUpExpectativa({required BuildContext context}){
                   children: [
                     Column(
                       children: [
-                        Image.asset(FIFAImages().campeonatoLogo(myClass.campeonatoID),height: 35,width: 35),
+                        Image.asset(FIFAImages().campeonatoLogo(myClass.campeonatoName),height: 35,width: 35),
                         Text('${myClass.getLeagueName()}: ', style: EstiloTextoPreto.text14),
                         Text(expectativaAtual.expectativaNacional.toString()+'º', style: EstiloTextoPreto.text20),
                       ],

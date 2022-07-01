@@ -242,7 +242,7 @@ Widget thisSeasonStats(BuildContext context, Jogador jogador){
             Column(
               children: [
                 const Text('', style: EstiloTextoBranco.text12),
-                Image.asset(FIFAImages().campeonatoLogo(Club(index: jogador.clubID).leagueID),height: 25,width: 25),
+                Image.asset(FIFAImages().campeonatoLogo(Club(index: jogador.clubID).leagueName),height: 25,width: 25),
                 Image.asset(FIFAImages().campeonatoInternacionalLogo(Club(index: jogador.clubID).internationalLeagueName),height: 25,width: 25),
               ],
             ),

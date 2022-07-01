@@ -226,7 +226,7 @@ class _PlayState extends State<Play> {
         Column(
           children: [
             Semana(semana).isJogoCampeonatoNacional
-                ? Image.asset(FIFAImages().campeonatoLogo(myMatchSimulation.myClass.campeonatoID),height: 30,width: 30)
+                ? Image.asset(FIFAImages().campeonatoLogo(myMatchSimulation.myClass.campeonatoName),height: 30,width: 30)
                 : Image.asset(FIFAImages().campeonatoInternacionalLogo(myMatchSimulation.myClass.getMyInternationalLeague()),height: 35,width: 35),
             Text(textRodada,style: EstiloTextoBranco.text16),
             visitante

@@ -94,7 +94,7 @@ Widget header(){
             children: [
               Column(
                 children: [
-                  Image.asset(FIFAImages().campeonatoLogo(club.leagueID),width: 50,height: 50),
+                  Image.asset(FIFAImages().campeonatoLogo(club.leagueName),width: 50,height: 50),
                   const Text('6º',style: EstiloTextoBranco.text16),
                 ],
               ),

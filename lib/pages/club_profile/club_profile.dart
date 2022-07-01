@@ -92,8 +92,8 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                         controller: _tabController,
                         tabs: [
                           Tab(text: Translation(context).text.cast),
-                          Tab(text: Translation(context).text.historic),
                           Tab(text: Translation(context).text.allInfos),
+                          Tab(text: Translation(context).text.historic),
                           Tab(text: Translation(context).text.calendar),
                         ],
                       ),
@@ -104,8 +104,8 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                         controller: _tabController,
                         children: [
                           StaticField(clubID: widget.clubID),
-                          ClubGraphics(club: clubClass),
                           AllInfosClub(club: clubClass,notifyParent: (){}),
+                          ClubGraphics(club: clubClass),
                           ClubCalendar(club: clubClass),
                         ],
                       ),

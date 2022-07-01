@@ -487,7 +487,7 @@ class ClubCountry{
     else if(clubName==ClubName().spartapraga){    nationality=Words.country.czechRepublic;}
     else if(clubName==ClubName().slaviaPraha){    nationality=Words.country.czechRepublic;}
     else if(clubName==ClubName().banikostrava){    nationality=Words.country.czechRepublic;}
-    else if(clubName==ClubName().bohemian){    nationality=Words.country.czechRepublic;}
+    else if(clubName==ClubName().bohemians){    nationality=Words.country.czechRepublic;}
     else if(clubName==ClubName().brno){    nationality=Words.country.czechRepublic;}
     else if(clubName==ClubName().dukla){    nationality=Words.country.czechRepublic;}
     else if(clubName==ClubName().hradec){    nationality=Words.country.czechRepublic;}

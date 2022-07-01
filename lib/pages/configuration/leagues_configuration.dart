@@ -113,7 +113,7 @@ Widget leagueRow(int i){
     padding: const EdgeInsets.all(8.0),
     child: Row(
       children: [
-        Image.asset(FIFAImages().campeonatoLogo(leagueInfos.leagueID),width: 50,height: 50),
+        Image.asset(FIFAImages().campeonatoLogo(leagueInfos.leagueName),width: 50,height: 50),
 
         IconButton(
           onPressed: (){leagueInfos.decreaseNTeams();setState((){});},
@@ -135,7 +135,7 @@ Widget leagueRow(int i){
           icon: const Icon(Icons.arrow_right,color: Colors.white),
         ),
         leagueInfos.nRelegated>0
-            ? Image.asset(FIFAImages().campeonatoLogo(leagueInfos.relegatedLeagueID),width: 30,height: 30)
+            ? Image.asset(FIFAImages().campeonatoLogo(leagueInfos.relegatedLeagueName),width: 30,height: 30)
             : addRelegationLeague(),
       ],
     ),
@@ -156,7 +156,7 @@ Widget leagueRow(int i){
       padding: const EdgeInsets.all(8.0),
       child: Row(
         children: [
-          Image.asset(FIFAImages().campeonatoLogo(leagueInfos.leagueID),width: 50,height: 50),
+          Image.asset(FIFAImages().campeonatoLogo(leagueInfos.leagueName),width: 50,height: 50),
 
           IconButton(
             onPressed: (){setState((){});},

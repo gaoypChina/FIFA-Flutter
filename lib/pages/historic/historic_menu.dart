@@ -1,14 +1,17 @@
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/classes/my.dart';
 import 'package:fifa/pages/historic/international_historic.dart';
 import 'package:fifa/pages/historic/leagues_historic.dart';
 import 'package:fifa/pages/historic/my_players_historic.dart';
 import 'package:fifa/pages/historic/players_historic.dart';
 import 'package:fifa/pages/historic/ranking_best_clubs_history.dart';
 import 'package:fifa/pages/historic/mundial.dart';
+import 'package:fifa/pages/historic/year_resume.dart';
 import 'package:fifa/pages/simulacao/after_play.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/images.dart';
+import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 
@@ -47,14 +50,14 @@ class _HistoricMenuState extends State<HistoricMenu> {
 
                           box(
                               'Nacional',
-                              Image.asset(FIFAImages().campeonatoLogo(1),height: 50,),
+                              Image.asset(FIFAImages().campeonatoLogo(My().campeonatoName),height: 50,),
                                   (){
                                 Navigator.push(context,MaterialPageRoute(builder: (context) => const HistoricLeague()));
                               }
                           ),
                           box(
                               'Internacional',
-                              Image.asset(FIFAImages().campeonatoInternacionalLogo('Champions League'),height: 50,),
+                              Image.asset(FIFAImages().campeonatoInternacionalLogo(LeagueOfficialNames().championsLeague),height: 50,),
                                   (){
                                 Navigator.push(context,MaterialPageRoute(builder: (context) => const InternationalHistoric()));
                               }
@@ -109,13 +112,26 @@ class _HistoricMenuState extends State<HistoricMenu> {
                       ),
 
                       //TESTE
-                      box(
-                          'Post Match',
-                          Image.asset('assets/clubs/generic.png',height: 50,),
-                              (){
-                            Navigator.push(context,MaterialPageRoute(builder: (context) => const AfterPlay()));
-                          }
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          box(
+                              'Post Match',
+                              Image.asset('assets/clubs/generic.png',height: 50,),
+                                  (){
+                                Navigator.push(context,MaterialPageRoute(builder: (context) => const AfterPlay()));
+                              }
+                          ),
+                          box(
+                              'Resumo do ano',
+                              Image.asset('assets/clubs/generic.png',height: 50,),
+                                  (){
+                                Navigator.push(context,MaterialPageRoute(builder: (context) => const YearResume()));
+                              }
+                          ),
+                        ],
                       ),
+
 
 
                     ],

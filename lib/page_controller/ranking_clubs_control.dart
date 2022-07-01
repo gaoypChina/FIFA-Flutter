@@ -11,6 +11,7 @@ class RankingClubsControl{
   List copyClubsName = [];
   List copyClubsNameNational = [];
   List copyClubsNameContinental = [];
+  My my = My();
 
   organizeRanking(){
 
@@ -18,8 +19,9 @@ class RankingClubsControl{
     for (var leagueID in leaguesListRealIndex) {//element: 0-70
       List allClubsIDList = League(index: leagueID).getAllClubsIDList();
       for(int i=0; i<allClubsIDList.length; i++) {
-        clubsOVR.add(Club(index: allClubsIDList[i]).getOverall());
-        copyClubsName.add(Club(index: allClubsIDList[i]).name);
+        Club clubClass = Club(index: allClubsIDList[i]);
+        clubsOVR.add(clubClass.getOverall());
+        copyClubsName.add(clubClass.name);
       }
     }
 
@@ -36,10 +38,10 @@ class RankingClubsControl{
 
   }
 
-  organizeNationalRanking(){
+  organizeMyNationalRanking(){
     copyClubsNameNational = List.from(copyClubsName);
     List allClubsName = [];
-    List divisionsName = Divisions().leagueDivisionsStructure(My().campeonatoName);
+    List divisionsName = Divisions().leagueDivisionsStructure(my.campeonatoName);
     for(String leagueName in divisionsName){
         int leagueIndex = leaguesIndexFromName[leagueName];
         allClubsName += League(index: leagueIndex).allClubsName;
@@ -47,9 +49,9 @@ class RankingClubsControl{
     copyClubsNameNational.removeWhere((element) => !allClubsName.contains(element) );
   }
 
-  organizeContinentalRanking(){
+  organizeMyContinentalRanking(){
     copyClubsNameContinental = List.from(copyClubsName);
-    String myContinent = Club(index: My().clubID).continent;
+    String myContinent = Club(index: my.clubID).continent;
     List allClubsName = [];
     for(String clubName in copyClubsName){
       int leagueIndex = clubsAllNameList.indexOf(clubName);
