@@ -343,6 +343,7 @@ class ClubCountry{
     else if(clubName==ClubName().djurgarden){    nationality=Words.country.sweden;}
     else if(clubName==ClubName().elfsborg){    nationality=Words.country.sweden;}
     else if(clubName==ClubName().hammarby){    nationality=Words.country.sweden;}
+    else if(clubName==ClubName().helsingborg){    nationality=Words.country.sweden;}
     else if(clubName==ClubName().kalmar){    nationality=Words.country.sweden;}
     else if(clubName==ClubName().ifkgoteborg){    nationality=Words.country.sweden;}
     else if(clubName==ClubName().lyn){    nationality=Words.country.sweden;}
