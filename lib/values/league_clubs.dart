@@ -9,7 +9,7 @@ ClubName clubName = ClubName();
 List defaultChampionsLeagueClubs = [
   clubName.manchestercity,clubName.psg,clubName.rbleipzig,clubName.brugge,
   clubName.liverpool,clubName.porto,clubName.milan,clubName.atleticomadrid,
-  clubName.borussiadortmund,clubName.ajax,clubName.sporting,clubName.besiktas,
+  clubName.dortmund,clubName.ajax,clubName.sporting,clubName.besiktas,
   clubName.realmadrid,clubName.inter,clubName.shaktardonetsk,clubName.lyon,
   clubName.bayernmunique,clubName.barcelona,clubName.benfica,clubName.dinamokiev,
   clubName.manchesterunited,clubName.atalanta,clubName.villareal,clubName.dinamozagreb,
@@ -78,7 +78,7 @@ Map clubNameMapImmutable = {
     8: clubName.malaga,9: clubName.sportingGijon,10: clubName.tenerife,11: clubName.zaragoza,
   },
   LeagueOfficialNames().alemanha1 : {
-    0: clubName.augsburg,1: clubName.bayerleverkusen,2: clubName.bayernmunique,3: clubName.borussiadortmund,
+    0: clubName.augsburg,1: clubName.leverkusen,2: clubName.bayernmunique,3: clubName.dortmund,
     4: clubName.bochum,5: clubName.moenchengladbach,6: clubName.colonia,7: clubName.eintrachtfrankfurt,
     8: clubName.freiburg,9: clubName.herthaberlim,10: clubName.hoffenheim,11: clubName.mainz05,
     12: clubName.rbleipzig,13: clubName.schalke04,14: clubName.stuttgart,15: clubName.unionBerlin,

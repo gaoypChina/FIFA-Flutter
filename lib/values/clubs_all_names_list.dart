@@ -43,7 +43,7 @@ List clubsAllNameList = [
   ClubName().sportingGijon,ClubName().tenerife,ClubName().elche,ClubName().leganes,
   ClubName().eibar,
   //alemanha
-  ClubName().moenchengladbach,  ClubName().borussiadortmund,  ClubName().bayernmunique,  ClubName().bayerleverkusen,
+  ClubName().moenchengladbach,  ClubName().dortmund,  ClubName().bayernmunique,  ClubName().leverkusen,
   ClubName().colonia,  ClubName().eintrachtfrankfurt,  ClubName().freiburg,  ClubName().hamburgo,
   ClubName().augsburg,  ClubName().herthaberlim,  ClubName().hoffenheim,  ClubName().rbleipzig,
   ClubName().schalke04,  ClubName().stuttgart,  ClubName().werderbremen,  ClubName().wolfsburg,

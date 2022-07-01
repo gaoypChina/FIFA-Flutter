@@ -170,9 +170,9 @@ class FIFAImages{
     else if(timeFoto==ClubName().zaragoza){    imageLogo='zaragoza';}
 
     else if(timeFoto==ClubName().moenchengladbach){    imageLogo='borussia';}
-    else if(timeFoto==ClubName().borussiadortmund){    imageLogo='dortmund';}
+    else if(timeFoto==ClubName().dortmund){    imageLogo='dortmund';}
     else if(timeFoto==ClubName().bayernmunique){    imageLogo='bayern';}
-    else if(timeFoto==ClubName().bayerleverkusen){    imageLogo='leverkusen';}
+    else if(timeFoto==ClubName().leverkusen){    imageLogo='leverkusen';}
     else if(timeFoto==ClubName().eintrachtfrankfurt){    imageLogo='frankfurt';}
     else if(timeFoto==ClubName().augsburg){    imageLogo='augsburg';}
     else if(timeFoto==ClubName().freiburg){    imageLogo='freiburg';}
@@ -235,12 +235,6 @@ class FIFAImages{
     else if(timeFoto==ClubName().sochaux){    imageLogo='sochaux';}
     else if(timeFoto==ClubName().strasbourg){    imageLogo='strasbourg';}
 
-    else if(timeFoto==ClubName().anderlecht){    imageLogo='anderlecht';}
-    else if(timeFoto==ClubName().brugge){    imageLogo='brugge';}
-    else if(timeFoto==ClubName().standardliege){    imageLogo='liege';}
-    else if(timeFoto==ClubName().genk){    imageLogo='genk';}
-    else if(timeFoto==ClubName().gent){    imageLogo='gent';}
-
     else if(timeFoto==ClubName().benfica){    imageLogo='benfica';}
     else if(timeFoto==ClubName().porto){    imageLogo='porto';}
     else if(timeFoto==ClubName().sporting){    imageLogo='sporting';}
@@ -269,23 +263,42 @@ class FIFAImages{
     else if(timeFoto==ClubName().vitesse){    imageLogo='vitesse';}
     else if(timeFoto==ClubName().heerenveen){    imageLogo='heerenveen';}
 
+
+    else if(timeFoto==ClubName().anderlecht){    imageLogo='anderlecht';}
+    else if(timeFoto==ClubName().brugge){    imageLogo='brugge';}
+    else if(timeFoto==ClubName().standardliege){    imageLogo='liege';}
+    else if(timeFoto==ClubName().genk){    imageLogo='genk';}
+    else if(timeFoto==ClubName().gent){    imageLogo='gent';}
+
     else if(timeFoto==ClubName().celtic){    imageLogo='celtic';}
     else if(timeFoto==ClubName().rangers){    imageLogo='rangers';}
+    else if(timeFoto==ClubName().hibernian){    imageLogo='hibernian';}
+    else if(timeFoto==ClubName().dundee){    imageLogo='dundee';}
+
+    else if(timeFoto==ClubName().bohemian){    imageLogo='bohemian';}
+
+
     else if(timeFoto==ClubName().rosenborg){    imageLogo='rosenborg';}
     else if(timeFoto==ClubName().molde){    imageLogo='molde';}
     else if(timeFoto==ClubName().malmo){    imageLogo='malmo';}
+    else if(timeFoto==ClubName().aik){    imageLogo='aik';}
+    else if(timeFoto==ClubName().ifkgoteborg){    imageLogo='ifk';}
     else if(timeFoto==ClubName().copenhague){    imageLogo='copenhague';}
     else if(timeFoto==ClubName().midtjylland){    imageLogo='midtjylland';}
+    else if(timeFoto==ClubName().brondby){    imageLogo='brondby';}
     else if(timeFoto==ClubName().helsinki){    imageLogo='hjk helsinki';}
 
     else if(timeFoto==ClubName().rbsalzburg){    imageLogo='rbsalzburg';}
     else if(timeFoto==ClubName().rapidviena){    imageLogo='rapidviena';}
+    else if(timeFoto==ClubName().austria){    imageLogo='austria';}
     else if(timeFoto==ClubName().laskLinz){    imageLogo='lask';}
     else if(timeFoto==ClubName().basel){    imageLogo='basel';}
     else if(timeFoto==ClubName().youngBoys){    imageLogo='young boys';}
     else if(timeFoto==ClubName().zurich){    imageLogo='zurich';}
     else if(timeFoto==ClubName().legiaWarszawa){    imageLogo='legia';}
     else if(timeFoto==ClubName().lechPoznan){    imageLogo='lech';}
+    else if(timeFoto==ClubName().gornik){    imageLogo='gornik';}
+    else if(timeFoto==ClubName().ruchchorzow){    imageLogo='ruch';}
     else if(timeFoto==ClubName().sturmGraz){    imageLogo='sturm';}
 
     else if(timeFoto==ClubName().galatasaray){    imageLogo='galatasaray';}
@@ -311,10 +324,12 @@ class FIFAImages{
 
     else if(timeFoto==ClubName().shaktardonetsk){    imageLogo='shaktar';}
     else if(timeFoto==ClubName().dinamokiev){    imageLogo='dinamokiev';}
+    else if(timeFoto==ClubName().dnipro){    imageLogo='dnipro';}
     else if(timeFoto==ClubName().sheriffTiraspol){    imageLogo='sheriff';}
     else if(timeFoto==ClubName().bate){    imageLogo='bate';}
     else if(timeFoto==ClubName().qarabag){    imageLogo='qarabag';}
     else if(timeFoto==ClubName().astana){    imageLogo='astana';}
+    else if(timeFoto==ClubName().zalgiris){    imageLogo='zalgiris';}
 
     else if(timeFoto==ClubName().estrelavermelha){    imageLogo='estrelavermelha';}
     else if(timeFoto==ClubName().partizan){    imageLogo='partizan';}
@@ -323,15 +338,26 @@ class FIFAImages{
     else if(timeFoto==ClubName().cluj){    imageLogo='cluj';}
     else if(timeFoto==ClubName().vardar){    imageLogo='vardar';}
     else if(timeFoto==ClubName().dinamozagreb){    imageLogo='dinamozagreb';}
+    else if(timeFoto==ClubName().hadjuksplit){    imageLogo='hadjuk split';}
     else if(timeFoto==ClubName().slovanBratislava){    imageLogo='slovan bratislava';}
+    else if(timeFoto==ClubName().maribor){    imageLogo='maribor';}
     else if(timeFoto==ClubName().spartapraga){    imageLogo='spartapraga';}
     else if(timeFoto==ClubName().slaviaPraha){    imageLogo='slavia praha';}
+    else if(timeFoto==ClubName().banikostrava){    imageLogo='banik';}
+    else if(timeFoto==ClubName().viktoriaPlzen){    imageLogo='viktoria';}
     else if(timeFoto==ClubName().ferencvaros){    imageLogo='ferencvaros';}
+    else if(timeFoto==ClubName().honved){    imageLogo='honved';}
+    else if(timeFoto==ClubName().mtk){    imageLogo='mtk';}
+    else if(timeFoto==ClubName().ujpest){    imageLogo='ujpest';}
     else if(timeFoto==ClubName().steauaBucureste){    imageLogo='steaua bucareste';}
+    else if(timeFoto==ClubName().dinamoBucureste){    imageLogo='dinamo bucuresti';}
     else if(timeFoto==ClubName().maccabiTelAviv){    imageLogo='maccabi tel aviv';}
 
+
+
     ///////////////////////////////////////////////////////////////////////////
-    else if(timeFoto==ClubName().atleticomg){       imageLogo='atleticomg';}
+    ///////////////////////////////////////////////////////////////////////////
+    if(timeFoto==ClubName().atleticomg){       imageLogo='atleticomg';}
     else if(timeFoto==ClubName().atleticopr){       imageLogo='atleticopr';}
     else if(timeFoto==ClubName().bahia){     imageLogo='bahia'; }
     else if(timeFoto==ClubName().botafogo){  imageLogo='botafogo'; }

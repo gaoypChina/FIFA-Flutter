@@ -170,3 +170,42 @@ bool leaguePlayInternationalCompetition(String name){
   }
   return playInternational;
 }
+
+
+String getCup(String leagueName){
+  Map cupsFromLeagues = {
+    LeagueOfficialNames().inglaterra1: LeagueOfficialNames().englandCup,
+    LeagueOfficialNames().inglaterra2: LeagueOfficialNames().englandCup,
+    LeagueOfficialNames().inglaterra3: LeagueOfficialNames().englandCup,
+    LeagueOfficialNames().italia1: LeagueOfficialNames().italyCup,
+    LeagueOfficialNames().italia2: LeagueOfficialNames().italyCup,
+    LeagueOfficialNames().espanha1: LeagueOfficialNames().spainCup,
+    LeagueOfficialNames().espanha2: LeagueOfficialNames().spainCup,
+    LeagueOfficialNames().franca1: LeagueOfficialNames().franceCup,
+    LeagueOfficialNames().franca2: LeagueOfficialNames().franceCup,
+    LeagueOfficialNames().alemanha1: LeagueOfficialNames().germanyCup,
+    LeagueOfficialNames().alemanha2: LeagueOfficialNames().germanyCup,
+    LeagueOfficialNames().ptHol: LeagueOfficialNames().portugalCup,
+    LeagueOfficialNames().turquiaGrecia: LeagueOfficialNames().turkeyCup,
+
+    LeagueOfficialNames().ligaEuropa: LeagueOfficialNames().ligaEuropaCup,
+    LeagueOfficialNames().lesteEuropeu: LeagueOfficialNames().eastEuropeCup,
+
+    LeagueOfficialNames().brasil1: LeagueOfficialNames().brazilCup,
+    LeagueOfficialNames().brasil2: LeagueOfficialNames().brazilCup,
+    LeagueOfficialNames().brasil3: LeagueOfficialNames().brazilCup,
+    LeagueOfficialNames().paulistao: LeagueOfficialNames().brazilCup,
+    LeagueOfficialNames().argentina: LeagueOfficialNames().argentinaCup,
+    LeagueOfficialNames().sulamericano: LeagueOfficialNames().sulamericanaCup,
+    LeagueOfficialNames().colombia: LeagueOfficialNames().merconorteCup,
+
+    LeagueOfficialNames().mexico: LeagueOfficialNames().mexicoCup,
+    LeagueOfficialNames().estadosUnidos: LeagueOfficialNames().usaCup,
+    LeagueOfficialNames().asia: LeagueOfficialNames().asiaCup,
+    LeagueOfficialNames().orienteMedio: LeagueOfficialNames().asiaCup,
+    LeagueOfficialNames().africa: LeagueOfficialNames().africaCup,
+    LeagueOfficialNames().outros: LeagueOfficialNames().othersCup,
+  };
+
+ return cupsFromLeagues[leagueName] ?? LeagueOfficialNames().othersCup;
+}

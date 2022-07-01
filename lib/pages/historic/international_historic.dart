@@ -447,7 +447,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
     return Container(
       width: 85,
       margin: (position+1 == 2 || position+1 == 4 || position+1 == 8 || position+1 == 16)
-        ? const EdgeInsets.only(bottom:12) : EdgeInsets.zero,
+        ? const EdgeInsets.only(bottom:16) : EdgeInsets.zero,
       child: Column(
         children: [
           Row(
