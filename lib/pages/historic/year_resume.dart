@@ -41,8 +41,10 @@ class _YearResumeState extends State<YearResume> {
               backButtonText(context,'Resumo do ano'),
 
               dropDownButton(),
-              for(int leagueID in leaguesListRealIndex)
-                resumeLeague(League(index: leagueID).name),
+              ListView.builder(
+                  itemCount: leaguesListRealIndex.length,
+                  itemBuilder: (c,leagueID)=> resumeLeague(League(index: leagueID).name)
+              ),
 
             ],
           ),
@@ -91,8 +93,13 @@ Widget resumeLeague(String leagueName){
     return Column(
       children: [
         Image.asset(FIFAImages().campeonatoLogo(leagueName),height: 40,width: 40),
-        Image.asset(Images().getEscudo('Boca Juniors'),height: 40,width: 40),
-        Image.asset(Images().getEscudo('Racing'),height: 40,width: 40),
+        Row(
+          children: [
+            Image.asset(Images().getEscudo('Boca Juniors'),height: 40,width: 40),
+            Image.asset(Images().getEscudo('Racing'),height: 40,width: 40),
+            Image.asset(Images().getEscudo('Independiente'),height: 40,width: 40),
+          ],
+        ),
       ],
     );
 }

@@ -303,6 +303,7 @@ class ClubCountry{
     else if(clubName==ClubName().brugge){    nationality=Words.country.belgium;}
     else if(clubName==ClubName().standardliege){    nationality=Words.country.belgium;}
     else if(clubName==ClubName().genk){    nationality=Words.country.belgium;}
+    else if(clubName==ClubName().gent){    nationality=Words.country.belgium;}
     else if(clubName==ClubName().lierse){    nationality=Words.country.belgium;}
     else if(clubName==ClubName().royalAntwerp){    nationality=Words.country.belgium;}
     else if(clubName==ClubName().mechelen){    nationality=Words.country.belgium;}
@@ -424,7 +425,6 @@ class ClubCountry{
     else if(clubName==ClubName().sivasspor){    nationality=Words.country.turkey;}
     //GRECIA
     else if(clubName==ClubName().olympiacos){    nationality=Words.country.greece;}
-    else if(clubName==ClubName().sivasspor){    nationality=Words.country.greece;}
     else if(clubName==ClubName().aek){    nationality=Words.country.greece;}
     else if(clubName==ClubName().paok){    nationality=Words.country.greece;}
     else if(clubName==ClubName().panathinaikos){    nationality=Words.country.greece;}
