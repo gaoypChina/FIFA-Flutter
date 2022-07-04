@@ -4,6 +4,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/page_controller/save/save_controller.dart';
 import 'package:fifa/pages/menu/b_home.dart';
+import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/popup/popup_ok_cancel.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
@@ -151,7 +152,7 @@ class _ChooseSaveState extends State<ChooseSave> {
             GestureDetector(
               onTap: (){
                 saveController.getData(gameSaveNumber);
-                Navigator.pop(context);
+                Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Menu()));
               },
               child: Container(
                 padding: const EdgeInsets.all(4),

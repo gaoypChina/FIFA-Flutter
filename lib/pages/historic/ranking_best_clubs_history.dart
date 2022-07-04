@@ -2,6 +2,7 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/page_controller/club_profile/data_graphics.dart';
 import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:fifa/theme/custom_toast.dart';
@@ -28,26 +29,43 @@ class _RankingBestClubsHistoryState extends State<RankingBestClubsHistory> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
-    organizarRanking();
+    organize();
     super.initState();
   }
-  organizarRanking(){
+  organize() async{
+
+    try{
+      for(int i=0; i<globalRankingClubs[ano]!.length; i++) {
+        clubsPoints.add(globalRankingClubs[ano]![i]);
+        copyClubsName.add(clubsAllNameList[i]);
+      }
+    }catch(e){
+      organizarRanking();
+    }
+    order();
+    setState(() {});
+  }
+
+  organizarRanking() {
     //REORGANIZA ORDEM
-      for(int i=0; i<clubsAllNameList.length; i++) {
-        customToast('${(100*i/clubsAllNameList.length).toStringAsFixed(1)}%');
+    globalRankingClubs[ano] = [];
+    int ending = 200;
+      for(int i=0; i<ending; i++) {
+        setState(() {});
+        customToast('${(100*i/ending).toStringAsFixed(1)}%');
         try {
-          Club clubClass = Club(index: i);
+          Club clubClass = Club(index: i,simplified: true);
           DataGraphics data = DataGraphics();
           data.getData(clubClass);
           clubsPoints.add(data.pointsTotal);
           copyClubsName.add(clubClass.name);
+          globalRankingClubs[ano]!.add(data.pointsTotal);
         }catch(e){
           //print('clube tem jogadores mas nao existe no jogo');
         }
       }
-
-
-      setState(() {});
+  }
+  order(){
     for(int i=0; i<clubsPoints.length-1; i++) {
       for(int k=i+1; k<clubsPoints.length; k++) {
         if(clubsPoints[k] > clubsPoints[i]){
@@ -58,8 +76,6 @@ class _RankingBestClubsHistoryState extends State<RankingBestClubsHistory> {
         }
       }
     }
-
-    setState(() {});
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -67,7 +83,6 @@ class _RankingBestClubsHistoryState extends State<RankingBestClubsHistory> {
 
   @override
   Widget build(BuildContext context) {
-    print(copyClubsName.length);
     return Scaffold(
       body: Stack(
         children: [
@@ -130,7 +145,7 @@ class _RankingBestClubsHistoryState extends State<RankingBestClubsHistory> {
         margin: const EdgeInsets.all(8),
         child: Row(
           children: [
-            SizedBox(width:30,child: Text(i.toString() + 'º ', style: EstiloTextoBranco.text14)),
+            SizedBox(width:30,child: Text((i+1).toString() + 'º ', style: EstiloTextoBranco.text14)),
             Image.asset(Images().getEscudo(copyClubsName[i]), height: 30, width: 30),
             const SizedBox(width: 10),
             Expanded(

@@ -65,6 +65,7 @@ Map globalHistoricBestPlayers = {};
 Map globalHistoricTopScorers = {};
 Map globalHistoricCoachResults = {};
 
+Map<int,List> globalRankingClubs = {2000:[]};
 //MATCH SIMULATION
 double globalMatchVelocity = 100;
 int globalMatchSubstitutionsLeft = 3;

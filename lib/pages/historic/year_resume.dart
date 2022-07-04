@@ -1,7 +1,10 @@
+import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/page_controller/club_profile/data_graphics.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/back_button.dart';
@@ -28,7 +31,7 @@ class _YearResumeState extends State<YearResume> {
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
-  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,10 +44,18 @@ class _YearResumeState extends State<YearResume> {
               backButtonText(context,'Resumo do ano'),
 
               dropDownButton(),
-              ListView.builder(
+              internationalChampions(),
+              Expanded(
+                child: GridView.builder(
+                    gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                        maxCrossAxisExtent: 200,
+                      childAspectRatio: 2.8,
+                    ),
                   itemCount: leaguesListRealIndex.length,
-                  itemBuilder: (c,leagueID)=> resumeLeague(League(index: leagueID).name)
+                  itemBuilder: (c,index)=> resumeLeague(League(index: leaguesListRealIndex[index]).name)
               ),
+              ),
+
 
             ],
           ),
@@ -88,19 +99,36 @@ class _YearResumeState extends State<YearResume> {
     );
   }
 
+  Widget internationalChampions(){
+    return Row(
+      children: [
+        Image.asset(FIFAImages().campeonatoInternacionalLogo(LeagueOfficialNames().championsLeague),height: 40,width: 40),
+        Image.asset(FIFAImages().campeonatoInternacionalLogo(LeagueOfficialNames().libertadores),height: 40,width: 40),
+      ],
+    );
+  }
 Widget resumeLeague(String leagueName){
 
-    return Column(
-      children: [
-        Image.asset(FIFAImages().campeonatoLogo(leagueName),height: 40,width: 40),
-        Row(
-          children: [
-            Image.asset(Images().getEscudo('Boca Juniors'),height: 40,width: 40),
-            Image.asset(Images().getEscudo('Racing'),height: 40,width: 40),
-            Image.asset(Images().getEscudo('Independiente'),height: 40,width: 40),
-          ],
+    List classification = Classification(leagueIndex: leaguesIndexFromName[leagueName]).classificationClubsIndexes;
+    return Container(
+      margin: EdgeInsets.all(2),
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.white,
+          width: 1, //                   <--- border width here
         ),
-      ],
+      ),
+      child: Row(
+        children: [
+          SizedBox(width: 10),
+          Image.asset(FIFAImages().campeonatoLogo(leagueName),height: 30,width: 30),
+          SizedBox(width: 10),
+          Image.asset(Images().getEscudo(clubsAllNameList[classification[0]]),height: 45,width: 45),
+          Image.asset(Images().getEscudo(clubsAllNameList[classification[1]]),height: 30,width: 30),
+          Image.asset(Images().getEscudo(clubsAllNameList[classification[2]]),height: 20,width: 20),
+          Image.asset(Images().getEscudo(clubsAllNameList[classification[3]]),height: 20,width: 20),
+        ],
+      ),
     );
 }
 

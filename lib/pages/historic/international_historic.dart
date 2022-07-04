@@ -83,22 +83,24 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                   ],
                 ),
               ),
-              !isList ? Expanded(
+              !isList ?
+              int.parse(selectedYear) >= anoInicial ?
+              Expanded(
                 child: SingleChildScrollView(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       children: [
-                        int.parse(selectedYear) >= anoInicial ?
                             isMataMata
                                 ? internationalHistoricColumnSimulation(int.parse(selectedYear),leagueInternational)
                                 : groupsClassificationColumnSimulation(int.parse(selectedYear),leagueInternational)
-                        : internationalHistoricColumn(int.parse(selectedYear)),
+
                       ],
                     ) ,
                   ),
                 ),
-              ) : listViewChampions(),
+              ) : internationalHistoricColumn(int.parse(selectedYear))
+                : listViewChampions(),
 
             ],
           ) : Container(),
@@ -152,8 +154,8 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
         ),
         padding: const EdgeInsets.all(4.0),
         alignment: Alignment.center,
-        child: isMataMata ? Text(Translation(context).text.knockoutStage.toUpperCase(),style: EstiloTextoPreto.text20)
-        : Text(Translation(context).text.groupStage.toUpperCase(),style: EstiloTextoPreto.text20),
+        child: isMataMata ? Text(Translation(context).text.knockoutStage.toUpperCase(),style: EstiloTextoPreto.text16)
+        : Text(Translation(context).text.groupStage.toUpperCase(),style: EstiloTextoPreto.text16),
       ),
     );
   }
@@ -207,7 +209,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
             isList = !isList;
             setState(() {});
           },
-          child: Center(child: Text(Translation(context).text.lista,textAlign:TextAlign.center,style: EstiloTextoPreto.text14))
+          child: Center(child: Text(Translation(context).text.lista.toUpperCase(),textAlign:TextAlign.center,style: EstiloTextoPreto.text16))
       ),
     );
   }
@@ -366,17 +368,17 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
   Widget internationalHistoricColumn(int year){
     Map map = mapChampions(leagueInternational);
     List list = map[year.toDouble()];
-    return SizedBox(
-              height: 520,
+    return Expanded(
               child: ListView.builder(
                 itemCount: list.length,
                 itemBuilder: (c,i){
                     String nationality = ClubCountry().countryName(list[i]);
                   return         Row(
                     children: [
-                      Text('${(i+1).toString()}º ',style: EstiloTextoBranco.text16),
+                      Container(width:30, child: Text('${(i+1).toString()}º ',style: EstiloTextoBranco.text16)),
                       const SizedBox(width: 4),
                       funcFlagsList(nationality, 15, 25),
+                      const SizedBox(width: 8),
                       Image.asset(Images().getEscudo(list[i]),width: 30,height: 30),
                       const SizedBox(width: 8),
                       Text(list[i],style: EstiloTextoBranco.text16),

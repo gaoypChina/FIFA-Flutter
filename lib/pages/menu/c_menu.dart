@@ -48,6 +48,7 @@ class _MenuState extends State<Menu> {
   void initState() {
     doThisOnLaunch();
     super.initState();
+
   }
   doThisOnLaunch() async{
     //POPUP DE EXPECTATIVA QUANDO COMEÇA NOVA TEMPORADA
@@ -60,6 +61,7 @@ class _MenuState extends State<Menu> {
     adversario.getAdversario();
 
     setState(() {});
+
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -68,6 +70,8 @@ class _MenuState extends State<Menu> {
   Widget build(BuildContext context) {
 
     myClass = My();
+
+
 
     return Scaffold(
         body:  Stack(

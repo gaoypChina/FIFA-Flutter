@@ -32,16 +32,16 @@ class Club{
   late int internationalGM;
   late int internationalGS;
 
-  Club({required this.index}) {
+  Club({required this.index,bool simplified = false}) {
     name = clubsAllNameList[index];
     picture = FIFAImages().imageLogo(name);
-    jogadores = getJogadores();
+    jogadores = simplified ? [] : getJogadores();
     nJogadores = jogadores.length;
     esquemaTatico = EsquemaTatico().e442;
     if(index == globalMyClubID){
       esquemaTatico = EsquemaTatico().meuEsquema;
     }
-    escalacao = optimizeBestSquadClub();
+    escalacao = simplified ? [] : optimizeBestSquadClub();
     leagueName = getLeagueName();
     leagueID = getLeagueID();
     leaguePoints = globalClubsLeaguePoints.isNotEmpty ? globalClubsLeaguePoints[index] : 0;
