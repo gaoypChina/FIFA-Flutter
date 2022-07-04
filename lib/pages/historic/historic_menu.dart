@@ -31,6 +31,7 @@ class _HistoricMenuState extends State<HistoricMenu> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
+    double imageSize = 50;
     return Scaffold(
       body: Stack(
         children: [
@@ -51,14 +52,14 @@ class _HistoricMenuState extends State<HistoricMenu> {
 
                           box(
                               'Nacional',
-                              Image.asset(FIFAImages().campeonatoLogo(My().campeonatoName),height: 50,),
+                              Image.asset(FIFAImages().campeonatoLogo(My().campeonatoName),height: imageSize,),
                                   (){
                                 Navigator.push(context,MaterialPageRoute(builder: (context) => const HistoricLeague()));
                               }
                           ),
                           box(
                               'Internacional',
-                              Image.asset(FIFAImages().campeonatoInternacionalLogo(LeagueOfficialNames().championsLeague),height: 50,),
+                              Image.asset(FIFAImages().campeonatoInternacionalLogo(LeagueOfficialNames().championsLeague),height: imageSize,),
                                   (){
                                 Navigator.push(context,MaterialPageRoute(builder: (context) => const InternationalHistoric()));
                               }
@@ -74,14 +75,14 @@ class _HistoricMenuState extends State<HistoricMenu> {
 
                           box(
                               'Jogadores',
-                              Image.asset('assets/icons/generic_user.png',height: 50,),
+                              Image.asset('assets/icons/generic_user.png',height: imageSize,),
                                   (){
                                 Navigator.push(context,MaterialPageRoute(builder: (context) => const PlayersHistoric()));
                               }
                           ),
                           box(
                               'Mundial',
-                              Image.asset('assets/league_logos/mundial.png',height: 50,),
+                              Image.asset('assets/league_logos/mundial.png',height: imageSize,),
                                   (){
                                 Navigator.push(context,MaterialPageRoute(builder: (context) => const TableMundial()));
                               }
@@ -96,14 +97,14 @@ class _HistoricMenuState extends State<HistoricMenu> {
                         children: [
                           box(
                               'Meus Elencos',
-                              Image.asset('assets/icons/generic_user.png',height: 50,),
+                              Image.asset('assets/icons/generic_user.png',height: imageSize,),
                                   (){
                                 Navigator.push(context,MaterialPageRoute(builder: (context) => const MyPlayersHistoric()));
                               }
                           ),
                           box(
                               'Melhores clubes da história',
-                              Image.asset('assets/clubs/generic.png',height: 50,),
+                              Image.asset('assets/clubs/generic.png',height: imageSize,),
                                   (){
                                 Navigator.push(context,MaterialPageRoute(builder: (context) => const RankingBestClubsHistory()));
                               }
@@ -118,14 +119,14 @@ class _HistoricMenuState extends State<HistoricMenu> {
                         children: [
                           box(
                               'Post Match',
-                              Image.asset('assets/clubs/generic.png',height: 50,),
+                              Icon(Icons.sports_volleyball_outlined,color: Colors.white, size: imageSize),
                                   (){
                                 Navigator.push(context,MaterialPageRoute(builder: (context) => const AfterPlay()));
                               }
                           ),
                           box(
                               'Resumo do ano',
-                              Image.asset('assets/clubs/generic.png',height: 50,),
+                              Icon(Icons.summarize,color: Colors.white, size: imageSize),
                                   (){
                                 Navigator.push(context,MaterialPageRoute(builder: (context) => const YearResume()));
                               }
@@ -134,7 +135,7 @@ class _HistoricMenuState extends State<HistoricMenu> {
                       ),
                       box(
                           'Mapa',
-                          Image.asset('assets/clubs/generic.png',height: 50,),
+                          Icon(Icons.map,color: Colors.white, size: imageSize),
                               (){
                             Navigator.push(context,MaterialPageRoute(builder: (context) => const MapPage()));
                           }

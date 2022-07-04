@@ -496,6 +496,7 @@ class ClubName{
   //ISLANDIA
   String akraness = "Akraness";
   String valur = "Valur";
+  String hafnarfjardar = "Hafnarfjarðar";
 
   //AUSTRIA/SUIÇA/POLONIA
   String rbsalzburg = "RB Salzburg";

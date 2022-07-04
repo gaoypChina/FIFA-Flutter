@@ -3,6 +3,7 @@ import 'dart:typed_data';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/classes/my.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -109,9 +110,9 @@ class _MapPageState extends State<MapPage> {
                 mapType: MapType.satellite,
                 tiltGesturesEnabled: false,
                 indoorViewEnabled: false,
-                initialCameraPosition: const CameraPosition(
-                  target: LatLng(-23, -46),
-                  zoom: 4.0,
+                initialCameraPosition: CameraPosition(
+                  target: LatLng(ClubDetails().getCoordinate(My().clubName).latitude, ClubDetails().getCoordinate(My().clubName).longitude),
+                  zoom: 6.0,
                 ),
                 onMapCreated: getClubsLocation,
                 markers: Set<Marker>.of(_markers),
