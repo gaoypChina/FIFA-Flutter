@@ -6,7 +6,7 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
-import 'package:fifa/values/club_country.dart';
+import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/historic_champions.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
@@ -372,10 +372,10 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
               child: ListView.builder(
                 itemCount: list.length,
                 itemBuilder: (c,i){
-                    String nationality = ClubCountry().countryName(list[i]);
+                    String nationality = ClubDetails().getCountry(list[i]);
                   return         Row(
                     children: [
-                      Container(width:30, child: Text('${(i+1).toString()}º ',style: EstiloTextoBranco.text16)),
+                      SizedBox(width:30, child: Text('${(i+1).toString()}º ',style: EstiloTextoBranco.text16)),
                       const SizedBox(width: 4),
                       funcFlagsList(nationality, 15, 25),
                       const SizedBox(width: 8),
@@ -445,7 +445,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
   }
 
   Widget positionListClub(List list, int position){
-    String nationality = ClubCountry().countryName(list[position]);
+    String nationality = ClubDetails().getCountry(list[position]);
     return Container(
       width: 85,
       margin: (position+1 == 2 || position+1 == 4 || position+1 == 8 || position+1 == 16)

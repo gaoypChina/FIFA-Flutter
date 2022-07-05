@@ -148,17 +148,17 @@ List clubsAllNameList = [
   ClubName().portland,  ClubName().seattle, ClubName().torontofc,  ClubName().vancouver,
 
   ///////////////////////////////////////////
-  ClubName().evergrande,  ClubName().pohang, ClubName().shandongluneng,  ClubName().shanghaisipg,
+  ClubName().ghuangzhou,  ClubName().pohang, ClubName().shandong,  ClubName().shanghaisipg,
   ClubName().kashimaantlers,  ClubName().urawareddiamonds, ClubName().visselkobe,  ClubName().kawasakifrontale,
   ClubName().aljazira,  ClubName().jeonbuk, ClubName().alnassr,  ClubName().alain,
   ClubName().alsadd,  ClubName().alduhail, ClubName().alahli,  ClubName().alhilal,
 
-  ClubName().fcSeoul,ClubName().beijingguoan,ClubName().persepolis,ClubName().ulsan,
-  ClubName().melbourneVictory,ClubName().sydney,ClubName().alWahda,ClubName().alIttihad,
+  ClubName().fcseoul,ClubName().beijingguoan,ClubName().persepolis,ClubName().ulsan,
+  ClubName().melbournevictory,ClubName().sydney,ClubName().alWahda,ClubName().alIttihad,
   ClubName().alShabab,ClubName().cerezoOsaka,ClubName().gambaOsaka,
 
   ClubName().alahly, ClubName().zamalek,ClubName().rajacasablanca,ClubName().wydad,
-  ClubName().mamelodi,  ClubName().orlandoPirates,  ClubName().kaizer,ClubName().esperance,
+  ClubName().mamelodi,  ClubName().orlandopirates,  ClubName().kaizer,ClubName().esperance,
   ClubName().mazembe, ClubName().agosto,
 
 

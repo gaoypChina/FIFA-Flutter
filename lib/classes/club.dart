@@ -2,7 +2,7 @@ import 'package:fifa/classes/geral/esquemas_taticos.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/functions/contries_continents.dart';
 import 'package:fifa/functions/international_league.dart';
-import 'package:fifa/values/club_country.dart';
+import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/global_variables.dart';
@@ -58,7 +58,7 @@ class Club{
       internationalPoints =0;internationalGM=0;internationalGS=0;
     }
 
-    nationality = ClubCountry().countryName(name);
+    nationality = ClubDetails().getCountry(name);
     continent = Continents().funcCountryContinents(nationality);
   }
 

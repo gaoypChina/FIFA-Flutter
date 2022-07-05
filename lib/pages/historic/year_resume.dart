@@ -2,7 +2,6 @@ import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/page_controller/club_profile/data_graphics.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/images.dart';
@@ -111,7 +110,7 @@ Widget resumeLeague(String leagueName){
 
     List classification = Classification(leagueIndex: leaguesIndexFromName[leagueName]).classificationClubsIndexes;
     return Container(
-      margin: EdgeInsets.all(2),
+      margin: const EdgeInsets.all(2),
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.white,
@@ -120,9 +119,9 @@ Widget resumeLeague(String leagueName){
       ),
       child: Row(
         children: [
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           Image.asset(FIFAImages().campeonatoLogo(leagueName),height: 30,width: 30),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           Image.asset(Images().getEscudo(clubsAllNameList[classification[0]]),height: 45,width: 45),
           Image.asset(Images().getEscudo(clubsAllNameList[classification[1]]),height: 30,width: 30),
           Image.asset(Images().getEscudo(clubsAllNameList[classification[2]]),height: 20,width: 20),

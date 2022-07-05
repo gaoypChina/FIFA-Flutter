@@ -187,7 +187,7 @@ Map clubNameMapImmutable = {
 
   //RESTO DO MUNDO
   LeagueOfficialNames().asia : {
-    0: clubName.evergrande,1: clubName.shanghaisipg,2: clubName.shandongluneng,3: clubName.kawasakifrontale,
+    0: clubName.ghuangzhou,1: clubName.shanghaisipg,2: clubName.shandong,3: clubName.kawasakifrontale,
     4: clubName.kashimaantlers,5: clubName.urawareddiamonds,6: clubName.visselkobe,7: clubName.pohang,
     8: clubName.jeonbuk,9: clubName.alhilal,10: clubName.alnassr,11: clubName.alain,
     12: clubName.alsadd,13: clubName.alahli,14: clubName.alduhail,15: clubName.aljazira,
@@ -195,11 +195,11 @@ Map clubNameMapImmutable = {
   },
   LeagueOfficialNames().africa : {
     0: clubName.alahly,1: clubName.zamalek,2: clubName.mazembe,3: clubName.esperance,
-    4: clubName.rajacasablanca,5: clubName.wydad,6: clubName.orlandoPirates,7: clubName.kaizer,
-    8: clubName.mamelodi,9: clubName.agosto,10:clubName.sydney,11:clubName.melbourneVictory,
+    4: clubName.rajacasablanca,5: clubName.wydad,6: clubName.orlandopirates,7: clubName.kaizer,
+    8: clubName.mamelodi,9: clubName.agosto,10:clubName.sydney,11:clubName.melbournevictory,
   },
   LeagueOfficialNames().outros : {
-    0: clubName.ulsan,1: clubName.fcSeoul,2: clubName.alWahda,3: clubName.atleticoTucuman,
+    0: clubName.ulsan,1: clubName.fcseoul,2: clubName.alWahda,3: clubName.atleticoTucuman,
     4: clubName.sheriffTiraspol, 5: clubName.joinville, 6: clubName.paulista, 7: clubName.ibis,
     8: clubName.juventusMooca,9: clubName.laskLinz,10: clubName.unionSantaFe,11: clubName.tigre,
   },

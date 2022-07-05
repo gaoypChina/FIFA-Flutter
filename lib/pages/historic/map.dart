@@ -1,18 +1,13 @@
-import 'dart:typed_data';
-
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/theme/colors.dart';
-import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
-import 'dart:ui' as ui;
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapPage extends StatefulWidget {
@@ -23,7 +18,7 @@ class MapPage extends StatefulWidget {
 }
 
 class _MapPageState extends State<MapPage> {
-  late List<BitmapDescriptor> _markersIcons = [];
+  late final List<BitmapDescriptor> _markersIcons = [];
   final List<Coordinates> coordinates = [];
   List<Marker> _markers = <Marker>[];
   late GoogleMapController controller;
@@ -40,7 +35,7 @@ class _MapPageState extends State<MapPage> {
       try {
         _markersIcons.add(
             await BitmapDescriptor.fromAssetImage(
-                ImageConfiguration(size: Size(48, 48)),
+                const ImageConfiguration(size: Size(48, 48)),
                 Images().getEscudo(clubName)
             )
         );
@@ -76,9 +71,10 @@ class _MapPageState extends State<MapPage> {
                       });
                       return bottomSheet(club);
                     }catch(e){
-                      customToast(clubName);
-                      Navigator.pop(c);
-                      return Container();
+                      Future.delayed(const Duration(seconds: 3), () {
+                        Navigator.pop(c);
+                      });
+                      return bottomSheetGenericClub(clubName);
                     }
 
 
@@ -110,6 +106,7 @@ class _MapPageState extends State<MapPage> {
                 mapType: MapType.satellite,
                 tiltGesturesEnabled: false,
                 indoorViewEnabled: false,
+                rotateGesturesEnabled: false,
                 initialCameraPosition: CameraPosition(
                   target: LatLng(ClubDetails().getCoordinate(My().clubName).latitude, ClubDetails().getCoordinate(My().clubName).longitude),
                   zoom: 6.0,
@@ -121,11 +118,11 @@ class _MapPageState extends State<MapPage> {
 
             ],
           ),
-          Container(
+          SizedBox(
             height: Sized(context).height,
             child: Column(
               children: [
-                Spacer(),
+                const Spacer(),
                 buttonZoomOut(),
               ],
             ),
@@ -146,9 +143,9 @@ class _MapPageState extends State<MapPage> {
       child: Container(
         height: 50,
         width: 50,
-        margin: EdgeInsets.all(8),
+        margin: const EdgeInsets.all(8),
         color: AppColors().greyTransparent,
-        child: Center(child: Text('Zoom Out',textAlign:TextAlign.center,style: EstiloTextoBranco.text14,)),
+        child: const Center(child: Text('Zoom Out',textAlign:TextAlign.center,style: EstiloTextoBranco.text14,)),
       ),
     );
   }
@@ -193,4 +190,39 @@ class _MapPageState extends State<MapPage> {
       ),
     );
   }
+
+  bottomSheetGenericClub(String clubName){
+    return GestureDetector(
+      onTap: (){
+        //Zoom
+        var newPosition = CameraPosition(
+            target: LatLng(ClubDetails().getCoordinate(clubName).latitude, ClubDetails().getCoordinate(clubName).longitude),
+            zoom: 16);
+        CameraUpdate cameraUpdate = CameraUpdate.newCameraPosition(newPosition);
+        controller.moveCamera(cameraUpdate);
+      },
+      child: Container(
+        color: ClubDetails().getColors(clubName).primaryColor.withOpacity(0.5),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              children: [
+                Text(ClubDetails().getStadium(clubName)+': ',style: EstiloTextoPreto.text16),
+                Text(ClubDetails().getStadiumCapacity(clubName).toString()),
+              ],
+            ),
+            Row(
+              children: [
+                Image.asset(Images().getEscudo(clubName),height:50, width: 50),
+                Text(clubName,style: EstiloTextoPreto.text20,),
+              ],
+            ),
+
+          ],
+        ),
+      ),
+    );
+  }
+
 }

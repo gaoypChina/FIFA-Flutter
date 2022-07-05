@@ -585,24 +585,23 @@ class FIFAImages{
     else if(timeFoto==ClubName().vancouver){ imageLogo='vancouver';  }
 
     //////////////////////////////////////////////////////////////////////////////////
-    if(timeFoto==ClubName().evergrande){       imageLogo='evergrande';}
+    if(timeFoto==ClubName().ghuangzhou){       imageLogo='evergrande';}
     else if(timeFoto==ClubName().beijingguoan){    imageLogo='beijing';     }
-    else if(timeFoto==ClubName().shandongluneng){    imageLogo='shandong_luneng';      }
+    else if(timeFoto==ClubName().shandong){    imageLogo='shandong_luneng';      }
     else if(timeFoto==ClubName().shanghaisipg){       imageLogo='shanghai';}
 
     else if(timeFoto==ClubName().kashimaantlers){imageLogo='kashima';}
     else if(timeFoto==ClubName().urawareddiamonds){    imageLogo='urawa';}
     else if(timeFoto==ClubName().visselkobe){     imageLogo='vissel_kobe'; }
     else if(timeFoto==ClubName().kawasakifrontale){       imageLogo='kawasaki_frontale'; }
-    else if(timeFoto==ClubName().fcTokyo){ imageLogo='fc tokyo';}
     else if(timeFoto==ClubName().cerezoOsaka){ imageLogo='cerezo osaka';}
     else if(timeFoto==ClubName().gambaOsaka){ imageLogo='gamba osaka';}
     else if(timeFoto==ClubName().kashiwaReysol){ imageLogo='kashiwa';}
-    else if(timeFoto==ClubName().yokohamaMarinos){ imageLogo='yokohama';}
+    else if(timeFoto==ClubName().yokohamamarinos){ imageLogo='yokohama';}
 
     else if(timeFoto==ClubName().jeonbuk){    imageLogo='jeonbuk'; }
-    else if(timeFoto==ClubName().fcSeoul){ imageLogo='fc seoul';}
-    else if(timeFoto==ClubName().suwonSamsung){ imageLogo='suwon samsung';}
+    else if(timeFoto==ClubName().fcseoul){ imageLogo='fc seoul';}
+    else if(timeFoto==ClubName().suwonsamsung){ imageLogo='suwon samsung';}
     else if(timeFoto==ClubName().pohang){      imageLogo='pohang';  }
     else if(timeFoto==ClubName().ulsan){ imageLogo='ulsan';}
     else if(timeFoto==ClubName().ulsan){ imageLogo='ulsan';}
@@ -619,9 +618,9 @@ class FIFAImages{
     else if(timeFoto==ClubName().alWahda){ imageLogo='al wahda';}
 
     else if(timeFoto==ClubName().persepolis){      imageLogo='persepolis';  }
-    else if(timeFoto==ClubName().melbourneVictory){ imageLogo='melbourne victory';}
+    else if(timeFoto==ClubName().melbournevictory){ imageLogo='melbourne victory';}
     else if(timeFoto==ClubName().sydney){ imageLogo='sydney';}
-    else if(timeFoto==ClubName().buriramUnited){ imageLogo='buriram united';}
+    else if(timeFoto==ClubName().buriram){ imageLogo='buriram united';}
 
     //AFRICA
     else if(timeFoto==ClubName().alahli){  imageLogo='al_ahli';  }
@@ -629,15 +628,15 @@ class FIFAImages{
     else if(timeFoto==ClubName().mazembe){ imageLogo='mazembe';}
     else if(timeFoto==ClubName().rajacasablanca){      imageLogo='raja';  }
     else if(timeFoto==ClubName().wydad){ imageLogo='wydad';}
-    else if(timeFoto==ClubName().orlandoPirates){ imageLogo='orlando pirates';}
+    else if(timeFoto==ClubName().orlandopirates){ imageLogo='orlando pirates';}
     else if(timeFoto==ClubName().kaizer){ imageLogo='kaizer chiefs';}
     else if(timeFoto==ClubName().mamelodi){ imageLogo='mamelodi sundowns';}
     else if(timeFoto==ClubName().agosto){ imageLogo='1 de agosto';}
     else if(timeFoto==ClubName().esperance){ imageLogo='esperance';}
     else if(timeFoto==ClubName().usmAlger){ imageLogo='usm alger';}
-    else if(timeFoto==ClubName().etoileSahel){ imageLogo='etoile sahel';}
-    else if(timeFoto==ClubName().esSetif){ imageLogo='es setif';}
-    else if(timeFoto==ClubName().asecMimosas){ imageLogo='asec mimosas';}
+    else if(timeFoto==ClubName().etoilesahel){ imageLogo='etoile sahel';}
+    else if(timeFoto==ClubName().essetif){ imageLogo='es setif';}
+    else if(timeFoto==ClubName().asecmimosas){ imageLogo='asec mimosas';}
     else if(timeFoto==ClubName().cotonsport){ imageLogo='cotonsport';}
     else if(timeFoto==ClubName().enyimba){ imageLogo='enyimba';}
 
