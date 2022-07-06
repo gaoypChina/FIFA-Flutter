@@ -74,6 +74,7 @@ class CountryNames {
   String get gambia => 'Gambia';
   String get georgia => 'Georgia';
   String get germany => 'Germany';
+  String get gibraltar => 'Gibraltar';
   String get ghana => 'Ghana';
   String get greece => 'Greece';
   String get grenada => 'Grenada';

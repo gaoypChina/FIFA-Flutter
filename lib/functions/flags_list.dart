@@ -71,6 +71,7 @@ Image funcFlagsList(String country, double _height, double _width){
   else if(country == Words.country.gambia){code = Image.asset('icons/flags/png/gm.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.gabon){code = Image.asset('icons/flags/png/ga.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.georgia){code = Image.asset('icons/flags/png/ge.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.gibraltar){code = Image.asset('icons/flags/png/gi.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.ghana){code = Image.asset('icons/flags/png/gh.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.germany){code = Image.asset('icons/flags/png/de.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.grenada){code = Image.asset('icons/flags/png/gd.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}

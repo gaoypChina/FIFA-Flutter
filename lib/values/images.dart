@@ -253,7 +253,7 @@ class FIFAImages{
     else if(timeFoto==ClubName().nacionalMadeira){    imageLogo='nacional madeira';}
     else if(timeFoto==ClubName().famalicao){    imageLogo='famalicao';}
     else if(timeFoto==ClubName().vitoriaSetubal){    imageLogo='vitoria setubal';}
-
+    //HOLANDA
     else if(timeFoto==ClubName().ajax){    imageLogo='ajax';}
     else if(timeFoto==ClubName().feyenoord){    imageLogo='feyenoord';}
     else if(timeFoto==ClubName().psv){    imageLogo='psv';}
@@ -262,19 +262,19 @@ class FIFAImages{
     else if(timeFoto==ClubName().utrecht){    imageLogo='utrecht';}
     else if(timeFoto==ClubName().vitesse){    imageLogo='vitesse';}
     else if(timeFoto==ClubName().heerenveen){    imageLogo='heerenveen';}
-
-
+    //BELGICA
     else if(timeFoto==ClubName().anderlecht){    imageLogo='anderlecht';}
     else if(timeFoto==ClubName().brugge){    imageLogo='brugge';}
     else if(timeFoto==ClubName().standardliege){    imageLogo='liege';}
     else if(timeFoto==ClubName().genk){    imageLogo='genk';}
     else if(timeFoto==ClubName().gent){    imageLogo='gent';}
 
+    //ESCOCIA
     else if(timeFoto==ClubName().celtic){    imageLogo='celtic';}
     else if(timeFoto==ClubName().rangers){    imageLogo='rangers';}
     else if(timeFoto==ClubName().hibernian){    imageLogo='hibernian';}
     else if(timeFoto==ClubName().dundee){    imageLogo='dundee';}
-
+    //IRLANDA
     else if(timeFoto==ClubName().bohemian){    imageLogo='bohemian';}
 
     //NORDICOS
@@ -296,29 +296,35 @@ class FIFAImages{
     else if(timeFoto==ClubName().austria){    imageLogo='austria';}
     else if(timeFoto==ClubName().tirol){    imageLogo='tirol';}
     else if(timeFoto==ClubName().laskLinz){    imageLogo='lask';}
+    else if(timeFoto==ClubName().sturmGraz){    imageLogo='sturm';}
+    //SUIÇA
     else if(timeFoto==ClubName().basel){    imageLogo='basel';}
     else if(timeFoto==ClubName().youngBoys){    imageLogo='young boys';}
     else if(timeFoto==ClubName().zurich){    imageLogo='zurich';}
     else if(timeFoto==ClubName().grasshoppers){    imageLogo='grasshopper';}
     else if(timeFoto==ClubName().servette){    imageLogo='servette';}
+    //POLONIA
     else if(timeFoto==ClubName().legiaWarszawa){    imageLogo='legia';}
     else if(timeFoto==ClubName().lechPoznan){    imageLogo='lech';}
     else if(timeFoto==ClubName().gornik){    imageLogo='gornik';}
     else if(timeFoto==ClubName().ruchchorzow){    imageLogo='ruch';}
-    else if(timeFoto==ClubName().sturmGraz){    imageLogo='sturm';}
 
+    //TURQUIA
     else if(timeFoto==ClubName().galatasaray){    imageLogo='galatasaray';}
     else if(timeFoto==ClubName().fenerbahce){    imageLogo='fenerbahce';}
     else if(timeFoto==ClubName().besiktas){    imageLogo='besiktas';}
     else if(timeFoto==ClubName().trabzonspor){    imageLogo='trabzonspor';}
     else if(timeFoto==ClubName().instanbul){    imageLogo='instanbul';}
+    else if(timeFoto==ClubName().sivasspor){    imageLogo='sivasspor';}
+    //GRECIA-CHIPRE-ISRAEL
     else if(timeFoto==ClubName().olympiacos){    imageLogo='olympiacos';}
-    else if(timeFoto==ClubName().sivasspor){    imageLogo='olympiacos';}
     else if(timeFoto==ClubName().aek){    imageLogo='aek';}
     else if(timeFoto==ClubName().paok){    imageLogo='paok';}
     else if(timeFoto==ClubName().panathinaikos){    imageLogo='panathinaikos';}
     else if(timeFoto==ClubName().apoel){    imageLogo='apoel';}
+    else if(timeFoto==ClubName().maccabiTelAviv){    imageLogo='maccabi tel aviv';}
 
+    //RUSSIA
     else if(timeFoto==ClubName().zenit){    imageLogo='zenit';}
     else if(timeFoto==ClubName().cska){    imageLogo='cska';}
     else if(timeFoto==ClubName().spartakmoscou){    imageLogo='spartak';}
@@ -330,6 +336,7 @@ class FIFAImages{
     else if(timeFoto==ClubName().rostov){    imageLogo='rostov';}
     else if(timeFoto==ClubName().rotor){    imageLogo='rotor';}
 
+    //EX-URSS
     else if(timeFoto==ClubName().shaktardonetsk){    imageLogo='shaktar';}
     else if(timeFoto==ClubName().dinamokiev){    imageLogo='dinamokiev';}
     else if(timeFoto==ClubName().dnipro){    imageLogo='dnipro';}
@@ -340,28 +347,36 @@ class FIFAImages{
     else if(timeFoto==ClubName().tbilisi){    imageLogo='tbilisi';}
     else if(timeFoto==ClubName().zalgiris){    imageLogo='zalgiris';}
 
+    //LESTE EUROPEU
+    //SERVIA
     else if(timeFoto==ClubName().estrelavermelha){    imageLogo='estrelavermelha';}
     else if(timeFoto==ClubName().partizan){    imageLogo='partizan';}
+    //BULGARIA
     else if(timeFoto==ClubName().ludogorets){    imageLogo='ludogorets';}
     else if(timeFoto==ClubName().cskaSofia){    imageLogo='cska sofia';}
-    else if(timeFoto==ClubName().cluj){    imageLogo='cluj';}
-    else if(timeFoto==ClubName().vardar){    imageLogo='vardar';}
+    //CROACIA
     else if(timeFoto==ClubName().dinamozagreb){    imageLogo='dinamozagreb';}
     else if(timeFoto==ClubName().hadjuksplit){    imageLogo='hadjuk split';}
+    //ESLOVAQUIA-ESLOVENIA
     else if(timeFoto==ClubName().slovanBratislava){    imageLogo='slovan bratislava';}
     else if(timeFoto==ClubName().maribor){    imageLogo='maribor';}
+    //REPUBLICA TCHECA
     else if(timeFoto==ClubName().spartapraga){    imageLogo='spartapraga';}
     else if(timeFoto==ClubName().slaviaPraha){    imageLogo='slavia praha';}
     else if(timeFoto==ClubName().banikostrava){    imageLogo='banik';}
     else if(timeFoto==ClubName().viktoriaPlzen){    imageLogo='viktoria';}
+    //HUNGRIA
     else if(timeFoto==ClubName().ferencvaros){    imageLogo='ferencvaros';}
     else if(timeFoto==ClubName().honved){    imageLogo='honved';}
     else if(timeFoto==ClubName().mtk){    imageLogo='mtk';}
     else if(timeFoto==ClubName().ujpest){    imageLogo='ujpest';}
     else if(timeFoto==ClubName().vasas){    imageLogo='vasas';}
+    //ROMENIA
     else if(timeFoto==ClubName().steauaBucureste){    imageLogo='steaua bucareste';}
     else if(timeFoto==ClubName().dinamoBucureste){    imageLogo='dinamo bucuresti';}
-    else if(timeFoto==ClubName().maccabiTelAviv){    imageLogo='maccabi tel aviv';}
+    else if(timeFoto==ClubName().cluj){    imageLogo='cluj';}
+    //MACEDONIA
+    else if(timeFoto==ClubName().vardar){    imageLogo='vardar';}
 
 
 
@@ -450,6 +465,7 @@ class FIFAImages{
 
 
     ///////////////////////////////////////////////
+    //ARGENTINA
     else if(timeFoto==ClubName().argentinojuniors){       imageLogo='argentinosjr';}
     else if(timeFoto==ClubName().arsenalsarandi){    imageLogo='sarandi';     }
     else if(timeFoto==ClubName().banfield){    imageLogo='banfield';      }
@@ -521,12 +537,7 @@ class FIFAImages{
     else if(timeFoto==ClubName().ldu){      imageLogo='ldu';  }
     else if(timeFoto==ClubName().idelvalle){ imageLogo='delvalle';  }
     else if(timeFoto==ClubName().elnacional){ imageLogo='el nacional';}
-
-    else if(timeFoto==ClubName().caracas){    imageLogo='caracas'; }
-    else if(timeFoto==ClubName().laGuaira){ imageLogo='la guaira';  }
-    else if(timeFoto==ClubName().deportivoTachira){ imageLogo='deportivo tachira';  }
-
-
+    //COLOMBIA
     else if(timeFoto==ClubName().americadecali){       imageLogo='americacali';}
     else if(timeFoto==ClubName().atleticonacional){    imageLogo='atleticonacional';     }
     else if(timeFoto==ClubName().deportivocali){    imageLogo='deportivocali';      }
@@ -536,6 +547,10 @@ class FIFAImages{
     else if(timeFoto==ClubName().millonarios){ imageLogo='millonarios';}
     else if(timeFoto==ClubName().santafe){     imageLogo='santafe'; }
     else if(timeFoto==ClubName().tolima){ imageLogo='tolima';  }
+    //VENEZUELA
+    else if(timeFoto==ClubName().caracas){    imageLogo='caracas'; }
+    else if(timeFoto==ClubName().laGuaira){ imageLogo='la guaira';  }
+    else if(timeFoto==ClubName().deportivoTachira){ imageLogo='deportivo tachira';  }
 
     ///////////////////////////////////////////////////////////////////////////
     //MÉXICO

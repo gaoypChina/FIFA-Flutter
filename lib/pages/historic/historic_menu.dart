@@ -53,15 +53,13 @@ class _HistoricMenuState extends State<HistoricMenu> {
                           box(
                               'Nacional',
                               Image.asset(FIFAImages().campeonatoLogo(My().campeonatoName),height: imageSize,),
-                                  (){
-                                Navigator.push(context,MaterialPageRoute(builder: (context) => const HistoricLeague()));
+                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => const HistoricLeague()));
                               }
                           ),
                           box(
                               'Internacional',
                               Image.asset(FIFAImages().campeonatoInternacionalLogo(LeagueOfficialNames().championsLeague),height: imageSize,),
-                                  (){
-                                Navigator.push(context,MaterialPageRoute(builder: (context) => const InternationalHistoric()));
+                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => const InternationalHistoric()));
                               }
                           ),
 
@@ -76,15 +74,13 @@ class _HistoricMenuState extends State<HistoricMenu> {
                           box(
                               'Jogadores',
                               Image.asset('assets/icons/generic_user.png',height: imageSize,),
-                                  (){
-                                Navigator.push(context,MaterialPageRoute(builder: (context) => const PlayersHistoric()));
+                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => const PlayersHistoric()));
                               }
                           ),
                           box(
                               'Mundial',
                               Image.asset('assets/league_logos/mundial.png',height: imageSize,),
-                                  (){
-                                Navigator.push(context,MaterialPageRoute(builder: (context) => const TableMundial()));
+                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => const TableMundial()));
                               }
                           ),
 
@@ -98,15 +94,13 @@ class _HistoricMenuState extends State<HistoricMenu> {
                           box(
                               'Meus Elencos',
                               Image.asset('assets/icons/generic_user.png',height: imageSize,),
-                                  (){
-                                Navigator.push(context,MaterialPageRoute(builder: (context) => const MyPlayersHistoric()));
+                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => const MyPlayersHistoric()));
                               }
                           ),
                           box(
                               'Melhores clubes da história',
                               Image.asset('assets/clubs/generic.png',height: imageSize,),
-                                  (){
-                                Navigator.push(context,MaterialPageRoute(builder: (context) => const RankingBestClubsHistory()));
+                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => const RankingBestClubsHistory()));
                               }
                           ),
 
@@ -120,15 +114,13 @@ class _HistoricMenuState extends State<HistoricMenu> {
                           box(
                               'Post Match',
                               Icon(Icons.sports_volleyball_outlined,color: Colors.white, size: imageSize),
-                                  (){
-                                Navigator.push(context,MaterialPageRoute(builder: (context) => const AfterPlay()));
+                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => const AfterPlay()));
                               }
                           ),
                           box(
                               'Resumo do ano',
                               Icon(Icons.summarize,color: Colors.white, size: imageSize),
-                                  (){
-                                Navigator.push(context,MaterialPageRoute(builder: (context) => const YearResume()));
+                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => const YearResume()));
                               }
                           ),
                         ],
@@ -136,8 +128,7 @@ class _HistoricMenuState extends State<HistoricMenu> {
                       box(
                           'Mapa',
                           Icon(Icons.map,color: Colors.white, size: imageSize),
-                              (){
-                            Navigator.push(context,MaterialPageRoute(builder: (context) => const MapPage()));
+                              (){Navigator.push(context,MaterialPageRoute(builder: (context) => const MapPage()));
                           }
                       ),
 

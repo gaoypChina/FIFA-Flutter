@@ -2,6 +2,7 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
@@ -161,6 +162,7 @@ class _MapPageState extends State<MapPage> {
         controller.moveCamera(cameraUpdate);
       },
       child: Container(
+        padding: const EdgeInsets.all(8),
         color: ClubDetails().getColors(club.name).primaryColor.withOpacity(0.5),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -169,6 +171,8 @@ class _MapPageState extends State<MapPage> {
               children: [
                 Text(ClubDetails().getStadium(club.name)+': ',style: EstiloTextoPreto.text16),
                 Text(ClubDetails().getStadiumCapacity(club.name).toString()),
+                const Spacer(),
+                funcFlagsList(ClubDetails().getCountry(club.name), 15, 25),
               ],
             ),
             Row(
@@ -202,6 +206,7 @@ class _MapPageState extends State<MapPage> {
         controller.moveCamera(cameraUpdate);
       },
       child: Container(
+        padding: const EdgeInsets.all(8),
         color: ClubDetails().getColors(clubName).primaryColor.withOpacity(0.5),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -210,6 +215,8 @@ class _MapPageState extends State<MapPage> {
               children: [
                 Text(ClubDetails().getStadium(clubName)+': ',style: EstiloTextoPreto.text16),
                 Text(ClubDetails().getStadiumCapacity(clubName).toString()),
+                const Spacer(),
+                funcFlagsList(ClubDetails().getCountry(clubName), 15, 25),
               ],
             ),
             Row(
