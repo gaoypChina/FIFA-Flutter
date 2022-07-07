@@ -15,6 +15,8 @@ class Club{
   late String name;
   late String nationality;
   late String continent;
+  late String stadiumName;
+  late int foundationYear;
   late List jogadores;
   late List escalacao;
   late String esquemaTatico;
@@ -43,7 +45,7 @@ class Club{
     }
     escalacao = simplified ? [] : optimizeBestSquadClub();
     leagueName = getLeagueName();
-    leagueID = getLeagueID();
+    leagueID = leaguesIndexFromName[leagueName];
     leaguePoints = globalClubsLeaguePoints.isNotEmpty ? globalClubsLeaguePoints[index] : 0;
     leagueGM = globalClubsLeagueGM.isNotEmpty ? globalClubsLeagueGM[index] : 0;
     leagueGS = globalClubsLeagueGS.isNotEmpty ? globalClubsLeagueGS[index] : 0;
@@ -59,6 +61,8 @@ class Club{
     }
 
     nationality = ClubDetails().getCountry(name);
+    foundationYear = ClubDetails().getFoundationYear(name);
+    stadiumName = ClubDetails().getStadium(name);
     continent = Continents().funcCountryContinents(nationality);
   }
 
@@ -76,11 +80,6 @@ class Club{
     return '';
   }
 
-  int getLeagueID() {
-    //SEARCH IN ALL LEAGUES
-    int index = leaguesIndexFromName[getLeagueName()];
-    return index;
-  }
 
     int getChaveLeague(){
     //Search name by index;

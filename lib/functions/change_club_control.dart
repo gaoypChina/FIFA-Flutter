@@ -66,12 +66,12 @@ class ClubClassification{
   late String clubName;
   late int posicaoTabela;
   late int chaveClub;
-  late int indexLeague;
+  late int leagueID;
 
   ClubClassification({required int clubID}){
     chaveClub = Club(index: clubID).getChaveLeague();
-    indexLeague = Club(index: clubID).getLeagueID();
-    posicaoTabela = Classification(leagueIndex: indexLeague).getClubPosition(clubID);
+    leagueID = Club(index: clubID).leagueID;
+    posicaoTabela = Classification(leagueIndex: leagueID).getClubPosition(clubID);
     clubName = Club(index: clubID).name;
   }
 }

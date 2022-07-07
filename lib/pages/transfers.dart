@@ -725,8 +725,7 @@ class _TransfersState extends State<Transfers> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              title,
-              style: EstiloTextoBranco.text22,
+              title,style: EstiloTextoBranco.text22,
             ),
           ],
         ),

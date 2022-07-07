@@ -19,7 +19,7 @@ class RankingClubsControl{
     for (var leagueID in leaguesListRealIndex) {//element: 0-70
       List allClubsIDList = League(index: leagueID).getAllClubsIDList();
       for(int i=0; i<allClubsIDList.length; i++) {
-        Club clubClass = Club(index: allClubsIDList[i]);
+        Club clubClass = Club(index: allClubsIDList[i],simplified: true);
         clubsOVR.add(clubClass.getOverall());
         copyClubsName.add(clubClass.name);
       }
@@ -51,11 +51,11 @@ class RankingClubsControl{
 
   organizeMyContinentalRanking(){
     copyClubsNameContinental = List.from(copyClubsName);
-    String myContinent = Club(index: my.clubID).continent;
+    String myContinent = Club(index: my.clubID,simplified: true).continent;
     List allClubsName = [];
     for(String clubName in copyClubsName){
       int leagueIndex = clubsAllNameList.indexOf(clubName);
-      if(Club(index: leagueIndex).continent.contains(myContinent)){
+      if(Club(index: leagueIndex,simplified: true).continent.contains(myContinent)){
         allClubsName.add(clubName);
       }
     }

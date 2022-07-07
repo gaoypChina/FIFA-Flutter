@@ -2,6 +2,7 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/classes/words.dart';
 import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -22,6 +23,7 @@ class _MapPageState extends State<MapPage> {
   late final List<BitmapDescriptor> _markersIcons = [];
   final List<Coordinates> coordinates = [];
   List<Marker> _markers = <Marker>[];
+  List<Marker> _markersShow = <Marker>[];
   late GoogleMapController controller;
   ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
@@ -49,7 +51,7 @@ class _MapPageState extends State<MapPage> {
   getClubsLocation(GoogleMapController googleMapController) {
     controller = googleMapController;
     _markers = [];
-    ClubDetails().mapDetails.forEach((key, value) {
+    ClubDetails().map.forEach((key, value) {
       String clubName = key;
 
       if(ClubDetails().getCoordinate(clubName).latitude != 0){
@@ -85,6 +87,7 @@ class _MapPageState extends State<MapPage> {
             //icon: clubsAllNameList.indexOf(clubName) < 40 ? _markersIcons[clubsAllNameList.indexOf(clubName)] : BitmapDescriptor.defaultMarker,
           ),
         );
+        _markersShow = List.from(_markers);
       }
     });
   }
@@ -100,7 +103,23 @@ class _MapPageState extends State<MapPage> {
           Images().getWallpaper(),
           Column(
             children: [
-              backButtonText(context, 'Mapa'),
+              Row(
+                children: [
+                  backButtonText(context, 'Mapa'),
+                  const Spacer(),
+                  Container(
+                    margin: const EdgeInsets.only(top:30.0),
+                    child: GestureDetector(
+                      onTap: (){
+                        filterBottomMessage();
+                        setState((){});
+                      },
+                      child: const Icon(Icons.filter_alt,size:35,color:Colors.white),
+                    ),
+                  ),
+                  const SizedBox(width: 16),
+                ],
+              ),
 
               Expanded(
                 child: GoogleMap(
@@ -113,7 +132,7 @@ class _MapPageState extends State<MapPage> {
                   zoom: 6.0,
                 ),
                 onMapCreated: getClubsLocation,
-                markers: Set<Marker>.of(_markers),
+                markers: Set<Marker>.of(_markersShow),
               ),
               ),
 
@@ -124,7 +143,12 @@ class _MapPageState extends State<MapPage> {
             child: Column(
               children: [
                 const Spacer(),
-                buttonZoomOut(),
+                Row(
+                  children: [
+                    buttonZoomOut(),
+                    buttonZoomMedium(),
+                  ],
+                )
               ],
             ),
           ),
@@ -147,6 +171,21 @@ class _MapPageState extends State<MapPage> {
         margin: const EdgeInsets.all(8),
         color: AppColors().greyTransparent,
         child: const Center(child: Text('Zoom Out',textAlign:TextAlign.center,style: EstiloTextoBranco.text14,)),
+      ),
+    );
+  }
+  Widget buttonZoomMedium(){
+    return GestureDetector(
+      onTap: (){
+        CameraUpdate zoom = CameraUpdate.zoomTo(8);
+        controller.moveCamera(zoom);
+      },
+      child: Container(
+        height: 50,
+        width: 80,
+        margin: const EdgeInsets.all(8),
+        color: AppColors().greyTransparent,
+        child: const Center(child: Text('Zoom Medium',textAlign:TextAlign.center,style: EstiloTextoBranco.text14,)),
       ),
     );
   }
@@ -184,7 +223,6 @@ class _MapPageState extends State<MapPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text(club.nationality),
                 Text(club.leagueName),
                 Text(ClubDetails().getFoundationYear(club.name).toString()),
               ],
@@ -223,6 +261,8 @@ class _MapPageState extends State<MapPage> {
               children: [
                 Image.asset(Images().getEscudo(clubName),height:50, width: 50),
                 Text(clubName,style: EstiloTextoPreto.text20,),
+                const Spacer(),
+                Text(ClubDetails().getFoundationYear(clubName).toString()),
               ],
             ),
 
@@ -232,4 +272,131 @@ class _MapPageState extends State<MapPage> {
     );
   }
 
+  Future filterBottomMessage(){
+    return showModalBottomSheet(
+        barrierColor: Colors.transparent,
+        context: context, builder: (c){
+      return Container(
+        margin: const EdgeInsets.all(8),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Text('Filtrar por: ',style: EstiloTextoPreto.text22),
+            GestureDetector(
+                onTap:(){
+                  Navigator.pop(c);
+                  filterFoundationYearBottomSheet();
+            },child: Container(padding:const EdgeInsets.all(4),child: const Text('Fundação',style: EstiloTextoPreto.text16))),
+
+            GestureDetector(
+                onTap:(){
+              String myNationality = Club(index: My().clubID).nationality;
+              _markersShow = List.from(_markers);
+              _markersShow.removeWhere((element) => ClubDetails().getCountry(element.markerId.value) != myNationality);
+              setState((){});
+              Navigator.pop(c);
+            }, child: Container(padding:const EdgeInsets.all(4),child: const Text('No meu País',style: EstiloTextoPreto.text16))),
+
+            GestureDetector(
+                onTap:(){
+                  Navigator.pop(c);
+                  filterCountryBottomSheet();
+                },
+                child: Container(padding:const EdgeInsets.all(4),child: const Text('País',style: EstiloTextoPreto.text16))),
+
+            GestureDetector(
+                onTap:(){
+              _markersShow = List.from(_markers);
+              setState((){});
+              Navigator.pop(c);
+            },child: Container(padding:const EdgeInsets.all(4),child: const Text('Restaurar Todos',style: EstiloTextoPreto.text16))),
+          ],
+        ),
+      );
+    }
+    );
+  }
+
+  Future filterCountryBottomSheet(){
+
+    List<DropdownMenuItem<String>> finalResultCountries = globalCountryNames.map((String dropDownStringItem) {
+      return DropdownMenuItem<String>(
+        value: dropDownStringItem,
+        child: Text(dropDownStringItem),
+      );
+    }).toList();
+
+
+    return showModalBottomSheet(
+        barrierColor: Colors.transparent,
+        context: context, builder: (c){
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SizedBox(
+            width: 120,
+            child: DropdownButton<String>(
+              isExpanded: true,
+              value: ClubDetails().getCountry(My().clubName),
+              items: finalResultCountries,
+              onChanged: (Object? nationality) {
+                _markersShow = List.from(_markers);
+                _markersShow.removeWhere((element) => ClubDetails().getCountry(element.markerId.value) != nationality.toString());
+                setState((){});
+                Navigator.pop(c);
+              },
+            ),
+          ),
+        ],
+      );
+    });
+  }
+
+
+  Future filterFoundationYearBottomSheet(){
+    TextEditingController controller1 = TextEditingController();
+    TextEditingController controller2 = TextEditingController();
+
+    //SELECT AFTER 2000 CLUBS
+    _markersShow = List.from(_markers);
+    _markersShow.removeWhere((element) => ClubDetails().getFoundationYear(element.markerId.value) < 2000);
+
+    return showModalBottomSheet(
+        barrierColor: Colors.transparent,
+        context: context, builder: (c){
+      return Container(
+        height: Sized(context).height - MediaQuery.of(context).viewInsets.bottom,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text('Desde: '),
+            widgetTextField(controller1,autofocus: true),
+            Text('Até: '),
+            widgetTextField(controller2),
+          ],
+        ),
+      );
+    });
+  }
+
+  Widget widgetTextField(TextEditingController controller,{bool autofocus = false}) {
+    return Container(
+      height: 30,
+      width: 50,
+      decoration: BoxDecoration(
+        border: Border.all(
+          width: 1.0,
+          color: Colors.grey,
+        ),
+      ),
+      margin: const EdgeInsets.only(left: 4),
+      child: TextField(
+        autofocus: autofocus,
+        textAlign: TextAlign.center,
+        controller: controller,
+        keyboardType: TextInputType.number,
+        decoration: const InputDecoration(border: InputBorder.none,),
+      ),
+    );
+  }
 }

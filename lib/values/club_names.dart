@@ -354,8 +354,8 @@ class ClubName{
   String strasbourg = "Strasbourg";
   String parisFC = "Paris FC";
 
-  String amiens = "Amiens";
   String ajaccio = "Ajaccio";
+  String amiens = "Amiens";
   String angers = "Angers";
   String angouleme = "Angoulême";
   String annecy = "Annecy FC";
@@ -522,9 +522,9 @@ class ClubName{
   String rosenborg = "Rosenborg";
   String molde = "Molde";
   String aalesund = "Aalesund";
+  String fredrikstad = "Fredrikstad";
   String glimt = "Bodø/Glimt";
   String lillestrom = "Lillestrøm";
-  String fredrikstad = "Fredrikstad";
   String lyn = "LYN";
   String odd = "Odds BK";
   String sarpsborg = "Sarpsborg 08";
@@ -786,7 +786,7 @@ class ClubName{
   String zilina = "MSK Zilina";
   String dac1904 = "DAC 1904";
   //OUTROS
-  String tirana = "KF Tirana";//ALBANIA
+  String tiranafk = "KF Tirana";//ALBANIA
   String partizanitirane = "FK Partizani Tiranë";//ALBANIA
   String maribor = "Maribor";//ESLOVENIA
   String ljublijana = "Olimpia Ljubljana";//ESLOVENIA
@@ -979,6 +979,7 @@ class ClubName{
   String riverPI = "River-PI";
   String riobrancoAC = "Rio Branco-AC";
   String riobrancoES = "Rio Branco-ES";
+  String riobrancoSP = "Rio Branco-SP";
   String rioclaro = "Rio Claro";
   String rionegro = "Rio Negro";
   String riopreto = "Rio Preto";
@@ -1024,11 +1025,11 @@ class ClubName{
 
 
   //////////////////////////////////////////////////////////////////////////////
-  String argentinojuniors = "Argentinos Juniors";
   String aldosivi = "Aldosivi";
   String allboys = "All Boys";
   String almagro = "Almagro";
   String atlantaARG = "Atlanta";
+  String argentinojuniors = "Argentinos Juniors";
   String arsenalsarandi = "Arsenal Sarandí";
   String atleticoTucuman = "Atlético Tucumán";
   String rafaela = "Atlético Rafaela";
@@ -1351,7 +1352,7 @@ class ClubName{
   String defenseforce = "Defense Force"; //TRINIDAD & TOBAGO
   String trintoc = "United Petrotrin"; //TRINIDAD & TOBAGO
   String guayanais = "Guayanais"; //GUIANA
-  String robinhood = "Robinhood"; //BERMUDA
+  String robinhood = "SV Robinhood"; //SURINAME
   String transvaal = "Transvaal"; //SURINAME
 
   //////////////////////////////////////////////////////////////////////////////
@@ -1394,7 +1395,7 @@ class ClubName{
   String incheon = "Incheon United FC";
   String pohang = "Pohang Steelers";
   String fcseoul = "FC Seoul";
-  String seognam = "Seongnam";
+  String seongnam = "Seongnam";
   String suwonsamsung = "Suwon Samsung";
   String ulsan = "Ulsan Hyundai";
   //RESTO ASIA - TAILANDIA

@@ -8,7 +8,7 @@ void main() {
 
     test('Club Details infos filled', () {
       ClubDetails clubDetails = ClubDetails();
-      clubDetails.mapDetails.forEach((key, value) {
+      clubDetails.map.forEach((key, value) {
         List values = value;
         expect(values[5].isNotEmpty, true);
       });

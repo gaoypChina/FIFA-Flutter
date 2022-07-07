@@ -29,6 +29,7 @@ Image funcFlagsList(String country, double _height, double _width){
   else if(country == Words.country.belarus){code = Image.asset('icons/flags/png/by.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.belize){code = Image.asset('icons/flags/png/bz.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.benin){code = Image.asset('icons/flags/png/bj.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.bermudas){code = Image.asset('icons/flags/png/bm.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.bolivia){code = Image.asset('icons/flags/png/bo.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.bosnia){code = Image.asset('icons/flags/png/ba.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.botswana){code = Image.asset('icons/flags/png/bw.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}

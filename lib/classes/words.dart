@@ -30,6 +30,7 @@ class CountryNames {
   String get belarus => 'Belarus';
   String get belize => 'Belize';
   String get benin => 'Benin';
+  String get bermudas => 'Bermudas';
   String get bhoutan => 'Bhoutan';
   String get bolivia => 'Bolivia';
   String get bosnia => 'Bosnia';
