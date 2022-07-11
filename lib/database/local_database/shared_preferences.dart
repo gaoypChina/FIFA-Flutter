@@ -42,6 +42,19 @@ class SharedPreferenceHelper {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.getStringList('COACHRANKING');
   }
+
+  ///////////////////////////////////////////////////////////////////////////
+  // MAP RANKING
+  ///////////////////////////////////////////////////////////////////////////
+  Future<bool> saveMapRanking(List<String> ranking) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.setStringList('MAPRANKING', ranking);
+  }
+
+  Future<List<String>?> getMapRanking() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getStringList('MAPRANKING');
+  }
 ///////////////////////////////////////////////////////////////////////////
 // REMOVE
 ///////////////////////////////////////////////////////////////////////////

@@ -8,7 +8,8 @@ import 'package:fifa/pages/historic/players_historic.dart';
 import 'package:fifa/pages/historic/ranking_best_clubs_history.dart';
 import 'package:fifa/pages/historic/mundial.dart';
 import 'package:fifa/pages/historic/year_resume.dart';
-import 'package:fifa/pages/historic/map.dart';
+import 'package:fifa/pages/map/map.dart';
+import 'package:fifa/pages/map/map_menu.dart';
 import 'package:fifa/pages/simulacao/after_play.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/images.dart';
@@ -131,7 +132,12 @@ class _HistoricMenuState extends State<HistoricMenu> {
                               (){Navigator.push(context,MaterialPageRoute(builder: (context) => const MapPage()));
                           }
                       ),
-
+                      box(
+                          'Mapa Menu',
+                          Icon(Icons.map,color: Colors.white, size: imageSize),
+                              (){Navigator.push(context,MaterialPageRoute(builder: (context) => const MapMenu()));
+                          }
+                      ),
 
                     ],
                   ),

@@ -5,11 +5,13 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/words.dart';
 import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/theme/colors.dart';
+import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
+import 'package:geocoding/geocoding.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapPage extends StatefulWidget {
@@ -28,26 +30,6 @@ class _MapPageState extends State<MapPage> {
   ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
-  @override
-  void initState() {
-    getClubIcon();
-    super.initState();
-  }
-  getClubIcon() async{
-    for (var clubName in clubsAllNameList) {
-      try {
-        _markersIcons.add(
-            await BitmapDescriptor.fromAssetImage(
-                const ImageConfiguration(size: Size(48, 48)),
-                Images().getEscudo(clubName)
-            )
-        );
-      }catch(e){
-        _markersIcons.add(BitmapDescriptor.defaultMarker);
-      }
-    }
-    setState((){});
-  }
   getClubsLocation(GoogleMapController googleMapController) {
     controller = googleMapController;
     _markers = [];
@@ -62,26 +44,21 @@ class _MapPageState extends State<MapPage> {
           Marker(
             markerId: MarkerId(clubName),
             position: LatLng(coordinates.last.latitude,coordinates.last.longitude),
-            onTap: () {
-              showModalBottomSheet(
-                  barrierColor: Colors.transparent,
-                  context: context, builder: (c){
+            onTap: () async{
 
-                    try{
-                      Club club = Club(index: clubsAllNameList.indexOf(clubName));
-                      Future.delayed(const Duration(seconds: 3), () {
-                        Navigator.pop(c);
-                      });
-                      return bottomSheet(club);
-                    }catch(e){
-                      Future.delayed(const Duration(seconds: 3), () {
-                        Navigator.pop(c);
-                      });
-                      return bottomSheetGenericClub(clubName);
-                    }
+              String city = '';
+              List<Placemark> placemarks = await placemarkFromCoordinates(
+                ClubDetails().getCoordinate(clubName).latitude,
+                ClubDetails().getCoordinate(clubName).longitude,
+              );
+              //print(placemarks[0]);
+              if(placemarks[0].locality!.isNotEmpty){
+                city = placemarks[0].locality.toString();
+              }else{
+                city = placemarks[0].administrativeArea.toString()+', '+placemarks[0].subAdministrativeArea.toString();
+              }
 
-
-              });
+              onMarkerTap(clubName,city);
             },
             //infoWindow: InfoWindow(title: clubName),
             //icon: clubsAllNameList.indexOf(clubName) < 40 ? _markersIcons[clubsAllNameList.indexOf(clubName)] : BitmapDescriptor.defaultMarker,
@@ -190,9 +167,34 @@ class _MapPageState extends State<MapPage> {
     );
   }
 
-  bottomSheet(Club club){
+  onMarkerTap(String clubName, String city) {
+
+    return showModalBottomSheet(
+        barrierColor: Colors.transparent,
+        context: context, builder: (c){
+
+      try{
+        Club club = Club(index: clubsAllNameList.indexOf(clubName));
+        Future.delayed(const Duration(seconds: 3), () {
+          Navigator.pop(c);
+        });
+        return bottomSheetClub(club,city);
+      }catch(e){
+        Future.delayed(const Duration(seconds: 3), () {
+          Navigator.pop(c);
+        });
+        return bottomSheetGenericClub(clubName,city);
+      }
+
+
+    });
+  }
+
+  Widget bottomSheetClub(Club club, String city) {
+
     return GestureDetector(
-      onTap: (){
+      onTap: () async{
+
         //Zoom
         var newPosition = CameraPosition(
             target: LatLng(ClubDetails().getCoordinate(club.name).latitude, ClubDetails().getCoordinate(club.name).longitude),
@@ -224,6 +226,7 @@ class _MapPageState extends State<MapPage> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(club.leagueName),
+                Text(city),
                 Text(ClubDetails().getFoundationYear(club.name).toString()),
               ],
             ),
@@ -233,9 +236,9 @@ class _MapPageState extends State<MapPage> {
     );
   }
 
-  bottomSheetGenericClub(String clubName){
+  bottomSheetGenericClub(String clubName, String city){
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         //Zoom
         var newPosition = CameraPosition(
             target: LatLng(ClubDetails().getCoordinate(clubName).latitude, ClubDetails().getCoordinate(clubName).longitude),
@@ -265,6 +268,8 @@ class _MapPageState extends State<MapPage> {
                 Text(ClubDetails().getFoundationYear(clubName).toString()),
               ],
             ),
+
+            Text(city),
 
           ],
         ),

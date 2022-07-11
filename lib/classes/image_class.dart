@@ -69,4 +69,24 @@ class Images{
       ),
     );
   }
+
+  String getContinentLogo(String continent) {
+    if (continent == 'Europa') {
+      return 'assets/continents/europe.png';
+    }
+    if (continent == 'América do Sul') {
+      return 'assets/continents/south america.png';
+    }
+    if (continent == 'América do Norte') {
+      return 'assets/continents/north america.png';
+    }
+    if (continent == 'Ásia') {
+      return 'assets/continents/asia.png';
+    }
+    if (continent == 'África') {
+      return 'assets/continents/africa.png';
+    }
+    return 'assets/continents/europe.png';
+  }
+
 }

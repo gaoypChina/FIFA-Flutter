@@ -337,7 +337,7 @@ class FIFAImages{
     else if(timeFoto==ClubName().brondby){    imageLogo='brondby';}
     else if(timeFoto==ClubName().horsens){    imageLogo='horsens';}
     else if(timeFoto==ClubName().lyngby){    imageLogo='lyngby';}
-    else if(timeFoto==ClubName().nordsjaelland){    imageLogo='nords';}
+    else if(timeFoto==ClubName().nordsjaelland){    imageLogo='nordsjaelland';}
     else if(timeFoto==ClubName().obodense){    imageLogo='ob odense';}
     else if(timeFoto==ClubName().randers){    imageLogo='randers';}
     else if(timeFoto==ClubName().vejle){    imageLogo='vejle';}
@@ -533,7 +533,7 @@ class FIFAImages{
     else if(timeFoto==ClubName().madureira){    imageLogo='madureira'; }
     else if(timeFoto==ClubName().mirassol){imageLogo='mirassol';  }
     else if(timeFoto==ClubName().motoclub){imageLogo='moto club';  }
-    else if(timeFoto==ClubName().nacional){    imageLogo='nacionalsp'; }
+    else if(timeFoto==ClubName().nacionalSP){    imageLogo='nacionalsp'; }
     else if(timeFoto==ClubName().noroeste){    imageLogo='noroeste'; }
     else if(timeFoto==ClubName().novaiguacu){    imageLogo='nova iguacu'; }
     else if(timeFoto==ClubName().oeste){    imageLogo='oeste'; }
