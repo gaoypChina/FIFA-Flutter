@@ -53,7 +53,6 @@ class _MapGameplayState extends State<MapGameplay> {
       milis++;
       setState((){});
     });
-
   }
 
   @override

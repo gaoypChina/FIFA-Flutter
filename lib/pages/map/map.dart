@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
@@ -30,6 +32,22 @@ class _MapPageState extends State<MapPage> {
   ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////
+//                               INIT                                     //
+////////////////////////////////////////////////////////////////////////////
+  @override
+  void initState() {
+    initMap();
+    super.initState();
+  }
+  initMap() async{
+    //GARANTE QUE A PÁGINA VAI DAR SETSTATE E CARREGAR OS MARKERS
+    await Future.delayed(const Duration(seconds: 3));
+      setState((){});
+    await Future.delayed(const Duration(seconds: 6));
+    setState((){});
+  }
+
   getClubsLocation(GoogleMapController googleMapController) {
     controller = googleMapController;
     _markers = [];
@@ -104,6 +122,8 @@ class _MapPageState extends State<MapPage> {
                 tiltGesturesEnabled: false,
                 indoorViewEnabled: false,
                 rotateGesturesEnabled: false,
+                compassEnabled: false,
+
                 initialCameraPosition: CameraPosition(
                   target: LatLng(ClubDetails().getCoordinate(My().clubName).latitude, ClubDetails().getCoordinate(My().clubName).longitude),
                   zoom: 6.0,
@@ -374,9 +394,9 @@ class _MapPageState extends State<MapPage> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text('Desde: '),
+            const Text('Desde: '),
             widgetTextField(controller1,autofocus: true),
-            Text('Até: '),
+            const Text('Até: '),
             widgetTextField(controller2),
           ],
         ),

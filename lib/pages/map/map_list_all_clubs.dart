@@ -20,13 +20,25 @@ class MapListAllClubs extends StatefulWidget {
 
 class _MapListAllClubsState extends State<MapListAllClubs> {
 
+  List<String> countryOptions = [];
+  String selectedCountry = 'Brazil';
   Iterable keysIterable = ClubDetails().map.keys;
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
+    getFlagsList();
     super.initState();
+  }
+  getFlagsList(){
+    ClubDetails().map.forEach((key, value) {
+      if(!countryOptions.contains(ClubDetails().getCountry(key))){
+        countryOptions.add(ClubDetails().getCountry(key));
+      }
+    });
+    countryOptions.sort();
+    setState((){});
   }
 
 ////////////////////////////////////////////////////////////////////////////
@@ -48,6 +60,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                     itemBuilder: (c,i)=>clubRow(keysIterable.elementAt(i))
                 ),
               ),
+              selectCountryRow(),
 
             ],
           ),
@@ -59,6 +72,9 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
   Widget clubRow(String clubName){
+    if(selectedCountry != ClubDetails().getCountry(clubName)){
+      return Container();
+    }
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8),
       margin: const EdgeInsets.symmetric(vertical: 2),
@@ -133,4 +149,26 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
     );
   }
 
+  Widget selectCountryRow(){
+    return Container(
+      height: 40,
+      child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: countryOptions.length,
+          itemBuilder: (c,i)=>countrySelection(countryOptions[i])
+      ),
+    );
+  }
+  Widget countrySelection(String country){
+    return GestureDetector(
+      onTap: (){
+        selectedCountry = country;
+        setState((){});
+      },
+      child: Center(child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 2.0),
+        child: funcFlagsList(country, 40, 50),
+      )),
+    );
+  }
 }
