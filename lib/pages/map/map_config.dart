@@ -1,12 +1,8 @@
-import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/database/local_database/shared_preferences.dart';
 import 'package:fifa/pages/map/map_gameplay.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
-
-import '../../classes/words.dart';
 
 class MapConfig extends StatefulWidget {
   const MapConfig({Key? key}) : super(key: key);
@@ -74,7 +70,7 @@ class _MapConfigState extends State<MapConfig> {
       padding: const EdgeInsets.all(8),
       child: Column(
         children: [
-          Text('Continentes',style: EstiloTextoBranco.negrito18,),
+          const Text('Continentes',style: EstiloTextoBranco.negrito18,),
           continentRow('Europa'),
           continentRow('América do Sul'),
           continentRow('América do Norte'),
@@ -111,7 +107,7 @@ class _MapConfigState extends State<MapConfig> {
       padding: const EdgeInsets.all(8),
       child: Column(
         children: [
-          Text('Dificuldade',style: EstiloTextoBranco.negrito18,),
+          const Text('Dificuldade',style: EstiloTextoBranco.negrito18,),
           checkbox('Fácil'),
           checkbox('Médio'),
           checkbox('Difícil'),

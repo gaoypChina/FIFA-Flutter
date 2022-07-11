@@ -1,15 +1,9 @@
-import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/database/local_database/shared_preferences.dart';
 import 'package:fifa/functions/flags_list.dart';
-import 'package:fifa/pages/map/map_gameplay.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
-import 'package:fifa/values/images.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
-
-import '../../classes/words.dart';
 
 class MapListAllClubs extends StatefulWidget {
   const MapListAllClubs({Key? key}) : super(key: key);
@@ -82,7 +76,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
       child: Stack(
             children: [
 
-              Container(
+              SizedBox(
                 height: 100,width: 150,
                 child: Opacity(
                   opacity: 0.2,
@@ -150,7 +144,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
   }
 
   Widget selectCountryRow(){
-    return Container(
+    return SizedBox(
       height: 40,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,

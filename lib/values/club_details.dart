@@ -138,8 +138,9 @@ class ClubDetails{
     map[_name.swindon] = [ClubColors(Colors.red,Colors.white),Coordinates(0,0),'County Ground',15728,1879,_country.england,];
     map[_name.wigan] = [ClubColors(Colors.blue,Colors.white),Coordinates(53.547778,-2.653889),'DW Stadium',25135,1932,_country.england,];
     map[_name.wimbledon] = [ClubColors(Colors.yellow,Colors.black),Coordinates(51.431363888,-0.186669444),'Plough Lane',9215,2002,_country.england,];
+    map[_name.york] = [ClubColors(Colors.red,Colors.blue),Coordinates(53.98449, -1.052972250),'York Community Stadium',8500,1922,_country.england,];
 
-
+    //ITALIA
     map[_name.atalanta] = [ClubColors(Colors.blue,Colors.black),Coordinates(45.708889,9.680833),'Atleti Azzurri d\'Italia',21300,1907,_country.italy,];
     map[_name.bologna] = [ClubColors(Colors.red,darkblue),Coordinates(44.49362,11.309719),'Renato Dall\'Ara',39444,1909,_country.italy,];
     map[_name.cagliari] = [ClubColors(Colors.red,darkblue),Coordinates(39.199888888,9.137583333),'Unipol Domus',16416,1920,_country.italy,];
@@ -190,6 +191,7 @@ class ClubDetails{
     map[_name.venezia] = [ClubColors(Colors.green,Colors.orange),Coordinates(45.427761,12.363731),'Pierluigi Penzo',9977,1907,_country.italy,];
     map[_name.vicenza] = [ClubColors(Colors.red,Colors.white),Coordinates(45.544167,11.555556),'Estádio Romeo Menti',17163,1902,_country.italy,];
 
+    //ESPANHA
     map[_name.athleticbilbao] = [ClubColors(Colors.red,Colors.white),Coordinates(43.264205,-2.949369),'San Mamés',53289,1898,_country.spain,[_name.realsociedad]];
     map[_name.atleticomadrid] = [ClubColors(Colors.red,Colors.white),Coordinates(40.436111,-3.599444),'Wanda Metropolitano',67829,1903,_country.spain,[_name.realmadrid]];
     map[_name.barcelona] = [ClubColors(Colors.red,Colors.blue),Coordinates(41.380833,2.1225),'Camp Nou',99354,1899,_country.spain,[_name.realmadrid]];
@@ -245,6 +247,7 @@ class ClubDetails{
     map[_name.xerez] = [ClubColors(Colors.blue,Colors.white),Coordinates(36.6896000729543, -6.119811153994252),'Estadio de Chapín',20523,1947,_country.spain,];
     map[_name.zaragoza] = [ClubColors(Colors.white,Colors.blue),Coordinates(41.636592,-0.901822),'La Romareda',34596,1932,_country.spain,];
 
+    //ALEMANHA
     map[_name.moenchengladbach] = [ClubColors(Colors.green,Colors.black),Coordinates(51.174583333,6.385463888),'Borussia-Park',54022,1900,_country.germany,];
     map[_name.dortmund] = [ClubColors(Colors.yellow,Colors.black),Coordinates(51.4925,7.451667),'Signal Iduna Park',81359,1909,_country.germany,[_name.schalke04]];
     map[_name.bayernmunique] = [ClubColors(Colors.red,Colors.white),Coordinates(48.218775,11.624752777),'Allianz Arena',75024,1900,_country.germany,];
@@ -290,6 +293,7 @@ class ClubDetails{
     map[_name.unionBerlin] = [ClubColors(Colors.red,Colors.yellow),Coordinates(52.457222,13.568056),'An der Alten Försterei',22012,1966,_country.germany,];
     map[_name.stPauli] = [ClubColors(grena,Colors.white),Coordinates(53.554444,9.967778),'Millerntor-Stadion',29546,1910,_country.germany,];
 
+    //FRANÇA
     map[_name.bordeaux] = [ClubColors(Colors.blue,Colors.white),Coordinates(44.897472252314174, -0.5612858873333884),'Matmut Atlantique',42052,1881,_country.france,];
     map[_name.lille] = [ClubColors(Colors.red,Colors.blue),Coordinates(50.611944,3.130556),'Pierre-Mauroy',50186,1944,_country.france,];
     map[_name.lyon] = [ClubColors(Colors.white,Colors.blue),Coordinates(45.765224,4.982131),'Parc Olympique Lyonnais',59186,1950,_country.france,];
@@ -331,6 +335,7 @@ class ClubDetails{
     map[_name.troyes] = [ClubColors(Colors.red,Colors.black),Coordinates(48.307668564872614, 4.098788858025232),'Stade de l\'Aube',20400,1900,_country.france,];
     map[_name.valenciennes] = [ClubColors(Colors.red,Colors.black),Coordinates(50.34901002249929, 3.532545128224054),'Stade du Hainaut',25172,1913,_country.france,];
 
+    //PORTUGAL
     map[_name.benfica] = [ClubColors(Colors.red,Colors.white),Coordinates(38.753014954909695, -9.184471075757182),'Estádio da Luz',64642,1904,_country.portugal,[_name.porto,_name.sporting]];
     map[_name.porto] = [ClubColors(Colors.blue,Colors.white),Coordinates(41.161758,-8.583933),'Estádio do Dragão',50035,1893,_country.portugal,[_name.benfica,_name.sporting]];
     map[_name.sporting] = [ClubColors(Colors.green,Colors.white),Coordinates(38.761194444,-9.160783333),'José Alvalade',50095,1906,_country.portugal,[_name.porto,_name.benfica]];
@@ -367,6 +372,7 @@ class ClubDetails{
     map[_name.vitoriaguimaraes] = [ClubColors(Colors.white,Colors.black),Coordinates(41.446135622185416, -8.300460354957018),'D. Afonso Henriques',30146,1922,_country.portugal,[_name.braga]];
     map[_name.vitoriaSetubal] = [ClubColors(Colors.green,Colors.white),Coordinates(38.53138889,-8.891111),'Estádio do Bonfim',21530,1910,_country.portugal,];
 
+    //HOLANDA
     map[_name.ajax] = [ClubColors(Colors.red,Colors.white),Coordinates(52.314166666,4.941944444),'Johan Cruijff Arena',54990,1900,_country.netherlands,[_name.psv,_name.feyenoord]];
     map[_name.feyenoord] = [ClubColors(Colors.red,Colors.black),Coordinates(51.893894444,4.523252777),'De Kuip',51577,1908,_country.netherlands,[_name.psv,_name.ajax]];
     map[_name.psv] = [ClubColors(Colors.red,Colors.white),Coordinates(51.441887861331786, 5.467844776087513),'Philips Stadion',35000,1912,_country.netherlands,[_name.ajax,_name.feyenoord]];
@@ -382,6 +388,7 @@ class ClubDetails{
     map[_name.vitesse] = [ClubColors(Colors.yellow,Colors.white),Coordinates(51.962924539860964, 5.893073596119453),'GelreDome',21248,1892,_country.netherlands,];
     map[_name.willem] = [ClubColors(Colors.blue,Colors.red),Coordinates(51.54301953859648, 5.067781658922021),'Willen II Stadion',45500,1896,_country.netherlands,];
 
+    //BELGICA
     map[_name.anderlecht] = [ClubColors(Colors.purple,Colors.white),Coordinates(50.8344335180823, 4.297968133381998),'Constant Vanden Stock',28063,1908,_country.belgium,];
     map[_name.brugge] = [ClubColors(Colors.blue,Colors.black),Coordinates(51.19333388412542, 3.180370157121857),'Jan Breydel',30000,1891,_country.belgium,];
     map[_name.standardliege] = [ClubColors(Colors.red,Colors.white),Coordinates(50.60992888780169, 5.544381876008557),'Maurice Dufrasne',30030,1898,_country.belgium,];
@@ -556,7 +563,7 @@ class ClubDetails{
 
     //SERVIA
     map[_name.estrelavermelha] = [ClubColors(Colors.red,Colors.white),Coordinates(44.783172178, 20.465097812647),'Rajko Mitić',55538,1945,_country.serbia,[_name.partizan]];
-    map[_name.partizan] = [ClubColors(Colors.black,Colors.white),Coordinates(44.78861754918, 20.45902153226),'Estádio',10000,1900,_country.serbia,[_name.estrelavermelha]];
+    map[_name.partizan] = [ClubColors(Colors.black,Colors.white),Coordinates(44.78861754918, 20.45902153226),'Stadion Partizana',32710,1945,_country.serbia,[_name.estrelavermelha]];
     map[_name.vojvodina] = [ClubColors(Colors.red,Colors.white),Coordinates(45.246939989314725, 19.84175658419325),'Stadium of Vojvodina',15754,1914,_country.serbia,];
     //BULGARIA
     map[_name.ludogorets] = [ClubColors(Colors.green,Colors.black),Coordinates(43.534406185, 26.528121692),'	Ludogorets Arena',12500,1940,_country.bulgaria,];

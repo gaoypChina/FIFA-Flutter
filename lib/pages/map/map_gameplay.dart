@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:math';
 
-import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/database/local_database/shared_preferences.dart';
@@ -11,10 +10,7 @@ import 'package:fifa/values/club_details.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:geocoding/geocoding.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-
-import '../../functions/func_number_clubs_total.dart';
 
 class MapGameplay extends StatefulWidget {
   const MapGameplay({Key? key}) : super(key: key);
@@ -139,7 +135,7 @@ class _MapGameplayState extends State<MapGameplay> {
                   //zoomGesturesEnabled: false, //SEM ZOOM
                   //zoomControlsEnabled: false, //SEM ZOOM
                   initialCameraPosition: const CameraPosition(
-                    target: const LatLng(0, 0),
+                    target: LatLng(0, 0),
                     zoom: 6.0,
                   ),
                   onMapCreated: getClubsLocation,
@@ -171,7 +167,7 @@ class _MapGameplayState extends State<MapGameplay> {
         Navigator.push(context,MaterialPageRoute(builder: (context) => const MapGameplay()));
       },
       child: Container(
-        padding: EdgeInsets.all(6),
+        padding: const EdgeInsets.all(6),
         decoration: const BoxDecoration(
           color: Colors.white38,
           borderRadius: BorderRadius.all(Radius.circular(5)),
@@ -179,7 +175,7 @@ class _MapGameplayState extends State<MapGameplay> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Container(
+            SizedBox(
               width: 80,
               child: Row(
                 children: [
@@ -188,7 +184,7 @@ class _MapGameplayState extends State<MapGameplay> {
                 ],
               ),
             ),
-            Container(width:Sized(context).width*0.55,child: Text(city,textAlign:TextAlign.center,overflow:TextOverflow.ellipsis,style: EstiloTextoBranco.text16)),
+            SizedBox(width:Sized(context).width*0.55,child: Text(city,textAlign:TextAlign.center,overflow:TextOverflow.ellipsis,style: EstiloTextoBranco.text16)),
 
             Column(
               children: [

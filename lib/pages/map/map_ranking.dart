@@ -1,4 +1,3 @@
-import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/database/local_database/shared_preferences.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -66,7 +65,7 @@ class _MapRankingState extends State<MapRanking> {
       child: Row(
         children: [
           Text((i+1).toString()+'º',style: EstiloTextoBranco.text16,),
-          Spacer(),
+          const Spacer(),
           Text(listRanking[i].toString()+'s',style: EstiloTextoBranco.negrito18,),
         ],
       ),

@@ -597,16 +597,16 @@ ClubName _name = ClubName();
     }
     else if(leagueName == LeagueOfficialNames().lesteEuropeu){
       champions = {
-        //2022: [_name.zenit,_name.sochi,_name.dinamoMoscou,_name.krasnodar,_name.cska,             _name.lokomotivMoscou,_name.terekGrozny,_name.krylyaSovetov,_name.rostov,_name.spartakmoscou],
+        //2022: [_name.zenit,_name.sochi,_name.dinamoMoscou,_name.krasnodar,_name.cska,             _name.lokomotivMoscou,_name.akhmatGrozny,_name.krylyaSovetov,_name.rostov,_name.spartakmoscou],
         2021: [_name.zenit,_name.spartakmoscou,_name.lokomotivMoscou,_name.rubinKazan,_name.sochi,  _name.cska,_name.dinamoMoscou,_name.khimki,_name.rostov,_name.krasnodar],
         2020: [_name.zenit,_name.lokomotivMoscou,_name.krasnodar,_name.cska,_name.rostov,         _name.dinamoMoscou,_name.spartakmoscou,_name.tula,_name.ufa,_name.rubinKazan,_name.ural,_name.sochi],
-        2019: [_name.zenit,_name.lokomotivMoscou,_name.krasnodar,_name.cska,_name.spartakmoscou,  _name.tula,_name.orenburg,_name.terekGrozny,_name.rostov,_name.ural,_name.rubinKazan,_name.dinamoMoscou,_name.krylyaSovetov,_name.ufa],
-        2018: [_name.lokomotivMoscou,_name.cska,_name.spartakmoscou,_name.krasnodar,_name.zenit,  _name.ufa,_name.tula,_name.dinamoMoscou,_name.terekGrozny,_name.rubinKazan,_name.rostov,_name.ural],
-        2017: [_name.spartakmoscou,_name.cska,_name.zenit,_name.krasnodar,_name.terekGrozny,      _name.rostov,_name.ufa,_name.lokomotivMoscou,_name.rubinKazan],
-        2016: [_name.cska,_name.rostov,_name.zenit,_name.krasnodar,_name.spartakmoscou,           _name.lokomotivMoscou,_name.terekGrozny,_name.ural,_name.krylyaSovetov,_name.rubinKazan],
+        2019: [_name.zenit,_name.lokomotivMoscou,_name.krasnodar,_name.cska,_name.spartakmoscou,  _name.tula,_name.orenburg,_name.akhmatGrozny,_name.rostov,_name.ural,_name.rubinKazan,_name.dinamoMoscou,_name.krylyaSovetov,_name.ufa],
+        2018: [_name.lokomotivMoscou,_name.cska,_name.spartakmoscou,_name.krasnodar,_name.zenit,  _name.ufa,_name.tula,_name.dinamoMoscou,_name.akhmatGrozny,_name.rubinKazan,_name.rostov,_name.ural],
+        2017: [_name.spartakmoscou,_name.cska,_name.zenit,_name.krasnodar,_name.akhmatGrozny,      _name.rostov,_name.ufa,_name.lokomotivMoscou,_name.rubinKazan],
+        2016: [_name.cska,_name.rostov,_name.zenit,_name.krasnodar,_name.spartakmoscou,           _name.lokomotivMoscou,_name.akhmatGrozny,_name.ural,_name.krylyaSovetov,_name.rubinKazan],
         2015: [_name.zenit,_name.cska,_name.krasnodar,_name.dinamoMoscou,_name.rubinKazan,        _name.spartakmoscou,_name.lokomotivMoscou],
         2014: [_name.cska,_name.zenit,_name.lokomotivMoscou,_name.dinamoMoscou,_name.krasnodar,   _name.spartakmoscou,_name.rostov,_name.kubanKrasnodar,_name.rubinKazan],
-        2013: [_name.cska,_name.zenit,_name.anzhi,_name.spartakmoscou,_name.kubanKrasnodar,       _name.rubinKazan,_name.dinamoMoscou,_name.terekGrozny,_name.lokomotivMoscou,_name.krasnodar],
+        2013: [_name.cska,_name.zenit,_name.anzhi,_name.spartakmoscou,_name.kubanKrasnodar,       _name.rubinKazan,_name.dinamoMoscou,_name.akhmatGrozny,_name.lokomotivMoscou,_name.krasnodar],
         2012: [_name.zenit,_name.cska,_name.dinamoMoscou,_name.spartakmoscou,_name.lokomotivMoscou,   _name.kubanKrasnodar,_name.rubinKazan,_name.anzhi,_name.krasnodar,_name.rostov],
         //2011: [],
         2010: [_name.zenit,_name.cska,_name.rubinKazan,_name.spartakmoscou,_name.lokomotivMoscou,  _name.spartakNalchik,_name.dinamoMoscou],

@@ -3,7 +3,6 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/map/map.dart';
 import 'package:fifa/pages/map/map_config.dart';
-import 'package:fifa/pages/map/map_gameplay.dart';
 import 'package:fifa/pages/map/map_list_all_clubs.dart';
 import 'package:fifa/pages/map/map_ranking.dart';
 import 'package:fifa/theme/colors.dart';
@@ -44,7 +43,7 @@ class _MapMenuState extends State<MapMenu> {
               children: [
                 backButtonText(context, 'Mapa'),
 
-                Text('MAP GAME',style: EstiloTextoBranco.text40),
+                const Text('MAP GAME',style: EstiloTextoBranco.text40),
                 Container(
                   width: Sized(context).width,
                   margin: const EdgeInsets.all(12),
@@ -120,7 +119,7 @@ Widget myProfile(){
       child: Stack(
         children: [
 
-          Container(
+          SizedBox(
             height: 80,width: 150,
             child: Opacity(
               opacity: 0.2,
@@ -143,7 +142,7 @@ Widget myProfile(){
             child: Row(
               children: [
                 Image.asset(Images().getEscudo(clubName),height: 40,width: 40),
-                SizedBox(width: 12),
+                const SizedBox(width: 12),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

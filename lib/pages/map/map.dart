@@ -7,7 +7,6 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/words.dart';
 import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/theme/colors.dart';
-import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
@@ -24,7 +23,6 @@ class MapPage extends StatefulWidget {
 }
 
 class _MapPageState extends State<MapPage> {
-  late final List<BitmapDescriptor> _markersIcons = [];
   final List<Coordinates> coordinates = [];
   List<Marker> _markers = <Marker>[];
   List<Marker> _markersShow = <Marker>[];
@@ -389,7 +387,7 @@ class _MapPageState extends State<MapPage> {
     return showModalBottomSheet(
         barrierColor: Colors.transparent,
         context: context, builder: (c){
-      return Container(
+      return SizedBox(
         height: Sized(context).height - MediaQuery.of(context).viewInsets.bottom,
         child: Column(
           mainAxisSize: MainAxisSize.min,
