@@ -107,7 +107,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                                 children: [
                                   Image.asset(Images().getEscudo(clubName),height: 40,width: 40),
                                   const SizedBox(width: 12),
-                                  Text(clubName,style: EstiloTextoBranco.negrito18)
+                                  Expanded(child: Text(clubName,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.negrito18))
                                 ],
                               ),
                               Row(

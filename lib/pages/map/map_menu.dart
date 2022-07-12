@@ -1,8 +1,12 @@
+import 'dart:math';
+
+import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/map/map.dart';
 import 'package:fifa/pages/map/map_config.dart';
+import 'package:fifa/pages/map/map_gameplay_markers.dart';
 import 'package:fifa/pages/map/map_list_all_clubs.dart';
 import 'package:fifa/pages/map/map_ranking.dart';
 import 'package:fifa/theme/colors.dart';
@@ -62,7 +66,9 @@ class _MapMenuState extends State<MapMenu> {
                   ),
                   child: Column(
                     children: [
-                      gameButton('Gameplay',(){Navigator.push(context,MaterialPageRoute(builder: (context) => const MapConfig()));}),
+                      gameButton('Gameplay',(){Navigator.push(context,MaterialPageRoute(builder: (context) => MapConfig(game: 0)));}),
+                      const SizedBox(height: 8),
+                      gameButton('Acerte o marker',(){Navigator.push(context,MaterialPageRoute(builder: (context) => MapConfig(game: 1)));}),
                       const SizedBox(height: 8),
                       gameButton('Exploração Livre',(){Navigator.push(context,MaterialPageRoute(builder: (context) => const MapPage()));}),
                       const SizedBox(height: 8),
@@ -112,7 +118,8 @@ Widget gameButton(String text, Function function){
 }
 
 Widget myProfile(){
-    String clubName = 'Barcelona';
+
+    String clubName = Club(index: Random().nextInt(400)).name;
     return Container(
       margin: const EdgeInsets.all(16),
       decoration: blackDecoration(),

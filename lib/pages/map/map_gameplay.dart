@@ -4,7 +4,6 @@ import 'dart:math';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/database/local_database/shared_preferences.dart';
-import 'package:fifa/functions/contries_continents.dart';
 import 'package:fifa/page_controller/map/map_game_settings.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -26,11 +25,11 @@ class _MapGameplayState extends State<MapGameplay> {
 
 
   Iterable keysIterable = ClubDetails().map.keys;
-  List<Marker> _marker = <Marker>[];
+  List<Marker> _markers = <Marker>[];
+  late GoogleMapController controller;
   List<Coordinates> coordinates = [];
   List wrongAnswers = [];
   List<String> listClubOptions = ['','','',''];
-  late GoogleMapController controller;
   String city = '';
   late Timer timer;
   int milis = 0;
@@ -79,15 +78,15 @@ class _MapGameplayState extends State<MapGameplay> {
       CameraUpdate cameraUpdate = CameraUpdate.newCameraPosition(newPosition);
       controller.moveCamera(cameraUpdate);
       //ADD MARKER
-      _marker = [];
-      _marker.add(
+      _markers = [];
+      _markers.add(
         Marker(
           markerId: MarkerId(clubNameMarker),
           position: LatLng(coordinates.last.latitude,coordinates.last.longitude),
           onTap: () async{
           },
           //infoWindow: InfoWindow(title: clubName),
-          //icon: clubsAllNameList.indexOf(clubName) < 40 ? _markersIcons[clubsAllNameList.indexOf(clubName)] : BitmapDescriptor.defaultMarker,
+          //icon: clubsAllNameList.indexOf(clubName) < 40 ? _markerssIcons[clubsAllNameList.indexOf(clubName)] : BitmapDescriptor.defaultMarker,
         ),
       );
 
@@ -160,7 +159,7 @@ class _MapGameplayState extends State<MapGameplay> {
                     zoom: 6.0,
                   ),
                   onMapCreated: getClubsLocation,
-                  markers: Set<Marker>.of(_marker),
+                  markers: Set<Marker>.of(_markers),
                 ),
               ),
 

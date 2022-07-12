@@ -1,12 +1,14 @@
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/page_controller/map/map_game_settings.dart';
 import 'package:fifa/pages/map/map_gameplay.dart';
+import 'package:fifa/pages/map/map_gameplay_markers.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 
 class MapConfig extends StatefulWidget {
-  const MapConfig({Key? key}) : super(key: key);
+  late int game;
+  MapConfig({Key? key,required this.game}) : super(key: key);
 
   @override
   State<MapConfig> createState() => _MapConfigState();
@@ -38,7 +40,12 @@ class _MapConfigState extends State<MapConfig> {
                 children: [
                   GestureDetector(
                     onTap: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context) => MapGameplay(mapGameSettings: mapGameSettings)));
+                      if(widget.game==0){
+                        Navigator.push(context,MaterialPageRoute(builder: (context) => MapGameplay(mapGameSettings: mapGameSettings)));
+                      }
+                      else if(widget.game==1){
+                        Navigator.push(context,MaterialPageRoute(builder: (context) => MapGameplayMarkers(mapGameSettings: mapGameSettings)));
+                      }
                     },
                     child: Container(
                       padding: const EdgeInsets.all(40),
