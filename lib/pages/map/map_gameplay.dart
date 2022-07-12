@@ -4,6 +4,8 @@ import 'dart:math';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/database/local_database/shared_preferences.dart';
+import 'package:fifa/functions/contries_continents.dart';
+import 'package:fifa/page_controller/map/map_game_settings.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
@@ -13,7 +15,8 @@ import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapGameplay extends StatefulWidget {
-  const MapGameplay({Key? key}) : super(key: key);
+  late MapGameSettings mapGameSettings;
+  MapGameplay({Key? key,required this.mapGameSettings}) : super(key: key);
 
   @override
   State<MapGameplay> createState() => _MapGameplayState();
@@ -65,7 +68,9 @@ class _MapGameplayState extends State<MapGameplay> {
     clubNameMarker = keysIterable.elementAt(clubID);
 
 
-    if(ClubDetails().getCoordinate(clubNameMarker).latitude != 0){
+    String continent = ClubDetails().getContinent(clubNameMarker);
+    if(ClubDetails().getCoordinate(clubNameMarker).latitude != 0 &&
+          widget.mapGameSettings.selectedContinents.contains(continent)){
       coordinates.add(ClubDetails().getCoordinate(clubNameMarker));
       //Zoom
       var newPosition = CameraPosition(
@@ -103,12 +108,28 @@ class _MapGameplayState extends State<MapGameplay> {
     int clubMarkerPosition = Random().nextInt(4);
     for(int i=0;i<4;i++){
       if(i!=clubMarkerPosition){
-        int clubID = Random().nextInt(keysIterable.length);
-        String clubName = keysIterable.elementAt(clubID);
-        listClubOptions.add(clubName);
+        bool isValidOption = false;
+        String clubName = '';
+        int i=0;
+        while(!isValidOption && i<100){
+          i++;
+          int clubID = Random().nextInt(keysIterable.length);
+          clubName = keysIterable.elementAt(clubID);
+          isValidOption = checkClubOptionValid(clubName);
+        }
+          listClubOptions.add(clubName);
+
       }else{
         listClubOptions.add(clubNameMarker);
       }
+    }
+  }
+  bool checkClubOptionValid(String clubName){
+    String continent = ClubDetails().getContinent(clubName);
+    if(widget.mapGameSettings.selectedContinents.contains(continent)){
+      return true;
+    }else{
+      return false;
     }
   }
 ////////////////////////////////////////////////////////////////////////////
@@ -162,38 +183,33 @@ class _MapGameplayState extends State<MapGameplay> {
       timeSecStr = '0' + timeSec.toString();
     }
 
-    return GestureDetector(
-      onTap: (){
-        Navigator.push(context,MaterialPageRoute(builder: (context) => const MapGameplay()));
-      },
-      child: Container(
-        padding: const EdgeInsets.all(6),
-        decoration: const BoxDecoration(
-          color: Colors.white38,
-          borderRadius: BorderRadius.all(Radius.circular(5)),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            SizedBox(
-              width: 80,
-              child: Row(
-                children: [
-                  Text('${timeMin.toString()}:$timeSecStr\'',style: EstiloTextoBranco.text20),
-                  const Icon(Icons.watch_later_outlined,color: Colors.white,),
-                ],
-              ),
-            ),
-            SizedBox(width:Sized(context).width*0.55,child: Text(city,textAlign:TextAlign.center,overflow:TextOverflow.ellipsis,style: EstiloTextoBranco.text16)),
-
-            Column(
+    return Container(
+      padding: const EdgeInsets.all(6),
+      decoration: const BoxDecoration(
+        color: Colors.white38,
+        borderRadius: BorderRadius.all(Radius.circular(5)),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          SizedBox(
+            width: 80,
+            child: Row(
               children: [
-                Text('$nCorrect/$nTotal',style: EstiloTextoBranco.text16),
-                hearts(),
+                Text('${timeMin.toString()}:$timeSecStr\'',style: EstiloTextoBranco.text20),
+                const Icon(Icons.watch_later_outlined,color: Colors.white,),
               ],
             ),
-          ],
-        ),
+          ),
+          SizedBox(width:Sized(context).width*0.55,child: Text(city,textAlign:TextAlign.center,overflow:TextOverflow.ellipsis,style: EstiloTextoBranco.text16)),
+
+          Column(
+            children: [
+              Text('$nCorrect/$nTotal',style: EstiloTextoBranco.text16),
+              hearts(),
+            ],
+          ),
+        ],
       ),
     );
   }
@@ -236,9 +252,8 @@ class _MapGameplayState extends State<MapGameplay> {
     return Expanded(
       child: GestureDetector(
         onTap: () async{
-          print(clubName);
-          print(clubNameMarker);
           if(clubName == clubNameMarker){
+            customToast('CORRETO!!!');
             nCorrect++;
             wrongAnswers = [];
             getClubsLocation(controller);

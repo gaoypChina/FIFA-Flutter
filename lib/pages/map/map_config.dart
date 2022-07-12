@@ -1,4 +1,5 @@
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/page_controller/map/map_game_settings.dart';
 import 'package:fifa/pages/map/map_gameplay.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/back_button.dart';
@@ -13,15 +14,7 @@ class MapConfig extends StatefulWidget {
 
 class _MapConfigState extends State<MapConfig> {
 
-  List selectedContinents = ['Europa','América do Sul','América do Norte','Ásia','África'];
-  String difficulty = 'Fácil';
-////////////////////////////////////////////////////////////////////////////
-//                               INIT                                     //
-////////////////////////////////////////////////////////////////////////////
-  @override
-  void initState() {
-    super.initState();
-  }
+  MapGameSettings mapGameSettings = MapGameSettings();
 
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -45,7 +38,7 @@ class _MapConfigState extends State<MapConfig> {
                 children: [
                   GestureDetector(
                     onTap: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context) => const MapGameplay()));
+                      Navigator.push(context,MaterialPageRoute(builder: (context) => MapGameplay(mapGameSettings: mapGameSettings)));
                     },
                     child: Container(
                       padding: const EdgeInsets.all(40),
@@ -84,12 +77,12 @@ class _MapConfigState extends State<MapConfig> {
     return Row(
       children: [
         Checkbox(
-          value: selectedContinents.contains(text),
+          value: mapGameSettings.selectedContinents.contains(text),
           onChanged: (newValue) {
-            if(selectedContinents.contains(text)){
-              selectedContinents.remove(text);
+            if(mapGameSettings.selectedContinents.contains(text)){
+              mapGameSettings.selectedContinents.remove(text);
             }else{
-              selectedContinents.add(text);
+              mapGameSettings.selectedContinents.add(text);
             }
             setState(() {
             });
@@ -108,22 +101,22 @@ class _MapConfigState extends State<MapConfig> {
       child: Column(
         children: [
           const Text('Dificuldade',style: EstiloTextoBranco.negrito18,),
-          checkbox('Fácil'),
-          checkbox('Médio'),
-          checkbox('Difícil'),
+          checkbox('Fácil',0),
+          checkbox('Médio',1),
+          checkbox('Difícil',2),
         ],
       ),
     );
   }
 
-  Widget checkbox(String text){
+  Widget checkbox(String text, int difficulty){
     return         Row(
       children: [
         Checkbox(
-          value: difficulty == text,
+          value: mapGameSettings.difficulty == difficulty,
           onChanged: (newValue) {
             setState(() {
-              difficulty = text;
+              mapGameSettings.difficulty = difficulty;
             });
           },
         ),

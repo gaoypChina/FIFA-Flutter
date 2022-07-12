@@ -747,9 +747,10 @@ class ClubName{
   String astana = "Astana";//KAZAKHSTAN
   String tbilisi = "Dinamo Tbilisi";//GEORGIA
   String batumi = "Dinamo Batumi";//GEORGIA
+  String alashkent = "FC Alashkent";//ARMENIA
+  String araratArmenia = "Ararat Armenia";//ARMENIA
   String yerevan = "Ararat Yerevan";//ARMENIA
   String pyunikyerevan = "Pyunik Yerevan";//ARMENIA
-  String alashkent = "FC Alashkent";//ARMENIA
   String rigas = "Rigas Futbola Skola";//LETONIA
   String rigafc = "Riga FC";//LETONIA
   String liepaja = "FK Liepaja";//LETONIA

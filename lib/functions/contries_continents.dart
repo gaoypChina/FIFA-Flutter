@@ -2,9 +2,8 @@ import 'package:fifa/classes/words.dart';
 
 class Continents{
 
-String americaSul = 'America do Sul';
-String americaNorte = 'America do Norte';
-String caribe = 'Caribe';
+String americaSul = 'América do Sul';
+String americaNorte = 'América do Norte';
 String europa = 'Europa';
 String asia = 'Ásia';
 String africa = 'África';
@@ -18,20 +17,20 @@ funcCountryContinents(String country){
   else if(country == Words.country.angola){code = africa;}
   else if(country == Words.country.algeria){code = africa;}
   else if(country == Words.country.andorra){code = europa;}
-  else if(country == Words.country.antiguaBarbuda){code = caribe;}
+  else if(country == Words.country.antiguaBarbuda){code = americaNorte;}
   else if(country == Words.country.argentina){code = americaSul;}
   else if(country == Words.country.armenia){code = europa;}
-  else if(country == Words.country.aruba){code = caribe;}
+  else if(country == Words.country.aruba){code = americaNorte;}
   else if(country == Words.country.australia){code = oceania;}
   else if(country == Words.country.austria){code = europa;}
   else if(country == Words.country.azerbaijan){code = asia;}
   else if(country == Words.country.bahrein){code = asia;}
-  else if(country == Words.country.bahamas){code = caribe;}
+  else if(country == Words.country.bahamas){code = americaNorte;}
   else if(country == Words.country.bangladesh){code = asia;}
-  else if(country == Words.country.barbados){code = caribe;}
+  else if(country == Words.country.barbados){code = americaNorte;}
   else if(country == Words.country.belgium){code = europa;}
   else if(country == Words.country.belarus){code = europa;}
-  else if(country == Words.country.belize){code = caribe;}
+  else if(country == Words.country.belize){code = americaNorte;}
   else if(country == Words.country.benin){code = africa;}
   else if(country == Words.country.bolivia){code = americaSul;}
   else if(country == Words.country.bosnia){code = europa;}
@@ -54,18 +53,18 @@ funcCountryContinents(String country){
   else if(country == Words.country.comoros){code = africa;}
   else if(country == Words.country.congo){code = africa;}
   else if(country == Words.country.congoRD){code = africa;}
-  else if(country == Words.country.costaRica){code = caribe;}
-  else if(country == Words.country.cuba){code = caribe;}
+  else if(country == Words.country.costaRica){code = americaNorte;}
+  else if(country == Words.country.cuba){code = americaNorte;}
   else if(country == Words.country.croatia){code = europa;}
   else if(country == Words.country.cyprus){code = europa;}
   else if(country == Words.country.czechRepublic){code = europa;}
   else if(country == Words.country.denmark){code = europa;}
   else if(country == Words.country.djibouti){code = africa;}
-  else if(country == Words.country.dominica){code = caribe;}
-  else if(country == Words.country.dominicanRepublic){code = caribe;}
+  else if(country == Words.country.dominica){code = americaNorte;}
+  else if(country == Words.country.dominicanRepublic){code = americaNorte;}
   else if(country == Words.country.ecuador){code = americaSul;}
   else if(country == Words.country.egypt){code = africa;}
-  else if(country == Words.country.elsalvador){code = caribe;}
+  else if(country == Words.country.elsalvador){code = americaNorte;}
   else if(country == Words.country.england){code = europa;}
   else if(country == Words.country.ethiopia){code = africa;}
   else if(country == Words.country.eritrea){code = africa;}
@@ -77,15 +76,15 @@ funcCountryContinents(String country){
   else if(country == Words.country.georgia){code = europa;}
   else if(country == Words.country.ghana){code = africa;}
   else if(country == Words.country.germany){code = europa;}
-  else if(country == Words.country.grenada){code = caribe;}
+  else if(country == Words.country.grenada){code = americaNorte;}
   else if(country == Words.country.greece){code = europa;}
-  else if(country == Words.country.guatemala){code = caribe;}
-  else if(country == Words.country.guyana){code = caribe;}
+  else if(country == Words.country.guatemala){code = americaNorte;}
+  else if(country == Words.country.guyana){code = americaNorte;}
   else if(country == Words.country.guinea){code = africa;}
   else if(country == Words.country.guineaEquatorial){code = africa;}
   else if(country == Words.country.guineaBissau){code = africa;}
-  else if(country == Words.country.haiti){code = caribe;}
-  else if(country == Words.country.honduras){code = caribe;}
+  else if(country == Words.country.haiti){code = americaNorte;}
+  else if(country == Words.country.honduras){code = americaNorte;}
   else if(country == Words.country.hungary){code = europa;}
   else if(country == Words.country.iceland){code = europa;}
   else if(country == Words.country.italy){code = europa;}
@@ -97,7 +96,7 @@ funcCountryContinents(String country){
   else if(country == Words.country.israel){code = europa;}
   else if(country == Words.country.ivorycoast){code = africa;}
   else if(country == Words.country.japan){code = asia;}
-  else if(country == Words.country.jamaica){code = caribe;}
+  else if(country == Words.country.jamaica){code = americaNorte;}
   else if(country == Words.country.jordan){code = asia;}
   else if(country == Words.country.kazakhstan){code = europa;}
   else if(country == Words.country.kenya){code = africa;}
@@ -135,7 +134,7 @@ funcCountryContinents(String country){
   else if(country == Words.country.nauru){code = oceania;}
   else if(country == Words.country.netherlands){code = europa;}
   else if(country == Words.country.nepal){code = asia;}
-  else if(country == Words.country.nicaragua){code = caribe;}
+  else if(country == Words.country.nicaragua){code = americaNorte;}
   else if(country == Words.country.niger){code = africa;}
   else if(country == Words.country.nigeria){code = africa;}
   else if(country == Words.country.newZealand){code = oceania;}
@@ -144,13 +143,13 @@ funcCountryContinents(String country){
   else if(country == Words.country.northernIreland){code = europa;}
   else if(country == Words.country.oman){code = asia;}
   else if(country == Words.country.pakistan){code = asia;}
-  else if(country == Words.country.panama){code = caribe;}
+  else if(country == Words.country.panama){code = americaNorte;}
   else if(country == Words.country.papua){code = oceania;}
   else if(country == Words.country.paraguay){code = americaSul;}
   else if(country == Words.country.peru){code = americaSul;}
   else if(country == Words.country.poland){code = europa;}
   else if(country == Words.country.portugal){code = europa;}
-  else if(country == Words.country.puertoRico){code = caribe;}
+  else if(country == Words.country.puertoRico){code = americaNorte;}
   else if(country == Words.country.philippines){code = asia;}
   else if(country == Words.country.qatar){code = asia;}
   else if(country == Words.country.romania){code = europa;}
@@ -174,17 +173,17 @@ funcCountryContinents(String country){
   else if(country == Words.country.sweden){code = europa;}
   else if(country == Words.country.switzerland){code = europa;}
   else if(country == Words.country.syria){code = asia;}
-  else if(country == Words.country.stKitts){code = caribe;}
-  else if(country == Words.country.stLucia){code = caribe;}
+  else if(country == Words.country.stKitts){code = americaNorte;}
+  else if(country == Words.country.stLucia){code = americaNorte;}
   else if(country == Words.country.srilanka){code = asia;}
   else if(country == Words.country.sudan){code = africa;}
-  else if(country == Words.country.suriname){code = caribe;}
+  else if(country == Words.country.suriname){code = americaNorte;}
   else if(country == Words.country.taiwan){code = asia;}
   else if(country == Words.country.timor){code = oceania;}
   else if(country == Words.country.tajikistan){code = asia;}
   else if(country == Words.country.tanzania){code = africa;}
   else if(country == Words.country.thailand){code = asia;}
-  else if(country == Words.country.trinidadTobago){code = caribe;}
+  else if(country == Words.country.trinidadTobago){code = americaNorte;}
   else if(country == Words.country.togo){code = africa;}
   else if(country == Words.country.tonga){code = oceania;}
   else if(country == Words.country.tunisia){code = africa;}
