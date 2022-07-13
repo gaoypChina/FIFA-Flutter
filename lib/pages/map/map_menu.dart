@@ -119,7 +119,7 @@ Widget gameButton(String text, Function function){
 
 Widget myProfile(){
 
-    String clubName = Club(index: Random().nextInt(400)).name;
+    String clubName = Club(index: Random().nextInt(300)).name;
     return Container(
       margin: const EdgeInsets.all(16),
       decoration: blackDecoration(),

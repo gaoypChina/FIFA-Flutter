@@ -838,6 +838,11 @@ class FIFAImages{
     else if(timeFoto==ClubName().alzawraa){      imageLogo='al zawraa';  }//IRAQUE
     else if(timeFoto==ClubName().alQuwaAlJawiya){      imageLogo='al quwa';  }//IRAQUE
     else if(timeFoto==ClubName().pakhtakor){ imageLogo='pakhtakor';}//UZBEQUISTAO
+    else if(timeFoto==ClubName().phnomPenhCrown){ imageLogo='phnom penh';}//CAMBOJA
+    else if(timeFoto==ClubName().alKuwait){ imageLogo='al kuwait';}//KUWAIT
+    else if(timeFoto==ClubName().machhindra){ imageLogo='machhindra';}//NEPAL
+    else if(timeFoto==ClubName().hanoi){ imageLogo='hanoi';}//VIETNA
+
 
 
     //OCENIA
@@ -855,6 +860,8 @@ class FIFAImages{
     //AFRICA
     else if(timeFoto==ClubName().alahli){  imageLogo='al_ahli';  }
     else if(timeFoto==ClubName().zamalek){ imageLogo='zamalek';}
+    else if(timeFoto==ClubName().ismaily){ imageLogo='ismaily';}
+    else if(timeFoto==ClubName().pyramids){ imageLogo='pyramids';}
     else if(timeFoto==ClubName().mazembe){ imageLogo='mazembe';}
     else if(timeFoto==ClubName().rajacasablanca){ imageLogo='raja';  }
     else if(timeFoto==ClubName().wydad){ imageLogo='wydad';}
@@ -869,12 +876,14 @@ class FIFAImages{
     else if(timeFoto==ClubName().capetown){ imageLogo='cape town';}
     else if(timeFoto==ClubName().agosto){ imageLogo='1 de agosto';}
     else if(timeFoto==ClubName().petroluanda){ imageLogo='petro luanda';}
+    else if(timeFoto==ClubName().costaDoSol){ imageLogo='costa do sol';}
     else if(timeFoto==ClubName().asecmimosas){ imageLogo='asec mimosas';}
     else if(timeFoto==ClubName().asantekotoko){ imageLogo='asante kotoko';}
     else if(timeFoto==ClubName().hafia){ imageLogo='hafia guinea';}
     else if(timeFoto==ClubName().heartsoak){ imageLogo='hearts oak';}
     else if(timeFoto==ClubName().cotonsport){ imageLogo='cotonsport';}
     else if(timeFoto==ClubName().enyimba){ imageLogo='enyimba';}
+    else if(timeFoto==ClubName().jaraaf){ imageLogo='jaraaf';}
     else if(timeFoto==ClubName().jeannedarc){ imageLogo='jeanne';}
     else if(timeFoto==ClubName().simba){ imageLogo='simba';}
     else if(timeFoto==ClubName().zesco){ imageLogo='zesco';} //ZAMBIA

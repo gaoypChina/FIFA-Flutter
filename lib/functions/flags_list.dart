@@ -101,6 +101,7 @@ Image funcFlagsList(String country, double _height, double _width){
   else if(country == Words.country.kenya){code = Image.asset('icons/flags/png/ke.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.kiribati){code = Image.asset('icons/flags/png/ki.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.kosovo){code = Image.asset('icons/flags/png/xk.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.kuwait){code = Image.asset('icons/flags/png/kw.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.kyrgyzstan){code = Image.asset('icons/flags/png/kg.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.laos){code = Image.asset('icons/flags/png/la.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.latvia){code = Image.asset('icons/flags/png/lv.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}

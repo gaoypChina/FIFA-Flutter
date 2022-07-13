@@ -1491,12 +1491,13 @@ class ClubName{
   String persebaya = "Persebaya Surabaya";
   String persipura = "Persipura Jayapura";
   //VIETNA
-  String hanoi = "Hà Nôi";
+  String hanoi = "Hanoi";
   String quangNam = "Quang Nam";
   String thanhoa = "Thanh Hoa";
   //PHILIPPINNES
   String unitedCity = "United City";
   String kaya = "Kaya";
+  String maharlika = "Maharlika Manila";
   //CAMBOJA
   String visakha = "Visakha";
   String phnomPenhCrown = "Phnom Penh Crown";
@@ -1605,10 +1606,11 @@ class ClubName{
   String benghazi = "Al Ahly Benghazi";//LÍBIA
   String alakhdar = "Al Akhdar";//LÍBIA
   String alNasrLIB = "Al Nasr-LIB";//LÍBIA
+  String alIttihadLIB = "Al Ittihad-LIB";//LÍBIA
   String rajacasablanca = "Raja Casablanca";//MARROCOS
   String wydad = "Wydad Casablanca";//MARROCOS
   String farRabat = "FAR Rabat";//MARROCOS
-  String masfes = "MAS de Fès";//MARROCOS
+  String masfes = "Maghreb de Fès";//MARROCOS
   String esperance = "Espérance de Tunis";//TUNISIA
   String etoilesahel = "Étoile du Sahel";//TUNISIA
   String sfaxien = "Sfaxien";//TUNISIA
@@ -1653,6 +1655,7 @@ class ClubName{
   String heartland = "Heartland";//NIGÉRIA
   String kano = "Kano Pillars";//NIGÉRIA
   String kwaraUtd = "Kwara Utd";//NIGÉRIA
+  String rangersInt = "Rangers International";//NIGÉRIA
   String riversUtd = "Rivers United";//NIGÉRIA
   String sunshinestars = "Sunshine Stars";//NIGÉRIA
   String shootingstars = "Shooting Stars";//NIGÉRIA
@@ -1668,9 +1671,9 @@ class ClubName{
   String greenEagles = "Green Eagles";//ZAMBIA
   String redArrows = "Red Arrows";//ZAMBIA
   String zesco = "Zesco United";//ZAMBIA
-  String manicaDiamonds = "Manica Diamonds"; //ZIMBABWE
   String chickenInn = "Chicken Inn"; //ZIMBABWE
   String dynamos = "Dynamos FC"; //ZIMBABWE
+  String manicaDiamonds = "Manica Diamonds"; //ZIMBABWE
   String platinum = "FC Platinum"; //ZIMBABWE
 
 }

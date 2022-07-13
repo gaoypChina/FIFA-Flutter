@@ -1,4 +1,5 @@
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/classes/words.dart';
 import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
@@ -15,7 +16,7 @@ class MapListAllClubs extends StatefulWidget {
 class _MapListAllClubsState extends State<MapListAllClubs> {
 
   List<String> countryOptions = [];
-  String selectedCountry = 'Brazil';
+  String selectedCountry = Words.country.brazil;
   Iterable keysIterable = ClubDetails().map.keys;
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
@@ -31,6 +32,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
         countryOptions.add(ClubDetails().getCountry(key));
       }
     });
+    setState((){});
     countryOptions.sort();
     setState((){});
   }
@@ -123,6 +125,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                         ),
                         Image.asset(Images().getStadium(clubName),height: 80,width: 100,
                           errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
+                          //Se o clube não tiver a imagem do estadio
                             return Image.asset('assets/clubs/generic0.jpg',height: 80,width: 100);
                           },
                         ),
