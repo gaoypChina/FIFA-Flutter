@@ -502,6 +502,7 @@ class ClubName{
   String kilmarnock = "Kilmarnock";
   String livingstone = "Livingstone";
   String motherwell = "Motherwell";
+  String rossCounty = "Ross County";
   String stjohnstone = "St. Johnstone";
   String stmirren = "St. Mirren";
 
@@ -1381,10 +1382,10 @@ class ClubName{
   String motagua = "Motagua";
   String rcdespana = "RCD España";
   //PANAMA
-  String independientePAN = "Independiente-PAN";
+  String independientePAN = "Independiente de La Chorrera";
   String tauro = "Tauro-PAN";
   String arabeunido = "Árabe Unido";
-  String alianzafc = "Alianza FC";
+  String alianzaPAN = "Alianza FC";
   String plazaAmador = "Plaza Amador";
   String sanMiguelito = "San Miguelito";
   //GUATEMALA
@@ -1392,9 +1393,14 @@ class ClubName{
   String comunicaciones = "Comunicaciones";
   String municipal = "Municipal";
   //EL SALVADOR
-  String isidro = "Isidro Metapán";
+  String alianzaELS = "Alianza El Salvador";
   String atleticomarte = "Atlético Marte";
   String aguila = "Águila";
+  String isidro = "Isidro Metapán";
+  //NICARAGUA
+  String diriangen = "Diriangén";
+  String managua = "Managua";
+  String realEsteli = "Real Estelí";
   //OUTROS
   String pinardelrio = "Pinar del Rio"; //CUBA
   String villaclara = "FC Villa Clara"; //CUBA
@@ -1416,11 +1422,14 @@ class ClubName{
   String ghuangzhou = "Ghuangzhou Evergrande";
   String beijingguoan = "Beijing Guoan";
   String chengdu = "Chengdu";
-  String changchun = "Changchun";
+  String changchun = "Changchun Yatai";
   String dalian = "Dalian";
   String hebei = "Hebei FC";
-  String henan = "Henan Songshan Longmen";
-  String meizhou = "Meizhou";
+  String henan = "Henan S. Longmen";
+  String liaoning = "Liaoning Hongyun";
+  String meizhou = "Meizhou Hakka";
+  String nantong = "Nantong Zhiyun";
+  String qingdao = "Qingdao";
   String shandong = "Shandong Luneng";
   String shanghaisipg = "Shanghai SIPG";
   String shanghaishenhua = "Shanghai Shenhua";
@@ -1506,6 +1515,9 @@ class ClubName{
   String manangMarshyangdi = "Manang Marshyangdi";
   String himalayan = "Himalayan Sherpa Club";
   String nepalPolice = "Nepal Police";
+  //MALASIA
+  String johorDarul = "Johor Darul Ta'zim";
+  String kualaLumpur = "Kuala Lumpur";
 
   //ORIENTE MÉDIO
   //ARABIA SAUDITA
@@ -1611,10 +1623,10 @@ class ClubName{
   String wydad = "Wydad Casablanca";//MARROCOS
   String farRabat = "FAR Rabat";//MARROCOS
   String masfes = "Maghreb de Fès";//MARROCOS
+  String africain = "Club Africain";//TUNISIA
   String esperance = "Espérance de Tunis";//TUNISIA
   String etoilesahel = "Étoile du Sahel";//TUNISIA
   String sfaxien = "Sfaxien";//TUNISIA
-  String africain = "Club Africain";//TUNISIA
 
   //AFRICA NEGRA
   String amazulu = "AmaZulu FC";

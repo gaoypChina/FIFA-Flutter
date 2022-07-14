@@ -7,8 +7,8 @@ import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 
 class MapConfig extends StatefulWidget {
-  late int game;
-  MapConfig({Key? key,required this.game}) : super(key: key);
+  final int game;
+  const MapConfig({Key? key,required this.game}) : super(key: key);
 
   @override
   State<MapConfig> createState() => _MapConfigState();

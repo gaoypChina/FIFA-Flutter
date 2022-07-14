@@ -14,15 +14,14 @@ import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapGameplay extends StatefulWidget {
-  late MapGameSettings mapGameSettings;
-  MapGameplay({Key? key,required this.mapGameSettings}) : super(key: key);
+  final MapGameSettings mapGameSettings;
+  const MapGameplay({Key? key,required this.mapGameSettings}) : super(key: key);
 
   @override
   State<MapGameplay> createState() => _MapGameplayState();
 }
 
 class _MapGameplayState extends State<MapGameplay> {
-
 
   Iterable keysIterable = ClubDetails().map.keys;
   List<Marker> _markers = <Marker>[];

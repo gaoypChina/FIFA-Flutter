@@ -12,8 +12,8 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapGameplayMarkers extends StatefulWidget {
-  late MapGameSettings mapGameSettings;
-  MapGameplayMarkers({Key? key,required this.mapGameSettings}) : super(key: key);
+  final MapGameSettings mapGameSettings;
+  const MapGameplayMarkers({Key? key,required this.mapGameSettings}) : super(key: key);
 
   @override
   State<MapGameplayMarkers> createState() => _MapGameplayMarkersState();

@@ -1361,7 +1361,7 @@ ClubName _name = ClubName();
         1997: [_name.cruzazul,_name.lagalaxy,_name.chivasguadalajara,_name.dcunited,     ],
         1996: [_name.cruzazul,_name.necaxa,_name.comunicaciones,_name.seattle,           ],
         1995: [_name.saprissa,_name.municipal,_name.alajuelense,_name.moulien],
-        1994: [_name.cartagines,_name.atlante,_name.usrobert,_name.alianzafc],
+        1994: [_name.cartagines,_name.atlante,_name.usrobert,_name.alianzaELS],
         1993: [_name.saprissa,_name.leon,_name.municipal,_name.robinhood],
         1992: [_name.americamex,_name.alajuelense,_name.robinhood,_name.aiglon],
         1991: [_name.puebla,_name.police,_name.rcdespana],
@@ -1381,14 +1381,14 @@ ClubName _name = ClubName();
         1977: [_name.americamex,_name.robinhood,_name.saprissa],
         1976: [_name.aguila,_name.robinhood,_name.leon],
         1975: [_name.atleticoespanol,_name.transvaal],
-        1974: [_name.municipal,_name.transvaal,_name.alianzafc],
+        1974: [_name.municipal,_name.transvaal,_name.alianzaELS],
         1973: [_name.transvaal,_name.saprissa],
         1972: [_name.olimpiaHON,_name.robinhood,_name.toluca],
         1971: [_name.cruzazul,_name.alajuelense,_name.comunicaciones],
         1970: [_name.cruzazul,_name.transvaal,_name.saprissa],
         1969: [_name.cruzazul,_name.comunicaciones,_name.saprissa],
         1968: [_name.toluca,_name.transvaal,],
-        1967: [_name.alianzafc,_name.jongcolombia],
+        1967: [_name.alianzaELS,_name.jongcolombia],
       };
     }
     else if(leagueName == LeagueOfficialNames().mundial) {
