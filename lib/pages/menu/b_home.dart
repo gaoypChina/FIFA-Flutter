@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
     globalJogadoresCarrerAssists = List.filled(globalMaxPlayersPermitted, 0);
 
     ano = anoInicial;
-
+    setState(() {});
     await SelectDatabase().load();
 
     setState(() {});
@@ -259,8 +259,8 @@ Widget continueButton(){
     return
       customButtonContinue(
           title: Translation(context).text.continueButton,
-          function: () async{
-            saveMyData();
+          function: () {
+            funcChangeClub(teamName,indexLeague);
             Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Menu()));
           }
       );
@@ -335,10 +335,6 @@ Widget configurations(){
 ////////////////////////////////////////////////////////////////////////////
 //                               FUNCTIONS                                //
 ////////////////////////////////////////////////////////////////////////////
-  saveMyData(){
-    funcChangeClub(teamName,indexLeague);
-  }
-
 
 
 }

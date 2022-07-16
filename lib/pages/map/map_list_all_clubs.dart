@@ -1,6 +1,7 @@
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/words.dart';
 import 'package:fifa/functions/flags_list.dart';
+import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/widgets/back_button.dart';
@@ -54,7 +55,14 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
 
           Column(
             children: [
-              backButtonText(context, 'Lista de Clubes'),
+              Row(
+                children: [
+                  backButtonText(context, 'Lista de Clubes'),
+                  const Spacer(),
+                  Text(showList.length.toString(),style: EstiloTextoBranco.text16),
+                  const SizedBox(width: 8),
+                ],
+              ),
               Expanded(
                 child: Scrollbar(
                   child: ListView.builder(
@@ -75,7 +83,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
   Widget clubRow(String clubName){
-    if(selectedCountry != ClubDetails().getCountry(clubName)){
+    if(selectedCountry != clubDetails.getCountry(clubName)){
       return Container();
     }
     return GestureDetector(
@@ -85,7 +93,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 8),
         margin: const EdgeInsets.symmetric(vertical: 2),
-        color: ClubDetails().getColors(clubName).primaryColor.withOpacity(0.2),
+        color: clubDetails.getColors(clubName).primaryColor.withOpacity(0.2),
         child: Stack(
               children: [
 
@@ -126,9 +134,9 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                                 Row(
                                   children: [
                                     const SizedBox(width: 8),
-                                    funcFlagsList(ClubDetails().getCountry(clubName), 15, 25),
+                                    funcFlagsList(clubDetails.getCountry(clubName), 15, 25),
                                     const SizedBox(width: 16),
-                                    Text(ClubDetails().getFoundationYear(clubName).toString(),style: EstiloTextoBranco.text16),
+                                    Text(clubDetails.getFoundationYear(clubName).toString(),style: EstiloTextoBranco.text16),
                                   ],
                                 ),
                               ],
@@ -144,9 +152,9 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                       ),
                       Row(
                         children: [
-                          Text(ClubDetails().getStadium(clubName),style: EstiloTextoBranco.text14),
+                          Text(clubDetails.getStadium(clubName),style: EstiloTextoBranco.text14),
                           const Spacer(),
-                          Text(ClubDetails().getStadiumCapacityPointFormat(clubName).toString(),style: EstiloTextoBranco.text16),
+                          Text(clubDetails.getStadiumCapacityPointFormat(clubName).toString(),style: EstiloTextoBranco.text16),
                         ],
                       ),
                     ],
@@ -159,8 +167,9 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
   }
 
   Widget selectCountryRow(){
-    return SizedBox(
-      height: 40,
+    return Container(
+      height: 60,
+      decoration: blackDecoration(),
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: countryOptions.length,

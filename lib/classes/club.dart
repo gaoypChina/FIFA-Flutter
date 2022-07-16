@@ -37,13 +37,13 @@ class Club{
   Club({required this.index,bool simplified = false}) {
     name = clubsAllNameList[index];
     picture = FIFAImages().imageLogo(name);
-    jogadores = getJogadores();
+    jogadores = simplified ? [] : getJogadores();
     nJogadores = jogadores.length;
     esquemaTatico = EsquemaTatico().e442;
     if(index == globalMyClubID){
       esquemaTatico = EsquemaTatico().meuEsquema;
     }
-    escalacao = optimizeBestSquadClub();
+    escalacao = simplified ? [] : optimizeBestSquadClub();
     leagueName = getLeagueName();
     leagueID = leaguesIndexFromName[leagueName];
     leaguePoints = globalClubsLeaguePoints.isNotEmpty ? globalClubsLeaguePoints[index] : 0;
@@ -59,10 +59,10 @@ class Club{
     }catch(e){
       internationalPoints =0;internationalGM=0;internationalGS=0;
     }
-
-    nationality = ClubDetails().getCountry(name);
-    foundationYear = ClubDetails().getFoundationYear(name);
-    stadiumName = ClubDetails().getStadium(name);
+    ClubDetails clubDetails = ClubDetails();
+    nationality = clubDetails.getCountry(name);
+    foundationYear = clubDetails.getFoundationYear(name);
+    stadiumName = clubDetails.getStadium(name);
     continent = Continents().funcCountryContinents(nationality);
   }
 

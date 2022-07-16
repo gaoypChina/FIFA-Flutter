@@ -1,25 +1,34 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
+import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/values/league_divisions.dart';
 import 'package:fifa/values/league_names.dart';
 
 class RankingClubsControl{
 
   List clubsOVR = []; //criado no init
+  List<Club> clubs = [];
   List copyClubsName = [];
-  List copyClubsNameNational = [];
-  List copyClubsNameContinental = [];
+  List<Club> copyClubsNational = [];
+  List<Club> copyClubsContinental = [];
   My my = My();
 
   organizeRanking(){
-
     //REORGANIZA ORDEM
     for (var leagueID in leaguesListRealIndex) {//element: 0-70
-      List allClubsIDList = League(index: leagueID).getAllClubsIDList();
-      for(int i=0; i<allClubsIDList.length; i++) {
-        Club clubClass = Club(index: allClubsIDList[i],simplified: true);
+      //Search name by index;
+      String leagueName = leaguesIndexFromName.keys.firstWhere((k) => leaguesIndexFromName[k] == leagueID, orElse: () => null);
+      Map allClubsMap = clubNameMap[leagueName];
+      List allClubsNameList = allClubsMap.values.toList();
+      //List allClubsIDList = League(index: leagueID).getAllClubsIDList();
+      customToast('LOADING: $leagueName');
+      for(int i=0; i<allClubsNameList.length; i++) {
+        int clubID = clubsAllNameList.indexOf(allClubsNameList[i]);
+        Club clubClass = Club(index: clubID);
+        clubs.add(clubClass);
         clubsOVR.add(clubClass.getOverall());
         copyClubsName.add(clubClass.name);
       }
@@ -30,36 +39,32 @@ class RankingClubsControl{
         if(clubsOVR[k] > clubsOVR[i]){
           late double auxiliarDouble;
           late String auxiliarString;
+          late Club auxiliarClub;
           auxiliarDouble = clubsOVR[i];clubsOVR[i] = clubsOVR[k]; clubsOVR[k] = auxiliarDouble;
           auxiliarString = copyClubsName[i];copyClubsName[i] = copyClubsName[k]; copyClubsName[k] = auxiliarString;
+          auxiliarClub = clubs[i];clubs[i] = clubs[k]; clubs[k] = auxiliarClub;
         }
       }
     }
 
   }
 
-  organizeMyNationalRanking(){
-    copyClubsNameNational = List.from(copyClubsName);
-    List allClubsName = [];
-    List divisionsName = Divisions().leagueDivisionsStructure(my.campeonatoName);
-    for(String leagueName in divisionsName){
-        int leagueIndex = leaguesIndexFromName[leagueName];
-        allClubsName += League(index: leagueIndex).allClubsName;
-    }
-    copyClubsNameNational.removeWhere((element) => !allClubsName.contains(element) );
+  organizeMyContinentalRanking(){
+    String myContinent = Club(index: my.clubID).continent;
+    copyClubsContinental = List.from(clubs);
+    copyClubsContinental.removeWhere((club) => !club.continent.contains(myContinent));
   }
 
-  organizeMyContinentalRanking(){
-    copyClubsNameContinental = List.from(copyClubsName);
-    String myContinent = Club(index: my.clubID,simplified: true).continent;
+  organizeMyNationalRanking(){
+    List divisionsName = Divisions().leagueDivisionsStructure(my.campeonatoName);
     List allClubsName = [];
-    for(String clubName in copyClubsName){
-      int leagueIndex = clubsAllNameList.indexOf(clubName);
-      if(Club(index: leagueIndex,simplified: true).continent.contains(myContinent)){
-        allClubsName.add(clubName);
-      }
+    for(String leagueName in divisionsName){
+      int leagueIndex = leaguesIndexFromName[leagueName];
+      allClubsName += League(index: leagueIndex).allClubsName;
     }
-    copyClubsNameContinental.removeWhere((element) => !allClubsName.contains(element) );
+
+    copyClubsNational = List.from(copyClubsContinental);
+    copyClubsNational.removeWhere((club) => !allClubsName.contains(club.name));
   }
 
 }

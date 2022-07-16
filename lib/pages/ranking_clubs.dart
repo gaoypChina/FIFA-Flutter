@@ -7,7 +7,6 @@ import 'package:fifa/functions/func_number_clubs_total.dart';
 import 'package:fifa/page_controller/ranking_clubs_control.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
-import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
@@ -28,6 +27,7 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
   RankingClubsControl rankingClubs = RankingClubsControl();
   late TabController _tabController;
   final ScrollController _scrollController = ScrollController();
+  List listClubsID = League(index: My().campeonatoID).getAllClubsIDList();
 
   bool isLoaded = false;
 
@@ -41,8 +41,8 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
   }
   organizarRanking(){
     rankingClubs.organizeRanking();
-    rankingClubs.organizeMyNationalRanking();
     rankingClubs.organizeMyContinentalRanking();
+    rankingClubs.organizeMyNationalRanking();
 
     _tabController = TabController(vsync: this, length: 3);
     isLoaded=true;
@@ -88,9 +88,9 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
                       child: TabBarView(
                         controller: _tabController,
                         children: [
-                          listRanking(rankingClubs.copyClubsName),
-                          listRanking(rankingClubs.copyClubsNameContinental),
-                          listRanking(rankingClubs.copyClubsNameNational),
+                          listRanking(rankingClubs.clubs),
+                          listRanking(rankingClubs.copyClubsContinental),
+                          listRanking(rankingClubs.copyClubsNational),
                         ],
                       ),
                     ),
@@ -109,6 +109,7 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
   Widget listRanking(List listClubs){
+
     return ShaderMask(
       shaderCallback: (Rect rect) {
         return const LinearGradient(
@@ -132,15 +133,12 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
     );
   }
 
-Widget rowClub(int ranking, String clubName){
+Widget rowClub(int ranking, Club club){
 
-    int realClubIndex = clubsAllNameList.indexOf(clubName);
-    Club club = Club(index: realClubIndex);
     double overall = club.getOverall();
 
     //Cor de Fundo
     Color colorBackground = Colors.transparent;
-    List listClubsID = League(index: myClub.campeonatoID).getAllClubsIDList();
 
     if(listClubsID.contains(club.index)){
       colorBackground = Colors.blue;

@@ -76,7 +76,6 @@ class ReadCSV{
     addRandomPlayers();
     reorganizeIndexIDs();
     customToast('Done');
-
   }
   readCSVfunc(String filename) async {
     List<List<dynamic>> _data = [];
