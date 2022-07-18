@@ -111,19 +111,21 @@ class _MapConfigState extends State<MapConfig> {
           checkbox('Fácil',0),
           checkbox('Médio',1),
           checkbox('Difícil',2),
+          checkbox('Expert',3),
         ],
       ),
     );
   }
 
   Widget checkbox(String text, int difficulty){
-    return         Row(
+    return Row(
       children: [
         Checkbox(
           value: mapGameSettings.difficulty == difficulty,
           onChanged: (newValue) {
             setState(() {
               mapGameSettings.difficulty = difficulty;
+              mapGameSettings.setDifficulty();
             });
           },
         ),

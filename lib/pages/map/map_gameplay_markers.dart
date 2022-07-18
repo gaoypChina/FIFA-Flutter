@@ -22,6 +22,7 @@ class MapGameplayMarkers extends StatefulWidget {
 class _MapGameplayMarkersState extends State<MapGameplayMarkers> {
 
   Iterable keysIterable = ClubDetails().map.keys;
+  ClubDetails clubDetails = ClubDetails();
   List<Marker> _markers = <Marker>[];
   late GoogleMapController controller;
   final List<Coordinates> coordinates = [];
@@ -59,8 +60,10 @@ class _MapGameplayMarkersState extends State<MapGameplayMarkers> {
     clubNameMarker = keysIterable.elementAt(clubID);
 
 
-    String continent = ClubDetails().getContinent(clubNameMarker);
-    if(!widget.mapGameSettings.selectedContinents.contains(continent)){
+    String continent = clubDetails.getContinent(clubNameMarker);
+    int capacity = clubDetails.getStadiumCapacity(clubNameMarker);
+    if(!widget.mapGameSettings.selectedContinents.contains(continent) ||
+        widget.mapGameSettings.stadiumSizeMin > capacity){
       defineNewClubTarget();
     }
     setState((){});
@@ -69,13 +72,15 @@ class _MapGameplayMarkersState extends State<MapGameplayMarkers> {
   getClubsLocation(GoogleMapController googleMapController) async{
     controller = googleMapController;
     _markers = [];
-    ClubDetails().map.forEach((key, value) {
+    clubDetails.map.forEach((key, value) {
       String clubName = key;
 
-      String continent = ClubDetails().getContinent(clubName);
-      if (ClubDetails().getCoordinate(clubName).latitude != 0 &&
-            widget.mapGameSettings.selectedContinents.contains(continent)) {
-        coordinates.add(ClubDetails().getCoordinate(clubName));
+      String continent = clubDetails.getContinent(clubName);
+      if (clubDetails.getCoordinate(clubName).latitude != 0 &&
+            widget.mapGameSettings.selectedContinents.contains(continent) &&
+            widget.mapGameSettings.stadiumSizeMin < clubDetails.getStadiumCapacity(clubName)
+      ) {
+        coordinates.add(clubDetails.getCoordinate(clubName));
 
         //ADD MARKER
         _markers.add(

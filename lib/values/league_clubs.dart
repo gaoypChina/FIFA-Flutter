@@ -123,7 +123,7 @@ Map clubNameMapImmutable = {
     0: clubName.cska,1: clubName.dinamoMoscou,2: clubName.krasnodar,3: clubName.lokomotivMoscou,
     4: clubName.rubinKazan,5: clubName.sochi,6: clubName.spartakmoscou,7: clubName.zenit,
     8: clubName.dinamokiev,9: clubName.shaktardonetsk,10: clubName.partizan,11: clubName.estrelavermelha,
-    12: clubName.dinamozagreb,13: clubName.steauaBucureste,14: clubName.cskaSofia,15: clubName.ludogorets,
+    12: clubName.dinamozagreb,13: clubName.steauaBucuresti,14: clubName.cskaSofia,15: clubName.ludogorets,
     16: clubName.astana,17: clubName.qarabag,18:clubName.slovanBratislava,19:clubName.ferencvaros,
   },
 

@@ -24,6 +24,7 @@ class MapGameplay extends StatefulWidget {
 class _MapGameplayState extends State<MapGameplay> {
 
   Iterable keysIterable = ClubDetails().map.keys;
+  ClubDetails clubDetails = ClubDetails();
   List<Marker> _markers = <Marker>[];
   late GoogleMapController controller;
   List<Coordinates> coordinates = [];
@@ -66,10 +67,11 @@ class _MapGameplayState extends State<MapGameplay> {
     clubNameMarker = keysIterable.elementAt(clubID);
 
 
-    String continent = ClubDetails().getContinent(clubNameMarker);
-    if(ClubDetails().getCoordinate(clubNameMarker).latitude != 0 &&
-          widget.mapGameSettings.selectedContinents.contains(continent)){
-      coordinates.add(ClubDetails().getCoordinate(clubNameMarker));
+    String continent = clubDetails.getContinent(clubNameMarker);
+    if(clubDetails.getCoordinate(clubNameMarker).latitude != 0 &&
+          widget.mapGameSettings.selectedContinents.contains(continent) &&
+    widget.mapGameSettings.stadiumSizeMin < clubDetails.getStadiumCapacity(clubNameMarker)){
+      coordinates.add(clubDetails.getCoordinate(clubNameMarker));
       //Zoom
       var newPosition = CameraPosition(
           target: LatLng(coordinates.last.latitude,coordinates.last.longitude),
@@ -124,7 +126,8 @@ class _MapGameplayState extends State<MapGameplay> {
   }
   bool checkClubOptionValid(String clubName){
     String continent = ClubDetails().getContinent(clubName);
-    if(widget.mapGameSettings.selectedContinents.contains(continent)){
+    if(widget.mapGameSettings.selectedContinents.contains(continent) &&
+        widget.mapGameSettings.stadiumSizeMin < clubDetails.getStadiumCapacity(clubName)){
       return true;
     }else{
       return false;

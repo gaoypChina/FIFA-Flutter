@@ -59,7 +59,8 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                 children: [
                   backButtonText(context, 'Lista de Clubes'),
                   const Spacer(),
-                  Text(showList.length.toString(),style: EstiloTextoBranco.text16),
+                  Padding(padding:const EdgeInsets.only(top:18),
+                      child: Text(showList.length.toString(),style: EstiloTextoBranco.text20)),
                   const SizedBox(width: 8),
                 ],
               ),
@@ -115,50 +116,52 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                     ),
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Column(
-                              children: [
-                                Row(
-                                  children: [
-                                    Image.asset(Images().getEscudo(clubName),height: 40,width: 40),
-                                    const SizedBox(width: 12),
-                                    Expanded(child: Text(clubName,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.negrito18))
-                                  ],
-                                ),
-                                Row(
-                                  children: [
-                                    const SizedBox(width: 8),
-                                    funcFlagsList(clubDetails.getCountry(clubName), 15, 25),
-                                    const SizedBox(width: 16),
-                                    Text(clubDetails.getFoundationYear(clubName).toString(),style: EstiloTextoBranco.text16),
-                                  ],
-                                ),
-                              ],
-                            ),
+
+
+                Column(
+                  children: [
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Image.asset(Images().getEscudo(clubName),height: 40,width: 40),
+                                  const SizedBox(width: 12),
+                                  Expanded(child: Text(clubName,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.negrito18))
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  const SizedBox(width: 8),
+                                  funcFlagsList(clubDetails.getCountry(clubName), 15, 25),
+                                  const SizedBox(width: 16),
+                                  Text(clubDetails.getFoundationYear(clubName).toString(),style: EstiloTextoBranco.text16),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Text('(${clubDetails.getStadiumCapacityPointFormat(clubName).toString()}) ',style: EstiloTextoBranco.text16),
+                                  Expanded(child: Text(clubDetails.getStadium(clubName),maxLines: 2,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14)),
+                                ],
+                              ),
+                            ],
                           ),
-                          Image.asset(Images().getStadium(clubName),height: 80,width: 100,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 5),
+                          child: Image.asset(Images().getStadium(clubName),height: 90,width: 120,fit: BoxFit.fill,
                             errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
                             //Se o clube não tiver a imagem do estadio
-                              return Image.asset('assets/clubs/generic0.jpg',height: 80,width: 100);
+                              return Image.asset('assets/clubs/generic0.jpg',height: 90,width: 120,fit: BoxFit.fill);
                             },
                           ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Text(clubDetails.getStadium(clubName),style: EstiloTextoBranco.text14),
-                          const Spacer(),
-                          Text(clubDetails.getStadiumCapacityPointFormat(clubName).toString(),style: EstiloTextoBranco.text16),
-                        ],
-                      ),
-                    ],
-                  ),
+                        ),
+                      ],
+                    ),
+
+                  ],
                 ),
               ],
             ),
@@ -183,9 +186,12 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
         selectedCountry = country;
         setState((){});
       },
-      child: Center(child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 2.0),
-        child: funcFlagsList(country, 40, 50),
+      child: Center(
+          child: Container(
+            height: 60,
+            color: country == selectedCountry ? Colors.green[300] : Colors.transparent,
+           padding: const EdgeInsets.symmetric(horizontal: 2.0,vertical: 10),
+            child: funcFlagsList(country, 40, 50),
       )),
     );
   }

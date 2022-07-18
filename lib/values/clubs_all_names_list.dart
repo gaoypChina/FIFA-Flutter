@@ -88,7 +88,7 @@ List clubsAllNameList = [
   ClubName().estrelavermelha,  ClubName().partizan,  ClubName().ludogorets,  ClubName().cskaSofia,
   ClubName().shaktardonetsk,  ClubName().dinamokiev,  ClubName().spartapraga,  ClubName().slaviaPraha,
   ClubName().dinamozagreb,ClubName().cluj,ClubName().slovanBratislava,ClubName().ferencvaros,
-  ClubName().steauaBucureste,ClubName().maccabiTelAviv,
+  ClubName().steauaBucuresti,ClubName().maccabiTelAviv,
 
   //////////////////////////////////////////////////////
   ClubName().palmeiras,  ClubName().atleticogo,  ClubName().atleticomg,  ClubName().atleticopr,
