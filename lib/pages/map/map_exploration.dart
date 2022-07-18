@@ -6,6 +6,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/words.dart';
 import 'package:fifa/functions/flags_list.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
@@ -27,14 +28,26 @@ class _MapPageState extends State<MapPage> {
   List<Marker> _markers = <Marker>[];
   List<Marker> _markersShow = <Marker>[];
   late GoogleMapController controller;
-  ////////////////////////////////////////////////////////////////////////////
-//                               INIT                                     //
-////////////////////////////////////////////////////////////////////////////
+  //Controle Ano fundação
+  ClubDetails clubDetails = ClubDetails();
+  TextEditingController controllerMin = TextEditingController();
+  TextEditingController controllerMax = TextEditingController();
+  TextEditingController controllerStadiumMin = TextEditingController();
+  TextEditingController controllerStadiumMax = TextEditingController();
+
+  //TIMELINE
+  TextEditingController controllerSimulationYear = TextEditingController();
+  bool showTimeline = false;
+  bool playTimeline = false;
+  bool removePreviousFoundedTeams = false;
+  int yearTimeline = 1860;
+  late Timer timer;
   ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
+    controllerSimulationYear.text = '1860';
     initMap();
     super.initState();
   }
@@ -45,7 +58,6 @@ class _MapPageState extends State<MapPage> {
     await Future.delayed(const Duration(seconds: 6));
     setState((){});
   }
-
   getClubsLocation(GoogleMapController googleMapController) {
     controller = googleMapController;
     _markers = [];
@@ -84,7 +96,11 @@ class _MapPageState extends State<MapPage> {
       }
     });
   }
-
+  @override
+  void dispose() {
+    timer.cancel();
+    super.dispose();
+  }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
@@ -100,6 +116,53 @@ class _MapPageState extends State<MapPage> {
                 children: [
                   backButtonText(context, 'Mapa'),
                   const Spacer(),
+                  showTimeline ?
+                      playTimeline ? Container(
+                    margin: const EdgeInsets.only(top:30.0),
+                    child: GestureDetector(
+                      onTap: (){
+                        playTimeline = false;
+                        setState((){});
+                      },
+                      child: const Icon(Icons.pause,size:35,color:Colors.white),
+                    ),
+                  ) : Container(
+                        margin: const EdgeInsets.only(top:30.0),
+                        child: GestureDetector(
+                          onTap: (){
+                            playTimeline = true;
+                            setState((){});
+                          },
+                          child: const Icon(Icons.play_arrow,size:35,color:Colors.white),
+                        ),
+                      )
+                          : Container(),
+
+
+                  Container(
+                    margin: const EdgeInsets.only(top:30.0),
+                    child: Column(
+                      children: [
+
+                        //MOSTRAR ANO
+                        showTimeline ? Text(yearTimeline.toString(),style: EstiloTextoBranco.text14,) : Container(),
+
+                        //TIMELINE BUTTON
+                        Container(
+                          child: GestureDetector(
+                            onTap: (){
+                              showTimeline = true;
+                              playTimeline = true;
+                              yearTimeline = int.parse(controllerSimulationYear.text);
+                              clubsFoundedTimelapse();
+                              setState((){});
+                            },
+                            child: const Icon(Icons.timelapse,size:35,color:Colors.white),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   Container(
                     margin: const EdgeInsets.only(top:30.0),
                     child: GestureDetector(
@@ -154,6 +217,36 @@ class _MapPageState extends State<MapPage> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+
+  clubsFoundedTimelapse(){
+    try{
+      timer.cancel();
+    }catch(e){
+      //1ªvez que o botao foi clicado, entao o timer ainda nao existe
+      //Se existir entao ele é apagado antes de ser iniciado de novo.
+    }
+    timer = Timer.periodic(const Duration(milliseconds: 400), (timer) {
+
+      if(playTimeline){
+        yearTimeline++;
+        List temp = List.from(_markers);
+        _markersShow = List.from(_markers);
+        temp.removeWhere((element) => clubDetails.getFoundationYear(element.markerId.value) < yearTimeline);
+        _markersShow.removeWhere((element) => temp.contains(element));
+        if(removePreviousFoundedTeams){
+          _markersShow.removeWhere((element) => clubDetails.getFoundationYear(element.markerId.value) < int.parse(controllerSimulationYear.text));
+        }
+        setState((){});
+      }
+
+      if (yearTimeline>=anoInicial) {
+        yearTimeline = int.parse(controllerSimulationYear.text);
+        showTimeline = false;
+        timer.cancel();
+      }
+    });
+  }
+
   Widget buttonZoomOut(){
     return GestureDetector(
       onTap: (){
@@ -198,12 +291,12 @@ class _MapPageState extends State<MapPage> {
         });
         return bottomSheetClub(club,city);
       }catch(e){
+        //Se o clube não é jogavel
         Future.delayed(const Duration(seconds: 3), () {
           Navigator.pop(c);
         });
         return bottomSheetGenericClub(clubName,city);
       }
-
 
     });
   }
@@ -309,30 +402,34 @@ class _MapPageState extends State<MapPage> {
                 onTap:(){
                   Navigator.pop(c);
                   filterFoundationYearBottomSheet();
-            },child: Container(padding:const EdgeInsets.all(4),child: const Text('Fundação',style: EstiloTextoPreto.text16))),
+            },child: Container(padding:const EdgeInsets.all(10),child: const Text('Fundação',style: EstiloTextoPreto.text16))),
 
             GestureDetector(
                 onTap:(){
-              String myNationality = Club(index: My().clubID).nationality;
-              _markersShow = List.from(_markers);
-              _markersShow.removeWhere((element) => ClubDetails().getCountry(element.markerId.value) != myNationality);
-              setState((){});
-              Navigator.pop(c);
-            }, child: Container(padding:const EdgeInsets.all(4),child: const Text('No meu País',style: EstiloTextoPreto.text16))),
+                  Navigator.pop(c);
+                  filterStadiumSizeBottomSheet();
+            }, child: Container(padding:const EdgeInsets.all(10),child: const Text('Tamanho do estádio',style: EstiloTextoPreto.text16))),
 
             GestureDetector(
                 onTap:(){
                   Navigator.pop(c);
                   filterCountryBottomSheet();
                 },
-                child: Container(padding:const EdgeInsets.all(4),child: const Text('País',style: EstiloTextoPreto.text16))),
+                child: Container(padding:const EdgeInsets.all(10),child: const Text('País',style: EstiloTextoPreto.text16))),
+
+            GestureDetector(
+                onTap:(){
+                  Navigator.pop(c);
+                  filterSimulationStartYearBottomSheet();
+                },
+                child: Container(padding:const EdgeInsets.all(10),child: const Text('Ano Inicial de Simulação',style: EstiloTextoPreto.text16))),
 
             GestureDetector(
                 onTap:(){
               _markersShow = List.from(_markers);
               setState((){});
               Navigator.pop(c);
-            },child: Container(padding:const EdgeInsets.all(4),child: const Text('Restaurar Todos',style: EstiloTextoPreto.text16))),
+            },child: Container(padding:const EdgeInsets.all(10),child: const Text('Restaurar Todos',style: EstiloTextoPreto.text16))),
           ],
         ),
       );
@@ -377,26 +474,131 @@ class _MapPageState extends State<MapPage> {
 
 
   Future filterFoundationYearBottomSheet(){
-    TextEditingController controller1 = TextEditingController();
-    TextEditingController controller2 = TextEditingController();
-
-    //SELECT AFTER 2000 CLUBS
-    _markersShow = List.from(_markers);
-    _markersShow.removeWhere((element) => ClubDetails().getFoundationYear(element.markerId.value) < 2000);
+    controllerMin.text = '1800';
+    controllerMax.text = '2050';
 
     return showModalBottomSheet(
         barrierColor: Colors.transparent,
         context: context, builder: (c){
-      return SizedBox(
-        height: Sized(context).height - MediaQuery.of(context).viewInsets.bottom,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
+
+      return Container(
+        height: MediaQuery.of(context).viewInsets.bottom+50,
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Desde: '),
-            widgetTextField(controller1,autofocus: true),
-            const Text('Até: '),
-            widgetTextField(controller2),
-          ],
+            const SizedBox(width: 10),
+            const Text('Desde: ',style: EstiloTextoPreto.text20),
+            const SizedBox(width: 10),
+            widgetTextField(controllerMin,autofocus: true),
+            const SizedBox(width: 20),
+            const Text('Até: ',style: EstiloTextoPreto.text20),
+            const SizedBox(width: 10),
+            widgetTextField(controllerMax),
+            const SizedBox(width: 20),
+
+            GestureDetector(
+                  onTap:() {
+                    Navigator.pop(c);
+                  _markersShow.removeWhere((element) => clubDetails.getFoundationYear(element.markerId.value) < int.parse(controllerMin.text));
+                  _markersShow.removeWhere((element) => clubDetails.getFoundationYear(element.markerId.value) > int.parse(controllerMax.text));
+
+                  },child: Container(
+                    color: Colors.grey,
+                    padding: const EdgeInsets.all(8.0),
+                    child: const Text('ok',style: EstiloTextoPreto.text20),
+                  ),
+            ),
+
+              ]
+        ),
+      );
+    });
+  }
+
+  Future filterSimulationStartYearBottomSheet(){
+    return showModalBottomSheet(
+        barrierColor: Colors.transparent,
+        context: context, builder: (c){
+
+      return Container(
+        height: MediaQuery.of(context).viewInsets.bottom+80,
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(width: 10),
+              const Text('Ano Inicial: ',style: EstiloTextoPreto.text20),
+              const SizedBox(width: 10),
+              widgetTextField(controllerSimulationYear),
+              const SizedBox(width: 20),
+
+              GestureDetector(
+                onTap:() {
+                  Navigator.pop(c);
+                  removePreviousFoundedTeams = true;
+                },child: Container(
+                color: Colors.red,
+                padding: const EdgeInsets.all(8.0),
+                child: const Text('Sim. 1',style: EstiloTextoPreto.text20),
+              ),
+              ),
+
+              GestureDetector(
+                onTap:() {
+                  Navigator.pop(c);
+                  removePreviousFoundedTeams = false;
+                },child: Container(
+                color: Colors.grey,
+                padding: const EdgeInsets.all(8.0),
+                child: const Text('Sim. 2',style: EstiloTextoPreto.text20),
+              ),
+              ),
+
+            ]
+        ),
+      );
+    });
+  }
+
+  Future filterStadiumSizeBottomSheet(){
+    controllerStadiumMin.text = '0';
+    controllerStadiumMax.text = '99000';
+
+    return showModalBottomSheet(
+        barrierColor: Colors.transparent,
+        context: context, builder: (c){
+
+      return Container(
+        height: MediaQuery.of(context).viewInsets.bottom+50,
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(width: 10),
+              const Text('Min: ',style: EstiloTextoPreto.text20),
+              const SizedBox(width: 10),
+              widgetTextField(controllerStadiumMin,autofocus: true),
+              const SizedBox(width: 20),
+              const Text('Max: ',style: EstiloTextoPreto.text20),
+              const SizedBox(width: 10),
+              widgetTextField(controllerStadiumMax),
+              const SizedBox(width: 20),
+
+              GestureDetector(
+                onTap:() {
+                  Navigator.pop(c);
+                  _markersShow.removeWhere((element) => clubDetails.getStadiumCapacity(element.markerId.value) < int.parse(controllerStadiumMin.text));
+                  _markersShow.removeWhere((element) => clubDetails.getStadiumCapacity(element.markerId.value) > int.parse(controllerStadiumMax.text));
+
+                },child: Container(
+                color: Colors.grey,
+                padding: const EdgeInsets.all(8.0),
+                child: const Text('ok',style: EstiloTextoPreto.text20),
+              ),
+              ),
+
+            ]
         ),
       );
     });

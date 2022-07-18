@@ -97,7 +97,8 @@ class _MapGameplayMarkersState extends State<MapGameplayMarkers> {
                 nLifes--;
               }
               if(nLifes==0){
-                customToast("Game Over");
+                int score = widget.mapGameSettings.getFinalScore(milis, nCorrect);
+                customToast('Game Over!!!\nSCORE: $score\nTEMPO: $milis');
                 Navigator.pop(context);
               }
             },

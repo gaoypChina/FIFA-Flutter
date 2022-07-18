@@ -1207,6 +1207,11 @@ class FIFAImages{
     else if(timeFoto==ClubName().northeast){ imageLogo='northeast';}
     else if(timeFoto==ClubName().odisha){ imageLogo='odisha';}
 
+    //BANGLADESH
+    //else if(timeFoto==ClubName().bashundhara){ imageLogo='bashundhara';}
+    //else if(timeFoto==ClubName().dhakaAbahani){ imageLogo='dhakaAbahani';}
+    //else if(timeFoto==ClubName().saif){ imageLogo='brunei';}
+    //else if(timeFoto==ClubName().sheikhJamal){ imageLogo='sheikh jamal';}
     //BRUNEI
     else if(timeFoto==ClubName().brunei){ imageLogo='brunei';}
     //SINGAPORE
@@ -1269,7 +1274,7 @@ class FIFAImages{
     else if(timeFoto==ClubName().alahli){  imageLogo='al_ahli';  }
     else if(timeFoto==ClubName().almasry){ imageLogo='al masry';}
     else if(timeFoto==ClubName().cleopatra){ imageLogo='cleopatra';}
-    else if(timeFoto==ClubName().future){ imageLogo='future';}
+    else if(timeFoto==ClubName().future){ imageLogo='future fc';}
     else if(timeFoto==ClubName().ismaily){ imageLogo='ismaily';}
     else if(timeFoto==ClubName().pyramids){ imageLogo='pyramids';}
     else if(timeFoto==ClubName().zamalek){ imageLogo='zamalek';}

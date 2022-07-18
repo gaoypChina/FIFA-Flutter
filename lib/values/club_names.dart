@@ -940,6 +940,7 @@ class ClubName{
   String vasco = "Vasco";
   String vitoria = "Vitória";
 
+  String julho4 = "4 de julho";
   String novembro15 = "15 de novembro";
   String abc = "ABC";
   String adesg = "Adesg";
@@ -1062,6 +1063,7 @@ class ClubName{
   String primavera = "Primavera";
   String princesasolimoes = "Princesa dos Solimões";
   String remo = "Remo";
+  String realArquimedes = "Real Arquimedes";
   String realNoroeste = "Real Noroeste-ES";
   String resende = "Resende";
   String retro = "Retrô";
@@ -1084,6 +1086,7 @@ class ClubName{
   String saoraimundoRR = "São Raimundo-RR";
   String sampaio = "Sampaio Corrêa";
   String santamaria = "Inter Santa Maria";
+  String serra = "Serra";
   String sergipe = "Sergipe";
   String sertaozinho = "Sertãozinho";
   String sinop = "Sport Sinop";
@@ -1110,6 +1113,7 @@ class ClubName{
   String voltaredonda = "Volta Redonda";
   String xvjau = "XV Jaú";
   String xvpiracicaba = "XV Piracicaba";
+  String ypirangaAP = "Ypiranga AP";
   String ypirangaRS = "Ypiranga RS";
 
 
@@ -1568,6 +1572,11 @@ class ClubName{
   String northeast = "Northeast United";
   String eastBengal = "SC East Bengal";
   String odisha = "Odisha FC";
+  //BANGLADESH
+  String bashundhara = "Bashundhara Kings";
+  String dhakaAbahani = "Dhaka Abahani";
+  String saif = "Saif";
+  String sheikhJamal = "Sheikh Jamal";
   //INDONESIA
   String bali = "Bali United";
   String borneo = "Borneo";

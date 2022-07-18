@@ -4,7 +4,7 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/pages/map/map.dart';
+import 'package:fifa/pages/map/map_exploration.dart';
 import 'package:fifa/pages/map/map_config.dart';
 import 'package:fifa/pages/map/map_list_all_clubs.dart';
 import 'package:fifa/pages/map/map_ranking.dart';

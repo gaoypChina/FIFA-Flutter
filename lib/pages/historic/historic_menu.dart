@@ -8,7 +8,7 @@ import 'package:fifa/pages/historic/players_historic.dart';
 import 'package:fifa/pages/historic/ranking_best_clubs_history.dart';
 import 'package:fifa/pages/historic/mundial.dart';
 import 'package:fifa/pages/historic/year_resume.dart';
-import 'package:fifa/pages/map/map.dart';
+import 'package:fifa/pages/map/map_exploration.dart';
 import 'package:fifa/pages/map/map_menu.dart';
 import 'package:fifa/pages/simulacao/after_play.dart';
 import 'package:fifa/theme/textstyle.dart';

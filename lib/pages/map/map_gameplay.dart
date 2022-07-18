@@ -34,7 +34,6 @@ class _MapGameplayState extends State<MapGameplay> {
   late Timer timer;
   int milis = 0;
   String clubNameMarker = '';
-  int nTotal = 15;
   int nCorrect = 0;
   int nLifes = 3;
 
@@ -206,7 +205,7 @@ class _MapGameplayState extends State<MapGameplay> {
 
           Column(
             children: [
-              Text('$nCorrect/$nTotal',style: EstiloTextoBranco.text16),
+              Text('$nCorrect',style: EstiloTextoBranco.text16),
               hearts(),
             ],
           ),
@@ -265,16 +264,13 @@ class _MapGameplayState extends State<MapGameplay> {
           }
           if(nLifes==0){
             Navigator.pop(context);
-            customToast('Game Over!!!');
+            int score = widget.mapGameSettings.getFinalScore(milis, nCorrect);
+            customToast('Game Over!!!\nSCORE: $score\nTEMPO: $milis');
+            List<String> listRanking = await SharedPreferenceHelper().getMapRanking() ?? [];
+            listRanking.add(milis.toString());
+            SharedPreferenceHelper().saveMapRanking(listRanking);
           }
 
-            if(nCorrect == nTotal){
-              Navigator.pop(context);
-              List<String> listRanking = await SharedPreferenceHelper().getMapRanking() ?? [];
-              listRanking.add(milis.toString());
-              SharedPreferenceHelper().saveMapRanking(listRanking);
-              customToast('Vencedor!!! $milis segundos');
-            }
             setState((){});
         },
         child: Container(
