@@ -466,6 +466,7 @@ class ClubName{
   String spartarotterdam = "Sparta Rotterdam";
   String twente = "Twente";
   String vitesse = "Vitesse";
+  String volendam = "Volendam";
   String utrecht = "Utrecht";
   String waalwijk = "RJK Waalwijk";
   String willem = "Willem II";
@@ -511,12 +512,14 @@ class ClubName{
   String stjohnstone = "St. Johnstone";
   String stmirren = "St. Mirren";
 
-  String linfield = "Linfield"; //Irlanda do Norte
-  String glentoran = "Glentoran"; //Irlanda do Norte
-  String crusaders = "Crusaders"; //Irlanda do Norte
-  String cliftonville = "Cliftonville FC"; //Irlanda do Norte
-  String newsaints = "The New Saints"; //GALES
-  String connahs = "Connah's Quay Nomads"; //GALES
+  //NORTHERN IRELAND
+  String linfield = "Linfield";
+  String glentoran = "Glentoran";
+  String crusaders = "Crusaders";
+  String cliftonville = "Cliftonville FC";
+  //WALES
+  String newsaints = "The New Saints";
+  String connahs = "Connah's Quay Nomads";
   //IRLANDA
   String bohemian = "Bohemian";
   String cork = "Cork City";
@@ -527,6 +530,7 @@ class ClubName{
   String sligo = "Sligo Rovers";
   String shamrock = "Shamrock Rovers";
   String waterford = "Waterford";
+
 
   //NORDICOS
   //NORUEGA
@@ -597,8 +601,10 @@ class ClubName{
   String hafnarfjardar = "Hafnarfjarðar";
   String reykjavik = "KR Reykjavik";
   //ILHAS FAROE
-  String klaksvik = "Klaksvíkar Ítróttarfelag";
-
+  String b36 = "B36 Tórshavn";
+  String hb = "Havnar Bóltfelag";
+  String klaksvik = "KÍ Klaksvík";
+  String vikingurFaroe = "Víkingur Gøta";
 
   //AUSTRIA/SUIÇA/POLONIA
   String admira = "Admira";
@@ -767,7 +773,7 @@ class ClubName{
   String araratArmenia = "Ararat Armenia";//ARMENIA
   String araratYerevan = "Ararat Yerevan";//ARMENIA
   String pyunikyerevan = "Pyunik Yerevan";//ARMENIA
-  String rigas = "Rigas Futbola Skola";//LETONIA
+  String rigaRFS = "Rigas Futbola Skola";//LETONIA
   String rigafc = "Riga FC";//LETONIA
   String liepaja = "FK Liepaja";//LETONIA
   String valmiera = "Valmiera";//LETONIA
@@ -779,8 +785,9 @@ class ClubName{
   //LESTE EUROPEU
   String estrelavermelha = "Estrela Vermelha";
   String partizan = "Partizan";
-  String cukacricki = "Čukarički";
+  String cukaricki = "Čukarički";
   String radnicki = "Radnicki";
+  String radnik = "Radnik";
   String vojvodina = "Vojvodina";
   //ROMENIA
   String steauaBucuresti = "Steaua Bucareste";
@@ -851,6 +858,8 @@ class ClubName{
   String ljublijana = "Olimpia Ljubljana";//ESLOVENIA
   String maribor = "Maribor";//ESLOVENIA
   String mura = "NS Mura";//ESLOVENIA
+  String domzale = "Domzale";//ESLOVENIA
+  String celje = "Celje";//ESLOVENIA
   //BOSNIA
   String posusje = "Posusje";//BOSNIA
   String sarajevo = "Sarajevo";//BOSNIA
@@ -859,6 +868,8 @@ class ClubName{
   //KOSOVO
   String ballkani = "KF Ballkani";//KOSOVO
   String llapi = "KF Llapi";//KOSOVO
+  String prishtina = "Prishtina";//KOSOVO
+  String drita = "Drita";//KOSOVO
   //MONTENEGRO
   String podgorica = "Buducnost Podgorica";//MONTENEGRO
   //MACEDONIA
@@ -1731,8 +1742,13 @@ class ClubName{
   String gaborone = "Gaborone United";//BOTSWANA
   String mindelense = "Mindelense";//CAPE VERDE
   String sptClubePraia = "Sporting Clube da Praia";//CAPE VERDE
+  String caraBrazaville = "Cara Brazzaville";//CONGO
+  String otoho = "Otohô";//CONGO
+  String diablesNoirs = "Diables Noirs";//CONGO
+  String talangai = "Talangai";//CONGO
   String mazembe = "Mazembe";//RD CONGO
   String vita = "Vita Club";//RD CONGO
+  String maniema = "Maniema Union";//RD CONGO
   String asecmimosas = "ASEC Mimosas";//COSTA DO MARFIM
   String africaSports = "Africa Sports";//COSTA DO MARFIM
   String gagnoa = "Gagnoa";//COSTA DO MARFIM

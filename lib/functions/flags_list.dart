@@ -67,6 +67,7 @@ Image funcFlagsList(String country, double _height, double _width){
   else if(country == Words.country.ethiopia){code = Image.asset('icons/flags/png/et.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.eritrea){code = Image.asset('icons/flags/png/er.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.estonia){code = Image.asset('icons/flags/png/ee.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.faroe){code = Image.asset('icons/flags/png/fo.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.finland){code = Image.asset('icons/flags/png/fi.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.france){code = Image.asset('icons/flags/png/fr.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.gambia){code = Image.asset('icons/flags/png/gm.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}

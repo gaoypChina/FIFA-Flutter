@@ -68,6 +68,7 @@ class CountryNames {
   String get eritrea => 'Eritrea';
   String get estonia => 'Estonia';
   String get ethiopia => 'Ethiopia';
+  String get faroe => 'Faroe Islands';
   String get fiji => 'Fiji';
   String get finland => 'Finland';
   String get france => 'France';
