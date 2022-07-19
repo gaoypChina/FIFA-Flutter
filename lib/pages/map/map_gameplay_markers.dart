@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/page_controller/map/map_game_settings.dart';
+import 'package:fifa/page_controller/map/map_ranking_controller.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
@@ -98,7 +99,8 @@ class _MapGameplayMarkersState extends State<MapGameplayMarkers> {
               }
               if(nLifes==0){
                 int score = widget.mapGameSettings.getFinalScore(milis, nCorrect);
-                customToast('Game Over!!!\nSCORE: $score\nTEMPO: $milis');
+                customToast('Game Over!!!\nSCORE: $score\nACERTOS: $nCorrect\nTEMPO: $milis');
+                MapRankingController().saveData(score, nCorrect, milis, widget.mapGameSettings.difficulty);
                 Navigator.pop(context);
               }
             },

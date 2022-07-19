@@ -11,6 +11,7 @@ import 'package:fifa/pages/map/map_ranking.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/values/club_details.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 
@@ -69,6 +70,10 @@ class _MapMenuState extends State<MapMenu> {
                       const SizedBox(height: 8),
                       gameButton('Acerte o marker',(){Navigator.push(context,MaterialPageRoute(builder: (context) => const MapConfig(game: 1)));}),
                       const SizedBox(height: 8),
+                      //gameButton('Contra Relógio',(){}),
+                      const SizedBox(height: 8),
+                      //gameButton('Estatísticas',(){Navigator.push(context,MaterialPageRoute(builder: (context) => const MapStatistics()));}),
+                      const SizedBox(height: 8),
                       gameButton('Exploração Livre',(){Navigator.push(context,MaterialPageRoute(builder: (context) => const MapPage()));}),
                       const SizedBox(height: 8),
                       gameButton('Ranking',(){Navigator.push(context,MaterialPageRoute(builder: (context) => const MapRanking()));}),
@@ -80,6 +85,7 @@ class _MapMenuState extends State<MapMenu> {
                 ),
 
                 const Spacer(),
+                customCrest('São Paulo'),
                 myProfile(),
               ],
             ),
@@ -90,6 +96,14 @@ class _MapMenuState extends State<MapMenu> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Widget customCrest(String clubName){
+    ClubColors clubColors = ClubDetails().getColors(clubName);
+    return CircleAvatar(
+      radius: 20,
+      backgroundColor: clubColors.primaryColor,
+      child: Center(child: Text(clubName[0],style: EstiloTextoBranco.text20)),
+    );
+  }
 Widget gameButton(String text, Function function){
     return GestureDetector(
       onTap: (){

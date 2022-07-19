@@ -46,7 +46,9 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
   @override
   Widget build(BuildContext context) {
     //Filtra os clubes do país
+
     Iterable showList = keysIterable.where((clubName) => selectedCountry == clubDetails.getCountry(clubName));
+    showList = showList.where((clubName) => clubDetails.getCoordinate(clubName).latitude != 0);
 
     return Scaffold(
       body: Stack(

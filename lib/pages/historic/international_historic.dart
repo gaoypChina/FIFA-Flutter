@@ -373,16 +373,22 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                 itemCount: list.length,
                 itemBuilder: (c,i){
                     String nationality = ClubDetails().getCountry(list[i]);
-                  return         Row(
-                    children: [
-                      SizedBox(width:30, child: Text('${(i+1).toString()}º ',style: EstiloTextoBranco.text16)),
-                      const SizedBox(width: 4),
-                      funcFlagsList(nationality, 15, 25),
-                      const SizedBox(width: 8),
-                      Image.asset(Images().getEscudo(list[i]),width: 30,height: 30),
-                      const SizedBox(width: 8),
-                      Text(list[i],style: EstiloTextoBranco.text16),
-                    ],
+                    int position = i+1;
+                  return         Container(
+                    padding: const EdgeInsets.only(left: 12),
+                    margin: (position == 2 || position == 4 || position == 8 || position == 16)
+                        ? const EdgeInsets.only(bottom:16) : EdgeInsets.zero,
+                    child: Row(
+                      children: [
+                        SizedBox(width:30, child: Text('${(i+1).toString()}º ',style: EstiloTextoBranco.text16)),
+                        const SizedBox(width: 4),
+                        funcFlagsList(nationality, 15, 25),
+                        const SizedBox(width: 8),
+                        Image.asset(Images().getEscudo(list[i]),width: 30,height: 30),
+                        const SizedBox(width: 8),
+                        Text(list[i],style: EstiloTextoBranco.text16),
+                      ],
+                    ),
                   );
                 },
               ),
@@ -454,7 +460,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
         children: [
           Row(
             children: [
-              Text('${(position+1).toString()}º ',style: EstiloTextoBranco.text16),
+              SizedBox(width:30, child: Text('${(position+1).toString()}º ',style: EstiloTextoBranco.text16)),
               const SizedBox(width: 4),
               funcFlagsList(nationality, 12, 15),
               Image.asset(Images().getEscudo(list[position]),width: 25,height: 25),

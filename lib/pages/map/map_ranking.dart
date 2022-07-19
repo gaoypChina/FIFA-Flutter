@@ -1,5 +1,5 @@
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/database/local_database/shared_preferences.dart';
+import 'package:fifa/page_controller/map/map_ranking_controller.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
@@ -13,8 +13,8 @@ class MapRanking extends StatefulWidget {
 
 class _MapRankingState extends State<MapRanking> {
 
-  late List listRanking = [];
-
+  MapRankingController mapRankingController = MapRankingController();
+  bool loaded = false;
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
@@ -24,8 +24,8 @@ class _MapRankingState extends State<MapRanking> {
     super.initState();
   }
   getRanking() async{
-    listRanking = (await SharedPreferenceHelper().getMapRanking())!;
-    listRanking.sort();
+    await mapRankingController.getStoredDataList();
+    loaded=true;
     setState((){});
   }
 
@@ -43,11 +43,12 @@ class _MapRankingState extends State<MapRanking> {
             children: [
               backButtonText(context, 'Ranking'),
 
-              Expanded(
+              loaded
+                  ? Expanded(
                 child: ListView.builder(
-                  itemCount: listRanking.length,
+                  itemCount: mapRankingController.savedListSeparated.length,
                     itemBuilder: (c,i)=> listRow(i)),
-              )
+              ): Container(),
  
             ],
           ),
@@ -59,14 +60,29 @@ class _MapRankingState extends State<MapRanking> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
   Widget listRow(int i){
+    mapRankingController.listToClass(mapRankingController.savedListSeparated[i]);
     return Container(
-      height: 50,
+      height: 80,
       padding: const EdgeInsets.all(8),
       child: Row(
         children: [
-          Text((i+1).toString()+'º',style: EstiloTextoBranco.text16,),
+          Text((i+1).toString()+'º  ',style: EstiloTextoBranco.text16),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("Acertos: "+mapRankingController.mapRankingIndividual.nCorrect.toString(),style: EstiloTextoBranco.text16,),
+              Text("Tempo: "+mapRankingController.mapRankingIndividual.milis.toString()+'s ',style: EstiloTextoBranco.text16,),
+              Text("Dificuldade: "+mapRankingController.mapRankingIndividual.difficulty.toString(),style: EstiloTextoBranco.text16,),
+            ],
+          ),
           const Spacer(),
-          Text(listRanking[i].toString()+'s',style: EstiloTextoBranco.negrito18,),
+          Column(
+            children: [
+              Text(mapRankingController.mapRankingIndividual.score.toString()+'pts ',style: EstiloTextoBranco.negrito18,),
+              Text(mapRankingController.mapRankingIndividual.date+' ',style: EstiloTextoBranco.text14,),
+
+            ],
+          ),
         ],
       ),
     );

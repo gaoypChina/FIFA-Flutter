@@ -148,17 +148,15 @@ class _MapPageState extends State<MapPage> {
                         showTimeline ? Text(yearTimeline.toString(),style: EstiloTextoBranco.text14,) : Container(),
 
                         //TIMELINE BUTTON
-                        Container(
-                          child: GestureDetector(
-                            onTap: (){
-                              showTimeline = true;
-                              playTimeline = true;
-                              yearTimeline = int.parse(controllerSimulationYear.text);
-                              clubsFoundedTimelapse();
-                              setState((){});
-                            },
-                            child: const Icon(Icons.timelapse,size:35,color:Colors.white),
-                          ),
+                        GestureDetector(
+                          onTap: (){
+                            showTimeline = true;
+                            playTimeline = true;
+                            yearTimeline = int.parse(controllerSimulationYear.text);
+                            clubsFoundedTimelapse();
+                            setState((){});
+                          },
+                          child: const Icon(Icons.timelapse,size:35,color:Colors.white),
                         ),
                       ],
                     ),
@@ -563,7 +561,7 @@ class _MapPageState extends State<MapPage> {
 
   Future filterStadiumSizeBottomSheet(){
     controllerStadiumMin.text = '0';
-    controllerStadiumMax.text = '99000';
+    controllerStadiumMax.text = '99900';
 
     return showModalBottomSheet(
         barrierColor: Colors.transparent,

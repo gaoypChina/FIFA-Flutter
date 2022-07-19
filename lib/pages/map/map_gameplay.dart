@@ -3,8 +3,8 @@ import 'dart:math';
 
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/database/local_database/shared_preferences.dart';
 import 'package:fifa/page_controller/map/map_game_settings.dart';
+import 'package:fifa/page_controller/map/map_ranking_controller.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
@@ -263,12 +263,10 @@ class _MapGameplayState extends State<MapGameplay> {
             HapticFeedback.mediumImpact();
           }
           if(nLifes==0){
-            Navigator.pop(context);
             int score = widget.mapGameSettings.getFinalScore(milis, nCorrect);
-            customToast('Game Over!!!\nSCORE: $score\nTEMPO: $milis');
-            List<String> listRanking = await SharedPreferenceHelper().getMapRanking() ?? [];
-            listRanking.add(milis.toString());
-            SharedPreferenceHelper().saveMapRanking(listRanking);
+            customToast('Game Over!!!\nSCORE: $score\nACERTOS: $nCorrect\nTEMPO: $milis');
+            MapRankingController().saveData(score, nCorrect, milis, widget.mapGameSettings.difficulty);
+            Navigator.pop(context);
           }
 
             setState((){});

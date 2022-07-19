@@ -48,12 +48,12 @@ class SharedPreferenceHelper {
   ///////////////////////////////////////////////////////////////////////////
   Future<bool> saveMapRanking(List<String> ranking) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.setStringList('MAPRANKING', ranking);
+    return prefs.setStringList('MAPRANKING1', ranking);
   }
 
   Future<List<String>?> getMapRanking() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getStringList('MAPRANKING');
+    return prefs.getStringList('MAPRANKING1');
   }
 ///////////////////////////////////////////////////////////////////////////
 // REMOVE
