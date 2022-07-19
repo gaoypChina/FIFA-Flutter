@@ -16,6 +16,8 @@ class UniformCustom{
     clubColors = clubDetails.getColors(clubName);
     if(clubDetails.getPattern(clubName) == ClubPattern().sleeves){
       sleeveColor = clubColors.secondColor;
+    }else if(clubDetails.getPattern(clubName) == ClubPattern().sp){
+      sleeveColor = clubColors.thirdColor;
     }else{
       sleeveColor = clubColors.primaryColor;
     }

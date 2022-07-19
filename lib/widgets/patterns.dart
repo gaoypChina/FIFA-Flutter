@@ -5,7 +5,8 @@ class ClubPattern{
   String solid = 'solid';
   String sp = 'SP';
   String divided = 'Divided';
-  String stripes = 'Stripes';
+  String stripes2 = 'Stripes2';
+  String stripes3 = 'Stripes3';
   String horStripes = 'horStripes';
   String oneVertStripe = 'oneVertStripe';
   String diagonal = 'diagonal';
@@ -30,7 +31,7 @@ class ClubPattern{
         end: Alignment.topRight,
       );
     }
-    else if(clubPattern == stripes){
+    else if(clubPattern == stripes2){
       estampa =  LinearGradient(
         colors: [clubColors.primaryColor,clubColors.primaryColor,
           clubColors.secondColor,clubColors.secondColor,
@@ -39,6 +40,21 @@ class ClubPattern{
           clubColors.primaryColor,clubColors.primaryColor,
         ],
         stops: const [0, 0.2, 0.2,0.4, 0.4,0.6, 0.6,0.8,  0.8,1],
+        begin: Alignment.topLeft,
+        end: Alignment.topRight,
+      );
+    }
+    else if(clubPattern == stripes3){
+      estampa =  LinearGradient(
+        colors: [clubColors.primaryColor,clubColors.primaryColor,
+          clubColors.secondColor,clubColors.secondColor,
+          clubColors.primaryColor,clubColors.primaryColor,
+          clubColors.secondColor,clubColors.secondColor,
+          clubColors.primaryColor,clubColors.primaryColor,
+          clubColors.secondColor,clubColors.secondColor,
+          clubColors.primaryColor,clubColors.primaryColor,
+        ],
+        stops: const [0, 0.15, 0.15,0.3, 0.3,0.42, 0.42,0.58, 0.58,0.7, 0.7,0.85, 0.85,1],
         begin: Alignment.topLeft,
         end: Alignment.topRight,
       );
@@ -91,13 +107,13 @@ class ClubPattern{
     }
     else if(clubPattern == sp){
       estampa = LinearGradient(
-        colors: [clubColors.primaryColor,clubColors.primaryColor,
+        colors: [clubColors.thirdColor,clubColors.thirdColor,
+          clubColors.primaryColor,clubColors.primaryColor,
+          clubColors.thirdColor,clubColors.thirdColor,
           clubColors.secondColor,clubColors.secondColor,
-          clubColors.primaryColor,clubColors.primaryColor,
-          clubColors.thirdColors,clubColors.thirdColors,
-          clubColors.primaryColor,clubColors.primaryColor,
+          clubColors.thirdColor,clubColors.thirdColor,
         ],
-        stops: const [0, 0.2, 0.2,0.4, 0.4,0.6, 0.6,0.8,  0.8,1],
+        stops: const [0, 0.35, 0.35,0.45, 0.45,0.55, 0.55,0.65,  0.65,1],
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
       );

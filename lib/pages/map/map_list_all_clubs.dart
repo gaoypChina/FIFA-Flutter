@@ -5,6 +5,7 @@ import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/widgets/back_button.dart';
+import 'package:fifa/widgets/uniforme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -165,6 +166,12 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
 
                   ],
                 ),
+
+                Padding(
+                    padding: const EdgeInsets.only(left:260,top: 5),
+                    child: UniformCustom(clubName,0.5).kit()
+                ),
+
               ],
             ),
       ),
@@ -259,7 +266,9 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                  Image.asset(Images().getEscudo(clubName),width: 25,height: 25),
                ],
              ),
-           )
+           ),
+
+
          ],
        ),
      );

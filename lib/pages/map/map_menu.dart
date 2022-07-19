@@ -88,7 +88,6 @@ class _MapMenuState extends State<MapMenu> {
                 const Spacer(),
                 CrestWidgets(size: 50).getCrest('Arsenal'),
                 UniformCustom('Aston Villa',1.5).kit(),
-                UniformCustom('Arsenal',0.3).kit(),
                 myProfile(),
               ],
             ),
