@@ -1,7 +1,9 @@
 import 'package:fifa/classes/words.dart';
 import 'package:fifa/functions/contries_continents.dart';
 import 'package:fifa/values/club_names.dart';
+import 'package:fifa/widgets/patterns.dart';
 import 'package:flutter/material.dart';
+
 class ClubColors{
   late Color primaryColor;
   late Color secondColor;
@@ -28,6 +30,10 @@ class ClubImage{
 class ClubDetails{
 
   Map map = {};
+
+  String getPattern(String clubName){
+    return map[clubName][7];
+  }
   ClubColors getColors(String clubName){
     return map[clubName][0];
   }
@@ -77,13 +83,14 @@ class ClubDetails{
     Color darkblue = const Color(0xFF001050);
     Color blue = const Color(0xFF001FBB);
     Color grena = const Color(0xFF760025);
+    ClubPattern pattern = ClubPattern();
     
     ClubName _name = ClubName();
     //https://query.wikidata.org/#SELECT%20%3Fclub%20%3FclubLabel%20%3Fvenue%20%3FvenueLabel%20%3Fcoordinates%0AWHERE%0A%7B%0A%09%3Fclub%20wdt%3AP31%20wd%3AQ476028%20.%0A%09%3Fclub%20wdt%3AP115%20%3Fvenue%20.%0A%09%3Fvenue%20wdt%3AP625%20%3Fcoordinates%20.%0A%09SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22pt%22%20%7D%0A%7D
     map[_name.arsenal] = [ClubColors(Colors.red,Colors.white),Coordinates(51.555,-0.108611),
-			'Estádio Emirates',60704,1886,_country.england,[_name.tottenham,_name.chelsea]];
-    map[_name.astonvilla] = [ClubColors(Colors.purple,Colors.blueAccent),Coordinates(52.509166666,-1.884722222),
-			'Villa Park',42660,1874,_country.england,[_name.birmigham]];
+			'Estádio Emirates',60704,1886,_country.england,[_name.tottenham,_name.chelsea],pattern.sleeves];
+    map[_name.astonvilla] = [ClubColors(grena,Colors.lightBlueAccent),Coordinates(52.509166666,-1.884722222),
+			'Villa Park',42660,1874,_country.england,[_name.birmigham],pattern.sleeves];
     map[_name.bournemouth] = [ClubColors(Colors.black,Colors.red),Coordinates(50.735278,-1.838333),
       'Dean Court',11464,1890,_country.england,[_name.southampton]];
     map[_name.brentford] = [ClubColors(Colors.red,Colors.white),Coordinates(51.488167,-0.302639),
@@ -330,7 +337,7 @@ class ClubDetails{
 			'San Mamés',53289,1898,_country.spain,[_name.realsociedad]];
     map[_name.atleticomadrid] = [ClubColors(Colors.red,Colors.white),Coordinates(40.436111,-3.599444),
 			'Wanda Metropolitano',67829,1903,_country.spain,[_name.realmadrid]];
-    map[_name.barcelona] = [ClubColors(Colors.red,Colors.blue),Coordinates(41.380833,2.1225),
+    map[_name.barcelona] = [ClubColors(Colors.blue,Colors.red),Coordinates(41.380833,2.1225),
 			'Camp Nou',99354,1899,_country.spain,[_name.realmadrid]];
     map[_name.cadiz] = [ClubColors(Colors.yellow,Colors.blue),Coordinates(36.50274029685163, -6.272703671625995),
       'Estadio Ramón de Carranza',20724,1910,_country.spain,];
@@ -570,7 +577,7 @@ class ClubDetails{
 			'Allianz Riviera',35624,1904,_country.france,];
     map[_name.om] = [ClubColors(Colors.blueAccent,Colors.white),Coordinates(43.269983072632826, 5.3962199073682795),
 			'Vélodrome',67395,1899,_country.france,[_name.psg]];
-    map[_name.psg] = [ClubColors(Colors.red,Colors.blue),Coordinates(48.8413888,2.2530555),
+    map[_name.psg] = [ClubColors(darkblue,Colors.red),Coordinates(48.8413888,2.2530555),
 			'Parc des Princes',48583,1970,_country.france,[_name.om]];
     map[_name.reims] = [ClubColors(Colors.red,Colors.white),Coordinates(49.246667,4.025),
 			'Auguste Delaune',21668,1931,_country.france,];
@@ -1183,7 +1190,7 @@ class ClubDetails{
       'Arena Ekaterinburg',35163,1930,_country.russia,];
     map[_name.vladikavkaz] = [ClubColors(Colors.red,Colors.yellow),Coordinates(43.0233065, 44.69528968),
 			'Republican Spartak Stadium',32464,1921,_country.russia,];
-    map[_name.zenit] = [ClubColors(Colors.blue,Colors.white),Coordinates(59.9728083770, 30.22200532914),
+    map[_name.zenit] = [ClubColors(Colors.lightBlueAccent,Colors.white),Coordinates(59.9728083770, 30.22200532914),
       'Gazprom Arena',69000,1925,_country.russia,];
 
     //UCRANIA
