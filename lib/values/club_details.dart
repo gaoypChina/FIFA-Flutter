@@ -670,7 +670,7 @@ class ClubDetails{
 			'Municipal José Santos Pinto',3500,1923,_country.portugal,];
     map[_name.estoril] = [ClubColors(Colors.yellow,Colors.white),pattern.solid,Coordinates(38.7153065, -9.40573817),
 			'António Coimbra da Mota',8000,1939,_country.portugal,];
-    map[_name.estrelaamadora] = [ClubColors(Colors.red,Colors.green),pattern.solid,Coordinates(38.75216476, -9.22726611),
+    map[_name.estrelaamadora] = [ClubColors(Colors.red,Colors.green),pattern.stripes3,Coordinates(38.75216476, -9.22726611),
 			'Estádio José Gomes',9288,1932,_country.portugal,];
     map[_name.famalicao] = [ClubColors(Colors.blue,Colors.blue),pattern.solid,Coordinates(41.4016829, -8.52243319),
 			'Estádio Municipal de Famalicão',5307,1931,_country.portugal,];
@@ -680,11 +680,11 @@ class ClubDetails{
       'Marcolino de Castro',5600,1918,_country.portugal,];
     map[_name.gilVicente] = [ClubColors(Colors.red,Colors.blue),pattern.solid,Coordinates(41.533888888,-8.611111111),
 			'Estádio Cidade de Barcelos',12046,1924,_country.portugal,];
-    map[_name.leixoes] = [ClubColors(Colors.white,Colors.red),pattern.solid,Coordinates(41.1842451364265, -8.666396418),
+    map[_name.leixoes] = [ClubColors(Colors.white,Colors.red),pattern.stripes2,Coordinates(41.1842451364265, -8.666396418),
 			'Estádio do Mar',9821,1907,_country.portugal,];
     map[_name.mafra] = [ClubColors(Colors.yellow,Colors.green),pattern.solid,Coordinates(-26.1286357, -49.80125986),
       'Municipal de Mafra',1257,1965,_country.portugal,];
-    map[_name.maritimo] = [ClubColors(Colors.green,Colors.red),pattern.solid,Coordinates(32.645561,-16.928331),
+    map[_name.maritimo] = [ClubColors(Colors.green,Colors.red),pattern.stripes2,Coordinates(32.645561,-16.928331),
 			'Estádio dos Barreiros',10932,1910,_country.portugal,];
     map[_name.moreirense] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(41.3782047, -8.3542469),
 			'Comendador Joaquim de Almeida Freitas',6153,1938,_country.portugal,];
@@ -704,7 +704,7 @@ class ClubDetails{
 			'Complexo Desportivo de Campanhã',1500,1911,_country.portugal,];
     map[_name.santaClara] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(37.76392847, -25.622288584),
 			'Estádio de São Miguel',10000,1927,_country.portugal,];
-    map[_name.uniaoLeiria] = [ClubColors(Colors.white,Colors.white),pattern.solid,Coordinates(39.74945449, -8.81260997427),
+    map[_name.leiria] = [ClubColors(Colors.white,Colors.white),pattern.solid,Coordinates(39.74945449, -8.81260997427),
 			'Estádio Dr. Magalhães Pessoa',25000,1966,_country.portugal,];
     map[_name.tondela] = [ClubColors(Colors.green,Colors.yellow),pattern.stripes2,Coordinates(40.51203795, -8.082878165),
 			'Estádio João Cardoso',5000,1933,_country.portugal,];
@@ -718,7 +718,7 @@ class ClubDetails{
 			'Estádio do Futebol Clube de Vizela',6000,1939,_country.portugal,];
     map[_name.vitoriaguimaraes] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(41.446135622, -8.300460355),
 			'D. Afonso Henriques',30146,1922,_country.portugal,[_name.braga]];
-    map[_name.vitoriaSetubal] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(38.53138889,-8.891111),
+    map[_name.setubal] = [ClubColors(Colors.white,Colors.green),pattern.stripes2,Coordinates(38.53138889,-8.891111),
 			'Estádio do Bonfim',21530,1910,_country.portugal,];
 
     //HOLANDA
@@ -2499,11 +2499,11 @@ class ClubDetails{
 			'G.M.C Balayogi Athletic',30000,2019,_country.india,];
     map[_name.kerala] = [ClubColors(Colors.yellow,Colors.blue),pattern.solid,Coordinates(13.08564797, 80.2716407),
 			'Jawaharlal Nehru',75000,2014,_country.india,];
-    map[_name.mohunBagan] = [ClubColors(Colors.lightBlueAccent,Colors.yellow),pattern.solid,Coordinates(22.5622357, 88.34235),
+    map[_name.mohunBagan] = [ClubColors(Colors.green,Colors.red),pattern.stripes3,Coordinates(22.5622357, 88.34235),
       'Mohun Bagan Ground',20000,2020,_country.india,];
     map[_name.mumbai] = [ClubColors(Colors.lightBlueAccent,Colors.yellow),pattern.solid,Coordinates(19.042204573, 73.0269),
 			'DY Patil Stadium',55000,2014,_country.india,];
-    map[_name.northeast] = [ClubColors(Colors.lightBlueAccent,Colors.yellow),pattern.solid,Coordinates(26.115528, 91.760329),
+    map[_name.northeast] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(26.115528, 91.760329),
       'Indira Gandhi Athletic Stadium',35000,2004,_country.india,];
     map[_name.odisha] = [ClubColors(Colors.orange,Colors.black),pattern.solid,Coordinates(20.2880451, 85.82383754),
 			'Kalinga Stadium',60000,2014,_country.india,];
@@ -2587,7 +2587,7 @@ class ClubDetails{
       'Hazza bin Zayed',25053,1968,_country.uae,];
     map[_name.aljazira] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(24.452764,54.392019),
 			'Estádio Mohammed Bin Zayed',42000,1974,_country.uae,];
-    map[_name.alnasrdubai] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(25.23990846, 55.312893),
+    map[_name.alnasrEAU] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(25.23990846, 55.312893),
       'Al Maktoum Stadium',15058,1945,_country.uae,];
     map[_name.alsharjah] = [ClubColors(Colors.white,Colors.red),pattern.solid,Coordinates(25.3332735, 55.4195766),
       'Sharjah Stadium',10000,1966,_country.uae,];

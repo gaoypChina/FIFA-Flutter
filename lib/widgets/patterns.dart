@@ -78,7 +78,7 @@ class ClubPattern{
           clubColors.secondColor,clubColors.secondColor,
           clubColors.primaryColor,clubColors.primaryColor,
         ],
-        stops: const [0, 0.3, 0.3,0.7, 0.7,1],
+        stops: const [0, 0.3, 0.3,0.5, 0.5,1],
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
       );

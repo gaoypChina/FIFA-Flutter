@@ -13,6 +13,11 @@ class LeagueOfficialNames{
   String franca1 = 'Ligue 1'; String franca2 = 'Ligue 2';
   String alemanha1 = 'Bundesliga';  String alemanha2 = 'Bundesliga 2';
   String ptHol = 'Liga Portugal Holanda'; String turquiaGrecia = 'Liga Greco-Turca';
+  String holanda = 'Liga Holanda';
+  String escocia = 'Liga Escocesa';
+  String belgica = 'Liga Belga';
+  String suecia = 'Liga Sueca';
+  String cazaquistao = 'Liga Cazaquistão';
   String ligaEuropa = 'Liga Europeia';  String lesteEuropeu = 'Leste Europeu';
 
   String brasil1 = 'Brasileirão';  String brasil2 = 'Brasileirão - Série B';String brasil3 = 'Brasileirão - Série C';
@@ -108,6 +113,12 @@ Map leaguesIndexFromName = {
 
   LeagueOfficialNames().ligaEuropa: 20,
   LeagueOfficialNames().lesteEuropeu: 21,
+
+  LeagueOfficialNames().holanda: 25,
+  LeagueOfficialNames().escocia: 26,
+  LeagueOfficialNames().belgica: 27,
+  LeagueOfficialNames().suecia: 28,
+  LeagueOfficialNames().cazaquistao: 35,
 
   LeagueOfficialNames().brasil1: 50,
   LeagueOfficialNames().brasil2: 51,
