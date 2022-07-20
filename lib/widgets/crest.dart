@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 
 class CrestWidgets{
 
+  ClubDetails clubDetails = ClubDetails();
+  ClubPattern clubPattern = ClubPattern();
+
   late double _height;
   late double _width;
 
@@ -14,9 +17,9 @@ class CrestWidgets{
   }
   
   getCrest(String clubName){
-    //String clubPattern = ClubDetails().getPattern(clubName);
-    ClubColors clubColors = ClubDetails().getColors(clubName);
-    LinearGradient pattern = ClubPattern().getGradient(ClubDetails().getPattern(clubName), clubColors);
+    String patternStr = clubDetails.getPattern(clubName);
+    ClubColors clubColors = clubDetails.getColors(clubName);
+    LinearGradient pattern = clubPattern.getGradient(patternStr, clubColors);
 
     return crest(clubName, pattern);
   }

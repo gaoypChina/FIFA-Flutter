@@ -12,8 +12,6 @@ import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/back_button.dart';
-import 'package:fifa/widgets/crest.dart';
-import 'package:fifa/widgets/uniforme.dart';
 import 'package:flutter/material.dart';
 
 class MapMenu extends StatefulWidget {
@@ -86,8 +84,6 @@ class _MapMenuState extends State<MapMenu> {
                 ),
 
                 const Spacer(),
-                CrestWidgets(size: 50).getCrest('Arsenal'),
-                UniformCustom('Aston Villa',1.5).kit(),
                 myProfile(),
               ],
             ),

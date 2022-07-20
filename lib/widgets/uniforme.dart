@@ -4,6 +4,9 @@ import 'package:fifa/widgets/patterns.dart';
 import 'package:flutter/material.dart';
 class UniformCustom{
 
+  ClubDetails clubDetails = ClubDetails();
+  ClubPattern clubPattern = ClubPattern();
+
   late String clubName;
   late LinearGradient pattern;
   late Color sleeveColor;
@@ -11,13 +14,10 @@ class UniformCustom{
   double scale = 1;
 
   UniformCustom(this.clubName,[this.scale = 1]){
-    ClubDetails clubDetails = ClubDetails();
-    pattern = ClubPattern().getGradient(clubDetails.getPattern(clubName), clubDetails.getColors(clubName));
+    pattern = clubPattern.getGradient(clubDetails.getPattern(clubName), clubDetails.getColors(clubName));
     clubColors = clubDetails.getColors(clubName);
-    if(clubDetails.getPattern(clubName) == ClubPattern().sleeves){
+    if(clubDetails.getPattern(clubName) == clubPattern.sleeves){
       sleeveColor = clubColors.secondColor;
-    }else if(clubDetails.getPattern(clubName) == ClubPattern().sp){
-      sleeveColor = clubColors.thirdColor;
     }else{
       sleeveColor = clubColors.primaryColor;
     }

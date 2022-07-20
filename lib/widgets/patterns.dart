@@ -107,11 +107,11 @@ class ClubPattern{
     }
     else if(clubPattern == sp){
       estampa = LinearGradient(
-        colors: [clubColors.thirdColor,clubColors.thirdColor,
+        colors: [clubColors.primaryColor,clubColors.primaryColor,
+          clubColors.secondColor,clubColors.secondColor,
           clubColors.primaryColor,clubColors.primaryColor,
           clubColors.thirdColor,clubColors.thirdColor,
-          clubColors.secondColor,clubColors.secondColor,
-          clubColors.thirdColor,clubColors.thirdColor,
+          clubColors.primaryColor,clubColors.primaryColor,
         ],
         stops: const [0, 0.35, 0.35,0.45, 0.45,0.55, 0.55,0.65,  0.65,1],
         begin: Alignment.topCenter,
