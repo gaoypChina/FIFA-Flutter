@@ -3,6 +3,7 @@ import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/images.dart';
+import 'package:fifa/widgets/crest.dart';
 import 'package:flutter/material.dart';
 
 class Images{
@@ -10,6 +11,14 @@ class Images{
 
   String getEscudo(String clubName){
     return 'assets/clubs/${FIFAImages().imageLogo(clubName)}.png';
+  }
+  Widget getEscudoWidget(String clubName,[double _height=50.0, double _width=50.0]){
+    String crest = FIFAImages().imageLogo(clubName);
+    if(crest != 'generic'){
+      return Image.asset('assets/clubs/${FIFAImages().imageLogo(clubName)}.png',height: _height,width: _width);
+    }else{
+      return CrestWidgets(size: _height).getCrest(clubName);
+    }
   }
   String getUniform(String clubName){
     return 'assets/clubs/${FIFAImages().imageLogo(clubName)}1.png';

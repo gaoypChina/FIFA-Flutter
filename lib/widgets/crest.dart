@@ -16,7 +16,7 @@ class CrestWidgets{
     _width = size;
   }
   
-  getCrest(String clubName){
+  Widget getCrest(String clubName){
     String patternStr = clubDetails.getPattern(clubName);
     ClubColors clubColors = clubDetails.getColors(clubName);
     LinearGradient pattern = clubPattern.getGradient(patternStr, clubColors);

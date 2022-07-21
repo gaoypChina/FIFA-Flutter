@@ -128,19 +128,29 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                             children: [
                               Row(
                                 children: [
-                                  Image.asset(Images().getEscudo(clubName),height: 40,width: 40),
+                                  Images().getEscudoWidget(clubName,50,50),
+
                                   const SizedBox(width: 12),
-                                  Expanded(child: Text(clubName,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.negrito18))
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Text(clubName,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.negrito18),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          funcFlagsList(clubDetails.getCountry(clubName), 15, 25),
+                                          const SizedBox(width: 16),
+                                          Text(clubDetails.getFoundationYear(clubName).toString(),style: EstiloTextoBranco.text16),
+                                        ],
+                                      ),
+                                    ],
+                                  )
                                 ],
                               ),
-                              Row(
-                                children: [
-                                  const SizedBox(width: 8),
-                                  funcFlagsList(clubDetails.getCountry(clubName), 15, 25),
-                                  const SizedBox(width: 16),
-                                  Text(clubDetails.getFoundationYear(clubName).toString(),style: EstiloTextoBranco.text16),
-                                ],
-                              ),
+
                               Row(
                                 children: [
                                   Text('(${clubDetails.getStadiumCapacityPointFormat(clubName).toString()}) ',style: EstiloTextoBranco.text16),
@@ -166,12 +176,8 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                 ),
 
                 Padding(
-                    padding: const EdgeInsets.only(left:260,top: 5),
-                    child: UniformCustom(clubName,0.5).kit()
-                ),
-                Padding(
-                    padding: const EdgeInsets.only(left:220,top: 5),
-                    child: CrestWidgets(size: 25).getCrest(clubName),
+                    padding: const EdgeInsets.only(left:260,top: 10),
+                    child: UniformCustom(clubName,0.6).kit()
                 ),
 
 
@@ -215,7 +221,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
    {
      List<Marker> _markers =          [Marker(
        markerId: MarkerId(clubName),
-       position: LatLng(ClubDetails().getCoordinate(clubName).latitude, ClubDetails().getCoordinate(clubName).longitude),
+       position: LatLng(clubDetails.getCoordinate(clubName).latitude, clubDetails.getCoordinate(clubName).longitude),
        infoWindow: InfoWindow(title: clubName),
        //icon: clubsAllNameList.indexOf(clubName) < 40 ? _markersIcons[clubsAllNameList.indexOf(clubName)] : BitmapDescriptor.defaultMarker,
      )];
@@ -233,7 +239,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                //zoomGesturesEnabled: false, //SEM ZOOM
                //zoomControlsEnabled: false, //SEM ZOOM
                initialCameraPosition: CameraPosition(
-                 target: LatLng(ClubDetails().getCoordinate(clubName).latitude, ClubDetails().getCoordinate(clubName).longitude),
+                 target: LatLng(clubDetails.getCoordinate(clubName).latitude, clubDetails.getCoordinate(clubName).longitude),
                  zoom: 15.0,
                ),
                //onMapCreated: getClubsLocation,
@@ -252,7 +258,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                zoomGesturesEnabled: false, //SEM ZOOM
                zoomControlsEnabled: false, //SEM ZOOM
                initialCameraPosition: CameraPosition(
-                 target: LatLng(ClubDetails().getCoordinate(clubName).latitude, ClubDetails().getCoordinate(clubName).longitude),
+                 target: LatLng(clubDetails.getCoordinate(clubName).latitude, clubDetails.getCoordinate(clubName).longitude),
                  zoom: 3.0,
                ),
                //onMapCreated: getClubsLocation,

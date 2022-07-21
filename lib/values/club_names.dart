@@ -1235,7 +1235,7 @@ class ClubName{
   String lau = "LaU";
   String univcatolica = "Univ. Católica";
   String antofagasta = "Antofagasta";
-  String audax = "Audax Italiano";
+  String audaxItaliano = "Audax Italiano";
   String cobreloa = "Cobreloa";
   String cobresal = "Cobresal";
   String concepcion = "Deportes Concepción";

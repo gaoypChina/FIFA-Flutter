@@ -5,11 +5,13 @@ class ClubPattern{
   String solid = 'solid';
   String sp = 'SP';
   String divided = 'Divided';
+  String dividedHor = 'DividedHor';
   String stripes2 = 'Stripes2';
   String stripes3 = 'Stripes3';
   String horStripes = 'horStripes';
   String oneVertStripe = 'oneVertStripe';
   String diagonal = 'diagonal';
+  String diagonalInv = 'diagonalInverted';
   String oneHorStripe = 'oneHorStripe';
   String sleeves = 'sleeves';
 
@@ -29,6 +31,14 @@ class ClubPattern{
         stops: const [0, 0.5, 0.5, 1],
         begin: Alignment.topLeft,
         end: Alignment.topRight,
+      );
+    }
+    else if(clubPattern == dividedHor){
+      estampa =  LinearGradient(
+        colors: [clubColors.primaryColor,clubColors.primaryColor,clubColors.secondColor,clubColors.secondColor],
+        stops: const [0, 0.5, 0.5, 1],
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
       );
     }
     else if(clubPattern == stripes2){
@@ -103,6 +113,17 @@ class ClubPattern{
         stops: const [0, 0.4, 0.4,0.6, 0.6,1],
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
+      );
+    }
+    else if(clubPattern == diagonalInv){
+      estampa =  LinearGradient(
+        colors: [clubColors.primaryColor,clubColors.primaryColor,
+          clubColors.secondColor,clubColors.secondColor,
+          clubColors.primaryColor,clubColors.primaryColor,
+        ],
+        stops: const [0, 0.4, 0.4,0.6, 0.6,1],
+        begin: Alignment.topRight,
+        end: Alignment.bottomLeft,
       );
     }
     else if(clubPattern == sp){
