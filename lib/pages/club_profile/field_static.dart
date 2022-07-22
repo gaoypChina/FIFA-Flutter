@@ -120,24 +120,26 @@ class _StaticFieldState extends State<StaticField> {
 ////////////////////////////////////////////////////////////////////////////
 
   button({required String title, required Function()? function}) {
-    return InkWell(
-      onTap: function,
-      child: Container(
-        padding: const EdgeInsets.all(6),
-        decoration: const BoxDecoration(
-          color: Colors.black38,
-          borderRadius: BorderRadius.all(
-              Radius.circular(10.0) //                 <--- border radius here
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: function,
+        customBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        child: Container(
+          padding: const EdgeInsets.all(6),
+          decoration: const BoxDecoration(
+            color: Colors.black38,
+            borderRadius: BorderRadius.all(Radius.circular(10.0)),
           ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              title,
-              style: EstiloTextoBranco.text16,
-            ),
-          ],
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                title,
+                style: EstiloTextoBranco.text16,
+              ),
+            ],
+          ),
         ),
       ),
     );

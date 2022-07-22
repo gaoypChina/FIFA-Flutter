@@ -1,8 +1,12 @@
 import 'package:fifa/classes/classification.dart';
+import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/table/table_nacional.dart';
+import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
@@ -42,8 +46,17 @@ class _YearResumeState extends State<YearResume> {
             children: [
               backButtonText(context,'Resumo do ano'),
 
-              dropDownButton(),
-              internationalChampions(),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    dropDownButton(),
+                    internationalChampions(),
+                  ],
+                ),
+              ),
+
               Expanded(
                 child: GridView.builder(
                     gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
@@ -109,6 +122,7 @@ class _YearResumeState extends State<YearResume> {
 Widget resumeLeague(String leagueName){
 
     List classification = Classification(leagueIndex: leaguesIndexFromName[leagueName]).classificationClubsIndexes;
+
     return Container(
       margin: const EdgeInsets.all(2),
       decoration: BoxDecoration(
@@ -117,16 +131,57 @@ Widget resumeLeague(String leagueName){
           width: 1, //                   <--- border width here
         ),
       ),
-      child: Row(
-        children: [
-          const SizedBox(width: 10),
-          Image.asset(FIFAImages().campeonatoLogo(leagueName),height: 30,width: 30),
-          const SizedBox(width: 10),
-          Image.asset(Images().getEscudo(clubsAllNameList[classification[0]]),height: 45,width: 45),
-          Image.asset(Images().getEscudo(clubsAllNameList[classification[1]]),height: 30,width: 30),
-          Image.asset(Images().getEscudo(clubsAllNameList[classification[2]]),height: 20,width: 20),
-          Image.asset(Images().getEscudo(clubsAllNameList[classification[3]]),height: 20,width: 20),
-        ],
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: (){
+            customToast(Translation(context).text.loading);
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableNacional(choosenLeagueIndex: leaguesIndexFromName[leagueName])));
+          },
+          child: Stack(
+            children: [
+
+              SizedBox(
+                width: Sized(context).width*0.45,
+                child: Center(
+                  child: SizedBox(
+                    height: 70,width: 90,
+                    child: Opacity(
+                      opacity: 0.2,
+                      child: AspectRatio(
+                        aspectRatio: 350 / 451,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                fit: BoxFit.fitWidth,
+                                alignment: FractionalOffset.center,
+                                image: AssetImage(FIFAImages().campeonatoLogo(leagueName)),
+                              )
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+              Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    const SizedBox(width: 10),
+                    Images().getEscudoWidget(clubsAllNameList[classification[0]],45,45),
+                    Images().getEscudoWidget(clubsAllNameList[classification[1]],30,30),
+                    classification.length>=3 ? Images().getEscudoWidget(clubsAllNameList[classification[2]],20,20) : Container(),
+                    classification.length>=4 ? Images().getEscudoWidget(clubsAllNameList[classification[3]],20,20) : Container(),
+                    classification.length>=5 ? Images().getEscudoWidget(clubsAllNameList[classification[4]],20,20) : Container(),
+                    const SizedBox(width: 10),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
 }

@@ -8,7 +8,6 @@ import 'package:fifa/pages/historic/players_historic.dart';
 import 'package:fifa/pages/historic/ranking_best_clubs_history.dart';
 import 'package:fifa/pages/historic/mundial.dart';
 import 'package:fifa/pages/historic/year_resume.dart';
-import 'package:fifa/pages/map/map_exploration.dart';
 import 'package:fifa/pages/map/map_menu.dart';
 import 'package:fifa/pages/simulacao/after_play.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -127,12 +126,6 @@ class _HistoricMenuState extends State<HistoricMenu> {
                         ],
                       ),
                       box(
-                          'Mapa',
-                          Icon(Icons.map,color: Colors.white, size: imageSize),
-                              (){Navigator.push(context,MaterialPageRoute(builder: (context) => const MapPage()));
-                          }
-                      ),
-                      box(
                           'Mapa Menu',
                           Icon(Icons.map,color: Colors.white, size: imageSize),
                               (){Navigator.push(context,MaterialPageRoute(builder: (context) => const MapMenu()));
@@ -155,26 +148,31 @@ class _HistoricMenuState extends State<HistoricMenu> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
 Widget box(String text, Widget centralWidget, Function function){
-    return InkWell(
-      onTap: (){
-        function();
-      },
-      child: Container(
-        height: 100,
-        width: Sized(context).width*0.45,
-        margin: const EdgeInsets.all(4),
-        decoration: const BoxDecoration(
-          color: Colors.black38,
-          borderRadius: BorderRadius.all(
-              Radius.circular(5.0) //                 <--- border radius here
+    return Container(
+      margin: const EdgeInsets.all(4),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: (){
+            function();
+          },
+          child: Container(
+            height: 100,
+            width: Sized(context).width*0.45,
+            decoration: const BoxDecoration(
+              color: Colors.black38,
+              borderRadius: BorderRadius.all(
+                  Radius.circular(5.0) //                 <--- border radius here
+              ),
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                centralWidget,
+                Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+              ],
+            ),
           ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            centralWidget,
-            Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-          ],
         ),
       ),
     );

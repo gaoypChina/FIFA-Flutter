@@ -5,7 +5,6 @@ import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/widgets/back_button.dart';
-import 'package:fifa/widgets/crest.dart';
 import 'package:fifa/widgets/uniforme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -99,6 +98,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
         child: Stack(
               children: [
 
+                //LOGO DE FUNDO OPACA
                 SizedBox(
                   height: 100,width: 150,
                   child: Opacity(

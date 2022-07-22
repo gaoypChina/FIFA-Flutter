@@ -68,21 +68,6 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
             children: [
               backButtonText(context, leagueInternational),
 
-              const SizedBox(height: 10),
-
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Row(
-                  children: [
-                    internationalLogoSelection(),
-                    const SizedBox(width: 6),
-                    !isList ? dropDownButton() : Container(),
-                    const SizedBox(width: 6),
-                    !isList && int.parse(selectedYear)>=anoInicial ? phaseSelection() : Container(),
-                    inListForm(),
-                  ],
-                ),
-              ),
               !isList ?
               int.parse(selectedYear) >= anoInicial ?
               Expanded(
@@ -102,8 +87,25 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
               ) : internationalHistoricColumn(int.parse(selectedYear))
                 : listViewChampions(),
 
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Row(
+                  children: [
+                    internationalLogoSelection(),
+                    const SizedBox(width: 6),
+                    !isList ? dropDownButton() : Container(),
+                    const SizedBox(width: 6),
+                    !isList && int.parse(selectedYear)>=anoInicial ? phaseSelection() : Container(),
+                    inListForm(),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 10),
+
             ],
           ) : Container(),
+
         )
     );
   }

@@ -84,6 +84,7 @@ class _MapMenuState extends State<MapMenu> {
                 ),
 
                 const Spacer(),
+
                 myProfile(),
               ],
             ),
@@ -96,16 +97,19 @@ class _MapMenuState extends State<MapMenu> {
 ////////////////////////////////////////////////////////////////////////////
 
 Widget gameButton(String text, Function function){
-    return GestureDetector(
-      onTap: (){
-        function();
-      },
-    child: Container(
-      width: 200,
-      padding: const EdgeInsets.all(8),
-      decoration: decorations(),
-      child: Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.text20,),
-    ),
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: (){
+          function();
+        },
+      child: Container(
+        width: 200,
+        padding: const EdgeInsets.all(8),
+        decoration: decorations(),
+        child: Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.text20,),
+      ),
+      ),
     );
 }
 

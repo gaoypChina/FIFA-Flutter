@@ -90,7 +90,7 @@ class _MapGameplayState extends State<MapGameplay> {
         ),
       );
 
-      city = ClubDetails().getStadium(clubNameMarker);
+      city = clubDetails.getStadium(clubNameMarker);
 
 
     }else{
@@ -124,7 +124,7 @@ class _MapGameplayState extends State<MapGameplay> {
     }
   }
   bool checkClubOptionValid(String clubName){
-    String continent = ClubDetails().getContinent(clubName);
+    String continent = clubDetails.getContinent(clubName);
     if(widget.mapGameSettings.selectedContinents.contains(continent) &&
         widget.mapGameSettings.stadiumSizeMin < clubDetails.getStadiumCapacity(clubName)){
       return true;

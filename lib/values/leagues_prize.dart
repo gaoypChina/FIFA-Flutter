@@ -21,6 +21,7 @@ void premiacao(){
     else if(leagueName==LeagueOfficialNames().franca1){premio=1.8;}//frances
     else if(leagueName==LeagueOfficialNames().franca2){premio=0.5;}
     else if(leagueName==LeagueOfficialNames().ptHol){premio=1.6;}
+    else if(leagueName==LeagueOfficialNames().holanda){premio=1.6;}
     else if(leagueName==LeagueOfficialNames().turquiaGrecia){premio=1.5;}
     else if(leagueName==LeagueOfficialNames().ligaEuropa){premio=1.4;}//ocidente
     else if(leagueName==LeagueOfficialNames().lesteEuropeu){premio=1.4;}//leste
@@ -54,7 +55,6 @@ void premiacao(){
     else if(leagueName==LeagueOfficialNames().asiaCup){premio=0.6;}
     else if(leagueName==LeagueOfficialNames().africaCup){premio=0.6;}
     else if(leagueName==LeagueOfficialNames().othersCup){premio=0.6;}
-
 
     else{
       premio=1.0;

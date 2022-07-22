@@ -632,6 +632,8 @@ class ClubName{
   String admira = "Admira";
   String austriaKlagenfurt = "Austria Klagenfurt";
   String austria = "Austria Viena";
+  String firstViena = "First Viena";
+  String grazer = "Grazer AK";
   String hartberg = "Hartberg";
   String innsbruck = "Innsbruck";
   String laskLinz = "LASK Linz";
@@ -642,10 +644,14 @@ class ClubName{
   String tirol = "Swarovski Tirol";
   String wiener = "Wiener Sportclub";
   String wolfsberger = "Wolfsberger AC";
+  String wackerInnsbruck = "Wacker Innsbruck"; //1915-1999
+  String stahlLinz = "Stahl Linz"; //1946-1997
   //SUIÇA
+  String aarau = "Aarau";
   String basel = "Basel";
   String chauxdefonds = "Chaux-de-Fonds";
   String grasshoppers = "Grasshoppers";
+  String lausanne = "Lausanne";
   String lugano = "Lugano";
   String luzern = "Luzern";
   String neuchatel = "Neuchâtel Xamax";
@@ -653,6 +659,7 @@ class ClubName{
   String sion = "Sion";
   String stgallen = "St. Gallen";
   String thun = "FC Thun";
+  String wil = "Wil";
   String winterthur = "Winterthur";
   String youngBoys = "Young Boys";
   String zurich = "Zurich";
@@ -1380,34 +1387,53 @@ class ClubName{
   //////////////////////////////////////////////////////////////////////////////
   //MEXICO
   String americamex= "América-MEX";
-  String chivasguadalajara= "Chivas Guadalajara";
-  String cruzazul = "Cruz Azul";
-  String monterrey = "Monterrey";
-  String pachuca = "Pachuca";
-  String pumas = "Pumas";
-  String tigres = "Tigres";
-  String toluca = "Toluca";
-
   String atlas = "Atlas";
   String atlante = "Atlante";
+  String atlPotosino = "Atlético Potosino";
   String celaya = "Atlético Celaya";
   String leon = "Club León";
-  String jaguares = "Jaguares";
+  String chivas= "Chivas Guadalajara";
+  String correcaminos = "Correcaminos";
+  String cobras = "Cobras";
+  String cruzazul = "Cruz Azul";
+  String dorados = "Dorados Sinaloa";
+  String irapuato = "Irapuato";
+  String jaguares = "Jaguares Chiapas";
   String juarez = "Juárez";
   String leonesNegros = "Leones Negros";
+  String lapiedad = "La Piedad";
+  String lobos = "Lobos BUAP";
   String mazatlan = "Mazatlán";
+  String monterrey = "Monterrey";
   String morelia = "Morelia";
   String necaxa = "Necaxa";
   String queretaro = "Querétaro";
+  String pachuca = "Pachuca";
   String puebla = "Puebla";
+  String pumas = "Pumas";
   String sanluis = "San Luis";
   String santosLaguna = "Santos Laguna";
   String tampico = "Tampico Madero";
   String tecos = "Tecos";
+  String torosNeza = "Toros Neza";
+  String tigres = "Tigres";
   String tijuana = "Tijuana";
-  String atleticoespanol = "Atlético Español";
+  String toluca = "Toluca";
+  String veracruz = "Veracruz";
+  String zacatepec = "Zacatepec";
+
+  String atlEspanol = "Atlético Español";
   String cdfas = "CD FAS";
+  String depNeza = "Deportivo Neza";
+  String indios = "Indios";
+  String jalisco = "Club Jalisco";
   String jongcolombia = "Jong Colombia";
+  String madero = "Ciudad Madero";
+  String nuevoLeon = "Jabatos de Nuevo León";
+  String oro = "Club Deportivo Oro";
+  String torreon = "Torreón";
+  String curtidores = "Unión de Curtidores";
+  String sanLuisPotosi = "San Luis Potosi";
 
   //MLS
   String atlanta = "Atlanta United";
@@ -1415,6 +1441,7 @@ class ClubName{
   String charleston = "Charleston Battery";
   String charlotte = "Charlotte FC";
   String chicago = "Chicago Fire";
+  String chivasUSA = "Chivas USA";
   String cincinnati = "Cincinnati FC";
   String colorado = "Colorado Rapids";
   String switchbacks = "Colorado Springs Switchbacks";
@@ -1432,12 +1459,14 @@ class ClubName{
   String louisville = "Louisville City";
   String newmexico = "New Mexico United";
   String miamifc = "Miami FC";
+  String miamiFusion = "Miami Fusion"; //EXTINTO
   String memphis = "Memphis 901";
   String minnesota = "Minnesota United";
   String montreal = "Montreal Impact";
   String nashville = "Nashville SC";
   String nerevolution = "NE Revolution";
   String nycity = "NY City";
+  String nycosmos = "NY Cosmos";
   String nyredbulls = "NY Red Bulls";
   String oakland = "Oakland Roots";
   String orlando = "Orlando City";
@@ -1452,9 +1481,10 @@ class ClubName{
   String sandiego = "San Diego Loyals";
   String sanJoseEarthquakes = "San Jose Earthquakes";
   String seattle = "Seattle Sounders";
-  String sportingKansasCity = "Sporting Kansas City";
+  String kansas = "Sporting Kansas City";
   String tampabay = "Tampa Bay Rowdies";
-  String torontofc = "Toronto FC";
+  String tampaBayMutiny = "Tampa Bay Mutiny"; //EXTINTO
+  String toronto = "Toronto FC";
   String tulsa = "FC Tulsa";
   String vancouver = "Vancouver Whitecaps";
 
@@ -1702,7 +1732,7 @@ class ClubName{
   //IRÃ
   String naftTehran = "Naft Tehran";
   String esteghlal = "Esteghlal";
-  String pastehran = "Pas Tehran";
+  String pastehran = "Pas Tehran"; //EXTINTO
   String persepolis = "Persepolis";
   String saipa = "Saipa";
   String sepahan = "Sepahan";
@@ -1710,7 +1740,7 @@ class ClubName{
   //IRAQUE
   String alzawraa = "Al-Zawraa";
   String alQuwaAlJawiya = "Al-Quwa Al-Jawiya";
-  String alRasheed = "Al-Rasheed";
+  String alRasheed = "Al-Rasheed"; //EXTINTO
   String alTalaba = "Al-Talaba";
   String alShorta = "Al-Shorta";
   //KUWAIT
@@ -1801,6 +1831,7 @@ class ClubName{
   //AFRICA NEGRA
   String amazulu = "AmaZulu FC";
   String capetown = "Cape Town City";
+  String capetownAjax = "Cape Town Spurs";
   String goldenarrows = "Golden Arrows";
   String kaizer = "Kaizer Chiefs";
   String mamelodi = "Mamelodi Sundowns";
@@ -1863,6 +1894,7 @@ class ClubName{
   String ulinzi = "Ulinzi Stars";//KHENYA
   String adema = "AS Adema";//MADAGASCAR
   String cnapsSport = "CNaPS Sport";//MADAGASCAR
+  String bakiliBullets = "Bakili Bullets";//MALAWI
   String djoliba = "Djoliba";//MALI
   String realBamako = "Real Bamako";//MALI
   String stadeMalien = "Stade Malien";//MALI
@@ -1907,6 +1939,7 @@ class ClubName{
   String chickenInn = "Chicken Inn"; //ZIMBABWE
   String dynamos = "Dynamos FC"; //ZIMBABWE
   String manicaDiamonds = "Manica Diamonds"; //ZIMBABWE
+  String monomotapa = "Monomotapa United"; //ZIMBABWE
   String platinum = "FC Platinum"; //ZIMBABWE
 
 }

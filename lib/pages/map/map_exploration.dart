@@ -61,11 +61,11 @@ class _MapPageState extends State<MapPage> {
   getClubsLocation(GoogleMapController googleMapController) {
     controller = googleMapController;
     _markers = [];
-    ClubDetails().map.forEach((key, value) {
+    clubDetails.map.forEach((key, value) {
       String clubName = key;
 
-      if(ClubDetails().getCoordinate(clubName).latitude != 0){
-        coordinates.add(ClubDetails().getCoordinate(clubName));
+      if(clubDetails.getCoordinate(clubName).latitude != 0){
+        coordinates.add(clubDetails.getCoordinate(clubName));
 
         //ADD MARKER
         _markers.add(
@@ -76,8 +76,8 @@ class _MapPageState extends State<MapPage> {
 
               String city = '';
               List<Placemark> placemarks = await placemarkFromCoordinates(
-                ClubDetails().getCoordinate(clubName).latitude,
-                ClubDetails().getCoordinate(clubName).longitude,
+                clubDetails.getCoordinate(clubName).latitude,
+                clubDetails.getCoordinate(clubName).longitude,
               );
               //print(placemarks[0]);
               if(placemarks[0].locality!.isNotEmpty){
@@ -184,7 +184,7 @@ class _MapPageState extends State<MapPage> {
                 compassEnabled: false,
 
                 initialCameraPosition: CameraPosition(
-                  target: LatLng(ClubDetails().getCoordinate(My().clubName).latitude, ClubDetails().getCoordinate(My().clubName).longitude),
+                  target: LatLng(clubDetails.getCoordinate(My().clubName).latitude, clubDetails.getCoordinate(My().clubName).longitude),
                   zoom: 6.0,
                 ),
                 onMapCreated: getClubsLocation,
@@ -306,23 +306,23 @@ class _MapPageState extends State<MapPage> {
 
         //Zoom
         var newPosition = CameraPosition(
-            target: LatLng(ClubDetails().getCoordinate(club.name).latitude, ClubDetails().getCoordinate(club.name).longitude),
+            target: LatLng(clubDetails.getCoordinate(club.name).latitude, clubDetails.getCoordinate(club.name).longitude),
             zoom: 16);
         CameraUpdate cameraUpdate = CameraUpdate.newCameraPosition(newPosition);
         controller.moveCamera(cameraUpdate);
       },
       child: Container(
         padding: const EdgeInsets.all(8),
-        color: ClubDetails().getColors(club.name).primaryColor.withOpacity(0.5),
+        color: clubDetails.getColors(club.name).primaryColor.withOpacity(0.5),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Row(
               children: [
-                Text(ClubDetails().getStadium(club.name)+': ',style: EstiloTextoPreto.text16),
-                Text(ClubDetails().getStadiumCapacity(club.name).toString()),
+                Text(clubDetails.getStadium(club.name)+': ',style: EstiloTextoPreto.text16),
+                Text(clubDetails.getStadiumCapacity(club.name).toString()),
                 const Spacer(),
-                funcFlagsList(ClubDetails().getCountry(club.name), 15, 25),
+                funcFlagsList(clubDetails.getCountry(club.name), 15, 25),
               ],
             ),
             Row(
@@ -336,7 +336,7 @@ class _MapPageState extends State<MapPage> {
               children: [
                 Text(club.leagueName),
                 Text(city),
-                Text(ClubDetails().getFoundationYear(club.name).toString()),
+                Text(clubDetails.getFoundationYear(club.name).toString()),
               ],
             ),
           ],
@@ -350,23 +350,23 @@ class _MapPageState extends State<MapPage> {
       onTap: () {
         //Zoom
         var newPosition = CameraPosition(
-            target: LatLng(ClubDetails().getCoordinate(clubName).latitude, ClubDetails().getCoordinate(clubName).longitude),
+            target: LatLng(clubDetails.getCoordinate(clubName).latitude, clubDetails.getCoordinate(clubName).longitude),
             zoom: 16);
         CameraUpdate cameraUpdate = CameraUpdate.newCameraPosition(newPosition);
         controller.moveCamera(cameraUpdate);
       },
       child: Container(
         padding: const EdgeInsets.all(8),
-        color: ClubDetails().getColors(clubName).primaryColor.withOpacity(0.5),
+        color: clubDetails.getColors(clubName).primaryColor.withOpacity(0.5),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Row(
               children: [
-                Text(ClubDetails().getStadium(clubName)+': ',style: EstiloTextoPreto.text16),
-                Text(ClubDetails().getStadiumCapacity(clubName).toString()),
+                Text(clubDetails.getStadium(clubName)+': ',style: EstiloTextoPreto.text16),
+                Text(clubDetails.getStadiumCapacity(clubName).toString()),
                 const Spacer(),
-                funcFlagsList(ClubDetails().getCountry(clubName), 15, 25),
+                funcFlagsList(clubDetails.getCountry(clubName), 15, 25),
               ],
             ),
             Row(
@@ -374,7 +374,7 @@ class _MapPageState extends State<MapPage> {
                 Image.asset(Images().getEscudo(clubName),height:50, width: 50),
                 Text(clubName,style: EstiloTextoPreto.text20,),
                 const Spacer(),
-                Text(ClubDetails().getFoundationYear(clubName).toString()),
+                Text(clubDetails.getFoundationYear(clubName).toString()),
               ],
             ),
 
@@ -455,11 +455,11 @@ class _MapPageState extends State<MapPage> {
             width: 120,
             child: DropdownButton<String>(
               isExpanded: true,
-              value: ClubDetails().getCountry(My().clubName),
+              value: clubDetails.getCountry(My().clubName),
               items: finalResultCountries,
               onChanged: (Object? nationality) {
                 _markersShow = List.from(_markers);
-                _markersShow.removeWhere((element) => ClubDetails().getCountry(element.markerId.value) != nationality.toString());
+                _markersShow.removeWhere((element) => clubDetails.getCountry(element.markerId.value) != nationality.toString());
                 setState((){});
                 Navigator.pop(c);
               },

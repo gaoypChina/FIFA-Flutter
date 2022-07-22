@@ -137,7 +137,7 @@ List clubsAllNameList = [
   ClubName().caracas,ClubName().deportivoTachira,ClubName().laGuaira,
 
   //MÉXICO
-  ClubName().americamex,  ClubName().chivasguadalajara, ClubName().cruzazul,  ClubName().monterrey,
+  ClubName().americamex,  ClubName().chivas, ClubName().cruzazul,  ClubName().monterrey,
   ClubName().pachuca,  ClubName().pumas, ClubName().tigres,  ClubName().toluca,
   ClubName().tijuana,  ClubName().santosLaguna, ClubName().puebla,  ClubName().necaxa,
   ClubName().atlas,  ClubName().queretaro, ClubName().leon,  ClubName().juarez,
@@ -145,7 +145,7 @@ List clubsAllNameList = [
   ClubName().atlanta,  ClubName().columbuscrew, ClubName().dcunited,  ClubName().fcdallas,
   ClubName().intermiami,  ClubName().losangelesfc, ClubName().lagalaxy,  ClubName().minnesota,
   ClubName().nerevolution,  ClubName().nycity, ClubName().nyredbulls,  ClubName().orlando,
-  ClubName().portland,  ClubName().seattle, ClubName().torontofc,  ClubName().vancouver,
+  ClubName().portland,  ClubName().seattle, ClubName().toronto,  ClubName().vancouver,
 
   ///////////////////////////////////////////
   ClubName().ghuangzhou,  ClubName().pohang, ClubName().shandong,  ClubName().shanghaisipg,

@@ -63,43 +63,46 @@ class _CalendarState extends State<Calendar> {
     ResultGameNacional show = ResultGameNacional(rodadaLocal: rodadaLocal, clubID: myTeamClass.clubID);
 
     if(rodadaLocal <= nClubsLeague){
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => ClubProfile(clubID: show.clubID2)));
-      },
-      child: Container(
-        width: 120,
-        height: 117,
-        color: show.backgroundColor,
-        child: Column(children: [
-          Text('${Translation(context).text.matchWeek} ' + (rodadaLocal).toString(),style: EstiloTextoBranco.text16),
-          SizedBox(
-            height: 45,
-            width: 80,
-            child: Stack(
-              children: [
-                show.visitante
-                    ? Image.asset(Images().getStadium(show.clubName2),height: 90, width: 90)
-                    : Container(),
-                //Image.asset(Images().getMyLeagueLogo(),height: 22, width: 22),
-                Center(child: Image.asset(Images().getEscudo(show.clubName2),height: 45, width: 45)),
-              ],
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => ClubProfile(clubID: show.clubID2)));
+        },
+        child: Container(
+          width: 120,
+          height: 117,
+          color: show.backgroundColor,
+          child: Column(children: [
+            Text('${Translation(context).text.matchWeek} ' + (rodadaLocal).toString(),style: EstiloTextoBranco.text16),
+            SizedBox(
+              height: 45,
+              width: 80,
+              child: Stack(
+                children: [
+                  show.visitante
+                      ? Image.asset(Images().getStadium(show.clubName2),height: 90, width: 90)
+                      : Container(),
+                  //Image.asset(Images().getMyLeagueLogo(),height: 22, width: 22),
+                  Center(child: Image.asset(Images().getEscudo(show.clubName2),height: 45, width: 45)),
+                ],
+              ),
             ),
-          ),
-          show.visitante
-              ? Text('${Translation(context).text.away.toUpperCase()} ${show.placar}',
-                  style: EstiloTextoBranco.text10, textAlign: TextAlign.center)
-              : Text('${Translation(context).text.home.toUpperCase()} ${show.placar}',
-                  style: EstiloTextoBranco.text10, textAlign: TextAlign.center),
-          Text(show.clubName2,
-              overflow: TextOverflow.fade,
-              style: EstiloTextoBranco.text14,
-              textAlign: TextAlign.center),
-          const Spacer(),
-        ]),
+            show.visitante
+                ? Text('${Translation(context).text.away.toUpperCase()} ${show.placar}',
+                    style: EstiloTextoBranco.text10, textAlign: TextAlign.center)
+                : Text('${Translation(context).text.home.toUpperCase()} ${show.placar}',
+                    style: EstiloTextoBranco.text10, textAlign: TextAlign.center),
+            Text(show.clubName2,
+                overflow: TextOverflow.fade,
+                style: EstiloTextoBranco.text14,
+                textAlign: TextAlign.center),
+            const Spacer(),
+          ]),
+        ),
       ),
     );
     }else{

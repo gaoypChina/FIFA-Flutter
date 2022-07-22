@@ -4,8 +4,10 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/back_button.dart';
@@ -24,7 +26,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
 
   int choosenLeagueIndex = My().campeonatoID;
   late League league;
-  int nTeamsSelected = 4;
+  int nTeamsSelected = 2;
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
@@ -56,7 +58,19 @@ class _HistoricLeagueState extends State<HistoricLeague> {
 
               //TABELA
               Expanded(
-                child: SingleChildScrollView(
+                child: nTeamsSelected>2 ? SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+
+                      for(int year=ano-1;year>=anoInicial;year--)
+                        yearRow(year),
+
+                      for(int year=ano-1;year>ano-60;year--)
+                        yearRowPast(year),
+                    ],
+                  ),
+                ) : SingleChildScrollView(
                   child: Column(
                     children: [
 
@@ -117,6 +131,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
       nRows = league.nClubs;
     }
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(year.toString(),style: EstiloTextoBranco.text16),
 
@@ -149,6 +164,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   //HISTORICOS PASSADOS
   Widget yearRowPast(int ano){
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         for(int position=0;position<nTeamsSelected;position++)
           validacao(position, ano),
@@ -164,7 +180,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
         return Column(
           children: [
 
-            Text(ano.toString(),style: EstiloTextoBranco.text16),
+            Text(ano.toString(),style: EstiloTextoBranco.negrito16),
             classificationPastRow(position,clubName),
           ],
         );
@@ -176,17 +192,27 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   }
   Widget classificationPastRow(int position, String clubName){
 
-   return Row(
-     children: [
-       position+1<10
-           ? Text('  ${(position+1).toString()}- ',style: EstiloTextoBranco.text14)
-           : Text('${(position+1).toString()}- ',style: EstiloTextoBranco.text14),
-       Image.asset('assets/clubs/${FIFAImages().imageLogo(clubName)}.png',height: 20,width: 20),
-       Padding(
-         padding: const EdgeInsets.symmetric(horizontal: 4.0),
-         child: Text(clubName,style: EstiloTextoBranco.text14),
-       ),
-     ],
+   return GestureDetector(
+     onTap: (){
+       if(clubsAllNameList.contains(clubName)){
+         int clubID = clubsAllNameList.indexOf(clubName);
+         Navigator.push(context, MaterialPageRoute(builder: (context) => ClubProfile(clubID: clubID)));
+       }
+     },
+     child: Row(
+       children: [
+         position+1<10
+             ? Text('  ${(position+1).toString()}º ',style: EstiloTextoBranco.text14)
+             : Text('${(position+1).toString()}º ',style: EstiloTextoBranco.text14),
+         Column(
+           crossAxisAlignment: CrossAxisAlignment.start,
+           children: [
+             Images().getEscudoWidget(clubName,24,24),
+             Container(width:100,child: Text(clubName,maxLines:1,overflow:TextOverflow.ellipsis,style: EstiloTextoBranco.text10)),
+           ],
+         ),
+       ],
+     ),
    );
   }
   Widget leagueSelectionRow(int i){

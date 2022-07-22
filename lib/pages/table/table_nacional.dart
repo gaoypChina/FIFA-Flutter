@@ -17,14 +17,15 @@ import 'package:flutter/material.dart';
 
 class TableNacional extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
-  const TableNacional({Key? key}) : super(key: key);
+  late int choosenLeagueIndex;
+  TableNacional({Key? key, required this.choosenLeagueIndex}) : super(key: key);
   @override
   _TableNacionalState createState() => _TableNacionalState();
 }
 
 class _TableNacionalState extends State<TableNacional> {
 
-  int choosenLeagueIndex = My().campeonatoID;
+  late int choosenLeagueIndex;
   int rodadaMatch = League(index: My().campeonatoID).nClubs-1;
 
   int choosenIcon = 1;
@@ -37,6 +38,8 @@ class _TableNacionalState extends State<TableNacional> {
     super.initState();
   }
   doThisOnLaunch() {
+    //INDEX INICIAL
+    choosenLeagueIndex = widget.choosenLeagueIndex;
     //rodada inicial mostrada
     if(rodada < League(index: My().campeonatoID).nClubs-1){
       rodadaMatch = rodada;

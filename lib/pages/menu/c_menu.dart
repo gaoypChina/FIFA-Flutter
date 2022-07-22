@@ -125,7 +125,7 @@ class _MenuState extends State<Menu> {
                             }
                           }),
                           menuButton(Translation(context).text.table,(){
-                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => const TableNacional()));
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableNacional(choosenLeagueIndex: myClass.campeonatoID)));
                           }),
 
                           Row(
@@ -291,20 +291,23 @@ class _MenuState extends State<Menu> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
 Widget menuButton(String text, Function() function){
-  return  InkWell(
-    onTap: function,
-    child: Container(
-      margin: const EdgeInsets.all(4),
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: AppColors().greyTransparent,
-        border: Border.all(
-        width: 2.0,
-        color: Colors.green,
-      ),
-      borderRadius: const BorderRadius.all(Radius.circular(15.0)),
-      ),
-      child: Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.text22),
+  return  Container(
+    margin: const EdgeInsets.all(4),
+    decoration: BoxDecoration(
+      color: AppColors().greyTransparent,
+      border: Border.all(
+      width: 2.0,
+      color: Colors.green,
+    ),
+    borderRadius: const BorderRadius.all(Radius.circular(15.0)),
+    ),
+    child: Material(
+      color: Colors.transparent,
+      child: InkWell(
+          onTap: function,
+          child: Padding(
+              padding: const EdgeInsets.all(12),
+              child: Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.text22))),
     ),
   );
 }

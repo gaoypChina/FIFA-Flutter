@@ -186,7 +186,7 @@ class _SubstitutionState extends State<Substitution> {
 
     Match matchClass = Match(playerID: playerIndex);
 
-    String name = player.name;
+    String name = player.nameResume;
     String position = player.position;
     double imageSize = 50;
     bool yellowCard = matchClass.yellowCard>0;

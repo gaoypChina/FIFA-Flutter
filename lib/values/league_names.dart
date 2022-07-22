@@ -17,6 +17,11 @@ class LeagueOfficialNames{
   String escocia = 'Liga Escocesa';
   String belgica = 'Liga Belga';
   String suecia = 'Liga Sueca';
+  String dinamarca = 'Liga Dinamarca';
+  String austria = 'Liga Austrica';
+  String suica = 'Liga Suiça';
+  String servia = 'Liga Servia';
+  String grecia = 'Liga Grega';
   String cazaquistao = 'Liga Cazaquistão';
   String ligaEuropa = 'Liga Europeia';  String lesteEuropeu = 'Leste Europeu';
 
@@ -62,7 +67,7 @@ List internationalLeagueNames = [LeagueOfficialNames().championsLeague,LeagueOff
 //ID<50 -> Champions League
 //ID<70 -> Libertadores
 List leaguesListRealIndex = [
-  1,2,3,5,6, 7,8,  9,10,11,12,15,16, 20,21,    50,51,52,60,61,62,   70,71,  80, 85, 90
+  1,2,3,5,6, 7,8,  9,10,11,12,15,25,16, 20,21,    50,51,52,60,61,62,   70,71,  80, 85, 90
 ];
 
 List getAvailableLeaguesNames(){
@@ -83,7 +88,8 @@ List leagueNames = [
   LeagueOfficialNames().espanha1,LeagueOfficialNames().espanha2,
   LeagueOfficialNames().franca1,LeagueOfficialNames().franca2,
   LeagueOfficialNames().alemanha1,LeagueOfficialNames().alemanha2,
-  LeagueOfficialNames().ptHol,LeagueOfficialNames().turquiaGrecia,
+  LeagueOfficialNames().ptHol,LeagueOfficialNames().holanda,
+  LeagueOfficialNames().turquiaGrecia,
   LeagueOfficialNames().ligaEuropa,LeagueOfficialNames().lesteEuropeu,
 
   LeagueOfficialNames().brasil1,LeagueOfficialNames().brasil2,LeagueOfficialNames().brasil3,

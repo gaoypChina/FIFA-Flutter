@@ -41,6 +41,7 @@ class _HomePageState extends State<HomePage> {
   late int indexLeague;
   int indexJog = 0;
 
+
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
@@ -118,7 +119,8 @@ class _HomePageState extends State<HomePage> {
                           }),
                         ),
 
-                        rightButton(onTap: (){
+                        rightButton(
+                            onTap: (){
                           if(posicaoPais< leaguesListRealIndex.length-1) {
                             posicaoPais ++;
                             posicao = 0;
@@ -199,21 +201,43 @@ class _HomePageState extends State<HomePage> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
   Widget rightButton({required Function onTap}){
-    return GestureDetector(
-      onTap: (){
-        onTap();
-        setState(() {});
-      },
-      child: Image.asset('assets/icons/button_right.png',height: buttonSize,width: buttonSize),
+    return Stack(
+      children: [
+        Image.asset('assets/icons/button_right.png',height: buttonSize,width: buttonSize),
+        SizedBox(
+          height: buttonSize,width: buttonSize,
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              customBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(buttonSize)),
+              onTap: (){
+                onTap();
+                setState(() {});
+              },
+            ),
+          ),
+        ),
+      ],
     );
   }
   Widget leftButton({required Function onTap}){
-    return GestureDetector(
-      onTap: (){
-        onTap();
-        setState(() {});
-      },
-      child: Image.asset('assets/icons/button_left.png',height: buttonSize,width: buttonSize),
+    return Stack(
+      children: [
+        Image.asset('assets/icons/button_left.png',height: buttonSize,width: buttonSize),
+        SizedBox(
+        height: buttonSize,width: buttonSize,
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+                customBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(buttonSize)),
+              onTap: (){
+                onTap();
+                setState(() {});
+              },
+            ),
+          ),
+        ),
+      ],
     );
   }
   Widget leagueLogoAndName(){

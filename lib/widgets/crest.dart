@@ -1,4 +1,3 @@
-import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/widgets/patterns.dart';
 import 'package:flutter/material.dart';
@@ -17,15 +16,40 @@ class CrestWidgets{
   }
   
   Widget getCrest(String clubName){
-    String patternStr = clubDetails.getPattern(clubName);
-    ClubColors clubColors = clubDetails.getColors(clubName);
-    LinearGradient pattern = clubPattern.getGradient(patternStr, clubColors);
+    try {
+      String patternStr = clubDetails.getPattern(clubName);
+      ClubColors clubColors = clubDetails.getColors(clubName);
+      LinearGradient pattern = clubPattern.getGradient(patternStr, clubColors);
 
-    return crest(clubName, pattern);
+      return crestCircular(clubName, pattern);
+    }catch(e){
+      LinearGradient pattern = clubPattern.getGradient(ClubPattern().solid, ClubColors(Colors.grey,Colors.white));
+      return crestCircular(clubName,pattern);
+    }
   }
 
 
-  Widget crest(String clubName, LinearGradient pattern){
+  Widget crestRetangular(String clubName, LinearGradient pattern){
+    return Container(
+        height: _height,width: _width,
+        decoration: BoxDecoration(
+          gradient: pattern,
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(_height),
+            bottomRight: Radius.circular(_height),
+          ),
+        ),
+      child: Center(
+          child: Text(clubName[0],
+              style: TextStyle(
+                fontFamily: 'Roboto',
+                color: Colors.white,
+                fontSize: _height*0.6,
+              ))),
+      );
+  }
+
+  Widget crestCircular(String clubName, LinearGradient pattern){
     return outborder(
       Container(
           height: _height, width: _width,
@@ -33,7 +57,13 @@ class CrestWidgets{
             shape: BoxShape.circle,
             gradient: pattern,
           ),
-          child: Center(child: Text(clubName[0],style: EstiloTextoBranco.text20)),
+          child: Center(
+              child: Text(clubName[0],
+              style: TextStyle(
+                fontFamily: 'Roboto',
+                color: Colors.white,
+                fontSize: _height*0.6,
+              ))),
         ),
     );
   }

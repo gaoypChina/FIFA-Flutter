@@ -712,22 +712,28 @@ class _TransfersState extends State<Transfers> {
   }
 
   localButton({required String title, required Function()? function}) {
-    return InkWell(
-      onTap: function,
-      child: Container(
-        margin: const EdgeInsets.only(top: 5, bottom: 5),
-        padding: const EdgeInsets.all(10),
-        decoration: const BoxDecoration(
-          color: Colors.black38,
-          borderRadius: BorderRadius.all(Radius.circular(5.0)),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              title,style: EstiloTextoBranco.text22,
+    return Container(
+      margin: const EdgeInsets.only(top: 5, bottom: 5),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: function,
+          customBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+          child: Container(
+            padding: const EdgeInsets.all(10),
+            decoration: const BoxDecoration(
+              color: Colors.black38,
+              borderRadius: BorderRadius.all(Radius.circular(5.0)),
             ),
-          ],
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  title,style: EstiloTextoBranco.text22,
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );

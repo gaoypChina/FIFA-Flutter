@@ -171,18 +171,22 @@ Widget changeClub(BuildContext context){
     children: [
       Container(
         color: AppColors().greyTransparent,
-        padding: const EdgeInsets.all(8),
         margin: const EdgeInsets.all(8),
-        child: GestureDetector(
-          onTap:(){
-            customToast(Translation(context).text.loading);
-            if(!alreadyChangedClubThisSeason){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ChangeClub()));
-            }else{
-              customToast(Translation(context).text.alreadyChangedYourClub);
-            }
-          },
-          child: Text(Translation(context).text.changeClub,style: EstiloTextoBranco.text16),
+        child: Material(
+          color: AppColors().greyTransparent,
+          child: InkWell(
+            onTap:(){
+              customToast(Translation(context).text.loading);
+              if(!alreadyChangedClubThisSeason){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ChangeClub()));
+              }else{
+                customToast(Translation(context).text.alreadyChangedYourClub);
+              }
+            },
+            child: Container(
+                padding: const EdgeInsets.all(8),
+                child: Text(Translation(context).text.changeClub,style: EstiloTextoBranco.text16)),
+          ),
         ),
       ),
     ],

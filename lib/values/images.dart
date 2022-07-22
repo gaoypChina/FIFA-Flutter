@@ -1003,7 +1003,7 @@ class FIFAImages{
     map[_name.atlante] =      'atlante'; 
     map[_name.atlas] = 'atlas'; 
     map[_name.americamex] =      'americamx'; 
-    map[_name.chivasguadalajara] ='chivas';  
+    map[_name.chivas] ='chivas';  
     map[_name.cruzazul] =      'cruzazul'; 
     map[_name.jaguares] = 'jaguares'; 
     map[_name.juarez] = 'juarez'; 
@@ -1046,10 +1046,10 @@ class FIFAImages{
     map[_name.seattle] = 'seattle'; 
     map[_name.intermiami] = 'miami';  
     map[_name.philadelphia] =     'philadelphia';  
-    map[_name.torontofc] =     'toronto';  
+    map[_name.toronto] =     'toronto';  
     map[_name.realSaltLake] ='real salt lake';  
     map[_name.sanJoseEarthquakes] ='san jose earthquakes';  
-    map[_name.sportingKansasCity] ='sporting kansas';  
+    map[_name.kansas] ='sporting kansas';  
     map[_name.vancouver] ='vancouver';  
 
     //CANADA
@@ -1226,11 +1226,14 @@ class FIFAImages{
     map[_name.persebaya] ='persebaya';
     //IRA
     map[_name.persepolis] =     'persepolis';  
-    map[_name.esteghlal] =     'esteghlal';  
-    map[_name.sepahan] =     'sepahan';  
+    map[_name.esteghlal] =     'esteghlal';
+    map[_name.saipa] =     'saipa';
+    map[_name.sepahan] =     'sepahan';
+    map[_name.zobahan] =     'zob ahan';
     //IRAQUE
-    map[_name.alzawraa] =     'al zawraa';  
-    map[_name.alQuwaAlJawiya] =     'al quwa';  
+    map[_name.alRasheed] =     'al rasheed';
+    map[_name.alQuwaAlJawiya] =     'al quwa';
+    map[_name.alzawraa] =     'al zawraa';
     //OUTROS
     map[_name.pakhtakor] ='pakhtakor';//UZBEQUISTAO
     map[_name.phnomPenhCrown] ='phnom penh';//CAMBOJA
@@ -1252,6 +1255,7 @@ class FIFAImages{
     map[_name.ulaanbaatar] ='ulaanbaatar city';
     //SIRIA
     map[_name.alJaish] ='al jaish';
+    map[_name.alShorta] ='al shorta';
     map[_name.tishreen] ='tishreen';
 
 
@@ -1284,6 +1288,8 @@ class FIFAImages{
     map[_name.belouizdad] ='belouizdad';
     map[_name.essetif] ='es setif';
     map[_name.kabylie] ='kabylie';
+    map[_name.mcalger] ='mc alger';
+    map[_name.mcOran] ='mc oran';
     map[_name.usmAlger] ='usm alger';
     //LYBIA
     map[_name.alIttihadLIB] ='al ittihad libya';
@@ -1330,6 +1336,7 @@ class FIFAImages{
     map[_name.otoho] ='otoho';
     map[_name.talangai] ='talangai';
     //RD CONGO
+    map[_name.dragons] ='dragons';
     map[_name.maniema] ='maniema';
     map[_name.mazembe] ='mazembe';
     map[_name.vita] ='vita';
@@ -1358,11 +1365,13 @@ class FIFAImages{
     map[_name.cnapsSport] ='cnaps sport';
     //MOZAMBIQUE
     map[_name.costaDoSol] ='costa do sol';
+    map[_name.libolo] ='ferroviario libolo';
     //NAMIBIA
     map[_name.blackAfrica] ='black africa';
     map[_name.africanStars] ='african stars';
     //NIGERIA
     map[_name.enyimba] ='enyimba';
+    map[_name.heartland] ='heartland';
     map[_name.kano] ='kano';
     map[_name.rangersInt] ='rangers international';
     map[_name.riversUtd] ='rivers united';
@@ -1403,8 +1412,9 @@ String campeonatoLogo(String leagueName) {
     if(leagueName==LeagueOfficialNames().franca2) {       imageLogo = 'ligue2'; }     
     if(leagueName==LeagueOfficialNames().alemanha1) {     imageLogo = 'bundesliga';}       
     if(leagueName==LeagueOfficialNames().alemanha2) {     imageLogo = 'bundesliga2';}       
-    if(leagueName==LeagueOfficialNames().ptHol) {      imageLogo = 'portugal';}       
-    if(leagueName==LeagueOfficialNames().turquiaGrecia) {      imageLogo = 'turquia';}       
+    if(leagueName==LeagueOfficialNames().ptHol) {      imageLogo = 'portugal';}
+    if(leagueName==LeagueOfficialNames().holanda) {      imageLogo = 'holanda';}
+    if(leagueName==LeagueOfficialNames().turquiaGrecia) {      imageLogo = 'turquia';}
     if(leagueName==LeagueOfficialNames().ligaEuropa) {      imageLogo = 'liga1';}       
     if(leagueName==LeagueOfficialNames().lesteEuropeu) {    imageLogo = 'leste';}       
     if(leagueName==LeagueOfficialNames().brasil1) {      imageLogo = 'brasileirao';}

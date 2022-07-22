@@ -15,9 +15,12 @@ class Images{
   Widget getEscudoWidget(String clubName,[double _height=50.0, double _width=50.0]){
     String crest = FIFAImages().imageLogo(clubName);
     if(crest != 'generic'){
-      return Image.asset('assets/clubs/${FIFAImages().imageLogo(clubName)}.png',height: _height,width: _width);
+      return Image.asset('assets/clubs/$crest.png',height: _height,width: _width);
     }else{
-      return CrestWidgets(size: _height).getCrest(clubName);
+      return Padding(
+        padding: EdgeInsets.only(left: _height*0.12,top: _height*0.13,bottom: _height*0.12),
+        child: CrestWidgets(size: _height*0.7).getCrest(clubName),
+      );
     }
   }
   String getUniform(String clubName){
