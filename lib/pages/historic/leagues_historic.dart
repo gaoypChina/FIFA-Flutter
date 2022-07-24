@@ -66,7 +66,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                       for(int year=ano-1;year>=anoInicial;year--)
                         yearRow(year),
 
-                      for(int year=ano-1;year>ano-60;year--)
+                      for(int year=ano-1;year>ano-65;year--)
                         yearRowPast(year),
                     ],
                   ),
@@ -77,7 +77,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                       for(int year=ano-1;year>=anoInicial;year--)
                         yearRow(year),
 
-                      for(int year=ano-1;year>ano-60;year--)
+                      for(int year=ano-1;year>ano-65;year--)
                         yearRowPast(year),
                     ],
                   ),
@@ -164,7 +164,6 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   //HISTORICOS PASSADOS
   Widget yearRowPast(int ano){
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         for(int position=0;position<nTeamsSelected;position++)
           validacao(position, ano),
@@ -176,10 +175,9 @@ class _HistoricLeagueState extends State<HistoricLeague> {
       Map<double,dynamic> results = mapChampions(league.name);
       List yearData = results[ano.toDouble()];
       String clubName = yearData[position];
-      if(position == 0){
+      if(position==0){
         return Column(
           children: [
-
             Text(ano.toString(),style: EstiloTextoBranco.negrito16),
             classificationPastRow(position,clubName),
           ],
@@ -204,13 +202,8 @@ class _HistoricLeagueState extends State<HistoricLeague> {
          position+1<10
              ? Text('  ${(position+1).toString()}º ',style: EstiloTextoBranco.text14)
              : Text('${(position+1).toString()}º ',style: EstiloTextoBranco.text14),
-         Column(
-           crossAxisAlignment: CrossAxisAlignment.start,
-           children: [
              Images().getEscudoWidget(clubName,24,24),
-             Container(width:100,child: Text(clubName,maxLines:1,overflow:TextOverflow.ellipsis,style: EstiloTextoBranco.text10)),
-           ],
-         ),
+             SizedBox(width:80,child: Text(clubName,maxLines:1,overflow:TextOverflow.ellipsis,style: EstiloTextoBranco.text10)),
        ],
      ),
    );

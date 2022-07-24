@@ -17,8 +17,8 @@ import 'package:flutter/material.dart';
 
 class TableNacional extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
-  late int choosenLeagueIndex;
-  TableNacional({Key? key, required this.choosenLeagueIndex}) : super(key: key);
+  final int choosenLeagueIndex;
+  const TableNacional({Key? key, required this.choosenLeagueIndex}) : super(key: key);
   @override
   _TableNacionalState createState() => _TableNacionalState();
 }

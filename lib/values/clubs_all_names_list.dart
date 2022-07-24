@@ -66,7 +66,7 @@ List clubsAllNameList = [
   ClubName().boavista,ClubName().maritimo,ClubName().portimonense,ClubName().vitoriaguimaraes,
   ClubName().coimbra,ClubName().famalicao,ClubName().gilVicente,ClubName().belenenses,
   //holanda
-  ClubName().ajax,  ClubName().feyenoord,  ClubName().psv,ClubName().azAlkmaar,
+  ClubName().ajax,  ClubName().feyenoord,  ClubName().psv,ClubName().az,
   ClubName().twente,ClubName().utrecht,ClubName().vitesse,ClubName().heerenveen,
   //turquia-grecia
   ClubName().galatasaray,  ClubName().fenerbahce,  ClubName().besiktas,  ClubName().instanbul,ClubName().trabzonspor,

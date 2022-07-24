@@ -20,7 +20,7 @@ void premiacao(){
     else if(leagueName==LeagueOfficialNames().alemanha2){premio=0.6;}
     else if(leagueName==LeagueOfficialNames().franca1){premio=1.8;}//frances
     else if(leagueName==LeagueOfficialNames().franca2){premio=0.5;}
-    else if(leagueName==LeagueOfficialNames().ptHol){premio=1.6;}
+    else if(leagueName==LeagueOfficialNames().portugal){premio=1.6;}
     else if(leagueName==LeagueOfficialNames().holanda){premio=1.6;}
     else if(leagueName==LeagueOfficialNames().turquiaGrecia){premio=1.5;}
     else if(leagueName==LeagueOfficialNames().ligaEuropa){premio=1.4;}//ocidente

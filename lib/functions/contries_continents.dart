@@ -23,7 +23,7 @@ funcCountryContinents(String country){
   else if(country == Words.country.aruba){code = americaNorte;}
   else if(country == Words.country.australia){code = oceania;}
   else if(country == Words.country.austria){code = europa;}
-  else if(country == Words.country.azerbaijan){code = asia;}
+  else if(country == Words.country.azerbaijan){code = europa;}
   else if(country == Words.country.bahrein){code = asia;}
   else if(country == Words.country.bahamas){code = americaNorte;}
   else if(country == Words.country.bangladesh){code = asia;}

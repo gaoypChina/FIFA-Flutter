@@ -12,7 +12,7 @@ class LeagueOfficialNames{
   String espanha1 = 'La Liga';  String espanha2 = 'La Liga2';
   String franca1 = 'Ligue 1'; String franca2 = 'Ligue 2';
   String alemanha1 = 'Bundesliga';  String alemanha2 = 'Bundesliga 2';
-  String ptHol = 'Liga Portugal Holanda'; String turquiaGrecia = 'Liga Greco-Turca';
+  String portugal = 'Liga Portugal Holanda'; String turquiaGrecia = 'Liga Greco-Turca';
   String holanda = 'Liga Holanda';
   String escocia = 'Liga Escocesa';
   String belgica = 'Liga Belga';
@@ -88,7 +88,7 @@ List leagueNames = [
   LeagueOfficialNames().espanha1,LeagueOfficialNames().espanha2,
   LeagueOfficialNames().franca1,LeagueOfficialNames().franca2,
   LeagueOfficialNames().alemanha1,LeagueOfficialNames().alemanha2,
-  LeagueOfficialNames().ptHol,LeagueOfficialNames().holanda,
+  LeagueOfficialNames().portugal,LeagueOfficialNames().holanda,
   LeagueOfficialNames().turquiaGrecia,
   LeagueOfficialNames().ligaEuropa,LeagueOfficialNames().lesteEuropeu,
 
@@ -114,7 +114,7 @@ Map leaguesIndexFromName = {
   LeagueOfficialNames().franca2: 10,
   LeagueOfficialNames().alemanha1: 11,
   LeagueOfficialNames().alemanha2: 12,
-  LeagueOfficialNames().ptHol: 15,
+  LeagueOfficialNames().portugal: 15,
   LeagueOfficialNames().turquiaGrecia: 16,
 
   LeagueOfficialNames().ligaEuropa: 20,
@@ -162,7 +162,7 @@ Map nTeamsClassified = {
   LeagueOfficialNames().franca1: 4,
   LeagueOfficialNames().alemanha1: 4,
 
-  LeagueOfficialNames().ptHol: 4,
+  LeagueOfficialNames().portugal: 4,
   LeagueOfficialNames().turquiaGrecia: 2,
 
   LeagueOfficialNames().ligaEuropa: 3,
@@ -178,7 +178,7 @@ bool leaguePlayInternationalCompetition(String name){
   bool playInternational = false;
   if(name == LeagueOfficialNames().inglaterra1 || name == LeagueOfficialNames().espanha1
       || name == LeagueOfficialNames().italia1 || name == LeagueOfficialNames().franca1
-      || name == LeagueOfficialNames().alemanha1 || name == LeagueOfficialNames().ptHol
+      || name == LeagueOfficialNames().alemanha1 || name == LeagueOfficialNames().portugal
       || name == LeagueOfficialNames().turquiaGrecia
       || name == LeagueOfficialNames().lesteEuropeu || name == LeagueOfficialNames().ligaEuropa
       || name == LeagueOfficialNames().brasil1 || name == LeagueOfficialNames().argentina
@@ -202,7 +202,7 @@ String getCup(String leagueName){
     LeagueOfficialNames().franca2: LeagueOfficialNames().franceCup,
     LeagueOfficialNames().alemanha1: LeagueOfficialNames().germanyCup,
     LeagueOfficialNames().alemanha2: LeagueOfficialNames().germanyCup,
-    LeagueOfficialNames().ptHol: LeagueOfficialNames().portugalCup,
+    LeagueOfficialNames().portugal: LeagueOfficialNames().portugalCup,
     LeagueOfficialNames().turquiaGrecia: LeagueOfficialNames().turkeyCup,
 
     LeagueOfficialNames().ligaEuropa: LeagueOfficialNames().ligaEuropaCup,

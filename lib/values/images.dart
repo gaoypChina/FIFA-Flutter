@@ -339,7 +339,7 @@ class FIFAImages{
     map[_name.ajax] = 'ajax';
     map[_name.feyenoord] = 'feyenoord';
     map[_name.psv] = 'psv';
-    map[_name.azAlkmaar] = 'az';
+    map[_name.az] = 'az';
     map[_name.cambuur] = 'cambuur';
     map[_name.denhaag] = 'den haag';
     map[_name.emmen] = 'emmen';
@@ -348,8 +348,9 @@ class FIFAImages{
     map[_name.goaheadeagles] = 'go ahead eagles';
     map[_name.groningen] = 'groningen';
     map[_name.heracles] = 'heracles';
+    map[_name.nacbreda] = 'nacbreda';
     map[_name.necnijmegen] = 'nec';
-    map[_name.rodajc] = 'rodajc';
+    map[_name.roda] = 'roda';
     map[_name.spartarotterdam] = 'spartarotterdam';
     map[_name.twente] = 'twente';
     map[_name.utrecht] = 'utrecht';
@@ -550,7 +551,7 @@ class FIFAImages{
     map[_name.sochi] = 'sochi';
     map[_name.rubinKazan] = 'rubin kazan';
     map[_name.akhmatGrozny] = 'akhmat grozny';
-    map[_name.vladikavkaz] = 'alania';
+    map[_name.alania] = 'alania';
     map[_name.anzhi] = 'anzhi';
     map[_name.khimki] = 'khimki';
     map[_name.krylyaSovetov] = 'krylya sovetov';
@@ -601,7 +602,7 @@ class FIFAImages{
 
     //BALTICOS
     //ESTONIA
-    map[_name.floratallinn] = 'flora talinn';
+    map[_name.floratallinn] = 'Flora Talinn';
     //LATVIA
     map[_name.rigaRFS] = 'riga rfs';
     map[_name.rigafc] = 'riga';
@@ -965,11 +966,13 @@ class FIFAImages{
     map[_name.olmedo] = 'olmedo';  
     map[_name.uniequ] ='uniequ';
     //COLOMBIA
+    map[_name.huila] =      'huila';
     map[_name.rioNegroAguilas] =      'aguilas';
     map[_name.alianzaPetrolera] =      'alianza petrolera';
     map[_name.americadecali] =      'americacali';
-    map[_name.atleticonacional] = 'atleticonacional';     
-    map[_name.bucaramanga] ='bucaramanga';  
+    map[_name.atleticonacional] = 'atleticonacional';
+    map[_name.boyaca] =      'boyaca chico';
+    map[_name.bucaramanga] ='bucaramanga';
     map[_name.cucuta] ='cucuta';  
     map[_name.deportivocali] = 'deportivocali';      
     map[_name.depPasto] = 'dep pasto';
@@ -1412,7 +1415,7 @@ String campeonatoLogo(String leagueName) {
     if(leagueName==LeagueOfficialNames().franca2) {       imageLogo = 'ligue2'; }     
     if(leagueName==LeagueOfficialNames().alemanha1) {     imageLogo = 'bundesliga';}       
     if(leagueName==LeagueOfficialNames().alemanha2) {     imageLogo = 'bundesliga2';}       
-    if(leagueName==LeagueOfficialNames().ptHol) {      imageLogo = 'portugal';}
+    if(leagueName==LeagueOfficialNames().portugal) {      imageLogo = 'portugal';}
     if(leagueName==LeagueOfficialNames().holanda) {      imageLogo = 'holanda';}
     if(leagueName==LeagueOfficialNames().turquiaGrecia) {      imageLogo = 'turquia';}
     if(leagueName==LeagueOfficialNames().ligaEuropa) {      imageLogo = 'liga1';}       

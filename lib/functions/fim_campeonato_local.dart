@@ -53,8 +53,13 @@ class FimDoCampeonatoLocal{
         globalInternational32ClubsID[indexChampions].add(clubIndexes[i]);
       }
     }
-    if(leagueClass.name == LeagueOfficialNames().ptHol){
-      for(int i=0; i<4; i++){
+    if(leagueClass.name == LeagueOfficialNames().portugal){
+      for(int i=0; i<2; i++){
+        globalInternational32ClubsID[indexChampions].add(clubIndexes[i]);
+      }
+    }
+    if(leagueClass.name == LeagueOfficialNames().holanda){
+      for(int i=0; i<2; i++){
         globalInternational32ClubsID[indexChampions].add(clubIndexes[i]);
       }
     }

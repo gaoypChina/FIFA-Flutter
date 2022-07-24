@@ -12,6 +12,12 @@ class Chaves{
     if(semanasJogosNacionais.contains(semana)){
       //verify is jogo volta
       int calculateWeek = semana;
+      if(League(index: leagueIndex).nClubs==2){
+        chave = Chaves().obterChave4(calculateWeek);
+      }
+      if(League(index: leagueIndex).nClubs==4){
+        chave = Chaves().obterChave4(calculateWeek);
+      }
       if(League(index: leagueIndex).nClubs==6){
         chave = Chaves().obterChave6(calculateWeek);
       }
@@ -61,6 +67,30 @@ class Chaves{
       return [indexAdv,visitante];
     }
     return [0,false];
+  }
+
+  List obterChave2(int semana) {
+    List chave = [];
+    if (semana == semanasJogosNacionais[0]) { //verifica o numero do meu time e ve qual a posição dele
+      chave = [0,1];
+    }
+
+    return chave;
+  }
+
+  List obterChave4(int semana) {
+    List chave = [];
+    if (semana == semanasJogosNacionais[0]) { //verifica o numero do meu time e ve qual a posição dele
+      chave = [0,1, 2,3];
+    }
+    else if (semana == semanasJogosNacionais[1]) { //verifica o numero do meu time e ve qual a posição dele
+      chave = [0,2, 3,1];
+    }
+    else if (semana == semanasJogosNacionais[2]) { //verifica o numero do meu time e ve qual a posição dele
+      chave = [3,0, 2,1];
+    }
+
+    return chave;
   }
 
   List obterChave6(int semana) {
