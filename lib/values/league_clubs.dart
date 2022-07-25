@@ -19,7 +19,7 @@ List defaultChampionsLeagueClubs = [
 List defaultLibertadoresClubs = [
   clubName.palmeiras,clubName.deportivoTachira,clubName.emelec,clubName.monterrey,
   clubName.atleticopr,clubName.bolivar,clubName.caracas,clubName.libertad,
-  clubName.bragantino,clubName.nacional,clubName.velezsarsfield,clubName.estudiantes,
+  clubName.bragantino,clubName.nacional,clubName.velez,clubName.estudiantes,
   clubName.atleticomg,clubName.idelvalle,clubName.tolima,clubName.americamg,
   clubName.bocajuniors,clubName.corinthians,clubName.alwaysReady,clubName.deportivocali,
   clubName.riverplate,clubName.fortaleza,clubName.colocolo,clubName.alianzalima,
@@ -158,7 +158,7 @@ Map clubNameMapImmutable = {
     4: clubName.colon,5: clubName.defensayjusticia,6: clubName.estudiantes,7: clubName.gimnasia,
     8: clubName.godoycruz,9: clubName.huracan,10: clubName.independiente,11: clubName.lanus,
     12: clubName.newells,13: clubName.racing,14: clubName.riverplate,15:clubName.rosariocentral,
-    16: clubName.sanlorenzo,17:clubName.talleres,18: clubName.unionSantaFe,19: clubName.velezsarsfield,
+    16: clubName.sanlorenzo,17:clubName.talleres,18: clubName.unionSantaFe,19: clubName.velez,
   },
   LeagueOfficialNames().sulamericano : {
     0: clubName.cerroporteno,1: clubName.olimpia,2: clubName.guaraniPAR,3: clubName.libertad,

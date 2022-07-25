@@ -131,43 +131,33 @@ class _HistoricLeagueState extends State<HistoricLeague> {
       nRows = league.nClubs;
     }
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(year.toString(),style: EstiloTextoBranco.text16),
+        Text(year.toString(),style: EstiloTextoBranco.negrito16),
 
         for(int i=0;i<nRows;i++)
-          classificationRow(year,i),
+          validacaoSimulation(year,i),
 
       ],
     );
   }
-  Widget classificationRow(int year, int position){
+  Widget validacaoSimulation(int year, int position){
     List classification = HistoricFunctions().funcHistoricListAll(year, league.name);
     int clubID = classification[position];
 
     Club club = Club(index: clubID);
-    return Row(
-      children: [
-        position+1<10
-            ? Text('  ${(position+1).toString()}- ',style: EstiloTextoBranco.text14)
-            : Text('${(position+1).toString()}- ',style: EstiloTextoBranco.text14),
-        Image.asset(Images().getEscudo(club.name),height: 20,width: 20),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 4.0),
-          child: Text(club.name,style: EstiloTextoBranco.text14),
-        ),
-      ],
-    );
+    return classificationRow(position, club.name);
   }
 
   //////////////////////////////////////////
   //HISTORICOS PASSADOS
   Widget yearRowPast(int ano){
-    return Column(
-      children: [
-        for(int position=0;position<nTeamsSelected;position++)
-          validacao(position, ano),
-      ],
+    return Center(
+      child: Column(
+        children: [
+          for(int position=0;position<nTeamsSelected;position++)
+            validacao(position, ano),
+        ],
+      ),
     );
   }
   Widget validacao(int position, int ano){
@@ -179,35 +169,38 @@ class _HistoricLeagueState extends State<HistoricLeague> {
         return Column(
           children: [
             Text(ano.toString(),style: EstiloTextoBranco.negrito16),
-            classificationPastRow(position,clubName),
+            classificationRow(position,clubName),
           ],
         );
       }
-      return classificationPastRow(position,clubName);
+      return classificationRow(position,clubName);
     }catch(e){
       return Container();
     }
   }
-  Widget classificationPastRow(int position, String clubName){
 
-   return GestureDetector(
-     onTap: (){
-       if(clubsAllNameList.contains(clubName)){
-         int clubID = clubsAllNameList.indexOf(clubName);
-         Navigator.push(context, MaterialPageRoute(builder: (context) => ClubProfile(clubID: clubID)));
-       }
-     },
-     child: Row(
-       children: [
-         position+1<10
-             ? Text('  ${(position+1).toString()}º ',style: EstiloTextoBranco.text14)
-             : Text('${(position+1).toString()}º ',style: EstiloTextoBranco.text14),
-             Images().getEscudoWidget(clubName,24,24),
-             SizedBox(width:80,child: Text(clubName,maxLines:1,overflow:TextOverflow.ellipsis,style: EstiloTextoBranco.text10)),
-       ],
-     ),
-   );
+  ////////////////////////////////////////////////////////////////////////////
+  Widget classificationRow(int position,String clubName){
+    return GestureDetector(
+      onTap: (){
+        if(clubsAllNameList.contains(clubName)){
+          int clubID = clubsAllNameList.indexOf(clubName);
+          Navigator.push(context, MaterialPageRoute(builder: (context) => ClubProfile(clubID: clubID)));
+        }
+      },
+      child: Row(
+        children: [
+          position+1<10
+              ? Text('  ${(position+1).toString()}º ',style: EstiloTextoBranco.text14)
+              : Text('${(position+1).toString()}º ',style: EstiloTextoBranco.text14),
+          Images().getEscudoWidget(clubName,24,24),
+          SizedBox(width:80,child: Text(clubName,maxLines:1,overflow:TextOverflow.ellipsis,style: EstiloTextoBranco.text10)),
+        ],
+      ),
+    );
   }
+
+  ////////////////////////////////////////////////////////////////////////////
   Widget leagueSelectionRow(int i){
     int leagueID = leaguesListRealIndex[i];
     String leagueName = League(index: leagueID).getName();

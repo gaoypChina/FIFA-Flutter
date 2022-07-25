@@ -510,6 +510,7 @@ class ClubName{
   String beveren = "Beveren";
   String charleroi = "Charleroi";
   String cerclebrugge = "Cercle Brugge";
+  String eendrachtAalst = "Eendracht Aalst";
   String kaseupen = "KAS Eupen";
   String kortrijk = "KV Kortrijk";
   String leuven = "Leuven";
@@ -518,12 +519,14 @@ class ClubName{
   String lokeren = "Lokeren";
   String mechelen = "Mechelen";
   String molenbeek = "Molenbeek";
+  String mouscron = "Mouscron";
   String oostende = "Oostende";
   String royalAntwerp = "Royal Antwerp";
   String saintgilloise = "Union Saint-Gilloise";
-  String seraing = "RFC Seraing";
+  String seraing = "RFC Seraing"; //EXTINTO
   String standardliege = "Standard Liege";
   String sttruidense = "St. Truidense";
+  String waregemKSV = "KSV waregem"; //EXTINTO 1925-2001
   String westerlo = "Westerlo";
   String zulteWaregem = "Zulte Waregem";
 
@@ -531,15 +534,23 @@ class ClubName{
   String celtic = "Celtic";
   String rangers = "Glasgow Rangers";
   String aberdeen = "Aberdeen";
-  String dundee = "Dundee";
+  String clyde = "Clyde";
+  String dundee = "Dundee United";
+  String dundeefc = "Dundee FC";
+  String dunfermline = "Dunfermline Athletic";
+  String falkirk = "Falkirk";
+  String hamilton = "Hamilton";
   String hearts = "Hearts";
   String hibernian = "Hibernian";
+  String inverness = "Inverness";
   String kilmarnock = "Kilmarnock";
-  String livingstone = "Livingstone";
+  String livingston = "Livingston";
   String motherwell = "Motherwell";
+  String partick = "Partick Thistle";
   String rossCounty = "Ross County";
   String stjohnstone = "St. Johnstone";
   String stmirren = "St. Mirren";
+  String thirdLanark = "Third Lanark"; //EXTINTO 1872-1967
 
   //NORTHERN IRELAND
   String linfield = "Linfield";
@@ -999,7 +1010,7 @@ class ClubName{
   String vaduz = "Vaduz";//LIECHSTEIN
   //SAN MARINO
   String domagnano = "Domagnano";//SAN MARINO
-  String folglore = "Folglore Falciano";//SAN MARINO
+  String folgore = "Folgore Falciano";//SAN MARINO
   String lafiorita = "La Fiorita";//SAN MARINO
   String trepenne = "Tre Penne";//SAN MARINO
   String trefiori = "Tre Fiori";//SAN MARINO
@@ -1231,6 +1242,7 @@ class ClubName{
   String almagro = "Almagro";
   String atlantaARG = "Atlanta";
   String argentinojuniors = "Argentinos Juniors";
+  String argentinoFirmat = "Argentino Firmat";
   String rafaela = "Atlético Rafaela";
   String arsenalsarandi = "Arsenal Sarandí";
   String atleticoTucuman = "Atlético Tucumán";
@@ -1239,23 +1251,31 @@ class ClubName{
   String belgrano = "Belgrano";
   String bocajuniors = "Boca Juniors";
   String centralCordoba = "Central Córdoba";
+  String centralNorte = "Central Norte";
   String chacarita = "Chacarita Juniors";
   String chaco = "Chaco For Ever";
   String colon = "Colón";
   String defensayjusticia = "Defensa y Justicia";
   String depEspanol = "Deportivo Español";
   String depArmenio = "Deportivo Armenio";
+  String desamparados = "Desamparados";
   String mandiyu = "Deportivo Mandiyú";
   String estudiantes = "Estudiantes";
+  String estudiantesBA = "Estudiantes de Buenos Aires";
+  String riocuarto = "Estudiantes de Río Cuarto";
   String ferro = "Ferro Carril Oeste";
   String gimnasia = "Gimnasia y Esgrima";
   String gimJujuy = "Gimnasia Jujuy";
   String gimTiro = "Gimnasia y Tiro";
   String godoycruz = "Godoy Cruz";
+  String antonioFranco = "Guaraní Antonio Franco";
   String huracan = "Huracán";
   String huracanCorrientes = "Huracán Corrientes";
+  String lasHeras = "Huracán de Las Heras";
+  String ingenieroWhite = "Huracán Ingeniero White";
   String independiente = "Independiente";
   String instituto = "Instituto Córdoba";
+  String kimberley = "Kimberley";
   String lanus = "Lanús";
   String losandes = "Los Andes";
   String newells = "Newell's Old Boys";
@@ -1265,16 +1285,22 @@ class ClubName{
   String platense = "Platense";
   String quilmes = "Quilmes";
   String racing = "Racing";
+  String rivadavia = "Ind. Rivadavia";
   String riverplate = "River Plate";
   String rosariocentral = "Rosario Central";
   String sanlorenzo = "San Lorenzo";
+  String slMarPlata = "San Lorenzo Mar del Plata";
   String sarmiento = "Sarmiento";
+  String sanmartinmendoza = "San Martin Mendoza";
   String sanmartintucuman = "San Martin Tucumán";
   String sanmartin = "San Martin San Juan";
+  String santamarina = "Ramón Santamarin";
+  String santelmo = "San Telmo";
   String talleres= "Talleres";
   String temperley= "Temperley";
   String tigre = "Tigre";
-  String velezsarsfield = "Vélez Sarsfield";
+  String tiroFederal = "Tiro Federal";
+  String velez = "Vélez Sarsfield";
   String unionSantaFe = "Unión de Santa Fe";
   //URU
   String penarol = "Peñarol";

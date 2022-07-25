@@ -12,17 +12,17 @@ class LeagueOfficialNames{
   String espanha1 = 'La Liga';  String espanha2 = 'La Liga2';
   String franca1 = 'Ligue 1'; String franca2 = 'Ligue 2';
   String alemanha1 = 'Bundesliga';  String alemanha2 = 'Bundesliga 2';
-  String portugal = 'Liga Portugal Holanda'; String turquiaGrecia = 'Liga Greco-Turca';
-  String holanda = 'Liga Holanda';
-  String escocia = 'Liga Escocesa';
-  String belgica = 'Liga Belga';
-  String suecia = 'Liga Sueca';
-  String dinamarca = 'Liga Dinamarca';
+  String portugal = 'Liga Portugal Bwin'; String turquiaGrecia = 'Liga Greco-Turca';
+  String holanda = 'Eredivisie';
+  String escocia = 'Scottish Premiership';
+  String belgica = 'Jupiler Pro League';
+  String suecia = 'Allsvenskan Sweden';
+  String dinamarca = 'Superliga Dinamarquesa';
   String austria = 'Liga Austrica';
-  String suica = 'Liga Suiça';
+  String suica = 'Super Liga Suíça';
   String servia = 'Liga Servia';
   String grecia = 'Liga Grega';
-  String cazaquistao = 'Liga Cazaquistão';
+  String cazaquistao = 'Super Liga do Cazaquistão';
   String ligaEuropa = 'Liga Europeia';  String lesteEuropeu = 'Leste Europeu';
 
   String brasil1 = 'Brasileirão';  String brasil2 = 'Brasileirão - Série B';String brasil3 = 'Brasileirão - Série C';

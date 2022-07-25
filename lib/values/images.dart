@@ -45,50 +45,54 @@ class FIFAImages{
     map[_name.bournemouth] = 'bournemouth';
     map[_name.burnley] = 'burnley';
     map[_name.bradford] = 'bradford';
-    map[_name.brentford] ='brentford';  
+    map[_name.brentford] = 'brentford';  
     map[_name.brighton] = 'brighton';
     map[_name.bristol] = 'bristol city';
     map[_name.bristolrovers] = 'bristol rovers';
     map[_name.burton] = 'burton';
-    map[_name.cardiffCity] ='cardiff city';  
-    map[_name.coventry] ='coventry';  
-    map[_name.charlton] ='charlton';  
+    map[_name.cardiffCity] = 'cardiff city';  
+    map[_name.coventry] = 'coventry';  
+    map[_name.charlton] = 'charlton';  
     map[_name.derbycount] = 'derby';
     map[_name.doncaster] = 'doncaster';
     map[_name.fleetwood] = 'fleetwood';
     map[_name.fulham] = 'fulham';
     map[_name.gillingham] = 'gillingham';
+    map[_name.grimsby] = 'grimsby';
     map[_name.huddersfield] = 'huddersfield';
-    map[_name.hullcity] ='hullcity';  
-    map[_name.ipswichTown] ='ipswich';  
-    map[_name.lincoln] ='lincoln';  
-    map[_name.luton] ='luton';  
-    map[_name.middlesbrough] =     'middlesbrough';
-    map[_name.millwall] ='millwall';  
-    map[_name.mkdons] ='mk dons';  
+    map[_name.hullcity] = 'hullcity';  
+    map[_name.ipswichTown] = 'ipswich';  
+    map[_name.lincoln] = 'lincoln';  
+    map[_name.luton] = 'luton';  
+    map[_name.middlesbrough] = 'middlesbrough';
+    map[_name.millwall] = 'millwall';  
+    map[_name.mkdons] = 'mk dons';  
     map[_name.norwich] = 'norwich';
-    map[_name.notts] ='notts';  
+    map[_name.notts] = 'notts';  
     map[_name.nottinghamforest] = 'nottingham';
-    map[_name.oxford] ='oxford';  
-    map[_name.peterborough] ='peterborough';  
-    map[_name.portsmouth] ='portsmouth';  
-    map[_name.plymouth] ='plymouth';  
-    map[_name.prestonNorthEnd] ='preston north end';  
-    map[_name.qpr] ='qpr';
+    map[_name.oldham] = 'oldham';
+    map[_name.oxford] = 'oxford';  
+    map[_name.peterborough] = 'peterborough';  
+    map[_name.portsmouth] = 'portsmouth';
+    map[_name.portvale] = 'port vale';
+    map[_name.plymouth] = 'plymouth';  
+    map[_name.prestonNorthEnd] = 'preston north end';  
+    map[_name.qpr] = 'qpr';
     map[_name.reading] = 'reading';
-    map[_name.rotherham] ='rotherham';  
-    map[_name.shrewsbury] ='shrewsbury';  
+    map[_name.rotherham] = 'rotherham';  
+    map[_name.shrewsbury] = 'shrewsbury';  
     map[_name.sheffieldunited] = 'sheffield';
-    map[_name.sheffieldWednesday] ='sheffield wed';  
+    map[_name.sheffieldWednesday] = 'sheffield wed';  
     map[_name.stoke] = 'stoke';
-    map[_name.sunderland] ='sunderland';  
-    map[_name.swindon] ='swindon';  
+    map[_name.sunderland] = 'sunderland';  
+    map[_name.swindon] = 'swindon';  
     map[_name.swansea] = 'swansea';
+    map[_name.tranmere] = 'tranmere';
     map[_name.watford] = 'watford';
-    map[_name.wigan] ='wigan';  
-    map[_name.wimbledon] ='wimbledon';  
-    map[_name.wycombe] ='wycombe';  
-    map[_name.york] ='york';  
+    map[_name.wigan] = 'wigan';  
+    map[_name.wimbledon] = 'wimbledon';  
+    map[_name.wycombe] = 'wycombe';  
+    map[_name.york] = 'york';  
 
     map[_name.atalanta] = 'atalanta';
     map[_name.bologna] = 'bologna';
@@ -108,6 +112,7 @@ class FIFAImages{
     map[_name.udinese] = 'udinese';
 
     map[_name.ascoli] = 'ascoli';
+    map[_name.avellino] = 'avellino';
     map[_name.bari] = 'bari';
     map[_name.benevento] = 'benevento';
     map[_name.brescia] = 'brescia';
@@ -127,6 +132,7 @@ class FIFAImages{
     map[_name.lecce] = 'lecce';
     map[_name.livorno] = 'livorno';
     map[_name.messina] = 'messina';
+    map[_name.modena] = 'modena';
     map[_name.monza] = 'monza';
     map[_name.padova] = 'padova';
     map[_name.palermo] = 'palermo';
@@ -274,9 +280,11 @@ class FIFAImages{
     map[_name.bastia] = 'bastia';
     map[_name.brest] = 'brest';
     map[_name.caen] = 'caen';
+    map[_name.cannes] = 'cannes';
     map[_name.chamois] = 'chamois';
     map[_name.clermont] = 'clermont';
     map[_name.dijon] = 'dijon';
+    map[_name.evian] = 'evian';
     map[_name.guingamp] = 'guingamp';
     map[_name.grenoble] = 'grenoble';
     map[_name.lavallois] = 'lavallois';
@@ -292,6 +300,7 @@ class FIFAImages{
     map[_name.redstar] = 'red star';
     map[_name.rodez] = 'rodez';
     map[_name.rouen] = 'rouen';
+    map[_name.toulon] = 'toulon';
     map[_name.toulouse] = 'toulouse';
     map[_name.troyes] = 'troyes';
     map[_name.sedan] = 'sedan';
@@ -302,6 +311,7 @@ class FIFAImages{
     map[_name.benfica] = 'benfica';
     map[_name.porto] = 'porto';
     map[_name.sporting] = 'sporting';
+    map[_name.alverca] = 'alverca';
     map[_name.beiramar] = 'beiramar';
     map[_name.belenenses] = 'belenenses';
     map[_name.boavista] = 'boavista';
@@ -311,6 +321,7 @@ class FIFAImages{
     map[_name.estoril] = 'estoril';
     map[_name.braga] = 'braga';
     map[_name.covilha] = 'covilha';
+    map[_name.espinho] = 'espinho';
     map[_name.estrelaamadora] = 'estrela amadora';
     map[_name.famalicao] = 'famalicao';
     map[_name.farense] = 'farense';
@@ -321,6 +332,7 @@ class FIFAImages{
     map[_name.maritimo] = 'maritimo';
     map[_name.moreirense] = 'moreirense';
     map[_name.nacionalMadeira] = 'nacional madeira';
+    map[_name.naval] = 'naval';
     map[_name.olhanense] = 'olhanense';
     map[_name.pacosDeFerreira] = 'paços de ferreira';
     map[_name.penafiel] = 'penafiel';
@@ -348,6 +360,8 @@ class FIFAImages{
     map[_name.goaheadeagles] = 'go ahead eagles';
     map[_name.groningen] = 'groningen';
     map[_name.heracles] = 'heracles';
+    map[_name.heerenveen] = 'heerenveen';
+    map[_name.mvv] = 'mvv';
     map[_name.nacbreda] = 'nacbreda';
     map[_name.necnijmegen] = 'nec';
     map[_name.roda] = 'roda';
@@ -356,7 +370,7 @@ class FIFAImages{
     map[_name.utrecht] = 'utrecht';
     map[_name.vitesse] = 'vitesse';
     map[_name.volendam] = 'volendam';
-    map[_name.heerenveen] = 'heerenveen';
+    map[_name.vvv] = 'vvv';
     map[_name.waalwijk] = 'waalwijk';
     map[_name.willem] = 'willem';
     map[_name.zwolle] = 'zwolle';
@@ -388,7 +402,7 @@ class FIFAImages{
     map[_name.hearts] = 'hearts';
     map[_name.hibernian] = 'hibernian';
     map[_name.kilmarnock] = 'kilmarnock';
-    map[_name.livingstone] = 'livingstone';
+    map[_name.livingston] = 'livingston';
     map[_name.motherwell] = 'motherwell';
     map[_name.rossCounty] = 'ross county';
     map[_name.stjohnstone] = 'st johnstone';
@@ -449,6 +463,8 @@ class FIFAImages{
     //FINLANDIA
     map[_name.helsinki] = 'hjk helsinki';
     map[_name.haka] = 'haka';
+    map[_name.ilves] = 'ilves';
+    map[_name.turku] = 'inter turku';
     map[_name.kups] = 'kups';
     map[_name.lahti] = 'lahti';
     //ISLANDIA
@@ -509,15 +525,20 @@ class FIFAImages{
     map[_name.antalyaspor] = 'antalyaspor';
     map[_name.bursaspor] = 'bursaspor';
     map[_name.denizlispor] = 'denizlispor';
+    map[_name.eskisehirspor] = 'eskisehirspor';
     map[_name.gaziantepspor] = 'gaziantepspor';
+    map[_name.genclerbirligi] = 'genclerbirligi';
     map[_name.goztepe] = 'goztepe';
     map[_name.instanbul] = 'instanbul';
     map[_name.karagumruk] = 'karagumruk';
     map[_name.kasimpasa] = 'kasimpasa';
+    map[_name.kayserispor] = 'kayserispor';
+    map[_name.kocaelispor] = 'kocaelispor';
     map[_name.konyaspor] = 'konyaspor';
     map[_name.hatayspor] = 'hatayspor';
     map[_name.malatyaspor] = 'malatyaspor';
     map[_name.rizespor] = 'rizespor';
+    map[_name.samsunspor] = 'samsunspor';
     map[_name.sivasspor] = 'sivasspor';
     map[_name.trabzonspor] = 'trabzonspor';
     //GRECIA-CHIPRE-ISRAEL
@@ -552,6 +573,7 @@ class FIFAImages{
     map[_name.rubinKazan] = 'rubin kazan';
     map[_name.akhmatGrozny] = 'akhmat grozny';
     map[_name.alania] = 'alania';
+    map[_name.amkar] = 'amkar';
     map[_name.anzhi] = 'anzhi';
     map[_name.khimki] = 'khimki';
     map[_name.krylyaSovetov] = 'krylya sovetov';
@@ -563,6 +585,7 @@ class FIFAImages{
     map[_name.rotor] = 'rotor';
     map[_name.torpedo] = 'torpedo';
     map[_name.tula] = 'tula';
+    map[_name.ufa] = 'ufa';
     map[_name.ural] = 'ural';
 
     //EX-URSS
@@ -571,16 +594,25 @@ class FIFAImages{
     map[_name.dnipro] = 'dnipro';
     map[_name.lviv] = 'lviv';
     map[_name.metalist] = 'metalist';
+    map[_name.odesa] = 'odesa';
+    map[_name.vorskla] = 'vorskla';
     map[_name.zorya] = 'zorya';
 
     //MOLDOVA
+    map[_name.milsami] = 'milsami';
     map[_name.sheriffTiraspol] = 'sheriff';
+    map[_name.zimbru] = 'zimbru';
     //BELARUS
     map[_name.bate] = 'bate';
     map[_name.dinamoBrest] = 'dinamo brest';
     map[_name.dinamoMinsk] = 'dinamo minsk';
+    map[_name.gomel] = 'gomel';
+    map[_name.soligorsk] = 'soligorsk';
     //AZERBAIJAN
+    map[_name.baku] = 'baku';
+    map[_name.qabala] = 'qabala';
     map[_name.qarabag] = 'qarabag';
+    map[_name.zira] = 'zira';
     //GEORGIA
     map[_name.batumi] = 'batumi';
     map[_name.dila] = 'dila';
@@ -599,10 +631,13 @@ class FIFAImages{
     map[_name.ordabasy] = 'ordabasy';
     map[_name.taraz] = 'taraz';
     map[_name.tobol] = 'tobol';
+    map[_name.zhenis] = 'zhenis';
 
     //BALTICOS
     //ESTONIA
-    map[_name.floratallinn] = 'Flora Talinn';
+    map[_name.floratallinn] = 'flora talinn';
+    map[_name.levadiatallinn] = 'levadia';
+    map[_name.paide] = 'paide';
     //LATVIA
     map[_name.rigaRFS] = 'riga rfs';
     map[_name.rigafc] = 'riga';
@@ -631,9 +666,11 @@ class FIFAImages{
     //CROACIA
     map[_name.dinamozagreb] = 'dinamozagreb';
     map[_name.hadjuksplit] = 'hadjuk split';
+    map[_name.lokZagreb] = 'lok zagreb';
     map[_name.rijeka] = 'rijeka';
     map[_name.osijek] = 'osijek';
     //ESLOVAQUIA
+    map[_name.dac1904] = 'dac1904';
     map[_name.interBratislava] = 'inter bratislava';
     map[_name.slovanBratislava] = 'slovan bratislava';
     map[_name.trnava] = 'trnava';
@@ -666,10 +703,13 @@ class FIFAImages{
     map[_name.debreceni] = 'debreceni';
     //ROMENIA
     map[_name.argesPitesti] = 'arges pitesti';
-    map[_name.steauaBucuresti] = 'steaua bucareste';
-    map[_name.dinamoBucuresti] = 'dinamo bucuresti';
-    map[_name.rapidBucuresti] = 'rapid bucuresti';
     map[_name.cluj] = 'cluj';
+    map[_name.craiova] = 'craiova';
+    map[_name.dinamoBucuresti] = 'dinamo bucuresti';
+    map[_name.otelul] = 'otelul';
+    map[_name.rapidBucuresti] = 'rapid bucuresti';
+    map[_name.steauaBucuresti] = 'steaua bucareste';
+    map[_name.arad] = 'uta arad';
     //MACEDONIA
     map[_name.akaPandev] = 'pandev';
     map[_name.shkendija] = 'shkendija';
@@ -683,10 +723,19 @@ class FIFAImages{
     //BOSNIA
     map[_name.sarajevo] = 'sarajevo';//BOSNIA
     map[_name.zrinjski] = 'zrinjski';//BOSNIA
+    //KOSOVO
+    map[_name.ballkani] = 'ballkani';
+    map[_name.drita] = 'drita';
+    map[_name.llapi] = 'llapi';
+    map[_name.prishtina] = 'prishtina';
     //MONTENEGRO
-    map[_name.podgorica] = 'podgorica';//MONTENEGRO
+    map[_name.podgorica] = 'podgorica';
+    map[_name.sutjeska] = 'sutjeska';
     //SAN MARINO
-    map[_name.lafiorita] = 'lafiorita';//SAN MARINO
+    map[_name.folgore] = 'folgore';
+    map[_name.lafiorita] = 'lafiorita';
+    map[_name.trefiori] = 'tre fiori';
+    map[_name.trepenne] = 'tre penne';
     //MALTA
     map[_name.sliema] = 'sliema';//MALTA
     map[_name.valletta] = 'valletta';//MALTA
@@ -694,10 +743,13 @@ class FIFAImages{
     map[_name.santacoloma] = 'santa coloma';
     //GIBRALTAR
     map[_name.europa] = 'europa';
+    map[_name.lincolnRedImps] = 'lincoln red imps';
     //LUXEMBURGO
     map[_name.dudelange] = 'f91 dudelange';
     map[_name.jeunesseesch] = 'jeunesse esch';
     //LIECHSTEINTEIN
+    map[_name.balzers] = 'balzers';
+    map[_name.eschenMauren] = 'eschen mauren';
     map[_name.vaduz] = 'vaduz';
 
 
@@ -705,38 +757,38 @@ class FIFAImages{
 
     ///////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////
-    map[_name.atleticomg] =      'atleticomg';
-    map[_name.atleticopr] =      'atleticopr';
-    map[_name.bahia] =    'bahia'; 
+    map[_name.atleticomg] = 'atleticomg';
+    map[_name.atleticopr] = 'atleticopr';
+    map[_name.bahia] = 'bahia'; 
     map[_name.botafogo] = 'botafogo'; 
-    map[_name.corinthians] =      'corinthians';
+    map[_name.corinthians] = 'corinthians';
     map[_name.cruzeiro] = 'cruzeiro'; 
     map[_name.flamengo] = 'flamengo';
-    map[_name.fluminense] ='fluminense';
+    map[_name.fluminense] = 'fluminense';
     map[_name.gremio] = 'gremio';
     map[_name.goias] = 'goias';
-    map[_name.internacional] =    'internacional';
+    map[_name.internacional] = 'internacional';
     map[_name.palmeiras] = 'palmeiras';   
     map[_name.santos] = 'santos';
-    map[_name.saopaulo] ='saopaulo';
+    map[_name.saopaulo] = 'saopaulo';
     map[_name.sport] = 'sport';
     map[_name.vasco] = 'vasco';
 
-    map[_name.americamg] ='americamg';
-    map[_name.atleticogo] ='atleticogo';
-    map[_name.cuiaba] ='cuiaba';
+    map[_name.americamg] = 'americamg';
+    map[_name.atleticogo] = 'atleticogo';
+    map[_name.cuiaba] = 'cuiaba';
     map[_name.chapecoense] = 'chapecoense';     
     map[_name.bragantino] = 'bragantino';      
-    map[_name.ceara] =      'ceara';
+    map[_name.ceara] = 'ceara';
     map[_name.coritiba] = 'coritiba';
     map[_name.criciuma] = 'criciuma';
-    map[_name.figueirense] ='figueirense';
+    map[_name.figueirense] = 'figueirense';
     map[_name.fortaleza] = 'fortaleza'; 
     map[_name.guarani] = 'guarani'; 
-    map[_name.juventude] ='juventude';  
+    map[_name.juventude] = 'juventude';  
     map[_name.nautico] = 'nautico'; 
     map[_name.parana] = 'parana';  
-    map[_name.pontepreta] =      'pontepreta';  
+    map[_name.pontepreta] = 'pontepreta';  
     map[_name.vitoria] = 'vitoria'; 
 
     map[_name.abc] = 'abc'; 
@@ -746,19 +798,19 @@ class FIFAImages{
     map[_name.altos] = 'altos';  
     map[_name.aparecidense] = 'aparecidense';  
     map[_name.asa] = 'asa';  
-    map[_name.avai] ='avai';
-    map[_name.americaRJ] ='americarj';  
-    map[_name.americaRN] ='americarn';  
+    map[_name.avai] = 'avai';
+    map[_name.americaRJ] = 'americarj';  
+    map[_name.americaRN] = 'americarn';  
     map[_name.azuriz] = 'azuriz';  
-    map[_name.bahiafeira] ='bahia feira';  
-    map[_name.bangu] ='bangu';  
-    map[_name.boaesporte] ='boa esporte';  
-    map[_name.boavistaRJ] ='boavista rj';  
-    map[_name.botafogoPB] ='botafogo pb';  
-    map[_name.botafogoSP] ='botafogo sp';  
+    map[_name.bahiafeira] = 'bahia feira';  
+    map[_name.bangu] = 'bangu';  
+    map[_name.boaesporte] = 'boa esporte';  
+    map[_name.boavistaRJ] = 'boavista rj';  
+    map[_name.botafogoPB] = 'botafogo pb';  
+    map[_name.botafogoSP] = 'botafogo sp';  
     map[_name.brasilPelotas] = 'brasil pelotas'; 
-    map[_name.brasilia] ='brasilia';  
-    map[_name.brasiliense] ='brasiliense';  
+    map[_name.brasilia] = 'brasilia';  
+    map[_name.brasiliense] = 'brasiliense';  
     map[_name.brusque] = 'brusque';  
     map[_name.campinense] = 'campinense';  
     map[_name.cascavel] = 'cascavel';  
@@ -788,10 +840,10 @@ class FIFAImages{
     map[_name.madureira] = 'madureira'; 
     map[_name.manaus] = 'manaus';  
     map[_name.marilia] = 'marilia'; 
-    map[_name.mirassol] ='mirassol';  
-    map[_name.mixto] ='mixto';  
-    map[_name.mogimirim] ='mogi mirim';  
-    map[_name.motoclub] ='moto club';  
+    map[_name.mirassol] = 'mirassol';  
+    map[_name.mixto] = 'mixto';  
+    map[_name.mogimirim] = 'mogi mirim';  
+    map[_name.motoclub] = 'moto club';  
     map[_name.nacionalSP] = 'nacionalsp'; 
     map[_name.noroeste] = 'noroeste'; 
     map[_name.novaiguacu] = 'nova iguacu'; 
@@ -800,10 +852,10 @@ class FIFAImages{
     map[_name.operarioPR] = 'operariopr'; 
     map[_name.palmas] = 'palmas';  
     map[_name.paysandu] = 'paysandu';  
-    map[_name.paulista] ='paulista';  
-    map[_name.portuguesa] ='portuguesa';  
-    map[_name.portuguesaRJ] ='portuguesa rj';  
-    map[_name.portuguesasantista] ='portuguesa santista';  
+    map[_name.paulista] = 'paulista';  
+    map[_name.portuguesa] = 'portuguesa';  
+    map[_name.portuguesaRJ] = 'portuguesa rj';  
+    map[_name.portuguesasantista] = 'portuguesa santista';  
     map[_name.remo] = 'remo'; 
     map[_name.resende] = 'resende'; 
     map[_name.riverPI] = 'river pi'; 
@@ -812,32 +864,32 @@ class FIFAImages{
     map[_name.rioclaro] = 'rio claro'; 
     map[_name.riopreto] = 'rio preto'; 
     map[_name.salgueiro] = 'salgueiro'; 
-    map[_name.santacruz] ='santacruz';  
+    map[_name.santacruz] = 'santacruz';  
     map[_name.sampaio] = 'sampaio'; 
-    map[_name.santoandre] ='santo andre';  
-    map[_name.saobento] ='sao bento';  
-    map[_name.saobernardo] ='sao bernardo';  
-    map[_name.saocaetano] ='sao caetano';  
-    map[_name.saojose] ='sao jose';  
-    map[_name.saojoseRS] ='sao jose rs';  
-    map[_name.saoraimundo] ='sao raimundo';  
-    map[_name.sergipe] ='sergipe';  
-    map[_name.sousa] ='sousa';  
-    map[_name.sobradinho] ='sobradinho';  
-    map[_name.taubate] ='taubate';  
-    map[_name.tocantinopolis] ='tocantinopolis';  
-    map[_name.tombense] ='tombense';  
-    map[_name.trem] ='trem';  
-    map[_name.treze] ='treze';  
-    map[_name.tunaluso] ='tunaluso';  
-    map[_name.tupi] ='tupi';  
-    map[_name.uberlandia] ='uberlandia';  
-    map[_name.urt] ='urt';  
+    map[_name.santoandre] = 'santo andre';  
+    map[_name.saobento] = 'sao bento';  
+    map[_name.saobernardo] = 'sao bernardo';  
+    map[_name.saocaetano] = 'sao caetano';  
+    map[_name.saojose] = 'sao jose';  
+    map[_name.saojoseRS] = 'sao jose rs';  
+    map[_name.saoraimundo] = 'sao raimundo';  
+    map[_name.sergipe] = 'sergipe';  
+    map[_name.sousa] = 'sousa';  
+    map[_name.sobradinho] = 'sobradinho';  
+    map[_name.taubate] = 'taubate';  
+    map[_name.tocantinopolis] = 'tocantinopolis';  
+    map[_name.tombense] = 'tombense';  
+    map[_name.trem] = 'trem';  
+    map[_name.treze] = 'treze';  
+    map[_name.tunaluso] = 'tunaluso';  
+    map[_name.tupi] = 'tupi';  
+    map[_name.uberlandia] = 'uberlandia';  
+    map[_name.urt] = 'urt';  
     map[_name.vilanova] = 'vila nova';  
-    map[_name.voltaredonda] ='volta redonda';  
-    map[_name.xvpiracicaba] ='xv';  
-    map[_name.xvjau] ='xv jau';  
-    map[_name.ypirangaRS] ='ypiranga';  
+    map[_name.voltaredonda] = 'volta redonda';  
+    map[_name.xvpiracicaba] = 'xv';  
+    map[_name.xvjau] = 'xv jau';  
+    map[_name.ypirangaRS] = 'ypiranga';  
 
 
     ///////////////////////////////////////////////
@@ -845,153 +897,156 @@ class FIFAImages{
     map[_name.aldosivi] = 'aldosivi';     
     map[_name.allboys] = 'allboys';     
     map[_name.almagro] = 'almagro';     
-    map[_name.argentinojuniors] =      'argentinosjr';
-    map[_name.atleticoTucuman] = 'atletico tucuman'; 
+    map[_name.argentinojuniors] = 'argentinosjr';
+    map[_name.atleticoTucuman] = 'atletico tucuman';
+    map[_name.rafaela] = 'atl rafaela';
     map[_name.arsenalsarandi] = 'sarandi';     
     map[_name.banfield] = 'banfield';      
     map[_name.barracas] = 'barracas';      
     map[_name.belgrano] = 'belgrano';      
-    map[_name.bocajuniors] =      'bocajuniors';
+    map[_name.bocajuniors] = 'bocajuniors';
     map[_name.chacarita] = 'chacarita';      
     map[_name.centralCordoba] = 'central cordoba';      
-    map[_name.colon] ='colon';
-    map[_name.defensayjusticia] ='defensa';
+    map[_name.colon] = 'colon';
+    map[_name.defensayjusticia] = 'defensa';
     map[_name.estudiantes] = 'estudiantes';
-    map[_name.ferro] ='ferro';
+    map[_name.ferro] = 'ferro';
     map[_name.godoycruz] = 'godoy cruz'; 
-    map[_name.independiente] ='independiente';
-    map[_name.huracan] =    'huracan'; 
-    map[_name.lanus] =      'lanus'; 
-    map[_name.newells] ='newells';  
-    map[_name.nuevachicago] ='nueva chicago';  
+    map[_name.independiente] = 'independiente';
+    map[_name.huracan] = 'huracan'; 
+    map[_name.lanus] = 'lanus'; 
+    map[_name.newells] = 'newells';
+    map[_name.nuevachicago] = 'nueva chicago';
+    map[_name.olimpo] = 'olimpo';
     map[_name.patronato] = 'patronato'; 
     map[_name.platense] = 'platense'; 
     map[_name.quilmes] = 'quilmes'; 
-    map[_name.racing] =      'racing'; 
+    map[_name.racing] = 'racing'; 
     map[_name.riverplate] = 'riverplate';  
     map[_name.rosariocentral] = 'rosariocentral';  
     map[_name.sanlorenzo] = 'sanlorenzo';  
     map[_name.sarmiento] = 'sarmiento';  
-    map[_name.talleres] =     'talleres';  
-    map[_name.temperley] =     'temperley';  
+    map[_name.talleres] = 'talleres';  
+    map[_name.temperley] = 'temperley';  
     map[_name.gimnasia] = 'gimnasia'; 
     map[_name.sanmartin] = 'san martin'; 
     map[_name.tigre] = 'tigre'; 
     map[_name.unionSantaFe] = 'union santa fe'; 
-    map[_name.velezsarsfield] = 'velez'; 
+    map[_name.velez] = 'velez'; 
 
     //AMÉRICA DO SUL
-    map[_name.penarol] =      'penarol';
+    map[_name.penarol] = 'penarol';
     map[_name.nacional] = 'nacional';     
-    map[_name.montevideo] ='montevideo';  
-    map[_name.danubio] ='danubio';  
-    map[_name.defensor] ='defensor';  
-    map[_name.liverpoolURU] ='liverpool uru';  
-    map[_name.fenix] ='fenix';  
-    map[_name.plazacolonia] ='plaza colonia';  
-    map[_name.rentistas] ='rentistas';  
-    map[_name.riverURU] ='river uru';  
-    map[_name.wanderers] ='wanderers';  
+    map[_name.montevideo] = 'montevideo';  
+    map[_name.danubio] = 'danubio';  
+    map[_name.defensor] = 'defensor';  
+    map[_name.liverpoolURU] = 'liverpool uru';  
+    map[_name.fenix] = 'fenix';  
+    map[_name.plazacolonia] = 'plaza colonia';  
+    map[_name.rentistas] = 'rentistas';  
+    map[_name.riverURU] = 'river uru';  
+    map[_name.wanderers] = 'wanderers';  
 
     map[_name.olimpia] = 'olimpia';      
-    map[_name.cerroporteno] =      'cerro';
-    map[_name.libertad] ='libertad';
-    map[_name.guaraniPAR] ='guarani paraguai';  
-    map[_name.nacionalPAR] ='nacional paraguai';  
-    map[_name.colegiales] ='colegiales';
-    map[_name.octubre] ='12 de octubre';  
-    map[_name.soldeamerica] ='sol de america';  
-    map[_name.luqueno] ='luqueno';
-    map[_name.tacuary] ='tacuary';
+    map[_name.cerroporteno] = 'cerro';
+    map[_name.libertad] = 'libertad';
+    map[_name.guaraniPAR] = 'guarani paraguai';  
+    map[_name.nacionalPAR] = 'nacional paraguai';  
+    map[_name.colegiales] = 'colegiales';
+    map[_name.octubre] = '12 de octubre';  
+    map[_name.soldeamerica] = 'sol de america';  
+    map[_name.luqueno] = 'luqueno';
+    map[_name.tacuary] = 'tacuary';
 
     map[_name.colocolo] = 'colocolo';
-    map[_name.lau] ='lau';
-    map[_name.audaxItaliano] ='audax';  
-    map[_name.cobreloa] ='cobreloa';
-    map[_name.cobresal] ='cobresal';
-    map[_name.coquimbo] ='coquimbo';  
-    map[_name.curico] ='curico';  
-    map[_name.evertonchi] ='everton chile';  
-    map[_name.huachipato] ='huachipato';  
-    map[_name.iquique] ='iquique';  
-    map[_name.laCalera] ='la calera';  
-    map[_name.laserena] ='la serena';  
-    map[_name.nublense] ='nublense';  
-    map[_name.ohiggins] ='ohiggins';  
-    map[_name.palestino] ='palestino';  
-    map[_name.santiagowanderers] ='santiago wanderers';  
-    map[_name.unionespanola] ='union';  
-    map[_name.univcatolica] =    'universidadcatolica'; 
+    map[_name.lau] = 'lau';
+    map[_name.audaxItaliano] = 'audax';  
+    map[_name.cobreloa] = 'cobreloa';
+    map[_name.cobresal] = 'cobresal';
+    map[_name.coquimbo] = 'coquimbo';  
+    map[_name.curico] = 'curico';  
+    map[_name.evertonchi] = 'everton chile';  
+    map[_name.huachipato] = 'huachipato';  
+    map[_name.iquique] = 'iquique';  
+    map[_name.laCalera] = 'la calera';  
+    map[_name.laserena] = 'la serena';  
+    map[_name.nublense] = 'nublense';  
+    map[_name.ohiggins] = 'ohiggins';  
+    map[_name.palestino] = 'palestino';  
+    map[_name.santiagowanderers] = 'santiago wanderers';  
+    map[_name.unionespanola] = 'union';  
+    map[_name.univcatolica] = 'universidadcatolica'; 
     //BOLIVIA
-    map[_name.aurora] ='aurora';  
-    map[_name.blooming] =      'blooming'; 
-    map[_name.bolivar] =      'bolivar'; 
-    map[_name.alwaysReady] ='always ready';  
-    map[_name.guabira] ='guabira';  
-    map[_name.indPetrolero] ='ind petrolero';  
-    map[_name.nacionalpotosi] ='nacional potosi';  
-    map[_name.palmaflor] ='palmaflor';  
-    map[_name.orientePetrolero] ='oriente';  
-    map[_name.realsantacruz] ='real santa cruz';  
-    map[_name.royalpari] ='royal pari';  
-    map[_name.sanJoseBOL] ='san jose';  
-    map[_name.theStrongest] ='the strongest';  
-    map[_name.sucre] ='sucre';  
+    map[_name.aurora] = 'aurora';  
+    map[_name.blooming] = 'blooming'; 
+    map[_name.bolivar] = 'bolivar'; 
+    map[_name.alwaysReady] = 'always ready';  
+    map[_name.guabira] = 'guabira';  
+    map[_name.indPetrolero] = 'ind petrolero';  
+    map[_name.nacionalpotosi] = 'nacional potosi';  
+    map[_name.palmaflor] = 'palmaflor';  
+    map[_name.orientePetrolero] = 'oriente';  
+    map[_name.realsantacruz] = 'real santa cruz';  
+    map[_name.royalpari] = 'royal pari';  
+    map[_name.sanJoseBOL] = 'san jose';  
+    map[_name.theStrongest] = 'the strongest';  
+    map[_name.sucre] = 'sucre';  
     //PERU
-    map[_name.alianzalima] ='alianzalima';  
+    map[_name.alianzalima] = 'alianzalima';  
     map[_name.binacional] = 'binacional';  
     map[_name.cesarvallejo] = 'cesar vallejo';  
     map[_name.carlosmanucci] = 'carlos manucci';  
     map[_name.cienciano] = 'cienciano';  
     map[_name.cusco] = 'cusco';  
-    map[_name.depmunicipal] ='depmunicipal';  
-    map[_name.jorge] ='jorge';  
-    map[_name.melgar] ='melgar';  
-    map[_name.universitario] ='universitario';  
-    map[_name.sportingcristal] =      'sportingcristal'; 
-    map[_name.sportboys] ='sport boys';  
+    map[_name.depmunicipal] = 'depmunicipal';  
+    map[_name.jorge] = 'jorge';
+    map[_name.juanaurich] = 'juan aurich';
+    map[_name.melgar] = 'melgar';  
+    map[_name.universitario] = 'universitario';  
+    map[_name.sportingcristal] = 'sportingcristal'; 
+    map[_name.sportboys] = 'sport boys';  
     //EQUADOR
-    map[_name.aucas] =     'aucas';  
+    map[_name.aucas] = 'aucas';  
     map[_name.barcelonaequ] = 'barcelonaequ';  
-    map[_name.delfin] ='delfin';
-    map[_name.idelvalle] ='delvalle';  
-    map[_name.depcuenca] ='depcuenca';
-    map[_name.depquito] ='depquito';
-    map[_name.elnacional] ='el nacional';
+    map[_name.delfin] = 'delfin';
+    map[_name.idelvalle] = 'delvalle';  
+    map[_name.depcuenca] = 'depcuenca';
+    map[_name.depquito] = 'depquito';
+    map[_name.elnacional] = 'el nacional';
     map[_name.emelec] = 'emelec';  
     map[_name.guayaquil] = 'guayaquil';  
-    map[_name.ldu] =     'ldu';  
+    map[_name.ldu] = 'ldu';  
     map[_name.macara] = 'macara';  
     map[_name.mushucruna] = 'mushuc runa';  
     map[_name.olmedo] = 'olmedo';  
-    map[_name.uniequ] ='uniequ';
+    map[_name.uniequ] = 'uniequ';
     //COLOMBIA
-    map[_name.huila] =      'huila';
-    map[_name.rioNegroAguilas] =      'aguilas';
-    map[_name.alianzaPetrolera] =      'alianza petrolera';
-    map[_name.americadecali] =      'americacali';
+    map[_name.huila] = 'huila';
+    map[_name.rioNegroAguilas] = 'aguilas';
+    map[_name.alianzaPetrolera] = 'alianza petrolera';
+    map[_name.americadecali] = 'americacali';
     map[_name.atleticonacional] = 'atleticonacional';
-    map[_name.boyaca] =      'boyaca chico';
-    map[_name.bucaramanga] ='bucaramanga';
-    map[_name.cucuta] ='cucuta';  
+    map[_name.boyaca] = 'boyaca chico';
+    map[_name.bucaramanga] = 'bucaramanga';
+    map[_name.cucuta] = 'cucuta';  
     map[_name.deportivocali] = 'deportivocali';      
     map[_name.depPasto] = 'dep pasto';
-    map[_name.envigado] =      'envigado';
-    map[_name.imedellin] ='medellin';
-    map[_name.junior] =      'junior';
-    map[_name.laequidad] ='la equidad';  
-    map[_name.millonarios] ='millonarios';
+    map[_name.envigado] = 'envigado';
+    map[_name.imedellin] = 'medellin';
+    map[_name.junior] = 'junior';
+    map[_name.laequidad] = 'la equidad';  
+    map[_name.millonarios] = 'millonarios';
     map[_name.oncecaldas] = 'oncecaldas';
     map[_name.patriotas] = 'patriotas';
-    map[_name.patriotas] = 'pereira';
-    map[_name.santafe] =    'santafe'; 
-    map[_name.tolima] ='tolima';  
+    map[_name.pereira] = 'pereira';
+    map[_name.santafe] = 'santafe'; 
+    map[_name.tolima] = 'tolima';  
     //VENEZUELA
     map[_name.carabobo] = 'carabobo'; 
     map[_name.caracas] = 'caracas'; 
-    map[_name.laGuaira] ='la guaira';  
-    map[_name.deportivoTachira] ='deportivo tachira';  
-    map[_name.estudiantesmerida] ='estudiantes merida';  
+    map[_name.laGuaira] = 'la guaira';  
+    map[_name.deportivoTachira] = 'deportivo tachira';  
+    map[_name.estudiantesmerida] = 'estudiantes merida';  
     map[_name.deplara] = 'deplara'; 
     map[_name.mineros] = 'mineros'; 
     map[_name.minerven] = 'minerven'; 
@@ -1003,13 +1058,17 @@ class FIFAImages{
 
     ///////////////////////////////////////////////////////////////////////////
     //MÉXICO
-    map[_name.atlante] =      'atlante'; 
+    map[_name.atlante] = 'atlante'; 
     map[_name.atlas] = 'atlas'; 
-    map[_name.americamex] =      'americamx'; 
-    map[_name.chivas] ='chivas';  
-    map[_name.cruzazul] =      'cruzazul'; 
+    map[_name.americamex] = 'americamx';
+    map[_name.celaya] = 'celaya';
+    map[_name.correcaminos] = 'correcaminos';
+    map[_name.chivas] = 'chivas';  
+    map[_name.cruzazul] = 'cruzazul';
+    map[_name.dorados] = 'dorados';
     map[_name.jaguares] = 'jaguares'; 
-    map[_name.juarez] = 'juarez'; 
+    map[_name.juarez] = 'juarez';
+    map[_name.irapuato] = 'irapuato';
     map[_name.leon] = 'leon'; 
     map[_name.leonesNegros] = 'leones negros'; 
     map[_name.mazatlan] = 'mazatlan';  
@@ -1019,380 +1078,386 @@ class FIFAImages{
     map[_name.pachuca] = 'pachuca';  
     map[_name.puebla] = 'puebla'; 
     map[_name.pumas] = 'pumas';  
-    map[_name.queretaro] = 'queretaro'; 
-    map[_name.tigres] =     'tigres';  
-    map[_name.toluca] = 'toluca'; 
-    map[_name.tijuana] = 'tijuana'; 
+    map[_name.queretaro] = 'queretaro';
     map[_name.sanluis] = 'san luis'; 
-    map[_name.santosLaguna] = 'santos laguna'; 
+    map[_name.santosLaguna] = 'santos laguna';
+    map[_name.tecos] = 'tecos';
+    map[_name.tigres] = 'tigres';
+    map[_name.tijuana] = 'tijuana';
+    map[_name.toluca] = 'toluca';
+    map[_name.torosNeza] = 'toros neza';
+    map[_name.veracruz] = 'veracruz';
 
-    map[_name.atlanta] =      'atlanta';
-    map[_name.austin] =      'austin';
-    map[_name.cincinnati] =      'cincinnati';
-    map[_name.charlotte] =      'charlotte';
-    map[_name.chicago] =      'chicago';
-    map[_name.columbuscrew] =      'columbus';
-    map[_name.colorado] =      'colorado';
+    map[_name.atlanta] = 'atlanta';
+    map[_name.austin] = 'austin';
+    map[_name.cincinnati] = 'cincinnati';
+    map[_name.charlotte] = 'charlotte';
+    map[_name.chicago] = 'chicago';
+    map[_name.columbuscrew] = 'columbus';
+    map[_name.colorado] = 'colorado';
     map[_name.dcunited] = 'dcunited';
-    map[_name.fcdallas] ='dallas';
+    map[_name.fcdallas] = 'dallas';
     map[_name.houston] = 'houston';
     map[_name.lagalaxy] = 'la';  
-    map[_name.losangelesfc] ='lafc';  
+    map[_name.losangelesfc] = 'lafc';  
     map[_name.minnesota] = 'minnesota';     
     map[_name.montreal] = 'montreal';  
     map[_name.nashville] = 'nashville';  
-    map[_name.nerevolution] =      'nerevolution'; 
+    map[_name.nerevolution] = 'nerevolution'; 
     map[_name.nycity] = 'nycity';  
     map[_name.nyredbulls] = 'nyredbull';      
-    map[_name.orlando] =    'orlando'; 
-    map[_name.portland] =      'portland'; 
+    map[_name.orlando] = 'orlando'; 
+    map[_name.portland] = 'portland'; 
     map[_name.seattle] = 'seattle'; 
     map[_name.intermiami] = 'miami';  
-    map[_name.philadelphia] =     'philadelphia';  
-    map[_name.toronto] =     'toronto';  
-    map[_name.realSaltLake] ='real salt lake';  
-    map[_name.sanJoseEarthquakes] ='san jose earthquakes';  
-    map[_name.kansas] ='sporting kansas';  
-    map[_name.vancouver] ='vancouver';  
+    map[_name.philadelphia] = 'philadelphia';  
+    map[_name.toronto] = 'toronto';  
+    map[_name.realSaltLake] = 'real salt lake';  
+    map[_name.sanJoseEarthquakes] = 'san jose earthquakes';  
+    map[_name.kansas] = 'sporting kansas';  
+    map[_name.vancouver] = 'vancouver';  
 
     //CANADA
-    map[_name.cavalry] ='cavalry';  
-    map[_name.forge] ='forge';  
+    map[_name.cavalry] = 'cavalry';  
+    map[_name.forge] = 'forge';  
 
     //COSTA RICA
-    map[_name.saprissa] ='saprissa';  
-    map[_name.alajuelense] ='alajuelense';  
-    map[_name.herediano] ='herediano';  
-    map[_name.cartagines] ='cartagines';  
-    map[_name.sanCarlos] ='san carlos';  
-    map[_name.sptSanJose] ='spt san jose';  
+    map[_name.saprissa] = 'saprissa';  
+    map[_name.alajuelense] = 'alajuelense';  
+    map[_name.herediano] = 'herediano';  
+    map[_name.cartagines] = 'cartagines';  
+    map[_name.sanCarlos] = 'san carlos';  
+    map[_name.sptSanJose] = 'spt san jose';  
     //EL SALVADOR
-    map[_name.alianzaELS] ='alianza el salvador';  
-    map[_name.atleticomarte] ='atletico marte';  
-    map[_name.aguila] ='aguila';  
-    map[_name.isidro] ='isidro metapan';  
+    map[_name.alianzaELS] = 'alianza el salvador';  
+    map[_name.atleticomarte] = 'atletico marte';  
+    map[_name.aguila] = 'aguila';  
+    map[_name.isidro] = 'isidro metapan';  
     //HONDURAS
-    map[_name.olimpiaHON] ='olimpia honduras';  
-    map[_name.rcdespana] ='rcd espana';  
-    map[_name.motagua] ='motagua';  
-    map[_name.marathon] ='marathon';  
+    map[_name.olimpiaHON] = 'olimpia honduras';  
+    map[_name.rcdespana] = 'rcd espana';  
+    map[_name.motagua] = 'motagua';  
+    map[_name.marathon] = 'marathon';  
     //GUATEMALA
-    map[_name.antiguaGuatemala] ='antigua';  
-    map[_name.comunicaciones] ='comunicaciones';  
-    map[_name.municipal] ='municipal';  
-    map[_name.xelaju] ='xelaju';  
+    map[_name.antiguaGuatemala] = 'antigua';  
+    map[_name.comunicaciones] = 'comunicaciones';  
+    map[_name.municipal] = 'municipal';  
+    map[_name.xelaju] = 'xelaju';  
     //NICARAGUA
-    map[_name.realEsteli] ='real esteli';  
-    map[_name.managua] ='managua';  
-    map[_name.diriangen] ='diriangen';  
+    map[_name.realEsteli] = 'real esteli';  
+    map[_name.managua] = 'managua';  
+    map[_name.diriangen] = 'diriangen';  
     //PANAMA
-    map[_name.alianzaPAN] ='alianza panama';  
-    map[_name.arabeunido] ='arabe unido';  
-    map[_name.independienteChorrera] ='independiente chorrera';  
-    map[_name.plazaAmador] ='plaza amador';  
-    map[_name.tauro] ='tauro';  
+    map[_name.alianzaPAN] = 'alianza panama';  
+    map[_name.arabeunido] = 'arabe unido';  
+    map[_name.independienteChorrera] = 'independiente chorrera';  
+    map[_name.plazaAmador] = 'plaza amador';  
+    map[_name.tauro] = 'tauro';  
     //CUBA
-    map[_name.pinardelrio] ='pinar del rio';  
-    map[_name.santiagoCuba] ='santiago cuba';  
-    map[_name.villaclara] ='villa clara';  
+    map[_name.pinardelrio] = 'pinar del rio';  
+    map[_name.santiagoCuba] = 'santiago cuba';  
+    map[_name.villaclara] = 'villa clara';  
     //JAMAICA
-    map[_name.arnettGardens] ='arnett gardens';  
-    map[_name.harbourView] ='harbour view';  
-    map[_name.portmore] ='portmore';  
-    map[_name.tivoliGardens] ='tivoli gardens';  
-    map[_name.waterhouse] ='waterhouse';  
+    map[_name.arnettGardens] = 'arnett gardens';  
+    map[_name.harbourView] = 'harbour view';  
+    map[_name.portmore] = 'portmore';  
+    map[_name.tivoliGardens] = 'tivoli gardens';  
+    map[_name.waterhouse] = 'waterhouse';  
     //HAITI
-    map[_name.arcahaie] ='arcahaie';  
-    map[_name.donBosco] ='don bosco';  
-    map[_name.fica] ='fica';  
-    map[_name.violette] ='violette haiti';  
+    map[_name.arcahaie] = 'arcahaie';  
+    map[_name.donBosco] = 'don bosco';  
+    map[_name.fica] = 'fica';  
+    map[_name.violette] = 'violette haiti';  
     //SURINAME
-    map[_name.robinhood] ='robinhood';  
-    map[_name.transvaal] ='transvaal';  
+    map[_name.robinhood] = 'robinhood';  
+    map[_name.transvaal] = 'transvaal';  
     //TRINIDAD TOBAGO
-    map[_name.defenseforce] ='defense force';  
-    map[_name.police] ='police';  
+    map[_name.defenseforce] = 'defense force';  
+    map[_name.police] = 'police';  
 
     //////////////////////////////////////////////////////////////////////////////////
-    map[_name.ghuangzhou] =      'ghuangzhou';
+    map[_name.ghuangzhou] = 'ghuangzhou';
     map[_name.beijingguoan] = 'beijing';     
     map[_name.dalian] = 'dalian';     
     map[_name.henan] = 'henan';     
     map[_name.nantong] = 'nantong';     
     map[_name.shandong] = 'shandong_luneng';      
-    map[_name.shanghaisipg] =      'shanghai';
-    map[_name.shanghaishenhua] =      'shanghai shenhua';
+    map[_name.shanghaisipg] = 'shanghai';
+    map[_name.shanghaishenhua] = 'shanghai shenhua';
     map[_name.tianjin] = 'tianjin';     
-    map[_name.wuhan] =      'wuhan';
-    map[_name.zhejiang] =      'zhejiang';
+    map[_name.wuhan] = 'wuhan';
+    map[_name.zhejiang] = 'zhejiang';
 
     //JAPAN
-    map[_name.albirex] ='albirex';
-    map[_name.avispa] ='avispa';
-    map[_name.cerezoOsaka] ='cerezo osaka';
-    map[_name.gambaOsaka] ='gamba osaka';
-    map[_name.fcTokyo] ='fc tokyo';
-    map[_name.hiroshima] ='hiroshima';
-    map[_name.jubiloiwata] ='jubilo iwata';
-    map[_name.kashimaantlers] ='kashima';
-    map[_name.kashiwaReysol] ='kashiwa reysol';
-    map[_name.kyoto] ='kyoto';
-    map[_name.kawasakifrontale] =      'kawasaki_frontale'; 
-    map[_name.nagoya] ='nagoya';
-    map[_name.sagantosu] ='sagan';
-    map[_name.sapporo] ='sapporo';
-    map[_name.shonanbellmare] ='shonan';
+    map[_name.albirex] = 'albirex';
+    map[_name.avispa] = 'avispa';
+    map[_name.cerezoOsaka] = 'cerezo osaka';
+    map[_name.gambaOsaka] = 'gamba osaka';
+    map[_name.fcTokyo] = 'fc tokyo';
+    map[_name.hiroshima] = 'hiroshima';
+    map[_name.jubiloiwata] = 'jubilo iwata';
+    map[_name.kashimaantlers] = 'kashima';
+    map[_name.kashiwaReysol] = 'kashiwa reysol';
+    map[_name.kyoto] = 'kyoto';
+    map[_name.kawasakifrontale] = 'kawasaki_frontale'; 
+    map[_name.nagoya] = 'nagoya';
+    map[_name.sagantosu] = 'sagan';
+    map[_name.sapporo] = 'sapporo';
+    map[_name.shonanbellmare] = 'shonan';
+    map[_name.tokyoVerdy] = 'tokyo verdy';
     map[_name.urawareddiamonds] = 'urawa';
-    map[_name.vegaltaSendai] =    'vegalta'; 
-    map[_name.visselkobe] =    'vissel_kobe'; 
-    map[_name.yokohamaFC] ='yokohama fc';
-    map[_name.yokohamamarinos] ='yokohama';
+    map[_name.vegaltaSendai] = 'vegalta'; 
+    map[_name.visselkobe] = 'vissel_kobe'; 
+    map[_name.yokohamaFC] = 'yokohama fc';
+    map[_name.yokohamamarinos] = 'yokohama';
     //SOUTH KOREA
     map[_name.busan] = 'busan'; 
     map[_name.daegu] = 'daegu'; 
     map[_name.jeonbuk] = 'jeonbuk'; 
-    map[_name.jeju] ='jeju';
-    map[_name.gimcheon] ='gimcheon';
-    map[_name.incheon] ='incheon';
-    map[_name.fcseoul] ='fc seoul';
-    map[_name.gangwon] ='gangwon';
-    map[_name.pohang] =     'pohang';  
-    map[_name.seongnam] =     'seongnam';  
-    map[_name.suwonsamsung] ='suwon samsung';
-    map[_name.ulsan] ='ulsan';
+    map[_name.jeju] = 'jeju';
+    map[_name.gimcheon] = 'gimcheon';
+    map[_name.incheon] = 'incheon';
+    map[_name.fcseoul] = 'fc seoul';
+    map[_name.gangwon] = 'gangwon';
+    map[_name.pohang] = 'pohang';  
+    map[_name.seongnam] = 'seongnam';  
+    map[_name.suwonsamsung] = 'suwon samsung';
+    map[_name.ulsan] = 'ulsan';
 
     //SOUTH ARABIA
     map[_name.alahly] = 'al_ahly';  
-    map[_name.alettifaq] ='al ettifaq';
+    map[_name.alettifaq] = 'al ettifaq';
     map[_name.alhilal] = 'al_hilal';  
-    map[_name.alfateh] ='al fateh';
-    map[_name.alIttihad] ='al ittihad';
+    map[_name.alfateh] = 'al fateh';
+    map[_name.alIttihad] = 'al ittihad';
     map[_name.alnassr] = 'al_nassr';  
-    map[_name.alraed] ='al raed';
-    map[_name.alShabab] ='al shabab';
-    map[_name.altaawoun] ='al taawoun';
-    map[_name.damac] ='damac';
+    map[_name.alraed] = 'al raed';
+    map[_name.alShabab] = 'al shabab';
+    map[_name.altaawoun] = 'al taawoun';
+    map[_name.damac] = 'damac';
     //QATAR
     map[_name.alarabi] = 'al arabi';  
     map[_name.alduhail] = 'duhail';  
     map[_name.alrayyan] = 'al rayyan';  
-    map[_name.alsadd] =      'sadd'; 
+    map[_name.alsadd] = 'sadd'; 
     //EAU
-    map[_name.ajman] ='ajman';  
-    map[_name.alain] ='al_ain';  
+    map[_name.ajman] = 'ajman';  
+    map[_name.alain] = 'al_ain';  
     map[_name.aljazira] = 'al_jazira';  
-    map[_name.alnasrEAU] ='al nasr';  
-    map[_name.alsharjah] ='al sharjah';
-    map[_name.alWahda] ='al wahda';
-    map[_name.alwasl] ='al wasl';
-    map[_name.baniyas] ='baniyas';
-    map[_name.shababalahli] ='shabab al ahli';
+    map[_name.alnasrEAU] = 'al nasr';  
+    map[_name.alsharjah] = 'al sharjah';
+    map[_name.alWahda] = 'al wahda';
+    map[_name.alwasl] = 'al wasl';
+    map[_name.baniyas] = 'baniyas';
+    map[_name.shababalahli] = 'shabab al ahli';
     //BAHREIN
-    map[_name.alhidd] ='al hidd';
-    map[_name.alMuharraq] ='al muharraq';
-    map[_name.alRiffa] ='al riffa';
-    map[_name.manama] ='manama';
+    map[_name.alhidd] = 'al hidd';
+    map[_name.alMuharraq] = 'al muharraq';
+    map[_name.alRiffa] = 'al riffa';
+    map[_name.manama] = 'manama';
     //PHILLIPINES
-    map[_name.maharlikaManila] ='manila';
-    map[_name.unitedCity] ='united city';
+    map[_name.maharlikaManila] = 'manila';
+    map[_name.unitedCity] = 'united city';
     //TAILANDIA
-    map[_name.buriram] ='buriram united';
-    map[_name.bangkok] ='bangkok';
-    map[_name.pathum] ='pathum';
-    map[_name.policeTero] ='police tero';
+    map[_name.buriram] = 'buriram united';
+    map[_name.bangkok] = 'bangkok';
+    map[_name.pathum] = 'pathum';
+    map[_name.policeTero] = 'police tero';
     //INDIA
-    map[_name.bengaluru] ='bengaluru';
-    map[_name.chennaiyin] ='chennaiyin';
-    map[_name.eastBengal] ='east bengal';
-    map[_name.hyderabad] ='hyderabad';
-    map[_name.goa] ='goa';
-    map[_name.kerala] ='kerala blasters';
-    map[_name.mohunBagan] ='mohun bagan';
-    map[_name.mumbai] ='mumbai';
-    map[_name.northeast] ='northeast';
-    map[_name.odisha] ='odisha';
+    map[_name.bengaluru] = 'bengaluru';
+    map[_name.chennaiyin] = 'chennaiyin';
+    map[_name.eastBengal] = 'east bengal';
+    map[_name.hyderabad] = 'hyderabad';
+    map[_name.goa] = 'goa';
+    map[_name.kerala] = 'kerala blasters';
+    map[_name.mohunBagan] = 'mohun bagan';
+    map[_name.mumbai] = 'mumbai';
+    map[_name.northeast] = 'northeast';
+    map[_name.odisha] = 'odisha';
 
     //BANGLADESH
-    //map[_name.bashundhara] ='bashundhara';
-    //map[_name.dhakaAbahani] ='dhakaAbahani';
-    //map[_name.saif] ='brunei';
-    //map[_name.sheikhJamal] ='sheikh jamal';
+    map[_name.bashundhara] = 'bashundhara';
+    map[_name.dhakaAbahani] = 'dhaka';
+    map[_name.saif] = 'saif';
+    //map[_name.sheikhJamal] = 'sheikh jamal';
     //BRUNEI
-    map[_name.brunei] ='brunei';
+    map[_name.brunei] = 'brunei';
     //SINGAPORE
-    map[_name.warriors] ='warriors';
-    map[_name.tampines] ='tampines';
+    map[_name.warriors] = 'warriors';
+    map[_name.tampines] = 'tampines';
     //INDONESIA
-    map[_name.bali] ='bali';
-    map[_name.persipura] ='persipura';
-    map[_name.persib] ='persib';
-    map[_name.persebaya] ='persebaya';
+    map[_name.bali] = 'bali';
+    map[_name.persipura] = 'persipura';
+    map[_name.persib] = 'persib';
+    map[_name.persebaya] = 'persebaya';
     //IRA
-    map[_name.persepolis] =     'persepolis';  
-    map[_name.esteghlal] =     'esteghlal';
-    map[_name.saipa] =     'saipa';
-    map[_name.sepahan] =     'sepahan';
-    map[_name.zobahan] =     'zob ahan';
+    map[_name.persepolis] = 'persepolis';  
+    map[_name.esteghlal] = 'esteghlal';
+    map[_name.saipa] = 'saipa';
+    map[_name.sepahan] = 'sepahan';
+    map[_name.zobahan] = 'zob ahan';
     //IRAQUE
-    map[_name.alRasheed] =     'al rasheed';
-    map[_name.alQuwaAlJawiya] =     'al quwa';
-    map[_name.alzawraa] =     'al zawraa';
+    map[_name.alRasheed] = 'al rasheed';
+    map[_name.alQuwaAlJawiya] = 'al quwa';
+    map[_name.alzawraa] = 'al zawraa';
     //OUTROS
-    map[_name.pakhtakor] ='pakhtakor';//UZBEQUISTAO
-    map[_name.phnomPenhCrown] ='phnom penh';//CAMBOJA
-    map[_name.alKuwait] ='al kuwait';//KUWAIT
-    map[_name.machhindra] ='machhindra';//NEPAL
-    map[_name.hanoi] ='hanoi';//VIETNA
+    map[_name.pakhtakor] = 'pakhtakor';//UZBEQUISTAO
+    map[_name.phnomPenhCrown] = 'phnom penh';//CAMBOJA
+    map[_name.alKuwait] = 'al kuwait';//KUWAIT
+    map[_name.alQadsia] = 'al qadsia';//KUWAIT
+    map[_name.machhindra] = 'machhindra';//NEPAL
+    map[_name.hanoi] = 'hanoi';//VIETNA
     //LEBANON
-    map[_name.alAhed] ='al ahed';
-    map[_name.alAnsar] ='al ansar';
-    map[_name.nejmeh] ='nejmeh';
+    map[_name.alAhed] = 'al ahed';
+    map[_name.alAnsar] = 'al ansar';
+    map[_name.nejmeh] = 'nejmeh';
     //MALASYA
-    map[_name.johorDarul] ='johor';
-    map[_name.kualaLumpur] ='kuala lumpur';
-    map[_name.selangor] ='selangor';
+    map[_name.johorDarul] = 'johor';
+    map[_name.kualaLumpur] = 'kuala lumpur';
+    map[_name.selangor] = 'selangor';
     //MONGOLIA
-    map[_name.athletic220] ='athletic 220';
-    map[_name.erchim] ='erchim';
-    map[_name.khoromkhon] ='khoromkhon';
-    map[_name.ulaanbaatar] ='ulaanbaatar city';
+    map[_name.athletic220] = 'athletic 220';
+    map[_name.erchim] = 'erchim';
+    map[_name.khoromkhon] = 'khoromkhon';
+    map[_name.ulaanbaatar] = 'ulaanbaatar city';
     //SIRIA
-    map[_name.alJaish] ='al jaish';
-    map[_name.alShorta] ='al shorta';
-    map[_name.tishreen] ='tishreen';
+    map[_name.alKaramah] = 'al karamah';
+    map[_name.alJaish] = 'al jaish';
+    map[_name.alShorta] = 'al shorta';
+    map[_name.tishreen] = 'tishreen';
 
 
 
     //OCENIA
-    map[_name.auckland] ='auckland';
-    map[_name.wellingtonphoenix] ='wellington phoenix';
+    map[_name.auckland] = 'auckland';
+    map[_name.wellingtonphoenix] = 'wellington phoenix';
 
-    map[_name.adelaide] ='adelaide';
-    map[_name.brisbane] ='brisbane';
-    map[_name.centralcoast] ='central coast';
-    map[_name.melbournecity] ='melbournecity';
-    map[_name.newcastlejets] ='newcastlejets';
-    map[_name.melbournevictory] ='melbourne victory';
-    map[_name.perth] ='perth';
-    map[_name.sydney] ='sydney';
-    map[_name.sydneywanderers] ='sydney wanderers';
-    map[_name.westernunited] ='western';
+    map[_name.adelaide] = 'adelaide';
+    map[_name.brisbane] = 'brisbane';
+    map[_name.centralcoast] = 'central coast';
+    map[_name.melbournecity] = 'melbournecity';
+    map[_name.newcastlejets] = 'newcastlejets';
+    map[_name.melbournevictory] = 'melbourne victory';
+    map[_name.perth] = 'perth';
+    map[_name.sydney] = 'sydney';
+    map[_name.sydneywanderers] = 'sydney wanderers';
+    map[_name.westernunited] = 'western';
 
     //AFRICA
     //EGITO
     map[_name.alahli] = 'al_ahli';  
-    map[_name.almasry] ='al masry';
-    map[_name.cleopatra] ='cleopatra';
-    map[_name.future] ='future fc';
-    map[_name.ismaily] ='ismaily';
-    map[_name.pyramids] ='pyramids';
-    map[_name.zamalek] ='zamalek';
+    map[_name.almasry] = 'al masry';
+    map[_name.cleopatra] = 'cleopatra';
+    map[_name.future] = 'future fc';
+    map[_name.ismaily] = 'ismaily';
+    map[_name.pyramids] = 'pyramids';
+    map[_name.zamalek] = 'zamalek';
     //ALGERIA
-    map[_name.belouizdad] ='belouizdad';
-    map[_name.essetif] ='es setif';
-    map[_name.kabylie] ='kabylie';
-    map[_name.mcalger] ='mc alger';
-    map[_name.mcOran] ='mc oran';
-    map[_name.usmAlger] ='usm alger';
+    map[_name.belouizdad] = 'belouizdad';
+    map[_name.essetif] = 'es setif';
+    map[_name.kabylie] = 'kabylie';
+    map[_name.mcalger] = 'mc alger';
+    map[_name.mcOran] = 'mc oran';
+    map[_name.usmAlger] = 'usm alger';
     //LYBIA
-    map[_name.alIttihadLIB] ='al ittihad libya';
-    map[_name.benghazi] ='benghazi';
+    map[_name.alIttihadLIB] = 'al ittihad libya';
+    map[_name.benghazi] = 'benghazi';
     //MARROCOS
-    map[_name.rajacasablanca] ='raja';  
-    map[_name.wydad] ='wydad';
-    map[_name.farRabat] ='far rabat';
-    map[_name.maghreb] ='maghreb';
+    map[_name.rajacasablanca] = 'raja';  
+    map[_name.wydad] = 'wydad';
+    map[_name.farRabat] = 'far rabat';
+    map[_name.maghreb] = 'maghreb';
     //SUDAN
-    map[_name.omdurman] ='omdurman';
-    map[_name.almerrikh] ='al merrikh';
+    map[_name.omdurman] = 'omdurman';
+    map[_name.almerrikh] = 'al merrikh';
     //TUNISIA
-    map[_name.clubAfricain] ='club africain';
-    map[_name.esperance] ='esperance';
-    map[_name.etoilesahel] ='etoile sahel';
-    map[_name.sfaxien] ='sfaxien';
+    map[_name.clubAfricain] = 'club africain';
+    map[_name.esperance] = 'esperance';
+    map[_name.etoilesahel] = 'etoile sahel';
+    map[_name.sfaxien] = 'sfaxien';
 
     /////////////////////////////////////////
     //AFRICA DO SUL
-    map[_name.amazulu] ='amazulu';
-    map[_name.capetown] ='cape town';
-    map[_name.goldenarrows] ='golden arrows';
-    map[_name.kaizer] ='kaizer chiefs';
-    map[_name.mamelodi] ='mamelodi sundowns';
-    map[_name.maritzburg] ='maritzburg';
-    map[_name.orlandopirates] ='orlando pirates';
+    map[_name.amazulu] = 'amazulu';
+    map[_name.capetown] = 'cape town';
+    map[_name.goldenarrows] = 'golden arrows';
+    map[_name.kaizer] = 'kaizer chiefs';
+    map[_name.mamelodi] = 'mamelodi sundowns';
+    map[_name.maritzburg] = 'maritzburg';
+    map[_name.orlandopirates] = 'orlando pirates';
     //ANGOLA
-    map[_name.agosto] ='1 de agosto';
-    map[_name.petroluanda] ='petro luanda';
-    map[_name.sagradaesperanca] ='sagrada esperanca';
-    map[_name.sptCabinda] ='sporting';
+    map[_name.agosto] = '1 de agosto';
+    map[_name.petroluanda] = 'petro luanda';
+    map[_name.sagradaesperanca] = 'sagrada esperanca';
+    map[_name.sptCabinda] = 'sporting';
     //BOTSWANA
-    map[_name.gaborone] ='gaborone';
+    map[_name.gaborone] = 'gaborone';
     //CAMEROON
-    map[_name.canonYaounde] ='canon yaounde';
-    map[_name.cotonsport] ='cotonsport';
-    map[_name.douala] ='douala';
+    map[_name.canonYaounde] = 'canon yaounde';
+    map[_name.cotonsport] = 'cotonsport';
+    map[_name.douala] = 'douala';
     //CAPE VERDE
-    map[_name.mindelense] ='mindelense';
-    map[_name.sptClubePraia] ='spt clube praia';
+    map[_name.mindelense] = 'mindelense';
+    map[_name.sptClubePraia] = 'spt clube praia';
     //CONGO
-    map[_name.diablesNoirs] ='diables noirs';
-    map[_name.otoho] ='otoho';
-    map[_name.talangai] ='talangai';
+    map[_name.diablesNoirs] = 'diables noirs';
+    map[_name.otoho] = 'otoho';
+    map[_name.talangai] = 'talangai';
     //RD CONGO
-    map[_name.dragons] ='dragons';
-    map[_name.maniema] ='maniema';
-    map[_name.mazembe] ='mazembe';
-    map[_name.vita] ='vita';
+    map[_name.dragons] = 'dragons';
+    map[_name.maniema] = 'maniema';
+    map[_name.mazembe] = 'mazembe';
+    map[_name.vita] = 'vita';
     //ETHIOPIA
-    map[_name.fasil] ='fasil kenema';
-    map[_name.stGeorge] ='st george';
+    map[_name.fasil] = 'fasil kenema';
+    map[_name.stGeorge] = 'st george';
     //IVORY COAST
-    map[_name.africaSports] ='africa sports';
-    map[_name.asecmimosas] ='asec mimosas';
-    map[_name.gagnoa] ='gagnoa';
-    map[_name.omnisport] ='omnisport';
-    map[_name.sanPedro] ='san pedro';
+    map[_name.africaSports] = 'africa sports';
+    map[_name.asecmimosas] = 'asec mimosas';
+    map[_name.gagnoa] = 'gagnoa';
+    map[_name.omnisport] = 'omnisport';
+    map[_name.sanPedro] = 'san pedro';
     //GHANA
-    map[_name.asantekotoko] ='asante kotoko';
-    map[_name.heartsoak] ='hearts oak';
+    map[_name.asantekotoko] = 'asante kotoko';
+    map[_name.heartsoak] = 'hearts oak';
     //GUINEA
-    map[_name.hafia] ='hafia guinea';
-    map[_name.horoya] ='horoya';
+    map[_name.hafia] = 'hafia guinea';
+    map[_name.horoya] = 'horoya';
     //KENYA
-    map[_name.gorMahia] ='gor mahia';
-    map[_name.mathare] ='mathare';
-    map[_name.tusker] ='tusker';
-    map[_name.ulinzi] ='ulinzi';
+    map[_name.gorMahia] = 'gor mahia';
+    map[_name.mathare] = 'mathare';
+    map[_name.tusker] = 'tusker';
+    map[_name.ulinzi] = 'ulinzi';
     //MADAGASCAR
-    map[_name.adema] ='adema';
-    map[_name.cnapsSport] ='cnaps sport';
+    map[_name.adema] = 'adema';
+    map[_name.cnapsSport] = 'cnaps sport';
     //MOZAMBIQUE
-    map[_name.costaDoSol] ='costa do sol';
-    map[_name.libolo] ='ferroviario libolo';
+    map[_name.costaDoSol] = 'costa do sol';
+    map[_name.libolo] = 'ferroviario libolo';
     //NAMIBIA
-    map[_name.blackAfrica] ='black africa';
-    map[_name.africanStars] ='african stars';
+    map[_name.blackAfrica] = 'black africa';
+    map[_name.africanStars] = 'african stars';
     //NIGERIA
-    map[_name.enyimba] ='enyimba';
-    map[_name.heartland] ='heartland';
-    map[_name.kano] ='kano';
-    map[_name.rangersInt] ='rangers international';
-    map[_name.riversUtd] ='rivers united';
-    map[_name.shootingstars] ='shooting stars';
-    map[_name.sunshinestars] ='sunshine stars';
+    map[_name.enyimba] = 'enyimba';
+    map[_name.heartland] = 'heartland';
+    map[_name.kano] = 'kano';
+    map[_name.rangersInt] = 'rangers international';
+    map[_name.riversUtd] = 'rivers united';
+    map[_name.shootingstars] = 'shooting stars';
+    map[_name.sunshinestars] = 'sunshine stars';
     //SENEGAL
-    map[_name.jaraaf] ='jaraaf';
-    map[_name.jeannedarc] ='jeanne';
+    map[_name.jaraaf] = 'jaraaf';
+    map[_name.jeannedarc] = 'jeanne';
     //TANZANIA
-    map[_name.simba] ='simba';
+    map[_name.simba] = 'simba';
     //ZAMBIA
-    map[_name.greenEagles] ='green eagles';
-    map[_name.nkana] ='nkana';
-    map[_name.zesco] ='zesco';
+    map[_name.greenEagles] = 'green eagles';
+    map[_name.nkana] = 'nkana';
+    map[_name.zesco] = 'zesco';
     //ZIMBABWE
-    map[_name.dynamos] ='dynamos';
-    map[_name.manicaDiamonds] ='manica';
-    map[_name.platinum] ='platinum';
+    map[_name.dynamos] = 'dynamos';
+    map[_name.manicaDiamonds] = 'manica';
+    map[_name.platinum] = 'platinum';
 
     if(map.containsKey(timeFoto)){
       return map[timeFoto];
