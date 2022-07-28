@@ -34,7 +34,6 @@ class _NotPlayState extends State<NotPlay> {
 
     String weekName = Semana(semana).semanaAlternativeStr;
 
-    print(Semana(semana).isJogoMundial);
     return Scaffold(
         body:  Stack(
             children: [

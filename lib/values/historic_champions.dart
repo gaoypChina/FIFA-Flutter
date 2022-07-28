@@ -1069,7 +1069,6 @@ ClubName _name = ClubName();
         1994: [_name.spartakmoscou,_name.dinamoMoscou,_name.lokomotivMoscou,_name.rotor,_name.alania,    _name.kamaz,_name.kamyshin,_name.nizhnyNovgorod,_name.zhemchuzhinaSochi,_name.cska,        _name.torpedo,_name.tyumen,_name.krylyaSovetov,_name.ural,_name.stavropol],
         1993: [_name.spartakmoscou,_name.dinamoMoscou,_name.rotor,_name.lokomotivMoscou,                 _name.alania,_name.torpedo,_name.ural,_name.kamaz,_name.cska,                              _name.nizhnyNovgorod,_name.stavropol,_name.zhemchuzhinaSochi,_name.krylyaSovetov,_name.vladivostok,_name.okean,_name.rostov,_name.presnyaMoscow],
         1992: [_name.spartakmoscou,_name.alania,_name.dinamoMoscou,_name.lokomotivMoscou,_name.cska,     _name.nizhnyNovgorod,_name.presnyaMoscow,_name.rostov,_name.ural,_name.kamyshin,           _name.torpedo,_name.rotor,_name.okean,_name.krylyaSovetov,_name.stavropol,_name.zenit,_name.fakel,_name.kubanKrasnodar,_name.shinnikYaroslavl,_name.tyumen],
-
         //URSS
         1991: [_name.cska,_name.spartakmoscou,_name.torpedo,_name.odesa,_name.dinamokiev,            _name.dinamoMoscou,_name.araratYerevan,_name.dinamoMinsk,_name.dnipro,_name.pamirDushanbe,     _name.alania,_name.shaktardonetsk,_name.metalurh,_name.pakhtakor,_name.metalist,_name.lokomotivMoscou],
         1990: [_name.dinamokiev,_name.cska,_name.dinamoMoscou,_name.torpedo,_name.spartakmoscou,     _name.dnipro,_name.araratYerevan,_name.shaktardonetsk,_name.odesa,_name.pamirDushanbe,         _name.metalist,_name.dinamoMinsk,_name.rotor,_name.zalgiris],
@@ -1077,10 +1076,30 @@ ClubName _name = ClubName();
         1988: [_name.dnipro,_name.dinamokiev,_name.torpedo,_name.spartakmoscou,_name.zalgiris,       _name.zenit,_name.lokomotivMoscou,_name.shaktardonetsk,_name.araratYerevan,_name.dinamoMoscou, _name.metalist,_name.dinamoMinsk,_name.odesa,_name.tbilisi,_name.baku,_name.kairat],
         1987: [_name.spartakmoscou,_name.dnipro,_name.zalgiris,_name.torpedo,_name.dinamoMinsk,      _name.dinamokiev,_name.shaktardonetsk,_name.araratYerevan,_name.baku,_name.dinamoMoscou,       _name.metalist,_name.kairat,_name.tbilisi,_name.zenit,_name.cska,_name.guria],
         1986: [_name.dinamokiev,_name.dinamoMoscou,_name.spartakmoscou,_name.zenit,_name.tbilisi,    _name.shaktardonetsk,_name.kairat,_name.zalgiris,_name.torpedo,_name.dinamoMinsk,              _name.dnipro,_name.metalist,_name.baku,_name.araratYerevan,_name.odesa,_name.kutaisi],
-        1985: [_name.dinamokiev,_name.spartakmoscou,_name.dnipro,_name.dinamoMinsk,_name.torpedo,       _name.zenit,_name.zalgiris,_name.tbilisi,_name.kairat,_name.metalist,                       _name.kutaisi,_name.shaktardonetsk,_name.araratYerevan,_name.dinamoMoscou,_name.odesa,_name.baku,_name.fakel,_name.skaRostov],
+        1985: [_name.dinamokiev,_name.spartakmoscou,_name.dnipro,_name.dinamoMinsk,_name.torpedo,    _name.zenit,_name.zalgiris,_name.tbilisi,_name.kairat,_name.metalist,                          _name.kutaisi,_name.shaktardonetsk,_name.araratYerevan,_name.dinamoMoscou,_name.odesa,_name.baku,_name.fakel,_name.skaRostov],
         1984: [_name.zenit,_name.spartakmoscou,_name.dnipro,_name.odesa,_name.dinamoMinsk,           _name.torpedo,_name.tbilisi,_name.kairat,_name.zalgiris,_name.dinamokiev,                      _name.araratYerevan,_name.metalist,_name.shaktardonetsk,_name.skaRostov,_name.baku,_name.dinamoMoscou,_name.pakhtakor,_name.cska],
         1983: [_name.dnipro,_name.spartakmoscou,_name.dinamoMinsk,_name.zenit,_name.zalgiris,        _name.torpedo,_name.dinamokiev,_name.odesa,_name.shaktardonetsk,_name.pakhtakor,               _name.metalist,_name.cska,_name.baku,_name.araratYerevan,_name.dinamoMoscou,_name.tbilisi,_name.kutaisi,_name.zimbru],
-      };
+        1982: [_name.dinamoMinsk,_name.dinamokiev,_name.spartakmoscou,_name.tbilisi,_name.araratYerevan,  _name.pakhtakor,_name.zenit,_name.torpedo,_name.dnipro,_name.odesa,                       _name.dinamoMoscou,_name.metalist,_name.kutaisi,_name.shaktardonetsk,_name.cska,_name.baku,_name.kubanKrasnodar,_name.kairat],
+        1981: [_name.dinamokiev,_name.spartakmoscou,_name.tbilisi,_name.dinamoMoscou,_name.torpedo,       _name.cska,_name.shaktardonetsk,_name.dnipro,_name.dinamoMinsk,_name.baku,                _name.odesa,_name.kairat,_name.kubanKrasnodar,_name.araratYerevan,_name.zenit,_name.skaRostov,_name.tavria,_name.pakhtakor],
+        1980: [_name.dinamokiev,_name.spartakmoscou,_name.zenit,_name.tbilisi,_name.cska,                 _name.shaktardonetsk,_name.odesa,_name.dinamoMinsk,_name.araratYerevan,_name.skaRostov,   _name.torpedo,_name.kairat,_name.baku,_name.dinamoMoscou,_name.kubanKrasnodar,_name.pakhtakor,_name.karpatyLviv,_name.lokomotivMoscou],
+        1979: [_name.spartakmoscou,_name.shaktardonetsk,_name.dinamokiev,_name.tbilisi,_name.dinamoMoscou,   _name.dinamoMinsk,_name.araratYerevan,_name.pakhtakor,_name.zenit,                     _name.odesa,_name.lokomotivMoscou,_name.kairat,_name.baku,_name.skaRostov,_name.torpedo,_name.zorya,_name.krylyaSovetov],
+        1978: [_name.tbilisi,_name.dinamokiev,_name.shaktardonetsk,_name.dinamoMoscou,_name.spartakmoscou,   _name.cska,_name.odesa,_name.torpedo,_name.zorya,_name.zenit,                          _name.pakhtakor,_name.kairat,_name.baku,_name.araratYerevan,_name.lokomotivMoscou,_name.dnipro],
+        1977: [_name.dinamokiev,_name.tbilisi,_name.torpedo,_name.dinamoMoscou,_name.shaktardonetsk,         _name.lokomotivMoscou,_name.odesa,_name.kairat,_name.zorya,_name.zenit,                _name.araratYerevan,_name.dnipro,_name.baku,_name.cska,_name.karpatyLviv,_name.krylyaSovetov],
+        1976: [_name.dinamoMoscou,_name.araratYerevan,_name.tbilisi,_name.karpatyLviv,_name.shaktardonetsk,  _name.krylyaSovetov,_name.cska,_name.dinamokiev,_name.dinamoMinsk,_name.odesa,         _name.dnipro,_name.torpedo,_name.zenit,_name.spartakmoscou,_name.lokomotivMoscou,_name.zorya],
+        1975: [_name.dinamokiev,_name.shaktardonetsk,_name.dinamoMoscou,_name.torpedo,_name.araratYerevan,   _name.karpatyLviv,_name.dnipro,_name.tbilisi,_name.zorya,_name.spartakmoscou,          _name.lokomotivMoscou,_name.odesa,_name.cska,_name.zenit,_name.pakhtakor,_name.skaRostov],
+        1974: [_name.dinamokiev,_name.spartakmoscou,_name.odesa,_name.torpedo,_name.araratYerevan,           _name.dinamoMoscou,_name.zenit,_name.pakhtakor,_name.tbilisi,_name.dnipro,             _name.karpatyLviv,_name.shaktardonetsk,_name.cska,_name.zorya,_name.kairat,_name.zimbru],
+        1973: [_name.araratYerevan,_name.dinamokiev,_name.dinamoMoscou,_name.spartakmoscou,_name.tbilisi,    _name.shaktardonetsk,_name.zorya,_name.dnipro,_name.kairat,_name.cska,                 _name.zenit,_name.pakhtakor,_name.torpedo,_name.karpatyLviv,_name.dinamoMinsk,_name.skaRostov],
+        1972: [_name.zorya,_name.dinamokiev,_name.tbilisi,_name.araratYerevan,_name.cska,                    _name.dnipro,_name.zenit,_name.dinamoMinsk,_name.torpedo,_name.dinamoMoscou,           _name.spartakmoscou,_name.skaRostov,_name.kairat,_name.karpatyLviv,_name.lokomotivMoscou,_name.baku],
+        1971: [_name.dinamokiev,_name.araratYerevan,_name.tbilisi,_name.zorya,_name.dinamoMoscou,            _name.spartakmoscou,_name.torpedo,_name.kairat,_name.baku,_name.karpatyLviv,           _name.dinamoMinsk,_name.cska,_name.zenit,_name.skaRostov,_name.pakhtakor,_name.shaktardonetsk],
+        1970: [_name.cska,_name.dinamoMoscou,_name.spartakmoscou,_name.tbilisi,_name.zorya,                  _name.torpedo,_name.dinamokiev,_name.skaRostov,_name.dinamoMinsk,_name.shaktardonetsk, _name.baku,_name.araratYerevan,_name.pakhtakor,_name.zenit,_name.odesa,_name.kutaisi,_name.alania],
+        1969: [_name.spartakmoscou,_name.dinamokiev,_name.tbilisi,_name.dinamoMoscou,_name.torpedo,          _name.cska,_name.baku,_name.odesa,_name.zenit,_name.shaktardonetsk,                    _name.zorya,_name.skaRostov,_name.dinamoMinsk,_name.kutaisi,   _name.araratYerevan,_name.pakhtakor,_name.kairat,_name.lokomotivMoscou,_name.krylyaSovetov,_name.ural],
+        1968: [_name.dinamokiev,_name.spartakmoscou,_name.torpedo,_name.cska,_name.dinamoMoscou,             _name.dinamoMinsk,_name.tbilisi,_name.odesa,_name.baku,_name.lokomotivMoscou,          _name.zenit,_name.skaRostov,_name.zorya,_name.shaktardonetsk,_name.kairat,_name.araratYerevan,_name.pakhtakor,_name.krylyaSovetov,_name.kutaisi,_name.kapaz],
+        1967: [_name.dinamokiev,_name.dinamoMoscou,_name.tbilisi,_name.dinamoMinsk,_name.baku,               _name.shaktardonetsk,_name.spartakmoscou,_name.araratYerevan,_name.cska,_name.skaRostov,  _name.krylyaSovetov,_name.torpedo,_name.kutaisi,_name.kairat,_name.pakhtakor,_name.zorya,_name.lokomotivMoscou,_name.odesa,_name.zenit],
+        1966: [_name.dinamokiev,_name.skaRostov,_name.baku,_name.spartakmoscou,_name.cska,                   _name.torpedo,_name.tbilisi,_name.dinamoMoscou,_name.pakhtakor,_name.shaktardonetsk,   _name.dinamoMinsk,_name.kairat,_name.araratYerevan,_name.odesa,_name.kutaisi,_name.zenit,_name.lokomotivMoscou,_name.krylyaSovetov,_name.scOdesa],
+        1965: [_name.torpedo,_name.dinamokiev,_name.cska,_name.dinamoMinsk,_name.dinamoMoscou,               _name.tbilisi,_name.skaRostov,_name.spartakmoscou,_name.zenit,_name.pakhtakor,         _name.baku,_name.shaktardonetsk,_name.krylyaSovetov,_name.odesa,_name.lokomotivMoscou,_name.kutaisi,_name.scOdesa],
+        1964: [_name.tbilisi,_name.torpedo,_name.cska,_name.skaRostov,_name.shaktardonetsk,                  _name.dinamokiev,_name.dinamoMoscou,_name.spartakmoscou,_name.dinamoMinsk,_name.krylyaSovetov,  _name.zenit,_name.baku,_name.kutaisi,_name.nizhnyNovgorod,_name.kairat,_name.shinnikYaroslavl,_name.zimbru],
+        1963: [_name.dinamoMoscou,_name.spartakmoscou,_name.dinamoMinsk,_name.skaRostov,_name.tbilisi,       _name.zenit,_name.cska,_name.baku,_name.dinamokiev,_name.torpedo,                     _name.shaktardonetsk,_name.kutaisi,_name.zimbru,_name.kairat,_name.krylyaSovetov,],
+        };
     }
     else if(leagueName == LeagueOfficialNames().brasil1){
       champions = {
@@ -1289,7 +1308,7 @@ ClubName _name = ClubName();
 
       };
     }
-    else if(leagueName == LeagueOfficialNames().sulamericano){
+    else if(leagueName == LeagueOfficialNames().uruguai){
       champions = {
         //2022: [],
         2021: [_name.penarol,_name.plazacolonia,],
@@ -1936,8 +1955,101 @@ ClubName _name = ClubName();
         1952: [_name.fluminense,_name.corinthians,_name.austria,_name.penarol],
         1951: [_name.palmeiras,_name.juventus,_name.vasco,_name.austria],
       };
+      }
 
 
+    else if(leagueName == LeagueOfficialNames().europaLeagueOficial){
+      champions = {
+        //2022: [_name.eintrachtfrankfurt,_name.rangers,_name.westham,_name.rbleipzig,  ],
+        2021: [_name.villareal,_name.manchesterunited,_name.arsenal,_name.roma,       ],
+        2020: [_name.sevilla,_name.inter,_name.manchesterunited,_name.shaktardonetsk, ],
+        2019: [_name.chelsea,_name.arsenal,_name.eintrachtfrankfurt,_name.valencia,   ],
+        2018: [_name.atleticomadrid,_name.om,_name.arsenal,_name.rbsalzburg,          ],
+        2017: [_name.manchesterunited,_name.ajax,_name.celtavigo,_name.lyon,          ],
+        2016: [_name.sevilla,_name.liverpool,_name.shaktardonetsk,_name.villareal,    ],
+        2015: [_name.sevilla,_name.dnipro,_name.fiorentina,_name.napoli,              ],
+        2014: [_name.sevilla,_name.benfica,_name.valencia,_name.juventus,             ],
+        2013: [_name.chelsea,_name.benfica,_name.basel,_name.fenerbahce,              ],
+        2012: [_name.atleticomadrid,_name.athleticbilbao,_name.valencia,_name.sporting, ],
+        2011: [_name.porto,_name.braga,_name.villareal,_name.benfica,                   ],
+        2010: [_name.atleticomadrid,_name.fulham,_name.liverpool,_name.hamburgo,        ],
+        2009: [_name.shaktardonetsk,_name.werderbremen,_name.dinamokiev,_name.hamburgo, ],
+        2008: [_name.zenit,_name.rangers,_name.bayernmunique,_name.fiorentina,          ],
+        2007: [_name.sevilla,_name.espanyol,_name.osasuna,_name.werderbremen,           ],
+        2006: [_name.sevilla,_name.middlesbrough,_name.schalke04,_name.steauaBucuresti, ],
+        2005: [_name.cska,_name.sporting,_name.parma,_name.az,                          ],
+        2004: [_name.valencia,_name.om,_name.villareal,_name.newcastle,                 ],
+        2003: [_name.porto,_name.celtic,_name.lazio,_name.boavista,                     ],
+        2002: [_name.feyenoord,_name.dortmund,_name.inter,_name.milan,               ],
+        2001: [_name.liverpool,_name.alaves,_name.barcelona,_name.kaiserslautern,    ],
+        2000: [_name.galatasaray,_name.arsenal,_name.leeds,_name.lens,               ],
+        1999: [_name.parma,_name.om,_name.atleticomadrid,_name.bologna,              ],
+        1998: [_name.inter,_name.lazio,_name.spartakmoscou,_name.atleticomadrid,     ],
+        1997: [_name.schalke04,_name.inter,_name.tenerife,_name.monaco,              ],
+        1996: [_name.bayernmunique,_name.bordeaux,_name.barcelona,_name.slaviaPraha, ],
+        1995: [_name.parma,_name.juventus,_name.leverkusen,_name.dortmund,           ],
+        1994: [_name.inter,_name.rbsalzburg,_name.cagliari,_name.karlsruher,         ],
+        1993: [_name.juventus,_name.dortmund,_name.psg,_name.auxerre,                ],
+        1992: [_name.ajax,_name.torino,_name.genoa,_name.realmadrid,                 ],
+        1991: [_name.inter,_name.roma,_name.sporting,_name.brondby,                  ],
+        1990: [_name.juventus,_name.fiorentina,_name.colonia,_name.werderbremen,     ],
+        1989: [_name.napoli,_name.stuttgart,_name.bayernmunique,_name.dynamoDresden, ],
+        1988: [_name.leverkusen,_name.espanyol,_name.werderbremen,_name.brugge,      ],
+        1987: [_name.ifkgoteborg,_name.dundee,_name.tirol,_name.moenchengladbach,    ],
+        1986: [_name.realmadrid,_name.colonia,_name.inter,_name.waregemKSV,          ],
+        1985: [_name.realmadrid,_name.fehervar,_name.inter,_name.zeljeznicar,        ],
+        1984: [_name.tottenham,_name.anderlecht,_name.hadjuksplit,_name.nottinghamforest,],
+        1983: [_name.anderlecht,_name.benfica,_name.bohemians,_name.craiova,         ],
+        1982: [_name.ifkgoteborg,_name.hamburgo,_name.kaiserslautern,_name.radnicki, ],
+        1981: [_name.ipswichTown,_name.az,_name.colonia,_name.sochaux,               ],
+        1980: [_name.eintrachtfrankfurt,_name.moenchengladbach,_name.bayernmunique,_name.stuttgart,],
+        1979: [_name.moenchengladbach,_name.estrelavermelha,_name.duisburg,_name.herthaberlim, ],
+        1978: [_name.psv,_name.bastia,_name.barcelona,_name.grasshoppers,           ],
+        1977: [_name.juventus,_name.athleticbilbao,_name.aek,_name.molenbeek,       ],
+        1976: [_name.liverpool,_name.brugge,_name.barcelona,_name.hamburgo,         ],
+        1975: [_name.moenchengladbach,_name.twente,_name.colonia,_name.juventus,    ],
+        1974: [_name.feyenoord,_name.tottenham,_name.stuttgart,_name.lokLeipzig,    ],
+        1973: [_name.liverpool,_name.moenchengladbach,_name.tottenham,_name.twente, ],
+        1972: [_name.tottenham,_name.wolves,_name.milan,_name.ferencvaros,          ],
+      };
+    }
+
+
+    else if(leagueName == LeagueOfficialNames().sulamericano){
+      champions = {
+        2021: [_name.atleticopr,_name.bragantino,_name.penarol,_name.libertad,         ],
+        2020: [_name.defensayjusticia,_name.lanus,_name.coquimbo,_name.velez,          ],
+        2019: [_name.idelvalle,_name.colon,_name.corinthians,_name.atleticomg,         ],
+        2018: [_name.atleticopr,_name.junior,_name.fluminense,_name.santafe,           ],
+        2017: [_name.independiente,_name.flamengo,_name.libertad,_name.junior,         ],
+        2016: [_name.chapecoense,_name.atleticonacional,_name.sanlorenzo,_name.cerroporteno],
+        2015: [_name.santafe,_name.huracan,_name.luqueno,_name.riverplate,             ],
+        2014: [_name.riverplate,_name.atleticonacional,_name.bocajuniors,_name.saopaulo],
+        2013: [_name.lanus,_name.pontepreta,_name.libertad,_name.saopaulo,             ],
+        2012: [_name.saopaulo,_name.tigre,_name.univcatolica,_name.millonarios,        ],
+        2011: [_name.lau,_name.ldu,_name.vasco,_name.velez,                            ],
+        2010: [_name.independiente,_name.goias,_name.ldu,_name.palmeiras,              ],
+        2009: [_name.ldu,_name.fluminense,_name.riverURU,_name.cerroporteno,           ],
+        2008: [_name.internacional,_name.estudiantes,_name.chivas,_name.argentinojuniors],
+        2007: [_name.arsenalsarandi,_name.americamex,_name.riverplate,_name.millonarios],
+        2006: [_name.pachuca,_name.colocolo,_name.atleticopr,_name.toluca,             ],
+        2005: [_name.bocajuniors,_name.pumas,_name.univcatolica,_name.velez,           ],
+        2004: [_name.bocajuniors,_name.bolivar,_name.internacional,_name.ldu,          ],
+        2003: [_name.cienciano,_name.riverplate,_name.atleticonacional,_name.saopaulo, ],
+        2002: [_name.sanlorenzo,_name.atleticonacional,_name.bolivar,_name.nacional,   ],
+        //COPA CONMEBOL
+        2001: [],
+        2000: [],
+        1999: [_name.talleres,_name.csa,_name.concepcion,_name.saoraimundo,            ],
+        1998: [_name.santos,_name.rosariocentral,_name.sampaio,_name.atleticomg,       ],
+        1997: [_name.atleticomg,_name.lanus,_name.universitario,_name.colon,           ],
+        1996: [_name.lanus,_name.santafe,_name.rosariocentral,_name.vasco,             ],
+        1995: [_name.rosariocentral,_name.atleticomg,_name.colegiales,_name.americadecali,],
+        1994: [_name.saopaulo,_name.penarol,_name.corinthians,_name.lau,               ],
+        1993: [_name.botafogo,_name.penarol,_name.atleticomg,_name.sanlorenzo,         ],
+        1992: [_name.atleticomg,_name.olimpia,_name.elnacional,_name.gimnasia,         ],
+      };
+    }
       ////////////////////////////////////////////////////
       if(leagueName == LeagueOfficialNames().englandCup) {
         champions = {
@@ -2315,7 +2427,74 @@ ClubName _name = ClubName();
         };
       }
 
-    }
+      else if(leagueName == LeagueOfficialNames().grecia){
+        champions = {
+          2021: [],
+          2020: [],
+          2019: [],
+          2018: [],
+          2017: [],
+          2016: [],
+          2015: [],
+          2014: [],
+          2013: [],
+          2012: [],
+          2011: [],
+          2010: [],
+          2009: [],
+          2008: [],
+          2007: [],
+          2006: [],
+          2005: [],
+          2004: [],
+          2003: [],
+          2002: [],
+          2001: [],
+          2000: [],
+          1999: [],
+          1998: [],
+          1997: [],
+          1996: [],
+          1995: [],
+          1994: [],
+          1993: [],
+          1992: [],
+          1991: [],
+          1990: [],
+          1989: [],
+          1988: [],
+          1987: [],
+          1986: [],
+          1985: [],
+          1984: [],
+          1983: [],
+          1982: [],
+          1981: [],
+          1980: [],
+          1979: [],
+          1978: [],
+          1977: [],
+          1976: [],
+          1975: [],
+          1974: [],
+          1973: [],
+          1972: [],
+          1971: [],
+          1970: [],
+          1969: [],
+          1968: [],
+          1967: [],
+          1966: [],
+          1965: [],
+          1964: [],
+          1963: [],
+          1962: [],
+          1961: [],
+          1960: [],
+        };
+      }
+
+
 
     return champions;
   }

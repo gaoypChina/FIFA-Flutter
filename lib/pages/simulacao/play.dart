@@ -55,7 +55,7 @@ class _PlayState extends State<Play> {
     try {
       _timer.cancel();
     }catch(e){
-      print(e);
+      //print(e);
     }
     super.dispose();
   }

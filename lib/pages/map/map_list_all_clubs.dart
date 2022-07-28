@@ -119,65 +119,62 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                 ),
 
 
-                Column(
+                Row(
                   children: [
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Column(
+                    Expanded(
+                      child: Column(
+                        children: [
+                          Row(
                             children: [
-                              Row(
-                                children: [
-                                  Images().getEscudoWidget(clubName,50,50),
+                              Images().getEscudoWidget(clubName,50,50),
 
-                                  const SizedBox(width: 12),
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Text(clubName,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.negrito18),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: [
-                                          funcFlagsList(clubDetails.getCountry(clubName), 15, 25),
-                                          const SizedBox(width: 16),
-                                          Text(clubDetails.getFoundationYear(clubName).toString(),style: EstiloTextoBranco.text16),
-                                        ],
-                                      ),
-                                    ],
-                                  )
-                                ],
-                              ),
-
-                              Row(
-                                children: [
-                                  Text('(${clubDetails.getStadiumCapacityPointFormat(clubName).toString()}) ',style: EstiloTextoBranco.text16),
-                                  Expanded(child: Text(clubDetails.getStadium(clubName),maxLines: 2,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14)),
-                                ],
-                              ),
+                              const SizedBox(width: 12),
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Expanded(child: Text(clubName,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.negrito18)),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        funcFlagsList(clubDetails.getCountry(clubName), 15, 25),
+                                        const SizedBox(width: 16),
+                                        Text(clubDetails.getFoundationYear(clubName).toString(),style: EstiloTextoBranco.text16),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              )
                             ],
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 5),
-                          child: Image.asset(Images().getStadium(clubName),height: 90,width: 120,fit: BoxFit.fill,
-                            errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
-                            //Se o clube não tiver a imagem do estadio
-                              return Image.asset('assets/clubs/generic0.jpg',height: 90,width: 120,fit: BoxFit.fill);
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
 
+                          Row(
+                            children: [
+                              Text('(${clubDetails.getStadiumCapacityPointFormat(clubName).toString()}) ',style: EstiloTextoBranco.text16),
+                              Expanded(child: Text(clubDetails.getStadium(clubName),maxLines: 2,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14)),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 5),
+                      child: Image.asset(Images().getStadium(clubName),height: 90,width: 110,fit: BoxFit.fill,
+                        errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
+                        //Se o clube não tiver a imagem do estadio
+                          return Image.asset('assets/clubs/generic0.jpg',height: 90,width: 110,fit: BoxFit.fill);
+                        },
+                      ),
+                    ),
                   ],
                 ),
 
                 Padding(
-                    padding: const EdgeInsets.only(left:260,top: 10),
-                    child: UniformCustom(clubName,0.6).kit()
+                    padding: const EdgeInsets.only(left:270,top: 10),
+                    child: UniformCustom(clubName,0.55).kit()
                 ),
 
 

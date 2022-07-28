@@ -79,7 +79,6 @@ class LeagueConfigIndividual{
   }
   nTeamsLeagueOutros(){
     Map leagueOutros = clubNameMapImmutable[LeagueOfficialNames().outros];
-    print(leagueOutros.keys.length);
     return leagueOutros.keys.length;
   }
 

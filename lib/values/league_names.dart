@@ -3,6 +3,11 @@ class LeagueOfficialNames{
   final String libertadores = 'Libertadores';
   final String concacaf = 'Concacaf champions';
   final String asiaafricaChampionsLeague = 'World Champions League';
+
+
+  final String europaLeagueOficial = 'Europa League';
+  final String copaSulAmericana = 'Copa Sul-Americana';
+
   final String resto = 'Resto do Mundo';
   final String mundial = 'Mundial de Clubes da FIFA';
 
@@ -22,12 +27,19 @@ class LeagueOfficialNames{
   String suica = 'Super Liga Suíça';
   String servia = 'Liga Servia';
   String grecia = 'Liga Grega';
+  String repTcheca = 'Liga Tcheca';
   String cazaquistao = 'Super Liga do Cazaquistão';
   String ligaEuropa = 'Liga Europeia';  String lesteEuropeu = 'Leste Europeu';
 
   String brasil1 = 'Brasileirão';  String brasil2 = 'Brasileirão - Série B';String brasil3 = 'Brasileirão - Série C';
   String paulistao = 'Paulistão';
-  String argentina = 'Campeonato Argentino';String sulamericano = 'Sul-Americano';String colombia = 'Merconorte';
+  String argentina = 'Campeonato Argentino';String sulamericano = 'Sul-Americano';
+  String colombia = 'Merconorte';
+  String uruguai = 'Campeonato uruguaio';
+  String paraguai = 'Campeonato paraguaio';
+  String chile = 'Campeonato chileno';
+  String equador = 'Campeonato equatoriano';
+
   String mexico = 'Liga MX';String estadosUnidos = 'MLS';
   String asia = 'Liga Ásia';  String orienteMedio = 'Liga Oriente Médio';  String africa = 'Liga África';
   String outros = 'Outros';
@@ -39,7 +51,7 @@ class LeagueOfficialNames{
   String ligaEuropaCup = 'Copa da Europa';String eastEuropeCup = 'Leste Europeu Copa';
 
   String brazilCup = 'Copa do Brasil';String argentinaCup = 'Copa Argentina';
-  String sulamericanaCup = 'Copa Argentina';String merconorteCup = 'Copa Merconorte';
+  String sulamericanaCup = 'Copa America';String merconorteCup = 'Copa Merconorte';
 
   String mexicoCup = 'Copa MX';String usaCup = 'MLS Cup';
   String asiaCup = 'Asia Cup';String africaCup = 'África Cup';

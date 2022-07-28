@@ -44,7 +44,7 @@ class _CompareState extends State<Compare> {
     club = Club(index: my.clubID);
     club2 = widget.club;
     dataGraphics.getData(club2);
-    dataGraphicsCompare.getData(Club(index: my.clubID));
+    dataGraphicsCompare.getData(club);
     super.initState();
   }
 ////////////////////////////////////////////////////////////////////////////

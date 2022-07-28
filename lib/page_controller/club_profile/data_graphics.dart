@@ -1,6 +1,7 @@
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/historic.dart';
+import 'package:fifa/classes/historic_champions_league.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/historic_champions.dart';
 import 'package:fifa/values/league_divisions.dart';
@@ -57,6 +58,7 @@ class DataGraphics{
     calculatePoints();
 
     //historico internacional
+    defineSimulationClassificationInternational(club);
     defineHistoricInternational(club);
     participationsInternational();
     calculatePointsInternational();
@@ -190,6 +192,20 @@ class DataGraphics{
   /////////////////////////////////////////////////////////////////////////////
   // INTERNATIONAL
   ////////////////////////////////////////////////////////////////////////////
+  defineSimulationClassificationInternational(Club club){
+    for(int i=anoInicial; i<ano;i++){
+      String internationalLeague = club.internationalLeagueName;
+      List finalClassificationIDs = HistoricChampionsLeague().get32finalClassificationIDs(i, internationalLeague);
+
+      //verifica se naquele ano tem o time
+      int position = 32;
+      if(finalClassificationIDs.contains(club.index)){
+        position = finalClassificationIDs.indexOf(club.index) + 1;
+      }
+      dataInternational.add(ClassificationData(i.toDouble(), position));
+    }
+  }
+
   defineHistoricInternational(Club club){
 
     //para cada ano

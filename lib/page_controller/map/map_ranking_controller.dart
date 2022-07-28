@@ -23,7 +23,6 @@ class MapRankingController{
     List<String> listRanking = await SharedPreferenceHelper().getMapRanking() ?? [];
     listRanking.add(scoreData);
     SharedPreferenceHelper().saveMapRanking(listRanking);
-    print(scoreData);
   }
   
   //LOAD DATA

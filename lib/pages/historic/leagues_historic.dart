@@ -2,7 +2,6 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/historic.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
-import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -17,16 +16,25 @@ import '../../values/historic_champions.dart';
 
 class HistoricLeague extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
-  const HistoricLeague({Key? key}) : super(key: key);
+  final int choosenLeagueIndex;
+  const HistoricLeague({Key? key, required this.choosenLeagueIndex}) : super(key: key);
   @override
   _HistoricLeagueState createState() => _HistoricLeagueState();
 }
 
 class _HistoricLeagueState extends State<HistoricLeague> {
 
-  int choosenLeagueIndex = My().campeonatoID;
+  late int choosenLeagueIndex;
   late League league;
   int nTeamsSelected = 2;
+  ////////////////////////////////////////////////////////////////////////////
+//                               INIT                                     //
+////////////////////////////////////////////////////////////////////////////
+  @override
+  void initState() {
+    choosenLeagueIndex = widget.choosenLeagueIndex;
+    super.initState();
+  }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
