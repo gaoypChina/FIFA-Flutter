@@ -1,5 +1,5 @@
 import 'package:fifa/values/club_details.dart';
-import 'package:fifa/widgets/patterns.dart';
+import 'package:fifa/widgets/kits_crests/patterns.dart';
 import 'package:flutter/material.dart';
 
 class CrestWidgets{

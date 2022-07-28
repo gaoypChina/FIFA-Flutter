@@ -804,7 +804,7 @@ class ClubName{
   String khimki = "FK Khimki";
   String krylyaSovetov = "Krylya Sovetov";
   String kubanKrasnodar = "Kuban Krasnodar";
-  String moskva = "FK Moskva";
+  String moskva = "FK Moskva"; //1997-2010
   String mordovia = "Mordovia Saransk";
   String nizhnyNovgorod = "Nizhny Novgorod";
   String okean = "Okean Nakhodka";//1986-2015

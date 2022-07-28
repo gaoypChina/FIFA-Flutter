@@ -5,7 +5,7 @@ import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/widgets/back_button.dart';
-import 'package:fifa/widgets/uniforme.dart';
+import 'package:fifa/widgets/kits_crests/uniforme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
