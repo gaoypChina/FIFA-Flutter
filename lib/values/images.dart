@@ -665,6 +665,8 @@ String imageLogo(String timeFoto) {
     map[_name.batumi] = 'batumi';
     map[_name.dila] = 'dila';
     map[_name.tbilisi] = 'tbilisi';
+    map[_name.kutaisi] = 'kutaisi';
+    map[_name.saburtalo] = 'saburtalo';
     //ARMENIA
     map[_name.alashkent] = 'alashkent';
     map[_name.araratArmenia] = 'ararat armenia';
@@ -1102,7 +1104,8 @@ String imageLogo(String timeFoto) {
     map[_name.laGuaira] = 'la guaira';  
     map[_name.deportivoTachira] = 'deportivo tachira';  
     map[_name.estudiantesmerida] = 'estudiantes merida';  
-    map[_name.deplara] = 'deplara'; 
+    map[_name.deplara] = 'deplara';
+    map[_name.metropolitanos] = 'metropolitanos';
     map[_name.mineros] = 'mineros'; 
     map[_name.minerven] = 'minerven'; 
     map[_name.monagas] = 'monagas'; 
@@ -1186,18 +1189,21 @@ String imageLogo(String timeFoto) {
     //EL SALVADOR
     map[_name.alianzaELS] = 'alianza el salvador';  
     map[_name.atleticomarte] = 'atletico marte';  
-    map[_name.aguila] = 'aguila';  
-    map[_name.isidro] = 'isidro metapan';  
+    map[_name.aguila] = 'aguila';
+    map[_name.fas] = 'fas';
+    map[_name.firpo] = 'firpo';
+    map[_name.isidro] = 'isidro metapan';
+    map[_name.santaTecla] = 'santa tecla';
+    //GUATEMALA
+    map[_name.antiguaGuatemala] = 'antigua';
+    map[_name.comunicaciones] = 'comunicaciones';
+    map[_name.municipal] = 'municipal';
+    map[_name.xelaju] = 'xelaju';
     //HONDURAS
     map[_name.olimpiaHON] = 'olimpia honduras';  
     map[_name.rcdespana] = 'rcd espana';  
     map[_name.motagua] = 'motagua';  
-    map[_name.marathon] = 'marathon';  
-    //GUATEMALA
-    map[_name.antiguaGuatemala] = 'antigua';  
-    map[_name.comunicaciones] = 'comunicaciones';  
-    map[_name.municipal] = 'municipal';  
-    map[_name.xelaju] = 'xelaju';  
+    map[_name.marathon] = 'marathon';
     //NICARAGUA
     map[_name.realEsteli] = 'real esteli';  
     map[_name.managua] = 'managua';  
@@ -1207,7 +1213,9 @@ String imageLogo(String timeFoto) {
     map[_name.arabeunido] = 'arabe unido';  
     map[_name.independienteChorrera] = 'independiente chorrera';  
     map[_name.plazaAmador] = 'plaza amador';  
-    map[_name.tauro] = 'tauro';  
+    map[_name.tauro] = 'tauro';
+
+    //CARIBE
     //CUBA
     map[_name.pinardelrio] = 'pinar del rio';  
     map[_name.santiagoCuba] = 'santiago cuba';  
@@ -1222,7 +1230,8 @@ String imageLogo(String timeFoto) {
     map[_name.arcahaie] = 'arcahaie';  
     map[_name.donBosco] = 'don bosco';  
     map[_name.fica] = 'fica';  
-    map[_name.violette] = 'violette haiti';  
+    map[_name.violette] = 'violette haiti';
+    //REP. DOMINICANA
     //SURINAME
     map[_name.robinhood] = 'robinhood';  
     map[_name.transvaal] = 'transvaal';  
@@ -1231,17 +1240,23 @@ String imageLogo(String timeFoto) {
     map[_name.police] = 'police';  
 
     //////////////////////////////////////////////////////////////////////////////////
+    //CHINA
     map[_name.ghuangzhou] = 'ghuangzhou';
-    map[_name.beijingguoan] = 'beijing';     
+    map[_name.beijingguoan] = 'beijing';
+    map[_name.changchun] = 'changchun';
     map[_name.dalian] = 'dalian';     
-    map[_name.henan] = 'henan';     
+    map[_name.henan] = 'henan';
+    map[_name.liaoning] = 'liaoning';
     map[_name.nantong] = 'nantong';     
     map[_name.shandong] = 'shandong_luneng';      
     map[_name.shanghaisipg] = 'shanghai';
     map[_name.shanghaishenhua] = 'shanghai shenhua';
     map[_name.tianjin] = 'tianjin';     
     map[_name.wuhan] = 'wuhan';
+    map[_name.wuhan3towns] = 'wuhan three towns';
     map[_name.zhejiang] = 'zhejiang';
+    //HONG KONG
+    map[_name.kitchee] = 'kitchee';
 
     //JAPAN
     map[_name.albirex] = 'albirex';
@@ -1291,10 +1306,12 @@ String imageLogo(String timeFoto) {
     map[_name.altaawoun] = 'al taawoun';
     map[_name.damac] = 'damac';
     //QATAR
-    map[_name.alarabi] = 'al arabi';  
-    map[_name.alduhail] = 'duhail';  
+    map[_name.alarabi] = 'al arabi';
+    map[_name.alduhail] = 'duhail';
+    map[_name.algharafa] = 'al gharafa';
     map[_name.alrayyan] = 'al rayyan';  
-    map[_name.alsadd] = 'sadd'; 
+    map[_name.alsadd] = 'sadd';
+    map[_name.eljaish] = 'el jaish';
     //EAU
     map[_name.ajman] = 'ajman';  
     map[_name.alain] = 'al_ain';  
@@ -1338,6 +1355,7 @@ String imageLogo(String timeFoto) {
     //BRUNEI
     map[_name.brunei] = 'brunei';
     //SINGAPORE
+    map[_name.albirexSINGAPORE] = 'albirex';
     map[_name.warriors] = 'warriors';
     map[_name.tampines] = 'tampines';
     //INDONESIA
@@ -1364,9 +1382,15 @@ String imageLogo(String timeFoto) {
     map[_name.tashkent] = 'tashkent';
     //CAMBOJA
     map[_name.phnomPenhCrown] = 'phnom penh';
+    //JORDANIA
+    map[_name.alFaisalyJORD] = 'al faisaly';
+    map[_name.alRamtha] = 'al ramtha';
+    map[_name.alWehdat] = 'al wehdat';
     //KUWAIT
+    map[_name.alArabiKUW] = 'al arabi kuwait';
     map[_name.alKuwait] = 'al kuwait';
-    map[_name.alQadsia] = 'al qadsia';//KUWAIT
+    map[_name.alQadsia] = 'al qadsia';
+    map[_name.kazma] = 'kazma';
     //NEPAL
     map[_name.machhindra] = 'machhindra';
     map[_name.manangMarshyangdi] = 'manang';
@@ -1378,7 +1402,11 @@ String imageLogo(String timeFoto) {
     map[_name.nejmeh] = 'nejmeh';
     //MALASYA
     map[_name.johorDarul] = 'johor';
+    map[_name.kedah] = 'kedah';
     map[_name.kualaLumpur] = 'kuala lumpur';
+    map[_name.penang] = 'penang';
+    map[_name.sabah] = 'sabah';
+    map[_name.sriPahang] = 'sri pahang';
     map[_name.selangor] = 'selangor';
     //MONGOLIA
     map[_name.athletic220] = 'athletic 220';
@@ -1388,7 +1416,7 @@ String imageLogo(String timeFoto) {
     //SIRIA
     map[_name.alKaramah] = 'al karamah';
     map[_name.alJaish] = 'al jaish';
-    map[_name.alShorta] = 'al shorta';
+    map[_name.alShortaDamascus] = 'al shorta';
     map[_name.tishreen] = 'tishreen';
     //TAJIKISTAN
     map[_name.istiklol] = 'istiklol';
@@ -1493,6 +1521,7 @@ String imageLogo(String timeFoto) {
     map[_name.omnisport] = 'omnisport';
     map[_name.sanPedro] = 'san pedro';
     //KENYA
+    map[_name.kakamega] = 'kakamega';
     map[_name.gorMahia] = 'gor mahia';
     map[_name.mathare] = 'mathare';
     map[_name.tusker] = 'tusker';

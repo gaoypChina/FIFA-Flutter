@@ -4,7 +4,7 @@ import 'dart:math';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/page_controller/map/map_game_settings.dart';
-import 'package:fifa/page_controller/map/map_ranking_controller.dart';
+import 'package:fifa/pages/map/map_menu.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
@@ -13,15 +13,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class MapGameplay extends StatefulWidget {
+class MapGameplayStadium4Club extends StatefulWidget {
   final MapGameSettings mapGameSettings;
-  const MapGameplay({Key? key,required this.mapGameSettings}) : super(key: key);
+  const MapGameplayStadium4Club({Key? key,required this.mapGameSettings}) : super(key: key);
 
   @override
-  State<MapGameplay> createState() => _MapGameplayState();
+  State<MapGameplayStadium4Club> createState() => _MapGameplayStadium4ClubState();
 }
 
-class _MapGameplayState extends State<MapGameplay> {
+class _MapGameplayStadium4ClubState extends State<MapGameplayStadium4Club> {
 
   Iterable keysIterable = ClubDetails().map.keys;
   ClubDetails clubDetails = ClubDetails();
@@ -29,7 +29,7 @@ class _MapGameplayState extends State<MapGameplay> {
   late GoogleMapController controller;
   List<Coordinates> coordinates = [];
   List wrongAnswers = [];
-  List<String> listClubOptions = ['','','',''];
+  List<String> listClubOptions = ['Palmeiras','Palmeiras','Palmeiras','Palmeiras'];
   String city = '';
   late Timer timer;
   int milis = 0;
@@ -46,8 +46,24 @@ class _MapGameplayState extends State<MapGameplay> {
     super.initState();
   }
   initMap(){
+
+    if(widget.mapGameSettings.mode == MapGameModeNames().modeSemErrar){
+      nLifes = 1;
+    }
+    if(widget.mapGameSettings.mode == MapGameModeNames().mode1minute){
+      milis = 60;
+      nLifes = 0;
+    }
+
     timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      milis++;
+      if(widget.mapGameSettings.mode == MapGameModeNames().mode1minute){
+        milis--;
+        if(milis <= 0){
+          gameOver();
+        }
+      }else{
+        milis++;
+      }
       setState((){});
     });
   }
@@ -205,7 +221,7 @@ class _MapGameplayState extends State<MapGameplay> {
 
           Column(
             children: [
-              Text('$nCorrect',style: EstiloTextoBranco.text16),
+              Text('$nCorrect/${MapGameModeNames().mapStarsValue(widget.mapGameSettings.mode)}',style: EstiloTextoBranco.text16),
               hearts(),
             ],
           ),
@@ -261,12 +277,14 @@ class _MapGameplayState extends State<MapGameplay> {
             nLifes--;
             wrongAnswers.add(clubName);
             HapticFeedback.mediumImpact();
+
+            if(widget.mapGameSettings.mode == MapGameModeNames().mode1minute){
+              milis -= 5;
+            }
+
           }
           if(nLifes==0){
-            int score = widget.mapGameSettings.getFinalScore(milis, nCorrect);
-            customToast('Game Over!!!\nSCORE: $score\nACERTOS: $nCorrect\nTEMPO: $milis');
-            MapRankingController().saveData(score, nCorrect, milis, widget.mapGameSettings.difficulty);
-            Navigator.pop(context);
+            gameOver();
           }
 
             setState((){});
@@ -282,11 +300,20 @@ class _MapGameplayState extends State<MapGameplay> {
             children: [
               Expanded(child: Text(clubName,textAlign:TextAlign.center,maxLines:1,style: EstiloTextoBranco.text20)),
               const SizedBox(width: 8),
-              Image.asset(Images().getEscudo(clubName),height:30,width: 30),
+              Images().getEscudoWidget(clubName,30,30),
             ],
           ),
         ),
       ),
     );
+  }
+
+
+
+
+  gameOver(){
+    customToast('Game Over!!!\nACERTOS: $nCorrect\nTEMPO: $milis');
+    widget.mapGameSettings.saveKeys(nCorrect);
+    Navigator.push(context,MaterialPageRoute(builder: (context) => const MapMenu()));
   }
 }

@@ -1,11 +1,11 @@
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/words.dart';
 import 'package:fifa/functions/flags_list.dart';
+import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
 import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/widgets/back_button.dart';
-import 'package:fifa/widgets/kits_crests/uniforme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -91,6 +91,9 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
       onTap: (){
           showClubMap(clubName);
         },
+      onDoubleTap: (){
+        Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfileNotPlayable(clubName: clubName)));
+      },
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 8),
         margin: const EdgeInsets.symmetric(vertical: 2),
@@ -160,21 +163,17 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                         ],
                       ),
                     ),
+                    //ESTADIO
                     Padding(
                       padding: const EdgeInsets.only(top: 5),
-                      child: Image.asset(Images().getStadium(clubName),height: 90,width: 110,fit: BoxFit.fill,
-                        errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
-                        //Se o clube não tiver a imagem do estadio
-                          return Image.asset('assets/clubs/generic0.jpg',height: 90,width: 110,fit: BoxFit.fill);
-                        },
-                      ),
+                      child: Images().getStadiumWidget(clubName,90,110),
                     ),
                   ],
                 ),
-
+                //UNIFORME
                 Padding(
                     padding: const EdgeInsets.only(left:270,top: 10),
-                    child: UniformCustom(clubName,0.55).kit()
+                    child: Images().getUniformWidget(clubName)
                 ),
 
 

@@ -19,7 +19,7 @@ class UniformCustom{
 
   //CENTRAL BOX
   double spacingCentralBox = 20;
-  double heightCentralBox = 80;
+  double heightCentralBox = 90;
   double widthCentralBox = 50;
   //SLEEVES
   double angleSleeve = 70;
@@ -39,11 +39,14 @@ class UniformCustom{
 
     if(clubDetails.getPattern(clubName) == clubPattern.stripesTricolor ||
         clubDetails.getPattern(clubName) == clubPattern.stripes2 ||
-        clubDetails.getPattern(clubName) == clubPattern.stripes3||
+        clubDetails.getPattern(clubName) == clubPattern.stripes3 ||
+        clubDetails.getPattern(clubName) == clubPattern.stripes4 ||
         clubDetails.getPattern(clubName) == clubPattern.stripesThin ||
         clubDetails.getPattern(clubName) == clubPattern.divided ||
         clubDetails.getPattern(clubName) == clubPattern.diagonal ||
         clubDetails.getPattern(clubName) == clubPattern.diagonalInv ||
+        clubDetails.getPattern(clubName) == clubPattern.horStripes3 ||
+        clubDetails.getPattern(clubName) == clubPattern.horStripes4 ||
         clubDetails.getPattern(clubName) == clubPattern.oneVertStripe
     ){
       paintMiddleBox = true;
@@ -54,6 +57,7 @@ class UniformCustom{
     }
   }
 
+
 Widget kit(){
 
   return Stack(
@@ -63,6 +67,8 @@ Widget kit(){
         padding: const EdgeInsets.only(left: 2.0),
         child: Stack(
             children: [
+
+              //Image.asset('assets/clubs/palmeiras1.png',height: 110*scale,width: 130*scale,),
 
               //Manga Esquerda
               Padding(
@@ -129,7 +135,7 @@ Widget kit(){
               //MARCA ESPORTIVA
               Padding(
                 padding: EdgeInsets.only(left: 29*scale,top: 12*scale),
-                child: Image.asset('assets/brands/nike.png',height: 10*scale,width: 10*scale,),
+                child: Image.asset('assets/brands/sports/nike.png',height: 10*scale,width: 10*scale,),
               ),
 
               //PATROCINIO
@@ -140,7 +146,7 @@ Widget kit(){
               ),
               Padding(
                 padding: EdgeInsets.only(left: 29*scale,top: 25*scale*heightMiddleBoxScale),
-                child: Image.asset('assets/brands/crefisa.png',
+                child: Image.asset('assets/brands/fly emirates.png',
                     color: heightMiddleBoxScale==1 ?  clubColors.secondColor : clubColors.primaryColor,
                     height: 32*scale,width: 32*scale,
                 ),
@@ -165,7 +171,7 @@ Widget kit(){
       children: [
 
         Padding(
-          padding:  EdgeInsets.only(left: spacingCentralBox-1),
+          padding:  EdgeInsets.only(left: (spacingCentralBox+14)*scale),
           child: Container(
             decoration: BoxDecoration(
               borderRadius: const BorderRadius.only(
@@ -178,8 +184,8 @@ Widget kit(){
                 color: clubColors.secondColor,
               ),
             ),
-            height: 5,
-            width: 12,
+            height: 12*scale,
+            width: 20*scale,
           ),
         ),
 

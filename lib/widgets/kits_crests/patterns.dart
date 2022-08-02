@@ -12,9 +12,12 @@ class ClubPattern{
   String dividedHor = 'DividedHor';
   String stripes2 = 'Stripes2';
   String stripes3 = 'Stripes3';
+  String stripes4 = 'Stripes4';
   String stripesTricolor = 'stripesTricolor';
   String stripeCrest = 'StripeCrest';
-  String horStripes = 'horStripes';
+  String horStripes2 = 'horStripes2';
+  String horStripes3 = 'horStripes3';
+  String horStripes4 = 'horStripes4';
   String horStripesThin = 'horStripesThin';
   String oneVertStripe = 'oneVertStripe';
   String diagonal = 'diagonal';
@@ -129,6 +132,23 @@ class ClubPattern{
         end: Alignment.topRight,
       );
     }
+    else if(clubPattern == stripes4){
+      estampa =  LinearGradient(
+        colors: [clubColors.primaryColor,clubColors.primaryColor,
+          clubColors.secondColor,clubColors.secondColor,          clubColors.primaryColor,clubColors.primaryColor,          clubColors.secondColor,clubColors.secondColor,
+          clubColors.primaryColor,clubColors.primaryColor,
+          clubColors.secondColor,clubColors.secondColor,        clubColors.primaryColor,clubColors.primaryColor,   clubColors.secondColor,clubColors.secondColor,
+          clubColors.primaryColor,clubColors.primaryColor,
+        ],
+        stops: const [0, 0.15,
+          0.15,0.25, 0.25,0.35,  0.35,0.45,
+          0.45,0.55,
+          0.55,0.65, 0.65,0.75,  0.75,0.85,
+          0.85,1],
+        begin: Alignment.topLeft,
+        end: Alignment.topRight,
+      );
+    }
     else if(clubPattern == stripeCrest){
       estampa =  LinearGradient(
         colors: [clubColors.primaryColor,clubColors.primaryColor,
@@ -156,7 +176,7 @@ class ClubPattern{
         end: Alignment.topRight,
       );
     }
-    else if(clubPattern == horStripes){
+    else if(clubPattern == horStripes2){
       estampa =  LinearGradient(
         colors: [clubColors.primaryColor,clubColors.primaryColor,
           clubColors.secondColor,clubColors.secondColor,
@@ -165,6 +185,36 @@ class ClubPattern{
           clubColors.primaryColor,clubColors.primaryColor,
         ],
         stops: const [0, 0.2, 0.2,0.4, 0.4,0.6, 0.6,0.8,  0.8,1],
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+      );
+    }
+    else if(clubPattern == horStripes3){
+      estampa =  LinearGradient(
+        colors: [clubColors.primaryColor,clubColors.primaryColor,          clubColors.secondColor,clubColors.secondColor,          clubColors.primaryColor,clubColors.primaryColor,
+          clubColors.secondColor,clubColors.secondColor,
+          clubColors.primaryColor,clubColors.primaryColor,          clubColors.secondColor,clubColors.secondColor,          clubColors.primaryColor,clubColors.primaryColor,
+        ],
+        stops: const [0, 0.14, 0.14,0.28, 0.28,0.43,
+          0.43,0.57,
+          0.57,0.72, 0.72,0.86,  0.86,1],
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+      );
+    }
+    else if(clubPattern == horStripes4){
+      estampa =  LinearGradient(
+        colors: [clubColors.primaryColor,clubColors.primaryColor,
+          clubColors.secondColor,clubColors.secondColor,     clubColors.primaryColor,clubColors.primaryColor,   clubColors.secondColor,clubColors.secondColor,
+          clubColors.primaryColor,clubColors.primaryColor,
+          clubColors.secondColor,clubColors.secondColor,       clubColors.primaryColor,clubColors.primaryColor,  clubColors.secondColor,clubColors.secondColor,
+          clubColors.primaryColor,clubColors.primaryColor,
+        ],
+        stops: const [0, 0.2,
+          0.2,0.3, 0.3,0.4, 0.4,0.5,
+          0.5,0.6,
+          0.6,0.7, 0.7,0.8,  0.8,0.9,
+          0.9,1],
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
       );
@@ -215,8 +265,10 @@ class ClubPattern{
           clubColors.primaryColor,clubColors.primaryColor,
         ],
         stops: const [0, 0.4, 0.4,0.6, 0.6,1],
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
+        //begin: Alignment.topLeft,
+        //end: Alignment.bottomRight,
+        begin: const Alignment(-1,-0.4),
+        end: const Alignment(1,0.3),
       );
     }
     else if(clubPattern == diagonalInv){

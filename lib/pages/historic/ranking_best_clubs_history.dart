@@ -1,3 +1,4 @@
+import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
@@ -23,6 +24,7 @@ class _RankingBestClubsHistoryState extends State<RankingBestClubsHistory> {
 
   List clubsPoints = []; //criado no init
   List copyClubsName = [];
+  final ScrollController _scrollController = ScrollController();
 
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
@@ -77,6 +79,11 @@ class _RankingBestClubsHistoryState extends State<RankingBestClubsHistory> {
       }
     }
   }
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
@@ -92,10 +99,15 @@ class _RankingBestClubsHistoryState extends State<RankingBestClubsHistory> {
               backButtonText(context, 'Melhores clubes da história'),
               title(),
               Expanded(
-                  child: ListView.builder(
-                    padding: EdgeInsets.zero,
-                      itemCount: copyClubsName.length,
-                      itemBuilder: (c, i) => row(i)
+                  child: DraggableScrollbar.semicircle(
+                    alwaysVisibleScrollThumb: true,
+                    controller: _scrollController,
+                    child: ListView.builder(
+                      padding: EdgeInsets.zero,
+                        controller: _scrollController,
+                        itemCount: copyClubsName.length,
+                        itemBuilder: (c, i) => row(i)
+                    ),
                   )
               ),
 
@@ -155,7 +167,7 @@ class _RankingBestClubsHistoryState extends State<RankingBestClubsHistory> {
                   child: Text(copyClubsName[i], style: EstiloTextoBranco.text16)),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 6.0,right: 8),
+              padding: const EdgeInsets.only(left: 6.0,right: 22),
               child: Text(clubsPoints[i].toString(),style: EstiloTextoBranco.text14),
             ),
           ],

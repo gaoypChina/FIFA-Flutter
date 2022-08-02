@@ -4,7 +4,7 @@ import 'dart:math';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/page_controller/map/map_game_settings.dart';
-import 'package:fifa/page_controller/map/map_ranking_controller.dart';
+import 'package:fifa/pages/map/map_menu.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
@@ -44,8 +44,24 @@ class _MapGameplayMarkersState extends State<MapGameplayMarkers> {
     super.initState();
   }
   initMap(){
+
+    if(widget.mapGameSettings.mode == MapGameModeNames().modeSemErrar){
+      nLifes = 1;
+    }
+    if(widget.mapGameSettings.mode == MapGameModeNames().mode1minute){
+      milis = 60;
+      nLifes = -1;
+    }
+
     timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      milis++;
+      if(widget.mapGameSettings.mode == MapGameModeNames().mode1minute){
+        milis--;
+        if(milis <= 0){
+          gameOver();
+        }
+      }else{
+        milis++;
+      }
       setState((){});
     });
   }
@@ -73,45 +89,77 @@ class _MapGameplayMarkersState extends State<MapGameplayMarkers> {
   getClubsLocation(GoogleMapController googleMapController) async{
     controller = googleMapController;
     _markers = [];
-    clubDetails.map.forEach((key, value) {
-      String clubName = key;
+    List shuffledTeamKeys = shuffle(clubDetails.map.keys.toList());
+
+    addMarker(clubNameMarker, googleMapController);
+
+    for (var clubName in shuffledTeamKeys) {
 
       String continent = clubDetails.getContinent(clubName);
       if (clubDetails.getCoordinate(clubName).latitude != 0 &&
             widget.mapGameSettings.selectedContinents.contains(continent) &&
-            widget.mapGameSettings.stadiumSizeMin < clubDetails.getStadiumCapacity(clubName)
+            widget.mapGameSettings.stadiumSizeMin < clubDetails.getStadiumCapacity(clubName) &&
+            _markers.length<15
       ) {
         coordinates.add(clubDetails.getCoordinate(clubName));
 
-        //ADD MARKER
-        _markers.add(
-          Marker(
-            markerId: MarkerId(clubName),
-            position: LatLng(
-                coordinates.last.latitude, coordinates.last.longitude),
-            onTap: () async {
-              if(clubName == clubNameMarker){
-                customToast("Correto");
-                nCorrect++;
-                defineNewClubTarget();
-              }else{
-                nLifes--;
-              }
-              if(nLifes==0){
-                int score = widget.mapGameSettings.getFinalScore(milis, nCorrect);
-                customToast('Game Over!!!\nSCORE: $score\nACERTOS: $nCorrect\nTEMPO: $milis');
-                MapRankingController().saveData(score, nCorrect, milis, widget.mapGameSettings.difficulty);
-                Navigator.pop(context);
-              }
-            },
-            infoWindow: InfoWindow(title: clubName),
-            //icon: clubsAllNameList.indexOf(clubName) < 40 ? _markersIcons[clubsAllNameList.indexOf(clubName)] : BitmapDescriptor.defaultMarker,
-          ),
-        );
+        addMarker(clubName, googleMapController);
 
       }
-    });
+    }
 
+    setState((){});
+  }
+
+  addMarker(String clubName, GoogleMapController googleMapController){
+    //ADD MARKER
+    _markers.add(
+      Marker(
+        markerId: MarkerId(clubName),
+        position: LatLng(
+            clubDetails.getCoordinate(clubName).latitude, clubDetails.getCoordinate(clubName).longitude),
+        onTap: () async {
+          if(clubName == clubNameMarker){
+            customToast("Correto");
+            nCorrect++;
+            defineNewClubTarget();
+            getClubsLocation(googleMapController);
+            //Zoom
+            var newPosition = CameraPosition(
+                target: LatLng(clubDetails.getCoordinate(clubName).latitude, clubDetails.getCoordinate(clubName).longitude),
+                zoom: 3);
+            CameraUpdate cameraUpdate = CameraUpdate.newCameraPosition(newPosition);
+            controller.moveCamera(cameraUpdate);
+          }else{
+            nLifes--;
+            if(widget.mapGameSettings.mode == MapGameModeNames().mode1minute){
+              milis -= 5;
+            }
+          }
+          if(nLifes==0){
+            gameOver();
+          }
+        },
+        infoWindow: InfoWindow(title: clubName),
+        //icon: clubsAllNameList.indexOf(clubName) < 40 ? _markersIcons[clubsAllNameList.indexOf(clubName)] : BitmapDescriptor.defaultMarker,
+      ),
+    );
+  }
+  List shuffle(List items) {
+    var random = Random();
+
+    // Go through all elements.
+    for (var i = items.length - 1; i > 0; i--) {
+
+      // Pick a pseudorandom number according to the list length
+      var n = random.nextInt(i + 1);
+
+      var temp = items[i];
+      items[i] = items[n];
+      items[n] = temp;
+    }
+
+    return items;
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -186,7 +234,7 @@ class _MapGameplayMarkersState extends State<MapGameplayMarkers> {
 
           Column(
             children: [
-              Text('$nCorrect',style: EstiloTextoBranco.text16),
+              Text('$nCorrect/${MapGameModeNames().mapStarsValue(widget.mapGameSettings.mode)}',style: EstiloTextoBranco.text16),
               hearts(),
             ],
           ),
@@ -205,5 +253,11 @@ class _MapGameplayMarkersState extends State<MapGameplayMarkers> {
         nLifes >= 5 ? Icon(Icons.heart_broken_rounded,color: Colors.red,size: size) : Icon(Icons.heart_broken_outlined,color: Colors.white,size: size),
       ],
     );
+  }
+
+  gameOver(){
+    customToast('Game Over!!!\nACERTOS: $nCorrect\nTEMPO: $milis');
+    widget.mapGameSettings.saveKeys(nCorrect);
+    Navigator.push(context,MaterialPageRoute(builder: (context) => const MapMenu()));
   }
 }

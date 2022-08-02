@@ -3,6 +3,7 @@ import 'package:fifa/classes/historic.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
 import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
@@ -23,7 +24,7 @@ class HistoricLeague extends StatefulWidget {
 }
 
 class _HistoricLeagueState extends State<HistoricLeague> {
-
+  late Map<double,dynamic> results;
   late int choosenLeagueIndex;
   late League league;
   int nTeamsSelected = 2;
@@ -41,6 +42,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   @override
   Widget build(BuildContext context) {
     league = League(index: choosenLeagueIndex);
+    results = mapChampions(league.name);
 
     return Scaffold(
         body:  Container(
@@ -170,7 +172,6 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   }
   Widget validacao(int position, int ano){
     try {
-      Map<double,dynamic> results = mapChampions(league.name);
       List yearData = results[ano.toDouble()];
       String clubName = yearData[position];
       if(position==0){
@@ -191,10 +192,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   Widget classificationRow(int position,String clubName){
     return GestureDetector(
       onTap: (){
-        if(clubsAllNameList.contains(clubName)){
-          int clubID = clubsAllNameList.indexOf(clubName);
-          Navigator.push(context, MaterialPageRoute(builder: (context) => ClubProfile(clubID: clubID)));
-        }
+        clickClub(clubName);
       },
       child: Row(
         children: [
@@ -224,6 +222,17 @@ class _HistoricLeagueState extends State<HistoricLeague> {
         child: Image.asset(FIFAImages().campeonatoLogo(leagueName),height: 50,width: 50,),
       ),
     );
+  }
+
+
+  ////////////////////////////////////////////////////////////////////////////
+  clickClub(String clubName){
+    if(clubsAllNameList.contains(clubName)){
+      int clubID = clubsAllNameList.indexOf(clubName);
+      Navigator.push(context, MaterialPageRoute(builder: (context) => ClubProfile(clubID: clubID)));
+    }else{
+      Navigator.push(context, MaterialPageRoute(builder: (context) => ClubProfileNotPlayable(clubName: clubName)));
+    }
   }
 
 }

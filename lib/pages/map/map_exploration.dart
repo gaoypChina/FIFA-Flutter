@@ -371,7 +371,7 @@ class _MapPageState extends State<MapPage> {
             ),
             Row(
               children: [
-                Image.asset(Images().getEscudo(clubName),height:50, width: 50),
+                Images().getEscudoWidget(clubName),
                 Text(clubName,style: EstiloTextoPreto.text20,),
                 const Spacer(),
                 Text(clubDetails.getFoundationYear(clubName).toString()),

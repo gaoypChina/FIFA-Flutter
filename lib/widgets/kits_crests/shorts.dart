@@ -1,4 +1,3 @@
-import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/widgets/kits_crests/patterns.dart';
 import 'package:fifa/widgets/kits_crests/uniforme.dart';
@@ -15,8 +14,8 @@ class FullKitCustom {
   double scale = 1;
 
   double angle = 25;
-  double _heightShorts = 40;
-  double _widthShorts = 27;
+  final double _heightShorts = 40;
+  final double _widthShorts = 27;
 
   FullKitCustom(this.clubName, [this.scale = 1]) {
     pattern = clubPattern.getGradient(

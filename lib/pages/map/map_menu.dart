@@ -1,15 +1,11 @@
-import 'dart:math';
-
-import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/global_variables.dart';
+import 'package:fifa/functions/contries_continents.dart';
+import 'package:fifa/page_controller/map/map_game_settings.dart';
+import 'package:fifa/pages/map/map_config1.dart';
 import 'package:fifa/pages/map/map_exploration.dart';
-import 'package:fifa/pages/map/map_config.dart';
 import 'package:fifa/pages/map/map_list_all_clubs.dart';
-import 'package:fifa/pages/map/map_ranking.dart';
 import 'package:fifa/theme/colors.dart';
-import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
@@ -24,12 +20,23 @@ class MapMenu extends StatefulWidget {
 class _MapMenuState extends State<MapMenu> {
 
 
+  MapGameSettings mapGameSettings = MapGameSettings();
+ bool loaded = false;
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
+    onInit();
     super.initState();
+  }
+  onInit() async{
+    mapGameSettings = MapGameSettings();
+    mapGameSettings.setDifficulty();
+    await mapGameSettings.getSaveNames();
+    print(mapGameSettings.saveNames);
+    loaded=true;
+    setState((){});
   }
 
 ////////////////////////////////////////////////////////////////////////////
@@ -37,6 +44,7 @@ class _MapMenuState extends State<MapMenu> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
         body: Stack(
           children: [
@@ -45,47 +53,102 @@ class _MapMenuState extends State<MapMenu> {
             Column(
               children: [
                 backButtonText(context, 'Mapa'),
-
                 const Text('MAP GAME',style: EstiloTextoBranco.text40),
-                Container(
-                  width: Sized(context).width,
-                  margin: const EdgeInsets.all(12),
-                  padding: const EdgeInsets.all(12),
-                  decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        stops: [0.6,1],
-                        colors: [
-                          Colors.white24,
-                          Colors.transparent,
-                        ],
-                      ),
-                    borderRadius: BorderRadius.all(Radius.circular(5)),
+
+                loaded ? SingleChildScrollView(
+                  child: Container(
+                    width: Sized(context).width,
+                    margin: const EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(12),
+                    decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          stops: [0.6,1],
+                          colors: [
+                            Colors.white24,
+                            Colors.transparent,
+                          ],
+                        ),
+                      borderRadius: BorderRadius.all(Radius.circular(5)),
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            gameButton('Nível 1',MapGameModeNames().nivel1,(){
+                              mapGameSettings.difficulty == 0;
+                              Navigator.push(context,MaterialPageRoute(builder: (context) => MapConfig1(mapGameSettings: mapGameSettings)));
+                            }),
+                            gameButton('Nível 2',MapGameModeNames().nivel2,(){
+                              mapGameSettings.difficulty == 1;
+                              Navigator.push(context,MaterialPageRoute(builder: (context) => MapConfig1(mapGameSettings: mapGameSettings)));
+                            }),
+                          ],
+                        ),
+                        const SizedBox(height: 12),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            gameButton('Nível 3',MapGameModeNames().nivel3,(){
+                              mapGameSettings.difficulty == 2;
+                              Navigator.push(context,MaterialPageRoute(builder: (context) => MapConfig1(mapGameSettings: mapGameSettings)));
+                            }),
+                            gameButton('Europa',Continents().europa,(){
+                              mapGameSettings.selectedContinents.add(Continents().europa);
+                              Navigator.push(context,MaterialPageRoute(builder: (context) => MapConfig1(mapGameSettings: mapGameSettings)));
+                            }),
+                          ],
+                        ),
+                        const SizedBox(height: 12),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            gameButton('América do Sul',Continents().americaSul,(){
+                              mapGameSettings.selectedContinents = [Continents().americaSul];
+                              Navigator.push(context,MaterialPageRoute(builder: (context) => MapConfig1(mapGameSettings: mapGameSettings)));
+                            }),
+                            gameButton('América do Norte',Continents().americaNorte,(){
+                              mapGameSettings.selectedContinents = [Continents().americaNorte];
+                              Navigator.push(context,MaterialPageRoute(builder: (context) => MapConfig1(mapGameSettings: mapGameSettings)));
+                            }),
+                          ],
+                        ),
+                        const SizedBox(height: 12),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            gameButton('África', Continents().africa,(){
+                              mapGameSettings.selectedContinents = [Continents().africa];
+                              Navigator.push(context,MaterialPageRoute(builder: (context) => MapConfig1(mapGameSettings: mapGameSettings)));
+                            }),
+                            gameButton('Ásia',Continents().asia,(){
+                              mapGameSettings.selectedContinents = [Continents().asia,Continents().oceania];
+                              Navigator.push(context,MaterialPageRoute(builder: (context) => MapConfig1(mapGameSettings: mapGameSettings)));
+                            }),
+                          ],
+                        ),
+
+                      ],
+                    ),
                   ),
-                  child: Column(
+                ) : Container(),
+
+                const Spacer(),
+                Container(
+                  margin: const EdgeInsets.all(8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      gameButton('Gameplay',(){Navigator.push(context,MaterialPageRoute(builder: (context) => const MapConfig(game: 0)));}),
-                      const SizedBox(height: 8),
-                      gameButton('Acerte o marker',(){Navigator.push(context,MaterialPageRoute(builder: (context) => const MapConfig(game: 1)));}),
-                      const SizedBox(height: 8),
-                      //gameButton('Contra Relógio',(){}),
-                      const SizedBox(height: 8),
-                      //gameButton('Estatísticas',(){Navigator.push(context,MaterialPageRoute(builder: (context) => const MapStatistics()));}),
-                      const SizedBox(height: 8),
-                      gameButton('Exploração Livre',(){Navigator.push(context,MaterialPageRoute(builder: (context) => const MapPage()));}),
-                      const SizedBox(height: 8),
-                      gameButton('Ranking',(){Navigator.push(context,MaterialPageRoute(builder: (context) => const MapRanking()));}),
-                      const SizedBox(height: 8),
-                      gameButton('Lista de Clubes',(){Navigator.push(context,MaterialPageRoute(builder: (context) => const MapListAllClubs()));}),
+
+                      gameButton2('Exploração Livre',(){Navigator.push(context,MaterialPageRoute(builder: (context) => const MapPage()));}),
+                      gameButton2('Lista de Clubes',(){Navigator.push(context,MaterialPageRoute(builder: (context) => const MapListAllClubs()));}),
 
                     ],
                   ),
                 ),
 
-                const Spacer(),
-
-                myProfile(),
               ],
             ),
           ],
@@ -96,18 +159,38 @@ class _MapMenuState extends State<MapMenu> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
 
-Widget gameButton(String text, Function function){
+Widget gameButton(String text, selectedNivel, Function function){
+    int nStars = 0;
+    int maxStars = 9;
+
+    nStars = mapGameSettings.hasStars9(
+      nivel: selectedNivel,
+    );
+
     return Material(
       color: Colors.transparent,
       child: InkWell(
         onTap: (){
+          mapGameSettings.selectedNivel = selectedNivel;
           function();
         },
       child: Container(
-        width: 200,
+        width: 160,
         padding: const EdgeInsets.all(8),
         decoration: decorations(),
-        child: Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.text20,),
+        child: Column(
+          children: [
+            Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.text20,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.star,color: nStars == maxStars ? Colors.yellow : Colors.white),
+                Text(nStars.toString()+'/'+maxStars.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text14,),
+
+              ],
+            )
+          ],
+        ),
       ),
       ),
     );
@@ -125,55 +208,25 @@ Widget gameButton(String text, Function function){
     );
 }
 
-Widget myProfile(){
-
-    String clubName = Club(index: Random().nextInt(300)).name;
-    return Container(
-      margin: const EdgeInsets.all(16),
-      decoration: blackDecoration(),
-      child: Stack(
-        children: [
-
-          SizedBox(
-            height: 80,width: 150,
-            child: Opacity(
-              opacity: 0.2,
-              child: AspectRatio(
-                aspectRatio: 300 / 451,
-                child: Container(
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                        fit: BoxFit.fitWidth,
-                        alignment: FractionalOffset.center,
-                        image: AssetImage(Images().getEscudo(clubName)),
-                      )
-                  ),
-                ),
-              ),
-            ),
+  Widget gameButton2(String text, Function function){
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: (){
+          function();
+        },
+        child: Container(
+          width: 100,
+          height: 60,
+          padding: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+              color: AppColors().greyTransparent,
+              borderRadius: const BorderRadius.all(Radius.circular(5))
           ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: Row(
-              children: [
-                Image.asset(Images().getEscudo(clubName),height: 40,width: 40),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(globalCoachName,style: EstiloTextoBranco.negrito18),
-                      Text(clubName,style: EstiloTextoBranco.text20),
-                    ],
-                  ),
-                ),
-                Image.asset(Images().getStadium(clubName),height: 80,width: 100)
-              ],
-            ),
-          ),
-        ],
+          child: Center(child: Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.text16,)),
+        ),
       ),
     );
-}
+  }
 
 }

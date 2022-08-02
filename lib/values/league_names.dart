@@ -1,9 +1,10 @@
+import 'package:fifa/classes/words.dart';
+
 class LeagueOfficialNames{
   final String championsLeague = 'Champions League';
   final String libertadores = 'Libertadores';
   final String concacaf = 'Concacaf champions';
   final String asiaafricaChampionsLeague = 'World Champions League';
-
 
   final String europaLeagueOficial = 'Europa League';
   final String copaSulAmericana = 'Copa Sul-Americana';
@@ -200,6 +201,31 @@ bool leaguePlayInternationalCompetition(String name){
   return playInternational;
 }
 
+String getLeague(String nationality){
+  LeagueOfficialNames leagueName = LeagueOfficialNames();
+  Map leaguesFromNationality = {
+    Words.country.england: leagueName.inglaterra1,
+    Words.country.italy: leagueName.italia1,
+    Words.country.spain: leagueName.espanha1,
+    Words.country.france: leagueName.franca1,
+    Words.country.germany: leagueName.alemanha1,
+    Words.country.portugal: leagueName.portugal,
+    Words.country.netherlands: leagueName.holanda,
+    Words.country.belgium: leagueName.belgica,
+    Words.country.turkey: leagueName.turquiaGrecia,
+    Words.country.sweden: leagueName.suecia,
+    Words.country.switzerland: leagueName.suica,
+
+    Words.country.brazil: leagueName.brasil1,
+    Words.country.argentina: leagueName.argentina,
+    Words.country.mexico: leagueName.mexico,
+    Words.country.unitedStates: leagueName.estadosUnidos,
+
+  };
+
+  return leaguesFromNationality[nationality];
+
+}
 
 String getCup(String leagueName){
   Map cupsFromLeagues = {

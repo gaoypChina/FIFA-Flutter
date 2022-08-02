@@ -74,7 +74,11 @@ class ClubDetails{
     return Continents().funcCountryContinents(getCountry(clubName));
   }
   List getRivals(String clubName){
-    return map[clubName][7];
+    try {
+      return map[clubName][7];
+    }catch(e){
+      return [];
+    }
   }
 
   ClubDetails(){
@@ -99,7 +103,7 @@ class ClubDetails{
       'Griffin Park',17250,1889,_country.england,];
     map[_name.brighton] = [ClubColors(Colors.blue,Colors.white),pattern.stripes2,Coordinates(50.861822222,-0.083277777),
       'Falmer Stadium',30750,1901,_country.england,[_name.crystalpalace]];
-    map[_name.crystalpalace] = [ClubColors(Colors.purple,Colors.blueAccent),pattern.stripes2,Coordinates(51.398333333,-0.085555555),
+    map[_name.crystalpalace] = [ClubColors(Colors.red,Colors.blueAccent),pattern.stripes2,Coordinates(51.398333333,-0.085555555),
 			'Selhurst Park',26047,1905,_country.england,];
     map[_name.chelsea] = [ClubColors(blue,Colors.white),pattern.solid,Coordinates(51.481666666,-0.191111111),
 			'Stamford Brigde',41837,1905,_country.england,[_name.tottenham,_name.arsenal]];
@@ -113,7 +117,7 @@ class ClubDetails{
 			'Elland Road',37890,1919,_country.england,];
     map[_name.liverpool] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(53.430833333,-2.960833333),
 			'Anfield',54167,1892,_country.england,[_name.manchesterunited,_name.everton]];
-    map[_name.manchestercity] = [ClubColors(Colors.lightBlue,Colors.white),pattern.solid,Coordinates(53.48331043737668, -2.200470393744969),
+    map[_name.manchestercity] = [ClubColors(Colors.lightBlueAccent,Colors.white),pattern.solid,Coordinates(53.483310, -2.20047039),
 			'Etihad Stadium',53400,1880,_country.england,[_name.manchesterunited]];
     map[_name.manchesterunited] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(53.463055555,-2.291388888),
 			'Old Trafford',76212,1878,_country.england,[_name.manchestercity]];
@@ -168,7 +172,7 @@ class ClubDetails{
       'Saint James Park',8541,1914,_country.england,];
     map[_name.fleetwood] = [ClubColors(Colors.red,Colors.white),pattern.sleeves,Coordinates(53.91654334, -3.024740453),
       'Highbury Stadium',5327,1908,_country.england,];
-    map[_name.forestgreen] = [ClubColors(Colors.green,Colors.black),pattern.horStripes,Coordinates(51.698995, -2.2377947),
+    map[_name.forestgreen] = [ClubColors(Colors.lightGreenAccent,Colors.black),pattern.horStripes2,Coordinates(51.698995, -2.2377947),
       'The New Lawn',5140,1889,_country.england,];
     map[_name.gillingham] = [ClubColors(Colors.blue,Colors.black),pattern.stripes2,Coordinates(51.3843096, 0.5607898),
       'KRBS Priestfield Stadium',11582,1893,_country.england,];
@@ -210,9 +214,9 @@ class ClubDetails{
 			'Home Park',19500,1886,_country.england,];
     map[_name.prestonNorthEnd] = [ClubColors(Colors.white,darkblue),pattern.solid,Coordinates(53.772222222,-2.6880555),
 			'Deepdale',23408,1880,_country.england,];
-    map[_name.qpr] = [ClubColors(Colors.blue,Colors.white),pattern.horStripes,Coordinates(51.50916666,-0.232222222),
+    map[_name.qpr] = [ClubColors(Colors.blue,Colors.white),pattern.horStripes2,Coordinates(51.50916666,-0.232222222),
       'Loftus Road',18439,1882,_country.england,[_name.chelsea,_name.fulham]];
-    map[_name.reading] = [ClubColors(Colors.blue,Colors.white),pattern.horStripes,Coordinates(51.4222,-0.98277),
+    map[_name.reading] = [ClubColors(Colors.blue,Colors.white),pattern.horStripes2,Coordinates(51.4222,-0.98277),
       'Madejski Stadium',24250,1871,_country.england,];
     map[_name.rotherham] = [ClubColors(Colors.red,Colors.white),pattern.sleeves,Coordinates(53.4279,-1.362),
 			'New York Stadium',12021,1925,_country.england,];
@@ -424,7 +428,7 @@ class ClubDetails{
 			'Francisco de la Hera',11580,1924,_country.spain,];
     map[_name.tarragona] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(42.19020153, 2.4763709658),
 			'Nou Estadi',14500,1886,_country.spain,];
-    map[_name.granada] = [ClubColors(Colors.red,Colors.white),pattern.horStripes,Coordinates(37.152967,-3.595736),
+    map[_name.granada] = [ClubColors(Colors.red,Colors.white),pattern.horStripes2,Coordinates(37.152967,-3.595736),
 			'Nuevo Los Cármenes',22524,1931,_country.spain,];
     map[_name.hercules] = [ClubColors(Colors.blue,Colors.white),pattern.stripes2,Coordinates(38.3580625, -0.4914326032),
 			'José Rico Pérez',29500,1922,_country.spain,];
@@ -684,9 +688,9 @@ class ClubDetails{
     //PORTUGAL
     map[_name.benfica] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(38.75301495, -9.1844710),
 			'Estádio da Luz',64642,1904,_country.portugal,[_name.porto,_name.sporting]];
-    map[_name.porto] = [ClubColors(Colors.blue,Colors.white),pattern.stripes2,Coordinates(41.161758,-8.583933),
+    map[_name.porto] = [ClubColors(Colors.blueAccent,Colors.white),pattern.stripes2,Coordinates(41.161758,-8.583933),
 			'Estádio do Dragão',50035,1893,_country.portugal,[_name.benfica,_name.sporting]];
-    map[_name.sporting] = [ClubColors(Colors.green,Colors.white),pattern.horStripes,Coordinates(38.76119444,-9.16078333),
+    map[_name.sporting] = [ClubColors(darkgreen,Colors.white),pattern.horStripes4,Coordinates(38.76119444,-9.16078333),
 			'José Alvalade',50095,1906,_country.portugal,[_name.porto,_name.benfica]];
     map[_name.alverca] = [ClubColors(grena,darkblue),pattern.stripes2,Coordinates(38.897982, -9.0350067),
       'Alverca do Ribatejo',7705,1939,_country.portugal,];
@@ -702,7 +706,7 @@ class ClubDetails{
 			'Estádio do Restelo',32000,1919,_country.portugal,];
     map[_name.casapia] = [ClubColors(Colors.black,Colors.white),pattern.solid,Coordinates(38.73764642, -9.20340044),
 			'Estádio Pina Manique',5000,1920,_country.portugal,];
-    map[_name.chaves] = [ClubColors(Colors.blue,Colors.red),pattern.solid,Coordinates(41.75094886, -7.464533445),
+    map[_name.chaves] = [ClubColors(Colors.blue,Colors.red),pattern.stripes3,Coordinates(41.75094886, -7.464533445),
 			'	Estádio Municipal de Chaves',9000,1949,_country.portugal,];
     map[_name.coimbra] = [ClubColors(Colors.black,Colors.white),pattern.solid,Coordinates(40.2035513, -8.406711275),
 			'Estádio Cidade de Coimbra',29622,1887,_country.portugal,];
@@ -714,7 +718,7 @@ class ClubDetails{
 			'António Coimbra da Mota',8000,1939,_country.portugal,];
     map[_name.estrelaamadora] = [ClubColors(Colors.red,Colors.green),pattern.stripes3,Coordinates(38.75216476, -9.22726611),
 			'Estádio José Gomes',9288,1932,_country.portugal,];
-    map[_name.famalicao] = [ClubColors(Colors.blue,Colors.blue),pattern.solid,Coordinates(41.4016829, -8.52243319),
+    map[_name.famalicao] = [ClubColors(darkblue,Colors.blue),pattern.solid,Coordinates(41.4016829, -8.52243319),
 			'Estádio Municipal de Famalicão',5307,1931,_country.portugal,];
     map[_name.farense] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(37.02232811, -7.928202),
 			'Estádio de São Luís',7000,1910,_country.portugal,];
@@ -732,7 +736,7 @@ class ClubDetails{
 			'Comendador Joaquim de Almeida Freitas',6153,1938,_country.portugal,];
     map[_name.nacionalMadeira] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(32.670625,-16.883525),
 			'Estádio da Madeira',5500,1910,_country.portugal,];
-    map[_name.naval] = [ClubColors(Colors.green,Colors.white),pattern.horStripes,Coordinates(40.162827, -8.85902270),
+    map[_name.naval] = [ClubColors(Colors.green,Colors.white),pattern.horStripes2,Coordinates(40.162827, -8.85902270),
       'José Bento Pessoa',9000,1893,_country.portugal,];
     map[_name.pacosDeFerreira] = [ClubColors(Colors.yellow,Colors.green),pattern.solid,Coordinates(41.27144668, -8.38488781),
 			'Capital do Móvel',9077,1950,_country.portugal,];
@@ -866,11 +870,11 @@ class ClubDetails{
     //ESCOCIA
     map[_name.aberdeen] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(57.15986178, -2.0880853),
 			'Pittodrie Stadium',22199,1903,_country.scotland];
-    map[_name.celtic] = [ClubColors(Colors.green,Colors.white),pattern.horStripes,Coordinates(55.84971111,-4.20558889),
+    map[_name.celtic] = [ClubColors(Colors.green,Colors.white),pattern.horStripes4,Coordinates(55.84971111,-4.20558889),
       'Celtic Park',60355,1888,_country.scotland,[_name.rangers]];
     map[_name.dundee] = [ClubColors(Colors.orange,Colors.black),pattern.solid,Coordinates(56.4748207, -2.9686031),
 			'Tannadice Park',14209,1909,_country.scotland,];
-    map[_name.hibernian] = [ClubColors(Colors.green,Colors.white),pattern.sleeves,Coordinates(55.96189876, -3.1650656),
+    map[_name.hibernian] = [ClubColors(darkgreen,Colors.white),pattern.sleeves,Coordinates(55.96189876, -3.1650656),
 			'Easter Road',20421,1875,_country.scotland,];
     map[_name.hearts] = [ClubColors(grena,Colors.white),pattern.solid,Coordinates(55.9389923, -3.232460),
 			'Tynecastle Stadium',20099,1874,_country.scotland,];
@@ -1248,7 +1252,7 @@ class ClubDetails{
       'VEB Arena',30000,1911,_country.russia,];
     map[_name.dinamoMoscou] = [ClubColors(darkblue,Colors.white),pattern.solid,Coordinates(55.79095156, 37.5610590),
       'Dinamo Lev Yashin Stadium',36000,1923,_country.russia,];
-    map[_name.khimki] = [ClubColors(Colors.green,Colors.black),pattern.solid,Coordinates(55.8854723, 37.454475),
+    map[_name.khimki] = [ClubColors(Colors.red,Colors.black),pattern.stripes2,Coordinates(55.8854723, 37.454475),
       'Arena Khimki',18636,1997,_country.russia,];
     map[_name.krasnodar] = [ClubColors(Colors.green,Colors.black),pattern.solid,Coordinates(45.0450492, 39.0294265),
       'Estádio Krasnodar',35074,2008,_country.russia,];
@@ -1317,7 +1321,7 @@ class ClubDetails{
     //BELARUS
     map[_name.bate] = [ClubColors(Colors.yellow,Colors.blue),pattern.solid,Coordinates(54.1927777,28.475694444),
 			'Borisov Arena',12900,1973,_country.belarus,];
-    map[_name.dinamoBrest] = [ClubColors(Colors.yellow,Colors.blue),pattern.solid,Coordinates(52.089810, 23.6836123),
+    map[_name.dinamoBrest] = [ClubColors(Colors.white,Colors.lightBlueAccent),pattern.solid,Coordinates(52.089810, 23.6836123),
 			'Sport Complex Brestskiy',10060,1960,_country.belarus,];
     map[_name.dinamoMinsk] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(53.881454, 27.6175440),
 			'Traktar Stadium',16500,1927,_country.belarus,];
@@ -1636,11 +1640,11 @@ class ClubDetails{
       'Neo Química Arena',47605,1910,_country.brazil,[_name.palmeiras,_name.saopaulo,_name.santos]];
     map[_name.coritiba] = [ClubColors(Colors.white,Colors.green,Colors.green),pattern.sp,Coordinates(-25.421111,-49.2595),
       'Couto Pereira',40502,1909,_country.brazil,[_name.atleticopr]];
-    map[_name.flamengo] = [ClubColors(Colors.red,Colors.black),pattern.horStripes,Coordinates(-22.911357, -43.230113),
+    map[_name.flamengo] = [ClubColors(Colors.red,Colors.black),pattern.horStripes2,Coordinates(-22.911357, -43.230113),
 			'Maracanã',78838,1895,_country.brazil,[_name.botafogo,_name.vasco,_name.fluminense]];
     map[_name.fluminense] = [ClubColors(vinho,darkgreen,Colors.white),pattern.stripesTricolor,Coordinates(-22.913116, -43.2303602),
 			'Maracanã',78838,1902,_country.brazil,[_name.flamengo,_name.vasco,_name.botafogo]];
-    map[_name.fortaleza] = [ClubColors(Colors.red,Colors.blue),pattern.horStripes,Coordinates(-3.807,-38.522),
+    map[_name.fortaleza] = [ClubColors(Colors.red,Colors.blue),pattern.horStripes2,Coordinates(-3.807,-38.522),
       'Castelão',63904,1918,_country.brazil,[_name.ceara]];
     map[_name.juventude] = [ClubColors(Colors.green,Colors.white),pattern.stripes3,Coordinates(-29.162,-51.176),
       'Alfredo Jaconi',19924,1913,_country.brazil,];
@@ -1650,7 +1654,7 @@ class ClubDetails{
 			'Beira-Rio',50128,1909,_country.brazil,[_name.gremio]];
     map[_name.palmeiras] = [ClubColors(darkgreen,Colors.white),pattern.solid,Coordinates(-23.52744641540078, -46.6784),
 			'Allianz Parque',43713,1914,_country.brazil,[_name.saopaulo,_name.corinthians,_name.santos]];
-    map[_name.santos] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(-23.950216, -46.3388120),
+    map[_name.santos] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(-23.9510286, -46.338936366),
 			'Vila Belmiro',17923,1912,_country.brazil,[_name.palmeiras,_name.corinthians,_name.saopaulo]];
     map[_name.saopaulo] = [ClubColors(Colors.white,Colors.red,Colors.black),pattern.sp,Coordinates(-23.600125,-46.720155555),
 			'Morumbi',66795,1930,_country.brazil,[_name.palmeiras,_name.corinthians,_name.santos]];
@@ -1665,17 +1669,17 @@ class ClubDetails{
 			'Arena Condá',22600,1973,_country.brazil,];
     map[_name.crb] = [ClubColors(Colors.red,Colors.white),pattern.oneHorStripe,Coordinates(-9.67054432, -35.75930852),
       'Rei Pelé',17126,1912,_country.brazil,[_name.csa]];
-    map[_name.criciuma] = [ClubColors(Colors.yellow,Colors.black),pattern.horStripes,Coordinates(-28.684329, -49.36763),
+    map[_name.criciuma] = [ClubColors(Colors.yellow,Colors.black),pattern.horStripes2,Coordinates(-28.684329, -49.36763),
 			'Heriberto Hülse',19300,1947,_country.brazil,];
-    map[_name.cruzeiro] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(-19.865833,-43.970833),
+    map[_name.cruzeiro] = [ClubColors(Colors.blueAccent,Colors.white),pattern.solid,Coordinates(-19.865833,-43.970833),
       'Mineirão',61927,1921,_country.brazil,[_name.atleticomg]];
     map[_name.csa] = [ClubColors(Colors.blue,Colors.white),pattern.stripes2,Coordinates(-9.6705, -35.7593),
       'Rei Pelé',17126,1913,_country.brazil,[_name.crb]];
     map[_name.figueirense] = [ClubColors(Colors.black,Colors.white),pattern.stripes2,Coordinates(-27.585556,-48.586667),
 			'Orlando Scarpelli',19584,1921,_country.brazil,];
-    map[_name.gremio] = [ClubColors(Colors.lightBlue,Colors.black),pattern.stripes3,Coordinates(-29.972884, -51.1949268),
+    map[_name.gremio] = [ClubColors(Colors.lightBlueAccent,Colors.black,Colors.white),pattern.stripesTricolor,Coordinates(-29.972884, -51.1949268),
       'Arena do Grêmio',55662,1903,_country.brazil,[_name.internacional]];
-    map[_name.gremioNovorizontino] = [ClubColors(Colors.yellow,Colors.black),pattern.horStripes,Coordinates(-21.466885, -49.231995),
+    map[_name.gremioNovorizontino] = [ClubColors(Colors.yellow,Colors.black),pattern.horStripes2,Coordinates(-21.466885, -49.231995),
       'Estádio Jorge Ismael de Biasi',18000,1973,_country.brazil,];
     map[_name.guarani] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(-22.909782888, -47.043755),
 			'Brinco de Ouro',29130,1911,_country.brazil,[_name.pontepreta]];
@@ -1683,11 +1687,11 @@ class ClubDetails{
       'Estádio do Café',36000,1956,_country.brazil,];
     map[_name.nautico] = [ClubColors(Colors.red,Colors.white),pattern.stripes2,Coordinates(-8.040533, -34.89678093),
 			'Aflitos',22856,1901,_country.brazil,[_name.sport,_name.santacruz]];
-    map[_name.operarioPR] = [ClubColors(Colors.black,Colors.white),pattern.stripes2,Coordinates(-25.115991, -50.156180),
+    map[_name.operarioPR] = [ClubColors(Colors.black,Colors.white),pattern.stripes3,Coordinates(-25.115991, -50.156180),
       'Germano Krüger',10632,1912,_country.brazil,];
     map[_name.pontepreta] = [ClubColors(Colors.white,Colors.black),pattern.diagonal,Coordinates(-22.913611,-47.051389),
 			'Moisés Lucarelli',17728,1900,_country.brazil,[_name.guarani]];
-    map[_name.sport] = [ClubColors(Colors.red,Colors.black),pattern.horStripes,Coordinates(-8.062888888,-34.902888888),
+    map[_name.sport] = [ClubColors(Colors.red,Colors.black),pattern.horStripes2,Coordinates(-8.062888888,-34.902888888),
       'Ilha do Retiro',26418,1905,_country.brazil,[_name.nautico,_name.santacruz,_name.bahia]];
     map[_name.tombense] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(-20.90766468, -42.030541527),
       'Antônio Guimarães de Almeida',3050,1914,_country.brazil,];
@@ -1695,7 +1699,7 @@ class ClubDetails{
       'São Januário',21880,1898,_country.brazil,[_name.flamengo,_name.fluminense,_name.botafogo]];
     map[_name.vilanova] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(-16.673543, -49.236922),
       'Onésio Brasileiro Alvarenga',11788,1943,_country.brazil,];
-    map[_name.vitoria] = [ClubColors(Colors.red,Colors.black),pattern.horStripes,Coordinates(-12.91850220, -38.42813070),
+    map[_name.vitoria] = [ClubColors(Colors.red,Colors.black),pattern.horStripes2,Coordinates(-12.91850220, -38.42813070),
 			'Barradão',30618,1899,_country.brazil,[_name.bahia]];
 
     map[_name.julho4] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(-4.27619893, -41.78598826),
@@ -1740,7 +1744,7 @@ class ClubDetails{
       'Bento Freitas',10200,1911,_country.brazil,];
     map[_name.camboriu] = [ClubColors(Colors.orange,Colors.green),pattern.solid,Coordinates(-27.0214440, -48.64794059),
       'Robertão',3500,2003,_country.brazil,];
-    map[_name.campinense] = [ClubColors(Colors.red,Colors.black),pattern.horStripes,Coordinates(-7.25366757188, -35.88033665),
+    map[_name.campinense] = [ClubColors(Colors.red,Colors.black),pattern.horStripes2,Coordinates(-7.25366757188, -35.88033665),
 			'O Amigão',25770,1915,_country.brazil,];
     map[_name.cascavel] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(-24.9750456, -53.502418),
 			'Olímpico Regional',28125,2008,_country.brazil,];
@@ -1786,7 +1790,7 @@ class ClubDetails{
 			'Arena Joinville',22100,1976,_country.brazil,];
     map[_name.juventusMooca] = [ClubColors(grena,Colors.white),pattern.solid,Coordinates(-23.5531052, -46.60451048),
 			'Estádio Conde Rodolfo Crespi',5000,1924,_country.brazil,];
-    map[_name.linense] = [ClubColors(Colors.red,Colors.white),pattern.horStripes,Coordinates(-21.666501905, -49.763218818),
+    map[_name.linense] = [ClubColors(Colors.red,Colors.white),pattern.horStripes2,Coordinates(-21.666501905, -49.763218818),
 			'Gilbertão',15770,1927,_country.brazil,];
     map[_name.luverdense] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(-13.07439827, -55.923762246),
 			'Passo das Emas',10000,2004,_country.brazil,[_name.cuiaba]];
@@ -1816,7 +1820,7 @@ class ClubDetails{
 			'Jânio Moraes',4700,1990,_country.brazil,];
     map[_name.novohamburgo] = [ClubColors(Colors.lightBlueAccent,Colors.white),pattern.stripes2,Coordinates(-29.7262180, -51.143800),
       'Estádio do Vale',5196,1911,_country.brazil,];
-    map[_name.oeste] = [ClubColors(Colors.red,Colors.black),pattern.horStripes,Coordinates(-23.51223575, -46.89928345),
+    map[_name.oeste] = [ClubColors(Colors.red,Colors.black),pattern.horStripes2,Coordinates(-23.51223575, -46.89928345),
 			'Arena Barueri',31452,1921,_country.brazil,];
     map[_name.operarioms] = [ClubColors(Colors.white,Colors.black),pattern.stripes2,Coordinates(-20.50119164, -54.610060),
 			'Morenão',16000,1938,_country.brazil,];
@@ -1830,11 +1834,11 @@ class ClubDetails{
 			'Mangueirão',35000,1914,_country.brazil,[_name.remo]];
     map[_name.portovelho] = [ClubColors(Colors.black,Colors.white),pattern.solid,Coordinates(-8.75714855, -63.9105997),
       'Aluízio Ferreira',7000,2018,_country.brazil,];
-    map[_name.portuguesa] = [ClubColors(Colors.red,Colors.green),pattern.horStripes,Coordinates(-23.520556,-46.618333),
+    map[_name.portuguesa] = [ClubColors(Colors.red,Colors.green),pattern.horStripes2,Coordinates(-23.520556,-46.618333),
 			'Canindé',21004,1920,_country.brazil,];
     map[_name.portuguesaRJ] = [ClubColors(Colors.white,Colors.green,Colors.red),pattern.sp,Coordinates(-22.8016378, -43.2078454),
       'Luso-Brasileiro',6437,1924,_country.brazil,];
-    map[_name.portuguesasantista] = [ClubColors(Colors.red,Colors.green),pattern.horStripes,Coordinates(-23.94715573, -46.3372746),
+    map[_name.portuguesasantista] = [ClubColors(Colors.red,Colors.green),pattern.horStripes2,Coordinates(-23.94715573, -46.3372746),
       'Ulrico Mursa',7635,1917,_country.brazil,];
     map[_name.princesasolimoes] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(-3.283451615, -60.6316817),
       'Gilbertão',15000,1971,_country.brazil,];
@@ -1890,7 +1894,7 @@ class ClubDetails{
 			'Joaquinzão',10000,1914,_country.brazil,];
     map[_name.tocantinopolis] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(-6.3429743, -47.4276875),
       'João Ribeiro',8000,1989,_country.brazil,];
-    map[_name.trem] = [ClubColors(Colors.red,Colors.black),pattern.horStripes,Coordinates(0.0006848359, -51.0808365),
+    map[_name.trem] = [ClubColors(Colors.red,Colors.black),pattern.horStripes2,Coordinates(0.0006848359, -51.0808365),
       'Zerão',13680,1947,_country.brazil,];
     map[_name.treze] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(-7.25430, -35.88053),
 			'O Amigão',25770,1925,_country.brazil,];
@@ -1906,7 +1910,7 @@ class ClubDetails{
 			'Raulino de Oliveira',20255,1976,_country.brazil,];
     map[_name.xvjau] = [ClubColors(Colors.green,Colors.yellow),pattern.solid,Coordinates(-22.296089, -48.57224110487209),
       'Zezinho Magalhães',12978,1924,_country.brazil,];
-    map[_name.xvpiracicaba] = [ClubColors(Colors.black,Colors.white),pattern.horStripes,Coordinates(-22.7294362, -47.636847),
+    map[_name.xvpiracicaba] = [ClubColors(Colors.black,Colors.white),pattern.horStripes2,Coordinates(-22.7294362, -47.636847),
 			'Barão de Serra Negra',18000,1913,_country.brazil,];
     map[_name.ypirangaAP] = [ClubColors(Colors.blue,Colors.black),pattern.solid,Coordinates(0.000243024, -51.08084246),
       'Zerão',13680,1963,_country.brazil,];
@@ -2066,7 +2070,7 @@ class ClubDetails{
 			'Estádio El Cobre',12000,1979,_country.chile,];
     map[_name.colocolo] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(-33.506611,-70.605944),
       'Monumental David Arellano',47017,1925,_country.chile,];
-    map[_name.coquimbo] = [ClubColors(Colors.yellow,Colors.black),pattern.horStripes,Coordinates(-29.9652247, -71.338293),
+    map[_name.coquimbo] = [ClubColors(Colors.yellow,Colors.black),pattern.horStripes2,Coordinates(-29.9652247, -71.338293),
 			'Francisco Sánchez Rumoroso',15000,1958,_country.chile,];
     map[_name.curico] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(-34.9742154, -71.230767),
       'La Granja',8200,1973,_country.chile,];
@@ -2384,7 +2388,7 @@ class ClubDetails{
 			'Estádio Corregidora',40000,1950,_country.mexico,];
     map[_name.sanluis] = [ClubColors(Colors.red,Colors.white),pattern.stripes2,Coordinates(22.1389898, -100.95071374670914),
 			'Estadio Alfonso Lastras Ramírez',25709,2013,_country.mexico,];
-    map[_name.santosLaguna] = [ClubColors(Colors.green,Colors.white),pattern.horStripes,Coordinates(25.62846869, -103.3796996),
+    map[_name.santosLaguna] = [ClubColors(Colors.green,Colors.white),pattern.horStripes2,Coordinates(25.62846869, -103.3796996),
 			'Nuevo Estadio Corona',30000,1983,_country.mexico,];
     map[_name.tampico] = [ClubColors(Colors.lightBlueAccent,Colors.white),pattern.solid,Coordinates(0, 0),
       'Estadio Tamaulipas',19668,1945,_country.mexico,];
@@ -2481,26 +2485,21 @@ class ClubDetails{
       'Estádio Carlos Ugalde Álvarez',6200,1965,_country.costaRica,];
     map[_name.sptSanJose] = [ClubColors(Colors.black,Colors.white),pattern.solid,Coordinates(9.94251970, -84.13030),
       'Ernesto Rohrmoser Stadium',3000,2016,_country.costaRica,];
-    //HONDURAS
-    map[_name.marathon] = [ClubColors(Colors.green,Colors.red),pattern.solid,Coordinates(15.47014392, -88.00675),
-      'Estadio Olímpico Metropolitano',45000,1925,_country.honduras,];
-    map[_name.motagua] = [ClubColors(Colors.blue,darkblue),pattern.solid,Coordinates(14.098298, -87.2039269),
-      'Tiburcio Carias Andino',35000,1928,_country.honduras,];
-    map[_name.olimpiaHON] = [ClubColors(Colors.white,Colors.red),pattern.solid,Coordinates(14.09869, -87.203603),
-			'Tiburcio Carias Andino',30000,1965,_country.honduras,];
-    map[_name.rcdespana] = [ClubColors(Colors.yellow,Colors.red),pattern.solid,Coordinates(15.507659, -88.033096),
-			'Francisco Morazán',26781,1929,_country.honduras,];
-    //PANAMA
-    map[_name.alianzaPAN] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(9.03394, -79.470226),
-      'Luis Ernesto Cascarita Tapia',1000,1963,_country.panama,];
-    map[_name.arabeunido] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(9.34405, -79.89594),
-			'Armando Dely Valdés',4000,1994,_country.panama,];
-    map[_name.independienteChorrera] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(8.8873752, -79.775471),
-      'Agustín Muquita Sánchez',3000,1982,_country.panama,];
-    map[_name.plazaAmador] = [ClubColors(Colors.blue,Colors.red),pattern.solid,Coordinates(8.945835, -79.549585),
-      'Maracaná de Panamá',6000,1955,_country.panama,];
-    map[_name.tauro] = [ClubColors(Colors.black,Colors.white),pattern.solid,Coordinates(9.0358766, -79.4693139),
-      'Rommel Fernández',32000,1984,_country.panama,];
+    //EL SALVADOR
+    map[_name.alianzaELS] = [ClubColors(Colors.white,Colors.white),pattern.solid,Coordinates(13.6811446, -89.222373),
+      'Estadio Cuscatlán',53400,1958,_country.elsalvador,];
+    map[_name.atleticomarte] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(13.6812, -89.2224),
+      'Estadio Cuscatlán',53400,1950,_country.elsalvador,];
+    map[_name.aguila] = [ClubColors(Colors.orange,Colors.black),pattern.solid,Coordinates(13.482514, -88.16900),
+      'Juan Francisco Barraza',15500,1926,_country.elsalvador,];
+    map[_name.fas] = [ClubColors(Colors.blue,Colors.red),pattern.solid,Coordinates(13.976406867, -89.56907633),
+      'Estádio Óscar Quiteño',17500,1947,_country.elsalvador,];
+    map[_name.firpo] = [ClubColors(Colors.blue,Colors.red),pattern.stripes3,Coordinates(13.34976510, -88.43801966),
+      'Estádio Sergio Torres Rivera',10000,1923,_country.elsalvador,];
+    map[_name.isidro] = [ClubColors(Colors.white,Colors.blue),pattern.solid,Coordinates(14.332095, -89.44904),
+      'Jorge "Calero" Suárez',2000,2000,_country.elsalvador,];
+    map[_name.santaTecla] = [ClubColors(Colors.green,Colors.blue),pattern.solid,Coordinates(13.6717297, -89.29938447),
+      'Estádio Las Delicias',10000,2007,_country.elsalvador,];
     //GUATEMALA
     map[_name.antiguaGuatemala] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(14.5673481, -90.7381967),
       'Estadio Pensativo',9000,1958,_country.guatemala,];
@@ -2510,15 +2509,15 @@ class ClubDetails{
       'Doroteo Guamuch Flores',26000,1936,_country.guatemala,];
     map[_name.xelaju] = [ClubColors(Colors.red,Colors.blue),pattern.solid,Coordinates(14.842098, -91.51714438),
       'Mario Camposeco',11000,1928,_country.guatemala,];
-    //EL SALVADOR
-    map[_name.alianzaELS] = [ClubColors(Colors.white,Colors.white),pattern.solid,Coordinates(13.6811446, -89.222373),
-      'Estadio Cuscatlán',53400,1958,_country.elsalvador,];
-    map[_name.atleticomarte] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(13.6812, -89.2224),
-      'Estadio Cuscatlán',53400,1950,_country.elsalvador,];
-    map[_name.aguila] = [ClubColors(Colors.orange,Colors.black),pattern.solid,Coordinates(13.482514, -88.16900),
-			'Juan Francisco Barraza',15500,1926,_country.elsalvador,];
-    map[_name.isidro] = [ClubColors(Colors.white,Colors.blue),pattern.solid,Coordinates(14.332095, -89.44904),
-      'Jorge "Calero" Suárez',2000,2000,_country.elsalvador,];
+    //HONDURAS
+    map[_name.marathon] = [ClubColors(Colors.green,Colors.red),pattern.solid,Coordinates(15.47014392, -88.00675),
+      'Estadio Olímpico Metropolitano',45000,1925,_country.honduras,];
+    map[_name.motagua] = [ClubColors(Colors.blue,darkblue),pattern.solid,Coordinates(14.098298, -87.2039269),
+      'Tiburcio Carias Andino',35000,1928,_country.honduras,];
+    map[_name.olimpiaHON] = [ClubColors(Colors.white,Colors.red),pattern.solid,Coordinates(14.09869, -87.203603),
+      'Tiburcio Carias Andino',30000,1965,_country.honduras,];
+    map[_name.rcdespana] = [ClubColors(Colors.yellow,Colors.red),pattern.solid,Coordinates(15.507659, -88.033096),
+      'Francisco Morazán',26781,1929,_country.honduras,];
     //NICARAGUA
     map[_name.diriangen] = [ClubColors(Colors.white,Colors.blue),pattern.solid,Coordinates(11.8612898, -86.2433238),
       'Estadio Cacique Diriangén',7500,1917,_country.nicaragua,];
@@ -2526,6 +2525,19 @@ class ClubDetails{
       'Olímpico del IND Managua',9000,2006,_country.nicaragua,];
     map[_name.realEsteli] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(13.097860, -86.352943),
       'Estadio Independencia',5000,1961,_country.nicaragua,];
+    //PANAMA
+    map[_name.alianzaPAN] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(9.03394, -79.470226),
+      'Luis Ernesto Cascarita Tapia',1000,1963,_country.panama,];
+    map[_name.arabeunido] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(9.34405, -79.89594),
+      'Armando Dely Valdés',4000,1994,_country.panama,];
+    map[_name.independienteChorrera] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(8.8873752, -79.775471),
+      'Agustín Muquita Sánchez',3000,1982,_country.panama,];
+    map[_name.plazaAmador] = [ClubColors(Colors.blue,Colors.red),pattern.solid,Coordinates(8.945835, -79.549585),
+      'Maracaná de Panamá',6000,1955,_country.panama,];
+    map[_name.tauro] = [ClubColors(Colors.black,Colors.white),pattern.solid,Coordinates(9.0358766, -79.4693139),
+      'Rommel Fernández',32000,1984,_country.panama,];
+
+    //CARIBE
     //CUBA
     map[_name.pinardelrio] = [ClubColors(Colors.green,Colors.yellow),pattern.solid,Coordinates(22.421594, -83.69040778),
       'Estadio Capitán San Luis',8000,1978,_country.cuba,];
@@ -2555,11 +2567,13 @@ class ClubDetails{
       'Edward Seaga Sports Complex',5000,1970,_country.jamaica,];
     map[_name.waterhouse] = [ClubColors(Colors.lightBlueAccent,Colors.yellow),pattern.solid,Coordinates(18.0013607, -76.77260),
       'Waterhouse Stadium',5000,1968,_country.jamaica,];
-    //TRINIDAD TOBAGO
-    map[_name.defenseforce] = [ClubColors(Colors.yellow,Colors.lightBlue),pattern.solid,Coordinates(10.661544, -61.533036),
-			'Hasely Crawford',27000,1974,_country.trinidadTobago,];
-    map[_name.police] = [ClubColors(Colors.blue,Colors.black),pattern.solid,Coordinates(10.30349244, -61.4417926),
-      'Manny Ramjohn Stadium',10000,1975,_country.trinidadTobago,];
+    //REP. DOMINICANA
+    map[_name.cibao] = [ClubColors(Colors.orange,Colors.black),pattern.solid,Coordinates(19.44559127, -70.67974268),
+      'Estadio Cibao FC',10000,2015,_country.dominicanRepublic,];
+    map[_name.omFC] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(18.48131234, -69.9187132),
+      'Estadio Olímpico Félix Sánchez',27000,2010,_country.dominicanRepublic,];
+    map[_name.pantoja] = [ClubColors(Colors.blue,Colors.yellow),pattern.oneHorStripe,Coordinates(18.480455936, -69.91863266),
+      'Estadio Olímpico Félix Sánchez',27000,2000,_country.dominicanRepublic,];
     //SURINAME
     map[_name.interMoengotapoe] = [ClubColors(Colors.red,Colors.black),pattern.stripes2,Coordinates(5.6214317, -54.4016037),
       'Ronnie Brunswijkstadion',5000,1992,_country.suriname,];
@@ -2567,10 +2581,21 @@ class ClubDetails{
 			'André Kamperveen Stadion',6000,1945,_country.suriname,];
     map[_name.transvaal] = [ClubColors(Colors.green,Colors.black),pattern.solid,Coordinates(5.8377, -55.160),
       'André Kamperveen Stadion',6000,1921,_country.suriname,];
+    //TRINIDAD TOBAGO
+    map[_name.centralFC] = [ClubColors(Colors.black,Colors.white),pattern.stripes3,Coordinates(10.42489512, -61.41732595),
+      'Ato Boldon Stadium',10000,2012,_country.trinidadTobago,];
+    map[_name.connection] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(10.303194782, -61.44113680),
+      'Manny Ramjohn Stadium',10000,1999,_country.trinidadTobago,];
+    map[_name.defenseforce] = [ClubColors(Colors.yellow,Colors.lightBlue),pattern.solid,Coordinates(10.661544, -61.533036),
+      'Hasely Crawford',27000,1974,_country.trinidadTobago,];
+    map[_name.police] = [ClubColors(Colors.blue,Colors.black),pattern.solid,Coordinates(10.30349244, -61.4417926),
+      'Manny Ramjohn Stadium',10000,1975,_country.trinidadTobago,];
+    map[_name.stAnnRangers] = [ClubColors(Colors.red,Colors.red),pattern.solid,Coordinates(10.6615435, -61.53307856),
+      'Hasely Crawford Stadium',24000,1979,_country.trinidadTobago,];
 
     //////////////////////////////////////////////////////////////////////////////////
     //CHINA
-    map[_name.beijingguoan] = [ClubColors(Colors.green,Colors.black),pattern.solid,Coordinates(39.865559, 116.272423),
+    map[_name.beijingguoan] = [ClubColors(Colors.green,Colors.yellow),pattern.solid,Coordinates(39.865559, 116.272423),
 			'Beijing Fengtai Stadium',31043,1992,_country.china,];
     map[_name.changchun] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(43.836849, 125.39063),
       'Development Area Stadium',25000,1996,_country.china,];
@@ -2659,13 +2684,13 @@ class ClubDetails{
       'Gangneung Stadium',30000,2008,_country.southKorea,];
     map[_name.gimcheon] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(36.139672, 128.08642078),
       'Gimcheon Stadium',32000,1984,_country.southKorea,];
-    map[_name.incheon] = [ClubColors(Colors.blue,Colors.black),pattern.solid,Coordinates(37.466183, 126.64357953),
+    map[_name.incheon] = [ClubColors(Colors.blue,Colors.black),pattern.stripes4,Coordinates(37.466183, 126.64357953),
 			'Incheon Football Stadium',20891,2003,_country.southKorea,];
     map[_name.jeonbuk] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(35.8683430, 127.064329),
 			'Jeonju World Cup Stadium',42477,1994,_country.southKorea,];
     map[_name.jeju] = [ClubColors(Colors.orange,Colors.red),pattern.solid,Coordinates(33.24632024, 126.509235),
       'Jeju World Cup Stadium',35657,1982,_country.southKorea,];
-    map[_name.pohang] = [ClubColors(Colors.grey,Colors.black),pattern.solid,Coordinates(36.0088520, 129.363788),
+    map[_name.pohang] = [ClubColors(Colors.red,Colors.black),pattern.horStripes2,Coordinates(36.0088520, 129.363788),
 			'Pohang Steel Yard',25000,1973,_country.southKorea,];
     map[_name.fcseoul] = [ClubColors(Colors.red,Colors.black),pattern.stripes2,Coordinates(37.56837781, 126.897502),
 			'Seoul World Cup Stadium',66704,1983,_country.southKorea,];
@@ -2673,7 +2698,7 @@ class ClubDetails{
 			'Tancheon Sports Complex',16146,1989,_country.southKorea,];
     map[_name.suwonsamsung] = [ClubColors(Colors.blue,Colors.red),pattern.solid,Coordinates(37.2866172728, 127.0367),
 			'Big Bird',43288,1995,_country.southKorea,];
-    map[_name.ulsan] = [ClubColors(Colors.blue,Colors.yellow),pattern.solid,Coordinates(35.56251397, 129.3483643),
+    map[_name.ulsan] = [ClubColors(Colors.blue,Colors.blueAccent),pattern.stripes3,Coordinates(35.56251397, 129.3483643),
 			'Munsu Cup Stadium',44474,1983,_country.southKorea,];
     //NORTH KOREA
     map[_name.april25] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(39.0495805, 125.775884),
@@ -2714,7 +2739,7 @@ class ClubDetails{
       'Boonyachinda Stadium',3550,1992,_country.thailand,];
     map[_name.ratchaburi] = [ClubColors(Colors.orange,Colors.white),pattern.solid,Coordinates(13.52162906, 99.7698381),
       'Mitr Phol Stadium',10000,2004,_country.thailand,];
-    map[_name.samutPrakan] = [ClubColors(Colors.blue,Colors.lightGreenAccent),pattern.horStripes,Coordinates(13.5792926, 100.7946855),
+    map[_name.samutPrakan] = [ClubColors(Colors.blue,Colors.lightGreenAccent),pattern.horStripes2,Coordinates(13.5792926, 100.7946855),
       'Samut Prakarn SAT Stadium',5100,2019,_country.thailand,];
     map[_name.suphanburi] = [ClubColors(darkblue,Colors.orange),pattern.solid,Coordinates(14.4740419, 100.08671126),
       'Estádio Municipal de Suphanburi',25000,1998,_country.thailand,];
@@ -2805,8 +2830,14 @@ class ClubDetails{
     map[_name.unitedCity] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(15.3455705, 120.5335554),
       'New Clark City Athletics',20000,2012,_country.philippines,];
     //CAMBOJA
+    map[_name.boeungKet] = [ClubColors(Colors.white,darkblue),pattern.solid,Coordinates(11.536736, 104.9561471),
+      'Cambodia Airways Stadium',2500,2008,_country.cambodia,];
+    map[_name.nagaworld] = [ClubColors(Colors.purple,Colors.black),pattern.solid,Coordinates(11.4883311, 104.483529),
+      'Kampong Speu Stadium',3000,2001,_country.cambodia,];
     map[_name.phnomPenhCrown] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(11.6047089, 104.894398),
       'RSN Stadium',5000,2001,_country.cambodia,];
+    map[_name.preahKhan] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(11.082494, 105.802971),
+      'Svay Rieng Stadium',2150,1997,_country.cambodia,];
     //NEPAL
     map[_name.machhindra] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(27.69569827, 85.3148114),
       'Dasarath Rangasala',15000,1973,_country.nepal,];
@@ -2816,9 +2847,15 @@ class ClubDetails{
     map[_name.johorDarul] = [ClubColors(Colors.blue,Colors.red),pattern.solid,Coordinates(1.497541866, 103.751479),
       'Larkin Stadium',30000,1970,_country.malaysia,];
     map[_name.kedah] = [ClubColors(Colors.yellow,Colors.green),pattern.solid,Coordinates(6.135977965, 100.3716979),
-      '	Darul Aman Stadium',32387,1924,_country.malaysia,];
+      'Darul Aman Stadium',32387,1924,_country.malaysia,];
     map[_name.kualaLumpur] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(3.10071364, 101.721440),
       'Kuala Lumpur Stadium',18000,1974,_country.malaysia,];
+    map[_name.penang] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(5.26120426, 100.437613187),
+      'Penang State Stadium',40000,1921,_country.malaysia,];
+    map[_name.sabah] = [ClubColors(Colors.red,Colors.white),pattern.sleeves,Coordinates(5.98317860, 116.0955644),
+      'Likas Stadium',35000,1950,_country.malaysia,];
+    map[_name.sriPahang] = [ClubColors(Colors.yellow,Colors.blue),pattern.sleeves,Coordinates(3.814934281, 103.3237541),
+      'Darul Makmur Stadium',40000,1959,_country.malaysia,];
     map[_name.selangor] = [ClubColors(Colors.red,Colors.yellow),pattern.solid,Coordinates(3.08214134, 101.54496),
       'Our Tampines Hub',80372,1905,_country.malaysia,];
     //SINGAPORE
@@ -2887,7 +2924,7 @@ class ClubDetails{
       'Prince Abdullah bin Jalawi Stadium',19550,1958,_country.southArabia,];
     map[_name.alhilal] = [ClubColors(darkblue,Colors.white),pattern.solid,Coordinates(24.78903170, 46.8395937),
 			'King Fahd Stadium',67000,1957,_country.southArabia,];
-    map[_name.alIttihad] = [ClubColors(Colors.yellow,Colors.black),pattern.stripes2,Coordinates(21.44662735, 39.2524137),
+    map[_name.alIttihad] = [ClubColors(Colors.black,Colors.yellow),pattern.stripes3,Coordinates(21.44662735, 39.2524137),
       'Prince Abdullah Al-Faisal Stadium',27000,1927,_country.southArabia,];
     map[_name.alnassr] = [ClubColors(Colors.yellow,Colors.blue),pattern.solid,Coordinates(21.76355015, 39.164367968),
 			'Universitário Rei Saud',25000,1955,_country.southArabia,];
@@ -2917,7 +2954,7 @@ class ClubDetails{
     map[_name.zobahan] = [ClubColors(Colors.white,Colors.green),pattern.oneHorStripe,Coordinates(32.48286848, 51.42148270),
       'Foolad Shahr Stadium',25000,1969,_country.iran,];
     //IRAQUE
-    map[_name.alShorta] = [ClubColors(Colors.green,Colors.green),pattern.solid,Coordinates(33.324906, 44.435304),
+    map[_name.alShortaIRAQ] = [ClubColors(Colors.green,Colors.green),pattern.solid,Coordinates(33.324906, 44.435304),
       'Al-Shaab Stadium',34200,1932,_country.iraq,];
     map[_name.alQuwaAlJawiya] = [ClubColors(Colors.blue,Colors.yellow),pattern.solid,Coordinates(33.3535912, 44.4543854),
       'Al-Zawraa Stadium',6000,1931,_country.iraq,];
@@ -2997,7 +3034,7 @@ class ClubDetails{
       'Khalid ibn al-Walid',32000,1928,_country.syria,];
     map[_name.alJaish] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(33.5227937, 36.3200108),
       'Abbasiyyin Stadium Damascus',30000,1945,_country.syria,];
-    map[_name.alShorta] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(33.5048124, 36.288935),
+    map[_name.alShortaDamascus] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(33.5048124, 36.288935),
       'Tishreen Stadium',12000,1947,_country.syria,];
     map[_name.tishreen] = [ClubColors(Colors.yellow,Colors.red),pattern.solid,Coordinates(33.5053761, 36.2892507),
       'Tishreen',28000,1947,_country.syria,];
@@ -3064,9 +3101,9 @@ class ClubDetails{
 			'Estádio 8 de Maio',25000,1958,_country.algeria,];
     map[_name.kabylie] = [ClubColors(Colors.yellow,Colors.green),pattern.solid,Coordinates(36.706899, 4.0560295),
 			'Stade 1er Novembre',22000,1946,_country.algeria,];
-    map[_name.mcalger] = [ClubColors(Colors.green,Colors.red),pattern.horStripes,Coordinates(36.75986425, 2.99499536),
+    map[_name.mcalger] = [ClubColors(Colors.green,Colors.red),pattern.horStripes2,Coordinates(36.75986425, 2.99499536),
       'Estádio 5 de Julho de 1962',76000,1921,_country.algeria,];
-    map[_name.mcOran] = [ClubColors(Colors.white,Colors.red),pattern.horStripes,Coordinates(35.683435418, -0.63621669),
+    map[_name.mcOran] = [ClubColors(Colors.white,Colors.red),pattern.horStripes2,Coordinates(35.683435418, -0.63621669),
       'Estádio Ahmed Zabana',40000,1917,_country.algeria,];
     map[_name.usmAlger] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(36.80114535, 3.04854982),
       'Omar Hamadi Stadium',15000,1937,_country.algeria,];
@@ -3161,7 +3198,7 @@ class ClubDetails{
     map[_name.horoya] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(9.5462, -13.6728),
       'Stade 28 Septembre',25000,1975,_country.guinea,];
     //KHENYA
-    map[_name.kakamega] = [ClubColors(Colors.yellow,Colors.green),pattern.stripes2,Coordinates(0.28970512, 34.7605814),
+    map[_name.kakamega] = [ClubColors(Colors.yellow,Colors.green,Colors.green),pattern.stripeCrest,Coordinates(0.28970512, 34.7605814),
       'Bukhungu Stadium',10000,2010,_country.kenya,];
     map[_name.gorMahia] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(-1.294090, 36.842290),
       'City Stadium',15000,1968,_country.kenya,];

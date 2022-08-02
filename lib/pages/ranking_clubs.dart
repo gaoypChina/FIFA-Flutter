@@ -50,7 +50,6 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
   }
   @override
   void dispose() {
-    //Cancelar o timer do envio de email
     _scrollController.dispose();
     _tabController.dispose();
     super.dispose();
