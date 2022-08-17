@@ -24,11 +24,15 @@ class LeagueOfficialNames{
   String belgica = 'Jupiler Pro League';
   String suecia = 'Allsvenskan Sweden';
   String dinamarca = 'Superliga Dinamarquesa';
-  String austria = 'Liga Austrica';
+  String noruega = 'Liga Norueguesa';
+  String austria = 'Liga Austriaca';
   String suica = 'Super Liga Suíça';
+  String polonia = 'Ekstraklasa';
   String servia = 'Liga Servia';
   String grecia = 'Liga Grega';
   String repTcheca = 'Liga Tcheca';
+  String croacia = 'Liga Croácia';
+  String ucrania = 'Liga Ucrania';
   String cazaquistao = 'Super Liga do Cazaquistão';
   String ligaEuropa = 'Liga Europeia';  String lesteEuropeu = 'Leste Europeu';
 
@@ -40,9 +44,25 @@ class LeagueOfficialNames{
   String paraguai = 'Campeonato paraguaio';
   String chile = 'Campeonato chileno';
   String equador = 'Campeonato equatoriano';
+  String venezuela = 'Campeonato venezuelano';
+  String peru = 'Campeonato peruano';
+  String bolivia = 'Campeonato boliviano';
 
   String mexico = 'Liga MX';String estadosUnidos = 'MLS';
   String asia = 'Liga Ásia';  String orienteMedio = 'Liga Oriente Médio';  String africa = 'Liga África';
+
+  String japao = 'J1-League';
+  String china = 'Liga China';
+  String coreiaSul = 'K-League';
+  String arabia = 'Liga Arábia Saudita';
+  String eau = 'Liga EAU';
+  String qatar = 'Liga qatar';
+  String iran = 'Liga iran';
+
+  String egito = 'Liga Egito';
+  String marrocos = 'Liga Marrocos';
+  String australia = 'A-League';
+  String africaSul = 'Liga África do Sul';
   String outros = 'Outros';
 
   //COPAS

@@ -17,7 +17,7 @@ List defaultChampionsLeagueClubs = [
   clubName.chelsea,clubName.juventus,clubName.zenit,clubName.malmo,
 ];
 List defaultLibertadoresClubs = [
-  clubName.palmeiras,clubName.deportivoTachira,clubName.emelec,clubName.monterrey,
+  clubName.palmeiras,clubName.tachira,clubName.emelec,clubName.monterrey,
   clubName.atleticopr,clubName.bolivar,clubName.caracas,clubName.libertad,
   clubName.bragantino,clubName.nacional,clubName.velez,clubName.estudiantes,
   clubName.atleticomg,clubName.idelvalle,clubName.tolima,clubName.americamg,
@@ -165,13 +165,13 @@ Map clubNameMapImmutable = {
     4: clubName.colocolo,5: clubName.lau,6: clubName.palestino,7: clubName.univcatolica,
     8: clubName.alwaysReady,9: clubName.bolivar,10: clubName.theStrongest,11: clubName.alianzalima,
     12: clubName.cienciano,13: clubName.jorge,14: clubName.melgar,15: clubName.sportingcristal,
-    16: clubName.universitario,17: clubName.montevideo,18: clubName.nacional,19: clubName.penarol,
+    16: clubName.universitario,17: clubName.montevideoCity,18: clubName.nacional,19: clubName.penarol,
   },
   LeagueOfficialNames().colombia : {
     0: clubName.americadecali,1: clubName.atleticonacional,2: clubName.deportivocali,3: clubName.junior,
     4: clubName.imedellin,5: clubName.tolima,6: clubName.millonarios,7: clubName.santafe,
     8: clubName.oncecaldas,
-    9: clubName.caracas,10: clubName.deportivoTachira,11: clubName.laGuaira,
+    9: clubName.caracas,10: clubName.tachira,11: clubName.laGuaira,
     12: clubName.barcelonaequ,13: clubName.emelec,14: clubName.ldu,15: clubName.idelvalle,
   },
 
@@ -200,7 +200,7 @@ Map clubNameMapImmutable = {
   LeagueOfficialNames().africa : {
     0: clubName.alahly,1: clubName.zamalek,2: clubName.mazembe,3: clubName.esperance,
     4: clubName.rajacasablanca,5: clubName.wydad,6: clubName.orlandopirates,7: clubName.kaizer,
-    8: clubName.mamelodi,9: clubName.agosto,10:clubName.sydney,11:clubName.melbournevictory,
+    8: clubName.mamelodi,9: clubName.agosto,10:clubName.sydneyFC,11:clubName.melbournevictory,
   },
   LeagueOfficialNames().outros : {
     0: clubName.laskLinz,1: clubName.sheriffTiraspol,2: clubName.ghuangzhou,3: clubName.tigre,

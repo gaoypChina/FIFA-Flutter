@@ -119,7 +119,7 @@ List clubsAllNameList = [
   ClubName().huracan,ClubName().gimnasia,ClubName().unionSantaFe,ClubName().godoycruz,
   ClubName().atleticoTucuman,ClubName().tigre,
 
-  ClubName().penarol,  ClubName().nacional,  ClubName().montevideo,
+  ClubName().penarol,  ClubName().nacional,  ClubName().montevideoCity,
   ClubName().olimpia,  ClubName().libertad,ClubName().cerroporteno,ClubName().guaraniPAR,
   ClubName().univcatolica, ClubName().colocolo,  ClubName().lau, ClubName().palestino,
   ClubName().bolivar, ClubName().theStrongest,ClubName().alwaysReady,
@@ -134,7 +134,7 @@ List clubsAllNameList = [
   ClubName().idelvalle,
   ClubName().barcelonaequ,  ClubName().emelec,  ClubName().ldu,
   //venezuela
-  ClubName().caracas,ClubName().deportivoTachira,ClubName().laGuaira,
+  ClubName().caracas,ClubName().tachira,ClubName().laGuaira,
 
   //MÉXICO
   ClubName().americamex,  ClubName().chivas, ClubName().cruzazul,  ClubName().monterrey,
@@ -154,7 +154,7 @@ List clubsAllNameList = [
   ClubName().alsadd,  ClubName().alduhail, ClubName().alahli,  ClubName().alhilal,
 
   ClubName().fcseoul,ClubName().beijingguoan,ClubName().persepolis,ClubName().ulsan,
-  ClubName().melbournevictory,ClubName().sydney,ClubName().alWahda,ClubName().alIttihad,
+  ClubName().melbournevictory,ClubName().sydneyFC,ClubName().alWahda,ClubName().alIttihad,
   ClubName().alShabab,ClubName().cerezoOsaka,ClubName().gambaOsaka,
 
   ClubName().alahly, ClubName().zamalek,ClubName().rajacasablanca,ClubName().wydad,

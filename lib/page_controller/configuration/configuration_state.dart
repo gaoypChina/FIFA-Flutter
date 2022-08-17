@@ -142,8 +142,13 @@ class ConfigurationState{
     globalInitialMoney = value;
   }
 
-  openTerms(){
-    final Uri _url = Uri.parse('https://www.davaiapp.com');
+  openPrivacyPolicy() async{
+    final Uri _url = Uri.parse("https://github.com/DavaiApp/User-Terms/blob/main/Privacy%20Police%20Football%20Guesser.docx.pdf");
+    funcOpenLink(_url);
+  }
+
+  openTerms() async{
+    final Uri _url = Uri.parse("https://github.com/DavaiApp/User-Terms/blob/main/EULA%20Football%20Guesser.docx.pdf");
     funcOpenLink(_url);
   }
 }

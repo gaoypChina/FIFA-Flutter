@@ -1,6 +1,5 @@
+import 'package:fifa/classes/words.dart';
 import 'package:flutter/material.dart';
-
-import '../classes/words.dart';
 
 //https://hampusborgos.github.io/country-flags/
 //https://github.com/bytepark/country_icons/tree/master/icons/flags/png
@@ -116,7 +115,7 @@ Image funcFlagsList(String country, double _height, double _width){
   else if(country == Words.country.macedonia){code = Image.asset('icons/flags/png/mk.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.madagascar){code = Image.asset('icons/flags/png/mg.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.malaysia){code = Image.asset('icons/flags/png/my.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
-  else if(country == Words.country.maldivas){code = Image.asset('icons/flags/png/mv.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.maldives){code = Image.asset('icons/flags/png/mv.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.mali){code = Image.asset('icons/flags/png/ml.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.malawi){code = Image.asset('icons/flags/png/mw.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.malta){code = Image.asset('icons/flags/png/mt.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
@@ -144,6 +143,7 @@ Image funcFlagsList(String country, double _height, double _width){
   else if(country == Words.country.northernIreland){code = Image.asset('icons/flags/png/gg.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.oman){code = Image.asset('icons/flags/png/om.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.pakistan){code = Image.asset('icons/flags/png/pk.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.palestine){code = Image.asset('icons/flags/png/ps.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.panama){code = Image.asset('icons/flags/png/pa.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.papua){code = Image.asset('icons/flags/png/pg.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.paraguay){code = Image.asset('icons/flags/png/py.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}

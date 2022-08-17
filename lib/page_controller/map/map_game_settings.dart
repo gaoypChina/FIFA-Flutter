@@ -1,6 +1,6 @@
 
 import 'package:fifa/database/local_database/shared_preferences.dart';
-import 'package:fifa/functions/contries_continents.dart';
+import 'package:fifa/functions/countries_continents.dart';
 
 class MapGameModeNames{
 

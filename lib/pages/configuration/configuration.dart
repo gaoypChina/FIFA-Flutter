@@ -75,7 +75,11 @@ class _ConfigurationState extends State<Configuration> {
                     SizedBox(height: spaceBetweenWidgets),
                     allowInjuries(config),
                     SizedBox(height: spaceBetweenWidgets),
+                    policyPrivacy(),
+                    SizedBox(height: spaceBetweenWidgets),
                     userTerms(),
+                    SizedBox(height: spaceBetweenWidgets),
+                    tutorial(),
                     SizedBox(height: spaceBetweenWidgets),
                     //test(),
                   ],
@@ -346,6 +350,19 @@ Widget soundEffects(ConfigurationState config){
       ],
     );
   }
+  Widget policyPrivacy(){
+    return Column(
+      children: [
+        GestureDetector(
+          onTap:(){
+            config.openPrivacyPolicy();
+          },
+          child: Text(Translation(context).text.userTerms,style: EstiloTextoBranco.negrito16),
+        ),
+      ],
+    );
+  }
+
   Widget userTerms(){
     return Column(
       children: [
@@ -357,6 +374,42 @@ Widget soundEffects(ConfigurationState config){
         ),
       ],
     );
+  }
+
+  Widget tutorial(){
+    return Column(
+      children: [
+        GestureDetector(
+          onTap:(){
+            bottomSheet('Jogo muito louco');
+          },
+          child: const Text('Tutorial',style: EstiloTextoBranco.negrito16),
+        ),
+      ],
+    );
+  }
+
+  bottomSheet(String text){
+    return showModalBottomSheet<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return Container(
+            height: 200,
+            color: Colors.greenAccent,
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Center(child: Text(text,textAlign: TextAlign.center)),
+                  ),
+                ],
+              ),
+            ),
+          );
+        });
   }
 
   Widget test(){

@@ -16,14 +16,14 @@ import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class MapPage extends StatefulWidget {
-  const MapPage({Key? key}) : super(key: key);
+class MapExploration extends StatefulWidget {
+  const MapExploration({Key? key}) : super(key: key);
 
   @override
-  State<MapPage> createState() => _MapPageState();
+  State<MapExploration> createState() => _MapExplorationState();
 }
 
-class _MapPageState extends State<MapPage> {
+class _MapExplorationState extends State<MapExploration> {
   final List<Coordinates> coordinates = [];
   List<Marker> _markers = <Marker>[];
   List<Marker> _markersShow = <Marker>[];

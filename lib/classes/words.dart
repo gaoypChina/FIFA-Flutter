@@ -119,7 +119,7 @@ class CountryNames {
   String get madagascar => 'Madagascar';
   String get malawi => 'Malawi';
   String get malaysia => 'Malaysia';
-  String get maldivas => 'Maldives';
+  String get maldives => 'Maldives';
   String get mali => 'Mali';
   String get malta => 'Malta';
   String get mauritania => 'Mauritania';
@@ -145,6 +145,7 @@ class CountryNames {
   String get norway => 'Norway';
   String get northernIreland => 'Northern Ireland';
   String get oman => 'Oman';
+  String get palestine => 'Palestine';
   String get pakistan => 'Pakistan';
   String get panama => 'Panama';
   String get papua => 'Papua New Guinea';
@@ -213,11 +214,11 @@ class CountryNames {
 CountryNames word = Words.country;
 List<String> globalCountryNames = [
   word.albania,word.algeria,word.andorra,word.angola,word.antiguaBarbuda,word.argentina,word.armenia,
-    word.austria,word.australia,word.azerbaijan,
+  word.austria,word.australia,word.azerbaijan,
   word.bahrein,word.bahamas,word.barbados,word.bangladesh,word.belize,word.belarus,word.belgium,word.benin,word.bolivia,
-    word.bosnia,word.botswana,word.brazil,word.brunei,word.bulgaria,word.burkina,word.burundi,
+  word.bosnia,word.botswana,word.brazil,word.brunei,word.bulgaria,word.burkina,word.burundi,
   word.cameroon,word.centralAfrica,word.colombia,word.costaRica,word.comoros,word.congo,word.congoRD,
-    word.chad,word.china,word.cyprus,word.chile,word.canada,word.capeVerde,word.croatia,word.cuba,word.czechRepublic,
+  word.chad,word.china,word.cyprus,word.chile,word.canada,word.capeVerde,word.croatia,word.cuba,word.czechRepublic,
   word.denmark,word.djibouti,word.dominicanRepublic,
   word.ecuador,word.egypt,word.england,word.estonia,word.ethiopia,
   word.finland,word.france,
@@ -234,9 +235,9 @@ List<String> globalCountryNames = [
   word.qatar,
   word.romania,word.russia,word.rwanda,
   word.sanMarino,word.stKitts,word.scotland,word.senegal,word.serbia,word.slovakia,word.slovenia,word.somalia,
-    word.southArabia,word.southKorea,word.southAfrica,word.spain,word.sudan,
-    word.suriname,word.sweden,word.switzerland,word.syria,
-  word.tanzania,word.thailand,word.togo,word.trinidadTobago,word.tunisia,word.turkey,word.turkmenistan,
+  word.southArabia,word.southKorea,word.southAfrica,word.spain,word.sudan,
+  word.suriname,word.sweden,word.switzerland,word.syria,
+  word.tajikistan,word.tanzania,word.thailand,word.togo,word.trinidadTobago,word.tunisia,word.turkey,word.turkmenistan,
   word.uganda,word.ukraine,word.uae,word.unitedStates,word.uruguay,word.uzbekistan,
   word.venezuela,word.vietnam,
   word.wales,

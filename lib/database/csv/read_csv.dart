@@ -13,6 +13,7 @@ class ReadCSV{
 
   openCSV() async{
 
+    customToast('Loading CSV Files...');
     resetPlayersData();
     resetData();
 
@@ -70,8 +71,8 @@ class ReadCSV{
     await readCSVfunc("oceania");
 
     //Importante deletar depois de setar todos os usuarios para evitar problemas com ids fora de ordem
-    customToast('Deleting Duplicated Players');
-    deleteRepeatedPlayers();
+    //customToast('Deleting Duplicated Players');
+    //deleteRepeatedPlayers();
     customToast('Loading Custom Players');
     addRandomPlayers();
     reorganizeIndexIDs();

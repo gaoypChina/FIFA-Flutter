@@ -998,11 +998,11 @@ String imageLogo(String timeFoto) {
     map[_name.defensor] = 'defensor';
     map[_name.fenix] = 'fenix';
     map[_name.liverpoolURU] = 'liverpool uru';
-    map[_name.montevideo] = 'montevideo';
+    map[_name.montevideoCity] = 'montevideo';
     map[_name.plazacolonia] = 'plaza colonia';  
     map[_name.rentistas] = 'rentistas';  
     map[_name.riverURU] = 'river uru';  
-    map[_name.wanderers] = 'wanderers';  
+    map[_name.montWanderers] = 'wanderers';
 
     map[_name.olimpia] = 'olimpia';      
     map[_name.cerroporteno] = 'cerro';
@@ -1010,7 +1010,7 @@ String imageLogo(String timeFoto) {
     map[_name.guaraniPAR] = 'guarani paraguai';  
     map[_name.nacionalPAR] = 'nacional paraguai';  
     map[_name.colegiales] = 'colegiales';
-    map[_name.octubre] = '12 de octubre';  
+    map[_name.octubre12] = '12 de octubre';
     map[_name.soldeamerica] = 'sol de america';  
     map[_name.luqueno] = 'luqueno';
     map[_name.tacuary] = 'tacuary';
@@ -1102,7 +1102,7 @@ String imageLogo(String timeFoto) {
     map[_name.carabobo] = 'carabobo'; 
     map[_name.caracas] = 'caracas'; 
     map[_name.laGuaira] = 'la guaira';  
-    map[_name.deportivoTachira] = 'deportivo tachira';  
+    map[_name.tachira] = 'deportivo tachira';  
     map[_name.estudiantesmerida] = 'estudiantes merida';  
     map[_name.deplara] = 'deplara';
     map[_name.metropolitanos] = 'metropolitanos';
@@ -1436,7 +1436,7 @@ String imageLogo(String timeFoto) {
     map[_name.newcastlejets] = 'newcastlejets';
     map[_name.melbournevictory] = 'melbourne victory';
     map[_name.perth] = 'perth';
-    map[_name.sydney] = 'sydney';
+    map[_name.sydneyFC] = 'sydney';
     map[_name.sydneywanderers] = 'sydney wanderers';
     map[_name.westernunited] = 'western';
 
