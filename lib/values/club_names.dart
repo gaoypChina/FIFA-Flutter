@@ -582,15 +582,25 @@ class ClubName{
   String rosenborg = "Rosenborg";
   String molde = "Molde";
   String aalesund = "Aalesund";
+  String brann = "Brann";
+  String bryne = "Bryne";
   String fredrikstad = "Fredrikstad";
-  String haugesund = "Haugesund";
   String glimt = "Bodø/Glimt";
+  String haugesund = "Haugesund";
+  String kongsvinger = "Kongsvinger";
   String lillestrom = "Lillestrøm";
   String lyn = "LYN";
   String odd = "Odds BK";
+  String mjondalen = "Mjondalen";
+  String moss = "Moss";
   String sanderfjord = "Sanderfjord";
   String sarpsborg = "Sarpsborg 08";
+  String skeid = "Skeid";
+  String stabaek = "Stabæk";
+  String start = "Start";
+  String steinkjer = "Steinkjer";
   String stromsgodset = "Strømsgodset";
+  String tonsberg = "Eik-Tønsberg";
   String tromso = "Tromsø IL";
   String valerenga = "Valerenga";
   String viking = "Viking";
@@ -889,6 +899,7 @@ class ClubName{
   String dnipro1 = "Dnipro-1";
   String karpatyLviv = "Karpaty Lviv";
   String kolosKovalivka = "Kolos Kovalivka";
+  String kryvbasKryvyi = "Kryvbas Kryvyi Rih";
   String metalist = "Metalist";
   String metalurh = "Metalurh Zaporizhzhia";
   String lviv = "Lviv";
@@ -2054,11 +2065,15 @@ class ClubName{
   //QATAR
   String alduhail = "Al Duhail";
   String alsadd = "Al Sadd";
+  String alahliQAT = "Al Ahli";
   String alarabi = "Al Arabi";
   String alrayyan = "Al Rayyan";
   String algharafa = "Al Gharafa";
+  String alkhor = "Al Khor";
   String alwakrah = "Al Wakrah";
   String eljaish = "El-Jaish";
+  String alsailiya = "Al-Sailiya";
+  String qatar = "Qatar Sports Club";
   String ummSalal = "Umm Salal";
   //BAHREIN
   String alhidd = "Al-Hidd";
@@ -2199,15 +2214,22 @@ class ClubName{
   //EGYPT
   String alahly = "Al Ahly";
   String zamalek = "Zamalek";
+  String alexandria = "Al Ittihad Alexandria";
   String almasry = "Al Masry";
   String almokawloon = "Al Mokawloon";
   String cleopatra = "Ceramica Cleopatra";
+  String elmansoura = "El Mansoura";
+  String elolympi = "El Olympi";
+  String enppi = "ENPPI";
   String ghazl = "Ghazl El-Mehalla";
+  String haras = "Haras El Hodoud";
   String ismaily = "Ismaily";
   String future = "Future FC";
+  String makkasa = "Misr Lel Makkasa";
+  String petrojet = "Petrojet";
   String pyramids = "Pyramids";
   String smouha = "Smouha";
-  String enppi = "ENPPI";
+  String tersana = "Tersana";
   //ARGELIA
   String saoura = "JS Saoura";
   String asoChlef = "ASO Chlef";

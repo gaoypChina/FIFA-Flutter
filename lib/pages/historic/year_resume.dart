@@ -3,6 +3,7 @@ import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/historic_champions_league.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
+import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/table/table_nacional.dart';
 import 'package:fifa/theme/custom_toast.dart';
@@ -32,7 +33,7 @@ class _YearResumeState extends State<YearResume> {
   @override
   void initState() {
     super.initState();
-    for(int i=anoInicial-65;i<=ano;i++){
+    for(int i=1960;i<=ano;i++){
       possibleYears.add(i.toString());
     }
   }
@@ -73,6 +74,20 @@ class _YearResumeState extends State<YearResume> {
               ),
               ),
 
+              (int.parse(selectedYear) < anoInicial) ? Container(
+                height: 500,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      for(String leagueName in LeagueOfficialNames().getAllLeagueNames())
+                        leagueHistoric(leagueName)
+                    ],
+                  ),
+                ),
+              ) : Container(),
+
+
+
 
             ],
           ),
@@ -86,6 +101,41 @@ class _YearResumeState extends State<YearResume> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Widget leagueHistoric(String leagueName){
+    List classificationNames = [];
+    try {
+      classificationNames = mapChampions(leagueName)[double.parse(selectedYear)];
+      if(classificationNames.isEmpty){
+        //SE naquele ano a liga nao tem times no historico
+        return Container();
+      }
+    }catch(e){
+      //print('LIGA $leagueName não tem histórico de classificação nesse ano);
+      return Container();
+    }
+    return Row(
+      children: [
+        Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              const SizedBox(width: 10),
+              funcFlagsList(getLeague(leagueName), 20, 30),
+              const SizedBox(width: 10),
+              classificationNames.isNotEmpty ? Images().getEscudoWidget(classificationNames[0],45,45) : Container(),
+              classificationNames.length>=2 ? Images().getEscudoWidget(classificationNames[1],30,30) : Container(),
+              classificationNames.length>=3 ? Images().getEscudoWidget(classificationNames[2],20,20) : Container(),
+              classificationNames.length>=4 ? Images().getEscudoWidget(classificationNames[3],20,20) : Container(),
+              classificationNames.length>=5 ? Images().getEscudoWidget(classificationNames[4],20,20) : Container(),
+              const SizedBox(width: 10),
+            ],
+          ),
+        ),
+      ],
+    );
+
+  }
+
   Widget dropDownButton(){
     return                   Container(
       decoration: BoxDecoration(
@@ -182,30 +232,7 @@ Widget resumeLeague(String leagueName){
               customToast(Translation(context).text.loading);
               Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableNacional(choosenLeagueIndex: leaguesIndexFromName[leagueName])));
             }else{
-                showModalBottomSheet(
-                  barrierColor: Colors.transparent,
-                    context: context, builder: (c){
-                      return SingleChildScrollView(
-                          child: Column(
-                        children: [
-
-                          for(int i=0; i<classificationNames.length;i++)
-                              Padding(
-                                padding: const EdgeInsets.only(left: 8.0),
-                                child: Row(
-                                  children: [
-                                    SizedBox(width:35,child: Text((i+1).toString()+'º ',textAlign: TextAlign.right,style:EstiloTextoPreto.text16)),
-                                    Padding(
-                                      padding: const EdgeInsets.all(6.0),
-                                      child: Images().getEscudoWidget(classificationNames[i],30,30),
-                                    ),
-                                    Text(classificationNames[i],style:EstiloTextoPreto.text16),
-                                  ],
-                                ),
-                              ),
-                        ],
-                      ));
-                    });
+                bottomSheetShowLeagueClassification(classificationNames);
             }
             },
           child: Stack(
@@ -256,5 +283,32 @@ Widget resumeLeague(String leagueName){
     );
   }
 
+
+  bottomSheetShowLeagueClassification(List classificationNames){
+    return showModalBottomSheet(
+        barrierColor: Colors.transparent,
+        context: context, builder: (c){
+      return SingleChildScrollView(
+          child: Column(
+            children: [
+
+              for(int i=0; i<classificationNames.length;i++)
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Row(
+                    children: [
+                      SizedBox(width:35,child: Text((i+1).toString()+'º ',textAlign: TextAlign.right,style:EstiloTextoPreto.text16)),
+                      Padding(
+                        padding: const EdgeInsets.all(6.0),
+                        child: Images().getEscudoWidget(classificationNames[i],30,30),
+                      ),
+                      Text(classificationNames[i],style:EstiloTextoPreto.text16),
+                    ],
+                  ),
+                ),
+            ],
+          ));
+    });
+  }
 
 }

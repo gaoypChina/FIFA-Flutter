@@ -36,16 +36,12 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
   ActionTransfer actionTransfer = ActionTransfer(context);
   isBuyOrSell(jogador, actionTransfer);
 
-
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
       // retorna um objeto do tipo Dialog
-      return StatefulBuilder(
-        builder: (BuildContext context, setState) {
-          return AlertDialog(
-            insetPadding: const EdgeInsets.symmetric(horizontal: 0),
-            content:Container(
+      return showModalBottomSheet<void>(
+          context: context,
+          builder: (BuildContext context) {
+            return Container(
+              padding: const EdgeInsets.all(4),
               decoration: Images().getWallpaperContainerDecoration(),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -88,6 +84,7 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
                   ),
                   const SizedBox(height: 12),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       SizedBox(height: 100,child: carrerStats(context,jogador)),
                       SizedBox(height: 100,child: thisSeasonStats(context,jogador)),
@@ -97,34 +94,33 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
                   value(context,jogador),
 
 
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                          child: Text(Translation(context).text.cancel,style: EstiloTextoBranco.text16,),
+                          onPressed: (){
+                            Navigator.of(context).pop();
+                          }
+                      ),
+                      TextButton(
+                          child: Text(actionTransfer.action,style: EstiloTextoBranco.text16,),
+                          onPressed: (){
+                            onTap(context, jogador,actionTransfer);
+                            funcSetState(); //set state no menu
+                            //setState(() {});
+                            jogador = Jogador(index: playerID);
+                            isBuyOrSell(jogador,actionTransfer);
+                            Navigator.of(context).pop();
+                          }
+                      ),
+                    ],
+                  )
 
                 ],
               ),
-            ),
-            actions: <Widget>[
-              TextButton(
-                  child: Text(Translation(context).text.cancel,style: EstiloTextoPreto.text16,),
-                  onPressed: (){
-                    Navigator.of(context).pop();
-                  }
-              ),
-              TextButton(
-                  child: Text(actionTransfer.action,style: EstiloTextoPreto.text16,),
-                  onPressed: (){
-                    onTap(context, jogador,actionTransfer);
-                    funcSetState(); //set state no menu
-                    setState(() {});
-                    jogador = Jogador(index: playerID);
-                    isBuyOrSell(jogador,actionTransfer);
-                    Navigator.of(context).pop();
-                  }
-              ),
-            ],
-          );
-        }
-      );
-    },
-  );
+            );
+        });
 }
 ////////////////////////////////////////////////////////////////////////////
 //                             WIDGET                                     //

@@ -25,6 +25,7 @@ class LeagueOfficialNames{
   String suecia = 'Allsvenskan Sweden';
   String dinamarca = 'Superliga Dinamarquesa';
   String noruega = 'Liga Norueguesa';
+  String finlandia = 'Liga Finlandesa';
   String austria = 'Liga Austriaca';
   String suica = 'Super Liga Suíça';
   String polonia = 'Ekstraklasa';
@@ -32,6 +33,7 @@ class LeagueOfficialNames{
   String grecia = 'Liga Grega';
   String repTcheca = 'Liga Tcheca';
   String croacia = 'Liga Croácia';
+  String russia = 'Liga Russa';
   String ucrania = 'Liga Ucrania';
   String cazaquistao = 'Super Liga do Cazaquistão';
   String ligaEuropa = 'Liga Europeia';  String lesteEuropeu = 'Leste Europeu';
@@ -78,6 +80,37 @@ class LeagueOfficialNames{
   String asiaCup = 'Asia Cup';String africaCup = 'África Cup';
   String othersCup = 'Outros Cup';
 
+  getAllLeagueNames(){
+    return [
+     inglaterra1,inglaterra2,inglaterra3,
+     italia1,italia2,
+     espanha1,espanha2,
+     franca1,franca2,
+     alemanha1,alemanha2,
+     portugal,
+
+     turquiaGrecia,     grecia,
+     holanda ,     escocia,     belgica,
+     suecia,     dinamarca,     noruega,     finlandia,
+     austria,     suica,     polonia, repTcheca,
+
+      servia,     croacia,
+      russia, ucrania,     cazaquistao,
+
+     brasil1, brasil2, brasil3,
+     argentina,
+     uruguai,     paraguai,     chile,     peru,    bolivia,
+     colombia, equador,     venezuela,
+
+     mexico, estadosUnidos,
+
+     japao,     china,     coreiaSul,
+     arabia,     eau,     qatar,     iran,
+     australia,
+
+     egito,     marrocos,     africaSul,
+    ];
+  }
 }
 
 getInternationalLeagueNumber(String internationalLeague){
@@ -209,78 +242,128 @@ Map nTeamsClassified = {
 
 bool leaguePlayInternationalCompetition(String name){
   bool playInternational = false;
-  if(name == LeagueOfficialNames().inglaterra1 || name == LeagueOfficialNames().espanha1
-      || name == LeagueOfficialNames().italia1 || name == LeagueOfficialNames().franca1
-      || name == LeagueOfficialNames().alemanha1 || name == LeagueOfficialNames().portugal
-      || name == LeagueOfficialNames().turquiaGrecia
-      || name == LeagueOfficialNames().lesteEuropeu || name == LeagueOfficialNames().ligaEuropa
-      || name == LeagueOfficialNames().brasil1 || name == LeagueOfficialNames().argentina
-      || name == LeagueOfficialNames().sulamericano || name == LeagueOfficialNames().colombia){
+  LeagueOfficialNames leagueOfficialNames =  LeagueOfficialNames();
+  if(name == leagueOfficialNames.inglaterra1 || name == leagueOfficialNames.espanha1
+      || name == leagueOfficialNames.italia1 || name == leagueOfficialNames.franca1
+      || name == leagueOfficialNames.alemanha1 || name == leagueOfficialNames.portugal
+      || name == leagueOfficialNames.turquiaGrecia
+      || name == leagueOfficialNames.lesteEuropeu || name == leagueOfficialNames.ligaEuropa
+      || name == leagueOfficialNames.brasil1 || name == leagueOfficialNames.argentina
+      || name == leagueOfficialNames.sulamericano || name == leagueOfficialNames.colombia){
     playInternational = true;
   }
   return playInternational;
 }
 
-String getLeague(String nationality){
+String getLeague(String leagueNameReceived){
   LeagueOfficialNames leagueName = LeagueOfficialNames();
-  Map leaguesFromNationality = {
-    Words.country.england: leagueName.inglaterra1,
-    Words.country.italy: leagueName.italia1,
-    Words.country.spain: leagueName.espanha1,
-    Words.country.france: leagueName.franca1,
-    Words.country.germany: leagueName.alemanha1,
-    Words.country.portugal: leagueName.portugal,
-    Words.country.netherlands: leagueName.holanda,
-    Words.country.belgium: leagueName.belgica,
-    Words.country.turkey: leagueName.turquiaGrecia,
-    Words.country.sweden: leagueName.suecia,
-    Words.country.switzerland: leagueName.suica,
+  Map nationalityFromLeague = {
+    leagueName.inglaterra1: Words.country.england,
+    leagueName.inglaterra2: Words.country.england,
+    leagueName.inglaterra3: Words.country.england,
+    leagueName.italia1: Words.country.italy,
+    leagueName.italia2: Words.country.italy,
+    leagueName.espanha1: Words.country.spain,
+    leagueName.espanha2: Words.country.spain,
+    leagueName.franca1: Words.country.france,
+    leagueName.franca2: Words.country.france,
+    leagueName.alemanha1: Words.country.germany ,
+    leagueName.alemanha2: Words.country.germany ,
+    leagueName.portugal: Words.country.portugal,
+    leagueName.holanda: Words.country.netherlands ,
+    leagueName.belgica: Words.country.belgium ,
+    leagueName.escocia: Words.country.scotland ,
+    leagueName.suica: Words.country.switzerland ,
+    leagueName.austria: Words.country.austria ,
+    leagueName.polonia: Words.country.poland ,
+    leagueName.repTcheca: Words.country.czechRepublic ,
+    leagueName.turquiaGrecia: Words.country.turkey ,
+    leagueName.grecia: Words.country.greece ,
+    leagueName.suecia: Words.country.sweden,
+    leagueName.dinamarca: Words.country.denmark,
+    leagueName.finlandia: Words.country.finland ,
+    leagueName.noruega: Words.country.norway ,
+    leagueName.ucrania: Words.country.ukraine,
+    leagueName.servia: Words.country.serbia ,
+    leagueName.croacia: Words.country.croatia ,
+    leagueName.russia: Words.country.russia ,
+    leagueName.cazaquistao: Words.country.kazakhstan ,
 
-    Words.country.brazil: leagueName.brasil1,
-    Words.country.argentina: leagueName.argentina,
-    Words.country.mexico: leagueName.mexico,
-    Words.country.unitedStates: leagueName.estadosUnidos,
+    leagueName.brasil1: Words.country.brazil ,
+    leagueName.brasil2: Words.country.brazil ,
+    leagueName.brasil3: Words.country.brazil ,
+    leagueName.argentina: Words.country.argentina ,
+    leagueName.uruguai: Words.country.uruguay ,
+    leagueName.paraguai: Words.country.paraguay ,
+    leagueName.chile: Words.country.chile ,
+    leagueName.bolivia: Words.country.bolivia ,
+    leagueName.peru: Words.country.peru ,
+    leagueName.equador: Words.country.ecuador ,
+    leagueName.colombia: Words.country.colombia ,
+    leagueName.venezuela: Words.country.venezuela ,
+
+    leagueName.mexico: Words.country.mexico ,
+    leagueName.estadosUnidos: Words.country.unitedStates,
+
+    leagueName.china: Words.country.china ,
+    leagueName.coreiaSul: Words.country.southKorea ,
+    leagueName.japao: Words.country.japan ,
+    leagueName.australia: Words.country.australia ,
+    leagueName.arabia: Words.country.southArabia ,
+    leagueName.qatar: Words.country.qatar ,
+    leagueName.eau: Words.country.uae ,
+    leagueName.iran: Words.country.iran ,
+
+    leagueName.egito: Words.country.egypt,
+    leagueName.marrocos: Words.country.morocco ,
+    leagueName.africaSul: Words.country.southAfrica ,
 
   };
 
-  return leaguesFromNationality[nationality];
+  try {
+    return nationalityFromLeague[leagueNameReceived];
+  }catch(e){
+    return Words.country.ocean;
+  }
 
 }
 
 String getCup(String leagueName){
+  LeagueOfficialNames leagueName = LeagueOfficialNames();
+
   Map cupsFromLeagues = {
-    LeagueOfficialNames().inglaterra1: LeagueOfficialNames().englandCup,
-    LeagueOfficialNames().inglaterra2: LeagueOfficialNames().englandCup,
-    LeagueOfficialNames().inglaterra3: LeagueOfficialNames().englandCup,
-    LeagueOfficialNames().italia1: LeagueOfficialNames().italyCup,
-    LeagueOfficialNames().italia2: LeagueOfficialNames().italyCup,
-    LeagueOfficialNames().espanha1: LeagueOfficialNames().spainCup,
-    LeagueOfficialNames().espanha2: LeagueOfficialNames().spainCup,
-    LeagueOfficialNames().franca1: LeagueOfficialNames().franceCup,
-    LeagueOfficialNames().franca2: LeagueOfficialNames().franceCup,
-    LeagueOfficialNames().alemanha1: LeagueOfficialNames().germanyCup,
-    LeagueOfficialNames().alemanha2: LeagueOfficialNames().germanyCup,
-    LeagueOfficialNames().portugal: LeagueOfficialNames().portugalCup,
-    LeagueOfficialNames().turquiaGrecia: LeagueOfficialNames().turkeyCup,
+    leagueName.inglaterra1: leagueName.englandCup,
+    leagueName.inglaterra2: leagueName.englandCup,
+    leagueName.inglaterra3: leagueName.englandCup,
+    leagueName.italia1: leagueName.italyCup,
+    leagueName.italia2: leagueName.italyCup,
+    leagueName.espanha1: leagueName.spainCup,
+    leagueName.espanha2: leagueName.spainCup,
+    leagueName.franca1: leagueName.franceCup,
+    leagueName.franca2: leagueName.franceCup,
+    leagueName.alemanha1: leagueName.germanyCup,
+    leagueName.alemanha2: leagueName.germanyCup,
+    leagueName.portugal: leagueName.portugalCup,
+    leagueName.turquiaGrecia: leagueName.turkeyCup,
 
-    LeagueOfficialNames().ligaEuropa: LeagueOfficialNames().ligaEuropaCup,
-    LeagueOfficialNames().lesteEuropeu: LeagueOfficialNames().eastEuropeCup,
+    leagueName.ligaEuropa: leagueName.ligaEuropaCup,
+    leagueName.lesteEuropeu: leagueName.eastEuropeCup,
 
-    LeagueOfficialNames().brasil1: LeagueOfficialNames().brazilCup,
-    LeagueOfficialNames().brasil2: LeagueOfficialNames().brazilCup,
-    LeagueOfficialNames().brasil3: LeagueOfficialNames().brazilCup,
-    LeagueOfficialNames().paulistao: LeagueOfficialNames().brazilCup,
-    LeagueOfficialNames().argentina: LeagueOfficialNames().argentinaCup,
-    LeagueOfficialNames().sulamericano: LeagueOfficialNames().sulamericanaCup,
-    LeagueOfficialNames().colombia: LeagueOfficialNames().merconorteCup,
+    leagueName.brasil1: leagueName.brazilCup,
+    leagueName.brasil2: leagueName.brazilCup,
+    leagueName.brasil3: leagueName.brazilCup,
+    leagueName.paulistao: leagueName.brazilCup,
+    leagueName.argentina: leagueName.argentinaCup,
+    leagueName.sulamericano: leagueName.sulamericanaCup,
+    leagueName.colombia: leagueName.merconorteCup,
 
-    LeagueOfficialNames().mexico: LeagueOfficialNames().mexicoCup,
-    LeagueOfficialNames().estadosUnidos: LeagueOfficialNames().usaCup,
-    LeagueOfficialNames().asia: LeagueOfficialNames().asiaCup,
-    LeagueOfficialNames().orienteMedio: LeagueOfficialNames().asiaCup,
-    LeagueOfficialNames().africa: LeagueOfficialNames().africaCup,
-    LeagueOfficialNames().outros: LeagueOfficialNames().othersCup,
+    leagueName.mexico: leagueName.mexicoCup,
+    leagueName.estadosUnidos: leagueName.usaCup,
+    leagueName.asia: leagueName.asiaCup,
+    leagueName.orienteMedio: leagueName.asiaCup,
+    leagueName.africa: leagueName.africaCup,
+    leagueName.outros: leagueName.othersCup,
   };
 
- return cupsFromLeagues[leagueName] ?? LeagueOfficialNames().othersCup;
+ return cupsFromLeagues[leagueName] ?? leagueName.othersCup;
 }
