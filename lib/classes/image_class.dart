@@ -76,9 +76,9 @@ class Images{
       campeonatoLogo = FIFAImages().campeonatoLogo(myClass.campeonatoName);
     }
     else if(myClass.playingInternational.isNotEmpty  && Semana(semana).isJogoGruposInternacional){
-      campeonatoLogo = FIFAImages().campeonatoInternacionalLogo(myClass.getMyInternationalLeague());
+      campeonatoLogo = FIFAImages().campeonatoLogo(myClass.getMyInternationalLeague());
     }else if(myClass.playingInternational.isNotEmpty  && Semana(semana).isJogoMataMataInternacional){
-      campeonatoLogo = FIFAImages().campeonatoInternacionalLogo(myClass.getMyInternationalLeague());
+      campeonatoLogo = FIFAImages().campeonatoLogo(myClass.getMyInternationalLeague());
     }else {
       campeonatoLogo = '';
     }
@@ -90,7 +90,7 @@ class Images{
   }
   String getMyInternationalLeagueLogo(){
     My myClass = My();
-    return FIFAImages().campeonatoInternacionalLogo(myClass.getMyInternationalLeague());
+    return FIFAImages().campeonatoLogo(myClass.getMyInternationalLeague());
   }
 
   Widget getWallpaper(){

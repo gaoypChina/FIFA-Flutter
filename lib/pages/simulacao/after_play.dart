@@ -87,7 +87,7 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
                 ),
                 Row(
                   children: [
-                    bestPlayerBox('Melhor Jogador', Jogador(index: 32)),
+                    bestPlayerBox('Melhor Jogador', Jogador(index: 32),''),
                     Expanded(child: classification()),
                   ],
                 ),
@@ -133,7 +133,7 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
           children: [
             Semana(semana).isJogoCampeonatoNacional
                 ? Image.asset(FIFAImages().campeonatoLogo(myClubClass.leagueName),height: 30,width: 30)
-                : Image.asset(FIFAImages().campeonatoInternacionalLogo(LeagueOfficialNames().libertadores),height: 35,width: 35),
+                : Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().libertadores),height: 35,width: 35),
             Text(textRodada,style: EstiloTextoBranco.text16),
             visitante
                 ? Text(gol1 +'X'+ gol2,style: EstiloTextoBranco.text30)

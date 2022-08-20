@@ -43,13 +43,33 @@ class DataGraphics{
   //TOTAL
   double pointsTotal = 0;
 
+  getDataNotPlayabale(String clubName, String leagueName, String internationalLeagueName){
+
+    //historico de campeoes ligas
+    defineHistoricClassification(clubName,leagueName);
+
+    averagePosition10years = averagePositionCount(data.take(10).toList());
+    averagePosition5years = averagePositionCount(data.take(5).toList());
+    averagePositionTotal = averagePositionCount(data.toList());
+
+    calculatePoints();
+
+    //historico internacional
+    defineHistoricInternational(clubName,internationalLeagueName);
+    participationsInternational();
+    calculatePointsInternational();
+
+    //historico mundial
+    defineHistoricMundial(clubName);
+    pointsTotal = pointsNational+pointsInternational+pointsmundial;
+  }
   getData(Club club){
     //Posição Ano Atual
     currentPosition = Classification(leagueIndex: club.leagueID).getClubPosition(club.index);
     //novas temporadas ligas
     defineSimulationClassification(club);
     //historico de campeoes ligas
-    defineHistoricClassification(club);
+    defineHistoricClassification(club.name,club.leagueName);
 
     averagePosition10years = averagePositionCount(data.take(10).toList());
     averagePosition5years = averagePositionCount(data.take(5).toList());
@@ -59,12 +79,12 @@ class DataGraphics{
 
     //historico internacional
     defineSimulationClassificationInternational(club);
-    defineHistoricInternational(club);
+    defineHistoricInternational(club.name,club.internationalLeagueName);
     participationsInternational();
     calculatePointsInternational();
 
     //historico mundial
-    defineHistoricMundial(club);
+    defineHistoricMundial(club.name);
     pointsTotal = pointsNational+pointsInternational+pointsmundial;
 
   }
@@ -85,10 +105,10 @@ class DataGraphics{
       }
     }
   }
-  defineHistoricClassification(Club club){
+  defineHistoricClassification(String clubName, String leagueName){
 
     //NOME DAS DIVISÕES
-    List<String> divisionLeagueNames = Divisions().leagueDivisionsStructure(club.leagueName);
+    List<String> divisionLeagueNames = Divisions().leagueDivisionsStructure(leagueName);
     //MAPA COM O HISTÓRICO DE CLASSIFICAÇÃO DE CADA DIVISÃO
     List<Map<double,dynamic>> listDivisionsHistoricResults = [];
     for( String division in divisionLeagueNames){
@@ -103,8 +123,8 @@ class DataGraphics{
         if (!yearSet) {
           divisionNumber++;
           try {
-            if (divisionMapResults[year].contains(club.name)) {
-              int position = divisionMapResults[year].indexOf(club.name) + 1 + (divisionNumber - 1) * 20;
+            if (divisionMapResults[year].contains(clubName)) {
+              int position = divisionMapResults[year].indexOf(clubName) + 1 + (divisionNumber - 1) * 20;
               data.add(ClassificationData(year, position));
               addTitlesCount(position);
               addGxCount(position);
@@ -206,15 +226,15 @@ class DataGraphics{
     }
   }
 
-  defineHistoricInternational(Club club){
+  defineHistoricInternational(String clubName, String internationalLeagueName){
 
     //para cada ano
-    for(var keyYear in mapChampions(club.internationalLeagueName).keys) {
-      List classificationNames = mapChampions(club.internationalLeagueName)[keyYear];
+    for(var keyYear in mapChampions(internationalLeagueName).keys) {
+      List classificationNames = mapChampions(internationalLeagueName)[keyYear];
       //verifica se naquele ano tem o time
       int position = 32;
-      if(classificationNames.contains(club.name)){
-        position = classificationNames.indexOf(club.name) + 1;
+      if(classificationNames.contains(clubName)){
+        position = classificationNames.indexOf(clubName) + 1;
       }
       dataInternational.add(ClassificationData(keyYear, position));
     }
@@ -272,7 +292,7 @@ class DataGraphics{
 /////////////////////////////////////////////////////////////////////////////
 // MUNDIAL
 ////////////////////////////////////////////////////////////////////////////
-  defineHistoricMundial(Club club){
+  defineHistoricMundial(String clubName){
     pointsmundial = 0;
     //para cada ano
     for(var keyYear in mapChampions(LeagueOfficialNames().mundial).keys) {
@@ -280,8 +300,8 @@ class DataGraphics{
       //verifica se naquele ano tem o time
 
       int position = 8;
-      if(classificationNames.contains(club.name)){
-        position = classificationNames.indexOf(club.name) + 1;
+      if(classificationNames.contains(clubName)){
+        position = classificationNames.indexOf(clubName) + 1;
         if(position==1){
           nTitulosMundial +=1;
           pointsmundial += 200;

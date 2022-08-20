@@ -4,13 +4,6 @@ import 'league_names.dart';
 
 class FIFAImages{
 
-  String campeonatoInternacionalLogo(String campeonatoFoto) {
-    String imageLogo = '';
-    if(campeonatoFoto==LeagueOfficialNames().championsLeague) {      imageLogo = 'assets/league_logos/champions_logo.jpg';}       
-    if(campeonatoFoto==LeagueOfficialNames().libertadores) {       imageLogo = 'assets/league_logos/libertadores.png';}
-    if(campeonatoFoto==LeagueOfficialNames().resto) { imageLogo = 'assets/league_logos/rest.png';}
-    return imageLogo;
-  }
   String mundialLogo(){
     return 'assets/league_logos/mundial.png';
   }
@@ -48,6 +41,9 @@ class FIFAImages{
 
     if(leagueName==LeagueOfficialNames().championsLeague) {      imageLogo = 'championsleague_branco';       }
     if(leagueName==LeagueOfficialNames().libertadores) {      imageLogo = 'libertadores'; }
+    if(leagueName==LeagueOfficialNames().ligaEuropa) {      imageLogo = 'europaleague'; }
+    if(leagueName==LeagueOfficialNames().concacaf) {      imageLogo = 'concacaf'; }
+    if(leagueName==LeagueOfficialNames().mercosul) {      imageLogo = 'mercosul'; }
     if(leagueName==LeagueOfficialNames().resto) {      imageLogo = 'rest';       }
     if(leagueName==LeagueOfficialNames().mundial) {      imageLogo = 'mundial';       }
 

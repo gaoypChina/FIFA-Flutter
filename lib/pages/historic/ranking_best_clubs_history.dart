@@ -51,7 +51,7 @@ class _RankingBestClubsHistoryState extends State<RankingBestClubsHistory> {
   organizarRanking() {
     //REORGANIZA ORDEM
     globalRankingClubs[ano] = [];
-    int ending = 200;
+    int ending = 10;
       for(int i=0; i<ending; i++) {
         setState(() {});
         customToast('${(100*i/ending).toStringAsFixed(1)}%');

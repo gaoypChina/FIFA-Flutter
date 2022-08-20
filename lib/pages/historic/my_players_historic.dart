@@ -101,7 +101,7 @@ Widget header(){
               const SizedBox(width: 8),
               Column(
                 children: [
-                  Image.asset(FIFAImages().campeonatoInternacionalLogo(club.internationalLeagueName),width: 50,height: 50),
+                  Image.asset(FIFAImages().campeonatoLogo(club.internationalLeagueName),width: 50,height: 50),
                   const Text('Oitavas',style: EstiloTextoBranco.text16),
                 ],
               ),
@@ -146,10 +146,10 @@ Widget header(){
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          bestPlayerBox('Craque',Jogador(index: 151)),
-          bestPlayerBox('Artilheiro',Jogador(index: 171)),
-          bestPlayerBox('Assistente',Jogador(index: 191)),
-          bestPlayerBox('MVP',Jogador(index: 131)),
+          bestPlayerBox('Craque',Jogador(index: 151),''),
+          bestPlayerBox('Artilheiro',Jogador(index: 171),''),
+          bestPlayerBox('Assistente',Jogador(index: 191),''),
+          bestPlayerBox('MVP',Jogador(index: 131),''),
         ],
       ),
     );

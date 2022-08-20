@@ -2,8 +2,6 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
-import 'package:fifa/global_variables.dart';
-import 'package:fifa/page_controller/calendar_control.dart';
 import 'package:fifa/page_controller/club_profile/data_graphics.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -55,16 +53,14 @@ class _ClubGraphicsState extends State<ClubGraphics> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  Text(Translation(context).text.performance,
-                      style: EstiloTextoBranco.text16),
                   bestPlayers(),
-                  last5Matchs(),
 
                   graphics(dataGraphics),
 
+                  currentPosition(widget.club, dataGraphics),
+
                   totalTrophyWidget(widget.club, dataGraphics),
 
-                  currentPosition(dataGraphics),
                 ],
               ),
             ),
@@ -83,7 +79,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Container(
-        height: 300,
+        height: 260,
         width: dataGraphics.data.length * 23 + 50,
         color: AppColors().greyTransparent,
         child: SfCartesianChart(
@@ -132,18 +128,6 @@ class _ClubGraphicsState extends State<ClubGraphics> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          //TITULOS
-          Column(
-            children: [
-              Text(Translation(context).text.titles,
-                  style: EstiloTextoBranco.text16),
-              Image.asset(
-                  'assets/trophy/${getTrophyImage(club.leagueName)}.png',
-                  height: 100, width: 100),
-              Text(dataGraphics.nTitulos.toString(),
-                  style: EstiloTextoBranco.text20),
-            ],
-          ),
 
           Column(
             children: [
@@ -184,69 +168,79 @@ class _ClubGraphicsState extends State<ClubGraphics> {
     );
   }
 
-  Widget currentPosition(DataGraphics dataGraphics) {
+  Widget currentPosition(Club club, DataGraphics dataGraphics) {
     return Container(
       width: Sized(context).width,
       color: AppColors().greyTransparent,
       margin: const EdgeInsets.all(4),
       padding: const EdgeInsets.all(4),
-      child: Column(
+      child: Row(
         children: [
-          Text(Translation(context).text.position,
-              style: EstiloTextoBranco.text16),
-          Text(widget.club.leagueName, style: EstiloTextoBranco.text16),
-          Text(dataGraphics.currentPosition.toString() + 'º',
-              style: EstiloTextoBranco.text20),
+
+          //TITULOS
+          Column(
+            children: [
+              Text(Translation(context).text.titles,
+                  style: EstiloTextoBranco.text16),
+              Image.asset('assets/trophy/${getTrophyImage(club.leagueName)}.png',
+                  height: 50, width: 50),
+              Text(dataGraphics.nTitulos.toString(),
+                  style: EstiloTextoBranco.text20),
+            ],
+          ),
+
+          Column(
+            children: [
+              Text(Translation(context).text.position,
+                  style: EstiloTextoBranco.text16),
+              Text(widget.club.leagueName, style: EstiloTextoBranco.text16),
+              Text(dataGraphics.currentPosition.toString() + 'º',
+                  style: EstiloTextoBranco.text20),
+            ],
+          ),
         ],
       ),
     );
   }
 
   Widget bestPlayers() {
+    List jogadores = widget.club.getJogadores();
+    List<Jogador> jogadoresClass = [];
+    List craqueValue=[],artilheiroValue=[],assistenteValue=[],matchValue=[],mvpValue=[];
+
+    for(int jogadorID in jogadores){
+      jogadoresClass.add(Jogador(index: jogadorID));
+      craqueValue.add(jogadoresClass.last.overall);
+      mvpValue.add(jogadoresClass.last.price.floor());
+      artilheiroValue.add(jogadoresClass.last.goalsLeague);
+      assistenteValue.add(jogadoresClass.last.assistsLeague);
+      matchValue.add(jogadoresClass.last.matchsLeague);
+    }
+
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          bestPlayerBox('Craque', Jogador(index: 151)),
-          bestPlayerBox('Artilheiro', Jogador(index: 171)),
-          bestPlayerBox('Assistente', Jogador(index: 191)),
-          bestPlayerBox('MVP', Jogador(index: 131)),
+          bestPlayerBox('Craque', jogadoresClass.elementAt(getMaxIndex(craqueValue)),"${getValue(craqueValue).toString()} OVR"),
+          bestPlayerBox('MVP', jogadoresClass.elementAt(getMaxIndex(mvpValue)),"\$ ${getValue(mvpValue).toString()}"),
+          bestPlayerBox('Artilheiro', jogadoresClass.elementAt(getMaxIndex(artilheiroValue)),"${getValue(artilheiroValue).toString()} G"),
+          bestPlayerBox('Assistente', jogadoresClass.elementAt(getMaxIndex(assistenteValue)),"${getValue(assistenteValue).toString()} A"),
+          bestPlayerBox('Principal', jogadoresClass.elementAt(getMaxIndex(matchValue)),"${getValue(matchValue).toString()} J"),
         ],
       ),
     );
   }
 
-  Widget last5Matchs() {
-    return SizedBox(
-      height: 25,
-      width: 120,
-      child: ListView.builder(
-          itemCount: 5,
-          scrollDirection: Axis.horizontal,
-          itemBuilder: (c, i) => resultBox(i)),
-    );
+  getValue(List lista){
+    return lista.elementAt(getMaxIndex(lista));
+  }
+  getMaxIndex(List lista){
+    //pega o index na lista com o valor máximo
+    int maxValue = lista.reduce((curr, next) => curr > next? curr: next);
+    int index = lista.indexOf(maxValue);
+    return index;
   }
 
-
-
-  Widget resultBox(int i){
-    Color color = Colors.transparent;
-    ResultGameNacional show = ResultGameNacional(rodadaLocal: rodada-i-1, clubID: widget.club.index);
-    if(show.victoryDrawLoss310 == 3){color = Colors.green;}
-    if(show.victoryDrawLoss310 == 1){color = Colors.yellow;}
-    if(show.victoryDrawLoss310 == 0){color = Colors.red;}
-    if(show.exists){
-      return Container(
-        height:20,
-        width: 20,
-        margin: const EdgeInsets.all(2),
-        color: color,
-        child: Center(child: Image.asset(Images().getEscudo(show.clubName2),width: 15,height: 15,)),
-      );
-    }else{
-      return Container();
-    }
-  }
 
 }
 

@@ -1005,8 +1005,12 @@ class ClubName{
   String hadjuksplit = "Hadjuk Split";
   String rijeka = "Rijeka";
   String gorica = "Gorica";
+  String nkzagreb = "NK Zagreb";
   String osijek = "Osijek";
+  String varteks = "Varteks";
+  String slavenBelupo = "Slaven Belupo";
   String lokZagreb = "NK Lokomotiva Zagreb";
+  String zapresic = "Inter Zaprešić";
   //REP. TCHECA
   String spartapraga = "Sparta Praga";
   String slaviaPraha = "Slavia Praha";
@@ -2248,10 +2252,29 @@ class ClubName{
   String alIttihadLIB = "Al Ittihad-LIB";//LIBYA
   String tripoliLIB = "Al Ahly Tripoli";//LIBYA
   //MARROCOS
-  String meknes = "Meknes";
+  String difaa = "Beni Mellal";
+  String beniMellal = "Difaa El Jadida";
+  String chababMohammedia = "Chabab Mohammédia";
+  String chababRifHoceima = "Chabab Rif Hoceima";
   String rajacasablanca = "Raja Casablanca";
   String wydad = "Wydad Casablanca";//MARROCOS
   String farRabat = "FAR Rabat";//MARROCOS
+  String fusRabat = "FUS Rabat";
+  String jeunesseMassira = "Jeunesse Massira";
+  String hassaniaAgadir = "Hassania Agadir";
+  String irTanger = "IR Tanger";
+  String kenitra = "KAC Kenitra";
+  String khemisset = "IZK Khemisset";
+  String kawkab = "Kawkab Marrakech";
+  String meknes = "CODM de Meknès";
+  String moulodiaOujda = "Mouloudia Oujda";
+  String oCasablanca = "Olympique Casablanca";
+  String sale = "AS Salé";
+  String safi = "Olympique Safi";
+  String khouribga = "Olympique Khouribga";
+  String renBerkane = "Renaissance de Berkane";
+  String settat = "Renaissance de Settat";
+  String racingCasablanca = "Racing de Casablanca";
   String maghreb = "Maghreb de Fès";//MARROCOS
   String moghrebTetouan = "Moghreb de Tétouan";//MARROCOS
   //TUNISI
@@ -2262,6 +2285,7 @@ class ClubName{
 
   //AFRICA NEGRA
   String amazulu = "AmaZulu FC";
+  String bidvestWits = "Bidvest Wits";
   String capetown = "Cape Town City";
   String capetownAjax = "Cape Town Spurs";
   String goldenarrows = "Golden Arrows";
@@ -2272,6 +2296,7 @@ class ClubName{
   String morokaSwallows = "Moroka Swallows";
   String orlandopirates = "Orlando Pirates";
   String royalAM = "Royal AM";
+  String santosAfrica = "Santos";
   String stellenbosch = "Stellenbosch";
   String supersport = "Supersport United";
   //ANGOLA

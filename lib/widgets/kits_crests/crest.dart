@@ -6,6 +6,7 @@ class CrestWidgets{
 
   ClubDetails clubDetails = ClubDetails();
   ClubPattern clubPattern = ClubPattern();
+  late ClubColors clubColors;
 
   late double _height;
   late double _width;
@@ -18,12 +19,13 @@ class CrestWidgets{
   Widget getCrest(String clubName){
     try {
       String patternStr = clubDetails.getPattern(clubName);
-      ClubColors clubColors = clubDetails.getColors(clubName);
+      clubColors = clubDetails.getColors(clubName);
       LinearGradient pattern = clubPattern.getGradient(patternStr, clubColors);
 
       return crestCircular(clubName, pattern);
     }catch(e){
-      LinearGradient pattern = clubPattern.getGradient(ClubPattern().solid, ClubColors(Colors.grey,Colors.white));
+      clubColors = ClubColors(Colors.grey,Colors.white);
+      LinearGradient pattern = clubPattern.getGradient(ClubPattern().solid, clubColors);
       return crestCircular(clubName,pattern);
     }
   }
@@ -43,7 +45,7 @@ class CrestWidgets{
           child: Text(clubName[0],
               style: TextStyle(
                 fontFamily: 'Roboto',
-                color: Colors.white,
+                color: clubColors.secondColor,
                 fontSize: _height*0.6,
               ))),
       );
@@ -61,19 +63,19 @@ class CrestWidgets{
               child: Text(clubName[0],
               style: TextStyle(
                 fontFamily: 'Roboto',
-                color: Colors.white,
+                color: clubColors.secondColor,
                 fontSize: _height*0.6,
               ))),
-        ),
+        )
     );
   }
 
   Widget outborder(Widget childWidget){
     return Container(
         height: _height*1.1, width: _width*1.1,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: Colors.white,
+          color: clubColors.secondColor,
         ),
         child: Align(
             alignment: Alignment.center,

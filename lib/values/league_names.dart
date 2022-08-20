@@ -41,6 +41,7 @@ class LeagueOfficialNames{
   String brasil1 = 'Brasileirão';  String brasil2 = 'Brasileirão - Série B';String brasil3 = 'Brasileirão - Série C';
   String paulistao = 'Paulistão';
   String argentina = 'Campeonato Argentino';String sulamericano = 'Sul-Americano';
+  String mercosul = 'Mercosul';
   String colombia = 'Merconorte';
   String uruguai = 'Campeonato uruguaio';
   String paraguai = 'Campeonato paraguaio';
@@ -160,7 +161,7 @@ List leagueNames = [
 
   LeagueOfficialNames().brasil1,LeagueOfficialNames().brasil2,LeagueOfficialNames().brasil3,
   LeagueOfficialNames().paulistao,
-  LeagueOfficialNames().argentina,LeagueOfficialNames().sulamericano,LeagueOfficialNames().colombia,
+  LeagueOfficialNames().argentina,LeagueOfficialNames().mercosul,LeagueOfficialNames().colombia,
   LeagueOfficialNames().mexico,LeagueOfficialNames().estadosUnidos,
   LeagueOfficialNames().asia,LeagueOfficialNames().orienteMedio,LeagueOfficialNames().africa,
   LeagueOfficialNames().outros,
@@ -197,7 +198,7 @@ Map leaguesIndexFromName = {
   LeagueOfficialNames().brasil3: 52,
   LeagueOfficialNames().paulistao: 53,
   LeagueOfficialNames().argentina: 60,
-  LeagueOfficialNames().sulamericano: 61,
+  LeagueOfficialNames().mercosul: 61,
   LeagueOfficialNames().colombia: 62,
 
   LeagueOfficialNames().mexico: 70,
@@ -236,7 +237,7 @@ Map nTeamsClassified = {
 
   LeagueOfficialNames().brasil1: 8,
   LeagueOfficialNames().argentina: 6,
-  LeagueOfficialNames().sulamericano: 12,
+  LeagueOfficialNames().mercosul: 12,
   LeagueOfficialNames().colombia: 6,
 };
 
@@ -249,15 +250,15 @@ bool leaguePlayInternationalCompetition(String name){
       || name == leagueOfficialNames.turquiaGrecia
       || name == leagueOfficialNames.lesteEuropeu || name == leagueOfficialNames.ligaEuropa
       || name == leagueOfficialNames.brasil1 || name == leagueOfficialNames.argentina
-      || name == leagueOfficialNames.sulamericano || name == leagueOfficialNames.colombia){
+      || name == leagueOfficialNames.mercosul || name == leagueOfficialNames.colombia){
     playInternational = true;
   }
   return playInternational;
 }
 
-String getLeague(String leagueNameReceived){
+Map getLeagueNationalityMap(){
   LeagueOfficialNames leagueName = LeagueOfficialNames();
-  Map nationalityFromLeague = {
+  return {
     leagueName.inglaterra1: Words.country.england,
     leagueName.inglaterra2: Words.country.england,
     leagueName.inglaterra3: Words.country.england,
@@ -319,6 +320,10 @@ String getLeague(String leagueNameReceived){
     leagueName.africaSul: Words.country.southAfrica ,
 
   };
+}
+String getCountryFromLeague(String leagueNameReceived){
+
+  Map nationalityFromLeague = getLeagueNationalityMap();
 
   try {
     return nationalityFromLeague[leagueNameReceived];

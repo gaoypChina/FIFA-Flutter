@@ -59,7 +59,7 @@ class _HistoricMenuState extends State<HistoricMenu> {
                           ),
                           box(
                               'Internacional',
-                              Image.asset(FIFAImages().campeonatoInternacionalLogo(LeagueOfficialNames().championsLeague),height: imageSize,),
+                              Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().championsLeague),height: imageSize,),
                                   (){Navigator.push(context,MaterialPageRoute(builder: (context) => const InternationalHistoric()));
                               }
                           ),

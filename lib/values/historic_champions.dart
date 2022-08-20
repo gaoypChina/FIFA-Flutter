@@ -189,7 +189,7 @@ ClubName _name = ClubName();
         1976.0: [_name.realmadrid,_name.barcelona,_name.atleticomadrid,_name.espanyol,_name.athleticbilbao,_name.hercules,_name.realbetis,_name.realsociedad,_name.salamanca,_name.valencia,      _name.sevilla,_name.racingSantander,_name.zaragoza,_name.lasPalmas,_name.elche,_name.realOviedo,_name.granada,_name.sportingGijon],
         1975.0: [_name.realmadrid,_name.zaragoza,_name.barcelona,_name.realsociedad,_name.hercules,_name.atleticomadrid,_name.salamanca,_name.realbetis,_name.elche,_name.athleticbilbao,         _name.espanyol,_name.valencia,_name.lasPalmas,_name.sportingGijon,_name.malaga,_name.granada,_name.celtavigo,_name.murcia],
         1974.0: [_name.barcelona,_name.atleticomadrid,_name.zaragoza,_name.realsociedad,_name.athleticbilbao,_name.granada,_name.malaga,_name.realmadrid,_name.espanyol,_name.valencia,           _name.lasPalmas,_name.celtavigo,_name.sportingGijon,_name.elche,_name.murcia,_name.castellon,_name.racingSantander,_name.realOviedo],
-        1973.0: [_name.atleticomadrid,_name.barcelona,_name.espanyol,_name.realmadrid,_name.castellon,_name.valencia,_name.valencia,_name.zaragoza,_name.realsociedad,_name.malaga,_name.athleticbilbao, _name.lasPalmas,_name.realOviedo,_name.sportingGijon,_name.celtavigo,_name.granada,_name.realbetis,_name.lacoruna,_name.burgos],
+        1973.0: [_name.atleticomadrid,_name.barcelona,_name.espanyol,_name.realmadrid,_name.castellon,_name.valencia,_name.realsociedad,_name.zaragoza,_name.athleticbilbao,_name.malaga,       _name.lasPalmas,_name.realOviedo,_name.sportingGijon,_name.celtavigo,_name.granada,_name.realbetis,_name.lacoruna,_name.burgos],
         1972.0: [_name.realmadrid,_name.valencia,_name.barcelona,_name.atleticomadrid,_name.lasPalmas,_name.granada,_name.malaga,_name.athleticbilbao,_name.realsociedad,_name.celtavigo,      _name.sportingGijon,_name.espanyol,_name.lacoruna,_name.realbetis,_name.burgos,_name.sevilla,_name.cordoba,_name.sabadell],
         1971.0: [_name.valencia,_name.barcelona,_name.atleticomadrid,_name.realmadrid,_name.athleticbilbao,_name.celtavigo,_name.sevilla,_name.realsociedad,_name.malaga,_name.granada,        _name.espanyol,_name.sportingGijon,_name.sabadell,_name.lasPalmas,_name.elche,_name.zaragoza],
         1970.0: [_name.atleticomadrid,_name.athleticbilbao,_name.valencia,_name.barcelona,_name.realmadrid,_name.sevilla,_name.realsociedad,_name.zaragoza,_name.lasPalmas,_name.celtavigo,    _name.granada,_name.elche,_name.sabadell,_name.lacoruna,_name.mallorca,_name.pontevedra],
@@ -850,7 +850,7 @@ ClubName _name = ClubName();
         1961.0: [_name.rangers,_name.kilmarnock,_name.thirdLanark,_name.celtic,_name.motherwell, ],
         1960.0: [_name.hearts,_name.kilmarnock,_name.rangers,_name.dundee,_name.motherwell,    ],
     };
-    leagueChampions[leagueName.outros] = {
+    leagueChampions[leagueName.belgica] = {
         //2022.0: [_name.brugge,],
         2021.0: [_name.brugge,_name.genk,_name.royalAntwerp,_name.anderlecht,],
         2020.0: [_name.brugge,_name.gent,_name.charleroi,_name.royalAntwerp,],
@@ -1178,7 +1178,7 @@ ClubName _name = ClubName();
     };
 
     leagueChampions[leagueName.austria] = {
-        //2022.0: [_name.rbsalzburg,]
+        2022.0: [_name.rbsalzburg,],
         2021.0: [_name.rbsalzburg,_name.sturmGraz,],
         2020.0: [_name.rbsalzburg,_name.rapidviena],
         2019.0: [_name.rbsalzburg,_name.rapidviena],
@@ -1310,7 +1310,7 @@ ClubName _name = ClubName();
     };
 
     leagueChampions[leagueName.russia] = {
-        //2022.0: [_name.zenit,_name.sochi,_name.dinamoMoscou,_name.krasnodar,_name.cska,             _name.lokomotivMoscou,_name.akhmatGrozny,_name.krylyaSovetov,_name.rostov,_name.spartakmoscou,  _name.nizhnyNovgorod,_name.ural,_name.khimki,_name.ufa,_name.rubinKazan,_name.tula],
+        2022.0: [_name.zenit,_name.sochi,_name.dinamoMoscou,_name.krasnodar,_name.cska,              _name.lokomotivMoscou,_name.akhmatGrozny,_name.krylyaSovetov,_name.rostov,_name.spartakmoscou,  _name.nizhnyNovgorod,_name.ural,_name.khimki,_name.ufa,_name.rubinKazan,_name.tula],
         2021.0: [_name.zenit,_name.spartakmoscou,_name.lokomotivMoscou,_name.rubinKazan,_name.sochi,  _name.cska,_name.dinamoMoscou,_name.khimki,_name.rostov,_name.krasnodar,                       _name.akhmatGrozny,_name.ural,_name.ufa,_name.tula,_name.rotor,_name.tambov],
         2020.0: [_name.zenit,_name.lokomotivMoscou,_name.krasnodar,_name.cska,_name.rostov,         _name.dinamoMoscou,_name.spartakmoscou,_name.tula,_name.ufa,_name.rubinKazan,                    _name.ural,_name.sochi,_name.akhmatGrozny,_name.tambov,_name.krylyaSovetov,_name.orenburg],
         2019.0: [_name.zenit,_name.lokomotivMoscou,_name.krasnodar,_name.cska,_name.spartakmoscou,  _name.tula,_name.orenburg,_name.akhmatGrozny,_name.rostov,_name.ural,                            _name.rubinKazan,_name.dinamoMoscou,_name.krylyaSovetov,_name.ufa,_name.anzhi,_name.yenisey],
@@ -1377,7 +1377,6 @@ ClubName _name = ClubName();
       };
 
     leagueChampions[leagueName.ucrania] = {
-
         //2022.0: [],
         2021.0: [_name.dinamokiev,_name.shaktardonetsk,_name.zorya,],
         2020.0: [_name.shaktardonetsk,_name.dinamokiev,_name.zorya,],
@@ -1441,6 +1440,40 @@ ClubName _name = ClubName();
         1994.0: [_name.semey,_name.irtysh],
         1993.0: [_name.irtysh,],
         1992.0: [_name.kairat,_name.ordabasy],
+    };
+
+    leagueChampions[leagueName.croacia] = {
+        2022.0: [_name.dinamozagreb,_name.hadjuksplit,_name.osijek,],
+        2021.0: [_name.dinamozagreb,_name.osijek,_name.rijeka,],
+        2020.0: [_name.dinamozagreb,_name.lokZagreb,_name.rijeka,],
+        2019.0: [_name.dinamozagreb,_name.rijeka,_name.osijek,],
+        2018.0: [_name.dinamozagreb,_name.rijeka,_name.hadjuksplit,],
+        2017.0: [_name.rijeka,_name.dinamozagreb,_name.hadjuksplit,],
+        2016.0: [_name.dinamozagreb,_name.rijeka,_name.hadjuksplit,],
+        2015.0: [_name.dinamozagreb,_name.rijeka,_name.hadjuksplit,],
+        2014.0: [_name.dinamozagreb,_name.rijeka,_name.hadjuksplit,],
+        2013.0: [_name.dinamozagreb,_name.lokZagreb,_name.rijeka,],
+        2012.0: [_name.dinamozagreb,_name.hadjuksplit,_name.slavenBelupo,],
+        2011.0: [_name.dinamozagreb,_name.hadjuksplit,],
+        2010.0: [_name.dinamozagreb,_name.hadjuksplit,],
+        2009.0: [_name.dinamozagreb,_name.hadjuksplit,_name.rijeka,],
+        2008.0: [_name.dinamozagreb,_name.slavenBelupo,_name.osijek,],
+        2007.0: [_name.dinamozagreb,_name.hadjuksplit,_name.nkzagreb,],
+        2006.0: [_name.dinamozagreb,_name.rijeka,_name.varteks,],
+        2005.0: [_name.hadjuksplit,_name.zapresic,_name.nkzagreb,],
+        2004.0: [_name.hadjuksplit,_name.dinamozagreb,_name.rijeka,],
+        2003.0: [_name.dinamozagreb,_name.hadjuksplit,],
+        2002.0: [_name.nkzagreb,_name.hadjuksplit,_name.dinamozagreb,],
+        2001.0: [_name.hadjuksplit,_name.dinamozagreb,_name.osijek,],
+        2000.0: [_name.dinamozagreb,_name.hadjuksplit,_name.rijeka,],
+        1999.0: [_name.dinamozagreb,_name.rijeka,_name.hadjuksplit,],
+        1998.0: [_name.dinamozagreb,_name.hadjuksplit,_name.osijek,],
+        1997.0: [_name.dinamozagreb,_name.hadjuksplit,],
+        1996.0: [_name.dinamozagreb,_name.hadjuksplit,_name.varteks,],
+        1995.0: [_name.hadjuksplit,_name.dinamozagreb,_name.osijek,],
+        1994.0: [_name.hadjuksplit,_name.nkzagreb,_name.dinamozagreb,],
+        1993.0: [_name.dinamozagreb,_name.hadjuksplit,_name.nkzagreb],
+        1992.0: [_name.hadjuksplit,_name.nkzagreb,_name.osijek],
     };
 
     leagueChampions[leagueName.servia] = {
@@ -2279,7 +2312,7 @@ ClubName _name = ClubName();
         1984.0: [_name.americamex,_name.chivas,_name.pumas,_name.cruzazul,              _name.atlante,_name.tecos,_name.tigres,_name.monterrey,             ],
         1983.0: [_name.puebla,_name.chivas,_name.leonesNegros,_name.americamex,         _name.atlante,_name.toluca,_name.tecos,_name.atlPotosino,           ],
         1982.0: [_name.tigres,_name.atlante,_name.americamex,_name.depNeza,             _name.zacatepec,_name.leonesNegros,_name.monterrey,_name.atlEspanol, ],
-        1981.0: [_name.pumas,_name.cruzazul,_name.zacatepec,_name.depNeza,              _name.chivas,_name.toluca,_name.atlEspanol,_name.tecos],
+        1981.0: [_name.pumas,_name.cruzazul,_name.zacatepec,_name.depNeza,              _name.chivas,_name.toluca,_name.atlEspanol,_name.tecos,              _name.atlante,_name.monterrey,_name.tigres,_name.puebla,    _name.americamex,_name.atlPotosino,_name.tampico,_name.leonesNegros,  ],
         1980.0: [_name.cruzazul,_name.tigres,_name.atlante,_name.americamex,            _name.depNeza,_name.pumas,_name.zacatepec,_name.tampico],
         1979.0: [_name.cruzazul,_name.pumas,_name.tigres,_name.toluca,                  _name.americamex,_name.monterrey,_name.atlPotosino,_name.zacatepec,],
         1978.0: [_name.tigres,_name.pumas,_name.cruzazul,_name.tampico,                 _name.americamex,_name.toluca,_name.tecos,_name.leonesNegros,],
@@ -2489,7 +2522,7 @@ ClubName _name = ClubName();
 
 
     leagueChampions[leagueName.arabia] = {
-//2022.0: [_name.alhilal,],
+        2022.0: [_name.alhilal,_name.alIttihad,_name.alnassr,_name.alShabab,_name.damac,],
         2021.0: [_name.alhilal,_name.alShabab,],
         2020.0: [_name.alhilal,_name.alnassr,],
         2019.0: [_name.alnassr,_name.alhilal,],
@@ -2540,7 +2573,7 @@ ClubName _name = ClubName();
     };
 
     leagueChampions[leagueName.qatar] = {
-        //2022.0: [_name.alsadd,],
+        2022.0: [_name.alsadd,_name.alduhail,_name.alwakrah,_name.alarabi,_name.algharafa,    ],
         2021.0: [_name.alsadd,_name.alduhail,_name.alrayyan,_name.algharafa,_name.alahliQAT,  ],
         2020.0: [_name.alduhail,_name.alrayyan,_name.alsadd,_name.algharafa,_name.alsailiya,  ],
         2019.0: [_name.alsadd,_name.alduhail,_name.alsailiya,_name.alrayyan,_name.alahliQAT,  ],
@@ -2563,7 +2596,7 @@ ClubName _name = ClubName();
         2002.0: [_name.algharafa,_name.qatar,_name.alrayyan,_name.alsadd,_name.alwakrah,      ],
         2001.0: [_name.alwakrah,_name.alarabi,_name.altaawoun,_name.alrayyan,_name.algharafa, ],
         2000.0: [_name.alsadd,_name.alrayyan,_name.alarabi,_name.algharafa,_name.alahliQAT,   ],
-        1999.0: [_name.alwakrah,_name.algharafa,_name.alsadd,_name.alarabi,_name.alwakrah,    ],
+        1999.0: [_name.alrayyan,_name.algharafa,_name.alsadd,_name.alarabi,_name.alwakrah,    ],
         1998.0: [_name.algharafa,_name.alrayyan,_name.alsadd,_name.alarabi,_name.alahliQAT,   ],
         1997.0: [_name.alarabi,_name.alrayyan,_name.algharafa,_name.alwakrah,_name.alsadd,    ],
         1996.0: [_name.alarabi,_name.alrayyan,_name.alwakrah,_name.alsadd,_name.algharafa,    ],
@@ -2660,12 +2693,106 @@ ClubName _name = ClubName();
         1960.0: [_name.zamalek,_name.tersana,_name.alahly,],
     };
 
+    leagueChampions[leagueName.marrocos] = {
+        2022.0: [_name.wydad,_name.rajacasablanca,],
+        2021.0: [_name.wydad,_name.rajacasablanca,_name.farRabat,_name.renBerkane,_name.moulodiaOujda,  ],
+        2020.0: [_name.rajacasablanca,_name.wydad,_name.renBerkane,_name.fusRabat,_name.moulodiaOujda,  ],
+        2019.0: [_name.wydad,_name.rajacasablanca,_name.hassaniaAgadir,_name.safi,_name.irTanger,       ],
+        2018.0: [_name.irTanger,_name.wydad,_name.hassaniaAgadir,_name.fusRabat,_name.difaa,            ],
+        2017.0: [_name.wydad,_name.difaa,_name.rajacasablanca,_name.renBerkane,_name.irTanger,          _name.farRabat,_name.fusRabat,_name.hassaniaAgadir,],
+        2016.0: [_name.fusRabat,_name.wydad,_name.irTanger,_name.farRabat,_name.rajacasablanca,         _name.moghrebTetouan,_name.renBerkane,_name.hassaniaAgadir, ],
+        2015.0: [_name.wydad,_name.khouribga,_name.kawkab,_name.moghrebTetouan,_name.fusRabat,          _name.hassaniaAgadir,_name.difaa,_name.rajacasablanca,],
+        2014.0: [_name.moghrebTetouan,_name.rajacasablanca,_name.fusRabat,_name.kawkab,_name.difaa,     _name.wydad,_name.farRabat,_name.hassaniaAgadir,],
+        2013.0: [_name.rajacasablanca,_name.farRabat,_name.maghreb,_name.wydad,_name.moghrebTetouan,    _name.fusRabat,_name.renBerkane,_name.chababRifHoceima,],
+        2012.0: [_name.moghrebTetouan,_name.fusRabat,_name.wydad,_name.rajacasablanca,_name.difaa,      _name.maghreb,_name.farRabat,_name.safi,],
+        2011.0: [_name.rajacasablanca,_name.maghreb,_name.wydad,_name.khouribga,_name.safi,             _name.farRabat,_name.fusRabat,_name.moghrebTetouan,],
+        2010.0: [_name.wydad,_name.rajacasablanca,_name.difaa,_name.kawkab,_name.khouribga,             _name.hassaniaAgadir,_name.farRabat,_name.maghreb,],
+        2009.0: [_name.rajacasablanca,_name.difaa,_name.farRabat,_name.wydad,_name.khouribga,           _name.moghrebTetouan,],
+        2008.0: [_name.farRabat,_name.khemisset,_name.rajacasablanca,_name.hassaniaAgadir,_name.difaa,  ],
+        2007.0: [_name.khouribga,_name.farRabat,_name.moghrebTetouan,_name.wydad,_name.difaa,           _name.kawkab,_name.khemisset,_name.jeunesseMassira,_name.hassaniaAgadir,_name.moulodiaOujda,   _name.rajacasablanca,_name.safi,],
+        2006.0: [_name.wydad,_name.farRabat,_name.khouribga,_name.rajacasablanca,_name.hassaniaAgadir,  _name.meknes,_name.difaa,_name.khemisset,_name.sale,_name.safi,                                ],
+        2005.0: [_name.farRabat,_name.rajacasablanca,_name.wydad,_name.safi,_name.jeunesseMassira,      _name.khemisset,_name.khouribga,],
+        2004.0: [_name.rajacasablanca,_name.farRabat,_name.sale,_name.wydad,_name.khouribga,            _name.meknes,_name.moulodiaOujda,_name.maghreb,_name.hassaniaAgadir,_name.kawkab,              ],
+        2003.0: [_name.hassaniaAgadir,_name.rajacasablanca,_name.wydad,_name.meknes,_name.maghreb,      _name.khouribga,_name.chababMohammedia,_name.jeunesseMassira,_name.farRabat,],
+        2002.0: [_name.hassaniaAgadir,_name.wydad,_name.rajacasablanca,_name.maghreb,_name.khouribga,   _name.farRabat,],
+        2001.0: [_name.rajacasablanca,_name.fusRabat,_name.maghreb,_name.settat,_name.khouribga,        _name.kawkab,_name.wydad,_name.khemisset,],
+        2000.0: [_name.rajacasablanca,_name.wydad,],
+        1999.0: [_name.rajacasablanca,_name.kawkab,],
+        1998.0: [_name.rajacasablanca,_name.kawkab,],
+        1997.0: [_name.rajacasablanca,_name.wydad,],
+        1996.0: [_name.rajacasablanca,_name.khouribga,],
+        1995.0: [_name.meknes,_name.oCasablanca,],
+        1994.0: [_name.oCasablanca,_name.wydad,],
+        1993.0: [_name.wydad,_name.rajacasablanca,],
+        1992.0: [_name.kawkab,_name.rajacasablanca,],
+        1991.0: [_name.wydad,_name.farRabat,],
+        1990.0: [_name.wydad,_name.irTanger,],
+        1989.0: [_name.farRabat,_name.maghreb,],
+        1988.0: [_name.rajacasablanca,_name.kawkab,],
+        1987.0: [_name.farRabat,_name.kawkab,],
+        1986.0: [_name.wydad,_name.rajacasablanca,],
+        1985.0: [_name.maghreb,_name.kenitra],
+        1984.0: [_name.farRabat,_name.khouribga,],
+        1983.0: [_name.maghreb,_name.renBerkane,],
+        1982.0: [_name.kenitra,_name.wydad,],
+        1981.0: [_name.kenitra,_name.fusRabat,],
+        1980.0: [_name.chababMohammedia,_name.wydad,],
+        1979.0: [_name.maghreb,_name.kenitra,],
+        1978.0: [_name.wydad,_name.maghreb,],
+        1977.0: [_name.wydad,_name.moulodiaOujda,],
+        1976.0: [_name.wydad,_name.difaa,],
+        1975.0: [_name.moulodiaOujda,_name.maghreb,],
+        1974.0: [_name.beniMellal,_name.rajacasablanca,],
+        1973.0: [_name.kenitra,_name.fusRabat,],
+        1972.0: [_name.racingCasablanca,_name.wydad,],
+        1971.0: [_name.settat,_name.farRabat,],
+        1970.0: [_name.farRabat,],
+        1969.0: [_name.wydad,_name.maghreb,],
+        1968.0: [_name.farRabat,_name.settat,],
+        1967.0: [_name.farRabat,_name.settat,],
+        1966.0: [_name.wydad,_name.rajacasablanca,],
+        1965.0: [_name.maghreb,_name.racingCasablanca,],
+        1964.0: [_name.farRabat,],
+        1963.0: [_name.farRabat,_name.kawkab,],
+        1962.0: [_name.farRabat,_name.racingCasablanca,],
+        1961.0: [_name.farRabat,_name.maghreb,],
+        1960.0: [_name.kenitra,_name.farRabat,],
+    };
+
+    leagueChampions[leagueName.africaSul] = {
+        2022.0: [_name.mamelodi,_name.capetown,],
+        2021.0: [_name.mamelodi,_name.amazulu,],
+        2020.0: [_name.mamelodi,_name.kaizer,],
+        2019.0: [_name.mamelodi,_name.orlandopirates,],
+        2018.0: [_name.mamelodi,_name.orlandopirates,],
+        2017.0: [_name.bidvestWits,_name.mamelodi,],
+        2016.0: [_name.mamelodi,_name.bidvestWits],
+        2015.0: [_name.kaizer,_name.mamelodi,],
+        2014.0: [_name.mamelodi,_name.kaizer,],
+        2013.0: [_name.kaizer,_name.platinum,],
+        2012.0: [_name.orlandopirates,_name.morokaSwallows,],
+        2011.0: [_name.orlandopirates,_name.capetownAjax,],
+        2010.0: [_name.supersport,_name.mamelodi,],
+        2009.0: [_name.supersport,_name.orlandopirates,],
+        2008.0: [_name.supersport,_name.capetownAjax,],
+        2007.0: [_name.mamelodi,_name.platinum,],
+        2006.0: [_name.mamelodi,_name.orlandopirates,],
+        2005.0: [_name.kaizer,_name.orlandopirates,],
+        2004.0: [_name.kaizer,_name.capetownAjax,],
+        2003.0: [_name.orlandopirates,_name.supersport,],
+        2002.0: [_name.santosAfrica,_name.supersport,],
+        2001.0: [_name.orlandopirates,_name.kaizer,],
+        2000.0: [_name.mamelodi,_name.orlandopirates,],
+        1999.0: [_name.mamelodi,_name.kaizer,],
+        1998.0: [_name.mamelodi,_name.orlandopirates,],
+        1997.0: [_name.manningRangers,_name.kaizer,],
+    };
     /////////////////////////////////////////////////////////////////
     // CONTINENTS CHAMPIONS
     ///////////////////////////////////////////////////////////////
 
     leagueChampions[leagueName.championsLeague] = {
-        //2022.0: [_name.realmadrid,_name.liverpool,_name.manchestercity,_name.villareal,        _name.chelsea,_name.benfica,_name.atleticomadrid,_name.bayernmunique,      _name.psg,_name.inter,_name.sporting,_name.juventus,_name.lille,_name.ajax,_name.manchesterunited,_name.rbsalzburg,                              ],
+        2022.0: [_name.realmadrid,_name.liverpool,_name.manchestercity,_name.villareal,        _name.chelsea,_name.benfica,_name.atleticomadrid,_name.bayernmunique,      _name.psg,_name.inter,_name.sporting,_name.juventus,_name.lille,_name.ajax,_name.manchesterunited,_name.rbsalzburg,                              ],
         2021.0: [_name.chelsea,_name.manchestercity,_name.realmadrid,_name.psg,                  _name.porto,_name.dortmund,_name.liverpool,_name.bayernmunique,          _name.atleticomadrid,_name.moenchengladbach,_name.atalanta,_name.barcelona,_name.juventus,_name.sevilla,_name.rbleipzig,_name.lazio,               _name.rbsalzburg,_name.shaktardonetsk,_name.olympiacos,_name.ajax,_name.krasnodar,_name.brugge,_name.dinamokiev,_name.manchesterunited,       _name.lokomotivMoscou,_name.inter,_name.om,_name.midtjylland,_name.rennes,_name.zenit,_name.ferencvaros,_name.instanbul],
         2020.0: [_name.bayernmunique,_name.psg,_name.lyon,_name.rbleipzig,                       _name.barcelona,_name.atalanta,_name.manchestercity,_name.atleticomadrid, _name.chelsea,_name.dortmund,_name.juventus,_name.tottenham,_name.napoli,_name.valencia,_name.realmadrid,_name.liverpool,                         _name.brugge,_name.olympiacos,_name.shaktardonetsk,_name.leverkusen,_name.rbsalzburg,_name.inter,_name.benfica,_name.ajax,               _name.galatasaray,_name.estrelavermelha,_name.dinamozagreb,_name.lokomotivMoscou,_name.genk,_name.slaviaPraha,_name.zenit,_name.lille],
         2019.0: [_name.liverpool,_name.tottenham,_name.barcelona,_name.ajax,                     _name.porto,_name.manchestercity,_name.manchesterunited,_name.juventus,   _name.bayernmunique,_name.dortmund,_name.lyon,_name.realmadrid,_name.roma,_name.schalke04,_name.psg,_name.atleticomadrid,                         _name.brugge,_name.inter,_name.napoli,_name.galatasaray,_name.benfica,_name.shaktardonetsk,_name.viktoriaPlzen,_name.valencia,                _name.monaco,_name.psv,_name.estrelavermelha,_name.lokomotivMoscou,_name.aek,_name.hoffenheim,_name.cska,_name.youngBoys],
@@ -2735,7 +2862,7 @@ ClubName _name = ClubName();
     };
 
     leagueChampions[leagueName.libertadores] = {
-        //2022.0: [_name.palmeiras,_name.flamengo,_name.atleticomg,_name.riverplate,_name.cerroporteno,_name.bocajuniors],
+        //2022.0: [_name.palmeiras,_name.flamengo,_name.velez,_name.atleticopr,           _name.atleticomg,_name.estudiantes,_name.talleres,_name.corinthians,             _name.riverplate,_name.cerroporteno,_name.bocajuniors],
         2021.0: [_name.palmeiras,_name.flamengo,_name.atleticomg,_name.barcelonaequ,      _name.saopaulo,_name.olimpia,_name.riverplate,_name.fluminense,                  _name.cerroporteno,_name.bocajuniors,_name.racing,_name.velez,_name.univcatolica,_name.defensayjusticia,_name.argentinojuniors,_name.internacional,  _name.idelvalle,_name.tachira,_name.santos,_name.junior,_name.sportingcristal,_name.nacional,_name.ldu,_name.americadecali,   _name.universitario,_name.alwaysReady,_name.theStrongest,_name.santafe,_name.rentistas,_name.atleticonacional,_name.laCalera,_name.laGuaira],
         2020.0: [_name.palmeiras,_name.santos,_name.riverplate,_name.bocajuniors,         _name.libertad,_name.gremio,_name.nacional,_name.racing,                         _name.ldu,_name.atleticopr,_name.flamengo,_name.delfin,_name.idelvalle,_name.jorge,_name.guaraniPAR,_name.internacional,                     _name.junior,_name.bolivar,_name.penarol,_name.saopaulo,_name.univcatolica,_name.estudiantesmerida,_name.defensayjusticia,_name.caracas,        _name.barcelonaequ,_name.tigre,_name.colocolo,_name.binacional,_name.americadecali,_name.alianzalima,_name.olimpia,_name.imedellin],
         2019.0: [_name.flamengo,_name.riverplate,_name.gremio,_name.bocajuniors,          _name.palmeiras,_name.ldu,_name.internacional,_name.cerroporteno,                _name.cruzeiro,_name.olimpia,_name.godoycruz,_name.sanlorenzo,_name.nacional,_name.atleticopr,_name.emelec,_name.libertad,                   _name.palestino,_name.deplara,_name.sportingcristal,_name.penarol,_name.atleticomg,_name.melgar,_name.tolima,_name.univcatolica,     _name.alianzalima,_name.huracan,_name.concepcion,_name.sanJoseBOL,_name.zamora,_name.junior,_name.jorge,_name.rosariocentral],
@@ -2802,7 +2929,7 @@ ClubName _name = ClubName();
 
 
     leagueChampions[leagueName.concacaf] = {
-        //2022.0: [_name.seattle,_name.pumas,_name.nycity,_name.cruzazul,                     _name.leon,_name.nerevolution,_name.montreal,_name.comunicaciones],
+        2022.0: [_name.seattle,_name.pumas,_name.nycity,_name.cruzazul,                     _name.leon,_name.nerevolution,_name.montreal,_name.comunicaciones],
         2021.0: [_name.monterrey,_name.americamex,_name.cruzazul,_name.philadelphia,        _name.columbuscrew,_name.portland,_name.toronto,_name.atlanta],
         2020.0: [_name.tigres,_name.losangelesfc,_name.olimpiaHON,_name.americamex,         _name.nycity,_name.cruzazul,_name.montreal,_name.atlanta],
         2019.0: [_name.monterrey,_name.tigres,_name.kansas,_name.santosLaguna,  _name.nyredbulls,_name.houston,_name.atlanta,_name.independienteChorrera],
@@ -2907,7 +3034,7 @@ ClubName _name = ClubName();
     };
 
     leagueChampions[leagueName.africa] = {
-        //2022.0: [_name.wydad,_name.alahly,_name.petroluanda,_name.esSetif],
+        2022.0: [_name.wydad,_name.alahly,_name.petroluanda,_name.essetif],
         2021.0: [_name.alahly,_name.kaizer,_name.esperance,_name.wydad,                  _name.mamelodi,_name.simba,_name.belouizdad,_name.mcalger,         _name.horoya,_name.zamalek,_name.vita,_name.mazembe,_name.omdurman,_name.teungueth,_name.almerrikh,_name.petroluanda],
         2020.0: [_name.alahly,_name.zamalek,_name.rajacasablanca,_name.wydad,            _name.mamelodi,_name.esperance,_name.etoilesahel,_name.mazembe,    _name.omdurman,_name.kabylie,_name.agosto,_name.petroluanda,_name.vita,_name.usmAlger,_name.zesco,_name.platinum],
         2019.0: [_name.esperance,_name.wydad,_name.mazembe,_name.mamelodi,               _name.constantine,_name.horoya,_name.simba,_name.alahly,           _name.clubAfricain,_name.saoura,_name.lobiStars,_name.orlandopirates,_name.asecmimosas,_name.vita,_name.platinum,_name.ismaily],
@@ -3036,7 +3163,7 @@ ClubName _name = ClubName();
 
 
     leagueChampions[leagueName.ligaEuropa] = {
-        //2022.0: [_name.eintrachtfrankfurt,_name.rangers,_name.westham,_name.rbleipzig,  ],
+        2022.0: [_name.eintrachtfrankfurt,_name.rangers,_name.westham,_name.rbleipzig,  ],
         2021.0: [_name.villareal,_name.manchesterunited,_name.arsenal,_name.roma,       ],
         2020.0: [_name.sevilla,_name.inter,_name.manchesterunited,_name.shaktardonetsk, ],
         2019.0: [_name.chelsea,_name.arsenal,_name.eintrachtfrankfurt,_name.valencia,   ],
@@ -3126,7 +3253,7 @@ ClubName _name = ClubName();
     };
       ////////////////////////////////////////////////////
     leagueChampions[leagueName.englandCup] = {
-          //2022.0: [_name.liverpool, _name.chelsea],
+          2022.0: [_name.liverpool, _name.chelsea],
           2021.0: [_name.leicester,_name.chelsea],
           2020.0: [_name.arsenal,_name.chelsea],
           2019.0: [_name.manchestercity,_name.watford],
@@ -3192,7 +3319,7 @@ ClubName _name = ClubName();
 
       };
     leagueChampions[leagueName.italyCup] = {
-          //2022.0: [_name.inter, _name.juventus],
+          2022.0: [_name.inter, _name.juventus],
           2021.0: [_name.juventus,_name.atalanta],
           2020.0: [_name.napoli,_name.juventus],
           2019.0: [_name.lazio,_name.atalanta],
@@ -3258,7 +3385,7 @@ ClubName _name = ClubName();
 
       };
     leagueChampions[leagueName.spainCup] = {
-          //2022.0: [_name.realbetis, _name.valencia],
+          2022.0: [_name.realbetis, _name.valencia],
           2021.0: [_name.barcelona,_name.athleticbilbao],
           2020.0: [_name.realsociedad,_name.athleticbilbao],
           2019.0: [_name.valencia,_name.barcelona],
@@ -3325,7 +3452,7 @@ ClubName _name = ClubName();
       };
 
     leagueChampions[leagueName.franceCup] = {
-          //2022.0: [_name.nantes,_name.nice],
+          2022.0: [_name.nantes,_name.nice],
           2021.0: [_name.psg,_name.monaco,],
           2020.0: [_name.psg,_name.saintetienne],
           2019.0: [_name.rennes,_name.psg],
@@ -3495,72 +3622,6 @@ ClubName _name = ClubName();
           1989.0: [_name.gremio,_name.sport,_name.flamengo,_name.goias],
 
       };
-
-    leagueChampions[leagueName.egito] = {
-         //2022.0: [],
-          2021.0: [],
-          2020.0: [],
-          2019.0: [],
-          2018.0: [],
-          2017.0: [],
-          2016.0: [],
-          2015.0: [],
-          2014.0: [],
-          2013.0: [],
-          2012.0: [],
-          2011.0: [],
-          2010.0: [],
-          2009.0: [],
-          2008.0: [],
-          2007.0: [],
-          2006.0: [],
-          2005.0: [],
-          2004.0: [],
-          2003.0: [],
-          2002.0: [],
-          2001.0: [],
-          2000.0: [],
-          1999.0: [],
-          1998.0: [],
-          1997.0: [],
-          1996.0: [],
-          1995.0: [],
-          1994.0: [],
-          1993.0: [],
-          1992.0: [],
-          1991.0: [],
-          1990.0: [],
-          1989.0: [],
-          1988.0: [],
-          1987.0: [],
-          1986.0: [],
-          1985.0: [],
-          1984.0: [],
-          1983.0: [],
-          1982.0: [],
-          1981.0: [],
-          1980.0: [],
-          1979.0: [],
-          1978.0: [],
-          1977.0: [],
-          1976.0: [],
-          1975.0: [],
-          1974.0: [],
-          1973.0: [],
-          1972.0: [],
-          1971.0: [],
-          1970.0: [],
-          1969.0: [],
-          1968.0: [],
-          1967.0: [],
-          1966.0: [],
-          1965.0: [],
-          1964.0: [],
-          1963.0: [],
-          1962.0: [],
-          1961.0: [],
-          1960.0: [],
-        };
 
     try {
         return leagueChampions[league];

@@ -66,7 +66,7 @@ popUpExpectativa({required BuildContext context}){
                     ? Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Image.asset(FIFAImages().campeonatoInternacionalLogo(myClass.getMyInternationalLeague()),height: 35,width: 35),
+                    Image.asset(FIFAImages().campeonatoLogo(myClass.getMyInternationalLeague()),height: 35,width: 35),
                     Text('${myClass.getMyInternationalLeague()}:', style: EstiloTextoPreto.text14),
                     Text(Name().showTranslated(context, expectativaAtual.expInternacional), style: EstiloTextoPreto.text14),
                   ],

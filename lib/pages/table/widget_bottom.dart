@@ -37,12 +37,12 @@ Widget customWidgetBottomBar (BuildContext context,String actualPage, String lea
                 onTap: (){
                   functionSetState(LeagueOfficialNames().libertadores);
                 },
-                child: Image.asset(FIFAImages().campeonatoInternacionalLogo(LeagueOfficialNames().championsLeague),width: 60,height: 60)
+                child: Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().championsLeague),width: 60,height: 60)
             ): GestureDetector(
                 onTap: (){
                   functionSetState(LeagueOfficialNames().championsLeague);
                 },
-                child: Image.asset(FIFAImages().campeonatoInternacionalLogo(LeagueOfficialNames().libertadores),width: 60,height: 60)
+                child: Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().libertadores),width: 60,height: 60)
             ),
 
 

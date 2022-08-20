@@ -167,7 +167,7 @@ Widget leagueRow(int i){
             onPressed: (){setState((){});},
             icon: const Icon(Icons.arrow_right,color: Colors.white),
           ),
-          Image.asset(FIFAImages().campeonatoInternacionalLogo(leagueInfos.internationalLeague),width: 30,height: 30)
+          Image.asset(FIFAImages().campeonatoLogo(leagueInfos.internationalLeague),width: 30,height: 30)
         ],
       ),
     );

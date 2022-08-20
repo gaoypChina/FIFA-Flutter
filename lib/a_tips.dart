@@ -192,8 +192,7 @@ Map<double,dynamic> zzzzzzzzz(String league) {
     1961.0: [],
     1960.0: [],
   };
-  leagueChampions[leagueName.japao] = {
-
+  leagueChampions[leagueName.croacia] = {
   };
 
   return leagueChampions[league];

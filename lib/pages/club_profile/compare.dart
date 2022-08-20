@@ -453,9 +453,9 @@ class _CompareState extends State<Compare> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Image.asset(FIFAImages().campeonatoInternacionalLogo(club.internationalLeagueName),height: 40,width: 40),
+          Image.asset(FIFAImages().campeonatoLogo(club.internationalLeagueName),height: 40,width: 40),
           Text(Translation(context).text.international,style: EstiloTextoBranco.negrito22),
-          Image.asset(FIFAImages().campeonatoInternacionalLogo(club2.internationalLeagueName),height: 40,width: 40),
+          Image.asset(FIFAImages().campeonatoLogo(club2.internationalLeagueName),height: 40,width: 40),
         ],
       ),
     );

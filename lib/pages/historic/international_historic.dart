@@ -181,7 +181,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                 }
                 setState(() {});
               },
-              child: Image.asset(FIFAImages().campeonatoInternacionalLogo(LeagueOfficialNames().championsLeague),width: 50,height: 50)
+              child: Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().championsLeague),width: 50,height: 50)
           ): GestureDetector(
               onTap: (){
                 leagueInternational = LeagueOfficialNames().championsLeague;
@@ -190,7 +190,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                 }
                 setState(() {});
               },
-              child: Image.asset(FIFAImages().campeonatoInternacionalLogo(LeagueOfficialNames().libertadores),width: 50,height: 50)
+              child: Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().libertadores),width: 50,height: 50)
           ),
         ],
       ),
