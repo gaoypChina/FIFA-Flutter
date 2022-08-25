@@ -34,10 +34,10 @@ class _YearResumeState extends State<YearResume> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
-    super.initState();
     for(int i=1960;i<=ano;i++){
       possibleYears.add(i.toString());
     }
+    super.initState();
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //

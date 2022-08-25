@@ -7,14 +7,14 @@ ClubName clubName = ClubName();
 /////////////
 //default teams
 List defaultChampionsLeagueClubs = [
-  clubName.manchestercity,clubName.psg,clubName.rbleipzig,clubName.brugge,
-  clubName.liverpool,clubName.porto,clubName.milan,clubName.atleticomadrid,
-  clubName.dortmund,clubName.ajax,clubName.sporting,clubName.besiktas,
-  clubName.realmadrid,clubName.inter,clubName.shaktardonetsk,clubName.lyon,
-  clubName.bayernmunique,clubName.barcelona,clubName.benfica,clubName.dinamokiev,
-  clubName.manchesterunited,clubName.atalanta,clubName.villareal,clubName.dinamozagreb,
-  clubName.sevilla,clubName.rbsalzburg,clubName.lille,clubName.wolfsburg,
-  clubName.chelsea,clubName.juventus,clubName.zenit,clubName.malmo,
+  clubName.manchestercity,clubName.liverpool,clubName.dortmund,clubName.brugge,
+  clubName.psg,clubName.atleticomadrid,clubName.rbsalzburg,clubName.celtic,
+  clubName.ajax,clubName.sevilla,clubName.sporting,clubName.rangers,
+  clubName.realmadrid,clubName.chelsea,clubName.inter,clubName.copenhague,
+  clubName.bayernmunique,clubName.tottenham,clubName.benfica,clubName.om,
+  clubName.eintrachtfrankfurt,clubName.barcelona,clubName.shaktardonetsk,clubName.maccabiHaifa,
+  clubName.milan,clubName.rbleipzig,clubName.napoli,clubName.viktoriaPlzen,
+  clubName.porto,clubName.juventus,clubName.leverkusen,clubName.dinamozagreb,
 ];
 List defaultLibertadoresClubs = [
   clubName.palmeiras,clubName.tachira,clubName.emelec,clubName.monterrey,
@@ -160,7 +160,7 @@ Map clubNameMapImmutable = {
     12: clubName.newells,13: clubName.racing,14: clubName.riverplate,15:clubName.rosariocentral,
     16: clubName.sanlorenzo,17:clubName.talleres,18: clubName.unionSantaFe,19: clubName.velez,
   },
-  LeagueOfficialNames().sulamericano : {
+  LeagueOfficialNames().mercosul : {
     0: clubName.cerroporteno,1: clubName.olimpia,2: clubName.guaraniPAR,3: clubName.libertad,
     4: clubName.colocolo,5: clubName.lau,6: clubName.palestino,7: clubName.univcatolica,
     8: clubName.alwaysReady,9: clubName.bolivar,10: clubName.theStrongest,11: clubName.alianzalima,
@@ -205,6 +205,7 @@ Map clubNameMapImmutable = {
   LeagueOfficialNames().outros : {
     0: clubName.laskLinz,1: clubName.sheriffTiraspol,2: clubName.ghuangzhou,3: clubName.tigre,
     4: clubName.joinville, 5: clubName.juventusMooca, 6: clubName.paulista, 7: clubName.ibis,
+    8: clubName.arsenalsarandi, 9: clubName.lechPoznan,
   },
 
 };

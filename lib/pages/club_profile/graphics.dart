@@ -80,7 +80,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
       scrollDirection: Axis.horizontal,
       child: Container(
         height: 260,
-        width: dataGraphics.data.length * 23 + 50,
+        width: dataGraphics.dataInternational.length * 23 + 50,
         color: AppColors().greyTransparent,
         child: SfCartesianChart(
           tooltipBehavior: _tooltipBehavior,
@@ -113,11 +113,32 @@ class _ClubGraphicsState extends State<ClubGraphics> {
               ),
             ),
 
+            LineSeries<ClassificationData, String>(
+              color: Colors.red,
+              xAxisName: Translation(context).text.years,
+              yAxisName: Translation(context).text.position,
+              name: widget.club.name,
+              dataSource: dataGraphics.dataInternational,
+              enableTooltip: true,
+              xValueMapper: (ClassificationData data, _) => data.year.toInt().toString(), //ano.0 -> ano
+              yValueMapper: (ClassificationData data, _) => data.position,
+              //dataLabelSettings:const DataLabelSettings(isVisible : true,color: Colors.white),
+              markerSettings: const MarkerSettings(
+                  isVisible: true,
+                  height: 4,
+                  width: 4,
+                  borderWidth: 3,
+                  borderColor: Colors.white
+              ),
+            ),
+
+
           ],
         ),
       ),
     );
   }
+
 
   Widget totalTrophyWidget(Club club, DataGraphics dataGraphics) {
     return Container(
@@ -132,20 +153,20 @@ class _ClubGraphicsState extends State<ClubGraphics> {
           Column(
             children: [
               Text(Translation(context).text.average,
-                  style: EstiloTextoBranco.text16),
+                  style: EstiloTextoBranco.text14),
               Text(Translation(context).text.last10Years,
-                  style: EstiloTextoBranco.text16),
-              const SizedBox(height: 10),
+                  style: EstiloTextoBranco.text14),
+              const SizedBox(height: 6),
               Text(dataGraphics.averagePosition10years.toString() + 'º',
                   style: EstiloTextoBranco.text20),
             ],
           ),
           Column(
             children: [
-              const Text('G-4', style: EstiloTextoBranco.text16),
+              const Text('G-4', style: EstiloTextoBranco.text14),
               Text(Translation(context).text.years,
-                  style: EstiloTextoBranco.text16),
-              const SizedBox(height: 10),
+                  style: EstiloTextoBranco.text14),
+              const SizedBox(height: 6),
               Text(dataGraphics.g4Years.toString(),
                   style: EstiloTextoBranco.text20),
             ],
@@ -154,10 +175,10 @@ class _ClubGraphicsState extends State<ClubGraphics> {
           Column(
             children: [
               Text(Translation(context).text.division2,
-                  style: EstiloTextoBranco.text16),
+                  style: EstiloTextoBranco.text14),
               Text(Translation(context).text.years,
-                  style: EstiloTextoBranco.text16),
-              const SizedBox(height: 10),
+                  style: EstiloTextoBranco.text14),
+              const SizedBox(height: 6),
               Text(dataGraphics.n2ndivision.toString(),
                   style: EstiloTextoBranco.text20),
             ],

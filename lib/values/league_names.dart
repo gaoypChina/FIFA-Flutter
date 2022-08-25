@@ -35,6 +35,7 @@ class LeagueOfficialNames{
   String croacia = 'Liga Croácia';
   String russia = 'Liga Russa';
   String ucrania = 'Liga Ucrania';
+  String israel = 'Liga israel';
   String cazaquistao = 'Super Liga do Cazaquistão';
   String ligaEuropa = 'Liga Europeia';  String lesteEuropeu = 'Leste Europeu';
 
@@ -61,9 +62,14 @@ class LeagueOfficialNames{
   String eau = 'Liga EAU';
   String qatar = 'Liga qatar';
   String iran = 'Liga iran';
+  String india = 'Liga india';
+  String tailandia = 'Liga Tailandia';
 
   String egito = 'Liga Egito';
+  String argelia = 'Liga Argelia';
   String marrocos = 'Liga Marrocos';
+  String nigeria = 'Liga Nigeria';
+  String tunisia = 'Liga Tunisia';
   String australia = 'A-League';
   String africaSul = 'Liga África do Sul';
   String outros = 'Outros';
@@ -95,7 +101,7 @@ class LeagueOfficialNames{
      suecia,     dinamarca,     noruega,     finlandia,
      austria,     suica,     polonia, repTcheca,
 
-      servia,     croacia,
+      servia,     croacia, israel,
       russia, ucrania,     cazaquistao,
 
      brasil1, brasil2, brasil3,
@@ -107,7 +113,7 @@ class LeagueOfficialNames{
 
      japao,     china,     coreiaSul,
      arabia,     eau,     qatar,     iran,
-     australia,
+     australia, india, tailandia,
 
      egito,     marrocos,     africaSul,
     ];
@@ -287,6 +293,7 @@ Map getLeagueNationalityMap(){
     leagueName.ucrania: Words.country.ukraine,
     leagueName.servia: Words.country.serbia ,
     leagueName.croacia: Words.country.croatia ,
+    leagueName.israel: Words.country.israel ,
     leagueName.russia: Words.country.russia ,
     leagueName.cazaquistao: Words.country.kazakhstan ,
 
@@ -314,8 +321,13 @@ Map getLeagueNationalityMap(){
     leagueName.qatar: Words.country.qatar ,
     leagueName.eau: Words.country.uae ,
     leagueName.iran: Words.country.iran ,
+    leagueName.india: Words.country.india ,
+    leagueName.tailandia: Words.country.thailand ,
 
     leagueName.egito: Words.country.egypt,
+    leagueName.argelia: Words.country.algeria ,
+    leagueName.nigeria: Words.country.nigeria ,
+    leagueName.tunisia: Words.country.tunisia ,
     leagueName.marrocos: Words.country.morocco ,
     leagueName.africaSul: Words.country.southAfrica ,
 

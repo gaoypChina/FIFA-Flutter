@@ -128,8 +128,9 @@ Map<double,dynamic> zzzzzzzzz(String league) {
   Map leagueChampions = {};
 
   leagueChampions[leagueName.cazaquistao] = {
-    //2022.0: [],
-    2021.0: [_name.barcelona,],
+
+    2022.0: [],
+    2021.0: [_name.saintgilloise,],
     2020.0: [],
     2019.0: [],
     2018.0: [],
@@ -193,6 +194,7 @@ Map<double,dynamic> zzzzzzzzz(String league) {
     1960.0: [],
   };
   leagueChampions[leagueName.croacia] = {
+
   };
 
   return leagueChampions[league];
