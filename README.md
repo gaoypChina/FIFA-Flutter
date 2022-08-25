@@ -9,7 +9,7 @@
   
 ## Como Executar o projeto
 
-Você precisa ter o Flutter devidamente instalado no seu computador, depois disso: 
+Você precisa ter o Flutter devidamente instalado no seu computador, de preferencia com Android Studio, depois disso: 
 
 copie o projeto digiando no terminal:
 -git clone https://github.com/Marcos14Almeida/FIFA-Flutter/
