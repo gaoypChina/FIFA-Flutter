@@ -195,6 +195,7 @@ Map<double,dynamic> zzzzzzzzz(String league) {
   };
   leagueChampions[leagueName.croacia] = {
 
+
   };
 
   return leagueChampions[league];

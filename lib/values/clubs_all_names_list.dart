@@ -155,7 +155,7 @@ List clubsAllNameList = [
 
   ClubName().fcseoul,ClubName().beijingguoan,ClubName().persepolis,ClubName().ulsan,
   ClubName().melbournevictory,ClubName().sydneyFC,ClubName().alWahda,ClubName().alIttihad,
-  ClubName().alShabab,ClubName().cerezoOsaka,ClubName().gambaOsaka,
+  ClubName().alShabab,ClubName().cerezoOsaka,
 
   ClubName().alahly, ClubName().zamalek,ClubName().rajacasablanca,ClubName().wydad,
   ClubName().mamelodi,  ClubName().orlandopirates,  ClubName().kaizer,ClubName().esperance,

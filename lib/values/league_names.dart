@@ -36,6 +36,9 @@ class LeagueOfficialNames{
   String russia = 'Liga Russa';
   String ucrania = 'Liga Ucrania';
   String israel = 'Liga israel';
+  String romenia = 'Liga Romenia';
+  String bulgaria = 'Liga Bulgaria';
+  String hungria = 'Liga Hungara';
   String cazaquistao = 'Super Liga do Cazaquistão';
   String ligaEuropa = 'Liga Europeia';  String lesteEuropeu = 'Leste Europeu';
 
@@ -52,7 +55,7 @@ class LeagueOfficialNames{
   String peru = 'Campeonato peruano';
   String bolivia = 'Campeonato boliviano';
 
-  String mexico = 'Liga MX';String estadosUnidos = 'MLS';
+  String mexico = 'Liga MX';String estadosUnidos = 'MLS';String costaRica = 'Liga Costa Rica';
   String asia = 'Liga Ásia';  String orienteMedio = 'Liga Oriente Médio';  String africa = 'Liga África';
 
   String japao = 'J1-League';
@@ -102,6 +105,7 @@ class LeagueOfficialNames{
      austria,     suica,     polonia, repTcheca,
 
       servia,     croacia, israel,
+      romenia, bulgaria, hungria,
       russia, ucrania,     cazaquistao,
 
      brasil1, brasil2, brasil3,
@@ -109,7 +113,7 @@ class LeagueOfficialNames{
      uruguai,     paraguai,     chile,     peru,    bolivia,
      colombia, equador,     venezuela,
 
-     mexico, estadosUnidos,
+     mexico, estadosUnidos, costaRica,
 
      japao,     china,     coreiaSul,
      arabia,     eau,     qatar,     iran,
@@ -168,7 +172,7 @@ List leagueNames = [
   LeagueOfficialNames().brasil1,LeagueOfficialNames().brasil2,LeagueOfficialNames().brasil3,
   LeagueOfficialNames().paulistao,
   LeagueOfficialNames().argentina,LeagueOfficialNames().mercosul,LeagueOfficialNames().colombia,
-  LeagueOfficialNames().mexico,LeagueOfficialNames().estadosUnidos,
+  LeagueOfficialNames().mexico,LeagueOfficialNames().estadosUnidos,LeagueOfficialNames().costaRica,
   LeagueOfficialNames().asia,LeagueOfficialNames().orienteMedio,LeagueOfficialNames().africa,
   LeagueOfficialNames().outros,
 ];
@@ -293,6 +297,9 @@ Map getLeagueNationalityMap(){
     leagueName.ucrania: Words.country.ukraine,
     leagueName.servia: Words.country.serbia ,
     leagueName.croacia: Words.country.croatia ,
+    leagueName.romenia: Words.country.romania ,
+    leagueName.bulgaria: Words.country.bulgaria ,
+    leagueName.hungria: Words.country.hungary ,
     leagueName.israel: Words.country.israel ,
     leagueName.russia: Words.country.russia ,
     leagueName.cazaquistao: Words.country.kazakhstan ,
@@ -312,6 +319,7 @@ Map getLeagueNationalityMap(){
 
     leagueName.mexico: Words.country.mexico ,
     leagueName.estadosUnidos: Words.country.unitedStates,
+    leagueName.costaRica: Words.country.costaRica,
 
     leagueName.china: Words.country.china ,
     leagueName.coreiaSul: Words.country.southKorea ,

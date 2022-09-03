@@ -98,12 +98,12 @@ class _HistoricMenuState extends State<HistoricMenu> {
                                   (){Navigator.push(context,MaterialPageRoute(builder: (context) => const MyPlayersHistoric()));
                               }
                           ),
-                          box(
-                              'Melhores clubes da história',
-                              Image.asset('assets/clubs/generic.png',height: imageSize,),
-                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => const RankingBestClubsHistory()));
-                              }
-                          ),
+                          // box(
+                          //     'Melhores clubes da história',
+                          //     Image.asset('assets/clubs/generic.png',height: imageSize,),
+                          //         (){Navigator.push(context,MaterialPageRoute(builder: (context) => const RankingBestClubsHistory()));
+                          //     }
+                          // ),
 
                         ],
                       ),

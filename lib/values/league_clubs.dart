@@ -7,14 +7,14 @@ ClubName clubName = ClubName();
 /////////////
 //default teams
 List defaultChampionsLeagueClubs = [
-  clubName.manchestercity,clubName.liverpool,clubName.dortmund,clubName.brugge,
-  clubName.psg,clubName.atleticomadrid,clubName.rbsalzburg,clubName.celtic,
-  clubName.ajax,clubName.sevilla,clubName.sporting,clubName.rangers,
-  clubName.realmadrid,clubName.chelsea,clubName.inter,clubName.copenhague,
-  clubName.bayernmunique,clubName.tottenham,clubName.benfica,clubName.om,
-  clubName.eintrachtfrankfurt,clubName.barcelona,clubName.shaktardonetsk,clubName.maccabiHaifa,
-  clubName.milan,clubName.rbleipzig,clubName.napoli,clubName.viktoriaPlzen,
-  clubName.porto,clubName.juventus,clubName.leverkusen,clubName.dinamozagreb,
+  clubName.ajax,clubName.liverpool,clubName.napoli,clubName.rangers,
+  clubName.porto,clubName.atleticomadrid,clubName.leverkusen,clubName.brugge,
+  clubName.bayernmunique,clubName.barcelona,clubName.inter,clubName.viktoriaPlzen,
+  clubName.eintrachtfrankfurt,clubName.tottenham,clubName.sporting,clubName.om,
+  clubName.milan,clubName.chelsea,clubName.rbsalzburg,clubName.dinamozagreb,
+  clubName.realmadrid,clubName.rbleipzig,clubName.shaktardonetsk,clubName.celtic,
+  clubName.manchestercity,clubName.sevilla,clubName.dortmund,clubName.copenhague,
+  clubName.psg,clubName.juventus,clubName.benfica,clubName.maccabiHaifa,
 ];
 List defaultLibertadoresClubs = [
   clubName.palmeiras,clubName.tachira,clubName.emelec,clubName.monterrey,
@@ -25,6 +25,26 @@ List defaultLibertadoresClubs = [
   clubName.riverplate,clubName.fortaleza,clubName.colocolo,clubName.alianzalima,
   clubName.colon,clubName.penarol,clubName.cerroporteno,clubName.olimpia,
   clubName.flamengo,clubName.univcatolica,clubName.talleres,clubName.sportingcristal,
+];
+List defaultEuropaLeagueClubs = [
+  clubName.roma,clubName.feyenoord,clubName.sheriffTiraspol,clubName.nantes,
+  clubName.manchesterunited,clubName.psv,clubName.realbetis,clubName.helsinki,
+  clubName.arsenal,clubName.rennes,clubName.midtjylland,clubName.sturmGraz,
+  clubName.lazio,clubName.monaco,clubName.glimt,clubName.aeklarnaca,
+  clubName.braga,clubName.realsociedad,clubName.ferencvaros,clubName.omonia,
+  clubName.estrelavermelha,clubName.qarabag,clubName.unionBerlin,clubName.zurich,
+  clubName.dinamokiev,clubName.malmo,clubName.freiburg,clubName.saintgilloise,
+  clubName.olympiacos,clubName.ludogorets,clubName.fenerbahce,clubName.trabzonspor,
+];
+List defaultSulAmericanaClubs = [
+  clubName.lanus,clubName.barcelonaequ,clubName.montWanderers,clubName.metropolitanos,
+  clubName.melgar,clubName.racing,clubName.cuiaba,clubName.riverURU,
+  clubName.santos,clubName.laCalera,clubName.uniequ,clubName.banfield,
+  clubName.saopaulo,clubName.evertonchi,clubName.ayacucho,clubName.jorge,
+  clubName.internacional,clubName.guairena,clubName.imedellin,clubName.octubre9,
+  clubName.atleticogo,clubName.ldu,clubName.antofagasta,clubName.defensayjusticia,
+  clubName.ceara,clubName.independiente,clubName.generalCaballero,clubName.laGuaira,
+  clubName.unionSantaFe,clubName.fluminense,clubName.junior,clubName.orientePetrolero,
 ];
 
 ///////////////////////////////////////////////////////////
