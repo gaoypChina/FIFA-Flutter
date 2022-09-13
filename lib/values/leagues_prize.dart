@@ -29,7 +29,7 @@ void premiacao(){
     else if(leagueName==LeagueOfficialNames().brasil2){premio=0.7;}//serie b
     else if(leagueName==LeagueOfficialNames().brasil3){premio=0.7;}//serie c
     else if(leagueName==LeagueOfficialNames().argentina){premio=1.1;}//argentina
-    else if(leagueName==LeagueOfficialNames().sulamericano){premio=1.0;}//sulamerica
+    else if(leagueName==LeagueOfficialNames().mercosul){premio=1.0;}//sulamerica
     else if(leagueName==LeagueOfficialNames().colombia){premio=1.1;}//colombia
     else if(leagueName==LeagueOfficialNames().mexico){premio=1.3;}//mexico
     else if(leagueName==LeagueOfficialNames().estadosUnidos){premio=1.4;}//mls

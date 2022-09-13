@@ -181,7 +181,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                 }
                 setState(() {});
               },
-              child: Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().championsLeague),width: 50,height: 50)
+              child: Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().championsLeague),color: Colors.black, width: 50,height: 50)
           ): GestureDetector(
               onTap: (){
                 leagueInternational = LeagueOfficialNames().championsLeague;

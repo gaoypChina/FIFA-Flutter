@@ -511,6 +511,7 @@ class ClubName{
   //BÉLGICA
   String anderlecht = "Anderlecht";
   String beringen = "Beringen";
+  String berchem = "Berchem Sport";
   String beerschot = "Beerschot";
   String brugge = "Brugge";
   String genk = "Genk";
@@ -518,11 +519,13 @@ class ClubName{
   String beveren = "Beveren";
   String charleroi = "Charleroi";
   String cerclebrugge = "Cercle Brugge";
+  String daring = "	Daring Club Bruxelles";
+  String diest = "Diest";
   String eendrachtAalst = "Eendracht Aalst";
   String kaseupen = "KAS Eupen";
   String kortrijk = "KV Kortrijk";
   String leuven = "Leuven";
-  String liegeois = "Liegeois";
+  String liegeois = "Royal FC de Liège";
   String lierse = "Lierse";
   String lokeren = "Lokeren";
   String mechelen = "Mechelen";
@@ -534,8 +537,12 @@ class ClubName{
   String seraing = "RFC Seraing"; //EXTINTO
   String standardliege = "Standard Liege";
   String sttruidense = "St. Truidense";
+  String tilleur = "Tilleur-Saint-Nicolas";
+  String tongeren = "Tongeren";
   String waregemKSV = "KSV waregem"; //EXTINTO 1925-2001
+  String waterschei = "Waterschei";
   String westerlo = "Westerlo";
+  String winterslag = "Winterslag";
   String zulteWaregem = "Zulte Waregem";
 
   //ESCÓCIA
@@ -643,6 +650,7 @@ class ClubName{
   String herfolge = "Herfølge";
   String holbaek = "Holbaek";
   String horsens = "Horsens";
+  String hobro = "Hobro";
   String hvidovre = "Hvidovre";
   String ikast = "Ikast FS";
   String koge = "Koge";
@@ -653,6 +661,7 @@ class ClubName{
   String randers = "Randers";
   String silkeborg = "Silkeborg";
   String sonderjysk = "SønderjyskE";
+  String vestjaelland = "Vestsjælland";
   String vejle = "Vejle";
   String viborg = "Viborg";
   String ab = "AB";
@@ -706,19 +715,36 @@ class ClubName{
   //SUIÇA
   String aarau = "Aarau";
   String basel = "Basel";
+  String baden = "Baden";
+  String bellinzona = "Bellinzona";
+  String bielBienne = "Biel-Bienne";
+  String bulle = "Bulle";
   String chauxdefonds = "Chaux-de-Fonds";
+  String chenois = "Chênois";
+  String chiasso = "Chiasso";
+  String delemont = "Delémont";
+  String fribourg = "Fribourg";
   String grasshoppers = "Grasshoppers";
+  String grenchen = "Grenchen";
+  String kriens = "Kriens";
   String lausanne = "Lausanne";
   String lugano = "Lugano";
   String luzern = "Luzern";
   String neuchatel = "Neuchâtel Xamax";
+  String nordsternBasel = "Nordstern Basel";
+  String schaffhausen = "Schaffhausen";
   String servette = "Servette";
   String sion = "Sion";
   String stgallen = "St. Gallen";
   String thun = "FC Thun";
+  String vevey = "Vevey";
+  String wettingen = "Wettingen";
   String wil = "Wil";
   String winterthur = "Winterthur";
+  String yverdon = "Yverdon-Sport";
   String youngBoys = "Young Boys";
+  String youngFellows = "Young Fellows Zurich";
+  String zug = "Zug";
   String zurich = "Zurich";
   //POLONIA
   String amica = "Amica Wronki";
@@ -1079,22 +1105,26 @@ class ClubName{
   String kaposvar = "Kaposvár";
   String kecskemet = "Kecskemét";
   String kisvarda = "Kisvárda";
+  String komloiBanyasz = "Komlói Bányász";
   String mezokovesd = "Mezőkövesd";
-  String nyiregyhaza = "Nyíregyháza";
   String mtk = "MTK";
+  String nyiregyhaza = "Nyíregyháza";
+  String ozdiKohasz = "Ózdi Kohász";
   String papa = "Pápa";
   String paks = "Paks";
   String pecsi = "Pecsi";
   String rakospalota = "Rákospalota";
+  String salgotarjani = "Salgótarjáni";
   String siofok = "Siófok";
   String sopron = "Sopron";
+  String szegedi = "Szegedi";
   String szolnok = "Szolnok";
+  String szombathely = "Szombathely";
   String tatabanya = "Tatabánya";
   String vasas = "Vasas";
   String vasutas = "Vasutas";
+  String vorosMeteor = "Vörös Meteor Egyetértés";
   String vac = "Vác";
-  String salgortajan = "Salgótarján";
-  String szombathely = "Szombathely";
   String ujpest = "Ujpest";
   String puskas = "Puskás Akadémia FC";
   String zalaegerszeg = "Zalaegerszeg";
@@ -1673,6 +1703,7 @@ class ClubName{
   String laequidad = "La Equidad";
   String patriotas = "Patriotas";
   String pereira = "Deportivo Pereira";
+  String quindio = "Deportes Quindio";
   String rioNegroAguilas = "Rio Negro Aguilas";
   String uMagdalena = "Unión Magdalena";
 

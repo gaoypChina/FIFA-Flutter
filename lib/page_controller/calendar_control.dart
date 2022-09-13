@@ -55,6 +55,8 @@ class ResultGameNacional{
       backgroundBasedOnResult(gol1,gol2);
 
 
+    }else{
+      exists = false;
     }
 
     if(league.nClubs<=rodadaLocal){

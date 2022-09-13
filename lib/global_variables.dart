@@ -34,8 +34,8 @@ bool globalRandomizePlayers = false;
 double globalInitialMoney = 0;
 
 int globalDificuldade = 2; //2-> médio
-int anoInicial = 2022; //ano fixo para contas
-int ano = 2022;
+int anoInicial = 2023; //ano fixo para contas
+int ano = 2023;
 int semana = 1, rodada = 1;
 int globalNMaxRodadasNacional = globalLeagueIdaVolta ? 38 : 19;
 late int posicao;

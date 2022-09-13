@@ -2,6 +2,7 @@ import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/historic.dart';
 import 'package:fifa/classes/historic_champions_league.dart';
+import 'package:fifa/functions/countries_continents.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/historic_champions.dart';
 import 'package:fifa/values/league_divisions.dart';
@@ -43,7 +44,19 @@ class DataGraphics{
   //TOTAL
   double pointsTotal = 0;
 
-  getDataNotPlayabale(String clubName, String leagueName, String internationalLeagueName){
+  getDataNotPlayabale(String clubName, String country){
+    //GET LEAGUE NAME
+    late String leagueName;
+    Map leagueNationality = getLeagueNationalityMap();
+    leagueNationality.forEach((key, value) {
+      if(value==country){
+        leagueName = key;
+      }
+    });
+    //GET CONTINENT NAME
+    String continent = Continents().funcCountryContinents(country);
+
+    String internationalLeagueName = getInternationalLeagueFromContinent(continent);
 
     //historico de campeoes ligas
     defineHistoricClassification(clubName,leagueName);

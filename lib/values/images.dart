@@ -31,7 +31,7 @@ class FIFAImages{
     if(leagueName==LeagueOfficialNames().brasil3) {     imageLogo = 'brasilseriec';}
     if(leagueName==LeagueOfficialNames().paulistao) {     imageLogo = 'brasileirao';}
     if(leagueName==LeagueOfficialNames().argentina) {      imageLogo = 'argentina';}
-    if(leagueName==LeagueOfficialNames().sulamericano) {      imageLogo = 'sulamericana';    }
+    if(leagueName==LeagueOfficialNames().mercosul) {      imageLogo = 'mercosul'; }
     if(leagueName==LeagueOfficialNames().colombia) {      imageLogo = 'colombia';       }
     if(leagueName==LeagueOfficialNames().mexico) {      imageLogo = 'mexico';       }
     if(leagueName==LeagueOfficialNames().estadosUnidos) {      imageLogo = 'mls';     }
@@ -43,7 +43,7 @@ class FIFAImages{
     if(leagueName==LeagueOfficialNames().libertadores) {      imageLogo = 'libertadores'; }
     if(leagueName==LeagueOfficialNames().ligaEuropa) {      imageLogo = 'europaleague'; }
     if(leagueName==LeagueOfficialNames().concacaf) {      imageLogo = 'concacaf'; }
-    if(leagueName==LeagueOfficialNames().mercosul) {      imageLogo = 'mercosul'; }
+    if(leagueName==LeagueOfficialNames().sulamericano) {      imageLogo = 'sulamericana';    }
     if(leagueName==LeagueOfficialNames().resto) {      imageLogo = 'rest';       }
     if(leagueName==LeagueOfficialNames().mundial) {      imageLogo = 'mundial';       }
 

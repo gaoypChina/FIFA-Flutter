@@ -22,7 +22,7 @@ getTrophyImage(String leagueName){
   if(leagueName == LeagueOfficialNames().brasil2){trophyName = 'trophy2division';}
   if(leagueName == LeagueOfficialNames().brasil3){trophyName = 'trophy2division';}
   if(leagueName == LeagueOfficialNames().argentina){trophyName = 'trophyargentina';}
-  if(leagueName == LeagueOfficialNames().sulamericano){trophyName = 'trophysulamericana';}
+  if(leagueName == LeagueOfficialNames().mercosul){trophyName = 'trophysulamericana';}
   if(leagueName == LeagueOfficialNames().colombia){trophyName = 'trophyliga';}
   if(leagueName == LeagueOfficialNames().mexico){trophyName = 'trophymexico';}
   if(leagueName == LeagueOfficialNames().estadosUnidos){trophyName = 'trophymls';}

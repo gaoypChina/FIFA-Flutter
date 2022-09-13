@@ -1,4 +1,5 @@
 import 'package:fifa/classes/words.dart';
+import 'package:fifa/functions/countries_continents.dart';
 
 class LeagueOfficialNames{
   final String championsLeague = 'Champions League';
@@ -125,16 +126,34 @@ class LeagueOfficialNames{
 }
 
 getInternationalLeagueNumber(String internationalLeague){
-  if(internationalLeague == LeagueOfficialNames().championsLeague){
+  LeagueOfficialNames leagueOfficialNames =  LeagueOfficialNames();
+  if(internationalLeague == leagueOfficialNames.championsLeague){
     return 0;
   }
-  if(internationalLeague == LeagueOfficialNames().libertadores){
+  else if(internationalLeague == leagueOfficialNames.libertadores){
     return 1;
   }
-  if(internationalLeague == LeagueOfficialNames().resto){
+  else if(internationalLeague == leagueOfficialNames.resto){
     return 2;
   }
   return -1;
+}
+
+getInternationalLeagueFromContinent(String continent){
+  String internationalLeague = LeagueOfficialNames().championsLeague;
+  if(continent==Continents().americaSul){
+    internationalLeague = LeagueOfficialNames().libertadores;
+  }
+  else if(continent==Continents().americaNorte){
+    internationalLeague = LeagueOfficialNames().concacaf;
+  }
+  else if(continent==Continents().africa){
+    internationalLeague = LeagueOfficialNames().africa;
+  }
+  else if(continent==Continents().asia){
+    internationalLeague = LeagueOfficialNames().asia;
+  }
+  return internationalLeague;
 }
 
 List internationalLeagueNames = [LeagueOfficialNames().championsLeague,LeagueOfficialNames().libertadores];

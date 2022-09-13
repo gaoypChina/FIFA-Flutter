@@ -6,16 +6,18 @@ ClubName clubName = ClubName();
 
 /////////////
 //default teams
+//Esses times tem que ser jogaveis
 List defaultChampionsLeagueClubs = [
   clubName.ajax,clubName.liverpool,clubName.napoli,clubName.rangers,
   clubName.porto,clubName.atleticomadrid,clubName.leverkusen,clubName.brugge,
-  clubName.bayernmunique,clubName.barcelona,clubName.inter,clubName.viktoriaPlzen,
+  clubName.bayernmunique,clubName.barcelona,clubName.inter,clubName.slaviaPraha,
   clubName.eintrachtfrankfurt,clubName.tottenham,clubName.sporting,clubName.om,
   clubName.milan,clubName.chelsea,clubName.rbsalzburg,clubName.dinamozagreb,
   clubName.realmadrid,clubName.rbleipzig,clubName.shaktardonetsk,clubName.celtic,
   clubName.manchestercity,clubName.sevilla,clubName.dortmund,clubName.copenhague,
-  clubName.psg,clubName.juventus,clubName.benfica,clubName.maccabiHaifa,
+  clubName.psg,clubName.juventus,clubName.benfica,clubName.maccabiTelAviv,
 ];
+
 List defaultLibertadoresClubs = [
   clubName.palmeiras,clubName.tachira,clubName.emelec,clubName.monterrey,
   clubName.atleticopr,clubName.bolivar,clubName.caracas,clubName.libertad,

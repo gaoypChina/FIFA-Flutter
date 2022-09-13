@@ -135,7 +135,7 @@ class FimDoCampeonatoLocal{
       globalInternational32ClubsID[indexLibertadores][13] = clubIndexes[4];
       globalInternational32ClubsID[indexLibertadores][9] = clubIndexes[5];
     }
-    if(leagueClass.name == LeagueOfficialNames().sulamericano){
+    if(leagueClass.name == LeagueOfficialNames().mercosul){
       globalInternational32ClubsID[indexLibertadores][29] = clubIndexes[0];
       globalInternational32ClubsID[indexLibertadores][25] = clubIndexes[1];
       globalInternational32ClubsID[indexLibertadores][5] = clubIndexes[2];

@@ -5,7 +5,6 @@ import 'package:fifa/pages/historic/international_historic.dart';
 import 'package:fifa/pages/historic/leagues_historic.dart';
 import 'package:fifa/pages/historic/my_players_historic.dart';
 import 'package:fifa/pages/historic/players_historic.dart';
-import 'package:fifa/pages/historic/ranking_best_clubs_history.dart';
 import 'package:fifa/pages/historic/mundial.dart';
 import 'package:fifa/pages/historic/year_resume.dart';
 import 'package:fifa/pages/map/map_exploration.dart';

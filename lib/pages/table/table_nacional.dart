@@ -27,6 +27,7 @@ class _TableNacionalState extends State<TableNacional> {
 
   late int choosenLeagueIndex;
   int rodadaMatch = League(index: My().campeonatoID).nClubs-1;
+  Map leaguesMap = {};
 
   int choosenIcon = 1;
 ////////////////////////////////////////////////////////////////////////////
@@ -44,6 +45,14 @@ class _TableNacionalState extends State<TableNacional> {
     if(rodada < League(index: My().campeonatoID).nClubs-1){
       rodadaMatch = rodada;
     }
+
+    //GET LEAGUES CLASSES
+    for(int i=0;i<leaguesListRealIndex.length;i++){
+      int leagueID = leaguesListRealIndex[i];
+      leaguesMap[leagueID] = League(index: leagueID);
+    }
+
+
     setState(() {});
   }
 ////////////////////////////////////////////////////////////////////////////
@@ -51,7 +60,7 @@ class _TableNacionalState extends State<TableNacional> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    String leagueName = League(index: choosenLeagueIndex).getName();
+    String leagueName = leaguesMap[choosenLeagueIndex].getName();
 
     return Scaffold(
         body:  Stack(
@@ -199,7 +208,7 @@ class _TableNacionalState extends State<TableNacional> {
  }
   Widget leagueRow(int league){
     int leagueID = leaguesListRealIndex[league];
-    String leagueName = League(index: leagueID).getName();
+    String leagueName = leaguesMap[leagueID].getName();
     return GestureDetector(
       onTap: (){
         choosenLeagueIndex = leagueID;
@@ -222,7 +231,7 @@ class _TableNacionalState extends State<TableNacional> {
 
 Widget matchsWidget(){
 
-  League choosenLeagueClass = League(index: choosenLeagueIndex);
+  League choosenLeagueClass = leaguesMap[choosenLeagueIndex];
   if(rodadaMatch>=choosenLeagueClass.nClubs-1){
     rodadaMatch = choosenLeagueClass.nClubs-1;
   }
@@ -265,7 +274,7 @@ Widget matchsWidget(){
               ? const {0: FractionColumnWidth(.36),6: FractionColumnWidth(.36)}
               : const {0: FractionColumnWidth(.36),2: FractionColumnWidth(.0),4: FractionColumnWidth(.0),6: FractionColumnWidth(.36)},
           children: [
-            for(int i=0; i<(League(index:choosenLeagueIndex).getNTeams()/2);i++)
+            for(int i=0; i<(leaguesMap[choosenLeagueIndex].getNTeams()/2);i++)
               rowMatches(i*2),
           ],
         ),
@@ -278,7 +287,7 @@ Widget matchsWidget(){
   TableRow rowMatches(int numeroDoConfronto) {
     List chave = Chaves().obterChave(rodadaMatch, choosenLeagueIndex);
     int chaveClub1 = chave[numeroDoConfronto];
-    League leagueClass = League(index: choosenLeagueIndex);
+    League leagueClass = leaguesMap[choosenLeagueIndex];
     String teamName1 = leagueClass.getClubName(chaveClub1);
     int chaveClub2 = Chaves().chaveIndexAdvCampeonato(rodadaMatch, choosenLeagueIndex, chaveClub1)[0];
     String teamName2 = leagueClass.getClubName(chaveClub2);
@@ -319,7 +328,7 @@ Widget matchsWidget(){
     List copyVariableList = [];
     List leaguePlayers = [];
 
-    List clubsInLeague = League(index: leagueID).getClassification();
+    List clubsInLeague = leaguesMap[leagueID].getClassification();
     for(int index=0; index<globalJogadoresClubIndex.length; index++){
       if(clubsInLeague.contains(globalJogadoresClubIndex[index])){
         try {// Na 1ªrodada pode dar pau, pq a lista nao foi criada
