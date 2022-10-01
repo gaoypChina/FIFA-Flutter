@@ -12,7 +12,7 @@ import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
-import 'package:fifa/values/historic_champions.dart';
+import 'package:fifa/values/historic_champions/historic_champions.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/back_button.dart';

@@ -13,7 +13,7 @@ import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 
-import '../../values/historic_champions.dart';
+import '../../values/historic_champions/historic_champions.dart';
 
 class HistoricLeague extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS

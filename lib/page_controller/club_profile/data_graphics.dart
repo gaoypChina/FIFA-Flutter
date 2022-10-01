@@ -4,7 +4,7 @@ import 'package:fifa/classes/historic.dart';
 import 'package:fifa/classes/historic_champions_league.dart';
 import 'package:fifa/functions/countries_continents.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/values/historic_champions.dart';
+import 'package:fifa/values/historic_champions/historic_champions.dart';
 import 'package:fifa/values/league_divisions.dart';
 import 'package:fifa/values/league_names.dart';
 

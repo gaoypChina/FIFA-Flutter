@@ -44,7 +44,10 @@ class LeagueOfficialNames{
   String ligaEuropa = 'Liga Europeia';  String lesteEuropeu = 'Leste Europeu';
 
   String brasil1 = 'Brasileirão';  String brasil2 = 'Brasileirão - Série B';String brasil3 = 'Brasileirão - Série C';
-  String paulistao = 'Paulistão';
+  String paulistao = 'Paulistão'; String carioca = 'Carioca'; String mineiro = 'Mineiro';
+  String gaucho = 'Gaucho'; String parana = 'Paranaense'; String santacatarina = 'Santa Catarina';
+  String bahia = 'Bahiano';   String pernambuco = 'Pernambucano'; String ceara = 'Cearense';
+  String goias = 'Goias';
   String argentina = 'Campeonato Argentino';String sulamericano = 'Sul-Americano';
   String mercosul = 'Mercosul';
   String colombia = 'Merconorte';
@@ -120,7 +123,7 @@ class LeagueOfficialNames{
      arabia,     eau,     qatar,     iran,
      australia, india, tailandia,
 
-     egito,     marrocos,     africaSul,
+     egito,     marrocos,     tunisia, africaSul,
     ];
   }
 }

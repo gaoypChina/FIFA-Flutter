@@ -1776,6 +1776,8 @@ class ClubDetails{
       'Jonas Duarte',20000,1948,_country.brazil,50.0,[]];
     map[_name.aparecidense] = [ClubColors(darkblue,Colors.white),pattern.solid,Coordinates(-16.81970, -49.245532),
       'Anníbal Batista de Toledo',5000,1985,_country.brazil,50.0,[]];
+    map[_name.asa] = [ClubColors(Colors.black,Colors.white),pattern.stripes3,Coordinates(-9.7474835, -36.66681596),
+      'Fumeirão',15000,1952,_country.brazil,50.0,[]];
     map[_name.atleticoAC] = [ClubColors(Colors.white,Colors.blue),pattern.oneHorStripe,Coordinates(-10.0021, -67.8041498),
       'Arena da Floresta',13700,1952,_country.brazil,50.0,[]];
     map[_name.atleticoCE] = [ClubColors(Colors.red,Colors.black),pattern.horStripes3,Coordinates(-3.745500, -38.5373544),
