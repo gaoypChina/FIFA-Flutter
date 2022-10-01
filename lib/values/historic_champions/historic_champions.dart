@@ -5,7 +5,6 @@ import 'package:fifa/values/historic_champions/europa.dart';
 import 'package:fifa/values/historic_champions/europa_top_leagues.dart';
 import 'package:fifa/values/historic_champions/internationals.dart';
 
-
   Map<double,dynamic> mapChampions(String league){
 
     if(mapEuropa[league] != null){

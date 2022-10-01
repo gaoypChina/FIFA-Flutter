@@ -122,13 +122,11 @@ import 'package:fifa/values/club_names.dart';
 import 'package:fifa/values/league_names.dart';
 
 
-Map<double,dynamic> zzzzzzzzz(String league) {
-  ClubName _name = ClubName();
-  LeagueOfficialNames leagueName = LeagueOfficialNames();
-  Map leagueChampions = {};
+ClubName _name = ClubName();
+LeagueOfficialNames leagueName = LeagueOfficialNames();
+Map<String,dynamic> zzzzzzzzz = {
 
-  leagueChampions[leagueName.cazaquistao] = {
-
+  leagueName.cazaquistao : {
     2022.0: [],
     2021.0: [_name.roma],
     2020.0: [],
@@ -192,11 +190,11 @@ Map<double,dynamic> zzzzzzzzz(String league) {
     1962.0: [],
     1961.0: [],
     1960.0: [],
-  };
+  },
 
-  leagueChampions[leagueName.tunisia] = {
+
+leagueName.cazaquistao : {
+
+}
 
 };
-
-  return leagueChampions[league];
-}

@@ -2,12 +2,11 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/historic.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
+import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
-import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
-import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/back_button.dart';
@@ -26,14 +25,15 @@ class HistoricLeague extends StatefulWidget {
 class _HistoricLeagueState extends State<HistoricLeague> {
   late Map<double,dynamic> results;
   late int choosenLeagueIndex;
-  late League league;
-  int nTeamsSelected = 2;
+  late String choosenLeagueName;
+  int nTeamsSelected = 1;
   ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
     choosenLeagueIndex = widget.choosenLeagueIndex;
+    choosenLeagueName = League(index: choosenLeagueIndex).getName();
     super.initState();
   }
 ////////////////////////////////////////////////////////////////////////////
@@ -41,8 +41,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    league = League(index: choosenLeagueIndex);
-    results = mapChampions(league.name);
+    results = mapChampions(choosenLeagueName);
 
     return Scaffold(
         body:  Container(
@@ -65,6 +64,19 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                   ],
                 ),
               ),
+
+              nTeamsSelected == 1 ? Column(
+                children: [
+                  for(int i = 1960; i<anoInicial;i+=10)
+                    Row(
+                      children: [
+                        Text(i.toString(),style: EstiloTextoBranco.text14,),
+                        rowChampions(i),
+                        Text((i+9).toString(),style: EstiloTextoBranco.text14,),
+                      ],
+                    )
+                ],
+              ) : Container(),
 
               //TABELA
               Expanded(
@@ -101,7 +113,9 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                 child: Row(
                   children: [
                       for(int i=0;i<leaguesListRealIndex.length;i++)
-                        leagueSelectionRow(i)
+                        leagueSelectionRow(i),
+                    for(String leagueName in LeagueOfficialNames().getAllLeagueNames())
+                      leagueHistoric(leagueName)
                   ],
                 ),
               ),
@@ -137,9 +151,13 @@ class _HistoricLeagueState extends State<HistoricLeague> {
 
   Widget yearRow(int year){
     int nRows = nTeamsSelected;
+
+    League league = League(index: choosenLeagueIndex);
+    results = mapChampions(league.name);
     if(league.nClubs < nTeamsSelected){
       nRows = league.nClubs;
     }
+
     return Column(
       children: [
         Text(year.toString(),style: EstiloTextoBranco.negrito16),
@@ -151,7 +169,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
     );
   }
   Widget validacaoSimulation(int year, int position){
-    List classification = HistoricFunctions().funcHistoricListAll(year, league.name);
+    List classification = HistoricFunctions().funcHistoricListAll(year, choosenLeagueName);
     int clubID = classification[position];
 
     Club club = Club(index: clubID);
@@ -214,25 +232,62 @@ class _HistoricLeagueState extends State<HistoricLeague> {
     return GestureDetector(
       onTap: (){
         choosenLeagueIndex = leagueID;
+        choosenLeagueName = leagueName;
         setState(() {});
       },
       child: Container(
         padding: const EdgeInsets.all(2),
-        color: choosenLeagueIndex == leagueID ? Colors.redAccent: Colors.white54,
+        color: choosenLeagueName == leagueName ? Colors.redAccent: Colors.white54,
         child: Image.asset(FIFAImages().campeonatoLogo(leagueName),height: 50,width: 50,),
       ),
     );
   }
 
 
+  rowChampions(int year){
+    return Expanded(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          for(int i=0;i<10;i++)
+            rowChampionsImage(year+i)
+        ],
+      ),
+    );
+  }
+  rowChampionsImage(int year){
+    try{
+      List yearData = results[year.toDouble()];
+      String clubName = yearData[0];
+      return Images().getEscudoWidget(clubName,24,24);
+    }catch(e){
+      return Container(width: 24);
+    }
+  }
+
+
+  Widget leagueHistoric(String leagueName) {
+    return GestureDetector(
+      onTap: (){
+        choosenLeagueName = leagueName;
+        setState(() {});
+      },
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 9),
+        color: choosenLeagueName == leagueName ? Colors.redAccent: Colors.white54,
+        child: funcFlagsList(getCountryFromLeague(leagueName), 35, 50),
+      ),
+    );
+  }
+
   ////////////////////////////////////////////////////////////////////////////
   clickClub(String clubName){
-    if(clubsAllNameList.contains(clubName)){
-      int clubID = clubsAllNameList.indexOf(clubName);
-      Navigator.push(context, MaterialPageRoute(builder: (context) => ClubProfile(clubID: clubID)));
-    }else{
+    //if(clubsAllNameList.contains(clubName)){
+    //  int clubID = clubsAllNameList.indexOf(clubName);
+    //  Navigator.push(context, MaterialPageRoute(builder: (context) => ClubProfile(clubID: clubID)));
+    //}else{
       Navigator.push(context, MaterialPageRoute(builder: (context) => ClubProfileNotPlayable(clubName: clubName)));
-    }
+    //}
   }
 
 }

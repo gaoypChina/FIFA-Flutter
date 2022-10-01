@@ -23,6 +23,7 @@ class LeagueOfficialNames{
   String holanda = 'Eredivisie';
   String escocia = 'Scottish Premiership';
   String belgica = 'Jupiler Pro League';
+  String irlanda = 'Liga irlanda';
   String suecia = 'Allsvenskan Sweden';
   String dinamarca = 'Superliga Dinamarquesa';
   String noruega = 'Liga Norueguesa';
@@ -104,7 +105,7 @@ class LeagueOfficialNames{
      portugal,
 
      turquiaGrecia,     grecia,
-     holanda ,     escocia,     belgica,
+     holanda ,     escocia,     belgica, irlanda,
      suecia,     dinamarca,     noruega,     finlandia,
      austria,     suica,     polonia, repTcheca,
 
@@ -123,7 +124,7 @@ class LeagueOfficialNames{
      arabia,     eau,     qatar,     iran,
      australia, india, tailandia,
 
-     egito,     marrocos,     tunisia, africaSul,
+     egito,     marrocos,     tunisia, africaSul, nigeria,
     ];
   }
 }
@@ -305,6 +306,7 @@ Map getLeagueNationalityMap(){
     leagueName.portugal: Words.country.portugal,
     leagueName.holanda: Words.country.netherlands ,
     leagueName.belgica: Words.country.belgium ,
+    leagueName.irlanda: Words.country.ireland ,
     leagueName.escocia: Words.country.scotland ,
     leagueName.suica: Words.country.switzerland ,
     leagueName.austria: Words.country.austria ,

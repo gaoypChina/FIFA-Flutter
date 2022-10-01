@@ -450,7 +450,7 @@ Map<String,dynamic> mapInternationals = {
 
 
   leagueName.sulamericano : {
-    //2022.0: [_name.saopaulo,_name.idelvalle,_name.melgar,_name.atleticogo,         _name.tachira,_name.nacional,_name.ceara,_name.nacional,               _name.lanus,_name.santos,_name.colocolo,_name.deportivocali,_name.unionSantaFe,_name.olimpia,_name.univcatolica,_name.theStrongest],
+    2022.0: [_name.saopaulo,_name.idelvalle,_name.melgar,_name.atleticogo,         _name.tachira,_name.nacional,_name.ceara,_name.nacional,               _name.lanus,_name.santos,_name.colocolo,_name.deportivocali,_name.unionSantaFe,_name.olimpia,_name.univcatolica,_name.theStrongest],
     2021.0: [_name.atleticopr,_name.bragantino,_name.penarol,_name.libertad,         _name.ldu,_name.rosariocentral,_name.sportingcristal,_name.santos,     _name.americadecali,_name.idelvalle,_name.nacional,_name.junior,_name.arsenalsarandi,_name.gremio,_name.tachira,_name.independiente],
     2020.0: [_name.defensayjusticia,_name.lanus,_name.coquimbo,_name.velez,          _name.bahia,_name.independiente,_name.junior,_name.univcatolica,       _name.vasco,_name.bolivar,_name.deportivocali,_name.riverURU,_name.fenix,_name.laCalera,_name.huancayo,_name.unionSantaFe,                  ],
     2019.0: [_name.idelvalle,_name.colon,_name.corinthians,_name.atleticomg,         _name.independiente,_name.zulia,_name.fluminense,_name.laequidad,      _name.caracas,_name.argentinojuniors,_name.montWanderers,_name.penarol,_name.univcatolica,_name.sportingcristal,_name.botafogo,_name.royalpari],

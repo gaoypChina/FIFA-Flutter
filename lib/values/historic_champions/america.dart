@@ -739,6 +739,7 @@ Map<String,dynamic> mapAmerica = {
   ///////////////////////////////////////////////////////////////
   leagueName.mexico : {
     //APERTURA
+    2022.0: [],
     2021.0: [_name.atlas,_name.leon,_name.pumas,_name.tigres,                       _name.americamex,_name.santosLaguna,_name.toluca,_name.puebla,_name.cruzazul,_name.monterrey,     _name.chivas,_name.sanluis,_name.mazatlan,_name.necaxa,_name.pachuca,_name.juarez,_name.queretaro,_name.tijuana],
     2020.0: [_name.leon,_name.pumas,_name.chivas,_name.cruzazul,                    _name.americamex,_name.monterrey,_name.tigres,_name.santosLaguna,_name.pachuca,_name.necaxa,      _name.toluca,_name.puebla,_name.juarez,_name.mazatlan,_name.tijuana,_name.atlas,_name.queretaro,_name.sanluis],
     2019.0: [_name.monterrey,_name.americamex,_name.necaxa,_name.morelia,           _name.santosLaguna,_name.leon,_name.tigres,_name.queretaro,_name.pachuca,_name.chivas,            _name.tijuana,_name.cruzazul,_name.pumas,_name.atlas,_name.sanluis,_name.juarez,_name.toluca,_name.puebla,_name.veracruz],

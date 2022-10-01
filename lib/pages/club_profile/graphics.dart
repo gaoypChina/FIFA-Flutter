@@ -80,7 +80,9 @@ class _ClubGraphicsState extends State<ClubGraphics> {
       scrollDirection: Axis.horizontal,
       child: Container(
         height: 260,
-        width: dataGraphics.dataInternational.length * 23 + 50,
+        width: dataGraphics.dataInternational.length > dataGraphics.data.length
+            ? dataGraphics.dataInternational.length * 23 + 50
+            : dataGraphics.data.length * 23 + 50,
         color: AppColors().greyTransparent,
         child: SfCartesianChart(
           tooltipBehavior: _tooltipBehavior,
