@@ -945,6 +945,8 @@ class ClubDetails{
       'Oriel Park',13600,1919,_country.ireland,67.1,[]];
     map[_name.shamrock] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(53.28363777, -6.373458012),
       'Estádio de Tallaght',6000,1899,_country.ireland,67.4,[]];
+    map[_name.shellbourne] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(53.3674709, -6.2518031),
+      'Tolka Park',9681,1895,_country.ireland,58.7,[]];
     map[_name.sligo] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(54.27006, -8.487299),
       'Showgrounds',5500,1926,_country.ireland,60.4,[]];
     map[_name.stpatricks] = [ClubColors(Colors.red,Colors.white),pattern.sleeves,Coordinates(53.341094, -6.3167397),

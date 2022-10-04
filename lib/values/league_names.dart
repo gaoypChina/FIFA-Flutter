@@ -60,7 +60,8 @@ class LeagueOfficialNames{
   String peru = 'Campeonato peruano';
   String bolivia = 'Campeonato boliviano';
 
-  String mexico = 'Liga MX';String estadosUnidos = 'MLS';String costaRica = 'Liga Costa Rica';
+  String mexico = 'Liga MX';String estadosUnidos = 'MLS';String canada = 'Liga Canada';
+  String costaRica = 'Liga Costa Rica';String honduras = 'Liga Honduras';
   String asia = 'Liga Ásia';  String orienteMedio = 'Liga Oriente Médio';  String africa = 'Liga África';
 
   String japao = 'J1-League';
@@ -70,6 +71,7 @@ class LeagueOfficialNames{
   String eau = 'Liga EAU';
   String qatar = 'Liga qatar';
   String iran = 'Liga iran';
+  String iraque = 'Liga iraque';
   String india = 'Liga india';
   String tailandia = 'Liga Tailandia';
 
@@ -118,11 +120,11 @@ class LeagueOfficialNames{
      uruguai,     paraguai,     chile,     peru,    bolivia,
      colombia, equador,     venezuela,
 
-     mexico, estadosUnidos, costaRica,
+     mexico, estadosUnidos, costaRica, honduras,
 
-     japao,     china,     coreiaSul,
-     arabia,     eau,     qatar,     iran,
-     australia, india, tailandia,
+     japao,     china,     coreiaSul, tailandia,
+     arabia,     eau,     qatar,     iran, iraque,
+     india, australia,
 
      egito,     marrocos,     tunisia, africaSul, nigeria,
     ];
@@ -343,7 +345,9 @@ Map getLeagueNationalityMap(){
 
     leagueName.mexico: Words.country.mexico ,
     leagueName.estadosUnidos: Words.country.unitedStates,
+    leagueName.canada: Words.country.canada,
     leagueName.costaRica: Words.country.costaRica,
+    leagueName.honduras: Words.country.honduras,
 
     leagueName.china: Words.country.china ,
     leagueName.coreiaSul: Words.country.southKorea ,
@@ -353,6 +357,7 @@ Map getLeagueNationalityMap(){
     leagueName.qatar: Words.country.qatar ,
     leagueName.eau: Words.country.uae ,
     leagueName.iran: Words.country.iran ,
+    leagueName.iraque: Words.country.iraq ,
     leagueName.india: Words.country.india ,
     leagueName.tailandia: Words.country.thailand ,
 

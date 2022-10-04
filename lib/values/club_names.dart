@@ -121,16 +121,21 @@ class ClubName{
   String torino    = "Torino";
   String udinese   = "Udinese";
 
+  String albinoleffe = "AlbinoLeffe";
   String alessandria = "Alessandria";
   String ancona = "Ancona";
+  String arezzo = "Arezzo";
   String ascoli = "Ascoli";
   String avellino = "Avellino";
   String bari = "Bari";
   String benevento = "Benevento";
   String brescia = "Brescia";
+  String brindisi = "Brindisi";
+  String campobasso = "Campobasso";
   String carpi = "Carpi";
   String catania = "Catania";
   String catanzaro = "Catanzaro";
+  String cavese = "Cavese";
   String cittadella = "Cittadella";
   String cremonese = "Cremonese";
   String cesena = "Cesena";
@@ -139,14 +144,18 @@ class ClubName{
   String cosenza = "Cosenza";
   String crotone = "Crotone";
   String empoli  = "Empoli";
+  String fidelisandria  = "Fidelis Andria";
   String foggia  = "Foggia";
   String frosinone = "Frosinone";
   String grosseto = "Grosseto";
   String hellasVerona = "Hellas Verona";
   String juvestabia = "Juve Stabia";
+  String latina = "Latina";
   String lecce = "Lecce";
   String lecco = "Lecco";
+  String licata = "Licata";
   String livorno = "Livorno";
+  String lucchese = "Lucchese";
   String mantova = "Mantova";
   String messina = "Messina";
   String modena = "Modena";
@@ -160,22 +169,31 @@ class ClubName{
   String piacenza = "Piacenza";
   String pistoiese = "Pistoiese";
   String pordenone = "Pordenone";
+  String potenza = "Potenza";
+  String prato = "Prato";
+  String propatria = "Pro Patria";
   String provercelli = "Pro Vercelli";
+  String ravenna = "Ravenna";
   String reggina = "Reggina";
   String reggiana = "Reggiana";
+  String rimini = "Rimini";
   String salernitana  = "Salernitana";
+  String sambe  = "Sambenedettese";
   String siena  = "Siena";
   String spal = "SPAL";
   String spezia  = "Spezia";
   String sudtirol  = "Süd Tirol";
+  String taranto  = "Taranto";
   String ternana  = "Ternana";
   String trapani = "Trapani";
   String treviso  = "Treviso";
   String triestina  = "Triestina";
+  String valdagno = "Valdagno";
   String varese = "Varese";
   String venezia = "Venezia FC";
   String vicenza = "Vicenza";
   String virtusentella = "Virtus Entella";
+  String virtuslanciano = "Virtus Lanciano";
 
   //ESPANHA
   String athleticbilbao = "Athletic Bilbao";
@@ -516,6 +534,7 @@ class ClubName{
   String berchem = "Berchem Sport";
   String beerschot = "Beerschot";
   String brugge = "Brugge";
+  String dender = "Dender";
   String genk = "Genk";
   String gent = "Gent";
   String beveren = "Beveren";
@@ -532,8 +551,10 @@ class ClubName{
   String lokeren = "Lokeren";
   String mechelen = "Mechelen";
   String molenbeek = "Molenbeek";
+  String mons = "Mons";
   String mouscron = "Mouscron";
   String oostende = "Oostende";
+  String roeselare = "Roeselare";
   String royalAntwerp = "Royal Antwerp";
   String saintgilloise = "Union Saint-Gilloise";
   String seraing = "RFC Seraing"; //EXTINTO
@@ -541,6 +562,7 @@ class ClubName{
   String sttruidense = "St. Truidense";
   String tilleur = "Tilleur-Saint-Nicolas";
   String tongeren = "Tongeren";
+  String tubize = "Tubize";
   String waregemKSV = "KSV waregem"; //EXTINTO 1925-2001
   String waterschei = "Waterschei";
   String westerlo = "Westerlo";
@@ -629,6 +651,7 @@ class ClubName{
   //SUÉCIA
   String aik = "AIK";
   String atvidabergs = "Atvidabergs";
+  String degerfors = "Degerfors";
   String djurgarden = "Djurgarden";
   String elfsborg = "Elfsborg";
   String hammarby = "Hammarby";
@@ -2011,7 +2034,11 @@ class ClubName{
   String olimpiaHON = "Olimpia-HON";
   String marathon = "Marathón";
   String motagua = "Motagua";
+  String platenseHON = "Platense";
+  String sociedadHON = "Real Sociedad";
   String rcdespana = "RCD España";
+  String victoriaHON = "Victoria";
+  String vida = "Vida";
   //NICARAGUA
   String diriangen = "Diriangén";
   String managua = "Managua";
@@ -2075,27 +2102,46 @@ class ClubName{
   //////////////////////////////////////////////////////////////////////////////
   //ASIA
   //CHINA
+  String august1 = "August 1st"; //1927-2003
   String beijingguoan = "Beijing Guoan";
   String chengfeng = "Beijing Chengfeng"; //1995-2021
+  String cangzhou = "Cangzhou Mighty Lions";
   String chengdu = "Chengdu";
   String changchun = "Changchun Yatai";
+  String chinaOlympic = "China Olympic XI";
+  String chongqing = "Chongqing Dangdai Lifan";
   String dalian = "Dalian"; //1955-2012
+  String foshan = "Foshan Fosti";
+  //String ghizou = "Guizhou Hengfeng Zhicheng"; //1992-2022
   String jiangsu = "Jiangsu Suning"; //1958-2020
   String guangdong = "Guangdong Winnerway"; //EXTINTO
   String ghuangzhou = "Ghuangzhou";
+  String ghuangzhouBaiyunshan = "Ghuangzhou Baiyunshan";
+  String ghuangzhouCity = "Ghuangzhou City";
+  String guizhou = "Guizhou Hengfeng";
+  String harbin = "Harbin Guoli";
   String hebei = "Hebei FC";
   String henan = "Henan S. Longmen";
   String liaoning = "Liaoning Hongyun";
+  String matsunichi = "Guangzhou Matsunichi"; //1995-2000
   String meizhou = "Meizhou Hakka";
   String nantong = "Nantong Zhiyun";
   String qingdao = "Qingdao";
   String shandong = "Shandong Luneng";
   String shanghaisipg = "Shanghai SIPG";
   String shanghaishenhua = "Shanghai Shenhua";
+  String shanghaiunited = "Shanghai United";
+  String shanghaizobon = "Shanghai Zobon";
+  String shaoxing = "Shaoxing Keqiao Yuejia";
+  String shenxin = "Shanghai Shenxin";
   String shenzhen = "Shenzhen";
+  String sichuan = "Sichuan Guancheng";
   String tianjin = "Tianjin Jinmen Tigers";
+  String xiamen = "Xiamen Lanshi";
   String wuhan3towns = "Wuhan Three Towns";
   String wuhan = "Wuhan";
+  String yanbian = "Yanbian Funde"; //1955-2019
+  String yunnan = "Yunnan Hongta"; //1996-2003  merged with chongqing
   String zhejiang = "Zhejiang";
   //HONG KONG
   String kitchee = "Kitchee";
@@ -2139,6 +2185,7 @@ class ClubName{
   String flugels = "Yokohama Flügels"; //Merged 1998 to form Yokohama F. Marinos
   //COREIA
   String busan = "Busan";
+  String chonbuk = "Chonbuk"; //EXTINTO
   String daegu = "Daegu FC";
   String daejeon = "Daejeon Citizen";
   String jeju = "Jeju United";
@@ -2149,9 +2196,12 @@ class ClubName{
   String gyeongnam = "Gyeongnam FC";
   String gwangju = "Gwangju";
   String hallelujah = "Hallelujah FC"; //1980-1998
+  String hanil = "Hanil Bank"; //EXTINTO
   String incheon = "Incheon United FC";
+  String kookmin = "Kookmin Bank";
   String pohang = "Pohang Steelers";
   String fcseoul = "FC Seoul";
+  String sangju = "Sangju Sangmu";
   String seongnam = "Seongnam";
   String suwonsamsung = "Suwon Samsung";
   String suwonFC = "Suwon FC";
@@ -2296,17 +2346,25 @@ class ClubName{
   //ARABIA SAUDITA
   String alnassr = "Al Nassr";
   String alahli = "Al Ahli";
+  String alansarARABIA = "Al Ansar";
   String alhilal = "Al Hilal";
   String alFaisalyARABIA = "Al-Faisaly";
   String alIttihad = "Al Ittihad";
   String alShabab = "Al Shabab";
   String alettifaq = "Al Ettifaq";
   String alfateh = "Al Fateh";
+  String alnahda = "Al Nahda";
+  String alnajma = "Al Najma Sport Club";
   String alQadisiya = "Al Qadisiya";
   String alraed = "Al Raed";
+  String alrawdhah = "Al Rawdhah";
+  String alriad = "Al Riyadh";
+  String alshoulla = "Al Shoulla";
   String altaawoun = "Al Taawoun";
   String altai = "Al Tai";
+  String alwehda = "Al Wehda";
   String damac = "Damac";
+  String ohod = "Ohod";
   //EAU
   String alain = "Al Ain-EAU";
   String aljazira = "Al Jazira";
@@ -2326,6 +2384,7 @@ class ClubName{
   String alrayyan = "Al Rayyan";
   String algharafa = "Al Gharafa";
   String alkhor = "Al Khor";
+  String alshamal = "Al Shamal";
   String alwakrah = "Al Wakrah";
   String eljaish = "El-Jaish";
   String alsailiya = "Al-Sailiya";
@@ -2353,11 +2412,20 @@ class ClubName{
   String tractor = "Tractor";
   String zobahan = "Zob Ahan";
   //IRAQUE
+  String aljaishIRAQ = "Al-Jaish";
+  String alminaa = "Al-Minaa";
+  String alnaft = "Al-Naft";
+  String alnajaf = "Al-Najaf";
+  String alsinaa = "Al-Sinaa";
   String alzawraa = "Al-Zawraa";
   String alQuwaAlJawiya = "Al-Quwa Al-Jawiya";
   String alRasheed = "Al-Rasheed"; //EXTINTO
   String alTalaba = "Al-Talaba";
   String alShortaIRAQ = "Al-Shorta";
+  String duhok = "Duhok";
+  String erbil = "Erbil";
+  String naftAlwasat = "Naft Al-Wasat";
+  String salahaddin = "Salahaddin";
   //JORDANIA
   String alFaisalyJORD = "Al-Faisaly Amã";
   String alRamtha = "Al-Ramtha";
