@@ -18,7 +18,7 @@ class LeagueOfficialNames{
   String italia1 = 'Serie A TIM';  String italia2 = 'Serie B TIM';
   String espanha1 = 'La Liga';  String espanha2 = 'La Liga2';
   String franca1 = 'Ligue 1'; String franca2 = 'Ligue 2';
-  String alemanha1 = 'Bundesliga';  String alemanha2 = 'Bundesliga 2';
+  String alemanha1 = 'Bundesliga';  String alemanha2 = 'Bundesliga 2';String alemanhaOriental = 'DDR-Oberliga';
   String portugal = 'Liga Portugal Bwin'; String turquiaGrecia = 'Liga Greco-Turca';
   String holanda = 'Eredivisie';
   String escocia = 'Scottish Premiership';
@@ -103,7 +103,7 @@ class LeagueOfficialNames{
      italia1,italia2,
      espanha1,espanha2,
      franca1,franca2,
-     alemanha1,alemanha2,
+     alemanha1,alemanha2,alemanhaOriental,
      portugal,
 
      turquiaGrecia,     grecia,
@@ -305,6 +305,7 @@ Map getLeagueNationalityMap(){
     leagueName.franca2: Words.country.france,
     leagueName.alemanha1: Words.country.germany ,
     leagueName.alemanha2: Words.country.germany ,
+    leagueName.alemanhaOriental: Words.country.ocean ,
     leagueName.portugal: Words.country.portugal,
     leagueName.holanda: Words.country.netherlands ,
     leagueName.belgica: Words.country.belgium ,

@@ -443,7 +443,7 @@ Map<String,dynamic> mapInternationals = {
     1977.0: [_name.juventus,_name.athleticbilbao,_name.aek,_name.molenbeek,       ],
     1976.0: [_name.liverpool,_name.brugge,_name.barcelona,_name.hamburgo,         ],
     1975.0: [_name.moenchengladbach,_name.twente,_name.colonia,_name.juventus,    ],
-    1974.0: [_name.feyenoord,_name.tottenham,_name.stuttgart,_name.lokLeipzig,    ],
+    1974.0: [_name.feyenoord,_name.tottenham,_name.stuttgart,_name.lokleipzig,    ],
     1973.0: [_name.liverpool,_name.moenchengladbach,_name.tottenham,_name.twente, ],
     1972.0: [_name.tottenham,_name.wolves,_name.milan,_name.ferencvaros,          ],
   },

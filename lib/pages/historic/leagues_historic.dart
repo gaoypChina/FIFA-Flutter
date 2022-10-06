@@ -259,7 +259,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
     try{
       List yearData = results[year.toDouble()];
       String clubName = yearData[0];
-      return Images().getEscudoWidget(clubName,24,24);
+      return SizedBox(width:24, child: Images().getEscudoWidget(clubName,24,24));
     }catch(e){
       return Container(width: 24);
     }

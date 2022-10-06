@@ -9,6 +9,7 @@ class CountryNames {
   const CountryNames();
 
   String get ocean => 'Ocean';
+  String get europe => 'Europe';
 
   String get afghanistan => 'Afghanistan';
   String get angola => 'Angola';
