@@ -86,7 +86,8 @@ List clubsAllNameList = [
 
   ClubName().qarabag,ClubName().astana,ClubName().vardar,ClubName().sheriffTiraspol,
   ClubName().estrelavermelha,  ClubName().partizan,  ClubName().ludogorets,  ClubName().cskaSofia,
-  ClubName().shaktardonetsk,  ClubName().dinamokiev,  ClubName().spartapraga,  ClubName().slaviaPraha,
+  ClubName().shaktardonetsk,  ClubName().dinamokiev,
+  ClubName().spartapraga,  ClubName().slaviaPraha, ClubName().viktoriaPlzen,
   ClubName().dinamozagreb,ClubName().cluj,ClubName().slovanBratislava,ClubName().ferencvaros,
   ClubName().steauaBucuresti,ClubName().maccabiTelAviv,
 
@@ -148,7 +149,7 @@ List clubsAllNameList = [
   ClubName().portland,  ClubName().seattle, ClubName().toronto,  ClubName().vancouver,
 
   ///////////////////////////////////////////
-  ClubName().ghuangzhou,  ClubName().pohang, ClubName().shandong,  ClubName().shanghaisipg,
+  ClubName().pohang, ClubName().shandong,  ClubName().shanghaisipg,
   ClubName().kashimaantlers,  ClubName().urawareddiamonds, ClubName().visselkobe,  ClubName().kawasakifrontale,
   ClubName().aljazira,  ClubName().jeonbuk, ClubName().alnassr,  ClubName().alain,
   ClubName().alsadd,  ClubName().alduhail, ClubName().alahli,  ClubName().alhilal,

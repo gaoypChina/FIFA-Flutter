@@ -225,7 +225,7 @@ Map clubNameMapImmutable = {
     8: clubName.mamelodi,9: clubName.agosto,10:clubName.sydneyFC,11:clubName.melbournevictory,
   },
   LeagueOfficialNames().outros : {
-    0: clubName.laskLinz,1: clubName.sheriffTiraspol,2: clubName.ghuangzhou,3: clubName.tigre,
+    0: clubName.laskLinz,1: clubName.sheriffTiraspol,2: clubName.viktoriaPlzen,3: clubName.tigre,
     4: clubName.joinville, 5: clubName.juventusMooca, 6: clubName.paulista, 7: clubName.ibis,
     8: clubName.arsenalsarandi, 9: clubName.lechPoznan,
   },

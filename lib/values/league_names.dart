@@ -64,16 +64,15 @@ class LeagueOfficialNames{
   String costaRica = 'Liga Costa Rica';String honduras = 'Liga Honduras';
   String asia = 'Liga Ásia';  String orienteMedio = 'Liga Oriente Médio';  String africa = 'Liga África';
 
-  String japao = 'J1-League';
   String china = 'Liga China';
+  String japao = 'J1-League';
   String coreiaSul = 'K-League';
   String arabia = 'Liga Arábia Saudita';
-  String eau = 'Liga EAU';
-  String qatar = 'Liga qatar';
-  String iran = 'Liga iran';
-  String iraque = 'Liga iraque';
+  String eau = 'Liga EAU';   String qatar = 'Liga qatar';
+  String iran = 'Liga iran';   String iraque = 'Liga iraque';
   String india = 'Liga india';
-  String tailandia = 'Liga Tailandia';
+  String tailandia = 'Liga Tailandia';   String vietna = 'Liga Vietnã';
+  String indonesia = 'Liga Indonesia';    String filipinas = 'Liga Filipinas';
 
   String egito = 'Liga Egito';
   String argelia = 'Liga Argelia';
@@ -122,11 +121,13 @@ class LeagueOfficialNames{
 
      mexico, estadosUnidos, costaRica, honduras,
 
-     japao,     china,     coreiaSul, tailandia,
+      china,  japao,     coreiaSul,
+     tailandia, filipinas, vietna, indonesia,
      arabia,     eau,     qatar,     iran, iraque,
      india, australia,
 
-     egito,     marrocos,     tunisia, africaSul, nigeria,
+      argelia, egito,   marrocos, tunisia,
+      africaSul, nigeria,
     ];
   }
 }
@@ -361,6 +362,9 @@ Map getLeagueNationalityMap(){
     leagueName.iraque: Words.country.iraq ,
     leagueName.india: Words.country.india ,
     leagueName.tailandia: Words.country.thailand ,
+    leagueName.filipinas: Words.country.philippines,
+    leagueName.indonesia: Words.country.indonesia ,
+    leagueName.vietna: Words.country.vietnam,
 
     leagueName.egito: Words.country.egypt,
     leagueName.argelia: Words.country.algeria ,

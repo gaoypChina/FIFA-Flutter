@@ -14,7 +14,7 @@ Map<String,dynamic> mapAmerica = {
   // BRASIL
   ///////////////////////////////////////////////////////////////
   leagueName.brasil1 : {
-    2022.0: [_name.palmeiras,_name.fluminense,_name.internacional,_name.corinthians,_name.flamengo,_name.atleticopr,_name.atleticomg,_name.botafogo,_name.americamg,_name.santos,_name.goias,_name.saopaulo,_name.fortaleza,_name.ceara,_name.coritiba,_name.avai,_name.cuiaba,_name.atleticogo,_name.juventude],
+    2022.0: [_name.palmeiras,_name.internacional,_name.fluminense,_name.corinthians,_name.flamengo,_name.atleticopr,_name.atleticomg,_name.botafogo,_name.americamg,_name.santos,_name.goias,_name.saopaulo,_name.fortaleza,_name.bragantino,_name.ceara,_name.coritiba,_name.avai,_name.cuiaba,_name.atleticogo,_name.juventude],
     2021.0: [_name.atleticomg,_name.flamengo,_name.palmeiras,_name.fortaleza,_name.corinthians,_name.bragantino,_name.fluminense,_name.americamg,_name.atleticogo,_name.santos, _name.ceara,_name.internacional,_name.saopaulo,_name.atleticopr,_name.cuiaba,_name.juventude,_name.gremio,_name.bahia,_name.sport,_name.chapecoense],
     2020.0: [_name.flamengo,_name.internacional,_name.atleticomg,_name.saopaulo,_name.fluminense,_name.palmeiras,_name.gremio,_name.santos,_name.atleticopr,_name.bragantino,  _name.ceara,_name.corinthians,_name.atleticogo,_name.bahia,_name.sport,_name.fortaleza,_name.vasco,_name.goias,_name.coritiba,_name.botafogo],
     2019.0: [_name.flamengo,_name.santos,_name.palmeiras,_name.gremio,_name.atleticopr,_name.saopaulo,_name.internacional,_name.corinthians,_name.fortaleza,_name.goias,       _name.bahia,_name.vasco,_name.atleticomg,_name.fluminense,_name.botafogo,_name.ceara,_name.cruzeiro,_name.csa,_name.chapecoense,_name.avai],
@@ -72,6 +72,8 @@ Map<String,dynamic> mapAmerica = {
     1967.0: [_name.palmeiras,_name.internacional,_name.corinthians,_name.gremio,_name.portuguesa,_name.santos,_name.cruzeiro,_name.atleticomg,_name.bangu,_name.saopaulo,       _name.flamengo,_name.vasco,_name.fluminense,_name.botafogo,_name.parana],
   },
   leagueName.brasil2 : {
+    //**ARRUMAR 2022
+    2022.0: [_name.cruzeiro,_name.gremio,_name.bahia,_name.vasco,_name.sport,               _name.ituano,_name.sampaio,_name.londrina,_name.pontepreta,],
     2021.0: [_name.botafogo,_name.goias,_name.coritiba,_name.avai,_name.csa,                _name.guarani,_name.crb,_name.nautico,_name.vilanova,_name.vasco,                 _name.pontepreta,_name.operarioPR,_name.brusque,_name.cruzeiro,_name.sampaio,     _name.londrina,_name.remo,_name.vitoria,_name.confianca,_name.brasilPelotas],
     2020.0: [_name.chapecoense,_name.americamg,_name.juventude,_name.cuiaba,_name.csa,      _name.sampaio,_name.pontepreta,_name.operarioPR,_name.avai,_name.crb,             _name.cruzeiro,_name.brasilPelotas,_name.guarani,_name.vitoria,_name.confianca,   _name.nautico,_name.figueirense,_name.parana,_name.botafogoSP,_name.oeste],
     2019.0: [_name.bragantino,_name.sport,_name.coritiba,_name.atleticogo,_name.americamg,  _name.parana,_name.crb,_name.cuiaba,_name.botafogoSP,_name.operarioPR,            _name.pontepreta,_name.vitoria,_name.guarani,_name.brasilPelotas,_name.oeste,     _name.figueirense,_name.londrina,_name.saobento,_name.criciuma,_name.vilanova],
@@ -153,7 +155,8 @@ Map<String,dynamic> mapAmerica = {
   ///////////////////////////////////////////////////////////////
   leagueName.argentina : {
     //https.0://es.wikipedia.org/wiki/Campeonato_de_Primera_Divisi%C3%B3n_2002-03_(Argentina)
-    2022.0: [],
+    //**CORRIGIR 2022
+    2022.0: [_name.bocajuniors,_name.atleticoTucuman,_name.riverplate,_name.racing,_name.huracan,      _name.gimnasia,_name.tigre,_name.argentinojuniors,_name.sanlorenzo,],
     2021.0: [_name.riverplate,_name.defensayjusticia,_name.talleres,_name.bocajuniors,_name.velez,     _name.estudiantes,_name.colon,_name.huracan,_name.independiente,_name.lanus,                   _name.gimnasia,_name.unionSantaFe,_name.aldosivi,_name.argentinojuniors,_name.racing,                   _name.rosariocentral,_name.godoycruz,_name.platense,_name.newells,_name.banfield],
     2020.0: [_name.bocajuniors,_name.riverplate,_name.velez,_name.racing,_name.argentinojuniors,       _name.defensayjusticia,_name.lanus,_name.sanlorenzo,_name.rosariocentral,_name.newells,        _name.arsenalsarandi,_name.talleres,_name.estudiantes,_name.independiente,_name.atleticoTucuman,        _name.unionSantaFe,_name.banfield,_name.centralCordoba,_name.gimnasia,_name.patronato],
     2019.0: [_name.racing,_name.defensayjusticia,_name.bocajuniors,_name.riverplate,_name.atleticoTucuman,      _name.velez,_name.independiente,_name.unionSantaFe,_name.tigre,_name.huracan,         _name.lanus,_name.talleres,_name.aldosivi,_name.godoycruz,_name.newells,                                _name.banfield,_name.estudiantes,_name.gimnasia,_name.patronato,_name.rosariocentral],

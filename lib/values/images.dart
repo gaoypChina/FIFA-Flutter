@@ -271,6 +271,8 @@ String imageLogo(String timeFoto) {
     map[_name.arminiaBiefeld] = 'arminia';
     map[_name.berliner] = 'berliner';
     map[_name.bochum] = 'bochum';
+    map[_name.carlzeissjena] = 'carl zeiss jena';
+    map[_name.chemnitzer] = 'chemnitzer';
     map[_name.darmstadt] = 'darmstadt';
     map[_name.duisburg] = 'duisburg';
     map[_name.dynamoDresden] = 'dynamo dresden';
@@ -287,6 +289,7 @@ String imageLogo(String timeFoto) {
     map[_name.jahnregensburg] = 'jahn';
     map[_name.karlsruher] = 'karlsruher';
     map[_name.kaiserslautern] = 'kaiserslautern';
+    map[_name.lokleipzig] = 'lok leipzig';
     map[_name.magdeburg] = 'magdeburg';
     map[_name.mainz05] = 'mainz';
     map[_name.munique1860] = 'munique1860';
@@ -294,10 +297,12 @@ String imageLogo(String timeFoto) {
     map[_name.paderborn] = 'paderborn';
     map[_name.rotWeissEssen] = 'rot weiss essen';
     map[_name.saarbrucken] = 'saarbrucken';
+    map[_name.sachsenleipzig] = 'sachsen leipzig';
     map[_name.sandhausen] = 'sandhausen';
     map[_name.uerdigen] = 'uerdigen';
     map[_name.unionBerlin] = 'union berlin';
     map[_name.stPauli] = 'st pauli';
+    map[_name.zwickau] = 'zwickau';
 
     map[_name.bordeaux] = 'bordeaux';
     map[_name.lille] = 'lille';
@@ -533,8 +538,10 @@ String imageLogo(String timeFoto) {
     map[_name.sturmGraz] = 'sturm';
     map[_name.wolfsberger] = 'wolfsberger';
     //SUIÇA
+    map[_name.aarau] = 'aarau';
     map[_name.basel] = 'basel';
     map[_name.grasshoppers] = 'grasshopper';
+    map[_name.lausanne] = 'lausanne';
     map[_name.lugano] = 'lugano';
     map[_name.luzern] = 'luzern';
     map[_name.servette] = 'servette';
@@ -1238,12 +1245,16 @@ String imageLogo(String timeFoto) {
     //////////////////////////////////////////////////////////////////////////////////
     //CHINA
     map[_name.ghuangzhou] = 'ghuangzhou';
+    map[_name.ghuangzhouCity] = 'ghuangzhou city';
     map[_name.beijingguoan] = 'beijing';
     map[_name.changchun] = 'changchun';
-    map[_name.dalian] = 'dalian';     
+    map[_name.chongqing] = 'chongqing';
+    map[_name.dalian] = 'dalian';
+    map[_name.hebei] = 'hebei';
     map[_name.henan] = 'henan';
     map[_name.liaoning] = 'liaoning';
-    map[_name.nantong] = 'nantong';     
+    map[_name.nantong] = 'nantong';
+    map[_name.qingdao] = 'qingdao';
     map[_name.shandong] = 'shandong_luneng';      
     map[_name.shanghaisipg] = 'shanghai';
     map[_name.shanghaishenhua] = 'shanghai shenhua';
@@ -1261,14 +1272,18 @@ String imageLogo(String timeFoto) {
     map[_name.gambaOsaka] = 'gamba osaka';
     map[_name.fcTokyo] = 'fc tokyo';
     map[_name.hiroshima] = 'hiroshima';
+    map[_name.jefUnited] = 'jef united';
     map[_name.jubiloiwata] = 'jubilo iwata';
     map[_name.kashimaantlers] = 'kashima';
     map[_name.kashiwaReysol] = 'kashiwa reysol';
     map[_name.kyoto] = 'kyoto';
     map[_name.kawasakifrontale] = 'kawasaki_frontale'; 
     map[_name.nagoya] = 'nagoya';
+    map[_name.omiyaardija] = 'omiya ardija';
+    map[_name.oitatrinita] = 'oita trinita';
     map[_name.sagantosu] = 'sagan';
     map[_name.sapporo] = 'sapporo';
+    map[_name.shimizuSPulse] = 'shimizu';
     map[_name.shonanbellmare] = 'shonan';
     map[_name.tokyoVerdy] = 'tokyo verdy';
     map[_name.urawareddiamonds] = 'urawa';
@@ -1278,10 +1293,12 @@ String imageLogo(String timeFoto) {
     map[_name.yokohamamarinos] = 'yokohama';
     //SOUTH KOREA
     map[_name.busan] = 'busan'; 
-    map[_name.daegu] = 'daegu'; 
+    map[_name.daegu] = 'daegu';
+    map[_name.daejeon] = 'daejeon';
     map[_name.jeonbuk] = 'jeonbuk'; 
     map[_name.jeju] = 'jeju';
     map[_name.gimcheon] = 'gimcheon';
+    map[_name.gyeongnam] = 'gyeongnam';
     map[_name.incheon] = 'incheon';
     map[_name.fcseoul] = 'fc seoul';
     map[_name.gangwon] = 'gangwon';
@@ -1329,8 +1346,14 @@ String imageLogo(String timeFoto) {
     //TAILANDIA
     map[_name.buriram] = 'buriram united';
     map[_name.bangkok] = 'bangkok';
+    map[_name.bangkokBank] = 'bangkok bank';
+    map[_name.chiangrai] = 'chiangrai';
+    map[_name.chonburi] = 'chonburi';
+    map[_name.muangthong] = 'muangthong';
     map[_name.pathum] = 'pathum';
-    map[_name.policeTero] = 'police tero';
+    map[_name.becToroSasana] = 'police tero';
+    map[_name.portFC] = 'portfc';
+    map[_name.ratchaburi] = 'ratchaburi';
     //INDIA
     map[_name.bengaluru] = 'bengaluru';
     map[_name.chennaiyin] = 'chennaiyin';

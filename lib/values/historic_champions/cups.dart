@@ -329,7 +329,7 @@ Map<String,dynamic> mapCopas = {
     1969.0: [_name.bayernmunique,_name.schalke04],
     1968.0: [_name.colonia,_name.bochum],
     1967.0: [_name.bayernmunique,_name.hamburgo],
-    1966.0: [_name.bayernmunique,_name.meidericher],
+    1966.0: [_name.bayernmunique,_name.duisburg],
     1965.0: [_name.dortmund,_name.aachen],
     1964.0: [_name.munique1860,_name.eintrachtfrankfurt],
     1963.0: [_name.hamburgo,_name.dortmund],

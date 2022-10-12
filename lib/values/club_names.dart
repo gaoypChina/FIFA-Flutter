@@ -363,7 +363,6 @@ class ClubName{
   String lokstendal = "Lokomotiv Stendal";
   String lokleipzig = "Lokomotiv Leipzig";
   String mainz05 = "Mainz 05";
-  String meidericher = "Meidericher";
   String magdeburg = "Magdeburg";
   String munique1860 = "Munique 1860";
   String neunkirchen = "Neunkirchen";
@@ -1709,7 +1708,7 @@ class ClubName{
   String generalCaballero = "General Caballero";
   String generalDiaz = "General Díaz";
   String guairena = "Guaireña";
-  String independientePAR = "independiente";
+  String independientePAR = "Independiente-PAR";
   String luqueno = "Sportivo Luqueño";
   String mayo2 = "2 de Mayo";
   String octubre12 = "12 de Octubre";
@@ -2291,16 +2290,22 @@ class ClubName{
   String vascoIND = "Vasco";
   String mysore = "Mysore State";//EXTINTO
   //INDONESIA
+  String arema = "Arema Indonesia";
+  String bhayangkara = "Bhayangkara";
   String bali = "Bali United";
   String borneo = "Borneo";
   String palembang = "KTB Palembang";//EXTINTO 84-91
   String madura = "Madura United";
   String pelitaJaya = "Pelita Jaya";
   String persib = "Persib Bandung";
+  String persija = "Persija";
+  String persiwa = "Persiwa";
   String persebaya = "Persebaya Surabaya";
   String persipura = "Persipura Jayapura";
   String psmMakassar = "PSM Makassar";
   String psmsMedan = "PSMS Medan";
+  String semenpadang = "Semen Padang";
+  String sriwijaya = "Sriwijaya";
   //LAOS
   String chanthabouly = "Chanthabouly";
   String youngElephants = "Young Elephants";
@@ -2339,9 +2344,11 @@ class ClubName{
   String globalCebu = "Global Cebu";
   String kaya = "Kaya-Iloilo";
   String lionsPHI = "Lions FC";
+  String loyola = "Loyola";
   String maharlikaManila = "Maharlika Manila";
   String stallionLaguna = "Stallion Laguna";
   String unitedCity = "United City";
+  String paf = "Phillippine Air Force";
   // TAILANDIA
   String bangkok = "Bangkok United";
   String bangkokBank = "Bangkok Bank"; //1955-2008
@@ -2355,7 +2362,7 @@ class ClubName{
   String nongbuaPitchaya = "Nongbua Pitchaya";
   String pattaya = "Pattaya United";
   String pathum = "Pathum United";
-  String policeTero = "Police Tero";
+  String policeUnited = "Police United";
   String portFC = "Port FC";
   String prachuap = "Prachuap";
   String ratchaburi = "Ratchaburi Mitr Phol";
@@ -2369,6 +2376,7 @@ class ClubName{
   //VIETNA
   String becamex = "Becamex Binh Duong";
   String danang = "Danang";
+  String dongtam = "Dong Tam Long An";
   String haiphong = "Haiphong";
   String hanoi = "Hanoi";
   String giaLai = "Hoàng Anh Gia Lai";
@@ -2404,6 +2412,7 @@ class ClubName{
   String ohod = "Ohod";
   //EAU
   String alain = "Al Ain-EAU";
+  String aldhafra = "Al Dhafra";
   String aljazira = "Al Jazira";
   String alWahda = "Al Wahda";
   String alnasrEAU = "Al-Nasr Dubai";
@@ -2413,6 +2422,9 @@ class ClubName{
   String baniyas = "Baniyas";
   String shababalahli = "Shabab Al-Ahli";
   String alShababEAU = "Al Shabab Al Arabi";
+  String alshaab = "Al Shaab";
+  String dubai = "Dubai Club";
+  String emirates = "Emirates Club";
   //QATAR
   String alduhail = "Al Duhail";
   String alsadd = "Al Sadd";
@@ -2598,16 +2610,19 @@ class ClubName{
   String smouha = "Smouha";
   String tersana = "Tersana";
   //ARGELIA
-  String saoura = "JS Saoura";
+  String bejaia = "Béjaïa";
+  String blida = "Blida";
   String asoChlef = "ASO Chlef";
   String essetif = "ES Sétif";//ALGERIA
   String belouizdad = "Belouizdad";//ALGERIA
   String constantine = "CS Constantine";//ALGERIA
   String usmAlger = "USM Alger";//ALGERIA
+  String elharrach = "El Harrach";
   String mcalger = "MC Alger";//ALGERIA
   String elEulma = "MC El-Eulma";//ALGERIA
   String mcOran = "MC Oran";//ALGERIA
   String kabylie = "JS Kabylie";//ALGERIA
+  String saoura = "JS Saoura";
   //LYBIA
   String benghazi = "Al Ahly Benghazi";//LIBYA
   String alakhdar = "Al Akhdar";//LIBYA
