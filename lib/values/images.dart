@@ -276,7 +276,7 @@ String imageLogo(String timeFoto) {
     map[_name.darmstadt] = 'darmstadt';
     map[_name.duisburg] = 'duisburg';
     map[_name.dynamoDresden] = 'dynamo dresden';
-    map[_name.eintrachtBraunschweiger] = 'braunschweiger';
+    map[_name.braunschweiger] = 'braunschweiger';
     map[_name.energieCottbus] = 'energie cottbus';
     map[_name.erzgebirgeaue] = 'erzgebirgeaue';
     map[_name.fortunaDusseldorf] = 'fortuna';

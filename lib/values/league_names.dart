@@ -8,7 +8,11 @@ class LeagueOfficialNames{
   final String asiaafricaChampionsLeague = 'World Champions League';
 
   final String europaLeagueOficial = 'Europa League';
+  final String conferenceLeague = 'Conference League';
   final String copaSulAmericana = 'Copa Sul-Americana';
+
+  final String recopaSulAmericana = 'Recopa Sul-Americana';
+  final String recopaEuropeia = 'Recopa Europeia';
 
   final String resto = 'Resto do Mundo';
   final String mundial = 'Mundial de Clubes da FIFA';
@@ -34,6 +38,8 @@ class LeagueOfficialNames{
   String servia = 'Liga Servia';
   String grecia = 'Liga Grega';
   String repTcheca = 'Liga Tcheca';
+  String eslovaquia = 'Liga Eslovaquia';
+  String eslovenia = 'Liga Eslovenia';
   String croacia = 'Liga Croácia';
   String russia = 'Liga Russa';
   String ucrania = 'Liga Ucrania';
@@ -45,10 +51,12 @@ class LeagueOfficialNames{
   String ligaEuropa = 'Liga Europeia';  String lesteEuropeu = 'Leste Europeu';
 
   String brasil1 = 'Brasileirão';  String brasil2 = 'Brasileirão - Série B';String brasil3 = 'Brasileirão - Série C';
-  String paulistao = 'Paulistão'; String carioca = 'Carioca'; String mineiro = 'Mineiro';
+  String paulistao = 'Paulistão'; String carioca = 'Carioca'; String mineiro = 'Mineiro'; String es = 'Capixaba';
   String gaucho = 'Gaucho'; String parana = 'Paranaense'; String santacatarina = 'Santa Catarina';
-  String bahia = 'Bahiano';   String pernambuco = 'Pernambucano'; String ceara = 'Cearense';
-  String goias = 'Goias';
+  String bahia = 'Bahiano';   String pernambuco = 'Pernambucano'; String ceara = 'Cearense';  String potiguar = 'Potiguar';
+  String alagoas = 'Alagoano'; String paraiba = 'Paraibano'; String piaui = 'Piaui'; String maranhao = 'Maranhão'; String sergipe = 'Sergipe';
+  String goias = 'Goias'; String df = 'Distrito Federal'; String mt = 'Mato Grosso'; String ms = 'Mato Grosso do Sul'; String to = 'Tocantins';
+  String para = 'Para'; String amazonas = 'Amazonas'; String acre = 'Acre'; String roraima = 'Roraima';
   String argentina = 'Campeonato Argentino';String sulamericano = 'Sul-Americano';
   String mercosul = 'Mercosul';
   String colombia = 'Merconorte';
@@ -96,6 +104,21 @@ class LeagueOfficialNames{
   String asiaCup = 'Asia Cup';String africaCup = 'África Cup';
   String othersCup = 'Outros Cup';
 
+  //OUTROS
+  String rioSP = 'Torneio Rio-SP';
+  String pequenaTaca = 'Pequena Taça do Mundo';
+  String mitropa = 'Copa Mitropa';
+  String latina = 'Copa Latina';
+  String aldao = 'Copa Aldao';
+  String silvioB = 'Copa Silvio Berlluschoni';
+  String joanGamper = 'Troféu Joan Gamper';
+  String isl = 'International Soccer League';
+  String ramoncarranza = 'Troféu Ramón de Carranza';
+  String intertoto = 'Copa Intertoto';
+  String cupwinners = 'UEFA Cup Winners Cup';
+
+
+
   getAllLeagueNames(){
     return [
      inglaterra1,inglaterra2,inglaterra3,
@@ -109,6 +132,7 @@ class LeagueOfficialNames{
      holanda ,     escocia,     belgica, irlanda,
      suecia,     dinamarca,     noruega,     finlandia,
      austria,     suica,     polonia, repTcheca,
+      eslovaquia, eslovenia,
 
       servia,     croacia, israel,
       romenia, bulgaria, hungria,
@@ -128,6 +152,12 @@ class LeagueOfficialNames{
 
       argelia, egito,   marrocos, tunisia,
       africaSul, nigeria,
+
+      paulistao,carioca,mineiro,
+      gaucho,parana,santacatarina,
+      alagoas,  bahia, ceara, maranhao, paraiba, pernambuco, potiguar,
+      df, goias, mt,
+      para, amazonas,
     ];
   }
 }
@@ -306,7 +336,7 @@ Map getLeagueNationalityMap(){
     leagueName.franca2: Words.country.france,
     leagueName.alemanha1: Words.country.germany ,
     leagueName.alemanha2: Words.country.germany ,
-    leagueName.alemanhaOriental: Words.country.ocean ,
+    leagueName.alemanhaOriental: Words.country.ddr ,
     leagueName.portugal: Words.country.portugal,
     leagueName.holanda: Words.country.netherlands ,
     leagueName.belgica: Words.country.belgium ,
@@ -316,6 +346,8 @@ Map getLeagueNationalityMap(){
     leagueName.austria: Words.country.austria ,
     leagueName.polonia: Words.country.poland ,
     leagueName.repTcheca: Words.country.czechRepublic ,
+    leagueName.eslovenia: Words.country.slovenia ,
+    leagueName.eslovaquia: Words.country.slovakia ,
     leagueName.turquiaGrecia: Words.country.turkey ,
     leagueName.grecia: Words.country.greece ,
     leagueName.suecia: Words.country.sweden,
@@ -373,8 +405,33 @@ Map getLeagueNationalityMap(){
     leagueName.marrocos: Words.country.morocco ,
     leagueName.africaSul: Words.country.southAfrica ,
 
+
+
+    leagueName.paulistao: Words.country.sp ,
+    leagueName.carioca: Words.country.rj ,
+    leagueName.mineiro: Words.country.mg ,
+    leagueName.gaucho: Words.country.rs ,
+    leagueName.parana: Words.country.pr ,
+    leagueName.santacatarina: Words.country.sc ,
+    leagueName.df: Words.country.df ,
+    leagueName.goias: Words.country.go ,
+    leagueName.mt: Words.country.mt ,
+    leagueName.ms: Words.country.ms ,
+    leagueName.alagoas: Words.country.al ,
+    leagueName.bahia: Words.country.ba ,
+    leagueName.ceara: Words.country.ce ,
+    leagueName.maranhao: Words.country.ma ,
+    leagueName.pernambuco: Words.country.pe ,
+    leagueName.paraiba: Words.country.pb ,
+    leagueName.piaui: Words.country.pi ,
+    leagueName.potiguar: Words.country.rn ,
+    leagueName.sergipe: Words.country.se ,
+    leagueName.para: Words.country.pa ,
+    leagueName.amazonas: Words.country.am ,
+    leagueName.acre: Words.country.ac ,
   };
 }
+
 String getCountryFromLeague(String leagueNameReceived){
 
   Map nationalityFromLeague = getLeagueNationalityMap();

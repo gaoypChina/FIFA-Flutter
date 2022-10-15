@@ -108,6 +108,9 @@ class HistoricFunctions{
 
   int funcHistoricListFromClubID(int year, String leagueName, int clubID){
     List divisionsNames = Divisions().leagueDivisionsStructure(leagueName);
+    if(divisionsNames.isEmpty){
+      return 0;
+    }
     for(String division in divisionsNames){
       List classificationIDs = funcHistoricListAll(year, division);
       if(classificationIDs.contains(clubID)){

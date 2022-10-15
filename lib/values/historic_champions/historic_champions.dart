@@ -1,6 +1,7 @@
 import 'package:fifa/values/historic_champions/africa.dart';
 import 'package:fifa/values/historic_champions/america.dart';
 import 'package:fifa/values/historic_champions/asia.dart';
+import 'package:fifa/values/historic_champions/estaduais.dart';
 import 'package:fifa/values/historic_champions/europa.dart';
 import 'package:fifa/values/historic_champions/europa_top_leagues.dart';
 import 'package:fifa/values/historic_champions/internationals.dart';
@@ -24,6 +25,10 @@ import 'package:fifa/values/historic_champions/internationals.dart';
     }
     if(mapInternationals[league] != null){
         return mapInternationals[league];
+    }
+
+    if(mapEstaduais[league] != null){
+      return mapEstaduais[league];
     }
     return {};
 

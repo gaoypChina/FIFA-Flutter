@@ -11,6 +11,38 @@ class CountryNames {
   String get ocean => 'Ocean';
   String get europe => 'Europe';
 
+  String get iuguslavia => 'Yuguslavia';
+  String get urss => 'URSS';
+  String get ddr => 'DDR';
+
+  String get sp => 'São Paulo';
+  String get rj => 'Rio de Janeiro';
+  String get mg => 'Minas Gerais';
+  String get es => 'Espírito Santo';
+  String get rs => 'Rio Grande do Sul';
+  String get pr => 'Paraná';
+  String get sc => 'Santa Catarina';
+  String get al => 'Alagoas';
+  String get ba => 'Bahia';
+  String get ce => 'Ceará';
+  String get ma => 'Maranhão';
+  String get pe => 'Pernambuco';
+  String get pi => 'Piauí';
+  String get pb => 'Paraíba';
+  String get rn => 'Rio Grande do Norte';
+  String get se => 'Sergipe';
+  String get df => 'Distrito Federal';
+  String get go => 'Goiás';
+  String get mt => 'Mato Grosso';
+  String get ms => 'Mato Grosso do Sul';
+  String get to => 'Tocantins';
+  String get ac => 'Acre';
+  String get pa => 'Pará';
+  String get am => 'Amazonas';
+  String get ro => 'Rondônia';
+  String get rr => 'Roraima';
+  String get ap => 'Amapá';
+
   String get afghanistan => 'Afghanistan';
   String get angola => 'Angola';
   String get albania => 'Albania';

@@ -82,6 +82,7 @@ flutter:
     - assets/clubs/
     - assets/icons/
     - assets/csv/
+    - assets/flags/
     - assets/trophy/
     - assets/continents/
     - assets/league_logos/

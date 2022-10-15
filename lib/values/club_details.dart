@@ -617,7 +617,7 @@ class ClubDetails{
       'MSV-Arena',31500,1902,_country.germany,66.8,[]];
     map[_name.dynamoDresden] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(51.040278,13.747778),
       'DDV-Stadion',32066,1953,_country.germany,68.2,[]];
-    map[_name.eintrachtBraunschweiger] = [ClubColors(Colors.white,Colors.blue),pattern.solid,Coordinates(52.29,10.521389),
+    map[_name.braunschweiger] = [ClubColors(Colors.white,Colors.blue),pattern.solid,Coordinates(52.29,10.521389),
       'Eintracht-Stadion',23325,1895,_country.germany,69.3,[]];
     map[_name.energieCottbus] = [ClubColors(Colors.white,Colors.red),pattern.solid,Coordinates(51.751389,14.345556),
       'Stadion der Freundschaft',25450,1966,_country.germany,66.5,[]];
