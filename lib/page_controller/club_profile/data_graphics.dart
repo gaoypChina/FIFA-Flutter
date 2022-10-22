@@ -8,8 +8,6 @@ import 'package:fifa/values/historic_champions/historic_champions.dart';
 import 'package:fifa/values/league_divisions.dart';
 import 'package:fifa/values/league_names.dart';
 
-import '../../classes/words.dart';
-
 class ClassificationData {
   ClassificationData(this.year, this.position);
 

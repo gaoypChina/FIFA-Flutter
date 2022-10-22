@@ -215,9 +215,12 @@ class ReadCSV{
   correctPlayerPostion(String position){
 
     //Se logo de cara aparecer uma dessas posições ja salva como prioridade
-    if(position.contains('LD') && position.contains('MD')){position='LD';}
-    if(position.contains('LE') && position.contains('ME')){position='LE';}
+    if(position.contains('LD') && position.contains('MD')){position='LD';return position;}
+    else if(position.contains('LE') && position.contains('MD')){position='LD';return position;}
+    else if(position.contains('LE') && position.contains('ME')){position='LE';return position;}
+
     if(position.length>3){position = position.substring(0,3);}
+
     if(position.contains('GOL')){position='GOL';}
     else if(position.contains('LD')){position='LD';}
     else if(position.contains('ADD')){position='LD';}

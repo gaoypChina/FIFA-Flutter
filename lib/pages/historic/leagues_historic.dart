@@ -67,7 +67,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
 
               nTeamsSelected == 1 ? Column(
                 children: [
-                  for(int i = 1960; i<anoInicial;i+=10)
+                  for(int i = 1950; i<anoInicial;i+=10)
                     Row(
                       children: [
                         Text(i.toString(),style: EstiloTextoBranco.text14,),
@@ -259,7 +259,12 @@ class _HistoricLeagueState extends State<HistoricLeague> {
     try{
       List yearData = results[year.toDouble()];
       String clubName = yearData[0];
-      return SizedBox(width:24, child: Images().getEscudoWidget(clubName,24,24));
+      return GestureDetector(
+          onTap:(){
+            List classificationNames = mapChampions(choosenLeagueName)[year];
+            bottomSheetShowLeagueClassification(classificationNames);
+          },
+          child: SizedBox(width:24, child: Images().getEscudoWidget(clubName,24,24)));
     }catch(e){
       return Container(width: 24);
     }
@@ -280,6 +285,38 @@ class _HistoricLeagueState extends State<HistoricLeague> {
     );
   }
 
+
+  bottomSheetShowLeagueClassification(List classificationNames){
+    return showModalBottomSheet(
+        barrierColor: Colors.transparent,
+        context: context, builder: (c){
+      return SingleChildScrollView(
+          child: Column(
+            children: [
+
+              for(int i=0; i<classificationNames.length;i++)
+                GestureDetector(
+                  onTap: (){
+                    clickClub(classificationNames[i]);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Row(
+                      children: [
+                        SizedBox(width:35,child: Text((i+1).toString()+'º ',textAlign: TextAlign.right,style:EstiloTextoPreto.text16)),
+                        Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: Images().getEscudoWidget(classificationNames[i],30,30),
+                        ),
+                        Text(classificationNames[i],style:EstiloTextoPreto.text16),
+                      ],
+                    ),
+                  ),
+                ),
+            ],
+          ));
+    });
+  }
   ////////////////////////////////////////////////////////////////////////////
   clickClub(String clubName){
     //if(clubsAllNameList.contains(clubName)){

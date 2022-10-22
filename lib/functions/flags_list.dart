@@ -16,8 +16,8 @@ Image funcFlagsList(String country, double _height, double _width){
   if(country == Words.country.rj){code = Image.asset('assets/flags/rj.png', fit: BoxFit.fill,width: _width,height: _height);}
   if(country == Words.country.mg){code = Image.asset('assets/flags/mg.png', fit: BoxFit.fill,width: _width,height: _height);}
   if(country == Words.country.es){code = Image.asset('assets/flags/es.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.rs){code = Image.asset('assets/flags/rs.png', fit: BoxFit.fill,width: _width,height: _height);}
   if(country == Words.country.pr){code = Image.asset('assets/flags/pr.png', fit: BoxFit.fill,width: _width,height: _height);}
+  if(country == Words.country.rs){code = Image.asset('assets/flags/rs.png', fit: BoxFit.fill,width: _width,height: _height);}
   if(country == Words.country.sc){code = Image.asset('assets/flags/sc.png', fit: BoxFit.fill,width: _width,height: _height);}
 
   if(country == Words.country.df){code = Image.asset('assets/flags/df.png', fit: BoxFit.fill,width: _width,height: _height);}
@@ -34,13 +34,14 @@ Image funcFlagsList(String country, double _height, double _width){
   if(country == Words.country.pe){code = Image.asset('assets/flags/pe.png', fit: BoxFit.fill,width: _width,height: _height);}
   if(country == Words.country.pi){code = Image.asset('assets/flags/pi.png', fit: BoxFit.fill,width: _width,height: _height);}
   if(country == Words.country.rn){code = Image.asset('assets/flags/rn.png', fit: BoxFit.fill,width: _width,height: _height);}
+  if(country == Words.country.se){code = Image.asset('assets/flags/se.png', fit: BoxFit.fill,width: _width,height: _height);}
 
   if(country == Words.country.ac){code = Image.asset('assets/flags/ac.png', fit: BoxFit.fill,width: _width,height: _height);}
   if(country == Words.country.am){code = Image.asset('assets/flags/am.png', fit: BoxFit.fill,width: _width,height: _height);}
+  if(country == Words.country.ap){code = Image.asset('assets/flags/ap.png', fit: BoxFit.fill,width: _width,height: _height);}
   if(country == Words.country.pa){code = Image.asset('assets/flags/pa.png', fit: BoxFit.fill,width: _width,height: _height);}
   if(country == Words.country.ro){code = Image.asset('assets/flags/ro.png', fit: BoxFit.fill,width: _width,height: _height);}
   if(country == Words.country.rr){code = Image.asset('assets/flags/rr.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.ap){code = Image.asset('assets/flags/ap.png', fit: BoxFit.fill,width: _width,height: _height);}
 
 
 

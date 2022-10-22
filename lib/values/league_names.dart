@@ -48,6 +48,8 @@ class LeagueOfficialNames{
   String bulgaria = 'Liga Bulgaria';
   String hungria = 'Liga Hungara';
   String cazaquistao = 'Super Liga do Cazaquistão';
+  String armenia = 'Liga Armena';
+  String belarus = 'Liga Belarus';
   String ligaEuropa = 'Liga Europeia';  String lesteEuropeu = 'Leste Europeu';
 
   String brasil1 = 'Brasileirão';  String brasil2 = 'Brasileirão - Série B';String brasil3 = 'Brasileirão - Série C';
@@ -56,7 +58,7 @@ class LeagueOfficialNames{
   String bahia = 'Bahiano';   String pernambuco = 'Pernambucano'; String ceara = 'Cearense';  String potiguar = 'Potiguar';
   String alagoas = 'Alagoano'; String paraiba = 'Paraibano'; String piaui = 'Piaui'; String maranhao = 'Maranhão'; String sergipe = 'Sergipe';
   String goias = 'Goias'; String df = 'Distrito Federal'; String mt = 'Mato Grosso'; String ms = 'Mato Grosso do Sul'; String to = 'Tocantins';
-  String para = 'Para'; String amazonas = 'Amazonas'; String acre = 'Acre'; String roraima = 'Roraima';
+  String para = 'Para'; String amazonas = 'Amazonas'; String acre = 'Acre'; String amapa = 'Amapa';String rondonia = 'Rondônia';String roraima = 'Roraima';
   String argentina = 'Campeonato Argentino';String sulamericano = 'Sul-Americano';
   String mercosul = 'Mercosul';
   String colombia = 'Merconorte';
@@ -69,7 +71,8 @@ class LeagueOfficialNames{
   String bolivia = 'Campeonato boliviano';
 
   String mexico = 'Liga MX';String estadosUnidos = 'MLS';String canada = 'Liga Canada';
-  String costaRica = 'Liga Costa Rica';String honduras = 'Liga Honduras';
+  String costaRica = 'Liga Costa Rica';String honduras = 'Liga Honduras';String elsalvador = 'Liga El Salvador';
+  String jamaica = 'Liga Jamaica';
   String asia = 'Liga Ásia';  String orienteMedio = 'Liga Oriente Médio';  String africa = 'Liga África';
 
   String china = 'Liga China';
@@ -153,11 +156,11 @@ class LeagueOfficialNames{
       argelia, egito,   marrocos, tunisia,
       africaSul, nigeria,
 
-      paulistao,carioca,mineiro,
+      paulistao, carioca, mineiro, es,
       gaucho,parana,santacatarina,
-      alagoas,  bahia, ceara, maranhao, paraiba, pernambuco, potiguar,
-      df, goias, mt,
-      para, amazonas,
+      alagoas,  bahia, ceara, maranhao, paraiba, pernambuco, piaui, potiguar, sergipe,
+      df, goias, mt, ms, to,
+      para, amazonas, acre, amapa, rondonia, roraima,
     ];
   }
 }
@@ -363,6 +366,8 @@ Map getLeagueNationalityMap(){
     leagueName.israel: Words.country.israel ,
     leagueName.russia: Words.country.russia ,
     leagueName.cazaquistao: Words.country.kazakhstan ,
+    leagueName.armenia: Words.country.armenia ,
+    leagueName.belarus: Words.country.belarus ,
 
     leagueName.brasil1: Words.country.brazil ,
     leagueName.brasil2: Words.country.brazil ,
@@ -382,6 +387,8 @@ Map getLeagueNationalityMap(){
     leagueName.canada: Words.country.canada,
     leagueName.costaRica: Words.country.costaRica,
     leagueName.honduras: Words.country.honduras,
+    leagueName.jamaica: Words.country.jamaica,
+    leagueName.elsalvador: Words.country.elsalvador,
 
     leagueName.china: Words.country.china ,
     leagueName.coreiaSul: Words.country.southKorea ,
@@ -410,6 +417,7 @@ Map getLeagueNationalityMap(){
     leagueName.paulistao: Words.country.sp ,
     leagueName.carioca: Words.country.rj ,
     leagueName.mineiro: Words.country.mg ,
+    leagueName.es: Words.country.es ,
     leagueName.gaucho: Words.country.rs ,
     leagueName.parana: Words.country.pr ,
     leagueName.santacatarina: Words.country.sc ,
@@ -417,6 +425,7 @@ Map getLeagueNationalityMap(){
     leagueName.goias: Words.country.go ,
     leagueName.mt: Words.country.mt ,
     leagueName.ms: Words.country.ms ,
+    leagueName.to: Words.country.to ,
     leagueName.alagoas: Words.country.al ,
     leagueName.bahia: Words.country.ba ,
     leagueName.ceara: Words.country.ce ,
@@ -429,6 +438,9 @@ Map getLeagueNationalityMap(){
     leagueName.para: Words.country.pa ,
     leagueName.amazonas: Words.country.am ,
     leagueName.acre: Words.country.ac ,
+    leagueName.amapa: Words.country.ap ,
+    leagueName.rondonia: Words.country.ro ,
+    leagueName.roraima: Words.country.rr ,
   };
 }
 
