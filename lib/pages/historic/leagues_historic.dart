@@ -169,11 +169,19 @@ class _HistoricLeagueState extends State<HistoricLeague> {
     );
   }
   Widget validacaoSimulation(int year, int position){
+
+  try{
+    //Se a liga for simulavel
     List classification = HistoricFunctions().funcHistoricListAll(year, choosenLeagueName);
     int clubID = classification[position];
 
-    Club club = Club(index: clubID);
+   Club club = Club(index: clubID);
     return classificationRow(position, club.name);
+  }catch(e){
+    //Se a liga não for atualizada(novos campeoes) pós simulações
+    return Container();
+  }
+
   }
 
   //////////////////////////////////////////
@@ -190,6 +198,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   }
   Widget validacao(int position, int ano){
     try {
+      results = mapChampions(choosenLeagueName);
       List yearData = results[ano.toDouble()];
       String clubName = yearData[position];
       if(position==0){
@@ -244,7 +253,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   }
 
 
-  rowChampions(int year){
+  Widget rowChampions(int year){
     return Expanded(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -255,7 +264,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
       ),
     );
   }
-  rowChampionsImage(int year){
+  Widget rowChampionsImage(int year){
     try{
       List yearData = results[year.toDouble()];
       String clubName = yearData[0];

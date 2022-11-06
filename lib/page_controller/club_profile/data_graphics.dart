@@ -21,12 +21,19 @@ class DataGraphics{
   int n2ndivision = 0;
   int g4Years = 0;
   int g10Years = 0;
+  int g20Years = 0;
   int averagePosition5years = 0;
   int averagePosition10years = 0;
   int averagePositionTotal = 0;
   int currentPosition = 0;
   double pointsNational = 0;
   List<ClassificationData> data=[];
+  //ESTADUAL
+  List<ClassificationData> dataEstadual=[];
+  int nTitulosEstadual = 0;
+  int finalsEstadual = 0;
+  double pointsEstadual = 0;
+
   //INTERNATIONAL
   List<ClassificationData> dataInternational=[];
   int nTitulosInternational = 0;
@@ -44,7 +51,7 @@ class DataGraphics{
   //TOTAL
   double pointsTotal = 0;
 
-  getDataNotPlayabale(String clubName, String country){
+  getDataNotPlayabale(String clubName, String country, [String state = '']){
     //GET LEAGUE NAME
     late String leagueName;
     Map leagueNationality = getLeagueNationalityMap();
@@ -66,6 +73,11 @@ class DataGraphics{
     averagePositionTotal = averagePositionCount(data.toList());
 
     calculatePoints();
+    //historico estadual
+    if(state.isNotEmpty) {
+      defineHistoricEstadual(clubName, state);
+      participationsEstadual();
+    }
 
     //historico internacional
     defineHistoricInternational(clubName,internationalLeagueName);
@@ -183,17 +195,22 @@ class DataGraphics{
       nTitulos ++;
     }
   }
+
   add2ndDivisionCount(int position){
     if(position >= 21){
       n2ndivision ++;
     }
   }
+
   addGxCount(int position){
     if(position <= 4){
       g4Years ++;
     }
     if(position <= 10){
       g10Years ++;
+    }
+    if(position <= 20){
+      g20Years ++;
     }
   }
 
@@ -220,8 +237,35 @@ class DataGraphics{
     pointsNational = 3000 - pointsNational;
   }
 
+  /////////////////////////////////////////////////////////////////////////////
+  // ESTADUAL
+  ////////////////////////////////////////////////////////////////////////////
+  defineHistoricEstadual(String clubName, String state){
+    String stateLeague = getLeagueNationalityMap().keys.firstWhere((k) => getLeagueNationalityMap()[k] == state, orElse: () => null);
 
+    //para cada ano
+    for(var keyYear in mapChampions(stateLeague).keys) {
+      List classificationNames = mapChampions(stateLeague)[keyYear];
+      //verifica se naquele ano tem o time
+      int position = 10;
+      if(classificationNames.contains(clubName)){
+        position = classificationNames.indexOf(clubName) + 1;
+      }
+      dataEstadual.add(ClassificationData(keyYear, position));
+    }
 
+  }
+
+  participationsEstadual(){
+    for(ClassificationData classificationData in dataInternational) {
+      if (classificationData.position == 1) {
+        nTitulosEstadual++;
+      }
+      if (classificationData.position <= 2) {
+        finalsEstadual++;
+      }
+    }
+  }
   /////////////////////////////////////////////////////////////////////////////
   // INTERNATIONAL
   ////////////////////////////////////////////////////////////////////////////

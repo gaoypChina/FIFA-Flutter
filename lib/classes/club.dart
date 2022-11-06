@@ -28,6 +28,8 @@ class Club{
   late int leaguePoints;
   late int leagueGM;
   late int leagueGS;
+  late String stateName;
+  late String estadualLeagueName;
   late String internationalLeagueName;
   late int internationalLeagueIndex;
   late int internationalPoints;
@@ -64,6 +66,11 @@ class Club{
     foundationYear = clubDetails.getFoundationYear(name);
     stadiumName = clubDetails.getStadium(name);
     continent = Continents().funcCountryContinents(nationality);
+    stateName = clubDetails.getState(name);
+    if(stateName.isNotEmpty){
+      estadualLeagueName = getLeagueNationalityMap().keys.firstWhere((k) => getLeagueNationalityMap()[k] == stateName, orElse: () => null);
+    }
+
   }
 
   String getLeagueName() {

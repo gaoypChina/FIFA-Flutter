@@ -33,7 +33,7 @@ class _YearResumeState extends State<YearResume> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
-    for(int i=1960;i<=ano;i++){
+    for(int i=1950;i<=ano;i++){
       possibleYears.add(i.toString());
     }
     super.initState();
@@ -59,12 +59,12 @@ class _YearResumeState extends State<YearResume> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     dropDownButton(),
-                    Expanded(child:
+                    int.parse(selectedYear) < anoInicial ?  Expanded(child:
                       SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: internationalChampionsSelection(),
                       ),
-                    ),
+                    ) : Container(),
                   ],
                 ),
               ),
@@ -199,7 +199,7 @@ Widget internationalChampionsWidgetDetail(String internationalLeagueName){
     late String team2;
     late List clubsID;
 
-    if(ano>anoInicial) {
+    if(int.parse(selectedYear) > anoInicial) {
        clubsID = HistoricChampionsLeague().getFinalClubsIDOrdered(int.parse(selectedYear), internationalLeagueName);
       team1 = clubsAllNameList[clubsID[0]];
       team2 = clubsAllNameList[clubsID[1]];

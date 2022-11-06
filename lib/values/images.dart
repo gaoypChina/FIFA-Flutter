@@ -948,7 +948,8 @@ String imageLogo(String timeFoto) {
     map[_name.salgueiro] = 'salgueiro'; 
     map[_name.santacruz] = 'santacruz';  
     map[_name.sampaio] = 'sampaio'; 
-    map[_name.santoandre] = 'santo andre';  
+    map[_name.santoandre] = 'santo andre';
+    map[_name.santosAP] = 'santos';
     map[_name.saobento] = 'sao bento';  
     map[_name.saobernardo] = 'sao bernardo';  
     map[_name.saocaetano] = 'sao caetano';  

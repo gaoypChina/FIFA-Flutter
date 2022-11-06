@@ -140,13 +140,16 @@ class LeagueOfficialNames{
       servia,     croacia, israel,
       romenia, bulgaria, hungria,
       russia, ucrania,     cazaquistao,
+      armenia,belarus,
 
      brasil1, brasil2, brasil3,
      argentina,
      uruguai,     paraguai,     chile,     peru,    bolivia,
      colombia, equador,     venezuela,
 
-     mexico, estadosUnidos, costaRica, honduras,
+     mexico, estadosUnidos,
+      costaRica, honduras, elsalvador,
+      jamaica,
 
       china,  japao,     coreiaSul,
      tailandia, filipinas, vietna, indonesia,

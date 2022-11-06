@@ -125,7 +125,7 @@ Map<String,dynamic> mapAsia = {
   leagueName.australia : {
     2022.0: [],
     2021.0: [_name.melbournecity,_name.sydneyFC,_name.macarthur,_name.adelaide,      _name.centralcoast,_name.brisbane,_name.wellingtonphoenix,_name.sydneywanderers,_name.perth,_name.westernunited,               _name.newcastlejets,_name.melbournevictory],
-    2020.0: [_name.sydneyFC,_name.melbournecity,_name.perth,_name.westernunited,     _name.wellingtonphoenix,_name.westernunited,_name.adelaide,_name.newcastlejets,_name.sydneywanderers,_name.melbournevictory,   _name.centralcoast],
+    2020.0: [_name.sydneyFC,_name.melbournecity,_name.perth,_name.westernunited,     _name.wellingtonphoenix,_name.brisbane,_name.adelaide,_name.newcastlejets,_name.sydneywanderers,_name.melbournevictory,   _name.centralcoast],
     2019.0: [_name.sydneyFC,_name.perth,_name.melbournevictory,_name.adelaide,       _name.melbournecity,_name.wellingtonphoenix,_name.newcastlejets,_name.sydneywanderers,_name.brisbane,_name.centralcoast],
     2018.0: [_name.melbournevictory,_name.newcastlejets,_name.sydneyFC,_name.melbournecity,  _name.adelaide,_name.brisbane,_name.sydneywanderers,_name.perth,_name.wellingtonphoenix,_name.centralcoast],
     2017.0: [_name.sydneyFC,_name.melbournevictory,_name.brisbane,_name.melbournecity,       _name.perth,_name.sydneywanderers,_name.wellingtonphoenix,_name.centralcoast,_name.adelaide,_name.newcastlejets],

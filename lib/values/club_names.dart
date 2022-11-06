@@ -506,6 +506,7 @@ class ClubName{
   String gilVicente = "Gil Vicente";
   String leca = "Leça FC";
   String leixoes = "Leixões";
+  String lusitanovrsa = "Lusitano VRSA";
   String mafra = "CD Mafra";
   String maritimo = "Marítimo";
   String moreirense = "Moreirense";
@@ -827,6 +828,7 @@ class ClubName{
   String austria = "Austria Viena";
   String bregenz = "Bregenz";
   String firstViena = "First Viena";
+  String floridsdorfer = "Floridsdorfer";
   String grazer = "Grazer AK";
   String grodig = "Grodig";
   String hartberg = "Hartberg";
@@ -839,9 +841,11 @@ class ClubName{
   String rbsalzburg = "RB Salzburg";
   String rapidviena = "Rapid Viena";
   String ried = "SV Ried";
+  String simmeringer = "Simmeringer";
   String sturmGraz = "Sturm Graz";
   String stpolten = "St. Polten";
   String tirol = "Swarovski Tirol";
+  String wien = "Wien";
   String wiener = "Wiener Sportclub";
   String wolfsberger = "Wolfsberger AC";
   String wackerInnsbruck = "Wacker Innsbruck"; //1915-1999
@@ -932,6 +936,7 @@ class ClubName{
   String akhisar = "Akhisar Belediyespor";
   String ankaragucu = "Ankaragücü";
   String adanaDemispor = "Adana Demispor";
+  String ankaraDemispor = "Ankara Demispor";
   String ankaraspor = "Ankaraspor Kulübü";
   String antalyaspor = "Antalyaspor";
   String alanyaspor = "Alanyaspor";
@@ -942,6 +947,7 @@ class ClubName{
   String boluspor = "Boluspor";
   String bursaspor = "Bursaspor";
   String denizlispor = "Denizlispor";
+  String diyarbakirspor = "Diyarbakırspor";
   String eskisehirspor = "Eskisehirspor";
   String hatayspor = "Hatayspor";
   String gaziantepspor = "Gaziantepspor";
@@ -949,6 +955,7 @@ class ClubName{
   String genclerbirligi = "Gençlerbirliği";
   String goztepe = "Göztepe";
   String istanbulspor = "İstanbulspor";
+  String izmirspor = "İzmirspor";
   String karabukspor = "Karabükspor";
   String karagumruk = "Karagümrük";
   String kayserispor = "Kayserispor";
@@ -959,6 +966,7 @@ class ClubName{
   String kirikkalespor = "Kirikkalespor";
   String malatyaspor = "Malatyaspor";
   String mersin = "Mersin İdmanyurdu";
+  String orduspor = "Orduspor";
   String osmanlispor = "Osmanlispor";
   String rizespor = "Rizespor";
   String sakaryaspor = "	Sakaryaspor";
@@ -966,7 +974,8 @@ class ClubName{
   String sariyer = "Sarıyer";
   String sivasspor = "Sivasspor";
   String trabzonspor = "Trabzonspor";
-  String zonguldakspor = "	Zonguldakspor";
+  String vefa = "Vefa";
+  String zonguldakspor = "Zonguldakspor";
   //GRECIA
   String olympiacos = "Olympiacos";
   String paok = "PAOK";
@@ -1197,6 +1206,8 @@ class ClubName{
   String obilic = "Obilic";
   String mladostLucani = "Mladost Lucani";
   String napredakKrusevac = "Napredak Krusevac";
+  String macva = "	Mačva Šabac";
+  String nasakrila = "Naša Krila Zemun";
   String noviPazar = "Novi Pazar";
   String ofkBelgrade = "OFK Belgrade";
   String radnicki = "Radnicki";
@@ -1212,8 +1223,10 @@ class ClubName{
   String clinceni = "Academica Clinceni";
   String apulum = "Apulum";
   String astragiurgiu = "Astra Giurgiu";
+  String bacau = "Bacau";
   String botosani = "Botosani";
   String brasov = "Brasov";
+  String caracal = "Caracal";
   String ceahlaul = "Ceahlaul";
   String corvinul = "Corvinul";
   String craiova = "Universitatea Craiova";
@@ -1226,25 +1239,34 @@ class ClubName{
   String arad = "UTA Arad";
   String flacara = "Flacara Moreni";
   String intersibiu = "Inter Sibiu";
-  String jiul = "Jiul";
+  String jiul = "Jiul Petrosani";
+  String minaur = "Minaur Baia Mare";
+  String moldovenesc = "Moldovenesc";
   String nationalbuc = "National Bucuresti";
   String pandurii = "Pandurii";
   String petrolul = "Petrolul";
   String progresul = "Progresul Bucuresti";
+  String oradea = "Oradea";
   String otelul = "Otelul";
   String oltscornicesti = "Olt Scornicesti";
   String sepsi = "Sepsi OSK";
+  String locbucuresti = "Locomotiva Bucuresti";
+  String sibiu = "Locomotiva Sibiu";
   String sportul = "Sportul Studenţesc";
   String targoviste = "Târgovişte";
   String targuMures = "Targu Mures";
   String timisoara = "Timisoara";
+  String unireatricolor = "Unirea Tricolor";
+  String unicluj = "Universitatea Cluj";
   String unirea = "Unirea Urziceni"; //1954-2015
   String vaslui = "Vaslui";
   String victoriabuc = "Victoria Bucuresti";
   String vitorul = "Vitorul";
   //BULGARIA
+  String akasofia = "Akademik Sofia";
   String beroe = "Beroe Stara Zagora";
   String botevPlovdiv = "Botev Plovdiv";
+  String chernomore = "Cherno More Varna";
   String cskaSofia = "CSKA Sofia";
   String levskiSofia = "Levski Sofia";
   String lokplovdiv = "Lokomotiv Plovdiv";
@@ -1260,6 +1282,7 @@ class ClubName{
   String gorica = "Gorica";
   String nkzagreb = "NK Zagreb";
   String osijek = "Osijek";
+  String rnksplit = "RNK Split";
   String varteks = "Varteks";
   String slavenBelupo = "Slaven Belupo";
   String lokZagreb = "NK Lokomotiva Zagreb";
@@ -1287,14 +1310,18 @@ class ClubName{
   //HUNGRIA
   String balmazujvaros = "Balmazújváros";
   String bekescsaba = "Békéscsaba";
+  String boripariduna = "Boripari Duna";
   String budafok = "Budafok";
   String csepel = "Csepel";
   String debreceni = "Debreceni";
   String diosgyor = "Diósgyőr";
+  String dorogi = "Dorogi Bányász";
   String dunaujvaros = "Dunaújváros";
   String egri = "Egri";
+  String elore = "Budapesti Előre";
   String fehervar = "Fehérvár";
   String ferencvaros = "Ferencvaros";
+  String gazszer = "Gazszer";
   String gyori = "Gyori";
   String gyirmot = "Gyitmot";
   String haladas = "Haladás";
@@ -1304,24 +1331,31 @@ class ClubName{
   String kisvarda = "Kisvárda";
   String komloiBanyasz = "Komlói Bányász";
   String mezokovesd = "Mezőkövesd";
+  String miskolci = "Miskolci";
   String mtk = "MTK";
   String nyiregyhaza = "Nyíregyháza";
   String ozdiKohasz = "Ózdi Kohász";
   String papa = "Pápa";
   String paks = "Paks";
   String pecsi = "Pecsi";
+  String pecsivsk = "Pecsi Vasutas";
+  String postas = "Budapesti Postás";
   String rakospalota = "Rákospalota";
   String salgotarjani = "Salgótarjáni";
   String siofok = "Siófok";
   String sopron = "Sopron";
+  String soroksar = "Soroksar";
   String szegedi = "Szegedi";
   String szolnok = "Szolnok";
   String szombathely = "Szombathely";
   String tatabanya = "Tatabánya";
+  String tungsram = "Tungsram";
+  String vac = "Vác";
   String vasas = "Vasas";
   String vasutas = "Vasutas";
+  String veszprem = "Veszprém";
+  String volan = "Volán";
   String vorosMeteor = "Vörös Meteor Egyetértés";
-  String vac = "Vác";
   String ujpest = "Ujpest";
   String puskas = "Puskás Akadémia FC";
   String zalaegerszeg = "Zalaegerszeg";
@@ -1386,6 +1420,7 @@ class ClubName{
   String makedonija = "Makedonija Gjorče Petrov";
   String shkendija = "FK Shkendija";
   String silekskratovo = "Sileks Kratovo";
+  String rabotnicki = "Rabotnički";
   String vardar = "FK Vardar";
   //MALTA
   String sliema = "Sliema Wanderers";//MALTA
@@ -1469,6 +1504,7 @@ class ClubName{
   String alagoinhas = "Alagoinhas";
   String alecrim = "Alecrim-RN";
   String alegrense = "Alegrense";
+  String amapa = "Amapá"; //AP
   String amazonas = "Amazonas";
   String americaAM= "América-AM";
   String americaMG= "América Teófilo Otoni-MG";
@@ -1542,6 +1578,7 @@ class ClubName{
   String coxim = "Coxim";
   String crac = "CRAC";
   String crb = "CRB";
+  String cristalAP = "Cristal-AP"; //AP
   String cruzeiroRS = "Cruzeiro-RS";
   String csa = "CSA";
   String democrata = "Democrata MG";
@@ -1592,6 +1629,7 @@ class ClubName{
   String icasa = "Icasa";
   String ilheus = "Colo-Colo Ilhéus";
   String imperatriz = "Imperatriz";
+  String independenteAP = "Independente"; //AP
   String independencia = "Independência";
   String interLimeira = "Inter de Limeira";
   String indtucurui = "Independente Tucuruí";
@@ -1611,6 +1649,7 @@ class ClubName{
   String juazeirense = "Juazeirense";
   String juventusMooca = "Juventus Mooca";
   String juventusAC = "Juventus AC";
+  String juventusAP = "Juventus AP";
   String juventusSC = "Juventus SC";
   String lajeadense = "Lajeadense";
   String lagartense = "Lagartense"; //SE
@@ -1622,6 +1661,7 @@ class ClubName{
   String luverdense = "Luverdense";
   String luziania = "Luziânia";
   String macae = "Macaé";
+  String macapa = "Macapá"; //AP
   String madureira = "Madureira";
   String malutrom = "Malutrom";
   String mamore = "Mamoré";
@@ -1700,7 +1740,8 @@ class ClubName{
   String saobernardo = "São Bernardo";
   String saogabriel = "São Gabriel";
   String saojose = "São José";
-  String saojoseRS = "São José RS";
+  String saojoseAP = "São José-AP";
+  String saojoseRS = "São José-RS";
   String saoluizRS = "São Luiz";
   String saomateus = "São Mateus-ES"; //ES
   String saopauloRS = "São Paulo RS";
@@ -1709,6 +1750,8 @@ class ClubName{
   String sampaio = "Sampaio Corrêa";
   String santamaria = "Inter Santa Maria";
   String santoantonio = "Santo Antônio";
+  String santosAP = "Santos-AP"; //AP
+  String santanaAP = "Santana"; //AP
   String serjuventude = "SER Juventude"; //MT
   String serra = "Serra";
   String sergipe = "Sergipe";

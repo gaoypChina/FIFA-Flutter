@@ -1,5 +1,7 @@
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/functions/flags_list.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/page_controller/club_profile/data_graphics.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -22,20 +24,25 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
   late TooltipBehavior _tooltipBehavior;
 
   DataGraphics dataGraphics = DataGraphics();
+  late String clubState;
   ///////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
     late String clubCountry;
+
+    clubState = ClubDetails().getState(widget.clubName);
+
     try {
       clubCountry = ClubDetails().getCountry(widget.clubName);
 
-    dataGraphics.getDataNotPlayabale(widget.clubName, clubCountry);
+    dataGraphics.getDataNotPlayabale(widget.clubName, clubCountry, clubState);
     }catch(e){
       //O CLUBE NÃO TEM INFORMAÇÕES NO CLUB DETAILS, Portanto não tem o que mostrar nessa página
       Navigator.pop(context);
     }
+
     super.initState();
   }
 ////////////////////////////////////////////////////////////////////////////
@@ -56,30 +63,24 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
 
               backButtonText(context, widget.clubName),
 
-              Row(
-                children: [
-                  Images().getEscudoWidget(widget.clubName,100,100),
-                  Images().getUniformWidget(widget.clubName,120,120),
-                ],
-              ),
-
-
               Padding(
-                padding: const EdgeInsets.all(8),
-                child: Column(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Row(
+                    Images().getEscudoWidget(widget.clubName,90,90),
+                    Images().getUniformWidget(widget.clubName,100,100),
+                    Column(
                       children: [
+                        Row(
+                          children: [
+                            funcFlagsList(ClubDetails().getCountry(widget.clubName), 35, 50),
+                            clubState.isNotEmpty ? funcFlagsList(ClubDetails().getState(widget.clubName), 35, 50) : Container(),
+                          ],
+                        ),
                         Text(ClubDetails().getFoundationYear(widget.clubName).toString(),style: EstiloTextoBranco.text16),
-                        const SizedBox(width: 25),
-                        Text(ClubDetails().getStadium(widget.clubName),style: EstiloTextoBranco.text16),
+                        Text(ClubDetails().getStadium(widget.clubName),style: EstiloTextoBranco.text14),
                         Text(ClubDetails().getStadiumCapacityPointFormat(widget.clubName),style: EstiloTextoBranco.text16),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        const Text('Rivais:',style: EstiloTextoBranco.text16),
-                        Text(ClubDetails().getRivals(widget.clubName).toString(),style: EstiloTextoBranco.text16),
                       ],
                     ),
                   ],
@@ -87,20 +88,33 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
               ),
 
 
+
               totalTrophyWidget(widget.clubName, dataGraphics),
-              positionYears(widget.clubName, dataGraphics,1),
-              positionYears(widget.clubName, dataGraphics,2),
+
 
 
               Expanded(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        dataGraphics.data.isNotEmpty ? graphics(dataGraphics) : Container(),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
 
-                      ],
-                    ),
-                  )),
+                      positionYears(widget.clubName, dataGraphics,1),
+                      positionYears(widget.clubName, dataGraphics,2),
+
+                      Column(
+                        children: [
+                          dataGraphics.data.isNotEmpty ? graphics(dataGraphics) : Container(),
+                        ],
+                      ),
+                      ClubDetails().getState(widget.clubName).isNotEmpty
+                          ? heatMapPositions('Estadual',dataGraphics.dataEstadual)
+                          : Container(),
+                      heatMapPositions('Nacional',dataGraphics.data),
+                      heatMapPositions('Internacional',dataGraphics.dataInternational),
+                    ],
+                  ),
+                ),
+              ),
 
             ],
           ),
@@ -113,10 +127,11 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
 ////////////////////////////////////////////////////////////////////////////
 
   Widget graphics(DataGraphics dataGraphics) {
+
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Container(
-        height: 300,
+        height: 280,
         width: dataGraphics.dataInternational.length * 23 + 50,
         color: AppColors().greyTransparent,
         child: SfCartesianChart(
@@ -197,6 +212,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
             ],
           ),
 
+          //G-4
           Column(
             children: [
               const Text('G-4', style: EstiloTextoBranco.text14),
@@ -208,6 +224,19 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
             ],
           ),
 
+          //1ªDIVISÃO
+          Column(
+            children: [
+              const Text('1ªDivisão', style: EstiloTextoBranco.text14),
+              Text(Translation(context).text.years,
+                  style: EstiloTextoBranco.text14),
+              const SizedBox(height: 6),
+              Text(dataGraphics.g20Years.toString(),
+                  style: EstiloTextoBranco.text20),
+            ],
+          ),
+
+          //2ªDIVISÃO
           Column(
             children: [
               Text(Translation(context).text.division2,
@@ -266,6 +295,55 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
       return Container();
     }
 
+  }
+
+  Widget heatMapPositions(String name, List<ClassificationData> dataClassificationList){
+    return Column(
+      children: [
+        Text(name+': ',style: EstiloTextoBranco.text16,),
+        for(int i = 1950; i<anoInicial;i+=10)
+          Row(
+            children: [
+              Text(i.toString(),style: EstiloTextoBranco.text14,),
+              rowChampions(i,dataClassificationList),
+              Text((i+9).toString(),style: EstiloTextoBranco.text14,),
+            ],
+          ),
+      ],
+    );
+  }
+
+  Widget rowChampions(int year,List<ClassificationData> dataClassificationList){
+    return Expanded(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          for(int i=0;i<10;i++)
+            rowChampionsPosition(year+i,dataClassificationList)
+        ],
+      ),
+    );
+  }
+  Widget rowChampionsPosition(int year,List<ClassificationData> dataClassificationList){
+    try{
+      var data = dataClassificationList.where((element) => element.year == year.toDouble());
+      ClassificationData classificationData = data.first;
+      if(classificationData.position == 1){
+        return Container(width:30,color:Colors.amber,child: Text(classificationData.position.toString(),textAlign: TextAlign.center,style: EstiloTextoPreto.text14));
+      }
+      if(classificationData.position <= 2){
+        return Container(width:30,color:Colors.lightBlueAccent,child: Text(classificationData.position.toString(),textAlign: TextAlign.center,style: EstiloTextoPreto.text14));
+      }
+      if(classificationData.position <= 4){
+        return Container(width:30,color:Colors.black38,child: Text(classificationData.position.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.text14));
+      }
+      if(classificationData.position <= 8){
+        return Container(width:30,color:Colors.black12,child: Text(classificationData.position.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.text14));
+      }
+      return Container(width:30,child: Text(classificationData.position.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.text14));
+    }catch(e){
+      return Container(width:30,);
+    }
   }
 
 }
