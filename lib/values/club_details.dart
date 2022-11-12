@@ -2437,7 +2437,7 @@ class ClubDetails{
     map[_name.lanus] = [ClubColors(grena,Colors.white),pattern.solid,Coordinates(-34.71693165, -58.38395483),
       'Ciudad de Lanús',47027,1915,_country.argentina,72.2,[]];
     map[_name.newells] = [ClubColors(Colors.red,Colors.black),pattern.divided,Coordinates(-32.95531568, -60.661299876),
-      'Marcelo Bielsa',42000,1903,_country.argentina,71.3,[_name.rosariocentral]];
+      'Marcelo Bielsa',42000,1903,_country.argentina,71.3,[_name.rosario]];
     map[_name.nuevachicago] = [ClubColors(Colors.black,darkgreen),pattern.stripes2,Coordinates(-34.66785282, -58.49983161),
       'República de Mataderos',29000,1911,_country.argentina,62.2,[]];
     map[_name.olimpo] = [ClubColors(Colors.yellow,Colors.black),pattern.stripes3,Coordinates(-38.72698577, -62.2758727),
@@ -2452,7 +2452,7 @@ class ClubDetails{
       'Presidente Perón',51389,1903,_country.argentina,74.5,[_name.independiente]];
     map[_name.riverplate] = [ClubColors(Colors.white,Colors.red),pattern.diagonal,Coordinates(-34.54518243, -58.44934575),
       'Monumental de Núñez',70074,1901,_country.argentina,76.7,[_name.bocajuniors]];
-    map[_name.rosariocentral] = [ClubColors(Colors.blue,Colors.yellow),pattern.stripes3,Coordinates(-32.9138952, -60.6744748),
+    map[_name.rosario] = [ClubColors(Colors.blue,Colors.yellow),pattern.stripes3,Coordinates(-32.9138952, -60.6744748),
       'Gigante de Arroyito',41654,1889,_country.argentina,71.4,[_name.newells]];
     map[_name.sanlorenzo] = [ClubColors(Colors.red,Colors.blue),pattern.stripes3,Coordinates(-34.652035, -58.4400335),
       'El Nuevo Gasómetro',47964,1908,_country.argentina,71.2,[]];

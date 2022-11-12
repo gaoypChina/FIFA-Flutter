@@ -18,7 +18,7 @@ class PlayerPastClubs{
   map['Chiellini'] = {    2000: _name.livorno,2004:_name.fiorentina,2005:_name.juventus,2022:_name.losangelesfc,  };
   map['Courtois'] = {    2009: _name.genk,2011: _name.atleticomadrid,2014: _name.chelsea,2018:_name.realmadrid  };
   map['De Bruyne'] = {    2008: _name.genk,2012: _name.werderbremen,2013:_name.chelsea,2014:_name.wolfsburg,2015: _name.manchestercity  };
-  map['Di Maria'] = {    2005: _name.rosariocentral,2007:_name.benfica,2010:_name.realmadrid,2014:_name.manchesterunited,2015: _name.psg,2022: _name.juventus,  };
+  map['Di Maria'] = {    2005: _name.rosario,2007:_name.benfica,2010:_name.realmadrid,2014:_name.manchesterunited,2015: _name.psg,2022: _name.juventus,  };
   map['Dybala'] = {    2011: _name.instituto,2012:_name.palermo,2015:_name.juventus,2022:_name.roma  };
   map['Dudu'] = {    2009: _name.cruzeiro,2010:_name.coritiba,2011:_name.dinamokiev,2014:_name.gremio,2015:_name.palmeiras,2020:_name.alduhail,2021:_name.palmeiras  };
   map['Haaland'] = {    2017: _name.molde,2019: _name.rbsalzburg,2020:_name.dortmund,2022:_name.manchestercity,  };

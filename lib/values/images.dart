@@ -47,6 +47,9 @@ class FIFAImages{
     if(leagueName==LeagueOfficialNames().resto) {      imageLogo = 'rest';       }
     if(leagueName==LeagueOfficialNames().mundial) {      imageLogo = 'mundial';       }
 
+    if(leagueName==LeagueOfficialNames().latina) {      imageLogo = 'copa latina';       }
+    if(leagueName==LeagueOfficialNames().rioSP) {      imageLogo = 'rio sp';       }
+
     imageLogo = 'assets/league_logos/$imageLogo.png';
     return imageLogo;
   }
@@ -1011,7 +1014,7 @@ String imageLogo(String timeFoto) {
     map[_name.quilmes] = 'quilmes'; 
     map[_name.racing] = 'racing'; 
     map[_name.riverplate] = 'riverplate';  
-    map[_name.rosariocentral] = 'rosariocentral';  
+    map[_name.rosario] = 'rosario';  
     map[_name.sanlorenzo] = 'sanlorenzo';  
     map[_name.sarmiento] = 'sarmiento';  
     map[_name.talleres] = 'talleres';  

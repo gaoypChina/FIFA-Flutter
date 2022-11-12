@@ -116,7 +116,7 @@ List clubsAllNameList = [
   ClubName().argentinojuniors,  ClubName().arsenalsarandi,  ClubName().banfield,  ClubName().bocajuniors,
   ClubName().colon,  ClubName().defensayjusticia,  ClubName().estudiantes,  ClubName().independiente,
   ClubName().lanus,  ClubName().newells,  ClubName().racing,  ClubName().riverplate,
-  ClubName().rosariocentral,  ClubName().sanlorenzo,  ClubName().talleres,  ClubName().velez,
+  ClubName().rosario,  ClubName().sanlorenzo,  ClubName().talleres,  ClubName().velez,
   ClubName().huracan,ClubName().gimnasia,ClubName().unionSantaFe,ClubName().godoycruz,
   ClubName().atleticoTucuman,ClubName().tigre,
 

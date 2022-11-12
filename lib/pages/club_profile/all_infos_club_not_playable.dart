@@ -111,6 +111,8 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
                           : Container(),
                       heatMapPositions('Nacional',dataGraphics.data),
                       heatMapPositions('Internacional',dataGraphics.dataInternational),
+
+                      peryear(),
                     ],
                   ),
                 ),
@@ -340,10 +342,59 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
       if(classificationData.position <= 8){
         return Container(width:30,color:Colors.black12,child: Text(classificationData.position.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.text14));
       }
-      return Container(width:30,child: Text(classificationData.position.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.text14));
+      return SizedBox(width:30,child: Text(classificationData.position.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.text14));
     }catch(e){
       return Container(width:30,);
     }
   }
 
+
+  Widget peryear(){
+    return Column(
+      children: [
+        const Text('Desempenho por ano',style: EstiloTextoBranco.text16,),
+        const Text('ANO  EST   NAC    INT',style: EstiloTextoBranco.text16,),
+        for(double i = 1950; i<anoInicial;i++)
+          peryearRow(i)
+      ],
+    );
+  }
+
+  Widget peryearRow(double year){
+
+    int national = 0;
+    try{
+      national = dataGraphics.data.where((element) => element.year == year).first.position;
+    }catch(e){
+      //print();
+    }
+
+    int international = 0;
+    try{
+      international = dataGraphics.dataInternational.where((element) => element.year == year).first.position;
+    }catch(e){
+      //print();
+    }
+
+    int estadual = 0;
+    try{
+      estadual = dataGraphics.dataEstadual.where((element) => element.year == year).first.position;
+    }catch(e){
+      //print();
+    }
+
+    return Row(
+      children: [
+        const SizedBox(width: 10),
+        Text(year.floor().toString(),style: EstiloTextoBranco.text14,),
+        const SizedBox(width: 10),
+        Container(width:30,child: Text(estadual.toString()+'º',style: EstiloTextoBranco.text14,)),
+        const SizedBox(width: 10),
+        Container(width:30,child: Text(national.toString()+'º',style: EstiloTextoBranco.text14,)),
+        const SizedBox(width: 10),
+        Text(international.toString()+'º',style: EstiloTextoBranco.text14,),
+
+      ],
+    );
+  }
 }

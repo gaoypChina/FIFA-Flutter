@@ -5,6 +5,7 @@ import 'package:fifa/values/historic_champions/estaduais.dart';
 import 'package:fifa/values/historic_champions/europa.dart';
 import 'package:fifa/values/historic_champions/europa_top_leagues.dart';
 import 'package:fifa/values/historic_champions/internationals.dart';
+import 'package:fifa/values/historic_champions/north_america.dart';
 
   Map<double,dynamic> mapChampions(String league){
 
@@ -16,6 +17,9 @@ import 'package:fifa/values/historic_champions/internationals.dart';
     }
     if(mapAmerica[league] != null){
         return mapAmerica[league];
+    }
+    if(mapNorthAmerica[league] != null){
+      return mapNorthAmerica[league];
     }
     if(mapAfrica[league] != null) {
         return mapAfrica[league];

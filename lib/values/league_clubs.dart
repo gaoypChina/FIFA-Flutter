@@ -179,7 +179,7 @@ Map clubNameMapImmutable = {
     0: clubName.argentinojuniors,1: clubName.atleticoTucuman,2: clubName.banfield,3: clubName.bocajuniors,
     4: clubName.colon,5: clubName.defensayjusticia,6: clubName.estudiantes,7: clubName.gimnasia,
     8: clubName.godoycruz,9: clubName.huracan,10: clubName.independiente,11: clubName.lanus,
-    12: clubName.newells,13: clubName.racing,14: clubName.riverplate,15:clubName.rosariocentral,
+    12: clubName.newells,13: clubName.racing,14: clubName.riverplate,15:clubName.rosario,
     16: clubName.sanlorenzo,17:clubName.talleres,18: clubName.unionSantaFe,19: clubName.velez,
   },
   LeagueOfficialNames().mercosul : {

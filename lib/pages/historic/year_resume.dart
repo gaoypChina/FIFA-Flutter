@@ -181,16 +181,17 @@ class _YearResumeState extends State<YearResume> {
 
 
 Widget internationalChampionsSelection(){
+  LeagueOfficialNames leagueOfficialNames = LeagueOfficialNames();
   return Row(
     children: [
-      internationalChampionsWidgetDetail(LeagueOfficialNames().mundial),
-      internationalChampionsWidgetDetail(LeagueOfficialNames().championsLeague),
-      internationalChampionsWidgetDetail(LeagueOfficialNames().ligaEuropa),
-      internationalChampionsWidgetDetail(LeagueOfficialNames().libertadores),
-      internationalChampionsWidgetDetail(LeagueOfficialNames().sulamericano),
-      internationalChampionsWidgetDetail(LeagueOfficialNames().concacaf),
-      internationalChampionsWidgetDetail(LeagueOfficialNames().asia),
-      internationalChampionsWidgetDetail(LeagueOfficialNames().africa),
+      internationalChampionsWidgetDetail(leagueOfficialNames.mundial),
+      internationalChampionsWidgetDetail(leagueOfficialNames.championsLeague),
+      internationalChampionsWidgetDetail(leagueOfficialNames.ligaEuropa),
+      internationalChampionsWidgetDetail(leagueOfficialNames.libertadores),
+      internationalChampionsWidgetDetail(leagueOfficialNames.sulamericano),
+      internationalChampionsWidgetDetail(leagueOfficialNames.concacaf),
+      internationalChampionsWidgetDetail(leagueOfficialNames.asia),
+      internationalChampionsWidgetDetail(leagueOfficialNames.africa),
     ],
   );
 }

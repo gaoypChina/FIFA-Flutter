@@ -7,7 +7,7 @@ class LeagueOfficialNames{
   final String concacaf = 'Concacaf champions';
   final String asiaafricaChampionsLeague = 'World Champions League';
 
-  final String europaLeagueOficial = 'Europa League';
+  final String europaL0eagueOficial = 'Europa League';
   final String conferenceLeague = 'Conference League';
   final String copaSulAmericana = 'Copa Sul-Americana';
 
@@ -90,6 +90,7 @@ class LeagueOfficialNames{
   String marrocos = 'Liga Marrocos';
   String nigeria = 'Liga Nigeria';
   String tunisia = 'Liga Tunisia';
+  String congoRD = 'Liga RDCongo';
   String australia = 'A-League';
   String africaSul = 'Liga África do Sul';
   String outros = 'Outros';
@@ -157,7 +158,7 @@ class LeagueOfficialNames{
      india, australia,
 
       argelia, egito,   marrocos, tunisia,
-      africaSul, nigeria,
+      africaSul, nigeria, congoRD,
 
       paulistao, carioca, mineiro, es,
       gaucho,parana,santacatarina,
@@ -413,6 +414,7 @@ Map getLeagueNationalityMap(){
     leagueName.nigeria: Words.country.nigeria ,
     leagueName.tunisia: Words.country.tunisia ,
     leagueName.marrocos: Words.country.morocco ,
+    leagueName.congoRD: Words.country.congoRD ,
     leagueName.africaSul: Words.country.southAfrica ,
 
 
