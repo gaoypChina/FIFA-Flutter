@@ -13,6 +13,7 @@ import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/historic_champions/historic_champions.dart';
 import 'package:fifa/values/images.dart';
+import 'package:fifa/values/league_divisions.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
@@ -116,17 +117,27 @@ class _YearResumeState extends State<YearResume> {
       //print('LIGA $leagueName não tem histórico de classificação nesse ano);
       return Container();
     }
-    return GestureDetector(
-      onTap: (){
-        bottomSheetShowLeagueClassification(classificationNames);
-      },
-      child: Row(
+
+    //CUP WINNERS
+    List<String> cupClassification = [];
+    try {
+      if(Divisions().is1stDivision(leagueName)){
+        String cupName = getCup(leagueName);
+        cupClassification = mapChampions(cupName)[double.parse(selectedYear)];
+      }
+    }catch(e){
+      //print('COPA $leagueName não tem histórico de classificação nesse ano);
+    }
+
+    return Row(
         children: [
-          Center(
+          const SizedBox(width: 10),
+          GestureDetector(
+            onTap: (){
+              bottomSheetShowLeagueClassification(classificationNames);
+            },
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                const SizedBox(width: 10),
                 funcFlagsList(getCountryFromLeague(leagueName), 20, 30),
                 const SizedBox(width: 10),
                 classificationNames.isNotEmpty ? Images().getEscudoWidget(classificationNames[0],45,45) : Container(),
@@ -139,12 +150,18 @@ class _YearResumeState extends State<YearResume> {
                 classificationNames.length>=6 ? Images().getEscudoWidget(classificationNames[5],20,20) : Container(),
                 classificationNames.length>=7 ? Images().getEscudoWidget(classificationNames[6],20,20) : Container(),
                 classificationNames.length>=8 ? Images().getEscudoWidget(classificationNames[7],20,20) : Container(),
-                const SizedBox(width: 20),
               ],
             ),
           ),
+          const Spacer(),
+          Row(
+            children: [
+              cupClassification.isNotEmpty ? Images().getEscudoWidget(cupClassification[0],40,40) : Container(),
+              cupClassification.length>=2 ? Images().getEscudoWidget(cupClassification[1],20,20) : Container(),
+            ],
+          ),
+          const SizedBox(width: 10),
         ],
-      ),
     );
 
   }
@@ -192,6 +209,10 @@ Widget internationalChampionsSelection(){
       internationalChampionsWidgetDetail(leagueOfficialNames.concacaf),
       internationalChampionsWidgetDetail(leagueOfficialNames.asia),
       internationalChampionsWidgetDetail(leagueOfficialNames.africa),
+
+      internationalChampionsWidgetDetail(leagueOfficialNames.cupwinners),
+      internationalChampionsWidgetDetail(leagueOfficialNames.latina),
+      internationalChampionsWidgetDetail(leagueOfficialNames.rioSP),
     ],
   );
 }

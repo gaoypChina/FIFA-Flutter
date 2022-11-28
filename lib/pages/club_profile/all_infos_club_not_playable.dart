@@ -353,7 +353,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
     return Column(
       children: [
         const Text('Desempenho por ano',style: EstiloTextoBranco.text16,),
-        const Text('ANO  EST   NAC    INT',style: EstiloTextoBranco.text16,),
+        const Text('ANO  EST  COPA   NAC    INT',style: EstiloTextoBranco.text16,),
         for(double i = 1950; i<anoInicial;i++)
           peryearRow(i)
       ],
@@ -362,39 +362,76 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
 
   Widget peryearRow(double year){
 
-    int national = 0;
-    try{
-      national = dataGraphics.data.where((element) => element.year == year).first.position;
-    }catch(e){
-      //print();
-    }
+    String estadual = filter(year,10,dataGraphics.dataEstadual,false);
+    String copa = filter(year,10,dataGraphics.dataCups,false);
+    String national = filter(year,-1,dataGraphics.data,false);
+    String international = filter(year,32,dataGraphics.dataInternational,true);
 
-    int international = 0;
-    try{
-      international = dataGraphics.dataInternational.where((element) => element.year == year).first.position;
-    }catch(e){
-      //print();
-    }
+    return SizedBox(
+      height: 30,
+      child: Row(
+        children: [
+          const SizedBox(width: 10),
+          Text(year.floor().toString(),style: EstiloTextoBranco.text14,),
+          const SizedBox(width: 10),
+          positionColor(estadual,40),
+          const SizedBox(width: 10),
+          positionColor(copa,40),
+          const SizedBox(width: 10),
+          positionColor(national,40),
+          const SizedBox(width: 10),
+          positionColor(international,80),
 
-    int estadual = 0;
-    try{
-      estadual = dataGraphics.dataEstadual.where((element) => element.year == year).first.position;
-    }catch(e){
-      //print();
-    }
-
-    return Row(
-      children: [
-        const SizedBox(width: 10),
-        Text(year.floor().toString(),style: EstiloTextoBranco.text14,),
-        const SizedBox(width: 10),
-        Container(width:30,child: Text(estadual.toString()+'º',style: EstiloTextoBranco.text14,)),
-        const SizedBox(width: 10),
-        Container(width:30,child: Text(national.toString()+'º',style: EstiloTextoBranco.text14,)),
-        const SizedBox(width: 10),
-        Text(international.toString()+'º',style: EstiloTextoBranco.text14,),
-
-      ],
+        ],
+      ),
     );
+  }
+  Widget positionColor(positionStr, double size){
+    if(positionStr =="1º" || positionStr == "Campeão"){
+      return Container(width:size,color:Colors.yellow,child: Text(positionStr,style: EstiloTextoPreto.text14,));
+    }
+    if(positionStr == "2º" || positionStr == "Vice"){
+      return Container(width:size,color:Colors.blue,child: Text(positionStr,style: EstiloTextoBranco.text14,));
+    }
+    if(positionStr == "3º" || positionStr  == "4º" ){
+      return Container(width:size,color:Colors.blue[100],child: Text(positionStr,style: EstiloTextoPreto.text14,));
+    }
+    return SizedBox(width:size,child: Text(positionStr,style: EstiloTextoBranco.text14,));
+  }
+
+  filter(double year, int positionEliminate,List<ClassificationData> data,bool isMataMata){
+    String positionStr = '-';
+    try{
+      int positionInt = data.where((element) => element.year == year).first.position;
+      positionStr = positionInt.toString();
+      if(positionStr==positionEliminate.toString()){
+        positionStr='-';
+      }else{
+        positionStr += 'º';
+        if(isMataMata){
+          if(positionInt==1){
+            positionStr = "Campeão";
+          }
+          if(positionInt==2){
+            positionStr = "Vice";
+          }
+          if(positionInt==3 || positionInt==4){
+            positionStr = "Semi";
+          }
+          if(positionInt>=5 && positionInt<=8){
+            positionStr = "Quartas";
+          }
+          if(positionInt>=9 && positionInt<=16){
+            positionStr = "Oitavas";
+          }
+          if(positionInt>=17 && positionInt<=32){
+            positionStr = "Grupo";
+          }
+        }
+      }
+    }catch(e){
+      //print();
+    }
+    return positionStr;
   }
 }

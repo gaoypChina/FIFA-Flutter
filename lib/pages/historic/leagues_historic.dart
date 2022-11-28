@@ -78,6 +78,8 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                 ],
               ) : Container(),
 
+              nTeamsSelected == 1 ? tableBestClubs() : Container(),
+
               //TABELA
               Expanded(
                 child: nTeamsSelected>2 ? SingleChildScrollView(
@@ -88,7 +90,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                       for(int year=ano-1;year>=anoInicial;year--)
                         yearRow(year),
 
-                      for(int year=ano-1;year>ano-75;year--)
+                      for(int year=ano-1;year>ano-(anoInicial-1950)-1;year--)
                         yearRowPast(year),
                     ],
                   ),
@@ -99,7 +101,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                       for(int year=ano-1;year>=anoInicial;year--)
                         yearRow(year),
 
-                      for(int year=ano-1;year>ano-65;year--)
+                      for(int year=ano-1;year>ano-(anoInicial-1950)-1;year--)
                         yearRowPast(year),
                     ],
                   ),
@@ -325,6 +327,98 @@ class _HistoricLeagueState extends State<HistoricLeague> {
             ],
           ));
     });
+  }
+
+  rankBestClubs(){
+    List<String> clubNames = [];
+    mapChampions(choosenLeagueName).forEach((key,value) {
+      for(String name in value){
+        if(!clubNames.contains(name)){
+          clubNames.add(name);
+        }
+      }
+    });
+    return clubNames;
+  }
+  getClubPositions(String clubName){
+    Map positions = {};
+    mapChampions(choosenLeagueName).forEach((key,value) {
+      List lista = value;
+        if(value.contains(clubName)){
+          if(positions[lista.indexOf(clubName)+1] == null){
+            positions[lista.indexOf(clubName)+1] = 1;
+          }else{
+            positions[lista.indexOf(clubName)+1] += 1;
+          }
+        }
+    });
+    List positionsList = [];
+    for(int i=1;i<=20;i++){
+      if(positions[i] != null){
+        positionsList.add(positions[i]);
+      }else{
+        positionsList.add(0);
+      }
+    }
+    return positionsList;
+  }
+  List orderClubsRanking(){
+
+    //MAP POINTS
+    Map teamPoints = {};
+    for (String name in rankBestClubs()){
+      List positionsList = getClubPositions(name);
+      double pontuacao = 0;
+      for(int i=0; i<positionsList.length; i++){
+        int positionTimes = positionsList[i];
+        int position = i+1;
+        pontuacao += ((1/position)*positionTimes);
+        if(position == 1){pontuacao += 2*positionTimes;}
+        else if(position == 2){pontuacao += 1*positionTimes;}
+      }
+      teamPoints[name] = pontuacao;
+    }
+
+    //SORT TEAMS IN ORDER
+    List teams = teamPoints.keys.toList();
+    List points = teamPoints.values.toList();
+
+      for(int i=0;i<points.length-1;i++){
+        for(int k=i;k<points.length;k++){
+        if(points[k]>points[i]){
+          var aux = points[i];points[i] = points[k];points[k] = aux;
+          aux = teams[i];teams[i] = teams[k];teams[k] = aux;
+        }
+        }
+      }
+    return teams;
+  }
+
+  Widget tableBestClubs(){
+    List<String> clubNames = rankBestClubs();
+    List teams = orderClubsRanking();
+    return SizedBox(
+      height: 200,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            for (String name in teams)
+              clubHistoric(name,clubNames.indexOf(name))
+          ],
+        ),
+      ),
+    );
+  }
+  Widget clubHistoric(String clubName, int index){
+    List positions = getClubPositions(clubName);
+    return Row(
+      children: [
+        Images().getEscudoWidget(clubName,30,30),
+        SizedBox(width:120,child: Text(clubName,style: EstiloTextoBranco.text14)),
+        for (int i=0;i<10;i++)
+          SizedBox(width:20,child: Text(" "+positions[i].toString(),style: EstiloTextoBranco.text14)),
+      ],
+    );
   }
   ////////////////////////////////////////////////////////////////////////////
   clickClub(String clubName){

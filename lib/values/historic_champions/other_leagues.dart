@@ -5,7 +5,7 @@ import 'package:fifa/values/league_names.dart';
 ClubName _name = ClubName();
 LeagueOfficialNames leagueName = LeagueOfficialNames();
 
-Map<String,dynamic> outrasLigas = {
+Map<String,dynamic> mapOtherLeagues = {
 
   leagueName.rioSP : {
     1966.0: [_name.botafogo,_name.santos,_name.vasco,_name.corinthians,_name.saopaulo,_name.palmeiras,_name.flamengo,_name.bangu,_name.fluminense,_name.portuguesa],
@@ -37,6 +37,64 @@ Map<String,dynamic> outrasLigas = {
     1951.0: [_name.milan,_name.lille,_name.atleticomadrid,_name.sporting],
     1950.0: [_name.benfica,_name.bordeaux,_name.atleticomadrid,_name.lazio],
     1949.0: [_name.barcelona,_name.sporting,_name.torino,_name.reims],
+  },
+
+  leagueName.mitropa : {
+    1939.0: [_name.ujpest,_name.ferencvaros,_name.bologna,_name.ofkBelgrade],
+    1938.0: [_name.slaviaPraha,_name.ferencvaros,_name.juventus,_name.genoa,],
+    1937.0: [_name.ferencvaros,_name.lazio,_name.austria,],
+    1936.0: [_name.austria,_name.spartapraga,_name.ujpest,_name.inter,],
+    1935.0: [_name.spartapraga,_name.ferencvaros,_name.juventus,_name.austria],
+    1934.0: [_name.bologna,_name.admira,_name.juventus,_name.austria,],
+    1933.0: [_name.austria,_name.inter,_name.spartapraga,_name.juventus,],
+    1932.0: [_name.bologna,],
+    1931.0: [_name.firstViena,_name.wiener,_name.spartapraga,_name.roma],
+    1930.0: [_name.rapidviena,_name.spartapraga,_name.ferencvaros,_name.inter,],
+    1929.0: [_name.ujpest,_name.slaviaPraha,_name.rapidviena,_name.firstViena,],
+    1928.0: [_name.ferencvaros,_name.rapidviena,_name.viktoriaZizkov,],
+    1927.0: [_name.spartapraga,_name.rapidviena,_name.slaviaPraha,],
+  },
+
+  leagueName.cupwinners : {
+    1999.0: [_name.lazio,_name.mallorca,],
+    1998.0: [_name.chelsea,_name.stuttgart,],
+    1997.0: [_name.barcelona,_name.psg],
+    1996.0: [_name.psg,_name.rapidviena,],
+    1995.0: [_name.zaragoza,_name.arsenal,],
+    1994.0: [_name.arsenal,_name.parma,],
+    1993.0: [_name.parma,_name.royalAntwerp,],
+    1992.0: [_name.werderbremen,_name.monaco,],
+    1991.0: [_name.manchesterunited,_name.barcelona,],
+    1990.0: [_name.sampdoria,_name.anderlecht,],
+    1989.0: [_name.barcelona,_name.sampdoria,],
+    1988.0: [_name.mechelen,_name.ajax,],
+    1987.0: [_name.ajax,_name.lokleipzig,],
+    1986.0: [_name.dinamokiev,_name.atleticomadrid,],
+    1985.0: [_name.everton,_name.rapidviena,],
+    1984.0: [_name.juventus,_name.porto,],
+    1983.0: [_name.aberdeen,_name.realmadrid,],
+    1982.0: [_name.barcelona,_name.standardliege,],
+    1981.0: [_name.tbilisi,_name.carlzeissjena,],
+    1980.0: [_name.valencia,_name.arsenal,],
+    1979.0: [_name.barcelona,_name.fortunaDusseldorf,],
+    1978.0: [_name.anderlecht,_name.austria,],
+    1977.0: [_name.hamburgo,_name.anderlecht,],
+    1976.0: [_name.anderlecht,_name.westham,],
+    1975.0: [_name.dinamokiev,_name.ferencvaros,],
+    1974.0: [_name.magdeburg,_name.milan,],
+    1973.0: [_name.milan,_name.leeds,],
+    1972.0: [_name.rangers,_name.dinamoMoscou,],
+    1971.0: [_name.chelsea,_name.realmadrid,],
+    1970.0: [_name.manchestercity,_name.gornik,],
+    1969.0: [_name.slovanBratislava,_name.barcelona,],
+    1968.0: [_name.milan,_name.hamburgo,],
+    1967.0: [_name.bayernmunique,_name.rangers,],
+    1966.0: [_name.dortmund,_name.liverpool,],
+    1965.0: [_name.westham,_name.munique1860,],
+    1964.0: [_name.sporting,_name.mtk,],
+    1963.0: [_name.tottenham,_name.atleticomadrid,],
+    1962.0: [_name.atleticomadrid,_name.fiorentina,],
+    1961.0: [_name.fiorentina,_name.rangers,],
   },
 
 };

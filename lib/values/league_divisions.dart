@@ -42,6 +42,14 @@ class Divisions{
     return leagueDivisionsStructure(name)[0];
   }
 
+  bool is1stDivision(String name){
+    if(leagueDivisionsStructure(name)[0] == name){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
   bool is2ndDivision(String name){
     if(leagueDivisionsStructure(name).length>1 && leagueDivisionsStructure(name)[1] == name){
       return true;

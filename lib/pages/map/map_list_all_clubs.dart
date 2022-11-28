@@ -89,11 +89,9 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
   Widget clubRow(String clubName){
     return GestureDetector(
       onTap: (){
-          showClubMap(clubName);
-        },
-      onDoubleTap: (){
+          //showClubMap(clubName);
         Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfileNotPlayable(clubName: clubName)));
-      },
+        },
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 8),
         margin: const EdgeInsets.symmetric(vertical: 2),

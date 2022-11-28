@@ -17,6 +17,8 @@ class ClassificationData {
 
 class DataGraphics{
 
+  late String leagueName;
+
   int nTitulos = 0;
   int n2ndivision = 0;
   int g4Years = 0;
@@ -34,6 +36,12 @@ class DataGraphics{
   int finalsEstadual = 0;
   double pointsEstadual = 0;
 
+  //COPA
+  List<ClassificationData> dataCups=[];
+  int nTitulosCups = 0;
+  int finalsCups = 0;
+  double pointsCups = 0;
+
   //INTERNATIONAL
   List<ClassificationData> dataInternational=[];
   int nTitulosInternational = 0;
@@ -43,6 +51,7 @@ class DataGraphics{
   int round16International = 0;
   int participationInternational = 0;
   double pointsInternational = 0;
+
   //MUNDIAL
   List<ClassificationData> dataMundial=[];
   int nTitulosMundial = 0;
@@ -53,7 +62,6 @@ class DataGraphics{
 
   getDataNotPlayabale(String clubName, String country, [String state = '']){
     //GET LEAGUE NAME
-    late String leagueName;
     Map leagueNationality = getLeagueNationalityMap();
     leagueNationality.forEach((key, value) {
       if(value==country){
@@ -78,6 +86,10 @@ class DataGraphics{
       defineHistoricEstadual(clubName, state);
       participationsEstadual();
     }
+    //historico copas
+    defineHistoricCups(clubName);
+    participationsCups();
+
 
     //historico internacional
     defineHistoricInternational(clubName,internationalLeagueName);
@@ -240,7 +252,7 @@ class DataGraphics{
   /////////////////////////////////////////////////////////////////////////////
   // ESTADUAL
   ////////////////////////////////////////////////////////////////////////////
-  defineHistoricEstadual(String clubName, String state){
+  void defineHistoricEstadual(String clubName, String state){
     String stateLeague = getLeagueNationalityMap().keys.firstWhere((k) => getLeagueNationalityMap()[k] == state, orElse: () => null);
 
     //para cada ano
@@ -256,13 +268,41 @@ class DataGraphics{
 
   }
 
-  participationsEstadual(){
-    for(ClassificationData classificationData in dataInternational) {
+  void participationsEstadual(){
+    for(ClassificationData classificationData in dataEstadual) {
       if (classificationData.position == 1) {
         nTitulosEstadual++;
       }
       if (classificationData.position <= 2) {
         finalsEstadual++;
+      }
+    }
+  }
+  /////////////////////////////////////////////////////////////////////////////
+  // COPAS
+  ////////////////////////////////////////////////////////////////////////////
+  void defineHistoricCups(String clubName){
+    String cup = getCup(leagueName);
+
+    //para cada ano
+    for(var keyYear in mapChampions(cup).keys) {
+      List classificationNames = mapChampions(cup)[keyYear];
+      //verifica se naquele ano tem o time
+      int position = 10;
+      if(classificationNames.contains(clubName)){
+        position = classificationNames.indexOf(clubName) + 1;
+      }
+      dataCups.add(ClassificationData(keyYear, position));
+    }
+
+  }
+  void participationsCups(){
+    for(ClassificationData classificationData in dataCups) {
+      if (classificationData.position == 1) {
+        nTitulosCups++;
+      }
+      if (classificationData.position <= 2) {
+        finalsCups++;
       }
     }
   }

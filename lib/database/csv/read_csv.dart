@@ -215,6 +215,8 @@ class ReadCSV{
   correctPlayerPostion(String position){
 
     //Se logo de cara aparecer uma dessas posições ja salva como prioridade
+    if(position.contains('MD LD')){position='LD';return position;}
+    if(position.contains('MD LE')){position='LE';return position;}
     if(position.contains('LD') && position.contains('MD')){position='LD';return position;}
     else if(position.contains('LE') && position.contains('MD')){position='LD';return position;}
     else if(position.contains('LE') && position.contains('ME')){position='LE';return position;}

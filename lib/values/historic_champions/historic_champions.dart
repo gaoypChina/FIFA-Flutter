@@ -1,11 +1,13 @@
 import 'package:fifa/values/historic_champions/africa.dart';
 import 'package:fifa/values/historic_champions/america.dart';
 import 'package:fifa/values/historic_champions/asia.dart';
+import 'package:fifa/values/historic_champions/cups.dart';
 import 'package:fifa/values/historic_champions/estaduais.dart';
 import 'package:fifa/values/historic_champions/europa.dart';
 import 'package:fifa/values/historic_champions/europa_top_leagues.dart';
 import 'package:fifa/values/historic_champions/internationals.dart';
 import 'package:fifa/values/historic_champions/north_america.dart';
+import 'package:fifa/values/historic_champions/other_leagues.dart';
 
   Map<double,dynamic> mapChampions(String league){
 
@@ -34,11 +36,15 @@ import 'package:fifa/values/historic_champions/north_america.dart';
     if(mapEstaduais[league] != null){
       return mapEstaduais[league];
     }
+
+    if(mapCopas[league] != null){
+      return mapCopas[league];
+    }
+
+    if(mapOtherLeagues[league] != null){
+      return mapOtherLeagues[league];
+    }
+
     return {};
-
-    //if(mapCopas(league).isNotEmpty){
-    //    return mapCopas(league);
-    //}
-
 
   }
