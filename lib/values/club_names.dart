@@ -1016,6 +1016,8 @@ class ClubName{
   String omonia = "Omonia";
   String anorthosis = "Anorthosis";
   String aeklarnaca = "AEK Larnaca";
+  String aellimassol = "AEL Limassol";
+  String olynikosia = "Olympiakos Nicosia";
   //ISRAEL
   String ashdod = "Ashdod SC";
   String bneiSakhnin = "Bnei Sakhnin";
@@ -1546,6 +1548,7 @@ class ClubName{
   String atleticoMT = "Atlético Matogrossense";
   String atleticoRR = "Atlético Roraima";
   String aparecidense = "Aparecidense";
+  String aracatuba = "Araçatuba";
   String carazinho = "Atlético Carazinho";
   String athleticMG = "Athletic";
   String avai = "Avaí";
@@ -1676,6 +1679,7 @@ class ClubName{
   String jacarezinho = "Jacarezinho"; //PR
   String jacuipense = "Jacuipense";
   String jiparana = "Ji-Paraná"; //RONDONIA
+  String jmalucelli = "J. Malucelli"; //PR
   String joinville = "Joinville";
   String juazeirense = "Juazeirense";
   String juventusMooca = "Juventus Mooca";
@@ -1697,12 +1701,13 @@ class ClubName{
   String madureira = "Madureira";
   String malutrom = "Malutrom";
   String mamore = "Mamoré";
+  String manaus = "Manaus";
   String mandaguari = "Mandaguari";
   String maranhao = "Maranhão";
   String marciliodias = "Marcílio Dias";
   String marilia = "Marília";
   String maringaFC = "Maringa FC";
-  String manaus = "Manaus";
+  String matonense = "Matonense";
   String metropol = "Metropol";
   String mirassol = "Mirassol";
   String mixto = "Mixto";
@@ -1753,7 +1758,9 @@ class ClubName{
   String potiguar = "Potiguar de Mossoró";
   String primavera = "Primavera";
   String princesasolimoes = "Princesa dos Solimões";
+  String progressoRR = "Progresso"; //RR
   String prudentina = "Prudentina";
+  String realRR = "Real"; //RR
   String remo = "Remo";
   String realArquimedes = "Real Arquimedes"; //RO
   String realNoroeste = "Real Noroeste-ES";
@@ -1765,12 +1772,14 @@ class ClubName{
   String riobrancoAC = "Rio Branco-AC";
   String riobrancoES = "Rio Branco-ES";
   String riobrancoMG = "Rio Branco-MG";
+  String riobrancoRR = "Rio Branco-RR";
   String riobrancoSP = "Rio Branco-SP";
   String rioclaro = "Rio Claro";
   String riograndense = "Riograndense";
   String rionegro = "Rio Negro";
   String rionegroRR = "Rio Negro-RR";
   String riopreto = "Rio Preto";
+  String riverRR = "River"; //RR
   String rondoniense = "Rondoniense";
   String salgueiro = "Salgueiro";
   String santacruz = "Santa Cruz";
@@ -1803,6 +1812,7 @@ class ClubName{
   String siderurgica = "Siderúrgica"; //MG
   String sobradinho = "Sobradinho";
   String social = "Social";
+  String sorocaba = "Atlético de Sorocaba";
   String sorriso = "Sorriso"; //MT
   String sousa = "Sousa PB";
   String sulamerica = "Sul América"; //AM

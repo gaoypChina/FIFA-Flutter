@@ -7,6 +7,7 @@ import 'package:fifa/functions/change_club_control.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/configuration/configuration.dart';
 import 'package:fifa/pages/configuration/customize_players.dart';
+import 'package:fifa/pages/tournament_mode/tournament.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
@@ -34,7 +35,6 @@ class _HomePageState extends State<HomePage> {
   int posicaoPais=0;
 
   late String leagueName;
-  late String teamName;
   late int nLeagueTeams;
   late int clubID;
   late Club club;
@@ -80,7 +80,6 @@ class _HomePageState extends State<HomePage> {
     indexLeague = leaguesListRealIndex[posicaoPais];
     League leagueClass = League(index: indexLeague);
     leagueName = leagueClass.name;
-    teamName = leagueClass.getClubName(posicao);
     clubID = leagueClass.getClubRealID(posicao);
     nLeagueTeams = leagueClass.nClubs;
     club = Club(index: clubID);
@@ -93,7 +92,12 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
 
-                const SizedBox(height: 80),
+                const SizedBox(height: 30),
+                openTournament(
+                    onTap: (){
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Tournament()));
+                    }
+                ),
                 const Text('FIFA 23',style: EstiloTextoBranco.text40),
                 const SizedBox(height: 20),
 
@@ -200,6 +204,26 @@ class _HomePageState extends State<HomePage> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Widget openTournament({required Function onTap}){
+    return Stack(
+      children: [
+        const Icon(Icons.open_with,color:Colors.white,size:30),
+        SizedBox(
+          height: buttonSize,width: buttonSize,
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              customBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(buttonSize)),
+              onTap: (){
+                onTap();
+                setState(() {});
+              },
+            ),
+          ),
+        ),
+      ],
+    );
+  }
   Widget rightButton({required Function onTap}){
     return Stack(
       children: [
@@ -254,20 +278,21 @@ class _HomePageState extends State<HomePage> {
 
 
 Widget clubLogoAndKitStack(Club club){
+  double imageSize = 200;
     return  Column(
       children: [
         SizedBox(
-          height: 200,
-          width: 200,
+          height: imageSize,
+          width: imageSize,
           child: Stack(
             children: [
-              //Image.asset(Images().getStadium(club.name),height: 200,width: 200,fit: BoxFit.fill,),
+              //Image.asset(Images().getStadium(club.name),height: imageSize,width: imageSize,fit: BoxFit.fill,),
               //Escudo
-              Image.asset(Images().getEscudo(club.name),height: 200,width: 200),
+              Image.asset(Images().getEscudo(club.name),height: imageSize,width: imageSize),
               //Uniforme
               Container(
                   alignment: Alignment.bottomRight,
-                  child: Image.asset(Images().getUniform(club.name),height: 100,width: 100)
+                  child: Image.asset(Images().getUniform(club.name),height: imageSize/2,width: imageSize/2)
               ),
             ],
           ),
@@ -284,7 +309,7 @@ Widget continueButton(){
       customButtonContinue(
           title: Translation(context).text.continueButton,
           function: () {
-            funcChangeClub(teamName,indexLeague);
+            funcChangeClub(club.name,indexLeague);
             Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const Menu()));
           }
       );

@@ -50,6 +50,7 @@ class LeagueOfficialNames{
   String cazaquistao = 'Super Liga do Cazaquistão';
   String armenia = 'Liga Armena';
   String belarus = 'Liga Belarus';
+  String chipre = 'Liga Chipre';
   String macedonia = 'Liga Macedonia';
   String ligaEuropa = 'Liga Europeia';  String lesteEuropeu = 'Leste Europeu';
 
@@ -155,7 +156,7 @@ class LeagueOfficialNames{
       servia,     croacia, israel,
       romenia, bulgaria, hungria,
       russia, ucrania,     cazaquistao,
-      armenia,belarus, macedonia,
+      armenia,belarus, macedonia, chipre,
 
      brasil1, brasil2, brasil3,
      argentina,
@@ -387,6 +388,7 @@ Map getLeagueNationalityMap(){
     leagueName.armenia: Words.country.armenia ,
     leagueName.belarus: Words.country.belarus ,
     leagueName.macedonia: Words.country.macedonia ,
+    leagueName.chipre: Words.country.cyprus ,
 
     leagueName.brasil1: Words.country.brazil ,
     leagueName.brasil2: Words.country.brazil ,

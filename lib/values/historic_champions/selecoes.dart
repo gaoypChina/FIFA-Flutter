@@ -1,9 +1,7 @@
 import 'package:fifa/classes/words.dart';
-import 'package:fifa/values/club_names.dart';
 import 'package:fifa/values/league_names.dart';
 
 
-ClubName _name = ClubName();
 var w = Words.country;
 LeagueOfficialNames leagueName = LeagueOfficialNames();
 
@@ -12,7 +10,7 @@ Map<String,dynamic> mapSelecoes = {
   // AMERICA DO NORTE
   ///////////////////////////////////////////////////////////////
   leagueName.copamundo : {
-    //2022.0: [w.brazil,w.france, w.spain,w.england,  w.argentina,w.netherlands,w.uruguay,      w.mexico,w.tunisia,w.canada,w.qatar],
+    2022.0: [w.argentina,w.france,    w.croatia,w.morocco,         w.england,w.brazil,w.netherlands,w.portugal,  w.spain,w.switzerland,w.poland,w.senegal,w.southKorea,w.unitedStates,w.australia,w.japan,    w.ecuador,w.iran,w.mexico,w.tunisia,w.germany,w.belgium,w.cameroon,w.uruguay,   w.ghana,w.serbia,w.costaRica,w.southArabia,w.wales,w.denmark,w.canada,w.qatar],
     2018.0: [w.france,w.croatia,      w.belgium,w.england,         w.uruguay,w.russia,w.brazil,w.sweden,       w.argentina,w.portugal,w.mexico,w.japan,w.spain,w.denmark,w.switzerland,w.colombia],
     2014.0: [w.germany,w.argentina,   w.netherlands,w.brazil,      w.france,w.belgium,w.colombia,w.costaRica,  w.algeria,w.switzerland,w.mexico,w.chile,w.nigeria,w.unitedStates,w.uruguay,w.greece],
     2010.0: [w.spain,w.netherlands,   w.germany,w.uruguay,         w.paraguay,w.brazil,w.argentina,w.ghana,    w.portugal,w.japan,w.england,w.southKorea,w.mexico,w.chile,w.slovakia,w.unitedStates],
