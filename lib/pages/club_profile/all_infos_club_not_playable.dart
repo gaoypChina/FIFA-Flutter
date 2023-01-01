@@ -3,6 +3,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/page_controller/club_profile/data_graphics.dart';
+import 'package:fifa/pages/historic/historic_players.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
@@ -68,7 +69,9 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    Images().getEscudoWidget(widget.clubName,90,90),
+                    GestureDetector(onTap:(){
+                      Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricPlayers(clubName: widget.clubName)));
+                    },child: Images().getEscudoWidget(widget.clubName,90,90)),
                     Images().getUniformWidget(widget.clubName,100,100),
                     Column(
                       children: [

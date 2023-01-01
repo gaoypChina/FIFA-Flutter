@@ -92,15 +92,15 @@ List clubsAllNameList = [
   ClubName().steauaBucuresti,ClubName().maccabiTelAviv,
 
   //////////////////////////////////////////////////////
-  ClubName().palmeiras,  ClubName().atleticogo,  ClubName().atleticomg,  ClubName().atleticopr,
-  ClubName().bahia,  ClubName().bragantino,  ClubName().ceara,  ClubName().corinthians,
+  ClubName().palmeiras,  ClubName().botafogo,  ClubName().atleticomg,  ClubName().atleticopr,
+  ClubName().bahia,  ClubName().bragantino,  ClubName().cruzeiro,  ClubName().corinthians,
   ClubName().flamengo,  ClubName().fluminense,  ClubName().fortaleza,  ClubName().gremio,
-  ClubName().internacional,  ClubName().santos,  ClubName().saopaulo,  ClubName().sport,
+  ClubName().internacional,  ClubName().santos,  ClubName().saopaulo,  ClubName().vasco,
 
-  ClubName().americamg,  ClubName().botafogo,  ClubName().chapecoense,  ClubName().coritiba,
-  ClubName().cuiaba,  ClubName().criciuma,  ClubName().cruzeiro,  ClubName().figueirense,
+  ClubName().americamg,  ClubName().atleticogo,  ClubName().chapecoense,  ClubName().coritiba,
+  ClubName().cuiaba,  ClubName().criciuma,  ClubName().ceara,  ClubName().figueirense,
   ClubName().goias,  ClubName().guarani,  ClubName().juventude,  ClubName().nautico,
-  ClubName().parana,  ClubName().pontepreta,  ClubName().vasco,  ClubName().vitoria,
+  ClubName().parana,  ClubName().pontepreta,  ClubName().sport,  ClubName().vitoria,
 
   ClubName().brusque,ClubName().tombense,
   ClubName().avai, ClubName().paysandu, ClubName().santacruz, ClubName().portuguesa,

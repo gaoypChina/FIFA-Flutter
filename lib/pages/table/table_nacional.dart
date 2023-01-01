@@ -285,6 +285,7 @@ Widget matchsWidget(){
 }
 
   TableRow rowMatches(int numeroDoConfronto) {
+
     List chave = Chaves().obterChave(rodadaMatch, choosenLeagueIndex);
     int chaveClub1 = chave[numeroDoConfronto];
     League leagueClass = leaguesMap[choosenLeagueIndex];

@@ -38,8 +38,8 @@ class _DailyMatchState extends State<DailyMatch> {
                 height: Sized(context).height,
                 width: Sized(context).width,
                 child: Column(
-                    children: [
-                      const SizedBox(height: 30),
+                    children: const [
+                      SizedBox(height: 30),
                       Text('oi', style: EstiloTextoBranco.text20),
 
                     ]

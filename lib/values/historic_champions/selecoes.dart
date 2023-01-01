@@ -10,7 +10,7 @@ Map<String,dynamic> mapSelecoes = {
   // AMERICA DO NORTE
   ///////////////////////////////////////////////////////////////
   leagueName.copamundo : {
-    2022.0: [w.argentina,w.france,    w.croatia,w.morocco,         w.england,w.brazil,w.netherlands,w.portugal,  w.spain,w.switzerland,w.poland,w.senegal,w.southKorea,w.unitedStates,w.australia,w.japan,    w.ecuador,w.iran,w.mexico,w.tunisia,w.germany,w.belgium,w.cameroon,w.uruguay,   w.ghana,w.serbia,w.costaRica,w.southArabia,w.wales,w.denmark,w.canada,w.qatar],
+    2022.0: [w.argentina,w.france,    w.croatia,w.morocco,         w.netherlands,w.england,w.brazil,w.portugal,  w.japan,w.senegal,w.australia,w.switzerland,w.spain,w.unitedStates,w.poland,w.southKorea,    w.germany,w.ecuador,w.cameroon,w.uruguay,w.tunisia,w.mexico,w.belgium,w.ghana,      w.southArabia,w.iran,w.costaRica,w.denmark,w.serbia,w.wales,w.canada,w.qatar],
     2018.0: [w.france,w.croatia,      w.belgium,w.england,         w.uruguay,w.russia,w.brazil,w.sweden,       w.argentina,w.portugal,w.mexico,w.japan,w.spain,w.denmark,w.switzerland,w.colombia],
     2014.0: [w.germany,w.argentina,   w.netherlands,w.brazil,      w.france,w.belgium,w.colombia,w.costaRica,  w.algeria,w.switzerland,w.mexico,w.chile,w.nigeria,w.unitedStates,w.uruguay,w.greece],
     2010.0: [w.spain,w.netherlands,   w.germany,w.uruguay,         w.paraguay,w.brazil,w.argentina,w.ghana,    w.portugal,w.japan,w.england,w.southKorea,w.mexico,w.chile,w.slovakia,w.unitedStates],
@@ -122,9 +122,9 @@ Map<String,dynamic> mapSelecoes = {
 
   leagueName.copaasia : {
     2019.0: [w.qatar,w.japan,w.iran,w.uae,                  w.southKorea,w.vietnam,w.australia,w.china,],
-    2015.0: [w.australia,w.southKorea,w.uae,w.iraq,],
-    2011.0: [w.japan,w.australia,w.southKorea,w.uzbekistan,],
-    2007.0: [w.iraq,w.southArabia,w.southKorea,w.japan,],
+    2015.0: [w.australia,w.southKorea,w.uae,w.iraq,         w.china,w.uzbekistan,w.japan,w.iran,           w.southArabia,w.jordan,w.bahrein,w.oman,       w.northKorea,w.qatar,w.kuwait,w.palestine],
+    2011.0: [w.japan,w.australia,w.southKorea,w.uzbekistan, w.qatar,w.iraq,w.iran,w.jordan,                w.china,w.bahrein,w.syria,w.northKorea,        w.uae,w.kuwait,w.southArabia,w.india,],
+    2007.0: [w.iraq,w.southArabia,w.southKorea,w.japan,     w.vietnam,w.uzbekistan,w.iran,w.australia,     ],
     2004.0: [w.japan,w.china,w.iran,w.bahrein,],
     2000.0: [w.japan,w.southArabia,w.southKorea,w.china,],
     1996.0: [w.southArabia,w.uae,w.iran,w.kuwait,],

@@ -4,7 +4,6 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/functions/change_club_control.dart';
 import 'package:fifa/pages/simulacao/play.dart';
-import 'package:fifa/pages/tournament_mode/daily_match.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/images.dart';
@@ -64,8 +63,10 @@ class _TournamentState extends State<Tournament> {
         width: Sized(context).width,
         child: Column(
         children: [
-              const SizedBox(height: 50),
+              const SizedBox(height: 260),
 
+              const Text('Jogo Único',style:EstiloTextoBranco.negrito22),
+              const SizedBox(height: 40),
               //LIGAS
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,

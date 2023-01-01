@@ -135,6 +135,7 @@ class LeagueOfficialNames{
   String ramoncarranza = 'Troféu Ramón de Carranza';
   String intertoto = 'Copa Intertoto';
   String cupwinners = 'UEFA Cup Winners Cup';
+  String palmamallorca = 'Troféu de Palma de Mallorca';
 
 
 

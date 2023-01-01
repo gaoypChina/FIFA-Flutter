@@ -229,7 +229,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
   Widget bestPlayers() {
     List jogadores = widget.club.getJogadores();
     List<Jogador> jogadoresClass = [];
-    List craqueValue=[],artilheiroValue=[],assistenteValue=[],matchValue=[],mvpValue=[];
+    List craqueValue=[],artilheiroValue=[],assistenteValue=[],mvpValue=[];
 
     for(int jogadorID in jogadores){
       jogadoresClass.add(Jogador(index: jogadorID));
@@ -237,7 +237,6 @@ class _ClubGraphicsState extends State<ClubGraphics> {
       mvpValue.add(jogadoresClass.last.price.floor());
       artilheiroValue.add(jogadoresClass.last.goalsLeague);
       assistenteValue.add(jogadoresClass.last.assistsLeague);
-      matchValue.add(jogadoresClass.last.matchsLeague);
     }
 
     return SingleChildScrollView(
@@ -248,7 +247,6 @@ class _ClubGraphicsState extends State<ClubGraphics> {
           bestPlayerBox('MVP', jogadoresClass.elementAt(getMaxIndex(mvpValue)),"\$ ${getValue(mvpValue).toString()}"),
           bestPlayerBox('Artilheiro', jogadoresClass.elementAt(getMaxIndex(artilheiroValue)),"${getValue(artilheiroValue).toString()} G"),
           bestPlayerBox('Assistente', jogadoresClass.elementAt(getMaxIndex(assistenteValue)),"${getValue(assistenteValue).toString()} A"),
-          bestPlayerBox('Principal', jogadoresClass.elementAt(getMaxIndex(matchValue)),"${getValue(matchValue).toString()} J"),
         ],
       ),
     );

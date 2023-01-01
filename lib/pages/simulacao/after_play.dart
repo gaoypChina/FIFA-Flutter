@@ -1,3 +1,5 @@
+import 'package:fifa/classes/chaves.dart';
+import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/name.dart';
 import 'package:fifa/classes/geral/semana.dart';
@@ -20,7 +22,12 @@ import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:flutter/material.dart';
 
 class AfterPlay extends StatefulWidget {
-  const AfterPlay({Key? key}) : super(key: key);
+  //NECESSARY VARIABLES WHEN CALLING THIS CLASS
+  final int adversarioClubID;
+  final int gol1;
+  final int gol2;
+  final bool visitante;
+  const AfterPlay({Key? key,required this.adversarioClubID, required this.visitante, required this.gol1, required this.gol2}) : super(key: key);
 
   @override
   State<AfterPlay> createState() => _AfterPlayState();
@@ -28,13 +35,12 @@ class AfterPlay extends StatefulWidget {
 
 class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
 
-  String name1 = 'CSKA';
-  String name2 = 'Celtic';
-  String gol1 = '1';
-  String gol2 = '0';
-  bool visitante = false;
+  String name1 = '';
+  String name2 = '';
   My myClass = My();
   Club myClubClass = Club(index: My().clubID);
+  late Club adversarioClubClass;
+  late League leagueClass;
   late TabController _tabController;
 
   ///////////////////////////////////////////////////////////////////////////
@@ -43,7 +49,19 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
   @override
   void initState() {
     _tabController = TabController(vsync: this, length: 2);
+    onInit();
     super.initState();
+  }
+  onInit(){
+    adversarioClubClass = Club(index: widget.adversarioClubID);
+    if(widget.visitante){
+      name2 = myClass.clubName;
+      name1 = adversarioClubClass.name;
+    }else{
+      name1 = myClass.clubName;
+      name2 = adversarioClubClass.name;
+    }
+    leagueClass = League(index: myClass.campeonatoID);
   }
   @override
   void dispose() {
@@ -55,6 +73,7 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
+
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -64,8 +83,10 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
 
             Column(
               children: [
+
                 const SizedBox(height: 30),
                 header(),
+
                 SizedBox(
                   height: 30,
                   child: TabBar(
@@ -87,7 +108,7 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
                 ),
                 Row(
                   children: [
-                    bestPlayerBox('Melhor Jogador', Jogador(index: 32),''),
+                    bestPlayerBox('Melhor Jogador', Jogador(index: myClass.jogadores[8]),''),
                     Expanded(child: classification()),
                   ],
                 ),
@@ -114,20 +135,21 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
 ////////////////////////////////////////////////////////////////////////////
   Widget header(){
     String textRodada = '';
-    if(Semana(semana).isJogoCampeonatoNacional) {
-      textRodada = '${Translation(context).text.matchWeek} ' + rodada.toString() + '/' + (League(index: myClass.campeonatoID).getNTeams()-1).toString();
+    Semana semanaClass = Semana(semana);
+    if(semanaClass.isJogoCampeonatoNacional) {
+      textRodada = '${Translation(context).text.matchWeek} ' + (rodada-1).toString() + '/' + (League(index: myClass.campeonatoID).getNTeams()-1).toString();
     }else{
       textRodada = Name().groupsPhase;
-      if(Semana(semana).isJogoGruposInternacional){textRodada += ' ${Semana(semana).rodadaGroupInternational}'; }
-      else if(Semana(semana).isJogoMataMataInternacional){
-        textRodada = Semana(semana).semanaStr;
+      if(semanaClass.isJogoGruposInternacional){textRodada += ' ${semanaClass.rodadaGroupInternational}'; }
+      else if(semanaClass.isJogoMataMataInternacional){
+        textRodada = semanaClass.semanaStr;
       }
     }
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         //Escudo time 1
-        Image.asset(Images().getEscudo(name1),height: 80,width: 80),
+        Images().getEscudoWidget(name1,80,80),
 
         Column(
           children: [
@@ -135,18 +157,19 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
                 ? Image.asset(FIFAImages().campeonatoLogo(myClubClass.leagueName),height: 30,width: 30)
                 : Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().libertadores),height: 35,width: 35),
             Text(textRodada,style: EstiloTextoBranco.text16),
-            visitante
-                ? Text(gol1 +'X'+ gol2,style: EstiloTextoBranco.text30)
-                : Text(gol2 +'X'+ gol1,style: EstiloTextoBranco.text30),
+            widget.visitante
+                ? Text(widget.gol2.toString() +'X'+ widget.gol1.toString() ,style: EstiloTextoBranco.text30)
+                : Text(widget.gol1.toString()  +'X'+ widget.gol2.toString() ,style: EstiloTextoBranco.text30),
           ],
         ),
 
         //Escudo time 2
-        Image.asset(Images().getEscudo(name2),height: 80,width: 80),
+        Images().getEscudoWidget(name2,80,80),
 
       ],
     );
   }
+
 Widget statistics(){
     return Column(
       children: [
@@ -208,7 +231,8 @@ Widget statistics(){
     );
   }
   Widget classification(){
-    int nTeams = 12;
+    List classificationClubsIndexes = Classification(leagueIndex: myClass.getLeagueID()).classificationClubsIndexes;
+
       return Container(
         height: 5*36,
         color: AppColors().greyTransparent,
@@ -222,7 +246,10 @@ Widget statistics(){
                 Container(width:30),
                 const Expanded(child: Text('Nome',style:EstiloTextoBranco.text14)),
                 const SizedBox(width:30,child: Text('PTS',style:EstiloTextoBranco.text14)),
+                const SizedBox(width:25,child: Text('GM',style:EstiloTextoBranco.text14)),
+                const SizedBox(width:25,child: Text('GS',style:EstiloTextoBranco.text14)),
                 const SizedBox(width:30,child: Text('OVR',style:EstiloTextoBranco.text14)),
+                const SizedBox(width:10)
               ],
             ),
             //CONTENT
@@ -231,8 +258,8 @@ Widget statistics(){
               margin: const EdgeInsets.all(4),
               child: ListView.builder(
                   padding: EdgeInsets.zero,
-                  itemCount: nTeams,
-                  itemBuilder: (c,i)=>classificationRow(i)
+                  itemCount: classificationClubsIndexes.length,
+                  itemBuilder: (c,i)=>classificationRow(i,classificationClubsIndexes[i])
               ),
             ),
           ],
@@ -240,41 +267,67 @@ Widget statistics(){
       );
     }
 
-  Widget classificationRow(int i){
-    String clubName1 = 'Chelsea';
+  Widget classificationRow(int position, int indexClub){
+    Club clubClass = Club(index: indexClub);
+    String clubName1 = clubClass.name;
+    int points = clubClass.leaguePoints;
+    int golsMarcados = clubClass.leagueGM;
+    int golsSofridos = clubClass.leagueGS;
+
     return Row(
       children: [
-        SizedBox(width:25,child: Text((i+1).toString()+'º',style:EstiloTextoBranco.text14)),
-        Image.asset(Images().getEscudo(clubName1),height: 25,width: 25,),
-        Expanded(child: Text(clubName1,style:EstiloTextoBranco.text14)),
-        const SizedBox(width:30,child: Text('6',style:EstiloTextoBranco.text14)),
-        const SizedBox(width:30,child: Text('76.8',style:EstiloTextoBranco.text14)),
+        SizedBox(width:25,child: Text((position+1).toString()+'º',style:EstiloTextoBranco.text14)),
+        Images().getEscudoWidget(clubName1,25,25),
+        Expanded(
+            child: Container(color:(clubName1==myClass.clubName) ? Colors.purple : Colors.transparent,
+            padding:const EdgeInsets.all(1),
+            child: Text(clubName1,style:EstiloTextoBranco.text12))),
+        SizedBox(width:25,child: Text(points.toString(),style:EstiloTextoBranco.text14)),
+        SizedBox(width:25,child: Text(golsMarcados.toString(),style:EstiloTextoBranco.text14)),
+        SizedBox(width:25,child: Text(golsSofridos.toString(),style:EstiloTextoBranco.text14)),
+        SizedBox(width:40,child: Text(clubClass.getOverall().toStringAsFixed(2),style:EstiloTextoBranco.text14)),
       ],
     );
   }
+
   Widget weekMatchs(){
+    int nteamsLeague = leagueClass.getNTeams();
+
     return Container(
       color: AppColors().greyTransparent,
       margin: const EdgeInsets.all(4),
       child: Column(
         children: [
-          Text('Rodada '+rodada.toString(),style: EstiloTextoBranco.negrito16),
+          Text('Rodada '+(rodada-1).toString(),style: EstiloTextoBranco.negrito16),
               Container(
                 height: 5*30,
                 margin: const EdgeInsets.all(4),
                 child: ListView.builder(
                     padding: EdgeInsets.zero,
-                    itemCount: 5,
-                    itemBuilder: (c,i)=>weekMatchRow()
+                    itemCount: (nteamsLeague/2).round(),
+                    itemBuilder: (c,i)=>weekMatchRow(i*2)
                 ),
               ),
         ],
       ),
     );
   }
-  Widget weekMatchRow(){
-    String clubName1 = 'Real Madrid';
-    String clubName2 = 'Milan';
+  Widget weekMatchRow(int numeroDoConfronto){
+
+    List chave = Chaves().obterChave((rodada-1), myClass.campeonatoID);
+    int chaveClub1 = chave[numeroDoConfronto];
+    String teamName1 = leagueClass.getClubName(chaveClub1);
+    int chaveClub2 = Chaves().chaveIndexAdvCampeonato((rodada-1),  myClass.campeonatoID, chaveClub1)[0];
+    String teamName2 = leagueClass.getClubName(chaveClub2);
+
+    int gol1=0;
+    int gol2=0;
+    //quando chega na rodada max ele acabaria nao mostrando, por isso quando termina o campeonato mostra a ultima rodada
+      List results = globalHistoricLeagueGoalsAll[(rodada-1)][ myClass.campeonatoID];
+      gol1 = results[chaveClub1];
+      gol2 = results[chaveClub2];
+
+
     return Container(
       margin: const EdgeInsets.only(bottom: 4),
       child: Row(
@@ -284,9 +337,12 @@ Widget statistics(){
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text(clubName1,style:EstiloTextoBranco.text14),
-                Image.asset(Images().getEscudo(clubName1),height: 25,width: 25,),
-                const Text('3',style:EstiloTextoBranco.text14),
+                Container(
+                    padding: const EdgeInsets.all(1),
+                    color:(myClass.clubName == teamName1) ?Colors.purple:Colors.transparent,
+                    child: Text(teamName1,style:EstiloTextoBranco.text14)),
+                Images().getEscudoWidget(teamName1,25,25),
+                Text(gol1.toString(),style:EstiloTextoBranco.text14),
               ],
             ),
           ),
@@ -297,9 +353,12 @@ Widget statistics(){
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const Text('2',style:EstiloTextoBranco.text14),
-                Image.asset(Images().getEscudo(clubName2),height: 25,width: 25,),
-                Text(clubName2,style:EstiloTextoBranco.text14),
+                Text(gol2.toString(),style:EstiloTextoBranco.text14),
+                Images().getEscudoWidget(teamName2,25,25),
+                Container(
+                    padding: const EdgeInsets.all(1),
+                    color:(myClass.clubName == teamName2) ?Colors.purple:Colors.transparent,
+                    child: Text(teamName2,style:EstiloTextoBranco.text14)),
               ],
             ),
           ),

@@ -9,7 +9,6 @@ import 'package:fifa/pages/historic/mundial.dart';
 import 'package:fifa/pages/historic/year_resume.dart';
 import 'package:fifa/pages/map/map_exploration.dart';
 import 'package:fifa/pages/map/map_list_all_clubs.dart';
-import 'package:fifa/pages/simulacao/after_play.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
@@ -91,12 +90,6 @@ class _HistoricMenuState extends State<HistoricMenu> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          box(
-                              'Meus Elencos',
-                              Image.asset('assets/icons/generic_user.png',height: imageSize,),
-                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => const MyPlayersHistoric()));
-                              }
-                          ),
                           // box(
                           //     'Melhores clubes da história',
                           //     Image.asset('assets/clubs/generic.png',height: imageSize,),
@@ -112,9 +105,9 @@ class _HistoricMenuState extends State<HistoricMenu> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           box(
-                              'Post Match',
-                              Icon(Icons.sports_volleyball_outlined,color: Colors.white, size: imageSize),
-                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => const AfterPlay()));
+                              'Meus Elencos',
+                              Image.asset('assets/icons/generic_user.png',height: imageSize,),
+                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => const MyPlayersHistoric()));
                               }
                           ),
                           box(

@@ -11,6 +11,7 @@ import 'package:fifa/functions/coach/coach_best_results.dart';
 import 'package:fifa/functions/simulate/my_match/counter.dart';
 import 'package:fifa/functions/simulate/my_match/my_match_simulation.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/simulacao/after_play.dart';
 import 'package:fifa/pages/simulacao/fim_campeonato.dart';
 import 'package:fifa/functions/simulate/simulate_functions.dart';
 import 'package:fifa/pages/simulacao/substitution.dart';
@@ -21,7 +22,6 @@ import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 import '../../classes/my.dart';
-import '../menu/c_menu.dart';
 import '../../widgets/field_static.dart';
 import 'end_year.dart';
 
@@ -350,8 +350,7 @@ class _PlayState extends State<Play> {
       }else if(semana == globalUltimaSemana){
         Navigator.of(context).push(MaterialPageRoute(builder: (context) => const EndYear()));
       }else{
-        Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Menu()));
-
+        Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => AfterPlay(adversarioClubID: widget.adversarioClubID,visitante: widget.visitante,gol1:myMatchSimulation.meuGolMarcado,gol2:myMatchSimulation.meuGolSofrido)));
       }
 
       //SIMULA OUTRAS PARTIDAS
