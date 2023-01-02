@@ -3,6 +3,7 @@ import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/functions/check_internet.dart';
+import 'package:fifa/functions/simulate/simulate_functions.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/page_controller/calendar_control.dart';
 import 'package:fifa/pages/calendar.dart';
@@ -11,6 +12,7 @@ import 'package:fifa/pages/historic/historic_menu.dart';
 import 'package:fifa/pages/menu/b_home.dart';
 import 'package:fifa/pages/ranking_clubs.dart';
 import 'package:fifa/pages/save/choose_save.dart';
+import 'package:fifa/pages/simulacao/end_year.dart';
 import 'package:fifa/pages/simulacao/not_play.dart';
 import 'package:fifa/pages/table/table_international.dart';
 import 'package:fifa/pages/table/table_nacional.dart';
@@ -125,9 +127,31 @@ class _MenuState extends State<Menu> {
                               Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const NotPlay()));
                             }
                           }),
-                          menuButton(Translation(context).text.table,(){
-                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableNacional(choosenLeagueIndex: myClass.campeonatoID)));
-                          }),
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+
+                            Expanded(
+                              child: menuButton('Simular',() async{
+                                //SIMULA JOGOS
+                                await Simulate().simulateWeek(simulMyMatch: true);
+
+                                if(semana >= globalUltimaSemana){
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const EndYear()));
+                                }else{
+                                  Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Menu()));
+                                }
+
+                              }),
+                          ),
+                          Expanded(
+                            child: menuButton(Translation(context).text.table,(){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableNacional(choosenLeagueIndex: myClass.campeonatoID)));
+                            }),
+                          ),
+                        ]),
+
 
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -193,24 +217,34 @@ class _MenuState extends State<Menu> {
                           onTap: (){
                             Navigator.push(context,MaterialPageRoute(builder: (context) => const Calendar()));
                           },
-                          child: Column(
+                          child: Stack(
                             children: [
-                               Text(Translation(context).text.nextAdversary,style: EstiloTextoBranco.text14),
-                              //Escudo
-                              adversario.clubName.isNotEmpty ? Image.asset(Images().getEscudo(adversario.clubName),height: 50,width: 50) : Container(),
-                              adversario.clubName.isNotEmpty ? Text(adversario.clubName,style: EstiloTextoBranco.negrito14) : Container(),
-                              adversario.clubName.isNotEmpty
-                                  ? Semana(semana).isJogoMataMataInternacional
-                                      ? Text(Semana(semana).semanaStr,style: EstiloTextoBranco.text14)
-                                  : Text('${Translation(context).text.position}: '+adversario.posicao.toString()+'º',style: EstiloTextoBranco.text14)
-                                  : Container(),
-                              adversario.clubName.isNotEmpty ? adversario.visitante
-                                  ? Text(Translation(context).text.away,style: EstiloTextoBranco.text14)
-                                  : Text(Translation(context).text.home,style: EstiloTextoBranco.text14) : Container(),
+                              const Padding(
+                                padding: EdgeInsets.only(top:8.0),
+                                child: Opacity(opacity:0.3,child: Icon(Icons.calendar_month,size:100,color: Colors.white)),
+                              ),
+                              Column(
+                                children: [
+                                   Text(Translation(context).text.nextAdversary,style: EstiloTextoBranco.text14),
+                                  //Escudo
+                                  adversario.clubName.isNotEmpty ? Image.asset(Images().getEscudo(adversario.clubName),height: 50,width: 50) : Container(),
+                                  adversario.clubName.isNotEmpty ? Text(adversario.clubName,style: EstiloTextoBranco.negrito14) : Container(),
+                                  adversario.clubName.isNotEmpty
+                                      ? Semana(semana).isJogoMataMataInternacional
+                                          ? Text(Semana(semana).semanaStr,style: EstiloTextoBranco.text14)
+                                      : Text('${Translation(context).text.position}: '+adversario.posicao.toString()+'º',style: EstiloTextoBranco.text14)
+                                      : Container(),
+                                  adversario.clubName.isNotEmpty ? adversario.visitante
+                                      ? Text(Translation(context).text.away,style: EstiloTextoBranco.text14)
+                                      : Text(Translation(context).text.home,style: EstiloTextoBranco.text14) : Container(),
 
+                                ],
+                              ),
                             ],
                           ),
                         ),
+
+                        //CLASSIFICAÇÃO E EXPECTATIVA
                         Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [

@@ -6,12 +6,12 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/tabela_national.dart';
 import 'package:fifa/functions/order_list.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/table/table_widget.dart';
+import 'package:fifa/theme/colors.dart';
+import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
-import 'package:fifa/theme/colors.dart';
 import 'package:fifa/values/league_names.dart';
-import 'package:fifa/pages/table/table_widget.dart';
-import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +26,8 @@ class TableNacional extends StatefulWidget {
 class _TableNacionalState extends State<TableNacional> {
 
   late int choosenLeagueIndex;
-  int rodadaMatch = League(index: My().campeonatoID).nClubs-1;
+  League myLeague = League(index: My().campeonatoID);
+  late int rodadaMatch = myLeague.nClubs-1;
   Map leaguesMap = {};
 
   int choosenIcon = 1;
@@ -42,7 +43,7 @@ class _TableNacionalState extends State<TableNacional> {
     //INDEX INICIAL
     choosenLeagueIndex = widget.choosenLeagueIndex;
     //rodada inicial mostrada
-    if(rodada < League(index: My().campeonatoID).nClubs-1){
+    if(rodada < myLeague.nClubs-1){
       rodadaMatch = rodada;
     }
 
@@ -51,7 +52,6 @@ class _TableNacionalState extends State<TableNacional> {
       int leagueID = leaguesListRealIndex[i];
       leaguesMap[leagueID] = League(index: leagueID);
     }
-
 
     setState(() {});
   }
@@ -90,7 +90,7 @@ class _TableNacionalState extends State<TableNacional> {
                             ///////////////////
                             //CLASSIFICAÇÃO
                             ///////////////////
-                            tabelaClassificacaoWidget(context,choosenLeagueIndex),
+                            tabelaClassificacaoWidget(context,leaguesMap[choosenLeagueIndex]),
 
                             ///////////////////
                             //PRÓXIMAS PARTIDAS

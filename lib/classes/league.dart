@@ -12,6 +12,7 @@ class League{
   late String name;
   late int internationalLeagueIndex;
   late String internationalLeagueName;
+  late String internationalLeagueNameWhenNotPlay;
   late List allClubsName;
   bool playInternational = false;
 
@@ -20,6 +21,7 @@ class League{
     allClubsName = getAllClubsNameList();
     nClubs = allClubsName.length;
     internationalLeagueName = InternationalLeagueManipulation().funcGetInternationalLeagueName(indexLeague: index);
+    internationalLeagueNameWhenNotPlay = InternationalLeagueManipulation().whenNotPlayInternationalLeague(internationalLeagueName);
     internationalLeagueIndex = InternationalLeagueManipulation().funcGetInternationalLeagueIndex(internationalLeagueName: internationalLeagueName);
     playInternational = leaguePlayInternationalCompetition(name);
   }

@@ -1,13 +1,12 @@
 import 'package:fifa/classes/geral/name.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/mata_mata/mata_mata_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
-  Widget notPlayShowInternationalMataMata(BuildContext context){
+  Widget notPlayShowInternationalMataMata(BuildContext context, String internationalLeagueName){
 
     return SingleChildScrollView(
       child: Column(
@@ -15,7 +14,7 @@ import 'package:flutter/material.dart';
                 Column(
                 children: [
                   for(int phaseStage = 0; phaseStage < 7; phaseStage++)
-                    phaseTableWidget(phaseStage)
+                    phaseTableMataMataWidget(internationalLeagueName,semana,phaseStage)
                 ],
               ),
           ],
@@ -26,7 +25,7 @@ import 'package:flutter/material.dart';
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-Widget phaseTableWidget(int phaseStage) {
+Widget phaseTableMataMataWidget(String internationalLeagueName,int weekToShow,int phaseStage) {
   int phaseRows = 9;
   int weekShow = 0;
   if(phaseStage==0 || phaseStage==1){phaseRows=8;weekShow = semanaOitavas.first;} //OITAVAS
@@ -40,17 +39,17 @@ Widget phaseTableWidget(int phaseStage) {
   }
 
   //Quando não está no matamata
-  if(semana < semanaOitavas.first){
+  if(weekToShow < semanaOitavas.first){
     return Container();
   }
   //Quando já está no matamata
-  if(semana < semanaQuartas.first && phaseStage>=2){
+  if(weekToShow < semanaQuartas.first && phaseStage>=2){
     return Container();
   }
-  if(semana < semanaSemi.first && phaseStage>=4){
+  if(weekToShow < semanaSemi.first && phaseStage>=4){
     return Container();
   }
-  if(semana < semanaFinal.first && phaseStage==6){
+  if(weekToShow < semanaFinal.first && phaseStage==6){
     return Container();
   }
   return Column(
@@ -60,16 +59,16 @@ Widget phaseTableWidget(int phaseStage) {
           columnWidths: const{0: FractionColumnWidth(.35),4: FractionColumnWidth(.35)},
           children: [
             if (i == -1)
-              groupTitle(phaseRows)
+              groupTitleMataMata(phaseRows)
             else
-              groupRow(i, phaseIdaVolta, weekShow)
+              groupRowMataMata(i,internationalLeagueName, phaseIdaVolta, weekShow)
           ],
         )
     ],
   );
 }
 
-TableRow groupTitle(int phaseRows){
+TableRow groupTitleMataMata(int phaseRows){
   String stageName = Name().oitavas;
   if(phaseRows==4){stageName=Name().quartas;}
   if(phaseRows==2){stageName=Name().semifinal;}
@@ -84,10 +83,9 @@ TableRow groupTitle(int phaseRows){
     ],
   );
 }
-TableRow groupRow(int matchRow, int phaseIdaVolta, int weekShow){
+TableRow groupRowMataMata(int matchRow,String internationalLeagueName, int phaseIdaVolta, int weekShow){
   MataMata data = MataMata();
-  String leagueInternational = League(index: My().campeonatoID).internationalLeagueName;
-  data.getData(leagueInternational, data.getSemanaPhase(weekShow),matchRow, phaseIdaVolta);
+  data.getData(internationalLeagueName, data.getSemanaPhase(weekShow),matchRow, phaseIdaVolta);
 
   //print(data.clubName1);
   //print('GOL: ${data.goal1} x ${data.goal2}');

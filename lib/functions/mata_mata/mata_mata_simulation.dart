@@ -10,7 +10,7 @@ import 'mata_mata_class.dart';
 
 class MataMataSimulation{
 
-  simulateMatchs(){
+  simulateMatchs(bool simulMyMatch){
     My myClass = My();
     for (int i = 0; i < internationalLeagueNames.length; i++) {
       String internationalName = InternationalLeagueManipulation().funcGetInternationalLeagueNameFromIndex(internationalLeagueIndex: i);
@@ -22,7 +22,7 @@ class MataMataSimulation{
         mataMata.getData(internationalName, mataMata.getSemanaPhase(semana),matchRows, phaseIdaVolta);
         Club club1 = Club(index: mataMata.clubID1);
         Club club2 = Club(index: mataMata.clubID2);
-        if(club1.index != myClass.clubID && club2.index != myClass.clubID ){
+        if((club1.index != myClass.clubID && club2.index != myClass.clubID) || simulMyMatch){
         //SIMULA A PARTIDA EM SI
         MatchSimulation(club1, club2);
         //Se a final terminar empatada simula de novo -> PENALTIS

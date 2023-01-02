@@ -1,5 +1,6 @@
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/words.dart';
+import 'package:fifa/functions/countries_continents.dart';
 import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
 import 'package:fifa/theme/decoration/black_decoration.dart';
@@ -10,7 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapListAllClubs extends StatefulWidget {
-  const MapListAllClubs({Key? key}) : super(key: key);
+  final String continent;
+  const MapListAllClubs({Key? key, required this.continent}) : super(key: key);
 
   @override
   State<MapListAllClubs> createState() => _MapListAllClubsState();
@@ -31,13 +33,17 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
     super.initState();
   }
   getFlagsList(){
-    clubDetails.map.forEach((key, value) {
-      if(!countryOptions.contains(clubDetails.getCountry(key))){
-        countryOptions.add(clubDetails.getCountry(key));
+    clubDetails.map.forEach((clubName, value) {
+      String countryName = clubDetails.getCountry(clubName);
+      if(!countryOptions.contains(countryName)){
+        if(Continents().funcCountryContinents(countryName) == widget.continent){
+          countryOptions.add(countryName);
+        }
       }
     });
     setState((){});
     countryOptions.sort();
+    selectedCountry = countryOptions.first;
     setState((){});
   }
 
@@ -60,7 +66,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
             children: [
               Row(
                 children: [
-                  backButtonText(context, 'Lista de Clubes'),
+                  backButtonText(context, 'Lista de Clubes - $selectedCountry'),
                   const Spacer(),
                   Padding(padding:const EdgeInsets.only(top:18),
                       child: Text(showList.length.toString(),style: EstiloTextoBranco.text20)),

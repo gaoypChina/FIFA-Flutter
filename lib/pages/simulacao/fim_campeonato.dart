@@ -1,4 +1,5 @@
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/classes/league.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/my.dart';
@@ -19,6 +20,7 @@ class _FimCampeonatoState extends State<FimCampeonato> {
 
   //late double _height, _width;
   My myClub = My();
+  late League myLeague = League(index: myClub.campeonatoID);
 
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -45,7 +47,7 @@ class _FimCampeonatoState extends State<FimCampeonato> {
                     const SizedBox(height: 8),
 
                     //TABELA
-                    tabelaClassificacaoWidget(context,My().campeonatoID),
+                    tabelaClassificacaoWidget(context,myLeague),
 
                     const Spacer(),
 

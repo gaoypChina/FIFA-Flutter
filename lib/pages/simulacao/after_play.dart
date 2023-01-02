@@ -9,9 +9,11 @@ import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/tabela_national.dart';
+import 'package:fifa/functions/mata_mata/mata_mata_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/page_controller/table/table_matchs_control.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
+import 'package:fifa/pages/simulacao/not_play_international/not_play_international_matamata.dart';
 import 'package:fifa/theme/background/background_position.dart';
 import 'package:fifa/theme/background/moral_icon.dart';
 import 'package:fifa/theme/colors.dart';
@@ -114,7 +116,11 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
                   ],
                 ),
 
-                Semana(semana).isJogoCampeonatoNacional ? weekMatchs() : tableWidget(),
+                Semana(semana).isJogoCampeonatoNacional
+                    ? weekMatchs()
+                    : Semana(semana).isJogoGruposInternacional
+                      ? tableWidget()
+                      : tableWidgetMataMata(),
 
                 customButtonContinue(
                   title: Translation(context).text.nextMatchWeek,
@@ -464,5 +470,24 @@ Widget statistics(){
     );
   }
 
+Widget tableWidgetMataMata(){
+  return Container(
+    color: AppColors().greyTransparent,
+    margin: const EdgeInsets.all(4),
+    height: 5*30,
+    child: SingleChildScrollView(
+      child: Column(
+        children: [
+          Column(
+            children: [
+              for(int phaseStage = 0; phaseStage < 7; phaseStage++)
+                phaseTableMataMataWidget(myClubClass.internationalLeagueName,semana,phaseStage)
+            ],
+          ),
+        ],
+      ),
+    ),
+  );
+}
 
 }

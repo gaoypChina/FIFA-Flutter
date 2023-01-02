@@ -12,7 +12,8 @@ import 'package:flutter/material.dart';
 
 import '../../theme/colors.dart';
 
-Widget tabelaClassificacaoWidget(BuildContext context,int choosenLeagueIndex){
+Widget tabelaClassificacaoWidget(BuildContext context,League league){
+  List classificationClubsIndexes = Classification(leagueIndex: league.index).classificationClubsIndexes;
   return Column(
     children: [
       Container(
@@ -44,8 +45,8 @@ Widget tabelaClassificacaoWidget(BuildContext context,int choosenLeagueIndex){
             7: FractionColumnWidth(.1)
           },
           children: [
-            for(int i=0; i<League(index:choosenLeagueIndex).nClubs;i++)
-              rowTableNacional(context, i,choosenLeagueIndex),
+            for(int i=0; i<league.nClubs;i++)
+              rowTableNacionalLayout(context, i,classificationClubsIndexes[i], league)
           ],
         ),
       ),
@@ -53,13 +54,7 @@ Widget tabelaClassificacaoWidget(BuildContext context,int choosenLeagueIndex){
   );
 }
 
-TableRow rowTableNacional(BuildContext context, int i,int choosenLeagueIndex){
-  List classificationClubsIndexes = Classification(leagueIndex: choosenLeagueIndex).classificationClubsIndexes;
-  int fullClubIndex = classificationClubsIndexes[i];
-  return rowTableNacionalLayout(context, i,fullClubIndex, choosenLeagueIndex);
-}
-
-TableRow rowTableNacionalLayout(BuildContext context, int position, int indexClub, choosenLeagueIndex) {
+TableRow rowTableNacionalLayout(BuildContext context, int position, int indexClub, League league) {
   Club clubClass = Club(index: indexClub);
   String clubName = clubClass.name;
   int points = clubClass.leaguePoints;
@@ -68,7 +63,7 @@ TableRow rowTableNacionalLayout(BuildContext context, int position, int indexClu
   int saldo = golsMarcados - golsSofridos;
   double overall = clubClass.getOverall();
 
-  Color backgroundColor = backgroundTextColor(position,choosenLeagueIndex,clubName);
+  Color backgroundColor = backgroundTextColor(position,league,clubName);
 
   return TableRow(
     children: [
@@ -103,9 +98,8 @@ goToClubProfilePage(BuildContext context, Club clubClass){
   Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: clubClass.index)));
 }
 
-Color backgroundTextColor(int position, int choosenLeagueIndex , String teamName){
+Color backgroundTextColor(int position, League league, String teamName){
 
-  League league = League(index: choosenLeagueIndex);
   String leagueName = league.name;
   Color backgroundColor = Colors.transparent;
 

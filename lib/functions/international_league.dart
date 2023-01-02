@@ -12,6 +12,13 @@ class InternationalLeagueManipulation{
     }
   }
 
+  String whenNotPlayInternationalLeague(String name){
+    if(name == LeagueOfficialNames().resto){
+      return LeagueOfficialNames().championsLeague;
+    }
+    return name;
+  }
+
   int funcGetInternationalLeagueIndex({required String internationalLeagueName}) {
     return internationalLeagueNames.indexOf(internationalLeagueName);
   }

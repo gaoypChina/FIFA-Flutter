@@ -32,6 +32,8 @@ class _NotPlayState extends State<NotPlay> {
   @override
   Widget build(BuildContext context) {
 
+    int leagueIndex = My().campeonatoID;
+    League league = League(index: leagueIndex);
     String weekName = Semana(semana).semanaAlternativeStr;
 
     return Scaffold(
@@ -42,7 +44,7 @@ class _NotPlayState extends State<NotPlay> {
                   ? Images().getWallpaper()
                   : Semana(semana).isJogoMundial
                     ? backgroundMundial()
-                    : backgroundInternationalLeague(League(index: My().campeonatoID).internationalLeagueName),
+                    : backgroundInternationalLeague(league.internationalLeagueNameWhenNotPlay),
 
               Column(
                 children: [
@@ -53,11 +55,11 @@ class _NotPlayState extends State<NotPlay> {
                   //TABELA
                   Expanded(
                       child: Semana(semana).isJogoCampeonatoNacional
-                          ? tabelaClassificacaoWidget(context,My().campeonatoID)
+                          ? tabelaClassificacaoWidget(context,league)
                           : Semana(semana).isJogoGruposInternacional
-                            ? notPlayShowInternationalGroups(context)
+                            ? notPlayShowInternationalGroups(context, league.internationalLeagueNameWhenNotPlay)
                             : Semana(semana).isJogoMataMataInternacional
-                              ? notPlayShowInternationalMataMata(context)
+                              ? notPlayShowInternationalMataMata(context,league.internationalLeagueNameWhenNotPlay)
                               : notPlayMundial(context),
                   ),
 
@@ -89,7 +91,7 @@ class _NotPlayState extends State<NotPlay> {
 onContinueButton(){
 
   //SIMULA JOGOS
-  Simulate().simulateWeek();
+  Simulate().simulateWeek(simulMyMatch: false);
 
   if(semana >= globalUltimaSemana){
     Navigator.of(context).push(MaterialPageRoute(builder: (context) => const EndYear()));

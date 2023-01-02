@@ -70,36 +70,31 @@ Widget calendarRow(int week){
         children: [
           Image.asset(FIFAImages().campeonatoLogo(controller.competitionName),height:30,width: 30,),
           const SizedBox(width: 8),
+          Column(
+            children: [
+              controller.visitante
+                  ? Text(Translation(context).text.away.toUpperCase(),style: EstiloTextoBranco.text12)
+                  : Text(Translation(context).text.home.toUpperCase(),style: EstiloTextoBranco.text12),
+              Text(controller.placar,style: EstiloTextoBranco.text16),
+            ],
+          ),
+          const SizedBox(width: 8),
+
           controller.hasAdversaryDefined
               ? Images().getEscudoWidget(controller.club2.name,30,30)
               : Container(),
           const SizedBox(width: 8),
-          Expanded(
-            child: Column(
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                  Row(
-                    children: [
-                      Expanded(child: Text(semanaClass.semanaCalendarStr,style: EstiloTextoBranco.text12)),
-                      controller.visitante
-                          ? Text(Translation(context).text.away.toUpperCase(),style: EstiloTextoBranco.text12)
-                          : Text(Translation(context).text.home.toUpperCase(),style: EstiloTextoBranco.text12),
-                      const SizedBox(width: 8),
-                    ],
-                  ),
 
-                  Row(
-                    children: [
-                      controller.hasAdversaryDefined
-                          ? Expanded(child: Text(controller.club2.name,style: EstiloTextoBranco.text16))
-                          : Expanded(child: Container()),
-                      Text(controller.placar,style: EstiloTextoBranco.text16),
-                      const SizedBox(width: 8),
-                    ],
-                  ),
+                Text(semanaClass.semanaCalendarStr,style: EstiloTextoBranco.text12),
+                controller.hasAdversaryDefined
+                    ? Text(controller.club2.name,style: EstiloTextoBranco.text16)
+                    : Container(),
 
               ],
             ),
-          ),
 
         ],
       ),

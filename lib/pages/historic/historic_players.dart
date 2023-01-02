@@ -5,15 +5,15 @@ import 'package:fifa/values/player_past_clubs.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 
-class HistoricPlayers extends StatefulWidget {
-  String clubName;
-  HistoricPlayers({Key? key,required this.clubName}) : super(key: key);
+class ChooseContinentPage extends StatefulWidget {
+  final String clubName;
+  const ChooseContinentPage({Key? key,required this.clubName}) : super(key: key);
 
   @override
-  State<HistoricPlayers> createState() => _HistoricPlayersState();
+  State<ChooseContinentPage> createState() => _ChooseContinentPageState();
 }
 
-class _HistoricPlayersState extends State<HistoricPlayers> {
+class _ChooseContinentPageState extends State<ChooseContinentPage> {
 
   Map yearPlayers = {};
   ////////////////////////////////////////////////////////////////////////////

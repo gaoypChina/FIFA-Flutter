@@ -1,7 +1,6 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/international.dart';
-import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
@@ -13,7 +12,7 @@ import 'package:fifa/values/league_names.dart';
 import 'package:flutter/material.dart';
 
 
-Widget notPlayShowInternationalGroups(BuildContext context){
+Widget notPlayShowInternationalGroups(BuildContext context, String internationalLeagueName){
 
 return Expanded(
   child: Container(
@@ -27,7 +26,7 @@ return Expanded(
               if (i == 0)
                 groupTitle(context, groupNumber)
               else
-                groupRow(i,4*groupNumber+(i-1))
+                groupRow(i,internationalLeagueName,4*groupNumber+(i-1))
         ],
       ),
     ),
@@ -62,8 +61,8 @@ TableRow groupTitle(BuildContext context, int groupNumber){
     ],
   );
 }
-TableRow groupRow(int i, int index032){
-  List clubsID = selectTeams();
+TableRow groupRow(int i, internationalLeagueName, int index032){
+  List clubsID = selectTeams(internationalLeagueName);
   int clubIndex = clubsID[index032];
   Club clubClass = Club(index: clubIndex);
   My my = My();
@@ -91,21 +90,20 @@ TableRow groupRow(int i, int index032){
   );
 }
 
-List selectTeams(){
+List selectTeams(String internationalLeagueName){
   List clubsID = [];
   //ANO INICIAL, COM TIMES DEMO
-  String leagueInternational = League(index: My().campeonatoID).internationalLeagueName;
   if(semana<semanasJogosInternacionais[0] && ano==anoInicial){
     for(int i=0; i<32; i++) {
-      if(leagueInternational == LeagueOfficialNames().championsLeague) {
+      if(internationalLeagueName == LeagueOfficialNames().championsLeague) {
         clubsID.add(clubsAllNameList.indexOf(defaultChampionsLeagueClubs[i]));
       }
-      if(leagueInternational == LeagueOfficialNames().libertadores){
+      if(internationalLeagueName == LeagueOfficialNames().libertadores){
         clubsID.add(clubsAllNameList.indexOf(defaultLibertadoresClubs[i]));
       }
     }
   }else{
-    clubsID = International(leagueInternational).getClassification();
+    clubsID = International(internationalLeagueName).getClassification();
   }
   return clubsID;
 }

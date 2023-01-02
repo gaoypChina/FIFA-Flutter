@@ -70,7 +70,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     GestureDetector(onTap:(){
-                      Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricPlayers(clubName: widget.clubName)));
+                      Navigator.push(context,MaterialPageRoute(builder: (context) => ChooseContinentPage(clubName: widget.clubName)));
                     },child: Images().getEscudoWidget(widget.clubName,90,90)),
                     Images().getUniformWidget(widget.clubName,100,100),
                     Column(

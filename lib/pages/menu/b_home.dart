@@ -92,12 +92,7 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
 
-                const SizedBox(height: 30),
-                openTournament(
-                    onTap: (){
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Tournament()));
-                    }
-                ),
+                const SizedBox(height: 70),
                 const Text('FIFA 23',style: EstiloTextoBranco.text40),
                 const SizedBox(height: 20),
 
@@ -191,6 +186,7 @@ class _HomePageState extends State<HomePage> {
                     database(),
                     editClub(),
                     configurations(),
+                    openTournament(),
                   ],
                 ),
 
@@ -204,26 +200,6 @@ class _HomePageState extends State<HomePage> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-  Widget openTournament({required Function onTap}){
-    return Stack(
-      children: [
-        const Icon(Icons.open_with,color:Colors.white,size:30),
-        SizedBox(
-          height: buttonSize,width: buttonSize,
-          child: Material(
-            color: Colors.transparent,
-            child: InkWell(
-              customBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(buttonSize)),
-              onTap: (){
-                onTap();
-                setState(() {});
-              },
-            ),
-          ),
-        ),
-      ],
-    );
-  }
   Widget rightButton({required Function onTap}){
     return Stack(
       children: [
@@ -380,6 +356,20 @@ Widget configurations(){
     );
 }
 
+  Widget openTournament(){
+    return
+      GestureDetector(
+        onTap: (){
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Tournament()));
+        },
+        child: Column(
+          children: const [
+            Icon(Icons.gamepad,color:Colors.white,size:40),
+            Text('Single Match',style: EstiloTextoBranco.underline14)
+          ],
+        ),
+      );
+  }
 
 ////////////////////////////////////////////////////////////////////////////
 //                               FUNCTIONS                                //

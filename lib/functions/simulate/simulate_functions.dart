@@ -15,17 +15,17 @@ import '../mata_mata/mata_mata_simulation.dart';
 
 class Simulate{
 
-  simulateWeek(){
+  simulateWeek({required bool simulMyMatch}){
 
     //SIMULA PARTIDAS
     if(Semana(semana).isJogoCampeonatoNacional) {
-      nationalMatchs();
+      nationalMatchs(simulMyMatch);
     }
     if(Semana(semana).isJogoGruposInternacional){
-      internationalMatchsGroups();
+      internationalMatchsGroups(simulMyMatch);
     }
     if(Semana(semana).isJogoMataMataInternacional) {
-      MataMataSimulation().simulateMatchs();
+      MataMataSimulation().simulateMatchs(simulMyMatch);
     }
 
     //APÓS A SIMULAÇÃO
@@ -63,7 +63,7 @@ class Simulate{
     }
   }
 
-  nationalMatchs(){
+  nationalMatchs(bool simulMyMatch){
       int myClubID = globalMyClubID;
       int myCampeonatoID = My().campeonatoID;
       for (int i = 0; i < leaguesListRealIndex.length; i++) {
@@ -84,7 +84,7 @@ class Simulate{
 
             //Se não for meu jogo simula
             if (myCampeonatoID != leagueIndex ||
-                (myClubID != indexTeam1 && myClubID != indexTeam2)) {
+                (myClubID != indexTeam1 && myClubID != indexTeam2) || simulMyMatch) {
               MatchSimulation match = MatchSimulation(Club(index: indexTeam1), Club(index: indexTeam2));
               //SALVA O PLACAR NO HISTÓRICO
               SaveMatchHistoric().setHistoricGoalsLeague(leagueIndex, chaveClub1, chaveClub2,match.variableGol1,match.variableGol2);
@@ -95,7 +95,7 @@ class Simulate{
 
   }
 
-  internationalMatchsGroups(){
+  internationalMatchsGroups(bool simulMyMatch){
 
     int myClubID = My().clubID;
     for(int i=0; i<globalInternational32ClubsID.length; i++) { //champions, libertadores... 2
@@ -108,7 +108,7 @@ class Simulate{
           int indexTeam1 = globalInternational32ClubsID[i][4 * groupNumber + chaveConfronto];
           int indexAdv04 = Chaves().chaveIndexAdvCampeonato(semana, 0, chaveConfronto)[0];
           int indexTeam2 = globalInternational32ClubsID[i][(4 * groupNumber) + indexAdv04];
-          if(indexTeam1 != myClubID && indexTeam2 != myClubID) {
+          if(indexTeam1 != myClubID && indexTeam2 != myClubID || simulMyMatch) {
             MatchSimulation match = MatchSimulation(Club(index: indexTeam1), Club(index: indexTeam2));
             //SALVA O PLACAR NO HISTÓRICO
             SaveMatchHistoric().setHistoricGoalsGruposInternational(internationalName,indexTeam1,indexTeam2, match.variableGol1,match.variableGol2);

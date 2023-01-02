@@ -3,12 +3,12 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/pages/historic/international_historic.dart';
 import 'package:fifa/pages/historic/leagues_historic.dart';
+import 'package:fifa/pages/historic/mundial.dart';
 import 'package:fifa/pages/historic/my_players_historic.dart';
 import 'package:fifa/pages/historic/players_historic.dart';
-import 'package:fifa/pages/historic/mundial.dart';
 import 'package:fifa/pages/historic/year_resume.dart';
+import 'package:fifa/pages/map/choose_continent_page.dart';
 import 'package:fifa/pages/map/map_exploration.dart';
-import 'package:fifa/pages/map/map_list_all_clubs.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
@@ -116,8 +116,7 @@ class _HistoricMenuState extends State<HistoricMenu> {
                           box(
                               'Lista de Clubes',
                               Icon(Icons.list_alt,color: Colors.white, size: imageSize),
-                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => const MapListAllClubs()));
-                              }
+                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => const ChooseContinentPage()));}
                           ),
                         ],
                       ),

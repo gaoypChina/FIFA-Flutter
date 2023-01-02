@@ -4,14 +4,14 @@ import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 
-class HistoricPlayers extends StatefulWidget {
-  const HistoricPlayers({Key? key}) : super(key: key);
+class ChooseContinentPage extends StatefulWidget {
+  const ChooseContinentPage({Key? key}) : super(key: key);
 
   @override
-  State<HistoricPlayers> createState() => _HistoricPlayersState();
+  State<ChooseContinentPage> createState() => _ChooseContinentPageState();
 }
 
-class _HistoricPlayersState extends State<HistoricPlayers> {
+class _ChooseContinentPageState extends State<ChooseContinentPage> {
 
   Map<double,dynamic> results = mapInternationals[LeagueOfficialNames().mundial];
 
@@ -36,7 +36,7 @@ class _HistoricPlayersState extends State<HistoricPlayers> {
 
           Column(
             children: [
-              backButtonText(context,'HistoricPlayers'),
+              backButtonText(context,'ChooseContinentPage'),
 
 
             ],

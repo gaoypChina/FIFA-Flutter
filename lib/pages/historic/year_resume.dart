@@ -1,5 +1,4 @@
 import 'package:fifa/classes/classification.dart';
-import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/historic_champions_league.dart';
 import 'package:fifa/classes/image_class.dart';

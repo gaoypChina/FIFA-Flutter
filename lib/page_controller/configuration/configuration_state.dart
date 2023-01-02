@@ -49,6 +49,16 @@ class ConfigurationState{
   }
   changeRandomizePlayersState(){
     globalRandomizePlayers = !globalRandomizePlayers;
+    if(globalRandomizePlayers){
+      for(int id in globalJogadoresIndex){
+        for(int i=0;i<20;i++){
+          int changePlayerIndex = Random().nextInt(globalJogadoresIndex.length);
+            if(globalJogadoresOverall[id]<globalJogadoresOverall[changePlayerIndex]+4 && globalJogadoresOverall[id]>globalJogadoresOverall[changePlayerIndex]-4){
+            int aux = globalJogadoresClubIndex[id];globalJogadoresClubIndex[id]=globalJogadoresClubIndex[changePlayerIndex];globalJogadoresClubIndex[changePlayerIndex]=aux;
+            }
+          }
+      }
+    }
     randomizePlayers = globalRandomizePlayers;
   }
 

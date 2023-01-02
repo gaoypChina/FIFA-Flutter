@@ -354,7 +354,7 @@ class _PlayState extends State<Play> {
       }
 
       //SIMULA OUTRAS PARTIDAS
-      Simulate().simulateWeek();
+      Simulate().simulateWeek(simulMyMatch: false);
 
       //**Só funciona se ja tiver simulado todos os outros jogos
       //Tem uma dependencia pelo ResultGameNacional
