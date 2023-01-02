@@ -1,14 +1,16 @@
-import 'package:fifa/classes/chaves.dart';
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/name.dart';
 import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/classes/international.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/classes/tabela_national.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/page_controller/table/table_matchs_control.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/theme/background/background_position.dart';
 import 'package:fifa/theme/background/moral_icon.dart';
@@ -16,7 +18,6 @@ import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
-import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/best_player_box/best_player_box.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:flutter/material.dart';
@@ -112,7 +113,9 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
                     Expanded(child: classification()),
                   ],
                 ),
-                weekMatchs(),
+
+                Semana(semana).isJogoCampeonatoNacional ? weekMatchs() : tableWidget(),
+
                 customButtonContinue(
                   title: Translation(context).text.nextMatchWeek,
                   function: (){
@@ -155,7 +158,7 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
           children: [
             Semana(semana).isJogoCampeonatoNacional
                 ? Image.asset(FIFAImages().campeonatoLogo(myClubClass.leagueName),height: 30,width: 30)
-                : Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().libertadores),height: 35,width: 35),
+                : Image.asset(FIFAImages().campeonatoLogo(myClubClass.internationalLeagueName),height: 35,width: 35),
             Text(textRodada,style: EstiloTextoBranco.text16),
             widget.visitante
                 ? Text(widget.gol2.toString() +'X'+ widget.gol1.toString() ,style: EstiloTextoBranco.text30)
@@ -231,8 +234,6 @@ Widget statistics(){
     );
   }
   Widget classification(){
-    List classificationClubsIndexes = Classification(leagueIndex: myClass.getLeagueID()).classificationClubsIndexes;
-
       return Container(
         height: 5*36,
         color: AppColors().greyTransparent,
@@ -252,39 +253,65 @@ Widget statistics(){
                 const SizedBox(width:10)
               ],
             ),
-            //CONTENT
-            Container(
-              height: 5*25,
-              margin: const EdgeInsets.all(4),
-              child: ListView.builder(
-                  padding: EdgeInsets.zero,
-                  itemCount: classificationClubsIndexes.length,
-                  itemBuilder: (c,i)=>classificationRow(i,classificationClubsIndexes[i])
-              ),
-            ),
+
+            classificationBox(),
+
           ],
         ),
       );
     }
 
+  Widget classificationBox(){
+    List classificationClubsIndexes = [];
+    if(Semana(rodada).isJogoCampeonatoNacional){
+      classificationClubsIndexes = Classification(leagueIndex: myClass.getLeagueID()).classificationClubsIndexes;
+    }else{
+      List classificationClubsIndexesAll = International(myClubClass.internationalLeagueName).getClassification();
+      int index = myClass.getMyClubInternationalGroup()*4;
+      classificationClubsIndexes = [
+        classificationClubsIndexesAll[index],
+        classificationClubsIndexesAll[index+1],
+        classificationClubsIndexesAll[index+2],
+        classificationClubsIndexesAll[index+3]
+      ];
+    }
+
+    return             //CONTENT
+      Container(
+        height: 5*25,
+        margin: const EdgeInsets.all(4),
+        child: ListView.builder(
+            padding: EdgeInsets.zero,
+            itemCount: classificationClubsIndexes.length,
+            itemBuilder: (c,i)=>classificationRow(i,classificationClubsIndexes[i])
+        ),
+      );
+  }
+
   Widget classificationRow(int position, int indexClub){
     Club clubClass = Club(index: indexClub);
-    String clubName1 = clubClass.name;
-    int points = clubClass.leaguePoints;
-    int golsMarcados = clubClass.leagueGM;
-    int golsSofridos = clubClass.leagueGS;
 
     return Row(
       children: [
         SizedBox(width:25,child: Text((position+1).toString()+'º',style:EstiloTextoBranco.text14)),
-        Images().getEscudoWidget(clubName1,25,25),
+        Images().getEscudoWidget(clubClass.name,25,25),
         Expanded(
-            child: Container(color:(clubName1==myClass.clubName) ? Colors.purple : Colors.transparent,
+            child: Container(color:(clubClass.name==myClass.clubName) ? Colors.purple : Colors.transparent,
             padding:const EdgeInsets.all(1),
-            child: Text(clubName1,style:EstiloTextoBranco.text12))),
-        SizedBox(width:25,child: Text(points.toString(),style:EstiloTextoBranco.text14)),
-        SizedBox(width:25,child: Text(golsMarcados.toString(),style:EstiloTextoBranco.text14)),
-        SizedBox(width:25,child: Text(golsSofridos.toString(),style:EstiloTextoBranco.text14)),
+            child: Text(clubClass.name,style:EstiloTextoBranco.text12))),
+        SizedBox(width:25,
+            child: Text(Semana(rodada).isJogoCampeonatoNacional
+                ? clubClass.leaguePoints.toString()
+                : clubClass.internationalPoints.toString()
+                ,style:EstiloTextoBranco.text14)),
+        SizedBox(width:25,
+            child: Text(Semana(rodada).isJogoCampeonatoNacional
+                ? clubClass.leagueGM.toString()
+                : clubClass.internationalGM.toString(),style:EstiloTextoBranco.text14)),
+        SizedBox(width:25,
+            child: Text(Semana(rodada).isJogoCampeonatoNacional
+                ? clubClass.leagueGS.toString()
+                : clubClass.internationalGS.toString(),style:EstiloTextoBranco.text14)),
         SizedBox(width:40,child: Text(clubClass.getOverall().toStringAsFixed(2),style:EstiloTextoBranco.text14)),
       ],
     );
@@ -314,19 +341,12 @@ Widget statistics(){
   }
   Widget weekMatchRow(int numeroDoConfronto){
 
-    List chave = Chaves().obterChave((rodada-1), myClass.campeonatoID);
-    int chaveClub1 = chave[numeroDoConfronto];
-    String teamName1 = leagueClass.getClubName(chaveClub1);
-    int chaveClub2 = Chaves().chaveIndexAdvCampeonato((rodada-1),  myClass.campeonatoID, chaveClub1)[0];
-    String teamName2 = leagueClass.getClubName(chaveClub2);
-
-    int gol1=0;
-    int gol2=0;
-    //quando chega na rodada max ele acabaria nao mostrando, por isso quando termina o campeonato mostra a ultima rodada
-      List results = globalHistoricLeagueGoalsAll[(rodada-1)][ myClass.campeonatoID];
-      gol1 = results[chaveClub1];
-      gol2 = results[chaveClub2];
-
+    TableNational tableNational = TableNational(
+        choosenLeagueIndex: myClass.campeonatoID,
+        leagueClass: leagueClass,
+        rodadaMatch: rodada-1,
+        numeroDoConfronto: numeroDoConfronto
+    );
 
     return Container(
       margin: const EdgeInsets.only(bottom: 4),
@@ -339,10 +359,10 @@ Widget statistics(){
               children: [
                 Container(
                     padding: const EdgeInsets.all(1),
-                    color:(myClass.clubName == teamName1) ?Colors.purple:Colors.transparent,
-                    child: Text(teamName1,style:EstiloTextoBranco.text14)),
-                Images().getEscudoWidget(teamName1,25,25),
-                Text(gol1.toString(),style:EstiloTextoBranco.text14),
+                    color:(myClass.clubName == tableNational.teamName1) ?Colors.purple:Colors.transparent,
+                    child: Text(tableNational.teamName1,style:EstiloTextoBranco.text14)),
+                Images().getEscudoWidget(tableNational.teamName1,25,25),
+                Text(tableNational.gol1.toString(),style:EstiloTextoBranco.text14),
               ],
             ),
           ),
@@ -353,12 +373,12 @@ Widget statistics(){
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text(gol2.toString(),style:EstiloTextoBranco.text14),
-                Images().getEscudoWidget(teamName2,25,25),
+                Text(tableNational.gol2.toString(),style:EstiloTextoBranco.text14),
+                Images().getEscudoWidget(tableNational.teamName2,25,25),
                 Container(
                     padding: const EdgeInsets.all(1),
-                    color:(myClass.clubName == teamName2) ?Colors.purple:Colors.transparent,
-                    child: Text(teamName2,style:EstiloTextoBranco.text14)),
+                    color:(myClass.clubName == tableNational.teamName2) ?Colors.purple:Colors.transparent,
+                    child: Text(tableNational.teamName2,style:EstiloTextoBranco.text14)),
               ],
             ),
           ),
@@ -366,4 +386,83 @@ Widget statistics(){
       ),
     );
   }
+
+
+  Widget tableWidget() {
+    return Container(
+      color: AppColors().greyTransparent,
+      margin: const EdgeInsets.all(4),
+      height: 5*30,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+
+            for (int groupNumber = 0; groupNumber < 8; groupNumber++)
+              for (int nConfronto = -1; nConfronto < 2; nConfronto++) //Tem linha com título
+                Table(
+                  columnWidths: const{0: FractionColumnWidth(.35),4: FractionColumnWidth(.35)},
+                  children: [
+                    if (nConfronto == -1)
+                      groupTitle(groupNumber)
+                    else
+                      groupRow(groupNumber,nConfronto)
+                  ],
+                )
+          ],
+        ),
+      ),
+    );
+  }
+
+  TableRow groupTitle(int groupNumber){
+    String groupLetter = 'A';
+    if(groupNumber==1){groupLetter='B';}
+    if(groupNumber==2){groupLetter='C';}
+    if(groupNumber==3){groupLetter='D';}
+    if(groupNumber==4){groupLetter='E';}
+    if(groupNumber==5){groupLetter='F';}
+    if(groupNumber==6){groupLetter='G';}
+    if(groupNumber==7){groupLetter='H';}
+    return TableRow(
+      children: [
+        Text('\n${Translation(context).text.group} ' + groupLetter,style: EstiloTextoBranco.text16),
+        Container(),
+        Container(),
+        Container(),
+        Container(),
+      ],
+    );
+  }
+  TableRow groupRow(int groupNumber, int nConfronto){
+    MatchResultInternational match = MatchResultInternational(rodadaNumber: semanasGruposInternacionais.indexOf(semana-1),groupNumber: groupNumber, nConfronto: nConfronto, competitionName: myClubClass.internationalLeagueName);
+    My my = My();
+
+    String teamNameA = match.clubName1;
+    String teamNameB =  match.clubName2;
+    int golsA = match.goals1;
+    int golsB = match.goals2;
+
+    return  TableRow(
+      children: [
+        Container(
+            color: teamNameA == my.clubName ? Colors.green : Colors.transparent,
+            child: Text(teamNameA,textAlign: TextAlign.right,style: EstiloTextoBranco.text16)),
+        //Escudo
+        Image.asset(Images().getEscudo(teamNameA),height: 20,width: 20),
+
+        match.isAlreadyPlayed
+            ? Text(golsA.toString()+'x'+golsB.toString(),style: EstiloTextoBranco.text16)
+            : const Center(child: Text('x',style: EstiloTextoBranco.text16)),
+
+        //Escudo
+        Image.asset(Images().getEscudo(teamNameB),height: 20,width: 20),
+
+        Container(
+            color: teamNameB == my.clubName ? Colors.green : Colors.transparent,
+            child: Text(teamNameB,style: EstiloTextoBranco.text16)),
+      ],
+    );
+  }
+
+
 }

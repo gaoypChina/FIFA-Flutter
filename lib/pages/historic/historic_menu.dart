@@ -86,20 +86,6 @@ class _HistoricMenuState extends State<HistoricMenu> {
                         ],
                       ),
 
-                      //3ªfileira
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          // box(
-                          //     'Melhores clubes da história',
-                          //     Image.asset('assets/clubs/generic.png',height: imageSize,),
-                          //         (){Navigator.push(context,MaterialPageRoute(builder: (context) => const RankingBestClubsHistory()));
-                          //     }
-                          // ),
-
-                        ],
-                      ),
-
                       //TESTE
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,

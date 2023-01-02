@@ -1,4 +1,5 @@
 import 'package:fifa/classes/classification.dart';
+import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/historic_champions_league.dart';
 import 'package:fifa/classes/image_class.dart';
@@ -256,8 +257,15 @@ Widget internationalChampionsWidgetDetail(String internationalLeagueName){
 }
 
 Widget resumeLeague(String leagueName){
-  List classificationNames = [];
-    List classification = Classification(leagueIndex: leaguesIndexFromName[leagueName]).classificationClubsIndexes;
+    List classification = [];
+    if(int.parse(selectedYear) < ano ){
+      classification = globalHistoricLeagueClassification[int.parse(selectedYear)][leagueName];
+    }else{
+      classification = Classification(leagueIndex: leaguesIndexFromName[leagueName]).classificationClubsIndexes;
+    }
+
+
+    List classificationNames = [];
     for (var clubID in classification) { classificationNames.add(clubsAllNameList[clubID]); }
 
 

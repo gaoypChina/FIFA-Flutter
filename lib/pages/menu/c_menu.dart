@@ -56,9 +56,10 @@ class _MenuState extends State<Menu> {
       popupexpectativaCall();
     });
 
-    globalHasInternet = await funcCheckInternet();
-
     adversario.getAdversario();
+    setState(() {});
+
+    globalHasInternet = await funcCheckInternet();
 
     setState(() {});
 

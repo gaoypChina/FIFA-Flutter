@@ -3,7 +3,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/classes/chaves.dart';
+import 'package:fifa/classes/tabela_national.dart';
 import 'package:fifa/functions/order_list.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/translation.dart';
@@ -286,33 +286,24 @@ Widget matchsWidget(){
 
   TableRow rowMatches(int numeroDoConfronto) {
 
-    List chave = Chaves().obterChave(rodadaMatch, choosenLeagueIndex);
-    int chaveClub1 = chave[numeroDoConfronto];
-    League leagueClass = leaguesMap[choosenLeagueIndex];
-    String teamName1 = leagueClass.getClubName(chaveClub1);
-    int chaveClub2 = Chaves().chaveIndexAdvCampeonato(rodadaMatch, choosenLeagueIndex, chaveClub1)[0];
-    String teamName2 = leagueClass.getClubName(chaveClub2);
-
-    bool showGoals = (rodadaMatch<rodada || semana > semanasJogosNacionais[leagueClass.nClubs-2]);
-    late int gol1,gol2;
-    //quando chega na rodada max ele acabaria nao mostrando, por isso quando termina o campeonato mostra a ultima rodada
-    if(showGoals) {
-      List results = globalHistoricLeagueGoalsAll[rodadaMatch][choosenLeagueIndex];
-      gol1 = results[chaveClub1];
-      gol2 = results[chaveClub2];
-    }
+    TableNational tableNational = TableNational(
+        choosenLeagueIndex: choosenLeagueIndex,
+        leagueClass: leaguesMap[choosenLeagueIndex],
+        rodadaMatch: rodadaMatch,
+        numeroDoConfronto: numeroDoConfronto
+    );
 
     return TableRow(
       children: [
-        Text(teamName1,textAlign:TextAlign.end,style: EstiloTextoBranco.text14),
-        Image.asset(Images().getEscudo(teamName1),height: 22,width: 22),
-        (showGoals)
-            ? Text(gol1.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text14) : Container(),
+        Text(tableNational.teamName1,textAlign:TextAlign.end,style: EstiloTextoBranco.text14),
+        Image.asset(Images().getEscudo(tableNational.teamName1),height: 22,width: 22),
+        (tableNational.showGoals)
+            ? Text(tableNational.gol1.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text14) : Container(),
         const Text('x',style: EstiloTextoBranco.text16,textAlign: TextAlign.center,),
-        (showGoals)
-            ? Text(gol2.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.text14) : Container(),
-        Image.asset(Images().getEscudo(teamName2),height: 22,width: 22),
-        Text(teamName2,style: EstiloTextoBranco.text14),
+        (tableNational.showGoals)
+            ? Text(tableNational.gol2.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.text14) : Container(),
+        Image.asset(Images().getEscudo(tableNational.teamName2),height: 22,width: 22),
+        Text(tableNational.teamName2,style: EstiloTextoBranco.text14),
       ],
     );
   }

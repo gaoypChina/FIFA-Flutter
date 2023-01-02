@@ -1,5 +1,6 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/page_controller/club_profile/data_graphics.dart';
 import 'package:fifa/pages/club_profile/all_infos_club.dart';
 import 'package:fifa/pages/club_profile/club_calendar.dart';
 import 'package:fifa/pages/club_profile/compare.dart';
@@ -8,6 +9,7 @@ import 'package:fifa/pages/club_profile/graphics.dart';
 import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/values/images.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:fifa/widgets/stars.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +27,7 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
 
   late Club clubClass;
   late TabController _tabController;
+  DataGraphics dataGraphics = DataGraphics();
 
   ///////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
@@ -46,6 +49,7 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
   Widget build(BuildContext context) {
 
     clubClass = Club(index: widget.clubID);
+    dataGraphics.getData(clubClass);
 
     return DefaultTabController(
       length: 4,
@@ -80,6 +84,15 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                           ),
                         ),
 
+                        Stack(
+                          children: [
+                            Opacity(opacity:0.3,child: Image.asset(FIFAImages().campeonatoLogo(clubClass.leagueName),height: 50,width: 50)),
+                            Container(
+                                width:50,height:50,
+                                padding: const EdgeInsets.only(top: 12),
+                                child: Text(dataGraphics.currentPosition.toString() + 'º',textAlign:TextAlign.center,style: EstiloTextoBranco.negrito22)),
+                          ],
+                        ),
                         Image.asset(Images().getStadium(clubClass.name),height: 80,width: 100),
                         const SizedBox(width: 8),
 

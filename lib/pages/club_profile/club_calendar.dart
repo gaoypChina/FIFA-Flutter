@@ -71,7 +71,7 @@ Widget calendarRow(int week){
           Image.asset(FIFAImages().campeonatoLogo(controller.competitionName),height:30,width: 30,),
           const SizedBox(width: 8),
           controller.hasAdversaryDefined
-              ? Image.asset(Images().getEscudo(controller.club2.name),height:30,width: 30,)
+              ? Images().getEscudoWidget(controller.club2.name,30,30)
               : Container(),
           const SizedBox(width: 8),
           Expanded(

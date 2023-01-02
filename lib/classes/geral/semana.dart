@@ -43,7 +43,7 @@ class Semana{
 
     semanaCalendarStr = semanaStr;
     if(semanasJogosNacionais.contains(weekToCalculate)){
-      semanaCalendarStr = 'Rodada ' + (int.parse(semanaStr)+1).toString();
+      semanaCalendarStr = 'Rodada ' + weekToCalculate.toString();
     }
 
     }
