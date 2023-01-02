@@ -56,7 +56,7 @@ class _RankingBestClubsHistoryState extends State<RankingBestClubsHistory> {
         setState(() {});
         customToast('${(100*i/ending).toStringAsFixed(1)}%');
         try {
-          Club clubClass = Club(index: i,simplified: true);
+          Club clubClass = Club(index: i,hasPlayers: true,clubDetails: false);
           DataGraphics data = DataGraphics();
           data.getData(clubClass);
           clubsPoints.add(data.pointsTotal);

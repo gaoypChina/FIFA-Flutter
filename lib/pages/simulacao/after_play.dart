@@ -9,7 +9,6 @@ import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/tabela_national.dart';
-import 'package:fifa/functions/mata_mata/mata_mata_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/page_controller/table/table_matchs_control.dart';
 import 'package:fifa/pages/menu/c_menu.dart';

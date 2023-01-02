@@ -23,7 +23,7 @@ class ClubCalendarController{
     if(semanasJogosNacionais.contains(weekToCalculate)){
       competitionName = club.leagueName;
       int rodada = semanasJogosNacionais.indexOf(weekToCalculate)+1;
-      ResultGameNacional result = ResultGameNacional(rodadaLocal: rodada, clubID: club.index);
+      ResultGameNacional result = ResultGameNacional(rodadaLocal: rodada, club: club);
       placar = result.placar;
       club2 = Club(index: result.clubID2);
       visitante = result.visitante;

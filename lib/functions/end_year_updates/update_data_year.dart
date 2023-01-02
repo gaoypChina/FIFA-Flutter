@@ -13,6 +13,7 @@ import 'package:fifa/functions/end_year_updates/aposentadoria.dart';
 import 'package:fifa/functions/international_league.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/page_controller/coach/coach_ranking_controller.dart';
+import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/values/league_names.dart';
 
 import 'ovr_update.dart';
@@ -20,10 +21,15 @@ import 'player_transfer.dart';
 import 'rebaixamento.dart';
 
 void funcUpdateDataAfterSeason(){
+  customToast('10% - Salvando dados históricos');
   saveHistoricalData(); //salva a classificação dos campeonatos
+  customToast('30% - Atualizando status dos jogadores');
   atualizaStatusJogadores(); //venda, update de overall, idade+1
+  customToast('50% - Alterando os times de divisão');
   trocaClubesRebaixamento();
+  customToast('70% - Resetando cartões, gols, assistencias');
   resetData(); //clear cartoes amarelos, gols, assistencias etc...
+  customToast('90% - Salvando dados de treinador');
   saveCoachPoints();
   ano++;
 }
@@ -133,14 +139,19 @@ resetData(){
 }
 
 void trocaClubesRebaixamento(){
-  funcRebaixamentoLeague(LeagueOfficialNames().inglaterra1,LeagueOfficialNames().inglaterra2,3);
-  funcRebaixamentoLeague(LeagueOfficialNames().inglaterra2,LeagueOfficialNames().inglaterra3,3);
-  funcRebaixamentoLeague(LeagueOfficialNames().espanha1,LeagueOfficialNames().espanha2,3);
-  funcRebaixamentoLeague(LeagueOfficialNames().italia1,LeagueOfficialNames().italia2,3);
-  funcRebaixamentoLeague(LeagueOfficialNames().alemanha1,LeagueOfficialNames().alemanha2,3);
-  funcRebaixamentoLeague(LeagueOfficialNames().franca1,LeagueOfficialNames().franca2,3);
-  funcRebaixamentoLeague(LeagueOfficialNames().brasil1,LeagueOfficialNames().brasil2,3);
-  funcRebaixamentoLeague(LeagueOfficialNames().brasil2,LeagueOfficialNames().brasil3,3);
+  List leagueClassifications = [];
+  for (int index in leaguesListRealIndex){
+    leagueClassifications.add(League(index: index).getClassification());
+  }
+
+  funcRebaixamentoLeague(leagueClassifications,LeagueOfficialNames().inglaterra1,LeagueOfficialNames().inglaterra2,3);
+  funcRebaixamentoLeague(leagueClassifications,LeagueOfficialNames().inglaterra2,LeagueOfficialNames().inglaterra3,3);
+  funcRebaixamentoLeague(leagueClassifications,LeagueOfficialNames().espanha1,LeagueOfficialNames().espanha2,3);
+  funcRebaixamentoLeague(leagueClassifications,LeagueOfficialNames().italia1,LeagueOfficialNames().italia2,3);
+  funcRebaixamentoLeague(leagueClassifications,LeagueOfficialNames().alemanha1,LeagueOfficialNames().alemanha2,3);
+  funcRebaixamentoLeague(leagueClassifications,LeagueOfficialNames().franca1,LeagueOfficialNames().franca2,3);
+  funcRebaixamentoLeague(leagueClassifications,LeagueOfficialNames().brasil1,LeagueOfficialNames().brasil2,3);
+  funcRebaixamentoLeague(leagueClassifications,LeagueOfficialNames().brasil2,LeagueOfficialNames().brasil3,3);
 }
 
 
@@ -158,7 +169,7 @@ void atualizaStatusJogadores(){
     transferenciaJogador(id);
 
     //aposentadoria
-    AposentarJogador(Jogador(index: id));
+    AposentarJogador(player);
   }
   //Faz minha nova escalação titular, com base nos melhores jogadores que melhoraram
   Club newClubClass = Club(index: My().clubID);

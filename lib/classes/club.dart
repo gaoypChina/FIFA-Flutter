@@ -2,11 +2,11 @@ import 'package:fifa/classes/geral/esquemas_taticos.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/functions/countries_continents.dart';
 import 'package:fifa/functions/international_league.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
-import 'package:fifa/values/league_clubs.dart';
-import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/images.dart';
+import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/values/league_names.dart';
 
 class Club{
@@ -21,6 +21,7 @@ class Club{
   late List escalacao;
   late String esquemaTatico;
   late int leagueID;
+  double overallAproximated = 0; //serve pra fazer contas com o overall do time mais rapidamente
   late String leagueName;
   late String picture;
   late int nJogadores;
@@ -36,16 +37,22 @@ class Club{
   late int internationalGM;
   late int internationalGS;
 
-  Club({required this.index,bool simplified = false}) {
+  Club({required this.index,bool hasPlayers = false,bool clubDetails = true}) {
     name = clubsAllNameList[index];
     picture = FIFAImages().imageLogo(name);
-    jogadores = simplified ? [] : getJogadores();
+    jogadores = hasPlayers ? [] : getJogadores();
     nJogadores = jogadores.length;
+
+    for (int index in  jogadores){
+      overallAproximated += globalJogadoresOverall[index];
+    }
+    overallAproximated = overallAproximated / jogadores.length;
+
     esquemaTatico = EsquemaTatico().e442;
     if(index == globalMyClubID){
       esquemaTatico = EsquemaTatico().meuEsquema;
     }
-    escalacao = simplified ? [] : optimizeBestSquadClub();
+    escalacao = hasPlayers ? [] : optimizeBestSquadClub();
     leagueName = getLeagueName();
     leagueID = leaguesIndexFromName[leagueName];
     leaguePoints = globalClubsLeaguePoints.isNotEmpty ? globalClubsLeaguePoints[index] : 0;
@@ -61,14 +68,16 @@ class Club{
     }catch(e){
       internationalPoints =0;internationalGM=0;internationalGS=0;
     }
-    ClubDetails clubDetails = ClubDetails();
-    nationality = clubDetails.getCountry(name);
-    foundationYear = clubDetails.getFoundationYear(name);
-    stadiumName = clubDetails.getStadium(name);
-    continent = Continents().funcCountryContinents(nationality);
-    stateName = clubDetails.getState(name);
-    if(stateName.isNotEmpty){
-      estadualLeagueName = getLeagueNationalityMap().keys.firstWhere((k) => getLeagueNationalityMap()[k] == stateName, orElse: () => null);
+    if(clubDetails){
+      ClubDetails clubDetails = ClubDetails();
+      nationality = clubDetails.getCountry(name);
+      foundationYear = clubDetails.getFoundationYear(name);
+      stadiumName = clubDetails.getStadium(name);
+      continent = Continents().funcCountryContinents(nationality);
+      stateName = clubDetails.getState(name);
+      if(stateName.isNotEmpty){
+        estadualLeagueName = getLeagueNationalityMap().keys.firstWhere((k) => getLeagueNationalityMap()[k] == stateName, orElse: () => null);
+      }
     }
 
   }
@@ -183,7 +192,6 @@ class Club{
         }
       }
     }
-
     //POE O MELHOR JOGADOR NA POSICAO, SE ELE JA ESTIVER ESCALADO PEGA O 2ª MELHOR ETC..
         try{
           for (int bestOrder = 0; bestOrder < 6; bestOrder++) {

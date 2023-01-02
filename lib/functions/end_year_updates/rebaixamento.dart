@@ -3,19 +3,23 @@ import 'package:fifa/classes/league.dart';
 import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/values/league_names.dart';
 
-funcRebaixamentoLeague(String leagueName1,String leagueName2, int nClubsRebaixados){
+funcRebaixamentoLeague(List leagueClassifications,String leagueName1,String leagueName2, int nClubsRebaixados){
+  print(leagueClassifications);
   int leagueIDRebaixados = leaguesIndexFromName[leagueName1];
   int leagueIDClassificados = leaguesIndexFromName[leagueName2];
   //Classificão final da liga
-  List clubIDRebaixados = League(index: leagueIDRebaixados).getClassification();
-  List clubIDClassificados = League(index: leagueIDClassificados).getClassification();
+  print(leagueClassifications);
+  List clubIDRebaixados = leagueClassifications[leaguesListRealIndex.indexOf(leagueIDRebaixados)];
+  List clubIDClassificados = leagueClassifications[leaguesListRealIndex.indexOf(leagueIDClassificados)];
+  print(clubIDRebaixados);
+  print(leagueIDClassificados);
 
   //troca os clubes
   int lengthLeague = clubIDRebaixados.length-1;
   for(int i=0;i<nClubsRebaixados;i++){
 
-    String nameRebaixado = Club(index: clubIDRebaixados[lengthLeague-i]).name;
-    String nameClassificado = Club(index: clubIDClassificados[i]).name;
+    String nameRebaixado = Club(index: clubIDRebaixados[lengthLeague-i],hasPlayers:false,clubDetails:false).name;
+    String nameClassificado = Club(index: clubIDClassificados[i],hasPlayers:false,clubDetails:false).name;
 
     //GET POSIÇÃO DO CLUBNAME MAP
     int posicaoIndexRebaixado = -1;

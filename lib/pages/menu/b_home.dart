@@ -4,6 +4,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/database/local_database/shared_preferences.dart';
 import 'package:fifa/database/select_database.dart';
 import 'package:fifa/functions/change_club_control.dart';
+import 'package:fifa/functions/func_number_clubs_total.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/configuration/configuration.dart';
 import 'package:fifa/pages/configuration/customize_players.dart';
@@ -68,6 +69,8 @@ class _HomePageState extends State<HomePage> {
     ano = anoInicial;
     setState(() {});
     await SelectDatabase().load();
+
+    globalNumberClubsTotal = funcNumberClubsTotal(); //get number of total clubs
 
     setState(() {});
   }

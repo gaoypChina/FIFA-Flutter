@@ -1,3 +1,4 @@
+import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
@@ -60,7 +61,7 @@ class _CalendarState extends State<Calendar> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
   Widget adversarioLeague(int rodadaLocal) {
-    ResultGameNacional show = ResultGameNacional(rodadaLocal: rodadaLocal, clubID: myTeamClass.clubID);
+    ResultGameNacional show = ResultGameNacional(rodadaLocal: rodadaLocal, club: Club(index: myTeamClass.clubID));
 
     if(rodadaLocal <= nClubsLeague){
     return Material(

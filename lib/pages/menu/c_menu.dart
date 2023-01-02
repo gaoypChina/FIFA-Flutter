@@ -74,8 +74,6 @@ class _MenuState extends State<Menu> {
 
     myClass = My();
 
-
-
     return Scaffold(
         body:  Stack(
             children: [
@@ -358,8 +356,8 @@ Widget last5Matchs(){
     );
 }
   Widget resultBox(int i){
-    Color color = Colors.transparent;
-      ResultGameNacional show = ResultGameNacional(rodadaLocal: rodada-i-1, clubID: myClass.clubID);
+      Color color = Colors.transparent;
+      ResultGameNacional show = ResultGameNacional(rodadaLocal: rodada-1-i, club: Club(index: myClass.clubID));
       if(show.victoryDrawLoss310 == 3){color = Colors.green;}
       if(show.victoryDrawLoss310 == 1){color = Colors.yellow;}
       if(show.victoryDrawLoss310 == 0){color = Colors.red;}
@@ -369,7 +367,7 @@ Widget last5Matchs(){
           width: 20,
           margin: const EdgeInsets.all(2),
           color: color,
-          child: Center(child: Image.asset(Images().getEscudo(show.clubName2),width: 15,height: 15,)),
+          child: Center(child: Images().getEscudoWidget(show.clubName2,15,15)),
         );
       }else{
         return Container();

@@ -4,7 +4,6 @@ library globals;
 int testInitRodada = 1;
 int gLOBALMAXCLUBSINSIDELEAGUE = 20;
 
-
 //MEU
 int globalMyClubID = -1;
 int globalMyExpectativa = 0;
@@ -123,6 +122,7 @@ List globalClubsInternationalGS = [];
 //LEAGUES CONFIGURATION
 Map globalLeagueRelegated = {};
 Map globalLeagueClassified = {};
+int globalNumberClubsTotal = 0;
 
 ///////////////////////////
 //CHAMPIONS E LIBERTADORES
