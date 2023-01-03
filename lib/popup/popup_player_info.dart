@@ -54,7 +54,7 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
                         height: 80,width: 80,
                         child: Stack(
                           children: [
-                            globalHasInternet ? Image.network(jogador.imageUrl,height: 80,width: 80) : Image.asset(Images().getGenericPlayerPicture(),height: 80,width: 80),
+                            Images().getPlayerPictureWidget(jogador,80,80),
                             Container(alignment: Alignment.bottomRight,child: funcFlagsList(jogador.nationality, 20,30)),
                             Text(jogador.nationality,style: EstiloTextoBranco.text12),
                           ],
@@ -69,7 +69,7 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
                         ],
                       )),
                       //Escudo da Equipe
-                      Image.asset(Images().getEscudo(jogador.clubName),height: 60,width: 60),
+                      Images().getEscudoWidget(jogador.clubName,60,60),
                     ],
                   ),
 
@@ -349,6 +349,7 @@ onTapSell(BuildContext context, Jogador jogador){
     globalMyMoney += jogador.price;
     globalJogadoresClubIndex[jogador.index] = destinyClub;
     globalMyJogadores.remove(jogador.index);
+    saveSellBuyPlayerToHistoric(jogador: jogador,isSell: true,clubID: destinyClub);
     customToast('${Translation(context).text.playerSoldTo} '+Club(index: destinyClub).name);
   }else{
     customToast(Translation(context).text.notEnoughPlayersLeftToSell);
@@ -361,6 +362,7 @@ onTapBuy(BuildContext context, Jogador jogador){
         globalMyMoney -= jogador.price;
         globalJogadoresClubIndex[jogador.index] = globalMyClubID;
         globalMyJogadores.add(jogador.index);
+        saveSellBuyPlayerToHistoric(jogador: jogador,isSell: false, clubID: jogador.clubID);
         customToast(Translation(context).text.playerBought);
       }else{
         customToast(Translation(context).text.cancelledPurchase+":\n"+Translation(context).text.otherTeamWillHaveNoPlayersLeft);
@@ -373,3 +375,24 @@ onTapBuy(BuildContext context, Jogador jogador){
   }
 }
 
+
+saveSellBuyPlayerToHistoric({required Jogador jogador,required bool isSell, required int clubID}){
+  String sellORbuyStr = 'Sell';
+  if(isSell == false){
+    sellORbuyStr = 'Buy';
+  }
+  globalHistoricMyTransfersID = checkMapHistoricTranfers(globalHistoricMyTransfersID,sellORbuyStr,jogador.index);
+  globalHistoricMyTransfersValue = checkMapHistoricTranfers(globalHistoricMyTransfersValue,sellORbuyStr,jogador.price);
+  globalHistoricMyTransfersClubID = checkMapHistoricTranfers(globalHistoricMyTransfersClubID,sellORbuyStr,clubID);
+}
+
+checkMapHistoricTranfers(Map mapa, String sellORbuyStr, dynamic newVariable){
+  try{
+    List listaValue = mapa[sellORbuyStr]![ano]!;
+    listaValue.add(newVariable);
+    mapa[sellORbuyStr]![ano] = mapa[sellORbuyStr]![ano]!;
+  }catch(e){
+    mapa[sellORbuyStr]![ano] = [newVariable];
+  }
+  return mapa;
+}

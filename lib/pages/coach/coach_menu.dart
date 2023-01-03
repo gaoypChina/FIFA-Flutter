@@ -3,6 +3,7 @@ import 'package:fifa/classes/expectativa.dart';
 import 'package:fifa/classes/geral/name.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/historic.dart';
+import 'package:fifa/classes/historic_tranfers.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
@@ -133,8 +134,8 @@ class _CoachMenuState extends State<CoachMenu> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        signWidget('Contratação mais cara', '32.67mi', 2321),
-                        signWidget('Venda mais cara','45.34mi', 1563),
+                        signWidget('Contratação mais cara',HistoricTransfers().sellKeyword),
+                        signWidget('Venda mais cara',HistoricTransfers().buyKeyword),
                       ],
                     ),
 
@@ -329,8 +330,12 @@ Widget sequenceWidget(String text, String value, int clubID, [int? advClubID]){
     ),
   );
 }
-Widget signWidget(String text, String value, int playerID){
-  Jogador player = Jogador(index: playerID);
+
+Widget signWidget(String text, String keyword){
+  HistoricTransfers historicTransfers = HistoricTransfers();
+  HighestSellBuy highestSellBuy = historicTransfers.getHighest(keyword);
+  
+  Jogador player = Jogador(index: highestSellBuy.playerID);
   return Container(
     decoration: BoxDecoration(
       color: AppColors().greyTransparent,
@@ -346,12 +351,10 @@ Widget signWidget(String text, String value, int playerID){
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              globalHasInternet
-                  ? Image.network(player.imageUrl,width: 50,height: 50)
-                  : Image.asset('assets/icons/generic_user.png',width: 50,height: 50),
+              Images().getPlayerPictureWidget(player,50,50),
               Column(
                 children: [
-                  Text(value,style: EstiloTextoBranco.text20),
+                  Text(highestSellBuy.maxPrice.toStringAsFixed(2),style: EstiloTextoBranco.text20),
                   SizedBox(width:80,child: Text(player.name,maxLines:2,textAlign:TextAlign.center,style: EstiloTextoBranco.text14)),
                 ],
               ),

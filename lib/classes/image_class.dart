@@ -1,4 +1,5 @@
 import 'package:fifa/classes/geral/semana.dart';
+import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
@@ -98,6 +99,11 @@ class Images{
   Widget getWallpaper(){
     return Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill);
   }
+  Image getPlayerPictureWidget(Jogador player,[double height = 50,double width=50]){
+    return globalHasInternet
+        ? Image.network(player.imageUrl,width: width,height: height)
+        : Image.asset('assets/icons/generic_user.png',width: width,height: height);
+  }
   String getGenericPlayerPicture(){
     return 'assets/icons/generic_user.png';
   }
@@ -109,6 +115,7 @@ class Images{
       ),
     );
   }
+
 
   String getContinentLogo(String continent) {
     if (continent == 'Europa') {

@@ -64,7 +64,11 @@ Map globalHistoricBestPlayers = {};
 Map globalHistoricTopScorers = {};
 Map globalHistoricCoachResults = {};
 
-Map<int,List> globalRankingClubs = {2000:[]};
+Map<String,Map<int,List<dynamic>>> globalHistoricMyTransfersID = {'Sell':{},'Buy':{}};
+Map<String,Map<int,List<dynamic>>> globalHistoricMyTransfersClubID = {'Sell':{},'Buy':{}};
+Map<String,Map<int,List<dynamic>>> globalHistoricMyTransfersValue = {'Sell':{},'Buy':{}};
+
+Map<int,List> globalRankingClubs = {2000:[]}; //Agiliza a organização do ranking de clubes
 //MATCH SIMULATION
 double globalMatchVelocity = 100;
 int globalMatchSubstitutionsLeft = 3;

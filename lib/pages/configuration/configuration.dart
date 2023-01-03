@@ -325,7 +325,6 @@ Widget soundEffects(ConfigurationState config){
             value: config.randomizePlayers,
             onChanged: (value) {
               setState(() {
-                customToast(Translation(context).text.inDevelopment);
                 config.changeRandomizePlayersState();
               });
             }),

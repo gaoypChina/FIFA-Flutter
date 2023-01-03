@@ -149,8 +149,7 @@ class _TransfersState extends State<Transfers> {
                     //BOTAO ESQUERDA
                     GestureDetector(
                       onTap: () {
-                        if ((filterPlayers.transferParameters.page + 1) * 50 <
-                            filterPlayers.copyJogadoresID.length) {
+                        if ((filterPlayers.transferParameters.page + 1) * 50 < filterPlayers.copyJogadoresID.length) {
                           filterPlayers.transferParameters.page++;
                           customToast(Translation(context).text.loading);
                         }
@@ -172,18 +171,15 @@ class _TransfersState extends State<Transfers> {
                     Expanded(
                       child: GestureDetector(
                         onTap: () {
-                          showModalBottomSheet(
-                              context: context,
+                          showModalBottomSheet(context: context,
                               builder: (context) {
                                 return filterByPositionWidget();
                               });
                         },
                         child: Column(
                           children: [
-                            Image.asset('assets/icons/assists.png',
-                                height: 40, width: 40),
-                            Text(Translation(context).text.position,
-                                style: EstiloTextoBranco.text14),
+                            Image.asset('assets/icons/assists.png',height: 40, width: 40),
+                            Text(Translation(context).text.position,style: EstiloTextoBranco.text14),
                           ],
                         ),
                       ),
@@ -191,12 +187,8 @@ class _TransfersState extends State<Transfers> {
 
                     GestureDetector(
                       onTap: () {
-                        showModalBottomSheet(
-                            isScrollControlled: true,
-                            context: context,
-                            builder: (context) {
-                              return filterByCountry();
-                            });
+                        showModalBottomSheet(isScrollControlled: true,context: context,
+                            builder: (context) {return filterByCountry();});
                       },
                       child: const Icon(Icons.flag, size: 35, color: Colors.white),
                     ),
@@ -204,12 +196,8 @@ class _TransfersState extends State<Transfers> {
                     const SizedBox(width: 20),
                     GestureDetector(
                         onTap: () {
-                      showModalBottomSheet(
-                          isScrollControlled: true,
-                          context: context,
-                          builder: (context) {
-                            return maxMinSelectionWidget();
-                          });
+                          showModalBottomSheet(isScrollControlled: true,context: context,
+                              builder: (context) {return maxMinSelectionWidget();});
                     },
                     child: const Icon(Icons.filter_alt, size: 35, color: Colors.white),
                     ),
