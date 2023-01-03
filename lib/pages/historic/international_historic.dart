@@ -265,9 +265,6 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
     String clubName2 = Club(index: clubID2).name;
     String goal2 = globalHistoricInternationalGoalsAll[ano][internationalLeague][phase][clubID2][idaVolta].toString();
 
-    if(idaVolta==1){
-
-    }
     return Padding(
       padding: const EdgeInsets.all(1.0),
       child: Row(

@@ -25,12 +25,8 @@ Widget notPlayMundial(BuildContext context){
 Widget row(){
     MundialFinal data = MundialFinal();
 
-    //print(data.clubName1);
-    //print('GOL: ${data.goal1} x ${data.goal2}');
-    String teamNameA = data.clubName1;
-    String teamNameB = data.clubName2;
-    int golsA = data.goal1;
-    int golsB = data.goal2;
+    String teamNameA = data.club1.name;
+    String teamNameB = data.club2.name;
 
     return  Column(
       children: [
@@ -44,8 +40,8 @@ Widget row(){
             //Escudo
             Image.asset(Images().getEscudo(teamNameA),height: 20,width: 20),
 
-            golsA >= 0
-                ? Text(' '+ golsA.toString()+'x'+golsB.toString()+' ',style: EstiloTextoBranco.text14)
+            data.goal1 >= 0
+                ? Text(' '+ data.goal1.toString()+'x'+data.goal2.toString()+' ',style: EstiloTextoBranco.text14)
                 : const Text('X',textAlign:TextAlign.center,style: EstiloTextoBranco.text14),
             //Escudo
             Image.asset(Images().getEscudo(teamNameB),height: 20,width: 20),
@@ -60,8 +56,8 @@ Widget row(){
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(Images().getUniform(teamNameA),height: 50,width: 50),
-            Image.asset(Images().getUniform(teamNameB),height: 50,width: 50),
+            Images().getUniformWidget(teamNameA,50,50),
+            Images().getUniformWidget(teamNameB,50,50),
           ],
         )
       ],

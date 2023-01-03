@@ -46,7 +46,9 @@ class _TableMundialState extends State<TableMundial> {
           Column(
             children: [
               backButtonText(context,'Mundial'),
-              row(),
+
+
+              (rodada >= semanaMundial.first) ? row() : Container(),
 
                   Expanded(
                       child: ShaderMask(
@@ -116,8 +118,8 @@ class _TableMundialState extends State<TableMundial> {
 
     //print(data.clubName1);
     //print('GOL: ${data.goal1} x ${data.goal2}');
-    String teamNameA = data.clubName1;
-    String teamNameB = data.clubName2;
+    String teamNameA = data.club1.name;
+    String teamNameB = data.club2.name;
     int golsA = data.goal1;
     int golsB = data.goal2;
 
