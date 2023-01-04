@@ -532,8 +532,7 @@ class _TransfersState extends State<Transfers> {
               positionContainer(player.position),
             ],
           ),
-          Image.asset(
-            Images().getEscudo(player.clubName),height: 20,width: 20),
+          Images().getEscudoWidget(player.clubName,20,20),
           //Text(player.index.toString(), style: EstiloTextoBranco.text16),
           GestureDetector(
             onTap: () {
@@ -609,7 +608,7 @@ class _TransfersState extends State<Transfers> {
               positionContainer(player.position),
             ],
           ),
-          Image.asset(Images().getEscudo(player.clubName),height: 20,width: 20),
+          Images().getEscudoWidget(player.clubName,20,20),
           //Text(player.index.toString(), style: EstiloTextoBranco.text16),
           GestureDetector(
             onTap: () {

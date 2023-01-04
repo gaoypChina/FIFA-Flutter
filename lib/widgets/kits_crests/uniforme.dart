@@ -12,6 +12,7 @@ class UniformCustom{
   late LinearGradient pattern;
   late Color sleeveColor;
   late ClubColors clubColors;
+  late Color sportBrandColor;
   double scale = 1;
 
   bool paintMiddleBox = false;
@@ -55,6 +56,13 @@ class UniformCustom{
     if(clubDetails.getPattern(clubName) == clubPattern.oneHorStripe){
         heightMiddleBoxScale = 0.7;
     }
+    if(clubDetails.getPattern(clubName) == clubPattern.stripes2 ||
+    clubDetails.getPattern(clubName) == clubPattern.stripes3 ||
+        clubDetails.getPattern(clubName) == clubPattern.stripesTricolor){
+      sportBrandColor = clubColors.primaryColor;
+    }else{
+      sportBrandColor = clubColors.secondColor;
+    }
   }
 
 
@@ -63,12 +71,10 @@ Widget kit(){
   return Stack(
     children: [
 
-      Padding(
+      Container(
         padding: const EdgeInsets.only(left: 2.0),
         child: Stack(
             children: [
-
-              //Image.asset('assets/clubs/palmeiras1.png',height: 110*scale,width: 130*scale,),
 
               //Manga Esquerda
               Padding(
@@ -129,35 +135,37 @@ Widget kit(){
               //LOGO
             Padding(
               padding: EdgeInsets.only(left: 50*scale,top: 12*scale),
-                child: Image.asset(Images().getEscudo(clubName),height: 12*scale,width: 12*scale,),
+                child: Images().getEscudoWidget(clubName,12*scale,12*scale),
             ),
 
               //MARCA ESPORTIVA
-              Padding(
+              Container(
                 padding: EdgeInsets.only(left: 29*scale,top: 12*scale),
-                child: Image.asset('assets/brands/sports/nike.png',height: 10*scale,width: 10*scale,),
+                child: Image.asset('assets/brands/sports/nike.png',
+                  color: sportBrandColor,
+                  height: 10*scale,width: 10*scale,),
               ),
 
               //PATROCINIO
-              Container(
-                height: 22*scale,width: 32*scale,
-                margin: EdgeInsets.only(left: 29*scale,top: 30*scale*heightMiddleBoxScale),
-                color: paintMiddleBox ? clubColors.primaryColor : Colors.transparent,
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 29*scale,top: 25*scale*heightMiddleBoxScale),
-                child: Image.asset('assets/brands/fly emirates.png',
-                    color: heightMiddleBoxScale==1 ?  clubColors.secondColor : clubColors.primaryColor,
-                    height: 32*scale,width: 32*scale,
-                ),
-              ),
+              //Container(
+              //  height: 22*scale,width: 32*scale,
+              //  margin: EdgeInsets.only(left: 29*scale,top: 30*scale*heightMiddleBoxScale),
+              //  color: paintMiddleBox ? clubColors.primaryColor : Colors.transparent,
+              //),
+              //Padding(
+              //  padding: EdgeInsets.only(left: 29*scale,top: 25*scale*heightMiddleBoxScale),
+              //  child: Image.asset('assets/brands/fly emirates.png',
+              //      color: heightMiddleBoxScale==1 ?  clubColors.secondColor : clubColors.primaryColor,
+              //      height: 32*scale,width: 32*scale,
+              //  ),
+              //),
 
             ],
           ),
       ),
 
 
-      //adidas(),
+      //adidasStripes(),
     ],
   );
 }
@@ -287,7 +295,7 @@ Widget faixasLaterais(){
     );
   }
 
-  Widget adidas(){
+  Widget adidasStripes(){
     double _height = 3;
     return Stack(
       children: [

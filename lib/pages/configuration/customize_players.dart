@@ -67,7 +67,7 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                       GestureDetector(
                           onTap:(){
                           },
-                          child: Image.asset(Images().getEscudo(club.name),height: 80,width: 80)
+                          child: Images().getEscudoWidget(club.name,80,80),
                       ),
                       const SizedBox(width: 8),
                       Column(
@@ -233,7 +233,7 @@ TableRow playersRow(int i){
               });
 
             },
-            child: Image.asset(Images().getEscudo(player.clubName),height:30, width: 30)),
+            child: Images().getEscudoWidget(player.clubName,30,30)),
 
         //NATIONALITY
         InkWell(

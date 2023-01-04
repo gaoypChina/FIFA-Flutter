@@ -91,7 +91,7 @@ class _CoachRankingState extends State<CoachRanking> {
               Row(
                 children: [
                   Text(controller.coach.simulationYear.toString(),style: EstiloTextoBranco.text16),
-                  Image.asset(Images().getEscudo(controller.coach.clubName),height:20,width: 20,),
+                  Images().getEscudoWidget(controller.coach.clubName,20,20),
                   ],
               )
             ],

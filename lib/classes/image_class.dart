@@ -12,7 +12,7 @@ class Images{
 
 
   String getEscudo(String clubName){
-    return 'assets/clubs/${FIFAImages().imageLogo(clubName)}.png';
+      return 'assets/clubs/${FIFAImages().imageLogo(clubName)}.png';
   }
   Widget getEscudoWidget(String clubName,[double _height=50.0, double _width=50.0]){
     String crest = FIFAImages().imageLogo(clubName);
@@ -29,9 +29,6 @@ class Images{
   }
 
 
-  String getUniform(String clubName){
-    return 'assets/clubs/${FIFAImages().imageLogo(clubName)}1.png';
-  }
   Widget getUniformWidget(String clubName,[double _height=50.0, double _width=50.0]){
     String name = FIFAImages().imageLogo(clubName);
     if(name != 'generic'){
@@ -59,13 +56,13 @@ class Images{
   }
   /////////////////////////////////////////////////////////////////////////////
   //MY
-  String getMyEscudo(){
+  Widget getMyEscudo({required double size}){
     My myClass = My();
-    return 'assets/clubs/${FIFAImages().imageLogo(myClass.clubName)}.png';
+    return getEscudoWidget(myClass.clubName,size,size);
   }
-  String getMyUniform(){
+  Widget getMyUniform({required double height,required double width}){
     My myClass = My();
-    return 'assets/clubs/${FIFAImages().imageLogo(myClass.clubName)}1.png';
+    return getUniformWidget(myClass.clubName,height,width);
   }
   String getMyStadium(){
     My myClass = My();

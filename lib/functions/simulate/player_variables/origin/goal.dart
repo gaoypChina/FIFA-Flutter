@@ -10,8 +10,8 @@ class Goal{
     //Se for a minha simulação
     //Se o jogador escolhido estiver machucado ou com cartão vermelho, entao escolhe outro jogador
     if(clubClass.index == globalMyClubID) {
-      if (globalJogadoresMatchRedCards[quemfez] > 0 && globalJogadoresMatchInjury[quemfez] > 0) {
-        quemfez = funcQuemfezgol();
+        if (globalJogadoresMatchRedCards[quemfez] > 0 && globalJogadoresMatchInjury[quemfez] > 0) {
+          quemfez = funcQuemfezgol();
       }
     }
     //Se for o meu time

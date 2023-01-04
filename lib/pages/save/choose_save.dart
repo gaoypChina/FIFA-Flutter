@@ -133,7 +133,7 @@ class _ChooseSaveState extends State<ChooseSave> {
 
             Stack(
               children: [
-                Image.asset(Images().getEscudo(club.name),height: 50,width: 50),
+                Images().getEscudoWidget(club.name,50,50),
                 Container(
                   margin: const EdgeInsets.only(top:25.0,left:25),
                   child: const Icon(Icons.save,color: Colors.white,size: 30,),

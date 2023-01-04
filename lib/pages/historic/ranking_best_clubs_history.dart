@@ -158,7 +158,7 @@ class _RankingBestClubsHistoryState extends State<RankingBestClubsHistory> {
         child: Row(
           children: [
             SizedBox(width:30,child: Text((i+1).toString() + 'º ', style: EstiloTextoBranco.text14)),
-            Image.asset(Images().getEscudo(copyClubsName[i]), height: 30, width: 30),
+            Images().getEscudoWidget(copyClubsName[i],30,30),
             const SizedBox(width: 10),
             Expanded(
               child: Container(

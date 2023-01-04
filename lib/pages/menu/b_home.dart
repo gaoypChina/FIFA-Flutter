@@ -267,11 +267,14 @@ Widget clubLogoAndKitStack(Club club){
             children: [
               //Image.asset(Images().getStadium(club.name),height: imageSize,width: imageSize,fit: BoxFit.fill,),
               //Escudo
-              Image.asset(Images().getEscudo(club.name),height: imageSize,width: imageSize),
+              Images().getEscudoWidget(club.name,imageSize,imageSize),
               //Uniforme
               Container(
                   alignment: Alignment.bottomRight,
-                  child: Image.asset(Images().getUniform(club.name),height: imageSize/2,width: imageSize/2)
+                  child: Container(
+                      height: imageSize/2,
+                      width: imageSize/2,
+                      child: Images().getUniformWidget(club.name,imageSize/2,imageSize/2)),
               ),
             ],
           ),

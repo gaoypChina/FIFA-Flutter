@@ -3,6 +3,7 @@ library globals;
 //geral
 int testInitRodada = 1;
 int gLOBALMAXCLUBSINSIDELEAGUE = 20;
+bool globalShowRealLogos = true;
 
 //MEU
 int globalMyClubID = -1;

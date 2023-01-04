@@ -3,11 +3,13 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/page_controller/club_profile/data_graphics.dart';
+import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:fifa/pages/historic/historic_players.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/club_details.dart';
+import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -52,7 +54,10 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
   @override
   Widget build(BuildContext context) {
     _tooltipBehavior = TooltipBehavior(enable: true);
-
+    bool isPlayableClub = false;
+    if(clubsAllNameList.contains(widget.clubName)){
+      isPlayableClub = true;
+    }
   return Scaffold(
       body: Stack(
         children: [
@@ -62,7 +67,18 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
 
-              backButtonText(context, widget.clubName),
+              Row(
+                children: [
+                  backButtonText(context, widget.clubName),
+                  const Spacer(),
+                  isPlayableClub ? Padding(
+                    padding: const EdgeInsets.only(top:20.0),
+                    child: IconButton(onPressed: (){
+                         Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: clubsAllNameList.indexOf(widget.clubName))));
+                    }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
+                  ) : Container(),
+                ],
+              ),
 
               Padding(
                 padding: const EdgeInsets.only(left: 8.0),
@@ -70,7 +86,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     GestureDetector(onTap:(){
-                      Navigator.push(context,MaterialPageRoute(builder: (context) => ChooseContinentPage(clubName: widget.clubName)));
+                      Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricPlayersPage(clubName: widget.clubName)));
                     },child: Images().getEscudoWidget(widget.clubName,90,90)),
                     Images().getUniformWidget(widget.clubName,100,100),
                     Column(

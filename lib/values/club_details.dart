@@ -133,7 +133,7 @@ class ClubDetails{
       'Craven Cottage',19000,1879,_country.england,74.5,[_name.chelsea,_name.qpr]];
     map[_name.leicester] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(52.620277777,-1.142222222),
       'King Power Stadium',39571,1884,_country.england,81.0,[]];
-    map[_name.leeds] = [ClubColors(Colors.white,Colors.white),pattern.solid,Coordinates(53.777777777,-1.572222222),
+    map[_name.leeds] = [ClubColors(Colors.white,Colors.yellow,Colors.blue),pattern.solid,Coordinates(53.777777777,-1.572222222),
       'Elland Road',37890,1919,_country.england,77.0,[]];
     map[_name.liverpool] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(53.430833333,-2.960833333),
       'Anfield',54167,1892,_country.england,86.5,[_name.manchesterunited,_name.everton]];

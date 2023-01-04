@@ -12,8 +12,15 @@ class InternationalLeagueManipulation{
     }
   }
 
-  String whenNotPlayInternationalLeague(String name){
+  bool internationalLeagueHasSimulation(String name){
     if(name == LeagueOfficialNames().resto){
+      return true;
+    }else{
+      return false;
+    }
+  }
+  String whenNotPlayInternationalLeague(String name){
+    if(internationalLeagueHasSimulation(name)){
       return LeagueOfficialNames().championsLeague;
     }
     return name;

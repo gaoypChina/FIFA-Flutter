@@ -160,13 +160,13 @@ class _TableMataMataState extends State<TableMataMata> {
           color: teamNameA == My().clubName ? Colors.green : Colors.transparent,
             child: Text(teamNameA,textAlign:TextAlign.end,style: EstiloTextoBranco.text14)),
         //Escudo
-        Image.asset(Images().getEscudo(teamNameA),height: 20,width: 20),
+        Images().getEscudoWidget(teamNameA,20,20),
 
         golsA >= 0
             ? Text(' '+ golsA.toString()+'x'+golsB.toString()+' ',style: EstiloTextoBranco.text14)
             : const Text('X',textAlign:TextAlign.center,style: EstiloTextoBranco.text14),
         //Escudo
-        Image.asset(Images().getEscudo(teamNameB),height: 20,width: 20),
+        Images().getEscudoWidget(teamNameB,20,20),
 
         Container(
           color: teamNameB == My().clubName ? Colors.green : Colors.transparent,

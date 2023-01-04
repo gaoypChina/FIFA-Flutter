@@ -1,6 +1,7 @@
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/historic/international_historic.dart';
 import 'package:fifa/pages/historic/leagues_historic.dart';
 import 'package:fifa/pages/historic/mundial.dart';
@@ -93,7 +94,7 @@ class _HistoricMenuState extends State<HistoricMenu> {
                           box(
                               'Meus Elencos',
                               Image.asset('assets/icons/generic_user.png',height: imageSize,),
-                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => const MyPlayersHistoric()));
+                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => MyPlayersHistoric(year: ano)));
                               }
                           ),
                           box(

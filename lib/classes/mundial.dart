@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/name.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/values/league_names.dart';
 
 class MundialFinal{
@@ -22,7 +21,6 @@ class MundialFinal{
   Club finalistName(String leagueInternational){
     int idaVolta = 0;
     List finalists = List.from(globalInternationalMataMataClubsID[leagueInternational][Name().finale]);
-    customToast(finalists.toString());
     int clubIndex1 = finalists[0];
     int gol1 = globalInternationalMataMataGoals[leagueInternational][Name().finale][clubIndex1][idaVolta];
 

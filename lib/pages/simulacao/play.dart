@@ -77,16 +77,8 @@ class _PlayState extends State<Play> {
 
     adversarioClubClass = Club(index: widget.adversarioClubID);
     //Reseta os indicadores da partida
-    globalMatchGoalScorerIDMy = [];
-    globalMatchGoalScorerIDAdv = [];
-    globalMatchGoalsMinutesMy = [];
-    globalMatchGoalsMinutesAdv = [];
-    globalJogadoresMatchGoals = List.filled(globalMaxPlayersPermitted, 0);
-    globalJogadoresMatchAssists = List.filled(globalMaxPlayersPermitted, 0);
-    globalJogadoresMatchRedCards = List.filled(globalMaxPlayersPermitted, 0);
-    globalJogadoresMatchYellowCards = List.filled(globalMaxPlayersPermitted, 0);
-    globalJogadoresMatchInjury = List.filled(globalMaxPlayersPermitted, 0);
-    globalJogadoresMatchHealth = List.filled(globalMaxPlayersPermitted, 1.0);
+    Simulate().startVariables();
+
   }
   visitanteFunc(){
     visitante = widget.visitante;
@@ -221,7 +213,7 @@ class _PlayState extends State<Play> {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         //Escudo time 1
-        Image.asset(Images().getEscudo(myClubClass.name),height: 80,width: 80),
+        Images().getEscudoWidget(myClubClass.name,80,80),
 
         Column(
           children: [
@@ -237,7 +229,7 @@ class _PlayState extends State<Play> {
         ),
 
         //Escudo time 2
-        Image.asset(Images().getEscudo(myMatchSimulation.adversarioClubClass.name),height: 80,width: 80),
+        Images().getEscudoWidget(myMatchSimulation.adversarioClubClass.name,80,80),
 
       ],
     );

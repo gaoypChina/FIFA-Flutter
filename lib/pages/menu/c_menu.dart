@@ -2,6 +2,7 @@ import 'package:fifa/classes/adversario.dart';
 import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/classes/league.dart';
 import 'package:fifa/functions/check_internet.dart';
 import 'package:fifa/functions/simulate/simulate_functions.dart';
 import 'package:fifa/global_variables.dart';
@@ -50,7 +51,6 @@ class _MenuState extends State<Menu> {
   void initState() {
     doThisOnLaunch();
     super.initState();
-
   }
   doThisOnLaunch() async{
     //POPUP DE EXPECTATIVA QUANDO COMEÇA NOVA TEMPORADA
@@ -74,7 +74,6 @@ class _MenuState extends State<Menu> {
 
     myClass = My();
 
-
     return Scaffold(
         body:  Stack(
             children: [
@@ -93,7 +92,7 @@ class _MenuState extends State<Menu> {
                       children: [
 
                         //Escudo
-                        Image.asset(Images().getMyEscudo(),height: 90,width: 90),
+                        Images().getMyEscudo(size: 90),
 
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -108,7 +107,7 @@ class _MenuState extends State<Menu> {
                         ),
 
                         //UNIFORME
-                        Image.asset(Images().getMyUniform(),height: 100,width: 100),
+                        Images().getMyUniform(height: 100,width: 100),
 
                       ],
                     ),
@@ -226,7 +225,7 @@ class _MenuState extends State<Menu> {
                                 children: [
                                    Text(Translation(context).text.nextAdversary,style: EstiloTextoBranco.text14),
                                   //Escudo
-                                  adversario.clubName.isNotEmpty ? Image.asset(Images().getEscudo(adversario.clubName),height: 50,width: 50) : Container(),
+                                  adversario.clubName.isNotEmpty ? Images().getEscudoWidget(adversario.clubName,50,50) : Container(),
                                   adversario.clubName.isNotEmpty ? Text(adversario.clubName,style: EstiloTextoBranco.negrito14) : Container(),
                                   adversario.clubName.isNotEmpty
                                       ? Semana(semana).isJogoMataMataInternacional
@@ -358,7 +357,10 @@ Widget last5Matchs(){
 }
   Widget resultBox(int i){
       Color color = Colors.transparent;
-      ResultGameNacional show = ResultGameNacional(rodadaLocal: rodada-1-i, club: Club(index: myClass.clubID));
+      ResultGameNacional show = ResultGameNacional(
+          rodadaLocal: rodada >= League(index: My().campeonatoID).nClubs  ? rodada-i :rodada-1-i,
+          club: Club(index: myClass.clubID)
+      );
       if(show.victoryDrawLoss310 == 3){color = Colors.green;}
       if(show.victoryDrawLoss310 == 1){color = Colors.yellow;}
       if(show.victoryDrawLoss310 == 0){color = Colors.red;}

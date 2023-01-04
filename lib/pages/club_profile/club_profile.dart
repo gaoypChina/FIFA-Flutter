@@ -2,6 +2,7 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/page_controller/club_profile/data_graphics.dart';
 import 'package:fifa/pages/club_profile/all_infos_club.dart';
+import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
 import 'package:fifa/pages/club_profile/club_calendar.dart';
 import 'package:fifa/pages/club_profile/compare.dart';
 import 'package:fifa/pages/club_profile/field_static.dart';
@@ -63,12 +64,23 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                 Column(
                   children: [
 
-                    backButtonText(context, clubClass.name),
+                    Row(
+                      children: [
+                        backButtonText(context, clubClass.name),
+                        const Spacer(),
+                        Padding(
+                          padding: const EdgeInsets.only(top:20.0),
+                          child: IconButton(onPressed: (){
+                            Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfileNotPlayable(clubName:clubClass.name)));
+                          }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
+                        )
+                      ],
+                    ),
 
                     Row(
                       children: [
                         //Escudo da Equipe
-                        Image.asset(Images().getEscudo(clubClass.name),height: 80,width: 80),
+                        Images().getEscudoWidget(clubClass.name,80,80),
 
                         const SizedBox(width: 8),
                         Expanded(

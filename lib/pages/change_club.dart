@@ -98,7 +98,7 @@ Widget clubWidget(int clubID){
           padding: const EdgeInsets.symmetric(vertical: 8.0),
           child: Column(
             children: [
-              Image.asset(Images().getEscudo(clubClassification.clubName),height: 130,width: 130),
+              Images().getEscudoWidget(clubClassification.clubName,130,130),
               Text(clubClassification.clubName,textAlign:TextAlign.center,style: EstiloTextoBranco.text20),
               Text('${Translation(context).text.position}: '+clubClassification.posicaoTabela.toString()+'º',style: EstiloTextoBranco.text14)
             ],

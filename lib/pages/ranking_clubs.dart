@@ -160,7 +160,7 @@ Widget rowClub(int ranking, Club club){
                 child: Text((ranking+1).toString()+'º',textAlign:TextAlign.end,style: EstiloTextoBranco.text14)
             ),
             funcFlagsList(club.nationality, 15, 22),
-            Image.asset(Images().getEscudo(club.name),height: 32,width: 32),
+            Images().getEscudoWidget(club.name,32,32),
             Expanded(
               child: Container(
                 color: colorBackground,

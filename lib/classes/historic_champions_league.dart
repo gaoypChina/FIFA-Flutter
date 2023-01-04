@@ -1,9 +1,13 @@
 import 'package:fifa/classes/geral/name.dart';
+import 'package:fifa/functions/international_league.dart';
 import 'package:fifa/global_variables.dart';
 
 class HistoricChampionsLeague{
 
   List get32finalClassificationIDs(int year, String internationalLeague){
+    if(InternationalLeagueManipulation().internationalLeagueHasSimulation(internationalLeague)){
+      return [];
+    }
     Map map = globalHistoricInternationalGoalsAll[year][internationalLeague][Name().oitavas];
     List clubs16ID = map.keys.toList();
     map = globalHistoricInternationalGoalsAll[year][internationalLeague][Name().quartas];

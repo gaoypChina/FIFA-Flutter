@@ -95,14 +95,14 @@ class _TableMundialState extends State<TableMundial> {
 
           funcFlagsList(club1.nationality, 15, 25),
           const SizedBox(width: 4),
-          Image.asset(Images().getEscudo(club1.name),height: 40,width: 40),
+          Images().getEscudoWidget(club1.name,40,40),
 
           const Padding(
             padding: EdgeInsets.all(8.0),
             child: Text('X',textAlign:TextAlign.center,style: EstiloTextoBranco.text14),
           ),
 
-          Image.asset(Images().getEscudo(club2.name),height: 40,width: 40),
+          Images().getEscudoWidget(club2.name,40,40),
           const SizedBox(width: 4),
           funcFlagsList(club2.nationality, 15, 25),
         ],
@@ -143,8 +143,8 @@ class _TableMundialState extends State<TableMundial> {
                     children: [
                       Row(
                         children: [
-                          Image.asset(Images().getEscudo(teamNameA),height: 50,width: 50),
-                          Image.asset(Images().getUniform(teamNameA),height: 50,width: 50),
+                          Images().getEscudoWidget(teamNameA,50,50),
+                          Images().getUniformWidget(teamNameA,50,50)
                         ],
                       ),
                       Container(
@@ -164,8 +164,8 @@ class _TableMundialState extends State<TableMundial> {
                     children: [
                       Row(
                         children: [
-                          Image.asset(Images().getUniform(teamNameB),height: 50,width: 50),
-                          Image.asset(Images().getEscudo(teamNameB),height: 50,width: 50),
+                          Images().getEscudoWidget(teamNameB,50,50),
+                          Images().getUniformWidget(teamNameB,50,50),
                         ],
                       ),
                       Container(

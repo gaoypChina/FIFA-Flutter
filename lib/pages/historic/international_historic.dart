@@ -270,7 +270,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(Images().getEscudo(clubName1),height: 25,width: 25),
+          Images().getEscudoWidget(clubName1,25,25),
           Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -288,7 +288,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
               ],
             ),
           ),
-          Image.asset(Images().getEscudo(clubName2),height: 25,width: 25),
+          Images().getEscudoWidget(clubName2,25,25),
         ],
       ),
     );
@@ -311,7 +311,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Image.asset(Images().getEscudo(Club(index: clubsID[i]).name),width: 25,height: 25),
+                          Images().getEscudoWidget(Club(index: clubsID[i]).name,25,25),
                           Container(
                             width: 140,
                             color: Club(index: clubsID[i]).name == My().clubName
@@ -341,7 +341,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                       i%4==0 ? Text('${Translation(context).text.group} ${(i/4+1).floor()}',style: EstiloTextoBranco.text16) : Container(),
                       Row(
                         children: [
-                          Image.asset(Images().getEscudo(Club(index: clubsID[i]).name),width: 25,height: 25),
+                          Images().getEscudoWidget(Club(index: clubsID[i]).name,25,25),
                           Container(
                             width: 140,
                             color: Club(index: clubsID[i]).name == My().clubName
@@ -383,7 +383,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                         const SizedBox(width: 4),
                         funcFlagsList(nationality, 15, 25),
                         const SizedBox(width: 8),
-                        Image.asset(Images().getEscudo(list[i]),width: 30,height: 30),
+                        Images().getEscudoWidget(list[i],30,30),
                         const SizedBox(width: 8),
                         Text(list[i],style: EstiloTextoBranco.text16),
                       ],
@@ -462,7 +462,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
               SizedBox(width:30, child: Text('${(position+1).toString()}º ',style: EstiloTextoBranco.text16)),
               const SizedBox(width: 4),
               funcFlagsList(nationality, 12, 15),
-              Image.asset(Images().getEscudo(list[position]),width: 25,height: 25),
+              Images().getEscudoWidget(list[position],25,25),
               const SizedBox(width: 8),
               //Text(list[position],style: EstiloTextoBranco.text16),
             ],

@@ -72,7 +72,7 @@ TableRow rowTableNacionalLayout(BuildContext context, int position, int indexClu
         onTap: (){
           goToClubProfilePage(context,clubClass);
           },
-          child: Image.asset(Images().getEscudo(clubClass.name),height: 25,width: 25)),
+          child: Images().getEscudoWidget(clubClass.name,25,25)),
       GestureDetector(
         onTap: (){
           goToClubProfilePage(context,clubClass);

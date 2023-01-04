@@ -17,6 +17,10 @@ class Simulate{
 
   simulateWeek({required bool simulMyMatch}){
 
+    if(semana == 1 || semana == testInitRodada){
+      startVariables();
+    }
+
     //SIMULA PARTIDAS
     if(Semana(semana).isJogoCampeonatoNacional) {
       nationalMatchs(simulMyMatch);
@@ -33,6 +37,19 @@ class Simulate{
 
 
     setTeamsInternational();
+  }
+
+  startVariables(){
+    globalMatchGoalScorerIDMy = [];
+    globalMatchGoalScorerIDAdv = [];
+    globalMatchGoalsMinutesMy = [];
+    globalMatchGoalsMinutesAdv = [];
+    globalJogadoresMatchGoals = List.filled(globalMaxPlayersPermitted, 0);
+    globalJogadoresMatchAssists = List.filled(globalMaxPlayersPermitted, 0);
+    globalJogadoresMatchRedCards = List.filled(globalMaxPlayersPermitted, 0);
+    globalJogadoresMatchYellowCards = List.filled(globalMaxPlayersPermitted, 0);
+    globalJogadoresMatchInjury = List.filled(globalMaxPlayersPermitted, 0);
+    globalJogadoresMatchHealth = List.filled(globalMaxPlayersPermitted, 1.0);
   }
 
   updateWeek() async{
@@ -82,7 +99,7 @@ class Simulate{
                 rodada, leagueIndex, chaveClub1)[0];
             int indexTeam2 = leagueSelected.getClubRealID(chaveClub2);
 
-            //Se não for meu jogo simula
+            //Se não for meu jogo simula ou se for simulação
             if (myCampeonatoID != leagueIndex ||
                 (myClubID != indexTeam1 && myClubID != indexTeam2) || simulMyMatch) {
               MatchSimulation match = MatchSimulation(Club(index: indexTeam1), Club(index: indexTeam2));

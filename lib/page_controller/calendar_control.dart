@@ -37,14 +37,9 @@ class ResultGameNacional{
     clubID2 = clubsAllNameList.indexOf(clubName2);
 
     int rodadaMax = rodada;
-    //Se for a ultima rodada
-    if(rodada == league.nClubs-1){
-      rodadaMax = rodada+1;
-      rodadaLocal += 1;
-    }
 
     //SÓ MOSTRA PARA RODADAS QUE JÁ ACONTECERAM
-    if((rodadaLocal<rodadaMax || semana > semanasJogosNacionais[league.nClubs-2]) && rodadaLocal < league.nClubs){
+    if((rodadaLocal<rodadaMax || semana > semanasJogosNacionais[league.nClubs-2])){
       //rodadaLocal começa em 1 por isso subtrai 1
 
       int chaveClub1 = Chaves().chaveIndexAdvCampeonato(rodadaLocal, club.leagueID, chaveClub2)[0];

@@ -136,7 +136,7 @@ class _CompareState extends State<Compare> {
             Row(
               children: [
 
-                Image.asset(Images().getEscudo(club.name),height: 50,width: 50),
+                Images().getEscudoWidget(club.name,50,50),
 
                 Column(
                   children: [
@@ -183,7 +183,7 @@ class _CompareState extends State<Compare> {
                   ],
                 ),
 
-                Image.asset(Images().getEscudo(club2.name),height: 50,width: 50),
+                Images().getEscudoWidget(club2.name,50,50),
 
               ],
             ),

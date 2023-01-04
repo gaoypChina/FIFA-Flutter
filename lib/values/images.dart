@@ -1,3 +1,4 @@
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/club_names.dart';
 
 import 'league_names.dart';
@@ -10,6 +11,9 @@ class FIFAImages{
 
   String campeonatoLogo(String leagueName) {
     String imageLogo = 'championship';
+    if(globalShowRealLogos == false){
+        return 'assets/league_logos/proximus_league.png';
+    }
     if(leagueName==LeagueOfficialNames().inglaterra1) {       imageLogo = 'premierleague';}
     if(leagueName==LeagueOfficialNames().inglaterra2) {       imageLogo = 'championship';}
     if(leagueName==LeagueOfficialNames().inglaterra3) {       imageLogo = 'inglaterra3';}
@@ -59,6 +63,10 @@ class FIFAImages{
 
 String imageLogo(String timeFoto) {
     ClubName _name = ClubName();
+
+    if(globalShowRealLogos == false){
+        return 'generic';
+    }
 
     Map map = {};
     map[_name.arsenal] = 'arsenal';

@@ -249,9 +249,9 @@ class _FieldDraggableState extends State<FieldDraggable> {
                    child: (player.injury >0 || player.redCard >0)
                         ? Opacity(
                         opacity: 0.4,
-                        child: Image.asset(Images().getMyUniform())
+                        child: Images().getMyUniform(height: imageSize-15,width: imageSize+15)
                     )
-                        : globalHasInternet ? Image.network(player.imageUrl) : Image.asset(Images().getMyUniform()),
+                        : globalHasInternet ? Image.network(player.imageUrl) : Images().getMyUniform(height: imageSize-15,width: imageSize+15),
                   ),
 
                   //CIRCULO

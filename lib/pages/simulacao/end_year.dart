@@ -41,7 +41,7 @@ class _EndYearState extends State<EndYear> {
                   const SizedBox(height: 10),
 
                   //Escudo
-                  Image.asset(Images().getMyEscudo(),height: 90,width: 90),
+                  Images().getMyEscudo(size: 90),
                   const Spacer(),
                   //VOLTAR
                   customButtonContinue(

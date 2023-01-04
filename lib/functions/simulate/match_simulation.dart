@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:fifa/classes/historic/total_victories.dart';
+import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/simulate/player_variables/cards_injury_selection.dart';
 import 'package:fifa/functions/simulate/after_simulation/set_points.dart';
 import 'package:fifa/functions/simulate/player_variables/update_player_variables.dart';
@@ -36,6 +38,30 @@ class MatchSimulation{
     List goalsList = result(ovr1,ovr2);
     variableGol1 = goalsList.first;
     variableGol2 = goalsList.last;
+
+    //Salva no historico do treinador se eu simulo a partida
+    if(clubClass1.name == My().clubName){
+      if(variableGol1>variableGol2){
+        TotalVictories().add1Victory();
+      }
+      if(variableGol1==variableGol2){
+        TotalVictories().add1Draw();
+      }
+      if(variableGol1<variableGol2){
+        TotalVictories().add1Loss();
+      }
+    }
+    if(clubClass2.name == My().clubName){
+      if(variableGol2>variableGol1){
+        TotalVictories().add1Victory();
+      }
+      if(variableGol2==variableGol1){
+        TotalVictories().add1Draw();
+      }
+      if(variableGol2<variableGol1){
+        TotalVictories().add1Loss();
+      }
+    }
 
     //SETA JOGADORES
     for(int i=0; i<variableGol1; i++){

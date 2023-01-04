@@ -148,7 +148,7 @@ TableRow groupTitle(int groupNumber){
       children: [
         Text(i.toString()+'-',style: EstiloTextoBranco.text16),
         //Escudo
-        Image.asset(Images().getEscudo(clubClass.name),height: 20,width: 20),
+        Images().getEscudoWidget(clubClass.name,20,20),
         Container(
           color: clubClass.name == my.clubName
               ? Colors.green

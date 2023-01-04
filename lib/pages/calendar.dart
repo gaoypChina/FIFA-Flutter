@@ -61,6 +61,7 @@ class _CalendarState extends State<Calendar> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
   Widget adversarioLeague(int rodadaLocal) {
+
     ResultGameNacional show = ResultGameNacional(rodadaLocal: rodadaLocal, club: Club(index: myTeamClass.clubID));
 
     if(rodadaLocal <= nClubsLeague){
@@ -87,8 +88,7 @@ class _CalendarState extends State<Calendar> {
                   show.visitante
                       ? Image.asset(Images().getStadium(show.clubName2),height: 90, width: 90)
                       : Container(),
-                  //Image.asset(Images().getMyLeagueLogo(),height: 22, width: 22),
-                  Center(child: Image.asset(Images().getEscudo(show.clubName2),height: 45, width: 45)),
+                  Center(child: Images().getEscudoWidget(show.clubName2,45,45)),
                 ],
               ),
             ),
@@ -154,7 +154,7 @@ Widget playWidget(int semanaLocal, show){
                     ? Image.asset(Images().getStadium(show.clubName2),height: 90, width: 90)
                     : Container(),
                 Image.asset(Images().getMyInternationalLeagueLogo(),height: 22, width: 22),
-                Center(child: Image.asset(Images().getEscudo(show.clubName2),height: 45, width: 45)),
+                Center(child: Images().getEscudoWidget(show.clubName2,45,45)),
               ],
             ),
           ),

@@ -224,9 +224,9 @@ class _SubstitutionState extends State<Substitution> {
                   (player.injury >0 || player.redCard >0)
                       ? Opacity(
                       opacity: 0.4,
-                      child: Image.asset(Images().getUniform(player.clubName))
+                      child: Images().getUniformWidget(player.clubName,imageSize-5,imageSize)
                   )
-                      : Image.asset(Images().getUniform(player.clubName)),
+                      : Images().getUniformWidget(player.clubName,imageSize-5,imageSize),
 
                   //GOL
                   Container(

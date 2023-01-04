@@ -72,7 +72,7 @@ class _MyTeamState extends State<MyTeam> {
                     Row(
                       children: [
                         //Escudo da Equipe
-                        Image.asset(Images().getMyEscudo(),height: 80,width: 80),
+                        Images().getMyEscudo(size: 80),
 
                         const SizedBox(width: 8),
                         Expanded(

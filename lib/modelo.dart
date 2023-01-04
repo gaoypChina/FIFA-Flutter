@@ -1,4 +1,5 @@
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/historic_champions/internationals.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/back_button.dart';
@@ -37,7 +38,7 @@ class _ChooseContinentPageState extends State<ChooseContinentPage> {
           Column(
             children: [
               backButtonText(context,'ChooseContinentPage'),
-
+              const Text('a',style: EstiloTextoBranco.text16),
 
             ],
           ),

@@ -115,7 +115,7 @@ class _TableInternationalScorersState extends State<TableInternationalScorers> {
           i+1<10
               ? Text('  ${(i+1).toString()}- ',style: EstiloTextoBranco.text16)
               : Text('${(i+1).toString()}- ',style: EstiloTextoBranco.text16),
-          Image.asset(Images().getEscudo(player.clubName),height: 25,width:25),
+        Images().getEscudoWidget(player.clubName,25,25),
           const SizedBox(width: 6),
           Container(
               width:200,

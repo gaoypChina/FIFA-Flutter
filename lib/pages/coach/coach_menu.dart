@@ -12,8 +12,9 @@ import 'package:fifa/functions/coach/coach_historic_data.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/change_club.dart';
 import 'package:fifa/pages/coach/coach_achievements.dart';
-import 'package:fifa/pages/coach/coach_past_club.dart';
 import 'package:fifa/pages/coach/coachs_ranking.dart';
+import 'package:fifa/pages/historic/my_players_historic.dart';
+import 'package:fifa/popup/popup_player_info.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -134,11 +135,10 @@ class _CoachMenuState extends State<CoachMenu> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        signWidget('Contratação mais cara',HistoricTransfers().sellKeyword),
-                        signWidget('Venda mais cara',HistoricTransfers().buyKeyword),
+                        signWidget('Contratação mais cara',HistoricTransfers().buyKeyword),
+                        signWidget('Venda mais cara',HistoricTransfers().sellKeyword),
                       ],
                     ),
-
 
                   ],
                 ),
@@ -320,9 +320,11 @@ Widget sequenceWidget(String text, String value, int clubID, [int? advClubID]){
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Image.asset(Images().getEscudo(Club(index: clubID).name),height:40,width: 40),
+              Images().getEscudoWidget(Club(index: clubID).name,40,40),
               Text(value,style: EstiloTextoBranco.text30),
-              advClubID != null && advClubID !=clubID ? Image.asset(Images().getEscudo(Club(index: advClubID).name),height:40,width: 40) : Container(),
+              advClubID != null && advClubID !=clubID
+                  ? Images().getEscudoWidget(Club(index: advClubID).name,40,40)
+                  : Container(),
             ],
           ),
         ),
@@ -343,25 +345,30 @@ Widget signWidget(String text, String keyword){
     width: 170,
     padding: const EdgeInsets.all(4),
     margin: const EdgeInsets.all(4),
-    child: Column(
-      children: [
-        Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.text14),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 6.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Images().getPlayerPictureWidget(player,50,50),
-              Column(
-                children: [
-                  Text(highestSellBuy.maxPrice.toStringAsFixed(2),style: EstiloTextoBranco.text20),
-                  SizedBox(width:80,child: Text(player.name,maxLines:2,textAlign:TextAlign.center,style: EstiloTextoBranco.text14)),
+    child: GestureDetector(
+      onTap: (){
+        popUpOkShowPlayerInfos(context: context, playerID: player.index, funcSetState: (){setState(() {});});
+      },
+      child: Column(
+        children: [
+          Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.text14),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 6.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Images().getPlayerPictureWidget(player,50,50),
+                Column(
+                  children: [
+                    Text(highestSellBuy.maxPrice.toStringAsFixed(2),style: EstiloTextoBranco.text20),
+                    SizedBox(width:80,child: Text(player.name,maxLines:2,textAlign:TextAlign.center,style: EstiloTextoBranco.text14)),
+                  ],
+                ),
                 ],
-              ),
-              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     ),
   );
 }
@@ -371,12 +378,12 @@ Widget yearRow(int year, BuildContext context){
 
   return GestureDetector(
     onTap: (){
-      Navigator.of(context).push(MaterialPageRoute(builder: (context) => CoachHistoricClub(clubID: myClubData.clubID, year: year)));
+      Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyPlayersHistoric(year: year)));
     },
     child: Row(
       children: [
         Text(year.toString(),style: EstiloTextoBranco.text16),
-        Image.asset(Images().getEscudo(myClubData.clubName),height: 20,width: 20,),
+        Images().getEscudoWidget(myClubData.clubName,20,20),
         SizedBox(
             width: Sized(context).width*0.25,
             child: Text(myClubData.clubName,style: EstiloTextoBranco.text14)

@@ -239,9 +239,9 @@ Widget playerWidgetMatch(int jogadorIndex, String clubName){
               child: (injury || redCard)
                     ? Opacity(
                         opacity: 0.4,
-                        child: Image.asset(Images().getUniform(clubName),height: imageSize,width: imageSize)
+                        child: Images().getUniformWidget(clubName,imageSize,imageSize)
                     )
-                : Image.asset(Images().getUniform(clubName),height: imageSize,width: imageSize),
+                : Images().getUniformWidget(clubName,imageSize,imageSize),
             ),
 
 

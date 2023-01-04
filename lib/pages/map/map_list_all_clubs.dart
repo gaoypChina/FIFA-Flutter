@@ -272,7 +272,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                mainAxisAlignment: MainAxisAlignment.end,
                children: [
                  Text(clubName,style: EstiloTextoBranco.negrito18),
-                 Image.asset(Images().getEscudo(clubName),width: 25,height: 25),
+                 Images().getEscudoWidget(clubName,25,25),
                ],
              ),
            ),

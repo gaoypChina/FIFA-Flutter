@@ -60,7 +60,7 @@ Widget myPlayersHistoricRow(int index){
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       Text(ano.toString()+': '+position.toString()+'º - '+clubName,style: EstiloTextoBranco.text14),
-      Image.asset(Images().getEscudo(clubName),height: 15,width: 15),
+      Images().getEscudoWidget(clubName,15,15),
     ],
   );
 }
@@ -101,7 +101,7 @@ Widget myPlayersHistoricRow(int index){
       children: [
         //Artilheiros
         Text('${(position+1).toString()}-',style: EstiloTextoBranco.text14),
-        Image.asset(Images().getEscudo(topScorers.clubName),height: 20,width: 20),
+        Images().getEscudoWidget(topScorers.clubName,20,20),
         SizedBox(
           width:130,
           child: Text(topScorers.playerName,style: EstiloTextoBranco.text14),
@@ -121,7 +121,7 @@ Widget yearRowBestPlayersRow(int year, int position){
 
       //MELHORES JOGADORES DO MUNDO
       Text('${(position+1).toString()}-',style: EstiloTextoBranco.text14),
-      Image.asset(Images().getEscudo(topPlayersOVR.clubName),height: 20,width: 20),
+      Images().getEscudoWidget(topPlayersOVR.clubName,20,20),
       SizedBox(
         width:130,
         child: Text(topPlayersOVR.playerName,style: EstiloTextoBranco.text14),

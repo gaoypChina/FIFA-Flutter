@@ -56,7 +56,7 @@ class _FimCampeonatoState extends State<FimCampeonato> {
                       children: [
 
                         //Escudo
-                        Image.asset(Images().getMyEscudo(),height: 60,width: 60),
+                        Images().getMyEscudo(size: 60),
 
                         const SizedBox(width: 10),
 

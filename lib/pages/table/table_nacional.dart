@@ -270,7 +270,7 @@ Widget matchsWidget(){
         color: AppColors().greyTransparent,
         child: Table(
           columnWidths:
-          (rodadaMatch<rodada)
+          (rodadaMatch<=rodada)
               ? const {0: FractionColumnWidth(.36),6: FractionColumnWidth(.36)}
               : const {0: FractionColumnWidth(.36),2: FractionColumnWidth(.0),4: FractionColumnWidth(.0),6: FractionColumnWidth(.36)},
           children: [
@@ -296,13 +296,13 @@ Widget matchsWidget(){
     return TableRow(
       children: [
         Text(tableNational.teamName1,textAlign:TextAlign.end,style: EstiloTextoBranco.text14),
-        Image.asset(Images().getEscudo(tableNational.teamName1),height: 22,width: 22),
+        Images().getEscudoWidget(tableNational.teamName1,22,22),
         (tableNational.showGoals)
             ? Text(tableNational.gol1.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text14) : Container(),
         const Text('x',style: EstiloTextoBranco.text16,textAlign: TextAlign.center,),
         (tableNational.showGoals)
             ? Text(tableNational.gol2.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.text14) : Container(),
-        Image.asset(Images().getEscudo(tableNational.teamName2),height: 22,width: 22),
+        Images().getEscudoWidget(tableNational.teamName2,22,22),
         Text(tableNational.teamName2,style: EstiloTextoBranco.text14),
       ],
     );
@@ -374,7 +374,7 @@ Widget yellowRedCardWidget(int goalOrYellowOrRed){
 
     return TableRow(
       children: [
-        Image.asset(Images().getEscudo(player.clubName),height: 20,width: 20),
+        Images().getEscudoWidget(player.clubName,20,20),
         Container(
             color: player.clubID == My().clubID ? Colors.teal : Colors.transparent,
             child: Text(player.name,style: EstiloTextoBranco.text14)),

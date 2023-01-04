@@ -453,14 +453,14 @@ Widget statistics(){
             color: teamNameA == my.clubName ? Colors.green : Colors.transparent,
             child: Text(teamNameA,textAlign: TextAlign.right,style: EstiloTextoBranco.text16)),
         //Escudo
-        Image.asset(Images().getEscudo(teamNameA),height: 20,width: 20),
+        Images().getEscudoWidget(teamNameA,20,20),
 
         match.isAlreadyPlayed
             ? Text(golsA.toString()+'x'+golsB.toString(),style: EstiloTextoBranco.text16)
             : const Center(child: Text('x',style: EstiloTextoBranco.text16)),
 
         //Escudo
-        Image.asset(Images().getEscudo(teamNameB),height: 20,width: 20),
+        Images().getEscudoWidget(teamNameB,20,20),
 
         Container(
             color: teamNameB == my.clubName ? Colors.green : Colors.transparent,

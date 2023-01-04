@@ -14,7 +14,8 @@ import 'package:fifa/widgets/best_player_box/best_player_box.dart';
 import 'package:flutter/material.dart';
 
 class MyPlayersHistoric extends StatefulWidget {
-  const MyPlayersHistoric({Key? key}) : super(key: key);
+  final int year;
+  const MyPlayersHistoric({Key? key, required this.year}) : super(key: key);
 
   @override
   State<MyPlayersHistoric> createState() => _MyPlayersHistoricState();
@@ -205,11 +206,11 @@ Widget header(){
         Images().getPlayerPictureWidget(jogador,20,20),
         SizedBox(width:150,child: Text(jogador.name,style: EstiloTextoBranco.text16)),
         const SizedBox(width: 4),
-        Text(jogador.matchsCarrer.toString(),style: EstiloTextoBranco.text16),
+        SizedBox(width:30,child:Text(jogador.matchsCarrer.toString(),style: EstiloTextoBranco.text16)),
         const SizedBox(width: 4),
-        Text(jogador.goalsCarrer.toString(),style: EstiloTextoBranco.text16),
+        SizedBox(width:30,child:Text(jogador.goalsCarrer.toString(),style: EstiloTextoBranco.text16)),
         const SizedBox(width: 4),
-        Text(jogador.assistsCarrer.toString(),style: EstiloTextoBranco.text16),
+        SizedBox(width:30,child:Text(jogador.assistsCarrer.toString(),style: EstiloTextoBranco.text16)),
       ],
     );
   }

@@ -327,7 +327,7 @@ class _MapExplorationState extends State<MapExploration> {
             ),
             Row(
               children: [
-                Image.asset(Images().getEscudo(club.name),height:50, width: 50),
+                Images().getEscudoWidget(club.name,25,25),
                 Text(club.name,style: EstiloTextoPreto.text20,),
               ],
             ),

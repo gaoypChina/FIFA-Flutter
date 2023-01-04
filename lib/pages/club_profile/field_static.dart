@@ -190,9 +190,9 @@ class _StaticFieldState extends State<StaticField> {
                     child: (player.injury >0 || player.redCard >0)
                         ? Opacity(
                         opacity: 0.4,
-                        child: Image.asset(Images().getUniform(player.clubName))
+                        child: Images().getUniformWidget(player.clubName,imageSize-15,imageSize+15),
                     )
-                        : globalHasInternet ? Image.network(player.imageUrl) : Image.asset(Images().getUniform(player.clubName)),
+                        : globalHasInternet ? Image.network(player.imageUrl) : Images().getUniformWidget(player.clubName,imageSize-15,imageSize+15),
                   ),
 
                   //CIRCULO
