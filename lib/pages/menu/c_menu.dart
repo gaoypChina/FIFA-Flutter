@@ -133,6 +133,7 @@ class _MenuState extends State<Menu> {
                             Expanded(
                               child: menuButton('Simular',() async{
                                 //SIMULA JOGOS
+                                Simulate().startVariables();
                                 await Simulate().simulateWeek(simulMyMatch: true);
 
                                 if(semana >= globalUltimaSemana){

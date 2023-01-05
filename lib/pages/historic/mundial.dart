@@ -1,4 +1,5 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/confronto.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/mundial.dart';
 import 'package:fifa/classes/my.dart';
@@ -23,13 +24,30 @@ class TableMundial extends StatefulWidget {
 class _TableMundialState extends State<TableMundial> {
 
   Map<double,dynamic> results = mapInternationals[LeagueOfficialNames().mundial];
-
+  MundialFinal dataFinal = MundialFinal();
   ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
+    onInit();
     super.initState();
+  }
+  onInit(){
+    for(int year=anoInicial;year<ano;year++){
+      dataFinal.getResults(year);
+      Confronto confronto = dataFinal.confronto;
+      results[double.parse(year.toString())] = [confronto.clubName1,confronto.clubName2];
+    }
+    List keysOrdered = results.keys.toList();
+    keysOrdered.sort((b, a) => a.compareTo(b));
+    Map<double,dynamic> resultsNovo = {};
+    for (var year in keysOrdered) {
+      resultsNovo[year] = results[year];
+    }
+    results = resultsNovo;
+    setState((){});
+
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -48,7 +66,8 @@ class _TableMundialState extends State<TableMundial> {
               backButtonText(context,'Mundial'),
 
 
-              (rodada >= semanaMundial.first) ? row() : Container(),
+              for(int year=anoInicial;year<ano;year++)
+                row(year),
 
                   Expanded(
                       child: ShaderMask(
@@ -113,15 +132,14 @@ class _TableMundialState extends State<TableMundial> {
     }
   }
 
-  Widget row(){
+  Widget row(int year){
     MundialFinal data = MundialFinal();
-
-    //print(data.clubName1);
-    //print('GOL: ${data.goal1} x ${data.goal2}');
-    String teamNameA = data.club1.name;
-    String teamNameB = data.club2.name;
-    int golsA = data.goal1;
-    int golsB = data.goal2;
+    data.getResults(year);
+    Confronto confronto = data.confronto;
+    String teamNameA = confronto.clubName1;
+    String teamNameB = confronto.clubName2;
+    int golsA = confronto.goal1;
+    int golsB = confronto.goal2;
 
     return  Row(
       children: [
@@ -134,7 +152,7 @@ class _TableMundialState extends State<TableMundial> {
           flex: 7,
           child: Column(
             children: [
-              Text(ano.toString(),textAlign:TextAlign.end,style: EstiloTextoBranco.negrito22),
+              Text(year.toString(),textAlign:TextAlign.end,style: EstiloTextoBranco.negrito22),
               Row(
                 children: [
 

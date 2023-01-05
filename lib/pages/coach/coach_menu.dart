@@ -338,7 +338,7 @@ Widget signWidget(String text, String keyword){
   HighestSellBuy highestSellBuy = historicTransfers.getHighest(keyword);
   
   Jogador player = Jogador(index: highestSellBuy.playerID);
-  return Container(
+  return highestSellBuy.maxPrice>0 ? Container(
     decoration: BoxDecoration(
       color: AppColors().greyTransparent,
     ),
@@ -370,7 +370,7 @@ Widget signWidget(String text, String keyword){
         ],
       ),
     ),
-  );
+  ) : Container(width: 170);
 }
 Widget yearRow(int year, BuildContext context){
 

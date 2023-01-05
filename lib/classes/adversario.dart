@@ -96,7 +96,7 @@ class Adversario{
         clubName = Club(index: clubID).name;
       }
     } catch (e) {
-      print('Variavel: globalInternationalMataMataClubsID ainda nao criada');
+      //print('Variavel: globalInternationalMataMataClubsID ainda nao criada');
     }
   }
 }

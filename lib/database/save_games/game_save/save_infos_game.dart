@@ -61,7 +61,7 @@ class SaveInfosGame extends SaveAbstract{
   @override
   SQLModel defineSQLModel(int gameSaveNumber){
     SQLModel sqlModel = SQLModel();
-    sqlModel.databasePath = 's3ave$gameSaveNumber.db';
+    sqlModel.databasePath = 'save$gameSaveNumber.db';
     sqlModel.tableName = 'infos_table';
     BasicGameInfos basicGameInfos = SaveInfosGame().dataModel(gameSaveNumber);
     sqlModel.object = basicGameInfos;

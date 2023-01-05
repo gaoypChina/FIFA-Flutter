@@ -310,7 +310,7 @@ class DataGraphics{
   // INTERNATIONAL
   ////////////////////////////////////////////////////////////////////////////
   defineSimulationClassificationInternational(Club club){
-    for(int i=anoInicial; i<ano;i++){
+    for(int i=ano-1; i>=anoInicial; i--){
       String internationalLeague = club.internationalLeagueName;
       List finalClassificationIDs = HistoricChampionsLeague().get32finalClassificationIDs(i, internationalLeague);
 

@@ -1,5 +1,6 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/league.dart';
+import 'package:fifa/classes/mundial.dart';
 import 'package:fifa/functions/mata_mata/mata_mata_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/chaves.dart';
@@ -16,10 +17,7 @@ import '../mata_mata/mata_mata_simulation.dart';
 class Simulate{
 
   simulateWeek({required bool simulMyMatch}){
-
-    if(semana == 1 || semana == testInitRodada){
-      startVariables();
-    }
+    //Antes de usar -> use o startVariables se for jogar a partida
 
     //SIMULA PARTIDAS
     if(Semana(semana).isJogoCampeonatoNacional) {
@@ -32,26 +30,31 @@ class Simulate{
       MataMataSimulation().simulateMatchs(simulMyMatch);
     }
 
+    if(Semana(semana).isJogoMundial) {
+      MundialFinal data = MundialFinal();
+      data.simulate();
+    }
+
     //APÓS A SIMULAÇÃO
     updateWeek();
-
 
     setTeamsInternational();
   }
 
   startVariables(){
-    globalMatchGoalScorerIDMy = [];
-    globalMatchGoalScorerIDAdv = [];
-    globalMatchGoalsMinutesMy = [];
-    globalMatchGoalsMinutesAdv = [];
-    globalJogadoresMatchGoals = List.filled(globalMaxPlayersPermitted, 0);
-    globalJogadoresMatchAssists = List.filled(globalMaxPlayersPermitted, 0);
-    globalJogadoresMatchRedCards = List.filled(globalMaxPlayersPermitted, 0);
-    globalJogadoresMatchYellowCards = List.filled(globalMaxPlayersPermitted, 0);
-    globalJogadoresMatchInjury = List.filled(globalMaxPlayersPermitted, 0);
-    globalJogadoresMatchHealth = List.filled(globalMaxPlayersPermitted, 1.0);
+    if(semana == 1 || semana == testInitRodada){
+      globalMatchGoalScorerIDMy = [];
+      globalMatchGoalScorerIDAdv = [];
+      globalMatchGoalsMinutesMy = [];
+      globalMatchGoalsMinutesAdv = [];
+      globalJogadoresMatchGoals = List.filled(globalMaxPlayersPermitted, 0);
+      globalJogadoresMatchAssists = List.filled(globalMaxPlayersPermitted, 0);
+      globalJogadoresMatchRedCards = List.filled(globalMaxPlayersPermitted, 0);
+      globalJogadoresMatchYellowCards = List.filled(globalMaxPlayersPermitted, 0);
+      globalJogadoresMatchInjury = List.filled(globalMaxPlayersPermitted, 0);
+      globalJogadoresMatchHealth = List.filled(globalMaxPlayersPermitted, 1.0);
+    }
   }
-
   updateWeek() async{
     semana++;
     //Atualiza a rodada do campeonato

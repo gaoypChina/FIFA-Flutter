@@ -8,6 +8,7 @@ import 'package:fifa/classes/historic/top_scorers.dart';
 import 'package:fifa/classes/international.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
+import 'package:fifa/classes/mundial.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/end_year_updates/aposentadoria.dart';
 import 'package:fifa/functions/international_league.dart';
@@ -38,6 +39,7 @@ void funcUpdateDataAfterSeason(){
 saveHistoricalData(){
   saveLeagueResults();
   saveInternationalLeagueResults();
+  resetInternationalGoalsData();
   saveMyClubData();
   saveBestPlayers();
 }
@@ -62,6 +64,8 @@ saveInternationalLeagueResults(){
   //salva o resultado final
   globalHistoricInternationalClassification[ano] = allLeaguesClassification;
   globalHistoricInternationalGoalsAll[ano] = globalInternationalMataMataGoals;
+}
+resetInternationalGoalsData(){
   globalInternationalMataMataGoals = {};
 }
 
@@ -109,6 +113,12 @@ resetPlayersData(){
   //Limpa histórico
   globalHistoricLeagueClassification = {};
   globalHistoricInternationalClassification = {};
+  globalHistoricClassification = {'Mundial':{}};
+
+  //ZERA DADOS DE TRANSFERENCIAS
+  globalHistoricMyTransfersID = {'Sell':{},'Buy':{}};
+  globalHistoricMyTransfersClubID = {'Sell':{},'Buy':{}};
+  globalHistoricMyTransfersValue = {'Sell':{},'Buy':{}};
 }
 resetData(){
   semana= testInitRodada;//testInitRodada = variavel global
@@ -135,7 +145,7 @@ resetData(){
   globalClubsInternationalPoints = List.filled(globalMaxClubsPermitted, 0);
   globalClubsInternationalGM = List.filled(globalMaxClubsPermitted, 0);
   globalClubsInternationalGS = List.filled(globalMaxClubsPermitted, 0);
-  
+
 }
 
 void trocaClubesRebaixamento(){

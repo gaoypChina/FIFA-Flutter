@@ -78,12 +78,11 @@ class _PlayState extends State<Play> {
     adversarioClubClass = Club(index: widget.adversarioClubID);
     //Reseta os indicadores da partida
     Simulate().startVariables();
-
   }
   visitanteFunc(){
     visitante = widget.visitante;
-    myClubClass.name = visitante ? Club(index: widget.adversarioClubID).name : myClass.clubName;
-    adversarioClubClass.name = visitante ? myClass.clubName : Club(index: widget.adversarioClubID).name;
+    myClubClass.name = visitante ? adversarioClubClass.name : myClass.clubName;
+    adversarioClubClass.name = visitante ? myClass.clubName : adversarioClubClass.name;
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //

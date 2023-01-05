@@ -59,6 +59,7 @@ Map globalHistoricInternationalGoalsAll = {};
 
 Map globalHistoricLeagueClassification = {};
 Map globalHistoricInternationalClassification = {};
+Map globalHistoricClassification = {'Mundial':{}};
 
 Map globalHistoricMyClub = {};
 Map globalHistoricBestPlayers = {};

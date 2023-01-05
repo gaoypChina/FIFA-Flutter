@@ -271,7 +271,7 @@ Widget clubLogoAndKitStack(Club club){
               //Uniforme
               Container(
                   alignment: Alignment.bottomRight,
-                  child: Container(
+                  child: SizedBox(
                       height: imageSize/2,
                       width: imageSize/2,
                       child: Images().getUniformWidget(club.name,imageSize/2,imageSize/2)),
