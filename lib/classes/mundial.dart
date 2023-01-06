@@ -1,8 +1,9 @@
 import 'dart:math';
 
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/confronto.dart';
+import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/geral/name.dart';
+import 'package:fifa/functions/simulate/match_simulation.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/league_names.dart';
 
@@ -16,9 +17,12 @@ class MundialFinal{
   int _goal2 = 0;
   late Confronto confronto;
 
+  getClubs(){
+    club1 = finalistName(LeagueOfficialNames().championsLeague);
+    club2 = finalistName(LeagueOfficialNames().libertadores);
+  }
   void simulate(){
-      club1 = finalistName(LeagueOfficialNames().championsLeague);
-      club2 = finalistName(LeagueOfficialNames().libertadores);
+      getClubs();
       simulateScore();
       confronto = Confronto(clubName1: club1.name, clubName2: club2.name, goal1: _goal1, goal2: _goal2);
       simulatePenaltis();
@@ -42,8 +46,10 @@ class MundialFinal{
     }
   }
   simulateScore(){
-    _goal1 = Random().nextInt(3);
-    _goal2 = Random().nextInt(3);
+
+    MatchSimulation match = MatchSimulation(club1, club2);
+    _goal1 = match.variableGol1;
+    _goal2 = match.variableGol2;
     if(_goal1>_goal2){
       isChampionClub1 = true;
     }else{
@@ -81,7 +87,6 @@ class MundialFinal{
   }
 
   getResults(int year){
-    print(globalHistoricClassification);
     Map result = globalHistoricClassification['Mundial'][year];
     confronto = Confronto(
         clubName1: result['champion'],

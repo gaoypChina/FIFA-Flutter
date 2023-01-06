@@ -1,9 +1,9 @@
 import 'package:fifa/classes/geral/name.dart';
 import 'package:fifa/values/league_divisions.dart';
 
-import '../global_variables.dart';
-import 'club.dart';
-import 'league.dart';
+import '../../global_variables.dart';
+import '../club.dart';
+import '../league.dart';
 
 class HistoricClubYear{
 

@@ -1,15 +1,13 @@
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/geral/size.dart';
-import 'package:fifa/classes/historic_champions_league.dart';
+import 'package:fifa/classes/historic/historic_champions_league.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
 import 'package:fifa/pages/table/table_nacional.dart';
-import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
-import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/historic_champions/historic_champions.dart';
 import 'package:fifa/values/images.dart';
@@ -282,7 +280,6 @@ Widget resumeLeague(String leagueName){
         child: InkWell(
           onTap: (){
             if(int.parse(selectedYear) == ano){
-              customToast(Translation(context).text.loading);
               Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableNacional(choosenLeagueIndex: leaguesIndexFromName[leagueName])));
             }else{
                 bottomSheetShowLeagueClassification(classificationNames);

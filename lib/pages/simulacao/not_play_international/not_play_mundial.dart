@@ -1,8 +1,7 @@
-import 'package:fifa/classes/confronto.dart';
+import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/mundial.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
@@ -26,11 +25,10 @@ Widget notPlayMundial(BuildContext context){
 ////////////////////////////////////////////////////////////////////////////
 Widget row(My myclass){
     MundialFinal data = MundialFinal();
-    data.simulate();
-    Confronto confronto = data.confronto;
+    data.getClubs();
 
-    String teamNameA = confronto.clubName1;
-    String teamNameB = confronto.clubName2;
+    String teamNameA = data.club1.name;
+    String teamNameB = data.club2.name;
     double imageSize = 25;
 
     return  Column(
@@ -45,9 +43,9 @@ Widget row(My myclass){
             //Escudo
             Images().getEscudoWidget(teamNameA,imageSize,imageSize),
 
-            confronto.goal1 >= 0
-                ? Text(' '+ confronto.goal1.toString()+'x'+confronto.goal2.toString()+' ',style: EstiloTextoBranco.text14)
-                : const Text('X',textAlign:TextAlign.center,style: EstiloTextoBranco.text14),
+            //confronto.goal1 >= 0
+            //    ? Text(' '+ confronto.goal1.toString()+'x'+confronto.goal2.toString()+' ',style: EstiloTextoBranco.text14)
+            //    : const Text('X',textAlign:TextAlign.center,style: EstiloTextoBranco.text14),
             //Escudo
             Images().getEscudoWidget(teamNameB,imageSize,imageSize),
 

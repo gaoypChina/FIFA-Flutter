@@ -1,7 +1,7 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
-import 'package:fifa/classes/match.dart';
+import 'package:fifa/classes/match/match.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/popup/popup_player_info.dart';

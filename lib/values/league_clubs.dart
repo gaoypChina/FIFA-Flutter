@@ -144,6 +144,7 @@ Map clubNameMapImmutable = {
     4: clubName.basel,5: clubName.zurich,6: clubName.youngBoys,7: clubName.legiaWarszawa,
     8: clubName.rapidviena,9: clubName.rbsalzburg,10: clubName.malmo,11: clubName.midtjylland,
     12: clubName.copenhague,13: clubName.molde,14: clubName.rosenborg,15: clubName.helsinki,
+    16: clubName.viktoriaPlzen,17: clubName.ifkgoteborg,
   },
   LeagueOfficialNames().lesteEuropeu : {
     0: clubName.cska,1: clubName.dinamoMoscou,2: clubName.krasnodar,3: clubName.lokomotivMoscou,
@@ -209,6 +210,7 @@ Map clubNameMapImmutable = {
     4: clubName.intermiami,5: clubName.losangelesfc,6: clubName.lagalaxy,7: clubName.minnesota,
     8: clubName.nerevolution,9: clubName.nycity,10: clubName.nyredbulls,11: clubName.orlando,
     12: clubName.portland,13: clubName.seattle,14: clubName.toronto,15:clubName.vancouver,
+    16: clubName.montreal,17:clubName.colorado,18:clubName.houston,19:clubName.kansas,
   },
 
   //RESTO DO MUNDO
@@ -223,11 +225,13 @@ Map clubNameMapImmutable = {
     0: clubName.alahly,1: clubName.zamalek,2: clubName.mazembe,3: clubName.esperance,
     4: clubName.rajacasablanca,5: clubName.wydad,6: clubName.orlandopirates,7: clubName.kaizer,
     8: clubName.mamelodi,9: clubName.agosto,10:clubName.sydneyFC,11:clubName.melbournevictory,
+    12:clubName.essetif,13:clubName.cotonsport,
   },
   LeagueOfficialNames().outros : {
-    0: clubName.laskLinz,1: clubName.sheriffTiraspol,2: clubName.viktoriaPlzen,3: clubName.tigre,
+    0: clubName.bate,1: clubName.sheriffTiraspol,2: clubName.gent,3: clubName.lechPoznan,
     4: clubName.joinville, 5: clubName.juventusMooca, 6: clubName.paulista, 7: clubName.ibis,
-    8: clubName.arsenalsarandi, 9: clubName.lechPoznan,
+    8: clubName.arsenalsarandi, 9: clubName.tigre,10: clubName.saprissa,11: clubName.olimpiaHON,
+    12:clubName.cerezoOsaka,13:clubName.auckland,
   },
 
 };

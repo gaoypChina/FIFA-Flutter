@@ -1,6 +1,6 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/page_controller/club_profile/data_graphics.dart';
+import 'package:fifa/classes/data_graphics.dart';
 import 'package:fifa/pages/club_profile/all_infos_club.dart';
 import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
 import 'package:fifa/pages/club_profile/club_calendar.dart';

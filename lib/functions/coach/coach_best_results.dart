@@ -1,7 +1,6 @@
-import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/geral/try_catch.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/classes/my_match_result.dart';
 import 'package:fifa/global_variables.dart';
 
 class CoachBestResults{
@@ -60,7 +59,7 @@ class CoachBestResults{
 
   ////////////////////////////////////////////////
   //ACTIONS
-  updateSequence(MyLastMatchResult myLastMatchResult){
+  updateSequence(Confronto myLastMatchResult){
 
     updateMaxVictory(myLastMatchResult);
     updateMaxLoss(myLastMatchResult);
@@ -69,32 +68,32 @@ class CoachBestResults{
     updateVariables();
   }
 
-  updateMaxVictory(MyLastMatchResult result){
+  updateMaxVictory(Confronto confronto){
     int maxGolMarcado = int.parse(globalHistoricCoachResults['maxVictory'].toString().substring(0,1));
     int maxGolSofrido = int.parse(globalHistoricCoachResults['maxVictory'].toString().substring(2));
     int meuMaxPlacar =  maxGolMarcado - maxGolSofrido;
-    if(result.goalMy - result.goalAdv > meuMaxPlacar
-        || (result.goalMy - result.goalAdv == meuMaxPlacar && result.goalMy > maxGolMarcado)){
-      My my = My();
-      globalHistoricCoachResults['maxVictory'] = '${result.goalMy}x${result.goalAdv}';
-      globalHistoricCoachResults['maxVictoryClubID'] = my.clubID;
-      globalHistoricCoachResults['maxVictoryClubAdvID'] = Club(index: result.clubIDadv).index;
+    if(confronto.goal1 - confronto.goal2 > meuMaxPlacar
+        || (confronto.goal1 - confronto.goal2 == meuMaxPlacar && confronto.goal1 > maxGolMarcado)){
+      saveCoachResults(confronto);
     }
   }
-  updateMaxLoss(MyLastMatchResult result){
+  updateMaxLoss(Confronto confronto){
     int maxGolMarcado = int.parse(globalHistoricCoachResults['maxLoss'].toString().substring(0,1));
     int maxGolSofrido = int.parse(globalHistoricCoachResults['maxLoss'].toString().substring(2));
     int meuMaxPlacar =  maxGolSofrido - maxGolMarcado;
-    if(result.goalAdv - result.goalMy > meuMaxPlacar
-        || (result.goalAdv - result.goalMy == meuMaxPlacar && result.goalAdv > maxGolSofrido)){
-      My my = My();
-      globalHistoricCoachResults['maxLoss'] = '${result.goalMy}x${result.goalAdv}';
-      globalHistoricCoachResults['maxLossClubID'] = my.clubID;
-      globalHistoricCoachResults['maxLossClubAdvID'] = Club(index: result.clubIDadv).index;
+    if(confronto.goal2 - confronto.goal1 > meuMaxPlacar
+        || (confronto.goal2 - confronto.goal1 == meuMaxPlacar && confronto.goal2 > maxGolSofrido)){
+      saveCoachResults(confronto);
     }
   }
-  updateMaxSequenceVictory(MyLastMatchResult result){
-    if(result.victoryDrawLoss310 == 3){
+  saveCoachResults(Confronto confronto){
+    My my = My();
+    globalHistoricCoachResults['maxLoss'] = '${confronto.goal1}x${confronto.goal2}';
+    globalHistoricCoachResults['maxLossClubID'] = my.clubID;
+    globalHistoricCoachResults['maxLossClubAdvID'] = confronto.clubID2;
+  }
+  updateMaxSequenceVictory(Confronto confronto){
+    if(confronto.result == confronto.victory){
       globalHistoricCoachResults['actualSequenceVictory']++;
       updateVariables();
       if(actualSequenceVictory>maxSequenceVictory){
@@ -107,8 +106,8 @@ class CoachBestResults{
     }
   }
 
-  updateMaxSequenceNoLosses(MyLastMatchResult result){
-    if(result.victoryDrawLoss310 >= 1){
+  updateMaxSequenceNoLosses(Confronto confronto){
+    if(confronto.result == confronto.victory || confronto.result == confronto.draw){
       globalHistoricCoachResults['actualSequenceNoLosses']++;
       updateVariables();
       if(actualSequenceNoLosses>maxSequenceNoLosses) {

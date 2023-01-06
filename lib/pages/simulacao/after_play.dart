@@ -10,7 +10,7 @@ import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/tabela_national.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/page_controller/table/table_matchs_control.dart';
+import 'package:fifa/classes/table_matchs_control.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/pages/simulacao/not_play_international/not_play_international_matamata.dart';
 import 'package:fifa/theme/background/background_position.dart';

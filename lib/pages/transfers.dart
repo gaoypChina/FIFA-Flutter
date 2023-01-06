@@ -39,6 +39,8 @@ class _TransfersState extends State<Transfers> {
   Widget build(BuildContext context) {
     double bottomSize = MediaQuery.of(context).viewInsets.bottom; //=0 SEM O TECLADO +-160 com o teclado
 
+
+
     showRows = 0;
     return Scaffold(
         resizeToAvoidBottomInset: false, //Evita um overlay quando o layout é maior que a tela

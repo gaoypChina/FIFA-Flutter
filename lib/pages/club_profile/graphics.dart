@@ -2,7 +2,7 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
-import 'package:fifa/page_controller/club_profile/data_graphics.dart';
+import 'package:fifa/classes/data_graphics.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';

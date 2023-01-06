@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/historic/historic_my_tranfers.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
@@ -343,13 +344,13 @@ onTap(BuildContext context, Jogador jogador,ActionTransfer actionTransfer){
   }
 }
 onTapSell(BuildContext context, Jogador jogador){
-  //TODO arrumar o clube que compra o jogador
+  //TODO tornar o clube que compra o jogador mais coerente
   if(globalMyJogadores.length>18) {
     int destinyClub = Random().nextInt(200);
     globalMyMoney += jogador.price;
     globalJogadoresClubIndex[jogador.index] = destinyClub;
     globalMyJogadores.remove(jogador.index);
-    saveSellBuyPlayerToHistoric(jogador: jogador,isSell: true,clubID: destinyClub);
+    saveSellBuyPlayerToHistoric(player: jogador,isSell: true,clubID: destinyClub);
     customToast('${Translation(context).text.playerSoldTo} '+Club(index: destinyClub).name);
   }else{
     customToast(Translation(context).text.notEnoughPlayersLeftToSell);
@@ -362,7 +363,7 @@ onTapBuy(BuildContext context, Jogador jogador){
         globalMyMoney -= jogador.price;
         globalJogadoresClubIndex[jogador.index] = globalMyClubID;
         globalMyJogadores.add(jogador.index);
-        saveSellBuyPlayerToHistoric(jogador: jogador,isSell: false, clubID: jogador.clubID);
+        saveSellBuyPlayerToHistoric(player: jogador,isSell: false, clubID: jogador.clubID);
         customToast(Translation(context).text.playerBought);
       }else{
         customToast(Translation(context).text.cancelledPurchase+":\n"+Translation(context).text.otherTeamWillHaveNoPlayersLeft);
@@ -376,23 +377,10 @@ onTapBuy(BuildContext context, Jogador jogador){
 }
 
 
-saveSellBuyPlayerToHistoric({required Jogador jogador,required bool isSell, required int clubID}){
-  String sellORbuyStr = 'Sell';
+saveSellBuyPlayerToHistoric({required Jogador player,required bool isSell, required int clubID}){
+  String sellORbuyStr = HistoricMyTransfers().sellKeyword;
   if(isSell == false){
-    sellORbuyStr = 'Buy';
+    sellORbuyStr = HistoricMyTransfers().buyKeyword;
   }
-  globalHistoricMyTransfersID = checkMapHistoricTranfers(globalHistoricMyTransfersID,sellORbuyStr,jogador.index);
-  globalHistoricMyTransfersValue = checkMapHistoricTranfers(globalHistoricMyTransfersValue,sellORbuyStr,jogador.price);
-  globalHistoricMyTransfersClubID = checkMapHistoricTranfers(globalHistoricMyTransfersClubID,sellORbuyStr,clubID);
-}
-
-checkMapHistoricTranfers(Map mapa, String sellORbuyStr, dynamic newVariable){
-  try{
-    List listaValue = mapa[sellORbuyStr]![ano]!;
-    listaValue.add(newVariable);
-    mapa[sellORbuyStr]![ano] = mapa[sellORbuyStr]![ano]!;
-  }catch(e){
-    mapa[sellORbuyStr]![ano] = [newVariable];
-  }
-  return mapa;
+  HistoricMyTransfers().checkMapHistoricTranfersNew(sellORbuyStr, player, clubID);
 }

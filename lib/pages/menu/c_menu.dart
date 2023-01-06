@@ -1,4 +1,4 @@
-import 'package:fifa/classes/adversario.dart';
+import 'package:fifa/classes/match/adversario.dart';
 import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
@@ -307,6 +307,17 @@ class _MenuState extends State<Menu> {
                               ),
                           ),
 
+                          //TEST FUNCTIONS BUTTON
+                          testInitRodada != 1 ? Container(
+                            alignment: Alignment.topCenter,
+                            child: GestureDetector(
+                                onTap:(){
+                                  customToast('TESTE DE FUNÇÃO');
+                                },
+                                child: const Icon(Icons.terminal_sharp,color:Colors.white,size: 50)
+                            ),
+                          ) : Container(),
+
                         ],
                       ),
                     ),
@@ -358,8 +369,9 @@ Widget last5Matchs(){
 }
   Widget resultBox(int i){
       Color color = Colors.transparent;
+      int nRodadasMyLeague =  League(index: My().campeonatoID).nClubs-1;
       ResultGameNacional show = ResultGameNacional(
-          rodadaLocal: rodada >= League(index: My().campeonatoID).nClubs  ? rodada-i :rodada-1-i,
+          rodadaLocal: rodada >= nRodadasMyLeague  ? nRodadasMyLeague-i : rodada-1-i,
           club: Club(index: myClass.clubID)
       );
       if(show.victoryDrawLoss310 == 3){color = Colors.green;}
@@ -381,7 +393,7 @@ Widget last5Matchs(){
 //                               FUNCTIONS                                //
 ////////////////////////////////////////////////////////////////////////////
   popupexpectativaCall(){
-    if(rodada == testInitRodada){
+    if(semana == testInitRodada){
       popUpExpectativa(context: context);
     }
   }

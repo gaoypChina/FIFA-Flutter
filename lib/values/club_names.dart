@@ -746,7 +746,7 @@ class ClubName{
   String jonkopings = "Jönköpings Södra";
   String gais = "GAIS";
   String kalmar = "Kalmar";
-  String ifkgoteborg = "IFK Goteborg";
+  String ifkgoteborg = "IFK Göteborg";
   String malmo = "Malmo";
   String mjallby = "Mjällby";
   String norrkoping = "Norrköping";

@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/geral/name.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/geral/semana.dart';
-import 'package:fifa/classes/my_match_result.dart';
 import 'package:fifa/functions/coach/coach_best_results.dart';
 import 'package:fifa/functions/simulate/my_match/counter.dart';
 import 'package:fifa/functions/simulate/my_match/my_match_simulation.dart';
@@ -38,7 +38,7 @@ class _PlayState extends State<Play> {
 
   late Timer _timer;
   late CounterMatch counterMatch;
-  double maxSliderDistance = 200;
+  double maxSliderDistance = 300;
 
   late PosturaDoTimeClass posturaDoTime;
   late MyMatchSimulation myMatchSimulation;
@@ -96,7 +96,9 @@ class _PlayState extends State<Play> {
         body:  Stack(
             children: [
 
-              Semana(semana).isJogoCampeonatoNacional
+              Semana(semana).isJogoMundial
+                  ? Image.asset('assets/icons/fundomundial.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill)
+              : Semana(semana).isJogoCampeonatoNacional
               ? Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill,)
                 : myClass.getMyInternationalLeague() == LeagueOfficialNames().championsLeague
                     ? Image.asset('assets/icons/fundochampions.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill)
@@ -204,7 +206,7 @@ class _PlayState extends State<Play> {
     }else{
       textRodada = Name().groupsPhase;
       if(Semana(semana).isJogoGruposInternacional){textRodada += ' ${Semana(semana).rodadaGroupInternational}'; }
-      else if(Semana(semana).isJogoMataMataInternacional){
+      else{
         textRodada = Semana(semana).semanaStr;
       }
     }
@@ -349,9 +351,9 @@ class _PlayState extends State<Play> {
 
       //**Só funciona se ja tiver simulado todos os outros jogos
       //Tem uma dependencia pelo ResultGameNacional
-      MyLastMatchResult myLastMatchResult = MyLastMatchResult(myClubClass.index, adversarioClubClass.index, myMatchSimulation.meuGolMarcado, myMatchSimulation.meuGolSofrido);
+      Confronto confronto = Confronto(clubName1: myClubClass.name, clubName2: adversarioClubClass.name, goal1: myMatchSimulation.meuGolMarcado, goal2: myMatchSimulation.meuGolSofrido);
       CoachBestResults coachBestResults = CoachBestResults();
-      coachBestResults.updateSequence(myLastMatchResult);
+      coachBestResults.updateSequence(confronto);
     }else{
       _timer.cancel();
       Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Substitution()))
@@ -360,7 +362,7 @@ class _PlayState extends State<Play> {
   }
 
   counter(){
-    _timer = Timer.periodic(Duration(milliseconds: 200 - globalMatchVelocity.toInt()), (timer) async {
+    _timer = Timer.periodic(Duration(milliseconds: int.parse(maxSliderDistance.floor().toString()) - globalMatchVelocity.toInt()), (timer) async {
       counterMatch.simulateMinute();
       setState(() {});
     });

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/geral/esquemas_taticos.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/player_basic.dart';
 import 'package:fifa/functions/flags_list.dart';
@@ -326,9 +327,9 @@ popupText(String title,String variableString, String whichData){
       intOrString: true,
       maxNcharacters: 22,
       functionOK: (value){
-         if(whichData=='Position' && positions442.containsKey(value)) {
+         if(whichData=='Position' && positions[EsquemaTatico().e442].containsKey(value)) {
             globalJogadoresPosition[choosenPlayerID] = value;
-         }else if(whichData=='Position' && !positions442.containsKey(value)){
+         }else if(whichData=='Position' && !positions[EsquemaTatico().e442].containsKey(value)){
             customToast(Translation(context).text.invalidPosition);
           }
 

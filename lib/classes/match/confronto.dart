@@ -1,19 +1,31 @@
+import 'package:fifa/global_variables.dart';
+import 'package:fifa/values/clubs_all_names_list.dart';
+
 class Confronto{
 
   late String clubName1;
   late String clubName2;
+  late int clubID1;
+  late int clubID2;
   late int goal1;
   late int goal2;
   late String result;
+  bool isMyMatch = false;
 
-  int penaltis1 = 0;
-  int penaltis2 = 0;
+  bool hasPenaltis = false;
+  int penaltis1 = -1;
+  int penaltis2 = -1;
 
   String victory = 'Victory';
   String draw = 'Draw';
   String loss = 'Loss';
 
   Confronto({required this.clubName1, required this.clubName2, required this.goal1,required this.goal2}){
+    clubID1 = clubsAllNameList.indexOf(clubName1);
+    clubID2 = clubsAllNameList.indexOf(clubName2);
+    if(clubID1 == globalMyClubID || clubID2 == globalMyClubID){
+      isMyMatch = true;
+    }
     if(goal1>goal2){
       result = victory;
     }
@@ -26,6 +38,7 @@ class Confronto{
   }
 
   setPenalties({required penaltis1,required penaltis2}){
+    hasPenaltis = true;
     this.penaltis1 = penaltis1;
     this.penaltis2 = penaltis2;
   }

@@ -1,5 +1,5 @@
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/confronto.dart';
+import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/mundial.dart';
 import 'package:fifa/classes/my.dart';
@@ -65,9 +65,7 @@ class _TableMundialState extends State<TableMundial> {
             children: [
               backButtonText(context,'Mundial'),
 
-
-              for(int year=anoInicial;year<ano;year++)
-                row(year),
+                  ano-1>=anoInicial ? row(ano-1) : Container(),
 
                   Expanded(
                       child: ShaderMask(
@@ -168,7 +166,7 @@ class _TableMundialState extends State<TableMundial> {
                       Container(
                           margin: const EdgeInsets.only(top: 8),
                           color: teamNameA == My().clubName ? Colors.green : Colors.transparent,
-                          child: Text(teamNameA,textAlign:TextAlign.end,style: EstiloTextoBranco.text16)),
+                          child: Text(teamNameA,textAlign:TextAlign.end,style: EstiloTextoBranco.text14)),
                     ],
                   ),
 
@@ -189,7 +187,7 @@ class _TableMundialState extends State<TableMundial> {
                       Container(
                         margin: const EdgeInsets.only(top: 8),
                         color: teamNameB == My().clubName ? Colors.green : Colors.transparent,
-                        child: Text(teamNameB,style: EstiloTextoBranco.text16),
+                        child: Text(teamNameB,style: EstiloTextoBranco.text14),
                       ),
                     ],
                   ),

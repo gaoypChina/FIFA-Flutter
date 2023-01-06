@@ -66,13 +66,11 @@ Map globalHistoricBestPlayers = {};
 Map globalHistoricTopScorers = {};
 Map globalHistoricCoachResults = {};
 
-Map<String,Map<int,List<dynamic>>> globalHistoricMyTransfersID = {'Sell':{},'Buy':{}};
-Map<String,Map<int,List<dynamic>>> globalHistoricMyTransfersClubID = {'Sell':{},'Buy':{}};
-Map<String,Map<int,List<dynamic>>> globalHistoricMyTransfersValue = {'Sell':{},'Buy':{}};
+Map<String,Map<int,Map<int,Map<String,dynamic>>>> globalHistoricMyTransfers = {};
 
 Map<int,List> globalRankingClubs = {2000:[]}; //Agiliza a organização do ranking de clubes
 //MATCH SIMULATION
-double globalMatchVelocity = 100;
+double globalMatchVelocity = 250;
 int globalMatchSubstitutionsLeft = 3;
 List globalMatchGoalScorerIDMy = [];
 List globalMatchGoalScorerIDAdv = [];
@@ -140,89 +138,56 @@ Map globalInternationalMataMataGoals = {};
 /////////////////////
 //POSITIONS
 List<String> globalAllPositions = ['GOL','ZAG','LE','LD','VOL','MC','MEI','ME','MD','PE','ATA','PD'];
-Map positions442 = {
-  'GOL': [0],
-  'LE': [1],
-  'ZAG': [2, 3],
-  'LD': [4],
-  'VOL': [5, 6],
-  'MC': [5, 6, 7, 8],
-  'ME': [7, 9],
-  'MEI': [7, 8],
-  'MD': [8, 10],
-  'PE': [7, 9],
-  'ATA': [9, 10],
-  'PD': [8, 10],
-};
-Map positions433 = {
-  //8 9 10
-  //  7
-  // 5 6
-  //1 2 3 4
-  'GOL': [0],
-  'LE': [1],
-  'ZAG': [2, 3],
-  'LD': [4],
-  'VOL': [5, 6],
-  'MC': [5, 6, 7],
-  'ME': [8],
-  'MEI': [7],
-  'MD': [10],
-  'PE': [8],
-  'ATA': [8,9,10],
-  'PD': [10],
-};
-Map positions451 = {
-  // 10
-  //7 8 9
-  // 5 6
-  //1 2 3 4
-  'GOL': [0],
-  'LE': [1],
-  'ZAG': [2, 3],
-  'LD': [4],
-  'VOL': [5, 6],
-  'MC': [5, 6, 8],
-  'ME': [7],
-  'MEI': [7,8,9],
-  'MD': [9],
-  'PE': [7],
-  'ATA': [10],
-  'PD': [9],
-};
-Map positions343 = {
-  //8 9 10
-  //6 7
-  //4 5
-  //1 2 3
-  'GOL': [0],
-  'LE': [1],
-  'ZAG': [1, 2, 3],
-  'LD': [3],
-  'VOL': [4, 5],
-  'MC': [4, 5],
-  'ME': [6, 8],
-  'MEI': [6,7],
-  'MD': [7,10],
-  'PE': [6, 8],
-  'ATA': [8,9,10],
-  'PD': [7,10],
-};
-Map positions541 = {
-  //  10
-  // 8   9
-  // 6   7
-  //1 2 3 4 5
-  'GOL': [0],
-  'LE': [1],
-  'ZAG': [2, 3, 4],
-  'LD': [5],
-  'VOL': [6, 7],
-  'MC': [6, 7, 8, 9],
-  'ME': [8],
-  'MEI': [8,9],
-  'MD': [9],
-  'PE': [8],
-  'ATA': [10],
-  'PD': [9],
+Map positions = {
+  '4-4-2': {
+    'PE': [7, 9], 'ATA': [9, 10], 'PD': [8, 10],
+    'ME': [7, 9], 'MEI': [7, 8], 'MD': [8, 10],
+    'VOL': [5, 6], 'MC': [5, 6, 7, 8],
+    'LE': [1], 'ZAG': [2, 3], 'LD': [4],
+    'GOL': [0],
+  },
+  '4-3-3': {
+    //8 9 10
+    //  7
+    // 5 6
+    //1 2 3 4
+    'PE': [8],'ATA': [8, 9, 10],'PD': [10],
+    'ME': [8],'MEI': [7],'MD': [10],
+    'VOL': [5, 6],'MC': [5, 6, 7],
+    'LE': [1],'ZAG': [2, 3],'LD': [4],
+    'GOL': [0],
+  },
+  '4-5-1': {
+    // 10
+    //7 8 9
+    // 5 6
+    //1 2 3 4
+    'PE': [7],'ATA': [10],'PD': [9],
+    'ME': [7],'MEI': [7,8,9],'MD': [9],
+    'VOL': [5, 6],'MC': [5, 6, 8],
+    'LE': [1],'ZAG': [2, 3],'LD': [4],
+    'GOL': [0],
+  },
+  '3-4-3': {
+    //8 9 10
+    //6 7
+    //4 5
+    //1 2 3
+    'PE': [6,8],'ATA': [8,9,10],'PD': [7,10],
+    'ME': [6,8],'MEI': [6,7],'MD': [7,10],
+    'VOL': [4,5],'MC': [4,5],
+    'LE': [1],'ZAG': [1,2, 3],'LD': [3],
+    'GOL': [0],
+  },
+  '5-4-1': {
+    //  10
+    // 8   9
+    // 6   7
+    //1 2 3 4 5
+    'PE': [8],'ATA': [10],'PD': [9],
+    'ME': [8],'MEI': [8,9],'MD': [9],
+    'VOL': [6,7],'MC': [6,7,8,9],
+    'LE': [1],'ZAG': [2,3,4],'LD': [5],
+    'GOL': [0],
+  },
 };

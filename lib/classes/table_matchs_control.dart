@@ -50,7 +50,6 @@ class MatchResultInternational{
     clubName1 = Club(index: clubID1).name;
     clubName2 = Club(index: clubID2).name;
 
-
     goals1 = 0;
     goals2 = 0;
 

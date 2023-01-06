@@ -2,7 +2,7 @@ import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/page_controller/table/table_matchs_control.dart';
+import 'package:fifa/classes/table_matchs_control.dart';
 import 'package:fifa/pages/table/widget_bottom.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';

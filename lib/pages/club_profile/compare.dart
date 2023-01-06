@@ -5,7 +5,7 @@ import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/flags_list.dart';
-import 'package:fifa/page_controller/club_profile/data_graphics.dart';
+import 'package:fifa/classes/data_graphics.dart';
 import 'package:fifa/popup/popup_select_club_compare.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';

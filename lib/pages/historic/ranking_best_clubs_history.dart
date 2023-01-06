@@ -4,7 +4,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/page_controller/club_profile/data_graphics.dart';
+import 'package:fifa/classes/data_graphics.dart';
 import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';

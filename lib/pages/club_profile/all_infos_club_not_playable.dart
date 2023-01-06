@@ -2,7 +2,7 @@ import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/page_controller/club_profile/data_graphics.dart';
+import 'package:fifa/classes/data_graphics.dart';
 import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:fifa/pages/historic/historic_players.dart';
 import 'package:fifa/theme/colors.dart';

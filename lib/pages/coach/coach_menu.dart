@@ -2,8 +2,8 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/expectativa.dart';
 import 'package:fifa/classes/geral/name.dart';
 import 'package:fifa/classes/geral/size.dart';
-import 'package:fifa/classes/historic.dart';
-import 'package:fifa/classes/historic_tranfers.dart';
+import 'package:fifa/classes/historic/historic_club_year.dart';
+import 'package:fifa/classes/historic/historic_my_tranfers.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
@@ -135,8 +135,8 @@ class _CoachMenuState extends State<CoachMenu> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        signWidget('Contratação mais cara',HistoricTransfers().buyKeyword),
-                        signWidget('Venda mais cara',HistoricTransfers().sellKeyword),
+                        signWidget('Contratação mais cara',HistoricMyTransfers().buyKeyword),
+                        signWidget('Venda mais cara',HistoricMyTransfers().sellKeyword),
                       ],
                     ),
 
@@ -334,7 +334,7 @@ Widget sequenceWidget(String text, String value, int clubID, [int? advClubID]){
 }
 
 Widget signWidget(String text, String keyword){
-  HistoricTransfers historicTransfers = HistoricTransfers();
+  HistoricMyTransfers historicTransfers = HistoricMyTransfers();
   HighestSellBuy highestSellBuy = historicTransfers.getHighest(keyword);
   
   Jogador player = Jogador(index: highestSellBuy.playerID);

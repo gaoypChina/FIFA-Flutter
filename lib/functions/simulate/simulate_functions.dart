@@ -42,7 +42,6 @@ class Simulate{
   }
 
   startVariables(){
-    if(semana == 1 || semana == testInitRodada){
       globalMatchGoalScorerIDMy = [];
       globalMatchGoalScorerIDAdv = [];
       globalMatchGoalsMinutesMy = [];
@@ -53,7 +52,6 @@ class Simulate{
       globalJogadoresMatchYellowCards = List.filled(globalMaxPlayersPermitted, 0);
       globalJogadoresMatchInjury = List.filled(globalMaxPlayersPermitted, 0);
       globalJogadoresMatchHealth = List.filled(globalMaxPlayersPermitted, 1.0);
-    }
   }
   updateWeek() async{
     semana++;

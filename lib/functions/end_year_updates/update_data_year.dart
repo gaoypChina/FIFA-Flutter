@@ -2,13 +2,13 @@ import 'dart:math';
 
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/historic.dart';
+import 'package:fifa/classes/historic/historic_club_year.dart';
+import 'package:fifa/classes/historic/historic_my_tranfers.dart';
 import 'package:fifa/classes/historic/top_players_ovr.dart';
 import 'package:fifa/classes/historic/top_scorers.dart';
 import 'package:fifa/classes/international.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
-import 'package:fifa/classes/mundial.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/end_year_updates/aposentadoria.dart';
 import 'package:fifa/functions/international_league.dart';
@@ -116,9 +116,7 @@ resetPlayersData(){
   globalHistoricClassification = {'Mundial':{}};
 
   //ZERA DADOS DE TRANSFERENCIAS
-  globalHistoricMyTransfersID = {'Sell':{},'Buy':{}};
-  globalHistoricMyTransfersClubID = {'Sell':{},'Buy':{}};
-  globalHistoricMyTransfersValue = {'Sell':{},'Buy':{}};
+  HistoricMyTransfers().resetGlobalVariable();
 }
 resetData(){
   semana= testInitRodada;//testInitRodada = variavel global

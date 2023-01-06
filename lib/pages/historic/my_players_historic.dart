@@ -1,6 +1,7 @@
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/historic.dart';
+import 'package:fifa/classes/historic/historic_club_year.dart';
+import 'package:fifa/classes/historic/historic_my_tranfers.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
@@ -67,6 +68,7 @@ class _MyPlayersHistoricState extends State<MyPlayersHistoric> {
               bestPlayers(),
 
               listPlayersWidget(),
+
               const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -203,7 +205,9 @@ Widget header(){
   Widget oldPlayerRow(Jogador jogador){
     return Row(
       children: [
-        Images().getPlayerPictureWidget(jogador,20,20),
+        Images().getPlayerPictureWidget(jogador,25,25),
+        SizedBox(width:40,child: Text(jogador.position,style: EstiloTextoBranco.text16)),
+        const SizedBox(width: 4),
         SizedBox(width:150,child: Text(jogador.name,style: EstiloTextoBranco.text16)),
         const SizedBox(width: 4),
         SizedBox(width:30,child:Text(jogador.matchsCarrer.toString(),style: EstiloTextoBranco.text16)),
@@ -214,28 +218,29 @@ Widget header(){
       ],
     );
   }
-Widget sellORbuyPlayers(String title, String buyOrSellStr, int selectedYear){
+Widget sellORbuyPlayers(String title, String buyOrSellKeyword, int selectedYear){
   try{
-    if(globalHistoricMyTransfersID[buyOrSellStr]![selectedYear]!.isNotEmpty) {
-    }
+    List<HighestSellBuy> listPlayers = HistoricMyTransfers().getTransfersYear(buyOrSellKeyword, selectedYear);
     return Column(
       children: [
         Text(title,style: EstiloTextoBranco.negrito18),
-        for(int i=0;i<globalHistoricMyTransfersID[buyOrSellStr]![selectedYear]!.length;i++)
+        for(int i=0; i < listPlayers.length;i++)
           GestureDetector(
             onTap: (){
               popUpOkShowPlayerInfos(
                   context: context,
-                  playerID: Jogador(index: globalHistoricMyTransfersID[buyOrSellStr]![selectedYear]![i]).index,
+                  playerID: listPlayers[i].playerID,
                   funcSetState: (){}
               );
             },
             child: Row(
               children: [
-                Images().getEscudoWidget(Club(index: globalHistoricMyTransfersClubID[buyOrSellStr]![selectedYear]![i]).name,20,20),
-                Text(Jogador(index: globalHistoricMyTransfersID[buyOrSellStr]![selectedYear]![i]).name,
+                Images().getEscudoWidget(Club(index: listPlayers[i].clubID).name,20,20),
+                Text(listPlayers[i].overall.toString(),
                     style: EstiloTextoBranco.text16),
-                Text(' - \$'+globalHistoricMyTransfersValue[buyOrSellStr]![selectedYear]![i].toStringAsFixed(2),
+                Text(Jogador(index: listPlayers[i].playerID).name,
+                    style: EstiloTextoBranco.text12),
+                Text(' -> \$'+listPlayers[i].maxPrice.toStringAsFixed(2),
                     style: EstiloTextoBranco.text16),
               ],
             ),
