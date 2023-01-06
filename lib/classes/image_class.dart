@@ -101,6 +101,7 @@ class Images{
         ? Image.network(player.imageUrl,width: width,height: height)
         : Image.asset('assets/icons/generic_user.png',width: width,height: height);
   }
+
   String getGenericPlayerPicture(){
     return 'assets/icons/generic_user.png';
   }

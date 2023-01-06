@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/historic/historic_club_year.dart';
+import 'package:fifa/classes/historic/historic_my_players.dart';
 import 'package:fifa/classes/historic/historic_my_tranfers.dart';
 import 'package:fifa/classes/historic/top_players_ovr.dart';
 import 'package:fifa/classes/historic/top_scorers.dart';
@@ -26,9 +27,9 @@ void funcUpdateDataAfterSeason(){
   saveHistoricalData(); //salva a classificação dos campeonatos
   customToast('30% - Atualizando status dos jogadores');
   atualizaStatusJogadores(); //venda, update de overall, idade+1
-  customToast('50% - Alterando os times de divisão');
+  customToast('70% - Alterando os times de divisão');
   trocaClubesRebaixamento();
-  customToast('70% - Resetando cartões, gols, assistencias');
+  customToast('80% - Resetando cartões, gols, assistencias');
   resetData(); //clear cartoes amarelos, gols, assistencias etc...
   customToast('90% - Salvando dados de treinador');
   saveCoachPoints();
@@ -40,7 +41,7 @@ saveHistoricalData(){
   saveLeagueResults();
   saveInternationalLeagueResults();
   resetInternationalGoalsData();
-  saveMyClubData();
+  HistoricMyPlayers().saveMyClubData(My());
   saveBestPlayers();
 }
 saveLeagueResults(){
@@ -67,15 +68,6 @@ saveInternationalLeagueResults(){
 }
 resetInternationalGoalsData(){
   globalInternationalMataMataGoals = {};
-}
-
-saveMyClubData(){
-  My my = My();
-  globalHistoricMyClub[ano] = {
-    'clubID': my.clubID,
-    'leagueID': my.campeonatoID,
-    'players': my.jogadores,
-  };
 }
 
 saveBestPlayers(){

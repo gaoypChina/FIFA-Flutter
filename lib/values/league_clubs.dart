@@ -231,7 +231,7 @@ Map clubNameMapImmutable = {
     0: clubName.bate,1: clubName.sheriffTiraspol,2: clubName.gent,3: clubName.lechPoznan,
     4: clubName.joinville, 5: clubName.juventusMooca, 6: clubName.paulista, 7: clubName.ibis,
     8: clubName.arsenalsarandi, 9: clubName.tigre,10: clubName.saprissa,11: clubName.olimpiaHON,
-    12:clubName.cerezoOsaka,13:clubName.auckland,
+    12:clubName.cluj,13:clubName.auckland,
   },
 
 };

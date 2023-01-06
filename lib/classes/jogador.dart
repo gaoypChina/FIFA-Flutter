@@ -30,6 +30,10 @@ class Jogador{
   late int goalsInternational;
   late int assistsInternational;
 
+  late int matchsYear;
+  late int goalsYear;
+  late int assistsYear;
+
   late int matchsCarrer;
   late int goalsCarrer;
   late int assistsCarrer;
@@ -56,6 +60,9 @@ class Jogador{
     matchsInternational = globalJogadoresInternationalMatchs[index];
     goalsInternational = globalJogadoresInternationalGoals[index];
     assistsInternational = globalJogadoresInternationalAssists[index];
+    matchsYear = matchsInternational+matchsLeague;
+    goalsYear = goalsInternational+goalsLeague;
+    assistsYear = assistsInternational+assistsLeague;
     matchsCarrer = globalJogadoresCarrerMatchs[index];
     goalsCarrer = globalJogadoresCarrerGoals[index];
     assistsCarrer = globalJogadoresCarrerAssists[index];

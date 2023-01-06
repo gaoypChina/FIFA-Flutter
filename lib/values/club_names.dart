@@ -1257,7 +1257,7 @@ class ClubName{
   String ceahlaul = "Ceahlaul";
   String corvinul = "Corvinul";
   String craiova = "Universitatea Craiova";
-  String cluj = "CFR Cluj";
+  String cluj = "Cluj";
   String farul = "Farul";
   String gazmetan = "Gaz Metan";
   String gloriabuzau = "Gloria Buzau";

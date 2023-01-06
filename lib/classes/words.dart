@@ -88,6 +88,7 @@ class CountryNames {
   String get costaRica => 'Costa Rica';
   String get croatia => 'Croatia';
   String get cuba => 'Cuba';
+  String get curacao => 'Curacao';
   String get cyprus => 'Cyprus';
   String get czechRepublic => 'Czech Republic';
   String get denmark => 'Denmark';

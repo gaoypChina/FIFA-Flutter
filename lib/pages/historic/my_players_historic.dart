@@ -1,6 +1,7 @@
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/historic/historic_club_year.dart';
+import 'package:fifa/classes/historic/historic_my_players.dart';
 import 'package:fifa/classes/historic/historic_my_tranfers.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
@@ -28,6 +29,7 @@ class _MyPlayersHistoricState extends State<MyPlayersHistoric> {
   bool isActualYear = false;
   List<String> possibleYears = [];
   String selectedYearStr = anoInicial.toString();
+  List<HistoricPlayerData> historicPlayerDatas =[];
   ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
@@ -40,6 +42,10 @@ class _MyPlayersHistoricState extends State<MyPlayersHistoric> {
     if(ano<=anoInicial){
       selectedYearStr = (anoInicial).toString();
     }
+    possibleYears = [];
+    for(int year=anoInicial;year<=ano;year++){
+      possibleYears.add(year.toString());
+    }
     club = Club(index: My().clubID);
   }
 ////////////////////////////////////////////////////////////////////////////
@@ -48,13 +54,14 @@ class _MyPlayersHistoricState extends State<MyPlayersHistoric> {
 
   @override
   Widget build(BuildContext context) {
-    possibleYears = [];
-    for(int year=anoInicial;year<=ano;year++){
-      possibleYears.add(year.toString());
-    }
+
     if(int.parse(selectedYearStr)==ano){
       isActualYear = true;
+    }else{
+      isActualYear = false;
     }
+    historicPlayerDatas = HistoricMyPlayers().getPlayersList(year: int.parse(selectedYearStr), isActualYear: isActualYear);
+
     return Scaffold(
       body: Stack(
         children: [
@@ -156,8 +163,8 @@ Widget header(){
             );
           }).toList(),
           onChanged: (value) {
-            setState(() {});
             selectedYearStr = value.toString();
+            setState(() {});
           },
         ),
       ),
@@ -168,9 +175,9 @@ Widget header(){
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          bestPlayerBox('Craque',Jogador(index: 151),''),
-          bestPlayerBox('Artilheiro',Jogador(index: 171),''),
-          bestPlayerBox('Assistente',Jogador(index: 191),''),
+          bestPlayerBox('Craque',Jogador(index: HistoricMyPlayers().getBestPlayer(historicPlayerDatas: historicPlayerDatas)),''),
+          bestPlayerBox('Artilheiro',Jogador(index: HistoricMyPlayers().getArtilheiro(historicPlayerDatas: historicPlayerDatas)),''),
+          bestPlayerBox('Assistente',Jogador(index: HistoricMyPlayers().getAssistente(historicPlayerDatas: historicPlayerDatas)),''),
           bestPlayerBox('MVP',Jogador(index: 131),''),
         ],
       ),
@@ -178,10 +185,6 @@ Widget header(){
   }
 
   Widget listPlayersWidget(){
-    List jogadores = Club(index: My().clubID).jogadores;
-    if(!isActualYear){
-      jogadores = [];
-    }
     return Column(
       children: [
         const Text('Lista de Jogadores',style: EstiloTextoBranco.negrito18),
@@ -191,8 +194,8 @@ Widget header(){
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                for (int playerID in jogadores)
-                  oldPlayerRow(Jogador(index: playerID))
+                for (HistoricPlayerData historicPlayerData in historicPlayerDatas)
+                  oldPlayerRow(historicPlayerData)
               ],
             ),
           ),
@@ -202,20 +205,30 @@ Widget header(){
     );
   }
 
-  Widget oldPlayerRow(Jogador jogador){
-    return Row(
-      children: [
-        Images().getPlayerPictureWidget(jogador,25,25),
-        SizedBox(width:40,child: Text(jogador.position,style: EstiloTextoBranco.text16)),
-        const SizedBox(width: 4),
-        SizedBox(width:150,child: Text(jogador.name,style: EstiloTextoBranco.text16)),
-        const SizedBox(width: 4),
-        SizedBox(width:30,child:Text(jogador.matchsCarrer.toString(),style: EstiloTextoBranco.text16)),
-        const SizedBox(width: 4),
-        SizedBox(width:30,child:Text(jogador.goalsCarrer.toString(),style: EstiloTextoBranco.text16)),
-        const SizedBox(width: 4),
-        SizedBox(width:30,child:Text(jogador.assistsCarrer.toString(),style: EstiloTextoBranco.text16)),
-      ],
+  Widget oldPlayerRow(HistoricPlayerData historicPlayerData){
+    Jogador jogador = Jogador(index: historicPlayerData.playerID);
+    return GestureDetector(
+      onTap: (){
+        popUpOkShowPlayerInfos(
+            context: context,
+            playerID: historicPlayerData.playerID,
+            funcSetState: (){setState((){});}
+        );
+      },
+      child: Row(
+        children: [
+          Images().getPlayerPictureWidget(jogador,25,25),
+          SizedBox(width:40,child: Text(jogador.position,style: EstiloTextoBranco.text16)),
+          const SizedBox(width: 4),
+          SizedBox(width:150,child: Text(historicPlayerData.name,style: EstiloTextoBranco.text16)),
+          const SizedBox(width: 4),
+          SizedBox(width:30,child:Text(historicPlayerData.matchs.toString(),style: EstiloTextoBranco.text16)),
+          const SizedBox(width: 4),
+          SizedBox(width:30,child:Text(historicPlayerData.goals.toString(),style: EstiloTextoBranco.text16)),
+          const SizedBox(width: 4),
+          SizedBox(width:30,child:Text(historicPlayerData.assists.toString(),style: EstiloTextoBranco.text16)),
+        ],
+      ),
     );
   }
 Widget sellORbuyPlayers(String title, String buyOrSellKeyword, int selectedYear){
@@ -230,7 +243,7 @@ Widget sellORbuyPlayers(String title, String buyOrSellKeyword, int selectedYear)
               popUpOkShowPlayerInfos(
                   context: context,
                   playerID: listPlayers[i].playerID,
-                  funcSetState: (){}
+                  funcSetState: (){setState((){});}
               );
             },
             child: Row(

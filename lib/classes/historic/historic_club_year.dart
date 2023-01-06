@@ -1,4 +1,5 @@
 import 'package:fifa/classes/geral/name.dart';
+import 'package:fifa/classes/historic/historic_my_players.dart';
 import 'package:fifa/values/league_divisions.dart';
 
 import '../../global_variables.dart';
@@ -17,10 +18,9 @@ class HistoricClubYear{
   late bool isInternationalChampion;
 
   HistoricClubYear(int year){
-    Map data = globalHistoricMyClub[year];
-    clubID = data['clubID'];
+    clubID = HistoricMyPlayers().getClubID(year: year);
     clubName = Club(index: clubID).name;
-    leagueID = data['leagueID'];
+    leagueID = HistoricMyPlayers().getLeagueID(year: year);
     leagueName = League(index: leagueID).name;
     List clubsIDs = HistoricFunctions().funcHistoricListAll(year, leagueName);
     leaguePosition = clubsIDs.indexOf(clubID)+1;

@@ -3,10 +3,13 @@ import 'package:fifa/classes/geral/esquemas_taticos.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/pages/club_profile/all_infos_club.dart';
+import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
+import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:fifa/pages/club_profile/field_draggable.dart';
 import 'package:fifa/pages/club_profile/graphics.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/widgets/stars.dart';
@@ -67,8 +70,18 @@ class _MyTeamState extends State<MyTeam> {
 
                 Column(
                   children: [
-
-                    backButtonText(context, myClub.name),
+                    Row(
+                      children: [
+                        backButtonText(context, myClub.name),
+                        const Spacer(),
+                        Padding(
+                          padding: const EdgeInsets.only(top:20.0),
+                          child: IconButton(onPressed: (){
+                            Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfileNotPlayable(clubName: myClub.name)));
+                          }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
+                        ),
+                      ],
+                    ),
                     Row(
                       children: [
                         //Escudo da Equipe

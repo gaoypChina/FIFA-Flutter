@@ -85,9 +85,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    GestureDetector(onTap:(){
-                      Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricPlayersPage(clubName: widget.clubName)));
-                    },child: Images().getEscudoWidget(widget.clubName,90,90)),
+                    Images().getEscudoWidget(widget.clubName,90,90),
                     Images().getUniformWidget(widget.clubName,100,100),
                     Column(
                       children: [
@@ -98,7 +96,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
                           ],
                         ),
                         Text(ClubDetails().getFoundationYear(widget.clubName).toString(),style: EstiloTextoBranco.text16),
-                        Text(ClubDetails().getStadium(widget.clubName),style: EstiloTextoBranco.text14),
+                        Text(ClubDetails().getStadium(widget.clubName),overflow:TextOverflow.ellipsis,style: EstiloTextoBranco.text14),
                         Text(ClubDetails().getStadiumCapacityPointFormat(widget.clubName),style: EstiloTextoBranco.text16),
                       ],
                     ),
@@ -107,15 +105,24 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
               ),
 
 
-
-              totalTrophyWidget(widget.clubName, dataGraphics),
-
+              Row(
+                children: [
+                  Container(
+                    color: AppColors().greyTransparent,
+                    child: TextButton(onPressed: (){
+                      Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricPlayersPage(clubName: widget.clubName)));
+                    }, child: Text('Jogadores Históricos',style:EstiloTextoBranco.text16)),
+                  ),
+                ],
+              ),
 
 
               Expanded(
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
+
+                      totalTrophyWidget(widget.clubName, dataGraphics),
 
                       positionYears(widget.clubName, dataGraphics,1),
                       positionYears(widget.clubName, dataGraphics,2),

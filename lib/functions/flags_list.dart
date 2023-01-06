@@ -89,6 +89,7 @@ Image funcFlagsList(String country, double _height, double _width){
   else if(country == Words.country.congoRD){code = Image.asset('icons/flags/png/cd.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.costaRica){code = Image.asset('icons/flags/png/cr.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.cuba){code = Image.asset('icons/flags/png/cu.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.curacao){code = Image.asset('icons/flags/png/cw.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.croatia){code = Image.asset('icons/flags/png/hr.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.cyprus){code = Image.asset('icons/flags/png/cy.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.czechRepublic){code = Image.asset('icons/flags/png/cz.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}

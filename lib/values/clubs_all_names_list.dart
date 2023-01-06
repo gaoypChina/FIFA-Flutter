@@ -156,7 +156,7 @@ List clubsAllNameList = [
   ///////////////////////////////////////////
   ClubName().pohang, ClubName().fcseoul, ClubName().ulsan,
   ClubName().shandong,  ClubName().shanghaisipg,
-  ClubName().kashimaantlers,  ClubName().urawareddiamonds, ClubName().visselkobe,  ClubName().kawasakifrontale,ClubName().cerezoOsaka,
+  ClubName().kashimaantlers,  ClubName().urawareddiamonds, ClubName().visselkobe,  ClubName().kawasakifrontale,
 
   ClubName().aljazira,  ClubName().jeonbuk, ClubName().alnassr,
   ClubName().alain,ClubName().alWahda,
