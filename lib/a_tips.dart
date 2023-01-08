@@ -123,6 +123,7 @@ import 'package:fifa/values/league_names.dart';
 
 
 ClubName _name = ClubName();
+ClubName n = ClubName();
 LeagueOfficialNames leagueName = LeagueOfficialNames();
 Map<String,dynamic> zzzzzzzzz = {
 

@@ -26,7 +26,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   late Map<double,dynamic> results;
   late int choosenLeagueIndex;
   late String choosenLeagueName;
-  int nTeamsSelected = 1;
+  int nTeamsSelected = 0;
   ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
@@ -56,6 +56,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
+                    selectButton('Resumo', 0),
                     selectButton('1º', 1),
                     selectButton('G-2', 2),
                     selectButton('G-4', 4),
@@ -65,7 +66,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                 ),
               ),
 
-              nTeamsSelected == 1 ? Column(
+              nTeamsSelected == 0 ? Column(
                 children: [
                   for(int i = 1950; i<anoInicial;i+=10)
                     Row(
@@ -78,10 +79,10 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                 ],
               ) : Container(),
 
-              nTeamsSelected == 1 ? tableBestClubs() : Container(),
+              nTeamsSelected == 0 ? tableBestClubs() : Container(),
 
               //TABELA
-              Expanded(
+              nTeamsSelected>0 ? Expanded(
                 child: nTeamsSelected>2 ? SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -106,7 +107,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                     ],
                   ),
                 ),
-              ),
+              ) : Container(),
 
               ////////////////////////////////////
               //SELECT LEAGUE
@@ -397,27 +398,31 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   Widget tableBestClubs(){
     List<String> clubNames = rankBestClubs();
     List teams = orderClubsRanking();
-    return SizedBox(
-      height: 200,
+    return Expanded(
       child: SingleChildScrollView(
-        child: Column(
-          children: [
-            for (String name in teams)
-              clubHistoric(name,clubNames.indexOf(name))
-          ],
+          child: Column(
+            children: [
+              for (String name in teams)
+                clubHistoric(name,clubNames.indexOf(name))
+            ],
+          ),
         ),
-      ),
     );
   }
   Widget clubHistoric(String clubName, int index){
     List positions = getClubPositions(clubName);
-    return Row(
-      children: [
-        Images().getEscudoWidget(clubName,30,30),
-        SizedBox(width:120,child: Text(clubName,style: EstiloTextoBranco.text14)),
-        for (int i=0;i<10;i++)
-          SizedBox(width:20,child: Text(" "+positions[i].toString(),style: EstiloTextoBranco.text14)),
-      ],
+    return GestureDetector(
+      onTap: (){
+        clickClub(clubName);
+      },
+      child: Row(
+        children: [
+          Images().getEscudoWidget(clubName,30,30),
+          SizedBox(width:120,child: Text(clubName,style: EstiloTextoBranco.text14)),
+          for (int i=0;i<10;i++)
+            SizedBox(width:20,child: Text(" "+positions[i].toString(),style: EstiloTextoBranco.text14)),
+        ],
+      ),
     );
   }
   ////////////////////////////////////////////////////////////////////////////

@@ -58,7 +58,7 @@ class LeagueConfigIndividual{
 
   ////////////////////////////////
   increaseNTeams(){
-    if(nTeams<=gLOBALMAXCLUBSINSIDELEAGUE  && nTeamsLeagueOutros()>2){
+    if(nTeams<=gLOBALMAXCLUBSINLEAGUE  && nTeamsLeagueOutros()>2){
       addTeam(nTeams-1);
       addTeam(nTeams-2);
     }
@@ -72,7 +72,7 @@ class LeagueConfigIndividual{
   }
 
   decreaseNTeams(){
-    if(nTeams>2 && nTeamsLeagueOutros()<=gLOBALMAXCLUBSINSIDELEAGUE){
+    if(nTeams>2 && nTeamsLeagueOutros()<=gLOBALMAXCLUBSINLEAGUE){
       removeTeam(nTeams-1);
       removeTeam(nTeams-2);
     }

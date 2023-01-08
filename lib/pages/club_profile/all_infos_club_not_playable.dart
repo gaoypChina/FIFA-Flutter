@@ -111,7 +111,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
                     color: AppColors().greyTransparent,
                     child: TextButton(onPressed: (){
                       Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricPlayersPage(clubName: widget.clubName)));
-                    }, child: Text('Jogadores Históricos',style:EstiloTextoBranco.text16)),
+                    }, child: const Text('Jogadores Históricos',style:EstiloTextoBranco.text16)),
                   ),
                 ],
               ),

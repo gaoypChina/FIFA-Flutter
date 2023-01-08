@@ -60,7 +60,6 @@ class CoachBestResults{
   ////////////////////////////////////////////////
   //ACTIONS
   updateSequence(Confronto myLastMatchResult){
-
     updateMaxVictory(myLastMatchResult);
     updateMaxLoss(myLastMatchResult);
     updateMaxSequenceVictory(myLastMatchResult);
@@ -74,7 +73,7 @@ class CoachBestResults{
     int meuMaxPlacar =  maxGolMarcado - maxGolSofrido;
     if(confronto.goal1 - confronto.goal2 > meuMaxPlacar
         || (confronto.goal1 - confronto.goal2 == meuMaxPlacar && confronto.goal1 > maxGolMarcado)){
-      saveCoachResults(confronto);
+      saveCoachResultsVictory(confronto);
     }
   }
   updateMaxLoss(Confronto confronto){
@@ -83,10 +82,16 @@ class CoachBestResults{
     int meuMaxPlacar =  maxGolSofrido - maxGolMarcado;
     if(confronto.goal2 - confronto.goal1 > meuMaxPlacar
         || (confronto.goal2 - confronto.goal1 == meuMaxPlacar && confronto.goal2 > maxGolSofrido)){
-      saveCoachResults(confronto);
+      saveCoachResultsLoss(confronto);
     }
   }
-  saveCoachResults(Confronto confronto){
+  saveCoachResultsVictory(Confronto confronto){
+    My my = My();
+    globalHistoricCoachResults['maxVictory'] = '${confronto.goal1}x${confronto.goal2}';
+    globalHistoricCoachResults['maxVictoryClubID'] = my.clubID;
+    globalHistoricCoachResults['maxVictoryClubAdvID'] = confronto.clubID2;
+  }
+  saveCoachResultsLoss(Confronto confronto){
     My my = My();
     globalHistoricCoachResults['maxLoss'] = '${confronto.goal1}x${confronto.goal2}';
     globalHistoricCoachResults['maxLossClubID'] = my.clubID;

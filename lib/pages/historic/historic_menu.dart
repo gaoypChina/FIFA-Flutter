@@ -2,6 +2,7 @@ import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/cups/cup_historic.dart';
 import 'package:fifa/pages/historic/international_historic.dart';
 import 'package:fifa/pages/historic/leagues_historic.dart';
 import 'package:fifa/pages/historic/mundial.dart';
@@ -10,6 +11,7 @@ import 'package:fifa/pages/historic/players_historic.dart';
 import 'package:fifa/pages/historic/year_resume.dart';
 import 'package:fifa/pages/map/choose_continent_page.dart';
 import 'package:fifa/pages/map/map_exploration.dart';
+import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
@@ -74,7 +76,12 @@ class _HistoricMenuState extends State<HistoricMenu> {
                           box(
                               'Jogadores',
                               Image.asset('assets/icons/generic_user.png',height: imageSize,),
-                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => const PlayersHistoric()));
+                                  (){
+                                if(ano>anoInicial){
+                                  Navigator.push(context,MaterialPageRoute(builder: (context) => const PlayersHistoric()));
+                                }else{
+                                  customToast('Sem dados. Jogue 1 temporada completa');
+                                }
                               }
                           ),
                           box(
@@ -120,6 +127,13 @@ class _HistoricMenuState extends State<HistoricMenu> {
                                   (){Navigator.push(context,MaterialPageRoute(builder: (context) => const ChooseContinentPage()));}
                           ),
                         ],
+                      ),
+
+                      box(
+                          'Copa',
+                          Image.asset('assets/league_logos/cup winners.png',height: imageSize,),
+                              (){Navigator.push(context,MaterialPageRoute(builder: (context) => const CupHistoric()));
+                          }
                       ),
 
                     ],

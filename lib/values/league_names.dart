@@ -52,6 +52,7 @@ class LeagueOfficialNames{
   String belarus = 'Liga Belarus';
   String chipre = 'Liga Chipre';
   String macedonia = 'Liga Macedonia';
+  String albania = 'Liga Albania';
   String ligaEuropa = 'Liga Europeia';  String lesteEuropeu = 'Leste Europeu';
 
   String brasil1 = 'Brasileirão';  String brasil2 = 'Brasileirão - Série B';String brasil3 = 'Brasileirão - Série C';
@@ -148,16 +149,17 @@ class LeagueOfficialNames{
      alemanha1,alemanha2,alemanhaOriental,
      portugal,
 
-     turquiaGrecia,     grecia,
-     holanda ,     escocia,     belgica, irlanda,
+     turquiaGrecia,     grecia, chipre,
+     holanda ,   belgica, escocia, irlanda,
      suecia,     dinamarca,     noruega,     finlandia,
      austria,     suica,     polonia, repTcheca,
-      eslovaquia, eslovenia,
+     eslovaquia, eslovenia,
 
-      servia,     croacia, israel,
+      servia,  croacia,
       romenia, bulgaria, hungria,
+      belarus, macedonia, albania,
       russia, ucrania,     cazaquistao,
-      armenia,belarus, macedonia, chipre,
+      armenia, israel,
 
      brasil1, brasil2, brasil3,
      argentina,
@@ -390,6 +392,7 @@ Map getLeagueNationalityMap(){
     leagueName.belarus: Words.country.belarus ,
     leagueName.macedonia: Words.country.macedonia ,
     leagueName.chipre: Words.country.cyprus ,
+    leagueName.albania: Words.country.albania ,
 
     leagueName.brasil1: Words.country.brazil ,
     leagueName.brasil2: Words.country.brazil ,

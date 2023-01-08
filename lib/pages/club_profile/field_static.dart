@@ -16,7 +16,8 @@ import '../../theme/textstyle.dart';
 
 class StaticField extends StatefulWidget {
   final int clubID;
-  const StaticField({Key? key, required this.clubID}) : super(key: key);
+  final bool hasReserves;
+  const StaticField({Key? key, required this.clubID, required this.hasReserves}) : super(key: key);
   @override
   State<StaticField> createState() => _StaticFieldState();
 }
@@ -43,14 +44,14 @@ class _StaticFieldState extends State<StaticField> {
               //Widget do campo
               fieldGameplay442(),
 
-              const       SizedBox(height: 4),
-              Container(
+              widget.hasReserves ? Container(
+                padding: const EdgeInsets.only(top: 4),
                   width: Sized(context).width,
                   color: AppColors().greyTransparent,
                   child: Text('${Translation(context).text.substitutes}:', style: EstiloTextoBranco.text22)
-              ),
+              ) : Container(),
 
-              Container(
+              widget.hasReserves ? Container(
                 height: 90,
                 color: AppColors().greyTransparent,
                 child: ListView.builder(
@@ -65,9 +66,9 @@ class _StaticFieldState extends State<StaticField> {
                       );
                     }
                 ),
-              ),
+              ) : Container(),
 
-              Container(
+              widget.hasReserves ? Container(
                 height: 90,
                 color: AppColors().greyTransparent,
                 child: ListView.builder(
@@ -81,10 +82,10 @@ class _StaticFieldState extends State<StaticField> {
                           child: playerWidgetOVR(jogadoresOrganizados[index]));
                     }
                 ),
-              ),
+              ) : Container(),
 
               //FILTRAR POR TÓPICOS
-              Padding(
+              widget.hasReserves ? Padding(
                 padding: const EdgeInsets.only(top:4.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -96,7 +97,7 @@ class _StaticFieldState extends State<StaticField> {
                     button(title: Translation(context).text.assists, function: (){setState(() {});show = 'Assists';}),
                   ],
                 ),
-              ),
+              ) : Container(),
 
             ],
           ),

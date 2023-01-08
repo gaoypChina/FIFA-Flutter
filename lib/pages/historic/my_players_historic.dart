@@ -13,6 +13,7 @@ import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:fifa/widgets/best_player_box/best_player_box.dart';
+import 'package:fifa/widgets/button/dropdown_button.dart';
 import 'package:flutter/material.dart';
 
 class MyPlayersHistoric extends StatefulWidget {
@@ -104,7 +105,15 @@ Widget header(){
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        dropDownButton(),
+
+        dropDownButton(
+            selectedYearStr: selectedYearStr,
+            possibleYears: possibleYears,
+            setStateFunc: (value){
+              selectedYearStr = value.toString();
+              setState(() {});
+            }),
+
         Row(
           children: [
             Images().getEscudoWidget(club.name,50,50),
@@ -141,35 +150,6 @@ Widget header(){
     );
 }
 
-  Widget dropDownButton(){
-    return                   Container(
-      decoration: BoxDecoration(
-        color:Colors.white, //background color of dropdown button
-        border: Border.all(color: Colors.black38, width:2), //border of dropdown button
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal:10.0,vertical: 4),
-        child: DropdownButton<String>(
-          value: selectedYearStr,
-          style: const TextStyle(fontSize: 18, color: Colors.white),
-          iconEnabledColor: Colors.black, //Icon color
-          underline: Container(), //empty line
-          dropdownColor: Colors.white,
-          items: possibleYears.map((value) {
-            return DropdownMenuItem(
-              child: Text(value,style: EstiloTextoPreto.text16),
-              value: value,
-            );
-          }).toList(),
-          onChanged: (value) {
-            selectedYearStr = value.toString();
-            setState(() {});
-          },
-        ),
-      ),
-    );
-  }
   Widget bestPlayers(){
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,

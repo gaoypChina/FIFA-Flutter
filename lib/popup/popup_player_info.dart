@@ -50,7 +50,6 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
                   
                   Row(
                     children: [
-                      //Escudo da Equipe
                       SizedBox(
                         height: 80,width: 80,
                         child: Stack(
@@ -70,7 +69,8 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
                         ],
                       )),
                       //Escudo da Equipe
-                      Images().getEscudoWidget(jogador.clubName,60,60),
+                      Images().getEscudoWidget(jogador.clubName,70,70),
+                      const SizedBox(width: 8),
                     ],
                   ),
 

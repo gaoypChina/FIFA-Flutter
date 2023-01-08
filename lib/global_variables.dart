@@ -2,7 +2,7 @@ library globals;
 
 //geral
 int testInitRodada = 1;
-int gLOBALMAXCLUBSINSIDELEAGUE = 20;
+int gLOBALMAXCLUBSINLEAGUE = 20;
 bool globalShowRealLogos = true;
 
 //MEU

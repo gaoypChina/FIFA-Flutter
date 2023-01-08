@@ -6,6 +6,8 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/tabela_national.dart';
 import 'package:fifa/functions/order_list.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/historic/leagues_historic.dart';
+import 'package:fifa/pages/table/statistics_league.dart';
 import 'package:fifa/pages/table/table_widget.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -78,6 +80,10 @@ class _TableNacionalState extends State<TableNacional> {
                         backButton(context),
                         Image.asset(FIFAImages().campeonatoLogo(leagueName),height:25,width: 25),
                         Text(' ${Translation(context).text.matchWeek} '+ rodada.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text20),
+                        const Spacer(),
+                        IconButton(onPressed: (){
+                            Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricLeague(choosenLeagueIndex: choosenLeagueIndex)));
+                          }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
                       ],
                     ),
 
@@ -308,40 +314,10 @@ Widget matchsWidget(){
     );
   }
 
-  List organizarVariavelLeague(int leagueID, int goalOrYellowOrRed) {
-    //Oraganiza em ordem lista de artilheiros, cartoes amarelos ou cartoes amarelos
-    //Mostra no Widget de League Results
-
-    List global = [];
-    if(goalOrYellowOrRed==0){global = globalJogadoresLeagueGoals;}
-    if(goalOrYellowOrRed==1){global = globalJogadoresYellowCard;}
-    if(goalOrYellowOrRed==2){global = globalJogadoresRedCard;}
-
-    List copyVariableList = [];
-    List leaguePlayers = [];
-
-    List clubsInLeague = leaguesMap[leagueID].getClassification();
-    for(int index=0; index<globalJogadoresClubIndex.length; index++){
-      if(clubsInLeague.contains(globalJogadoresClubIndex[index])){
-        try {// Na 1ªrodada pode dar pau, pq a lista nao foi criada
-          if (global[index] >= 0) {
-            copyVariableList.add(global[index]);
-            leaguePlayers.add(index);
-          }
-        }catch(e){
-          print('Error GlobalFunctions().organizarVariavelLeague: '+e.toString());
-        }
-      }
-    }
-    //ARTILHEIROS/lista EM ORDEM
-    leaguePlayers = Order().listDecrescente(listA: copyVariableList, listB: leaguePlayers, length: leaguePlayers.length)[1];
-
-    return leaguePlayers;
-  }
 
 Widget yellowRedCardWidget(int goalOrYellowOrRed){
 
-  List leaguePlayers = organizarVariavelLeague(choosenLeagueIndex,  goalOrYellowOrRed);
+  List leaguePlayers = organizarVariavelLeague(leaguesMap[choosenLeagueIndex],  goalOrYellowOrRed);
 
     return Column(
       children: [

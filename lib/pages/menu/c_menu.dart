@@ -3,7 +3,9 @@ import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
+import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/functions/check_internet.dart';
+import 'package:fifa/functions/coach/coach_best_results.dart';
 import 'package:fifa/functions/simulate/simulate_functions.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/page_controller/calendar_control.dart';
@@ -15,6 +17,7 @@ import 'package:fifa/pages/ranking_clubs.dart';
 import 'package:fifa/pages/save/choose_save.dart';
 import 'package:fifa/pages/simulacao/end_year.dart';
 import 'package:fifa/pages/simulacao/not_play.dart';
+import 'package:fifa/pages/table/statistics_league.dart';
 import 'package:fifa/pages/table/table_international.dart';
 import 'package:fifa/pages/table/table_nacional.dart';
 import 'package:fifa/pages/transfers.dart';
@@ -135,6 +138,18 @@ class _MenuState extends State<Menu> {
                                 //SIMULA JOGOS
                                 Simulate().startVariables();
                                 await Simulate().simulateWeek(simulMyMatch: true);
+
+                                //**Só funciona se ja tiver simulado todos os outros jogos
+                                //TODO: SÓ CONTA RESULTADO DAS LIGAS NACIONAIS
+                                //Tem uma dependencia pelo ResultGameNacional
+                                int nRodadasMyLeague =  League(index: My().campeonatoID).nClubs-1;
+                                ResultGameNacional show = ResultGameNacional(
+                                    rodadaLocal: rodada >= nRodadasMyLeague  ? nRodadasMyLeague-1 : rodada-1,
+                                    club: Club(index: myClass.clubID)
+                                );
+                                Confronto confronto = Confronto(clubName1: myClass.clubName, clubName2: adversario.clubName, goal1: show.gol1, goal2: show.gol2);
+                                CoachBestResults coachBestResults = CoachBestResults();
+                                coachBestResults.updateSequence(confronto);
 
                                 if(semana >= globalUltimaSemana){
                                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => const EndYear()));
@@ -313,6 +328,7 @@ class _MenuState extends State<Menu> {
                             child: GestureDetector(
                                 onTap:(){
                                   customToast('TESTE DE FUNÇÃO');
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => StatisticsLeague(league: League(index: 1),)));
                                 },
                                 child: const Icon(Icons.terminal_sharp,color:Colors.white,size: 50)
                             ),

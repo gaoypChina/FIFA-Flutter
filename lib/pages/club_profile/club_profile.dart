@@ -128,7 +128,7 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                       child: TabBarView(
                         controller: _tabController,
                         children: [
-                          StaticField(clubID: widget.clubID),
+                          StaticField(clubID: widget.clubID,hasReserves: true,),
                           AllInfosClub(club: clubClass,notifyParent: (){}),
                           ClubGraphics(club: clubClass),
                           ClubCalendar(club: clubClass),

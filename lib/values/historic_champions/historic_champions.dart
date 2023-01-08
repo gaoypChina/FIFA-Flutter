@@ -11,11 +11,11 @@ import 'package:fifa/values/historic_champions/other_leagues.dart';
 
   Map<double,dynamic> mapChampions(String league){
 
-    if(mapEuropa[league] != null){
-        return mapEuropa[league];
-    }
     if(mapEuropaTopLeagues[league] != null){
       return mapEuropaTopLeagues[league];
+    }
+    if(mapEuropa[league] != null){
+        return mapEuropa[league];
     }
     if(mapAmerica[league] != null){
         return mapAmerica[league];
