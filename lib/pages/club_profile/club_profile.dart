@@ -7,6 +7,7 @@ import 'package:fifa/pages/club_profile/club_calendar.dart';
 import 'package:fifa/pages/club_profile/compare.dart';
 import 'package:fifa/pages/club_profile/field_static.dart';
 import 'package:fifa/pages/club_profile/graphics.dart';
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
@@ -64,57 +65,69 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                 Column(
                   children: [
 
-                    Row(
-                      children: [
-                        backButtonText(context, clubClass.name),
-                        const Spacer(),
-                        Padding(
-                          padding: const EdgeInsets.only(top:20.0),
-                          child: IconButton(onPressed: (){
-                            Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfileNotPlayable(clubName:clubClass.name)));
-                          }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
-                        )
-                      ],
+                    //APPBAR
+                    Container(
+                      color: clubClass.colors.primaryColor.withOpacity(0.3),
+                      child: Row(
+                        children: [
+                          backButtonText(context, clubClass.name),
+                          const Spacer(),
+                          Padding(
+                            padding: const EdgeInsets.only(top:20.0),
+                            child: IconButton(onPressed: (){
+                              Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfileNotPlayable(clubName:clubClass.name)));
+                            }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
+                          )
+                        ],
+                      ),
                     ),
 
-                    Row(
-                      children: [
-                        //Escudo da Equipe
-                        Images().getEscudoWidget(clubClass.name,80,80),
+                    //HEADER
+                    Container(
+                      color: clubClass.colors.primaryColor.withOpacity(0.3),
+                      child: Row(
+                        children: [
+                          //Escudo da Equipe
+                          Images().getEscudoWidget(clubClass.name,80,80),
 
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                starsWidgetFromOverall(clubClass.getOverall()),
+                                Text('${Translation(context).text.overall}: '+clubClass.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.text14),
+                                Text('${Translation(context).text.avgAge}: '+clubClass.getAverageAge().toStringAsFixed(2), style: EstiloTextoBranco.text14),
+                                Text('${Translation(context).text.player}: '+clubClass.nJogadores.toString(), style: EstiloTextoBranco.text14),
+                                compare(),
+                              ],
+                            ),
+                          ),
+
+                          Stack(
                             children: [
-                              starsWidgetFromOverall(clubClass.getOverall()),
-                              Text('${Translation(context).text.overall}: '+clubClass.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.text14),
-                              Text('${Translation(context).text.avgAge}: '+clubClass.getAverageAge().toStringAsFixed(2), style: EstiloTextoBranco.text14),
-                              Text('${Translation(context).text.player}: '+clubClass.nJogadores.toString(), style: EstiloTextoBranco.text14),
-                              compare(),
+                              Opacity(opacity:0.3,child: Image.asset(FIFAImages().campeonatoLogo(clubClass.leagueName),height: 50,width: 50)),
+                              Container(
+                                  width:50,height:50,
+                                  padding: const EdgeInsets.only(top: 12),
+                                  child: Text(dataGraphics.currentPosition.toString() + 'º',textAlign:TextAlign.center,style: EstiloTextoBranco.negrito22)),
                             ],
                           ),
-                        ),
+                          Image.asset(Images().getStadium(clubClass.name),height: 80,width: 100),
+                          const SizedBox(width: 8),
 
-                        Stack(
-                          children: [
-                            Opacity(opacity:0.3,child: Image.asset(FIFAImages().campeonatoLogo(clubClass.leagueName),height: 50,width: 50)),
-                            Container(
-                                width:50,height:50,
-                                padding: const EdgeInsets.only(top: 12),
-                                child: Text(dataGraphics.currentPosition.toString() + 'º',textAlign:TextAlign.center,style: EstiloTextoBranco.negrito22)),
-                          ],
-                        ),
-                        Image.asset(Images().getStadium(clubClass.name),height: 80,width: 100),
-                        const SizedBox(width: 8),
-
-                      ],
+                        ],
+                      ),
                     ),
 
-                    SizedBox(
+                    Container(
                       height: 30,
+                      color: clubClass.colors.primaryColor.withOpacity(0.3),
                       child: TabBar(
                         controller: _tabController,
+                        unselectedLabelColor: Colors.white54,
+                        labelColor: clubClass.colors.secondColor,
+                        indicatorColor: clubClass.colors.secondColor,
                         tabs: [
                           Tab(text: Translation(context).text.cast),
                           Tab(text: Translation(context).text.allInfos),

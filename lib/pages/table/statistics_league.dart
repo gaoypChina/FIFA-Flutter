@@ -10,7 +10,6 @@ import 'package:fifa/values/historic_champions/internationals.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
-import 'dart:math';
 
 class StatisticsLeague extends StatefulWidget {
   final League league;

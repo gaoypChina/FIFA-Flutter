@@ -4,7 +4,6 @@ import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/tabela_national.dart';
-import 'package:fifa/functions/order_list.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/historic/leagues_historic.dart';
 import 'package:fifa/pages/table/statistics_league.dart';

@@ -1,19 +1,43 @@
-import 'package:fifa/page_controller/configuration/configuration_state.dart';
+import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
-//TODO: FAZER O POPUP DE GOL
-popUpGoal({required BuildContext context, required Function(ConfigurationState configurationState)? function}){
-  ConfigurationState configurationState = ConfigurationState();
+popUpGoal({required BuildContext context,required int milis, required Jogador scorer, required Function()? function}){
 
   showDialog(
     context: context,
     builder: (BuildContext context) {
       // retorna um objeto do tipo Dialog
       return AlertDialog(
-        title: Text('GOAL',style: EstiloTextoPreto.text16),
+        title: const Text('GOAL',style: EstiloRisque.text22),
         content: Column(
+          mainAxisSize: MainAxisSize.min,
           children: [
+            Row(
+              children: [
+                Column(
+                  children: [
+                      Row(
+                        children: [
+                          Images().getPlayerPictureWidget(scorer,40,40),
+                          Text(scorer.name,style: EstiloTextoPreto.negrito16,)
+                        ],
+                      ),
+                    Row(
+                      children: [
+                        Images().getPlayerPictureWidget(Jogador(index: 1),20,20),
+                        Text(Jogador(index: 1).name,style: EstiloTextoPreto.text14,)
+                      ],
+                    ),
+                  ],
+                ),
+
+                Images().getEscudoWidget(scorer.clubName,70,70),
+              ],
+            ),
+
+            Text(milis.toString()+"'",style: EstiloRisque.text22),
 
           ],
         ),
@@ -21,7 +45,7 @@ popUpGoal({required BuildContext context, required Function(ConfigurationState c
           TextButton(
               child: const Text("OK",style: EstiloTextoPreto.text16,),
               onPressed: (){
-                function!(configurationState);
+                function!();
                 Navigator.of(context).pop();
               }
           ),

@@ -96,8 +96,17 @@ class _HomePageState extends State<HomePage> {
               children: [
 
                 const SizedBox(height: 70),
-                const Text('FIFA 23',style: EstiloTextoBranco.text40),
-                const SizedBox(height: 20),
+                //TITLE
+                Stack(
+                  children: const [
+                    Text('FIFA 23',style: EstiloRowdies.textWhite50),
+                    Padding(
+                      padding: EdgeInsets.only(left:2.0,top: 1),
+                      child: Text('FIFA 23',style: EstiloRowdies.textGreen50),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10),
 
                 ////////////
                 //PAIS

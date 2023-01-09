@@ -1,26 +1,29 @@
 import 'dart:async';
+
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/geral/name.dart';
+import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
-import 'package:fifa/classes/geral/semana.dart';
+import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/functions/coach/coach_best_results.dart';
 import 'package:fifa/functions/simulate/my_match/counter.dart';
 import 'package:fifa/functions/simulate/my_match/my_match_simulation.dart';
+import 'package:fifa/functions/simulate/simulate_functions.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/simulacao/after_play.dart';
 import 'package:fifa/pages/simulacao/fim_campeonato.dart';
-import 'package:fifa/functions/simulate/simulate_functions.dart';
 import 'package:fifa/pages/simulacao/substitution.dart';
+import 'package:fifa/popup/popup_goal.dart';
+import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
-import 'package:fifa/values/league_names.dart';
+import 'package:fifa/widgets/background/background_international_league.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
-import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
+
 import '../../classes/my.dart';
 import '../../widgets/field_static.dart';
 import 'end_year.dart';
@@ -96,14 +99,7 @@ class _PlayState extends State<Play> {
         body:  Stack(
             children: [
 
-              Semana(semana).isJogoMundial
-                  ? Image.asset('assets/icons/fundomundial.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill)
-              : Semana(semana).isJogoCampeonatoNacional
-              ? Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill,)
-                : myClass.getMyInternationalLeague() == LeagueOfficialNames().championsLeague
-                    ? Image.asset('assets/icons/fundochampions.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill)
-                    : Image.asset('assets/icons/fundolibertadores.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill,),
-
+              backgroundTournament(Semana(semana),myClass),
 
                   Column(
                     children: [
@@ -368,4 +364,17 @@ class _PlayState extends State<Play> {
     });
   }
 
+  showPopUpGoal(){
+    int antes1 = myMatchSimulation.meuGolMarcado;
+    int antes2 = myMatchSimulation.meuGolSofrido;
+
+    //SIMULATE MATCH
+
+    if(myMatchSimulation.meuGolMarcado != antes1){
+      popUpGoal(context: context,scorer: Jogador(index:globalMatchGoalScorerIDMy.last),milis: myMatchSimulation.milis, function: (){});
+    }
+    if(myMatchSimulation.meuGolSofrido != antes2){
+      popUpGoal(context: context,scorer: Jogador(index:globalMatchGoalScorerIDAdv.last),milis: myMatchSimulation.milis, function: (){});
+    }
+  }
 }

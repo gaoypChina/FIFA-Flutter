@@ -17,6 +17,7 @@ class Club{
   late String continent;
   late String stadiumName;
   late int foundationYear;
+  late ClubColors colors;
   late List jogadores;
   late List escalacao;
   late String esquemaTatico;
@@ -75,6 +76,7 @@ class Club{
       stadiumName = clubDetails.getStadium(name);
       continent = Continents().funcCountryContinents(nationality);
       stateName = clubDetails.getState(name);
+      colors = clubDetails.getColors(name);
       if(stateName.isNotEmpty){
         estadualLeagueName = getLeagueNationalityMap().keys.firstWhere((k) => getLeagueNationalityMap()[k] == stateName, orElse: () => null);
       }

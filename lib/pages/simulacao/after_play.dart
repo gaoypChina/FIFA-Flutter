@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/name.dart';
@@ -14,6 +16,7 @@ import 'package:fifa/classes/table_matchs_control.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/pages/simulacao/not_play_international/not_play_international_matamata.dart';
 import 'package:fifa/theme/background/background_position.dart';
+import 'package:fifa/theme/background/color_grade.dart';
 import 'package:fifa/theme/background/moral_icon.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -93,6 +96,7 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
                   height: 30,
                   child: TabBar(
                     controller: _tabController,
+                    indicatorColor: AppColors().primary,
                     tabs: [
                       Tab(text: Translation(context).text.timeline),
                       Tab(text: Translation(context).text.players),
@@ -207,35 +211,46 @@ Widget statistics(){
   }
 
   Widget playerStatistics(){
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-        Column(
-          children: [
-            playerRow(Jogador(index: 12)),
-            playerRow(Jogador(index: 15)),
-          ],
-        ),
-        Column(
-          children: [
-            playerRow(Jogador(index: 12)),
-            playerRow(Jogador(index: 15)),
-          ],
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Column(
+            children: [
+              for(int playerID in myClubClass.escalacao)
+                playerRow(Jogador(index: playerID)),
+            ],
+          ),
+
+          Column(
+            children: [
+              for(int playerID in adversarioClubClass.escalacao)
+              playerRow(Jogador(index: playerID)),
+            ],
+          ),
+        ],
+      ),
     );
   }
   Widget playerRow(Jogador player){
-    return Row(
-      children: [
-          const SizedBox(width: 4),
-          positionContainer(player.position),
-          const SizedBox(width: 4),
-          moralContainer(player,size: 20),
-          const SizedBox(width: 4),
-          SizedBox(width:100,child: Text(player.name,style: EstiloTextoBranco.text14)),
-          const SizedBox(width: 4),
-      ],
+    double grade = (Random().nextInt(40)+50)/10;
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4.0),
+      child: Row(
+        children: [
+            const SizedBox(width: 4),
+            positionContainer(player.position),
+            const SizedBox(width: 4),
+            moralContainer(player,size: 20),
+            const SizedBox(width: 4),
+            SizedBox(width:100,child: Text(player.name,style: EstiloTextoBranco.text12)),
+            const SizedBox(width: 4),
+            Container(
+                height:18,width:25,color:colorAgeBackground(grade),
+                child: Center(child: Text(grade.toStringAsFixed(1),style: EstiloTextoPreto.text12))),
+        ],
+      ),
     );
   }
   Widget classification(){

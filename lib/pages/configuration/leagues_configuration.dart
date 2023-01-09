@@ -62,6 +62,7 @@ class _LeaguesConfigurationState extends State<LeaguesConfiguration> with Ticker
                       height: 30,
                       child: TabBar(
                         controller: controller.tabController,
+                        indicatorColor: AppColors().primary,
                         tabs: const [
                           Tab(text: 'nºtimes/nº rebaixados'),
                           Tab(text: 'Internacional'),

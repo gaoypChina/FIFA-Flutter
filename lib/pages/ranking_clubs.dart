@@ -5,6 +5,7 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/functions/func_number_clubs_total.dart';
 import 'package:fifa/page_controller/ranking_clubs_control.dart';
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/back_button.dart';
@@ -71,10 +72,16 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
                 child: Column(
                   children: [
 
-                    backButtonText(context, 'Ranking'),
-                    SizedBox(
+                    Container(
+                        color: AppColors().primary.withOpacity(0.5),
+                        child: backButtonText(context, 'Ranking'),
+                    ),
+
+                    Container(
                       height: 30,
+                      color: AppColors().primary.withOpacity(0.5),
                       child: TabBar(
+                        indicatorColor: AppColors().primary,
                         controller: _tabController,
                         tabs: [
                           Tab(text: Translation(context).text.rankingGlobalClubs),

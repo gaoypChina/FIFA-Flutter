@@ -68,57 +68,71 @@ class _MyTeamState extends State<MyTeam> {
 
                 Column(
                   children: [
-                    Row(
-                      children: [
-                        backButtonText(context, myClub.name),
-                        const Spacer(),
-                        Padding(
-                          padding: const EdgeInsets.only(top:20.0),
-                          child: IconButton(onPressed: (){
-                            Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfileNotPlayable(clubName: myClub.name)));
-                          }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        //Escudo da Equipe
-                        Images().getMyEscudo(size: 80),
 
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                    //APPBAR
+                    Container(
+                      color: myClub.colors.primaryColor.withOpacity(0.3),
+                      child: Row(
+                        children: [
+                          backButtonText(context, myClub.name),
+                          const Spacer(),
+                          Padding(
+                            padding: const EdgeInsets.only(top:20.0),
+                            child: IconButton(onPressed: (){
+                              Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfileNotPlayable(clubName: myClub.name)));
+                            }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    //HEADER
+                    Container(
+                      color: myClub.colors.primaryColor.withOpacity(0.3),
+                      child: Row(
+                        children: [
+                          //Escudo da Equipe
+                          Images().getMyEscudo(size: 80),
+
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                starsWidgetFromOverall(myClub.getOverall()),
+                                Text('${Translation(context).text.overall}: '+myClub.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.text14),
+                                Text('${Translation(context).text.avgAge}: '+averageAge.toStringAsFixed(2), style: EstiloTextoBranco.text14),
+                                Text('${Translation(context).text.player}: '+myClub.nJogadores.toString(), style: EstiloTextoBranco.text14),
+                              ],
+                            ),
+                          ),
+
+                          Column(
                             children: [
-                              starsWidgetFromOverall(myClub.getOverall()),
-                              Text('${Translation(context).text.overall}: '+myClub.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.text14),
-                              Text('${Translation(context).text.avgAge}: '+averageAge.toStringAsFixed(2), style: EstiloTextoBranco.text14),
-                              Text('${Translation(context).text.player}: '+myClub.nJogadores.toString(), style: EstiloTextoBranco.text14),
+                              //MUDAR ESQUEMA TATICO
+                              customButtonContinue(
+                                  title: my.esquemaTatico,
+                                  function: (){
+                                    EsquemaTatico().changeMyEsquema();
+                                    setState(() {});
+                                  }
+                              ),
                             ],
                           ),
-                        ),
-
-                        Column(
-                          children: [
-                            //MUDAR ESQUEMA TATICO
-                            customButtonContinue(
-                                title: my.esquemaTatico,
-                                function: (){
-                                  EsquemaTatico().changeMyEsquema();
-                                  setState(() {});
-                                }
-                            ),
-                          ],
-                        ),
 
 
 
-                      ],
+                        ],
+                      ),
                     ),
 
-                    SizedBox(
+                    Container(
                       height: 30,
+                      color: myClub.colors.primaryColor.withOpacity(0.3),
                       child: TabBar(
+                        unselectedLabelColor: Colors.white54,
+                        labelColor: myClub.colors.secondColor,
+                        indicatorColor: myClub.colors.secondColor,
                         tabs: [
                           Tab(text: Translation(context).text.cast),
                           Tab(text: Translation(context).text.allInfos),

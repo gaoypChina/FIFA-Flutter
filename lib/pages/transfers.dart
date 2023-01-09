@@ -154,7 +154,7 @@ class _TransfersState extends State<Transfers> {
                               child: Image.asset('assets/icons/button_left.png',width: 50),
                             ),
 
-                            SizedBox(width: 20),
+                            const SizedBox(width: 20),
                             //BOTAO ESQUERDA
                             GestureDetector(
                               onTap: () {
@@ -174,7 +174,7 @@ class _TransfersState extends State<Transfers> {
                         Row(
                           children: [
                             buttonSelection(false),
-                            SizedBox(width: 4),
+                            const SizedBox(width: 4),
                             buttonSelection(true),
                           ],
                         ),

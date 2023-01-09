@@ -1,4 +1,31 @@
 import 'package:flutter/material.dart';
+//fontFamily: 'Roboto',
+//color: Colors.white,
+//fontSize: 22,
+//height: 0.5,
+//letterSpacing: 0.5,
+//fontWeight: FontWeight.w600
+
+abstract class EstiloRisque {
+  static const TextStyle text22 = TextStyle(
+    fontFamily: 'Risque',
+    color: Colors.black,
+    fontSize: 22,
+  );
+}
+
+abstract class EstiloRowdies {
+  static const TextStyle textWhite50 = TextStyle(
+    fontFamily: 'Rowdies',
+    color: Colors.white,
+    fontSize: 50,
+  );
+  static const TextStyle textGreen50 = TextStyle(
+    fontFamily: 'Rowdies',
+    color: Colors.teal,
+    fontSize: 50,
+  );
+}
 
 abstract class EstiloTextoBranco {
   static const TextStyle text40 = TextStyle(
@@ -131,6 +158,18 @@ abstract class EstiloTextoPreto {
     color: Colors.black,
     fontFamily: 'Roboto',
     fontSize: 12,
+  );
+  static const TextStyle negrito16 = TextStyle(
+    color: Colors.black,
+    fontFamily: 'Roboto',
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+  );
+  static const TextStyle negrito20 = TextStyle(
+    color: Colors.black,
+    fontFamily: 'Roboto',
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
   );
   static const TextStyle underline14 = TextStyle(
     color: Colors.black,
