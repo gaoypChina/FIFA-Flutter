@@ -11,13 +11,13 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/page_controller/calendar_control.dart';
 import 'package:fifa/pages/calendar.dart';
 import 'package:fifa/pages/coach/coach_menu.dart';
+import 'package:fifa/pages/configuration/customize_club.dart';
 import 'package:fifa/pages/historic/historic_menu.dart';
 import 'package:fifa/pages/menu/b_home.dart';
 import 'package:fifa/pages/ranking_clubs.dart';
 import 'package:fifa/pages/save/choose_save.dart';
 import 'package:fifa/pages/simulacao/end_year.dart';
 import 'package:fifa/pages/simulacao/not_play.dart';
-import 'package:fifa/pages/table/statistics_league.dart';
 import 'package:fifa/pages/table/table_international.dart';
 import 'package:fifa/pages/table/table_nacional.dart';
 import 'package:fifa/pages/transfers.dart';
@@ -101,11 +101,12 @@ class _MenuState extends State<Menu> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(width:180,child: Text(myClass.clubName,textAlign: TextAlign.center,style: EstiloTextoBranco.negrito22)),
-                            Text('${Translation(context).text.year}: '+ ano.toString(),style: EstiloTextoBranco.text14),
-                            Text('${Translation(context).text.week}: '+ semana.toString(),style: EstiloTextoBranco.text14),
+                            Text('${Translation(context).text.year}: '+ ano.toString() + ' ${Translation(context).text.week}: '+ semana.toString(),style: EstiloTextoBranco.negrito16),
+                            const SizedBox(height: 8),
                             Text('${Translation(context).text.money}: \$'+ myClass.money.toStringAsFixed(2)+'mi',style: EstiloTextoBranco.text14),
                             Text('${Translation(context).text.clubOverall}: ' + Club(index: myClass.clubID).getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text14),
                             Text('${Translation(context).text.clubValue}: \$' + myClass.getClubValue().toStringAsFixed(2)+'mi',style: EstiloTextoBranco.text14),
+                            Text('${Translation(context).text.difficulty}: '+DificuldadeClass().getNameTranslated(context),style: EstiloTextoBranco.text14),
                           ],
                         ),
 
@@ -142,7 +143,7 @@ class _MenuState extends State<Menu> {
                                 //**Só funciona se ja tiver simulado todos os outros jogos
                                 //TODO: SÓ CONTA RESULTADO DAS LIGAS NACIONAIS
                                 //Tem uma dependencia pelo ResultGameNacional
-                                int nRodadasMyLeague =  League(index: My().campeonatoID).nClubs-1;
+                                int nRodadasMyLeague =  League(index: myClass.campeonatoID).nClubs-1;
                                 ResultGameNacional show = ResultGameNacional(
                                     rodadaLocal: rodada >= nRodadasMyLeague  ? nRodadasMyLeague-1 : rodada-1,
                                     club: Club(index: myClass.clubID)
@@ -174,7 +175,7 @@ class _MenuState extends State<Menu> {
                                 Expanded(
                                   child: menuButton(Translation(context).text.international,(){
                                     //Mostra a competição internacional que o time está participando 1º
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableInternational(leagueInternational: My().getMyInternationalLeague())));
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableInternational(leagueInternational: myClass.getMyInternationalLeague())));
                                   }),
                                 ),
                                 Expanded(
@@ -300,17 +301,6 @@ class _MenuState extends State<Menu> {
                                 : const SizedBox(height: 60,width: 60),
                           ),
 
-                          //DIFICULDADE
-                          Container(
-                            alignment: Alignment.bottomCenter,
-                            padding: const EdgeInsets.only(bottom:4),
-                            child: GestureDetector(
-                                onTap:(){
-                                },
-                                child: Text('${Translation(context).text.difficulty}: '+DificuldadeClass().getNameTranslated(context),style: EstiloTextoBranco.text12),
-                            ),
-                          ),
-
                             //SAVE
                             Container(
                               alignment: Alignment.bottomRight,
@@ -328,7 +318,7 @@ class _MenuState extends State<Menu> {
                             child: GestureDetector(
                                 onTap:(){
                                   customToast('TESTE DE FUNÇÃO');
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => StatisticsLeague(league: League(index: 1),)));
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CustomizeClub()));
                                 },
                                 child: const Icon(Icons.terminal_sharp,color:Colors.white,size: 50)
                             ),
@@ -385,7 +375,7 @@ Widget last5Matchs(){
 }
   Widget resultBox(int i){
       Color color = Colors.transparent;
-      int nRodadasMyLeague =  League(index: My().campeonatoID).nClubs-1;
+      int nRodadasMyLeague =  League(index: myClass.campeonatoID).nClubs-1;
       ResultGameNacional show = ResultGameNacional(
           rodadaLocal: rodada >= nRodadasMyLeague  ? nRodadasMyLeague-i : rodada-1-i,
           club: Club(index: myClass.clubID)
@@ -398,7 +388,10 @@ Widget last5Matchs(){
           height:20,
           width: 20,
           margin: const EdgeInsets.all(2),
-          color: color,
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+          ),
           child: Center(child: Images().getEscudoWidget(show.clubName2,15,15)),
         );
       }else{

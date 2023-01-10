@@ -6,7 +6,7 @@ void popupEdit({
   required BuildContext context,
   required String title,
   required dynamic variable,
-  required bool intOrString,
+  required bool isStringType,
   required int maxNcharacters,
   required Function(dynamic variable)? functionOK}) {
 
@@ -17,7 +17,7 @@ void popupEdit({
       return AlertDialog(
         title: Text(title),
         content: TextFormField(
-          keyboardType: intOrString ? TextInputType.name : TextInputType.number,
+          keyboardType: isStringType ? TextInputType.name : TextInputType.number,
           minLines: 1,
           maxLines: 2,
           inputFormatters: [

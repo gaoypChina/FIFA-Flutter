@@ -6,6 +6,8 @@ import 'package:fifa/classes/data_graphics.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/values/images.dart';
+import 'package:fifa/values/league_names.dart';
 import 'package:fifa/values/league_trophy_image.dart';
 import 'package:fifa/widgets/best_player_box/best_player_box.dart';
 import 'package:flutter/material.dart';
@@ -61,6 +63,12 @@ class _ClubGraphicsState extends State<ClubGraphics> {
 
                   totalTrophyWidget(widget.club, dataGraphics),
 
+                  Row(
+                    children: [
+                      Images().getStadiumWidget(widget.club.name,130,240),
+                      Images().getUniformWidget(widget.club.name,130,130),
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -174,6 +182,20 @@ class _ClubGraphicsState extends State<ClubGraphics> {
             ],
           ),
 
+          //1 divisao
+          Column(
+            children: [
+              const Text('1ª Divisão',
+                  style: EstiloTextoBranco.text14),
+              Text(Translation(context).text.years,
+                  style: EstiloTextoBranco.text14),
+              const SizedBox(height: 6),
+              Text(dataGraphics.n1ndivision.toString(),
+                  style: EstiloTextoBranco.text20),
+            ],
+          ),
+
+          //2 divisao
           Column(
             children: [
               Text(Translation(context).text.division2,
@@ -198,9 +220,26 @@ class _ClubGraphicsState extends State<ClubGraphics> {
       margin: const EdgeInsets.all(4),
       padding: const EdgeInsets.all(4),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
 
-          //TITULOS
+          //POSIÇÃO ATUAL
+          Column(
+            children: [
+              Text(Translation(context).text.position,style: EstiloTextoBranco.text16),
+              Stack(
+                children: [
+                  Opacity(opacity:0.3,child: Image.asset(FIFAImages().campeonatoLogo(club.leagueName),height: 50,width: 50)),
+                  Container(
+                      width:50,height:50,
+                      padding: const EdgeInsets.only(top: 12),
+                      child: Text(dataGraphics.currentPosition.toString() + 'º',textAlign:TextAlign.center,style: EstiloTextoBranco.negrito22)),
+                ],
+              ),
+            ],
+          ),
+
+          //TITULOS NACIONAIS
           Column(
             children: [
               Text(Translation(context).text.titles,
@@ -212,15 +251,32 @@ class _ClubGraphicsState extends State<ClubGraphics> {
             ],
           ),
 
+          //TITULOS INTERNACIONAIS
           Column(
             children: [
-              Text(Translation(context).text.position,
+              Text(Translation(context).text.titles,
                   style: EstiloTextoBranco.text16),
-              Text(widget.club.leagueName, style: EstiloTextoBranco.text16),
-              Text(dataGraphics.currentPosition.toString() + 'º',
+              Image.asset('assets/trophy/${getTrophyImage(club.internationalLeagueName)}.png',
+                  height: 50, width: 50),
+              Text(dataGraphics.nTitulosInternational.toString(),
                   style: EstiloTextoBranco.text20),
             ],
           ),
+
+          //TITULOS MUNDIAIS
+          Column(
+            children: [
+              Text(Translation(context).text.titles,
+                  style: EstiloTextoBranco.text16),
+              Image.asset('assets/trophy/${getTrophyImage(LeagueOfficialNames().mundial)}.png',height: 50, width: 50),
+              Text(dataGraphics.nTitulosMundial.toString(),
+                  style: EstiloTextoBranco.text20),
+            ],
+          ),
+
+
+
+
         ],
       ),
     );

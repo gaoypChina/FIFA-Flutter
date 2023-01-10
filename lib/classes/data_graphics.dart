@@ -21,6 +21,7 @@ class DataGraphics{
 
   int nTitulos = 0;
   int n2ndivision = 0;
+  int n1ndivision = 0;
   int g4Years = 0;
   int g10Years = 0;
   int g20Years = 0;
@@ -223,6 +224,7 @@ class DataGraphics{
     }
     if(position <= 20){
       g20Years ++;
+      n1ndivision++;
     }
   }
 

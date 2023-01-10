@@ -14,6 +14,7 @@ import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/back_button.dart';
+import 'package:fifa/widgets/button/button_square_selection.dart';
 import 'package:flutter/material.dart';
 
 import '../classes/my.dart';
@@ -136,6 +137,25 @@ class _TransfersState extends State<Transfers> {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
+
+                        Row(
+                          children: [
+                            buttonSquareSelection(
+                                conditionWhenTrue: showMatchsGoalsAssists == false,
+                                height: 20, width: 40,
+                                function: (){showMatchsGoalsAssists = false;setState((){});}
+                            ),
+                            const SizedBox(width: 4),
+                            buttonSquareSelection(
+                                conditionWhenTrue: showMatchsGoalsAssists == true,
+                                height: 20, width: 40,
+                                function: (){showMatchsGoalsAssists = true;setState((){});}
+                            ),
+                          ],
+                        ),
+
+                        const SizedBox(height: 12),
+
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
@@ -170,14 +190,6 @@ class _TransfersState extends State<Transfers> {
                           ],
                         ),
 
-
-                        Row(
-                          children: [
-                            buttonSelection(false),
-                            const SizedBox(width: 4),
-                            buttonSelection(true),
-                          ],
-                        ),
 
                       ],
                     ),
@@ -236,21 +248,6 @@ class _TransfersState extends State<Transfers> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-  Widget buttonSelection(bool state){
-    return GestureDetector(
-      onTap: (){
-        showMatchsGoalsAssists = state;
-        setState(() {});
-      },
-      child: Container(
-        height: 20,width: 40,
-        decoration: BoxDecoration(
-          color: showMatchsGoalsAssists == state ? Colors.lightGreenAccent : AppColors().greyTransparent,
-          border: Border.all(color: showMatchsGoalsAssists == state ? Colors.black : Colors.lightGreenAccent, width:1),
-        ),
-      ),
-    );
-  }
   Widget filterByPositionWidget(){
     return SizedBox(
       height: 200,

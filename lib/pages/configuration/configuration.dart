@@ -101,7 +101,7 @@ class _ConfigurationState extends State<Configuration> {
             context: context,
             title: Translation(context).text.coachName,
             variable: config.coachName,
-            intOrString: true,
+            isStringType: true,
             maxNcharacters: 30,
             functionOK: (value){
               config.coachName = value;

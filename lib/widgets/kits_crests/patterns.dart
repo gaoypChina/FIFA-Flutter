@@ -283,6 +283,10 @@ class ClubPattern{
       );
     }
     else if(clubPattern == sp){
+      if(clubColors.thirdColor == const Color(0x00000000)){
+        //Se não tiver cor terciária
+        clubColors.thirdColor = clubColors.secondColor;
+      }
       estampa = LinearGradient(
         colors: [clubColors.primaryColor,clubColors.primaryColor,
           clubColors.secondColor,clubColors.secondColor,

@@ -9,6 +9,7 @@ import 'package:fifa/theme/background/background_position.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/widgets/button/button_square_selection.dart';
 import 'package:flutter/material.dart';
 
 class AllInfosClub extends StatefulWidget {
@@ -58,25 +59,29 @@ class _AllInfosClubState extends State<AllInfosClub> {
                   const SizedBox(height: 10),
 
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      GestureDetector(
-                        onTap:(){
-                          selection--;
-                          if(selection<0)selection=3;
-                          setState(() {});
-                        },
-                          child: Image.asset('assets/icons/button_left.png',height: buttonSize,width: buttonSize),
-                      ),
-                      const SizedBox(width: 20),
-                      GestureDetector(
-                          onTap:(){
-                            selection++;
-                            if(selection>=4)selection=0;
+                      buttonSquareSelection(
+                          conditionWhenTrue: selection==0,
+                          height: 25, width: 50,
+                          function: (){
+                            selection = 0;
                             setState(() {});
-                          },
-                          child: Image.asset('assets/icons/button_right.png',height: buttonSize,width: buttonSize),
-                      ),
+                          }),
+                      buttonSquareSelection(
+                          conditionWhenTrue: selection==1,
+                          height: 25, width: 50,
+                          function: (){
+                            selection = 1;
+                            setState(() {});
+                          }),
+                      buttonSquareSelection(
+                          conditionWhenTrue: selection==2,
+                          height: 25, width: 50,
+                          function: (){
+                            selection = 2;
+                            setState(() {});
+                          }),
                     ],
                   ),
 

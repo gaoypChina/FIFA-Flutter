@@ -10,6 +10,7 @@ import 'package:fifa/theme/background/background_position.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/field_size.dart';
+import 'package:fifa/widgets/number_player_position.dart';
 import 'package:flutter/material.dart';
 
 import '../../theme/textstyle.dart';
@@ -38,68 +39,90 @@ class _StaticFieldState extends State<StaticField> {
       body: Stack(
         children: [
           Images().getWallpaper(),
-          Column(
-            children: [
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
 
-              //Widget do campo
-              fieldGameplay442(),
+                  //Widget do campo
+                  fieldGameplay442(),
 
-              widget.hasReserves ? Container(
-                padding: const EdgeInsets.only(top: 4),
-                  width: Sized(context).width,
-                  color: AppColors().greyTransparent,
-                  child: Text('${Translation(context).text.substitutes}:', style: EstiloTextoBranco.text22)
-              ) : Container(),
+                  widget.hasReserves ? Container(
+                    padding: const EdgeInsets.only(top: 4),
+                      width: Sized(context).width,
+                      color: AppColors().greyTransparent,
+                      child: Text('${Translation(context).text.substitutes}:', style: EstiloTextoBranco.text22)
+                  ) : Container(),
 
-              widget.hasReserves ? Container(
-                height: 90,
-                color: AppColors().greyTransparent,
-                child: ListView.builder(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    itemCount:  clubClass.nJogadores>11 ? clubClass.nJogadores> 18 ? 7 : clubClass.nJogadores -11 : 0,
-                    itemBuilder: (BuildContext context, int index) {
-                      index = index+11;
-                      return Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 2.0),
-                        child: playerWidgetOVR(jogadoresOrganizados[index]),
-                      );
-                    }
-                ),
-              ) : Container(),
+                  widget.hasReserves ? Container(
+                    height: 90,
+                    color: AppColors().greyTransparent,
+                    child: ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemCount:  clubClass.nJogadores>11 ? clubClass.nJogadores> 18 ? 7 : clubClass.nJogadores -11 : 0,
+                        itemBuilder: (BuildContext context, int index) {
+                          index = index+11;
+                          return Container(
+                            margin: const EdgeInsets.symmetric(horizontal: 2.0),
+                            child: playerWidgetOVR(jogadoresOrganizados[index]),
+                          );
+                        }
+                    ),
+                  ) : Container(),
 
-              widget.hasReserves ? Container(
-                height: 90,
-                color: AppColors().greyTransparent,
-                child: ListView.builder(
-                    shrinkWrap: true,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: clubClass.nJogadores>18 ? clubClass.nJogadores-18 : 0,
-                    itemBuilder: (BuildContext context, int index) {
-                      index = index+18;
-                      return Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 2.0),
-                          child: playerWidgetOVR(jogadoresOrganizados[index]));
-                    }
-                ),
-              ) : Container(),
+                  widget.hasReserves ? Container(
+                    height: 90,
+                    color: AppColors().greyTransparent,
+                    child: ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: clubClass.nJogadores>18 ? clubClass.nJogadores-18 : 0,
+                        itemBuilder: (BuildContext context, int index) {
+                          index = index+18;
+                          return Container(
+                              margin: const EdgeInsets.symmetric(horizontal: 2.0),
+                              child: playerWidgetOVR(jogadoresOrganizados[index]));
+                        }
+                    ),
+                  ) : Container(),
 
-              //FILTRAR POR TÓPICOS
-              widget.hasReserves ? Padding(
-                padding: const EdgeInsets.only(top:4.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    button(title: 'OVR', function: (){setState(() {});show = 'OVR';}),
-                    button(title: Translation(context).text.age, function: (){setState(() {});show = 'Idade';}),
-                    button(title: Translation(context).text.matchs, function: (){setState(() {});show = 'Jogos';}),
-                    button(title: Translation(context).text.goals, function: (){setState(() {});show = 'Gols';}),
-                    button(title: Translation(context).text.assists, function: (){setState(() {});show = 'Assists';}),
-                  ],
-                ),
-              ) : Container(),
+                  //FILTRAR POR TÓPICOS
+                  widget.hasReserves ? Padding(
+                    padding: const EdgeInsets.only(top:4.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        button(title: 'OVR', function: (){setState(() {});show = 'OVR';}),
+                        button(title: Translation(context).text.age, function: (){setState(() {});show = 'Idade';}),
+                        button(title: Translation(context).text.matchs, function: (){setState(() {});show = 'Jogos';}),
+                        button(title: Translation(context).text.goals, function: (){setState(() {});show = 'Gols';}),
+                        button(title: Translation(context).text.assists, function: (){setState(() {});show = 'Assists';}),
+                      ],
+                    ),
+                  ) : Container(),
 
-            ],
+                  //ANALISE DO ELENCO
+                  Container(
+                    height: 200,
+                    margin: const EdgeInsets.all(4),
+                    padding: const EdgeInsets.all(4),
+                    width: Sized(context).width,
+                    color: AppColors().greyTransparent,
+                    child: Column(
+                      children: [
+                        const Text('Análise do Elenco',style: EstiloTextoBranco.text16),
+
+                        //Jogadores por posição
+                        playersPerPosition(clubClass),
+
+                      ],
+                    ),
+                  )
+
+                ],
+              ),
+            ),
           ),
         ],
       ),

@@ -21,6 +21,7 @@ import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:fifa/widgets/button/button_design.dart';
+import 'package:fifa/widgets/number_player_position.dart';
 import 'package:flutter/material.dart';
 
 import '../../classes/jogador.dart';
@@ -105,12 +106,6 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                                   }
                               ),
 
-                              // buttonDesign(
-                              //     title: '4-4-2',
-                              //     function: (){
-                              //     }
-                              //     ),
-
                             ],
                           ),
 
@@ -121,18 +116,7 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                   ),
 
                   //Jogadores por posição
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 6),
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          for(int i=0;i<club.nPlayersPerPositions().keys.length;i++)
-                            positionsCount(club.nPlayersPerPositions().keys.elementAt(i),club.nPlayersPerPositions().values.elementAt(i)),
-                        ],
-                      ),
-                    ),
-                  ),
+                  playersPerPosition(club),
 
                   const SizedBox(height: 4),
                   //SHOW TABLE PLAYERS TITLE
@@ -187,20 +171,6 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-Widget positionsCount(String position, int number){
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 2.0),
-      child: Column(
-        children: [
-          Container(
-              color: colorPositionBackground(position),
-              padding: const EdgeInsets.symmetric(horizontal: 2.0),
-              child: Text(position,style: EstiloTextoBranco.text16)),
-          Text(number.toString(),style: EstiloTextoBranco.text16),
-        ],
-      ),
-    );
-}
 
 TableRow playersRow(int i){
 
@@ -324,7 +294,7 @@ popupText(String title,String variableString, String whichData){
       context: context,
       title: title,
       variable: variableString,
-      intOrString: true,
+      isStringType: true,
       maxNcharacters: 22,
       functionOK: (value){
          if(whichData=='Position' && positions[EsquemaTatico().e442].containsKey(value)) {
@@ -345,7 +315,7 @@ popupNumber(dynamic number, String whichData){
         context: context,
         title: Translation(context).text.newValueTo+' '+whichData,
         variable: number,
-        intOrString: true,
+        isStringType: true,
         maxNcharacters: 22,
         functionOK: (valueStr){
           int value = int.parse(valueStr);

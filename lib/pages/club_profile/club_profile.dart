@@ -1,13 +1,13 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/data_graphics.dart';
+import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/pages/club_profile/all_infos_club.dart';
 import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
 import 'package:fifa/pages/club_profile/club_calendar.dart';
 import 'package:fifa/pages/club_profile/compare.dart';
 import 'package:fifa/pages/club_profile/field_static.dart';
 import 'package:fifa/pages/club_profile/graphics.dart';
-import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
@@ -104,15 +104,24 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                             ),
                           ),
 
-                          Stack(
+                          Column(
                             children: [
-                              Opacity(opacity:0.3,child: Image.asset(FIFAImages().campeonatoLogo(clubClass.leagueName),height: 50,width: 50)),
-                              Container(
-                                  width:50,height:50,
-                                  padding: const EdgeInsets.only(top: 12),
-                                  child: Text(dataGraphics.currentPosition.toString() + 'º',textAlign:TextAlign.center,style: EstiloTextoBranco.negrito22)),
+
+                              funcFlagsList(clubClass.nationality, 20, 30),
+
+                              //CLASSIFICAÇÃO ATUAL
+                              Stack(
+                                children: [
+                                  Opacity(opacity:0.3,child: Image.asset(FIFAImages().campeonatoLogo(clubClass.leagueName),height: 50,width: 50)),
+                                  Container(
+                                      width:50,height:50,
+                                      padding: const EdgeInsets.only(top: 12),
+                                      child: Text(dataGraphics.currentPosition.toString() + 'º',textAlign:TextAlign.center,style: EstiloTextoBranco.negrito22)),
+                                ],
+                              ),
                             ],
                           ),
+
                           Image.asset(Images().getStadium(clubClass.name),height: 80,width: 100),
                           const SizedBox(width: 8),
 

@@ -9,7 +9,7 @@ class UniformCustom{
   ClubPattern clubPattern = ClubPattern();
 
   late String clubName;
-  late LinearGradient pattern;
+  late LinearGradient linearGradient;
   late Color sleeveColor;
   late ClubColors clubColors;
   late Color sportBrandColor;
@@ -30,40 +30,53 @@ class UniformCustom{
   double spacingRightSleeve = 60;
 
   UniformCustom(this.clubName,[this.scale = 1]){
-    pattern = clubPattern.getGradient(clubDetails.getPattern(clubName), clubDetails.getColors(clubName));
+    linearGradient = clubPattern.getGradient(clubDetails.getPattern(clubName), clubDetails.getColors(clubName));
     clubColors = clubDetails.getColors(clubName);
-    if(clubDetails.getPattern(clubName) == clubPattern.sleeves){
-      sleeveColor = clubColors.secondColor;
-    }else{
-      sleeveColor = clubColors.primaryColor;
-    }
 
-    if(clubDetails.getPattern(clubName) == clubPattern.stripesTricolor ||
-        clubDetails.getPattern(clubName) == clubPattern.stripes2 ||
-        clubDetails.getPattern(clubName) == clubPattern.stripes3 ||
-        clubDetails.getPattern(clubName) == clubPattern.stripes4 ||
-        clubDetails.getPattern(clubName) == clubPattern.stripesThin ||
-        clubDetails.getPattern(clubName) == clubPattern.divided ||
-        clubDetails.getPattern(clubName) == clubPattern.diagonal ||
-        clubDetails.getPattern(clubName) == clubPattern.diagonalInv ||
-        clubDetails.getPattern(clubName) == clubPattern.horStripes3 ||
-        clubDetails.getPattern(clubName) == clubPattern.horStripes4 ||
-        clubDetails.getPattern(clubName) == clubPattern.oneVertStripe
-    ){
-      paintMiddleBox = true;
-    }
+    setDefinitions(clubDetails.getPattern(clubName));
 
-    if(clubDetails.getPattern(clubName) == clubPattern.oneHorStripe){
-        heightMiddleBoxScale = 0.7;
-    }
-    if(clubDetails.getPattern(clubName) == clubPattern.stripes2 ||
-    clubDetails.getPattern(clubName) == clubPattern.stripes3 ||
-        clubDetails.getPattern(clubName) == clubPattern.stripesTricolor){
-      sportBrandColor = clubColors.primaryColor;
-    }else{
-      sportBrandColor = clubColors.secondColor;
-    }
   }
+
+bool compareLinearGradient(String patternStr){
+    if(patternStr == clubDetails.getPattern(clubName)){
+      return true;
+    }
+    return false;
+}
+
+setDefinitions(String patternStr){
+  linearGradient = clubPattern.getGradient(patternStr, clubColors);
+  if(patternStr == clubPattern.sleeves){
+    sleeveColor = clubColors.secondColor;
+  }else{
+    sleeveColor = clubColors.primaryColor;
+  }
+  if(patternStr == clubPattern.stripesTricolor ||
+      patternStr == clubPattern.stripes2 ||
+      patternStr == clubPattern.stripes3 ||
+      patternStr == clubPattern.stripes4 ||
+      patternStr == clubPattern.stripesThin ||
+      patternStr == clubPattern.divided ||
+      patternStr == clubPattern.diagonal ||
+      patternStr == clubPattern.diagonalInv ||
+      patternStr == clubPattern.horStripes3 ||
+      patternStr == clubPattern.horStripes4 ||
+      patternStr == clubPattern.oneVertStripe
+  ){
+    paintMiddleBox = true;
+  }
+
+  if(patternStr == clubPattern.oneHorStripe){
+    heightMiddleBoxScale = 0.7;
+  }
+  if(patternStr == clubPattern.stripes2 ||
+      patternStr == clubPattern.stripes3 ||
+      patternStr == clubPattern.stripesTricolor){
+    sportBrandColor = clubColors.primaryColor;
+  }else{
+    sportBrandColor = clubColors.secondColor;
+  }
+}
 
 
 Widget kit(){
@@ -114,7 +127,7 @@ Widget kit(){
                   decoration: BoxDecoration(
                     color: clubColors.primaryColor,
                     borderRadius: BorderRadius.all(Radius.circular(4*scale)),
-                    gradient: pattern,
+                    gradient: linearGradient,
                   ),
                 ),
               ),

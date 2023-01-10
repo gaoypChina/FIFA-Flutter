@@ -259,7 +259,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
               Text(Translation(context).text.years,
                   style: EstiloTextoBranco.text14),
               const SizedBox(height: 6),
-              Text(dataGraphics.g20Years.toString(),
+              Text(dataGraphics.n1ndivision.toString(),
                   style: EstiloTextoBranco.text20),
             ],
           ),
