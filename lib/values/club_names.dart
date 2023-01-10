@@ -2368,22 +2368,24 @@ class ClubName{
   String colorado = "Colorado Rapids";
   String switchbacks = "Colorado Springs Switchbacks";
   String columbuscrew = "Columbus Crew";
+  String denver = "Denver Dynamos";
   String detroit  = "Detroit City FC";
+  String detroitexpress  = "Detroit Express";
   String dcunited  = "DC United";
+  String edmonton = "Edmonton Drillers";
   String elpaso  = "El Paso Lokomotiv";
   String fcdallas = "FC Dallas";
   String fortlauderdale = "Fort Lauderdale Strikers";
   String houston = "Houston Dynamo";
   String intermiami = "Inter Miami";
   String indyeleven = "Indy Eleven";
+  String jacksonville = "Jacksonville Tea Men";
   String lasvegas = "Las Vegas Lights";
   String losangelesfc = "Los Angeles FC";
-  String laaztecs = "Los Angeles Aztecs"; //EXTINTO
   String lagalaxy = "LA Galaxy";
   String louisville = "Louisville City";
   String newmexico = "New Mexico United";
   String miamifc = "Miami FC";
-  String miamiFusion = "Miami Fusion"; //EXTINTO
   String memphis = "Memphis 901";
   String minnesota = "Minnesota United";
   String montreal = "Montreal Impact";
@@ -2400,19 +2402,42 @@ class ClubName{
   String portland = "Portland Timbers";
   String realSaltLake = "Real Salt Lake";
   String riogrande = "Rio Grande Valley";
+  String rochester = "Rochester Lancers";
   String sacramento = "Sacramento Republic";
   String sanantonio = "San Antonio FC";
   String sandiego = "San Diego Loyals";
-  String sandiegoSockers = "San Diego Sockers";
   String sanfrancisco = "San Francisco Deltas";
   String sanJoseEarthquakes = "San Jose Earthquakes";
   String seattle = "Seattle Sounders";
   String kansas = "Sporting Kansas City";
   String tampabay = "Tampa Bay Rowdies";
-  String tampaBayMutiny = "Tampa Bay Mutiny"; //EXTINTO
   String toronto = "Toronto FC";
+  String tmc = "Toronto Metro-Croatia";
   String tulsa = "FC Tulsa";
   String vancouver = "Vancouver Whitecaps";
+
+  //NASL
+  String baltimorebays = "Baltimore Bays";
+  String baltimore = "Baltimore Comets";
+  String boston = "Boston Minutemen";
+  String atlantachiefs = "Atlanta Chiefs";
+  String chicagosting = "Chicago Sting";
+  String dallastornado  = "Dallas Tornado";
+  String kansasspurs  = "Kansas City Spurs";
+  String laaztecs = "Los Angeles Aztecs"; //EXTINTO
+  String miamiFusion = "Miami Fusion"; //EXTINTO
+  String miamitoros = "Miami Toros";
+  String minnesotastrikers = "Minnesota Strikers"; //1984-88
+  String minnesotakicks = "Minnesota Kicks"; //1976-81
+  String montrealmanic = "Montreal Manic"; //1981-83
+  String montrealoly = "Montreal Olympique"; //1971-1973
+  String philaatoms = "Philadelphia Atoms"; //1973-76
+  String sandiegoSockers = "San Diego Sockers";
+  String stlouis = "St. Louis Stars";
+  String torontoblizzard = "Toronto Blizzard";//
+  String tulsaroughnecks = "Tulsa Roughnecks";
+  String tampaBayMutiny = "Tampa Bay Mutiny"; //EXTINTO
+  String darts = "Washington Darts"; //EXTINTO
   String washington = "Washington Diplomats"; //EXTINTO
 
   //CANANDA
@@ -2465,10 +2490,16 @@ class ClubName{
   String vida = "Vida";
   String unah = "UNAH";
   //NICARAGUA
+  String americamanagua = "América Managuá";
+  String bufalos = "Búfalos";
+  String depsantacecilia = "Deportivo Santa Cecilia";
   String diriangen = "Diriangén";
+  String jalapa = "Deportivo Jalapa";
   String juvmanagua = "Juventus Managua";
+  String masaya = "Deportivo Masaya";
   String managua = "Managua";
   String realEsteli = "Real Estelí";
+  String uca = "UCA";
   String walterferreti = "Walter Ferreti";
   //PANAMA
   String independienteChorrera = "Independiente de La Chorrera";
@@ -3023,33 +3054,50 @@ class ClubName{
   String tersana = "Tersana";
   String wadidegla = "Wadi Degla";
   //ARGELIA
+  String annaba = "Annaba";
+  String arbaa = "Arbaâ";
+  String batna = "Batna";
   String bejaia = "Béjaïa";
+  String belabbes = "Bel-Abbès";
+  String bordj = "Bordj Bou Arreridj";
   String blida = "Blida";
+  String chaouia = "Chaouia";
   String asoChlef = "ASO Chlef";
   String essetif = "ES Sétif";//ALGERIA
   String belouizdad = "Belouizdad";//ALGERIA
   String constantine = "CS Constantine";//ALGERIA
+  String hussein = "Hussein Dey";
+  String khroub = "Khroub";
+  String kouba = "Kouba";
   String usmAlger = "USM Alger";//ALGERIA
   String elharrach = "El Harrach";
+  String mascara = "Mascara";
   String mcalger = "MC Alger";//ALGERIA
   String elEulma = "MC El-Eulma";//ALGERIA
   String mcOran = "MC Oran";//ALGERIA
+  String asmoran = "ASM Oran";
   String kabylie = "JS Kabylie";//ALGERIA
+  String paradou = "Paradou AC";
+  String saida = "Saïda";
   String saoura = "JS Saoura";
+  String tlemcen = "Tlemcen";
   //LYBIA
-  String benghazi = "Al Ahly Benghazi";//LIBYA
-  String alakhdar = "Al Akhdar";//LIBYA
-  String alNasrLIB = "Al Nasr-LIB";//LIBYA
-  String alIttihadLIB = "Al Ittihad-LIB";//LIBYA
-  String tripoliLIB = "Al Ahly Tripoli";//LIBYA
+  String benghazi = "Al Ahly Benghazi";
+  String alakhdar = "Al Akhdar";
+  String alNasrLIB = "Al Nasr-LIB";
+  String alIttihadLIB = "Al Ittihad-LIB";
+  String almadina = "Al Madina";
+  String almahala = "Al Mahala";
+  String alolympique = "Al Olympique";
+  String tripoliLIB = "Al Ahly Tripoli";
   //MARROCOS
   String difaa = "Beni Mellal";
   String beniMellal = "Difaa El Jadida";
   String chababMohammedia = "Chabab Mohammédia";
   String chababRifHoceima = "Chabab Rif Hoceima";
   String rajacasablanca = "Raja Casablanca";
-  String wydad = "Wydad Casablanca";//MARROCOS
-  String farRabat = "FAR Rabat";//MARROCOS
+  String wydad = "Wydad Casablanca";
+  String farRabat = "FAR Rabat";
   String fusRabat = "FUS Rabat";
   String jeunesseMassira = "Jeunesse Massira";
   String hassaniaAgadir = "Hassania Agadir";
@@ -3293,7 +3341,18 @@ class ClubName{
   //SUDÃO
   String omdurman = "Al-Hilal Omdurman";
   String almerrikh = "Al-Merrikh";
+  String almourada = "Al-Mourada";
   //TANZANIA
+  String azam = "Azam";
+  String biashara = "Biashara United";
+  String kagera = "Kagera Sugar";
+  String maji = "Maji Maji";
+  String malindi = "Malindi";
+  String mbeya = "Mbeya City";
+  String mtibwa = "Mtibwa Sugar";
+  String moro = "Moro United";
+  String namungo = "Namungo";
+  String prisons = "Prisons SC";
   String simba = "Simba";
   String yanga = "Young Africans";
   //TOGO
