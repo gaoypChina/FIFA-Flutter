@@ -222,30 +222,9 @@ Map<String,dynamic> zzzzzzzzz = {
   },
   //RSSSF.ORG
 
-  leagueName.sudan : {
-    2022.0: [n.omdurman,n.almerrikh,],
-    2021.0: [n.omdurman,n.almerrikh,],
-    2020.0: [n.almerrikh,n.omdurman,],
-    2019.0: [n.almerrikh,n.omdurman,],
-    2018.0: [n.almerrikh,n.omdurman,],
-    2017.0: [n.omdurman,n.almerrikh,],
-    2016.0: [n.omdurman,n.almerrikh,],
-    2015.0: [n.almerrikh,n.omdurman,],
-    2014.0: [n.omdurman,n.almerrikh,],
-    2013.0: [n.almerrikh,n.omdurman,],
-    2012.0: [n.omdurman,n.almerrikh,],
-    2011.0: [n.almerrikh,n.omdurman,],
-    2010.0: [n.omdurman,n.almerrikh,],
-    2009.0: [n.omdurman,n.almerrikh,],
-    2008.0: [n.almerrikh,n.omdurman,],
-    2007.0: [n.omdurman,n.almerrikh,],
-    2006.0: [n.omdurman,n.almerrikh,],
-    2005.0: [n.omdurman,n.almerrikh,],
-    2004.0: [n.omdurman,n.almerrikh,],
-    2003.0: [n.omdurman,n.almerrikh,],
-    2002.0: [n.almerrikh,n.omdurman,n.almerrikh,],
-    2001.0: [n.almerrikh,n.omdurman,n.almerrikh,],
-    2000.0: [n.almerrikh,n.omdurman,],
+  leagueName.cazaquistao : {
+
+
 
   },
 

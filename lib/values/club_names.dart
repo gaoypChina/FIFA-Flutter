@@ -689,11 +689,14 @@ class ClubName{
   //IRLANDA
   String athlone = "Athlone Town";
   String bohemian = "Bohemian";
+  String corkceltic = "Cork Celtic";
   String cork = "Cork City";
+  String corkhibernians = "Cork Hibernians";
   String derry = "Derry City";
   String drogheda = "Drogheda United";
   String drumcondra = "Drumcondra";
   String dundalk = "Dundalk";
+  String finn = "Finn Harps";
   String galway = "Galway";
   String limerick = "Limerick";
   String longford = "Longford Town";
@@ -711,11 +714,14 @@ class ClubName{
   String aalesund = "Aalesund";
   String brann = "Brann";
   String bryne = "Bryne";
+  String fram = "Fram Larvik";
   String fredrikstad = "Fredrikstad";
   String glimt = "Bodø/Glimt";
+  String hamkam = "HamKam";
   String haugesund = "Haugesund";
   String kristiansud = "Kristiansud";
   String kongsvinger = "Kongsvinger";
+  String larvik = "Larvik Turn";
   String lillestrom = "Lillestrøm";
   String lyn = "LYN";
   String odd = "Odds BK";
@@ -1358,7 +1364,10 @@ class ClubName{
   String brno = "Zbrojovka Brno";
   String drnovice = "Drnovice";
   String hradec = "Hradec Králové";
+  String karlin = "Čechie Karlín";
+  String kladno = "Baník Kladno";
   String dukla = "Dukla Praha";
+  String duklaolomouc = "Dukla Olomouc";
   String mladaBoleslav = "Mladá Boleslav";
   String jablonec = "Jablonec";
   String teplice = "Teplice";
@@ -1366,6 +1375,8 @@ class ClubName{
   String sigmaOlomouc = "Sigma Olomouc";
   String slovacko = "Slovácko";
   String slovanLiberec = "Slovan Liberec";
+  String tankista = "Tankista Praga";
+  String trinityzlin = "Trinity Zlin";
   String vitkovice = "Vitkovice";
   String viktoriaPlzen = "Viktoria Plzen";
   String viktoriaZizkov = "Viktoria Žižkov";

@@ -1,4 +1,6 @@
+import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/data_graphics.dart';
 import 'package:fifa/classes/expectativa.dart';
 import 'package:fifa/classes/geral/name.dart';
 import 'package:fifa/classes/geral/size.dart';
@@ -23,6 +25,7 @@ import 'package:fifa/values/league_trophy_image.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 class CoachMenu extends StatefulWidget {
   const CoachMenu({Key? key}) : super(key: key);
@@ -140,6 +143,8 @@ class _CoachMenuState extends State<CoachMenu> {
                       ],
                     ),
 
+                    financeWidget(),
+
                   ],
                 ),
               ),
@@ -251,7 +256,6 @@ Widget pieChart(Map<String,double> dataMap){
       colorList: const [Colors.green,Colors.grey,Colors.red],
       legendOptions: const LegendOptions(
         showLegendsInRow: false,
-        legendPosition: LegendPosition.right,
         showLegends: true,
         legendTextStyle: TextStyle(
           fontWeight: FontWeight.bold,
@@ -300,8 +304,27 @@ Widget expectations(){
             ],
           ),
           ),
+
+          const SizedBox(height: 12),
+          const Text('Desempenho',style: EstiloTextoBranco.text20),
+          const SizedBox(height: 6),
+          expectationBar(),
+
+
         ],
       ),
+    );
+}
+Widget expectationBar(){
+    int actualPosition = Classification(leagueIndex: my.campeonatoID).getClubPosition(my.clubID);
+    int expectativaPosition = expectativa.expectativaNacional;
+    double value = 0.65 + 0.0786*(expectativaPosition-actualPosition);
+
+    return LinearProgressIndicator(
+      minHeight: 10,
+      value: value,
+      color: value>=0.66 ? Colors.teal : value > 0.45 ? Colors.yellow : Colors.red,
+      backgroundColor: Colors.grey,
     );
 }
 Widget sequenceWidget(String text, String value, int clubID, [int? advClubID]){
@@ -397,4 +420,101 @@ Widget yearRow(int year, BuildContext context){
     ),
   );
 }
+
+Widget financeWidget(){
+
+    List<HighestSellBuy> playersBought = HistoricMyTransfers().getTransfersYear(HistoricMyTransfers().buyKeyword, ano);
+    List<HighestSellBuy> playersSold = HistoricMyTransfers().getTransfersYear(HistoricMyTransfers().sellKeyword, ano);
+    double expense = 0;
+    Map<int,double> expenseByWeek = {};
+    for (HighestSellBuy element in playersBought) {
+      try{
+        expenseByWeek[element.weekTimestamp] = expenseByWeek[element.weekTimestamp]! + element.maxPrice;
+      }catch(e){
+        expenseByWeek[element.weekTimestamp] = element.maxPrice;
+      }
+      expense += element.maxPrice;
+    }
+
+    Map<int,double> profitByWeek = {};
+    for (HighestSellBuy element in playersSold) {
+      try{
+        profitByWeek[element.weekTimestamp] = profitByWeek[element.weekTimestamp]! + element.maxPrice;
+      }catch(e){
+        profitByWeek[element.weekTimestamp] = element.maxPrice;
+      }
+    }
+
+    double profit = my.money + expense;
+
+    return Container(
+      width: Sized(context).width,
+      color: AppColors().greyTransparent,
+      margin: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.all(4),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+
+          Text('Finanças - '+ano.toString(),style: EstiloTextoBranco.text20),
+
+          const SizedBox(height: 12),
+
+          graphFinance(expenseByWeek),
+
+          const Text('Gastos',style: EstiloTextoBranco.text16),
+          Text('\$'+expense.toStringAsFixed(2),style: EstiloTextoBranco.text16),
+          const Text('Receita',style: EstiloTextoBranco.text16),
+          Text('\$'+profit.toStringAsFixed(2),style: EstiloTextoBranco.text16),
+          const SizedBox(height: 20),
+          const Text('Saldo',style: EstiloTextoBranco.text16),
+          Text('\$'+my.money.toStringAsFixed(2),style: EstiloTextoBranco.text16),
+        ],
+      ),
+    );
+}
+Widget graphFinance(Map expensesMap){
+    List<GraphPoint> lista = [];
+  for(int week=1;week<=semana;week++){
+    if(expensesMap.containsKey(week)){
+      lista.add(GraphPoint(week, my.money-expensesMap[week]));
+    }else{
+      lista.add(GraphPoint(week, my.money));
+    }
+  }
+
+    return Container(
+        height: 150,
+        width: Sized(context).width,
+        child: SfCartesianChart(
+          //tooltipBehavior: _tooltipBehavior,
+          //https://pub.dev/documentation/syncfusion_flutter_charts/latest/charts/SfCartesianChart-class.html?utm_source=pubdev&utm_medium=listing&utm_campaign=flutter-charts-pubdev
+          // Initialize category axis
+          primaryXAxis: CategoryAxis(),
+          series: <ChartSeries>[
+            // Initialize line series
+            LineSeries<GraphPoint, String>(
+              xAxisName: Translation(context).text.years,
+              yAxisName: Translation(context).text.position,
+              name: 'nome',
+              dataSource: lista,
+              enableTooltip: true,
+              xValueMapper: (GraphPoint data, _) => data.x.toString(),
+              yValueMapper: (GraphPoint data, _) => data.y,
+              dataLabelSettings: const DataLabelSettings(
+                  isVisible: true, color: Colors.white),
+              markerSettings: const MarkerSettings(
+                  isVisible: true,
+                  height: 4,
+                  width: 4,
+                  borderWidth: 3,
+                  borderColor: Colors.white
+              ),
+            ),
+
+          ],
+        ),
+      );
+}
+
 }

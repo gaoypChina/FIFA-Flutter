@@ -8,6 +8,13 @@ import 'package:fifa/values/historic_champions/historic_champions.dart';
 import 'package:fifa/values/league_divisions.dart';
 import 'package:fifa/values/league_names.dart';
 
+class GraphPoint {
+  GraphPoint(this.x, this.y);
+
+  final int x;
+  final double y;
+}
+
 class ClassificationData {
   ClassificationData(this.year, this.position);
 

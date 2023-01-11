@@ -6,6 +6,7 @@ class HighestSellBuy{
   int clubID = 0;
   double maxPrice = 0;
   int overall = 0;
+  int weekTimestamp = 0;
 
 }
 class HistoricMyTransfers{
@@ -15,6 +16,7 @@ class HistoricMyTransfers{
   String clubNameKeyword = 'ClubName';
   String valueKeyword = 'Value';
   String overallKeyword = 'Overall';
+  String weekTimestamp = 'week';
 
   resetGlobalVariable(){
     globalHistoricMyTransfers
@@ -30,7 +32,12 @@ class HistoricMyTransfers{
     }catch(e){
       //year don't have data
     }
-    allPlayersMap[player.index] = {clubNameKeyword: clubID,valueKeyword:player.price,overallKeyword:player.overall};
+    allPlayersMap[player.index] = {
+      clubNameKeyword: clubID,
+      valueKeyword:player.price,
+      overallKeyword:player.overall,
+      weekTimestamp: semana,
+    };
     globalHistoricMyTransfers[sellORbuyStr]![ano] = allPlayersMap;
   }
 
@@ -38,7 +45,11 @@ class HistoricMyTransfers{
 
   List<HighestSellBuy> getTransfersYear(String buyOrSellKeyword, int year){
     Map players = {};
-    players = globalHistoricMyTransfers[buyOrSellKeyword]![year]!;
+    try {
+      players = globalHistoricMyTransfers[buyOrSellKeyword]![year]!;
+    }catch(e){
+      return [];
+    }
     List playersID = players.keys.toList();
     List<HighestSellBuy> highestSellBuyList = [];
     for (int playerID in playersID){
@@ -48,6 +59,7 @@ class HistoricMyTransfers{
       highestSellBuy.clubID = data[clubNameKeyword];
       highestSellBuy.maxPrice = data[valueKeyword];
       highestSellBuy.overall = data[overallKeyword];
+      highestSellBuy.weekTimestamp = semana;
       highestSellBuyList.add(highestSellBuy);
     }
     return highestSellBuyList;

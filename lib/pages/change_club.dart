@@ -34,43 +34,42 @@ class _ChangeClubState extends State<ChangeClub> {
 
               Images().getWallpaper(),
 
-              SingleChildScrollView(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
+              Column(
+                children: [
 
-                    backButtonText(context, Translation(context).text.changeClub),
+                  backButtonText(context, Translation(context).text.changeClub),
 
-                    Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            clubWidget(options.teams[0]),
-                            clubWidget(options.teams[1]),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            clubWidget(options.teams[2]),
-                            clubWidget(options.teams[3]),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            clubWidget(options.teams[4]),
-                            clubWidget(options.teams[5]),
-                          ],
-                        ),
-                        const SizedBox(height: 40),
-                      ],
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              clubWidget(options.teams[0]),
+                              clubWidget(options.teams[1]),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              clubWidget(options.teams[2]),
+                              clubWidget(options.teams[3]),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              clubWidget(options.teams[4]),
+                              clubWidget(options.teams[5]),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
-
-
-                  ],
-                ),
+                  ),
+                ],
               ),
 
             ]
@@ -93,13 +92,13 @@ Widget clubWidget(int clubID){
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0),
         child: Container(
-          height: 210,width: 170,
+          height: 220,width: 170,
           color: Colors.black12,
           padding: const EdgeInsets.symmetric(vertical: 8.0),
           child: Column(
             children: [
               Images().getEscudoWidget(clubClassification.clubName,130,130),
-              Text(clubClassification.clubName,textAlign:TextAlign.center,style: EstiloTextoBranco.text20),
+              Text(clubClassification.clubName,textAlign:TextAlign.center,style: EstiloTextoBranco.negrito22),
               Text('${Translation(context).text.position}: '+clubClassification.posicaoTabela.toString()+'º',style: EstiloTextoBranco.text14)
             ],
           ),
