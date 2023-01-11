@@ -16,6 +16,7 @@ import 'package:fifa/pages/change_club.dart';
 import 'package:fifa/pages/coach/coach_achievements.dart';
 import 'package:fifa/pages/coach/coachs_ranking.dart';
 import 'package:fifa/pages/historic/my_players_historic.dart';
+import 'package:fifa/popup/popup_ask_money.dart';
 import 'package:fifa/popup/popup_player_info.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
@@ -282,7 +283,13 @@ Widget expectations(){
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(Translation(context).text.expectation,style: EstiloTextoBranco.text20),
+          Row(
+            children: [
+              Text(Translation(context).text.expectation,style: EstiloTextoBranco.text20),
+              const Spacer(),
+              buttonMoreMoney(),
+            ],
+          ),
           const SizedBox(height: 6),
           Padding(
             padding: const EdgeInsets.all(6.0),
@@ -308,23 +315,42 @@ Widget expectations(){
           const SizedBox(height: 12),
           const Text('Desempenho',style: EstiloTextoBranco.text20),
           const SizedBox(height: 6),
+
           expectationBar(),
+
 
 
         ],
       ),
     );
 }
+
 Widget expectationBar(){
     int actualPosition = Classification(leagueIndex: my.campeonatoID).getClubPosition(my.clubID);
     int expectativaPosition = expectativa.expectativaNacional;
-    double value = 0.65 + 0.0786*(expectativaPosition-actualPosition);
+    double value = 0.65 + 0.0786*(expectativaPosition-actualPosition); //MADE-UP FORMULA
 
     return LinearProgressIndicator(
       minHeight: 10,
       value: value,
       color: value>=0.66 ? Colors.teal : value > 0.45 ? Colors.yellow : Colors.red,
       backgroundColor: Colors.grey,
+    );
+}
+Widget buttonMoreMoney(){
+    return           GestureDetector(
+        onTap: (){
+          popUpAskMoney(
+              context: context,
+              expectativa: expectativa,
+              overall: Club(index: my.clubID).getOverall(),
+              functionSetState: (){setState((){});}
+          );
+        },child: Container(
+        color: AppColors().greyTransparent,
+        padding: const EdgeInsets.all(4),
+        margin: const EdgeInsets.all(4),
+        child: const Text('Pedir + Dinheiro',style: EstiloTextoBranco.text16))
     );
 }
 Widget sequenceWidget(String text, String value, int clubID, [int? advClubID]){
@@ -483,7 +509,7 @@ Widget graphFinance(Map expensesMap){
     }
   }
 
-    return Container(
+    return SizedBox(
         height: 150,
         width: Sized(context).width,
         child: SfCartesianChart(

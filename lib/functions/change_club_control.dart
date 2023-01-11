@@ -15,7 +15,7 @@ funcChangeClub(String newClubName, int newLeagueID){
   Club newClubClass = Club(index: clubID);
   globalMyJogadores = newClubClass.escalacao; //global MyJogadores tem que ser declarado antes de usar qualquer getOverall();
   double overall = newClubClass.getOverall();
-  globalMyMoney = ((overall-68)*(overall-68)/5)*0.7*DificuldadeClass().getDificuldadeMultiplicationValue();
+  globalMyMoney = funcCalculateMoney(overall: overall);
   if(globalInitialMoney>0){
     globalMyMoney = globalInitialMoney;
   }
@@ -24,6 +24,10 @@ funcChangeClub(String newClubName, int newLeagueID){
   //Zera retrospecto de jogos
   globalHistoricCoachResults['actualSequenceVictory'] = 0;
   globalHistoricCoachResults['actualSequenceNoLosses'] = 0;
+}
+
+funcCalculateMoney({required double overall}){
+  return ((overall-68)*(overall-68)/5)*0.7*DificuldadeClass().getDificuldadeMultiplicationValue();
 }
 
 class OptionsClubs{

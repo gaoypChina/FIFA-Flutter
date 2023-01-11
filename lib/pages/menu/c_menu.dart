@@ -207,7 +207,8 @@ class _MenuState extends State<Menu> {
                               children: [
                                 Expanded(
                                   child: menuButton(Translation(context).text.coach,(){
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CoachMenu()));
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CoachMenu()))
+                                        .then((value) {setState(() {});});
                                   }
                                   ),
                                 ),
