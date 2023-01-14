@@ -1,8 +1,10 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/historic_positions_this_year.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/data_graphics.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
@@ -55,7 +57,6 @@ class _ClubGraphicsState extends State<ClubGraphics> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  bestPlayers(),
 
                   graphics(dataGraphics),
 
@@ -69,6 +70,9 @@ class _ClubGraphicsState extends State<ClubGraphics> {
                       Images().getUniformWidget(widget.club.name,130,130),
                     ],
                   ),
+
+                  positionThisYear(),
+
                 ],
               ),
             ),
@@ -96,7 +100,9 @@ class _ClubGraphicsState extends State<ClubGraphics> {
           tooltipBehavior: _tooltipBehavior,
           //https://pub.dev/documentation/syncfusion_flutter_charts/latest/charts/SfCartesianChart-class.html?utm_source=pubdev&utm_medium=listing&utm_campaign=flutter-charts-pubdev
           // Initialize category axis
-          primaryXAxis: CategoryAxis(),
+          primaryXAxis: CategoryAxis(
+            labelStyle: EstiloTextoBranco.text12,
+          ),
           series: <ChartSeries>[
             // Initialize line series
             LineSeries<ClassificationData, String>(
@@ -282,40 +288,57 @@ class _ClubGraphicsState extends State<ClubGraphics> {
     );
   }
 
-  Widget bestPlayers() {
-    List jogadores = widget.club.getJogadores();
-    List<Jogador> jogadoresClass = [];
-    List craqueValue=[],artilheiroValue=[],assistenteValue=[],mvpValue=[];
 
-    for(int jogadorID in jogadores){
-      jogadoresClass.add(Jogador(index: jogadorID));
-      craqueValue.add(jogadoresClass.last.overall);
-      mvpValue.add(jogadoresClass.last.price.floor());
-      artilheiroValue.add(jogadoresClass.last.goalsLeague);
-      assistenteValue.add(jogadoresClass.last.assistsLeague);
+
+
+
+  Widget positionThisYear(){
+
+    List<int> positions = HistoricPositionsThisYear().getGlobal(widget.club.name);
+    List<GraphPointInt> lista = [];
+    for(int week=1;week<semana;week++){
+        lista.add(GraphPointInt(week, positions[week-1]));
     }
 
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
+    return lista.isNotEmpty ? Container(
+      width: Sized(context).width,
+      color: AppColors().greyTransparent,
+      margin: const EdgeInsets.all(4),
+      padding: const EdgeInsets.all(4),
+      child: Column(
         children: [
-          bestPlayerBox('Craque', jogadoresClass.elementAt(getMaxIndex(craqueValue)),"${getValue(craqueValue).toString()} OVR"),
-          bestPlayerBox('MVP', jogadoresClass.elementAt(getMaxIndex(mvpValue)),"\$ ${getValue(mvpValue).toString()}"),
-          bestPlayerBox('Artilheiro', jogadoresClass.elementAt(getMaxIndex(artilheiroValue)),"${getValue(artilheiroValue).toString()} G"),
-          bestPlayerBox('Assistente', jogadoresClass.elementAt(getMaxIndex(assistenteValue)),"${getValue(assistenteValue).toString()} A"),
+          Text('Histórico de posição '+ano.toString(),style: EstiloTextoBranco.negrito18),
+
+          SfCartesianChart(
+            //https://pub.dev/documentation/syncfusion_flutter_charts/latest/charts/SfCartesianChart-class.html?utm_source=pubdev&utm_medium=listing&utm_campaign=flutter-charts-pubdev
+            // Initialize category axis
+            primaryXAxis: CategoryAxis(
+                labelStyle: EstiloTextoBranco.text12,
+            ),
+            primaryYAxis: CategoryAxis(
+              labelStyle: EstiloTextoBranco.text12,
+            ),
+            series: <ChartSeries>[
+              // Initialize line series
+              LineSeries<GraphPointInt, String>(
+                xAxisName: Translation(context).text.years,
+                yAxisName: Translation(context).text.position,
+                name: widget.club.name,
+                dataSource: lista,
+                enableTooltip: true,
+                xValueMapper: (GraphPointInt data, _) => data.x.toString(),
+                yValueMapper: (GraphPointInt data, _) => data.y,
+                dataLabelSettings: const DataLabelSettings(
+                    isVisible: true,
+                    color: Colors.white,
+                ),
+              ),
+
+            ],
+          ),
         ],
       ),
-    );
-  }
-
-  getValue(List lista){
-    return lista.elementAt(getMaxIndex(lista));
-  }
-  getMaxIndex(List lista){
-    //pega o index na lista com o valor máximo
-    int maxValue = lista.reduce((curr, next) => curr > next? curr: next);
-    int index = lista.indexOf(maxValue);
-    return index;
+    ) : Container();
   }
 
 

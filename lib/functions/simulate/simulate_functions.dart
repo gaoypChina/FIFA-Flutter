@@ -1,4 +1,5 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/historic_positions_this_year.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/mundial.dart';
 import 'package:fifa/functions/mata_mata/mata_mata_class.dart';
@@ -39,6 +40,9 @@ class Simulate{
     updateWeek();
 
     setTeamsInternational();
+
+    //Save position map
+    HistoricPositionsThisYear().setGlobal();
   }
 
   startVariables(){

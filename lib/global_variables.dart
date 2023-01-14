@@ -123,6 +123,8 @@ List globalClubsInternationalPoints = [];
 List globalClubsInternationalGM = [];
 List globalClubsInternationalGS = [];
 
+Map<String,List<int>> globalHistoricPositionsThisYear = {}; //{'Palmeiras': [1,4,6,4,3,4,4], 'Santos': ...};
+
 //LEAGUES CONFIGURATION
 Map globalLeagueRelegated = {};
 Map globalLeagueClassified = {};

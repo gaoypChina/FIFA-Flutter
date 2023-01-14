@@ -17,12 +17,13 @@ class League{
   bool playInternational = false;
 
   League({required this.index}){
+    InternationalLeagueManipulation internationalLeagueManipulation = InternationalLeagueManipulation();
     name = getName();
     allClubsName = getAllClubsNameList();
     nClubs = allClubsName.length;
-    internationalLeagueName = InternationalLeagueManipulation().funcGetInternationalLeagueName(indexLeague: index);
-    internationalLeagueNameWhenNotPlay = InternationalLeagueManipulation().whenNotPlayInternationalLeague(internationalLeagueName);
-    internationalLeagueIndex = InternationalLeagueManipulation().funcGetInternationalLeagueIndex(internationalLeagueName: internationalLeagueName);
+    internationalLeagueName = internationalLeagueManipulation.funcGetInternationalLeagueName(indexLeague: index);
+    internationalLeagueNameWhenNotPlay = internationalLeagueManipulation.whenNotPlayInternationalLeague(internationalLeagueName);
+    internationalLeagueIndex = internationalLeagueManipulation.funcGetInternationalLeagueIndex(internationalLeagueName: internationalLeagueName);
     playInternational = leaguePlayInternationalCompetition(name);
   }
 

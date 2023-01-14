@@ -143,7 +143,7 @@ class LeagueOfficialNames{
 
 
 
-  getAllLeagueNames(){
+  List getAllLeagueNames(){
     return [
      inglaterra1,inglaterra2,inglaterra3,
      italia1,italia2,
