@@ -333,7 +333,7 @@ Widget expectationBar(){
     return LinearProgressIndicator(
       minHeight: 10,
       value: value,
-      color: value>=0.66 ? Colors.teal : value > 0.45 ? Colors.yellow : Colors.red,
+      color: value>=0.65 ? Colors.teal : value > 0.45 ? Colors.yellow : Colors.red,
       backgroundColor: Colors.grey,
     );
 }
@@ -449,29 +449,29 @@ Widget yearRow(int year, BuildContext context){
 
 Widget financeWidget(){
 
-    List<HighestSellBuy> playersBought = HistoricMyTransfers().getTransfersYear(HistoricMyTransfers().buyKeyword, ano);
-    List<HighestSellBuy> playersSold = HistoricMyTransfers().getTransfersYear(HistoricMyTransfers().sellKeyword, ano);
+    Map<int,double> balanceByWeek = {};
+    double saldoMesAnterior = 0;
     double expense = 0;
-    Map<int,double> expenseByWeek = {};
-    for (HighestSellBuy element in playersBought) {
-      try{
-        expenseByWeek[element.weekTimestamp] = expenseByWeek[element.weekTimestamp]! + element.maxPrice;
+    double profit = 0;
+    for(int week=1;week<=semana;week++){
+
+      balanceByWeek[week] = HistoricMyTransfers().getWeekBalance(week);
+
+      try {
+        if (saldoMesAnterior > balanceByWeek[week]!) {
+          profit += saldoMesAnterior - balanceByWeek[week]!;
+        } else {
+          profit += balanceByWeek[week]! - saldoMesAnterior;
+        }
       }catch(e){
-        expenseByWeek[element.weekTimestamp] = element.maxPrice;
+        //1ºloop
       }
-      expense += element.maxPrice;
+
+      saldoMesAnterior = balanceByWeek[week]!;
     }
 
-    Map<int,double> profitByWeek = {};
-    for (HighestSellBuy element in playersSold) {
-      try{
-        profitByWeek[element.weekTimestamp] = profitByWeek[element.weekTimestamp]! + element.maxPrice;
-      }catch(e){
-        profitByWeek[element.weekTimestamp] = element.maxPrice;
-      }
-    }
-
-    double profit = my.money + expense;
+    profit -= HistoricMyTransfers().getWeekBalance(1);
+    expense =  globalMyMoney - profit - HistoricMyTransfers().getWeekBalance(1);
 
     return Container(
       width: Sized(context).width,
@@ -486,7 +486,7 @@ Widget financeWidget(){
 
           const SizedBox(height: 12),
 
-          graphFinance(expenseByWeek),
+          graphFinance(balanceByWeek),
 
           const Text('Gastos',style: EstiloTextoBranco.text16),
           Text('\$'+expense.toStringAsFixed(2),style: EstiloTextoBranco.text16),
@@ -503,9 +503,9 @@ Widget graphFinance(Map expensesMap){
     List<GraphPoint> lista = [];
   for(int week=1;week<=semana;week++){
     if(expensesMap.containsKey(week)){
-      lista.add(GraphPoint(week, my.money-expensesMap[week]));
+      lista.add(GraphPoint(week, expensesMap[week]));
     }else{
-      lista.add(GraphPoint(week, my.money));
+      lista.add(GraphPoint(week, expensesMap[week]));
     }
   }
 

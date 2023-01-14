@@ -3,14 +3,17 @@ import 'package:fifa/classes/data_graphics.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/historic_positions_this_year.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/values/league_trophy_image.dart';
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../../classes/club.dart';
@@ -71,7 +74,8 @@ class _ClubGraphicsState extends State<ClubGraphics> {
                     ],
                   ),
 
-                  Text(widget.club.stadiumName+': '+widget.club.stadiumSize.toString(),style: EstiloTextoBranco.text14),
+                  mapWidget(),
+                  Text(widget.club.stadiumName+': '+widget.club.stadiumSize.toString(),style: EstiloTextoBranco.text20),
 
                   positionThisYear(),
 
@@ -360,6 +364,8 @@ class _ClubGraphicsState extends State<ClubGraphics> {
 
 
   Future titleYearBottomSheet(List<ClassificationData> yearTitles){
+    List<ClassificationData> lista = yearTitles.where((ClassificationData classificationData) => classificationData.position==1).toList();
+
     return showModalBottomSheet(
         barrierColor: Colors.transparent,
         context: context, builder: (c) {
@@ -372,14 +378,39 @@ class _ClubGraphicsState extends State<ClubGraphics> {
             const Text('Campeão',style: EstiloTextoPreto.negrito16,),
             const Text('Anos:',style: EstiloTextoPreto.text16,),
             const SizedBox(height: 8),
-            for(ClassificationData classificationData in yearTitles)
-              classificationData.position==1 ? Text(classificationData.year.toInt().toString()) : Container(),
-          ],
-        ),
-      );
-    });
+            SizedBox(
+              height: 100,
+              child: GridView.count(
+              crossAxisCount: 5,
+              childAspectRatio: 2.5,
+              children: List.generate(lista.length, (index) {
+                  return Text(lista[index].year.toInt().toString());
+                }),
+              ),
+            ),
+      ]),
+    );
+   });
   }
 
+  Widget mapWidget(){
+    return SizedBox(
+      height: 300,
+      child: GoogleMap(
+        mapType: MapType.satellite,
+        tiltGesturesEnabled: false,
+        indoorViewEnabled: false,
+        rotateGesturesEnabled: false,
+        compassEnabled: false,
+
+        initialCameraPosition: CameraPosition(
+          target: LatLng(ClubDetails().getCoordinate(widget.club.name).latitude, ClubDetails().getCoordinate(widget.club.name).longitude),
+          zoom: 16.4,
+        ),
+        //onMapCreated: getClubsLocation,
+      ),
+    );
+  }
 }
 
 

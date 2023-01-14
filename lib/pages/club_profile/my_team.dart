@@ -100,7 +100,7 @@ class _MyTeamState extends State<MyTeam> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 starsWidgetFromOverall(myClub.getOverall()),
-                                Text('${Translation(context).text.overall}: '+myClub.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.text14),
+                                Text('${Translation(context).text.overall}: '+myClub.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.negrito16),
                                 Text('${Translation(context).text.avgAge}: '+averageAge.toStringAsFixed(2), style: EstiloTextoBranco.text14),
                                 Text('${Translation(context).text.player}: '+myClub.nJogadores.toString(), style: EstiloTextoBranco.text14),
                               ],

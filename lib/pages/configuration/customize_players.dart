@@ -80,7 +80,7 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
 
-                          Container(
+                          SizedBox(
                             width: Sized(context).width - escudoSize-10,
                             child: Row(
                               children: [

@@ -115,6 +115,7 @@ resetPlayersData(){
   HistoricPositionsThisYear().resetGlobal();
 
 }
+
 resetData(){
   semana= testInitRodada;//testInitRodada = variavel global
   rodada= testInitRodada;//testInitRodada = variavel global

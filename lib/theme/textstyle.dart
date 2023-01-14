@@ -85,6 +85,12 @@ abstract class EstiloTextoBranco {
     color: Colors.white,
     fontSize: 8,
   );
+    static const TextStyle negrito6 = TextStyle(
+  fontFamily: 'Roboto',
+    color: Colors.white,
+    fontSize: 6,
+      fontWeight: FontWeight.bold,
+  );
   static const TextStyle negrito22 = TextStyle(
     color: Colors.white,
     fontFamily: 'Roboto',

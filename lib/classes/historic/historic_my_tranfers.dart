@@ -12,17 +12,30 @@ class HighestSellBuy{
 class HistoricMyTransfers{
   String sellKeyword = 'Sell';
   String buyKeyword = 'Buy';
+  String weekKeyword = 'Week';
 
   String clubNameKeyword = 'ClubName';
   String valueKeyword = 'Value';
   String overallKeyword = 'Overall';
-  String weekTimestamp = 'week';
 
   resetGlobalVariable(){
     globalHistoricMyTransfers
-    = {'Sell':{},//'Sell':{anoInicial: {67:{'ClubName':{},'Value':{},'Overall':{}}}
-      'Buy' :{}, //'Buy':{anoInicial: {67:{'ClubName':{},'Value':{},'Overall':{}}}
+    = {
+      sellKeyword: {},//'Sell':{anoInicial: {67:{'ClubName':{},'Value':{},'Overall':{}}}
+      buyKeyword : {}, //'Buy':{anoInicial: {67:{'ClubName':{},'Value':{},'Overall':{}}}
     };
+    globalBalance = [];
+  }
+
+  saveWeekBalance(){
+    globalBalance.add(globalMyMoney);
+  }
+  getWeekBalance(int week){
+    if(globalBalance.length>=week) {
+      return globalBalance[week-1];
+    }else{
+      return globalMyMoney;
+    }
   }
 
   checkMapHistoricTranfersNew(String sellORbuyStr, Jogador player, int clubID){
@@ -36,7 +49,7 @@ class HistoricMyTransfers{
       clubNameKeyword: clubID,
       valueKeyword:player.price,
       overallKeyword:player.overall,
-      weekTimestamp: semana,
+      weekKeyword: semana,
     };
     globalHistoricMyTransfers[sellORbuyStr]![ano] = allPlayersMap;
   }

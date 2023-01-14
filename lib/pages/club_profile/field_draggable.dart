@@ -11,6 +11,8 @@ import 'package:fifa/theme/background/background_overall.dart';
 import 'package:fifa/theme/background/background_position.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/widgets/club_profile/analise_elenco.dart';
+import 'package:fifa/widgets/club_profile/best_players.dart';
 import 'package:fifa/widgets/field_size.dart';
 import 'package:flutter/material.dart';
 
@@ -116,6 +118,12 @@ class _FieldDraggableState extends State<FieldDraggable> {
                     ],
                   ),
                 ),
+
+                //BEST PLAYERS BOX
+                bestPlayers(myClub),
+
+                //ANALISE DO ELENCO
+                analiseElenco(context, myClub),
 
                 const SizedBox(height: 60),
               ],

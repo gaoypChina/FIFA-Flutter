@@ -10,6 +10,7 @@ import 'package:fifa/functions/simulate/simulate_functions.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/page_controller/calendar_control.dart';
 import 'package:fifa/pages/calendar.dart';
+import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:fifa/pages/coach/coach_menu.dart';
 import 'package:fifa/pages/historic/historic_menu.dart';
 import 'package:fifa/pages/menu/b_home.dart';
@@ -224,6 +225,7 @@ class _MenuState extends State<Menu> {
                     ),
 
 
+                    //CALENDARIO
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -231,6 +233,9 @@ class _MenuState extends State<Menu> {
                         GestureDetector(
                           onTap: (){
                             Navigator.push(context,MaterialPageRoute(builder: (context) => const Calendar()));
+                          },
+                          onLongPress: (){
+                            Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: adversario.clubID)));
                           },
                           child: Stack(
                             children: [
@@ -261,12 +266,17 @@ class _MenuState extends State<Menu> {
 
                         //CLASSIFICAÇÃO E EXPECTATIVA
                         Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Text('${Translation(context).text.matchWeek}: '+rodada.toString(),style: EstiloTextoBranco.text16),
-                            Text(Translation(context).text.classification,style: EstiloTextoBranco.text14),
-                            Text(Classification(leagueIndex: myClass.campeonatoID).getClubPosition(myClass.clubID).toString()+'º',style: EstiloTextoBranco.text30),
-                            Text('${Translation(context).text.expectation}: '+myClass.getLastYearExpectativa().toString()+'º',style: EstiloTextoBranco.text14),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('${Translation(context).text.expectation}: '+myClass.getLastYearExpectativa().toString()+'º',
+                                    style: EstiloTextoBranco.text16
+                                ),
+                                classification3(),
+                              ],
+                            ),
+
                             last5Matchs(),
                           ],
                         ),
@@ -362,6 +372,42 @@ Widget menuButton(String text, Function() function){
   );
 }
 
+Widget classification3(){
+
+  List classificationList = Classification(leagueIndex: myClass.campeonatoID).classificationClubsIndexes;
+  int myPosition = classificationList.indexOf(myClass.clubID);
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      for(int i=-2;i<2;i++)
+       myPosition+i+1 > 0 && myPosition+i < classificationList.length
+          ? rowClassification(myPosition+i+1,Club(index: classificationList[myPosition+i]))
+          : Container(),
+    ],
+  );
+}
+Widget rowClassification(int position, Club club, ){
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        myClass.getLastYearExpectativa() == position
+            ? Text('............................................................................................',style: EstiloTextoBranco.negrito6)
+            : Container(),
+        Row(
+          children: [
+            SizedBox(width:25,child: Text(position.toString()+'º',style: EstiloTextoBranco.text14)),
+            SizedBox(width:22,child: Center(child: Text(club.leaguePoints.toString(),style: EstiloTextoBranco.negrito14))),
+            Images().getEscudoWidget(club.name,18,18),
+            Container(
+                width:100,
+                color: club.name == myClass.clubName ? Colors.teal : Colors.transparent,
+                child: Text(club.name,style: EstiloTextoBranco.text14,)),
+          ],
+        ),
+      ],
+    );
+}
+
 Widget last5Matchs(){
     return SizedBox(
       height: 25,
@@ -383,15 +429,20 @@ Widget last5Matchs(){
       if(show.victoryDrawLoss310 == 1){color = Colors.yellow;}
       if(show.victoryDrawLoss310 == 0){color = Colors.red;}
       if(show.exists){
-        return Container(
-          height:20,
-          width: 20,
-          margin: const EdgeInsets.all(2),
-          decoration: BoxDecoration(
-            color: color,
-            borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+        return GestureDetector(
+          onTap:(){
+            Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => ClubProfile(clubID: show.clubID2)));
+          },
+          child: Container(
+            height:20,
+            width: 20,
+            margin: const EdgeInsets.all(2),
+            decoration: BoxDecoration(
+              color: color,
+              borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+            ),
+            child: Center(child: Images().getEscudoWidget(show.clubName2,15,15)),
           ),
-          child: Center(child: Images().getEscudoWidget(show.clubName2,15,15)),
         );
       }else{
         return Container();

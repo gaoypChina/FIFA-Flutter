@@ -67,6 +67,7 @@ Map globalHistoricTopScorers = {};
 Map globalHistoricCoachResults = {};
 
 Map<String,Map<int,Map<int,Map<String,dynamic>>>> globalHistoricMyTransfers = {};
+List globalBalance = [];
 
 Map<int,List> globalRankingClubs = {2000:[]}; //Agiliza a organização do ranking de clubes
 //MATCH SIMULATION

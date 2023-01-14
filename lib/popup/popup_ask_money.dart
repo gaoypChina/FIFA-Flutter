@@ -24,6 +24,21 @@ popUpAskMoney({required BuildContext context, required Expectativa expectativa, 
               children: [
                 Text('\$'+sliderMoneyValue.toStringAsFixed(2),style: EstiloTextoPreto.text16),
 
+                const Text('Nova Expectativa:',style: EstiloTextoPreto.text16),
+                Row(
+                  children: [
+                    Image.asset(Images().getMyLeagueLogo(),height: 25,width: 25),
+                    Text(expectativa.expectativaNacional.toString()+'º',style: EstiloTextoPreto.text16),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Image.asset(Images().getMyInternationalLeagueLogo(),height: 25,width: 25),
+                    Text(expectativa.expInternacional.toString(),style: EstiloTextoPreto.text16),
+                  ],
+                ),
+
+
                 Slider(
                   activeColor: Colors.green,
                   value: sliderMoneyValue,
@@ -43,23 +58,15 @@ popUpAskMoney({required BuildContext context, required Expectativa expectativa, 
                       sliderMoneyValue = value;
                     }
 
+                    if(value == 0){
+                      expectativa.expectativaNacional = originalExpectation;
+                    }
+
                       setState((){});
                   },
                 ),
 
-                const Text('Nova Expectativa:',style: EstiloTextoPreto.text16),
-                Row(
-                  children: [
-                    Image.asset(Images().getMyLeagueLogo(),height: 25,width: 25),
-                    Text(expectativa.expectativaNacional.toString()+'º',style: EstiloTextoPreto.text16),
-                  ],
-                ),
-                Row(
-                  children: [
-                    Image.asset(Images().getMyInternationalLeagueLogo(),height: 25,width: 25),
-                    Text(expectativa.expInternacional.toString(),style: EstiloTextoPreto.text16),
-                  ],
-                ),
+
 
               ],
             ),

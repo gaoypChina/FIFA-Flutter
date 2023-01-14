@@ -1,4 +1,5 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/historic/historic_my_tranfers.dart';
 import 'package:fifa/classes/historic_positions_this_year.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/mundial.dart';
@@ -43,6 +44,9 @@ class Simulate{
 
     //Save position map
     HistoricPositionsThisYear().setGlobal();
+
+    //Salva o saldo financeiro atual para o histórico
+    HistoricMyTransfers().saveWeekBalance();
   }
 
   startVariables(){
@@ -107,7 +111,7 @@ class Simulate{
             //Se não for meu jogo simula ou se for simulação
             if (myCampeonatoID != leagueIndex ||
                 (myClubID != indexTeam1 && myClubID != indexTeam2) || simulMyMatch) {
-              MatchSimulation match = MatchSimulation(Club(index: indexTeam1), Club(index: indexTeam2));
+              MatchSimulation match = MatchSimulation(Club(index: indexTeam1,clubDetails: false), Club(index: indexTeam2,clubDetails: false));
               //SALVA O PLACAR NO HISTÓRICO
               SaveMatchHistoric().setHistoricGoalsLeague(leagueIndex, chaveClub1, chaveClub2,match.variableGol1,match.variableGol2);
             }

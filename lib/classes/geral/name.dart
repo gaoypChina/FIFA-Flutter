@@ -8,6 +8,7 @@ class Name{
   String semifinal = 'Semifinal';
   String finale = 'Final';
   String qualify = 'Classificar';
+  String mundial = 'Mundial';
 
   showTranslated(BuildContext context, String word){
     if(word == groupsPhase){word = Translation(context).text.groupStage;}

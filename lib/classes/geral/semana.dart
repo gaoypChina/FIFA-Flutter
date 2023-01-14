@@ -16,6 +16,7 @@ class Semana{
   String semanaCalendarStr = semana.toString();
 
   Semana(int weekToCalculate){
+    Name name = Name();
 
     if(isJogoCampeonatoNacional) {
       semanaStr = semanasJogosNacionais.indexOf(weekToCalculate).toString();
@@ -26,13 +27,13 @@ class Semana{
     }
     if(semanasJogosCopas.contains(weekToCalculate)){semanaStr = 'Jogo das Copas';}
     else if(semanasGruposInternacionais.contains(weekToCalculate)){
-      semanaStr = Name().groupsPhase;
+      semanaStr = name.groupsPhase;
       rodadaGroupInternational = semanasGruposInternacionais.indexOf(weekToCalculate)+1;}
-    else if(semanaOitavas.contains(weekToCalculate)){semanaStr = Name().oitavas;    }
-    else if(semanaQuartas.contains(weekToCalculate)){semanaStr = Name().quartas;}
-    else if(semanaSemi.contains(weekToCalculate)){semanaStr = Name().semifinal;}
-    else if(semanaFinal.contains(weekToCalculate)){semanaStr = Name().finale;}
-    else if(semanaMundial.contains(weekToCalculate)){semanaStr = 'Mundial';}
+    else if(semanaOitavas.contains(weekToCalculate)){semanaStr = name.oitavas;    }
+    else if(semanaQuartas.contains(weekToCalculate)){semanaStr = name.quartas;}
+    else if(semanaSemi.contains(weekToCalculate)){semanaStr = name.semifinal;}
+    else if(semanaFinal.contains(weekToCalculate)){semanaStr = name.finale;}
+    else if(semanaMundial.contains(weekToCalculate)){semanaStr = name.mundial;}
 
     verifyIsMataMataIdaOrVolta(weekToCalculate);
 
