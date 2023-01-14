@@ -1,4 +1,3 @@
-import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/pages/cups/cup_historic.dart';
@@ -9,7 +8,6 @@ import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/back_button.dart';
-import 'package:fifa/widgets/choose_league_bottom.dart';
 import 'package:flutter/material.dart';
 
 class CupMain extends StatefulWidget {
@@ -101,7 +99,7 @@ class _CupMainState extends State<CupMain> with TickerProviderStateMixin{
 ////////////////////////////////////////////////////////////////////////////
 
   Widget selectLeagueWidget(Map leaguesMap){
-    return              Container(
+    return              SizedBox(
       height: 50,
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,

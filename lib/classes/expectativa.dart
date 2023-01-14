@@ -1,3 +1,4 @@
+import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/geral/name.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
@@ -7,12 +8,13 @@ class Expectativa{
   String expInternacional = '';
   late int expectativaNacional;
   late int expLastYear;
+  late My my;
 
-  Expectativa(My my){
-    setVariables(my);
+  Expectativa(this.my){
+    setVariables();
   }
 
-  setVariables(My my){
+  setVariables(){
     expLastYear = my.getLastYearExpectativa();
     expectativaNacional = my.getLastYearExpectativa();
 
@@ -24,9 +26,17 @@ class Expectativa{
     }
   }
 
-  changeExpectativaGlobally({required int newValue,required My my}){
+  changeExpectativaGlobally({required int newValue}){
     globalMyExpectativa = newValue;
-    setVariables(my);
+    setVariables();
+  }
+
+  bool hadGoodPerformance(){
+    if(expectativaNacional > Classification(leagueIndex: my.campeonatoID).getClubPosition(my.clubID)){
+      return true;
+    }else{
+      return false;
+    }
   }
 
 }

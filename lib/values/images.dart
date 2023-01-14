@@ -43,7 +43,7 @@ class FIFAImages{
     if(leagueName==LeagueOfficialNames().africa) {      imageLogo = 'africa';       }
     if(leagueName==LeagueOfficialNames().outros) {      imageLogo = 'others';       }
 
-    if(leagueName==LeagueOfficialNames().championsLeague) {      imageLogo = 'championsleague_branco';       }
+    if(leagueName==LeagueOfficialNames().championsLeague) {      imageLogo = 'champions_logo';       }
     if(leagueName==LeagueOfficialNames().libertadores) {      imageLogo = 'libertadores'; }
     if(leagueName==LeagueOfficialNames().ligaEuropa) {      imageLogo = 'europaleague'; }
     if(leagueName==LeagueOfficialNames().concacaf) {      imageLogo = 'concacaf'; }

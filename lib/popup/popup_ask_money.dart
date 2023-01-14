@@ -1,6 +1,5 @@
 import 'package:fifa/classes/expectativa.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/change_club_control.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -82,7 +81,7 @@ popUpAskMoney({required BuildContext context, required Expectativa expectativa, 
                   child: const Text("OK",style: EstiloTextoPreto.text16,),
                   onPressed: (){
                     globalMyMoney += sliderMoneyValue;
-                    expectativa.changeExpectativaGlobally(newValue: expectativa.expectativaNacional,my: My());
+                    expectativa.changeExpectativaGlobally(newValue: expectativa.expectativaNacional);
                     functionSetState!();
                     Navigator.of(context).pop();
                   }

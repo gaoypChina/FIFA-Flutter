@@ -87,7 +87,7 @@ Widget clubWidget(int clubID){
       onTap: (){
         funcChangeClub(clubClassification.clubName, clubClassification.leagueID);
         alreadyChangedClubThisSeason = true;
-        Navigator.push(context,MaterialPageRoute(builder: (context) => const Menu()));
+        Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Menu()));
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0),

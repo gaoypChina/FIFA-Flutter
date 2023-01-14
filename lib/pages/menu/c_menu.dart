@@ -391,7 +391,7 @@ Widget rowClassification(int position, Club club, ){
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         myClass.getLastYearExpectativa() == position
-            ? Text('............................................................................................',style: EstiloTextoBranco.negrito6)
+            ? const Text('............................................................................................',style: EstiloTextoBranco.negrito6)
             : Container(),
         Row(
           children: [

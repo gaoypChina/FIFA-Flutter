@@ -3,7 +3,6 @@ import 'package:fifa/classes/data_graphics.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/historic_positions_this_year.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';

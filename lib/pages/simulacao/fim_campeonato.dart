@@ -1,8 +1,11 @@
+import 'package:fifa/classes/expectativa.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
+import 'package:fifa/pages/change_club.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/pages/table/table_widget.dart';
@@ -88,7 +91,12 @@ class _FimCampeonatoState extends State<FimCampeonato> {
                       child:  customButtonContinue(
                           title: Translation(context).text.nextMatchWeek,
                           function: (){
-                            Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Menu()));
+                            if(Expectativa(My()).hadGoodPerformance()){
+                              Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Menu()));
+                            }else{
+                              customToast('Você foi demitido. Escolha um novo clube');
+                              Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const ChangeClub()));
+                            }
                           }
                       ),
                     ),
