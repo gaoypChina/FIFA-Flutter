@@ -2,10 +2,12 @@ import 'dart:async';
 
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/esquemas_taticos.dart';
+import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/player_basic.dart';
 import 'package:fifa/functions/flags_list.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/configuration/customize_club.dart';
 import 'package:fifa/popup/popup_create_player.dart';
 import 'package:fifa/popup/popup_edit_nationality.dart';
 import 'package:fifa/popup/popup_ok_cancel.dart';
@@ -50,6 +52,7 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
   Widget build(BuildContext context) {
 
     club = Club(index: widget.clubID);
+    double escudoSize = 80;
 
     return Scaffold(
         resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
@@ -69,19 +72,40 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                       GestureDetector(
                           onTap:(){
                           },
-                          child: Images().getEscudoWidget(club.name,80,80),
+                          child: Images().getEscudoWidget(club.name,escudoSize,escudoSize),
                       ),
                       const SizedBox(width: 8),
+
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
 
-                          Text(club.name,style: EstiloTextoBranco.negrito22),
-                          //N Jogadores
-                          Text('${Translation(context).text.player}: ${club.jogadores.length.toString()}',style: EstiloTextoBranco.text16),
+                          Container(
+                            width: Sized(context).width - escudoSize-10,
+                            child: Row(
+                              children: [
+
+                                Column(
+                                  children: [
+                                    Text(club.name,style: EstiloTextoBranco.negrito22),
+                                    //N Jogadores
+                                    Text('${Translation(context).text.player}: ${club.jogadores.length.toString()}',style: EstiloTextoBranco.text16),
+                                  ],
+                                ),
+
+                                const Spacer(),
+                                buttonDesign(
+                                    title: 'Edit Club',
+                                    function: (){
+                                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => CustomizeClub(clubName: club.name)));
+                                    }),
+                              ],
+                            ),
+                          ),
 
                           //CUSTOMIZE
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
 
                               buttonDesign(
@@ -105,6 +129,12 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                                     );
                                   }
                               ),
+
+                              buttonDesign(
+                                  title: EsquemaTatico().e442,
+                                  function: (){
+
+                                  }),
 
                             ],
                           ),

@@ -1,4 +1,3 @@
-import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/global_variables.dart';
 

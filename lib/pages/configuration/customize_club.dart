@@ -1,5 +1,4 @@
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/classes/my.dart';
 import 'package:fifa/popup/poup_edit.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -10,7 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
 class CustomizeClub extends StatefulWidget {
-  const CustomizeClub({Key? key}) : super(key: key);
+  final String clubName;
+  const CustomizeClub({Key? key, required this.clubName}) : super(key: key);
 
   @override
   State<CustomizeClub> createState() => _CustomizeClubState();
@@ -18,7 +18,7 @@ class CustomizeClub extends StatefulWidget {
 
 class _CustomizeClubState extends State<CustomizeClub> {
 
-  String clubName = My().clubName;
+  String clubName = "";
   late UniformCustom uniformCustom;
 
   Color pickerColor = const Color(0xff443a49);
@@ -28,6 +28,7 @@ class _CustomizeClubState extends State<CustomizeClub> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
+    clubName =  widget.clubName;
     uniformCustom = UniformCustom(clubName,0.6);
     super.initState();
   }

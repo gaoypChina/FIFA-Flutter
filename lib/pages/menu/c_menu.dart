@@ -1,8 +1,8 @@
-import 'package:fifa/classes/match/adversario.dart';
 import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
+import 'package:fifa/classes/match/adversario.dart';
 import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/functions/check_internet.dart';
 import 'package:fifa/functions/coach/coach_best_results.dart';
@@ -11,7 +11,6 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/page_controller/calendar_control.dart';
 import 'package:fifa/pages/calendar.dart';
 import 'package:fifa/pages/coach/coach_menu.dart';
-import 'package:fifa/pages/configuration/customize_club.dart';
 import 'package:fifa/pages/historic/historic_menu.dart';
 import 'package:fifa/pages/menu/b_home.dart';
 import 'package:fifa/pages/ranking_clubs.dart';
@@ -319,7 +318,6 @@ class _MenuState extends State<Menu> {
                             child: GestureDetector(
                                 onTap:(){
                                   customToast('TESTE DE FUNÇÃO');
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CustomizeClub()));
                                 },
                                 child: const Icon(Icons.terminal_sharp,color:Colors.white,size: 50)
                             ),

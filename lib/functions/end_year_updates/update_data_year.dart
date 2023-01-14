@@ -7,6 +7,7 @@ import 'package:fifa/classes/historic/historic_my_players.dart';
 import 'package:fifa/classes/historic/historic_my_tranfers.dart';
 import 'package:fifa/classes/historic/top_players_ovr.dart';
 import 'package:fifa/classes/historic/top_scorers.dart';
+import 'package:fifa/classes/historic_positions_this_year.dart';
 import 'package:fifa/classes/international.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
@@ -109,6 +110,10 @@ resetPlayersData(){
 
   //ZERA DADOS DE TRANSFERENCIAS
   HistoricMyTransfers().resetGlobalVariable();
+
+  //Reset Histórico de posições
+  HistoricPositionsThisYear().resetGlobal();
+
 }
 resetData(){
   semana= testInitRodada;//testInitRodada = variavel global

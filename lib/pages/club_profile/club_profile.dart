@@ -96,7 +96,7 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 starsWidgetFromOverall(clubClass.getOverall()),
-                                Text('${Translation(context).text.overall}: '+clubClass.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.text14),
+                                Text('${Translation(context).text.overall}: '+clubClass.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.negrito16),
                                 Text('${Translation(context).text.avgAge}: '+clubClass.getAverageAge().toStringAsFixed(2), style: EstiloTextoBranco.text14),
                                 Text('${Translation(context).text.player}: '+clubClass.nJogadores.toString(), style: EstiloTextoBranco.text14),
                                 compare(),
@@ -122,7 +122,7 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                             ],
                           ),
 
-                          Image.asset(Images().getStadium(clubClass.name),height: 80,width: 100),
+
                           const SizedBox(width: 8),
 
                         ],

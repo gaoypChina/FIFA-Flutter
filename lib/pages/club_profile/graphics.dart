@@ -1,9 +1,8 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/data_graphics.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/historic_positions_this_year.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/classes/jogador.dart';
-import 'package:fifa/classes/data_graphics.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -11,7 +10,6 @@ import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/values/league_trophy_image.dart';
-import 'package:fifa/widgets/best_player_box/best_player_box.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -53,7 +51,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
           Images().getWallpaper(),
 
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(6.0),
             child: SingleChildScrollView(
               child: Column(
                 children: [
@@ -64,12 +62,16 @@ class _ClubGraphicsState extends State<ClubGraphics> {
 
                   totalTrophyWidget(widget.club, dataGraphics),
 
+
+                  Text('Fundado: '+widget.club.foundationYear.toString(),style: EstiloTextoBranco.negrito22),
                   Row(
                     children: [
                       Images().getStadiumWidget(widget.club.name,130,240),
                       Images().getUniformWidget(widget.club.name,130,130),
                     ],
                   ),
+
+                  Text(widget.club.stadiumName+': '+widget.club.stadiumSize.toString(),style: EstiloTextoBranco.text14),
 
                   positionThisYear(),
 
@@ -246,38 +248,53 @@ class _ClubGraphicsState extends State<ClubGraphics> {
           ),
 
           //TITULOS NACIONAIS
-          Column(
-            children: [
-              Text(Translation(context).text.titles,
-                  style: EstiloTextoBranco.text16),
-              Image.asset('assets/trophy/${getTrophyImage(club.leagueName)}.png',
-                  height: 50, width: 50),
-              Text(dataGraphics.nTitulos.toString(),
-                  style: EstiloTextoBranco.text20),
-            ],
+          GestureDetector(
+            onTap: (){
+              titleYearBottomSheet(dataGraphics.data);
+            },
+            child: Column(
+              children: [
+                Text(Translation(context).text.titles,
+                    style: EstiloTextoBranco.text16),
+                Image.asset('assets/trophy/${getTrophyImage(club.leagueName)}.png',
+                    height: 50, width: 50),
+                Text(dataGraphics.nTitulos.toString(),
+                    style: EstiloTextoBranco.text20),
+              ],
+            ),
           ),
 
           //TITULOS INTERNACIONAIS
-          Column(
-            children: [
-              Text(Translation(context).text.titles,
-                  style: EstiloTextoBranco.text16),
-              Image.asset('assets/trophy/${getTrophyImage(club.internationalLeagueName)}.png',
-                  height: 50, width: 50),
-              Text(dataGraphics.nTitulosInternational.toString(),
-                  style: EstiloTextoBranco.text20),
-            ],
+          GestureDetector(
+            onTap: (){
+              titleYearBottomSheet(dataGraphics.dataInternational);
+            },
+            child: Column(
+              children: [
+                Text(Translation(context).text.titles,
+                    style: EstiloTextoBranco.text16),
+                Image.asset('assets/trophy/${getTrophyImage(club.internationalLeagueName)}.png',
+                    height: 50, width: 50),
+                Text(dataGraphics.nTitulosInternational.toString(),
+                    style: EstiloTextoBranco.text20),
+              ],
+            ),
           ),
 
           //TITULOS MUNDIAIS
-          Column(
-            children: [
-              Text(Translation(context).text.titles,
-                  style: EstiloTextoBranco.text16),
-              Image.asset('assets/trophy/${getTrophyImage(LeagueOfficialNames().mundial)}.png',height: 50, width: 50),
-              Text(dataGraphics.nTitulosMundial.toString(),
-                  style: EstiloTextoBranco.text20),
-            ],
+          GestureDetector(
+            onTap: (){
+              titleYearBottomSheet(dataGraphics.dataMundial);
+            },
+            child: Column(
+              children: [
+                Text(Translation(context).text.titles,
+                    style: EstiloTextoBranco.text16),
+                Image.asset('assets/trophy/${getTrophyImage(LeagueOfficialNames().mundial)}.png',height: 50, width: 50),
+                Text(dataGraphics.nTitulosMundial.toString(),
+                    style: EstiloTextoBranco.text20),
+              ],
+            ),
           ),
 
 
@@ -326,7 +343,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
                 name: widget.club.name,
                 dataSource: lista,
                 enableTooltip: true,
-                xValueMapper: (GraphPointInt data, _) => data.x.toString(),
+                xValueMapper: (GraphPointInt data, _) => data.x.toString()+'ª',
                 yValueMapper: (GraphPointInt data, _) => data.y,
                 dataLabelSettings: const DataLabelSettings(
                     isVisible: true,
@@ -341,6 +358,27 @@ class _ClubGraphicsState extends State<ClubGraphics> {
     ) : Container();
   }
 
+
+  Future titleYearBottomSheet(List<ClassificationData> yearTitles){
+    return showModalBottomSheet(
+        barrierColor: Colors.transparent,
+        context: context, builder: (c) {
+      return Container(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Text('Campeão',style: EstiloTextoPreto.negrito16,),
+            const Text('Anos:',style: EstiloTextoPreto.text16,),
+            const SizedBox(height: 8),
+            for(ClassificationData classificationData in yearTitles)
+              classificationData.position==1 ? Text(classificationData.year.toInt().toString()) : Container(),
+          ],
+        ),
+      );
+    });
+  }
 
 }
 

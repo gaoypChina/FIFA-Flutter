@@ -1,5 +1,4 @@
 import 'package:fifa/classes/classification.dart';
-import 'package:fifa/classes/club.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/league_names.dart';

@@ -16,6 +16,7 @@ class Club{
   late String nationality;
   late String continent;
   late String stadiumName;
+  late int stadiumSize;
   late int foundationYear;
   late ClubColors colors;
   late List jogadores;
@@ -74,6 +75,7 @@ class Club{
       nationality = clubDetails.getCountry(name);
       foundationYear = clubDetails.getFoundationYear(name);
       stadiumName = clubDetails.getStadium(name);
+      stadiumSize = clubDetails.getStadiumCapacity(name);
       continent = Continents().funcCountryContinents(nationality);
       stateName = clubDetails.getState(name);
       colors = clubDetails.getColors(name);
