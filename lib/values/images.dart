@@ -626,6 +626,8 @@ String imageLogo(String timeFoto) {
     //CHIPRE
     map[_name.apoel] = 'apoel';
     map[_name.aeklarnaca] = 'aek larnaca';
+    map[_name.aellimassol] = 'ael limassol';
+    map[_name.anorthosis] = 'anorthosis';
     map[_name.omonia] = 'omonia';
     map[_name.apollon] = 'apollon';
     //ISRAEL
@@ -700,6 +702,7 @@ String imageLogo(String timeFoto) {
     map[_name.araratArmenia] = 'ararat armenia';
     map[_name.araratYerevan] = 'ararat yerevan';
     map[_name.pyunikyerevan] = 'pyunik yerevan';
+    map[_name.shirak] = 'shirak';
     //KAZAKHSTAN
     map[_name.aktobe] = 'aktobe';
     map[_name.astana] = 'astana';
@@ -738,6 +741,7 @@ String imageLogo(String timeFoto) {
     map[_name.beroe] = 'beroe';
     map[_name.cskaSofia] = 'cska sofia';
     map[_name.levskiSofia] = 'levski sofia';
+    map[_name.litexLovech] = 'litex lovech';
     map[_name.lokplovdiv] = 'lok plovdiv';
     map[_name.loksofia] = 'lok sofia';
     map[_name.ludogorets] = 'ludogorets';
@@ -801,6 +805,7 @@ String imageLogo(String timeFoto) {
     map[_name.tiranafk] = 'tirana fk';
     map[_name.laci] = 'laci';
     map[_name.partizanitirane] = 'partizani tirane';
+    map[_name.skenderbeu] = 'skenderbeu';
     map[_name.vllaznia] = 'vllaznia';
     //BOSNIA
     map[_name.sarajevo] = 'sarajevo';//BOSNIA
@@ -1433,7 +1438,9 @@ String imageLogo(String timeFoto) {
     //IRAQUE
     map[_name.alRasheed] = 'al rasheed';
     map[_name.alQuwaAlJawiya] = 'al quwa';
+    map[_name.alTalaba] = 'al talaba';
     map[_name.alzawraa] = 'al zawraa';
+    map[_name.alShortaIRAQ] = 'al shorta iraq';
     //OUTROS
     //UZBEQUISTAO
     map[_name.agmk] = 'agmk';

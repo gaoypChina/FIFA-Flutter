@@ -2003,6 +2003,9 @@ class ClubDetails{
 
     //OUTROS
     //ALBANIA
+
+    map[_name.dinamoTirana] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(0,0),
+      'Arena Kombëtare',21690,1950,_country.albania,64.0,[]];
     map[_name.tiranafk] = [ClubColors(Colors.blue,Colors.white),pattern.stripes3,Coordinates(41.319399, 19.81133),
       'Selman Stermasi Stadium',7000,1920,_country.albania,68.1,[]];
     map[_name.kukesi] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(42.079203526, 20.42031655),
@@ -2011,6 +2014,8 @@ class ClubDetails{
       'Laçi Stadium',4500,1960,_country.albania,65.3,[]];
     map[_name.partizanitirane] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(41.3191655, 19.8114063),
       'Selman Stërmasi Stadium',20600,1946,_country.albania,64.7,[]];
+    map[_name.skenderbeu] = [ClubColors(Colors.red,Colors.white),pattern.stripes3,Coordinates(0,0),
+      'Skënderbeu Stadium',12000,1909,_country.albania,63.8,[]];
     map[_name.teutaDurres] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(41.3262515, 19.4497168),
       'Stadioni Niko Dovana',13000,1920,_country.albania,62.0,[]];
     map[_name.vllaznia] = [ClubColors(Colors.red,Colors.blue),pattern.stripes2,Coordinates(42.07005, 19.5066547),
