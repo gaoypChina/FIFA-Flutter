@@ -4024,6 +4024,8 @@ class ClubDetails{
     //ALGERIA
     map[_name.asoChlef] = [ClubColors(Colors.red,Colors.white),pattern.sleeves,Coordinates(0,0),
       'Boumezrag Mohamed',30000,1947,_country.algeria,58.6,[]];
+    map[_name.bejaia] = [ClubColors(Colors.red,Colors.green),pattern.solid,Coordinates(0, 0),
+      'Stade de l\'Unité maghrébine',17500,1936,_country.algeria,59.5,[]];
     map[_name.belouizdad] = [ClubColors(Colors.white,Colors.red),pattern.solid,Coordinates(36.7456313, 3.0786813),
       'Stade du 20-Août-1955',10000,1955,_country.algeria,66.5,[]];
     map[_name.constantine] = [ClubColors(Colors.green,Colors.black),pattern.solid,Coordinates(0,0),
@@ -4032,12 +4034,16 @@ class ClubDetails{
       '1 November 1954 Stadium',5000,1935,_country.algeria,62.6,[]];
     map[_name.essetif] = [ClubColors(Colors.black,Colors.white),pattern.solid,Coordinates(36.18707773, 5.3937329179),
       'Estádio 8 de Maio',25000,1958,_country.algeria,70.4,[]];
+    map[_name.hussein] = [ClubColors(Colors.yellow,Colors.red),pattern.solid,Coordinates(0, 0),
+      'Stade du 20 Août 1955',10000,1955,_country.algeria,57.8,[]];
     map[_name.kabylie] = [ClubColors(Colors.yellow,Colors.green),pattern.solid,Coordinates(36.706899, 4.0560295),
       'Stade 1er Novembre',22000,1946,_country.algeria,66.2,[]];
     map[_name.mcalger] = [ClubColors(Colors.green,Colors.red),pattern.horStripes2,Coordinates(36.75986425, 2.99499536),
       'Estádio 5 de Julho de 1962',76000,1921,_country.algeria,69.2,[]];
     map[_name.mcOran] = [ClubColors(Colors.white,Colors.red),pattern.horStripes2,Coordinates(35.683435418, -0.63621669),
       'Estádio Ahmed Zabana',40000,1917,_country.algeria,65.7,[]];
+    map[_name.saoura] = [ClubColors(Colors.yellow,Colors.green),pattern.solid,Coordinates(0, 0),
+      '20 August Stadium',20000,2008,_country.algeria,62.5,[]];
     map[_name.usmAlger] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(36.80114535, 3.04854982),
       'Omar Hamadi Stadium',15000,1937,_country.algeria,69.5,[]];
     //LIBYA

@@ -37,12 +37,12 @@ Widget customWidgetBottomBar (BuildContext context,String actualPage, String lea
                 onTap: (){
                   functionSetState(LeagueOfficialNames().libertadores);
                 },
-                child: Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().championsLeague),color: Colors.black, width: 60,height: 60)
+                child: Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().championsLeague), width: 50,height: 50)
             ): GestureDetector(
                 onTap: (){
                   functionSetState(LeagueOfficialNames().championsLeague);
                 },
-                child: Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().libertadores),width: 60,height: 60)
+                child: Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().libertadores),width: 50,height: 50)
             ),
 
 
@@ -51,7 +51,7 @@ Widget customWidgetBottomBar (BuildContext context,String actualPage, String lea
                     Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => TableInternational(leagueInternational: leagueInternational)));
                 },
                 child: Container(
-                  color: actualPage == WidgetBottomInternational().classificacao ? Colors.black26 : Colors.transparent,
+                  color: actualPage == WidgetBottomInternational().classificacao ? AppColors().primary : Colors.transparent,
                   padding: const EdgeInsets.all(8.0),
                   child: Text(WidgetBottomInternational().getTranslation(context, WidgetBottomInternational().classificacao),style: EstiloTextoPreto.text16),
                 ),
@@ -61,7 +61,7 @@ Widget customWidgetBottomBar (BuildContext context,String actualPage, String lea
                   Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => TableMatchs(leagueInternational: leagueInternational)));
                 },
                 child: Container(
-                  color: actualPage == WidgetBottomInternational().partidas ? Colors.black26 : Colors.transparent,
+                  color: actualPage == WidgetBottomInternational().partidas ? AppColors().primary : Colors.transparent,
                   padding: const EdgeInsets.all(8.0),
                   child: Text(WidgetBottomInternational().getTranslation(context, WidgetBottomInternational().partidas),style: EstiloTextoPreto.text16),
                 ),
@@ -71,7 +71,7 @@ Widget customWidgetBottomBar (BuildContext context,String actualPage, String lea
                   Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => TableMataMata(leagueInternational: leagueInternational)));
                 },
                 child: Container(
-                  color: actualPage == WidgetBottomInternational().matamata ? Colors.black26 : Colors.transparent,
+                  color: actualPage == WidgetBottomInternational().matamata ? AppColors().primary : Colors.transparent,
                   padding: const EdgeInsets.all(8.0),
                   child: Text(WidgetBottomInternational().getTranslation(context, WidgetBottomInternational().matamata),style: EstiloTextoPreto.text16),
                 ),
@@ -81,7 +81,7 @@ Widget customWidgetBottomBar (BuildContext context,String actualPage, String lea
                 Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => TableInternationalScorers(leagueInternational: leagueInternational)));
               },
               child: Container(
-                color: actualPage == WidgetBottomInternational().artilheiros ? Colors.black26 : Colors.transparent,
+                color: actualPage == WidgetBottomInternational().artilheiros ? AppColors().primary : Colors.transparent,
                 padding: const EdgeInsets.all(8.0),
                 child: Text(WidgetBottomInternational().getTranslation(context, WidgetBottomInternational().artilheiros),style: EstiloTextoPreto.text16),
               ),

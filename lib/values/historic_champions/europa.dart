@@ -1164,15 +1164,16 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.ucrania : {
+    //https://en.wikipedia.org/wiki/1995%E2%80%9396_Vyshcha_Liha
     2022.0: [n.shaktardonetsk,n.dinamokiev,n.dnipro1,n.zorya,n.vorskla,  ],
     2021.0: [n.dinamokiev,n.shaktardonetsk,n.zorya,],
     2020.0: [n.shaktardonetsk,n.dinamokiev,n.zorya,],
     2019.0: [n.shaktardonetsk,n.dinamokiev,n.oleksandriya,],
     2018.0: [n.shaktardonetsk,n.dinamokiev,n.vorskla,],
-    2017.0: [n.shaktardonetsk,n.dinamokiev,n.zorya,],
-    2016.0: [n.dinamokiev,n.shaktardonetsk,n.dnipro,],
-    2015.0: [n.dinamokiev,n.shaktardonetsk,n.dnipro,],
-    2014.0: [n.shaktardonetsk,n.dnipro,n.metalist,],
+    2017.0: [n.shaktardonetsk,n.dinamokiev,n.zorya,n.olimpikdonetsk,n.oleksandriya,   n.odesa,n.vorskla],
+    2016.0: [n.dinamokiev,n.shaktardonetsk,n.dnipro,n.zorya,n.vorskla,   n.oleksandriya,n.karpatyLviv,],
+    2015.0: [n.dinamokiev,n.shaktardonetsk,n.dnipro,n.zorya,n.vorskla,   n.metalist,n.metalurh,],
+    2014.0: [n.shaktardonetsk,n.dnipro,n.metalist,n.dinamokiev,n.odesa],
     2013.0: [n.shaktardonetsk,n.metalist,n.dinamokiev,],
     2012.0: [n.shaktardonetsk,n.dinamokiev,n.metalist,],
     2011.0: [n.shaktardonetsk,n.dinamokiev,n.metalist,],
@@ -1190,10 +1191,10 @@ Map<String,dynamic> mapEuropa = {
     1999.0: [n.dinamokiev,n.shaktardonetsk,n.kryvbasKryvyi,],
     1998.0: [n.dinamokiev,n.shaktardonetsk,n.karpatyLviv,],
     1997.0: [n.dinamokiev,n.shaktardonetsk,n.vorskla,],
-    1996.0: [n.dinamokiev,n.odesa,n.dnipro,],
-    1995.0: [n.dinamokiev,n.odesa,n.dnipro,],
+    1996.0: [n.dinamokiev,n.odesa,n.dnipro,n.arsenalkyiv,n.metalurh,     n.zirka,n.torpedozapo,n.karpatyLviv,n.kremin,n.shaktardonetsk],
+    1995.0: [n.dinamokiev,n.odesa,n.dnipro,n.shaktardonetsk,],
     1994.0: [n.dinamokiev,n.shaktardonetsk,n.odesa,],
-    1993.0: [n.dinamokiev,n.dnipro,n.odesa,],
+    1993.0: [n.dinamokiev,n.dnipro,n.odesa,n.shaktardonetsk,n.metalist,  n.karpatyLviv,    ],
   },
 
   leagueName.cazaquistao : {

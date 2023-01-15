@@ -914,7 +914,8 @@ String imageLogo(String timeFoto) {
     map[_name.csa] = 'csa';
     map[_name.desportiva] = 'desportiva';
     map[_name.fast] = 'fast';
-    map[_name.ferroviaria] = 'ferroviaria'; 
+    map[_name.ferroviaria] = 'ferroviaria';
+    map[_name.flamengoPI] = 'fla pi';
     map[_name.gama] = 'gama'; 
     map[_name.globo] = 'globo';
     map[_name.goianesia] = 'goianesia';
@@ -950,7 +951,8 @@ String imageLogo(String timeFoto) {
     map[_name.operarioPR] = 'operariopr'; 
     map[_name.palmas] = 'palmas';  
     map[_name.paysandu] = 'paysandu';  
-    map[_name.paulista] = 'paulista';  
+    map[_name.paulista] = 'paulista';
+    map[_name.piaui] = 'piaui';
     map[_name.portuguesa] = 'portuguesa';  
     map[_name.portuguesaRJ] = 'portuguesa rj';  
     map[_name.portuguesasantista] = 'portuguesa santista';  
@@ -1519,6 +1521,7 @@ String imageLogo(String timeFoto) {
     map[_name.zamalek] = 'zamalek';
     //ALGERIA
     map[_name.belouizdad] = 'belouizdad';
+    map[_name.constantine] = 'constantine';
     map[_name.essetif] = 'es setif';
     map[_name.kabylie] = 'kabylie';
     map[_name.mcalger] = 'mc alger';

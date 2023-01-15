@@ -1149,6 +1149,7 @@ class ClubName{
   String zhemchuzhinaSochi = "Zhemchuzhina Sochi";//Extinto 2012
   //UKRAINE
   String shaktardonetsk = "Shaktar Donetsk";
+  String arsenalkyiv = "Arsenal Kyiv";
   String dinamokiev = "Dinamo Kiev";
   String odesa = "Chornomorets Odesa";
   String desna = "Desna Chernihiv";
@@ -1157,16 +1158,20 @@ class ClubName{
   String kharkiv = "Lokomotyv Kharkiv";
   String karpatyLviv = "Karpaty Lviv";
   String kolosKovalivka = "Kolos Kovalivka";
+  String kremin = "Kremin";
   String kryvbasKryvyi = "Kryvbas Kryvyi Rih";
   String metalist = "Metalist";
   String metalurh = "Metalurh Zaporizhzhia";
   String lviv = "Lviv";
   String oleksandriya = "Oleksandriya";
+  String olimpikdonetsk = "Olimpik Donetsk";
   String rukhLviv = "Rukh Lviv";
   String tavria = "Tavria Simferopol";
+  String torpedozapo = "Torpedo Zaporizhzhia";
   String scOdesa = "SC Odesa";
   String veresRivne = "Veres Rivne";
   String vorskla = "Vorskla";
+  String zirka = "Zirka";
   String zorya = "Zorya";
   //EX-URSS
   //MOLDOVA

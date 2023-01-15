@@ -323,7 +323,7 @@ class _MenuState extends State<Menu> {
                           ),
 
                           //TEST FUNCTIONS BUTTON
-                          testInitRodada != 1 ? Container(
+                          testInitRodada >= 1 ? Container(
                             alignment: Alignment.topCenter,
                             child: GestureDetector(
                                 onTap:(){
@@ -401,7 +401,7 @@ Widget rowClassification(int position, Club club, ){
             Container(
                 width:100,
                 color: club.name == myClass.clubName ? Colors.teal : Colors.transparent,
-                child: Text(club.name,style: EstiloTextoBranco.text14,)),
+                child: Text(club.name,style: EstiloTextoBranco.text12,)),
           ],
         ),
       ],
