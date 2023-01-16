@@ -28,10 +28,12 @@ class LeagueOfficialNames{
   String escocia = 'Scottish Premiership';
   String belgica = 'Jupiler Pro League';
   String irlanda = 'Liga irlanda';
+  String paisgales = 'Liga País de Gales';
   String suecia = 'Allsvenskan Sweden';
   String dinamarca = 'Superliga Dinamarquesa';
   String noruega = 'Liga Norueguesa';
   String finlandia = 'Liga Finlandesa';
+  String islandia = 'Liga Islandia';
   String austria = 'Liga Austriaca';
   String suica = 'Super Liga Suíça';
   String polonia = 'Ekstraklasa';
@@ -41,6 +43,7 @@ class LeagueOfficialNames{
   String eslovaquia = 'Liga Eslovaquia';
   String eslovenia = 'Liga Eslovenia';
   String croacia = 'Liga Croácia';
+  String bosnia = 'Liga Bosnia';
   String russia = 'Liga Russa';
   String ucrania = 'Liga Ucrania';
   String israel = 'Liga israel';
@@ -53,6 +56,11 @@ class LeagueOfficialNames{
   String chipre = 'Liga Chipre';
   String macedonia = 'Liga Macedonia';
   String albania = 'Liga Albania';
+  String estonia = 'Liga Estônia';
+  String lituania = 'Liga Lituânia';
+  String letonia = 'Liga Letônia';
+  String azerbaijao = 'Liga Azerbaijão';
+  String saomarino = 'Liga São Marino';
   String ligaEuropa = 'Liga Europeia';  String lesteEuropeu = 'Leste Europeu';
 
   String brasil1 = 'Brasileirão';  String brasil2 = 'Brasileirão - Série B';String brasil3 = 'Brasileirão - Série C';
@@ -75,19 +83,23 @@ class LeagueOfficialNames{
 
   String mexico = 'Liga MX';String estadosUnidos = 'MLS';String canada = 'Liga Canada';
   String costaRica = 'Liga Costa Rica';String honduras = 'Liga Honduras';String elsalvador = 'Liga El Salvador';
-  String nicaragua = 'Liga Nicaragua';String jamaica = 'Liga Jamaica';
+  String nicaragua = 'Liga Nicaragua';String guatemala = 'Liga Guatemala';
+  String jamaica = 'Liga Jamaica';
   String asia = 'Liga Ásia';  String orienteMedio = 'Liga Oriente Médio';  String africa = 'Liga África';
 
   String china = 'Liga China';
   String japao = 'J1-League';
   String coreiaSul = 'K-League';
   String arabia = 'Liga Arábia Saudita';
-  String eau = 'Liga EAU';   String qatar = 'Liga qatar';
-  String iran = 'Liga iran';   String iraque = 'Liga iraque';
+  String uzbekistao = 'Liga Uzbekistao'; String tadjiquistao = 'Liga Tadjikistan';
+  String eau = 'Liga EAU';   String qatar = 'Liga Qatar';String bahrein = 'Liga Bahrein';
+  String iran = 'Liga Iran';   String iraque = 'Liga Iraque';
   String siria = 'Liga Síria'; String libano = 'Liga Líbano';
-  String india = 'Liga india';
+  String india = 'Liga India';
   String tailandia = 'Liga Tailandia';   String vietna = 'Liga Vietnã';
   String indonesia = 'Liga Indonesia';    String filipinas = 'Liga Filipinas';
+  String malasia = 'Liga Malásia';
+
 
   String egito = 'Liga Egito';
   String argelia = 'Liga Argelia';
@@ -153,30 +165,33 @@ class LeagueOfficialNames{
      portugal,
 
      turquiaGrecia,     grecia, chipre,
-     holanda ,   belgica, escocia, irlanda,
-     suecia,     dinamarca,     noruega,     finlandia,
+     holanda ,   belgica, escocia, irlanda, paisgales,
+     suecia,     dinamarca,     noruega,     finlandia, islandia,
      austria,     suica,     polonia, repTcheca,
      eslovaquia, eslovenia,
+      lituania, estonia, letonia,
 
-      servia,  croacia,
+      servia,  croacia, bosnia,
       romenia, bulgaria, hungria,
-      belarus, macedonia, albania,
-      russia, ucrania,     cazaquistao,
-      armenia, israel,
+      macedonia, albania, belarus,
+      russia, ucrania,   cazaquistao,
+      armenia, azerbaijao, israel, saomarino,
 
      brasil1, brasil2, brasil3,
      argentina,
      uruguai,     paraguai,     chile,     peru,    bolivia,
      colombia, equador,     venezuela,
 
-     mexico, estadosUnidos,
-      costaRica, honduras, elsalvador, nicaragua,
+      mexico, estadosUnidos,
+      costaRica, honduras, elsalvador, nicaragua, guatemala,
       jamaica,
 
       china,  japao,     coreiaSul,
-     tailandia, filipinas, vietna, indonesia,
-     arabia,     eau,     qatar,     iran, iraque,
-     india, australia,
+      tailandia, filipinas, vietna, indonesia, malasia,
+      arabia,     eau,     bahrein, qatar,
+      iran, iraque, siria, libano,
+      india, australia,
+      uzbekistao, tadjiquistao,
 
       argelia, egito, libya,  marrocos, tunisia,
       africaSul, angola, camaroes, congoRD, nigeria, sudan, tanzania,
@@ -370,6 +385,7 @@ Map getLeagueNationalityMap(){
     leagueName.belgica: Words.country.belgium ,
     leagueName.irlanda: Words.country.ireland ,
     leagueName.escocia: Words.country.scotland ,
+    leagueName.paisgales: Words.country.wales ,
     leagueName.suica: Words.country.switzerland ,
     leagueName.austria: Words.country.austria ,
     leagueName.polonia: Words.country.poland ,
@@ -382,8 +398,10 @@ Map getLeagueNationalityMap(){
     leagueName.dinamarca: Words.country.denmark,
     leagueName.finlandia: Words.country.finland ,
     leagueName.noruega: Words.country.norway ,
+    leagueName.islandia: Words.country.iceland ,
     leagueName.ucrania: Words.country.ukraine,
     leagueName.servia: Words.country.serbia ,
+    leagueName.bosnia: Words.country.bosnia ,
     leagueName.croacia: Words.country.croatia ,
     leagueName.romenia: Words.country.romania ,
     leagueName.bulgaria: Words.country.bulgaria ,
@@ -396,6 +414,11 @@ Map getLeagueNationalityMap(){
     leagueName.macedonia: Words.country.macedonia ,
     leagueName.chipre: Words.country.cyprus ,
     leagueName.albania: Words.country.albania ,
+    leagueName.estonia: Words.country.estonia ,
+    leagueName.lituania: Words.country.lithuania ,
+    leagueName.letonia: Words.country.latvia ,
+    leagueName.azerbaijao: Words.country.azerbaijan ,
+    leagueName.saomarino: Words.country.sanMarino ,
 
     leagueName.brasil1: Words.country.brazil ,
     leagueName.brasil2: Words.country.brazil ,
@@ -414,28 +437,41 @@ Map getLeagueNationalityMap(){
     leagueName.estadosUnidos: Words.country.unitedStates,
     leagueName.canada: Words.country.canada,
     leagueName.costaRica: Words.country.costaRica,
+    leagueName.guatemala: Words.country.guatemala,
     leagueName.honduras: Words.country.honduras,
     leagueName.jamaica: Words.country.jamaica,
     leagueName.elsalvador: Words.country.elsalvador,
     leagueName.nicaragua: Words.country.nicaragua ,
 
+    //ASIA
     leagueName.china: Words.country.china ,
     leagueName.coreiaSul: Words.country.southKorea ,
     leagueName.japao: Words.country.japan ,
     leagueName.australia: Words.country.australia ,
+
+    leagueName.uzbekistao: Words.country.uzbekistan ,
+    leagueName.tadjiquistao: Words.country.tajikistan ,
+
     leagueName.arabia: Words.country.southArabia ,
+    leagueName.bahrein: Words.country.bahrein ,
     leagueName.qatar: Words.country.qatar ,
     leagueName.eau: Words.country.uae ,
     leagueName.iran: Words.country.iran ,
     leagueName.iraque: Words.country.iraq ,
     leagueName.siria: Words.country.syria ,
     leagueName.libano: Words.country.lebanon ,
+
     leagueName.india: Words.country.india ,
+    leagueName.uzbekistao: Words.country.uzbekistan ,
+    leagueName.tadjiquistao: Words.country.tajikistan ,
+
     leagueName.tailandia: Words.country.thailand ,
     leagueName.filipinas: Words.country.philippines,
     leagueName.indonesia: Words.country.indonesia ,
+    leagueName.malasia: Words.country.malaysia ,
     leagueName.vietna: Words.country.vietnam,
 
+    //AFRICA
     leagueName.egito: Words.country.egypt,
     leagueName.argelia: Words.country.algeria ,
     leagueName.libya: Words.country.libya ,

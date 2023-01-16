@@ -540,7 +540,7 @@ String imageLogo(String timeFoto) {
     //ISLANDIA
     map[_name.akraness] = 'akraness';
     map[_name.breidablik] = 'breidablik';
-    map[_name.hafnarfjardar] = 'hafnarfjardar';
+    map[_name.fh] = 'hafnarfjardar';
     map[_name.reykjavik] = 'reykjavik';
     map[_name.valur] = 'valur';
     map[_name.vikingur] = 'vikingur';
@@ -687,7 +687,7 @@ String imageLogo(String timeFoto) {
     map[_name.gomel] = 'gomel';
     map[_name.soligorsk] = 'soligorsk';
     //AZERBAIJAN
-    map[_name.baku] = 'baku';
+    map[_name.neftci] = 'neftci';
     map[_name.qabala] = 'qabala';
     map[_name.qarabag] = 'qarabag';
     map[_name.zira] = 'zira';
@@ -1449,7 +1449,7 @@ String imageLogo(String timeFoto) {
     map[_name.bunyodkor] = 'bunyodkor';
     map[_name.nasafQarshi] = 'nasaf';
     map[_name.pakhtakor] = 'pakhtakor';
-    map[_name.tashkent] = 'tashkent';
+    map[_name.loktashkent] = 'tashkent';
     //CAMBOJA
     map[_name.phnomPenhCrown] = 'phnom penh';
     //JORDANIA
@@ -1484,7 +1484,7 @@ String imageLogo(String timeFoto) {
     map[_name.khoromkhon] = 'khoromkhon';
     map[_name.ulaanbaatar] = 'ulaanbaatar city';
     //SIRIA
-    map[_name.alKaramah] = 'al karamah';
+    map[_name.alkaramah] = 'al karamah';
     map[_name.alJaish] = 'al jaish';
     map[_name.alShortaDamascus] = 'al shorta';
     map[_name.tishreen] = 'tishreen';

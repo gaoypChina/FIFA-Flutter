@@ -369,12 +369,22 @@ class _PlayState extends State<Play> {
     int antes2 = myMatchSimulation.meuGolSofrido;
 
     //SIMULATE MATCH
+    counterMatch.simulateMinute();
 
     if(myMatchSimulation.meuGolMarcado != antes1){
-      popUpGoal(context: context,scorer: Jogador(index:globalMatchGoalScorerIDMy.last),milis: myMatchSimulation.milis, function: (){});
+      popUpGoal(context: context,
+          scorer: Jogador(index:globalMatchGoalScorerIDMy.last),
+          milis: myMatchSimulation.milis,
+          function: (){}
+      );
     }
     if(myMatchSimulation.meuGolSofrido != antes2){
-      popUpGoal(context: context,scorer: Jogador(index:globalMatchGoalScorerIDAdv.last),milis: myMatchSimulation.milis, function: (){});
+      popUpGoal(context: context,
+          scorer: Jogador(index:globalMatchGoalScorerIDAdv.last),
+          milis: myMatchSimulation.milis,
+          function: (){}
+      );
+
     }
   }
 }

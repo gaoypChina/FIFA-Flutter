@@ -11,6 +11,7 @@ import 'package:fifa/functions/simulate/after_simulation/historic.dart';
 import 'package:fifa/functions/simulate/match_simulation.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/league_names.dart';
+import 'package:fifa/values/leagues_prize.dart';
 
 import '../../classes/geral/semana.dart';
 import '../fim_campeonato_local.dart';
@@ -47,6 +48,7 @@ class Simulate{
 
     //Salva o saldo financeiro atual para o histórico
     HistoricMyTransfers().saveWeekBalance();
+
   }
 
   startVariables(){

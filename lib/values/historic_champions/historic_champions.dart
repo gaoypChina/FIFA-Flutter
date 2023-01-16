@@ -7,9 +7,14 @@ import 'package:fifa/values/historic_champions/europa.dart';
 import 'package:fifa/values/historic_champions/europa_top_leagues.dart';
 import 'package:fifa/values/historic_champions/internationals.dart';
 import 'package:fifa/values/historic_champions/north_america.dart';
+import 'package:fifa/values/historic_champions/oriente_medio.dart';
 import 'package:fifa/values/historic_champions/other_leagues.dart';
 
   Map<double,dynamic> mapChampions(String league){
+
+    if(mapInternationals[league] != null){
+      return mapInternationals[league];
+    }
 
     if(mapEuropaTopLeagues[league] != null){
       return mapEuropaTopLeagues[league];
@@ -29,8 +34,8 @@ import 'package:fifa/values/historic_champions/other_leagues.dart';
     if(mapAsia[league] != null){
         return mapAsia[league];
     }
-    if(mapInternationals[league] != null){
-        return mapInternationals[league];
+    if(mapOrienteMedio[league] != null){
+      return mapOrienteMedio[league];
     }
 
     if(mapEstaduais[league] != null){

@@ -1292,7 +1292,7 @@ class ClubDetails{
       'Akranesvöllur',6000,1946,_country.iceland,63.8,[]];
     map[_name.breidablik] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(64.10421594, -21.8969209),
       'Kópavogsvöllur',5501,1950,_country.iceland,62.6,[]];
-    map[_name.hafnarfjardar] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(64.07608583, -21.935295742),
+    map[_name.fh] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(64.07608583, -21.935295742),
       'Kaplakriki',6450,1928,_country.iceland,61.7,[]];
     map[_name.reykjavik] = [ClubColors(Colors.black,Colors.white),pattern.solid,Coordinates(64.14640062, -21.96675625),
       'KR-völlur',6000,1899,_country.iceland,64.8,[]];
@@ -1708,7 +1708,7 @@ class ClubDetails{
     map[_name.soligorsk] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(52.79859758, 27.5382051),
       'Estádio Stroitel',4200,1961,_country.belarus,67.3,[]];
     //AZERBAIJÃO
-    map[_name.baku] = [ClubColors(Colors.white,Colors.black),pattern.stripes3,Coordinates(40.4001566, 49.9438641),
+    map[_name.neftci] = [ClubColors(Colors.white,Colors.black),pattern.stripes3,Coordinates(40.4001566, 49.9438641),
       'Bakcell Arena',11000,1906,_country.azerbaijan,70.6,[]];
     map[_name.kapaz] = [ClubColors(Colors.yellow,Colors.blue),pattern.solid,Coordinates(40.70590163, 46.36198384),
       'Ganja City Stadium',25000,1959,_country.azerbaijan,64.4,[]];
@@ -3881,7 +3881,7 @@ class ClubDetails{
     map[_name.hilalAlQuds] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(31.8476340, 35.23024420),
       'Faisal Al-Husseini International',12500,1972,_country.palestine,61.2,[]];
     //SYRIA
-    map[_name.alKaramah] = [ClubColors(Colors.blue,Colors.orange),pattern.solid,Coordinates(34.729750, 36.69807434),
+    map[_name.alkaramah] = [ClubColors(Colors.blue,Colors.orange),pattern.solid,Coordinates(34.729750, 36.69807434),
       'Khalid ibn al-Walid',32000,1928,_country.syria,67.3,[]];
     map[_name.alJaish] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(33.5227937, 36.3200108),
       'Abbasiyyin Stadium Damascus',30000,1945,_country.syria,65.5,[]];
@@ -3936,7 +3936,7 @@ class ClubDetails{
       'Markaziy Stadium',21000,1986,_country.uzbekistan,67.4,[]];
     map[_name.pakhtakor] = [ClubColors(Colors.blue,Colors.yellow),pattern.solid,Coordinates(41.3156628, 69.26059),
       'Pakhtakor Markaziy Stadium',35000,1956,_country.uzbekistan,69.5,[]];
-    map[_name.tashkent] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(41.36116543, 69.394842616),
+    map[_name.loktashkent] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(41.36116543, 69.394842616),
       'Lokomotiv Stadium',8000,2002,_country.uzbekistan,68.8,[]];
     map[_name.sogdiyona] = [ClubColors(darkblue,Colors.white),pattern.solid,Coordinates(40.115161, 67.82866878),
       'Sogdiyona Sport Majmuasi',11850,1970,_country.uzbekistan,65.3,[]];

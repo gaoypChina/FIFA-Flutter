@@ -66,7 +66,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
             children: [
               Row(
                 children: [
-                  backButtonText(context, 'Lista de Clubes - $selectedCountry'),
+                  backButtonText(context, 'Lista de Clubes'),
                   const Spacer(),
                   Padding(padding:const EdgeInsets.only(top:18),
                       child: Text(showList.length.toString(),style: EstiloTextoBranco.text20)),

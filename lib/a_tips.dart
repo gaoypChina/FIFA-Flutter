@@ -222,11 +222,7 @@ Map<String,dynamic> zzzzzzzzz = {
   },
   //RSSSF.ORG
 
-  leagueName.cazaquistao : {
 
-
-
-  },
 
 leagueName.cazaquistao : {
   2022.0: [],
@@ -252,7 +248,6 @@ leagueName.cazaquistao : {
   2002.0: [],
   2001.0: [],
   2000.0: [],
-
 },
 
 };

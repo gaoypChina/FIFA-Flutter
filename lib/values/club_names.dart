@@ -682,10 +682,17 @@ class ClubName{
   String crusaders = "Crusaders";
   String cliftonville = "Cliftonville";
   //WALES
+  String airbusuk = "Airbus UK Broughton";
   String balatown = "Bala Town";
+  String bangorcity = "Bangor City";
+  String barrytown = "Barry Town";
+  String cwmbran = "Cwmbran Town ";
+  String llanelli = "Llanelli";
+  String neath = "Neath";
   String newsaints = "The New Saints";
   String newtown = "Newtown Association";
   String connahs = "Connah's Quay Nomads";
+  String rhyl = "Rhyl";
   //IRLANDA
   String athlone = "Athlone Town";
   String bohemian = "Bohemian";
@@ -855,10 +862,13 @@ class ClubName{
   //ISLANDIA
   String akraness = "Akraness";
   String breidablik = "Breiðablik Kópavogur";
+  String fh = "Hafnarfjarðar";
+  String framIslandia = "Fram";
+  String ibv = "IBV";
+  String keflavik = "Keflavik";
   String stjarnan = "Stjarnan Garðabaer";
   String valur = "Valur";
   String vikingur = "Vikingur Reykjavik";
-  String hafnarfjardar = "Hafnarfjarðar";
   String reykjavik = "KR Reykjavik";
   //ILHAS FAROE
   String b36 = "B36 Tórshavn";
@@ -1191,9 +1201,13 @@ class ClubName{
   String slaviamozyr = "	Slavia Mozyr";
   String soligorsk = "Shakhtyor Soligorsk";//BELARUS
   //AZERBAIJAN
-  String baku = "Neftchi Baku";
+  String baku = "Baku";
+  String khazar = "Khazar Lankaran";
+  String neftci = "Neftchi Baku";
   String sabahFK = "Sabah FK";
   String sebail = "Sebail Klubu";
+  String shamakhi = "Shamakhi FK";
+  String shamkir = "Shamkir";
   String kapaz = "Kapaz PFK";//AZERBAIJAN
   String qabala = "Qabala";//AZERBAIJAN
   String qarabag = "Qarabag";//AZERBAIJAN
@@ -1249,19 +1263,31 @@ class ClubName{
   String yerevan = "Yerevan";
   //LETONIA
   String daugavaRiga = "Daugava Riga";
+  String jurmala = "Spartaks Jurmala";
   String rigaRFS = "Rigas Futbola Skola";
   String rigafc = "Riga FC";
   String liepaja = "FK Liepaja";
+  String skonto = "Skonto Riga";
   String valmiera = "Valmiera";
+  String ventspils = "Ventspils";
   //LITUANIA
+  String ekranas = "Ekranas";
   String suduva = "Suduva Marijampole";
   String kaunu = "Kaunu Zalgiris";
   String zalgiris = "Zalgiris Vilnius";
   //ESTONIA
   String kalev = "Kalev Tallinn";
+  String fci = "FCI Tallinn";
   String floratallinn = "Flora Tallinn";
   String levadiatallinn = 'Levadia Talinn';
+  String kajlu = "Nömme Kajlu";
+  String lantana = "Lantana";
+  String narvatrans = "Narva Trans";
+  String norma = "Norma";
   String paide = 'Paide Linnameeskond';
+  String sillamae = "Sillamäe Kalev";
+  String tallinna = "Tallinna Sadam";
+  String tvmk = 'TVMK';
 
   //LESTE EUROPEU
   //SERBIA
@@ -1481,6 +1507,12 @@ class ClubName{
   String primorje = "Primorje";
   String rudarvelenje = "Rudar Velenje";
   //BOSNIA
+  String borac = "Borac Banja Luka";
+  String brotnjo = "Brotnjo";
+  String leotar = "Leotar";
+  String modrica = "Modriča";
+  String siroki = "Široki Brijeg";
+  String tuzla = "Tuzla";
   String posusje = "Posusje";//BOSNIA
   String sarajevo = "Sarajevo";//BOSNIA
   String zrinjski = "HSK Zrinjski";//BOSNIA
@@ -1530,12 +1562,17 @@ class ClubName{
   String eschenMauren = "Eschen-Mauren";//LIECHSTEIN
   String vaduz = "Vaduz";//LIECHSTEIN
   //SAN MARINO
-  String domagnano = "Domagnano";//SAN MARINO
-  String folgore = "Folgore Falciano";//SAN MARINO
-  String lafiorita = "La Fiorita";//SAN MARINO
-  String trepenne = "Tre Penne";//SAN MARINO
-  String trefiori = "Tre Fiori";//SAN MARINO
-  String libertas = "Libertas";//SAN MARINO
+  String cosmos = "Cosmos";
+  String domagnano = "Domagnano";
+  String faetano = "Faetano";
+  String folgore = "Folgore Falciano";
+  String lafiorita = "La Fiorita";
+  String libertas = "Libertas";
+  String montevito = "Montevito";
+  String murata = "Murata";
+  String pennarossa = "Pennarossa";
+  String trepenne = "Tre Penne";
+  String trefiori = "Tre Fiori";
   //GIBRALTAR
   String europa = "Europa FC";
   String lincolnRedImps = "Lincoln Red Imps";
@@ -2490,6 +2527,7 @@ class ClubName{
   String sansalvador = "San Salvador";
   //GUATEMALA
   String antiguaGuatemala = "Antigua Guatemala";
+  String coban = "Cobán Imperial";
   String comunicaciones = "Comunicaciones";
   String marquense = "Marquense";
   String municipal = "Municipal";
@@ -2958,12 +2996,18 @@ class ClubName{
   String shababAlKhalil = "Shabab Al-Khalil";
   String hilalAlQuds = "Hilal Al-Quds";
   //SYRIA
-  String alKaramah = "Al-Karamah";
+  String alfutowa = "Al-Futowa";
+  String alkaramah = "Al-Karamah";
   String alJaish = "Al-Jaish";
+  String alittihadSYR = "Al-Ittihad-SYRIA";
+  String alhurriya = "Al-Hurriya";
+  String almajd = "Al-Majd";
+  String alwahdaSYR = "Al-Wahda-SYRIA";
   String alWathba = "Al-Wathba";
   String alShortaDamascus = "Al Shorta Damascus";
   String aleppo = "Al-Ittihad Aleppo";
   String jableh = "Jableh";
+  String hutteen = "Hutteen";
   String tishreen = "Tishreen";
 
   //ASIA CENTRAL
@@ -2973,9 +3017,18 @@ class ClubName{
   String alay = "Alay";
   String dordoiBishkek = "Dordoi Bishkek";
   //TAJIKISTAN
+  String dynamodushambe = "Dynamo Dushanbe";
   String pamirDushanbe = "CSKA Pamir Dushanbe";
   String istiklol = "Istiklol";
+  String istaravshan = "Istaravshan";
+  String khosilot = "Khosilot Farkhor";
   String khujand = "Khujand";
+  String parvoz = "Parvoz Bobojon Ghafurov";
+  String ravshan = "Ravshan Kulob";
+  String regartadaz = "Regar-TadAZ";
+  String sitora = "Sitora Dushanbe";
+  String vakhsh = "Vakhsh Qurghonteppa";
+  String varzob = "Varzob Dushanbe";
   //TURCOMENISTAN
   String altynAsyr = "Altyn Asyr";
   String ahalAnew = "Ahal Änew";
@@ -2987,11 +3040,18 @@ class ClubName{
   //UZBEQUISTAN
   String agmk = "AGMK Olmaliq";
   String bunyodkor = "Bunyodkor";
-  String tashkent = "Lokomotiv Tashkent";
+  String buxoro = "Buxoro";
+  String dustlik = "Dustlik";
+  String kokand = "Kokand 1912";
+  String loktashkent = "Lokomotiv Tashkent";
+  String metallurg = "Metallurg";
+  String mhsk = "MHSK";
+  String mubarek = "Mash'al Mubarek";
   String nasafQarshi = "Nasaf Qarshi";
   String navbahor = "Navbahor Namangan";
   String neftchiFargona = "Neftchi Fargona";
   String pakhtakor = "Pakhtakor";
+  String qizilqum = "Qizilqum";
   String sogdiyona = "Sogdiyona Jizzakh";
 
 
