@@ -555,4 +555,27 @@ Map<String,dynamic> mapAsia = {
     1993.0: [n.sitora,n.pamirDushanbe,],
     1992.0: [n.pamirDushanbe,n.regartadaz,n.vakhsh,],
   },
+
+  leagueName.malasia : {
+    2022.0: [n.johorDarul,n.terengganu,n.sabah,],
+    2021.0: [n.johorDarul,n.kedah,n.penang,],
+    2020.0: [n.johorDarul,n.kedah,n.terengganu,],
+    2019.0: [n.johorDarul,n.pahang,n.selangor,],
+    2018.0: [n.johorDarul,n.perak,],
+    2017.0: [n.johorDarul,n.pahang,n.felda,],
+    2016.0: [n.johorDarul,n.felda,n.kedah,],
+    2015.0: [n.johorDarul,n.selangor,n.pahang,],
+    2014.0: [n.johorDarul,n.selangor,n.pahang,],
+    2013.0: [n.lionsxii,n.selangor,n.johorDarul,],
+    2012.0: [n.kelantan,n.lionsxii,n.selangor,],
+    2011.0: [n.kelantan,n.terengganu,n.selangor,],
+    2010.0: [n.selangor,n.kelantan,n.terengganu,],
+    2009.0: [n.selangor,n.perlis,n.kedah,],
+    2008.0: [n.kedah,n.negeri,n.johorDarul,],
+    2007.0: [n.kedah,n.perak,n.bruneidpmm],
+    2006.0: [],
+    2005.0: [n.perlis,n.pahang,n.perak,],
+    2004.0: [n.pahang,],
+  },
+
 };

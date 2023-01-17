@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/functions/simulate/player_variables/origin/grade.dart';
 import 'package:fifa/functions/simulate/player_variables/origin/injury.dart';
 import 'package:fifa/functions/simulate/player_variables/origin/red_card.dart';
 import 'package:fifa/functions/simulate/player_variables/origin/yellow_card.dart';
@@ -62,6 +63,8 @@ class CardsInjury{
       } else if (prob <= 250) {
         YellowCard().notMy(clubClass,jogPOS);
       }
+
+     Grade().notMy(clubClass, jogPOS);
     }
   }
 

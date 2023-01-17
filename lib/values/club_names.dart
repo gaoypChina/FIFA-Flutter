@@ -2739,7 +2739,7 @@ class ClubName{
   String saif = "Saif";
   String sheikhJamal = "Sheikh Jamal";
   //BRUNEI
-  String brunei = "Brunei DMPP";
+  String bruneidpmm = "Brunei DMPP";
   //CAMBOJA
   String boeungKet = "Boeung Ket";
   String nagaworld = "Nagaworld";
@@ -2798,13 +2798,21 @@ class ClubName{
   String youngElephants = "Young Elephants";
   //MALASIA
   String johorDarul = "Johor Darul Ta'zim";
+  String felda = "Felda United";
   String kedah = "Kedah Darul Aman";
+  String kelantan = "Kelantan";
   String kualaLumpur = "Kuala Lumpur";
   String federalTerritory = "Federal Territory";
+  String lionsxii = "Lions XII";
+  String negeri = "Negeri Sembilan";
+  String pahang = "Pahang";
   String penang = "Penang";
+  String perak = "Perak";
+  String perlis = "Perlis";
   String sabah = "Sabah";
   String sriPahang = "Sri Pahang";
   String selangor = "Selangor";
+  String terengganu = "Terengganu";
   //MALDIVES
   String maziya = "Maziya S&RC";
   String newradiant = "New Radiant";
@@ -2929,10 +2937,14 @@ class ClubName{
   String qatar = "Qatar Sports Club";
   String ummSalal = "Umm Salal";
   //BAHREIN
+  String alhala = "Al-Hala";
   String alhidd = "Al-Hidd";
   String alMuharraq = "Al-Muharraq";
+  String alnasrBAH = "Al-Nasr QAT";
   String alRiffa = "Al-Riffa";
+  String bahrain = "Bahrain";
   String eastRiffa = "East Riffa";
+  String malkiya = "Malkiya";
   String manama = "Manama";
   //IRÃ
   String bahman = "Bahman";
@@ -2976,9 +2988,9 @@ class ClubName{
   String alKuwait = "Al-Kuwait";
   String kazma = "Kazma";
   //LEBANON
-  String alAhed = "Al-Ahed";
+  String alahed = "Al-Ahed";
   String alAnsar = "Al Ansar";
-  String alSafa = "Al-Safa";
+  String alsafa = "Al-Safa";
   String nejmeh = "Nejmeh";
   String homenetmen = "Homenetmen";
   String tripoliLEB = "TripoliLEB";
@@ -3160,11 +3172,14 @@ class ClubName{
   //LYBIA
   String benghazi = "Al Ahly Benghazi";
   String alakhdar = "Al Akhdar";
+  String aldhahra = "Al Dhahra";
   String alNasrLIB = "Al Nasr-LIB";
   String alIttihadLIB = "Al Ittihad-LIB";
   String almadina = "Al Madina";
   String almahala = "Al Mahala";
   String alolympique = "Al Olympique";
+  String alshat = "Al Shat";
+  String altahaddi = "Al Tahaddi";
   String tripoliLIB = "Al Ahly Tripoli";
   //MARROCOS
   String difaa = "Beni Mellal";
@@ -3263,9 +3278,12 @@ class ClubName{
   //BENIN
   String dragonsoueme = "Dragons FC de l'Ouémé";
   //BOTSWANA
-  String jwanengGalaxy = "Jwaneng Galaxy FC";
+  String botswana = "Botswana Defence Force XI";
+  String eccocity = "ECCO City Greens";
   String gaborone = "Gaborone United";
+  String jwaneng = "Jwaneng Galaxy";
   String mochudi = "Mochudi Centre Chiefs";
+  String mogoditshane = "Mogoditshane Fighters";
   String orapa = "Orapa United";
   String township = "Township Rollers";
   //CAMARÕES
@@ -3375,9 +3393,15 @@ class ClubName{
   String ferroviarioMOZ = "Ferroviario-MOZ";
   String ldMaputo = "Liga Desportiva de Maputo";
   //NAMIBIA
-  String blackAfrica = "Black Africa";
   String africanStars = "African Stars";
+  String blackAfrica = "Black Africa";
+  String bluewaters = "Blue Waters";
   String civics = "Civics";
+  String chiefsantos = "Chief Santos";
+  String elevenarrows = "Eleven Arrows";
+  String liverpoolNAM = "Liverpool NAM";
+  String orlandopiratesNAM = "Orlando Pirates NAM";
+  String ramblers = "Ramblers";
   //NIGERIA
   String akwa = "Akwa United";
   String bayelsa = "Bayelsa United";
@@ -3407,12 +3431,20 @@ class ClubName{
   String apr = "APR";
   String rayonSports = "RayonSports";
   //SENEGAL
+  String casasports = "Casas Sports";
   String douanes = "AS Douanes";
   String diaraf = "Diaraf";
+  String diambars = "Diambars";
   String genefoot = "Gene Foot";
   String goree = "Gorée";
   String jaraaf = "Jaraaf";
   String jeannedarc = "Jeanne D'Arc";
+  String linguere = "Linguère";
+  String ndiambour = "Ndiambour";
+  String ouakam = "Ouakam";
+  String pikine = "Pikine";
+  String portautonome = "UCST Port Autonome ";
+  String suneor = "ASC SUNEOR";
   String teungueth = "Teungueth";
   //SUDÃO
   String omdurman = "Al-Hilal Omdurman";
@@ -3448,10 +3480,15 @@ class ClubName{
   String redArrows = "Red Arrows";//ZAMBIA
   String zesco = "Zesco United";//ZAMBIA
   //ZIMBABWE
+  String amazuluZIM = "amazulu ZIM";
+  String caps = "Caps United";
   String chickenInn = "Chicken Inn";
   String dynamos = "Dynamos FC"; //ZIMBABWE
+  String gunners = "Gunners";
+  String highlanders = "Highlanders";
   String manicaDiamonds = "Manica Diamonds"; //ZIMBABWE
   String monomotapa = "Monomotapa United"; //ZIMBABWE
+  String motoraction = "Motor Action";
   String platinum = "FC Platinum"; //ZIMBABWE
  //ISLES SAINT REUNION
   String saintLouisienne = "Saint-Louisienne";

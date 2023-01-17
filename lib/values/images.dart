@@ -1421,7 +1421,7 @@ String imageLogo(String timeFoto) {
     map[_name.saif] = 'saif';
     //map[_name.sheikhJamal] = 'sheikh jamal';
     //BRUNEI
-    map[_name.brunei] = 'brunei';
+    map[_name.bruneidpmm] = 'brunei';
     //SINGAPORE
     map[_name.albirexSINGAPORE] = 'albirex';
     map[_name.warriors] = 'warriors';
@@ -1467,7 +1467,7 @@ String imageLogo(String timeFoto) {
     //VIETNA
     map[_name.hanoi] = 'hanoi';
     //LEBANON
-    map[_name.alAhed] = 'al ahed';
+    map[_name.alahed] = 'al ahed';
     map[_name.alAnsar] = 'al ansar';
     map[_name.nejmeh] = 'nejmeh';
     //MALASYA

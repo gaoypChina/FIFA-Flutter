@@ -8,7 +8,6 @@ class GoalAssistsSelection{
   goalsAssistsNational(Club clubClass){
     int jogadorID = Goal().setGoals(clubClass);
     Goal().saveGoalsNational(jogadorID);
-
     jogadorID = Assists().setAssists(clubClass);
     Assists().saveAssistsNational(jogadorID);
   }

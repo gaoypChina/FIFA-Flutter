@@ -107,13 +107,20 @@ class LeagueOfficialNames{
   String marrocos = 'Liga Marrocos';
   String tunisia = 'Liga Tunisia';
   String angola = 'Liga Angola';
+  String botswana = 'Liga Botswana';
   String camaroes = 'Liga Camaroes';
   String nigeria = 'Liga Nigeria';
   String congoRD = 'Liga RDCongo';
+  String guine = 'Liga Guiné';
+  String mali = 'Liga Mali';
   String mocambique = 'Liga Mocambique';
+  String namibia = 'Liga Namíbia';
+  String senegal = 'Liga Senegal';
   String sudan = 'Liga Sudão';
   String tanzania = 'Liga Tanzania';
+  String zimbabwe = 'Liga Zimbabwe';
   String africaSul = 'Liga África do Sul';
+
   String australia = 'A-League';
   String outros = 'Outros';
 
@@ -194,7 +201,9 @@ class LeagueOfficialNames{
       uzbekistao, tadjiquistao,
 
       argelia, egito, libya,  marrocos, tunisia,
-      africaSul, angola, camaroes, congoRD, nigeria, sudan, tanzania,
+      africaSul, angola, botswana, camaroes, congoRD, guine,
+      mali, namibia, nigeria,
+      sudan, tanzania, zimbabwe,
 
       paulistao, carioca, mineiro, es,
       gaucho,parana,santacatarina,
@@ -478,12 +487,19 @@ Map getLeagueNationalityMap(){
     leagueName.nigeria: Words.country.nigeria ,
     leagueName.tunisia: Words.country.tunisia ,
     leagueName.marrocos: Words.country.morocco ,
+
     leagueName.angola: Words.country.angola ,
+    leagueName.botswana: Words.country.botswana ,
     leagueName.camaroes: Words.country.cameroon ,
-    leagueName.mocambique: Words.country.mozambique ,
     leagueName.congoRD: Words.country.congoRD ,
+    leagueName.guine: Words.country.guinea ,
+    leagueName.mocambique: Words.country.mozambique ,
+    leagueName.mali: Words.country.mali ,
+    leagueName.namibia: Words.country.namibia ,
+    leagueName.senegal: Words.country.senegal ,
     leagueName.sudan: Words.country.sudan ,
     leagueName.tanzania: Words.country.tanzania ,
+    leagueName.zimbabwe: Words.country.zimbabwe ,
     leagueName.africaSul: Words.country.southAfrica ,
 
 

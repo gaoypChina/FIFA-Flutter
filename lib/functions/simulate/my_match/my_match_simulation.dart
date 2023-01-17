@@ -8,6 +8,7 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/simulate/my_match/counter.dart';
 import 'package:fifa/functions/simulate/player_variables/origin/assists.dart';
 import 'package:fifa/functions/simulate/player_variables/origin/goal.dart';
+import 'package:fifa/functions/simulate/player_variables/origin/grade.dart';
 import 'package:fifa/global_variables.dart';
 
 class MyMatchSimulation{
@@ -78,6 +79,7 @@ class MyMatchSimulation{
   funcQuemfezgol(int clubMyorAdv){
 
     int quemfez = Goal().funcQuemfezgol();
+    
 
     //Procura o nome do jogador na lista de todos os jogadores e adiciona um gol pra ele
     late int jogadorID;
@@ -96,6 +98,8 @@ class MyMatchSimulation{
     }
     globalJogadoresMatchGoals[jogadorID]++;
     globalJogadoresCarrerGoals[jogadorID]++;
+
+    Grade().goalMyMatch(jogadorID);
   }
 
   funcQuemfezAssistencia(int clubMyorAdv){
@@ -114,6 +118,9 @@ class MyMatchSimulation{
       }
       globalJogadoresMatchAssists[jogadorID]++;
       globalJogadoresCarrerAssists[jogadorID]++;
+
+
+      Grade().assistMyMatch(jogadorID);
     }
   }
 
@@ -124,7 +131,14 @@ class MyMatchSimulation{
 
       updateHealthPlayer(myJogador);
       updateHealthPlayer(adversarioJogador);
+      
+      updateGradePlayer(myJogador);
+      updateGradePlayer(adversarioJogador);
     }
+  }
+
+  updateGradePlayer(Jogador player){
+    Grade().addMyGameRandomScore(player.index);
   }
 
   updateHealthPlayer(Jogador player){

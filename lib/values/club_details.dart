@@ -3717,7 +3717,7 @@ class ClubDetails{
     map[_name.warriors] = [ClubColors(Colors.blue,Colors.red),pattern.solid,Coordinates(1.391140, 103.74921),
       'Choa Chu Kang Stadium',10000,1975,_country.singapore,63.6,[]];
     //BRUNEI
-    map[_name.brunei] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(1.35453962, 103.851562),
+    map[_name.bruneidpmm] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(1.35453962, 103.851562),
       'Ground Bishan',30000,2000,_country.brunei,62.4,[]];
 
     //ORIENTE MÉDIO
@@ -3858,7 +3858,7 @@ class ClubDetails{
     map[_name.kazma] = [ClubColors(Colors.orange,Colors.blue),pattern.solid,Coordinates(29.328998, 47.9877632),
       'Al-Sadaqua Walsalam Stadium',21500,1964,_country.kuwait,62.8,[]];
     //LEBANON
-    map[_name.alAhed] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(33.840550954, 35.4898395),
+    map[_name.alahed] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(33.840550954, 35.4898395),
       'Al Ahed',2000,1964,_country.lebanon,64.6,[]];
     map[_name.alAnsar] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(33.8384684, 35.495880),
       'Al Ansar',5000,1951,_country.lebanon,65.1,[]];

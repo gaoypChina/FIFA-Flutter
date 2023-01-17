@@ -131,6 +131,7 @@ resetData(){
   globalJogadoresInternationalGoals = List.filled(globalMaxPlayersPermitted, 0);
   globalJogadoresInternationalAssists = List.filled(globalMaxPlayersPermitted, 0);
   globalJogadoresRedCard = List.filled(globalMaxPlayersPermitted, 0);
+  globalJogadoresGrades = List.filled(globalMaxPlayersPermitted, 6.0);
   globalJogadoresYellowCard = List.filled(globalMaxPlayersPermitted, 0);
   globalJogadoresInjury = List.filled(globalMaxPlayersPermitted, 0);
 

@@ -244,7 +244,6 @@ Widget playerWidgetMatch(int jogadorIndex, String clubName){
                 : Images().getUniformWidget(clubName,imageSize,imageSize),
             ),
 
-
             //GOL
             Container(
               alignment: Alignment.topRight,
@@ -267,6 +266,9 @@ Widget playerWidgetMatch(int jogadorIndex, String clubName){
                 alignment: Alignment.topCenter,
                 child: globalHasInternet ? Image.network(jogadorClass.imageUrl,height: headSize,width: headSize) : Container(),
             ),
+
+
+            Text(matchClass.grade.toStringAsFixed(1),style: EstiloTextoBranco.text12),
 
           ],
         ),

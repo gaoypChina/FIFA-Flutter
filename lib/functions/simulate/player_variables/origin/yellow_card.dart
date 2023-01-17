@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/functions/simulate/player_variables/origin/grade.dart';
 import 'package:fifa/global_variables.dart';
 
 import '../../../../global_variables.dart';
@@ -17,6 +18,8 @@ class YellowCard{
     int jogadorID = escalacao[probJog]; //Posição do jogador [0-11]
     globalJogadoresYellowCard[jogadorID]++;
     globalJogadoresMatchYellowCards[jogadorID]++;
+
+    Grade().yellowCardMyMatch(jogadorID);
 
   }
   notMy(Club clubClass, int jogPOS) {

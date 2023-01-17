@@ -1,11 +1,13 @@
 import 'dart:math';
 
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/functions/simulate/player_variables/origin/grade.dart';
 import 'package:fifa/global_variables.dart';
 
 import '../../../../classes/club.dart';
 
 class RedCard{
+
   my(Club clubClass){
     //Se for o meu time
     List escalacao = clubClass.escalacao;
@@ -17,6 +19,8 @@ class RedCard{
     int jogadorID = escalacao[probJog];//Posição do jogador [0-11]
     globalJogadoresRedCard[jogadorID]++;
     globalJogadoresMatchRedCards[jogadorID]++;
+
+    Grade().redCardMyMatch(jogadorID);
   }
 
   notMy(Club clubClass,int jogPOS) {

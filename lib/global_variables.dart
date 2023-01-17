@@ -83,6 +83,7 @@ List globalJogadoresMatchRedCards = [];
 List globalJogadoresMatchYellowCards = [];
 List globalJogadoresMatchInjury = [];
 List globalJogadoresMatchHealth = [];
+List globalJogadoresMatchGrade = [];
 
 
 //Jogadores
@@ -110,8 +111,9 @@ List globalJogadoresLeagueAssists = [];
 List globalJogadoresInternationalMatchs = [];
 List globalJogadoresInternationalGoals = [];
 List globalJogadoresInternationalAssists = [];
-List globalJogadoresRedCard = [];
 List globalJogadoresYellowCard = [];
+List globalJogadoresRedCard = [];
+List globalJogadoresGrades = [];
 List globalJogadoresInjury = [];
 List globalJogadoresMoralNames = ['Excelent','Good','Average','Bad','Terrible'];
 

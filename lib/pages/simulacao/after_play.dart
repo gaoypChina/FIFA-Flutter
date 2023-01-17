@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/name.dart';
@@ -9,10 +7,11 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/international.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
+import 'package:fifa/classes/match/match.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/tabela_national.dart';
-import 'package:fifa/global_variables.dart';
 import 'package:fifa/classes/table_matchs_control.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/pages/simulacao/not_play_international/not_play_international_matamata.dart';
 import 'package:fifa/theme/background/background_position.dart';
@@ -25,6 +24,13 @@ import 'package:fifa/values/images.dart';
 import 'package:fifa/widgets/best_player_box/best_player_box.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:flutter/material.dart';
+
+class PlayerGrade{
+  late int id;
+  late String name;
+  late double grade;
+  PlayerGrade({required this.id,required this.name, required this.grade});
+}
 
 class AfterPlay extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
@@ -43,6 +49,7 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
   String name1 = '';
   String name2 = '';
   My myClass = My();
+  late PlayerGrade playerGrade;
   Club myClubClass = Club(index: My().clubID);
   late Club adversarioClubClass;
   late League leagueClass;
@@ -55,6 +62,7 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
   void initState() {
     _tabController = TabController(vsync: this, length: 2);
     onInit();
+    bestPlayer();
     super.initState();
   }
   onInit(){
@@ -67,6 +75,23 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
       name2 = adversarioClubClass.name;
     }
     leagueClass = League(index: myClass.campeonatoID);
+  }
+  bestPlayer(){
+    int bestPlayerID = 0;
+    double highestGrade = 0;
+    for(int playerID in myClubClass.escalacao){
+      if(Match(playerID: playerID).grade > highestGrade){
+        highestGrade = Match(playerID: playerID).grade;
+        bestPlayerID = playerID;
+      }
+    }
+    for(int playerID in adversarioClubClass.escalacao){
+      if(Match(playerID: playerID).grade > highestGrade){
+        highestGrade = Match(playerID: playerID).grade;
+        bestPlayerID = playerID;
+      }
+    }
+    playerGrade = PlayerGrade(id: bestPlayerID,name: Jogador(index: bestPlayerID).name,grade: highestGrade);
   }
   @override
   void dispose() {
@@ -114,7 +139,7 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
                 ),
                 Row(
                   children: [
-                    bestPlayerBox('Melhor Jogador', Jogador(index: myClass.jogadores[8]),''),
+                    bestPlayerBox('Melhor Jogador', Jogador(index: playerGrade.id),playerGrade.grade.toStringAsFixed(1)),
                     Expanded(child: classification()),
                   ],
                 ),
@@ -218,15 +243,15 @@ Widget statistics(){
         children: [
           Column(
             children: [
-              for(int playerID in myClubClass.escalacao)
-                playerRow(Jogador(index: playerID)),
+              for(int i=0;i<11;i++)
+                playerRow(Jogador(index: myClubClass.escalacao[i])),
             ],
           ),
 
           Column(
             children: [
-              for(int playerID in adversarioClubClass.escalacao)
-              playerRow(Jogador(index: playerID)),
+              for(int i=0;i<11;i++)
+                playerRow(Jogador(index: adversarioClubClass.escalacao[i])),
             ],
           ),
         ],
@@ -234,7 +259,7 @@ Widget statistics(){
     );
   }
   Widget playerRow(Jogador player){
-    double grade = (Random().nextInt(40)+50)/10;
+    Match match = Match(playerID: player.index);
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: Row(
@@ -247,8 +272,8 @@ Widget statistics(){
             SizedBox(width:100,child: Text(player.name,style: EstiloTextoBranco.text12)),
             const SizedBox(width: 4),
             Container(
-                height:18,width:25,color:colorAgeBackground(grade),
-                child: Center(child: Text(grade.toStringAsFixed(1),style: EstiloTextoPreto.text12))),
+                height:18,width:25,color:colorAgeBackground(match.grade),
+                child: Center(child: Text(match.grade.toStringAsFixed(1),style: EstiloTextoPreto.text12))),
         ],
       ),
     );

@@ -25,6 +25,7 @@ class Jogador{
   late int redCard;
   late int yellowCard;
   late int injury;
+  late double grade;
 
   late int matchsInternational;
   late int goalsInternational;
@@ -56,6 +57,7 @@ class Jogador{
     assistsLeague = globalJogadoresLeagueAssists[index] ?? 0;
     redCard = globalJogadoresRedCard[index] ?? 0;
     yellowCard = globalJogadoresYellowCard[index] ?? 0;
+    grade = globalJogadoresGrades[index] ?? 0;
     injury = globalJogadoresInjury[index] ?? 0;
     matchsInternational = globalJogadoresInternationalMatchs[index];
     goalsInternational = globalJogadoresInternationalGoals[index];
