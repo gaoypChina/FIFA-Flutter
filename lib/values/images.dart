@@ -798,6 +798,7 @@ String imageLogo(String timeFoto) {
     //MACEDONIA
     map[_name.akaPandev] = 'pandev';
     map[_name.makedonija] = 'makedonija';
+    map[_name.rabotnicki] = 'rabotnicki';
     map[_name.shkendija] = 'shkendija';
     map[_name.shkupi] = 'shkupi';
     map[_name.vardar] = 'vardar';
@@ -1476,7 +1477,7 @@ String imageLogo(String timeFoto) {
     map[_name.kualaLumpur] = 'kuala lumpur';
     map[_name.penang] = 'penang';
     map[_name.sabah] = 'sabah';
-    map[_name.sriPahang] = 'sri pahang';
+    map[_name.sripahang] = 'sri pahang';
     map[_name.selangor] = 'selangor';
     //MONGOLIA
     map[_name.athletic220] = 'athletic 220';

@@ -2805,12 +2805,11 @@ class ClubName{
   String federalTerritory = "Federal Territory";
   String lionsxii = "Lions XII";
   String negeri = "Negeri Sembilan";
-  String pahang = "Pahang";
   String penang = "Penang";
   String perak = "Perak";
   String perlis = "Perlis";
   String sabah = "Sabah";
-  String sriPahang = "Sri Pahang";
+  String sripahang = "Sri Pahang";
   String selangor = "Selangor";
   String terengganu = "Terengganu";
   //MALDIVES
@@ -2940,6 +2939,7 @@ class ClubName{
   String alhala = "Al-Hala";
   String alhidd = "Al-Hidd";
   String alMuharraq = "Al-Muharraq";
+  String alahliBAH = "Al Ahli-BAH";
   String alnasrBAH = "Al-Nasr QAT";
   String alRiffa = "Al-Riffa";
   String bahrain = "Bahrain";
