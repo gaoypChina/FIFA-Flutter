@@ -8,6 +8,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/match/confronto.dart';
+import 'package:fifa/classes/match/goal_my_match.dart';
 import 'package:fifa/functions/coach/coach_best_results.dart';
 import 'package:fifa/functions/simulate/my_match/counter.dart';
 import 'package:fifa/functions/simulate/my_match/my_match_simulation.dart';
@@ -250,23 +251,19 @@ class _PlayState extends State<Play> {
     : SizedBox(width: (Sized(context).width/2)-15);
   }
   Widget goalWidgetRow(int i,bool isMy){
-    late int minuto;
-    late int playerIndex;
+    GoalMyMatch goalMyMatch = GoalMyMatch();
     if(isMy){
-      minuto = globalMatchGoalsMinutesMy[i];
-      playerIndex = globalMatchGoalScorerIDMy[i];
+      goalMyMatch.getMyGoal(i);
     }else {
-      minuto = globalMatchGoalsMinutesAdv[i];
-      playerIndex = globalMatchGoalScorerIDAdv[i];
+      goalMyMatch.getAdvGoal(i);
     }
-      String playerName = Jogador(index: playerIndex).name;
       return
         Row(
         children: [
           Image.asset('assets/icons/bola.png',height:15,width: 15),
-          Text(minuto.toString()+'\'  ',style: EstiloTextoBranco.text14),
+          Text(goalMyMatch.minute.toString()+'\'  ',style: EstiloTextoBranco.text14),
           SizedBox(width:135,
-              child: Text(playerName,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14)
+              child: Text(goalMyMatch.playerName,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14)
           ),
         ],
       );

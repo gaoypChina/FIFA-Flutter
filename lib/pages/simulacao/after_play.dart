@@ -7,6 +7,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/international.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
+import 'package:fifa/classes/match/goal_my_match.dart';
 import 'package:fifa/classes/match/match.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/tabela_national.dart';
@@ -38,7 +39,7 @@ class AfterPlay extends StatefulWidget {
   final int gol1;
   final int gol2;
   final bool visitante;
-  const AfterPlay({Key? key,required this.adversarioClubID, required this.visitante, required this.gol1, required this.gol2}) : super(key: key);
+  const AfterPlay({Key? key, required this.adversarioClubID, required this.visitante, required this.gol1, required this.gol2}) : super(key: key);
 
   @override
   State<AfterPlay> createState() => _AfterPlayState();
@@ -132,7 +133,9 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
                   child: TabBarView(
                     controller: _tabController,
                     children: [
-                      statistics(),
+                      widget.visitante
+                          ? statisticsVisitante()
+                          : statisticsHome(),
                       playerStatistics(),
                     ],
                   ),
@@ -207,33 +210,70 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
     );
   }
 
-Widget statistics(){
-    return Column(
+Widget statisticsHome(){
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        statisticsRow(53,'Posse de bola',47),
-        statisticsRow(1,'Chutes',3),
-        statisticsRow(1,'Chutes no Gol',3),
-        statisticsRow(1,'Escanteios',3),
+
+        Column(
+          children: [
+            for(int i=1; i<=widget.gol1;i++)
+              goalRowMy(i-1),
+          ],
+        ),
+        Container(width: 1 ,color: Colors.white),
+        widget.gol2 >0 ? Column(
+          children: [
+            for(int i=1; i<=widget.gol2;i++)
+              goalRowAdv(i-1),
+          ],
+        ) : Container(width: Sized(context).width*0.45),
       ],
     );
 }
-  Widget statisticsRow(int value1, String name, int value2){
-    return Column(
+  Widget statisticsVisitante(){
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+        Column(
           children: [
-            Text(value1.toString(),style: EstiloTextoBranco.text14),
-            SizedBox(
-                width: Sized(context).width*0.3,
-                child: Text(name,textAlign:TextAlign.center,style: EstiloTextoBranco.text16)
-            ),
-            Text(value2.toString(),style: EstiloTextoBranco.text14),
+            for(int i=1; i<=widget.gol2;i++)
+              goalRowAdv(i-1),
           ],
-        )
+        ),
+        Container(width: 1 ,color: Colors.white),
+        widget.gol1 >0 ? Column(
+          children: [
+            for(int i=1; i<=widget.gol1;i++)
+              goalRowMy(i-1),
+          ],
+        ) : Container(width: Sized(context).width*0.45),
       ],
     );
   }
+  Widget goalRowMy(int i){
+    GoalMyMatch goalMyMatch = GoalMyMatch();
+    goalMyMatch.getMyGoal(i);
+    return goalRow(goalMyMatch);
+  }
+  Widget goalRowAdv(int i){
+    GoalMyMatch goalMyMatch = GoalMyMatch();
+    goalMyMatch.getAdvGoal(i);
+    return goalRow(goalMyMatch);
+  }
+Widget goalRow(GoalMyMatch goalMyMatch){
+  return
+    Row(
+      children: [
+        Image.asset('assets/icons/bola.png',height:15,width: 15),
+        Text(goalMyMatch.minute.toString()+'\'  ',style: EstiloTextoBranco.text14),
+        SizedBox(width:135,
+            child: Text(goalMyMatch.playerName,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14)
+        ),
+      ],
+    );
+}
 
   Widget playerStatistics(){
     return SingleChildScrollView(
@@ -264,15 +304,13 @@ Widget statistics(){
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: Row(
         children: [
-            const SizedBox(width: 4),
+            const SizedBox(width: 2),
             positionContainer(player.position),
-            const SizedBox(width: 4),
-            moralContainer(player,size: 20),
-            const SizedBox(width: 4),
+            Images().getPlayerPictureWidget(player,25,25),
             SizedBox(width:100,child: Text(player.name,style: EstiloTextoBranco.text12)),
             const SizedBox(width: 4),
             Container(
-                height:18,width:25,color:colorAgeBackground(match.grade),
+                height:18,width:25,color:colorAgeBackground(match.grade.floorToDouble()),
                 child: Center(child: Text(match.grade.toStringAsFixed(1),style: EstiloTextoPreto.text12))),
         ],
       ),

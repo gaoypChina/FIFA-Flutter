@@ -6,7 +6,7 @@ import 'package:fifa/global_variables.dart';
 class Grade{
 
   addMyGameRandomScore(int jogadorID){
-    double randomNum = (Random().nextInt(5)-2)/100;
+    double randomNum = (Random().nextInt(6)-2)/100;
     add(jogadorID, randomNum);
   }
 
@@ -36,7 +36,7 @@ class Grade{
   }
 
   goalMyMatch(int jogadorID){
-    add(jogadorID, 1.5);
+    add(jogadorID, 1.3);
   }
   assistMyMatch(int jogadorID){
     add(jogadorID, 0.8);
