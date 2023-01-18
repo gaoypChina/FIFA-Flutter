@@ -1,20 +1,20 @@
 club,name,position,age,overall,nationality,image
-Chelsea,N. Kanté,VOL MC,31,88,France,/215/914/23_60.png
-Chelsea,K. Koulibaly,ZAG,31,86,Senegal,/201/024/23_60.png
-Chelsea,É. Mendy,GOL,30,86,Senegal,/234/642/23_60.png
+Chelsea,N. Kanté,VOL MC,31,89,France,/215/914/23_60.png
+Chelsea,K. Koulibaly,ZAG,31,85,Senegal,/201/024/23_60.png
+Chelsea,É. Mendy,GOL,30,85,Senegal,/234/642/23_60.png
 Chelsea,Thiago Silva,ZAG,37,86,Brazil,/164/240/23_60.png
-Chelsea,R. Lukaku,ATA,29,86,Belgium,/192/505/23_60.png
-Chelsea,R. Sterling,PE PD ATA,27,85,England,/202/652/23_60.png
-Chelsea,P. Aubameyang,ATA,33,84,Gabon,/188/567/23_60.png
+Chelsea,R. Lukaku,ATA,29,84,Belgium,/192/505/23_60.png
+Chelsea,R. Sterling,PE PD ATA,27,82,England,/202/652/23_60.png
+Chelsea,P. Aubameyang,ATA,33,83,Gabon,/188/567/23_60.png
 Chelsea,M. Kovačić,MC,28,84,Croatia,/207/410/23_60.png
 Chelsea,R. James,LD LD,22,84,England,/238/074/23_60.png
 Chelsea,K. Havertz,MEI ATA ATA,23,84,Germany,/235/790/23_60.png
 Chelsea,Jorginho,MC VOL,30,84,Italy,/205/498/23_60.png
 Chelsea,H. Ziyech,PD MEI,29,83,Morocco,/208/670/23_60.png
 Chelsea,M. Mount,MEI PD,23,83,England,/233/064/23_60.png
-Chelsea,C. Pulisic,PE PD ME,23,82,United States,/227/796/23_60.png
+Chelsea,C. Pulisic,PE PD ME,23,81,United States,/227/796/23_60.png
 Chelsea,Azpilicueta,ZAG LD LD,32,82,Spain,/184/432/23_60.png
-Chelsea,B. Chilwell,LE LE,25,82,England,/229/984/23_60.png
+Chelsea,B. Chilwell,LE LE,25,83,England,/229/984/23_60.png
 Chelsea,Kepa,GOL,27,81,Spain,/206/585/23_60.png
 Chelsea,Cucurella,LE ZAG LE,23,81,Spain,/239/231/23_60.png
 Chelsea,D. Zakaria,VOL MC,25,81,Switzerland,/229/261/23_60.png
@@ -46,11 +46,11 @@ Chelsea,J. Brooking,ZAG LD,19,60,England,/257/239/23_60.png
 Chelsea,C. Webster,MC VOL MEI,18,58,England,/261/390/23_60.png
 Manchester City,K. De Bruyne,MC MEI,31,91,Belgium,/192/985/23_60.png
 Manchester City,Ederson,GOL,28,89,Brazil,/210/257/23_60.png
-Manchester City,E. Haaland,ATA,21,89,Norway,/239/085/23_60.png
+Manchester City,E. Haaland,ATA,21,93,Norway,/239/085/23_60.png
 Manchester City,Rúben Dias,ZAG,25,88,Portugal,/239/818/23_60.png
 Manchester City,João Cancelo,LE LD,28,88,Portugal,/210/514/23_60.png
 Manchester City,Bernardo Silva,MEI MC,27,88,Portugal,/218/667/23_60.png
-Manchester City,Rodri,VOL,26,87,Spain,/231/866/23_60.png
+Manchester City,Rodri,VOL,26,88,Spain,/231/866/23_60.png
 Manchester City,A. Laporte,ZAG,28,86,Spain,/212/218/23_60.png
 Manchester City,P. Foden,PE ATA MEI,22,85,England,/237/692/23_60.png
 Manchester City,K. Walker,LD,32,85,England,/188/377/23_60.png
@@ -90,7 +90,7 @@ Manchester City,J. Wilson-Esbrand,LE,19,58,England,/264/681/23_60.png
 Manchester City,C. Slicker,GOL,19,52,Scotland,/264/645/23_60.png
 Manchester United,Casemiro,VOL,30,89,Brazil,/200/145/23_60.png
 Manchester United,De Gea,GOL,31,87,Spain,/193/080/23_60.png
-Manchester United,Bruno Fernandes,MEI MC,27,86,Portugal,/212/198/23_60.png
+Manchester United,Bruno Fernandes,MEI MC,27,87,Portugal,/212/198/23_60.png
 Manchester United,R. Varane,ZAG,29,85,France,/201/535/23_60.png
 Manchester United,C. Eriksen,MC VOL MEI,30,83,Denmark,/190/460/23_60.png
 Manchester United,J. Sancho,PE PD ME,22,83,England,/233/049/23_60.png
@@ -143,7 +143,7 @@ Arsenal,B. White,ZAG LD,24,80,England,/231/936/23_60.png
 Arsenal,E. Smith Rowe,ME MEI,21,80,England,/240/273/23_60.png
 Arsenal,O. Zinchenko,LE,25,79,Ukraine,/227/813/23_60.png
 Arsenal,T. Tomiyasu,LD,23,79,Japan,/232/938/23_60.png
-Arsenal,Gabriel Martinelli,ME PE,21,79,Brazil,/251/566/23_60.png
+Arsenal,Gabriel Martinelli,ME PE,21,81,Brazil,/251/566/23_60.png
 Arsenal,N. Pépé,MD ME PE,27,79,Ivory Coast,/226/110/23_60.png
 Arsenal,R. Holding,ZAG,26,77,England,/228/295/23_60.png
 Arsenal,Fábio Vieira,MEI MD,22,77,Portugal,/256/958/23_60.png
@@ -181,7 +181,7 @@ Liverpool,Alisson,GOL,29,89,Brazil,/212/831/23_60.png
 Liverpool,A. Robertson,LE,28,87,Scotland,/216/267/23_60.png
 Liverpool,Fabinho,VOL ZAG,28,86,Brazil,/209/499/23_60.png
 Liverpool,Thiago,MC,31,86,Spain,/189/509/23_60.png
-Liverpool,T. Alexander-Arnold,LD,23,86,England,/231/281/23_60.png
+Liverpool,T. Alexander-Arnold,LD,23,87,England,/231/281/23_60.png
 Liverpool,Diogo Jota,ATA PE,25,85,Portugal,/224/458/23_60.png
 Liverpool,L. Díaz,PE ME,25,84,Colombia,/241/084/23_60.png
 Liverpool,J. Matip,ZAG,30,84,Cameroon,/197/061/23_60.png
@@ -252,7 +252,7 @@ Tottenham,P. Sarr,MC,19,71,Senegal,/259/868/23_60.png
 Tottenham,T. Parrott,ATA MD,20,66,Ireland,/245/902/23_60.png
 Tottenham,D. Scarlett,ATA,18,65,England,/261/025/23_60.png
 Tottenham,H. White,VOL MC,20,64,England,/245/903/23_60.png
-Tottenham,B. Austin,GOL,23,64,England,/236/568/23_60.png
+Tottenham,B. Austin FC,GOL,23,64,England,/236/568/23_60.png
 Tottenham,J. Bowden,MC VOL,20,63,Ireland,/245/907/23_60.png
 Tottenham,A. Whiteman,GOL,23,63,England,/236/239/23_60.png
 Tottenham,A. Devine,MEI PE,17,61,England,/264/180/23_60.png
@@ -1930,7 +1930,7 @@ Barcelona,Sergio Busquets,VOL,33,85,Spain,/189/511/23_60.png
 Barcelona,M. Depay,ATA PE ATA,28,85,Netherlands,/202/556/23_60.png
 Barcelona,J. Koundé,ZAG LD,23,84,France,/241/486/23_60.png
 Barcelona,F. Kessié,VOL MC MEI,25,84,Ivory Coast,/230/938/23_60.png
-Barcelona,O. Dembélé,PD PE,25,83,France,/231/443/23_60.png
+Barcelona,O. Dembélé,PD PE,25,84,France,/231/443/23_60.png
 Barcelona,Raphinha,PD MD,25,83,Brazil,/233/419/23_60.png
 Barcelona,R. Araujo,ZAG LD,23,83,Uruguay,/253/163/23_60.png
 Barcelona,Ferran Torres,PE ATA,22,82,Spain,/241/461/23_60.png
@@ -1942,7 +1942,7 @@ Barcelona,Héctor Bellerín,LD,27,79,Spain,/203/747/23_60.png
 Barcelona,Ansu Fati,PE,19,79,Spain,/253/004/23_60.png
 Barcelona,S. Umtiti,ZAG,28,79,France,/205/600/23_60.png
 Barcelona,Eric García,ZAG,21,77,Spain,/245/037/23_60.png
-Barcelona,S. Dest,LD MD LE,21,77,United States,/251/804/23_60.png
+Barcelona,S. Dest,LD MD LE,21,78,United States,/251/804/23_60.png
 Barcelona,Trincão,PD MD,22,76,Portugal,/244/778/23_60.png
 Barcelona,Nico González,MC VOL,20,75,Spain,/255/069/23_60.png
 Barcelona,Balde,LE ME LD,18,74,Spain,/263/578/23_60.png
@@ -1963,29 +1963,29 @@ Barcelona,C. Riad,ZAG,19,61,Morocco,/258/490/23_60.png
 Real Madrid,K. Benzema,ATA ATA,34,91,France,/165/153/23_60.png
 Real Madrid,T. Courtois,GOL,30,90,Belgium,/192/119/23_60.png
 Real Madrid,T. Kroos,MC,32,88,Germany,/182/521/23_60.png
-Real Madrid,L. Modrić,MC,36,88,Croatia,/177/003/23_60.png
+Real Madrid,L. Modrić,MC,36,89,Croatia,/177/003/23_60.png
 Real Madrid,A. Rüdiger,ZAG,29,87,Germany,/205/452/23_60.png
 Real Madrid,D. Alaba,ZAG LE,30,86,Austria,/197/445/23_60.png
-Real Madrid,Vinícius Jr.,PE,21,86,Brazil,/238/794/23_60.png
+Real Madrid,Vinícius Jr.,PE,21,88,Brazil,/238/794/23_60.png
 Real Madrid,F. Valverde,MC PD,23,85,Uruguay,/239/053/23_60.png
 Real Madrid,Carvajal,LD,30,84,Spain,/204/963/23_60.png
-Real Madrid,E. Hazard,PE,31,84,Belgium,/183/277/23_60.png
+Real Madrid,E. Hazard,PE,31,80,Belgium,/183/277/23_60.png
 Real Madrid,Éder Militão,ZAG,24,84,Brazil,/240/130/23_60.png
 Real Madrid,A. Tchouaméni,VOL MC,22,83,France,/241/637/23_60.png
 Real Madrid,Marco Asensio,PD PE,26,83,Spain,/220/834/23_60.png
 Real Madrid,F. Mendy,LE,27,83,France,/228/618/23_60.png
 Real Madrid,Nacho Fernández,ZAG LE,32,82,Spain,/200/724/23_60.png
-Real Madrid,Rodrygo,PD PE ATA,21,81,Brazil,/243/812/23_60.png
+Real Madrid,Rodrygo,PD PE ATA,21,82,Brazil,/243/812/23_60.png
 Real Madrid,Lucas Vázquez,LD PD,31,81,Spain,/208/618/23_60.png
-Real Madrid,E. Camavinga,MC VOL,19,79,France,/248/243/23_60.png
-Real Madrid,Odriozola,LD,26,78,Spain,/234/035/23_60.png
+Real Madrid,E. Camavinga,MC VOL,19,80,France,/248/243/23_60.png
+Real Madrid,Odriozola,LD,26,79,Spain,/234/035/23_60.png
 Real Madrid,Brahim,MEI,22,78,Spain,/231/410/23_60.png
 Real Madrid,Dani Ceballos,MC VOL,25,77,Spain,/222/509/23_60.png
 Real Madrid,Vallejo,ZAG,25,75,Spain,/225/161/23_60.png
 Real Madrid,A. Lunin,GOL,23,75,Ukraine,/243/952/23_60.png
-Real Madrid,Mariano,ATA,28,74,Dominican Republic,/221/639/23_60.png
+Real Madrid,Mariano,ATA,28,75,Dominican Republic,/221/639/23_60.png
 Real Madrid,Antonio Blanco,MC VOL,21,71,Spain,/261/987/23_60.png
-Real Madrid,Reinier,MD ME MEI,20,70,Brazil,/254/544/23_60.png
+Real Madrid,Reinier,MD ME MEI,20,72,Brazil,/254/544/23_60.png
 Real Madrid,Latasa,ATA,21,69,Spain,/271/682/23_60.png
 Real Madrid,Marvin,PD MD LD,22,68,Spain,/258/922/23_60.png
 Real Madrid,Iker Bravo,ATA MD,17,65,Spain,/265/194/23_60.png
@@ -1999,7 +1999,7 @@ Real Madrid,Luis López,GOL,21,63,Spain,/264/170/23_60.png
 Real Madrid,Cañizares,GOL,20,62,Spain,/259/317/23_60.png
 Real Madrid,Julen Jon,MEI MC ATA,18,61,Spain,/264/845/23_60.png
 Real Madrid,T. Nakai,MEI,18,61,Japan,/259/419/23_60.png
-Atlético Madrid,J. Oblak,GOL,29,89,Slovenia,/200/389/23_60.png
+Atlético Madrid,J. Oblak,GOL,29,88,Slovenia,/200/389/23_60.png
 Atlético Madrid,Y. Carrasco,ME LE,28,85,Belgium,/208/418/23_60.png
 Atlético Madrid,Marcos Llorente,MC MD LD,27,84,Spain,/226/161/23_60.png
 Atlético Madrid,R. De Paul,MC MD,28,84,Argentina,/212/616/23_60.png
@@ -3005,18 +3005,18 @@ Real Zaragoza,Guillem Naranjo,ATA,22,62,Spain,/272/443/23_60.png
 Real Zaragoza,Vaquero,MC,18,60,Spain,/267/606/23_60.png
 Real Zaragoza,Miguel Operé,ZAG,21,60,Spain,/271/884/23_60.png
 Juventus,W. Szczęsny,GOL,32,86,Poland,/186/153/23_60.png
-Juventus,F. Kostić,ME PE LE,29,85,Serbia,/208/574/23_60.png
+Juventus,F. Kostić,ME PE LE,29,83,Serbia,/208/574/23_60.png
 Juventus,P. Pogba,MC VOL ME,29,85,France,/195/864/23_60.png
-Juventus,Á. Di María,PD,34,84,Argentina,/183/898/23_60.png
+Juventus,Á. Di María,PD,34,85,Argentina,/183/898/23_60.png
 Juventus,F. Chiesa,PE,24,84,Italy,/235/805/23_60.png
 Juventus,D. Vlahović,ATA,22,84,Serbia,/246/430/23_60.png
 Juventus,L. Bonucci,ZAG,35,83,Italy,/184/344/23_60.png
-Juventus,Bremer,ZAG,25,83,Brazil,/239/580/23_60.png
+Juventus,Bremer,ZAG,25,81,Brazil,/239/580/23_60.png
 Juventus,J. Cuadrado,LD MD PD,34,82,Colombia,/193/082/23_60.png
 Juventus,M. Locatelli,VOL MC,24,82,Italy,/222/077/23_60.png
-Juventus,Danilo,LD ZAG,30,81,Brazil,/199/304/23_60.png
+Juventus,Danilo,LD ZAG,30,82,Brazil,/199/304/23_60.png
 Juventus,A. Rabiot,MC ME,27,81,France,/210/008/23_60.png
-Juventus,Alex Sandro,LE,31,80,Brazil,/191/043/23_60.png
+Juventus,Alex Sandro,LE,31,81,Brazil,/191/043/23_60.png
 Juventus,A. Milik,ATA,28,80,Poland,/205/175/23_60.png
 Juventus,L. Paredes,MC VOL,28,80,Argentina,/207/439/23_60.png
 Juventus,M. Perin,GOL,29,79,Italy,/198/009/23_60.png
@@ -3093,15 +3093,15 @@ Napoli,V. Osimhen,ATA,23,83,Nigeria,/232/293/23_60.png
 Napoli,G. Di Lorenzo,LD,28,82,Italy,/217/870/23_60.png
 Napoli,S. Lobotka,MC VOL,27,81,Slovakia,/216/435/23_60.png
 Napoli,H. Lozano,PD,26,81,Mexico,/221/992/23_60.png
-Napoli,A. Zambo Anguissa,VOL MC,26,81,Cameroon,/227/236/23_60.png
+Napoli,A. Zambo Anguissa,VOL MC,26,82,Cameroon,/227/236/23_60.png
 Napoli,M. Politano,PD MD,28,81,Italy,/216/409/23_60.png
 Napoli,A. Rrahmani,ZAG,28,80,Kosovo,/244/263/23_60.png
-Napoli,Kim Min Jae,ZAG,25,79,South Korea,/237/086/23_60.png
+Napoli,Kim Min Jae,ZAG,25,84,South Korea,/237/086/23_60.png
 Napoli,Mário Rui,LE,31,79,Portugal,/204/614/23_60.png
-Napoli,G. Raspadori,ATA MEI ATA,22,79,Italy,/253/002/23_60.png
-Napoli,A. Meret,GOL,25,79,Italy,/225/116/23_60.png
-Napoli,K. Kvaratskhelia,PE MEI,21,79,Georgia,/247/635/23_60.png
-Napoli,G. Simeone,ATA,26,78,Argentina,/216/816/23_60.png
+Napoli,G. Raspadori,ATA MEI ATA,22,81,Italy,/253/002/23_60.png
+Napoli,A. Meret,GOL,25,81,Italy,/225/116/23_60.png
+Napoli,K. Kvaratskhelia,PE MEI,21,86,Georgia,/247/635/23_60.png
+Napoli,G. Simeone,ATA,26,79,Argentina,/216/816/23_60.png
 Napoli,E. Elmas,MEI MC PE,22,78,North Macedonia,/241/390/23_60.png
 Napoli,D. Demme,VOL MC,30,77,Germany,/202/325/23_60.png
 Napoli,M. Olivera,LE LE,24,77,Uruguay,/240/716/23_60.png
@@ -3117,7 +3117,7 @@ Napoli,M. Folorunsho,MC MEI,24,69,Italy,/268/683/23_60.png
 Napoli,N. Contini,GOL,26,67,Ukraine,/220/532/23_60.png
 Napoli,K. Zedadka,LE PE LD,22,62,France,/264/392/23_60.png
 Napoli,H. Idasiak,GOL,20,55,Poland,/271/957/23_60.png
-Lazio,S. Milinković-Savić,MC,27,86,Serbia,/223/848/23_60.png
+Lazio,S. Milinković-Savić,MC,27,84,Serbia,/223/848/23_60.png
 Lazio,C. Immobile,ATA,32,86,Italy,/192/387/23_60.png
 Lazio,Luis Alberto,MC,29,83,Spain,/198/706/23_60.png
 Lazio,A. Romagnoli,ZAG,27,81,Italy,/210/413/23_60.png
@@ -3153,7 +3153,7 @@ Milan,F. Tomori,ZAG,24,84,England,/232/756/23_60.png
 Milan,I. Bennacer,VOL MC,24,82,Algeria,/226/754/23_60.png
 Milan,S. Kjær,ZAG,33,82,Denmark,/179/645/23_60.png
 Milan,Z. Ibrahimović,ATA,40,82,Sweden,/041/236/23_60.png
-Milan,O. Giroud,ATA,35,82,France,/178/509/23_60.png
+Milan,O. Giroud,ATA,35,84,France,/178/509/23_60.png
 Milan,A. Rebić,PE ME ATA,28,80,Croatia,/220/018/23_60.png
 Milan,D. Calabria,LD,25,80,Italy,/228/881/23_60.png
 Milan,A. Florenzi,LD,31,79,Italy,/203/551/23_60.png
@@ -3176,7 +3176,7 @@ Milan,L. Colombo,ATA,20,69,Italy,/256/899/23_60.png
 Milan,D. Maldini,MEI,20,65,Italy,/255/611/23_60.png
 Milan,M. Lazetić,ATA,18,65,Serbia,/266/891/23_60.png
 Milan,M. Brescianini,VOL MC,22,64,Italy,/257/785/23_60.png
-Roma,P. Dybala,ATA MEI,28,86,Argentina,/211/110/23_60.png
+Roma,P. Dybala,ATA MEI,28,83,Argentina,/211/110/23_60.png
 Roma,L. Pellegrini,MEI MC,26,84,Italy,/228/251/23_60.png
 Roma,T. Abraham,ATA,24,82,England,/231/352/23_60.png
 Roma,L. Spinazzola,LE ME,29,82,Italy,/202/884/23_60.png
@@ -3220,7 +3220,7 @@ Atalanta,T. Koopmeiners,MC VOL,24,80,Netherlands,/240/679/23_60.png
 Atalanta,H. Hateboer,LD LD MD,28,80,Netherlands,/220/093/23_60.png
 Atalanta,M. de Roon,VOL MC ZAG,31,80,Netherlands,/208/461/23_60.png
 Atalanta,B. Djimsiti,ZAG,29,79,Albania,/208/165/23_60.png
-Atalanta,D. Zappacosta,LE ME MD,30,79,Italy,/216/150/23_60.png
+Atalanta,D. Zappacosta,LE,30,79,Italy,/216/150/23_60.png
 Atalanta,M. Pessina,MEI MC ATA,25,78,Italy,/239/613/23_60.png
 Atalanta,J. Palomino,ZAG,32,78,Argentina,/217/196/23_60.png
 Atalanta,J. Boga,PE ATA ME,25,77,Ivory Coast,/224/422/23_60.png
@@ -3598,8 +3598,6 @@ Montreal Impact,J. Pantemis,GOL,25,66,Canada,/238/919/23_60.png
 Montreal Impact,M. Toye,ATA,23,66,United States,/242/253/23_60.png
 Montreal Impact,M. Miljevic,ATA ATA,21,66,United States,/246/336/23_60.png
 Montreal Impact,A. Hamdi,MC ATA,24,65,Egypt,/260/953/23_60.png
-Montreal Impact,G. Corbo,ZAG,22,64,Italy,/243/513/23_60.png
-Montreal Impact,S. Breza,GOL,24,64,Canada,/261/687/23_60.png
 Montreal Impact,B. Johnsen,ATA,30,63,Norway,/235/320/23_60.png
 Montreal Impact,C. Offor,ATA ME,22,63,Nigeria,/259/626/23_60.png
 Montreal Impact,S. Ibrahim,ATA ATA,19,61,Nigeria,/260/443/23_60.png
@@ -3640,34 +3638,34 @@ Houston Dynamo,N. Quiñónes,PE PD,19,53,Colombia,/270/955/23_60.png
 Houston Dynamo,J. Castilla,MC MD,17,52,Colombia,/260/424/23_60.png
 Houston Dynamo,B. Avila,ME,21,51,United States,/269/158/23_60.png
 Houston Dynamo,B. Raines,VOL,17,50,United States,/269/005/23_60.png
-Austin,S. Driussi,MEI ATA,26,78,Argentina,/221/125/23_60.png
-Austin,E. Rigoni,MD ATA ME,29,77,Argentina,/215/259/23_60.png
-Austin,A. Ring,VOL MC,31,74,Finland,/205/895/23_60.png
-Austin,T. Pochettino,MC MEI,26,73,Argentina,/231/524/23_60.png
-Austin,D. Fagundez,ME MD MEI,27,72,Uruguay,/201/895/23_60.png
-Austin,Bryan Corozo,ME,23,70,Ecuador,/253/347/23_60.png
-Austin,M. Djitté,ATA,22,70,Senegal,/244/042/23_60.png
-Austin,R. Gabrielsen,ZAG,30,69,Norway,/190/491/23_60.png
-Austin,B. Stuver,GOL,31,69,United States,/213/206/23_60.png
-Austin,N. Lima,LD LE,27,68,United States,/236/993/23_60.png
-Austin,E. Finlay,MD,31,67,United States,/207/669/23_60.png
-Austin,Felipe,VOL MC,31,67,Brazil,/207/465/23_60.png
-Austin,M. Urruti,ATA,31,67,Argentina,/215/083/23_60.png
-Austin,J. Cascante,ZAG LD,28,67,Costa Rica,/242/533/23_60.png
-Austin,J. Valencia,VOL MC,25,66,Colombia,/228/744/23_60.png
-Austin,H. Jimenez,LD LE,33,66,United States,/202/231/23_60.png
-Austin,D. Pereira,VOL MC,21,65,Venezuela,/261/245/23_60.png
-Austin,R. Redes,MD PD,22,65,Paraguay,/253/250/23_60.png
-Austin,D. Hoesen,ATA,31,65,Netherlands,/190/497/23_60.png
-Austin,A. Tarbell,GOL,28,63,United States,/232/082/23_60.png
-Austin,Ž. Kolmanič,LE ME,22,63,Slovenia,/261/359/23_60.png
-Austin,J. Gallagher,LE ME,26,63,Ireland,/242/624/23_60.png
-Austin,J. Stroud,MD ME,25,61,United States,/243/464/23_60.png
-Austin,J. Romaña,ZAG,23,61,Colombia,/233/814/23_60.png
-Austin,F. Kleemann,ZAG,23,57,United States,/261/201/23_60.png
-Austin,K. Keller,ZAG,21,57,United States,/266/388/23_60.png
-Austin,O. Wolff,MD MC,17,54,United States,/269/151/23_60.png
-Austin,D. Las,GOL,20,52,United States,/266/726/23_60.png
+Austin FC,S. Driussi,MEI ATA,26,78,Argentina,/221/125/23_60.png
+Austin FC,E. Rigoni,MD ATA ME,29,77,Argentina,/215/259/23_60.png
+Austin FC,A. Ring,VOL MC,31,74,Finland,/205/895/23_60.png
+Austin FC,T. Pochettino,MC MEI,26,73,Argentina,/231/524/23_60.png
+Austin FC,D. Fagundez,ME MD MEI,27,72,Uruguay,/201/895/23_60.png
+Austin FC,Bryan Corozo,ME,23,70,Ecuador,/253/347/23_60.png
+Austin FC,M. Djitté,ATA,22,70,Senegal,/244/042/23_60.png
+Austin FC,R. Gabrielsen,ZAG,30,69,Norway,/190/491/23_60.png
+Austin FC,B. Stuver,GOL,31,69,United States,/213/206/23_60.png
+Austin FC,N. Lima,LD LE,27,68,United States,/236/993/23_60.png
+Austin FC,E. Finlay,MD,31,67,United States,/207/669/23_60.png
+Austin FC,Felipe,VOL MC,31,67,Brazil,/207/465/23_60.png
+Austin FC,M. Urruti,ATA,31,67,Argentina,/215/083/23_60.png
+Austin FC,J. Cascante,ZAG LD,28,67,Costa Rica,/242/533/23_60.png
+Austin FC,J. Valencia,VOL MC,25,66,Colombia,/228/744/23_60.png
+Austin FC,H. Jimenez,LD LE,33,66,United States,/202/231/23_60.png
+Austin FC,D. Pereira,VOL MC,21,65,Venezuela,/261/245/23_60.png
+Austin FC,R. Redes,MD PD,22,65,Paraguay,/253/250/23_60.png
+Austin FC,D. Hoesen,ATA,31,65,Netherlands,/190/497/23_60.png
+Austin FC,A. Tarbell,GOL,28,63,United States,/232/082/23_60.png
+Austin FC,Ž. Kolmanič,LE ME,22,63,Slovenia,/261/359/23_60.png
+Austin FC,J. Gallagher,LE ME,26,63,Ireland,/242/624/23_60.png
+Austin FC,J. Stroud,MD ME,25,61,United States,/243/464/23_60.png
+Austin FC,J. Romaña,ZAG,23,61,Colombia,/233/814/23_60.png
+Austin FC,F. Kleemann,ZAG,23,57,United States,/261/201/23_60.png
+Austin FC,K. Keller,ZAG,21,57,United States,/266/388/23_60.png
+Austin FC,O. Wolff,MD MC,17,54,United States,/269/151/23_60.png
+Austin FC,D. Las,GOL,20,52,United States,/266/726/23_60.png
 SJ Earthquakes,Akapo,LD LE,29,75,Equatorial Guinea,/216/605/23_60.png
 SJ Earthquakes,Jamiro Monteiro,MC MEI ME,28,74,Cape Verde,/231/150/23_60.png
 SJ Earthquakes,M. Trauco,LE ME,29,72,Peru,/225/706/23_60.png
@@ -3731,7 +3729,6 @@ Chicago Fire,C. Mueller,MD PD,25,70,United States,/242/714/23_60.png
 Chicago Fire,F. Navarro,VOL MC,22,69,Argentina,/246/335/23_60.png
 Chicago Fire,K. Przybyłko,ATA,29,69,Poland,/208/120/23_60.png
 Chicago Fire,B. Sekulić,LD LD MD,30,67,Slovakia,/247/503/23_60.png
-Chicago Fire,G. Slonina,GOL,18,66,United States,/248/158/23_60.png
 Chicago Fire,M. Pineda,ZAG VOL,24,66,United States,/255/273/23_60.png
 Chicago Fire,F. Herbers,MEI MD MC,28,66,Germany,/232/166/23_60.png
 Chicago Fire,J. Torres,MC MD ME,22,66,Mexico,/236/842/23_60.png
@@ -3812,36 +3809,36 @@ Colorado Rapids,O. Larraz,MC MEI,20,52,United States,/261/453/23_60.png
 Colorado Rapids,S. Anderson,LD,19,52,United States,/248/567/23_60.png
 Colorado Rapids,M. Edwards,ZAG,21,52,United States,/261/419/23_60.png
 Colorado Rapids,D. Yapi,ATA,17,49,United States,/261/455/23_60.png
-Charlotte,K. Świderski,ATA MEI,25,74,Poland,/224/301/23_60.png
-Charlotte,Nuno Santos,MC,23,74,Portugal,/251/438/23_60.png
-Charlotte,G. Corujo,ZAG,25,72,Uruguay,/253/289/23_60.png
-Charlotte,N. Byrne,LD,30,70,England,/202/814/23_60.png
-Charlotte,C. Fuchs,LE ZAG,36,70,Austria,/139/313/23_60.png
-Charlotte,K. Jóźwiak,MD ME,24,69,Poland,/233/222/23_60.png
-Charlotte,J. Mora,LE LE ME,29,68,Costa Rica,/242/995/23_60.png
-Charlotte,J. Alcívar,MC MD ME,22,67,Ecuador,/254/039/23_60.png
-Charlotte,D. Jones,VOL MC,25,66,United States,/235/425/23_60.png
-Charlotte,A. Walkes,ZAG,25,66,England,/232/252/23_60.png
-Charlotte,Andre Shinyashiki,ME ATA MEI,25,66,Brazil,/247/391/23_60.png
-Charlotte,H. Afful,LD,36,66,Ghana,/189/514/23_60.png
-Charlotte,J. Lindsey,LD LD,22,66,United States,/242/334/23_60.png
-Charlotte,Y. Reyna,ME MD ATA,28,66,Peru,/214/000/23_60.png
-Charlotte,K. Kahlina,GOL,29,65,Croatia,/266/282/23_60.png
-Charlotte,P. Sisniega,GOL,26,65,Mexico,/235/590/23_60.png
-Charlotte,B. Bronico,VOL MC,27,65,United States,/237/920/23_60.png
-Charlotte,B. Bender,MEI ME MC,21,64,United States,/266/373/23_60.png
-Charlotte,O. Gaines,MD ME,24,63,United States,/239/826/23_60.png
-Charlotte,D. Ríos,ATA,27,63,Mexico,/235/184/23_60.png
-Charlotte,A. Malanda,ZAG,20,63,France,/262/597/23_60.png
-Charlotte,A. Zendejas,GOL,26,62,United States,/229/433/23_60.png
-Charlotte,J. Sobociński,ZAG,23,60,Poland,/250/849/23_60.png
-Charlotte,Vinicius Mello,ATA PE,19,60,Brazil,/265/988/23_60.png
-Charlotte,K. Vargas,MD ME ATA,20,57,Colombia,/269/913/23_60.png
-Charlotte,Q. McNeill,MC VOL,23,56,Ireland,/269/873/23_60.png
-Charlotte,K. Santos,ZAG LE,22,54,United States,/267/875/23_60.png
-Charlotte,G. Marks,GOL,22,53,United States,/267/874/23_60.png
-Charlotte,C. Hegardt,MC,20,52,United States,/266/281/23_60.png
-Charlotte,A. Armour,LE,19,52,United States,/265/181/23_60.png
+Charlotte FC,K. Świderski,ATA MEI,25,74,Poland,/224/301/23_60.png
+Charlotte FC,Nuno Santos,MC,23,74,Portugal,/251/438/23_60.png
+Charlotte FC,G. Corujo,ZAG,25,72,Uruguay,/253/289/23_60.png
+Charlotte FC,N. Byrne,LD,30,70,England,/202/814/23_60.png
+Charlotte FC,C. Fuchs,LE ZAG,36,70,Austria,/139/313/23_60.png
+Charlotte FC,K. Jóźwiak,MD ME,24,69,Poland,/233/222/23_60.png
+Charlotte FC,J. Mora,LE LE ME,29,68,Costa Rica,/242/995/23_60.png
+Charlotte FC,J. Alcívar,MC MD ME,22,67,Ecuador,/254/039/23_60.png
+Charlotte FC,D. Jones,VOL MC,25,66,United States,/235/425/23_60.png
+Charlotte FC,A. Walkes,ZAG,25,66,England,/232/252/23_60.png
+Charlotte FC,Andre Shinyashiki,ME ATA MEI,25,66,Brazil,/247/391/23_60.png
+Charlotte FC,H. Afful,LD,36,66,Ghana,/189/514/23_60.png
+Charlotte FC,J. Lindsey,LD LD,22,66,United States,/242/334/23_60.png
+Charlotte FC,Y. Reyna,ME MD ATA,28,66,Peru,/214/000/23_60.png
+Charlotte FC,K. Kahlina,GOL,29,65,Croatia,/266/282/23_60.png
+Charlotte FC,P. Sisniega,GOL,26,65,Mexico,/235/590/23_60.png
+Charlotte FC,B. Bronico,VOL MC,27,65,United States,/237/920/23_60.png
+Charlotte FC,B. Bender,MEI ME MC,21,64,United States,/266/373/23_60.png
+Charlotte FC,O. Gaines,MD ME,24,63,United States,/239/826/23_60.png
+Charlotte FC,D. Ríos,ATA,27,63,Mexico,/235/184/23_60.png
+Charlotte FC,A. Malanda,ZAG,20,63,France,/262/597/23_60.png
+Charlotte FC,A. Zendejas,GOL,26,62,United States,/229/433/23_60.png
+Charlotte FC,J. Sobociński,ZAG,23,60,Poland,/250/849/23_60.png
+Charlotte FC,Vinicius Mello,ATA PE,19,60,Brazil,/265/988/23_60.png
+Charlotte FC,K. Vargas,MD ME ATA,20,57,Colombia,/269/913/23_60.png
+Charlotte FC,Q. McNeill,MC VOL,23,56,Ireland,/269/873/23_60.png
+Charlotte FC,K. Santos,ZAG LE,22,54,United States,/267/875/23_60.png
+Charlotte FC,G. Marks,GOL,22,53,United States,/267/874/23_60.png
+Charlotte FC,C. Hegardt,MC,20,52,United States,/266/281/23_60.png
+Charlotte FC,A. Armour,LE,19,52,United States,/265/181/23_60.png
 Sporting Kansas City,J. Russell,PD MD,32,75,Scotland,/185/068/23_60.png
 Sporting Kansas City,D. Sallói,PE ATA,25,73,Hungary,/232/148/23_60.png
 Sporting Kansas City,E. Thommy,ME MD ATA,27,72,Germany,/221/797/23_60.png
@@ -3873,7 +3870,6 @@ Paulista Jundiaí,Nicolas Souza,VOL MC,23,58,Brazil,wiki/missing_player.jpg
 Paulista Jundiaí,Carlos Antônio,LE,27,60,Brazil,wiki/missing_player.jpg
 Paulista Jundiaí,Diego Telles,GOL,31,63,Brazil,wiki/missing_player.jpg
 Paulista Jundiaí,Caio Adriano,ZAG,22,57,Brazil,wiki/missing_player.jpg
-Palmeiras,Endrick,ATA,16,73,Brazil,wiki/missing_player.jpg
 Cotonsport,Alioum Boukar,GOL,32,72,Cameroon,wiki/missing_player.jpg
 Cotonsport,Jacques Songo'o,GOL,28,66,Cameroon,wiki/missing_player.jpg
 Cotonsport,Idriss Carlos Kameni,GOL,25,62,Cameroon,wiki/missing_player.jpg
@@ -4573,7 +4569,7 @@ Alessandria,Matteo Baldi,ZAG,20,57,Italy,wiki/missing_player.jpg
 Alessandria,Ionut Matteo Cociobanu,MEI MC,16,52,Italy,wiki/missing_player.jpg
 Bayern Munique,M. Neuer,GOL,36,90,Germany,/167/495/23_60.png
 Bayern Munique,S. Mané,ATA ME,30,89,Senegal,/208/722/23_60.png
-Bayern Munique,J. Kimmich,VOL LD MC,27,89,Germany,/212/622/23_60.png
+Bayern Munique,J. Kimmich,VOL LD MC,27,88,Germany,/212/622/23_60.png
 Bayern Munique,T. Müller,MEI ATA,32,87,Germany,/189/596/23_60.png
 Bayern Munique,L. Goretzka,MC VOL,27,87,Germany,/209/658/23_60.png
 Bayern Munique,K. Coman,MD ME,26,86,France,/213/345/23_60.png
@@ -5694,12 +5690,12 @@ Saarbrücken,T. Paterok,GOL,29,62,Germany,/218/873/23_60.png
 Saarbrücken,J. Bauer,GOL,22,56,Germany,/266/383/23_60.png
 Saarbrücken,F. Recktenwald,LD VOL,19,54,Germany,/262/915/23_60.png
 Saarbrücken,A. Breuer,MC ATA VOL,16,52,Germany,/270/839/23_60.png
-PSG,L. Messi,PD,35,91,Argentina,/158/023/23_60.png
+PSG,L. Messi,MEI,35,91,Argentina,/158/023/23_60.png
 PSG,K. Mbappé,ATA PE,23,91,France,/231/747/23_60.png
-PSG,Neymar Jr,PE,30,89,Brazil,/190/871/23_60.png
+PSG,Neymar Jr,PE,30,90,Brazil,/190/871/23_60.png
 PSG,Marquinhos,ZAG,28,88,Brazil,/207/865/23_60.png
-PSG,G. Donnarumma,GOL,23,88,Italy,/230/621/23_60.png
-PSG,K. Navas,GOL,35,88,Costa Rica,/193/041/23_60.png
+PSG,G. Donnarumma,GOL,23,86,Italy,/230/621/23_60.png
+PSG,K. Navas,GOL,35,86,Costa Rica,/193/041/23_60.png
 PSG,M. Verratti,MC MEI,29,87,Italy,/199/556/23_60.png
 PSG,A. Hakimi,LD LD,23,84,Morocco,/235/212/23_60.png
 PSG,Sergio Ramos,ZAG,36,84,Spain,/155/862/23_60.png
@@ -5712,7 +5708,7 @@ PSG,Danilo Pereira,VOL MC ZAG,30,80,Portugal,/200/888/23_60.png
 PSG,Nuno Mendes,LE LE,20,80,Portugal,/252/145/23_60.png
 PSG,N. Mukiele,LD ZAG,24,79,France,/226/166/23_60.png
 PSG,J. Draxler,PE MEI,28,79,Germany,/202/166/23_60.png
-PSG,Vitinha,MC MEI,22,79,Portugal,/255/253/23_60.png
+PSG,Vitinha,MC MEI,22,80,Portugal,/255/253/23_60.png
 PSG,Juan Bernat,LE,29,78,Spain,/205/069/23_60.png
 PSG,M. Icardi,ATA,29,78,Argentina,/201/399/23_60.png
 PSG,H. Ekitike,ATA,20,76,France,/257/289/23_60.png
@@ -6697,12 +6693,12 @@ Nimes,R. Labonne,LD,24,61,France,/270/364/23_60.png
 Nimes,L. Delpech,MC MEI,19,61,France,/263/600/23_60.png
 Benfica,Grimaldo,LE LE ME,26,83,Spain,/210/035/23_60.png
 Benfica,Rafa,ATA MD PD,29,83,Portugal,/216/547/23_60.png
-Benfica,O. Vlachodimos,GOL,28,81,Greece,/211/990/23_60.png
+Benfica,O. Vlachodimos,GOL,28,80,Greece,/211/990/23_60.png
 Benfica,João Mário,ME MC,29,81,Portugal,/212/814/23_60.png
 Benfica,N. Otamendi,ZAG,34,81,Argentina,/192/366/23_60.png
 Benfica,David Neres,MD PD MEI,25,80,Brazil,/236/632/23_60.png
-Benfica,E. Fernández,MC VOL,21,80,Argentina,/247/090/23_60.png
-Benfica,Gonçalo Ramos,ATA,21,78,Portugal,/256/903/23_60.png
+Benfica,E. Fernández,MC VOL,21,85,Argentina,/247/090/23_60.png
+Benfica,Gonçalo Ramos,ATA,21,82,Portugal,/256/903/23_60.png
 Benfica,Florentino,VOL MC,22,78,Portugal,/234/569/23_60.png
 Benfica,F. Aursnes,MC VOL,26,78,Norway,/231/913/23_60.png
 Benfica,Gilberto,LD,29,78,Brazil,/211/567/23_60.png
@@ -6766,7 +6762,7 @@ Sporting,Mateus Fernandes,MC MEI,17,66,Portugal,/270/857/23_60.png
 Sporting,André Paulo,GOL,25,65,Portugal,/259/067/23_60.png
 Sporting,Geny Catamo,PD,21,65,Mozambique,/266/097/23_60.png
 Porto,Otávio,MD ME,27,82,Portugal,/210/411/23_60.png
-Porto,M. Taremi,ATA ATA,29,82,Iran,/241/788/23_60.png
+Porto,M. Taremi,ATA ATA,29,83,Iran,/241/788/23_60.png
 Porto,Diogo Costa,GOL,22,81,Portugal,/234/577/23_60.png
 Porto,M. Uribe,MC VOL,31,81,Colombia,/214/047/23_60.png
 Porto,Pepe,ZAG,39,81,Portugal,/120/533/23_60.png
@@ -7241,7 +7237,7 @@ Ajax,K. Fitz-Jim,MC VOL,18,65,Netherlands,/262/218/23_60.png
 Ajax,Y. Regeer,LD MC,18,65,Netherlands,/265/390/23_60.png
 Ajax,Y. Baas,LE LD,19,64,Netherlands,/264/220/23_60.png
 Ajax,A. Salah-Eddine,LE,20,64,Netherlands,/268/728/23_60.png
-PSV,C. Gakpo,PE,23,83,Netherlands,/242/516/23_60.png
+PSV,C. Gakpo,PE,23,85,Netherlands,/242/516/23_60.png
 PSV,I. Sangaré,VOL MC,24,81,Ivory Coast,/235/173/23_60.png
 PSV,W. Benítez,GOL,29,80,Argentina,/215/223/23_60.png
 PSV,L. de Jong,ATA,31,79,Netherlands,/189/805/23_60.png
@@ -8862,14 +8858,14 @@ Antalyaspor,A. Dadakdeniz,GOL,22,62,Turkey,/235/932/23_60.png
 Antalyaspor,M. Erdilman,MC VOL,18,55,Turkey,/254/095/23_60.png
 Antalyaspor,A. Gerxhaliu,ZAG,20,55,Kosovo,/271/676/23_60.png
 Olympiacos,James Rodriguez,MEI MC,31,82,Colombia,wiki/38125.png
-Olympiacos,Vieira Marcelo,MD LE ZAG,34,80,Brazil,wiki/13726.png
-Olympiacos,Diadie Samassekou,MC MD,26,80,Mali,wiki/88331.png
+Olympiacos,Vieira Marcelo,LE,34,80,Brazil,wiki/13726.png
+Olympiacos,Diadie Samassekou,MC MD,26,79,Mali,wiki/88331.png
 Olympiacos,Yann M'Vila,MD MC ZAG,32,80,France,wiki/41473.png
 Olympiacos,Tomas Vaclik,GOL,33,80,Czech Republic,wiki/48557.png
 Olympiacos,Cedric Bakambu,ATA,31,80,Democratic Republic Congo,wiki/45490.png
 Olympiacos,Kostas Fortounis,ATA ATA,30,80,Greece,wiki/46987.png
 Olympiacos,Šime Vrsaljko,MD LD ZAG,30,79,Croatia,wiki/41450.png
-Olympiacos,Almeida Rodinei,MD LD ZAG,30,79,Brazil,wiki/68360.png
+Olympiacos,Almeida Rodinei,LD,30,79,Brazil,wiki/68360.png
 Olympiacos,Pape Abou Cisse,ZAG,27,78,Senegal,wiki/82857.png
 Olympiacos,Youssef el Arabi,ATA,35,78,Morocco,wiki/42468.png
 Olympiacos,Giorgos Masouras,ATA MEI,29,78,Greece,wiki/76304.png
@@ -10198,18 +10194,19 @@ Palmeiras,Raphael Veiga,MEI MC,27,79,Brazil,wiki/87006.png
 Palmeiras,Barbosa Rony,ATA MEI,27,80,Brazil,wiki/99213.png
 Palmeiras,Ze Rafael,MC MEI MD,29,77,Brazil,wiki/68908.png
 Palmeiras,Murilo Cerqueira,VOL ZAG,25,79,Brazil,wiki/90543.png
-Palmeiras,Oliveira Danilo,MC MD,21,80,Brazil,wiki/105064.png
+Nottingham Forest,Oliveira Danilo,MC MD,21,80,Brazil,wiki/105064.png
+Nottingham Forest,Gustavo Scarpa,MD MEI,29,80,Brazil,wiki/missing_player.jpg
 Palmeiras,Marcos Rocha,MD LD ZAG,34,79,Brazil,wiki/41184.png
 Palmeiras,Garcia Luan,ZAG,29,78,Brazil,wiki/61630.png
 Palmeiras,Joaquin Piquerez,MD LE ZAG,24,80,Uruguay,wiki/95046.png
 Palmeiras,Gabriel Menino,MD MC LD,22,77,Brazil,wiki/103732.png
-Palmeiras,Jose Manuel Lopez,ATA,22,77,Argentina,wiki/109574.png
-Fluminense,Jorge Moraes,MD LE ZAG,26,77,Brazil,wiki/81736.png
-Palmeiras,Eduard Atuesta,MC MEI MD,25,77,Colombia,wiki/89399.png
-Palmeiras,Miguel Merentiel,ATA ATA,26,76,Uruguay,wiki/89614.png
-Palmeiras,Matheus Fernandes,MC MD,24,76,Brazil,wiki/90591.png
-Palmeiras,Lucas Lima,MEI,32,76,Brazil,wiki/68223.png
-Palmeiras,Benjamin Kuscevic,ZAG,26,75,Chile,wiki/84922.png
+Palmeiras,Jose Manuel Lopez,ATA,22,76,Argentina,wiki/109574.png
+Fluminense,Jorge Moraes,MD LE ZAG,26,75,Brazil,wiki/81736.png
+Palmeiras,Eduard Atuesta,MC MEI MD,25,76,Colombia,wiki/89399.png
+Palmeiras,Miguel Merentiel,ATA ATA,26,73,Uruguay,wiki/89614.png
+Palmeiras,Matheus Fernandes,MC MD,24,75,Brazil,wiki/90591.png
+Palmeiras,Lucas Lima,MEI,32,74,Brazil,wiki/68223.png
+Palmeiras,Benjamin Kuscevic,ZAG,26,74,Chile,wiki/84922.png
 Palmeiras,Rafael Navarro,ATA,22,73,Brazil,wiki/104746.png
 Palmeiras,Rocha Mayke,MD MC PD ZAG,30,76,Brazil,wiki/65767.jpg
 Palmeiras,Bruno Tabata,PE ATA,25,76,Brazil,wiki/96079.png
@@ -10229,10 +10226,11 @@ Palmeiras,Kaiky Naves,ZAG,20,62,Brazil,wiki/missing_player.jpg
 Palmeiras,Marinho Henri,ZAG,20,62,Brazil,wiki/104426.png
 Palmeiras,Nascimento Fabricio,ATA MEI,21,62,Brazil,wiki/108609.png
 Palmeiras,Estevao Willian,PE ATA,15,57,Brazil,wiki/128879.png
+Palmeiras,Endrick,ATA,16,73,Brazil,wiki/missing_player.jpg
 Corinthians,Roger Guedes,ATA MEI,26,80,Brazil,wiki/86483.png
 Corinthians,Fabian Balbuena,ZAG,31,79,Paraguay,wiki/62739.png
 Corinthians,Renato Augusto,MC MEI MD,34,79,Brazil,wiki/18281.png
-Corinthians,Ramos Cassio,GOL,35,81,Brazil,wiki/18237.png
+Corinthians,Ramos Cassio,GOL,35,82,Brazil,wiki/18237.png
 Corinthians,Ángel Romero,ATA MEI,30,79,Paraguay,wiki/63347.png
 Corinthians,Bezerra Paulinho,MC MEI MD,34,78,Brazil,wiki/26843.png
 Corinthians,Victor Giuliano,MEI MC,32,78,Brazil,wiki/37955.png
@@ -10357,7 +10355,7 @@ Santos,Paulo Mazoti,GOL,22,57,Brazil,wiki/missing_player.jpg
 Santos,Vinicius Diogenes,GOL,21,57,Brazil,wiki/missing_player.jpg
 Atlético-MG,Guilherme Arana,MD LE ZAG,25,81,Brazil,wiki/81016.png
 Atlético-MG,Santos Edenilson,MD MC LD,33,80,Brazil,wiki/51238.png
-Atlético-MG,Nacho Fernandez,MEI MC,32,80,Argentina,wiki/48353.png
+River Plate,Nacho Fernandez,MEI MC,32,80,Argentina,wiki/48353.png
 Atlético-MG,Matias Zaracho,MEI,24,80,Argentina,wiki/90310.png
 Atlético-MG,Givanildo Hulk,ATA MEI,36,80,Brazil,wiki/33654.png
 Atlético-MG,Passos Otavio,MC MD,28,79,Brazil,wiki/73544.png
@@ -10467,7 +10465,7 @@ Flamengo,Rego Werton,ATA ATA,19,59,Brazil,wiki/118830.png
 Flamengo,Cleiton Santana,ZAG,19,57,Brazil,wiki/120403.png
 Flamengo,Matheus Cunha,GOL,21,57,Brazil,wiki/120400.png
 Botafogo,Tiquinho Soares,ATA,31,80,Brazil,wiki/79486.png
-Botafogo,Danilo Barbosa,MD MC ZAG,26,78,Brazil,wiki/73541.png
+Botafogo,Danilo Barbosa,MD MC ZAG,26,76,Brazil,wiki/73541.png
 Botafogo,Tche Tche,MD MC MEI LD,30,78,Brazil,wiki/86671.png
 Botafogo,Victor Cuesta,ZAG,34,78,Argentina,wiki/58396.png
 Botafogo,Gatito Fernandez,GOL,34,77,Paraguay,wiki/31356.png
@@ -10514,7 +10512,7 @@ Fluminense,Franca Keno,PE ATA,33,78,Brazil,wiki/78238.png
 Fluminense,Deivson Fabio,GOL,42,77,Brazil,wiki/3690.png
 Fluminense,Caio Paulista,MD LE MEI ZAG,24,77,Brazil,wiki/102108.png
 Fluminense,Jhon Arias,MEI,25,77,Colombia,wiki/89088.png
-Fluminense,Paulo Henrique Ganso,MEI,33,77,Brazil,wiki/33533.png
+Fluminense,Paulo Henrique Ganso,MEI,33,78,Brazil,wiki/33533.png
 Fluminense,Messias Manoel,ZAG,32,77,Brazil,wiki/41232.png
 Fluminense,Andre Trindade,MC MD,21,77,Brazil,wiki/105080.png
 Fluminense,Yago Felipe,MC MEI MD,27,76,Brazil,wiki/81741.png
@@ -10561,7 +10559,7 @@ Atlético-PR,Marcelo Cirino,ATA MEI,30,75,Brazil,wiki/43276.jpg
 Atlético-PR,Tomas Cuello,MEI MC,22,75,Argentina,wiki/96122.png
 Atlético-PR,Guilherme Bissoli,ATA,24,75,Brazil,wiki/99245.png
 Atlético-PR,Ze Ivaldo,LD,25,74,Brazil,wiki/90584.png
-Atlético-PR,Vitor Roque,ATA MEI,17,74,Brazil,wiki/117952.png
+Atlético-PR,Vitor Roque,ATA MEI,17,77,Brazil,wiki/117952.png
 Atlético-PR,Nicolas Hernandez,ZAG,24,74,Colombia,wiki/100169.png
 Atlético-PR,Matheus Felipe,ZAG,24,74,Brazil,wiki/112213.png
 Atlético-PR,Lucas Halter,ZAG,22,73,Brazil,wiki/101266.png
@@ -11369,28 +11367,6 @@ CRB,Jose Wellington,MD LD ZAG,21,57,Brazil,wiki/missing_player.jpg
 CRB,Ferreira Ewerton,GOL,24,57,Brazil,wiki/missing_player.jpg
 CRB,Davi Lessa,ATA,20,52,Brazil,wiki/missing_player.jpg
 CRB,Ericles Rauan,MEI,21,52,Brazil,wiki/missing_player.jpg
-Cotonsport,Alioum Boukar,GOL,32,72,Cameroon,wiki/missing_player.jpg
-Cotonsport,Jacques Songo'o,GOL,28,66,Cameroon,wiki/missing_player.jpg
-Cotonsport,Idriss Carlos Kameni,GOL,25,62,Cameroon,wiki/missing_player.jpg
-Cotonsport,Bill Tchato,ZAG,33,69,Cameroon,wiki/missing_player.jpg
-Cotonsport,Pierre Womé,ZAG,29,66,Cameroon,wiki/missing_player.jpg
-Cotonsport,Rigobert Song,ZAG,36,73,Cameroon,wiki/missing_player.jpg
-Cotonsport,Raymond Kalla,ZAG,21,61,Cameroon,wiki/missing_player.jpg
-Cotonsport,Pierre Njanka,LE,20,62,Cameroon,wiki/missing_player.jpg
-Cotonsport,Geremi Njitapo,LE,26,67,Cameroon,wiki/missing_player.jpg
-Cotonsport,Lucien Mettomo,LD,18,63,Cameroon,wiki/missing_player.jpg
-Cotonsport,Joseph Ndo,LD,32,71,Cameroon,wiki/missing_player.jpg
-Cotonsport,Lauren,VOL,22,65,Cameroon,wiki/missing_player.jpg
-Cotonsport,Joël Epalle,VOL,26,66,Cameroon,wiki/missing_player.jpg
-Cotonsport,Nicolas Alnoudji,MC,30,67,Cameroon,wiki/missing_player.jpg
-Cotonsport,Marc-Vivien Foé,MC,18,63,Cameroon,wiki/missing_player.jpg
-Cotonsport,Eric Djemba-Djemba,MEI,25,66,Cameroon,wiki/missing_player.jpg
-Cotonsport,Salomon Olembé,MEI,29,68,Cameroon,wiki/missing_player.jpg
-Cotonsport,Daniel Ngom Kome,PE,24,63,Cameroon,wiki/missing_player.jpg
-Cotonsport,Patrick Mboma,PD,31,70,Cameroon,wiki/missing_player.jpg
-Cotonsport,Pius N'Diefi,ATA,19,62,Cameroon,wiki/missing_player.jpg
-Cotonsport,Patrick Suffo,ATA,17,59,Cameroon,wiki/missing_player.jpg
-Cotonsport,Joseph-Désiré Job,ATA,26,63,Cameroon,wiki/missing_player.jpg
 Santa Cruz,Augusto Cesar,MEI MC,30,71,Brazil,wiki/68224.png
 Santa Cruz,Alex Alves,VOL LE,30,70,Brazil,wiki/64804.png
 Santa Cruz,Rubens Esquerdinha,MD LE MEI ZAG,33,70,Brazil,wiki/73606.jpg
@@ -12142,7 +12118,6 @@ River Plate,D. Martínez,ZAG LE,24,74,Paraguay,/241/569/23_60.png
 River Plate,P. Solari,MD ATA PD,21,74,Argentina,/256/509/23_60.png
 River Plate,B. Zuculini,VOL MC,29,74,Argentina,/203/864/23_60.png
 River Plate,E. Gómez,LE LE,28,73,Argentina,/221/053/23_60.png
-River Plate,T. Pochettino,MC MEI,26,73,Argentina,/231/524/23_60.png
 River Plate,L. González Pirez,ZAG,30,73,Argentina,/199/669/23_60.png
 River Plate,L. Beltrán,ATA PD,21,72,Argentina,/246/258/23_60.png
 River Plate,A. Herrera,LD LD,23,72,Argentina,/246/106/23_60.png
@@ -15134,6 +15109,32 @@ Columbus Crew,S. Zawadzki,VOL,22,56,United States,/266/390/23_60.png
 Columbus Crew,I. Parente,MEI VOL,22,53,United States,/260/421/23_60.png
 Columbus Crew,J. Russell-Rowe,ATA,19,53,Canada,/269/923/23_60.png
 Columbus Crew,J. Morris,LE ZAG,23,52,United States,/266/853/23_60.png
+Philadelphia Union,A. Blake,GOL,31,77,Jamaica,/216/939/23_60.png
+Philadelphia Union,K. Wagner,LE LE,25,76,Germany,/239/704/23_60.png
+Philadelphia Union,D. Gazdag,MEI MC,26,76,Hungary,/238/277/23_60.png
+Philadelphia Union,M. Uhre,ATA,27,74,Denmark,/213/815/23_60.png
+Philadelphia Union,J. Martínez,VOL,27,73,Venezuela,/254/891/23_60.png
+Philadelphia Union,A. Bedoya,MC VOL,35,72,United States,/191/173/23_60.png
+Philadelphia Union,J. Glesnes,ZAG,28,72,Norway,/233/400/23_60.png
+Philadelphia Union,J. Elliott,ZAG VOL,26,72,England,/238/008/23_60.png
+Philadelphia Union,J. Carranza,ATA,22,70,Argentina,/240/969/23_60.png
+Philadelphia Union,L. Flach,MC VOL LE,21,68,United States,/252/859/23_60.png
+Philadelphia Union,A. Perea,VOL MC,21,67,United States,/246/047/23_60.png
+Philadelphia Union,O. Mbaizo,LD,24,67,Cameroon,/243/235/23_60.png
+Philadelphia Union,N. Harriel,LD,21,66,United States,/260/477/23_60.png
+Philadelphia Union,Jesús Bueno,VOL MC,23,66,Venezuela,/259/978/23_60.png
+Philadelphia Union,M. Freese,GOL,23,65,United States,/247/506/23_60.png
+Philadelphia Union,M. Real,LE VOL,22,64,United States,/242/196/23_60.png
+Philadelphia Union,J. McGlynn,MC,18,63,United States,/260/479/23_60.png
+Philadelphia Union,J. Bendik,GOL,33,63,United States,/201/873/23_60.png
+Philadelphia Union,Q. Sullivan,MEI MC,18,60,United States,/260/547/23_60.png
+Philadelphia Union,C. Turner,VOL ZAG,20,56,United States,/255/756/23_60.png
+Philadelphia Union,B. Craig,VOL ZAG,18,55,United States,/260/545/23_60.png
+Philadelphia Union,J. Rafanello,ATA PE MEI,22,54,United States,/261/333/23_60.png
+Philadelphia Union,A. Aremeyaw,ZAG,18,53,Ghana,/271/290/23_60.png
+Philadelphia Union,A. Sorenson,LE,19,53,United States,/267/622/23_60.png
+Philadelphia Union,R. Odada,VOL MC,21,51,Kenya,/271/308/23_60.png
+Philadelphia Union,C. Donovan,ATA,21,51,United States,/270/137/23_60.png
 Portland Timbers,D. Chará,VOL MC,36,75,Colombia,/203/067/23_60.png
 Portland Timbers,S. Blanco,MEI ME,34,75,Argentina,/190/577/23_60.png
 Portland Timbers,Y. Chará,MEI ME MD,31,74,Colombia,/214/132/23_60.png
@@ -15509,203 +15510,6 @@ Toronto FC,J. Perruzza,ATA PD,21,58,Canada,/260/399/23_60.png
 Toronto FC,H. Mbongue,ATA,17,54,Canada,/272/667/23_60.png
 Toronto FC,T. Antonoglou,LE ME,21,53,Canada,/269/091/23_60.png
 Toronto FC,K. Franklin,LD,19,52,Canada,/268/433/23_60.png
-Montreal Impact,V. Wanyama,VOL MC,31,75,Kenya,/188/942/23_60.png
-Montreal Impact,D. Mihailovic,ATA MEI MC,23,75,United States,/237/496/23_60.png
-Montreal Impact,R. Quioto,ATA,30,75,Honduras,/210/321/23_60.png
-Montreal Impact,S. Piette,VOL MC,27,71,Canada,/213/092/23_60.png
-Montreal Impact,K. Miller,ZAG LE,25,71,Canada,/247/648/23_60.png
-Montreal Impact,A. Johnston,MD LD ZAG,23,71,Canada,/256/107/23_60.png
-Montreal Impact,R. Camacho,ZAG,31,70,France,/206/485/23_60.png
-Montreal Impact,K. Kamara,ATA,37,70,Sierra Leone,/176/048/23_60.png
-Montreal Impact,J. Torres,ATA,25,68,Argentina,/233/090/23_60.png
-Montreal Impact,L. Lappalainen,ME LE MD,23,67,Finland,/234/300/23_60.png
-Montreal Impact,J. Waterman,ZAG,26,67,Canada,/255/956/23_60.png
-Montreal Impact,M. Choinière,ME MC MD,23,66,Canada,/244/680/23_60.png
-Montreal Impact,Z. Brault-Guillard,MD LD LD,23,66,Canada,/243/574/23_60.png
-Montreal Impact,I. Koné,MC,20,66,Canada,/264/207/23_60.png
-Montreal Impact,J. Pantemis,GOL,25,66,Canada,/238/919/23_60.png
-Montreal Impact,M. Toye,ATA,23,66,United States,/242/253/23_60.png
-Montreal Impact,M. Miljevic,ATA ATA,21,66,United States,/246/336/23_60.png
-Montreal Impact,A. Hamdi,MC ATA,24,65,Egypt,/260/953/23_60.png
-Montreal Impact,B. Johnsen,ATA,30,63,Norway,/235/320/23_60.png
-Montreal Impact,C. Offor,ATA ME,22,63,Nigeria,/259/626/23_60.png
-Montreal Impact,S. Ibrahim,ATA ATA,19,61,Nigeria,/260/443/23_60.png
-Montreal Impact,R. Thorkelsson,ZAG LE ME,20,58,Iceland,/262/845/23_60.png
-Montreal Impact,L. Ketterer,GOL,28,58,United States,/237/305/23_60.png
-Montreal Impact,J. Kwizera,ME MD,23,58,Democratic Republic Congo,/268/525/23_60.png
-Montreal Impact,Z. Bassong,ZAG LE ME,23,57,Canada,/247/125/23_60.png
-Montreal Impact,R. Zouhir,VOL MC,18,56,Morocco,/260/390/23_60.png
-Montreal Impact,K. Ferdinand,LD ZAG LE,18,52,Canada,/260/391/23_60.png
-Montreal Impact,T. Giraldo,MC,19,48,Canada,/260/393/23_60.png
-Montreal Impact,N. Saliba,MC,18,46,Canada,/260/398/23_60.png
-Houston Dynamo,H. Herrera,MC VOL,32,80,Mexico,/156/519/23_60.png
-Houston Dynamo,D. Quintero,MEI PE ME,34,72,Colombia,/190/607/23_60.png
-Houston Dynamo,S. Ferreira,ATA,24,71,Paraguay,/244/832/23_60.png
-Houston Dynamo,S. Clark,GOL,36,71,United States,/198/355/23_60.png
-Houston Dynamo,M. Vera,VOL MC,26,70,Argentina,/228/375/23_60.png
-Houston Dynamo,A. Lundqvist,LE,28,69,Sweden,/220/600/23_60.png
-Houston Dynamo,A. Carrasquilla,MC VOL,23,69,Panama,/243/544/23_60.png
-Houston Dynamo,Fafà Picault,PD MD ME,31,69,United States,/230/991/23_60.png
-Houston Dynamo,T. Hadebe,ZAG,26,68,Zimbabwe,/239/438/23_60.png
-Houston Dynamo,D. Cerén,VOL MC,32,68,El Salvador,/217/217/23_60.png
-Houston Dynamo,J. Corona,VOL MC,31,68,United States,/198/749/23_60.png
-Houston Dynamo,D. Steres,ZAG,31,67,United States,/209/761/23_60.png
-Houston Dynamo,T. Parker,ZAG,29,66,United States,/226/803/23_60.png
-Houston Dynamo,Z. Valentin,LD,30,66,Puerto Rico,/202/076/23_60.png
-Houston Dynamo,Zeca,LD LE,28,66,Brazil,/222/980/23_60.png
-Houston Dynamo,M. Rodriguez,MEI MC PE,26,66,United States,/226/220/23_60.png
-Houston Dynamo,C. Baird,MD ATA,26,64,United States,/242/716/23_60.png
-Houston Dynamo,S. Junqua,LE ZAG,25,63,United States,/247/309/23_60.png
-Houston Dynamo,M. Palomino,MEI MC,21,62,United States,/254/964/23_60.png
-Houston Dynamo,T. Úlfarsson,ATA PE ME,21,62,Iceland,/266/385/23_60.png
-Houston Dynamo,G. Dorsey,MD LD LD,23,61,United States,/246/849/23_60.png
-Houston Dynamo,E. Bartlow,ZAG,22,57,United States,/261/763/23_60.png
-Houston Dynamo,M. Nelson,GOL,27,56,United States,/243/299/23_60.png
-Houston Dynamo,Thiago,ME MD,21,55,Brazil,/268/911/23_60.png
-Houston Dynamo,D. Rios,ME ATA,19,54,United States,/260/426/23_60.png
-Houston Dynamo,N. Quiñónes,PE PD,19,53,Colombia,/270/955/23_60.png
-Houston Dynamo,J. Castilla,MC MD,17,52,Colombia,/260/424/23_60.png
-Houston Dynamo,B. Avila,ME,21,51,United States,/269/158/23_60.png
-Houston Dynamo,B. Raines,VOL,17,50,United States,/269/005/23_60.png
-Austin,S. Driussi,MEI ATA,26,78,Argentina,/221/125/23_60.png
-Austin,E. Rigoni,MD ATA ME,29,77,Argentina,/215/259/23_60.png
-Austin,A. Ring,VOL MC,31,74,Finland,/205/895/23_60.png
-Austin,D. Fagundez,ME MD MEI,27,72,Uruguay,/201/895/23_60.png
-Austin,Bryan Corozo,ME,23,70,Ecuador,/253/347/23_60.png
-Austin,M. Djitté,ATA,22,70,Senegal,/244/042/23_60.png
-Austin,R. Gabrielsen,ZAG,30,69,Norway,/190/491/23_60.png
-Austin,B. Stuver,GOL,31,69,United States,/213/206/23_60.png
-Austin,N. Lima,LD LE,27,68,United States,/236/993/23_60.png
-Austin,E. Finlay,MD,31,67,United States,/207/669/23_60.png
-Austin,Felipe,VOL MC,31,67,Brazil,/207/465/23_60.png
-Austin,M. Urruti,ATA,31,67,Argentina,/215/083/23_60.png
-Austin,J. Cascante,ZAG LD,28,67,Costa Rica,/242/533/23_60.png
-Austin,J. Valencia,VOL MC,25,66,Colombia,/228/744/23_60.png
-Austin,H. Jimenez,LD LE,33,66,United States,/202/231/23_60.png
-Austin,D. Pereira,VOL MC,21,65,Venezuela,/261/245/23_60.png
-Austin,R. Redes,MD PD,22,65,Paraguay,/253/250/23_60.png
-Austin,D. Hoesen,ATA,31,65,Netherlands,/190/497/23_60.png
-Austin,A. Tarbell,GOL,28,63,United States,/232/082/23_60.png
-Austin,Ž. Kolmanič,LE ME,22,63,Slovenia,/261/359/23_60.png
-Austin,J. Gallagher,LE ME,26,63,Ireland,/242/624/23_60.png
-Austin,J. Stroud,MD ME,25,61,United States,/243/464/23_60.png
-Austin,J. Romaña,ZAG,23,61,Colombia,/233/814/23_60.png
-Austin,F. Kleemann,ZAG,23,57,United States,/261/201/23_60.png
-Austin,K. Keller,ZAG,21,57,United States,/266/388/23_60.png
-Austin,O. Wolff,MD MC,17,54,United States,/269/151/23_60.png
-Austin,D. Las,GOL,20,52,United States,/266/726/23_60.png
-SJ Earthquakes,Akapo,LD LE,29,75,Equatorial Guinea,/216/605/23_60.png
-SJ Earthquakes,Jamiro Monteiro,MC MEI ME,28,74,Cape Verde,/231/150/23_60.png
-SJ Earthquakes,M. Trauco,LE ME,29,72,Peru,/225/706/23_60.png
-SJ Earthquakes,C. Espinoza,MD,27,72,Argentina,/226/385/23_60.png
-SJ Earthquakes,J. Greguš,VOL MC,31,71,Slovakia,/194/063/23_60.png
-SJ Earthquakes,Nathan,ZAG,27,71,Brazil,/225/529/23_60.png
-SJ Earthquakes,J. Ebobisse,ATA MD,25,71,Cameroon,/237/256/23_60.png
-SJ Earthquakes,J. Yueill,VOL ZAG MC,25,70,United States,/237/257/23_60.png
-SJ Earthquakes,Judson,VOL,29,69,Brazil,/232/358/23_60.png
-SJ Earthquakes,E. Remedi,VOL MC,27,69,Argentina,/228/838/23_60.png
-SJ Earthquakes,C. Cowell,ME ATA MD,18,67,United States,/247/325/23_60.png
-SJ Earthquakes,Rodrigues,ZAG,24,66,Brazil,/263/784/23_60.png
-SJ Earthquakes,J. Marcinkowski,GOL,25,66,United States,/242/703/23_60.png
-SJ Earthquakes,T. Beason,ZAG,25,65,United States,/255/136/23_60.png
-SJ Earthquakes,S. Salinas,ME LE,36,64,United States,/186/715/23_60.png
-SJ Earthquakes,T. Thompson,LD LE,26,64,United States,/221/709/23_60.png
-SJ Earthquakes,P. Marie,LD LE,27,62,France,/243/126/23_60.png
-SJ Earthquakes,B. Kikanović,ATA,22,59,United States,/261/114/23_60.png
-SJ Earthquakes,S. Haji,MD MEI,22,59,United States,/247/426/23_60.png
-SJ Earthquakes,G. Fuentes,MEI MC,20,57,El Salvador,/242/345/23_60.png
-SJ Earthquakes,M. Bersano,GOL,29,57,United States,/238/076/23_60.png
-SJ Earthquakes,O. Ågren,ZAG,23,56,Sweden,/267/790/23_60.png
-SJ Earthquakes,J. Skahan,MC,24,55,United States,/256/110/23_60.png
-SJ Earthquakes,O. Bouda,ME MD,22,55,Burkina Faso,/266/375/23_60.png
-SJ Earthquakes,W. Richmond,ME,22,53,United States,/266/340/23_60.png
-SJ Earthquakes,G. Asomani,VOL MC,23,52,Ghana,/260/681/23_60.png
-SJ Earthquakes,N. Tsakiris,MEI MC,17,51,United States,/266/518/23_60.png
-SJ Earthquakes,E. Ochoa,GOL,17,51,United States,/254/277/23_60.png
-SJ Earthquakes,C. Walls,ZAG,19,51,United States,/254/154/23_60.png
-Nashville,H. Mukhtar,ATA ATA MEI,27,77,Germany,/210/021/23_60.png
-Nashville,W. Zimmerman,ZAG,29,76,United States,/212/591/23_60.png
-Nashville,S. Davis,VOL MC,29,73,United States,/226/273/23_60.png
-Nashville,S. Moore,LD MD,25,72,United States,/232/120/23_60.png
-Nashville,R. Leal,ME MD,25,71,Costa Rica,/227/911/23_60.png
-Nashville,C. Sapong,ATA ME,33,71,United States,/202/220/23_60.png
-Nashville,A. Godoy,VOL MC,32,71,Panama,/217/047/23_60.png
-Nashville,J. Willis,GOL,33,70,United States,/202/215/23_60.png
-Nashville,D. Lovitz,LE LE,30,70,United States,/221/713/23_60.png
-Nashville,D. McCarty,VOL,35,70,United States,/176/071/23_60.png
-Nashville,D. Romney,ZAG,29,69,United States,/229/879/23_60.png
-Nashville,A. Muyl,MD ME,26,67,United States,/231/886/23_60.png
-Nashville,A. Loba,ATA,24,67,Ivory Coast,/246/732/23_60.png
-Nashville,E. Miller,LD ZAG LE,29,65,United States,/221/656/23_60.png
-Nashville,J. Maher,ZAG,22,65,United States,/259/292/23_60.png
-Nashville,T. Bunbury,ATA ME MD,32,65,United States,/197/716/23_60.png
-Nashville,J. Shaffelburg,ME LE,22,65,Canada,/251/352/23_60.png
-Nashville,B. Anunga,VOL MC,25,62,Cameroon,/255/177/23_60.png
-Nashville,T. Washington,LE,28,62,United States,/231/987/23_60.png
-Nashville,B. Meredith,GOL,32,61,United States,/202/244/23_60.png
-Nashville,E. Zubak,ATA,24,59,United States,/247/753/23_60.png
-Nashville,E. Panicco,GOL,25,59,United States,/256/111/23_60.png
-Nashville,L. Haakenson,ME MD,24,58,United States,/256/106/23_60.png
-Nashville,R. Castellanos,ZAG,24,58,United States,/261/197/23_60.png
-Nashville,W. Meyer,GOL,24,54,United States,/271/111/23_60.png
-Nashville,A. Longmire,ZAG,22,52,United States,/271/109/23_60.png
-Nashville,I. Donasiyano,MEI ATA,24,51,Tanzania,/262/097/23_60.png
-Chicago Fire,X. Shaqiri,MEI MD,30,76,Switzerland,/193/348/23_60.png
-Chicago Fire,R. Czichos,ZAG LE,32,74,Germany,/211/826/23_60.png
-Chicago Fire,G. Giménez,VOL MC,30,73,Paraguay,/227/772/23_60.png
-Chicago Fire,C. Mueller,MD PD,25,70,United States,/242/714/23_60.png
-Chicago Fire,F. Navarro,VOL MC,22,69,Argentina,/246/335/23_60.png
-Chicago Fire,K. Przybyłko,ATA,29,69,Poland,/208/120/23_60.png
-Chicago Fire,B. Sekulić,LD LD MD,30,67,Slovakia,/247/503/23_60.png
-Chicago Fire,M. Pineda,ZAG VOL,24,66,United States,/255/273/23_60.png
-Chicago Fire,F. Herbers,MEI MD MC,28,66,Germany,/232/166/23_60.png
-Chicago Fire,J. Torres,MC MD ME,22,66,Mexico,/236/842/23_60.png
-Chicago Fire,J. Bornstein,LE ZAG ME,37,66,United States,/176/061/23_60.png
-Chicago Fire,J. Espinoza,LD MD,23,66,Ecuador,/254/211/23_60.png
-Chicago Fire,S. Richey,GOL,30,65,United States,/236/989/23_60.png
-Chicago Fire,C. Terán,ZAG LD,21,63,Colombia,/247/173/23_60.png
-Chicago Fire,M. Navarro,LE ME LE,23,63,Venezuela,/255/457/23_60.png
-Chicago Fire,W. Omsberg,ZAG,26,63,United States,/242/734/23_60.png
-Chicago Fire,S. Ivanov,ATA MD,23,62,Bulgaria,/252/740/23_60.png
-Chicago Fire,B. Gutiérrez,ME PE MEI,19,61,United States,/260/984/23_60.png
-Chicago Fire,A. Reynolds II,LE,21,60,United States,/247/095/23_60.png
-Chicago Fire,K. Burks,ZAG,22,59,United States,/271/048/23_60.png
-Chicago Fire,J. Durán,ATA,18,59,Colombia,/247/172/23_60.png
-Chicago Fire,A. Monis,MD PD,19,57,United States,/271/047/23_60.png
-Chicago Fire,V. Bezerra,ATA PE,22,56,United States,/266/856/23_60.png
-Chicago Fire,C. Brady,GOL,18,53,United States,/260/982/23_60.png
-Chicago Fire,S. Oregel,MC,17,51,United States,/271/051/23_60.png
-Chicago Fire,M. Rodríguez,ATA,19,50,United States,/271/049/23_60.png
-Chicago Fire,J. Casas Jr.,MC,19,50,United States,/260/983/23_60.png
-Cincinnati,L. Acosta,MEI,28,76,Argentina,/221/634/23_60.png
-Cincinnati,O. Nwobodo,VOL MC,25,72,Nigeria,/258/881/23_60.png
-Cincinnati,M. Miazga,ZAG,26,72,United States,/215/565/23_60.png
-Cincinnati,R. Matarrita,LE ME LE,27,71,Costa Rica,/232/230/23_60.png
-Cincinnati,B. Vazquez,ATA,23,70,United States,/236/885/23_60.png
-Cincinnati,Brenner,ATA,22,70,Brazil,/240/332/23_60.png
-Cincinnati,J. Moreno,VOL MC,28,70,Venezuela,/240/982/23_60.png
-Cincinnati,Sergio Santos,ATA PE,27,69,Brazil,/226/495/23_60.png
-Cincinnati,Y. Kubo,MC VOL ME,28,68,Japan,/217/242/23_60.png
-Cincinnati,G. Cameron,ZAG,36,68,United States,/186/672/23_60.png
-Cincinnati,N. Hagglund,ZAG LD,29,66,United States,/221/680/23_60.png
-Cincinnati,A. Kann,GOL,31,66,United States,/213/719/23_60.png
-Cincinnati,D. Badji,ATA MD,29,66,Senegal,/227/998/23_60.png
-Cincinnati,R. Celentano,GOL,21,65,United States,/266/382/23_60.png
-Cincinnati,T. Blackett,ZAG LE,28,65,England,/203/265/23_60.png
-Cincinnati,R. Gaddis,LD LE,32,65,United States,/207/783/23_60.png
-Cincinnati,Á. Barreal,PE PD,21,65,Argentina,/245/691/23_60.png
-Cincinnati,A. Powell,LD LD,27,65,Jamaica,/216/346/23_60.png
-Cincinnati,K. Vermeer,GOL,36,64,Netherlands,/169/181/23_60.png
-Cincinnati,A. Cruz,MC VOL,26,63,Costa Rica,/247/580/23_60.png
-Cincinnati,J. Nelson,LE LE,23,61,United States,/247/308/23_60.png
-Cincinnati,B. Mines,MD MEI,22,60,United States,/242/652/23_60.png
-Cincinnati,E. Louro,GOL,26,60,United States,/237/399/23_60.png
-Cincinnati,I. Murphy,ZAG LE,22,59,United States,/268/130/23_60.png
-Cincinnati,Z. Bailey,LD,21,58,United States,/254/643/23_60.png
-Cincinnati,N. Markanich,ATA,22,54,United States,/267/869/23_60.png
-Cincinnati,A. Ordoñez,ME ATA,18,54,Guatemala,/263/679/23_60.png
-Cincinnati,C. Harris,ME,22,54,England,/261/604/23_60.png
-Cincinnati,B. Sunderland,GOL,19,54,United States,/259/279/23_60.png
 Saprissa,Kendall Waston,ZAG,35,74,Costa Rica,wiki/37498.png
 Saprissa,David Guzman,MC MD,32,74,Costa Rica,wiki/46885.png
 Saprissa,Ulises Segura,MEI,29,72,Costa Rica,wiki/71673.png
@@ -17355,8 +17159,3 @@ Auckland City,Lachlan Duke,GOL,17,55,Australia,wiki/128886.png
 Auckland City,Samuel Klein,MC,18,55,Australia,wiki/missing_player.jpg
 Auckland City,Nicholas O'Connell,GOL,21,52,Australia,wiki/missing_player.jpg
 Auckland City,Brandon Mcmorrow,MC,21,52,Australia,wiki/115524.png
-Paulista Jundiaí,Nicolas Souza,VOL MC,23,58,Brazil,wiki/missing_player.jpg
-Paulista Jundiaí,Carlos Antônio,LE,27,60,Brazil,wiki/missing_player.jpg
-Paulista Jundiaí,Diego Telles,GOL,31,63,Brazil,wiki/missing_player.jpg
-Paulista Jundiaí,Caio Adriano,ZAG,22,57,Brazil,wiki/missing_player.jpg
-Palmeiras,Endrick,ATA,16,73,Brazil,wiki/missing_player.jpg

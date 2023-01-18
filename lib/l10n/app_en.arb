@@ -295,7 +295,7 @@
   "playerBought": "Player bought",
   "moneyNotEnough": "You are without money",
   "otherTeamWillHaveNoPlayersLeft": "The other team will have no players left",
-  "limitNPlayersReached": "Number of maximum players reached (32)",
+  "limitNPlayersReached": "Number of maximum players reached",
   "notEnoughPlayersLeftToSell": "You don't have enough players to sell",
 
   "@_POPUP_SAVE_DATA": {

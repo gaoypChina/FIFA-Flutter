@@ -146,10 +146,11 @@ List clubsAllNameList = [
   ClubName().atlas,  ClubName().queretaro, ClubName().leon,  ClubName().juarez,
 
   ClubName().atlanta,  ClubName().columbuscrew, ClubName().dcunited,  ClubName().fcdallas,
+  ClubName().colorado, ClubName().chicago, ClubName().austin, ClubName().charlotte,
   ClubName().houston,
   ClubName().intermiami,  ClubName().losangelesfc, ClubName().lagalaxy,  ClubName().minnesota,
   ClubName().nerevolution,  ClubName().nycity, ClubName().nyredbulls,  ClubName().orlando,
-  ClubName().portland,  ClubName().seattle, ClubName().colorado, ClubName().kansas,
+  ClubName().philadelphia, ClubName().portland,  ClubName().seattle,  ClubName().kansas,
   ClubName().toronto,  ClubName().vancouver, ClubName().montreal,
 
   ClubName().saprissa,ClubName().olimpiaHON,
@@ -159,8 +160,8 @@ List clubsAllNameList = [
   ClubName().kashimaantlers,  ClubName().urawareddiamonds, ClubName().visselkobe,  ClubName().kawasakifrontale,
 
   ClubName().aljazira,  ClubName().jeonbuk, ClubName().alnassr,
-  ClubName().alain,ClubName().alWahda,
-  ClubName().alsadd,  ClubName().alduhail,
+  ClubName().alain,ClubName().alWahda, ClubName().alShabab,
+  ClubName().alsadd,  ClubName().alduhail, ClubName().alrayyan,
   ClubName().alahli,  ClubName().alhilal,ClubName().alIttihad,
   ClubName().persepolis,
 

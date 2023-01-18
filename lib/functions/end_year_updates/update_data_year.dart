@@ -159,6 +159,7 @@ void trocaClubesRebaixamento(){
   funcRebaixamentoLeague(leagueClassifications,LeagueOfficialNames().franca1,LeagueOfficialNames().franca2,3);
   funcRebaixamentoLeague(leagueClassifications,LeagueOfficialNames().brasil1,LeagueOfficialNames().brasil2,3);
   funcRebaixamentoLeague(leagueClassifications,LeagueOfficialNames().brasil2,LeagueOfficialNames().brasil3,3);
+  funcRebaixamentoLeague(leagueClassifications,LeagueOfficialNames().brasil3,LeagueOfficialNames().brasil4,3);
 }
 
 

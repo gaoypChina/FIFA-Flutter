@@ -357,7 +357,7 @@ onTapSell(BuildContext context, Jogador jogador){
   }
 }
 onTapBuy(BuildContext context, Jogador jogador){
-  if(globalMyJogadores.length<32) {
+  if(globalMyJogadores.length<34) {
     if (globalMyMoney > jogador.price) {
       if(Club(index: jogador.clubID).nJogadores>15){
         globalMyMoney -= jogador.price;
@@ -366,7 +366,7 @@ onTapBuy(BuildContext context, Jogador jogador){
         saveSellBuyPlayerToHistoric(player: jogador,isSell: false, clubID: jogador.clubID);
         customToast(Translation(context).text.playerBought);
       }else{
-        customToast(Translation(context).text.cancelledPurchase+":\n"+Translation(context).text.otherTeamWillHaveNoPlayersLeft);
+        customToast(Translation(context).text.cancelledPurchase+":\n"+Translation(context).text.otherTeamWillHaveNoPlayersLeft+" (34)");
       }
     } else {
       customToast(Translation(context).text.cancelledPurchase+":\n"+Translation(context).text.moneyNotEnough);

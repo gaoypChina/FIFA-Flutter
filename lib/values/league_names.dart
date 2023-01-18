@@ -64,6 +64,7 @@ class LeagueOfficialNames{
   String ligaEuropa = 'Liga Europeia';  String lesteEuropeu = 'Leste Europeu';
 
   String brasil1 = 'Brasileirão';  String brasil2 = 'Brasileirão - Série B';String brasil3 = 'Brasileirão - Série C';
+  String brasil4 = 'Brasileirão - Série D';
   String paulistao = 'Paulistão'; String carioca = 'Carioca'; String mineiro = 'Mineiro'; String es = 'Capixaba';
   String gaucho = 'Gaucho'; String parana = 'Paranaense'; String santacatarina = 'Santa Catarina';
   String bahia = 'Bahiano';   String pernambuco = 'Pernambucano'; String ceara = 'Cearense';  String potiguar = 'Potiguar';
@@ -184,7 +185,7 @@ class LeagueOfficialNames{
       russia, ucrania,   cazaquistao,
       armenia, azerbaijao, israel, saomarino,
 
-     brasil1, brasil2, brasil3,
+     brasil1, brasil2, brasil3, brasil4,
      argentina,
      uruguai,     paraguai,     chile,     peru,    bolivia,
      colombia, equador,     venezuela,
@@ -252,7 +253,7 @@ List internationalLeagueNames = [LeagueOfficialNames().championsLeague,LeagueOff
 //ID<50 -> Champions League
 //ID<70 -> Libertadores
 List leaguesListRealIndex = [
-  1,2,3,5,6, 7,8,  9,10,11,12,15,25,16, 20,21,    50,51,52,60,61,62,   70,71,  80, 85, 90
+  1,2,3,5,6, 7,8,  9,10,11,12,15,25,16, 20,21,    50,51,52,53, 60,61,62,   70,71,  80, 85, 90
 ];
 
 List getAvailableLeaguesNames(){
@@ -278,7 +279,7 @@ List leagueNames = [
   LeagueOfficialNames().ligaEuropa,LeagueOfficialNames().lesteEuropeu,
 
   LeagueOfficialNames().brasil1,LeagueOfficialNames().brasil2,LeagueOfficialNames().brasil3,
-  LeagueOfficialNames().paulistao,
+  LeagueOfficialNames().brasil4,
   LeagueOfficialNames().argentina,LeagueOfficialNames().mercosul,LeagueOfficialNames().colombia,
   LeagueOfficialNames().mexico,LeagueOfficialNames().estadosUnidos,LeagueOfficialNames().costaRica,
   LeagueOfficialNames().asia,LeagueOfficialNames().orienteMedio,LeagueOfficialNames().africa,
@@ -314,7 +315,8 @@ Map leaguesIndexFromName = {
   LeagueOfficialNames().brasil1: 50,
   LeagueOfficialNames().brasil2: 51,
   LeagueOfficialNames().brasil3: 52,
-  LeagueOfficialNames().paulistao: 53,
+  LeagueOfficialNames().brasil4: 53,
+  LeagueOfficialNames().paulistao: 54,
   LeagueOfficialNames().argentina: 60,
   LeagueOfficialNames().mercosul: 61,
   LeagueOfficialNames().colombia: 62,
@@ -338,6 +340,7 @@ Map nTeamsRelegated = {
 
   LeagueOfficialNames().brasil1: 3,
   LeagueOfficialNames().brasil2: 3,
+  LeagueOfficialNames().brasil3: 3,
 };
 
 Map nTeamsClassified = {
@@ -432,6 +435,7 @@ Map getLeagueNationalityMap(){
     leagueName.brasil1: Words.country.brazil ,
     leagueName.brasil2: Words.country.brazil ,
     leagueName.brasil3: Words.country.brazil ,
+    leagueName.brasil4: Words.country.brazil ,
     leagueName.argentina: Words.country.argentina ,
     leagueName.uruguai: Words.country.uruguay ,
     leagueName.paraguai: Words.country.paraguay ,
@@ -570,6 +574,7 @@ String getCup(String leagueNameIn){
     leagueName.brasil1: leagueName.brazilCup,
     leagueName.brasil2: leagueName.brazilCup,
     leagueName.brasil3: leagueName.brazilCup,
+    leagueName.brasil4: leagueName.brazilCup,
     leagueName.argentina: leagueName.argentinaCup,
     leagueName.sulamericano: leagueName.sulamericanaCup,
     leagueName.colombia: leagueName.merconorteCup,

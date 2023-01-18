@@ -30,9 +30,10 @@ class FIFAImages{
     if(leagueName==LeagueOfficialNames().turquiaGrecia) {      imageLogo = 'turquia';}
     if(leagueName==LeagueOfficialNames().ligaEuropa) {      imageLogo = 'liga1';}
     if(leagueName==LeagueOfficialNames().lesteEuropeu) {    imageLogo = 'leste';}
-    if(leagueName==LeagueOfficialNames().brasil1) {      imageLogo = 'brasileirao';}
-    if(leagueName==LeagueOfficialNames().brasil2) {     imageLogo = 'brasilserieb';}
-    if(leagueName==LeagueOfficialNames().brasil3) {     imageLogo = 'brasilseriec';}
+    if(leagueName==LeagueOfficialNames().brasil1) {      imageLogo = 'brasil a';}
+    if(leagueName==LeagueOfficialNames().brasil2) {     imageLogo = 'brasil b';}
+    if(leagueName==LeagueOfficialNames().brasil3) {     imageLogo = 'brasil c';}
+    if(leagueName==LeagueOfficialNames().brasil4) {     imageLogo = 'brasil d';}
     if(leagueName==LeagueOfficialNames().paulistao) {     imageLogo = 'brasileirao';}
     if(leagueName==LeagueOfficialNames().argentina) {      imageLogo = 'argentina';}
     if(leagueName==LeagueOfficialNames().mercosul) {      imageLogo = 'mercosul'; }
