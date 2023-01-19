@@ -37,6 +37,7 @@ class ReadCSV{
       customToast('Arquivo Inexistente: '+filename);
     }
 
+    List clubIDs = [];
     for(int line=1;line<_data.length;line++){
       String club = _data[line][0];
       String name = _data[line][1].toString();
@@ -56,7 +57,7 @@ class ReadCSV{
       //VARIAVEIS GLOBAIS
       int clubIndex = clubsAllNameList.indexOf(club);
       if(clubIndex >= 0) { //se o clube existir e estiver cadastrado certo
-
+        
         PlayerBasicInfo playerBasicInfo = PlayerBasicInfo();
         playerBasicInfo.clubID = clubIndex;
         playerBasicInfo.playerID = indexJog;
@@ -66,8 +67,9 @@ class ReadCSV{
         playerBasicInfo.overall = overall;
         playerBasicInfo.nationality = nationality;
         playerBasicInfo.imagePlayer = imagePlayer;
-        playerBasicInfo.createNewPlayerToDatabase();
-        indexJog++;
+
+
+        limit_n_players(clubIDs,playerBasicInfo, clubIndex);
 
         //test jogadores importados
         // if(club == ClubName().arsenal){
@@ -82,6 +84,16 @@ class ReadCSV{
     }
   }
 
+  limit_n_players(List clubIDs,PlayerBasicInfo playerBasicInfo, int clubID){
+    clubIDs.add(clubID);
+    int nocurrences = clubIDs.map((element) => element == clubID ? 1 : 0).reduce((value, element) => value + element);
+    if(nocurrences<34){
+      playerBasicInfo.createNewPlayerToDatabase();
+      indexJog++;
+    }else{
+      clubIDs.removeLast();
+    }
+  }
   //Função antiga de leitura dos csvs
 
   // readCSVfunc(String filename) async {

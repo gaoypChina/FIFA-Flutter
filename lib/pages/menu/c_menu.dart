@@ -323,7 +323,7 @@ class _MenuState extends State<Menu> {
                           ),
 
                           //TEST FUNCTIONS BUTTON
-                          testInitRodada >= 1 ? Container(
+                          testInitRodada == 18 ? Container(
                             alignment: Alignment.topCenter,
                             child: GestureDetector(
                                 onTap:(){
@@ -390,7 +390,7 @@ Widget rowClassification(int position, Club club, ){
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        myClass.getLastYearExpectativa() == position
+        myClass.getLastYearExpectativa() == position-1
             ? const Text('............................................................................................',style: EstiloTextoBranco.negrito6)
             : Container(),
         Row(
