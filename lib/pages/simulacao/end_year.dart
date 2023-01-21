@@ -219,12 +219,15 @@ Widget finale(String internationalLeague){
 onContinueButton() async{
   customToast(Translation(context).text.loadingNewSeason);
   loading = true;
+
+  bool keepCoach = Expectativa(My()).hadGoodPerformance();
+
   setState(() {});
   //AWAIT Só pra dar o set state antes e mostrar a pagina carregando
   await Future.delayed(const Duration(milliseconds: 10), () {});
   funcUpdateDataAfterSeason();
 
-  if(Expectativa(My()).hadGoodPerformance()){
+  if(keepCoach){
     Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Menu()));
   }else{
     customToast('Você foi demitido. Escolha um novo clube');

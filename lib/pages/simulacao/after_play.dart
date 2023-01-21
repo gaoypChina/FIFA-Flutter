@@ -17,7 +17,6 @@ import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/pages/simulacao/not_play_international/not_play_international_matamata.dart';
 import 'package:fifa/theme/background/background_position.dart';
 import 'package:fifa/theme/background/color_grade.dart';
-import 'package:fifa/theme/background/moral_icon.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';

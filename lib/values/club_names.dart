@@ -1117,6 +1117,7 @@ class ClubName{
   String alania = "Alania Vladikavkaz";
   String amkar = "Amkar";
   String anzhi = "Anzhi";
+  String avangard = "Avangard Kursk";
   String tula = "Arsenal Tula";
   String baltika = "Baltika Kaliningrad";
   String chernomorets = "Chernomorets Novorossiysk";
@@ -1149,6 +1150,7 @@ class ClubName{
   String shinnikYaroslavl = "Shinnik Yaroslavl";
   String ska = "SKA";
   String skaRostov = "SKA Rostov";
+  String sibir = "Sibir Novosibirsk";
   String sokol = "Sokol Saratov";
   String spartakNalchik = "Spartak Nalchik";
   String stavropol = "Dynamo Stavropol";
@@ -1243,12 +1245,23 @@ class ClubName{
   String zhetysu = "Zhetysu";//KAZAKHSTAN
   //GEORGIA
   String tbilisi = "Dinamo Tbilisi";
-  String batumi = "Dinamo Batumi";//GEORGIA
-  String dila = "FC Dila";//GEORGIA
-  String guria = "Guria Lanchkhuti";//GEORGIA
+  String fctbilisi = "FC Tbilisi";
+  String ameri = "Ameri Tbilisi";
+  String batumi = "Dinamo Batumi";
+  String chikhura = "Chikhura Sachkhere";
+  String dila = "FC Dila";
+  String georgia = "WIT georgia";
+  String guria = "Guria Lanchkhuti";
+  String kolkheti = "Kolkheti-1913 Poti";
+  String loctbilisi = "Locomotive Tbilisi";
+  String metrustavi = "Metalurgi Rustavi";
+  String olirustavi = "Olimpi Rustavi";
   String kutaisi = "Torpedo Kutaisi";//GEORGIA
   String saburtalo = "Saburtalo Tbilisi";
+  String samtredia = "Samtredia";
+  String sioni = "Sioni Bolnisi";
   String spartaktbilisi = "Spartak Tbilisi";
+  String zestafoni = "Zestafoni";
   //ARMENIA
   String alashkent = "Alashkent";
   String araratArmenia = "Ararat Armenia";//ARMENIA
@@ -1667,6 +1680,7 @@ class ClubName{
   String aparecidense = "Aparecidense";
   String aracatuba = "Araçatuba";
   String aracruz = "Aracruz"; //ES
+  String araguaia = "Araguaia"; //MT
   String carazinho = "Atlético Carazinho";
   String athleticMG = "Athletic";
   String avai = "Avaí";
@@ -1675,6 +1689,7 @@ class ClubName{
   String bage = "Bagé";
   String bangu = "Bangu";
   String baraunas = "Baraúnas";
+  String barragarcas = "Barra do Garças"; //MT
   String barcelonaRO = "Barcelona-RO"; //RO
   String bare = "Baré"; //Roraima
   String barras = "Barras"; //PI
@@ -1686,7 +1701,7 @@ class ClubName{
   String botafogoPB = "Botafogo-PB";
   String botafogoBA = "Botafogo-BA";
   String boaesporte = "Boa Esporte";
-  String bragantinoPR = "Bragantino Clube do Pará";
+  String bragantinoPA = "Bragantino do Pará";
   String brasilPelotas = "Brasil de Pelotas";
   String brasilia = "Brasília";
   String brasiliense = "Brasiliense";
@@ -1744,7 +1759,9 @@ class ClubName{
   String doze = "Doze"; //ES
   String duque = "Duque de Caxias";
   String espigao = "Espigão"; //RO
+  String espiritosanto = "Espírito Santo";
   String esportivo = "Esportivo";
+  String estanciano = "Estanciano"; //SE
   String estrelanorte = "Estrela do Norte";
   String fabril = "Fabril";
   String farroupilha = "Farroupilha";
@@ -1770,6 +1787,7 @@ class ClubName{
   String gloriaRS = "Glória";
   String anapolis = "Grêmio Anápolis";
   String goytacaz = "Goytacaz";
+  String goiatuba = "Goiatuba";
   String guara = "Guará"; //DF
   String guarany = "Guarany de Sobral"; //CE
   String guaranyjuazeiro = "Guarany Juazeiro"; //CE
@@ -1805,6 +1823,7 @@ class ClubName{
   String indtucurui = "Independente Tucuruí";
   String intercap = "Intercap"; //TO
   String ipatinga = "Ipatinga";
+  String ipora = "Iporá"; //GOIAS
   String ivinhema = "Ivinhema"; //MS
   String lages = "Inter de Lages";
   String interporto = "Interporto"; //TO
@@ -1826,6 +1845,7 @@ class ClubName{
   String juventusAC = "Juventus AC";
   String juventusAP = "Juventus AP";
   String juventusSC = "Juventus SC";
+  String samas = "Juventude Samas";
   String lajeadense = "Lajeadense";
   String lagartense = "Lagartense"; //SE
   String lagarto = "Lagarto-SE";
@@ -1851,6 +1871,7 @@ class ClubName{
   String maringaFC = "Maringa FC";
   String matonense = "Matonense";
   String metropol = "Metropol";
+  String metropolitano = "Metropolitano"; //SC
   String miguelense = "Miguelense"; //AL
   String mirassol = "Mirassol";
   String mixto = "Mixto";
@@ -1861,12 +1882,15 @@ class ClubName{
   String munizfreire = "Muniz Freire"; //ES
   String murici = "Murici"; //AL
   String nacionalAM = "Nacional AMAZ";
+  String nacionalMG = "Nacional MG";
   String nacionalSP = "Nacional SP";
+  String nacionalGO = "Nacional GO";
   String nauticoRR = "Naútico-RR";
   String naviraiense = "Naviraiense"; //MS
   String noroeste = "Noroeste";
   String novaandradina = "Nova Andradina"; //MS
   String novaiguacu = "Nova Iguaçu";
+  String novavenecia = "Nova Venécia";
   String novohamburgo = "Novo Hamburgo";
   String novamutum= "Nova Mutum"; //MT
   String olaria = "Olaria";
@@ -1880,6 +1904,7 @@ class ClubName{
   String pacajus = "Pacajus"; //CE
   String palestra = "Palestra Itália"; //PR
   String palmas = "Palmas";
+  String paragominas = "Paragominas";
   String paranavai = "Paranavaí";
   String patrocinense = "Patrocinense"; //MG
   String parnahyba = "Parnahyba"; //PIAUI
@@ -1951,9 +1976,11 @@ class ClubName{
   String saomateus = "São Mateus-ES"; //ES
   String saopauloRS = "São Paulo RS";
   String saoraimundo = "São Raimundo";
+  String saoraimundoPA = "São Raimundo-PA";
   String saoraimundoRR = "São Raimundo-RR";
   String sampaio = "Sampaio Corrêa";
   String santamaria = "Inter Santa Maria";
+  String santacruzRN = "Santa Cruz RN";
   String santoantonio = "Santo Antônio";
   String santosAP = "Santos-AP"; //AP
   String santanaAP = "Santana"; //AP
@@ -1999,6 +2026,7 @@ class ClubName{
   String vascoAC = "Vasco AC";
   String veloclube = "Velo Clube";
   String veranopolis = "Veranópolis";
+  String vilaaurora = "Vila Aurora";
   String vilanova = "Vila Nova";
   String vilhena = "Vilhena"; //RO
   String vilhenense = "Vilhenense"; //RO
@@ -2083,31 +2111,39 @@ class ClubName{
   //URU
   String penarol = "Peñarol";
   String nacional = "Nacional";
+  String albion = "Albion";
   String atenas = "Atenas";
+  String basanez = "Basáñez";
   String bellavista = "Bella Vista";
   String bostonriver = "Boston River";
   String cerrito = "Cerrito";
   String cerrouru = "Cerro-URU";
   String cerroLargo = "Cerro Largo";
   String centralespanol = "Central Español";
+  String colonURU = "Colón-URU";
   String danubio = "Danubio";
   String defensor = "Defensor";
+  String depColonia = "Deportivo Colonia";
   String depMaldonado = "Deportivo Maldonado";
   String eltanque = "El Tanque Sisley";
-  String juventud = "Juventud";
-  String montevideoCity = "Montevideo City";
   String fenix = "Fenix";
+  String frontera = "Frontera Rivera";
+  String buceo = "Huracán Buceo";
+  String juventud = "Juventud";
   String liverpoolURU = "Liverpool-URU";
   String miramar = "Miramar Misiones";
+  String montevideoCity = "Montevideo City";
+  String paysanduuru = "Paysandú Bella Vista";
   String plazacolonia = "Plaza Colonia";
   String progreso = "Progreso";
-  String racingMontevideo = "Racing Montevideo";
+  String racinguru = "Racing Montevideo";
   String rampla = "Rampla Juniors";
   String rentistas = "Rentistas";
   String riverURU = "River Plate-URU";
   String rocha = "Rocha";
   String sudamerica = "Sud América";
   String tacuarembo = "Tacuarembó";
+  String villaespanola = "Villa Española";
   String montWanderers = "Montevideo Wanderers";
   //PARAGUAI
   String olimpia = "Olimpia";
@@ -2741,11 +2777,19 @@ class ClubName{
   //BRUNEI
   String bruneidpmm = "Brunei DMPP";
   //CAMBOJA
+  String angkor = "Angkor TAIGER";
   String boeungKet = "Boeung Ket";
+  String buildbright = "Build Bright United";
+  String khemera = "Khemera Keila";
+  String kirivong = "Kirivong Sok Sen Chey";
   String nagaworld = "Nagaworld";
+  String nationaldef = "National Defense Ministry ";
   String preahKhan = "Preah Khan Reach FC";
+  String policeCAMB = "Police Commissary";
+  String tiffy = "Tiffy Army";
   String visakha = "Visakha";
   String phnomPenhCrown = "Phnom Penh Crown";
+  String svayrieng = "Svay Rieng";
   //SINGAPORE
   String albirexSINGAPORE = "Albirex Niigata Singapore";
   String lionSitySailors = "Lion City Sailors";
@@ -3071,8 +3115,10 @@ class ClubName{
   //OCEANIA
   //NEW ZEALAND
   String auckland = "Auckland City";
+  String canterbury = "Canterbury United";
   String easternsuburbs = "Eastern Suburbs";
   String hamiltonWnaderers = "Hamilton Wanderers";
+  String hawkebay = "Hawke's Bay United";
   String teamwellington = "Team Wellington"; //EXTINTO 2021
   String waitakere = "Waitakere United";
   String wellingtonphoenix = "Wellington Phoenix";
@@ -3287,13 +3333,17 @@ class ClubName{
   String orapa = "Orapa United";
   String township = "Township Rollers";
   //CAMARÕES
+  String aigle = "Aigle Nkongsamba";
   String apejes = "APEJES Academy";
   String astres = "Les Astres";
   String bafoussam = "Bafoussam";
   String bamboutos = "Bamboutos";
+  String caiman = "Ciman Douala";
   String cotonsport = "Cotonsport";
   String canonYaounde = "Canon Yaoundé";//CAMARÕES
+  String diamantyaounde = "Diamant Yaoundé";
   String edingsport = "Eding Sport";
+  String fovu = "Fovu";
   String leopardsCAM = "Léopards";//CAMARÕES
   String oryx = "Oryx";//CAMARÕES
   String douala = "Union Douala";//CAMARÕES
@@ -3301,19 +3351,40 @@ class ClubName{
   String sable = "Sable FC";
   String tiko = "Tiko United FC";
   String tonnerre = "Tonnerre";//CAMARÕES
+  String unisport = "Unisport";
   //CAPE VERDE
+  String acadaeroporto = "Académico Aeroporto";
+  String acadmindelo = "Académica Mindelo";
+  String acadpraia = "Académica Praia";
+  String acadsal = "Académica Sal";
+  String amarantes = "Amarantes";
+  String boavistapraia = "Boavista Praia";
+  String derbyfc = "Derby FC";
   String mindelense = "Mindelense";
+  String onzeunidos = "Onze Unidos";
   String sptClubePraia = "Sporting Clube da Praia";
+  String salrei = "Sal-Rei";
+  String travadores = "Travadores";
   //CENTRAL AFRICAN REPUBLIC
   String dfc8 = "DFC 8";
   String bangui = "Olympic Real de Bangui";
   String tempeteMocaf = "Tempête Mocaf";
   //CONGO
+  String aspolice = "AS police";
   String caraBrazaville = "Cara Brazzaville";
-  String diablesNoirs = "Diables Noirs";//CONGO
-  String leopardsCON = "AC Léopards";//CONGO
-  String otoho = "Otohô";//CONGO
-  String talangai = "Talangai";//CONGO
+  String cheminots = "AS Cheminots";
+  String diablesNoirs = "Diables Noirs";
+  String etoilecongo = "Étoile du Congo";
+  String kotoko = "Kotoko MFOA";
+  String interclub = "Inter Club Brazzville";
+  String lamancha = "La Mancha";
+  String leopardsCON = "AC Léopards";
+  String mokanda = "Vita Club Mokanda";
+  String munisport = "Munisport";
+  String patronage = "Patronage Sainte-Anne";
+  String otoho = "Otohô";
+  String ouenze = "Saint Michel d'Ouenzé";
+  String talangai = "Talangai";
   //RD CONGO
   String bantous = "Bantous";
   String cilu = "Cilu";
@@ -3335,12 +3406,28 @@ class ClubName{
   String africaSports = "Africa Sports";//COSTA DO MARFIM
   String gagnoa = "Gagnoa";//COSTA DO MARFIM
   String omnisport = "Omnisport";//COSTA DO MARFIM
+  String racabidjan = "Racing Club Abidjan";
   String sanPedro = "San Pedro";//COSTA DO MARFIM
   String seweSport = "Séwé Sport";//COSTA DO MARFIM
   String stadeDAbidjan = "Stade d'Abidjan";//COSTA DO MARFIM
+  String stella = "Stella Club d'Adjamé";
+  String tanda = "Tanda";
   //ETHIOPIA
+  String asmara = "Asmara Brewery";
+  String awassa = "Awassa City";
+  String cotton = "Cotton";
+  String dedebit = "Dedebit";
+  String eepco = "EEPCO";
+  String embassoria = "Embassoria";
+  String ethiocement = "Ethio-Cement";
+  String ethiocoffee = "Ethiopian Coffee";
   String fasil = "Fasil Kenema";
+  String jimma = "Jimma Aba Jifar";
+  String medrbabur = "Medr Babur";
+  String mekelle = "Mekelle 70 Enderta";
+  String mechal = "Mechal";
   String stGeorge = "Saint George";
+  String tele = "Tele SC";
   //GABON
   String bitam = "Bitam";
   String cercleMberi = "Cercle Mbéri Sportif";
@@ -3363,17 +3450,27 @@ class ClubName{
   String obuasi = "Obuasi Goldfields";
   String tamale = "Real Tamale United";
   //GUINÉ
+  String asfag = "ASFAG";
+  String fello = "Fello Star";
   String hafia = "Hafia FC";
   String horoya = "Horoya";
   String kaloum = "Kaloum Star";
+  String satellite = "Satellite";
   //KHENYA
   String bandare = "Bandare";
+  String feisal = "Feisal";
   String gorMahia = "Gor Mahia";
   String kakamega = "Kakamega Homeboyz";
   String leopardsQUE = "Leopards";
   String mathare = "Mathare United";
+  String nakuru = "Nakuru";
+  String oserian = "Oserian";
+  String sofapaka = "Sofapaka";
+  String sonysugar = "SonySugar";
+  String reunion = "Reunion";
   String tusker = "Tusker";
   String ulinzi = "Ulinzi Stars";
+  String utalii = "Utalii FC";
   //MADAGASCAR
   String adema = "AS Adema";
   String cnapsSport = "CNaPS Sport";

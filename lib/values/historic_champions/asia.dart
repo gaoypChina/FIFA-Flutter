@@ -173,6 +173,27 @@ Map<String,dynamic> mapAsia = {
     1977.0: [n.maccabiHakoah,n.marconiStallions,],
   },
 
+  leagueName.novazelandia : {
+    2022.0: [],
+    2021.0: [n.teamwellington,n.auckland,],
+    2020.0: [n.auckland,n.teamwellington,],
+    2019.0: [n.easternsuburbs,n.teamwellington,],
+    2018.0: [n.auckland,n.teamwellington,],
+    2017.0: [n.teamwellington,n.auckland,],
+    2016.0: [n.teamwellington,n.auckland,],
+    2015.0: [n.auckland,n.hawkebay,],
+    2014.0: [n.auckland,n.teamwellington,],
+    2013.0: [n.waitakere,n.auckland,],
+    2012.0: [n.waitakere,n.teamwellington,],
+    2011.0: [n.waitakere,n.auckland,],
+    2010.0: [n.waitakere,n.canterbury,],
+    2009.0: [n.auckland,n.waitakere,],
+    2008.0: [n.waitakere,n.teamwellington,],
+    2007.0: [n.auckland,n.waitakere,],
+    2006.0: [n.auckland,n.canterbury,],
+    2005.0: [n.auckland,n.waitakere,],
+  },
+
 
   leagueName.india : {
     2022.0: [n.hyderabad,n.kerala,n.jamshedpur,n.mohunBagan,  n.mumbai,n.bengaluru,n.odisha,n.chennaiyin,n.goa,n.northeast,              n.eastBengal],
@@ -421,6 +442,27 @@ Map<String,dynamic> mapAsia = {
     1982.0: [n.tishreen,n.alWathba,n.alittihadSYR,],
     1981.0: [],
     1980.0: [n.alShortaDamascus,n.alhurriya,n.alittihadSYR,],
+  },
+
+  leagueName.camboja : {
+    2022.0: [n.preahKhan,n.visakha,n.phnomPenhCrown,n.boeungKet,n.nagaworld,      ],
+    2021.0: [n.phnomPenhCrown,n.preahKhan,n.visakha,n.nagaworld,n.boeungKet,      ],
+    2020.0: [n.boeungKet,n.preahKhan,n.phnomPenhCrown,n.tiffy,n.visakha,          ],
+    2019.0: [n.preahKhan,n.visakha,n.nagaworld,n.boeungKet,n.angkor,              ],
+    2018.0: [n.nagaworld,n.boeungKet,n.visakha,n.nationaldef,n.phnomPenhCrown,    ],
+    2017.0: [n.boeungKet,n.preahKhan,n.nagaworld,n.nationaldef,n.phnomPenhCrown,  ],
+    2016.0: [n.boeungKet,n.nationaldef,n.nagaworld,n.preahKhan,n.phnomPenhCrown,  ],
+    2015.0: [n.phnomPenhCrown,n.nagaworld,n.boeungKet,n.angkor,n.nationaldef,     ],
+    2014.0: [n.phnomPenhCrown,n.boeungKet,n.nagaworld,n.svayrieng,n.angkor,       ],
+    2013.0: [n.svayrieng,n.boeungKet,n.phnomPenhCrown,n.buildbright,n.nagaworld,  ],
+    2012.0: [n.boeungKet,n.nagaworld,n.preahKhan,n.policeCAMB,n.phnomPenhCrown,   ],
+    2011.0: [n.phnomPenhCrown,n.nagaworld,n.preahKhan,n.nationaldef,n.buildbright,],
+    2010.0: [n.phnomPenhCrown,n.preahKhan,n.buildbright,n.nagaworld,n.kirivong,   ],
+    2009.0: [n.nagaworld,n.khemera,n.preahKhan,n.phnomPenhCrown,n.kirivong,       ],
+    2008.0: [n.phnomPenhCrown,n.nationaldef,n.nagaworld,n.preahKhan,n.buildbright,],
+    2007.0: [n.nagaworld,n.khemera,n.phnomPenhCrown,n.tiffy,n.buildbright,        ],
+    2006.0: [n.khemera,n.nagaworld,n.phnomPenhCrown,],
+    2005.0: [n.khemera,n.phnomPenhCrown,n.policeCAMB,n.nagaworld,],
   },
 
   leagueName.vietna : {

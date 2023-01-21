@@ -69,7 +69,7 @@ class ReadCSV{
         playerBasicInfo.imagePlayer = imagePlayer;
 
 
-        limit_n_players(clubIDs,playerBasicInfo, clubIndex);
+        limitNPlayers(clubIDs,playerBasicInfo, clubIndex);
 
         //test jogadores importados
         // if(club == ClubName().arsenal){
@@ -84,7 +84,7 @@ class ReadCSV{
     }
   }
 
-  limit_n_players(List clubIDs,PlayerBasicInfo playerBasicInfo, int clubID){
+  limitNPlayers(List clubIDs,PlayerBasicInfo playerBasicInfo, int clubID){
     clubIDs.add(clubID);
     int nocurrences = clubIDs.map((element) => element == clubID ? 1 : 0).reduce((value, element) => value + element);
     if(nocurrences<34){

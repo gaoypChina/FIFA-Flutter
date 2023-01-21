@@ -2760,6 +2760,10 @@ class ClubDetails{
 
     map[_name.bostonriver] = [ClubColors(Colors.green,Colors.red),pattern.divided,Coordinates(-34.3292745, -56.7107625),
       'Luis Trócolli',25000,1939,_country.uruguay,65.6,[]];
+    map[_name.buceo] = [ClubColors(Colors.black,Colors.red,Colors.white),pattern.oneVertStripe,Coordinates(0, 0),
+      'Parque Huracán',10000,1937,_country.uruguay,61.7,[]];
+    map[_name.centralespanol] = [ClubColors(Colors.blue,Colors.red),pattern.stripes3,Coordinates(0, 0),
+      'Parque Palermo',6500,1905,_country.uruguay,61.7,[]];
     map[_name.cerroLargo] = [ClubColors(Colors.white,Colors.blue),pattern.stripes3,Coordinates(-32.3595878, -54.1693633),
       'Arquitecto Antonio Ubilla',9000,2002,_country.uruguay,67.3,[]];
     map[_name.cerrouru] = [ClubColors(Colors.lightBlueAccent,Colors.white),pattern.stripes2,Coordinates(-34.867238, -56.252016),
@@ -2780,18 +2784,26 @@ class ClubDetails{
       'Parque Alfredo Víctor Viera',10000,1902,_country.uruguay,69.5,[]];
     map[_name.nacional] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(-34.8845,-56.159),
       'Estádio Gran Parque Central',34000,1899,_country.uruguay,73.5,[_name.penarol]];
+    map[_name.paysanduuru] = [ClubColors(Colors.white,Colors.red),pattern.oneHorStripe,Coordinates(0, 0),
+      'Parque Artigas',25000,2003,_country.uruguay,58.8,[]];
     map[_name.penarol] = [ClubColors(Colors.yellow,Colors.black),pattern.stripes2,Coordinates(-34.7963, -56.06693),
       'Campeón del Siglo',40000,1891,_country.uruguay,72.4,[_name.nacional]];
     map[_name.plazacolonia] = [ClubColors(Colors.white,Colors.green),pattern.solid,Coordinates(-34.4671517, -57.8456522),
       'Prof. Alberto Suppici',12000,1917,_country.uruguay,69.8,[]];
     map[_name.progreso] = [ClubColors(Colors.red,Colors.yellow),pattern.stripes3,Coordinates(-34.8732457, -56.234474),
       'Parque Abraham Paladino',8000,1917,_country.uruguay,65.1,[]];
+    map[_name.racinguru] = [ClubColors(Colors.green,Colors.white),pattern.stripes3,Coordinates(0, 0),
+      'Parque Osvaldo Roberto',8500,1919,_country.uruguay,61.6,[]];
+    map[_name.rampla] = [ClubColors(Colors.green,Colors.red),pattern.stripes3,Coordinates(0, 0),
+      'Olímpico de Montevidéu',6000,1914,_country.uruguay,62.3,[]];
     map[_name.rentistas] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(-34.776324, -56.165855),
       'Complejo Rentistas',10600,1933,_country.uruguay,66.4,[]];
     map[_name.riverURU] = [ClubColors(Colors.red,Colors.white),pattern.stripes2,Coordinates(-34.861929, -56.201579),
       'Federico Omar Saroldi',6000,1932,_country.uruguay,68.2,[]];
+    map[_name.sudamerica] = [ClubColors(Colors.orange,Colors.black),pattern.sleeves,Coordinates(0, 0),
+      'Parque Carlos Ángel Fossa',6000,1914,_country.uruguay,63.2,[]];
     map[_name.bellavista] = [ClubColors(Colors.yellow,Colors.white),pattern.divided,Coordinates(0, 0),
-      'Estádio',0,0,_country.uruguay,50.0,[]];
+      'Parque José Nasazzi',8000,1920,_country.uruguay,64.7,[]];
     map[_name.rocha] = [ClubColors(Colors.lightBlueAccent,Colors.blue),pattern.divided,Coordinates(0,0),
       'Doctor Mario Sobrero',10000,1999,_country.uruguay,50.0,[]];
 
@@ -4020,6 +4032,12 @@ class ClubDetails{
     //NEW ZEALAND
     map[_name.auckland] = [ClubColors(Colors.blue,Colors.blue),pattern.solid,Coordinates(-36.89779, 174.736646117),
       'Kiwitea Street',3500,2004,_country.newZealand,69.3,[]];
+    map[_name.easternsuburbs] = [ClubColors(Colors.white,Colors.yellow),pattern.solid,Coordinates(0,0),
+      'Bill McKinlay Park',5000,1934,_country.newZealand,62.4,[]];
+    map[_name.teamwellington] = [ClubColors(Colors.black,Colors.white),pattern.solid,Coordinates(0,0),
+      'David Farrington Park',2250,2004,_country.newZealand,50.0,[]]; //EXTINTO 2021
+    map[_name.waitakere] = [ClubColors(Colors.white,Colors.red),pattern.solid,Coordinates(0,0),
+      'Fred Taylor Park',4000,2003,_country.newZealand,63.1,[]];
     map[_name.wellingtonphoenix] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(-41.273115, 174.78582),
       'Westpac Stadium',35000,2007,_country.newZealand,66.4,[]];
     //AUSTRALIA
