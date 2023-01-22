@@ -108,7 +108,7 @@ List clubsAllNameList = [
   ClubName().avai, ClubName().paysandu, ClubName().santacruz, ClubName().portuguesa,
   ClubName().brusque,ClubName().crb,ClubName().csa,ClubName().manaus,
   ClubName().sampaio,ClubName().vilanova,ClubName().brasilPelotas,ClubName().ituano,
-  ClubName().gremioNovorizontino,ClubName().mirassol,ClubName().operarioPR,
+  ClubName().novorizontino,ClubName().mirassol,ClubName().operarioPR,
   ClubName().londrina,ClubName().remo,ClubName().abc,ClubName().saocaetano,ClubName().santoandre,
   ClubName().mirassol,ClubName().botafogoSP,ClubName().botafogoPB,ClubName().caxias,
   ClubName().bangu,ClubName().joinville,ClubName().paulista,ClubName().campinense,

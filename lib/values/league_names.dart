@@ -223,7 +223,8 @@ class LeagueOfficialNames{
       australia, novazelandia,
 
       argelia, egito, libya,  marrocos, tunisia,
-      africaSul, angola, botswana, caboverde, camaroes, congo, congoRD, costamarfim,
+      africaSul, angola, botswana, caboverde, camaroes,
+      congo, congoRD, costamarfim, etiopia,
       guine, mali, namibia, nigeria, quenia,
       sudan, tanzania, zimbabwe,
 

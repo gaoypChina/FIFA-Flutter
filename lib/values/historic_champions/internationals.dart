@@ -244,7 +244,7 @@ Map<String,dynamic> mapInternationals = {
     1988.0: [],
     1987.0: [n.tokyoVerdy,n.alhilal,n.federalTerritory,n.alRasheed,    ],
     1986.0: [n.jefUnited,n.alhilal,n.liaoning,n.alTalaba,              ],
-    1985.0: [n.busan,n.alahli,n.palembang,n.aleppo,                    ],
+    1985.0: [n.busan,n.alahli,n.palembang,n.alittihadSYR,                    ],
     1984.0: [],
     1983.0: [],
     1982.0: [],

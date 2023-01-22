@@ -165,7 +165,7 @@ Map clubNameMapImmutable = {
   LeagueOfficialNames().brasil2 : {
     0: clubName.abc,1: clubName.atleticogo,2: clubName.avai,3: clubName.botafogoSP,
     4: clubName.ceara,5: clubName.chapecoense,6: clubName.crb,7: clubName.criciuma,
-    8: clubName.juventude,9: clubName.gremioNovorizontino,10: clubName.guarani,11: clubName.ituano,
+    8: clubName.juventude,9: clubName.novorizontino,10: clubName.guarani,11: clubName.ituano,
     12: clubName.londrina,13: clubName.mirassol,14: clubName.pontepreta,15: clubName.sampaio,
     16: clubName.sport,17:clubName.tombense,18:clubName.vilanova,19:clubName.vitoria,
   },

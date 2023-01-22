@@ -1804,7 +1804,7 @@ class ClubName{
   String gremioBarueri = "Grêmio Barueri";
   String gremiocoariense = "Grêmio Coariense"; //AM
   String gremioanapolis = "Grêmio Anápolis";
-  String gremioNovorizontino = "Grêmio Novorizontino";
+  String novorizontino = "Grêmio Novorizontino";
   String guajara = "Guajará"; //RO
   String guarapari = "Guarapari"; //ES
   String gurupi = "Gurupi"; //TO
@@ -3060,13 +3060,12 @@ class ClubName{
   String alfutowa = "Al-Futowa";
   String alkaramah = "Al-Karamah";
   String alJaish = "Al-Jaish";
-  String alittihadSYR = "Al-Ittihad-SYRIA";
+  String alittihadSYR = "Al-Ittihad Aleppo";
   String alhurriya = "Al-Hurriya";
   String almajd = "Al-Majd";
   String alwahdaSYR = "Al-Wahda-SYRIA";
   String alWathba = "Al-Wathba";
   String alShortaDamascus = "Al Shorta Damascus";
-  String aleppo = "Al-Ittihad Aleppo";
   String jableh = "Jableh";
   String hutteen = "Hutteen";
   String tishreen = "Tishreen";
@@ -3582,7 +3581,7 @@ class ClubName{
   String redArrows = "Red Arrows";//ZAMBIA
   String zesco = "Zesco United";//ZAMBIA
   //ZIMBABWE
-  String amazuluZIM = "amazulu ZIM";
+  String amazuluZIM = "Amazulu ZIM";
   String caps = "Caps United";
   String chickenInn = "Chicken Inn";
   String dynamos = "Dynamos FC"; //ZIMBABWE

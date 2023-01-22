@@ -230,7 +230,6 @@ String imageLogo(String timeFoto) {
     map[_name.burgos] = 'burgos';
     map[_name.cadiz] = 'cadiz';
     map[_name.cartagena] = 'cartagena';
-    map[_name.compostela] = 'compostela';
     map[_name.cordoba] = 'cordoba';
     map[_name.eibar] = 'eibar';
     map[_name.elche] = 'elche';
@@ -922,7 +921,7 @@ String imageLogo(String timeFoto) {
     map[_name.globo] = 'globo';
     map[_name.goianesia] = 'goianesia';
     map[_name.goytacaz] = 'goytacaz'; 
-    map[_name.gremioNovorizontino] = 'gremio novorizontino'; 
+    map[_name.novorizontino] = 'gremio novorizontino';
     map[_name.ibis] = 'ibis'; 
     map[_name.icasa] = 'icasa';
     map[_name.interporto] = 'interporto';
