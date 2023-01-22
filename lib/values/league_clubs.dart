@@ -170,15 +170,15 @@ Map clubNameMapImmutable = {
     16: clubName.sport,17:clubName.tombense,18:clubName.vilanova,19:clubName.vitoria,
   },
   LeagueOfficialNames().brasil3 : {
-    0: clubName.bangu,1: clubName.brasilPelotas,2: clubName.botafogoPB,3: clubName.brasiliense,
-    4: clubName.brusque,5: clubName.campinense,6: clubName.caxias,7: clubName.csa,
-    8: clubName.ferroviaria,9:clubName.figueirense,10: clubName.manaus,11: clubName.nautico,
-    12: clubName.operarioPR,13: clubName.parana,14: clubName.paysandu,15: clubName.portuguesa,
-    16: clubName.remo,17: clubName.santacruz,
+    0: clubName.botafogoPB,1: clubName.brusque,2: clubName.csa,3:clubName.figueirense,
+    4: clubName.manaus,5: clubName.nautico,6: clubName.operarioPR,7: clubName.paysandu,
+    8: clubName.portuguesa,9: clubName.remo,
   },
   LeagueOfficialNames().brasil4 : {
-    0: clubName.joinville, 1: clubName.juventusMooca, 2: clubName.ibis, 3: clubName.paulista,
-    4: clubName.santoandre,5: clubName.saocaetano,
+    0: clubName.bangu,1: clubName.brasiliense,2: clubName.brasilPelotas,3: clubName.campinense,
+    4: clubName.caxias,5: clubName.ferroviaria,6: clubName.ibis,7: clubName.joinville,
+    8: clubName.juventusMooca,9: clubName.parana,10: clubName.paulista,11: clubName.santacruz,
+    12: clubName.santoandre,13: clubName.saocaetano,
   },
   LeagueOfficialNames().argentina : {
     0: clubName.argentinojuniors,1: clubName.atleticoTucuman,2: clubName.banfield,3: clubName.bocajuniors,

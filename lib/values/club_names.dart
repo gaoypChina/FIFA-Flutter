@@ -3576,9 +3576,15 @@ class ClubName{
   String vipers = "Vipers SC";
   //ZAMBIA
   String greenEagles = "Green Eagles";
-  String nkana = "Nkana";//ZAMBIA
+  String greenbuffaloes = "Green buffaloes";
+  String kabwe = "Kabwe Warriors";
+  String lusaka = "City of Lusaka";
   String mufulira = "Mufulira Wanderers";//ZAMBIA
+  String nchanga = "Nchanga Rangers";
+  String nkana = "Nkana";//ZAMBIA
+  String powerdynamos = "Power Dynamos";
   String redArrows = "Red Arrows";//ZAMBIA
+  String zanaco = "Zanaco";
   String zesco = "Zesco United";//ZAMBIA
   //ZIMBABWE
   String amazuluZIM = "Amazulu ZIM";

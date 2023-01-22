@@ -132,9 +132,7 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
                   child: TabBarView(
                     controller: _tabController,
                     children: [
-                      widget.visitante
-                          ? statisticsVisitante()
-                          : statisticsHome(),
+                      goalsWidget(),
                       playerStatistics(),
                     ],
                   ),
@@ -209,67 +207,62 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
     );
   }
 
-Widget statisticsHome(){
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
+Widget goalsWidget(){
+  List<GoalMyMatch> goals = [];
+  List<GoalMyMatch> goals1 = [];
+  List<GoalMyMatch> goals2 = [];
+  for(int i=0; i < widget.gol1;i++){
+    if(!widget.visitante){
+      GoalMyMatch goal1 = GoalMyMatch();
+      goal1.getMyGoal(i);
+      goals1.add(goal1);
+    }else{
+      GoalMyMatch goal2 = GoalMyMatch();
+      goal2.getMyGoal(i);
+      goals2.add(goal2);
+    }
+  }
+  for(int i=0; i< widget.gol2;i++){
+    if(widget.visitante){
+      GoalMyMatch goal1 = GoalMyMatch();
+      goal1.getAdvGoal(i);
+      goals1.add(goal1);
+    }else{
+      GoalMyMatch goal2 = GoalMyMatch();
+      goal2.getAdvGoal(i);
+      goals2.add(goal2);
+    }
+  }
 
+  goals = goals1+goals2;
+  goals.sort((a, b) => a.minute.compareTo(b.minute));
+
+    return
         Column(
           children: [
-            for(int i=1; i<=widget.gol1;i++)
-              goalRowMy(i-1),
+            for(int i=0; i<goals.length;i++)
+              goalRow(goals[i], goals2.contains(goals[i])),
           ],
-        ),
-        Container(width: 1 ,color: Colors.white),
-        widget.gol2 >0 ? Column(
-          children: [
-            for(int i=1; i<=widget.gol2;i++)
-              goalRowAdv(i-1),
-          ],
-        ) : Container(width: Sized(context).width*0.45),
-      ],
-    );
+        );
 }
-  Widget statisticsVisitante(){
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
 
-        Column(
-          children: [
-            for(int i=1; i<=widget.gol2;i++)
-              goalRowAdv(i-1),
-          ],
-        ),
-        Container(width: 1 ,color: Colors.white),
-        widget.gol1 >0 ? Column(
-          children: [
-            for(int i=1; i<=widget.gol1;i++)
-              goalRowMy(i-1),
-          ],
-        ) : Container(width: Sized(context).width*0.45),
-      ],
-    );
-  }
-  Widget goalRowMy(int i){
-    GoalMyMatch goalMyMatch = GoalMyMatch();
-    goalMyMatch.getMyGoal(i);
-    return goalRow(goalMyMatch);
-  }
-  Widget goalRowAdv(int i){
-    GoalMyMatch goalMyMatch = GoalMyMatch();
-    goalMyMatch.getAdvGoal(i);
-    return goalRow(goalMyMatch);
-  }
-Widget goalRow(GoalMyMatch goalMyMatch){
+Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
+    double paddingSize = 6;
   return
     Row(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
+        visitante ? Container(width: Sized(context).width*0.50-1) : Container(),
+        visitante ? Container(width: 1,height:18,color: Colors.white): Container(),
+        Container(padding: EdgeInsets.only(left: paddingSize)),
         Image.asset('assets/icons/bola.png',height:15,width: 15),
         Text(goalMyMatch.minute.toString()+'\'  ',style: EstiloTextoBranco.text14),
         SizedBox(width:135,
-            child: Text(goalMyMatch.playerName,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14)
-        ),
+            child: Text(goalMyMatch.playerName,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14),
+          ),
+          const Spacer(),
+          !visitante ? Container(width: 1,height:18,color: Colors.white): Container(),
+          !visitante ? Container(width: Sized(context).width*0.5) : Container(),
       ],
     );
 }
@@ -283,14 +276,14 @@ Widget goalRow(GoalMyMatch goalMyMatch){
           Column(
             children: [
               for(int i=0;i<11;i++)
-                playerRow(Jogador(index: myClubClass.escalacao[i])),
+                playerRow(Jogador(index: !widget.visitante ? myClubClass.escalacao[i] : adversarioClubClass.escalacao[i])),
             ],
           ),
 
           Column(
             children: [
               for(int i=0;i<11;i++)
-                playerRow(Jogador(index: adversarioClubClass.escalacao[i])),
+                playerRow(Jogador(index: widget.visitante ? myClubClass.escalacao[i] : adversarioClubClass.escalacao[i])),
             ],
           ),
         ],
