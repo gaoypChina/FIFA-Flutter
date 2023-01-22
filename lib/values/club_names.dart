@@ -1730,6 +1730,7 @@ class ClubName{
   String cene = "CENE"; //MS
   String central = "Central Caruaru";
   String ceov = "CEOV";
+  String ceub = "CEUB";
   String cfa = "CFA"; //RO
   String chapadao = "Chapadão"; //MS
   String cianorte = "Cianorte";
@@ -1829,6 +1830,7 @@ class ClubName{
   String interporto = "Interporto"; //TO
   String iranduba = "Iranduba"; //AM
   String iraty = "Iraty"; //PR
+  String itaperuna = "Itaperuna"; //RJ
   String ituano = "Ituano";
   String ituiutaba = "Ituiutaba";
   String itumbiara = "Itumbiara";
@@ -2296,15 +2298,18 @@ class ClubName{
   String audazOctubrino = "Audaz Octubrino";
   String azogues = "Azogues";
   String clanJuvenil = "Clan Juvenil";
+  String cumbaya = "Cumbayá";
   String delfin = "Delfín";
   String depquito = "Deportivo Quito";
   String elnacional = "El Nacional";
+  String espana = "España";
   String everestGuayaquil = "Everest Guayaquil";
   String esmeraldas = "Esmeraldas Petrolero";
   String espoli = "Espoli";
   String filanbanco = "Filanbanco";
   String fuerzaAmarilla = "Fuerza Amarilla";
   String guayaquil = "Guayaquil City";
+  String gualaceo = "Gualaceo";
   String imbabura = "Imbabura";
   String lduLoja = "LDU Loja";
   String portoviejo = "LDU de Portoviejo";

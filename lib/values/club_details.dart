@@ -4282,7 +4282,7 @@ class ClubDetails{
     //IVORY COAST
     map[_name.africaSports] = [ClubColors(Colors.blue,Colors.yellow),pattern.solid,Coordinates(6.1192630, -5.9613877),
       'Stade Robert Champroux',15000,1960,_country.ivorycoast,64.5,[]];
-    map[_name.asecmimosas] = [ClubColors(Colors.green,Colors.red),pattern.solid,Coordinates(5.3049676, -3.99280839),
+    map[_name.asecmimosas] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(5.3049676, -3.99280839),
       'Stade Robert Champroux',10000,1947,_country.ivorycoast,67.3,[]];
     map[_name.gagnoa] = [ClubColors(Colors.blue,Colors.yellow),pattern.solid,Coordinates(6.1192630, -5.9613877),
       'Stade Victor Biaka Boda',15000,1960,_country.ivorycoast,64.1,[]];

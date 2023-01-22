@@ -62,6 +62,7 @@ class LeagueOfficialNames{
   String azerbaijao = 'Liga Azerbaijão';
   String georgia = 'Liga Geórgia';
   String saomarino = 'Liga São Marino';
+  String gibraltar = 'Liga Gibraltar';
   String ligaEuropa = 'Liga Europeia';  String lesteEuropeu = 'Leste Europeu';
 
   String brasil1 = 'Brasileirão';  String brasil2 = 'Brasileirão - Série B';String brasil3 = 'Brasileirão - Série C';
@@ -95,7 +96,7 @@ class LeagueOfficialNames{
   String arabia = 'Liga Arábia Saudita';
   String uzbekistao = 'Liga Uzbekistao'; String tadjiquistao = 'Liga Tadjikistan';
   String eau = 'Liga EAU';   String qatar = 'Liga Qatar';String bahrein = 'Liga Bahrein';
-  String iran = 'Liga Iran';   String iraque = 'Liga Iraque';
+  String iran = 'Liga Iran';   String iraque = 'Liga Iraque'; String kuwait = 'Liga Kuwait';
   String siria = 'Liga Síria'; String libano = 'Liga Líbano';
   String india = 'Liga India';
   String tailandia = 'Liga Tailandia';   String vietna = 'Liga Vietnã'; String camboja = 'Liga Camboja';
@@ -120,13 +121,16 @@ class LeagueOfficialNames{
   String etiopia = 'Liga Etiópia';
   String gabao = 'Liga Gabão';
   String guine = 'Liga Guiné';
+  String liberia = 'Liga Libéria';
   String madagascar = 'Liga Madagascar';
   String mali = 'Liga Mali';
+  String mauritania = 'Liga Mauritânia';
   String mocambique = 'Liga Mocambique';
   String namibia = 'Liga Namíbia';
   String niger = 'Liga Níger';
   String nigeria = 'Liga Nigeria';
   String quenia = 'Liga Quênia';
+  String ruanda = 'Liga Ruanda';
   String senegal = 'Liga Senegal';
   String somalia = 'Liga Somália';
   String sudan = 'Liga Sudão';
@@ -449,6 +453,7 @@ Map getLeagueNationalityMap(){
     leagueName.azerbaijao: Words.country.azerbaijan ,
     leagueName.georgia: Words.country.georgia ,
     leagueName.saomarino: Words.country.sanMarino ,
+    leagueName.gibraltar: Words.country.gibraltar ,
 
     leagueName.brasil1: Words.country.brazil ,
     leagueName.brasil2: Words.country.brazil ,
@@ -488,6 +493,7 @@ Map getLeagueNationalityMap(){
     leagueName.eau: Words.country.uae ,
     leagueName.iran: Words.country.iran ,
     leagueName.iraque: Words.country.iraq ,
+    leagueName.kuwait: Words.country.kuwait ,
     leagueName.siria: Words.country.syria ,
     leagueName.libano: Words.country.lebanon ,
 
@@ -526,12 +532,15 @@ Map getLeagueNationalityMap(){
     leagueName.etiopia: Words.country.ethiopia ,
     leagueName.gabao: Words.country.gabon ,
     leagueName.guine: Words.country.guinea ,
+    leagueName.liberia: Words.country.liberia ,
     leagueName.madagascar: Words.country.madagascar ,
     leagueName.mocambique: Words.country.mozambique ,
     leagueName.mali: Words.country.mali ,
+    leagueName.mauritania: Words.country.mauritania ,
     leagueName.namibia: Words.country.namibia ,
     leagueName.niger: Words.country.niger ,
     leagueName.nigeria: Words.country.nigeria ,
+    leagueName.ruanda: Words.country.rwanda ,
     leagueName.quenia: Words.country.kenya ,
     leagueName.senegal: Words.country.senegal ,
     leagueName.somalia: Words.country.somalia ,
