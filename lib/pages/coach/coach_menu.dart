@@ -450,28 +450,9 @@ Widget yearRow(int year, BuildContext context){
 Widget financeWidget(){
 
     Map<int,double> balanceByWeek = {};
-    double saldoMesAnterior = 0;
-    double expense = 0;
-    double profit = 0;
     for(int week=1;week<=semana;week++){
-
       balanceByWeek[week] = HistoricMyTransfers().getWeekBalance(week);
-
-      try {
-        if (saldoMesAnterior > balanceByWeek[week]!) {
-          profit += saldoMesAnterior - balanceByWeek[week]!;
-        } else {
-          profit += balanceByWeek[week]! - saldoMesAnterior;
-        }
-      }catch(e){
-        //1ºloop
-      }
-
-      saldoMesAnterior = balanceByWeek[week]!;
     }
-
-    profit -= HistoricMyTransfers().getWeekBalance(1);
-    expense =  globalMyMoney - profit - HistoricMyTransfers().getWeekBalance(1);
 
     return Container(
       width: Sized(context).width,
@@ -488,11 +469,7 @@ Widget financeWidget(){
 
           graphFinance(balanceByWeek),
 
-          const Text('Gastos',style: EstiloTextoBranco.text16),
-          Text('\$'+expense.toStringAsFixed(2),style: EstiloTextoBranco.text16),
-          const Text('Receita',style: EstiloTextoBranco.text16),
-          Text('\$'+profit.toStringAsFixed(2),style: EstiloTextoBranco.text16),
-          const SizedBox(height: 20),
+          const SizedBox(height: 10),
           const Text('Saldo',style: EstiloTextoBranco.text16),
           Text('\$'+my.money.toStringAsFixed(2),style: EstiloTextoBranco.text16),
         ],

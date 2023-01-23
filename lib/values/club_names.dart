@@ -1187,9 +1187,18 @@ class ClubName{
   String zorya = "Zorya";
   //EX-URSS
   //MOLDOVA
+  String balti = "Olimpia Bălți";
+  String daciaChisinau = "Dacia Chișinău";
+  String iskraribnita = "Iskra-Stal Rîbnița";
+  String nistruotaci = "Nistru Otaci";
+  String milsami = "Milsami Orhei";
+  String petrocub = "Petrocub Hîncești";
   String sheriffTiraspol = "Sheriff Tiraspol";
-  String zimbru = "Zimbru Chișinău";//MOLDOVA
-  String milsami = "Milsami Orhei";//MOLDOVA
+  String stintul = "Sfântul Gheorghe Suruceni";
+  String tiligultiras = "Tiligul-Tiras Tiraspol";
+  String tiraspol = "Constructorul Chișinău";
+  String veris = "Veris Chișinău";
+  String zimbru = "Zimbru Chișinău";
   //BELARUS
   String bate = "BATE";
   String belshina = "Belshina Bobruisk";
@@ -2597,11 +2606,13 @@ class ClubName{
   String uca = "UCA";
   String walterferreti = "Walter Ferreti";
   //PANAMA
+  String chorrillo = "Chorrillo";
   String independienteChorrera = "Independiente de La Chorrera";
   String tauro = "Tauro-PAN";
   String arabeunido = "Árabe Unido";
   String alianzaPAN = "Alianza FC";
   String plazaAmador = "Plaza Amador";
+  String sanfranciscoPAN = "San Francisco";
   String sanMiguelito = "San Miguelito";
 
   //CARIBE
@@ -3026,10 +3037,17 @@ class ClubName{
   String naftAlwasat = "Naft Al-Wasat";
   String salahaddin = "Salahaddin";
   //JORDANIA
+  String amman = "Amman";
+  String alahliJOR = "Al-Ahli JORD";
+  String alaqaba = "Al-Aqaba";
+  String albaqaa = "Al-Baqa\'a";
   String alFaisalyJORD = "Al-Faisaly Amã";
+  String alhussein = "Al-Hussein";
+  String aljazeera = "Al-Jazeera";
   String alRamtha = "Al-Ramtha";
-  String alSalt = "Al-Salt";
+  String alsalt = "Al-Salt";
   String alWehdat = "Al-Wehdat";
+  String thatras = "That Ras";
   String shababAlOrdon = "Shabab Al-Ordon";
   //KUWAIT
   String alArabiKUW = "Al Arabi Kuwait";
@@ -3572,8 +3590,11 @@ class ClubName{
   //UGANDA
   String express = "Express FC";
   String kampala = "Kampala Capital City";
+  String nilebreweries = "Nile Breweries";
+  String uganda = "Uganda Revenue Authority SC";
   String villa = "Villa";
   String vipers = "Vipers SC";
+  String policeUGA = "Police Uganda";
   //ZAMBIA
   String greenEagles = "Green Eagles";
   String greenbuffaloes = "Green buffaloes";

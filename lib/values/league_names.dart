@@ -204,7 +204,7 @@ class LeagueOfficialNames{
 
       servia,  croacia, bosnia,
       romenia, bulgaria, hungria,
-      macedonia, albania, belarus,
+      macedonia, albania, belarus, moldova,
       russia, ucrania,   cazaquistao,
       armenia, azerbaijao, georgia, israel, saomarino,
 
@@ -214,7 +214,7 @@ class LeagueOfficialNames{
      colombia, equador,     venezuela,
 
       mexico, estadosUnidos,
-      costaRica, honduras, elsalvador, nicaragua, guatemala,
+      costaRica, honduras, elsalvador, guatemala, nicaragua, panama,
       jamaica,
 
       china,  japao,     coreiaSul,
@@ -229,7 +229,7 @@ class LeagueOfficialNames{
       africaSul, angola, botswana, caboverde, camaroes,
       congo, congoRD, costamarfim, etiopia,
       guine, mali, namibia, nigeria, quenia,
-      sudan, tanzania, zambia, zimbabwe,
+      sudan, tanzania, uganda, zambia, zimbabwe,
 
       paulistao, carioca, mineiro, es,
       gaucho,parana,santacatarina,

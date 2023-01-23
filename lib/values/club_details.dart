@@ -3956,7 +3956,7 @@ class ClubDetails{
       'Estádio Internacional de Amã',25000,1932,_country.jordan,63.5,[]];
     map[_name.alRamtha] = [ClubColors(Colors.blue,Colors.blue),pattern.solid,Coordinates(32.540733, 36.0193454),
       'Prince Hashim Stadium',5000,1966,_country.jordan,64.8,[]];
-    map[_name.alSalt] = [ClubColors(Colors.blue,Colors.black),pattern.solid,Coordinates(32.0579113, 35.7019326),
+    map[_name.alsalt] = [ClubColors(Colors.blue,Colors.black),pattern.solid,Coordinates(32.0579113, 35.7019326),
       'Al-Salt Stadium',1000,1965,_country.jordan,61.6,[]];
     map[_name.alWehdat] = [ClubColors(Colors.green,Colors.red),pattern.solid,Coordinates(31.92822, 35.95329),
       'King Abdullah II Stadium',13265,1956,_country.jordan,65.1,[]];
