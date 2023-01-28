@@ -1281,7 +1281,7 @@ String imageLogo(String timeFoto) {
     map[_name.waterhouse] = 'waterhouse';  
     //HAITI
     map[_name.arcahaie] = 'arcahaie';  
-    map[_name.donBosco] = 'don bosco';  
+    map[_name.donbosco] = 'don bosco';
     map[_name.fica] = 'fica';  
     map[_name.violette] = 'violette haiti';
     //REP. DOMINICANA
@@ -1606,7 +1606,7 @@ String imageLogo(String timeFoto) {
     map[_name.realBamako] = 'real bamako';
     map[_name.stadeMalien] = 'stade malien';
     //MOZAMBIQUE
-    map[_name.costaDoSol] = 'costa do sol';
+    map[_name.costasol] = 'costa do sol';
     map[_name.libolo] = 'ferroviario libolo';
     //NAMIBIA
     map[_name.blackAfrica] = 'black africa';

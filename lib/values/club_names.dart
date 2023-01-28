@@ -2622,15 +2622,29 @@ class ClubName{
   String sanPedroPirates = "San Pedro Pirates";
   String verdes = "Verdes FC";
   //CUBA
+  String camaguey = "Camagüey";
+  String ciegoavila = "Ciego de Ávila";
+  String cienfuegos = "Cienfuegos";
+  String ciudadhabana = "Ciudad de La Habana";
+  String holguin = "Holguín";
+  String lahabana = "La Habana";
   String pinardelrio = "Pinar del Rio";
   String santiagoCuba = "Santiago de Cuba";
-  String villaclara = "FC Villa Clara";
+  String villaclara = "Villa Clara";
   //HAITI
+  String americacayes = "America de Cayes";
   String arcahaie = "Arcahaie";
+  String baltimoreHAI = "Baltimore SC";
+  String capoise = "Capoise";
   String cavaly = "Cavaly";
-  String donBosco = "Don Bosco FC";
+  String donbosco = "Don Bosco FC";
   String fica = "FICA";
+  String mirebalais = "Mirebalais";
   String racingHAITI = "Racing Haiti";
+  String realhope = "Real Hope";
+  String roulado = "Roulado";
+  String tempete = "Tempête";
+  String valenciaHAI = "Valencia Haiti";
   String violette = "Violette";
   //JAMAICA
   String arnettGardens = "Arnett Gardens";
@@ -2658,9 +2672,15 @@ class ClubName{
   String omFC = "O&M FC";
   String pantoja = "CA Pantoja";
   //SURINAME
-  String interMoengotapoe = "Inter Moengotapoe";
+  String coronieboys = "Coronie Boys";
+  String fcsnacional = "FCS Nacional";
+  String intermoengotapoe = "Inter Moengotapoe";
+  String leovictor = "Leo Victor";
   String robinhood = "SV Robinhood";
+  String snl = "SNL";
   String transvaal = "Transvaal";
+  String voorwaarts = "Voorwaarts";
+  String walking = "Walking Bout Company";
   //TRINIDAD & TOBAGO
   String centralFC = "Central FC";
   String connection = "Connection";
@@ -3023,14 +3043,18 @@ class ClubName{
   String zobahan = "Zob Ahan";
   //IRAQUE
   String aljaishIRAQ = "Al-Jaish SC";
+  String aljamiea = "Al-Jamiea";
   String alminaa = "Al-Minaa";
   String alnaft = "Al-Naft";
   String alnajaf = "Al-Najaf";
+  String alshababIRAQ = "Al-Shabab Iraq";
   String alsinaa = "Al-Sinaa";
   String alzawraa = "Al-Zawraa";
   String alQuwaAlJawiya = "Al-Quwa Al-Jawiya";
   String alRasheed = "Al-Rasheed"; //EXTINTO
   String alTalaba = "Al-Talaba";
+  String altijara = "Al-Tijara";
+  String altayaran = "Al-Tayaran";
   String alShortaIRAQ = "Al-Shorta";
   String duhok = "Duhok";
   String erbil = "Erbil";
@@ -3051,8 +3075,10 @@ class ClubName{
   String shababAlOrdon = "Shabab Al-Ordon";
   //KUWAIT
   String alArabiKUW = "Al Arabi Kuwait";
+  String aljahra = "Al-Jahra";
   String alQadsia = "Al-Qadsia";
   String alKuwait = "Al-Kuwait";
+  String alsalmiya = "Al-Salmiya";
   String kazma = "Kazma";
   //LEBANON
   String alahed = "Al-Ahed";
@@ -3506,11 +3532,17 @@ class ClubName{
   String nouadhibou = "Nouadhibou";
   String tevraghZeina = "Tevragh-Zeina";
   //MOZAMBIQUE
-  String blackBulls = "Black Bulls";
-  String costaDoSol = "Costa do Sol";
+  String blackbulls = "Black Bulls";
+  String costasol = "Costa do Sol";
+  String desportivomap = "Desportivo de Maputo";
+  String ferroviariobeira = "Ferroviario da Beira";
+  String ferroviariomaputo = "Ferroviario de Maputo";
+  String nampula = "Ferroviário de Nampula";
+  String matchedje = "Matchedje Maputo";
   String maxaquene = "Maxaquene";
-  String ferroviarioMOZ = "Ferroviario-MOZ";
   String ldMaputo = "Liga Desportiva de Maputo";
+  String songo = "Songo";
+  String pungue = "Têxtil Punguè";
   //NAMIBIA
   String africanStars = "African Stars";
   String blackAfrica = "Black Africa";

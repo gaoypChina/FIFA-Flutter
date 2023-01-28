@@ -88,7 +88,8 @@ class LeagueOfficialNames{
   String mexico = 'Liga MX';String estadosUnidos = 'MLS';String canada = 'Liga Canada';
   String costaRica = 'Liga Costa Rica';String honduras = 'Liga Honduras';String elsalvador = 'Liga El Salvador';
   String nicaragua = 'Liga Nicaragua';String guatemala = 'Liga Guatemala';String panama = 'Liga Panamá';
-  String jamaica = 'Liga Jamaica';String cuba = 'Liga Cuba';String suriname = 'Liga Suriname';
+  String jamaica = 'Liga Jamaica';String cuba = 'Liga Cuba';String haiti = 'Liga Haiti';
+  String suriname = 'Liga Suriname';
   String asia = 'Liga Ásia';  String orienteMedio = 'Liga Oriente Médio';  String africa = 'Liga África';
 
   String china = 'Liga China';
@@ -214,8 +215,8 @@ class LeagueOfficialNames{
      colombia, equador,     venezuela,
 
       mexico, estadosUnidos,
-      costaRica, honduras, elsalvador, guatemala, nicaragua, panama,
-      jamaica,
+      costaRica, elsalvador, guatemala, honduras, nicaragua, panama,
+      jamaica, haiti, suriname,
 
       china,  japao,     coreiaSul,
       tailandia, camboja, filipinas, indonesia, malasia, vietna,
@@ -228,7 +229,7 @@ class LeagueOfficialNames{
       argelia, egito, libya,  marrocos, tunisia,
       africaSul, angola, botswana, caboverde, camaroes,
       congo, congoRD, costamarfim, etiopia,
-      guine, mali, namibia, nigeria, quenia,
+      guine, mali, mocambique, namibia, nigeria, quenia,
       sudan, tanzania, uganda, zambia, zimbabwe,
 
       paulistao, carioca, mineiro, es,
@@ -520,6 +521,7 @@ Map getLeagueNationalityMap(){
     leagueName.canada: Words.country.canada,
     leagueName.costaRica: Words.country.costaRica,
     leagueName.guatemala: Words.country.guatemala,
+    leagueName.haiti: Words.country.haiti ,
     leagueName.honduras: Words.country.honduras,
     leagueName.jamaica: Words.country.jamaica,
     leagueName.elsalvador: Words.country.elsalvador,

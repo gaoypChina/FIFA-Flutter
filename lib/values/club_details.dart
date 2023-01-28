@@ -3418,6 +3418,14 @@ class ClubDetails{
     map[_name.verdes] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(17.1601597, -89.0699064),
       'Norman Broaster Stadium',2000,1976,_country.belize,62.5,[]];
     //CUBA
+    map[_name.camaguey] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(0, 0),
+      'Terreno Sebastopol',1000,1912,_country.cuba,53.1,[]];
+    map[_name.ciegoavila] = [ClubColors(Colors.yellow,Colors.green),pattern.solid,Coordinates(0, 0),
+      'Complejo Deportivo Sergio Alonso Grandal',3000,1978,_country.cuba,56.1,[]];
+    map[_name.cienfuegos] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(0, 0),
+      'Luis Pérez Lozano',4000,1978,_country.cuba,59.1,[]];
+    map[_name.lahabana] = [ClubColors(Colors.purple,darkblue),pattern.stripes2,Coordinates(0, 0),
+      'Estadio La Polar',2000,1915,_country.cuba,58.1,[]];
     map[_name.pinardelrio] = [ClubColors(Colors.green,Colors.yellow),pattern.solid,Coordinates(22.421594, -83.69040778),
       'Estadio Capitán San Luis',8000,1978,_country.cuba,61.4,[]];
     map[_name.santiagoCuba] = [ClubColors(Colors.blue,Colors.black),pattern.solid,Coordinates(20.0365537, -75.81123),
@@ -3429,7 +3437,7 @@ class ClubDetails{
       'Parc Saint-Yves',1000,2017,_country.haiti,64.2,[]];
     map[_name.cavaly] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(19.9298295, -72.71602628),
       'Parc Julia Vilbon',1000,1975,_country.haiti,61.2,[]];
-    map[_name.donBosco] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(18.5189640, -72.2777613),
+    map[_name.donbosco] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(18.5189640, -72.2777613),
       'Stade Pétion-Ville',5000,1963,_country.haiti,58.2,[]];
     map[_name.fica] = [ClubColors(Colors.yellow,Colors.red),pattern.solid,Coordinates(19.75364810, -72.20763375),
       'Parc Saint-Victor',7500,1972,_country.haiti,62.1,[]];
@@ -3456,7 +3464,7 @@ class ClubDetails{
     map[_name.pantoja] = [ClubColors(Colors.blue,Colors.yellow),pattern.oneHorStripe,Coordinates(18.480455936, -69.91863266),
       'Estadio Olímpico Félix Sánchez',27000,2000,_country.dominicanRepublic,60.1,[]];
     //SURINAME
-    map[_name.interMoengotapoe] = [ClubColors(Colors.red,Colors.black),pattern.stripes2,Coordinates(5.6214317, -54.4016037),
+    map[_name.intermoengotapoe] = [ClubColors(Colors.red,Colors.black),pattern.stripes2,Coordinates(5.6214317, -54.4016037),
       'Ronnie Brunswijkstadion',5000,1992,_country.suriname,61.5,[]];
     map[_name.robinhood] = [ClubColors(Colors.red,Colors.green),pattern.solid,Coordinates(5.8376520, -55.1602422),
       'André Kamperveen Stadion',6000,1945,_country.suriname,61.2,[]];
@@ -4380,9 +4388,9 @@ class ClubDetails{
     map[_name.tevraghZeina] = [ClubColors(Colors.white,Colors.white),pattern.solid,Coordinates(18.104679673, -15.9854073389),
       'Stade Olympique Nouakchott',20000,2005,_country.mauritania,57.1,[]];
     //MOZAMBIQUE
-    map[_name.costaDoSol] = [ClubColors(Colors.yellow,Colors.blue),pattern.solid,Coordinates(-25.9413178, 32.61610373),
+    map[_name.costasol] = [ClubColors(Colors.yellow,Colors.blue),pattern.solid,Coordinates(-25.9413178, 32.61610373),
       'Estádio do Costa do Sol',10000,1955,_country.mozambique,65.7,[]];
-    map[_name.ferroviarioMOZ] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(-25.9173539, 32.52639366),
+    map[_name.ferroviariomaputo] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(-25.9173539, 32.52639366),
       'Estádio da Machava',45000,1924,_country.mozambique,63.0,[]];
     map[_name.ldMaputo] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(-25.9567109, 32.44568156),
       'Estádio da Liga',5000,1990,_country.mozambique,61.7,[]];
