@@ -1,7 +1,7 @@
 library globals;
 
 //geral
-int testInitRodada = 1;
+int testInitRodada = 18;
 int gLOBALMAXCLUBSINLEAGUE = 20;
 bool globalShowRealLogos = true;
 
@@ -139,6 +139,8 @@ List globalInternational32ClubsID = [[],[]];//0:Champions, 1:Libertadores
 Map globalInternationalMataMataClubsID = {};
 Map globalInternationalMataMataGoals = {};
 
+//Europa League e SulAmericana
+Map globalInternational = {};
 
 /////////////////////
 //POSITIONS

@@ -13,7 +13,7 @@ import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/functions/end_year_updates/aposentadoria.dart';
-import 'package:fifa/functions/international_league.dart';
+import 'package:fifa/functions/international_league_manipulation.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/page_controller/coach/coach_ranking_controller.dart';
 import 'package:fifa/theme/custom_toast.dart';

@@ -71,10 +71,10 @@ class ClubClassification{
   late int chaveClub;
   late int leagueID;
 
-  ClubClassification({required int clubID}){
-    chaveClub = Club(index: clubID).getChaveLeague();
-    leagueID = Club(index: clubID).leagueID;
-    posicaoTabela = Classification(leagueIndex: leagueID).getClubPosition(clubID);
-    clubName = Club(index: clubID).name;
+  ClubClassification({required Club club}){
+    chaveClub = club.getChaveLeague();
+    leagueID = club.leagueID;
+    posicaoTabela = Classification(leagueIndex: leagueID).getClubPosition(club.index);
+    clubName = club.name;
   }
 }

@@ -1,4 +1,4 @@
-import 'package:fifa/classes/words.dart';
+import 'package:fifa/functions/countries/words.dart';
 import 'package:flutter/material.dart';
 
 //https://hampusborgos.github.io/country-flags/

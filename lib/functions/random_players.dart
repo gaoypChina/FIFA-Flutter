@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/player_basic.dart';
-import 'package:fifa/classes/words.dart';
+import 'package:fifa/functions/countries/words.dart';
 import 'package:fifa/database/csv/read_csv.dart';
 import 'package:fifa/global_variables.dart';
 

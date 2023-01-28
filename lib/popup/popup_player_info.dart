@@ -6,7 +6,7 @@ import 'package:fifa/classes/historic/historic_my_tranfers.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/functions/flags_list.dart';
+import 'package:fifa/functions/countries/flags_list.dart';
 import 'package:fifa/theme/background/background_age.dart';
 import 'package:fifa/theme/background/background_position.dart';
 import 'package:fifa/theme/background/moral_icon.dart';

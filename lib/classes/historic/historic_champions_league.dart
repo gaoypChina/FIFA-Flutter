@@ -1,5 +1,5 @@
 import 'package:fifa/classes/geral/name.dart';
-import 'package:fifa/functions/international_league.dart';
+import 'package:fifa/functions/international_league_manipulation.dart';
 import 'package:fifa/global_variables.dart';
 
 class HistoricChampionsLeague{

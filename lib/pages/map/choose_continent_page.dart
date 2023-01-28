@@ -1,5 +1,5 @@
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/functions/countries_continents.dart';
+import 'package:fifa/functions/countries/countries_continents.dart';
 import 'package:fifa/pages/map/map_list_all_clubs.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';

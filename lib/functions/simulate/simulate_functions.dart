@@ -6,7 +6,7 @@ import 'package:fifa/classes/mundial.dart';
 import 'package:fifa/functions/mata_mata/mata_mata_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/chaves.dart';
-import 'package:fifa/functions/international_league.dart';
+import 'package:fifa/functions/international_league_manipulation.dart';
 import 'package:fifa/functions/simulate/after_simulation/historic.dart';
 import 'package:fifa/functions/simulate/match_simulation.dart';
 import 'package:fifa/global_variables.dart';

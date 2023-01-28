@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:fifa/classes/league.dart';
-import 'package:fifa/functions/international_league.dart';
+import 'package:fifa/functions/international_league_manipulation.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/league_names.dart';
 
@@ -17,8 +17,11 @@ class FimDoCampeonatoLocal{
       int leagueID = leaguesListRealIndex[i];
       League leagueClass = League(index: leagueID);
 
-      setTeamsChampions(leagueClass);
-      setTeamsLibertadores(leagueClass);
+      List clubIndexes = leagueClass.getClassification();
+
+      setTeamsChampions(leagueClass, clubIndexes);
+      setTeamsLibertadores(leagueClass, clubIndexes);
+      setTeamsEuropaLeague(leagueClass, clubIndexes);
     }
 
     //Sortear grupo Champions
@@ -26,59 +29,55 @@ class FimDoCampeonatoLocal{
 
   }
 
-  setTeamsChampions(League leagueClass){
-    List clubIndexes = leagueClass.getClassification();
-    if(leagueClass.name == LeagueOfficialNames().inglaterra1){
-      for(int i=0; i<4; i++){
-        globalInternational32ClubsID[indexChampions].add(clubIndexes[i]);
-      }
-    }
-    if(leagueClass.name == LeagueOfficialNames().espanha1){
-      for(int i=0; i<4; i++){
-        globalInternational32ClubsID[indexChampions].add(clubIndexes[i]);
-      }
-    }
-    if(leagueClass.name == LeagueOfficialNames().italia1){
-      for(int i=0; i<4; i++){
-        globalInternational32ClubsID[indexChampions].add(clubIndexes[i]);
-      }
-    }
-    if(leagueClass.name == LeagueOfficialNames().alemanha1){
-      for(int i=0; i<4; i++){
-        globalInternational32ClubsID[indexChampions].add(clubIndexes[i]);
-      }
-    }
-    if(leagueClass.name == LeagueOfficialNames().franca1){
-      for(int i=0; i<4; i++){
-        globalInternational32ClubsID[indexChampions].add(clubIndexes[i]);
-      }
-    }
-    if(leagueClass.name == LeagueOfficialNames().portugal){
-      for(int i=0; i<2; i++){
-        globalInternational32ClubsID[indexChampions].add(clubIndexes[i]);
-      }
-    }
-    if(leagueClass.name == LeagueOfficialNames().holanda){
-      for(int i=0; i<2; i++){
-        globalInternational32ClubsID[indexChampions].add(clubIndexes[i]);
-      }
-    }
-    if(leagueClass.name == LeagueOfficialNames().turquiaGrecia){
-      for(int i=0; i<2; i++){
-        globalInternational32ClubsID[indexChampions].add(clubIndexes[i]);
-      }
-    }
-    if(leagueClass.name == LeagueOfficialNames().ligaEuropa){
-      for(int i=0; i<3; i++){
-        globalInternational32ClubsID[indexChampions].add(clubIndexes[i]);
-      }
-    }
-    if(leagueClass.name == LeagueOfficialNames().lesteEuropeu){
-      for(int i=0; i<3; i++){
-        globalInternational32ClubsID[indexChampions].add(clubIndexes[i]);
-      }
-    }
 
+  setGloballyClubsEuropaLeague(League leagueClass, List clubIndexes, String leagueCompared,int nClubs){
+    int nTeamsClassifiedInt = nTeamsClassified[leagueClass.name] ?? 0;
+    if(leagueClass.name == leagueCompared){
+      for(int i=0; i<nClubs; i++){
+        int clubID = clubIndexes[i+nTeamsClassifiedInt];
+        List atual = List.from(globalInternational['Europa League']['clubsID']);
+        atual.add(clubID);
+        globalInternational['Europa League']['clubsID'] = atual;
+      }
+    }
+  }
+  setTeamsEuropaLeague(League leagueClass, List clubIndexes){
+    LeagueOfficialNames leagueName = LeagueOfficialNames();
+    if(!globalInternational.containsKey('Europa League')){
+      globalInternational['Europa League'] = {};
+      globalInternational['Europa League']['clubsID'] = [];
+    }
+    setGloballyClubsEuropaLeague(leagueClass, clubIndexes, leagueName.inglaterra1, 3);
+    setGloballyClubsEuropaLeague(leagueClass, clubIndexes, leagueName.espanha1, 3);
+    setGloballyClubsEuropaLeague(leagueClass, clubIndexes, leagueName.italia1, 3);
+    setGloballyClubsEuropaLeague(leagueClass, clubIndexes, leagueName.alemanha1, 3);
+    setGloballyClubsEuropaLeague(leagueClass, clubIndexes, leagueName.franca1, 3);
+    setGloballyClubsEuropaLeague(leagueClass, clubIndexes, leagueName.portugal, 2);
+    setGloballyClubsEuropaLeague(leagueClass, clubIndexes, leagueName.holanda, 2);
+    setGloballyClubsEuropaLeague(leagueClass, clubIndexes, leagueName.turquiaGrecia, 3);
+    setGloballyClubsEuropaLeague(leagueClass, clubIndexes, leagueName.ligaEuropa, 5);
+    setGloballyClubsEuropaLeague(leagueClass, clubIndexes, leagueName.lesteEuropeu, 5);
+  }
+
+  addLeagueTeamsToIntLeague(League leagueClass, List clubIndexes, String leagueCompared,int nClubs){
+    if(leagueClass.name == leagueCompared){
+      for(int i=0; i<nClubs; i++){
+        globalInternational32ClubsID[indexChampions].add(clubIndexes[i]);
+      }
+    }
+  }
+  setTeamsChampions(League leagueClass, List clubIndexes){
+    LeagueOfficialNames leagueName = LeagueOfficialNames();
+    addLeagueTeamsToIntLeague(leagueClass, clubIndexes, leagueName.inglaterra1, 4);
+    addLeagueTeamsToIntLeague(leagueClass, clubIndexes, leagueName.espanha1, 4);
+    addLeagueTeamsToIntLeague(leagueClass, clubIndexes, leagueName.italia1, 4);
+    addLeagueTeamsToIntLeague(leagueClass, clubIndexes, leagueName.alemanha1, 4);
+    addLeagueTeamsToIntLeague(leagueClass, clubIndexes, leagueName.franca1, 4);
+    addLeagueTeamsToIntLeague(leagueClass, clubIndexes, leagueName.portugal, 2);
+    addLeagueTeamsToIntLeague(leagueClass, clubIndexes, leagueName.holanda, 2);
+    addLeagueTeamsToIntLeague(leagueClass, clubIndexes, leagueName.turquiaGrecia, 2);
+    addLeagueTeamsToIntLeague(leagueClass, clubIndexes, leagueName.ligaEuropa, 3);
+    addLeagueTeamsToIntLeague(leagueClass, clubIndexes, leagueName.lesteEuropeu, 3);
 
   }
   changeVariablesInListChampions({required int position1,required int position2,required List list}){
@@ -118,8 +117,7 @@ class FimDoCampeonatoLocal{
   }
 
 
-  setTeamsLibertadores(League leagueClass){
-    List clubIndexes = leagueClass.getClassification();
+  setTeamsLibertadores(League leagueClass, List clubIndexes){
 
     if(leagueClass.name == LeagueOfficialNames().brasil1){
       for(int i=0; i<8; i++){
@@ -158,8 +156,9 @@ class FimDoCampeonatoLocal{
     globalInternational32ClubsID[indexLibertadores][23] = clubIndexes[5];
     }
 
-
   }
+
+
 
 }
 

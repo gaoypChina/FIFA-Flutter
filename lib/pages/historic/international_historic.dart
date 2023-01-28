@@ -1,7 +1,7 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/functions/flags_list.dart';
+import 'package:fifa/functions/countries/flags_list.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';

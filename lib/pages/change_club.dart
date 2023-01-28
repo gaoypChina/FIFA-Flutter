@@ -1,3 +1,4 @@
+import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/functions/change_club_control.dart';
 import 'package:fifa/global_variables.dart';
@@ -81,7 +82,7 @@ class _ChangeClubState extends State<ChangeClub> {
 ////////////////////////////////////////////////////////////////////////////
 Widget clubWidget(int clubID){
 
-  ClubClassification clubClassification = ClubClassification(clubID: clubID);
+  ClubClassification clubClassification = ClubClassification(club: Club(index: clubID));
 
     return GestureDetector(
       onTap: (){

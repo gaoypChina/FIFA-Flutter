@@ -1,4 +1,4 @@
-import 'package:fifa/functions/international_league.dart';
+import 'package:fifa/functions/international_league_manipulation.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/values/league_divisions.dart';

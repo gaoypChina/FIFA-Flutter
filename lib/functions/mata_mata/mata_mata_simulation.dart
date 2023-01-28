@@ -4,7 +4,7 @@ import 'package:fifa/classes/my.dart';
 import '../../classes/club.dart';
 import '../../global_variables.dart';
 import '../../values/league_names.dart';
-import '../international_league.dart';
+import '../international_league_manipulation.dart';
 import '../simulate/match_simulation.dart';
 import 'mata_mata_class.dart';
 

@@ -1,4 +1,4 @@
-import 'package:fifa/classes/words.dart';
+import 'package:fifa/functions/countries/words.dart';
 import 'package:fifa/values/league_names.dart';
 
 

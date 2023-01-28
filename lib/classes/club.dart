@@ -1,7 +1,7 @@
 import 'package:fifa/classes/geral/esquemas_taticos.dart';
 import 'package:fifa/classes/jogador.dart';
-import 'package:fifa/functions/countries_continents.dart';
-import 'package:fifa/functions/international_league.dart';
+import 'package:fifa/functions/countries/countries_continents.dart';
+import 'package:fifa/functions/international_league_manipulation.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';

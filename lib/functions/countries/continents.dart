@@ -1,4 +1,4 @@
-import 'package:fifa/classes/words.dart';
+import 'package:fifa/functions/countries/words.dart';
 
 class Continents{
 

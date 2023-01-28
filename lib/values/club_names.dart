@@ -3040,7 +3040,7 @@ class ClubName{
   String amman = "Amman";
   String alahliJOR = "Al-Ahli JORD";
   String alaqaba = "Al-Aqaba";
-  String albaqaa = "Al-Baqa\'a";
+  String albaqaa = "Al-Baqa'a";
   String alFaisalyJORD = "Al-Faisaly Amã";
   String alhussein = "Al-Hussein";
   String aljazeera = "Al-Jazeera";
