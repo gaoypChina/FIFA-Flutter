@@ -2,13 +2,13 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/functions/fim_campeonato_local.dart';
 import 'package:fifa/classes/historic/historic_my_tranfers.dart';
 import 'package:fifa/classes/historic_positions_this_year.dart';
+import 'package:fifa/classes/international_league.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/mata_mata/mata_mata_class.dart';
 import 'package:fifa/classes/mata_mata/mata_mata_simulation.dart';
 import 'package:fifa/classes/mundial.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/chaves.dart';
-import 'package:fifa/classes/functions/international_league_manipulation.dart';
 import 'package:fifa/classes/simulate/after_simulation/historic.dart';
 import 'package:fifa/classes/simulate/match_simulation.dart';
 import 'package:fifa/global_variables.dart';
@@ -93,7 +93,7 @@ class Simulate{
 
   nationalMatchs(bool simulMyMatch){
       int myClubID = globalMyClubID;
-      int myCampeonatoID = My().campeonatoID;
+      int myCampeonatoID = My().leagueID;
       for (int i = 0; i < leaguesListRealIndex.length; i++) {
         int leagueIndex = leaguesListRealIndex[i];
         League leagueSelected = League(index: leagueIndex);
@@ -122,27 +122,28 @@ class Simulate{
       }
 
   }
+  internationalMatchsGroups(bool simulMyMatch) {
+    internationalMatchsGroupsLeague(simulMyMatch, LeagueOfficialNames().championsLeague);
+    internationalMatchsGroupsLeague(simulMyMatch, LeagueOfficialNames().libertadores);
+  }
 
-  internationalMatchsGroups(bool simulMyMatch){
-
+  internationalMatchsGroupsLeague(bool simulMyMatch, String internationalName){
     int myClubID = My().clubID;
-    for(int i=0; i<globalInternational32ClubsID.length; i++) { //champions, libertadores... 2
-      String internationalName = InternationalLeagueManipulation().funcGetInternationalLeagueNameFromIndex(internationalLeagueIndex: i);
       //PRA CHAMPIONS E PARA A LIBERTADORES
       List chave = Chaves().obterChave(semana, 0);
       for (int groupNumber = 0; groupNumber < 8; groupNumber++) {
         for (int nConfronto = 0; nConfronto < 4 / 2; nConfronto++) {
           int chaveConfronto = chave[nConfronto * 2];
-          int indexTeam1 = globalInternational32ClubsID[i][4 * groupNumber + chaveConfronto];
+          int indexTeam1 = InternationalLeague().getClub(internationalName, 4 * groupNumber + chaveConfronto);
           int indexAdv04 = Chaves().chaveIndexAdvCampeonato(semana, 0, chaveConfronto)[0];
-          int indexTeam2 = globalInternational32ClubsID[i][(4 * groupNumber) + indexAdv04];
+          int indexTeam2 = InternationalLeague().getClub(internationalName, 4 * groupNumber + indexAdv04);
           if(indexTeam1 != myClubID && indexTeam2 != myClubID || simulMyMatch) {
             MatchSimulation match = MatchSimulation(Club(index: indexTeam1), Club(index: indexTeam2));
             //SALVA O PLACAR NO HISTÓRICO
             SaveMatchHistoric().setHistoricGoalsGruposInternational(internationalName,indexTeam1,indexTeam2, match.variableGol1,match.variableGol2);
           }
         }
-      }
+
     }
 
   }

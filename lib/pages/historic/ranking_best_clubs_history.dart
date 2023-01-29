@@ -139,7 +139,7 @@ class _RankingBestClubsHistoryState extends State<RankingBestClubsHistory> {
     int clubID = clubsAllNameList.indexOf(copyClubsName[i]);
 
     //clubes da minha liga
-    List listClubsID = League(index: My().campeonatoID).getAllClubsIDList();
+    List listClubsID = League(index: My().leagueID).getAllClubsIDList();
     //Cor de Fundo
     Color colorBackground = Colors.transparent;
     if(clubID==My().clubID){

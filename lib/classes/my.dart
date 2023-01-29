@@ -1,5 +1,6 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/semana.dart';
+import 'package:fifa/classes/international_league.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/functions/international_league_manipulation.dart';
@@ -12,30 +13,35 @@ class My{
 
   String clubName = '';
   late int clubID;
-  late int campeonatoID;
+  late int leagueID;
   late String campeonatoName;
   late int posicaoChave;
   late int scoreGame;
   late double money;
   late String esquemaTatico;
   late List jogadores;
+  late String internationalLeagueName;
   late String playingInternational;
 
   My(){
     clubID = globalMyClubID;
     clubName = clubsAllNameList[globalMyClubID];
     campeonatoName = getLeagueName();
-    campeonatoID = getLeagueID();
+    leagueID = getLeagueID();
     posicaoChave = getChaveLeague();
     esquemaTatico = globalMyEsquemaTatico;
     money = globalMyMoney;
     jogadores = globalMyJogadores;
+    internationalLeagueName = InternationalLeagueManipulation().funcGetInternationalLeagueName(indexLeague: leagueID);
     playingInternational = getPlayingInternational();
     scoreGame = globalCoachPoints;
   }
 
   getMyInternationalLeague(){
-    League league = League(index: campeonatoID);
+    League league = League(index: leagueID);
+    if(playingInternational.isNotEmpty){
+      return playingInternational;
+    }
     return league.internationalLeagueName;
   }
 
@@ -74,7 +80,7 @@ class My{
   }
   int newExpectativa(){
     int expect = 0;
-    List clubsMyLeague = League(index: campeonatoID).allClubsName;
+    List clubsMyLeague = League(index: leagueID).allClubsName;
     late Club club;
     List ovr = [];
     for (var nameClub in clubsMyLeague) {
@@ -100,8 +106,9 @@ class My{
     String val = '';
     //FASE DE GRUPOS
     if(Semana(semana).isJogoGruposInternacional){
-      if(globalInternational32ClubsID[0].contains(clubID)){val = LeagueOfficialNames().championsLeague;}
-      if(globalInternational32ClubsID[1].contains(clubID)){val = LeagueOfficialNames().libertadores;}
+      val = InternationalLeague().checkContains(clubID, internationalLeagueName, val);
+      val = InternationalLeague().checkContains(clubID, LeagueOfficialNames().europaLeagueOficial, val);
+      val = InternationalLeague().checkContains(clubID, LeagueOfficialNames().copaSulAmericana, val);
     }
     //MATA-MATA
     else if(Semana(semana).isJogoMataMataInternacional){
@@ -122,10 +129,7 @@ class My{
     return val;
   }
   int getMyClubInternationalPosition032(){
-    late int position;
-    if(globalInternational32ClubsID[0].contains(clubID)){position = globalInternational32ClubsID[0].indexOf(clubID);}
-    else if(globalInternational32ClubsID[1].contains(clubID)){position = globalInternational32ClubsID[1].indexOf(clubID);}
-
+    int position = InternationalLeague().searchClub(playingInternational, clubID);
     return position;
   }
   int getMyClubInternationalGroup(){

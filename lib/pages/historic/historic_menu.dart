@@ -55,7 +55,7 @@ class _HistoricMenuState extends State<HistoricMenu> {
                           box(
                               'Nacional',
                               Image.asset(FIFAImages().campeonatoLogo(My().campeonatoName),height: imageSize,),
-                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricLeague(choosenLeagueIndex: My().campeonatoID)));
+                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricLeague(choosenLeagueIndex: My().leagueID)));
                               }
                           ),
                           box(

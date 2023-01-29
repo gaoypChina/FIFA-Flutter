@@ -32,7 +32,7 @@ class Expectativa{
   }
 
   bool hadGoodPerformance(){
-    if(Classification(leagueIndex: my.campeonatoID).getClubPosition(my.clubID) <= expectativaNacional){
+    if(Classification(leagueIndex: my.leagueID).getClubPosition(my.clubID) <= expectativaNacional){
       return true;
     }else{
       return false;

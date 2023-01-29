@@ -8,7 +8,7 @@ import 'package:fifa/classes/functions/check_internet.dart';
 import 'package:fifa/classes/coach/coach_best_results.dart';
 import 'package:fifa/classes/simulate/simulate_functions.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/page_controller/calendar_control.dart';
+import 'package:fifa/page_controller/result_game.dart';
 import 'package:fifa/pages/calendar.dart';
 import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:fifa/pages/coach/coach_menu.dart';
@@ -18,7 +18,8 @@ import 'package:fifa/pages/ranking_clubs.dart';
 import 'package:fifa/pages/save/choose_save.dart';
 import 'package:fifa/pages/simulacao/end_year.dart';
 import 'package:fifa/pages/simulacao/not_play.dart';
-import 'package:fifa/pages/table/table_international.dart';
+import 'package:fifa/pages/table/statistics_league.dart';
+import 'package:fifa/pages/table_international/table_international.dart';
 import 'package:fifa/pages/table/table_nacional.dart';
 import 'package:fifa/pages/transfers.dart';
 import 'package:fifa/theme/colors.dart';
@@ -143,7 +144,7 @@ class _MenuState extends State<Menu> {
                                 //**Só funciona se ja tiver simulado todos os outros jogos
                                 //TODO: SÓ CONTA RESULTADO DAS LIGAS NACIONAIS
                                 //Tem uma dependencia pelo ResultGameNacional
-                                int nRodadasMyLeague =  League(index: myClass.campeonatoID).nClubs-1;
+                                int nRodadasMyLeague =  League(index: myClass.leagueID).nClubs-1;
                                 ResultGameNacional show = ResultGameNacional(
                                     rodadaLocal: rodada >= nRodadasMyLeague  ? nRodadasMyLeague-1 : rodada-1,
                                     club: Club(index: myClass.clubID)
@@ -162,7 +163,7 @@ class _MenuState extends State<Menu> {
                           ),
                           Expanded(
                             child: menuButton(Translation(context).text.table,(){
-                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableNacional(choosenLeagueIndex: myClass.campeonatoID)));
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableNacional(choosenLeagueIndex: myClass.leagueID)));
                             }),
                           ),
                         ]),
@@ -323,11 +324,12 @@ class _MenuState extends State<Menu> {
                           ),
 
                           //TEST FUNCTIONS BUTTON
-                          testInitRodada == 18 ? Container(
+                          testInitRodada == 1 ? Container(
                             alignment: Alignment.topCenter,
                             child: GestureDetector(
                                 onTap:(){
                                   customToast('TESTE DE FUNÇÃO');
+                                  Navigator.push(context,MaterialPageRoute(builder: (context) => StatisticsLeague(league: League(index: 1),)));
                                 },
                                 child: const Icon(Icons.terminal_sharp,color:Colors.white,size: 50)
                             ),
@@ -374,7 +376,7 @@ Widget menuButton(String text, Function() function){
 
 Widget classification3(){
 
-  List classificationList = Classification(leagueIndex: myClass.campeonatoID).classificationClubsIndexes;
+  List classificationList = Classification(leagueIndex: myClass.leagueID).classificationClubsIndexes;
   int myPosition = classificationList.indexOf(myClass.clubID);
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -420,7 +422,7 @@ Widget last5Matchs(){
 }
   Widget resultBox(int i){
       Color color = Colors.transparent;
-      int nRodadasMyLeague =  League(index: myClass.campeonatoID).nClubs-1;
+      int nRodadasMyLeague =  League(index: myClass.leagueID).nClubs-1;
       ResultGameNacional show = ResultGameNacional(
           rodadaLocal: rodada >= nRodadasMyLeague  ? nRodadasMyLeague-i : rodada-1-i,
           club: Club(index: myClass.clubID)

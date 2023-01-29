@@ -5,7 +5,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/page_controller/calendar_control.dart';
+import 'package:fifa/page_controller/result_game.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/back_button.dart';
@@ -21,7 +21,7 @@ class Calendar extends StatefulWidget {
 
 class _CalendarState extends State<Calendar> {
   My myTeamClass = My();
-  int nClubsLeague = (League(index: My().campeonatoID).nClubs) - 1;
+  int nClubsLeague = (League(index: My().leagueID).nClubs) - 1;
 
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -31,7 +31,8 @@ class _CalendarState extends State<Calendar> {
 
     return Scaffold(
         body: Stack(children: [
-      Images().getWallpaper(),
+
+          Images().getWallpaper(),
 
       Column(
         children: [

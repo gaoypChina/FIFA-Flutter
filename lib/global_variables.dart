@@ -135,11 +135,10 @@ int globalNumberClubsTotal = 0;
 
 ///////////////////////////
 //CHAMPIONS E LIBERTADORES
-List globalInternational32ClubsID = [[],[]];//0:Champions, 1:Libertadores
 Map globalInternationalMataMataClubsID = {};
 Map globalInternationalMataMataGoals = {};
 
-//Europa League e SulAmericana
+//Clubs IDs: Champions, Libertadores, Europa League e SulAmericana
 Map globalInternational = {};
 
 /////////////////////

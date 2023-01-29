@@ -66,7 +66,7 @@ class ReadCSV{
         playerBasicInfo.age = age;
         playerBasicInfo.overall = overall;
         playerBasicInfo.nationality = nationality;
-        playerBasicInfo.imagePlayer = imagePlayer;
+        playerBasicInfo.imageUrl = imagePlayer;
 
 
         limitNPlayers(clubIDs,playerBasicInfo, clubIndex);

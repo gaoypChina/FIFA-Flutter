@@ -322,13 +322,13 @@ class _CompareState extends State<Compare> {
           //TITULOS
           Row(
             children: [
-              Image.asset('assets/trophy/${getTrophyImage(club.leagueName)}.png',height: 100,width: 100),
+              Images().getTrophy(club.leagueName,100,100),
               Text(dataGraphicsCompare.nTitulos.toString(),style: EstiloTextoBranco.text20),
 
               Expanded(child: Text(Translation(context).text.titles,textAlign:TextAlign.center,style: EstiloTextoBranco.text16)),
 
               Text(dataGraphics.nTitulos.toString(),style: EstiloTextoBranco.text20),
-              Image.asset('assets/trophy/${getTrophyImage(club2.leagueName)}.png',height: 100,width: 100),
+              Images().getTrophy(club2.leagueName,100,100),
             ],
           ),
 

@@ -1,5 +1,6 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/chaves.dart';
+import 'package:fifa/classes/international_league.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/global_variables.dart';
@@ -16,17 +17,16 @@ class MatchResultInternational{
   bool isAlreadyPlayed = false;
 
   MatchResultInternational({required int rodadaNumber, required int groupNumber, required int nConfronto, required String competitionName}){
-    int internationalIndex = getInternationalLeagueNumber(competitionName); //0,1
+
       //PRA CHAMPIONS E PARA A LIBERTADORES
       int semanaDoJogo = semanasGruposInternacionais[rodadaNumber];
       List chave = Chaves().obterChave(semanaDoJogo, 0);
           int chaveConfronto = chave[nConfronto * 2];
 
           try{
-            clubID1 = globalInternational32ClubsID[internationalIndex][4 * groupNumber + chaveConfronto];
+            clubID1 = InternationalLeague().getClub(competitionName, 4 * groupNumber + chaveConfronto);
           }catch(e){
             //CASO SEJA O PRIMEIRO ANO
-            //Todo: refazer isso aqui
             clubName1 = getClubName(competitionName, 4 * groupNumber + chaveConfronto);
             clubID1 = clubsAllNameList.indexOf(clubName1);
           }
@@ -35,7 +35,7 @@ class MatchResultInternational{
 
 
     try{
-          clubID2 = globalInternational32ClubsID[internationalIndex][(4 * groupNumber) + indexAdv04];
+      clubID2 = InternationalLeague().getClub(competitionName, (4 * groupNumber) + indexAdv04);
     }catch(e){
       //CASO SEJA O PRIMEIRO ANO
       clubName2 = getClubName(competitionName, 4 * groupNumber + indexAdv04);

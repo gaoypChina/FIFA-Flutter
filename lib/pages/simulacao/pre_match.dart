@@ -80,7 +80,7 @@ class _PreMatchState extends State<PreMatch> {
   Widget header(){
     String textRodada = '';
     if(Semana(semana).isJogoCampeonatoNacional) {
-      textRodada = '${Translation(context).text.matchWeek} ' + rodada.toString() + '/' + (League(index: myClass.campeonatoID).getNTeams()-1).toString();
+      textRodada = '${Translation(context).text.matchWeek} ' + rodada.toString() + '/' + (League(index: myClass.leagueID).getNTeams()-1).toString();
     }else{
       textRodada = Name().groupsPhase;
       if(Semana(semana).isJogoGruposInternacional){textRodada += ' ${Semana(semana).rodadaGroupInternational}'; }

@@ -44,7 +44,7 @@ popUpExpectativa({required BuildContext context}){
           mainAxisSize: MainAxisSize.min,
           children: [
             Row(
-              mainAxisAlignment: League(index: myClass.campeonatoID).playInternational
+              mainAxisAlignment: League(index: myClass.leagueID).playInternational
                   ? MainAxisAlignment.spaceBetween
                   : MainAxisAlignment.center,
               children: [
@@ -62,7 +62,7 @@ popUpExpectativa({required BuildContext context}){
 
                   ],
                 ),
-                League(index: myClass.campeonatoID).playInternational
+                League(index: myClass.leagueID).playInternational
                     ? Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [

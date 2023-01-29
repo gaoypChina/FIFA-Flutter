@@ -28,7 +28,7 @@ class AddRandomPlayer{
     playerBasicInfo.position = globalAllPositions[Random().nextInt(globalAllPositions.length)];
     playerBasicInfo.playerID = globalJogadoresIndex.last+1;
     playerBasicInfo.clubID = club.index;
-    playerBasicInfo.imagePlayer = ReadCSV().correctImageUrl('/notfound_0_120.png');
+    playerBasicInfo.imageUrl = ReadCSV().correctImageUrl('/notfound_0_120.png');
     playerBasicInfo.nationality = club.nationality;
   }
 

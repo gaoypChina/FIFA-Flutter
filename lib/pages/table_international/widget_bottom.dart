@@ -1,7 +1,7 @@
-import 'package:fifa/pages/table/table_international.dart';
-import 'package:fifa/pages/table/table_international_scorers.dart';
-import 'package:fifa/pages/table/table_mata_mata.dart';
-import 'package:fifa/pages/table/table_matchs.dart';
+import 'package:fifa/pages/table_international/table_international.dart';
+import 'package:fifa/pages/table_international/table_international_scorers.dart';
+import 'package:fifa/pages/table_international/table_mata_mata.dart';
+import 'package:fifa/pages/table_international/table_matchs.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';

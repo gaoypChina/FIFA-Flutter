@@ -199,7 +199,7 @@ class _PlayState extends State<Play> {
   Widget header(){
     String textRodada = '';
     if(Semana(semana).isJogoCampeonatoNacional) {
-      textRodada = '${Translation(context).text.matchWeek} ' + rodada.toString() + '/' + (League(index: myClass.campeonatoID).getNTeams()-1).toString();
+      textRodada = '${Translation(context).text.matchWeek} ' + rodada.toString() + '/' + (League(index: myClass.leagueID).getNTeams()-1).toString();
     }else{
       textRodada = Name().groupsPhase;
       if(Semana(semana).isJogoGruposInternacional){textRodada += ' ${Semana(semana).rodadaGroupInternational}'; }
@@ -328,7 +328,7 @@ class _PlayState extends State<Play> {
       _timer.cancel();
       //SE FOR A ULTIMA RODADA DO CAMPEONATO MOSTRA A TABELA DE CLASSIFICAÇÃO FINAL
       //VERIFICA SE É A ULTIMA RODADA
-      int nRodadas = League(index: myClass.campeonatoID).nClubs-1;
+      int nRodadas = League(index: myClass.leagueID).nClubs-1;
 
       bool ultimaRodadaLeague = (rodada==nRodadas && semanasJogosNacionais[nRodadas-1] == semana);
       if(ultimaRodadaLeague){

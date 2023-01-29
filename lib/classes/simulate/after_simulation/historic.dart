@@ -14,7 +14,7 @@ class SaveMatchHistoric{
   setHistoricGoalsLeagueMy(MyMatchSimulation myMatchSimulation){
     My myClass = My();
     if(Semana(semana).isJogoCampeonatoNacional){
-      List chaves = Chaves().obterChave(semana,myClass.campeonatoID);
+      List chaves = Chaves().obterChave(semana,myClass.leagueID);
       late int chavePos2;
       if (chaves.indexOf(myClass.posicaoChave) % 2 == 0) {
         chavePos2 = chaves[chaves.indexOf(myClass.posicaoChave) + 1];
@@ -26,7 +26,7 @@ class SaveMatchHistoric{
       goalsList[chavePos1]  =  myMatchSimulation.meuGolMarcado;
       goalsList[chavePos2]  =  myMatchSimulation.meuGolSofrido;
       //SALVA OS GOLS DO CAMPEONATO
-      globalHistoricLeagueGoalsLastRodada[myClass.campeonatoID] = List.from(goalsList);
+      globalHistoricLeagueGoalsLastRodada[myClass.leagueID] = List.from(goalsList);
       //SALVA OS GOLS DO CAMPEONATO NA RODADA
       globalHistoricLeagueGoalsAll[rodada] = Map.from(globalHistoricLeagueGoalsLastRodada);
     }

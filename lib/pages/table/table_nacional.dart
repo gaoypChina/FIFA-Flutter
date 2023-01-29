@@ -24,13 +24,14 @@ class TableNacional extends StatefulWidget {
   _TableNacionalState createState() => _TableNacionalState();
 }
 
-class _TableNacionalState extends State<TableNacional> {
+class _TableNacionalState extends State<TableNacional>  with TickerProviderStateMixin  {
 
   late int choosenLeagueIndex;
-  League myLeague = League(index: My().campeonatoID);
+  League myLeague = League(index: My().leagueID);
   late int rodadaMatch = myLeague.nClubs-1;
   Map leaguesMap = {};
 
+  late TabController _tabController;
   int choosenIcon = 1;
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
@@ -41,6 +42,7 @@ class _TableNacionalState extends State<TableNacional> {
     super.initState();
   }
   doThisOnLaunch() {
+    _tabController = TabController(vsync: this, length: 2);
     //INDEX INICIAL
     choosenLeagueIndex = widget.choosenLeagueIndex;
     //rodada inicial mostrada
@@ -63,7 +65,9 @@ class _TableNacionalState extends State<TableNacional> {
   Widget build(BuildContext context) {
     String leagueName = leaguesMap[choosenLeagueIndex].getName();
 
-    return Scaffold(
+    return  DefaultTabController(
+        length: 2,
+        child: Scaffold(
         body:  Stack(
             children: [
 
@@ -86,102 +90,41 @@ class _TableNacionalState extends State<TableNacional> {
                       ],
                     ),
 
-                    Container(
+                    SizedBox(
                       height: Sized(context).height-130,
-                      color: AppColors().greyTransparent,
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            ///////////////////
-                            //CLASSIFICAÇÃO
-                            ///////////////////
-                            tabelaClassificacaoWidget(context,leaguesMap[choosenLeagueIndex]),
+                      child: TabBarView(
+                        controller: _tabController,
+                        children: [
 
-                            ///////////////////
-                            //PRÓXIMAS PARTIDAS
-                            ///////////////////
-                            const SizedBox(height: 8),
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
+                          SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                tabelaClassificacaoWidget(context,leaguesMap[choosenLeagueIndex]),                            ///////////////////
+                                //PRÓXIMAS PARTIDAS
+                                ///////////////////
+                                const SizedBox(height: 8),
+                                rowStatistics(),
+                                const SizedBox(height: 8),
 
-                            SizedBox(
-                              width: 70,
-                              child: Column(
-                                children: [
-                                  //Matchs - VERSUS
-                                  Container(
-                                    color: choosenIcon==1 ? Colors.teal : Colors.transparent,
-                                    padding: const EdgeInsets.all(2),
-                                    child: GestureDetector(
-                                      onTap:(){
-                                        choosenIcon = 1;
-                                        setState(() {});
-                                      },
-                                      child: Image.asset('assets/icons/versus.png',height:50),
-                                    ),
-                                  ),
-                                  //Artilheiro
-                                  Container(
-                                    color: choosenIcon==2 ? Colors.teal : Colors.transparent,
-                                    padding: const EdgeInsets.all(2),
-                                    child: GestureDetector(
-                                      onTap:(){
-                                        choosenIcon = 2;
-                                        setState(() {});
-                                        //Navigator.push(context,MaterialPageRoute(builder: (context) => Artilheiros(choosenLeagueIndex:choosenLeagueIndex)));
-                                      },
-                                      child: Image.asset('assets/icons/artilheiro.png',height:50),
-                                    ),
-                                  ),
-                                  //YELLOW CARDS
-                                  Container(
-                                    color: choosenIcon==3 ? Colors.teal : Colors.transparent,
-                                    padding: const EdgeInsets.all(2),
-                                    child: GestureDetector(
-                                      onTap:(){
-                                        choosenIcon = 3;
-                                        setState(() {});
-                                      },
-                                      child: Image.asset('assets/icons/cartao-amarelo.png',height:50),
-                                    ),
-                                  ),
-                                  //RED CARDS
-                                  Container(
-                                    color: choosenIcon==4 ? Colors.teal : Colors.transparent,
-                                    padding: const  EdgeInsets.all(2),
-                                    child: GestureDetector(
-                                      onTap:(){
-                                        choosenIcon = 4;
-                                        setState(() {});
-                                      },
-                                      child: Image.asset('assets/icons/cartao-vermelho.png',height:50),
-                                    ),
-                                  ),
-
-                                ],
-                              ),
+                                Column(
+                                  children: const [
+                                    Text('Premiação',style: EstiloTextoBranco.negrito18),
+                                    Text('Campeão: \$27.7',style: EstiloTextoBranco.text16),
+                                    Text('Vitória: \$3.0',style: EstiloTextoBranco.text16),
+                                    Text('Empate: \$1.0',style: EstiloTextoBranco.text16),
+                                    Text('Derrota: \$0.75',style: EstiloTextoBranco.text16),
+                                  ],
+                                ),
+                              ],
                             ),
+                          ),
 
+                          StatisticsLeague(league: League(index: 1)),
 
-                            Expanded(
-                              child: Container(
-                                color: AppColors().greyTransparent,
-                                child: choosenIcon==1 ? matchsWidget()
-                                    : choosenIcon==2 ? yellowRedCardWidget(0)
-                                              : choosenIcon==3 ? yellowRedCardWidget(1)
-                                              : choosenIcon==4 ? yellowRedCardWidget(2) : Container(),
-                              ),
-                            ),
-
-
-                          ],
-                        ),
-
-                          ],
-                        ),
+                        ],
                       ),
                     ),
+
                   ],
                 ),
               ),
@@ -192,11 +135,90 @@ class _TableNacionalState extends State<TableNacional> {
 
             ]
         )
+    )
     );
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Widget rowStatistics(){
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+
+        SizedBox(
+          width: 70,
+          child: Column(
+            children: [
+              //Matchs - VERSUS
+              Container(
+                color: choosenIcon==1 ? Colors.teal : Colors.transparent,
+                padding: const EdgeInsets.all(2),
+                child: GestureDetector(
+                  onTap:(){
+                    choosenIcon = 1;
+                    setState(() {});
+                  },
+                  child: Image.asset('assets/icons/versus.png',height:50),
+                ),
+              ),
+              //Artilheiro
+              Container(
+                color: choosenIcon==2 ? Colors.teal : Colors.transparent,
+                padding: const EdgeInsets.all(2),
+                child: GestureDetector(
+                  onTap:(){
+                    choosenIcon = 2;
+                    setState(() {});
+                    //Navigator.push(context,MaterialPageRoute(builder: (context) => Artilheiros(choosenLeagueIndex:choosenLeagueIndex)));
+                  },
+                  child: Image.asset('assets/icons/artilheiro.png',height:50),
+                ),
+              ),
+              //YELLOW CARDS
+              Container(
+                color: choosenIcon==3 ? Colors.teal : Colors.transparent,
+                padding: const EdgeInsets.all(2),
+                child: GestureDetector(
+                  onTap:(){
+                    choosenIcon = 3;
+                    setState(() {});
+                  },
+                  child: Image.asset('assets/icons/cartao-amarelo.png',height:50),
+                ),
+              ),
+              //RED CARDS
+              Container(
+                color: choosenIcon==4 ? Colors.teal : Colors.transparent,
+                padding: const  EdgeInsets.all(2),
+                child: GestureDetector(
+                  onTap:(){
+                    choosenIcon = 4;
+                    setState(() {});
+                  },
+                  child: Image.asset('assets/icons/cartao-vermelho.png',height:50),
+                ),
+              ),
+
+            ],
+          ),
+        ),
+
+
+        Expanded(
+          child: Container(
+            color: AppColors().greyTransparent,
+            child: choosenIcon==1 ? matchsWidget()
+                : choosenIcon==2 ? yellowRedCardWidget(0)
+                : choosenIcon==3 ? yellowRedCardWidget(1)
+                : choosenIcon==4 ? yellowRedCardWidget(2) : Container(),
+          ),
+        ),
+
+
+      ],
+    );
+  }
  Widget selectLeagueWidget(BuildContext context){
     return              Container(
       padding: EdgeInsets.only(top:Sized(context).height- 50),

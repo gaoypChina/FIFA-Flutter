@@ -130,7 +130,7 @@ Widget header(){
                 children: [
                   Image.asset(FIFAImages().campeonatoLogo(club.leagueName),width: 50,height: 50),
                   isActualYear
-                      ? Text(Classification(leagueIndex: My().campeonatoID).getClubPosition(My().clubID).toString()+'º',style: EstiloTextoBranco.text16)
+                      ? Text(Classification(leagueIndex: My().leagueID).getClubPosition(My().clubID).toString()+'º',style: EstiloTextoBranco.text16)
                       : Text(myClubData.leaguePosition.toString()+"º",style: EstiloTextoBranco.text16),
                ],
               ),

@@ -1,5 +1,5 @@
+import 'package:fifa/classes/international_league.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/values/league_names.dart';
 
 class International{
 
@@ -17,9 +17,8 @@ class International{
   Map finalMap = {};
 
   International(competitionName) {
-    int internationalIndex = getInternationalLeagueNumber(competitionName); //0,1
     try {
-      clubIDs = List.from(globalInternational32ClubsID[internationalIndex]); //32 clubes
+      clubIDs = InternationalLeague().getClubs(competitionName); //32 clubes
     }catch(e){
       clubIDs = List.filled(32, 0);
     }

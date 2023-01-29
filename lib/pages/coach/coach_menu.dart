@@ -326,7 +326,7 @@ Widget expectations(){
 }
 
 Widget expectationBar(){
-    int actualPosition = Classification(leagueIndex: my.campeonatoID).getClubPosition(my.clubID);
+    int actualPosition = Classification(leagueIndex: my.leagueID).getClubPosition(my.clubID);
     int expectativaPosition = expectativa.expectativaNacional;
     double value = 0.65 + 0.0786*(expectativaPosition-actualPosition); //MADE-UP FORMULA
 

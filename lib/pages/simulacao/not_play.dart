@@ -32,7 +32,7 @@ class _NotPlayState extends State<NotPlay> {
   @override
   Widget build(BuildContext context) {
 
-    int leagueIndex = My().campeonatoID;
+    int leagueIndex = My().leagueID;
     League league = League(index: leagueIndex);
     String weekName = Semana(semana).semanaAlternativeStr;
 

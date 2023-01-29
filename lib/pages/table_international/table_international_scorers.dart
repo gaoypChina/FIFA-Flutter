@@ -4,7 +4,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/functions/order_list.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/pages/table/widget_bottom.dart';
+import 'package:fifa/pages/table_international/widget_bottom.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';

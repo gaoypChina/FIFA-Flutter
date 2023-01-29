@@ -74,7 +74,7 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
       name1 = myClass.clubName;
       name2 = adversarioClubClass.name;
     }
-    leagueClass = League(index: myClass.campeonatoID);
+    leagueClass = League(index: myClass.leagueID);
   }
   bestPlayer(){
     int bestPlayerID = 0;
@@ -174,7 +174,7 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
     String textRodada = '';
     Semana semanaClass = Semana(semana);
     if(semanaClass.isJogoCampeonatoNacional) {
-      textRodada = '${Translation(context).text.matchWeek} ' + (rodada-1).toString() + '/' + (League(index: myClass.campeonatoID).getNTeams()-1).toString();
+      textRodada = '${Translation(context).text.matchWeek} ' + (rodada-1).toString() + '/' + (League(index: myClass.leagueID).getNTeams()-1).toString();
     }else{
       textRodada = Name().groupsPhase;
       if(semanaClass.isJogoGruposInternacional){textRodada += ' ${semanaClass.rodadaGroupInternational}'; }
@@ -192,7 +192,7 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
           children: [
             Semana(semana).isJogoCampeonatoNacional
                 ? Image.asset(FIFAImages().campeonatoLogo(myClubClass.leagueName),height: 30,width: 30)
-                : Image.asset(FIFAImages().campeonatoLogo(myClubClass.internationalLeagueName),height: 35,width: 35),
+                : Image.asset(FIFAImages().campeonatoLogo(myClass.getMyInternationalLeague()),height: 35,width: 35),
             Text(textRodada,style: EstiloTextoBranco.text16),
             widget.visitante
                 ? Text(widget.gol2.toString() +'X'+ widget.gol1.toString() ,style: EstiloTextoBranco.text30)
@@ -341,7 +341,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
     if(Semana(rodada).isJogoCampeonatoNacional){
       classificationClubsIndexes = Classification(leagueIndex: myClass.getLeagueID()).classificationClubsIndexes;
     }else{
-      List classificationClubsIndexesAll = International(myClubClass.internationalLeagueName).getClassification();
+      List classificationClubsIndexesAll = International(myClass.getMyInternationalLeague()).getClassification();
       int index = myClass.getMyClubInternationalGroup()*4;
       classificationClubsIndexes = [
         classificationClubsIndexesAll[index],
@@ -417,7 +417,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
   Widget weekMatchRow(int numeroDoConfronto){
 
     TableNational tableNational = TableNational(
-        choosenLeagueIndex: myClass.campeonatoID,
+        choosenLeagueIndex: myClass.leagueID,
         leagueClass: leagueClass,
         rodadaMatch: rodada-1,
         numeroDoConfronto: numeroDoConfronto
@@ -509,7 +509,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
     );
   }
   TableRow groupRow(int groupNumber, int nConfronto){
-    MatchResultInternational match = MatchResultInternational(rodadaNumber: semanasGruposInternacionais.indexOf(semana-1),groupNumber: groupNumber, nConfronto: nConfronto, competitionName: myClubClass.internationalLeagueName);
+    MatchResultInternational match = MatchResultInternational(rodadaNumber: semanasGruposInternacionais.indexOf(semana-1),groupNumber: groupNumber, nConfronto: nConfronto, competitionName: myClass.getMyInternationalLeague());
     My my = My();
 
     String teamNameA = match.clubName1;
@@ -550,7 +550,7 @@ Widget tableWidgetMataMata(){
           Column(
             children: [
               for(int phaseStage = 0; phaseStage < 7; phaseStage++)
-                phaseTableMataMataWidget(myClubClass.internationalLeagueName,semana,phaseStage)
+                phaseTableMataMataWidget(myClass.getMyInternationalLeague(),semana,phaseStage)
             ],
           ),
         ],

@@ -20,7 +20,7 @@ class _FimCampeonatoState extends State<FimCampeonato> {
 
   //late double _height, _width;
   My myClub = My();
-  late League myLeague = League(index: myClub.campeonatoID);
+  late League myLeague = League(index: myClub.leagueID);
 
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -74,7 +74,7 @@ class _FimCampeonatoState extends State<FimCampeonato> {
                         Column(
                           children: [
                             Text(Translation(context).text.classification,style: EstiloTextoBranco.text14),
-                            Text(Classification(leagueIndex: myClub.campeonatoID).getClubPosition(myClub.clubID).toString()+'º',style: EstiloTextoBranco.text30),
+                            Text(Classification(leagueIndex: myClub.leagueID).getClubPosition(myClub.clubID).toString()+'º',style: EstiloTextoBranco.text30),
                           ],
                         ),
 

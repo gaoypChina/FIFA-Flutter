@@ -1,14 +1,11 @@
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/functions/order_list.dart';
+import 'package:fifa/classes/player_basic.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
-import 'package:fifa/values/historic_champions/internationals.dart';
-import 'package:fifa/values/league_names.dart';
-import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 
 class StatisticsLeague extends StatefulWidget {
@@ -20,8 +17,6 @@ class StatisticsLeague extends StatefulWidget {
 }
 
 class _StatisticsLeagueState extends State<StatisticsLeague> {
-
-  Map<double,dynamic> results = mapInternationals[LeagueOfficialNames().mundial];
 
   ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
@@ -42,50 +37,33 @@ class _StatisticsLeagueState extends State<StatisticsLeague> {
 
           Images().getWallpaper(),
 
-          Column(
-            children: [
-              backButtonText(context,'Statistics League'),
-              Expanded(
-                  child: Column(
-                    children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        box('Gols',0),
-                        box('Assistências',0),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        box('Cartões Amarelos',1),
-                        box('Cartões Vermelhos',2),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        box('Nota média',0),
-                        box('Clean Sheets',0),
-                      ],
-                    ),
-                    ],
-                  ),
-              ),
-
-              Column(
-                children: const [
-                  Text('Premiação',style: EstiloTextoBranco.negrito18),
-                  Text('Campeão: \$27.7',style: EstiloTextoBranco.text16),
-                  Text('Vitória: \$3.0',style: EstiloTextoBranco.text16),
-                  Text('Empate: \$1.0',style: EstiloTextoBranco.text16),
-                  Text('Derrota: \$0.75',style: EstiloTextoBranco.text16),
+          Expanded(
+              child: Column(
+                children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    box('Gols',0),
+                    box('Assistências',0),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    box('Cartões Amarelos',1),
+                    box('Cartões Vermelhos',2),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    box('Nota média',0),
+                    box('Clean Sheets',0),
+                  ],
+                ),
                 ],
-              )
-
-            ],
+              ),
           ),
-
 
         ],
       ),
@@ -98,7 +76,7 @@ class _StatisticsLeagueState extends State<StatisticsLeague> {
 Widget box(String title, int goalOrYellowOrRed){
     List leaguePlayers = organizarVariavelLeague(widget.league,  goalOrYellowOrRed);
     return Container(
-      height: 200,
+      height: 180,
       width: (Sized(context).width/2)-20,
       color: AppColors().greyTransparent,
       margin: const EdgeInsets.all(4),
@@ -110,8 +88,8 @@ Widget box(String title, int goalOrYellowOrRed){
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  for(int i=0;i<70 && i<leaguePlayers.length;i++)
-                    playerRow(i+1,Jogador(index: leaguePlayers[i]),i)
+                  for(int i=0;i<20 && i<leaguePlayers.length;i++)
+                    playerRow(i+1,leaguePlayers[i],i)
                 ],
               ),
             ),
@@ -120,14 +98,16 @@ Widget box(String title, int goalOrYellowOrRed){
       ),
     );
 }
-Widget playerRow(int position, Jogador player,int number){
+Widget playerRow(int position, int playerID,int number){
+  PlayerBasicInfo player = PlayerBasicInfo();
+  player.get(playerID);
     return Row(
       children: [
         SizedBox(width:20,child: Text(position.toString()+'º',style: EstiloTextoBranco.text12)),
         Images().getEscudoWidget(player.clubName,25,25),
         Text(player.name,style: EstiloTextoBranco.text14),
         const Spacer(),
-        Text(player.goalsLeague.toString(),style: EstiloTextoBranco.negrito14),
+        Text(player.overall.toString(),style: EstiloTextoBranco.negrito14),
       ],
     );
 }

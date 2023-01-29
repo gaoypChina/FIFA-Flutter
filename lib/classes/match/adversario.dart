@@ -4,10 +4,10 @@ import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/international.dart';
+import 'package:fifa/classes/international_league.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/values/league_names.dart';
 
 class Adversario{
   String clubName = '';
@@ -20,7 +20,7 @@ class Adversario{
     My myClass = My();
 
     //ADVERSARIO CAMPEONATO
-    if (Semana(semana).isJogoCampeonatoNacional && semana < League(index: myClass.campeonatoID).nClubs) {
+    if (Semana(semana).isJogoCampeonatoNacional && semana < League(index: myClass.leagueID).nClubs) {
       getLeagueAdversario();
     }
     //ADVERSARIO FASE DE GRUPOS CHAMPIONS OU LIBERTADORES
@@ -36,7 +36,7 @@ class Adversario{
   getLeagueAdversario(){
     My myClass = My();
     late int indexAdv; //de 0-16
-    List chaves = Chaves().obterChave(semana, myClass.campeonatoID);
+    List chaves = Chaves().obterChave(semana, myClass.leagueID);
     if (chaves.isNotEmpty) {
       if (chaves.indexOf(myClass.posicaoChave) % 2 == 0) {
         indexAdv = chaves[chaves.indexOf(myClass.posicaoChave) + 1];
@@ -44,9 +44,9 @@ class Adversario{
         indexAdv = chaves[chaves.indexOf(myClass.posicaoChave) - 1];
         visitante = true;
       }
-      clubID = League(index: myClass.campeonatoID).getClubRealID(indexAdv); //indice entre todos os clube
+      clubID = League(index: myClass.leagueID).getClubRealID(indexAdv); //indice entre todos os clube
       clubName = Club(index: clubID).name;
-      posicao = Classification(leagueIndex: myClass.campeonatoID).getClubPosition(clubID);
+      posicao = Classification(leagueIndex: myClass.leagueID).getClubPosition(clubID);
     }
   }
 
@@ -62,11 +62,8 @@ class Adversario{
       visitante = true;
     }
     int indexAdv032 = 4 * myClass.getMyClubInternationalGroup() + indexAdv;
-    if (myClass.playingInternational == LeagueOfficialNames().championsLeague) {
-      clubID = globalInternational32ClubsID[0][indexAdv032];
-    }
-    if (myClass.playingInternational == LeagueOfficialNames().libertadores) {
-      clubID = globalInternational32ClubsID[1][indexAdv032];
+    if (myClass.playingInternational.isNotEmpty) {
+      clubID = InternationalLeague().getClub(myClass.playingInternational, indexAdv032);
     }
     clubName = Club(index: clubID).name;
     List clubsID = International(myClass.getMyInternationalLeague()).getClassification();

@@ -382,7 +382,8 @@ Map nTeamsClassified = {
   LeagueOfficialNames().franca1: 4,
   LeagueOfficialNames().alemanha1: 4,
 
-  LeagueOfficialNames().portugal: 4,
+  LeagueOfficialNames().portugal: 2,
+  LeagueOfficialNames().holanda: 2,
   LeagueOfficialNames().turquiaGrecia: 2,
 
   LeagueOfficialNames().ligaEuropa: 3,
@@ -392,6 +393,28 @@ Map nTeamsClassified = {
   LeagueOfficialNames().argentina: 6,
   LeagueOfficialNames().mercosul: 12,
   LeagueOfficialNames().colombia: 6,
+};
+
+Map nTeamsClassified2 = {
+  LeagueOfficialNames().inglaterra1: 3,
+  LeagueOfficialNames().italia1: 3,
+  LeagueOfficialNames().espanha1: 3,
+  LeagueOfficialNames().franca1: 3,
+  LeagueOfficialNames().alemanha1: 3,
+
+  LeagueOfficialNames().portugal: 2,
+  LeagueOfficialNames().holanda: 2,
+  LeagueOfficialNames().turquiaGrecia: 3,
+
+  LeagueOfficialNames().ligaEuropa: 5,
+  LeagueOfficialNames().lesteEuropeu: 5,
+
+  LeagueOfficialNames().brasil1: 6,
+  LeagueOfficialNames().argentina: 6,
+  LeagueOfficialNames().mercosul: 6,
+  LeagueOfficialNames().colombia: 6,
+  LeagueOfficialNames().mexico: 4,
+  LeagueOfficialNames().estadosUnidos: 4,
 };
 
 String getCup(String leagueNameIn){

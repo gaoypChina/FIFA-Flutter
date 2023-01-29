@@ -5,8 +5,6 @@ import 'package:fifa/values/league_names.dart';
 
 class HistoricPositionsThisYear{
 
-
-
   resetGlobal(){
     globalHistoricPositionsThisYear = {};
   }

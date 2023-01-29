@@ -1,6 +1,6 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/page_controller/calendar_control.dart';
+import 'package:fifa/page_controller/result_game.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:flutter/material.dart';

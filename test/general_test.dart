@@ -16,9 +16,7 @@ void main() {
     test('Teste maps', () {
       Map global = {'Mundial':{}};
       global['Mundial'][2012] = ['oi','boi'];
-      print(global);
       global['Mundial'][2013] = ['oi','boi'];
-      print(global);
     });
 
   });

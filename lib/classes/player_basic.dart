@@ -1,6 +1,9 @@
+import 'package:fifa/values/clubs_all_names_list.dart';
+
 import '../global_variables.dart';
 
 class PlayerBasicInfo{
+  String clubName = "";
   int clubID = -1;
   int playerID = -1;
   int age = 18;
@@ -8,10 +11,21 @@ class PlayerBasicInfo{
   String position = 'ATA';
   int overall = 75;
   String nationality = 'Brazil';
-  String imagePlayer = 'https://i0.wp.com/zblibrary.info/wp-content/uploads/sites/76/2017/03/default-user.png?ssl=1';
+  String imageUrl = 'https://i0.wp.com/zblibrary.info/wp-content/uploads/sites/76/2017/03/default-user.png?ssl=1';
+
+  get(int playerID){
+    this.playerID = playerID;
+    age = globalJogadoresAge[playerID];
+    name = globalJogadoresName[playerID];
+    position = globalJogadoresPosition[playerID];
+    overall = globalJogadoresOverall[playerID];
+    clubID = globalJogadoresClubIndex[playerID];
+    clubName = clubsAllNameList[clubID];
+    nationality = globalJogadoresNationality[playerID];
+    imageUrl = globalJogadoresNationality[playerID];
+  }
 
   createNewPlayerToDatabase(){
-
     globalJogadoresIndex.add(playerID);
     globalJogadoresClubIndex.add(clubID);
     globalJogadoresName.add(name);
@@ -19,7 +33,7 @@ class PlayerBasicInfo{
     globalJogadoresAge.add(age);
     globalJogadoresOverall.add(overall);
     globalJogadoresNationality.add(nationality);
-    globalJogadoresImageUrl.add(imagePlayer);
+    globalJogadoresImageUrl.add(imageUrl);
   }
 
   deletePlayerFromDatabase(int playerID){

@@ -28,7 +28,7 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
   RankingClubsControl rankingClubs = RankingClubsControl();
   late TabController _tabController;
   final ScrollController _scrollController = ScrollController();
-  List listClubsID = League(index: My().campeonatoID).getAllClubsIDList();
+  List listClubsID = League(index: My().leagueID).getAllClubsIDList();
 
   bool isLoaded = false;
 

@@ -31,7 +31,7 @@ class EndYear extends StatefulWidget {
 class _EndYearState extends State<EndYear> {
 
   My my = My();
-  late League myLeague = League(index: my.campeonatoID);
+  late League myLeague = League(index: my.leagueID);
   bool loading = false;
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -112,7 +112,7 @@ Widget expectativa(){
         Column(
           children: [
             Text(Translation(context).text.classification,style: EstiloTextoBranco.text14),
-            Text(Classification(leagueIndex: my.campeonatoID).getClubPosition(my.clubID).toString()+'º',style: EstiloTextoBranco.text30),
+            Text(Classification(leagueIndex: my.leagueID).getClubPosition(my.clubID).toString()+'º',style: EstiloTextoBranco.text30),
           ],
         ),
 
@@ -131,7 +131,7 @@ Widget performance(){
 }
 
   Widget expectationBar(){
-    int actualPosition = Classification(leagueIndex: my.campeonatoID).getClubPosition(my.clubID);
+    int actualPosition = Classification(leagueIndex: my.leagueID).getClubPosition(my.clubID);
     int expectativaPosition = Expectativa(my).expectativaNacional;
     double value = 0.65 + 0.0786*(expectativaPosition-actualPosition); //MADE-UP FORMULA
 
