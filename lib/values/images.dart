@@ -56,6 +56,10 @@ class FIFAImages{
     if(leagueName==LeagueOfficialNames().rioSP) {      imageLogo = 'rio sp';       }
     if(leagueName==LeagueOfficialNames().cupwinners) {      imageLogo = 'cup winners';       }
 
+
+    if(leagueName==LeagueOfficialNames().europaLeagueOficial) {      imageLogo = 'europaleague'; }
+    if(leagueName==LeagueOfficialNames().copaSulAmericana) {      imageLogo = 'sulamericana'; }
+
     imageLogo = 'assets/league_logos/$imageLogo.png';
     return imageLogo;
   }

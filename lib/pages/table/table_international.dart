@@ -52,10 +52,25 @@ class _TableInternationalState extends State<TableInternational> {
           if(leagueInternational == LeagueOfficialNames().libertadores){
             clubsID.add(clubsAllNameList.indexOf(defaultLibertadoresClubs[i]));
           }
+          if(leagueInternational == LeagueOfficialNames().europaLeagueOficial){
+            clubsID.add(clubsAllNameList.indexOf(defaultEuropaLeagueClubs[i]));
+          }
+          if(leagueInternational == LeagueOfficialNames().copaSulAmericana){
+            clubsID.add(clubsAllNameList.indexOf(defaultSulAmericanaClubs[i]));
+          }
         }
+      //SE JÁ TIVER OS CLUBES DO CAMPEONATO CONFIGURADO
       }else{
         clubsID = International(leagueInternational).getClassification();
+        if(leagueInternational == LeagueOfficialNames().europaLeagueOficial ||
+            leagueInternational == LeagueOfficialNames().copaSulAmericana){
+          clubsID = globalInternational[leagueInternational]['clubsID'];
+        }
       }
+
+
+
+
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //

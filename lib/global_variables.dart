@@ -1,7 +1,7 @@
 library globals;
 
 //geral
-int testInitRodada = 18;
+int testInitRodada = 1;
 int gLOBALMAXCLUBSINLEAGUE = 20;
 bool globalShowRealLogos = true;
 

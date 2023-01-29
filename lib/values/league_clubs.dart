@@ -31,22 +31,22 @@ List defaultLibertadoresClubs = [
 List defaultEuropaLeagueClubs = [
   clubName.roma,clubName.feyenoord,clubName.sheriffTiraspol,clubName.nantes,
   clubName.manchesterunited,clubName.psv,clubName.realbetis,clubName.helsinki,
-  clubName.arsenal,clubName.rennes,clubName.midtjylland,clubName.sturmGraz,
-  clubName.lazio,clubName.monaco,clubName.glimt,clubName.aeklarnaca,
-  clubName.braga,clubName.realsociedad,clubName.ferencvaros,clubName.omonia,
-  clubName.estrelavermelha,clubName.qarabag,clubName.unionBerlin,clubName.zurich,
-  clubName.dinamokiev,clubName.malmo,clubName.freiburg,clubName.saintgilloise,
+  clubName.arsenal,clubName.rennes,clubName.midtjylland,clubName.rapidviena,
+  clubName.lazio,clubName.monaco,clubName.rosenborg,clubName.apoel,
+  clubName.braga,clubName.realsociedad,clubName.ferencvaros,clubName.apoel,
+  clubName.estrelavermelha,clubName.qarabag,clubName.unionBerlin,clubName.basel,
+  clubName.dinamokiev,clubName.malmo,clubName.freiburg,clubName.gent,
   clubName.olympiacos,clubName.ludogorets,clubName.fenerbahce,clubName.trabzonspor,
 ];
 List defaultSulAmericanaClubs = [
-  clubName.lanus,clubName.barcelonaequ,clubName.montWanderers,clubName.metropolitanos,
-  clubName.melgar,clubName.racing,clubName.cuiaba,clubName.riverURU,
-  clubName.santos,clubName.laCalera,clubName.uniequ,clubName.banfield,
-  clubName.saopaulo,clubName.evertonchi,clubName.ayacucho,clubName.jorge,
-  clubName.internacional,clubName.guairena,clubName.imedellin,clubName.octubre9,
-  clubName.atleticogo,clubName.ldu,clubName.antofagasta,clubName.defensayjusticia,
-  clubName.ceara,clubName.independiente,clubName.generalCaballero,clubName.laGuaira,
-  clubName.unionSantaFe,clubName.fluminense,clubName.junior,clubName.orientePetrolero,
+  clubName.lanus,clubName.barcelonaequ,clubName.montevideoCity,clubName.caracas,
+  clubName.melgar,clubName.racing,clubName.cuiaba,clubName.theStrongest,
+  clubName.santos,clubName.americamex,clubName.seattle,clubName.banfield,
+  clubName.saopaulo,clubName.lagalaxy,clubName.cruzazul,clubName.jorge,
+  clubName.internacional,clubName.losangelesfc,clubName.imedellin,clubName.saprissa,
+  clubName.atleticogo,clubName.ldu,clubName.vancouver,clubName.defensayjusticia,
+  clubName.ceara,clubName.independiente,clubName.tigres,clubName.laGuaira,
+  clubName.unionSantaFe,clubName.fluminense,clubName.junior,clubName.chivas,
 ];
 
 ///////////////////////////////////////////////////////////

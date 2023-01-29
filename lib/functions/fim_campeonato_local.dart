@@ -22,6 +22,7 @@ class FimDoCampeonatoLocal{
       setTeamsChampions(leagueClass, clubIndexes);
       setTeamsLibertadores(leagueClass, clubIndexes);
       setTeamsEuropaLeague(leagueClass, clubIndexes);
+      setTeamsSulAmericana(leagueClass, clubIndexes);
     }
 
     //Sortear grupo Champions
@@ -49,8 +50,8 @@ class FimDoCampeonatoLocal{
     addLeagueTeamsToIntLeague(leagueClass, clubIndexes, leagueName.turquiaGrecia, 2);
     addLeagueTeamsToIntLeague(leagueClass, clubIndexes, leagueName.ligaEuropa, 3);
     addLeagueTeamsToIntLeague(leagueClass, clubIndexes, leagueName.lesteEuropeu, 3);
-
   }
+
   changeVariablesInListChampions({required int position1,required int position2,required List list}){
     int aux = list[indexChampions][position1]; list[indexChampions][position1]=list[indexChampions][position2]; list[indexChampions][position2]=aux;
     return list;
@@ -133,7 +134,7 @@ class FimDoCampeonatoLocal{
   //////////////////////////////////////////////////////////////////////////////
   // EUROPA LEAGUE E SULAMERICANA
   //////////////////////////////////////////////////////////////////////////////
-  setGloballyClubsEuropaLeague(League leagueClass, String intName, List clubIndexes, String leagueCompared,int nClubs){
+  setGloballyClubs(League leagueClass, String intName, List clubIndexes, String leagueCompared,int nClubs){
     int nTeamsClassifiedInt = nTeamsClassified[leagueClass.name] ?? 0;
     if(leagueClass.name == leagueCompared){
       for(int i=0; i<nClubs; i++){
@@ -150,16 +151,16 @@ class FimDoCampeonatoLocal{
       globalInternational[leagueName.europaLeagueOficial] = {};
       globalInternational[leagueName.europaLeagueOficial]['clubsID'] = [];
     }
-    setGloballyClubsEuropaLeague(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.inglaterra1, 3);
-    setGloballyClubsEuropaLeague(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.espanha1, 3);
-    setGloballyClubsEuropaLeague(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.italia1, 3);
-    setGloballyClubsEuropaLeague(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.alemanha1, 3);
-    setGloballyClubsEuropaLeague(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.franca1, 3);
-    setGloballyClubsEuropaLeague(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.portugal, 2);
-    setGloballyClubsEuropaLeague(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.holanda, 2);
-    setGloballyClubsEuropaLeague(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.turquiaGrecia, 3);
-    setGloballyClubsEuropaLeague(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.ligaEuropa, 5);
-    setGloballyClubsEuropaLeague(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.lesteEuropeu, 5);
+    setGloballyClubs(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.inglaterra1, 3);
+    setGloballyClubs(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.espanha1, 3);
+    setGloballyClubs(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.italia1, 3);
+    setGloballyClubs(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.alemanha1, 3);
+    setGloballyClubs(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.franca1, 3);
+    setGloballyClubs(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.portugal, 2);
+    setGloballyClubs(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.holanda, 2);
+    setGloballyClubs(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.turquiaGrecia, 3);
+    setGloballyClubs(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.ligaEuropa, 5);
+    setGloballyClubs(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.lesteEuropeu, 5);
   }
 
   setTeamsSulAmericana(League leagueClass, List clubIndexes){
@@ -168,12 +169,12 @@ class FimDoCampeonatoLocal{
       globalInternational[leagueName.copaSulAmericana] = {};
       globalInternational[leagueName.copaSulAmericana]['clubsID'] = [];
     }
-    setGloballyClubsEuropaLeague(leagueClass, leagueName.copaSulAmericana, clubIndexes, leagueName.brasil1, 6);
-    setGloballyClubsEuropaLeague(leagueClass, leagueName.copaSulAmericana, clubIndexes, leagueName.argentina, 6);
-    setGloballyClubsEuropaLeague(leagueClass, leagueName.copaSulAmericana, clubIndexes, leagueName.mercosul, 6);
-    setGloballyClubsEuropaLeague(leagueClass, leagueName.copaSulAmericana, clubIndexes, leagueName.colombia, 6);
-    setGloballyClubsEuropaLeague(leagueClass, leagueName.copaSulAmericana, clubIndexes, leagueName.mexico, 4);
-    setGloballyClubsEuropaLeague(leagueClass, leagueName.copaSulAmericana, clubIndexes, leagueName.estadosUnidos, 4);
+    setGloballyClubs(leagueClass, leagueName.copaSulAmericana, clubIndexes, leagueName.brasil1, 6);
+    setGloballyClubs(leagueClass, leagueName.copaSulAmericana, clubIndexes, leagueName.argentina, 6);
+    setGloballyClubs(leagueClass, leagueName.copaSulAmericana, clubIndexes, leagueName.mercosul, 6);
+    setGloballyClubs(leagueClass, leagueName.copaSulAmericana, clubIndexes, leagueName.colombia, 6);
+    setGloballyClubs(leagueClass, leagueName.copaSulAmericana, clubIndexes, leagueName.mexico, 4);
+    setGloballyClubs(leagueClass, leagueName.copaSulAmericana, clubIndexes, leagueName.estadosUnidos, 4);
   }
 
 }

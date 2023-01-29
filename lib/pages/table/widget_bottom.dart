@@ -33,16 +33,29 @@ Widget customWidgetBottomBar (BuildContext context,String actualPage, String lea
           children: [
             const SizedBox(width: 8),
             //LIBERTADORES OU CHAMPIONS LEAGUE
-            leagueInternational == LeagueOfficialNames().championsLeague ? GestureDetector(
+            leagueInternational == LeagueOfficialNames().championsLeague
+                ? GestureDetector(
                 onTap: (){
                   functionSetState(LeagueOfficialNames().libertadores);
                 },
                 child: Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().championsLeague), width: 50,height: 50)
-            ): GestureDetector(
+            ) : leagueInternational == LeagueOfficialNames().libertadores
+                ? GestureDetector(
+                onTap: (){
+                  functionSetState(LeagueOfficialNames().europaLeagueOficial);
+                },
+                child: Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().libertadores), width: 50,height: 50)
+            ): leagueInternational == LeagueOfficialNames().europaLeagueOficial
+                ? GestureDetector(
+                onTap: (){
+                  functionSetState(LeagueOfficialNames().copaSulAmericana);
+                },
+                child: Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().europaLeagueOficial), width: 50,height: 50)
+            ) : GestureDetector(
                 onTap: (){
                   functionSetState(LeagueOfficialNames().championsLeague);
                 },
-                child: Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().libertadores),width: 50,height: 50)
+                child: Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().copaSulAmericana), width: 50,height: 50)
             ),
 
 

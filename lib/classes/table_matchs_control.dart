@@ -27,10 +27,7 @@ class MatchResultInternational{
           }catch(e){
             //CASO SEJA O PRIMEIRO ANO
             //Todo: refazer isso aqui
-            clubName1 = defaultChampionsLeagueClubs[4 * groupNumber + chaveConfronto];
-            if(competitionName == LeagueOfficialNames().libertadores){
-              clubName1 = defaultLibertadoresClubs[4 * groupNumber + chaveConfronto];
-            }
+            clubName1 = getClubName(competitionName, 4 * groupNumber + chaveConfronto);
             clubID1 = clubsAllNameList.indexOf(clubName1);
           }
 
@@ -41,10 +38,7 @@ class MatchResultInternational{
           clubID2 = globalInternational32ClubsID[internationalIndex][(4 * groupNumber) + indexAdv04];
     }catch(e){
       //CASO SEJA O PRIMEIRO ANO
-      clubName2 = defaultChampionsLeagueClubs[4 * groupNumber + indexAdv04];
-      if(competitionName == LeagueOfficialNames().libertadores){
-        clubName2 = defaultLibertadoresClubs[4 * groupNumber + indexAdv04];
-      }
+      clubName2 = getClubName(competitionName, 4 * groupNumber + indexAdv04);
       clubID2 = clubsAllNameList.indexOf(clubName2);
     }
     clubName1 = Club(index: clubID1).name;
@@ -62,6 +56,22 @@ class MatchResultInternational{
 
     if(semanaDoJogo < semana) {
       isAlreadyPlayed = true;
+    }
+  }
+
+
+  getClubName(String competitionName, int position){
+    if(competitionName == LeagueOfficialNames().championsLeague){
+      return defaultChampionsLeagueClubs[position];
+    }
+    if(competitionName == LeagueOfficialNames().libertadores){
+      return defaultLibertadoresClubs[position];
+    }
+    if(competitionName == LeagueOfficialNames().europaLeagueOficial){
+      return defaultEuropaLeagueClubs[position];
+    }
+    if(competitionName == LeagueOfficialNames().copaSulAmericana){
+      return defaultSulAmericanaClubs[position];
     }
   }
 
