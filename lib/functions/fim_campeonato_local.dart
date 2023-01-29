@@ -30,35 +30,6 @@ class FimDoCampeonatoLocal{
   }
 
 
-  setGloballyClubsEuropaLeague(League leagueClass, List clubIndexes, String leagueCompared,int nClubs){
-    int nTeamsClassifiedInt = nTeamsClassified[leagueClass.name] ?? 0;
-    if(leagueClass.name == leagueCompared){
-      for(int i=0; i<nClubs; i++){
-        int clubID = clubIndexes[i+nTeamsClassifiedInt];
-        List atual = List.from(globalInternational['Europa League']['clubsID']);
-        atual.add(clubID);
-        globalInternational['Europa League']['clubsID'] = atual;
-      }
-    }
-  }
-  setTeamsEuropaLeague(League leagueClass, List clubIndexes){
-    LeagueOfficialNames leagueName = LeagueOfficialNames();
-    if(!globalInternational.containsKey('Europa League')){
-      globalInternational['Europa League'] = {};
-      globalInternational['Europa League']['clubsID'] = [];
-    }
-    setGloballyClubsEuropaLeague(leagueClass, clubIndexes, leagueName.inglaterra1, 3);
-    setGloballyClubsEuropaLeague(leagueClass, clubIndexes, leagueName.espanha1, 3);
-    setGloballyClubsEuropaLeague(leagueClass, clubIndexes, leagueName.italia1, 3);
-    setGloballyClubsEuropaLeague(leagueClass, clubIndexes, leagueName.alemanha1, 3);
-    setGloballyClubsEuropaLeague(leagueClass, clubIndexes, leagueName.franca1, 3);
-    setGloballyClubsEuropaLeague(leagueClass, clubIndexes, leagueName.portugal, 2);
-    setGloballyClubsEuropaLeague(leagueClass, clubIndexes, leagueName.holanda, 2);
-    setGloballyClubsEuropaLeague(leagueClass, clubIndexes, leagueName.turquiaGrecia, 3);
-    setGloballyClubsEuropaLeague(leagueClass, clubIndexes, leagueName.ligaEuropa, 5);
-    setGloballyClubsEuropaLeague(leagueClass, clubIndexes, leagueName.lesteEuropeu, 5);
-  }
-
   addLeagueTeamsToIntLeague(League leagueClass, List clubIndexes, String leagueCompared,int nClubs){
     if(leagueClass.name == leagueCompared){
       for(int i=0; i<nClubs; i++){
@@ -159,6 +130,51 @@ class FimDoCampeonatoLocal{
   }
 
 
+  //////////////////////////////////////////////////////////////////////////////
+  // EUROPA LEAGUE E SULAMERICANA
+  //////////////////////////////////////////////////////////////////////////////
+  setGloballyClubsEuropaLeague(League leagueClass, String intName, List clubIndexes, String leagueCompared,int nClubs){
+    int nTeamsClassifiedInt = nTeamsClassified[leagueClass.name] ?? 0;
+    if(leagueClass.name == leagueCompared){
+      for(int i=0; i<nClubs; i++){
+        int clubID = clubIndexes[i+nTeamsClassifiedInt];
+        List atual = List.from(globalInternational[intName]['clubsID']);
+        atual.add(clubID);
+        globalInternational[intName]['clubsID'] = atual;
+      }
+    }
+  }
+  setTeamsEuropaLeague(League leagueClass, List clubIndexes){
+    LeagueOfficialNames leagueName = LeagueOfficialNames();
+    if(!globalInternational.containsKey(leagueName.europaLeagueOficial)){
+      globalInternational[leagueName.europaLeagueOficial] = {};
+      globalInternational[leagueName.europaLeagueOficial]['clubsID'] = [];
+    }
+    setGloballyClubsEuropaLeague(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.inglaterra1, 3);
+    setGloballyClubsEuropaLeague(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.espanha1, 3);
+    setGloballyClubsEuropaLeague(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.italia1, 3);
+    setGloballyClubsEuropaLeague(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.alemanha1, 3);
+    setGloballyClubsEuropaLeague(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.franca1, 3);
+    setGloballyClubsEuropaLeague(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.portugal, 2);
+    setGloballyClubsEuropaLeague(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.holanda, 2);
+    setGloballyClubsEuropaLeague(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.turquiaGrecia, 3);
+    setGloballyClubsEuropaLeague(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.ligaEuropa, 5);
+    setGloballyClubsEuropaLeague(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.lesteEuropeu, 5);
+  }
+
+  setTeamsSulAmericana(League leagueClass, List clubIndexes){
+    LeagueOfficialNames leagueName = LeagueOfficialNames();
+    if(!globalInternational.containsKey(leagueName.copaSulAmericana)){
+      globalInternational[leagueName.copaSulAmericana] = {};
+      globalInternational[leagueName.copaSulAmericana]['clubsID'] = [];
+    }
+    setGloballyClubsEuropaLeague(leagueClass, leagueName.copaSulAmericana, clubIndexes, leagueName.brasil1, 6);
+    setGloballyClubsEuropaLeague(leagueClass, leagueName.copaSulAmericana, clubIndexes, leagueName.argentina, 6);
+    setGloballyClubsEuropaLeague(leagueClass, leagueName.copaSulAmericana, clubIndexes, leagueName.mercosul, 6);
+    setGloballyClubsEuropaLeague(leagueClass, leagueName.copaSulAmericana, clubIndexes, leagueName.colombia, 6);
+    setGloballyClubsEuropaLeague(leagueClass, leagueName.copaSulAmericana, clubIndexes, leagueName.mexico, 4);
+    setGloballyClubsEuropaLeague(leagueClass, leagueName.copaSulAmericana, clubIndexes, leagueName.estadosUnidos, 4);
+  }
 
 }
 

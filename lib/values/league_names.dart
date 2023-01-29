@@ -7,7 +7,7 @@ class LeagueOfficialNames{
   final String concacaf = 'Concacaf champions';
   final String asiaafricaChampionsLeague = 'World Champions League';
 
-  final String europaL0eagueOficial = 'Europa League';
+  final String europaLeagueOficial = 'Europa League';
   final String conferenceLeague = 'Conference League';
   final String copaSulAmericana = 'Copa Sul-Americana';
 
@@ -27,7 +27,8 @@ class LeagueOfficialNames{
   String holanda = 'Eredivisie';
   String escocia = 'Scottish Premiership';
   String belgica = 'Jupiler Pro League';
-  String irlanda = 'Liga irlanda';
+  String irlanda = 'Liga Irlanda';
+  String irlandanorte = 'Liga Irlanda do Norte';
   String paisgales = 'Liga País de Gales';
   String suecia = 'Allsvenskan Sweden';
   String dinamarca = 'Superliga Dinamarquesa';
@@ -62,8 +63,12 @@ class LeagueOfficialNames{
   String letonia = 'Liga Letônia';
   String azerbaijao = 'Liga Azerbaijão';
   String georgia = 'Liga Geórgia';
+  String montenegro = 'Liga Montenegro';
   String saomarino = 'Liga São Marino';
   String gibraltar = 'Liga Gibraltar';
+  String malta = 'Liga Malta';
+  String liechtenstein = 'Liga Liechtenstein';
+  String luxemburgo = 'Liga Luxemburgo';
   String ligaEuropa = 'Liga Europeia';  String lesteEuropeu = 'Leste Europeu';
 
   String brasil1 = 'Brasileirão';  String brasil2 = 'Brasileirão - Série B';String brasil3 = 'Brasileirão - Série C';
@@ -156,7 +161,7 @@ class LeagueOfficialNames{
   String ligaEuropaCup = 'Copa da Europa';String eastEuropeCup = 'Leste Europeu Copa';
 
   String brazilCup = 'Copa do Brasil';String argentinaCup = 'Copa Argentina';
-  String sulamericanaCup = 'Copa America';String merconorteCup = 'Copa Merconorte';
+  String mercosulCup = 'Copa America';String merconorteCup = 'Copa Merconorte';
 
   String mexicoCup = 'Copa MX';String usaCup = 'MLS Cup';
   String asiaCup = 'Asia Cup';String africaCup = 'África Cup';
@@ -197,17 +202,18 @@ class LeagueOfficialNames{
      portugal,
 
      turquiaGrecia,     grecia, chipre,
-     holanda ,   belgica, escocia, irlanda, paisgales,
+     holanda ,   belgica, escocia, irlanda, irlandanorte, paisgales,
      suecia,     dinamarca,     noruega,     finlandia, islandia,
      austria,     suica,     polonia, repTcheca,
      eslovaquia, eslovenia,
       lituania, estonia, letonia,
 
-      servia,  croacia, bosnia,
-      romenia, bulgaria, hungria,
+      croacia, servia, bosnia,
+      romenia, bulgaria, hungria, montenegro,
       macedonia, albania, belarus, moldova,
       russia, ucrania,   cazaquistao,
-      armenia, azerbaijao, georgia, israel, saomarino,
+      armenia, azerbaijao, georgia, israel,
+      gibraltar, saomarino,
 
      brasil1, brasil2, brasil3, brasil4,
      argentina,
@@ -415,7 +421,7 @@ String getCup(String leagueNameIn){
     leagueName.brasil3: leagueName.brazilCup,
     leagueName.brasil4: leagueName.brazilCup,
     leagueName.argentina: leagueName.argentinaCup,
-    leagueName.sulamericano: leagueName.sulamericanaCup,
+    leagueName.sulamericano: leagueName.mercosulCup,
     leagueName.colombia: leagueName.merconorteCup,
 
     leagueName.mexico: leagueName.mexicoCup,
@@ -463,6 +469,7 @@ Map getLeagueNationalityMap(){
     leagueName.holanda: Words.country.netherlands ,
     leagueName.belgica: Words.country.belgium ,
     leagueName.irlanda: Words.country.ireland ,
+    leagueName.irlandanorte: Words.country.northernIreland ,
     leagueName.escocia: Words.country.scotland ,
     leagueName.paisgales: Words.country.wales ,
     leagueName.suica: Words.country.switzerland ,
@@ -499,8 +506,12 @@ Map getLeagueNationalityMap(){
     leagueName.letonia: Words.country.latvia ,
     leagueName.azerbaijao: Words.country.azerbaijan ,
     leagueName.georgia: Words.country.georgia ,
+    leagueName.montenegro: Words.country.montenegro ,
     leagueName.saomarino: Words.country.sanMarino ,
     leagueName.gibraltar: Words.country.gibraltar ,
+    leagueName.malta: Words.country.malta ,
+    leagueName.liechtenstein: Words.country.liechtenstein ,
+    leagueName.luxemburgo: Words.country.luxembourg ,
 
     leagueName.brasil1: Words.country.brazil ,
     leagueName.brasil2: Words.country.brazil ,

@@ -676,11 +676,15 @@ class ClubName{
   String thirdLanark = "Third Lanark"; //EXTINTO 1872-1967
 
   //NORTHERN IRELAND
+  String ards = "Ards";
+  String ballymena = "Ballymena United";
   String coleraine = "Coleraine";
   String linfield = "Linfield";
+  String glenavon = "Glenavon";
   String glentoran = "Glentoran";
   String crusaders = "Crusaders";
   String cliftonville = "Cliftonville";
+  String portadown = "Portadown";
   //WALES
   String airbusuk = "Airbus UK Broughton";
   String balatown = "Bala Town";
@@ -1547,10 +1551,15 @@ class ClubName{
   String prishtina = "Prishtina";//KOSOVO
   String drita = "Drita";//KOSOVO
   //MONTENEGRO
+  String celik = "Čelik";
   String decic = "Decic";
   String iskra = "Iskra Danilovgrad";
+  String lovcen = "Lovcen";
+  String mogren = "Mogren";
   String podgorica = "Buducnost Podgorica";
+  String rudar = "Rudar";
   String sutjeska = "Sutjeska Nikšić";
+  String titograd = "Titograd";
   String zeta = "Zeta";
   //MACEDONIA
   String akaPandev = "Akademija Pandev";
@@ -1596,9 +1605,14 @@ class ClubName{
   String trepenne = "Tre Penne";
   String trefiori = "Tre Fiori";
   //GIBRALTAR
+  String britannia = "Britannia XI";
   String europa = "Europa FC";
+  String gibraltar = "Gibraltar United";
+  String glacis = "Glacis United";
+  String manchester62 = "Manchester 62 ";
   String lincolnRedImps = "Lincoln Red Imps";
   String stJosephs = "St Joseph's";
+  String stTheresas = "St Theresa's";
   //ANDORRA
   String santacoloma = "Santa Coloma";//ANDORRA
 

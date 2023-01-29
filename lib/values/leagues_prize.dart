@@ -48,7 +48,7 @@ void premiacao(){
     else if(leagueName==LeagueOfficialNames().eastEuropeCup){premio=0.6;}
     else if(leagueName==LeagueOfficialNames().brazilCup){premio=0.6;}
     else if(leagueName==LeagueOfficialNames().argentinaCup){premio=0.6;}
-    else if(leagueName==LeagueOfficialNames().sulamericanaCup){premio=0.6;}
+    else if(leagueName==LeagueOfficialNames().mercosulCup){premio=0.6;}
     else if(leagueName==LeagueOfficialNames().merconorteCup){premio=0.6;}
     else if(leagueName==LeagueOfficialNames().mexicoCup){premio=0.6;}
     else if(leagueName==LeagueOfficialNames().usaCup){premio=0.6;}
