@@ -1,4 +1,4 @@
-import 'package:fifa/functions/simulate/my_match/counter.dart';
+import 'package:fifa/classes/simulate/my_match/counter.dart';
 import 'package:fifa/pages/menu/b_home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';

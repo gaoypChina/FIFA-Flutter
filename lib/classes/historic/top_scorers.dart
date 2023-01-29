@@ -1,8 +1,7 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/functions/order_list.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/global_variables.dart';
-
-import '../../functions/order_list.dart';
 
 class TopScorers{
   Map allHistoricScorers = globalHistoricTopScorers;

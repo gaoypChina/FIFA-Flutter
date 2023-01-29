@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/geral/name.dart';
-import 'package:fifa/functions/simulate/match_simulation.dart';
+import 'package:fifa/classes/simulate/match_simulation.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/league_names.dart';
 

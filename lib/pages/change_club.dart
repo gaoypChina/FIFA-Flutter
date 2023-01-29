@@ -1,6 +1,6 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/functions/change_club_control.dart';
+import 'package:fifa/classes/functions/change_club_control.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';

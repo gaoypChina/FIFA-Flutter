@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:fifa/database/csv/read_csv.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/functions/open_url.dart';
+import 'package:fifa/classes/functions/open_url.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:flutter/material.dart';
 

@@ -1,5 +1,5 @@
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/popup/poup_edit.dart';
+import 'package:fifa/widgets/popup/poup_edit.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';

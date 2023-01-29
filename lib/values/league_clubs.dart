@@ -29,14 +29,14 @@ List defaultLibertadoresClubs = [
   clubName.flamengo,clubName.univcatolica,clubName.talleres,clubName.sportingcristal,
 ];
 List defaultEuropaLeagueClubs = [
-  clubName.roma,clubName.feyenoord,clubName.sheriffTiraspol,clubName.nantes,
-  clubName.manchesterunited,clubName.psv,clubName.realbetis,clubName.helsinki,
-  clubName.arsenal,clubName.rennes,clubName.midtjylland,clubName.rapidviena,
-  clubName.lazio,clubName.monaco,clubName.rosenborg,clubName.apoel,
-  clubName.braga,clubName.realsociedad,clubName.ferencvaros,clubName.apoel,
-  clubName.estrelavermelha,clubName.qarabag,clubName.unionBerlin,clubName.basel,
-  clubName.dinamokiev,clubName.malmo,clubName.freiburg,clubName.gent,
-  clubName.olympiacos,clubName.ludogorets,clubName.fenerbahce,clubName.trabzonspor,
+  clubName.arsenal,clubName.psv,clubName.rosenborg,clubName.zurich,
+  clubName.fenerbahce,clubName.rennes,clubName.dinamokiev,clubName.aek,
+  clubName.realbetis,clubName.roma,clubName.ludogorets,clubName.helsinki,
+  clubName.gent,clubName.malmo,clubName.unionBerlin,clubName.braga,
+  clubName.manchesterunited,clubName.realsociedad,clubName.sheriffTiraspol,clubName.apoel,
+  clubName.feyenoord,clubName.lazio,clubName.midtjylland,clubName.rapidviena,
+  clubName.nantes,clubName.qarabag,clubName.freiburg,clubName.olympiacos,
+  clubName.monaco,clubName.ferencvaros,clubName.estrelavermelha,clubName.trabzonspor,
 ];
 List defaultSulAmericanaClubs = [
   clubName.lanus,clubName.barcelonaequ,clubName.montevideoCity,clubName.caracas,

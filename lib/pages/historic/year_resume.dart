@@ -3,7 +3,7 @@ import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/historic/historic_champions_league.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
-import 'package:fifa/functions/countries/flags_list.dart';
+import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
 import 'package:fifa/pages/table/table_nacional.dart';

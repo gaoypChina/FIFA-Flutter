@@ -4,7 +4,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/functions/simulate/simulate_functions.dart';
+import 'package:fifa/classes/simulate/simulate_functions.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/simulacao/end_year.dart';
 import 'package:fifa/pages/simulacao/not_play_international/not_play_international_groups.dart';

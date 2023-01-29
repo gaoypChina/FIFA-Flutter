@@ -5,7 +5,7 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/page_controller/save/save_controller.dart';
 import 'package:fifa/pages/menu/b_home.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
-import 'package:fifa/popup/popup_ok_cancel.dart';
+import 'package:fifa/widgets/popup/popup_ok_cancel.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';

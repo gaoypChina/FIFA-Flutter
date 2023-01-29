@@ -1,5 +1,5 @@
-import 'package:fifa/functions/countries/words.dart';
-import 'package:fifa/functions/countries/countries_continents.dart';
+import 'package:fifa/classes/countries/words.dart';
+import 'package:fifa/classes/countries/countries_continents.dart';
 
 class LeagueOfficialNames{
   final String championsLeague = 'Champions League';

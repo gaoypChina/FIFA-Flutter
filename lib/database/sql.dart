@@ -1,10 +1,10 @@
 import 'dart:io';
 import 'dart:math';
 
+import 'package:fifa/classes/end_year_updates/update_data_year.dart';
 import 'package:fifa/database/key_names.dart';
 import 'package:fifa/database/local_database/shared_preferences.dart';
 import 'package:fifa/database/save_games/player_save/player_save_data.dart';
-import 'package:fifa/functions/end_year_updates/update_data_year.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:sqflite/sqflite.dart';

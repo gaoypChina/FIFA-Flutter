@@ -1,7 +1,7 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/chaves.dart';
 import 'package:fifa/classes/geral/semana.dart';
-import 'package:fifa/functions/mata_mata/mata_mata_class.dart';
+import 'package:fifa/classes/mata_mata/mata_mata_class.dart';
 import 'package:fifa/classes/table_matchs_control.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';

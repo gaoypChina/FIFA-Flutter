@@ -1,5 +1,5 @@
-import 'package:fifa/functions/countries/words.dart';
-import 'package:fifa/functions/countries/countries_continents.dart';
+import 'package:fifa/classes/countries/words.dart';
+import 'package:fifa/classes/countries/countries_continents.dart';
 import 'package:fifa/values/club_names.dart';
 import 'package:fifa/widgets/kits_crests/patterns.dart';
 import 'package:flutter/material.dart';

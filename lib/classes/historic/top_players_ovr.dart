@@ -1,6 +1,6 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/jogador.dart';
-import 'package:fifa/functions/order_list.dart';
+import 'package:fifa/classes/functions/order_list.dart';
 import 'package:fifa/global_variables.dart';
 
 class TopPlayersOVR{

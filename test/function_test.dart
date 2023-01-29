@@ -1,5 +1,5 @@
 
-import 'package:fifa/functions/mata_mata/mata_mata_class.dart';
+import 'package:fifa/classes/mata_mata/mata_mata_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:flutter_test/flutter_test.dart';

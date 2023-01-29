@@ -1,11 +1,11 @@
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
-import 'package:fifa/functions/countries/words.dart';
+import 'package:fifa/classes/countries/words.dart';
 import 'package:fifa/page_controller/transfers/filter_players.dart';
-import 'package:fifa/functions/countries/flags_list.dart';
+import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/popup/popup_player_info.dart';
+import 'package:fifa/widgets/popup/popup_player_info.dart';
 import 'package:fifa/theme/background/background_age.dart';
 import 'package:fifa/theme/background/background_overall.dart';
 import 'package:fifa/theme/background/background_position.dart';

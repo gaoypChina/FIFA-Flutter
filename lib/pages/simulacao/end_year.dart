@@ -1,13 +1,13 @@
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/end_year_updates/update_data_year.dart';
 import 'package:fifa/classes/expectativa.dart';
 import 'package:fifa/classes/geral/name.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/mundial.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/functions/end_year_updates/update_data_year.dart';
-import 'package:fifa/functions/mata_mata/mata_mata_class.dart';
+import 'package:fifa/classes/mata_mata/mata_mata_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/change_club.dart';
 import 'package:fifa/theme/custom_toast.dart';

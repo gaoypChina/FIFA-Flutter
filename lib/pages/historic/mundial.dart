@@ -3,7 +3,7 @@ import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/mundial.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/functions/countries/flags_list.dart';
+import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
