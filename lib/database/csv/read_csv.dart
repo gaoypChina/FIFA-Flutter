@@ -14,7 +14,7 @@ class ReadCSV{
   openCSV() async{
 
     customToast('Loading CSV Files...');
-    resetPlayersData();
+    resetOnLoadData();
     resetData();
 
     //READ CSV

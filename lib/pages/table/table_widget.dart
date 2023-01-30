@@ -145,8 +145,14 @@ Color backgroundTextColor(int position, League league, String teamName){
   //1ºCOLOCADO
   if(position==0){backgroundColor = Colors.yellowAccent.withOpacity(0.7);}
 
-  //REBAIXAMENTO
+  //ACESSO 1ªDivisão
   List<String> divisionsNames = Divisions().leagueDivisionsStructure(leagueName);
+  if(divisionsNames.length > 1 && leagueName != divisionsNames.first){
+    if(position==1){backgroundColor = Colors.blue;}
+    if(position==2){backgroundColor = Colors.blue;}
+  }
+
+  //REBAIXAMENTO
   if(divisionsNames.length > 1 && leagueName != divisionsNames.last){
     if(position==league.nClubs-3){backgroundColor = Colors.red;}
     if(position==league.nClubs-2){backgroundColor = Colors.red;}

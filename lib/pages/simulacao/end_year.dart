@@ -159,6 +159,9 @@ Widget champions(){
         const SizedBox(height: 12),
         finale(LeagueOfficialNames().championsLeague),
         finale(LeagueOfficialNames().libertadores),
+        finale(LeagueOfficialNames().europaLeagueOficial),
+        finale(LeagueOfficialNames().copaSulAmericana),
+        const SizedBox(height: 12),
         mundial(),
       ],
     );

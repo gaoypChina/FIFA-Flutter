@@ -278,7 +278,12 @@ getInternationalLeagueFromContinent(String continent){
   return internationalLeague;
 }
 
-List internationalLeagueNames = [LeagueOfficialNames().championsLeague,LeagueOfficialNames().libertadores];
+List internationalLeagueNames = [
+  LeagueOfficialNames().championsLeague,
+  LeagueOfficialNames().libertadores,
+  LeagueOfficialNames().europaLeagueOficial,
+  LeagueOfficialNames().copaSulAmericana
+];
 
 //Pra adicionar uma nova liga adicione o index da liga aqui:
 //Essas são as ligas que de fato estão no jogo

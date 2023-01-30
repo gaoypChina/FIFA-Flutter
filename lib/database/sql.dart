@@ -162,7 +162,7 @@ class SaveSQL{
     List<PlayerSaveData> list = await funcPlayerSavedDataResult();
     if(list.isNotEmpty){
 
-      resetPlayersData();
+      resetOnLoadData();
       resetData();
 
       for (PlayerSaveData row in list){

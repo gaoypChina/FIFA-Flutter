@@ -24,7 +24,11 @@ class Divisions{
     if(checkDivision(leagueNames,leagueName)){
       return leagueNames;
     }
-    leagueNames = [LeagueOfficialNames().brasil1,LeagueOfficialNames().brasil2,LeagueOfficialNames().brasil3,LeagueOfficialNames().brasil4];
+    leagueNames = [
+      LeagueOfficialNames().brasil1,
+      LeagueOfficialNames().brasil2,
+      LeagueOfficialNames().brasil3,
+      LeagueOfficialNames().brasil4];
     if(checkDivision(leagueNames,leagueName)){
       return leagueNames;
     }

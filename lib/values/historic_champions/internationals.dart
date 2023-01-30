@@ -400,7 +400,6 @@ Map<String,dynamic> mapInternationals = {
     1951.0: [n.palmeiras,n.juventus,n.vasco,n.austria],
   },
 
-
   leagueName.ligaEuropa : {
     2022.0: [n.eintrachtfrankfurt,n.rangers,n.westham,n.rbleipzig,  n.barcelona,n.braga,n.lyon,n.atalanta],
     2021.0: [n.villareal,n.manchesterunited,n.arsenal,n.roma,       n.dinamozagreb,n.granada,n.slaviaPraha,n.ajax],

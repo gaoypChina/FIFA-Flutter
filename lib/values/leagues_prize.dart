@@ -82,5 +82,4 @@ void premiacao(){
   if(globalMyLeagueLastResults.last==0){premio=(premio/3);}
 
   globalMyMoney += premio * DificuldadeClass().getDificuldadeMultiplicationValue();
-
 }

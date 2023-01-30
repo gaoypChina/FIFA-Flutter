@@ -10,6 +10,7 @@ import 'package:fifa/classes/historic/top_players_ovr.dart';
 import 'package:fifa/classes/historic/top_scorers.dart';
 import 'package:fifa/classes/historic_positions_this_year.dart';
 import 'package:fifa/classes/international.dart';
+import 'package:fifa/classes/international_league.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
@@ -91,7 +92,7 @@ saveBestPlayers(){
   TopScorers().orderAndSave(topScorers, topScorersID);
   TopPlayersOVR().orderAndSave(best, bestID);
 }
-resetPlayersData(){
+resetOnLoadData(){
   //Reseta só antes de carregar o database
   //Jogadores
   globalJogadoresIndex = [];
@@ -114,6 +115,9 @@ resetPlayersData(){
   //Reset Histórico de posições
   HistoricPositionsThisYear().resetGlobal();
 
+  //RESET CHAMPIONS LEAGUE, LIBERTADORES etc data
+  InternationalLeague().resetAll();
+  InternationalLeague().setDefaultTeams();
 }
 
 resetData(){
@@ -144,6 +148,7 @@ resetData(){
   globalClubsInternationalGS = List.filled(globalMaxClubsPermitted, 0);
 
 }
+
 
 void trocaClubesRebaixamento(){
   List leagueClassifications = [];

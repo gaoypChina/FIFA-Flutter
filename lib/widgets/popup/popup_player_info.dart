@@ -10,6 +10,7 @@ import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/background/background_age.dart';
 import 'package:fifa/theme/background/background_position.dart';
+import 'package:fifa/theme/background/color_grade.dart';
 import 'package:fifa/theme/background/moral_icon.dart';
 import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/translation.dart';
@@ -81,6 +82,15 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
                       positionContainer(jogador.position,size: 60,style: EstiloTextoPreto.text16),
                       health(context, jogador),
                       lesoesCartoes(context, jogador),
+                      Column(
+                        children: [
+                          const Text('Nota',style: EstiloTextoBranco.negrito22),
+                          Container(
+                              color: colorGradeBackground(jogador.grade),
+                              padding: const EdgeInsets.all(2),
+                              child: Text(jogador.grade.toStringAsFixed(1),style: EstiloTextoBranco.negrito22)),
+                        ],
+                      ),
                     ],
                   ),
                   const SizedBox(height: 12),

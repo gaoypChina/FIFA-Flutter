@@ -1,9 +1,9 @@
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/international_league.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/functions/international_league_manipulation.dart';
+import 'package:fifa/classes/playing_international.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/league_names.dart';
@@ -103,33 +103,10 @@ class My{
     return expect;
   }
   String getPlayingInternational(){
-    String val = '';
-    //FASE DE GRUPOS
-    if(Semana(semana).isJogoGruposInternacional){
-      val = InternationalLeague().checkContains(clubID, internationalLeagueName, val);
-      val = InternationalLeague().checkContains(clubID, LeagueOfficialNames().europaLeagueOficial, val);
-      val = InternationalLeague().checkContains(clubID, LeagueOfficialNames().copaSulAmericana, val);
-    }
-    //MATA-MATA
-    else if(Semana(semana).isJogoMataMataInternacional){
-      for(int i=0; i<InternationalLeagueManipulation().funcNInternationalLeagues();i++){
-        String leagueName = InternationalLeagueManipulation().funcGetInternationalLeagueNameFromIndex(internationalLeagueIndex: i);
-        try{
-        List listIDs = globalInternationalMataMataClubsID[leagueName][Semana(semana).semanaStr];
-        if(listIDs.contains(clubID)){
-          val = leagueName;
-        }
-        }catch(e){
-          //print('variavel globalInternationalMataMataClubsID ainda nao criada');
-        }
-
-      }
-    }
-
-    return val;
+    return getPlayingInternationalName(clubID, internationalLeagueName);
   }
   int getMyClubInternationalPosition032(){
-    int position = InternationalLeague().searchClub(playingInternational, clubID);
+    int position = InternationalLeague().searchClub(internationalLeagueName, clubID);
     return position;
   }
   int getMyClubInternationalGroup(){

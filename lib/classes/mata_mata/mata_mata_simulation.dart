@@ -14,6 +14,7 @@ class MataMataSimulation{
     My myClass = My();
     for (int i = 0; i < internationalLeagueNames.length; i++) {
       String internationalName = InternationalLeagueManipulation().funcGetInternationalLeagueNameFromIndex(internationalLeagueIndex: i);
+
       int matchRowsTotal = MataMata().getMatchRows();
       int phaseIdaVolta = MataMata().getPhaseIdaVolta(semana); //jogo de ida ou volta
       for (int matchRows = 0; matchRows<matchRowsTotal; matchRows++) {
@@ -46,7 +47,7 @@ class MataMataSimulation{
     int phaseIdaVolta = MataMata().getPhaseIdaVolta(semana);
     String weekPhase = MataMata().getSemanaPhase(semana);
 
-    String internationalName = Club(index: clubID1).internationalLeagueName;
+    String internationalName = Club(index: clubID1).internationalLeagueNamePlaying;
     //CRIA MAP SE NÃO EXISTIR
     if(globalInternationalMataMataGoals[internationalName] == null){
       globalInternationalMataMataGoals[internationalName] = {};

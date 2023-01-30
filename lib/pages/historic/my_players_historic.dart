@@ -1,5 +1,6 @@
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/historic/historic_club_year.dart';
 import 'package:fifa/classes/historic/historic_my_players.dart';
 import 'package:fifa/classes/historic/historic_my_tranfers.dart';
@@ -7,6 +8,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/theme/background/background_overall.dart';
 import 'package:fifa/widgets/popup/popup_player_info.dart';
 import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -77,14 +79,26 @@ class _MyPlayersHistoricState extends State<MyPlayersHistoric> {
 
               listPlayersWidget(),
 
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  sellORbuyPlayers('Comprados','Buy',int.parse(selectedYearStr)),
-                  sellORbuyPlayers('Vendidos','Sell',int.parse(selectedYearStr)),
+                children: const [
+                  Text('Comprados',style: EstiloTextoBranco.negrito18),
+                  Text('Vendidos',style: EstiloTextoBranco.negrito18),
                 ],
+              ),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      sellORbuyPlayers('Buy',int.parse(selectedYearStr)),
+                      sellORbuyPlayers('Sell',int.parse(selectedYearStr)),
+                    ],
+                  ),
+                ),
               )
             ],
           ),
@@ -158,7 +172,7 @@ Widget header(){
           bestPlayerBox('Craque',Jogador(index: HistoricMyPlayers().getBestPlayer(historicPlayerDatas: historicPlayerDatas)),''),
           bestPlayerBox('Artilheiro',Jogador(index: HistoricMyPlayers().getArtilheiro(historicPlayerDatas: historicPlayerDatas)),''),
           bestPlayerBox('Assistente',Jogador(index: HistoricMyPlayers().getAssistente(historicPlayerDatas: historicPlayerDatas)),''),
-          bestPlayerBox('MVP',Jogador(index: 131),''),
+          bestPlayerBox('MVP',Jogador(index: HistoricMyPlayers().getMVP(historicPlayerDatas: historicPlayerDatas)),''),
         ],
       ),
     );
@@ -211,12 +225,19 @@ Widget header(){
       ),
     );
   }
-Widget sellORbuyPlayers(String title, String buyOrSellKeyword, int selectedYear){
+Widget sellORbuyPlayers(String buyOrSellKeyword, int selectedYear){
   try{
     List<HighestSellBuy> listPlayers = HistoricMyTransfers().getTransfersYear(buyOrSellKeyword, selectedYear);
+
+    if(listPlayers.isEmpty){
+      return Container(
+        width: Sized(context).width/2,
+      );
+    }
+
     return Column(
       children: [
-        Text(title,style: EstiloTextoBranco.negrito18),
+
         for(int i=0; i < listPlayers.length;i++)
           GestureDetector(
             onTap: (){
@@ -226,16 +247,24 @@ Widget sellORbuyPlayers(String title, String buyOrSellKeyword, int selectedYear)
                   funcSetState: (){setState((){});}
               );
             },
-            child: Row(
-              children: [
-                Images().getEscudoWidget(Club(index: listPlayers[i].clubID).name,20,20),
-                Text(listPlayers[i].overall.toString(),
-                    style: EstiloTextoBranco.text16),
-                Text(Jogador(index: listPlayers[i].playerID).name,
-                    style: EstiloTextoBranco.text12),
-                Text(' -> \$'+listPlayers[i].maxPrice.toStringAsFixed(2),
-                    style: EstiloTextoBranco.text16),
-              ],
+            child: SizedBox(
+              width: Sized(context).width/2,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Images().getEscudoWidget(Club(index: listPlayers[i].clubID).name,20,20),
+                  Container(
+                    color: colorOverallBackground(listPlayers[i].overall),
+                    child: Text(listPlayers[i].overall.toString(),
+                        style: EstiloTextoPreto.text16),
+                  ),
+                  Text(" "+Jogador(index: listPlayers[i].playerID).name,
+                      style: EstiloTextoBranco.text12),
+                  const Spacer(),
+                  Text('\$'+listPlayers[i].maxPrice.toStringAsFixed(2),
+                      style: EstiloTextoBranco.text16),
+                ],
+              ),
             ),
           ),
 

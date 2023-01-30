@@ -73,6 +73,8 @@ class MatchResultInternational{
     if(competitionName == LeagueOfficialNames().copaSulAmericana){
       return defaultSulAmericanaClubs[position];
     }
+    //OUTRAS COMPETIÇÕES
+    return "Arsenal";
   }
 
 }

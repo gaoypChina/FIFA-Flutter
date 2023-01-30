@@ -79,7 +79,7 @@ class SaveInfosPlayers extends SaveAbstract{
 
     if(list.length>1000){
 
-      resetPlayersData();
+      resetOnLoadData();
       resetData();
 
       for (PlayerSaveData row in list){

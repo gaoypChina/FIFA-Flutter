@@ -105,16 +105,6 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
                                 const SizedBox(height: 8),
                                 rowStatistics(),
                                 const SizedBox(height: 8),
-
-                                Column(
-                                  children: const [
-                                    Text('Premiação',style: EstiloTextoBranco.negrito18),
-                                    Text('Campeão: \$27.7',style: EstiloTextoBranco.text16),
-                                    Text('Vitória: \$3.0',style: EstiloTextoBranco.text16),
-                                    Text('Empate: \$1.0',style: EstiloTextoBranco.text16),
-                                    Text('Derrota: \$0.75',style: EstiloTextoBranco.text16),
-                                  ],
-                                ),
                               ],
                             ),
                           ),

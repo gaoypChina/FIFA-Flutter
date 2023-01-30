@@ -1,5 +1,6 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/functions/fim_campeonato_local.dart';
+import 'package:fifa/classes/functions/international_league_manipulation.dart';
 import 'package:fifa/classes/historic/historic_my_tranfers.dart';
 import 'package:fifa/classes/historic_positions_this_year.dart';
 import 'package:fifa/classes/international_league.dart';
@@ -123,8 +124,12 @@ class Simulate{
 
   }
   internationalMatchsGroups(bool simulMyMatch) {
-    internationalMatchsGroupsLeague(simulMyMatch, LeagueOfficialNames().championsLeague);
-    internationalMatchsGroupsLeague(simulMyMatch, LeagueOfficialNames().libertadores);
+    for(int i=0; i<InternationalLeagueManipulation().funcNInternationalLeagues();i++){
+      internationalMatchsGroupsLeague(
+          simulMyMatch,
+          InternationalLeagueManipulation().funcGetInternationalLeagueNameFromIndex(internationalLeagueIndex: i)
+      );
+    }
   }
 
   internationalMatchsGroupsLeague(bool simulMyMatch, String internationalName){

@@ -317,7 +317,9 @@ class _ClubGraphicsState extends State<ClubGraphics> {
     List<int> positions = HistoricPositionsThisYear().getGlobal(widget.club.name);
     List<GraphPointInt> lista = [];
     for(int week=1;week<semana;week++){
+      if(testInitRodada==1){
         lista.add(GraphPointInt(week, positions[week-1]));
+      }
     }
 
     return lista.isNotEmpty ? Container(

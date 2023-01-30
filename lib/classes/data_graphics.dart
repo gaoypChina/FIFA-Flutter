@@ -258,7 +258,7 @@ class DataGraphics{
     }
     //Compensa anos sem data
     if(data.length<60){
-      int yearsWithoutData = 60- data.length ;
+      int yearsWithoutData = 70- data.length ;
       pointsNational += 25 * yearsWithoutData;
     }
 

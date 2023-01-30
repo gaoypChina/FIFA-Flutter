@@ -6,16 +6,19 @@ import 'package:fifa/global_variables.dart';
 class Grade{
 
   addMyGameRandomScore(int jogadorID){
-    double randomNum = (Random().nextInt(6)-2)/100;
+    double randomNum = (Random().nextInt(7)-2)/100; //[-0.02,0.05]
     add(jogadorID, randomNum);
   }
 
-  notMy(Club clubClass,int jogPOS){
-    int jogadorID = clubClass.escalacao[jogPOS];
-    double randomNum = 5+Random().nextInt(40)/10;
-    globalJogadoresGrades[jogadorID] = randomNum;
-  }
 
+  notMy(Club clubClass,int jogPOS){
+    int playerID = clubClass.escalacao[jogPOS];
+    double randomNum = 5+Random().nextInt(40)/10;
+    globalJogadoresGrades[playerID] = randomNum;
+    if(globalJogadoresMatchGrade[playerID]>10){
+      globalJogadoresMatchGrade[playerID] = 10;
+    }
+  }
 
 
   int whichPlayer(Club clubClass){
@@ -36,10 +39,10 @@ class Grade{
   }
 
   goalMyMatch(int jogadorID){
-    add(jogadorID, 1.3);
+    add(jogadorID, 1.2);
   }
   assistMyMatch(int jogadorID){
-    add(jogadorID, 0.8);
+    add(jogadorID, 0.75);
   }
   redCardMyMatch(int jogadorID){
     add(jogadorID, -1.5);
@@ -51,6 +54,9 @@ class Grade{
   add(int playerID,double value){
     if(playerID>=0) {
       globalJogadoresMatchGrade[playerID] += value;
+      if(globalJogadoresMatchGrade[playerID]>10){
+        globalJogadoresMatchGrade[playerID] = 10;
+      }
     }
   }
 

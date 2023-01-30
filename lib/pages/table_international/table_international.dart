@@ -1,6 +1,7 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/international.dart';
+import 'package:fifa/classes/international_league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
@@ -44,32 +45,16 @@ class _TableInternationalState extends State<TableInternational> {
   selectTeams(){
     clubsID = [];
     //ANO INICIAL, COM TIMES DEMO
-      if(semana<semanasJogosInternacionais[0] && ano==anoInicial){
-        for(int i=0; i<32; i++) {
-          if(leagueInternational == LeagueOfficialNames().championsLeague) {
-            clubsID.add(clubsAllNameList.indexOf(defaultChampionsLeagueClubs[i]));
-          }
-          if(leagueInternational == LeagueOfficialNames().libertadores){
-            clubsID.add(clubsAllNameList.indexOf(defaultLibertadoresClubs[i]));
-          }
-          if(leagueInternational == LeagueOfficialNames().europaLeagueOficial){
-            clubsID.add(clubsAllNameList.indexOf(defaultEuropaLeagueClubs[i]));
-          }
-          if(leagueInternational == LeagueOfficialNames().copaSulAmericana){
-            clubsID.add(clubsAllNameList.indexOf(defaultSulAmericanaClubs[i]));
-          }
-        }
+      if(semana<semanasJogosInternacionais[0] && ano==anoInicial || semanasJogosInternacionais[0]==1){
+        clubsID = InternationalLeague().getClubs(leagueInternational);
       //SE JÁ TIVER OS CLUBES DO CAMPEONATO CONFIGURADO
       }else{
         clubsID = International(leagueInternational).getClassification();
         if(leagueInternational == LeagueOfficialNames().europaLeagueOficial ||
             leagueInternational == LeagueOfficialNames().copaSulAmericana){
-          clubsID = globalInternational[leagueInternational]['clubsID'];
+          clubsID =  InternationalLeague().getClubs(leagueInternational);
         }
       }
-
-
-
 
   }
 ////////////////////////////////////////////////////////////////////////////
@@ -77,6 +62,7 @@ class _TableInternationalState extends State<TableInternational> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
 
         body:  Stack(

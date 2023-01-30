@@ -302,7 +302,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
             SizedBox(width:100,child: Text(player.name,style: EstiloTextoBranco.text12)),
             const SizedBox(width: 4),
             Container(
-                height:18,width:25,color:colorAgeBackground(match.grade.floorToDouble()),
+                height:18,width:25,color:colorGradeBackground(match.grade.floorToDouble()),
                 child: Center(child: Text(match.grade.toStringAsFixed(1),style: EstiloTextoPreto.text12))),
         ],
       ),
@@ -342,6 +342,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
       classificationClubsIndexes = Classification(leagueIndex: myClass.getLeagueID()).classificationClubsIndexes;
     }else{
       List classificationClubsIndexesAll = International(myClass.getMyInternationalLeague()).getClassification();
+      myClass = My();
       int index = myClass.getMyClubInternationalGroup()*4;
       classificationClubsIndexes = [
         classificationClubsIndexesAll[index],

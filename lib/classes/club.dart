@@ -2,6 +2,7 @@ import 'package:fifa/classes/geral/esquemas_taticos.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/countries/countries_continents.dart';
 import 'package:fifa/classes/functions/international_league_manipulation.dart';
+import 'package:fifa/classes/playing_international.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
@@ -34,7 +35,7 @@ class Club{
   late String stateName;
   late String estadualLeagueName;
   late String internationalLeagueName;
-  late int internationalLeagueIndex;
+  late String internationalLeagueNamePlaying;
   late int internationalPoints;
   late int internationalGM;
   late int internationalGS;
@@ -62,7 +63,7 @@ class Club{
     leagueGS = globalClubsLeagueGS.isNotEmpty ? globalClubsLeagueGS[index] : 0;
 
     internationalLeagueName = InternationalLeagueManipulation().funcGetInternationalLeagueName(indexLeague: leagueID);
-    internationalLeagueIndex = InternationalLeagueManipulation().funcGetInternationalLeagueIndex(internationalLeagueName: internationalLeagueName);
+    internationalLeagueNamePlaying = getPlayingInternationalName(index, internationalLeagueName);
     try{
       internationalPoints = globalClubsInternationalPoints[index];
       internationalGM = globalClubsInternationalGM[index];

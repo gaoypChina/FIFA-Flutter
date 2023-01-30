@@ -2,16 +2,16 @@ import 'dart:math';
 
 import 'package:fifa/classes/international_league.dart';
 import 'package:fifa/classes/league.dart';
+import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/values/league_names.dart';
 
 class FimDoCampeonatoLocal{
 
   setAll032InternationalTeams(){
 
-    InternationalLeague().reset(LeagueOfficialNames().championsLeague);
-    InternationalLeague().resetFilled(LeagueOfficialNames().libertadores);
-    InternationalLeague().reset(LeagueOfficialNames().europaLeagueOficial);
-    InternationalLeague().reset(LeagueOfficialNames().copaSulAmericana);
+    customToast('Defining Classified Teams to International Leagues');
+
+    InternationalLeague().resetAll();
 
 
     for(int i=0; i<leaguesListRealIndex.length; i++){
@@ -53,23 +53,23 @@ class FimDoCampeonatoLocal{
     LeagueOfficialNames leagueName = LeagueOfficialNames();
     //Redistribute Cabeça de chaves
     //0-ING1 1-INGL2(1) 2-ESP1(4) 3-ESP2(5) 4-ITA1(8) 5-ITA2(9) 6-ALE1(12) 7-FRA1(16)
-    InternationalLeague().sortClubs(leagueName: leagueName.championsLeague, position1: 4, position2: 1);
-    InternationalLeague().sortClubs(leagueName: leagueName.championsLeague, position1: 28, position2: 2);
-    InternationalLeague().sortClubs(leagueName: leagueName.championsLeague, position1: 8, position2: 4);
-    InternationalLeague().sortClubs(leagueName: leagueName.championsLeague, position1: 12, position2: 5);
-    InternationalLeague().sortClubs(leagueName: leagueName.championsLeague, position1: 16, position2: 8);
-    InternationalLeague().sortClubs(leagueName: leagueName.championsLeague, position1: 20, position2: 9);
-    InternationalLeague().sortClubs(leagueName: leagueName.championsLeague, position1: 24, position2: 12);
-    InternationalLeague().sortClubs(leagueName: leagueName.championsLeague, position1: 24, position2: 16);
+    InternationalLeague().sortClubs(internationalName: leagueName.championsLeague, position1: 4, position2: 1);
+    InternationalLeague().sortClubs(internationalName: leagueName.championsLeague, position1: 28, position2: 2);
+    InternationalLeague().sortClubs(internationalName: leagueName.championsLeague, position1: 8, position2: 4);
+    InternationalLeague().sortClubs(internationalName: leagueName.championsLeague, position1: 12, position2: 5);
+    InternationalLeague().sortClubs(internationalName: leagueName.championsLeague, position1: 16, position2: 8);
+    InternationalLeague().sortClubs(internationalName: leagueName.championsLeague, position1: 20, position2: 9);
+    InternationalLeague().sortClubs(internationalName: leagueName.championsLeague, position1: 24, position2: 12);
+    InternationalLeague().sortClubs(internationalName: leagueName.championsLeague, position1: 24, position2: 16);
 
     //8-FRA4(15) 9-ESP4(7) 10-ALE4(15) 11-ITA3(10) 12-FRA3(18) 13-ING4(3) 14-ITA4(11) 15-ALE3(14)
-    InternationalLeague().sortClubs(leagueName: leagueName.championsLeague, position1: 5, position2: 7);
-    InternationalLeague().sortClubs(leagueName: leagueName.championsLeague, position1: 9, position2: 15);
-    InternationalLeague().sortClubs(leagueName: leagueName.championsLeague, position1: 13, position2: 10);
-    InternationalLeague().sortClubs(leagueName: leagueName.championsLeague, position1: 17, position2: 18);
-    InternationalLeague().sortClubs(leagueName: leagueName.championsLeague, position1: 21, position2: 3);
-    InternationalLeague().sortClubs(leagueName: leagueName.championsLeague, position1: 25, position2: 11);
-    InternationalLeague().sortClubs(leagueName: leagueName.championsLeague, position1: 29, position2: 14);
+    InternationalLeague().sortClubs(internationalName: leagueName.championsLeague, position1: 5, position2: 7);
+    InternationalLeague().sortClubs(internationalName: leagueName.championsLeague, position1: 9, position2: 15);
+    InternationalLeague().sortClubs(internationalName: leagueName.championsLeague, position1: 13, position2: 10);
+    InternationalLeague().sortClubs(internationalName: leagueName.championsLeague, position1: 17, position2: 18);
+    InternationalLeague().sortClubs(internationalName: leagueName.championsLeague, position1: 21, position2: 3);
+    InternationalLeague().sortClubs(internationalName: leagueName.championsLeague, position1: 25, position2: 11);
+    InternationalLeague().sortClubs(internationalName: leagueName.championsLeague, position1: 29, position2: 14);
 
 
     //Organiza o resto aleatoriamente
@@ -77,7 +77,7 @@ class FimDoCampeonatoLocal{
       for(int i=2; i<4; i++){
         int random = Random().nextInt(32);
         if(random%4 ==2 || random%4==3){//só muda se for da posição 3 e 4
-          InternationalLeague().sortClubs(leagueName: leagueName.championsLeague, position1: 4*group+i, position2: random);
+          InternationalLeague().sortClubs(internationalName: leagueName.championsLeague, position1: 4*group+i, position2: random);
           }
       }
     }
@@ -85,6 +85,8 @@ class FimDoCampeonatoLocal{
   }
 
   setTeamsLibertadores(League leagueClass, List clubIndexes){
+
+    InternationalLeague().reset32Zeros(LeagueOfficialNames().libertadores);
 
     if(leagueClass.name == LeagueOfficialNames().brasil1){
       for(int i=0; i<8; i++){
@@ -171,7 +173,7 @@ class FimDoCampeonatoLocal{
     for(int group=0; group<8; group++){
       for(int i=0; i<4; i++){
         int random = Random().nextInt(32);
-        InternationalLeague().sortClubs(leagueName: internationalName, position1: 4*group+i, position2: random);
+        InternationalLeague().sortClubs(internationalName: internationalName, position1: 4*group+i, position2: random);
       }
     }
   }

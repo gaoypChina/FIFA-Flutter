@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Color colorAgeBackground(double grade){
+Color colorGradeBackground(double grade){
   Color colorBackground = Colors.green;
   if(grade < 5.0){colorBackground = Colors.red;}
   else if(grade < 6.0){colorBackground = Colors.red.shade400;}
