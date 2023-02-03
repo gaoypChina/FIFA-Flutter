@@ -52,6 +52,7 @@ class ClubName{
   String colchester = "Colchester United";
   String cheltenham = "Cheltenham";
   String charlton = "Charlton Athletic";
+  String chesterfield = "Chesterfield";
   String coventry = "Coventry";
   String crewe = "Crewe Alexandra";
   String doncaster = "Doncaster Rovers";
@@ -148,6 +149,7 @@ class ClubName{
   String cosenza = "Cosenza";
   String crotone = "Crotone";
   String empoli  = "Empoli";
+  String fanfulla  = "Fanfulla";
   String fermana  = "Fermana";
   String fidelisandria  = "Fidelis Andria";
   String foggia  = "Foggia";
@@ -176,15 +178,18 @@ class ClubName{
   String novara = "Novara";
   String pisa    = "Pisa";
   String padova  = "Padova";
+  String pavia    = "Pavia";
   String palermo = "Palermo";
   String perugia = "Perugia";
   String pescara = "Pescara";
   String piacenza = "Piacenza";
+  String piombino    = "Piombino";
   String pistoiese = "Pistoiese";
   String pordenone = "Pordenone";
   String potenza = "Potenza";
   String prato = "Prato";
   String propatria = "Pro Patria";
+  String prosesto = "Pro Sesto";
   String provercelli = "Pro Vercelli";
   String ravenna = "Ravenna";
   String reggina = "Reggina";
@@ -194,7 +199,9 @@ class ClubName{
   String sambe  = "Sambenedettese";
   String savoia  = "Savoia";
   String savona  = "Savona";
+  String seregno  = "Seregno";
   String siena  = "Siena";
+  String siracusa  = "Siracusa";
   String sorrento  = "Sorrento";
   String spal = "SPAL";
   String spezia  = "Spezia";
@@ -1579,19 +1586,40 @@ class ClubName{
   String turnovo = "Turnovo";
   String vardar = "FK Vardar";
   //MALTA
-  String sliema = "Sliema Wanderers";//MALTA
-  String hiberniansMALTA = "Hibernians-Malta";//MALTA
-  String valletta = "Valletta";//MALTA
-  String floriana = "Floriana";//MALTA
+  String balzan = "Balzan";
+  String birkirkara = "Birkirkara";
+  String floriana = "Floriana";
+  String gzira = "Gzira";
+  String hamrun = "Ħamrun Spartans";
+  String hiberniansMALTA = "Hibernians-Malta";
+  String marsaxlokk = "Marsaxlokk";
+  String mosta = "Mosta";
+  String rabatajax = "Rabat Ajax";
+  String sirens = "Sirens";
+  String sliema = "Sliema Wanderers";
+  String valletta = "Valletta";
   //LUXEMBURGO
+  String arisbennevoie = "Aris Bonnevoie";
+  String avenir = "Avenir Beggen";
+  String differdange = "Red Boys Differdange";
   String dudelange = "F91 Dudelange";//LUXEMBURGO
+  String etzella = "Etzella Ettelbruck";
+  String folaeesch = "Fola Esch";
+  String grevenmacher = "Grevenmacher";
   String jeunesseesch = "Jeunesse Esch";//LUXEMBURGO
-  String folaeesch = "Fola Esch";//LUXEMBURGO
+  String niederkorn = "Progrès Niederkorn";
+  String rumelange = "Rumelange";
+  String schifflange = "National Schifflange";
+  String sporalux = "Spora Luxembourg";
+  String stadedud = "Stade Dudelange";
+  String unionlux = "Union Luxembourg";
   //LIECHSTEIN
-  String balzers = "FC Balzers";//LIECHSTEIN
-  String rugell = "FC Rugell";//LIECHSTEIN
-  String eschenMauren = "Eschen-Mauren";//LIECHSTEIN
-  String vaduz = "Vaduz";//LIECHSTEIN
+  String balzers = "FC Balzers";
+  String rugell = "FC Rugell";
+  String schaan = "Schaan";
+  String triesen = "Triesen";
+  String eschenMauren = "Eschen-Mauren";
+  String vaduz = "Vaduz";
   //SAN MARINO
   String cosmos = "Cosmos";
   String domagnano = "Domagnano";
@@ -1614,7 +1642,15 @@ class ClubName{
   String stJosephs = "St Joseph's";
   String stTheresas = "St Theresa's";
   //ANDORRA
-  String santacoloma = "Santa Coloma";//ANDORRA
+  String constellacio = "Constellació Esportiva";
+  String encamp = "Encamp";
+  String engordany = "Engordany";
+  String escaldes = "Inter Club d'Escaldes";
+  String fcrangers = "FC Rangers";
+  String lusitanos = "Lusitanos";
+  String principat = "Principat";
+  String santjulia = "Sant Julià";
+  String santacoloma = "Santa Coloma";
 
 
   //////////////////////////////////////////////////////////////////////////////
@@ -3543,8 +3579,16 @@ class ClubName{
   String realBamako = "Real Bamako";
   String stadeMalien = "Stade Malien";
   //MAURITANIA
+  String concorde = "Concorde";
+  String gardenationale = "Garde Nationale";
+  String kedia = "Kedia";
+  String ksar = "Ksar";
+  String mauritel = "Mauritel";
+  String nasr = "Nasr";
   String nouadhibou = "Nouadhibou";
+  String snim = "Snim";
   String tevraghZeina = "Tevragh-Zeina";
+  String trarza = "Trarza";
   //MOZAMBIQUE
   String blackbulls = "Black Bulls";
   String costasol = "Costa do Sol";
