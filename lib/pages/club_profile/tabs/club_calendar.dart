@@ -2,7 +2,7 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/page_controller/club_profile/club_calendar_controller.dart';
+import 'package:fifa/pages/club_profile/controller/club_calendar_controller.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';

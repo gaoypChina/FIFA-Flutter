@@ -16,7 +16,7 @@ import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/functions/international_league_manipulation.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/page_controller/coach/coach_ranking_controller.dart';
+import 'package:fifa/pages/coach/controller/coach_ranking_controller.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/values/league_names.dart';
 

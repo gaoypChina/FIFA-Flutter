@@ -4,13 +4,17 @@ import 'package:fifa/classes/international_league.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/league_names.dart';
 
+bool isPlayingInternationalFunc(int clubID, String internationalLeagueName){
+  return InternationalLeague().checkContains(clubID, internationalLeagueName);
+}
+
 String getPlayingInternationalName(int clubID, String originalIntName){
   String val = originalIntName;
   //FASE DE GRUPOS
   if(Semana(semana).isJogoGruposInternacional){
     //CONFERE SE JOGA EUROPA LEAGUE, LIBERTADORES, CHAMPIONS...
     for (var internationalLeagueName in internationalLeagueNames) {
-      val = InternationalLeague().checkContains(clubID, internationalLeagueName, val);
+      val = InternationalLeague().checkContainsStr(clubID, internationalLeagueName, val);
     }
   }
   //MATA-MATA

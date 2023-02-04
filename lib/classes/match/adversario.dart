@@ -24,7 +24,7 @@ class Adversario{
       getLeagueAdversario();
     }
     //ADVERSARIO FASE DE GRUPOS CHAMPIONS OU LIBERTADORES
-    else if (myClass.playingInternational.isNotEmpty && Semana(semana).isJogoGruposInternacional) {
+    else if (myClass.isPlayingInternational && Semana(semana).isJogoGruposInternacional) {
       getInternationalAdversario(semana);
     }
     //FASE DE MATA-MATA

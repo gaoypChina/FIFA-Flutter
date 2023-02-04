@@ -1,3 +1,4 @@
+import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/league.dart';
 
 import '../global_variables.dart';
@@ -9,7 +10,7 @@ class Chaves{
   //define os adversarios dos pontos corridos
   List obterChave(int semana, int leagueIndex){
     List chave = [];
-    if(semanasJogosNacionais.contains(semana)){
+    if(Semana(semana).isJogoCampeonatoNacional){
       //verify is jogo volta
       int calculateWeek = semana;
       if(League(index: leagueIndex).nClubs==2){
@@ -43,10 +44,10 @@ class Chaves{
         chave = Chaves().obterChave20(calculateWeek);
       }
     }
-    else if(semanasJogosInternacionais.contains(semana)){
+    else if(Semana(semana).isJogoCampeonatoInternacional){
       chave = Chaves().obterChaveGrupoInternacional(semana);
     }
-    else if(semanasJogosCopas.contains(semana)){
+    else if(Semana(semana).isJogoCopa){
       chave = [];
     }
 

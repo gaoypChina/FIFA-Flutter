@@ -43,13 +43,18 @@ List<int> semanaOitavas = [semanasJogosInternacionais.first+6,semanasJogosIntern
     semanaQuartas = [semanasJogosInternacionais.first+8,semanasJogosInternacionais.first+9],
     semanaSemi = [semanasJogosInternacionais.first+10,semanasJogosInternacionais.first+11],
     semanaFinal = [semanasJogosInternacionais.first+12],
-    semanaMundial = [semanasJogosInternacionais.first+13];
-List<int> semanasJogosInternacionais = [for(var i=semanasJogosNacionais.last+1; i<=semanasJogosNacionais.last+15; i++) i];
+    semanaMundial = [semanasJogosInternacionais.length+semanasJogosNacionais.length+1];
+List<int> semanasJogosInternacionais = [for(var i=semanasJogosNacionais.last+1; i<=semanasJogosNacionais.last+13; i++) i];
+//List<int> semanasJogosInternacionais = [for(var i=1; i<=13; i++) i];
+
 List semanasGruposInternacionais = semanasJogosInternacionais.take(6).toList();
 List<int> semanasMataMataInternacionais = semanaOitavas+semanaQuartas+semanaSemi+semanaFinal;
+
 List<int> semanasJogosNacionais = [for(var i=1; i<=globalNMaxRodadasNacional; i++) i];
+//List<int> semanasJogosNacionais = [for(var i=semanasJogosInternacionais.last+1; i<=semanasJogosInternacionais.last+globalNMaxRodadasNacional; i++) i];
+
 List semanasJogosCopas = [];
-int globalUltimaSemana = semanasJogosInternacionais.last;
+int globalUltimaSemana = semanaMundial.last+1;
 
 //HISTORIC
 Map globalHistoricLeagueGoalsAll = {};

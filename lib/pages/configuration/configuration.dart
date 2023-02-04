@@ -2,7 +2,7 @@ import 'package:fifa/classes/geral/dificuldade.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/page_controller/configuration/configuration_state.dart';
+import 'package:fifa/pages/configuration/controller/configuration_state.dart';
 import 'package:fifa/pages/configuration/leagues_configuration.dart';
 import 'package:fifa/widgets/popup/popup_change_clubs.dart';
 import 'package:fifa/widgets/popup/popup_initial_money.dart';

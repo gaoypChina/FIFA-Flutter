@@ -4,15 +4,15 @@ import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/classes/functions/func_number_clubs_total.dart';
-import 'package:fifa/page_controller/ranking_clubs_control.dart';
+import 'package:fifa/pages/ranking_clubs/ranking_clubs_control.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
-import '../widgets/loader.dart';
-import 'club_profile/club_profile.dart';
+import '../../widgets/loader.dart';
+import '../club_profile/club_profile.dart';
 
 class RankingClubs extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS

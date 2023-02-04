@@ -6,16 +6,17 @@ import '../values/league_clubs.dart';
 
 class InternationalLeague{
 
+  LeagueOfficialNames leagueOfficialNames = LeagueOfficialNames();
   String clubsIDkey = 'clubsID';
 
   ////////////////////////////////////////////////////////
   // RESET
   ///////////////////////////////////////////////////////
   resetAll(){
-    reset(LeagueOfficialNames().championsLeague);
-    reset(LeagueOfficialNames().libertadores);
-    reset(LeagueOfficialNames().europaLeagueOficial);
-    reset(LeagueOfficialNames().copaSulAmericana);
+    reset(leagueOfficialNames.championsLeague);
+    reset(leagueOfficialNames.libertadores);
+    reset(leagueOfficialNames.europaLeagueOficial);
+    reset(leagueOfficialNames.copaSulAmericana);
   }
   reset(String internationalName){
     globalInternational[internationalName] = {};
@@ -37,16 +38,16 @@ class InternationalLeague{
   }
   defineDefaultTeams(String leagueInternational){
       for(int i=0; i<32; i++) {
-        if(leagueInternational == LeagueOfficialNames().championsLeague) {
+        if(leagueInternational == leagueOfficialNames.championsLeague) {
           setClub(leagueInternational, clubsAllNameList.indexOf(defaultChampionsLeagueClubs[i]), i);
         }
-        if(leagueInternational == LeagueOfficialNames().libertadores){
+        if(leagueInternational == leagueOfficialNames.libertadores){
           setClub(leagueInternational, clubsAllNameList.indexOf(defaultLibertadoresClubs[i]), i);
         }
-        if(leagueInternational == LeagueOfficialNames().europaLeagueOficial){
+        if(leagueInternational == leagueOfficialNames.europaLeagueOficial){
           setClub(leagueInternational, clubsAllNameList.indexOf(defaultEuropaLeagueClubs[i]), i);
         }
-        if(leagueInternational == LeagueOfficialNames().copaSulAmericana){
+        if(leagueInternational == leagueOfficialNames.copaSulAmericana){
           setClub(leagueInternational, clubsAllNameList.indexOf(defaultSulAmericanaClubs[i]), i);
         }
       }
@@ -82,11 +83,19 @@ class InternationalLeague{
     return clubs.indexOf(clubID);
   }
 
-  String checkContains(int clubID, String internationalName, String val){
-    if(globalInternational[internationalName][clubsIDkey].contains(clubID)){
+  String checkContainsStr(int clubID, String internationalName, String val){
+    if(checkContains(clubID, internationalName)){
       return internationalName;
     }else{
       return val;
+    }
+  }
+
+  bool checkContains(int clubID, String internationalName){
+    if(globalInternational[internationalName][clubsIDkey].contains(clubID)){
+      return true;
+    }else{
+      return false;
     }
   }
 

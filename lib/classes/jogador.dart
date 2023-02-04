@@ -18,6 +18,7 @@ class Jogador{
   late double price;
   late double health;
   late String moral;
+  late double trainLevel;
 
   late int matchsLeague;
   late int goalsLeague;
@@ -71,6 +72,7 @@ class Jogador{
     moral = globalJogadoresMoral[index];
     grade = globalJogadoresGrades[index] ?? 0;
     gradeAvg = grade/matchsYear;
+    trainLevel = 0;
   }
 
   printData(){

@@ -67,7 +67,7 @@ class Simulate{
   updateWeek() async{
     semana++;
     //Atualiza a rodada do campeonato
-    if(semanasJogosNacionais.contains(semana)) {
+    if(Semana(semana).isJogoCampeonatoNacional) {
       rodada = semanasJogosNacionais.indexOf(semana)+1;
     }
   }
@@ -103,12 +103,12 @@ class Simulate{
         //Se a liga estiver em uma semana que ainda tem jogo Ex: Rodada 15 com 10 times nem joga
         //16 times -> 15 rodadas [0,14]
         if (semana <= semanasJogosNacionais[leagueSelected.nClubs - 2]) {
-          List chave = Chaves().obterChave(rodada, leagueIndex);
+          List chave = Chaves().obterChave(semana, leagueIndex);
           for (int nConfronto = 0; nConfronto < nClubs / 2; nConfronto++) {
             int chaveClub1 = chave[nConfronto * 2];
             int indexTeam1 = leagueSelected.getClubRealID(chaveClub1);
             int chaveClub2 = Chaves().chaveIndexAdvCampeonato(
-                rodada, leagueIndex, chaveClub1)[0];
+                semana, leagueIndex, chaveClub1)[0];
             int indexTeam2 = leagueSelected.getClubRealID(chaveClub2);
 
             //Se não for meu jogo simula ou se for simulação

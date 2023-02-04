@@ -4,6 +4,7 @@ import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/images.dart';
+import 'package:fifa/values/league_names.dart';
 import 'package:fifa/values/league_trophy_image.dart';
 import 'package:fifa/widgets/kits_crests/crest.dart';
 import 'package:fifa/widgets/kits_crests/uniforme.dart';
@@ -92,6 +93,9 @@ class Images{
   String getMyInternationalLeagueLogo(){
     My myClass = My();
     return FIFAImages().campeonatoLogo(myClass.getMyInternationalLeague());
+  }
+  String getMundialLogo(){
+    return FIFAImages().campeonatoLogo(LeagueOfficialNames().mundial);
   }
 
   Widget getWallpaper(){

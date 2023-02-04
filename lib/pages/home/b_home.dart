@@ -39,6 +39,7 @@ class _HomePageState extends State<HomePage> {
   late int indexLeague;
   int indexJog = 0;
 
+  bool loaded = false;
 
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
@@ -69,6 +70,7 @@ class _HomePageState extends State<HomePage> {
 
     globalNumberClubsTotal = funcNumberClubsTotal(); //get number of total clubs
 
+    loaded = true;
     setState(() {});
   }
 ////////////////////////////////////////////////////////////////////////////
@@ -82,114 +84,117 @@ class _HomePageState extends State<HomePage> {
     leagueName = leagueClass.name;
     clubID = leagueClass.getClubRealID(posicao);
     nLeagueTeams = leagueClass.nClubs;
-    club = Club(index: clubID);
+    if(loaded) {
+      club = Club(index: clubID);
+    }
 
-    return Scaffold(
-        body:  Container(
-          height: Sized(context).height,
-          decoration: Images().getWallpaperContainerDecoration(),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
+      return Scaffold(
+          body:  Container(
+            height: Sized(context).height,
+            decoration: Images().getWallpaperContainerDecoration(),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
 
-                const SizedBox(height: 70),
+                  const SizedBox(height: 70),
 
-                title(),
+                  title(),
 
-                const SizedBox(height: 10),
+                  const SizedBox(height: 10),
 
-                ////////////
-                //PAIS
-                ////////////
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
+                  ////////////
+                  //PAIS
+                  ////////////
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
 
-                    Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: leftButton(onTap: (){
-                            if(posicaoPais>0) {
-                              posicaoPais --;
-                              posicao = 0;
+                      Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: leftButton(onTap: (){
+                              if(posicaoPais>0) {
+                                posicaoPais --;
+                                posicao = 0;
+                              }else{
+                                posicaoPais = leaguesListRealIndex.length-1;
+                                posicao = 0;
+                              }
+                            }),
+                          ),
+
+                          rightButton(
+                              onTap: (){
+                                if(posicaoPais< leaguesListRealIndex.length-1) {
+                                  posicaoPais ++;
+                                  posicao = 0;
+                                }else{
+                                  posicaoPais = 0;
+                                  posicao = 0;
+                                }
+                              }),
+                        ],
+                      ),
+
+
+                      leagueLogoAndName(),
+                    ],
+                  ),
+
+                  const SizedBox(height: 40),
+                  /////////////////////////////////////////
+                  //TIME
+                  /////////////////////////////////////////
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+
+                      Column(
+                        children: [
+
+                          Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: leftButton(onTap: (){
+                              if(posicao>0) {
+                                posicao --;
+                              }else{
+                                posicao = nLeagueTeams-1;
+                              }
+                            }),
+                          ),
+
+                          rightButton(onTap: (){
+                            if(posicao<nLeagueTeams-1) {
+                              posicao ++;
                             }else{
-                              posicaoPais = leaguesListRealIndex.length-1;
                               posicao = 0;
                             }
                           }),
-                        ),
 
-                        rightButton(
-                            onTap: (){
-                          if(posicaoPais< leaguesListRealIndex.length-1) {
-                            posicaoPais ++;
-                            posicao = 0;
-                          }else{
-                            posicaoPais = 0;
-                            posicao = 0;
-                          }
-                        }),
-                      ],
-                    ),
+                        ],
+                      ),
+
+                      //ESCUDO E UNIFORME
+                      loaded ? wHomeClubLogoAndKitStack(club) : Container(),
+
+                    ],
+                  ),
 
 
-                    leagueLogoAndName(),
-                  ],
-                ),
+                  const SizedBox(height: 30),
+                  continueButton(),
+                  const SizedBox(height: 28),
 
-                const SizedBox(height: 40),
-                /////////////////////////////////////////
-                //TIME
-                /////////////////////////////////////////
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-
-                    Column(
-                      children: [
-
-                        Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: leftButton(onTap: (){
-                            if(posicao>0) {
-                              posicao --;
-                            }else{
-                              posicao = nLeagueTeams-1;
-                            }
-                          }),
-                        ),
-
-                        rightButton(onTap: (){
-                          if(posicao<nLeagueTeams-1) {
-                            posicao ++;
-                          }else{
-                            posicao = 0;
-                          }
-                        }),
-
-                      ],
-                    ),
-
-                        //ESCUDO E UNIFORME
-                    wHomeClubLogoAndKitStack(club),
-
-                  ],
-                ),
+                  wHomeBottomRowButtons(context, clubID),
 
 
-                const SizedBox(height: 30),
-                continueButton(),
-                const SizedBox(height: 28),
-
-                wHomeBottomRowButtons(context, clubID),
-
-
-              ],
+                ],
+              ),
             ),
-          ),
-        )
-    );
+          )
+      );
+
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //

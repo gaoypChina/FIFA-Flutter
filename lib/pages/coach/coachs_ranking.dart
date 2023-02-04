@@ -1,5 +1,5 @@
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/page_controller/coach/coach_ranking_controller.dart';
+import 'package:fifa/pages/coach/controller/coach_ranking_controller.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/back_button.dart';

@@ -21,6 +21,7 @@ class My{
   late String esquemaTatico;
   late List jogadores;
   late String internationalLeagueName;
+  late bool isPlayingInternational;
   late String playingInternational;
 
   My(){
@@ -33,7 +34,8 @@ class My{
     money = globalMyMoney;
     jogadores = globalMyJogadores;
     internationalLeagueName = InternationalLeagueManipulation().funcGetInternationalLeagueName(indexLeague: leagueID);
-    playingInternational = getPlayingInternational();
+    playingInternational = getPlayingInternationalName(clubID, internationalLeagueName);
+    isPlayingInternational = isPlayingInternationalFunc(clubID, playingInternational);
     scoreGame = globalCoachPoints;
   }
 
@@ -102,9 +104,7 @@ class My{
     expect = ovr.length;
     return expect;
   }
-  String getPlayingInternational(){
-    return getPlayingInternationalName(clubID, internationalLeagueName);
-  }
+
   int getMyClubInternationalPosition032(){
     int position = InternationalLeague().searchClub(internationalLeagueName, clubID);
     return position;

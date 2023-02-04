@@ -1,4 +1,4 @@
-import 'package:fifa/page_controller/configuration/configuration_state.dart';
+import 'package:fifa/pages/configuration/controller/configuration_state.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:flutter/material.dart';

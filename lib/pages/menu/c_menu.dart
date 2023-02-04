@@ -7,7 +7,7 @@ import 'package:fifa/classes/match/adversario.dart';
 import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/simulate/simulate_functions.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/page_controller/result_game.dart';
+import 'package:fifa/classes/result_game.dart';
 import 'package:fifa/pages/coach/coach_menu.dart';
 import 'package:fifa/pages/historic/historic_menu.dart';
 import 'package:fifa/pages/menu/widgets/calendar_icon.dart';
@@ -16,12 +16,13 @@ import 'package:fifa/pages/menu/widgets/last5_matchs.dart';
 import 'package:fifa/pages/menu/widgets/menu_button.dart';
 import 'package:fifa/pages/menu/widgets/menu_classification.dart';
 import 'package:fifa/pages/menu/widgets/stadium_buttons.dart';
-import 'package:fifa/pages/ranking_clubs.dart';
+import 'package:fifa/pages/menu/widgets/test_button.dart';
+import 'package:fifa/pages/ranking_clubs/ranking_clubs.dart';
 import 'package:fifa/pages/simulacao/end_year.dart';
 import 'package:fifa/pages/simulacao/not_play.dart';
 import 'package:fifa/pages/table/table_nacional.dart';
 import 'package:fifa/pages/table_international/table_international.dart';
-import 'package:fifa/pages/transfers.dart';
+import 'package:fifa/pages/transfers/transfers.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/popup/popup_expectativa.dart';
@@ -231,7 +232,12 @@ class _MenuState extends State<Menu> {
         rodadaLocal: rodada >= nRodadasMyLeague  ? nRodadasMyLeague-1 : rodada-1,
         club: Club(index: myClass.clubID)
     );
-    Confronto confronto = Confronto(clubName1: myClass.clubName, clubName2: adversario.clubName, goal1: show.gol1, goal2: show.gol2);
+    Confronto confronto = Confronto(
+        clubName1: myClass.clubName,
+        clubName2: adversario.clubName,
+        goal1: show.gol1,
+        goal2: show.gol2
+    );
     CoachBestResults coachBestResults = CoachBestResults();
     coachBestResults.updateSequence(confronto);
 

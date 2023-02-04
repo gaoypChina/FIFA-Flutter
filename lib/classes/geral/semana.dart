@@ -4,10 +4,12 @@ import 'package:flutter/cupertino.dart';
 
 class Semana{
   String semanaStr = semana.toString();
+  int rodadaNacional = 1;
   int rodadaGroupInternational = 1;
   bool isJogoIdaMataMata = true;
   bool isJogoIdaLeague = true;
   bool isJogoMundial = semanaMundial.contains(semana);
+  bool isJogoCopa = semanasJogosCopas.contains(semana);
   bool isJogoCampeonatoNacional = semanasJogosNacionais.contains(semana);
   bool isJogoCampeonatoInternacional = semanasJogosInternacionais.contains(semana);
   bool isJogoGruposInternacional = semanasGruposInternacionais.contains(semana);
@@ -18,15 +20,24 @@ class Semana{
   Semana(int weekToCalculate){
     Name name = Name();
 
+    isJogoMundial = semanaMundial.contains(weekToCalculate);
+    isJogoCopa = semanasJogosCopas.contains(weekToCalculate);
+    isJogoCampeonatoNacional = semanasJogosNacionais.contains(weekToCalculate);
+    isJogoCampeonatoInternacional = semanasJogosInternacionais.contains(weekToCalculate);
+    isJogoGruposInternacional = semanasGruposInternacionais.contains(weekToCalculate);
+    isJogoMataMataInternacional = semanasMataMataInternacionais.contains(weekToCalculate);
+
+
     if(isJogoCampeonatoNacional) {
-      semanaStr = semanasJogosNacionais.indexOf(weekToCalculate).toString();
+      rodadaNacional = semanasJogosNacionais.indexOf(weekToCalculate)+1;
+      semanaStr = rodadaNacional.toString();
       //TODO: ARRUMAR
       if(globalLeagueIdaVolta && semanasJogosNacionais.indexOf(weekToCalculate) > (globalNMaxRodadasNacional-1/2).round()){
         isJogoIdaLeague = false;
       }
     }
     if(semanasJogosCopas.contains(weekToCalculate)){semanaStr = 'Jogo das Copas';}
-    else if(semanasGruposInternacionais.contains(weekToCalculate)){
+    else if(isJogoGruposInternacional){
       semanaStr = name.groupsPhase;
       rodadaGroupInternational = semanasGruposInternacionais.indexOf(weekToCalculate)+1;}
     else if(semanaOitavas.contains(weekToCalculate)){semanaStr = name.oitavas;    }
@@ -43,8 +54,8 @@ class Semana{
     }
 
     semanaCalendarStr = semanaStr;
-    if(semanasJogosNacionais.contains(weekToCalculate)){
-      semanaCalendarStr = 'Rodada ' + weekToCalculate.toString();
+    if(isJogoCampeonatoNacional){
+      semanaCalendarStr = 'Rodada ' + rodadaNacional.toString();
     }
 
     }
@@ -59,7 +70,7 @@ class Semana{
     }
 
     getTranslated(BuildContext context){
-      return Name().showTranslated(context, semanaStr);
+      return Name().showTranslated(context, semanaCalendarStr);
     }
 
 }

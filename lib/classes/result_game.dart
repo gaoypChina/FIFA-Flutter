@@ -8,7 +8,7 @@ import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:flutter/material.dart';
 
 import '../global_variables.dart';
-import '../classes/league.dart';
+import 'league.dart';
 
 class ResultGameNacional{
 

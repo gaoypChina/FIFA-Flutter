@@ -2,7 +2,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/page_controller/result_game.dart';
+import 'package:fifa/classes/result_game.dart';
 import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:flutter/material.dart';
 import '../../../classes/club.dart';
