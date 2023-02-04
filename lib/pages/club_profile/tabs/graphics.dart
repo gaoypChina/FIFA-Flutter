@@ -15,7 +15,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
-import '../../classes/club.dart';
+import '../../../classes/club.dart';
 
 class ClubGraphics extends StatefulWidget {
   final Club club;
@@ -58,9 +58,12 @@ class _ClubGraphicsState extends State<ClubGraphics> {
               child: Column(
                 children: [
 
+                  currentPosition(widget.club, dataGraphics),
+
                   graphics(dataGraphics),
 
-                  currentPosition(widget.club, dataGraphics),
+                  positionThisYear(),
+
 
                   totalTrophyWidget(widget.club, dataGraphics),
 
@@ -76,7 +79,6 @@ class _ClubGraphicsState extends State<ClubGraphics> {
                   mapWidget(),
                   Text(widget.club.stadiumName+': '+widget.club.stadiumSize.toString(),style: EstiloTextoBranco.text20),
 
-                  positionThisYear(),
 
                 ],
               ),

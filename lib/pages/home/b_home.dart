@@ -1,25 +1,22 @@
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/geral/size.dart';
-import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/database/local_database/shared_preferences.dart';
-import 'package:fifa/database/select_database.dart';
 import 'package:fifa/classes/functions/change_club_control.dart';
 import 'package:fifa/classes/functions/func_number_clubs_total.dart';
+import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/database/select_database.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/pages/configuration/configuration.dart';
-import 'package:fifa/pages/configuration/customize_players.dart';
-import 'package:fifa/pages/tournament_mode/tournament.dart';
-import 'package:fifa/theme/custom_toast.dart';
+import 'package:fifa/pages/home/bottom_row_buttons.dart';
+import 'package:fifa/pages/home/logo_kit_stack.dart';
+import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
-import 'package:fifa/theme/textstyle.dart';
-import 'package:fifa/widgets/stars.dart';
 import 'package:flutter/material.dart';
-import 'c_menu.dart';
+
 import '../../classes/league.dart';
+import '../menu/c_menu.dart';
 
 class HomePage extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
@@ -96,16 +93,9 @@ class _HomePageState extends State<HomePage> {
               children: [
 
                 const SizedBox(height: 70),
-                //TITLE
-                Stack(
-                  children: const [
-                    Text('FIFA 23',style: EstiloRowdies.textWhite50),
-                    Padding(
-                      padding: EdgeInsets.only(left:2.0,top: 1),
-                      child: Text('FIFA 23',style: EstiloRowdies.textGreen50),
-                    ),
-                  ],
-                ),
+
+                title(),
+
                 const SizedBox(height: 10),
 
                 ////////////
@@ -182,7 +172,7 @@ class _HomePageState extends State<HomePage> {
                     ),
 
                         //ESCUDO E UNIFORME
-                        clubLogoAndKitStack(club),
+                    wHomeClubLogoAndKitStack(club),
 
                   ],
                 ),
@@ -192,15 +182,7 @@ class _HomePageState extends State<HomePage> {
                 continueButton(),
                 const SizedBox(height: 28),
 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children:[
-                    database(),
-                    editClub(),
-                    configurations(),
-                    openTournament(),
-                  ],
-                ),
+                wHomeBottomRowButtons(context, clubID),
 
 
               ],
@@ -212,6 +194,17 @@ class _HomePageState extends State<HomePage> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Widget title(){
+    return Stack(
+      children: const [
+        Text('FIFA 23',style: EstiloRowdies.textWhite50),
+        Padding(
+          padding: EdgeInsets.only(left:2.0,top: 1),
+          child: Text('FIFA 23',style: EstiloRowdies.textGreen50),
+        ),
+      ],
+    );
+  }
   Widget rightButton({required Function onTap}){
     return Stack(
       children: [
@@ -265,36 +258,6 @@ class _HomePageState extends State<HomePage> {
   }
 
 
-Widget clubLogoAndKitStack(Club club){
-  double imageSize = 200;
-    return  Column(
-      children: [
-        SizedBox(
-          height: imageSize,
-          width: imageSize,
-          child: Stack(
-            children: [
-              //Image.asset(Images().getStadium(club.name),height: imageSize,width: imageSize,fit: BoxFit.fill,),
-              //Escudo
-              Images().getEscudoWidget(club.name,imageSize,imageSize),
-              //Uniforme
-              Container(
-                  alignment: Alignment.bottomRight,
-                  child: SizedBox(
-                      height: imageSize/2,
-                      width: imageSize/2,
-                      child: Images().getUniformWidget(club.name,imageSize/2,imageSize/2)),
-              ),
-            ],
-          ),
-        ),
-        Text(club.name,style:EstiloTextoBranco.text25),
-        starsWidgetFromOverall(club.getOverall()),
-      ],
-    );
-}
-
-
 Widget continueButton(){
     return
       customButtonContinue(
@@ -306,85 +269,7 @@ Widget continueButton(){
       );
 }
 
-Widget database(){
-    return
-      GestureDetector(
-        onTap:() async{
-          bool sucessLoadingDatabase = false;
-          while(!sucessLoadingDatabase){
-            globalSaveNumber++;
-            if(globalSaveNumber == globalMaxSavesPermitted+1){
-              globalSaveNumber=0;
-            }
-            await SharedPreferenceHelper().savesharedSaveNumber(globalSaveNumber);
 
-            customToast('${Translation(context).text.loading} Database $globalSaveNumber...');
-            try {
-              await SelectDatabase().load();
-              sucessLoadingDatabase = true;
-            }catch(e){
-              customToast('Erro no carregamento do Database $globalSaveNumber');
-            }
-
-          }
-
-          setState(() {});
-        },
-        child: Column(
-          children: [
-            const Icon(Icons.save,color:Colors.white,size:40),
-            globalSaveNumber==0
-                ? const Text('Database padrão',style: EstiloTextoBranco.underline14)
-                : Text('Database: '+globalSaveNumber.toString(),style: EstiloTextoBranco.underline14),
-          ],
-        ),
-      );
-}
-
-
-Widget editClub(){
-  return
-    GestureDetector(
-      onTap: (){
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) => CustomizePlayers(clubID: clubID)));
-      },
-      child: Column(
-        children: [
-          const Icon(Icons.edit,color:Colors.white,size:40),
-          Text(Translation(context).text.editTeam,style: EstiloTextoBranco.underline14)
-        ],
-      ),
-    );
-}
-
-Widget configurations(){
-    return GestureDetector(
-      onTap: (){
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Configuration()));
-      },
-      child: Column(
-        children: [
-          const Icon(Icons.miscellaneous_services,color:Colors.white,size:40),
-          Text(Translation(context).text.configuration,style: EstiloTextoBranco.underline14),
-        ],
-      ),
-    );
-}
-
-  Widget openTournament(){
-    return
-      GestureDetector(
-        onTap: (){
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Tournament()));
-        },
-        child: Column(
-          children: const [
-            Icon(Icons.gamepad,color:Colors.white,size:40),
-            Text('Single Match',style: EstiloTextoBranco.underline14)
-          ],
-        ),
-      );
-  }
 
 ////////////////////////////////////////////////////////////////////////////
 //                               FUNCTIONS                                //

@@ -166,7 +166,7 @@ Widget box(String text, Widget centralWidget, Function function){
             decoration: const BoxDecoration(
               color: Colors.black38,
               borderRadius: BorderRadius.all(
-                  Radius.circular(5.0) //                 <--- border radius here
+                  Radius.circular(5.0)
               ),
             ),
             child: Column(

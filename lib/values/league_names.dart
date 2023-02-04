@@ -67,6 +67,7 @@ class LeagueOfficialNames{
   String andorra = 'Liga Andorra';
   String saomarino = 'Liga São Marino';
   String gibraltar = 'Liga Gibraltar';
+  String ilhasfaroe = 'Liga Ilhas Faroe';
   String malta = 'Liga Malta';
   String liechtenstein = 'Liga Liechtenstein';
   String luxemburgo = 'Liga Luxemburgo';
@@ -214,7 +215,7 @@ class LeagueOfficialNames{
       macedonia, albania, belarus, moldova,
       russia, ucrania,   cazaquistao,
       armenia, azerbaijao, georgia, israel,
-      andorra, gibraltar, luxemburgo, malta, saomarino,
+      andorra, gibraltar, liechtenstein, luxemburgo, malta, saomarino,
 
      brasil1, brasil2, brasil3, brasil4,
      argentina,
@@ -236,7 +237,7 @@ class LeagueOfficialNames{
       argelia, egito, libya,  marrocos, tunisia,
       africaSul, angola, botswana, caboverde, camaroes,
       congo, congoRD, costamarfim, etiopia,
-      guine, mali, mauritania, mocambique, namibia, nigeria, quenia,
+      guine, madagascar, mali, mauritania, mocambique, namibia, nigeria, quenia,
       sudan, tanzania, uganda, zambia, zimbabwe,
 
       paulistao, carioca, mineiro, es,
@@ -538,6 +539,7 @@ Map getLeagueNationalityMap(){
     leagueName.montenegro: Words.country.montenegro,
     leagueName.andorra: Words.country.andorra,
     leagueName.gibraltar: Words.country.gibraltar,
+    leagueName.ilhasfaroe: Words.country.faroe,
     leagueName.malta: Words.country.malta,
     leagueName.liechtenstein: Words.country.liechtenstein,
     leagueName.luxemburgo: Words.country.luxembourg,
@@ -626,9 +628,9 @@ Map getLeagueNationalityMap(){
     leagueName.guine: Words.country.guinea,
     leagueName.liberia: Words.country.liberia,
     leagueName.madagascar: Words.country.madagascar,
-    leagueName.mocambique: Words.country.mozambique,
     leagueName.mali: Words.country.mali,
     leagueName.mauritania: Words.country.mauritania,
+    leagueName.mocambique: Words.country.mozambique,
     leagueName.namibia: Words.country.namibia,
     leagueName.niger: Words.country.niger,
     leagueName.nigeria: Words.country.nigeria,

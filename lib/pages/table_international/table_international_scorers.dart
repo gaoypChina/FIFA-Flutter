@@ -8,7 +8,7 @@ import 'package:fifa/pages/table_international/widget_bottom.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
-import 'package:fifa/widgets/background/background_international_league.dart';
+import 'package:fifa/widgets/background_image/backimage_international_league.dart';
 import 'package:flutter/material.dart';
 
 import '../../classes/my.dart';

@@ -24,4 +24,11 @@ class DificuldadeClass{
     if(globalDificuldade==4){multiplicationDouble=0.6;}
     return multiplicationDouble;
   }
+
+  addDificulty(){
+    globalDificuldade++;
+    if(globalDificuldade==5){
+      globalDificuldade=0;
+    }
+  }
 }

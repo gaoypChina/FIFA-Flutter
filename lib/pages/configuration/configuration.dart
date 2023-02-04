@@ -131,10 +131,7 @@ class _ConfigurationState extends State<Configuration> {
     return
       GestureDetector(
         onTap:(){
-          globalDificuldade++;
-          if(globalDificuldade==5){
-            globalDificuldade=0;
-          }
+          DificuldadeClass().addDificulty();
           setState(() {});
         },
         child: SizedBox(

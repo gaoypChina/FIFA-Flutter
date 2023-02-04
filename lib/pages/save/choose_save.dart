@@ -3,7 +3,7 @@ import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/page_controller/save/save_controller.dart';
-import 'package:fifa/pages/menu/b_home.dart';
+import 'package:fifa/pages/home/b_home.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/widgets/popup/popup_ok_cancel.dart';
 import 'package:fifa/theme/colors.dart';

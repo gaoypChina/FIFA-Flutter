@@ -16,7 +16,7 @@ import 'package:fifa/pages/table/table_widget.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
-import '../../widgets/background/background_international_league.dart';
+import '../../widgets/background_image/backimage_international_league.dart';
 
 class NotPlay extends StatefulWidget {
   const NotPlay({Key? key}) : super(key: key);

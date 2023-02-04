@@ -8,7 +8,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/theme/background/background_overall.dart';
+import 'package:fifa/theme/background_color/background_overall.dart';
 import 'package:fifa/widgets/popup/popup_player_info.dart';
 import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';

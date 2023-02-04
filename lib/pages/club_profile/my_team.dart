@@ -4,8 +4,8 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/pages/club_profile/all_infos_club.dart';
 import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
-import 'package:fifa/pages/club_profile/field_draggable.dart';
-import 'package:fifa/pages/club_profile/graphics.dart';
+import 'package:fifa/pages/club_profile/tabs/field_draggable.dart';
+import 'package:fifa/pages/club_profile/tabs/graphics.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/back_button.dart';
@@ -26,7 +26,6 @@ class _MyTeamState extends State<MyTeam> {
 
   Club myClub = Club(index: My().clubID);
   My my = My();
-
 
   String show = 'OVR';
   late double averageAge;
