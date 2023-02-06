@@ -28,8 +28,7 @@ class ResultGameNacional{
 
   ResultGameNacional({required int rodadaLocal, required this.club}){
 
-
-    List list = Chaves().chaveIndexAdvCampeonato(rodadaLocal,club.leagueID, club.getChaveLeague());//index 0-16
+    List list = Chaves().chaveIndexAdvCampeonato(semanasJogosNacionais[rodadaLocal],club.leagueID, club.getChaveLeague());//index 0-16
     int chaveClub2 = list[0];
     visitante = list[1];
     League league = League(index: club.leagueID);
@@ -91,6 +90,7 @@ class ResultGameNacional{
 
 class ResultGameInternacional{
 
+  late String internationalLeagueName;
   late int semanaLocal;
   bool visitante = false;
   late int clubID;
@@ -106,10 +106,9 @@ class ResultGameInternacional{
   bool isAlreadyPlayed = false;
 
 
-  ResultGameInternacional({required int semanaLocal, required this.clubID}){
+  ResultGameInternacional({required int semanaLocal, required this.clubID, required this.internationalLeagueName}){
 
     club = Club(index: clubID);
-    String internationalLeague = club.internationalLeagueName;
 
     //FASE DE GRUPOS
     //Check every group if myTeam Is Playing
@@ -122,7 +121,7 @@ class ResultGameInternacional{
               rodadaNumber: rodadaNumber,
               groupNumber: groupNumber,
               nConfronto: nConfronto,
-              competitionName: internationalLeague);
+              competitionName: internationalLeagueName);
 
           isAlreadyPlayed = matchResultInternational.isAlreadyPlayed;
 
@@ -147,7 +146,7 @@ class ResultGameInternacional{
       for(int matchRow=0; matchRow<8; matchRow++){
         try{
           MataMata mataMata = MataMata();
-          mataMata.getData(internationalLeague, Semana(semanaLocal).semanaStr, matchRow, idaVolta);
+          mataMata.getData(internationalLeagueName, Semana(semanaLocal).semanaStr, matchRow, idaVolta);
           isAlreadyPlayed = mataMata.isAlreadyPlayed;
           if(mataMata.clubID1 == clubID){
             visitante = false;

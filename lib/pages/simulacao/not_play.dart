@@ -12,7 +12,7 @@ import 'package:fifa/pages/simulacao/not_play_international/not_play_internation
 import 'package:fifa/pages/simulacao/not_play_international/not_play_mundial.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
-import 'package:fifa/pages/table/table_widget.dart';
+import 'package:fifa/pages/table/widgets/table_widget.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 

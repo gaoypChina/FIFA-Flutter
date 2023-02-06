@@ -32,6 +32,5 @@ String getPlayingInternationalName(int clubID, String originalIntName){
 
     }
   }
-
   return val;
 }

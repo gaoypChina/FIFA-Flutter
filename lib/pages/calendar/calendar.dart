@@ -6,7 +6,7 @@ import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/result_game.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/pages/my_calendar/calendar_adv_box.dart';
+import 'package:fifa/pages/calendar/calendar_adv_box.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +44,8 @@ class _CalendarState extends State<Calendar> {
                 spacing: 5,
                 runSpacing: 5,
                 children: [
-                  for (int i=1;i<=globalUltimaSemana;i++) adversarioWidget(i),
+                  for (int i=1;i<=globalUltimaSemana;i++)
+                    adversarioWidget(i),
                 ],
               ),
             ),
@@ -71,7 +72,7 @@ class _CalendarState extends State<Calendar> {
       }
 
     }else if(Semana(semanaLocal).isJogoCampeonatoInternacional){
-      ResultGameInternacional show = ResultGameInternacional(semanaLocal: semanaLocal, clubID: myTeamClass.clubID);
+      ResultGameInternacional show = ResultGameInternacional(semanaLocal: semanaLocal, clubID: myTeamClass.clubID, internationalLeagueName: myTeamClass.playingInternational);
       if(show.hasAdversary && semana >= semanasJogosInternacionais.first) {
         return wCalendarAdvBox(context, semanaLocal, show);
       }else{
@@ -83,7 +84,7 @@ class _CalendarState extends State<Calendar> {
       }
 
     }else if(Semana(semanaLocal).isJogoMataMataInternacional){
-      ResultGameInternacional show = ResultGameInternacional(semanaLocal: semanaLocal, clubID: myTeamClass.clubID);
+      ResultGameInternacional show = ResultGameInternacional(semanaLocal: semanaLocal, clubID: myTeamClass.clubID, internationalLeagueName: myTeamClass.playingInternational);
       if(show.hasAdversary && semana >= semanasMataMataInternacionais.first) {
         return wCalendarAdvBox(context, semanaLocal, show);
       }else{

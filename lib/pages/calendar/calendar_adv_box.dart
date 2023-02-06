@@ -59,7 +59,7 @@ Widget wCalendarNotPlayWidget(int semanaLocal,String title, [String? imageName])
     child: Column(
       children: [
         Text(title, textAlign: TextAlign.center,style: EstiloTextoBranco.text16),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         imageName != null ? Image.asset(imageName,height: 70, width: 70) : Container(),
       ],
     ),

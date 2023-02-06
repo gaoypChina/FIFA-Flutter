@@ -1,4 +1,5 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/result_game.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
@@ -20,9 +21,10 @@ class ClubCalendarController{
   }
 
   getWeekInfos(int weekToCalculate){
-    if(semanasJogosNacionais.contains(weekToCalculate)){
+    Semana week = Semana(weekToCalculate);
+    if(week.isJogoCampeonatoNacional){
       competitionName = club.leagueName;
-      int rodada = semanasJogosNacionais.indexOf(weekToCalculate)+1;
+      int rodada = Semana(weekToCalculate).rodadaNacional;
       ResultGameNacional result = ResultGameNacional(rodadaLocal: rodada, club: club);
       placar = result.placar;
       club2 = Club(index: result.clubID2);
@@ -30,9 +32,12 @@ class ClubCalendarController{
       backgroundColor = result.backgroundColor;
       hasAdversaryDefined = result.hasAdversary;
     }
-    else if(semanasJogosInternacionais.contains(weekToCalculate)){
-      competitionName = club.internationalLeagueName;
-      ResultGameInternacional result = ResultGameInternacional(semanaLocal: rodada, clubID: club.index);
+    else if(week.isJogoCampeonatoInternacional){
+      competitionName = club.internationalLeagueNamePlaying;
+      ResultGameInternacional result = ResultGameInternacional(
+            semanaLocal: rodada,
+            clubID: club.index,
+            internationalLeagueName: club.internationalLeagueNamePlaying);
       if(result.isAlreadyPlayed) {
         placar = result.placar;
         club2 = Club(index: result.clubID2);
@@ -41,7 +46,7 @@ class ClubCalendarController{
       }
       hasAdversaryDefined = result.isAlreadyPlayed;
     }
-    else if(semanaMundial.contains(weekToCalculate)){
+    else if(week.isJogoMundial){
       competitionName = LeagueOfficialNames().mundial;
     }
   }

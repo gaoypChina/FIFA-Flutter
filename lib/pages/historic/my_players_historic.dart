@@ -131,7 +131,7 @@ Widget header(){
         Row(
           children: [
             Images().getEscudoWidget(club.name,50,50),
-            Images().getUniformWidget(club.name,50,50),
+            Images().getUniformWidget(club.name,60,60),
           ],
         ),
         Container(
@@ -183,7 +183,7 @@ Widget header(){
       children: [
         const Text('Lista de Jogadores',style: EstiloTextoBranco.negrito18),
         SizedBox(
-          height: 180,
+          height: 300,
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,

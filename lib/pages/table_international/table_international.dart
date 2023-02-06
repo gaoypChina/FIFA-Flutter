@@ -3,6 +3,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/international.dart';
 import 'package:fifa/classes/international_league.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/classes/navigator/click_club.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/table_international/widget_bottom.dart';
@@ -148,13 +149,18 @@ TableRow groupTitle(int groupNumber){
         Text(i.toString()+'-',style: EstiloTextoBranco.text16),
         //Escudo
         Images().getEscudoWidget(clubClass.name,20,20),
-        Container(
-          color: clubClass.name == my.clubName
-              ? Colors.green
-              : i==1 || i==2 ? Colors.deepPurple
-                    : Colors.transparent,
-          padding: const EdgeInsets.all(2.0),
-          child: Text(clubClass.name,style: EstiloTextoBranco.text16),
+        GestureDetector(
+          onTap:(){
+            clickClub(context: context, clubName: clubClass.name);
+          },
+          child: Container(
+            color: clubClass.name == my.clubName
+                ? Colors.green
+                : i==1 || i==2 ? Colors.deepPurple
+                      : Colors.transparent,
+            padding: const EdgeInsets.all(2.0),
+            child: Text(clubClass.name,style: EstiloTextoBranco.text16),
+          ),
         ),
         Text(' ${clubClass.internationalPoints.toString()}',style: EstiloTextoBranco.text14),
         Text(clubClass.internationalGM.toString(),style: EstiloTextoBranco.text14),

@@ -2,13 +2,13 @@ import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
-import 'package:fifa/pages/club_profile/club_profile.dart';
+import 'package:fifa/classes/navigator/click_club.dart';
 import 'package:fifa/theme/background_color/color_class_table.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:flutter/material.dart';
 
-import '../../theme/colors.dart';
+import '../../../theme/colors.dart';
 
 Widget tabelaClassificacaoWidget(BuildContext context,League league){
   List classificationClubsIndexes = Classification(leagueIndex: league.index).classificationClubsIndexes;
@@ -68,12 +68,12 @@ TableRow rowTableNacionalLayout(BuildContext context, int position, int indexClu
       Text((position+1).toString()+'-',style: EstiloTextoBranco.text14),
       GestureDetector(
         onTap: (){
-          goToClubProfilePage(context,clubClass);
+          clickClubProfilePage(context,clubClass);
           },
           child: Images().getEscudoWidget(clubClass.name,25,25)),
       GestureDetector(
         onTap: (){
-          goToClubProfilePage(context,clubClass);
+          clickClubProfilePage(context,clubClass);
         },
         child: Container(
             width:170,
@@ -92,6 +92,3 @@ TableRow rowTableNacionalLayout(BuildContext context, int position, int indexClu
   );
 }
 
-goToClubProfilePage(BuildContext context, Club clubClass){
-  Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: clubClass.index)));
-}

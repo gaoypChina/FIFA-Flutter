@@ -1,4 +1,5 @@
 import 'package:fifa/classes/geral/name.dart';
+import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/mata_mata/mata_mata_class.dart';
@@ -34,8 +35,6 @@ class _TableMataMataState extends State<TableMataMata> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    double _height = MediaQuery.of(context).size.height;
-    double _width = MediaQuery.of(context).size.width;
     return Scaffold(
 
       body:  Stack(
@@ -51,8 +50,8 @@ class _TableMataMataState extends State<TableMataMata> {
                     child: Center(
                       child: Container(
                           color: AppColors().greyTransparent,
-                          height: _height*0.9,
-                          width: _width*0.9,
+                          height: Sized(context).height*0.9,
+                          width: Sized(context).width*0.9,
                           child: SingleChildScrollView(
                               child:
                               Column(

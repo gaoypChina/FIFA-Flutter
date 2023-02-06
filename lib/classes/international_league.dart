@@ -92,9 +92,13 @@ class InternationalLeague{
   }
 
   bool checkContains(int clubID, String internationalName){
-    if(globalInternational[internationalName][clubsIDkey].contains(clubID)){
-      return true;
-    }else{
+    try{
+      if(globalInternational[internationalName][clubsIDkey].contains(clubID)){
+        return true;
+      }else{
+        return false;
+      }
+    }catch(e){
       return false;
     }
   }

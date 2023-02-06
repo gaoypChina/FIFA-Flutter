@@ -29,7 +29,7 @@ class Semana{
 
 
     if(isJogoCampeonatoNacional) {
-      rodadaNacional = semanasJogosNacionais.indexOf(weekToCalculate)+1;
+      rodadaNacional = semanasJogosNacionais.indexOf(weekToCalculate);
       semanaStr = rodadaNacional.toString();
       //TODO: ARRUMAR
       if(globalLeagueIdaVolta && semanasJogosNacionais.indexOf(weekToCalculate) > (globalNMaxRodadasNacional-1/2).round()){
@@ -55,7 +55,7 @@ class Semana{
 
     semanaCalendarStr = semanaStr;
     if(isJogoCampeonatoNacional){
-      semanaCalendarStr = 'Rodada ' + rodadaNacional.toString();
+      semanaCalendarStr = 'Rodada ' + (rodadaNacional+1).toString();
     }
 
     }

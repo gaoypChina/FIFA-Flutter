@@ -5,7 +5,6 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
 import 'package:fifa/pages/table/table_nacional.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
@@ -14,6 +13,7 @@ import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_divisions.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/back_button.dart';
+import 'package:fifa/widgets/bottom_sheet_league_classification.dart';
 import 'package:flutter/material.dart';
 
 class YearResume extends StatefulWidget {
@@ -132,7 +132,7 @@ class _YearResumeState extends State<YearResume> {
           const SizedBox(width: 10),
           GestureDetector(
             onTap: (){
-              bottomSheetShowLeagueClassification(classificationNames);
+              bottomSheetShowLeagueClassification(context, classificationNames);
             },
             child: Row(
               children: [
@@ -240,7 +240,7 @@ Widget internationalChampionsWidgetDetail(String internationalLeagueName){
     padding: const EdgeInsets.symmetric(horizontal: 6.0),
     child: GestureDetector(
       onTap: (){
-        bottomSheetShowLeagueClassification(clubsID);
+        bottomSheetShowLeagueClassification(context, clubsID);
       },
       child: Row(
           children: [
@@ -282,7 +282,7 @@ Widget resumeLeague(String leagueName){
             if(int.parse(selectedYear) == ano){
               Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableNacional(choosenLeagueIndex: leaguesIndexFromName[leagueName])));
             }else{
-                bottomSheetShowLeagueClassification(classificationNames);
+                bottomSheetShowLeagueClassification(context, classificationNames);
             }
             },
           child: Stack(
@@ -331,47 +331,6 @@ Widget resumeLeague(String leagueName){
         ),
       ),
     );
-  }
-
-  clickClub(String clubName){
-    //if(clubsAllNameList.contains(clubName)){
-    //  int clubID = clubsAllNameList.indexOf(clubName);
-    //  Navigator.push(context, MaterialPageRoute(builder: (context) => ClubProfile(clubID: clubID)));
-    //}else{
-      Navigator.push(context, MaterialPageRoute(builder: (context) => ClubProfileNotPlayable(clubName: clubName)));
-    //}
-  }
-
-  bottomSheetShowLeagueClassification(List classificationNames){
-    return showModalBottomSheet(
-        barrierColor: Colors.transparent,
-        context: context, builder: (c){
-      return SingleChildScrollView(
-          child: Column(
-            children: [
-
-              for(int i=0; i<classificationNames.length;i++)
-                GestureDetector(
-                  onTap: (){
-                    clickClub(classificationNames[i]);
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child: Row(
-                      children: [
-                        SizedBox(width:35,child: Text((i+1).toString()+'º ',textAlign: TextAlign.right,style:EstiloTextoPreto.text16)),
-                        Padding(
-                          padding: const EdgeInsets.all(6.0),
-                          child: Images().getEscudoWidget(classificationNames[i],30,30),
-                        ),
-                        Text(classificationNames[i],style:EstiloTextoPreto.text16),
-                      ],
-                    ),
-                  ),
-                ),
-            ],
-          ));
-    });
   }
 
 }

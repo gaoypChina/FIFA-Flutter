@@ -1,8 +1,8 @@
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
-import 'package:fifa/pages/cups/cup_historic.dart';
-import 'package:fifa/pages/cups/cup_matchs.dart';
-import 'package:fifa/pages/cups/cup_statistics.dart';
+import 'package:fifa/pages/cups/tabs/cup_historic.dart';
+import 'package:fifa/pages/cups/tabs/cup_matchs.dart';
+import 'package:fifa/pages/cups/tabs/cup_statistics.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';

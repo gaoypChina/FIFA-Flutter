@@ -73,6 +73,7 @@ class _MenuState extends State<Menu> {
   Widget build(BuildContext context) {
 
     myClass = My();
+    adversario.getAdversario();
 
     return Scaffold(
         body:  Stack(
@@ -187,7 +188,7 @@ class _MenuState extends State<Menu> {
 
                           test(context),
 
-                          train(context)
+                          //train(context)
 
                         ],
                       ),

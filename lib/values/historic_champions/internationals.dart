@@ -326,7 +326,7 @@ Map<String,dynamic> mapInternationals = {
   },
 
   leagueName.mundial : {
-    //2022.0: [n.realmadrid,n.flamengo,n.seattle,n.wydad],
+    2022.0: [n.realmadrid,n.flamengo,n.alahly,n.alhilal,n.seattle,n.wydad,n.auckland],
     2021.0: [n.chelsea,n.palmeiras,n.alahly,n.alhilal,n.monterrey],
     2020.0: [n.bayernmunique,n.tigres,n.alahly,n.palmeiras],
     2019.0: [n.liverpool,n.flamengo,n.monterrey,n.alhilal],
@@ -400,7 +400,7 @@ Map<String,dynamic> mapInternationals = {
     1951.0: [n.palmeiras,n.juventus,n.vasco,n.austria],
   },
 
-  leagueName.ligaEuropa : {
+  leagueName.europaLeagueOficial : {
     2022.0: [n.eintrachtfrankfurt,n.rangers,n.westham,n.rbleipzig,  n.barcelona,n.braga,n.lyon,n.atalanta],
     2021.0: [n.villareal,n.manchesterunited,n.arsenal,n.roma,       n.dinamozagreb,n.granada,n.slaviaPraha,n.ajax],
     2020.0: [n.sevilla,n.inter,n.manchesterunited,n.shaktardonetsk, n.wolves,n.leverkusen,n.copenhague,n.basel],
@@ -469,7 +469,7 @@ Map<String,dynamic> mapInternationals = {
   },
 
 
-  leagueName.sulamericano : {
+  leagueName.copaSulAmericana : {
     2022.0: [n.idelvalle,n.saopaulo,n.melgar,n.atleticogo,           n.tachira,n.ceara,n.internacional,n.nacional,          n.lanus,n.univcatolica,n.deportivocali,n.olimpia,n.santos,n.colocolo,n.unionSantaFe,n.theStrongest],
     2021.0: [n.atleticopr,n.bragantino,n.penarol,n.libertad,         n.ldu,n.rosario,n.sportingcristal,n.santos,     n.americadecali,n.idelvalle,n.nacional,n.junior,n.arsenalsarandi,n.gremio,n.tachira,n.independiente],
     2020.0: [n.defensayjusticia,n.lanus,n.coquimbo,n.velez,          n.bahia,n.independiente,n.junior,n.univcatolica,       n.vasco,n.bolivar,n.deportivocali,n.riverURU,n.fenix,n.laCalera,n.huancayo,n.unionSantaFe,                  ],

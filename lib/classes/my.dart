@@ -106,7 +106,7 @@ class My{
   }
 
   int getMyClubInternationalPosition032(){
-    int position = InternationalLeague().searchClub(internationalLeagueName, clubID);
+    int position = InternationalLeague().searchClub(playingInternational, clubID);
     return position;
   }
   int getMyClubInternationalGroup(){

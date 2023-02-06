@@ -11,36 +11,37 @@ class Chaves{
   List obterChave(int semana, int leagueIndex){
     List chave = [];
     if(Semana(semana).isJogoCampeonatoNacional){
+      League leagueClass = League(index: leagueIndex);
       //verify is jogo volta
       int calculateWeek = semana;
-      if(League(index: leagueIndex).nClubs==2){
+      if(leagueClass.nClubs==2){
         chave = Chaves().obterChave4(calculateWeek);
       }
-      if(League(index: leagueIndex).nClubs==4){
+      if(leagueClass.nClubs==4){
         chave = Chaves().obterChave4(calculateWeek);
       }
-      if(League(index: leagueIndex).nClubs==6){
+      if(leagueClass.nClubs==6){
         chave = Chaves().obterChave6(calculateWeek);
       }
-      else if(League(index: leagueIndex).nClubs==8){
+      else if(leagueClass.nClubs==8){
         chave = Chaves().obterChave8(calculateWeek);
       }
-      else if(League(index: leagueIndex).nClubs==10){
+      else if(leagueClass.nClubs==10){
         chave = Chaves().obterChave10(calculateWeek);
       }
-      else if(League(index: leagueIndex).nClubs==12){
+      else if(leagueClass.nClubs==12){
         chave = Chaves().obterChave12(calculateWeek);
       }
-      else if(League(index: leagueIndex).nClubs==14){
+      else if(leagueClass.nClubs==14){
         chave = Chaves().obterChave14(calculateWeek);
       }
-      else if(League(index: leagueIndex).nClubs==16){
+      else if(leagueClass.nClubs==16){
         chave = Chaves().obterChave16(calculateWeek);
       }
-      else if(League(index: leagueIndex).nClubs==18){
+      else if(leagueClass.nClubs==18){
         chave = Chaves().obterChave18(calculateWeek);
       }
-      else if(League(index: leagueIndex).nClubs==20){
+      else if(leagueClass.nClubs==20){
         chave = Chaves().obterChave20(calculateWeek);
       }
     }

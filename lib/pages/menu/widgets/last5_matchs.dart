@@ -1,3 +1,4 @@
+import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
@@ -21,8 +22,14 @@ Widget wLast5Matchs(BuildContext context){
 Widget resultBox(BuildContext context, int i, My myClass){
   Color color = Colors.transparent;
   int nRodadasMyLeague =  League(index: myClass.leagueID).nClubs-1;
+  int semanaShow = 0;
+  if(rodada >= nRodadasMyLeague){
+    semanaShow = semanasJogosNacionais[nRodadasMyLeague-i];
+  }else if(rodada-1-i >= 0){
+    semanaShow = semanasJogosNacionais[rodada-1-i];
+  }
   ResultGameNacional show = ResultGameNacional(
-      rodadaLocal: rodada >= nRodadasMyLeague  ? nRodadasMyLeague-i : rodada-1-i,
+      rodadaLocal: Semana(semanaShow).rodadaNacional,
       club: Club(index: myClass.clubID)
   );
   if(show.victoryDrawLoss310 == 3){color = Colors.green;}

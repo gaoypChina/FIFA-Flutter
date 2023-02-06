@@ -58,49 +58,26 @@ Widget customWidgetBottomBar (BuildContext context,String actualPage, String lea
                 child: Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().copaSulAmericana), width: 50,height: 50)
             ),
 
+            bottomButton(context, actualPage, WidgetBottomInternational().classificacao, TableInternational(leagueInternational: leagueInternational)),
+            bottomButton(context, actualPage, WidgetBottomInternational().partidas, TableMatchs(leagueInternational: leagueInternational)),
+            bottomButton(context, actualPage, WidgetBottomInternational().matamata, TableMataMata(leagueInternational: leagueInternational)),
+            bottomButton(context, actualPage, WidgetBottomInternational().artilheiros, TableInternationalScorers(leagueInternational: leagueInternational)),
 
-            GestureDetector(
-                onTap: (){
-                    Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => TableInternational(leagueInternational: leagueInternational)));
-                },
-                child: Container(
-                  color: actualPage == WidgetBottomInternational().classificacao ? AppColors().primary : Colors.transparent,
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(WidgetBottomInternational().getTranslation(context, WidgetBottomInternational().classificacao),style: EstiloTextoPreto.text16),
-                ),
-            ),
-            GestureDetector(
-                onTap: (){
-                  Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => TableMatchs(leagueInternational: leagueInternational)));
-                },
-                child: Container(
-                  color: actualPage == WidgetBottomInternational().partidas ? AppColors().primary : Colors.transparent,
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(WidgetBottomInternational().getTranslation(context, WidgetBottomInternational().partidas),style: EstiloTextoPreto.text16),
-                ),
-            ),
-            GestureDetector(
-                onTap: (){
-                  Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => TableMataMata(leagueInternational: leagueInternational)));
-                },
-                child: Container(
-                  color: actualPage == WidgetBottomInternational().matamata ? AppColors().primary : Colors.transparent,
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(WidgetBottomInternational().getTranslation(context, WidgetBottomInternational().matamata),style: EstiloTextoPreto.text16),
-                ),
-            ),
-            GestureDetector(
-              onTap: (){
-                Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => TableInternationalScorers(leagueInternational: leagueInternational)));
-              },
-              child: Container(
-                color: actualPage == WidgetBottomInternational().artilheiros ? AppColors().primary : Colors.transparent,
-                padding: const EdgeInsets.all(8.0),
-                child: Text(WidgetBottomInternational().getTranslation(context, WidgetBottomInternational().artilheiros),style: EstiloTextoPreto.text16),
-              ),
-            ),
           ],
         ),
       ),
     );
+}
+
+Widget bottomButton(BuildContext context,String actualPage,String word, Widget page){
+  return GestureDetector(
+    onTap: (){
+      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => page));
+    },
+    child: Container(
+      color: actualPage == word ? AppColors().primary : Colors.transparent,
+      padding: const EdgeInsets.all(8.0),
+      child: Text(WidgetBottomInternational().getTranslation(context, word),style: EstiloTextoPreto.text16),
+    ),
+  );
 }

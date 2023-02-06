@@ -10,7 +10,10 @@ import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
+import 'package:fifa/values/historic_champions/historic_champions.dart';
+import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/back_button.dart';
+import 'package:fifa/widgets/bottom_sheet_league_classification.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -27,13 +30,13 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
   late TooltipBehavior _tooltipBehavior;
 
   DataGraphics dataGraphics = DataGraphics();
+  late String clubCountry;
   late String clubState;
   ///////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
-    late String clubCountry;
 
     clubState = ClubDetails().getState(widget.clubName);
 
@@ -109,6 +112,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
                 children: [
                   Container(
                     color: AppColors().greyTransparent,
+                    margin: const EdgeInsets.only(left: 4.0),
                     child: TextButton(onPressed: (){
                       Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricPlayersPage(clubName: widget.clubName)));
                     }, child: const Text('Jogadores Históricos',style:EstiloTextoBranco.text16)),
@@ -404,7 +408,18 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
           const SizedBox(width: 10),
           positionColor(copa,40),
           const SizedBox(width: 10),
-          positionColor(national,40),
+          GestureDetector(onTap:(){
+            //GET LEAGUE NAME
+            Map leagueNationality = getLeagueNationalityMap();
+            late String leagueName;
+            leagueNationality.forEach((key, value) {
+              if(value==clubCountry){
+                leagueName = key;
+                List classificationNames = mapChampions(leagueName)[year];
+                bottomSheetShowLeagueClassification(context, classificationNames);
+              }
+            });
+          },child: positionColor(national,40)),
           const SizedBox(width: 10),
           positionColor(international,80),
 

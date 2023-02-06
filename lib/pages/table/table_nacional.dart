@@ -1,13 +1,12 @@
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/classes/tabela_national.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/historic/leagues_historic.dart';
-import 'package:fifa/pages/table/statistics_league.dart';
-import 'package:fifa/pages/table/table_widget.dart';
+import 'package:fifa/pages/table/widgets/matchs.dart';
+import 'package:fifa/pages/table/widgets/player_statistics.dart';
+import 'package:fifa/pages/table/widgets/table_widget.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
@@ -42,7 +41,7 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
     super.initState();
   }
   doThisOnLaunch() {
-    _tabController = TabController(vsync: this, length: 2);
+    _tabController = TabController(vsync: this, length: 1);
     //INDEX INICIAL
     choosenLeagueIndex = widget.choosenLeagueIndex;
     //rodada inicial mostrada
@@ -66,7 +65,7 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
     String leagueName = leaguesMap[choosenLeagueIndex].getName();
 
     return  DefaultTabController(
-        length: 2,
+        length: 1,
         child: Scaffold(
         body:  Stack(
             children: [
@@ -109,8 +108,6 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
                             ),
                           ),
 
-                          StatisticsLeague(league: League(index: 1)),
-
                         ],
                       ),
                     ),
@@ -132,78 +129,37 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
   Widget rowStatistics(){
-    return Row(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
 
-        SizedBox(
-          width: 70,
-          child: Column(
-            children: [
-              //Matchs - VERSUS
-              Container(
-                color: choosenIcon==1 ? Colors.teal : Colors.transparent,
-                padding: const EdgeInsets.all(2),
-                child: GestureDetector(
-                  onTap:(){
-                    choosenIcon = 1;
-                    setState(() {});
-                  },
-                  child: Image.asset('assets/icons/versus.png',height:50),
-                ),
-              ),
-              //Artilheiro
-              Container(
-                color: choosenIcon==2 ? Colors.teal : Colors.transparent,
-                padding: const EdgeInsets.all(2),
-                child: GestureDetector(
-                  onTap:(){
-                    choosenIcon = 2;
-                    setState(() {});
-                    //Navigator.push(context,MaterialPageRoute(builder: (context) => Artilheiros(choosenLeagueIndex:choosenLeagueIndex)));
-                  },
-                  child: Image.asset('assets/icons/artilheiro.png',height:50),
-                ),
-              ),
-              //YELLOW CARDS
-              Container(
-                color: choosenIcon==3 ? Colors.teal : Colors.transparent,
-                padding: const EdgeInsets.all(2),
-                child: GestureDetector(
-                  onTap:(){
-                    choosenIcon = 3;
-                    setState(() {});
-                  },
-                  child: Image.asset('assets/icons/cartao-amarelo.png',height:50),
-                ),
-              ),
-              //RED CARDS
-              Container(
-                color: choosenIcon==4 ? Colors.teal : Colors.transparent,
-                padding: const  EdgeInsets.all(2),
-                child: GestureDetector(
-                  onTap:(){
-                    choosenIcon = 4;
-                    setState(() {});
-                  },
-                  child: Image.asset('assets/icons/cartao-vermelho.png',height:50),
-                ),
-              ),
+        Container(
+          color: AppColors().greyTransparent,
+          child: choosenIcon==1 ? matchsWidget()
+              : choosenIcon==2 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 0)
+              : choosenIcon==3 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 1)
+              : choosenIcon==4 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 2)
+              : choosenIcon==5 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 3)
+              : choosenIcon==6 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 4)
+              : Container(),
+        ),
 
+        SizedBox(
+          height: 70,
+          child: Row(
+            children: [
+              componentTable(0),
+              componentButton(1, 'assets/icons/versus.png'),
+              componentButton(2, 'assets/icons/artilheiro.png'),
+              componentButton(5, 'assets/icons/assists.png'),
+              componentButton(3, 'assets/icons/cartao-amarelo.png'),
+              componentButton(4, 'assets/icons/cartao-vermelho.png'),
+              componentButton(6, 'assets/icons/craque.png'),
             ],
           ),
         ),
 
 
-        Expanded(
-          child: Container(
-            color: AppColors().greyTransparent,
-            child: choosenIcon==1 ? matchsWidget()
-                : choosenIcon==2 ? yellowRedCardWidget(0)
-                : choosenIcon==3 ? yellowRedCardWidget(1)
-                : choosenIcon==4 ? yellowRedCardWidget(2) : Container(),
-          ),
-        ),
 
 
       ],
@@ -244,8 +200,32 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
 ////////////////////////////////////////////////////////////////////////////
 //                               FUNCTIONS                                 //
 ////////////////////////////////////////////////////////////////////////////
-
-
+Widget componentButton(int optionNumber, String image){
+  return Container(
+    color: choosenIcon==optionNumber ? Colors.teal : Colors.transparent,
+    padding: const  EdgeInsets.all(2),
+    child: GestureDetector(
+      onTap:(){
+        choosenIcon = optionNumber;
+        setState(() {});
+      },
+      child: Image.asset(image,height:50),
+    ),
+  );
+}
+  Widget componentTable(int optionNumber){
+    return Container(
+      color: choosenIcon==optionNumber ? Colors.teal : Colors.transparent,
+      padding: const  EdgeInsets.all(2),
+      child: GestureDetector(
+        onTap:(){
+          choosenIcon = optionNumber;
+          setState(() {});
+        },
+        child: const Icon(Icons.table_chart, color: Colors.white, size:50),
+      ),
+    );
+  }
 Widget matchsWidget(){
 
   League choosenLeagueClass = leaguesMap[choosenLeagueIndex];
@@ -283,95 +263,11 @@ Widget matchsWidget(){
         ],
       ),
 
-      Container(
-        color: AppColors().greyTransparent,
-        child: Table(
-          columnWidths:
-          (rodadaMatch<=rodada)
-              ? const {0: FractionColumnWidth(.36),6: FractionColumnWidth(.36)}
-              : const {0: FractionColumnWidth(.36),2: FractionColumnWidth(.0),4: FractionColumnWidth(.0),6: FractionColumnWidth(.36)},
-          children: [
-            for(int i=0; i<(leaguesMap[choosenLeagueIndex].getNTeams()/2);i++)
-              rowMatches(i*2),
-          ],
-        ),
-      ),
+      wMatchsTable(rodadaMatch, leaguesMap[choosenLeagueIndex], choosenLeagueIndex),
 
     ],
   );
 }
-
-  TableRow rowMatches(int numeroDoConfronto) {
-
-    TableNational tableNational = TableNational(
-        choosenLeagueIndex: choosenLeagueIndex,
-        leagueClass: leaguesMap[choosenLeagueIndex],
-        rodadaMatch: rodadaMatch,
-        numeroDoConfronto: numeroDoConfronto
-    );
-
-    return TableRow(
-      children: [
-        Text(tableNational.teamName1,textAlign:TextAlign.end,style: EstiloTextoBranco.text14),
-        Images().getEscudoWidget(tableNational.teamName1,22,22),
-        (tableNational.showGoals)
-            ? Text(tableNational.gol1.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text14) : Container(),
-        const Text('x',style: EstiloTextoBranco.text16,textAlign: TextAlign.center,),
-        (tableNational.showGoals)
-            ? Text(tableNational.gol2.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.text14) : Container(),
-        Images().getEscudoWidget(tableNational.teamName2,22,22),
-        Text(tableNational.teamName2,style: EstiloTextoBranco.text14),
-      ],
-    );
-  }
-
-
-Widget yellowRedCardWidget(int goalOrYellowOrRed){
-
-  List leaguePlayers = organizarVariavelLeague(leaguesMap[choosenLeagueIndex],  goalOrYellowOrRed);
-
-    return Column(
-      children: [
-        Row(
-          children: [
-            goalOrYellowOrRed==0
-                  ? Text(Translation(context).text.topScorers,style: EstiloTextoBranco.text16)
-                  : goalOrYellowOrRed==1 ? Text(Translation(context).text.yellowCards,style: EstiloTextoBranco.text16)
-                : Text(Translation(context).text.redCards,style: EstiloTextoBranco.text16),
-          ],
-        ),
-
-        SizedBox(
-          height: 205,
-          child: SingleChildScrollView(
-            child: Table(
-              columnWidths: const{0: FractionColumnWidth(.1),1: FractionColumnWidth(.5),2: FractionColumnWidth(.4)},
-              children: [
-                for(int i=0; i<70; i++)
-                  yellowRedCardWidgetRow(leaguePlayers[i],goalOrYellowOrRed)
-              ],
-            ),
-          ),
-        ),
-      ],
-    );
-}
-  TableRow yellowRedCardWidgetRow(int playerID,int goalOrYellowOrRed){
-    Jogador player = Jogador(index: playerID);
-
-    return TableRow(
-      children: [
-        Images().getEscudoWidget(player.clubName,20,20),
-        Container(
-            color: player.clubID == My().clubID ? Colors.teal : Colors.transparent,
-            child: Text(player.name,style: EstiloTextoBranco.text14)),
-        goalOrYellowOrRed==0
-              ? Text(player.goalsLeague.toString(),style: EstiloTextoBranco.text16)
-              : goalOrYellowOrRed==1 ? Text(player.yellowCard.toString(),style: EstiloTextoBranco.text16)
-            : Text(player.redCard.toString(),style: EstiloTextoBranco.text16),
-      ],
-    );
-  }
 
 
 }
