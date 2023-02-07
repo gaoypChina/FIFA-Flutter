@@ -1,6 +1,6 @@
 import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/classes/navigator/click_club.dart';
+import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/historic_champions/historic_champions.dart';

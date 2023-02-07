@@ -2,7 +2,7 @@ import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
-import 'package:fifa/classes/navigator/click_club.dart';
+import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/theme/background_color/color_class_table.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';

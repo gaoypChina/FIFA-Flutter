@@ -199,7 +199,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
           ? GestureDetector(
               onTap: () {
                 if(i==internationalLeagueNames.length-1){
-                  changeLeague(internationalLeagueNames[i]);
+                  changeLeague(internationalLeagueNames[0]);
                 }else{
                   changeLeague(internationalLeagueNames[i+1]);
                 }

@@ -17,6 +17,8 @@ class InternationalLeague{
     reset(leagueOfficialNames.libertadores);
     reset(leagueOfficialNames.europaLeagueOficial);
     reset(leagueOfficialNames.copaSulAmericana);
+
+    reset32Zeros(leagueOfficialNames.libertadores);
   }
   reset(String internationalName){
     globalInternational[internationalName] = {};

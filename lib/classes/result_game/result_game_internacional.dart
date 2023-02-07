@@ -1,97 +1,16 @@
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/chaves.dart';
 import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/mata_mata/mata_mata_class.dart';
 import 'package:fifa/classes/table_matchs_control.dart';
+import 'package:fifa/global_variables.dart';
+import 'package:fifa/theme/background_color/background_score.dart';
 import 'package:fifa/theme/colors.dart';
-import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:flutter/material.dart';
-
-import '../global_variables.dart';
-import 'league.dart';
-
-class ResultGameNacional{
-
-  bool exists = false;
-  bool hasAdversary = true;
-  late int rodadaLocal;
-  bool visitante = false;
-  late int clubID;
-  late Club club;
-  late String clubName2;
-  late int clubID2;
-  int gol1 = 0;
-  int gol2 = 0;
-  int victoryDrawLoss310 = 0;
-  String placar = '';
-  Color backgroundColor = AppColors().greyTransparent;
-
-  ResultGameNacional({required int rodadaLocal, required this.club}){
-
-    List list = Chaves().chaveIndexAdvCampeonato(semanasJogosNacionais[rodadaLocal],club.leagueID, club.getChaveLeague());//index 0-16
-    int chaveClub2 = list[0];
-    visitante = list[1];
-    League league = League(index: club.leagueID);
-    clubName2 = league.getClubName(chaveClub2);
-    clubID2 = clubsAllNameList.indexOf(clubName2);
-
-    int rodadaMax = rodada;
-
-    //SÓ MOSTRA PARA RODADAS QUE JÁ ACONTECERAM
-    if((rodadaLocal<rodadaMax || semana > semanasJogosNacionais[league.nClubs-2])){
-      //rodadaLocal começa em 1 por isso subtrai 1
-
-      int chaveClub1 = Chaves().chaveIndexAdvCampeonato(rodadaLocal, club.leagueID, chaveClub2)[0];
-      try {
-        List results = globalHistoricLeagueGoalsAll[rodadaLocal][club.leagueID];
-        gol1 = results[chaveClub1];
-        gol2 = results[chaveClub2];
-        placar = gol1.toString() + ' x '+ gol2.toString();
-        exists = true;
-      }catch(e){
-        exists = false;
-        //print("Rodada $rodadaLocal não foi simulada");
-      }
-
-      backgroundBasedOnResult(gol1,gol2);
-
-
-    }else{
-      exists = false;
-    }
-
-    if(league.nClubs<=rodadaLocal){
-      hasAdversary = false;
-    }
-
-
-  }
-
-  
-  backgroundBasedOnResult(int gol1,int gol2){
-    if(gol1 < gol2){
-      backgroundColor = Colors.red;
-      victoryDrawLoss310 = 0;
-    }else if(gol1 == gol2){
-      backgroundColor = Colors.amber.withOpacity(0.7);
-      victoryDrawLoss310 = 1;
-    }else if(gol1 > gol2){
-      backgroundColor = Colors.green;
-      victoryDrawLoss310 = 3;
-    }
-    if(placar.isEmpty){
-      backgroundColor = Colors.black12;
-      victoryDrawLoss310 = -1;
-    }
-  }
-
-
-  }
 
 class ResultGameInternacional{
 
-  late String internationalLeagueName;
-  late int semanaLocal;
+  late String competitionName;
+  late int weekLocal;
   bool visitante = false;
   late int clubID;
   late Club club;
@@ -105,15 +24,20 @@ class ResultGameInternacional{
   bool hasAdversary = false;
   bool isAlreadyPlayed = false;
 
+  printar(){
+    print("WEEK: $weekLocal hasAdversary: $hasAdversary isAlreadyPlayed: $isAlreadyPlayed");
+    if(hasAdversary) {
+      print("TIME1: ${club.name} TIME2: $clubName2");
+    }
+  }
 
-  ResultGameInternacional({required int semanaLocal, required this.clubID, required this.internationalLeagueName}){
+  ResultGameInternacional({required this.weekLocal, required this.club, required this.competitionName}){
 
-    club = Club(index: clubID);
-
+    clubID = club.index;
     //FASE DE GRUPOS
     //Check every group if myTeam Is Playing
-    if(semanasGruposInternacionais.contains(semanaLocal)){
-      int rodadaNumber = semanasGruposInternacionais.indexOf(semanaLocal);
+    if(Semana(weekLocal).isJogoGruposInternacional){
+      int rodadaNumber = semanasGruposInternacionais.indexOf(weekLocal);
       for(int groupNumber=0; groupNumber<8; groupNumber++){
         for(int nConfronto=0; nConfronto<2; nConfronto++) {
 
@@ -121,10 +45,9 @@ class ResultGameInternacional{
               rodadaNumber: rodadaNumber,
               groupNumber: groupNumber,
               nConfronto: nConfronto,
-              competitionName: internationalLeagueName);
+              competitionName: competitionName);
 
           isAlreadyPlayed = matchResultInternational.isAlreadyPlayed;
-
           //SE SOU O TIME 1
           if(matchResultInternational.clubID1 == clubID){
             ifMyTeamIsLocal(matchResultInternational);
@@ -138,15 +61,15 @@ class ResultGameInternacional{
     }
 
     //RESULTADO MATA-MATAS
-    else if(semanasMataMataInternacionais.contains(semanaLocal)){
+    else if(Semana(weekLocal).isJogoMataMataInternacional){
       int idaVolta = 1;
-      if(Semana(semanaLocal).isJogoIdaMataMata){
+      if(Semana(weekLocal).isJogoIdaMataMata){
         idaVolta = 0;
       }
       for(int matchRow=0; matchRow<8; matchRow++){
         try{
           MataMata mataMata = MataMata();
-          mataMata.getData(internationalLeagueName, Semana(semanaLocal).semanaStr, matchRow, idaVolta);
+          mataMata.getData(competitionName, Semana(weekLocal).semanaStr, matchRow, idaVolta);
           isAlreadyPlayed = mataMata.isAlreadyPlayed;
           if(mataMata.clubID1 == clubID){
             visitante = false;
@@ -176,13 +99,24 @@ class ResultGameInternacional{
           }
 
         }catch(e){
+          isAlreadyPlayed = false;
           //print('row nao existe');
         }
       }
     }
 
+    if(weekLocal < semana){
+      backgroundColor = Colors.black87;
+    }
+
     if(isAlreadyPlayed) {
-      backgroundBasedOnResult(gol1, gol2);
+      if(placar.isEmpty){
+        backgroundColor = Colors.black87;
+        victoryDrawLoss310 = -1;
+      }else{
+        backgroundColor = colorResultBackground(gol1,gol2);
+        victoryDrawLoss310 = getVictoryDrawLoss310(gol1, gol2);
+      }
     }
 
   }
@@ -214,20 +148,5 @@ class ResultGameInternacional{
     }
   }
 
-  backgroundBasedOnResult(int gol1,int gol2){
-    if(gol1 < gol2){
-      backgroundColor = Colors.red;
-      victoryDrawLoss310 = 0;
-    }else if(gol1 == gol2){
-      backgroundColor = Colors.amber.withOpacity(0.7);
-      victoryDrawLoss310 = 1;
-    }else if(gol1 > gol2){
-      backgroundColor = Colors.green;
-      victoryDrawLoss310 = 3;
-    }
-    if(placar.isEmpty){
-      backgroundColor = Colors.black12;
-      victoryDrawLoss310 = -1;
-    }
-  }
+
 }

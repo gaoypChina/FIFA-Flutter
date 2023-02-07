@@ -7,7 +7,7 @@ import 'package:fifa/classes/match/adversario.dart';
 import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/simulate/simulate_functions.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/classes/result_game.dart';
+import 'package:fifa/classes/result_game/result_game_nacional.dart';
 import 'package:fifa/pages/coach/coach_menu.dart';
 import 'package:fifa/pages/historic/historic_menu.dart';
 import 'package:fifa/pages/menu/widgets/calendar_icon.dart';
@@ -112,7 +112,10 @@ class _MenuState extends State<Menu> {
 
                             Expanded(
                               child: wMenuButton('Simular',() async{
-                                simulateFunction();
+                                //int simulateNRodadas = 1;
+                                //for(int i =0; i < simulateNRodadas;i++) {
+                                  await simulateFunction();
+                                //}
                               }),
                           ),
 
@@ -230,7 +233,7 @@ class _MenuState extends State<Menu> {
     //Tem uma dependencia pelo ResultGameNacional
     int nRodadasMyLeague =  League(index: myClass.leagueID).nClubs-1;
     ResultGameNacional show = ResultGameNacional(
-        rodadaLocal: rodada >= nRodadasMyLeague  ? nRodadasMyLeague-1 : rodada-1,
+        rodadaLocal: rodada >= nRodadasMyLeague  ? nRodadasMyLeague : rodada,
         club: Club(index: myClass.clubID)
     );
     Confronto confronto = Confronto(

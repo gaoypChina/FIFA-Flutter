@@ -40,7 +40,7 @@ class Club{
   late int internationalGM;
   late int internationalGS;
 
-  Club({required this.index,bool hasPlayers = false,bool clubDetails = true}) {
+  Club({required this.index,bool hasPlayers = false,bool clubDetails = true, bool calcInternationalLeaguePlaying = true}) {
     name = clubsAllNameList[index];
     picture = FIFAImages().imageLogo(name);
     jogadores = hasPlayers ? [] : getJogadores();
@@ -62,8 +62,8 @@ class Club{
     leagueGM = globalClubsLeagueGM.isNotEmpty ? globalClubsLeagueGM[index] : 0;
     leagueGS = globalClubsLeagueGS.isNotEmpty ? globalClubsLeagueGS[index] : 0;
 
-    internationalLeagueName = InternationalLeagueManipulation().funcGetInternationalLeagueName(indexLeague: leagueID);
-    internationalLeagueNamePlaying = getPlayingInternationalName(index, internationalLeagueName);
+    internationalLeagueName = calcInternationalLeaguePlaying ? InternationalLeagueManipulation().funcGetInternationalLeagueName(indexLeague: leagueID) : "";
+    internationalLeagueNamePlaying = calcInternationalLeaguePlaying ? getPlayingInternationalName(index, internationalLeagueName) : "";
     try{
       internationalPoints = globalClubsInternationalPoints[index];
       internationalGM = globalClubsInternationalGM[index];

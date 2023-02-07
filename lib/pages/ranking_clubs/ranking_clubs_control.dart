@@ -50,7 +50,7 @@ class RankingClubsControl{
   }
 
   organizeMyContinentalRanking(){
-    String myContinent = Club(index: my.clubID).continent;
+    String myContinent = Club(index: my.clubID,calcInternationalLeaguePlaying:false).continent;
     copyClubsContinental = List.from(clubs);
     copyClubsContinental.removeWhere((club) => !club.continent.contains(myContinent));
   }

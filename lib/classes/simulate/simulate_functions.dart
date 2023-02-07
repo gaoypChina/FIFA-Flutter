@@ -13,6 +13,7 @@ import 'package:fifa/classes/chaves.dart';
 import 'package:fifa/classes/simulate/after_simulation/historic.dart';
 import 'package:fifa/classes/simulate/match_simulation.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/values/league_names.dart';
 
 import '../../classes/geral/semana.dart';
@@ -22,6 +23,7 @@ class Simulate{
   simulateWeek({required bool simulMyMatch}){
     //Antes de usar -> use o startVariables se for jogar a partida
 
+    customToast('Simulate Matchs...');
     //SIMULA PARTIDAS
     if(Semana(semana).isJogoCampeonatoNacional) {
       nationalMatchs(simulMyMatch);
@@ -41,14 +43,18 @@ class Simulate{
     //APÓS A SIMULAÇÃO
     updateWeek();
 
-    setTeamsInternational();
+    if(Semana(semana).isJogoCampeonatoInternacional) {
+      customToast('Set Teams');
+      setTeamsInternational();
+    }
 
     //Save position map
-    HistoricPositionsThisYear().setGlobal();
+    if(Semana(semana).isJogoCampeonatoNacional){
+      HistoricPositionsThisYear().setGlobal();
+    }
 
     //Salva o saldo financeiro atual para o histórico
     HistoricMyTransfers().saveWeekBalance();
-
   }
 
   startVariables(){
@@ -64,7 +70,7 @@ class Simulate{
       globalJogadoresMatchHealth = List.filled(globalMaxPlayersPermitted, 1.0);
       globalJogadoresMatchGrade = List.filled(globalMaxPlayersPermitted, 6.0);
   }
-  updateWeek() async{
+  updateWeek(){
     semana++;
     //Atualiza a rodada do campeonato
     if(Semana(semana).isJogoCampeonatoNacional) {

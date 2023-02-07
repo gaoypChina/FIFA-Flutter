@@ -46,9 +46,9 @@ class FIFAImages{
 
     if(leagueName==LeagueOfficialNames().championsLeague) {      imageLogo = 'champions_logo';       }
     if(leagueName==LeagueOfficialNames().libertadores) {      imageLogo = 'libertadores'; }
-    if(leagueName==LeagueOfficialNames().ligaEuropa) {      imageLogo = 'europaleague'; }
+    if(leagueName==LeagueOfficialNames().europaLeagueOficial) {      imageLogo = 'europaleague'; }
+    if(leagueName==LeagueOfficialNames().copaSulAmericana) {      imageLogo = 'sulamericana'; }
     if(leagueName==LeagueOfficialNames().concacaf) {      imageLogo = 'concacaf'; }
-    if(leagueName==LeagueOfficialNames().sulamericano) {      imageLogo = 'sulamericana';    }
     if(leagueName==LeagueOfficialNames().resto) {      imageLogo = 'rest';       }
     if(leagueName==LeagueOfficialNames().mundial) {      imageLogo = 'mundial';       }
 
@@ -57,8 +57,7 @@ class FIFAImages{
     if(leagueName==LeagueOfficialNames().cupwinners) {      imageLogo = 'cup winners';       }
 
 
-    if(leagueName==LeagueOfficialNames().europaLeagueOficial) {      imageLogo = 'europaleague'; }
-    if(leagueName==LeagueOfficialNames().copaSulAmericana) {      imageLogo = 'sulamericana'; }
+
 
     imageLogo = 'assets/league_logos/$imageLogo.png';
     return imageLogo;

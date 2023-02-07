@@ -3,7 +3,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/international.dart';
 import 'package:fifa/classes/international_league.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/classes/navigator/click_club.dart';
+import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/table_international/widget_bottom.dart';
@@ -151,7 +151,7 @@ TableRow groupTitle(int groupNumber){
         Images().getEscudoWidget(clubClass.name,20,20),
         GestureDetector(
           onTap:(){
-            clickClub(context: context, clubName: clubClass.name);
+            clickClubProfilePage(context, clubClass);
           },
           child: Container(
             color: clubClass.name == my.clubName

@@ -11,6 +11,7 @@ Mazembe,Mbomo Lutembe,LD,36,63,Democratic Republic Congo,wiki/missing_player.jpg
 Mazembe,Fadengo Soto,ZAG,28,64,Democratic Republic Congo,wiki/missing_player.jpg
 Mazembe,Bare Fuito,MC,23,60,Democratic Republic Congo,wiki/missing_player.jpg
 Nottingham Forest,K. Navas,GOL,35,87,Costa Rica,/193/041/23_60.png
+Chelsea,M. Gusto,LD,19,75,France,/259/307/23_60.png
 Chelsea,E. Fernández,MC VOL,21,85,Argentina,/247/090/23_60.png
 Chelsea,N. Kanté,VOL MC,31,88,France,/215/914/23_60.png
 Chelsea,K. Koulibaly,ZAG,31,86,Senegal,/201/024/23_60.png
@@ -566,7 +567,7 @@ Wolves,S. Kalajdžić,ATA,24,78,Austria,/239/901/23_60.png
 Wolves,Nélson Semedo,LD LD,28,78,Portugal,/227/928/23_60.png
 Wolves,C. Dawson,ZAG,32,78,England,/194/806/23_60.png
 Wolves,Hwang Hee Chan,PE ATA,26,77,South Korea,/226/380/23_60.png
-Wolves,Adama Traoré,PD PE ATA,26,77,Spain,/213/956/23_60.png
+Wolves,Adama Traoré,PD PE ATA,26,78,Spain,/213/956/23_60.png
 Wolves,Daniel Podence,PE ATA MEI,26,77,Portugal,/226/766/23_60.png
 Wolves,N. Collins,ZAG LD,21,76,Ireland,/248/484/23_60.png
 Wolves,Jonny,LD LE LD,28,76,Spain,/210/455/23_60.png
@@ -2124,7 +2125,7 @@ Real Betis,Rodri,MD ME MC,22,75,Spain,/259/681/23_60.png
 Real Betis,Aitor Ruibal,MD ME LD,26,75,Spain,/241/867/23_60.png
 Real Betis,D. Lainez,MD MC MEI,22,74,Mexico,/237/995/23_60.png
 Real Betis,Montoya,LD,31,73,Spain,/194/644/23_60.png
-Real Betis,Abner,LE,22,73,Brazil,/263/815/23_60.png
+Real Betis,Abner,LE,22,74,Brazil,/263/815/23_60.png
 Real Betis,Luiz Henrique,MD ME,21,73,Brazil,/264/698/23_60.png
 Real Betis,Loren,ATA,28,72,Spain,/242/348/23_60.png
 Real Betis,Camarasa,MC MEI MD,28,71,Spain,/219/571/23_60.png
@@ -5434,7 +5435,6 @@ Lyon,H. Aouar,MEI ME MC,24,77,France,/234/906/23_60.png
 Lyon,J. Boateng,ZAG,33,77,Germany,/183/907/23_60.png
 Lyon,C. Lukeba,ZAG,19,76,France,/262/138/23_60.png
 Lyon,Thiago Mendes,VOL ZAG,30,76,Brazil,/213/874/23_60.png
-Lyon,M. Gusto,LD,19,75,France,/259/307/23_60.png
 Lyon,J. Reine-Adélaïde,MC,24,75,France,/228/509/23_60.png
 Lyon,S. Diomande,ZAG,21,74,Ivory Coast,/257/204/23_60.png
 Lyon,R. Cherki,MEI PE PD,18,73,France,/251/570/23_60.png
@@ -5894,7 +5894,7 @@ Angers,S. Boufal,ATA ME ATA,28,76,Morocco,/211/381/23_60.png
 Angers,P. Bernardoni,GOL,25,74,France,/223/898/23_60.png
 Angers,N. Bentaleb,VOL MC,27,73,Algeria,/213/296/23_60.png
 Angers,C. Hountondji,ZAG,28,73,Benin,/219/680/23_60.png
-Angers,A. Ounahi,MC,22,73,Morocco,/255/125/23_60.png
+Olympique Marselha,A. Ounahi,MC,22,79,Morocco,/255/125/23_60.png
 Angers,S. Doumbia,LE ME LE,25,72,Ivory Coast,/236/454/23_60.png
 Angers,M. Blažič,ZAG,29,72,Slovenia,/238/945/23_60.png
 Angers,P. Capelle,MD MC ME,35,72,France,/209/781/23_60.png
@@ -6416,7 +6416,7 @@ Benfica,Samuel Soares,GOL,20,66,Portugal,/270/060/23_60.png
 Benfica,I. Vukotić,MC VOL,23,66,Montenegro,/246/192/23_60.png
 Benfica,João Neves,MC,17,65,Portugal,/272/834/23_60.png
 Benfica,Sandro Cruz,LE,21,64,Portugal,/268/807/23_60.png
-Sporting,Pedro Porro,LD MD,22,82,Spain,/243/576/23_60.png
+Tottenham,Pedro Porro,LD MD,22,82,Spain,/243/576/23_60.png
 Sporting,S. Coates,ZAG,31,82,Uruguay,/197/655/23_60.png
 Sporting,Pedro Gonçalves,PE PD MC,24,82,Portugal,/240/950/23_60.png
 Sporting,Adán,GOL,35,81,Spain,/178/086/23_60.png
@@ -9988,13 +9988,13 @@ Santos,Paulo Mazoti,GOL,22,57,Brazil,wiki/missing_player.jpg
 Atlético-MG,Guilherme Arana,MD LE ZAG,25,81,Brazil,wiki/81016.png
 Atlético-MG,Santos Edenilson,MD MC LD,33,80,Brazil,wiki/51238.png
 Atlético-MG,Matias Zaracho,MEI,24,80,Argentina,wiki/90310.png
-Atlético-MG,Givanildo Hulk,ATA MEI,36,80,Brazil,wiki/33654.png
+Atlético-MG,Hulk,ATA MEI,36,80,Brazil,wiki/33654.png
 Atlético-MG,Passos Otavio,MC MD,28,79,Brazil,wiki/73544.png
-Atlético-MG,Delmino Pedrinho,MEI MD,24,79,Brazil,wiki/90580.png
+Atlético-MG,Pedrinho,MEI MD,24,79,Brazil,wiki/90580.png
 Atlético-MG,Felipe Éverson,GOL,32,79,Brazil,wiki/47457.png
 Atlético-MG,Cristian Pavon,ATA MEI,27,79,Argentina,wiki/73146.png
 Atlético-MG,Igor Rabello,ZAG,27,78,Brazil,wiki/87421.png
-Atlético-MG,Bezerra Patrick,MC MEI VOL,30,78,Brazil,wiki/76921.png
+Atlético-MG,Patrick Bezerra,MC MEI VOL,30,78,Brazil,wiki/76921.png
 Atlético-MG,Eduardo Vargas,ATA ATA,33,78,Chile,wiki/32459.png
 Atlético-MG,Allan Souza,MC MD,25,78,Brazil,wiki/82325.png
 Atlético-MG,Igor Gomes,MEI MC,23,78,Brazil,wiki/99243.png
@@ -10002,7 +10002,7 @@ Atlético-MG,Eduardo Sasha,ATA MEI,30,78,Brazil,wiki/47327.png
 Atlético-MG,Mariano Ferreira,MD LD ZAG,36,77,Brazil,wiki/27948.png
 Atlético-MG,Nathan Silva,MD MC ZAG,25,77,Brazil,wiki/97019.png
 Atlético-MG,Junior Ademir,PE ATA,27,77,Brazil,wiki/99172.png
-Atlético-MG,Filho Paulinho,PE MEI,22,77,Brazil,wiki/91630.png
+Atlético-MG,Paulinho,PE MEI,22,77,Brazil,wiki/91630.png
 Atlético-MG,Humberto Rever,ZAG,38,76,Brazil,wiki/34047.png
 Atlético-MG,Dalmoro Hyoran,MEI MC,29,76,Brazil,wiki/76947.png
 Atlético-MG,Ribeiro Dodo,MD LE ZAG,31,75,Brazil,wiki/43456.png
@@ -10016,7 +10016,7 @@ Atlético-MG,Goncalves Calebe,MC MD,22,70,Brazil,wiki/108603.png
 Atlético-MG,Matheus Mendes,GOL,23,68,Brazil,wiki/105060.png
 Atlético-MG,Silva Micael,ZAG,22,59,Brazil,wiki/missing_player.jpg
 Atlético-MG,Gabriel Delfim,GOL,20,59,Brazil,wiki/missing_player.jpg
-Internacional,Mario Fernandes,MD LD ZAG,32,80,Russia,wiki/41203.png
+Internacional,Mario Fernandes,LD,32,80,Russia,wiki/41203.png
 Internacional,Fabricio Bustos,MD LD ZAG,26,79,Argentina,wiki/90274.png
 Internacional,Alan Patrick,MEI MC,31,79,Brazil,wiki/43661.png
 Internacional,Wanderson Maciel,ATA MEI,28,79,Brazil,wiki/64855.png
@@ -10042,15 +10042,15 @@ Internacional,Lucas Ramos,MC MD,22,65,Brazil,wiki/missing_player.jpg
 Internacional,Matheus Dias,MC MEI MD,20,62,Brazil,wiki/missing_player.jpg
 Internacional,Emerson Junior,GOL,22,59,Brazil,wiki/missing_player.jpg
 Flamengo,Gabriel Barbosa,ATA ATA,26,83,Brazil,wiki/68166.png
-Flamengo,Giorgian de Arrascaeta,ATA ATA,28,84,Uruguay,wiki/64661.png
+Flamengo,Giorgian de Arrascaeta,MEI,28,84,Uruguay,wiki/64661.png
 Flamengo,Éverton Ribeiro,MEI MC,33,81,Brazil,wiki/32347.png
 Flamengo,Guilherme Pedro,ATA,25,83,Brazil,wiki/87068.png
 Flamengo,Everton Cebolinha,MEI MC,26,80,Brazil,wiki/73914.png
-Flamengo,Santos Gerson,MEI MC,25,81,Brazil,wiki/79604.png
-Flamengo,Erick Pulgar,MC MD,29,78,Chile,wiki/72125.png
+Flamengo,Santos Gerson,MC,25,81,Brazil,wiki/79604.png
+Flamengo,Erick Pulgar,MC MD,29,77,Chile,wiki/72125.png
 Flamengo,Bruno Henrique,ATA MEI,32,79,Brazil,wiki/81439.png
-Flamengo,Arturo Vidal,MEI ME MD,35,78,Chile,wiki/17566.png
-Flamengo,Filipe Luis,MD LE ZAG,37,79,Brazil,wiki/3086.png
+Flamengo,Arturo Vidal,VOL MC,35,78,Chile,wiki/17566.png
+Flamengo,Filipe Luis,LE,37,79,Brazil,wiki/3086.png
 Flamengo,Aderbar Santos,GOL,32,79,Brazil,wiki/54606.png
 Flamengo,Nascimento Pablo,ZAG,31,78,Brazil,wiki/48539.png
 Flamengo,Rodrigo Caio,ZAG,29,78,Brazil,wiki/51236.png
@@ -10107,12 +10107,12 @@ Botafogo,Santos Chay,ATA ATA,32,72,Brazil,wiki/115483.png
 Botafogo,Goncalves Hugo,MD LE ZAG,21,72,Brazil,wiki/108605.png
 Botafogo,Lucas Perri,GOL,25,70,Brazil,wiki/82286.png
 Botafogo,Diego Loureiro,GOL,24,70,Brazil,wiki/102290.png
-Botafogo,Matheus Nascimento,ATA,18,68,Brazil,wiki/105111.png
+Botafogo,Matheus Nascimento,ATA,18,73,Brazil,wiki/105111.png
 Botafogo,Silva Breno,MC MD,22,68,Brazil,wiki/102160.png
 Botafogo,Luiz Kayque,MC MD,22,67,Brazil,wiki/115482.png
 Botafogo,Santanna Ronald,MEI,26,67,Brazil,wiki/112841.png
 Botafogo,Gabriel Conceicao,ATA,21,65,Brazil,wiki/missing_player.jpg
-Botafogo,Lucas Mezenga,ZAG,21,65,Brazil,wiki/124177.png
+Botafogo,Lucas Mezenga,ZAG,21,69,Brazil,wiki/124177.png
 Botafogo,Douglas Borges,GOL,32,65,Brazil,wiki/112840.png
 Botafogo,Silva Wallison,MD LD ZAG,21,64,Brazil,wiki/104093.png
 Botafogo,Luis Phelipe,PE MEI,21,64,Brazil,wiki/104156.png
@@ -10818,7 +10818,7 @@ Vasco,Pedro Raul,ATA,26,77,Brazil,wiki/103833.png
 Vasco,Luca Orellano,ATA ATA,22,77,Argentina,wiki/104675.png
 Vasco,Alex Teixeira,ATA ATA,33,77,Brazil,wiki/32901.png
 Vasco,Leo Jardim,GOL,27,75,Brazil,wiki/78697.png
-Vasco,Ânderson Nene,PE MEI,41,75,Brazil,wiki/2704.png
+Vasco,Ânderson Nene,PE MEI,41,76,Brazil,wiki/2704.png
 Vasco,Jose Luis Rodriguez,MD LD ZAG,25,75,Uruguay,wiki/89593.png
 Vasco,Fraga Edimar,MD LE ZAG,36,75,Brazil,wiki/33390.png
 Vasco,Robson Bambu,ZAG,25,74,Brazil,wiki/99215.png
@@ -11614,26 +11614,26 @@ River Plate,F. Petroli,GOL,24,66,Argentina,/256/407/23_60.png
 River Plate,H. López Muñoz,MD ME,21,66,Argentina,/248/231/23_60.png
 River Plate,F. Londoño,ATA,21,65,Colombia,/266/725/23_60.png
 River Plate,N. Casasola,VOL,21,62,Argentina,/269/494/23_60.png
-Boca Juniors,A. Rossi,GOL,26,79,Argentina,/227/275/23_60.png
+Al Nassr,A. Rossi,GOL,26,79,Argentina,/227/275/23_60.png
 Boca Juniors,M. Rojo,ZAG,32,78,Argentina,/201/862/23_60.png
-Boca Juniors,S. Villa,PE PD,26,78,Colombia,/233/959/23_60.png
+Boca Juniors,S. Villa,PE PD,26,79,Colombia,/233/959/23_60.png
 Boca Juniors,D. Benedetto,ATA,32,77,Argentina,/215/061/23_60.png
 Boca Juniors,F. Fabra,LE,31,77,Colombia,/214/040/23_60.png
 Boca Juniors,S. Romero,GOL,35,76,Argentina,/173/373/23_60.png
 Boca Juniors,A. Varela,VOL MC,20,76,Argentina,/260/599/23_60.png
 Boca Juniors,G. Fernández,MC VOL,30,76,Argentina,/211/269/23_60.png
-Boca Juniors,Ó. Romero,MEI MD MC,29,76,Paraguay,/220/334/23_60.png
+Boca Juniors,Ó. Romero,MEI MD MC,29,77,Paraguay,/220/334/23_60.png
 Boca Juniors,M. Retegui,ATA,23,75,Argentina,/241/850/23_60.png
-Boca Juniors,L. Advíncula,LD,32,75,Peru,/204/539/23_60.png
+Boca Juniors,L. Advíncula,LD,32,76,Peru,/204/539/23_60.png
 Boca Juniors,F. Roncaglia,ZAG LD,35,74,Argentina,/183/966/23_60.png
 Boca Juniors,J. Ramírez,MC ME,29,74,Argentina,/214/665/23_60.png
 Boca Juniors,B. Valdez,ZAG LD,29,74,Paraguay,/228/729/23_60.png
 Boca Juniors,A. Molinas,MEI MC,21,73,Argentina,/256/502/23_60.png
-Boca Juniors,J. Campuzano,VOL MC,26,73,Colombia,/242/267/23_60.png
+Boca Juniors,J. Campuzano,VOL MC,26,75,Colombia,/242/267/23_60.png
 Boca Juniors,J. García,GOL,35,73,Argentina,/178/566/23_60.png
 Boca Juniors,N. Figal,ZAG LD,28,73,Argentina,/219/841/23_60.png
 Boca Juniors,L. Vázquez,ATA,21,72,Argentina,/251/651/23_60.png
-Boca Juniors,E. Zeballos,PD PE,20,72,Argentina,/260/601/23_60.png
+Boca Juniors,E. Zeballos,PD PE,20,73,Argentina,/260/601/23_60.png
 Boca Juniors,N. Orsini,ATA,27,72,Argentina,/220/148/23_60.png
 Boca Juniors,D. González,MC,34,71,Argentina,/214/770/23_60.png
 Boca Juniors,E. Fernández,VOL MC,19,71,Argentina,/262/151/23_60.png
@@ -13538,12 +13538,12 @@ Tolima,Juan Manuel Valencia,MEI MC,24,69,Colombia,wiki/87489.png
 Tolima,Leider Riascos,MD LD ZAG,22,69,Colombia,wiki/115794.png
 Tolima,Juan Jose Rubiano,MEI,21,59,Colombia,wiki/missing_player.jpg
 Tolima,Alejandro Aguilar,GOL,18,57,Colombia,wiki/124380.png
-I. Del Valle,Junior Sornoza,MEI,29,76,Ecuador,wiki/52850.png
-I. Del Valle,Moises Ramirez,GOL,22,75,Ecuador,wiki/100022.png
-I. Del Valle,Lorenzo Faravelli,MEI MC,29,75,Argentina,wiki/50801.png
+I. Del Valle,Junior Sornoza,MEI,29,77,Ecuador,wiki/52850.png
+I. Del Valle,Moises Ramirez,GOL,22,76,Ecuador,wiki/100022.png
+I. Del Valle,Lorenzo Faravelli,MEI MC,29,78,Argentina,wiki/50801.png
 I. Del Valle,Cristian Pellerano,MC MD,41,74,Argentina,wiki/18559.png
-I. Del Valle,Jordy Alcivar,MC MEI MD,23,74,Ecuador,wiki/110489.png
-I. Del Valle,Richard Schunke,ZAG,31,74,Argentina,wiki/94849.png
+I. Del Valle,Jordy Alcivar,MC MEI MD,23,75,Ecuador,wiki/110489.png
+I. Del Valle,Richard Schunke,ZAG,31,76,Argentina,wiki/94849.png
 I. Del Valle,Beder Caicedo,MD LE ZAG,30,74,Ecuador,wiki/40743.png
 I. Del Valle,Mateo Carabajal,MD MC ZAG,25,72,Argentina,wiki/100070.png
 I. Del Valle,Anthony Landazuri,LD LD,25,72,Ecuador,wiki/100472.png
@@ -15978,7 +15978,7 @@ Al Nassr,Anderson Talisca,ATA ATA MEI,28,82,Brazil,/212/523/23_60.png
 Al Nassr,D. Ospina,GOL,33,80,Colombia,/176/550/23_60.png
 Al Nassr,G. Konan,LE LE,26,77,Ivory Coast,/235/634/23_60.png
 Al Nassr,Álvaro,ZAG,32,75,Spain,/202/935/23_60.png
-Al Nassr,Luiz Gustavo,VOL MC,34,75,Brazil,/185/221/23_60.png
+Al Nassr,Luiz Gustavo,VOL MC,34,77,Brazil,/185/221/23_60.png
 Al Nassr,G. Martínez,MD MEI ME,29,75,Argentina,/226/377/23_60.png
 Al Nassr,S. Al Ghannam,LD,28,72,South Arabia,/232/477/23_60.png
 Al Nassr,J. Masharipov,ME,28,71,Uzbekistan,/262/595/23_60.png
@@ -16270,20 +16270,20 @@ Persepolis,Mohammad Omri,MEI,22,66,Iran,wiki/missing_player.jpg
 Persepolis,Ali Joudaki,MD LE ZAG,22,62,Iran,wiki/missing_player.jpg
 Persepolis,Mehrshad Asadi,GOL,21,62,Iran,wiki/missing_player.jpg
 Persepolis,Abolfazl Soleimani,ZAG,21,57,Iran,wiki/missing_player.jpg
-Al Ahly,Ali Maâloul,MD LE ZAG,33,76,Tunisia,wiki/64939.png
+Al Ahly,Ali Maâloul,MD LE ZAG,33,78,Tunisia,wiki/64939.png
 Al Ahly,Percy Tau,ATA ATA,28,76,South Africa,wiki/78674.png
 Al Ahly,Rami Rabia,VOL ZAG,29,75,Egypt,wiki/52919.png
-Al Ahly,Mohamed el Shenawy,GOL,34,75,Egypt,wiki/67092.png
-Al Ahly,Amr el Solia,MC MD,32,75,Egypt,wiki/43896.png
-Al Ahly,Mohamed Hany,MD LD ZAG,26,75,Egypt,wiki/76772.png
+Al Ahly,Mohamed el Shenawy,GOL,34,78,Egypt,wiki/67092.png
+Al Ahly,Amr el Solia,MC MD,32,76,Egypt,wiki/43896.png
+Al Ahly,Mohamed Hany,MD LD ZAG,26,76,Egypt,wiki/76772.png
 Al Ahly,Hussein el Shahat,MD LD MEI ZAG,30,75,Egypt,wiki/96078.png
 Al Ahly,Ayman Ashraf,LE,31,75,Egypt,wiki/47096.png
 Al Ahly,Mohamed Abdelmonem,ZAG,24,74,Egypt,wiki/118419.png
-Al Ahly,Mohamed Magdy,MEI MC,26,74,Egypt,wiki/108170.png
+Al Ahly,Mohamed Magdy,MEI MC,26,75,Egypt,wiki/108170.png
 Al Ahly,Aliou Dieng,MC MD,25,74,Mali,wiki/101449.png
-Al Ahly,Mahmoud Kahraba,PE ATA,28,74,Egypt,wiki/65223.jpg
+Al Ahly,Mahmoud Kahraba,PE ATA,28,73,Egypt,wiki/65223.jpg
 Al Ahly,Hamdi Fathi,MD MC ZAG,28,74,Egypt,wiki/76817.png
-Al Ahly,Mohamed Sherif,ATA MEI,27,73,Egypt,wiki/66063.png
+Al Ahly,Mohamed Sherif,ATA MEI,27,74,Egypt,wiki/66063.png
 Al Ahly,Ahmed Kendouci,MEI MC,23,72,Algeria,wiki/118358.png
 Al Ahly,Mahmoud Metwaly,VOL ZAG,30,71,Egypt,wiki/66061.png
 Al Ahly,Yasser Ibrahim,ZAG,29,71,Egypt,wiki/72403.jpg
@@ -16298,7 +16298,7 @@ Al Ahly,Mohamed Dhaoui,PE MEI,19,68,Tunisia,wiki/128783.png
 Al Ahly,Karim Nedved,MEI MC,25,67,Egypt,wiki/108171.png
 Al Ahly,Karim Fouad,MC ZAG,23,64,Egypt,wiki/missing_player.jpg
 Zamalek,Omar Gaber,MD MEI LE,31,75,Egypt,wiki/51149.png
-Zamalek,Ahmed Zizo,MEI MC,27,75,Egypt,wiki/73404.png
+Zamalek,Ahmed Zizo,MEI MC,27,76,Egypt,wiki/73404.png
 Zamalek,Mahmoud el Wensh,LD,27,74,Egypt,wiki/110071.png
 Zamalek,Ahmed Fatouh,MD LE ZAG,24,74,Egypt,wiki/108174.png
 Zamalek,Ibrahima Ndiaye,PE ATA,24,73,Senegal,wiki/101809.png

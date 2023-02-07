@@ -1,11 +1,10 @@
-import 'package:fifa/classes/geral/semana.dart';
+import 'package:fifa/classes/calendar_result.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/classes/result_game.dart';
 import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:flutter/material.dart';
+
 import '../../../classes/club.dart';
 
 Widget wLast5Matchs(BuildContext context){
@@ -16,29 +15,34 @@ Widget wLast5Matchs(BuildContext context){
     child: ListView.builder(
         itemCount: 5,
         scrollDirection: Axis.horizontal,
-        itemBuilder: (c,i)=>resultBox(context, i, myClass)),
+        itemBuilder: (c,i)=>resultBox(context, i+1, myClass)),
   );
 }
 Widget resultBox(BuildContext context, int i, My myClass){
   Color color = Colors.transparent;
-  int nRodadasMyLeague =  League(index: myClass.leagueID).nClubs-1;
-  int semanaShow = 0;
-  if(rodada >= nRodadasMyLeague){
-    semanaShow = semanasJogosNacionais[nRodadasMyLeague-i];
-  }else if(rodada-1-i >= 0){
-    semanaShow = semanasJogosNacionais[rodada-1-i];
+
+  //ESSE TRECHO NAO ESTA MAIS EM USO
+//  int nRodadasMyLeague =  League(index: myClass.leagueID).nClubs-1;
+//  int semanaShow = 0;
+//  if(rodada >= nRodadasMyLeague){
+//    semanaShow = semanasJogosNacionais[nRodadasMyLeague-i];
+//  }else if(rodada-1-i >= 0){
+//    semanaShow = semanasJogosNacionais[rodada-1-i];// }
+
+
+  int week = 0;
+  if(semana-i > 0){
+    week = semana-i;
   }
-  ResultGameNacional show = ResultGameNacional(
-      rodadaLocal: Semana(semanaShow).rodadaNacional,
-      club: Club(index: myClass.clubID)
-  );
-  if(show.victoryDrawLoss310 == 3){color = Colors.green;}
-  if(show.victoryDrawLoss310 == 1){color = Colors.yellow;}
-  if(show.victoryDrawLoss310 == 0){color = Colors.red;}
-  if(show.exists){
+  CalendarResult calendarResult = CalendarResult(semanaLocal: week, club: Club(index: myClass.clubID));
+
+  if(calendarResult.show.isAlreadyPlayed && calendarResult.show.hasAdversary){
+
+    color = calendarResult.show.backgroundColor;
+
     return GestureDetector(
       onTap:(){
-        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => ClubProfile(clubID: show.clubID2)));
+        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => ClubProfile(clubID: calendarResult.show.clubID2)));
       },
       child: Container(
         height:20,
@@ -48,7 +52,7 @@ Widget resultBox(BuildContext context, int i, My myClass){
           color: color,
           borderRadius: const BorderRadius.all(Radius.circular(5.0)),
         ),
-        child: Center(child: Images().getEscudoWidget(show.clubName2,15,15)),
+        child: Center(child: Images().getEscudoWidget(calendarResult.show.clubName2,15,15)),
       ),
     );
   }else{

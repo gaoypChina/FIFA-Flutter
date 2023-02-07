@@ -86,8 +86,6 @@ class FimDoCampeonatoLocal{
 
   setTeamsLibertadores(League leagueClass, List clubIndexes){
 
-    InternationalLeague().reset32Zeros(LeagueOfficialNames().libertadores);
-
     if(leagueClass.name == LeagueOfficialNames().brasil1){
       for(int i=0; i<8; i++){
         InternationalLeague().setClub(LeagueOfficialNames().libertadores, clubIndexes[i], i*4);

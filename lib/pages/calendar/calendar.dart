@@ -4,7 +4,8 @@ import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/classes/result_game.dart';
+import 'package:fifa/classes/result_game/result_game_internacional.dart';
+import 'package:fifa/classes/result_game/result_game_nacional.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/calendar/calendar_adv_box.dart';
 import 'package:fifa/theme/translation.dart';
@@ -59,8 +60,13 @@ class _CalendarState extends State<Calendar> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
   Widget adversarioWidget(int semanaLocal){
+    Club myClub = Club(index: myTeamClass.clubID);
     if(Semana(semanaLocal).isJogoCampeonatoNacional){
-      ResultGameNacional show = ResultGameNacional(rodadaLocal: Semana(semanaLocal).rodadaNacional, club: Club(index: myTeamClass.clubID));
+      ResultGameNacional show = ResultGameNacional(
+          rodadaLocal: Semana(semanaLocal).rodadaNacional,
+          club: myClub
+      );
+
       if(Semana(semanaLocal).rodadaNacional <= nClubsLeague){
         return wCalendarAdvBox(context, semanaLocal, show);
       }else{
@@ -72,7 +78,11 @@ class _CalendarState extends State<Calendar> {
       }
 
     }else if(Semana(semanaLocal).isJogoCampeonatoInternacional){
-      ResultGameInternacional show = ResultGameInternacional(semanaLocal: semanaLocal, clubID: myTeamClass.clubID, internationalLeagueName: myTeamClass.playingInternational);
+      ResultGameInternacional show = ResultGameInternacional(
+          weekLocal: semanaLocal,
+          club: myClub,
+          competitionName: myTeamClass.playingInternational
+      );
       if(show.hasAdversary && semana >= semanasJogosInternacionais.first) {
         return wCalendarAdvBox(context, semanaLocal, show);
       }else{
@@ -84,7 +94,11 @@ class _CalendarState extends State<Calendar> {
       }
 
     }else if(Semana(semanaLocal).isJogoMataMataInternacional){
-      ResultGameInternacional show = ResultGameInternacional(semanaLocal: semanaLocal, clubID: myTeamClass.clubID, internationalLeagueName: myTeamClass.playingInternational);
+      ResultGameInternacional show = ResultGameInternacional(
+          weekLocal: semanaLocal,
+          club: myClub,
+          competitionName: myTeamClass.playingInternational
+      );
       if(show.hasAdversary && semana >= semanasMataMataInternacionais.first) {
         return wCalendarAdvBox(context, semanaLocal, show);
       }else{

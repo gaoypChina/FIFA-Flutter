@@ -1,5 +1,6 @@
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
+import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/tabela_national.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
@@ -28,9 +29,12 @@ Widget wMatchsTable(int rodadaMatch, League leagueClass, int choosenLeagueIndex)
 }
 
 TableRow wRowMatchesVersus(TableNational tableNational) {
+  My my = My();
   return TableRow(
     children: [
-      Text(tableNational.teamName1,textAlign:TextAlign.end,style: EstiloTextoBranco.text14),
+      Container(
+        color: tableNational.teamName1 == my.clubName ? Colors.teal : Colors.transparent,
+          child: Text(tableNational.teamName1,textAlign:TextAlign.end,style: EstiloTextoBranco.text14)),
       Images().getEscudoWidget(tableNational.teamName1,22,22),
       (tableNational.showGoals)
           ? Text(tableNational.gol1.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text14) : Container(),
@@ -38,7 +42,9 @@ TableRow wRowMatchesVersus(TableNational tableNational) {
       (tableNational.showGoals)
           ? Text(tableNational.gol2.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.text14) : Container(),
       Images().getEscudoWidget(tableNational.teamName2,22,22),
-      Text(tableNational.teamName2,style: EstiloTextoBranco.text14),
+      Container(
+          color: tableNational.teamName2 == my.clubName ? Colors.teal : Colors.transparent,
+          child: Text(tableNational.teamName2,textAlign:TextAlign.start,style: EstiloTextoBranco.text14)),
     ],
   );
 }

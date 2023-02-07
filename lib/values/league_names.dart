@@ -71,6 +71,7 @@ class LeagueOfficialNames{
   String malta = 'Liga Malta';
   String liechtenstein = 'Liga Liechtenstein';
   String luxemburgo = 'Liga Luxemburgo';
+
   String ligaEuropa = 'Liga Europeia';  String lesteEuropeu = 'Leste Europeu';
 
   String brasil1 = 'Brasileirão';  String brasil2 = 'Brasileirão - Série B';String brasil3 = 'Brasileirão - Série C';

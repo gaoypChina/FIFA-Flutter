@@ -1,5 +1,5 @@
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/classes/navigator/click_club.dart';
+import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 

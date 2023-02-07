@@ -1,6 +1,6 @@
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/classes/nteams_int_league.dart';
+import 'package:fifa/classes/functions/nteams_int_league.dart';
 import 'package:fifa/values/league_divisions.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:flutter/material.dart';

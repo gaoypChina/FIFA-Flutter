@@ -1,8 +1,9 @@
+import 'package:fifa/classes/calendar_result.dart';
+import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/pages/club_profile/controller/club_calendar_controller.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
@@ -59,44 +60,48 @@ class _ClubCalendarState extends State<ClubCalendar> {
 ////////////////////////////////////////////////////////////////////////////
 Widget calendarRow(int week){
     Semana semanaClass = Semana(week);
-    ClubCalendarController controller = ClubCalendarController(widget.club);
-    controller.getWeekInfos(week);
+    CalendarResult calendarResult = CalendarResult(semanaLocal: week, club: widget.club);
 
-    return Container(
-      color: controller.backgroundColor,
-      margin: const EdgeInsets.symmetric(vertical: 4),
-      padding: const EdgeInsets.all(4),
-      child: Row(
-        children: [
-          Image.asset(FIFAImages().campeonatoLogo(controller.competitionName),height:30,width: 30,),
-          const SizedBox(width: 8),
-          Column(
-            children: [
-              controller.visitante
-                  ? Text(Translation(context).text.away.toUpperCase(),style: EstiloTextoBranco.text12)
-                  : Text(Translation(context).text.home.toUpperCase(),style: EstiloTextoBranco.text12),
-              Text(controller.placar,style: EstiloTextoBranco.text16),
-            ],
-          ),
-          const SizedBox(width: 8),
-
-          controller.hasAdversaryDefined
-              ? Images().getEscudoWidget(controller.club2.name,30,30)
-              : Container(),
-          const SizedBox(width: 8),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+    return GestureDetector(
+      onTap: (){
+        clickClubProfilePage(context, Club(index: calendarResult.show.clubID2));
+      },
+      child: Container(
+        color: calendarResult.show.backgroundColor,
+        margin: const EdgeInsets.symmetric(vertical: 4),
+        padding: const EdgeInsets.all(4),
+        child: Row(
+          children: [
+            Image.asset(FIFAImages().campeonatoLogo(calendarResult.show.competitionName),height:30,width: 30,),
+            const SizedBox(width: 8),
+            Column(
               children: [
-
-                Text(semanaClass.semanaCalendarStr,style: EstiloTextoBranco.text12),
-                controller.hasAdversaryDefined
-                    ? Text(controller.club2.name,style: EstiloTextoBranco.text16)
-                    : Container(),
-
+                calendarResult.show.visitante
+                    ? Text(Translation(context).text.away.toUpperCase(),style: EstiloTextoBranco.text12)
+                    : Text(Translation(context).text.home.toUpperCase(),style: EstiloTextoBranco.text12),
+                Text(calendarResult.show.placar,style: EstiloTextoBranco.text16),
               ],
             ),
+            const SizedBox(width: 8),
 
-        ],
+            calendarResult.show.hasAdversary
+                ? Images().getEscudoWidget(calendarResult.show.clubName2,30,30)
+                : Container(),
+            const SizedBox(width: 8),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+
+                  Text(semanaClass.semanaCalendarStr,style: EstiloTextoBranco.text12),
+                  calendarResult.show.hasAdversary
+                      ? Text(calendarResult.show.clubName2,style: EstiloTextoBranco.text16)
+                      : Container(),
+
+                ],
+              ),
+
+          ],
+        ),
       ),
     );
 }
