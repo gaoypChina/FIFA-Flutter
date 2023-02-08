@@ -12,17 +12,18 @@ class MataMataSimulation{
 
   simulateMatchs(bool simulMyMatch){
     My myClass = My();
+    MataMata mataMata = MataMata();
     for (int i = 0; i < internationalLeagueNames.length; i++) {
       String internationalName = InternationalLeagueManipulation().funcGetInternationalLeagueNameFromIndex(internationalLeagueIndex: i);
 
-      int matchRowsTotal = MataMata().getMatchRows();
-      int phaseIdaVolta = MataMata().getPhaseIdaVolta(semana); //jogo de ida ou volta
+      int matchRowsTotal = mataMata.getMatchRows();
+      int phaseIdaVolta = mataMata.getPhaseIdaVolta(semana); //jogo de ida ou volta
       for (int matchRows = 0; matchRows<matchRowsTotal; matchRows++) {
         //PEGA OS TIMES QUE VÃO JOGAR
-        MataMata mataMata = MataMata();
+        mataMata = MataMata();
         mataMata.getData(internationalName, mataMata.getSemanaPhase(semana),matchRows, phaseIdaVolta);
-        Club club1 = Club(index: mataMata.clubID1);
-        Club club2 = Club(index: mataMata.clubID2);
+        Club club1 = Club(index: mataMata.clubID1, clubDetails: false);
+        Club club2 = Club(index: mataMata.clubID2, clubDetails: false);
         if((club1.index != myClass.clubID && club2.index != myClass.clubID) || simulMyMatch){
         //SIMULA A PARTIDA EM SI
         MatchSimulation(club1, club2);

@@ -1,18 +1,18 @@
 import 'package:fifa/classes/coach/coach_best_results.dart';
 import 'package:fifa/classes/functions/check_internet.dart';
+import 'package:fifa/classes/geral/semana.dart';
 import 'package:fifa/classes/geral/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/match/adversario.dart';
 import 'package:fifa/classes/match/confronto.dart';
+import 'package:fifa/classes/result_game/result_game_nacional.dart';
 import 'package:fifa/classes/simulate/simulate_functions.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/classes/result_game/result_game_nacional.dart';
 import 'package:fifa/pages/coach/coach_menu.dart';
 import 'package:fifa/pages/historic/historic_menu.dart';
 import 'package:fifa/pages/menu/widgets/calendar_icon.dart';
 import 'package:fifa/pages/menu/widgets/header.dart';
-import 'package:fifa/pages/menu/widgets/last5_matchs.dart';
 import 'package:fifa/pages/menu/widgets/menu_button.dart';
 import 'package:fifa/pages/menu/widgets/menu_classification.dart';
 import 'package:fifa/pages/menu/widgets/stadium_buttons.dart';
@@ -112,10 +112,7 @@ class _MenuState extends State<Menu> {
 
                             Expanded(
                               child: wMenuButton('Simular',() async{
-                                //int simulateNRodadas = 1;
-                                //for(int i =0; i < simulateNRodadas;i++) {
                                   await simulateFunction();
-                                //}
                               }),
                           ),
 
@@ -167,7 +164,7 @@ class _MenuState extends State<Menu> {
 
                             wMenuClassification(context, myClass),
 
-                            wLast5Matchs(context),
+                            //wLast5Matchs(context),
                           ],
                         ),
 
@@ -231,20 +228,23 @@ class _MenuState extends State<Menu> {
     //**Só funciona se ja tiver simulado todos os outros jogos
     //TODO: SÓ CONTA RESULTADO DAS LIGAS NACIONAIS
     //Tem uma dependencia pelo ResultGameNacional
-    int nRodadasMyLeague =  League(index: myClass.leagueID).nClubs-1;
-    ResultGameNacional show = ResultGameNacional(
-        rodadaLocal: rodada >= nRodadasMyLeague  ? nRodadasMyLeague : rodada,
-        club: Club(index: myClass.clubID)
-    );
-    Confronto confronto = Confronto(
-        clubName1: myClass.clubName,
-        clubName2: adversario.clubName,
-        goal1: show.gol1,
-        goal2: show.gol2
-    );
-    CoachBestResults coachBestResults = CoachBestResults();
-    coachBestResults.updateSequence(confronto);
+    if(Semana(semanasJogosNacionais[rodada-1]).isJogoCampeonatoNacional){
+      int nRodadasMyLeague =  League(index: myClass.leagueID).nClubs-1;
+      ResultGameNacional show = ResultGameNacional(
+          rodadaLocal: rodada >= nRodadasMyLeague  ? nRodadasMyLeague : rodada,
+          club: Club(index: myClass.clubID)
+      );
+      Confronto confronto = Confronto(
+          clubName1: myClass.clubName,
+          clubName2: adversario.clubName,
+          goal1: show.gol1,
+          goal2: show.gol2
+      );
+      CoachBestResults coachBestResults = CoachBestResults();
+      coachBestResults.updateSequence(confronto);
+    }
 
+    customToast('Done');
     if(semana >= globalUltimaSemana){
       Navigator.of(context).push(MaterialPageRoute(builder: (context) => const EndYear()));
     }else{

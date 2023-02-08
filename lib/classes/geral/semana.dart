@@ -8,6 +8,10 @@ class Semana{
   int rodadaGroupInternational = 1;
   bool isJogoIdaMataMata = true;
   bool isJogoIdaLeague = true;
+  bool isJogoOitavasInternacional = semanaOitavas.contains(semana);
+  bool isJogoQuartasInternacional = semanaQuartas.contains(semana);
+  bool isJogoSemifinalInternacional = semanaSemi.contains(semana);
+  bool isJogoFinalInternacional = semanaFinal.contains(semana);
   bool isJogoMundial = semanaMundial.contains(semana);
   bool isJogoCopa = semanasJogosCopas.contains(semana);
   bool isJogoCampeonatoNacional = semanasJogosNacionais.contains(semana);
@@ -26,6 +30,11 @@ class Semana{
     isJogoCampeonatoInternacional = semanasJogosInternacionais.contains(weekToCalculate);
     isJogoGruposInternacional = semanasGruposInternacionais.contains(weekToCalculate);
     isJogoMataMataInternacional = semanasMataMataInternacionais.contains(weekToCalculate);
+
+    isJogoOitavasInternacional = semanaOitavas.contains(weekToCalculate);
+    isJogoQuartasInternacional = semanaQuartas.contains(weekToCalculate);
+    isJogoSemifinalInternacional = semanaSemi.contains(weekToCalculate);
+    isJogoFinalInternacional = semanaFinal.contains(weekToCalculate);
 
 
     if(isJogoCampeonatoNacional) {

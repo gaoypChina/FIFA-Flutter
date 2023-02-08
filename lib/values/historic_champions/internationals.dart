@@ -326,7 +326,7 @@ Map<String,dynamic> mapInternationals = {
   },
 
   leagueName.mundial : {
-    2022.0: [n.realmadrid,n.flamengo,n.alahly,n.alhilal,n.seattle,n.wydad,n.auckland],
+    2022.0: [n.realmadrid,n.alhilal,n.flamengo,n.alahly,n.seattle,n.wydad,n.auckland],
     2021.0: [n.chelsea,n.palmeiras,n.alahly,n.alhilal,n.monterrey],
     2020.0: [n.bayernmunique,n.tigres,n.alahly,n.palmeiras],
     2019.0: [n.liverpool,n.flamengo,n.monterrey,n.alhilal],

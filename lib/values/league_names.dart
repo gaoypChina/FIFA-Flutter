@@ -229,8 +229,8 @@ class LeagueOfficialNames{
 
       china,  japao,     coreiaSul,
       tailandia, camboja, filipinas, indonesia, malasia, vietna,
-      arabia,     eau,     bahrein, qatar,
-      iran, iraque, libano, jordania, kuwait, siria,
+      arabia, bahrein, eau, qatar,
+      iran, iraque,  jordania, kuwait, libano, siria,
       india,
       uzbekistao, tadjiquistao,
       australia, novazelandia,

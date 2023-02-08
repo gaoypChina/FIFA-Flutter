@@ -33,10 +33,11 @@ class ResultGameInternacional{
 
   ResultGameInternacional({required this.weekLocal, required this.club, required this.competitionName}){
 
+    Semana weekClass = Semana(weekLocal);
     clubID = club.index;
     //FASE DE GRUPOS
     //Check every group if myTeam Is Playing
-    if(Semana(weekLocal).isJogoGruposInternacional){
+    if(weekClass.isJogoGruposInternacional){
       int rodadaNumber = semanasGruposInternacionais.indexOf(weekLocal);
       for(int groupNumber=0; groupNumber<8; groupNumber++){
         for(int nConfronto=0; nConfronto<2; nConfronto++) {
@@ -61,15 +62,22 @@ class ResultGameInternacional{
     }
 
     //RESULTADO MATA-MATAS
-    else if(Semana(weekLocal).isJogoMataMataInternacional){
+    else if(weekClass.isJogoMataMataInternacional){
       int idaVolta = 1;
-      if(Semana(weekLocal).isJogoIdaMataMata){
+      if(weekClass.isJogoIdaMataMata){
         idaVolta = 0;
       }
-      for(int matchRow=0; matchRow<8; matchRow++){
+
+      int nmatchs = 8;
+      if(weekClass.isJogoOitavasInternacional){nmatchs = 8;}
+      else if(weekClass.isJogoQuartasInternacional){nmatchs = 4;}
+      else if(weekClass.isJogoSemifinalInternacional){nmatchs = 2;}
+      else if(weekClass.isJogoFinalInternacional){nmatchs = 1;}
+
+      for(int matchRow=0; matchRow<nmatchs; matchRow++){
         try{
           MataMata mataMata = MataMata();
-          mataMata.getData(competitionName, Semana(weekLocal).semanaStr, matchRow, idaVolta);
+          mataMata.getData(competitionName, weekClass.semanaStr, matchRow, idaVolta);
           isAlreadyPlayed = mataMata.isAlreadyPlayed;
           if(mataMata.clubID1 == clubID){
             visitante = false;
@@ -110,7 +118,7 @@ class ResultGameInternacional{
     }
 
     if(isAlreadyPlayed) {
-      if(placar.isEmpty){
+      if(placar.isEmpty || !hasAdversary){
         backgroundColor = Colors.black87;
         victoryDrawLoss310 = -1;
       }else{

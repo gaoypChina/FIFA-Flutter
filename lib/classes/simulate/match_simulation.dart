@@ -16,6 +16,10 @@ class MatchSimulation{
   late int variableGol1;
   late int variableGol2;
 
+  printar(Club clubClass1,Club clubClass2){
+    print("TIME1: ${clubClass1.name} TIME2 ${clubClass1.name}");
+  }
+
   MatchSimulation(Club clubClass1,Club clubClass2){
 
     //REMOVE (-1) CARTOES AMARELOS E VERMELHOS E LESOES

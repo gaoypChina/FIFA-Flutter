@@ -16,17 +16,18 @@ class TableNational{
 
   TableNational({required this.choosenLeagueIndex, required this.leagueClass,required this.rodadaMatch,required this.numeroDoConfronto}) {
 
-  List chave = Chaves().obterChave((rodadaMatch),choosenLeagueIndex);
+  int weekCalculate = semanasJogosNacionais[rodadaMatch];
+  List chave = Chaves().obterChave(weekCalculate,choosenLeagueIndex);
   int chaveClub1 = chave[numeroDoConfronto];
   teamName1 = leagueClass.getClubName(chaveClub1);
-  int chaveClub2 = Chaves().chaveIndexAdvCampeonato((rodadaMatch),  choosenLeagueIndex, chaveClub1)[0];
+  int chaveClub2 = Chaves().chaveIndexAdvCampeonato((weekCalculate),  choosenLeagueIndex, chaveClub1)[0];
   teamName2 = leagueClass.getClubName(chaveClub2);
 
   showGoals = ((rodadaMatch<rodada || semana >= semanasJogosNacionais[leagueClass.nClubs-2]));
   //quando chega na rodada max ele acabaria nao mostrando, por isso quando termina o campeonato mostra a ultima rodada
   if(showGoals) {
     try {
-      List results = globalHistoricLeagueGoalsAll[(rodadaMatch)][choosenLeagueIndex];
+      List results = globalHistoricLeagueGoalsAll[rodadaMatch][choosenLeagueIndex];
       gol1 = results[chaveClub1];
       gol2 = results[chaveClub2];
     }catch(e){

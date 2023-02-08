@@ -44,7 +44,6 @@ class Simulate{
     updateWeek();
 
     if(Semana(semana).isJogoCampeonatoInternacional) {
-      customToast('Set Teams');
       setTeamsInternational();
     }
 
@@ -140,16 +139,17 @@ class Simulate{
 
   internationalMatchsGroupsLeague(bool simulMyMatch, String internationalName){
     int myClubID = My().clubID;
+    InternationalLeague internationalLeague = InternationalLeague();
       //PRA CHAMPIONS E PARA A LIBERTADORES
       List chave = Chaves().obterChave(semana, 0);
       for (int groupNumber = 0; groupNumber < 8; groupNumber++) {
         for (int nConfronto = 0; nConfronto < 4 / 2; nConfronto++) {
           int chaveConfronto = chave[nConfronto * 2];
-          int indexTeam1 = InternationalLeague().getClub(internationalName, 4 * groupNumber + chaveConfronto);
+          int indexTeam1 = internationalLeague.getClub(internationalName, 4 * groupNumber + chaveConfronto);
           int indexAdv04 = Chaves().chaveIndexAdvCampeonato(semana, 0, chaveConfronto)[0];
-          int indexTeam2 = InternationalLeague().getClub(internationalName, 4 * groupNumber + indexAdv04);
+          int indexTeam2 = internationalLeague.getClub(internationalName, 4 * groupNumber + indexAdv04);
           if(indexTeam1 != myClubID && indexTeam2 != myClubID || simulMyMatch) {
-            MatchSimulation match = MatchSimulation(Club(index: indexTeam1), Club(index: indexTeam2));
+            MatchSimulation match = MatchSimulation(Club(index: indexTeam1,clubDetails: false), Club(index: indexTeam2,clubDetails: false));
             //SALVA O PLACAR NO HISTÓRICO
             SaveMatchHistoric().setHistoricGoalsGruposInternational(internationalName,indexTeam1,indexTeam2, match.variableGol1,match.variableGol2);
           }

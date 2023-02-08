@@ -13,22 +13,13 @@ Widget wLast5Matchs(BuildContext context){
     height: 25,
     width: 120,
     child: ListView.builder(
-        itemCount: 5,
+        itemCount: 10,
         scrollDirection: Axis.horizontal,
         itemBuilder: (c,i)=>resultBox(context, i+1, myClass)),
   );
 }
 Widget resultBox(BuildContext context, int i, My myClass){
   Color color = Colors.transparent;
-
-  //ESSE TRECHO NAO ESTA MAIS EM USO
-//  int nRodadasMyLeague =  League(index: myClass.leagueID).nClubs-1;
-//  int semanaShow = 0;
-//  if(rodada >= nRodadasMyLeague){
-//    semanaShow = semanasJogosNacionais[nRodadasMyLeague-i];
-//  }else if(rodada-1-i >= 0){
-//    semanaShow = semanasJogosNacionais[rodada-1-i];// }
-
 
   int week = 0;
   if(semana-i > 0){

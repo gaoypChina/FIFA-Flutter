@@ -129,9 +129,11 @@ class MataMata {
   }
 
   getData(String internationalName, String weekPhase, int matchRow,int phaseIdaVolta) {
+
     try {
       final List clubsID = List.from(globalInternationalMataMataClubsID[internationalName][weekPhase]);
-
+      //print("SEMANA: $weekPhase $clubsID");
+      //print("GOLS: ${globalInternationalMataMataGoals[internationalName][0]}");
       if (phaseIdaVolta == 0) {
         clubID1 = clubsID[matchRow * 2];
         clubID2 = clubsID[matchRow * 2 + 1];
@@ -142,6 +144,7 @@ class MataMata {
 
       clubName1 = Club(index: clubID1).name;
       clubName2 = Club(index: clubID2).name;
+
       try {
         goal1 = globalInternationalMataMataGoals[internationalName][weekPhase][clubID1][phaseIdaVolta];
         goal2 = globalInternationalMataMataGoals[internationalName][weekPhase][clubID2][phaseIdaVolta];
@@ -149,7 +152,7 @@ class MataMata {
           isAlreadyPlayed = true;
         }
       } catch (e) {
-        //print('Pag. Mata-Mata: Semana ainda não foi simulada');
+        //print("Pag. Mata-Mata: Semana ainda não foi simulada");
       }
     } catch (e) {
       //print('FASE AINDA NÃO SIMULADA');
