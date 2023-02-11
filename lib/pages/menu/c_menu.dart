@@ -244,7 +244,7 @@ class _MenuState extends State<Menu> {
     }
 
     customToast('Done');
-    if(semana >= globalUltimaSemana){
+    if(semana > globalUltimaSemana){
       Navigator.of(context).push(MaterialPageRoute(builder: (context) => const EndYear()));
     }else{
       Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Menu()));

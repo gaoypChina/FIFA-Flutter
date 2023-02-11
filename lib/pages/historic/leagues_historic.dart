@@ -7,7 +7,9 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/images.dart';
+import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
@@ -269,12 +271,33 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   }
   Widget rowChampionsImage(int year){
     try{
-      List yearData = results[year.toDouble()];
-      String clubName = yearData[0];
+      List yearData = [];
+      late String clubName;
+      if(year>=anoInicial){
+        List classification = HistoricFunctions().funcHistoricListAll(year, choosenLeagueName);
+        int clubID = classification[0];
+
+        clubName = Club(index: clubID).name;
+      }else{
+        yearData = results[year.toDouble()];
+        clubName = yearData[0];
+      }
       return GestureDetector(
           onTap:(){
-            List classificationNames = mapChampions(choosenLeagueName)[year];
-            bottomSheetShowLeagueClassification(classificationNames);
+
+            if(year>=anoInicial){
+              List classificationNames = [];
+              List classification = HistoricFunctions().funcHistoricListAll(year, choosenLeagueName);
+              for (int clubID in classification) {
+                String clubName = Club(index: clubID).name;
+                classificationNames.add(clubName);
+              }
+              bottomSheetShowLeagueClassification(classificationNames);
+            }else{
+
+              List classificationNames = mapChampions(choosenLeagueName)[year];
+              bottomSheetShowLeagueClassification(classificationNames);
+            }
           },
           child: SizedBox(width:24, child: Images().getEscudoWidget(clubName,24,24)));
     }catch(e){
@@ -332,6 +355,12 @@ class _HistoricLeagueState extends State<HistoricLeague> {
 
   rankBestClubs(){
     List<String> clubNames = [];
+    //cast list<dynamic> to list<String>
+    try{
+      clubNames = List<String>.from(clubNameMap[choosenLeagueName].values.toList() as List);
+    }catch(e){
+      //O CLUBE NÃO É JOGÁVEL
+    }
     mapChampions(choosenLeagueName).forEach((key,value) {
       for(String name in value){
         if(!clubNames.contains(name)){
@@ -353,6 +382,25 @@ class _HistoricLeagueState extends State<HistoricLeague> {
           }
         }
     });
+
+    if(clubsAllNameList.contains(clubName)){
+      int clubID = clubsAllNameList.indexOf(clubName);
+      for(int year=anoInicial;year<ano;year++){
+        try {
+          List classification = HistoricFunctions().funcHistoricListAll(
+              year, choosenLeagueName);
+          if (positions[classification.indexOf(clubID) + 1] == null) {
+            positions[classification.indexOf(clubID) + 1] = 1;
+          } else {
+            positions[classification.indexOf(clubID) + 1] += 1;
+          }
+        }catch(e){
+          //O TIME É JOGAVEL, MAS A LIGA NAO
+        }
+      }
+    }
+
+
     List positionsList = [];
     for(int i=1;i<=20;i++){
       if(positions[i] != null){
@@ -398,6 +446,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   Widget tableBestClubs(){
     List<String> clubNames = rankBestClubs();
     List teams = orderClubsRanking();
+
     return Expanded(
       child: SingleChildScrollView(
           child: Column(
@@ -417,8 +466,10 @@ class _HistoricLeagueState extends State<HistoricLeague> {
       },
       child: Row(
         children: [
+          const SizedBox(width: 4),
           Images().getEscudoWidget(clubName,30,30),
-          SizedBox(width:120,child: Text(clubName,style: EstiloTextoBranco.text14)),
+          const SizedBox(width: 4),
+          SizedBox(width:130,child: Text(clubName,style: EstiloTextoBranco.negrito14)),
           for (int i=0;i<10;i++)
             SizedBox(width:20,child: Text(" "+positions[i].toString(),style: EstiloTextoBranco.text14)),
         ],

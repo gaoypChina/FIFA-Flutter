@@ -5,15 +5,15 @@ import 'package:fifa/classes/expectativa.dart';
 import 'package:fifa/classes/functions/name.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
+import 'package:fifa/classes/mata_mata/mata_mata_class.dart';
 import 'package:fifa/classes/mundial.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/classes/mata_mata/mata_mata_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/change_club.dart';
+import 'package:fifa/pages/table_international/table_international.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
-import 'package:fifa/values/historic_champions/historic_champions.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/bottom_sheet_league_classification.dart';
@@ -211,9 +211,7 @@ Widget finale(String internationalLeagueName){
   data.getData(internationalLeagueName, Name().finale,0, 0);
   return GestureDetector(
     onTap: (){
-      Map allClassifications = mapChampions(internationalLeagueName);
-      List clubsID = allClassifications[double.parse(ano.toString())];
-      bottomSheetShowLeagueClassification(context, clubsID);
+      Navigator.push(context,MaterialPageRoute(builder: (context) => TableInternational(leagueInternational: internationalLeagueName)));
     },
     child: Column(
       children: [
