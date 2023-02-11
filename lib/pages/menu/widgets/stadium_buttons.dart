@@ -1,4 +1,3 @@
-import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/pages/home/b_home.dart';
 import 'package:fifa/pages/save/choose_save.dart';
 import 'package:fifa/pages/train/train.dart';
@@ -14,18 +13,6 @@ Widget close(BuildContext context){
         child: const Icon(Icons.close,color:Colors.red,size: 50)
     ),
   );
-}
-
-Widget leagueLogo(){
-  return
-    //CAMPEONATO
-    Container(
-      margin: const EdgeInsets.only(right: 8),
-      alignment: Alignment.topRight,
-      child: Images().getMyActualCampeonatoLogo().isNotEmpty
-          ? Image.asset(Images().getMyActualCampeonatoLogo(),height: 60,width: 60)
-          : const SizedBox(height: 60,width: 60),
-    );
 }
 
 Widget save(BuildContext context){

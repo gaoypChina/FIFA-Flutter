@@ -39,19 +39,22 @@ int ano = 2023;
 int semana = 1, rodada = 1;
 int globalNMaxRodadasNacional = globalLeagueIdaVolta ? 38 : 19;
 late int posicao;
-List<int> semanaOitavas = [semanasJogosInternacionais.first+6,semanasJogosInternacionais.first+7],
-    semanaQuartas = [semanasJogosInternacionais.first+8,semanasJogosInternacionais.first+9],
-    semanaSemi = [semanasJogosInternacionais.first+10,semanasJogosInternacionais.first+11],
-    semanaFinal = [semanasJogosInternacionais.first+12],
+List<int> semanaOitavas = [semanasJogosInternacionais[6],semanasJogosInternacionais[7]],
+    semanaQuartas = [semanasJogosInternacionais[8],semanasJogosInternacionais[9]],
+    semanaSemi = [semanasJogosInternacionais[10],semanasJogosInternacionais[11]],
+    semanaFinal = [semanasJogosInternacionais[12]],
     semanaMundial = [semanasJogosInternacionais.length+semanasJogosNacionais.length+1];
 //List<int> semanasJogosInternacionais = [for(var i=semanasJogosNacionais.last+1; i<=semanasJogosNacionais.last+13; i++) i];
-List<int> semanasJogosInternacionais = [for(var i=1; i<=13; i++) i];
+//List<int> semanasJogosInternacionais = [for(var i=1; i<=13; i++) i];
+List<int> semanasJogosInternacionais = [3,6,9,12,15,18,  21,23, 25,27, 29,30, 32];
+
 
 List semanasGruposInternacionais = semanasJogosInternacionais.take(6).toList();
 List<int> semanasMataMataInternacionais = semanaOitavas+semanaQuartas+semanaSemi+semanaFinal;
 
 //List<int> semanasJogosNacionais = [for(var i=1; i<=globalNMaxRodadasNacional; i++) i];
-List<int> semanasJogosNacionais = [for(var i=semanasJogosInternacionais.last+1; i<=semanasJogosInternacionais.last+globalNMaxRodadasNacional; i++) i];
+//List<int> semanasJogosNacionais = [for(var i=semanasJogosInternacionais.last+1; i<=semanasJogosInternacionais.last+globalNMaxRodadasNacional; i++) i];
+List<int> semanasJogosNacionais = [1,2,4,5,7, 8,10,11,13,14, 16,17,19,20,22, 24,26,28,31];
 
 List semanasJogosCopas = [];
 int globalUltimaSemana = semanaMundial.last+1;

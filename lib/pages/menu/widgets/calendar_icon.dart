@@ -17,6 +17,9 @@ Widget wMenuCalendarIcon(BuildContext context, int semana, Adversario adversario
     },
     child: Stack(
       children: [
+
+        leagueLogo(),
+
         const Padding(
           padding: EdgeInsets.only(top:8.0),
           child: Opacity(opacity:0.3,child: Icon(Icons.calendar_month,size:100,color: Colors.white)),
@@ -41,4 +44,16 @@ Widget wMenuCalendarIcon(BuildContext context, int semana, Adversario adversario
       ],
     ),
   );
+}
+
+Widget leagueLogo(){
+  return
+    //CAMPEONATO
+    Container(
+      margin: const EdgeInsets.only(right: 8,top: 15),
+      alignment: Alignment.topRight,
+      child: Images().getMyActualCampeonatoLogo().isNotEmpty
+          ? Image.asset(Images().getMyActualCampeonatoLogo(),height: 30,width: 30)
+          : const SizedBox(height: 20,width: 20),
+    );
 }

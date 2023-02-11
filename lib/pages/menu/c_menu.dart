@@ -74,6 +74,7 @@ class _MenuState extends State<Menu> {
 
     myClass = My();
     adversario.getAdversario();
+    Club club = Club(index: myClass.clubID);
 
     return Scaffold(
         body:  Stack(
@@ -98,7 +99,7 @@ class _MenuState extends State<Menu> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
 
-                          wMenuButton(Translation(context).text.play,(){
+                          wMenuButton(Translation(context).text.play,club,(){
                             if(adversario.clubName.isNotEmpty){
                               Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Play(adversarioClubID: adversario.clubID, visitante: adversario.visitante)));
                             }else{
@@ -111,12 +112,12 @@ class _MenuState extends State<Menu> {
                         children: [
 
                             Expanded(
-                              child: wMenuButton('Simular',() async{
+                              child: wMenuButton('Simular',club,() async{
                                   await simulateFunction();
                               }),
                           ),
 
-                          expandedButton(Translation(context).text.table, TableNacional(choosenLeagueIndex: myClass.leagueID)),
+                          expandedButton(Translation(context).text.table,club, TableNacional(choosenLeagueIndex: myClass.leagueID)),
                         ]),
 
 
@@ -124,16 +125,16 @@ class _MenuState extends State<Menu> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
 
-                                expandedButton(Translation(context).text.international, TableInternational(leagueInternational: myClass.getMyInternationalLeague())),
-                                expandedButton(Translation(context).text.myClub, const MyTeam()),
+                                expandedButton(Translation(context).text.international,club, TableInternational(leagueInternational: myClass.getMyInternationalLeague())),
+                                expandedButton(Translation(context).text.myClub,club, const MyTeam()),
 
                               ]),
                           Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                expandedButton(Translation(context).text.historic, const HistoricMenu()),
+                                expandedButton(Translation(context).text.historic,club, const HistoricMenu()),
                                 Expanded(
-                                  child: wMenuButton(Translation(context).text.ranking,(){
+                                  child: wMenuButton(Translation(context).text.ranking,club,(){
                                     customToast(Translation(context).text.loading);
                                     Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RankingClubs()))
                                         .then((value) {setState(() {});});
@@ -143,8 +144,8 @@ class _MenuState extends State<Menu> {
                           Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                expandedButton(Translation(context).text.coach, const CoachMenu()),
-                                expandedButton(Translation(context).text.transfers, const Transfers()),
+                                expandedButton(Translation(context).text.coach,club, const CoachMenu()),
+                                expandedButton(Translation(context).text.transfers,club, const Transfers()),
                               ]),
 
 
@@ -182,8 +183,6 @@ class _MenuState extends State<Menu> {
 
                           close(context),
 
-                          leagueLogo(),
-
                           save(context),
 
                           test(context),
@@ -207,9 +206,9 @@ class _MenuState extends State<Menu> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-  Widget expandedButton(String title, Widget page){
+  Widget expandedButton(String title, Club club, Widget page){
     return Expanded(
-      child: wMenuButton(title,(){
+      child: wMenuButton(title,club,(){
         Navigator.of(context).push(MaterialPageRoute(builder: (context) => page))
             .then((value) {setState(() {});});
       }),

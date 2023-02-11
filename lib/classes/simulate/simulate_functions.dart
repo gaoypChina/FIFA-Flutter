@@ -79,7 +79,7 @@ class Simulate{
 
   setTeamsInternational(){
     //Define Times na champions e libertadores
-    if(semana == semanasJogosInternacionais.first){
+    if(semana == semanaMundial.first){
       FimDoCampeonatoLocal().setAll032InternationalTeams();
     }
     //Define times oitavas

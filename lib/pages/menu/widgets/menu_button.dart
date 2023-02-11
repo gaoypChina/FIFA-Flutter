@@ -1,15 +1,15 @@
-import 'package:fifa/theme/colors.dart';
+import 'package:fifa/classes/club.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
-Widget wMenuButton(String text, Function() function){
+Widget wMenuButton(String text, Club club, Function() function){
   return  Container(
     margin: const EdgeInsets.all(4),
     decoration: BoxDecoration(
-      color: AppColors().greyTransparent,
+      color: club.colors.primaryColor.withOpacity(0.4),
       border: Border.all(
         width: 2.0,
-        color: Colors.green,
+        color: club.colors.secondColor,
       ),
       borderRadius: const BorderRadius.all(Radius.circular(15.0)),
     ),
