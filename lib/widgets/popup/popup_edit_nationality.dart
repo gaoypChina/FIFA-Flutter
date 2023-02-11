@@ -1,4 +1,4 @@
-import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/countries/words.dart';
 import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/classes/jogador.dart';

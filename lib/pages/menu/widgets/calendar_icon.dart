@@ -1,4 +1,4 @@
-import 'package:fifa/classes/geral/semana.dart';
+import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/match/adversario.dart';
 import 'package:fifa/pages/calendar/calendar.dart';

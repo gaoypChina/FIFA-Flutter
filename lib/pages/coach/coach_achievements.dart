@@ -1,4 +1,4 @@
-import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/pages/coach/controller/coach_achievements_controller.dart';
 import 'package:fifa/theme/textstyle.dart';

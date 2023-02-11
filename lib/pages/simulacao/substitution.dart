@@ -1,4 +1,5 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/functions/esquemas_taticos.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/match/match.dart';
@@ -15,7 +16,6 @@ import 'package:fifa/widgets/field_size.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
-import '../../classes/geral/esquemas_taticos.dart';
 
 class Substitution extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS

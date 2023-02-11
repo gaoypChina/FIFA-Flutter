@@ -1,7 +1,7 @@
 import 'package:fifa/classes/coach/coach_best_results.dart';
 import 'package:fifa/classes/functions/check_internet.dart';
-import 'package:fifa/classes/geral/semana.dart';
-import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/semana.dart';
+import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/match/adversario.dart';
@@ -20,6 +20,7 @@ import 'package:fifa/pages/menu/widgets/test_button.dart';
 import 'package:fifa/pages/ranking_clubs/ranking_clubs.dart';
 import 'package:fifa/pages/simulacao/end_year.dart';
 import 'package:fifa/pages/simulacao/not_play.dart';
+import 'package:fifa/pages/simulacao/play.dart';
 import 'package:fifa/pages/table/table_nacional.dart';
 import 'package:fifa/pages/table_international/table_international.dart';
 import 'package:fifa/pages/transfers/transfers.dart';
@@ -32,7 +33,6 @@ import 'package:flutter/scheduler.dart';
 import '../../classes/club.dart';
 import '../../classes/my.dart';
 import '../club_profile/my_team.dart';
-import '../simulacao/play.dart';
 
 class Menu extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS

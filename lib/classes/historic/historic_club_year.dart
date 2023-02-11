@@ -1,4 +1,4 @@
-import 'package:fifa/classes/geral/name.dart';
+import 'package:fifa/classes/functions/name.dart';
 import 'package:fifa/classes/historic/historic_my_players.dart';
 import 'package:fifa/values/league_divisions.dart';
 

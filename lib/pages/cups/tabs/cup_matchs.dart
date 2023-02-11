@@ -1,4 +1,4 @@
-import 'package:fifa/classes/geral/name.dart';
+import 'package:fifa/classes/functions/name.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/my.dart';

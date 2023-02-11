@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/geral/esquemas_taticos.dart';
-import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/functions/esquemas_taticos.dart';
+import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/player_basic.dart';
 import 'package:fifa/classes/countries/flags_list.dart';

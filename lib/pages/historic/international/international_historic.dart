@@ -1,4 +1,5 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/functions/name.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
@@ -13,7 +14,6 @@ import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 
-import '../../../classes/geral/name.dart';
 
 class InternationalHistoric extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS

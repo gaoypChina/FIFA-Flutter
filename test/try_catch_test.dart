@@ -1,4 +1,4 @@
-import 'package:fifa/classes/geral/try_catch.dart';
+import 'package:fifa/classes/functions/try_catch.dart';
 import 'package:fifa/classes/historic/total_victories.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:flutter_test/flutter_test.dart';

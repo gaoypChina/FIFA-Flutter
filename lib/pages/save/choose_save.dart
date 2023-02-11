@@ -1,5 +1,5 @@
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/save/controller/save_controller.dart';
@@ -56,7 +56,7 @@ class _ChooseSaveState extends State<ChooseSave> {
 
                     Expanded(child: Column(children: [
                       for(int i=0; i<saveController.basicGameInfos.length;i++)
-                        save(i),
+                        saveRow(i),
                     ],)),
 
 
@@ -88,7 +88,7 @@ class _ChooseSaveState extends State<ChooseSave> {
     );
   }
 
-  Widget save(int gameSaveNumber) {
+  Widget saveRow(int gameSaveNumber) {
     saveController.getIndividualGameSaveInfos(gameSaveNumber);
     Club club = Club(index: saveController.basicGameInfo.myClubID);
 

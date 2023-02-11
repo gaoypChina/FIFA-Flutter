@@ -1,5 +1,5 @@
-import 'package:fifa/classes/geral/dificuldade.dart';
-import 'package:fifa/classes/geral/semana.dart';
+import 'package:fifa/classes/functions/dificuldade.dart';
+import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/league_names.dart';

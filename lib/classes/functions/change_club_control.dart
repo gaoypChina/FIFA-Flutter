@@ -1,6 +1,6 @@
 import 'dart:math';
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/geral/dificuldade.dart';
+import 'package:fifa/classes/functions/dificuldade.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 

@@ -138,11 +138,7 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
       ),
     );
   }
-
-Widget rowClub(int ranking, Club club){
-
-    double overall = club.getOverall();
-
+  Color colorRankingClubs(Club club){
     //Cor de Fundo
     Color colorBackground = Colors.transparent;
 
@@ -152,6 +148,15 @@ Widget rowClub(int ranking, Club club){
     if(club.index==myClub.clubID){
       colorBackground = Colors.redAccent;
     }
+    return colorBackground;
+  }
+
+Widget rowClub(int ranking, Club club){
+
+    double overall = club.getOverall();
+
+    //Cor de Fundo
+    Color colorBackground = colorRankingClubs(club);
 
     return GestureDetector(
       onTap:(){

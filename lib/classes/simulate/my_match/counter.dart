@@ -1,11 +1,10 @@
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/geral/semana.dart';
+import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/simulate/after_simulation/historic.dart';
 import 'package:fifa/classes/simulate/my_match/my_match_simulation.dart';
 import 'package:fifa/classes/simulate/player_variables/cards_injury_selection.dart';
 import 'package:fifa/classes/simulate/player_variables/match_selection.dart';
-import 'package:fifa/classes/simulate/player_variables/origin/grade.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -45,7 +44,6 @@ class CounterMatch extends ChangeNotifier{
     if(milis==0){
       CardsInjury().setMinus1InjuryRedYellowCardAllTeam(myClubClass);
       CardsInjury().setMinus1InjuryRedYellowCardAllTeam(adversarioClubClass);
-      Grade().reset();
     }
 
       milis+=1;

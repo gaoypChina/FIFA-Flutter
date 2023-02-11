@@ -2,7 +2,7 @@
 import 'package:fifa/classes/chaves.dart';
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/geral/semana.dart';
+import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/international.dart';
 import 'package:fifa/classes/international_league.dart';
 import 'package:fifa/classes/league.dart';

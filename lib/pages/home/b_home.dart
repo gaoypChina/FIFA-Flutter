@@ -1,7 +1,7 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/functions/change_club_control.dart';
 import 'package:fifa/classes/functions/func_number_clubs_total.dart';
-import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/database/select_database.dart';
 import 'package:fifa/global_variables.dart';

@@ -1,4 +1,4 @@
-import 'package:fifa/classes/geral/esquemas_taticos.dart';
+import 'package:fifa/classes/functions/esquemas_taticos.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/countries/countries_continents.dart';
 import 'package:fifa/classes/functions/international_league_manipulation.dart';

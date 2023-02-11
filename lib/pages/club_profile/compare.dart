@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/countries/flags_list.dart';

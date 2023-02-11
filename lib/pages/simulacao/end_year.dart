@@ -2,7 +2,7 @@ import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/end_year_updates/update_data_year.dart';
 import 'package:fifa/classes/expectativa.dart';
-import 'package:fifa/classes/geral/name.dart';
+import 'package:fifa/classes/functions/name.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/mundial.dart';

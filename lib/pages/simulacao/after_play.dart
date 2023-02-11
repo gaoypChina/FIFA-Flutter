@@ -1,8 +1,8 @@
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/geral/name.dart';
-import 'package:fifa/classes/geral/semana.dart';
-import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/functions/name.dart';
+import 'package:fifa/classes/semana.dart';
+import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/international.dart';
 import 'package:fifa/classes/jogador.dart';

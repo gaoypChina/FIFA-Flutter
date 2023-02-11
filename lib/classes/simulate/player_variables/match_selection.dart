@@ -1,4 +1,4 @@
-import 'package:fifa/classes/geral/semana.dart';
+import 'package:fifa/classes/semana.dart';
 import 'package:fifa/global_variables.dart';
 
 import '../../../classes/club.dart';

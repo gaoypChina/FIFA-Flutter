@@ -1,5 +1,5 @@
 import 'package:fifa/classes/classification.dart';
-import 'package:fifa/classes/geral/name.dart';
+import 'package:fifa/classes/functions/name.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/league_names.dart';

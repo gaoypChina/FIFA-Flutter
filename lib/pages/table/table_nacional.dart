@@ -1,4 +1,4 @@
-import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';

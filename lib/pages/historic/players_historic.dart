@@ -1,4 +1,4 @@
-import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/historic/top_players_ovr.dart';
 import 'package:fifa/classes/historic/top_scorers.dart';
 import 'package:fifa/classes/image_class.dart';

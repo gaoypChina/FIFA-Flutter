@@ -1,7 +1,7 @@
 import 'package:fifa/classes/calendar_result.dart';
 import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/geral/semana.dart';
+import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/textstyle.dart';

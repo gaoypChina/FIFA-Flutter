@@ -1,6 +1,6 @@
 
 import 'package:fifa/classes/chaves.dart';
-import 'package:fifa/classes/geral/semana.dart';
+import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/mata_mata/mata_mata_simulation.dart';
 import 'package:fifa/classes/simulate/my_match/my_match_simulation.dart';

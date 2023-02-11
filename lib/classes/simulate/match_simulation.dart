@@ -1,12 +1,13 @@
 import 'dart:math';
 
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/geral/semana.dart';
+import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/historic/total_victories.dart';
 import 'package:fifa/classes/mata_mata/mata_mata_simulation.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/simulate/player_variables/cards_injury_selection.dart';
 import 'package:fifa/classes/simulate/after_simulation/set_points.dart';
+import 'package:fifa/classes/simulate/player_variables/origin/grade.dart';
 import 'package:fifa/classes/simulate/player_variables/update_player_variables.dart';
 import 'package:fifa/global_variables.dart';
 
@@ -21,6 +22,8 @@ class MatchSimulation{
   }
 
   MatchSimulation(Club clubClass1,Club clubClass2){
+
+    Grade().reset();
 
     //REMOVE (-1) CARTOES AMARELOS E VERMELHOS E LESOES
     CardsInjury().setMinus1InjuryRedYellowCardAllTeam(clubClass1);

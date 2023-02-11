@@ -1,4 +1,4 @@
-import 'package:fifa/classes/geral/try_catch.dart';
+import 'package:fifa/classes/functions/try_catch.dart';
 import 'package:fifa/global_variables.dart';
 
 class TotalVictories{

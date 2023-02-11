@@ -181,6 +181,7 @@ class LeagueOfficialNames{
 
   //OUTROS
   String rioSP = 'Torneio Rio-SP';
+  String copaNordeste = 'Copa do Nordeste';
   String pequenaTaca = 'Pequena Taça do Mundo';
   String mitropa = 'Copa Mitropa';
   String latina = 'Copa Latina';

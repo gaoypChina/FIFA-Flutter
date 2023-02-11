@@ -221,7 +221,37 @@ Map<String,dynamic> zzzzzzzzz = {
     1927.0: [_name.palermo,],
   },
   //RSSSF.ORG
-
+  leagueName.copaNordeste : {
+    2022.0: [n.fortaleza,n.sport, n.nautico,n.crb,          n.ceara,n.botafogoPB,n.csa,n.alagoinhas,  ],
+    2021.0: [n.bahia,n.ceara,n.fortaleza,n.vitoria,         n.crb,n.altos,n.csa,n.sampaio,            n.abc,n.treze,n.salgueiro,n.confianca,n.botafogoPB,n.julho4,n.sport,n.santacruz],
+    2020.0: [n.ceara,n.bahia,n.fortaleza,n.confianca,       n.santacruz,n.vitoria,n.botafogoPB,n.sport,   n.nautico,n.abc,n.crb,n.csa,n.imperatriz,n.americaRN,n.freipaulistano,n.riverPI],
+    2019.0: [n.fortaleza,n.botafogoPB,n.nautico,n.santacruz, n.ceara,n.csa,n.crb,n.vitoria,           n.bahia,n.abc,n.motoclub,n.confianca,n.salgueiro,n.sampaio,n.sergipe,n.altos],
+    2018.0: [n.sampaio,n.bahia,n.abc,n.ceara,               n.vitoria,n.crb,n.santacruz,n.botafogoPB, n.nautico,n.globo,n.confianca,n.csa,n.treze,n.altos,n.salgueiro,n.ferroviario],
+    2017.0: [n.bahia,n.sport,n.santacruz,n.vitoria,         n.campinense,n.riverPI,n.itabaiana,n.sergipe,  n.nautico,n.crb,n.americaRN,n.abc,n.fortaleza,n.altos,n.csa,n.sampaio,n.botafogoPB,n.juazeirense,n.motoclub,n.uniclinic],
+    2016.0: [n.santacruz,n.campinense,n.bahia,n.sport,      n.ceara,n.salgueiro,n.crb,n.fortaleza,    n.sampaio,n.conquista,n.americaRN,n.coruripe,n.riverPI,n.estanciano,n.botafogoPB,n.abc,n.imperatriz,n.confianca,n.juazeirense,n.flamengoPI],
+    2015.0: [n.ceara,n.bahia,n.vitoria,n.sport,             n.fortaleza,n.americaRN,n.salgueiro,n.campinense,  n.nautico,n.riverPI,n.coruripe,n.crb,n.motoclub,n.sampaio,n.globo,n.confianca,n.piaui,n.serrano,n.socorrense,n.botafogoPB],
+    2014.0: [n.sport,n.ceara,n.americaRN,n.santacruz,       n.csa,n.crb,n.vitoria,n.guarany,          n.bahia,n.potiguar,n.nautico,n.sergipe,n.botafogoPB,n.treze,n.confianca,n.conquista],
+    2013.0: [n.campinense,n.asa,n.fortaleza,n.ceara,        n.vitoria,n.santacruz,n.sport,n.abc,      n.confianca,n.bahia,n.americaRN,n.crb,n.salgueiro,n.itabaiana,n.sousa,n.feirense],
+    2012.0: [],
+    2011.0: [],
+    2010.0: [n.vitoria,n.abc,n.csa,n.treze,      n.bahia,n.ceara,n.crb,n.santacruz,n.americaRN,n.nautico,n.fortaleza,n.botafogoPB,n.fluminenseFeira,n.confianca,n.sergipe],
+    2009.0: [],
+    2008.0: [],
+    2007.0: [],
+    2006.0: [],
+    2005.0: [],
+    2004.0: [],
+    2003.0: [n.vitoria,n.fluminenseFeira,n.abc,n.americaRN,  n.sergipe,n.ceara,n.crb,n.csa,n.corinthiansAL,n.treze,n.palmeirasBA],
+    2002.0: [n.bahia,n.vitoria,n.nautico,n.santacruz,        n.fluminenseFeira,n.crb,n.csa,n.americaRN,n.fortaleza,n.sport,n.abc,n.botafogoPB,n.treze,n.ceara,n.sergipe,n.confianca],
+    2001.0: [n.bahia,n.sport,n.nautico,n.fortaleza,          n.santacruz,n.abc,n.vitoria,n.treze,n.ceara,n.csa,n.crb,n.sergipe,n.fluminenseFeira,n.confianca,n.americaRN,n.botafogoPB],
+    2000.0: [n.sport,n.vitoria,n.sergipe,n.pocoes,         n.americaRN,n.abc,n.miguelense,n.treze,n.bahia,n.santacruz,n.ceara,n.botafogoPB,n.juazeirense,n.coritibaSE,n.csa,n.guaranyjuazeiro],
+    1999.0: [n.vitoria,n.bahia,n.sport,n.csa,              n.botafogoPB,n.americaRN,n.sergipe,n.abc,     n.crb,n.portoPE,n.ceara,n.ferroviario,n.baraunas,n.campinense,n.juazeirense,n.lagartense],
+    1998.0: [n.americaRN,n.vitoria,n.bahia,n.botafogoPB,   n.santacruz,n.ceara,n.abc,n.fortaleza,n.sport,n.fluminenseFeira,n.csa,n.crb,n.sergipe,n.confianca,n.nautico,n.treze],
+    1997.0: [n.vitoria,n.bahia,n.ceara,n.sport,            n.fluminenseFeira,n.nautico,n.abc,n.santacruz,n.csa,n.santacruzPB,n.ferroviario,n.confianca,n.sergipe,n.crb,n.americaRN,n.botafogoPB],
+    1996.0: [],
+    1995.0: [],
+    1994.0: [n.sport,n.crb,n.bahia,n.cruzeiroAL,           n.botafogoPB,n.guarany,n.santacruz,n.americaRN,n.csa,n.abc,n.santacruz,n.nautico,n.fortaleza,n.capela,n.asa,n.vitoria],
+  },
 
 
 leagueName.cazaquistao : {

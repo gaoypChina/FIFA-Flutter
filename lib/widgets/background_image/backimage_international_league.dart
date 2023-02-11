@@ -1,4 +1,4 @@
-import 'package:fifa/classes/geral/semana.dart';
+import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:flutter/material.dart';

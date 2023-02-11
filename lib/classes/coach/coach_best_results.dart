@@ -1,5 +1,5 @@
 import 'package:fifa/classes/match/confronto.dart';
-import 'package:fifa/classes/geral/try_catch.dart';
+import 'package:fifa/classes/functions/try_catch.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 

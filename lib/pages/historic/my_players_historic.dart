@@ -1,6 +1,6 @@
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/historic/historic_club_year.dart';
 import 'package:fifa/classes/historic/historic_my_players.dart';
 import 'package:fifa/classes/historic/historic_my_tranfers.dart';

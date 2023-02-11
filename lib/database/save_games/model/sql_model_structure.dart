@@ -38,7 +38,7 @@ class SQLModelStructure{
 
   Future<Database> initDB() async{
     // Avoid errors caused by flutter upgrade.
-    // Importing 'package:flutter/widgets.dart' is required.
+    // Importing 'package:flutter/widgets_play.dart' is required.
     WidgetsFlutterBinding.ensureInitialized();
     // Open the database and store the reference.
     final database = openDatabase(

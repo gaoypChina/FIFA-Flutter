@@ -1,5 +1,5 @@
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/player_basic.dart';
 import 'package:fifa/classes/countries/words.dart';
 import 'package:fifa/classes/countries/flags_list.dart';

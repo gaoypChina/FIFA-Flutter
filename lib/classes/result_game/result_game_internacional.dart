@@ -1,5 +1,5 @@
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/geral/semana.dart';
+import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/mata_mata/mata_mata_class.dart';
 import 'package:fifa/classes/table_matchs_control.dart';
 import 'package:fifa/global_variables.dart';

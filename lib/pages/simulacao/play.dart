@@ -1,15 +1,13 @@
 import 'dart:async';
 
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/geral/name.dart';
-import 'package:fifa/classes/geral/semana.dart';
-import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/coach/coach_best_results.dart';
+import 'package:fifa/classes/semana.dart';
+import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/match/confronto.dart';
-import 'package:fifa/classes/match/goal_my_match.dart';
-import 'package:fifa/classes/coach/coach_best_results.dart';
 import 'package:fifa/classes/simulate/my_match/counter.dart';
 import 'package:fifa/classes/simulate/my_match/my_match_simulation.dart';
 import 'package:fifa/classes/simulate/simulate_functions.dart';
@@ -17,12 +15,14 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/simulacao/after_play.dart';
 import 'package:fifa/pages/simulacao/fim_campeonato.dart';
 import 'package:fifa/pages/simulacao/substitution.dart';
-import 'package:fifa/widgets/popup/popup_goal.dart';
+import 'package:fifa/pages/simulacao/widgets_play/goal_widget.dart';
+import 'package:fifa/pages/simulacao/widgets_play/header_play.dart';
+import 'package:fifa/pages/simulacao/widgets_play/tactics.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
-import 'package:fifa/values/images.dart';
 import 'package:fifa/widgets/background_image/backimage_international_league.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
+import 'package:fifa/widgets/popup/popup_goal.dart';
 import 'package:flutter/material.dart';
 
 import '../../classes/my.dart';
@@ -87,6 +87,9 @@ class _PlayState extends State<Play> {
     visitante = widget.visitante;
     myClubClass.name = visitante ? adversarioClubClass.name : myClass.clubName;
     adversarioClubClass.name = visitante ? myClass.clubName : adversarioClubClass.name;
+
+    myMatchSimulation.visitante = visitante;
+    myMatchSimulation.myClubClass = myClubClass;
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -107,7 +110,7 @@ class _PlayState extends State<Play> {
 
                       const SizedBox(height: 30),
 
-                      header(),
+                      headerPlay(context, myMatchSimulation),
 
                       //GOLS MARCADOS
                       SizedBox(
@@ -116,67 +119,24 @@ class _PlayState extends State<Play> {
                           crossAxisAlignment: CrossAxisAlignment.start, //Começando a lista do topo
                           children: [
                             const SizedBox(width: 15),
-                            goalWidget(true),
+                            goalWidget(context, true, myMatchSimulation),
 
                             const SizedBox(width: 15),
-                            goalWidget(false),
+                            goalWidget(context, false, myMatchSimulation),
 
                           ],
                         ),
                       ),
 
                       //Campo de jogo
-                      Expanded(
-                        child: Stack(
-                          children: [
-
-                            //Estádio
-                            Image.asset(Images().getStadium(myClubClass.name),height: 430,width: double.infinity,fit:BoxFit.fill),
-                            InteractiveViewer(
-                              panEnabled: true, // Set it to false to prevent panning.
-                              minScale: 0.5,
-                              maxScale: 4,
-                              child:
-                            //Jogadores
-                            SingleChildScrollView(
-                              scrollDirection: Axis.horizontal,
-                              child: Row(
-                                children: [
-                                  SizedBox(
-                                    width: Sized(context).width-30,
-                                      height: 430,
-                                      child: visitante ? fieldGameplay442(widget.adversarioClubID) : fieldWidget(),
-                                  ),
-                                  SizedBox(
-                                      width: Sized(context).width,
-                                      height: 430,
-                                      child: visitante ? fieldWidget() : fieldGameplay442(widget.adversarioClubID),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      field(),
 
                       //TÁTICAS
-                      tacticsWidget(),
+                      tacticsWidget(context, myMatchSimulation, posturaDoTime),
 
 
                       Text(Translation(context).text.gameVelocity,style: EstiloTextoBranco.text14),
-                      Slider(
-                        activeColor: Colors.green,
-                        value: globalMatchVelocity,
-                        min: 10,max: maxSliderDistance,
-                        onChanged: (double value) {
-                          setState(() {
-                            globalMatchVelocity = value;
-                            _timer.cancel();
-                            counter();
-                          });
-                        },
-                      ),
+                      gameVelocitySlider(),
 
                       customButtonContinue(
                           title: counterMatch.milis>=90
@@ -196,129 +156,56 @@ class _PlayState extends State<Play> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-  Widget header(){
-    String textRodada = '';
-    if(Semana(semana).isJogoCampeonatoNacional) {
-      textRodada = '${Translation(context).text.matchWeek} ' + rodada.toString() + '/' + (League(index: myClass.leagueID).getNTeams()-1).toString();
-    }else{
-      textRodada = Name().groupsPhase;
-      if(Semana(semana).isJogoGruposInternacional){textRodada += ' ${Semana(semana).rodadaGroupInternational}'; }
-      else{
-        textRodada = Semana(semana).semanaStr;
-      }
-    }
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        //Escudo time 1
-        Images().getEscudoWidget(myClubClass.name,80,80),
-
-        Column(
-          children: [
-            Semana(semana).isJogoCampeonatoNacional
-                ? Image.asset(FIFAImages().campeonatoLogo(myMatchSimulation.myClass.campeonatoName),height: 30,width: 30)
-                : Image.asset(FIFAImages().campeonatoLogo(myMatchSimulation.myClass.getMyInternationalLeague()),height: 35,width: 35),
-            Text(textRodada,style: EstiloTextoBranco.text16),
-            visitante
-                ? Text(myMatchSimulation.meuGolSofrido.toString() +'X'+ myMatchSimulation.meuGolMarcado.toString(),style: EstiloTextoBranco.text30)
-                : Text(myMatchSimulation.meuGolMarcado.toString() +'X'+ myMatchSimulation.meuGolSofrido.toString(),style: EstiloTextoBranco.text30),
-            Text(myMatchSimulation.milis.toString()+'\'',style: EstiloTextoBranco.text16),
-          ],
-        ),
-
-        //Escudo time 2
-        Images().getEscudoWidget(myMatchSimulation.adversarioClubClass.name,80,80),
-
-      ],
-    );
-  }
-  Widget goalWidget(bool isTeam1){
-    int lengthWidget = myMatchSimulation.meuGolSofrido;
-    bool isMy = false;
-    if((isTeam1 && !visitante) || (!isTeam1 && visitante)) {//
-      lengthWidget = myMatchSimulation.meuGolMarcado;
-      isMy = true;
-    }
-    return   lengthWidget > 0
-        ? SingleChildScrollView(
-        child: Column(
-          children: [
-          for(int i=0; i<lengthWidget; i++)
-            goalWidgetRow(i, isMy)
-          ],
-        ),
-    )
-    : SizedBox(width: (Sized(context).width/2)-15);
-  }
-  Widget goalWidgetRow(int i,bool isMy){
-    GoalMyMatch goalMyMatch = GoalMyMatch();
-    if(isMy){
-      goalMyMatch.getMyGoal(i);
-    }else {
-      goalMyMatch.getAdvGoal(i);
-    }
-      return
-        Row(
+Widget field(){
+    return Expanded(
+      child: Stack(
         children: [
-          Image.asset('assets/icons/bola.png',height:15,width: 15),
-          Text(goalMyMatch.minute.toString()+'\'  ',style: EstiloTextoBranco.text14),
-          SizedBox(width:135,
-              child: Text(goalMyMatch.playerName,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14)
+
+          //Estádio
+          Image.asset(Images().getStadium(myClubClass.name),height: 430,width: double.infinity,fit:BoxFit.fill),
+          InteractiveViewer(
+            panEnabled: true, // Set it to false to prevent panning.
+            minScale: 0.5,
+            maxScale: 4,
+            child:
+            //Jogadores
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: Sized(context).width-30,
+                    height: 430,
+                    child: visitante ? fieldGameplay442(widget.adversarioClubID) : fieldWidget(),
+                  ),
+                  SizedBox(
+                    width: Sized(context).width,
+                    height: 430,
+                    child: visitante ? fieldWidget() : fieldGameplay442(widget.adversarioClubID),
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
-      );
-
-  }
-
-  Widget tacticsWidget(){
-    return Column(
-      children: [
-        Theme(
-          data: Theme.of(context).copyWith(
-            unselectedWidgetColor: Colors.white, //cor da borda do checkbox
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              GestureDetector(
-                  onTap:(){
-                    posturaDoTime.setValue(posturaDoTime.defesa);
-                  },
-                  child: Opacity(
-                      opacity:posturaDoTime.value == posturaDoTime.defesa ? 1: 0.5,
-                      child: Image.asset('assets/icons/defensive.png',height: 35))),
-              GestureDetector(
-                  onTap:(){
-                    posturaDoTime.setValue(posturaDoTime.normal);
-                  },
-                  child: Opacity(
-                      opacity:posturaDoTime.value == posturaDoTime.normal ? 1: 0.5,
-                      child: Image.asset('assets/icons/moderate.png',height: 35))),
-              GestureDetector(
-                  onTap:(){
-                    posturaDoTime.setValue(posturaDoTime.ataque);
-                  },
-                  child: Opacity(
-                      opacity:posturaDoTime.value == posturaDoTime.ataque ? 1: 0.5,
-                      child: Image.asset('assets/icons/very offensive.png',height: 35))),
-              globalSeeProbabilities ? Column(
-                children: [
-                  Text(Translation(context).text.scoreProbability,style: EstiloTextoBranco.text16),
-                  Text('${myMatchSimulation.probGM.toString()}%',style: EstiloTextoBranco.text16),
-                ],
-              ) : Container(),
-              globalSeeProbabilities ? Column(
-                children: [
-                  Text(Translation(context).text.takeProbability,style: EstiloTextoBranco.text16),
-                  Text('${myMatchSimulation.probGS.toString()}%',style: EstiloTextoBranco.text16),
-                ],
-              ) : Container(),
-            ],
-          ),
-        ),
-      ],
+      ),
     );
-  }
+}
+
+Widget gameVelocitySlider(){
+    return Slider(
+      activeColor: Colors.green,
+      value: globalMatchVelocity,
+      min: 10,max: maxSliderDistance,
+      onChanged: (double value) {
+        setState(() {
+          globalMatchVelocity = value;
+          _timer.cancel();
+          counter();
+        });
+      },
+    );
+}
 ////////////////////////////////////////////////////////////////////////////
 //                               FUNCTIONS                                //
 ////////////////////////////////////////////////////////////////////////////

@@ -16,7 +16,7 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/values/league_names.dart';
 
-import '../../classes/geral/semana.dart';
+import '../semana.dart';
 
 class Simulate{
 

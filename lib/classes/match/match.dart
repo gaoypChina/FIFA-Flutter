@@ -18,7 +18,7 @@ class Match{
     yellowCard = globalJogadoresMatchYellowCards[playerID];
     injury = globalJogadoresMatchInjury[playerID];
     health = globalJogadoresMatchHealth[playerID];
-    grade = globalJogadoresMatchGrade[playerID];
+    grade = double.parse(globalJogadoresMatchGrade[playerID].toString()); //pode vir como int
   }
 
 

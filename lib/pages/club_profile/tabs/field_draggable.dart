@@ -1,6 +1,6 @@
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/geral/esquemas_taticos.dart';
-import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/functions/esquemas_taticos.dart';
+import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';

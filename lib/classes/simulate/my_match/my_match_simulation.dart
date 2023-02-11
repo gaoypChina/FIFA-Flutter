@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/geral/semana.dart';
+import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/historic/total_victories.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
@@ -13,6 +13,7 @@ import 'package:fifa/global_variables.dart';
 
 class MyMatchSimulation{
 
+  bool visitante = false;
   int milis=0;
   int meuGolMarcado=0;
   int meuGolSofrido=0;

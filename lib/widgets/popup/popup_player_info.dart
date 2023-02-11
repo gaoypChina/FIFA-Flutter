@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/historic/historic_my_tranfers.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';

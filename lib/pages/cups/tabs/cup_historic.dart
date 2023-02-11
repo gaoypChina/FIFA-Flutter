@@ -1,4 +1,4 @@
-import 'package:fifa/classes/geral/size.dart';
+import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/my.dart';
@@ -111,10 +111,13 @@ import 'package:flutter/material.dart';
       child: Text(year.toString(),style: EstiloTextoBranco.negrito18),
     );
   }
+
 Widget matchBox(){
+    
     Confronto confronto = Confronto(clubName1: 'Peñarol', clubName2: 'Milan', goal1: 1, goal2: 3);
     confronto.setPenalties(penaltis1: 2, penaltis2: 3);
     double imageSize = 35;
+
     return Container(
       height: 90,
       width: 80,
