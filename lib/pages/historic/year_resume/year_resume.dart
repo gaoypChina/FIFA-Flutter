@@ -225,6 +225,7 @@ Widget internationalChampionsSelection(){
           internationalChampionsWidgetDetail(leagueOfficialNames.cupwinners),
           internationalChampionsWidgetDetail(leagueOfficialNames.latina),
           internationalChampionsWidgetDetail(leagueOfficialNames.rioSP),
+          internationalChampionsWidgetDetail(leagueOfficialNames.copaNordeste),
         ],
       )
 

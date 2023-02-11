@@ -126,6 +126,7 @@ class LeagueOfficialNames{
   String botswana = 'Liga Botswana';
   String caboverde = 'Liga Cabo Verde';
   String camaroes = 'Liga Camaroes';
+  String centralAfrica = 'Liga Rep. Centro-Africana';
   String chade = 'Liga Chade';
   String congo = 'Liga Congo';
   String congoRD = 'Liga RDCongo';
@@ -239,9 +240,9 @@ class LeagueOfficialNames{
 
       argelia, egito, libya,  marrocos, tunisia,
       africaSul, angola, botswana, caboverde, camaroes,
-      congo, congoRD, costamarfim, etiopia,
+      centralAfrica, congo, congoRD, costamarfim, etiopia,
       guine, madagascar, mali, mauritania, mocambique, namibia, nigeria, quenia,
-      sudan, tanzania, uganda, zambia, zimbabwe,
+      sudan, tanzania, togo, uganda, zambia, zimbabwe,
 
       paulistao, carioca, mineiro, es,
       gaucho,parana,santacatarina,
@@ -638,6 +639,7 @@ Map getLeagueNationalityMap(){
     leagueName.namibia: Words.country.namibia,
     leagueName.niger: Words.country.niger,
     leagueName.nigeria: Words.country.nigeria,
+    leagueName.centralAfrica: Words.country.centralAfrica,
     leagueName.ruanda: Words.country.rwanda,
     leagueName.quenia: Words.country.kenya,
     leagueName.senegal: Words.country.senegal,

@@ -4483,7 +4483,7 @@ class ClubDetails{
     //TOGO
     map[_name.askoKara] = [ClubColors(Colors.yellow,Colors.black),pattern.oneHorStripe,Coordinates(9.5726839, 1.179215596),
       'Stade Municipal Kara',10000,1974,_country.togo,62.0,[]];
-    map[_name.etoileFilante] = [ClubColors(Colors.blue,Colors.white),pattern.sleeves,Coordinates(0,0),
+    map[_name.etoilefilante] = [ClubColors(Colors.blue,Colors.white),pattern.sleeves,Coordinates(0,0),
       'Stade Oscar Anthony',2000,1932,_country.togo,58.3,[]];
     map[_name.semassi] = [ClubColors(Colors.red,Colors.white),pattern.oneHorStripe,Coordinates(8.981679877, 1.147266657),
       'Stade Municipal Sokodé',10000,1974,_country.togo,60.4,[]];

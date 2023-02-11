@@ -3491,7 +3491,12 @@ class ClubName{
   //CENTRAL AFRICAN REPUBLIC
   String dfc8 = "DFC 8";
   String bangui = "Olympic Real de Bangui";
+  String faca = "Forces Armées Centrafricaine";
+  String fatima = "ASDR Fatima";
+  String mouara = "Publique Sportive Mouara";
   String tempeteMocaf = "Tempête Mocaf";
+  String tocages = "SCAF Tocages";
+  String usca = "USCA";
   //CONGO
   String aspolice = "AS police";
   String caraBrazaville = "Cara Brazzaville";
@@ -3692,23 +3697,38 @@ class ClubName{
   String almerrikh = "Al-Merrikh";
   String almourada = "Al-Mourada";
   //TANZANIA
+  String africansports = "African Sports";
   String azam = "Azam";
   String biashara = "Biashara United";
   String kagera = "Kagera Sugar";
+  String kmkm = "KMKM";
   String maji = "Maji Maji";
   String malindi = "Malindi";
   String mbeya = "Mbeya City";
   String mtibwa = "Mtibwa Sugar";
   String moro = "Moro United";
+  String mseto = "Mseto Sports";
   String namungo = "Namungo";
+  String pamba = "Pamba";
+  String panafrican = "Pan African";
   String prisons = "Prisons SC";
   String simba = "Simba";
   String yanga = "Young Africans";
   //TOGO
+  String agaza = "Agaza";
+  String anges = "Anges";
+  String asfosa = "ASFOSA Lomé";
   String askoKara = "ASKO Kara";
-  String etoileFilante = "Étoile Filante";
+  String douaneslome = "Douanes de Lomé";
+  String doumbe = "Doumbé";
+  String etoilefilante = "Étoile Filante";
+  String koroki = "Koroki";
   String lome = "Lomé I";
+  String maranatha = "Maranatha";
+  String modelelome = "Modèle Lomé";
   String semassi = "Semassi";
+  String togolais = "Dynamic Togolais";
+  String togoport = "Togo-Port";
   //UGANDA
   String express = "Express FC";
   String kampala = "Kampala Capital City";

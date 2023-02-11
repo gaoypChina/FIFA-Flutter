@@ -320,7 +320,7 @@ Map<String,dynamic> mapInternationals = {
     1971.0: [n.canonYaounde,n.asantekotoko,n.greatOlympics,n.asecmimosas],
     1970.0: [n.asantekotoko,n.mazembe,n.ismaily,n.kaloum],
     1969.0: [n.ismaily,n.mazembe,n.asantekotoko,n.hafia],
-    1968.0: [n.mazembe,n.etoileFilante,n.leopardsQUE,n.farRabat],
+    1968.0: [n.mazembe,n.etoilefilante,n.leopardsQUE,n.farRabat],
     1967.0: [n.mazembe,n.asantekotoko,n.stGeorge,n.djoliba],
     1966.0: [n.stadeDAbidjan,n.realBamako,n.oryx,n.omdurman],
   },
