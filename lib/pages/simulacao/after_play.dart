@@ -54,6 +54,7 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
   late Club adversarioClubClass;
   late League leagueClass;
   late TabController _tabController;
+  Semana weekClass = Semana(semana-1); //A semana desejada é a "anterior"
 
   ///////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
@@ -144,9 +145,9 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
                   ],
                 ),
 
-                Semana(semana).isJogoCampeonatoNacional
+                weekClass.isJogoCampeonatoNacional
                     ? weekMatchs()
-                    : Semana(semana).isJogoGruposInternacional
+                    : weekClass.isJogoGruposInternacional
                       ? tableWidget()
                       : tableWidgetMataMata(),
 
@@ -172,14 +173,13 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
 ////////////////////////////////////////////////////////////////////////////
   Widget header(){
     String textRodada = '';
-    Semana semanaClass = Semana(semana);
-    if(semanaClass.isJogoCampeonatoNacional) {
+    if(weekClass.isJogoCampeonatoNacional) {
       textRodada = '${Translation(context).text.matchWeek} ' + (rodada-1).toString() + '/' + (League(index: myClass.leagueID).getNTeams()-1).toString();
     }else{
       textRodada = Name().groupsPhase;
-      if(semanaClass.isJogoGruposInternacional){textRodada += ' ${semanaClass.rodadaGroupInternational}'; }
-      else if(semanaClass.isJogoMataMataInternacional){
-        textRodada = semanaClass.semanaStr;
+      if(weekClass.isJogoGruposInternacional){textRodada += ' ${weekClass.rodadaGroupInternational}'; }
+      else if(weekClass.isJogoMataMataInternacional){
+        textRodada = weekClass.semanaStr;
       }
     }
     return Row(
@@ -190,7 +190,7 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
 
         Column(
           children: [
-            Semana(semana).isJogoCampeonatoNacional
+            weekClass.isJogoCampeonatoNacional
                 ? Image.asset(FIFAImages().campeonatoLogo(myClubClass.leagueName),height: 30,width: 30)
                 : Image.asset(FIFAImages().campeonatoLogo(myClass.getMyInternationalLeague()),height: 35,width: 35),
             Text(textRodada,style: EstiloTextoBranco.text16),
@@ -338,7 +338,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
 
   Widget classificationBox(){
     List classificationClubsIndexes = [];
-    if(Semana(rodada).isJogoCampeonatoNacional){
+    if(weekClass.isJogoCampeonatoNacional){
       classificationClubsIndexes = Classification(leagueIndex: myClass.getLeagueID()).classificationClubsIndexes;
     }else{
       List classificationClubsIndexesAll = International(myClass.getMyInternationalLeague()).getClassification();
@@ -376,16 +376,16 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
             padding:const EdgeInsets.all(1),
             child: Text(clubClass.name,style:EstiloTextoBranco.text12))),
         SizedBox(width:25,
-            child: Text(Semana(rodada).isJogoCampeonatoNacional
+            child: Text(weekClass.isJogoCampeonatoNacional
                 ? clubClass.leaguePoints.toString()
                 : clubClass.internationalPoints.toString()
                 ,style:EstiloTextoBranco.text14)),
         SizedBox(width:25,
-            child: Text(Semana(rodada).isJogoCampeonatoNacional
+            child: Text(weekClass.isJogoCampeonatoNacional
                 ? clubClass.leagueGM.toString()
                 : clubClass.internationalGM.toString(),style:EstiloTextoBranco.text14)),
         SizedBox(width:25,
-            child: Text(Semana(rodada).isJogoCampeonatoNacional
+            child: Text(weekClass.isJogoCampeonatoNacional
                 ? clubClass.leagueGS.toString()
                 : clubClass.internationalGS.toString(),style:EstiloTextoBranco.text14)),
         SizedBox(width:40,child: Text(clubClass.getOverall().toStringAsFixed(2),style:EstiloTextoBranco.text14)),

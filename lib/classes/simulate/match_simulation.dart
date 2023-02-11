@@ -7,6 +7,7 @@ import 'package:fifa/classes/mata_mata/mata_mata_simulation.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/simulate/player_variables/cards_injury_selection.dart';
 import 'package:fifa/classes/simulate/after_simulation/set_points.dart';
+import 'package:fifa/classes/simulate/player_variables/match_selection.dart';
 import 'package:fifa/classes/simulate/player_variables/origin/grade.dart';
 import 'package:fifa/classes/simulate/player_variables/update_player_variables.dart';
 import 'package:fifa/global_variables.dart';
@@ -82,8 +83,8 @@ class MatchSimulation{
 
   matchSimulationAfter(Club clubClass1,Club clubClass2){
     //+1 Match
-    UpdatePlayerVariable().setMatchUpdate(clubClass1);
-    UpdatePlayerVariable().setMatchUpdate(clubClass2);
+    UpdatePlayerVariableMatch().update(clubClass1);
+    UpdatePlayerVariableMatch().update(clubClass2);
 
     //RED CARDS, YELLOW CARDS, INJURY
     UpdatePlayerVariable().setCardsInjuryUpdate(clubClass1,false);

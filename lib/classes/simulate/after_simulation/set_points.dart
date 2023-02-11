@@ -5,10 +5,11 @@ class SetPoints{
 
   set(int indexTeam1, int indexTeam2, int golTime1, int golTime2){
 
-    if(Semana(semana).isJogoCampeonatoNacional){
+    Semana weekClass = Semana(semana);
+    if(weekClass.isJogoCampeonatoNacional){
       pointsNational(indexTeam1,indexTeam2,golTime1,golTime2);
     }
-    else if(Semana(semana).isJogoGruposInternacional) {
+    else if(weekClass.isJogoGruposInternacional) {
       pointsGroupInterNational(indexTeam1,indexTeam2,golTime1,golTime2);
     }
 

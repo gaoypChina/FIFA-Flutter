@@ -40,7 +40,7 @@ class _CalendarState extends State<Calendar> {
             margin: const EdgeInsets.all(8),
             height: Sized(context).height-95,
             child: SingleChildScrollView(
-              reverse: (Semana(semana).isJogoCampeonatoInternacional) ? true : false,
+              reverse: (semana>globalUltimaSemana/2) ? true : false,
               child: Wrap(
                 spacing: 5,
                 runSpacing: 5,
@@ -83,7 +83,7 @@ class _CalendarState extends State<Calendar> {
           club: myClub,
           competitionName: myTeamClass.playingInternational
       );
-      if(show.hasAdversary && semana >= semanasJogosInternacionais.first) {
+      if(show.hasAdversary) {
         return wCalendarAdvBox(context, semanaLocal, show);
       }else{
         return wCalendarNotPlayWidget(

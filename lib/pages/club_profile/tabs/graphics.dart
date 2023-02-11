@@ -317,10 +317,11 @@ class _ClubGraphicsState extends State<ClubGraphics> {
   Widget positionThisYear(){
 
     List<int> positions = HistoricPositionsThisYear().getGlobal(widget.club.name);
+    print(positions);
     List<GraphPointInt> lista = [];
-    for(int week=1;week<semana;week++){
+    for(int week=0;week < positions.length;week++){
       if(testInitRodada==1){
-        lista.add(GraphPointInt(week, positions[week-1]));
+        lista.add(GraphPointInt(week, positions[week]));
       }
     }
 

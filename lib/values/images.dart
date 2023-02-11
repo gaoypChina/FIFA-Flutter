@@ -828,8 +828,10 @@ String imageLogo(String timeFoto) {
     map[_name.trefiori] = 'tre fiori';
     map[_name.trepenne] = 'tre penne';
     //MALTA
-    map[_name.sliema] = 'sliema';//MALTA
-    map[_name.valletta] = 'valletta';//MALTA
+    map[_name.floriana] = 'floriana';
+    map[_name.sliema] = 'sliema';
+    map[_name.hiberniansMALTA] = 'hibernians malta';
+    map[_name.valletta] = 'valletta';
     //ANDORRA
     map[_name.santacoloma] = 'santa coloma';
     //GIBRALTAR

@@ -12,9 +12,6 @@ class UpdatePlayerVariable{
 
   late Club clubClass;
 
-  setMatchUpdate(Club clubClass){
-    UpdatePlayerVariableMatch().update(clubClass);
-  }
 
   setCardsInjuryUpdate(Club clubClass,bool isMyMatch){
     CardsInjury().setRedCardsYellowCardsInjury(clubClass,isMyMatch);
