@@ -55,7 +55,7 @@ Widget wCalendarNotPlayWidget(int semanaLocal,String title, [String? imageName])
   return Container(
     width: 120,
     height: 117,
-    color: semana > semanaLocal ? Colors.deepPurple : Colors.black38,
+    color: semana > semanaLocal ? Colors.black87 : Colors.black38,
     child: Column(
       children: [
         Text(title, textAlign: TextAlign.center,style: EstiloTextoBranco.text16),

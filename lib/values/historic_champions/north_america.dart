@@ -570,6 +570,31 @@ Map<String,dynamic> mapNorthAmerica = {
     1990.0: [n.reno,],
   },
 
+  leagueName.repdominicana : {
+    //https://www.rsssf.org/tablesd/domrepchamp.html
+    2022.0: [n.cibao,],
+    2021.0: [n.cibao,],
+    2020.0: [n.omFC],
+    2019.0: [n.pantoja,],
+    2018.0: [n.cibao,],
+    2017.0: [n.atlantico,],
+    2016.0: [n.barcelonaRDOM,],
+    2015.0: [n.pantoja,],
+    2014.0: [n.moca,],
+    2013.0: [n.moca,],
+    2012.0: [n.pantoja,],
+    2011.0: [],
+    2010.0: [n.moca,],
+    2009.0: [n.pantoja,],
+    2008.0: [],
+    2007.0: [n.barcelonaRDOM,],
+    2006.0: [],
+    2005.0: [n.pantoja,],
+    2004.0: [],
+    2003.0: [n.jarabacoa,],
+    2002.0: [n.jarabacoa,],
+  },
+
   leagueName.suriname : {
     2022.0: [],
     2021.0: [],
@@ -645,4 +670,5 @@ Map<String,dynamic> mapNorthAmerica = {
     1951.0: [n.transvaal,],
     1950.0: [n.transvaal,],
   },
+
 };

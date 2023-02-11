@@ -58,15 +58,19 @@ class _YearResumeState extends State<YearResume> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     dropDownButton(),
-                    int.parse(selectedYear) < anoInicial ?  Expanded(child:
-                      SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: internationalChampionsSelection(),
-                      ),
-                    ) : Container(),
+
+                    int.parse(selectedYear) < anoInicial
+                        ?  internationalChampionsWidgetDetail(LeagueOfficialNames().mundial)
+                        : Container(),
                   ],
                 ),
               ),
+              int.parse(selectedYear) < anoInicial ?  SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: internationalChampionsSelection(),
+                ) : Container(),
+
+
 
               int.parse(selectedYear) >= anoInicial ? Expanded(
                 child: GridView.builder(
@@ -197,20 +201,33 @@ class _YearResumeState extends State<YearResume> {
 
 Widget internationalChampionsSelection(){
   LeagueOfficialNames leagueOfficialNames = LeagueOfficialNames();
-  return Row(
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      internationalChampionsWidgetDetail(leagueOfficialNames.mundial),
-      internationalChampionsWidgetDetail(leagueOfficialNames.championsLeague),
-      internationalChampionsWidgetDetail(leagueOfficialNames.ligaEuropa),
-      internationalChampionsWidgetDetail(leagueOfficialNames.libertadores),
-      internationalChampionsWidgetDetail(leagueOfficialNames.sulamericano),
-      internationalChampionsWidgetDetail(leagueOfficialNames.concacaf),
-      internationalChampionsWidgetDetail(leagueOfficialNames.asia),
-      internationalChampionsWidgetDetail(leagueOfficialNames.africa),
+      Row(
+        children: [
+          internationalChampionsWidgetDetail(leagueOfficialNames.championsLeague),
+          internationalChampionsWidgetDetail(leagueOfficialNames.libertadores),
+        ],
+      ),
+      Row(
+        children: [
+          internationalChampionsWidgetDetail(leagueOfficialNames.europaLeagueOficial),
+          internationalChampionsWidgetDetail(leagueOfficialNames.copaSulAmericana),
+        ],
+      ),
+      Row(
+        children: [
+          internationalChampionsWidgetDetail(leagueOfficialNames.concacaf),
+          internationalChampionsWidgetDetail(leagueOfficialNames.asia),
+          internationalChampionsWidgetDetail(leagueOfficialNames.africa),
 
-      internationalChampionsWidgetDetail(leagueOfficialNames.cupwinners),
-      internationalChampionsWidgetDetail(leagueOfficialNames.latina),
-      internationalChampionsWidgetDetail(leagueOfficialNames.rioSP),
+          internationalChampionsWidgetDetail(leagueOfficialNames.cupwinners),
+          internationalChampionsWidgetDetail(leagueOfficialNames.latina),
+          internationalChampionsWidgetDetail(leagueOfficialNames.rioSP),
+        ],
+      )
+
     ],
   );
 }
@@ -237,7 +254,7 @@ Widget internationalChampionsWidgetDetail(String internationalLeagueName){
 
 
   return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 6.0),
+    padding: const EdgeInsets.symmetric(horizontal: 3.0),
     child: GestureDetector(
       onTap: (){
         bottomSheetShowLeagueClassification(context, clubsID);

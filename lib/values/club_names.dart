@@ -2736,9 +2736,16 @@ class ClubName{
   //PORTO RICO
   String puertoRico = "Puerto Rico Islanders";
   //REP. DOMINICANA
+  String atlantico = "Atlántico";
+  String barcelonaRDOM = "Barcelona Atlético";
+  String bauger = "Bauger";
   String cibao = "Cibao";
+  String delfines = "Delfines";
+  String jarabacoa = "Jarabacoa";
   String omFC = "O&M FC";
+  String moca = "Moca";
   String pantoja = "CA Pantoja";
+  String vegareal = "Vega Real";
   //SURINAME
   String coronieboys = "Coronie Boys";
   String fcsnacional = "FCS Nacional";

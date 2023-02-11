@@ -25,7 +25,7 @@ Widget classification3(My myClass){
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      for(int i=-2;i<2;i++)
+      for(int i=-2;i<3;i++)
         myPosition+i+1 > 0 && myPosition+i < classificationList.length
             ? rowClassification(myPosition+i+1,Club(index: classificationList[myPosition+i]), myClass)
             : Container(),

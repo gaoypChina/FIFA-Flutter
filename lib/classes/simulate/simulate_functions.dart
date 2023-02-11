@@ -43,9 +43,7 @@ class Simulate{
     //APÓS A SIMULAÇÃO
     updateWeek();
 
-    if(Semana(semana).isJogoCampeonatoInternacional) {
-      setTeamsInternational();
-    }
+    setTeamsInternational();
 
     //Save position map
     if(Semana(semana).isJogoCampeonatoNacional){
@@ -78,21 +76,17 @@ class Simulate{
   }
 
   setTeamsInternational(){
-    //Define Times na champions e libertadores
-    if(semana == semanaMundial.first){
-      FimDoCampeonatoLocal().setAll032InternationalTeams();
-    }
     //Define times oitavas
     if(semana == semanaOitavas.first) {
       MataMata().defineClubsOitavas();
     }
-    if(semana == semanaQuartas.first) {
+    else if(semana == semanaQuartas.first) {
       MataMata().defineClubsQuartas();
     }
-    if(semana == semanaSemi.first) {
+    else if(semana == semanaSemi.first) {
       MataMata().defineClubsSemi();
     }
-    if(semana == semanaFinal.first) {
+    else if(semana == semanaFinal.first) {
       MataMata().defineClubsFinal();
     }
   }

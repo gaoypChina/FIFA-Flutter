@@ -13,8 +13,10 @@ import 'package:fifa/pages/change_club.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/values/historic_champions/historic_champions.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
+import 'package:fifa/widgets/bottom_sheet_league_classification.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/widgets/loader.dart';
 import 'package:flutter/material.dart';
@@ -167,13 +169,19 @@ Widget champions(){
     );
 }
 Widget leagueChampion(int leagueID){
-  int championID = Classification(leagueIndex: leagueID).classificationClubsIndexes.first;
-    return Stack(
-      children: [
+  List classificationIndexes = Classification(leagueIndex: leagueID).classificationClubsIndexes;
+  int championID = classificationIndexes.first;
+    return
         //Image.asset(FIFAImages().campeonatoLogo(Club(index: championID).leagueName),height:40,width: 40,),
-        Images().getEscudoWidget(Club(index: championID).name,40,40)
-      ],
-    );
+        GestureDetector(
+            onTap:(){
+              List names = [];
+              for (int clubID in classificationIndexes) {
+                names.add(Club(index: clubID).name);
+              }
+              bottomSheetShowLeagueClassification(context, names);
+        },child: Images().getEscudoWidget(Club(index: championID).name,40,40)
+        );
 }
 Widget mundial(){
   MundialFinal mundial = MundialFinal();
@@ -198,22 +206,29 @@ Widget mundial(){
     );
 }
 
-Widget finale(String internationalLeague){
+Widget finale(String internationalLeagueName){
   MataMata data = MataMata();
-  data.getData(internationalLeague, Name().finale,0, 0);
-  return Column(
-    children: [
-      Text(internationalLeague,style: EstiloTextoBranco.negrito22),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(FIFAImages().campeonatoLogo(internationalLeague),height: 35,width:35,),
-          Images().getEscudoWidget(data.clubName1,30,30),
-          const Text('x',style: EstiloTextoBranco.text14),
-          Images().getEscudoWidget(data.clubName2,30,30)
-        ],
-      ),
-    ],
+  data.getData(internationalLeagueName, Name().finale,0, 0);
+  return GestureDetector(
+    onTap: (){
+      Map allClassifications = mapChampions(internationalLeagueName);
+      List clubsID = allClassifications[double.parse(ano.toString())];
+      bottomSheetShowLeagueClassification(context, clubsID);
+    },
+    child: Column(
+      children: [
+        Text(internationalLeagueName,style: EstiloTextoBranco.negrito22),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(FIFAImages().campeonatoLogo(internationalLeagueName),height: 35,width:35,),
+            Images().getEscudoWidget(data.clubName1,30,30),
+            const Text('x',style: EstiloTextoBranco.text14),
+            Images().getEscudoWidget(data.clubName2,30,30)
+          ],
+        ),
+      ],
+    ),
   );
 }
 ////////////////////////////////////////////////////////////////////////////

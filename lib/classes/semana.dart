@@ -20,9 +20,12 @@ class Semana{
   bool isJogoMataMataInternacional = semanasMataMataInternacionais.contains(semana);
   String semanaAlternativeStr = semana.toString(); //com o numero da rodada
   String semanaCalendarStr = semana.toString();
+  String realDate = weekRealDays[semana]!+"/"+ano.toString();
 
   Semana(int weekToCalculate){
     Name name = Name();
+
+    realDate = weekRealDays[semana]!+"/"+ano.toString();
 
     isJogoMundial = semanaMundial.contains(weekToCalculate);
     isJogoCopa = semanasJogosCopas.contains(weekToCalculate);

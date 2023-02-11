@@ -46,7 +46,7 @@ List<int> semanaOitavas = [semanasJogosInternacionais[6],semanasJogosInternacion
     semanaMundial = [semanasJogosInternacionais.length+semanasJogosNacionais.length+1];
 //List<int> semanasJogosInternacionais = [for(var i=semanasJogosNacionais.last+1; i<=semanasJogosNacionais.last+13; i++) i];
 //List<int> semanasJogosInternacionais = [for(var i=1; i<=13; i++) i];
-List<int> semanasJogosInternacionais = [3,6,9,12,15,18,  21,23, 25,27, 29,30, 32];
+List<int> semanasJogosInternacionais = [3,5,7,10,12,14,  18,20, 23,25, 28,29, 32];
 
 
 List semanasGruposInternacionais = semanasJogosInternacionais.take(6).toList();
@@ -54,28 +54,28 @@ List<int> semanasMataMataInternacionais = semanaOitavas+semanaQuartas+semanaSemi
 
 //List<int> semanasJogosNacionais = [for(var i=1; i<=globalNMaxRodadasNacional; i++) i];
 //List<int> semanasJogosNacionais = [for(var i=semanasJogosInternacionais.last+1; i<=semanasJogosInternacionais.last+globalNMaxRodadasNacional; i++) i];
-List<int> semanasJogosNacionais = [1,2,4,5,7, 8,10,11,13,14, 16,17,19,20,22, 24,26,28,31];
+List<int> semanasJogosNacionais = [1,2,4,6,8, 9,11,13,15,16, 17,19,21,22,24, 26,27,30,31];
 
 List semanasJogosCopas = [];
 int globalUltimaSemana = semanaMundial.last+1;
 
 Map<int,String> weekRealDays = {
-  1: "04/08/2022",  2: "07/08/2022",  3: "11/08/2022",
-  4: "14/08/2022",  5: "18/08/2022",  6: "21/08/2022",
-  7: "24/08/2022",  8: "28/08/2022",  9: "31/08/2022",
-  10: "04/09/2022",  11: "07/09/2022",  12: "11/09/2022",
-  13: "14/09/2022",  14: "18/09/2022",  15: "21/09/2022",
-  16: "25/09/2022",  17: "28/09/2022",  18: "02/10/2022",
-  19: "05/10/2022",  20: "09/10/2022",  21: "12/10/2022",
-  22: "16/10/2022",  23: "19/10/2022",  24: "23/10/2022",
-  25: "26/10/2022",  26: "30/10/2022",  27: "02/11/2022",
-  28: "06/11/2022",  29: "09/11/2022",  30: "13/11/2022",
-  31: "16/11/2022",  32: "20/11/2022",  33: "23/11/2022",
-  34: "27/11/2022",  35: "30/11/2022",  36: "04/12/2022",
-  37: "07/12/2022",  38: "11/12/2022",  39: "15/12/2022",
-  40: "18/12/2022",  41: "21/12/2022",  42: "04/01/2023",
-  43: "08/01/2022",  44: "11/01/2022",  45: "15/01/2023",
-  46: "18/01/2022",  47: "22/01/2022",  48: "25/01/2023",
+  1: "04/08",  2: "07/08",  3: "11/08",
+  4: "14/08",  5: "18/08",  6: "21/08",
+  7: "24/08",  8: "28/08",  9: "31/08",
+  10: "04/09",  11: "07/09",  12: "11/09",
+  13: "14/09",  14: "18/09",  15: "21/09",
+  16: "25/09",  17: "28/09",  18: "02/10",
+  19: "05/10",  20: "09/10",  21: "12/10",
+  22: "16/10",  23: "19/10",  24: "23/10",
+  25: "26/10",  26: "30/10",  27: "02/11",
+  28: "06/11",  29: "09/11",  30: "13/11",
+  31: "16/11",  32: "20/11",  33: "23/11",
+  34: "27/11",  35: "30/11",  36: "04/12",
+  37: "07/12",  38: "11/12",  39: "15/12",
+  40: "18/12",  41: "21/12",  42: "04/01",
+  43: "08/01",  44: "11/01",  45: "15/01",
+  46: "18/01",  47: "22/01",  48: "25/01",
 };
 
 //HISTORIC

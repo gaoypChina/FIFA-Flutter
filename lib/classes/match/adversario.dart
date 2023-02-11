@@ -20,7 +20,7 @@ class Adversario{
 
     Semana weekClass = Semana(semana);
     //ADVERSARIO CAMPEONATO
-    if (weekClass.isJogoCampeonatoNacional && semana < League(index: myClass.leagueID).nClubs) {
+    if (weekClass.isJogoCampeonatoNacional) {
       getLeagueAdversario();
     }
     //ADVERSARIO FASE DE GRUPOS CHAMPIONS OU LIBERTADORES

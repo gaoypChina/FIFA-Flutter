@@ -97,6 +97,7 @@ class LeagueOfficialNames{
   String costaRica = 'Liga Costa Rica';String honduras = 'Liga Honduras';String elsalvador = 'Liga El Salvador';
   String nicaragua = 'Liga Nicaragua';String guatemala = 'Liga Guatemala';String panama = 'Liga Panamá';
   String jamaica = 'Liga Jamaica';String cuba = 'Liga Cuba';String haiti = 'Liga Haiti';
+  String repdominicana = 'Liga Rep. Dominicana';
   String suriname = 'Liga Suriname';
   String asia = 'Liga Ásia';  String orienteMedio = 'Liga Oriente Médio';  String africa = 'Liga África';
 
@@ -226,7 +227,7 @@ class LeagueOfficialNames{
 
       mexico, estadosUnidos,
       costaRica, elsalvador, guatemala, honduras, nicaragua, panama,
-      jamaica, haiti, suriname,
+      repdominicana, jamaica, haiti, suriname,
 
       china,  japao,     coreiaSul,
       tailandia, camboja, filipinas, indonesia, malasia, vietna,
@@ -569,10 +570,11 @@ Map getLeagueNationalityMap(){
     leagueName.haiti: Words.country.haiti,
     leagueName.honduras: Words.country.honduras,
     leagueName.jamaica: Words.country.jamaica,
+    leagueName.cuba: Words.country.cuba,
     leagueName.elsalvador: Words.country.elsalvador,
     leagueName.nicaragua: Words.country.nicaragua,
     leagueName.panama: Words.country.panama,
-    leagueName.cuba: Words.country.cuba,
+    leagueName.repdominicana: Words.country.dominicanRepublic,
     leagueName.suriname: Words.country.suriname,
 
     //ASIA

@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/end_year_updates/aposentadoria.dart';
+import 'package:fifa/classes/functions/fim_campeonato_local.dart';
 import 'package:fifa/classes/historic/historic_club_year.dart';
 import 'package:fifa/classes/historic/historic_my_players.dart';
 import 'package:fifa/classes/historic/historic_my_tranfers.dart';
@@ -27,14 +28,20 @@ import 'rebaixamento.dart';
 void funcUpdateDataAfterSeason(){
   customToast('10% - Salvando dados históricos');
   saveHistoricalData(); //salva a classificação dos campeonatos
+
   customToast('30% - Atualizando status dos jogadores');
   atualizaStatusJogadores(); //venda, update de overall, idade+1
+
   customToast('70% - Alterando os times de divisão');
+  FimDoCampeonatoLocal().setAll032InternationalTeams(); //Define Times na champions e libertadores
   trocaClubesRebaixamento();
+
   customToast('80% - Resetando cartões, gols, assistencias');
   resetData(); //clear cartoes amarelos, gols, assistencias etc...
+
   customToast('90% - Salvando dados de treinador');
   saveCoachPoints();
+
   ano++;
 }
 
@@ -116,8 +123,10 @@ resetOnLoadData(){
   HistoricPositionsThisYear().resetGlobal();
 
   //RESET CHAMPIONS LEAGUE, LIBERTADORES etc data
-  InternationalLeague().resetAll();
-  InternationalLeague().setDefaultTeams();
+  if(ano == anoInicial) {
+    InternationalLeague().resetAll();
+    InternationalLeague().setDefaultTeams();
+  }
 }
 
 resetData(){

@@ -8,6 +8,7 @@ LeagueOfficialNames leagueName = LeagueOfficialNames();
 Map<String,dynamic> mapEuropaTopLeagues = {
 
   leagueName.inglaterra1 : {
+    //2023.0: [n.arsenal,n.manchestercity,n.manchesterunited,n.newcastle,n.tottenham,n.brighton,n.chelsea,n.fulham,n.liverpool,n.brentford,            n.astonvilla],
     2022.0: [n.manchestercity,n.liverpool,n.chelsea,n.tottenham,n.arsenal,n.manchesterunited,n.westham,n.leicester,n.brighton,n.wolves,              n.newcastle,n.crystalpalace,n.brentford,n.astonvilla,n.southampton,n.everton,n.leeds,n.burnley,n.watford,n.norwich],
     2021.0: [n.manchestercity,n.manchesterunited,n.liverpool,n.chelsea,n.leicester,n.westham,n.tottenham,n.arsenal,n.everton,n.leeds,                n.astonvilla,n.newcastle,n.wolves,n.crystalpalace,n.southampton,n.brighton,n.burnley,n.fulham,n.westbromwich,n.sheffieldunited],
     2020.0: [n.liverpool,n.manchestercity,n.manchesterunited,n.chelsea,n.leicester,n.tottenham,n.wolves,n.arsenal,n.sheffieldunited,n.burnley,       n.southampton,n.everton,n.newcastle,n.crystalpalace,n.brighton,n.westham,n.astonvilla,n.bournemouth,n.watford,n.norwich],

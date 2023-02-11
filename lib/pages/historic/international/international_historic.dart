@@ -250,7 +250,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
       children: [
 
         Text(Name().showTranslated(context, Name().finale).toUpperCase(),
-            style: EstiloTextoBranco.text14),
+            style: EstiloTextoBranco.negrito14),
         for(int idaVolta = 0; idaVolta < 1; idaVolta++)
           for(int i = 0; i < 2; i += 2)
             internationalHistoricRow(
@@ -258,30 +258,32 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
 
         const Text('', style: EstiloTextoBranco.text16),
         Text(Name().showTranslated(context, Name().semifinal).toUpperCase(),
-            style: EstiloTextoBranco.text14),
-        for(int idaVolta = 0; idaVolta < 2; idaVolta++)
-          for(int i = 0; i < 4; i += 2)
-            internationalHistoricRow(
-                internationalLeagueName, Name().semifinal, i, idaVolta, ano),
+            style: EstiloTextoBranco.negrito14),
+        iteratePhase(ano, Name().semifinal, 4, internationalLeagueName),
 
         const Text('', style: EstiloTextoBranco.text16),
         Text(Name().showTranslated(context, Name().quartas).toUpperCase(),
-            style: EstiloTextoBranco.text14),
-        for(int idaVolta = 0; idaVolta < 2; idaVolta++)
-          for(int i = 0; i < 8; i += 2)
-            internationalHistoricRow(
-                internationalLeagueName, Name().quartas, i, idaVolta, ano),
+            style: EstiloTextoBranco.negrito14),
+        iteratePhase(ano, Name().quartas, 8, internationalLeagueName),
 
         const Text('', style: EstiloTextoBranco.text16),
         Text(Name().showTranslated(context, Name().oitavas).toUpperCase(),
-            style: EstiloTextoBranco.text14),
-        for(int idaVolta = 0; idaVolta < 2; idaVolta++)
-          for(int i = 0; i < 16; i += 2)
-            internationalHistoricRow(
-                internationalLeagueName, Name().oitavas, i, idaVolta, ano),
+            style: EstiloTextoBranco.negrito14),
+        iteratePhase(ano, Name().oitavas, 16, internationalLeagueName),
 
         const Text('', style: EstiloTextoBranco.text16),
         const Text('', style: EstiloTextoBranco.text16),
+      ],
+    );
+  }
+  Widget iteratePhase(int ano, String phase, int iterations, String internationalLeagueName){
+    return Column(
+      children: [
+        for(int idaVolta = 0; idaVolta < 2; idaVolta++)
+          for(int i = 0; i < iterations; i += 2)
+            internationalHistoricRow(
+                internationalLeagueName, phase, i, idaVolta, ano
+            ),
       ],
     );
   }
