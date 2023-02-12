@@ -1,7 +1,8 @@
+import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/countries/countries_continents.dart';
+import 'package:fifa/classes/my.dart';
 import 'package:fifa/pages/map/map_list_all_clubs.dart';
-import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
@@ -70,10 +71,10 @@ class _ChooseContinentPageState extends State<ChooseContinentPage> {
     return  Container(
       margin: const EdgeInsets.all(4),
       decoration: BoxDecoration(
-        color: AppColors().greyTransparent,
+        color: Club(index: My().clubID).colors.primaryColor.withOpacity(0.4),
         border: Border.all(
           width: 2.0,
-          color: Colors.green,
+          color: Club(index: My().clubID).colors.secondColor,
         ),
         borderRadius: const BorderRadius.all(Radius.circular(15.0)),
       ),

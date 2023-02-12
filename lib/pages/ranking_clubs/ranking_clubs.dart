@@ -146,7 +146,7 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
       colorBackground = Colors.blue;
     }
     if(club.index==myClub.clubID){
-      colorBackground = Colors.redAccent;
+      colorBackground = Colors.teal;
     }
     return colorBackground;
   }

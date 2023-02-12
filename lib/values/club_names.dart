@@ -1612,7 +1612,7 @@ class ClubName{
   String differdange = "Red Boys Differdange";
   String dudelange = "F91 Dudelange";
   String etzella = "Etzella Ettelbruck";
-  String folaeesch = "Fola Esch";
+  String folaesch = "Fola Esch";
   String grevenmacher = "Grevenmacher";
   String jeunesseesch = "Jeunesse Esch";
   String niederkorn = "Progrès Niederkorn";
@@ -1629,17 +1629,21 @@ class ClubName{
   String eschenMauren = "Eschen-Mauren";
   String vaduz = "Vaduz";
   //SAN MARINO
+  String cailungo = "Cailungo";
   String cosmos = "Cosmos";
+  String dogana = "Juvenes/Dogana";
   String domagnano = "Domagnano";
   String faetano = "Faetano";
+  String fiorentino = "Fiorentino";
   String folgore = "Folgore Falciano";
   String lafiorita = "La Fiorita";
   String libertas = "Libertas";
-  String montevito = "Montevito";
   String murata = "Murata";
   String pennarossa = "Pennarossa";
+  String sangiovanni = "San Giovanni";
   String trepenne = "Tre Penne";
   String trefiori = "Tre Fiori";
+  String virtus = "Virtus";
   //GIBRALTAR
   String britannia = "Britannia XI";
   String europa = "Europa FC";

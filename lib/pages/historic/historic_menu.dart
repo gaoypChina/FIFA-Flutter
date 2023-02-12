@@ -1,3 +1,4 @@
+import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
@@ -152,6 +153,7 @@ class _HistoricMenuState extends State<HistoricMenu> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
 Widget box(String text, Widget centralWidget, Function function){
+    Club club = Club(index: My().clubID);
     return Container(
       margin: const EdgeInsets.all(4),
       child: Material(
@@ -163,17 +165,19 @@ Widget box(String text, Widget centralWidget, Function function){
           child: Container(
             height: 100,
             width: Sized(context).width*0.45,
-            decoration: const BoxDecoration(
-              color: Colors.black38,
-              borderRadius: BorderRadius.all(
-                  Radius.circular(5.0)
+            decoration: BoxDecoration(
+              color: club.colors.primaryColor.withOpacity(0.2),
+              borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+              border: Border.all(
+                width: 2.0,
+                color: club.colors.secondColor,
               ),
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 centralWidget,
-                Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+                Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.negrito16),
               ],
             ),
           ),
