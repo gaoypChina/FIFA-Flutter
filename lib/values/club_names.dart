@@ -1042,7 +1042,6 @@ class ClubName{
   String malatyaspor = "Malatyaspor";
   String mersin = "Mersin İdmanyurdu";
   String orduspor = "Orduspor";
-  String osmanlispor = "Osmanlispor";
   String rizespor = "Rizespor";
   String sakaryaspor = "	Sakaryaspor";
   String samsunspor = "Samsunspor";
@@ -1505,7 +1504,6 @@ class ClubName{
   String puskas = "Puskás Akadémia FC";
   String zalaegerszeg = "Zalaegerszeg";
   //ESLOVAQUIA
-  String dunajska = "Dunajská Streda";
   String duklaBanska = "Dukla Banska Bystrica";
   String petrzalka = "Petrzalka 1898";
   String slovanBratislava = "Slovan Bratislava";
@@ -1719,6 +1717,7 @@ class ClubName{
   String alagoinhas = "Alagoinhas";
   String alecrim = "Alecrim-RN";
   String alegrense = "Alegrense";
+  String aliancaAP = "Aliança-AP"; //AP
   String alvorada = "Alvorada"; //TO
   String amapa = "Amapá"; //AP
   String amazonas = "Amazonas";
@@ -1743,7 +1742,8 @@ class ClubName{
   String avenida = "Avenida";
   String audaxSP = "Grêmio Osasco Audax";
   String audaxRJ = "Audax";
-  String autoesporte = "Auto Esporte-PI";
+  String autoesportePB = "Auto Esporte-PB";
+  String autoesportePI = "Auto Esporte-PI";
   String autoesporteAM = "Auto Esporte"; //AM
   String atleticoCE = "Atlético-CE";
   String atleticoAC = "Atlético Acreano";
@@ -1772,6 +1772,7 @@ class ClubName{
   String bonsucesso = "Bonsucesso"; //RJ
   String botafogoSP = "Botafogo-SP";
   String botafogoPB = "Botafogo-PB";
+  String botafogoPI = "Botafogo-PI";
   String botafogoBA = "Botafogo-BA";
   String boaesporte = "Boa Esporte";
   String bragantinoPA = "Bragantino do Pará";
@@ -1783,6 +1784,7 @@ class ClubName{
   String cachoeiro = "Cachoeiro"; //ES
   String cai = "CA Itapemirim"; //ES
   String cajazeirense = "Atl. Cajazeirense"; //PB
+  String caicara = "Caiçara";
   String caldense = "Caldense"; //MG
   String calourosar = "Calouros do Ar"; //CE
   String camboriu = "Camboriú"; //SC
@@ -1801,6 +1803,7 @@ class ClubName{
   String caucaia = "Caucaia"; //CE
   String caxias = "Caxias do Sul"; //RS
   String caxiasSC = "Caxias-SC"; //SC
+  String cea = "CEA Clube"; //AP
   String ceilandia = "Ceilândia"; //DF
   String cene = "CENE"; //MS
   String central = "Central Caruaru";
@@ -1816,11 +1819,13 @@ class ClubName{
   String comercial = "Comercial";
   String comercialPR = "Comercial Cornélio Procópio";
   String comercialms = "Comercial-MS";
+  String comercialPI = "Comercial-PI";
   String confianca = "Confiança";
   String confiancaPB = "Confiança-PB"; //PB
   String conquista = "Vitória da Conquista"; //BA
   String corinthianspp = "Corinthians Presidente Prudente";
   String corinthiansAL = "Corinthians-AL";
+  String corisabba = "Cori-Sabbá"; //PI
   String coritibaSE = "Coritiba-SE";
   String corumbaense = "Corumbaense"; //MS
   String coruripe = "Coruripe"; //AL
@@ -1889,6 +1894,7 @@ class ClubName{
   String novorizontino = "Grêmio Novorizontino";
   String guajara = "Guajará"; //RO
   String guarapari = "Guarapari"; //ES
+  String guaranyAP = "Guarany AP"; //ES
   String gurupi = "Gurupi"; //TO
   String hermann = "Hermann Aichinger"; //SC
   String hercilioluz = "Hercílio Luz";
@@ -1926,7 +1932,8 @@ class ClubName{
   String jiparana = "Ji-Paraná"; //RONDONIA
   String jmalucelli = "J. Malucelli"; //PR
   String joinville = "Joinville";
-  String juazeirense = "Juazeirense";
+  String juazeirense = "Juazeirense"; //BA
+  String juazeiro = "Juazeiro"; //BA
   String juventusMooca = "Juventus Mooca";
   String juventusAC = "Juventus AC";
   String juventusAP = "Juventus AP";
@@ -1957,6 +1964,7 @@ class ClubName{
   String marilia = "Marília";
   String maringaFC = "Maringa FC";
   String matonense = "Matonense";
+  String mazagao = "Mazagão";
   String metropol = "Metropol";
   String metropolitano = "Metropolitano"; //SC
   String miguelense = "Miguelense"; //AL
@@ -1985,13 +1993,15 @@ class ClubName{
   String novohamburgo = "Novo Hamburgo";
   String novohorizonte = "Novo Horizonte"; //GO
   String novamutum= "Nova Mutum"; //MT
+  String oeiras = "Oeiras"; //PI
+  String oeste = "Oeste";
   String olaria = "Olaria";
   String olimpicoAM = "Olimpico Clube"; //AM
   String olimpicoBlumenau = "Olimpico Blumenau"; //SC
   String operarioPR = "Operário-PR";
   String operarioms = "Operário-MS";
   String operarioMT = "Operário-MT";
-  String oeste = "Oeste";
+  String oratorio = "Oratório"; //AP
   String ordemprogresso = "Ordem e Progresso"; //ES
   String pacajus = "Pacajus"; //CE
   String palestra = "Palestra Itália"; //PR
@@ -2004,6 +2014,7 @@ class ClubName{
   String paularamos = "Paula Ramos"; //SC
   String paulista = "Paulista Jundiaí";
   String paysandu = "Paysandu";
+  String paysanduPI = "Paysandu-PI";
   String pelotas = "Pelotas";
   String penapolense = "Penapolense";
   String penarolAM = "Peñarol-AM";
@@ -2067,8 +2078,9 @@ class ClubName{
   String saojose = "São José";
   String saojoseAP = "São José-AP";
   String saojoseRS = "São José-RS";
-  String saoluizRS = "São Luiz";
+  String saoluizRS = "SãoLuiz Luiz";
   String saomateus = "São Mateus-ES"; //ES
+  String saopauloAP = "São Paulo AP";
   String saopauloRS = "São Paulo RS";
   String saoraimundo = "São Raimundo";
   String saoraimundoPA = "São Raimundo-PA";
@@ -2914,7 +2926,7 @@ class ClubName{
   String angkor = "Angkor TAIGER";
   String boeungKet = "Boeung Ket";
   String buildbright = "Build Bright United";
-  String khemera = "Khemera Keila";
+  String khemara = "Khemara Keila";
   String kirivong = "Kirivong Sok Sen Chey";
   String nagaworld = "Nagaworld";
   String nationaldef = "National Defense Ministry ";
@@ -3066,7 +3078,7 @@ class ClubName{
   //ARABIA SAUDITA
   String alnassr = "Al Nassr";
   String alahli = "Al Ahli";
-  String alansarARABIA = "Al Ansar";
+  String alansarARABIA = "Al Ansar ARABIA";
   String alhilal = "Al Hilal";
   String alFaisalyARABIA = "Al-Faisaly";
   String alIttihad = "Al Ittihad";
@@ -3153,7 +3165,6 @@ class ClubName{
   String alRasheed = "Al-Rasheed"; //EXTINTO
   String alTalaba = "Al-Talaba";
   String altijara = "Al-Tijara";
-  String altayaran = "Al-Tayaran";
   String alShortaIRAQ = "Al-Shorta";
   String dohuk = "Dohuk";
   String erbil = "Erbil";

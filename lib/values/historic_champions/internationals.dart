@@ -478,7 +478,7 @@ Map<String,dynamic> mapInternationals = {
     2017.0: [n.independiente,n.flamengo,n.libertad,n.junior,         n.nacionalPAR,n.fluminense,n.racing,n.sport,           n.atleticoTucuman,n.chapecoense,n.santafe,n.corinthians,n.estudiantes,n.ldu,n.pontepreta,n.cerroporteno],
     2016.0: [n.chapecoense,n.atleticonacional,n.sanlorenzo,n.cerroporteno,  n.junior,n.coritiba,n.palestino,n.imedellin,    n.independiente,n.soldeamerica,n.santacruz,n.santafe,n.belgrano,n.laGuaira,n.flamengo,n.montWanderers],
     2015.0: [n.santafe,n.huracan,n.luqueno,n.riverplate,             n.independiente,n.defensor,n.atleticopr,n.chapecoense, n.emelec,n.sport,n.ldu,n.libertad,n.lanus,n.brasilia,n.tolima,n.olimpia,],
-    2014.0: [n.riverplate,n.atleticonacional,n.bocajuniors,n.saopaulo, n.estudiantes,n.cesarvallejo,n.cerroporteno,n.emelec, n.libertad,n.vitoria,n.bahia,n.saopaulo,n.goias,n.capiata,n.lanus,n.penarol],
+    2014.0: [n.riverplate,n.atleticonacional,n.bocajuniors,n.saopaulo, n.estudiantes,n.cesarvallejo,n.cerroporteno,n.emelec, n.libertad,n.vitoria,n.bahia,n.huachipato,n.goias,n.capiata,n.lanus,n.penarol],
     2013.0: [n.lanus,n.pontepreta,n.libertad,n.saopaulo,             n.riverplate,n.velez,n.rioNegroAguilas,n.atleticonacional,  n.lau,n.depPasto,n.univcatolica,n.bahia,n.laequidad,n.sport,n.coritiba,n.lduLoja],
     2012.0: [n.saopaulo,n.tigre,n.univcatolica,n.millonarios,        n.lau,n.cerroporteno,n.independiente,n.gremio,          n.lduLoja,n.depquito,n.colon,n.barcelonaequ,n.palmeiras,n.liverpoolURU,n.atleticogo,n.emelec],
     2011.0: [n.lau,n.ldu,n.vasco,n.velez,                            n.arsenalsarandi,n.libertad,n.universitario,n.santafe,  n.flamengo,n.independiente,n.saopaulo,n.botafogo,n.univcatolica,n.godoycruz,n.aurora,n.olimpia],
@@ -488,7 +488,7 @@ Map<String,dynamic> mapInternationals = {
     2007.0: [n.arsenalsarandi,n.americamex,n.riverplate,n.millonarios,   n.chivas,n.vasco,n.defensor,n.saopaulo,             n.goias,n.pachuca,n.botafogo,n.colocolo,n.dcunited,n.lanus,n.elnacional,n.bocajuniors],
     2006.0: [n.pachuca,n.colocolo,n.atleticopr,n.toluca,             n.lanus,n.gimnasia,n.nacional,n.sanlorenzo,             n.tolima,n.alajuelense,n.riverplate,n.elnacional,n.corinthians,n.fluminense,n.bocajuniors,n.santos],
     2005.0: [n.bocajuniors,n.pumas,n.univcatolica,n.velez,           n.internacional,n.corinthians,n.fluminense,n.americamex,  n.cerroporteno,n.theStrongest,n.atleticonacional,n.cruzeiro,n.riverplate,n.banfield,n.dcunited,n.rosario],
-    2004.0: [n.bocajuniors,n.bolivar,n.internacional,n.ldu,          n.cerroporteno,n.arsenalsarandi,n.junior,n.santos,      n.sanlorenzo,n.concepcion,n.cruzeiro,n.santos,n.penarol,n.riverplate,n.alianzaSullana,n.saopaulo],
+    2004.0: [n.bocajuniors,n.bolivar,n.internacional,n.ldu,          n.cerroporteno,n.arsenalsarandi,n.junior,n.santos,      n.sanlorenzo,n.concepcion,n.cruzeiro,n.aurora,n.penarol,n.riverplate,n.alianzaSullana,n.saopaulo],
     2003.0: [n.cienciano,n.riverplate,n.atleticonacional,n.saopaulo, n.santos,n.libertad,n.bocajuniors,n.theStrongest,       n.univcatolica,n.independiente,n.colon,n.fluminense,n.saocaetano,n.sanlorenzo,n.ldu,n.nacional],
     2002.0: [n.sanlorenzo,n.atleticonacional,n.bolivar,n.nacional,   n.racing,n.santiagowanderers,n.gimnasia,n.alianzalima,  n.monagas,n.americadecali,n.libertad,n.danubio,n.riverplate,n.cobreloa,n.bocajuniors,n.barcelonaequ],
     //COPA CONMEBOL

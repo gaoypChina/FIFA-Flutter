@@ -458,11 +458,11 @@ Map<String,dynamic> mapAsia = {
     2012.0: [n.boeungKet,n.nagaworld,n.preahKhan,n.policeCAMB,n.phnomPenhCrown,   ],
     2011.0: [n.phnomPenhCrown,n.nagaworld,n.preahKhan,n.nationaldef,n.buildbright,],
     2010.0: [n.phnomPenhCrown,n.preahKhan,n.buildbright,n.nagaworld,n.kirivong,   ],
-    2009.0: [n.nagaworld,n.khemera,n.preahKhan,n.phnomPenhCrown,n.kirivong,       ],
+    2009.0: [n.nagaworld,n.khemara,n.preahKhan,n.phnomPenhCrown,n.kirivong,       ],
     2008.0: [n.phnomPenhCrown,n.nationaldef,n.nagaworld,n.preahKhan,n.buildbright,],
-    2007.0: [n.nagaworld,n.khemera,n.phnomPenhCrown,n.tiffy,n.buildbright,        ],
-    2006.0: [n.khemera,n.nagaworld,n.phnomPenhCrown,],
-    2005.0: [n.khemera,n.phnomPenhCrown,n.policeCAMB,n.nagaworld,],
+    2007.0: [n.nagaworld,n.khemara,n.phnomPenhCrown,n.tiffy,n.buildbright,        ],
+    2006.0: [n.khemara,n.nagaworld,n.phnomPenhCrown,],
+    2005.0: [n.khemara,n.phnomPenhCrown,n.policeCAMB,n.nagaworld,],
   },
 
   leagueName.vietna : {
