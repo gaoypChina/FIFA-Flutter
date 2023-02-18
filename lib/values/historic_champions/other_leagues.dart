@@ -127,5 +127,15 @@ Map<String,dynamic> mapOtherLeagues = {
     1995.0: [],
     1994.0: [n.sport,n.crb,n.bahia,n.cruzeiroAL,           n.botafogoPB,n.guarany,n.santacruz,n.americaRN,n.csa,n.abc,n.santacruz,n.nautico,n.fortaleza,n.capela,n.asa,n.vitoria],
   },
-  
+
+
+  leagueName.pequenaTaca:{
+    1957.0: [n.barcelona,n.botafogo,n.sevilla,n.nacional,],
+    1956.0: [n.realmadrid,n.vasco,n.porto,n.roma,],
+    1955.0: [n.saopaulo,n.valencia,n.benfica,n.lasalle,],
+    1954.0: [n.corinthians,n.roma,n.barcelona,],
+    1953.0: [n.millonarios,n.riverplate,n.rapidviena,n.espanyol,],
+    1952.0: [n.realmadrid,n.botafogo,n.millonarios,n.lasalle,],
+  }
+
 };

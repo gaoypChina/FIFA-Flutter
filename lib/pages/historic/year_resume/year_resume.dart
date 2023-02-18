@@ -214,6 +214,7 @@ Widget internationalChampionsSelection(){
         children: [
           internationalChampionsWidgetDetail(leagueOfficialNames.europaLeagueOficial),
           internationalChampionsWidgetDetail(leagueOfficialNames.copaSulAmericana),
+          internationalChampionsWidgetDetail(leagueOfficialNames.pequenaTaca),
         ],
       ),
       Row(

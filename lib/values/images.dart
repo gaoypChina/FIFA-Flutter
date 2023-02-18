@@ -54,7 +54,9 @@ class FIFAImages{
 
     if(leagueName==LeagueOfficialNames().latina) {      imageLogo = 'rest';       }
     if(leagueName==LeagueOfficialNames().rioSP) {      imageLogo = 'rio sp';       }
+    if(leagueName==LeagueOfficialNames().copaNordeste) {      imageLogo = 'copa nordeste';       }
     if(leagueName==LeagueOfficialNames().cupwinners) {      imageLogo = 'cup winners';       }
+    if(leagueName==LeagueOfficialNames().pequenaTaca) {      imageLogo = 'cup winners';       }
 
 
 

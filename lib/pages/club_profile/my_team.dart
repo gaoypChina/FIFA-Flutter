@@ -4,6 +4,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/pages/club_profile/all_infos_club.dart';
 import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
+import 'package:fifa/pages/club_profile/tabs/club_calendar.dart';
 import 'package:fifa/pages/club_profile/tabs/field_draggable.dart';
 import 'package:fifa/pages/club_profile/tabs/graphics.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -58,7 +59,7 @@ class _MyTeamState extends State<MyTeam> {
     my = My();
 
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
           body:  Stack(
               children: [
@@ -136,6 +137,7 @@ class _MyTeamState extends State<MyTeam> {
                           Tab(text: Translation(context).text.cast),
                           Tab(text: Translation(context).text.allInfos),
                           Tab(text: Translation(context).text.historic),
+                          Tab(text: Translation(context).text.calendar),
                         ],
                       ),
                     ),
@@ -147,6 +149,7 @@ class _MyTeamState extends State<MyTeam> {
                           FieldDraggable(notifyParent: notifyParent),
                           AllInfosClub(notifyParent: notifyParent, club: myClub),
                           ClubGraphics(club: myClub),
+                          ClubCalendar(club: myClub),
                         ],
                       ),
                     ),

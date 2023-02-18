@@ -2539,6 +2539,8 @@ class ClubDetails{
       'Frasqueirão',18000,1915,_country.brazil,50.0,[],_country.rn];
     map[n.alegrense] = [ClubColors(Colors.blue,Colors.red),pattern.solid,Coordinates(0,0),
       'Benedito Teixeira Leão',0,1971,_country.brazil,50.0,[],_country.es];
+    map[n.altovale] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(0,0),
+      'Alfredo João Krieck',8000,1960,_country.brazil,50.0,[],_country.sc];
     map[n.altos] = [ClubColors(Colors.green,Colors.green),pattern.solid,Coordinates(-5.038122163, -42.44551040),
       'Felipão',4000,2013,_country.brazil,50.0,[],_country.pi];
     map[n.alvorada] = [ClubColors(Colors.white,darkgreen),pattern.solid,Coordinates(0,0),
@@ -2843,6 +2845,8 @@ class ClubDetails{
       'Ipatingão',22000,1998,_country.brazil,50.0,[],_country.mg];
     map[n.ipora] = [ClubColors(Colors.blue,Colors.yellow),pattern.oneHorStripe,Coordinates(0,0),
       'Estádio Ferreirão',6520,2000,_country.brazil,50.0,[],_country.go];
+    map[n.iraty] = [ClubColors(darkblue,Colors.white),pattern.solid,Coordinates(0,0),
+      'Estádio Coronel Emílio Gomes',8000,1914,_country.brazil,50.0,[],_country.pr];
     map[n.itabaiana] = [ClubColors(Colors.blue,Colors.red),pattern.stripes3,Coordinates(-10.68849961, -37.4319),
       'Etelvino Mendonça',12000,1938,_country.brazil,50.0,[],_country.se];
     map[n.itumbiara] = [ClubColors(Colors.blue,Colors.red,Colors.white),pattern.stripesTricolor,Coordinates(0,0),
@@ -3061,6 +3065,8 @@ class ClubDetails{
       'Estádio Augusto Antunes',5000,1955,_country.brazil,50.0,[],_country.ap];
     map[n.santosAP] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(0,0),
       'Zerão',13000,1973,_country.brazil,50.0,[n.saopauloAP],_country.ap];
+    map[n.santosPB] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(0,0),
+      'Almeidão',45000,1949,_country.brazil,50.0,[n.saopauloAP],_country.pb];
     map[n.santoandre] = [ClubColors(Colors.white,Colors.blue),pattern.solid,Coordinates(-23.669687, -46.50901102),
       'Estádio Bruno José Daniel',12000,1967,_country.brazil,50.0,[n.saocaetano],_country.sp];
     map[n.santoantonio] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(0,0),
@@ -3131,6 +3137,8 @@ class ClubDetails{
       'Castanheirão',2500,1993,_country.brazil,50.0,[],_country.to];
     map[n.tocantinsFC] = [ClubColors(Colors.blue,Colors.red),pattern.solid,Coordinates(0,0),
       '',0,1999,_country.brazil,50.0,[],_country.to];
+    map[n.toledoPR] = [ClubColors(darkblue,Colors.white),pattern.solid,Coordinates(0,0),
+      '14 de Dezembro',15280,2004,_country.brazil,50.0,[],_country.pr];
     map[n.trem] = [ClubColors(Colors.red,Colors.black),pattern.horStripes2,Coordinates(0.0006848359, -51.0808365),
       'Zerão',13680,1947,_country.brazil,50.0,[],_country.ap];
     map[n.treze] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(-7.25430, -35.88053),
