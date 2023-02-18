@@ -202,10 +202,10 @@ class _HomePageState extends State<HomePage> {
   Widget title(){
     return Stack(
       children: const [
-        Text('FIFA 23',style: EstiloRowdies.textWhite50),
+        Text('Football Simulator',style: EstiloRowdies.titleWhite),
         Padding(
           padding: EdgeInsets.only(left:2.0,top: 1),
-          child: Text('FIFA 23',style: EstiloRowdies.textGreen50),
+          child: Text('Football Simulator',style: EstiloRowdies.titleGreen),
         ),
       ],
     );

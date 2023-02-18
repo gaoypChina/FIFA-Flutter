@@ -13,6 +13,7 @@ class ConfigurationState{
   bool hasInjuries = globalHasInjuries;
   bool seeProbability = globalSeeProbabilities;
   bool randomizePlayers = globalRandomizePlayers;
+  bool showRealImages = globalShowRealLogos;
   double initialMoney = globalInitialMoney;
   String coachName = globalCoachName;
 
@@ -40,7 +41,10 @@ class ConfigurationState{
       semanasJogosCopas = [];
       globalUltimaSemana = semanasJogosInternacionais.last;
   }
-
+  changeShowRealImagesState(){
+    globalShowRealLogos = !globalShowRealLogos;
+    showRealImages = globalShowRealLogos;
+  }
   changeCardsState(){
     hasCards = !hasCards;
   }

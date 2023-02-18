@@ -130,8 +130,8 @@ Widget header(){
 
         Row(
           children: [
-            Images().getEscudoWidget(club.name,50,50),
-            Images().getUniformWidget(club.name,60,60),
+            Images().getEscudoWidget(isActualYear ? club.name : myClubData.clubName,50,50),
+            Images().getUniformWidget(isActualYear ? club.name: myClubData.clubName,60,60),
           ],
         ),
         Container(
@@ -142,18 +142,20 @@ Widget header(){
             children: [
               Column(
                 children: [
-                  Image.asset(FIFAImages().campeonatoLogo(club.leagueName),width: 50,height: 50),
+                  Image.asset(FIFAImages().campeonatoLogo(isActualYear ? club.leagueName:myClubData.leagueName),
+                      width: 50,height: 50),
                   isActualYear
-                      ? Text(Classification(leagueIndex: My().leagueID).getClubPosition(My().clubID).toString()+'º',style: EstiloTextoBranco.text16)
+                      ? Text(Classification(leagueIndex: club.leagueID).getClubPosition(club.index).toString()+'º',style: EstiloTextoBranco.text16)
                       : Text(myClubData.leaguePosition.toString()+"º",style: EstiloTextoBranco.text16),
                ],
               ),
               const SizedBox(width: 8),
               Column(
                 children: [
-                  Image.asset(FIFAImages().campeonatoLogo(club.internationalLeagueName),width: 50,height: 50),
+                  Image.asset(FIFAImages().campeonatoLogo(isActualYear ? club.internationalLeagueName : myClubData.internationalLeagueName),
+                      width: 50,height: 50),
                   isActualYear
-                      ? const Text('Oitavas',style: EstiloTextoBranco.text16)
+                      ? const Text('',style: EstiloTextoBranco.text16)
                       : Text(myClubData.internationalLeaguePosition,style: EstiloTextoBranco.text16),
                 ],
               ),

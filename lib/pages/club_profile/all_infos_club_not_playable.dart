@@ -4,7 +4,7 @@ import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/classes/data_graphics.dart';
 import 'package:fifa/pages/club_profile/club_profile.dart';
-import 'package:fifa/pages/historic/historic_players.dart';
+import 'package:fifa/pages/historic/historic_best_players.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
@@ -114,7 +114,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
                     color: AppColors().greyTransparent,
                     margin: const EdgeInsets.only(left: 4.0),
                     child: TextButton(onPressed: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricPlayersPage(clubName: widget.clubName)));
+                      Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricBestPlayersPage(clubName: widget.clubName)));
                     }, child: const Text('Jogadores Históricos',style:EstiloTextoBranco.text16)),
                   ),
                 ],

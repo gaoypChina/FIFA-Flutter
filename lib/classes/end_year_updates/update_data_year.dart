@@ -140,9 +140,13 @@ resetData(){
   globalJogadoresLeagueMatchs = List.filled(globalMaxPlayersPermitted, 0);
   globalJogadoresLeagueGoals = List.filled(globalMaxPlayersPermitted, 0);
   globalJogadoresLeagueAssists = List.filled(globalMaxPlayersPermitted, 0);
+  globalJogadoresLeagueCleanSheets = List.filled(globalMaxPlayersPermitted, 0);
+  globalJogadoresLeagueGolsSofridos = List.filled(globalMaxPlayersPermitted, 0);
   globalJogadoresInternationalMatchs = List.filled(globalMaxPlayersPermitted, 0);
   globalJogadoresInternationalGoals = List.filled(globalMaxPlayersPermitted, 0);
   globalJogadoresInternationalAssists = List.filled(globalMaxPlayersPermitted, 0);
+  globalJogadoresInternationalCleanSheets = List.filled(globalMaxPlayersPermitted, 0);
+  globalJogadoresInternationalGolsSofridos = List.filled(globalMaxPlayersPermitted, 0);
   globalJogadoresRedCard = List.filled(globalMaxPlayersPermitted, 0);
   globalJogadoresGrades = List.filled(globalMaxPlayersPermitted, 6.0);
   globalJogadoresYellowCard = List.filled(globalMaxPlayersPermitted, 0);

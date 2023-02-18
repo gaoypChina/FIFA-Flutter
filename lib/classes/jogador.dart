@@ -23,6 +23,8 @@ class Jogador{
   late int matchsLeague;
   late int goalsLeague;
   late int assistsLeague;
+  late int cleanSheetsLeague;
+  late int golsSofridosLeague;
   late int redCard;
   late int yellowCard;
   late int injury;
@@ -32,14 +34,20 @@ class Jogador{
   late int matchsInternational;
   late int goalsInternational;
   late int assistsInternational;
+  late int cleanSheetsInternational;
+  late int golsSofridosInternational;
 
   late int matchsYear;
   late int goalsYear;
   late int assistsYear;
+  late int cleanSheetsYear;
+  late int golsSofridosYear;
 
   late int matchsCarrer;
   late int goalsCarrer;
   late int assistsCarrer;
+  late int cleanSheetsCarrer;
+  late int golsSofridosCarrer;
 
   Jogador({required this.index}) {
     name = globalJogadoresName[index];
@@ -57,18 +65,26 @@ class Jogador{
     matchsLeague = globalJogadoresLeagueMatchs[index] ?? 0;
     goalsLeague = globalJogadoresLeagueGoals[index] ?? 0;
     assistsLeague = globalJogadoresLeagueAssists[index] ?? 0;
+    cleanSheetsLeague = globalJogadoresCarrerCleanSheets[index] ?? 0;
+    golsSofridosLeague = globalJogadoresCarrerGolsSofridos[index] ?? 0;
     redCard = globalJogadoresRedCard[index] ?? 0;
     yellowCard = globalJogadoresYellowCard[index] ?? 0;
     injury = globalJogadoresInjury[index] ?? 0;
     matchsInternational = globalJogadoresInternationalMatchs[index];
     goalsInternational = globalJogadoresInternationalGoals[index];
     assistsInternational = globalJogadoresInternationalAssists[index];
+    cleanSheetsInternational = globalJogadoresInternationalCleanSheets[index];
+    golsSofridosInternational = globalJogadoresInternationalGolsSofridos[index];
     matchsYear = matchsInternational+matchsLeague;
     goalsYear = goalsInternational+goalsLeague;
     assistsYear = assistsInternational+assistsLeague;
+    cleanSheetsYear = cleanSheetsInternational + cleanSheetsLeague;
+    golsSofridosYear = golsSofridosInternational + golsSofridosLeague;
     matchsCarrer = globalJogadoresCarrerMatchs[index];
     goalsCarrer = globalJogadoresCarrerGoals[index];
     assistsCarrer = globalJogadoresCarrerAssists[index];
+    cleanSheetsCarrer = globalJogadoresCarrerCleanSheets[index];
+    golsSofridosCarrer = globalJogadoresCarrerGolsSofridos[index];
     moral = globalJogadoresMoral[index];
     grade = globalJogadoresGrades[index] ?? 0;
     gradeAvg = grade/matchsYear;

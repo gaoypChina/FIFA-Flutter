@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 Color colorResultBackground(int gol1,int gol2){
   late Color backgroundColor;
     if(gol1 < gol2){
-      backgroundColor = Colors.red;
+      backgroundColor = Colors.red.withOpacity(0.5);
     }else if(gol1 == gol2){
-      backgroundColor = Colors.amber.withOpacity(0.7);
+      backgroundColor = Colors.amber.withOpacity(0.5);
     }else if(gol1 > gol2){
-      backgroundColor = Colors.green;
+      backgroundColor = Colors.green.withOpacity(0.5);
     }
   return backgroundColor;
 }

@@ -75,6 +75,7 @@ class _ConfigurationState extends State<Configuration> {
                     SizedBox(height: spaceBetweenWidgets),
                     allowInjuries(config),
                     SizedBox(height: spaceBetweenWidgets),
+                    imagesReal(config),
                     policyPrivacy(),
                     SizedBox(height: spaceBetweenWidgets),
                     userTerms(),
@@ -290,7 +291,25 @@ Widget soundEffects(ConfigurationState config){
     );
   }
 
+  Widget imagesReal(ConfigurationState config){
+    return Row(
+        children: [
+          const SizedBox(
+            width: 200,
+            child: Text("Imagens Reais",style: EstiloTextoBranco.negrito16),
+          ),
 
+          const Spacer(),
+          Switch(
+              value: config.showRealImages,
+              onChanged: (value) {
+                setState(() {
+                  config.changeShowRealImagesState();
+                });
+              }),
+        ]
+    );
+  }
   Widget playersOverallCheckbox(){
     return Column(
       children: [

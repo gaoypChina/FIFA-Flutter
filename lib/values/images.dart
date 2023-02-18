@@ -11,9 +11,7 @@ class FIFAImages{
 
   String campeonatoLogo(String leagueName) {
     String imageLogo = 'championship';
-    if(globalShowRealLogos == false){
-        return 'assets/league_logos/proximus_league.png';
-    }
+
     if(leagueName==LeagueOfficialNames().inglaterra1) {       imageLogo = 'premierleague';}
     if(leagueName==LeagueOfficialNames().inglaterra2) {       imageLogo = 'championship';}
     if(leagueName==LeagueOfficialNames().inglaterra3) {       imageLogo = 'inglaterra3';}

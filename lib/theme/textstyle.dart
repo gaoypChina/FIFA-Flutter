@@ -15,15 +15,15 @@ abstract class EstiloRisque {
 }
 
 abstract class EstiloRowdies {
-  static const TextStyle textWhite50 = TextStyle(
+  static const TextStyle titleWhite = TextStyle(
     fontFamily: 'Rowdies',
     color: Colors.white,
-    fontSize: 50,
+    fontSize: 42,
   );
-  static const TextStyle textGreen50 = TextStyle(
+  static const TextStyle titleGreen = TextStyle(
     fontFamily: 'Rowdies',
     color: Colors.teal,
-    fontSize: 50,
+    fontSize: 42,
   );
 }
 

@@ -3,6 +3,7 @@ import 'package:fifa/database/select_database.dart';
 import 'package:fifa/pages/configuration/configuration.dart';
 import 'package:fifa/pages/configuration/customize_players.dart';
 import 'package:fifa/pages/tournament_mode/tournament.dart';
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
@@ -53,13 +54,17 @@ class _DatabaseButtonState extends State<DatabaseButton> {
 
         setState(() {});
       },
-      child: Column(
-        children: [
-          const Icon(Icons.save,color:Colors.white,size:40),
-          globalSaveNumber==0
-              ? const Text('Database padrão',style: EstiloTextoBranco.underline14)
-              : Text('Database: '+globalSaveNumber.toString(),style: EstiloTextoBranco.underline14),
-        ],
+      child: Container(
+        padding: const EdgeInsets.all(4),
+        decoration: decoratorHomeButtons(),
+        child: Column(
+          children: [
+            const Icon(Icons.save,color:Colors.white,size:40),
+            globalSaveNumber==0
+                ? const Text('Database padrão',style: EstiloTextoBranco.text14)
+                : Text('Database: '+globalSaveNumber.toString(),style: EstiloTextoBranco.text14),
+          ],
+        ),
       ),
     );
   }
@@ -71,11 +76,15 @@ Widget editClub(BuildContext context, int clubID){
       onTap: (){
         Navigator.of(context).push(MaterialPageRoute(builder: (context) => CustomizePlayers(clubID: clubID)));
       },
-      child: Column(
-        children: [
-          const Icon(Icons.edit,color:Colors.white,size:40),
-          Text(Translation(context).text.editTeam,style: EstiloTextoBranco.underline14)
-        ],
+      child: Container(
+        padding: const EdgeInsets.all(4),
+        decoration: decoratorHomeButtons(),
+        child: Column(
+          children: [
+            const Icon(Icons.edit,color:Colors.white,size:40),
+            Text(Translation(context).text.editTeam,style: EstiloTextoBranco.text14)
+          ],
+        ),
       ),
     );
 }
@@ -85,11 +94,15 @@ Widget configurations(BuildContext context){
     onTap: (){
       Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Configuration()));
     },
-    child: Column(
-      children: [
-        const Icon(Icons.miscellaneous_services,color:Colors.white,size:40),
-        Text(Translation(context).text.configuration,style: EstiloTextoBranco.underline14),
-      ],
+    child: Container(
+      padding: const EdgeInsets.all(4),
+      decoration: decoratorHomeButtons(),
+      child: Column(
+        children: [
+          const Icon(Icons.miscellaneous_services,color:Colors.white,size:40),
+          Text(Translation(context).text.configuration,style: EstiloTextoBranco.text14),
+        ],
+      ),
     ),
   );
 }
@@ -100,11 +113,26 @@ Widget openTournament(BuildContext context){
       onTap: (){
         Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Tournament()));
       },
-      child: Column(
-        children: const [
-          Icon(Icons.gamepad,color:Colors.white,size:40),
-          Text('Single Match',style: EstiloTextoBranco.underline14)
-        ],
+      child: Container(
+        padding: const EdgeInsets.all(4),
+        decoration: decoratorHomeButtons(),
+        child: Column(
+          children: const [
+            Icon(Icons.gamepad,color:Colors.white,size:40),
+            Text('Single Match',style: EstiloTextoBranco.text14)
+          ],
+        ),
       ),
     );
+}
+
+BoxDecoration decoratorHomeButtons(){
+  return BoxDecoration(
+    color: AppColors().greyTransparent,
+    borderRadius: const BorderRadius.all(Radius.circular(5.0) ),
+    border: Border.all(
+      width: 1.0,
+      color: Colors.lightGreenAccent,
+    ),
+  );
 }

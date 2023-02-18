@@ -493,7 +493,7 @@ class ClubDetails{
       'Vallecas Campo de Futebol',15105,1924,_country.spain,75.0,[]];
     map[n.realbetis] = [ClubColors(Colors.green,Colors.white),pattern.stripes2,Coordinates(37.356403,-5.981611),
       'Benito Villamarín',60720,1907,_country.spain,79.6,[n.sevilla]];
-    map[n.realmadrid] = [ClubColors(Colors.white,Colors.white),pattern.solid,Coordinates(40.45306,-3.68835),
+    map[n.realmadrid] = [ClubColors(Colors.white,Colors.grey),pattern.solid,Coordinates(40.45306,-3.68835),
       'Santiago Bernabeu',81044,1902,_country.spain,86.0,[n.barcelona,n.atleticomadrid]];
     map[n.realsociedad] = [ClubColors(Colors.blue,Colors.white),pattern.stripes2,Coordinates(43.301378,-1.973617),
       'Anoeta',39500,1909,_country.spain,80.5,[n.athleticbilbao]];

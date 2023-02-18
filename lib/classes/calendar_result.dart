@@ -29,7 +29,6 @@ class CalendarResult{
 
     }else if(Semana(semanaLocal).isJogoMundial){
       MundialFinal mundial = MundialFinal();
-      mundial.getClubs();
       show.fromMundial(semanaLocal, club, mundial);
     }
     else{

@@ -15,7 +15,7 @@ Widget wCalendarAdvBox(BuildContext context, int semanaLocal, show){
       },
       child: Container(
         width: 120,
-        height: 117,
+        height: 127,
         color: show.backgroundColor,
         child: Column(
           children: [
@@ -30,20 +30,24 @@ Widget wCalendarAdvBox(BuildContext context, int semanaLocal, show){
                       : Container(),
                   Semana(semanaLocal).isJogoCampeonatoInternacional
                       ? Image.asset(Images().getMyInternationalLeagueLogo(),height: 22, width: 22)
-                      : Container(),
+                      : Semana(semanaLocal).isJogoCampeonatoNacional
+                        ? Image.asset(Images().getMyLeagueLogo(),height: 22, width: 22)
+                        : Container(),
                   Center(child: Images().getEscudoWidget(show.clubName2,45,45)),
                 ],
               ),
             ),
             show.visitante
-                ? Text('${Translation(context).text.away.toUpperCase()} ${show.placar}',
+                ? Text(Translation(context).text.away.toUpperCase(),
                 style: EstiloTextoBranco.text10, textAlign: TextAlign.center)
-                : Text('${Translation(context).text.home.toUpperCase()} ${show.placar}',
+                : Text(Translation(context).text.home.toUpperCase(),
                 style: EstiloTextoBranco.text10, textAlign: TextAlign.center),
             Text(show.clubName2,
                 overflow: TextOverflow.fade,
                 style: EstiloTextoBranco.text14,
                 textAlign: TextAlign.center),
+            Text('${show.placar}',
+                style: EstiloTextoBranco.negrito16, textAlign: TextAlign.center),
           ],
         ),
       ),
