@@ -74,7 +74,7 @@ class Semana{
 
     verifyIsMataMataIdaOrVolta(int weekToCalculate){
       if(semanaOitavas.first == weekToCalculate || semanaQuartas.first == weekToCalculate
-          || semanaSemi.first == weekToCalculate || semanaSemi.first == weekToCalculate){
+          || semanaSemi.first == weekToCalculate || semanaFinal.first == weekToCalculate){
         isJogoIdaMataMata = true;
       }else{
         isJogoIdaMataMata = false;

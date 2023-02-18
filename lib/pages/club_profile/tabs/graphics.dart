@@ -69,6 +69,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
 
 
                   Text('Fundado: '+widget.club.foundationYear.toString(),style: EstiloTextoBranco.negrito22),
+                  Text(widget.club.stadiumName+': '+widget.club.stadiumSize.toString(),style: EstiloTextoBranco.text20),
                   Row(
                     children: [
                       Images().getStadiumWidget(widget.club.name,130,240),
@@ -77,7 +78,6 @@ class _ClubGraphicsState extends State<ClubGraphics> {
                   ),
 
                   mapWidget(),
-                  Text(widget.club.stadiumName+': '+widget.club.stadiumSize.toString(),style: EstiloTextoBranco.text20),
 
 
                 ],

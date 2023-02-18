@@ -113,7 +113,9 @@ class _MenuState extends State<Menu> {
 
                             Expanded(
                               child: wMenuButton('Simular',club,() async{
+                                for(int i=0; i<5;i++){
                                   await simulateFunction();
+                                }
                               }),
                           ),
 

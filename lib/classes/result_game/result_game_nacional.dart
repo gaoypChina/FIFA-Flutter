@@ -51,7 +51,7 @@ class ResultGameNacional{
 
 
     //SÓ MOSTRA PARA RODADAS QUE JÁ ACONTECERAM
-    if((rodadaLocal<rodadaMax || semana > semanasJogosNacionais[league.nClubs-2])){
+    if((rodadaLocal<=rodadaMax && weekLocal <= semanasJogosNacionais[league.nClubs-2])){
       //rodadaLocal começa em 1 por isso subtrai 1
 
       int chaveClub1 = Chaves().chaveIndexAdvCampeonato(weekLocal, club.leagueID, chaveClub2)[0];

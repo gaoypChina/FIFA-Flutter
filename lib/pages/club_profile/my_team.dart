@@ -36,19 +36,7 @@ class _MyTeamState extends State<MyTeam> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
-    doThisOnLaunch();
     super.initState();
-  }
-  doThisOnLaunch() {
-    setAverageAge();
-    setState(() {});
-  }
-  setAverageAge(){
-    averageAge = 0;
-    for(int i=0; i<my.jogadores.length; i++){
-      averageAge += Jogador(index: my.jogadores[i]).age;
-    }
-    averageAge = averageAge / myClub.nJogadores;
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -56,6 +44,7 @@ class _MyTeamState extends State<MyTeam> {
   @override
   Widget build(BuildContext context) {
     myClub = Club(index: My().clubID);
+    averageAge = myClub.getAverageAge();
     my = My();
 
     return DefaultTabController(

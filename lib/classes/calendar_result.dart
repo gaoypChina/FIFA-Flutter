@@ -1,4 +1,5 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/mundial.dart';
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/result_game/result_game_internacional.dart';
 import 'package:fifa/classes/result_game/result_game_nacional.dart';
@@ -26,7 +27,12 @@ class CalendarResult{
 
       show.fromResultGameInternacional(resultGameInternacional);
 
-    }else{
+    }else if(Semana(semanaLocal).isJogoMundial){
+      MundialFinal mundial = MundialFinal();
+      mundial.getClubs();
+      show.fromMundial(semanaLocal, club, mundial);
+    }
+    else{
       show.setDefault(semanaLocal);
     }
 

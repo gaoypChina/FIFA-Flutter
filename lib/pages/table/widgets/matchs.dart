@@ -20,7 +20,7 @@ Widget wMatchsTable(int rodadaMatch, League leagueClass, int choosenLeagueIndex)
           wRowMatchesVersus(TableNational(
               choosenLeagueIndex: choosenLeagueIndex,
               leagueClass: leagueClass,
-              rodadaMatch: rodadaMatch,
+              rodadaMatch: rodadaMatch-1,
               numeroDoConfronto: i*2
           )),
       ],

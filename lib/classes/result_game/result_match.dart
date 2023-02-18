@@ -77,30 +77,42 @@ class ResultMatch{
     backgroundColor = show.backgroundColor;
   }
 
-  fromMundial(int week, Club club, MundialFinal show){
-    //TODO: MUDAR ISSO AQUI PRA FICAR QUE NEM NOS OUTROS
-    if(week < semanaMundial.first){
+  fromMundial(int week, Club club, MundialFinal mundialFinal){
+
+    //THE TEAM WILL PLAY THE FINAL?
+    if(mundialFinal.club1.index == club.index) {
+      hasAdversary = true;
+      club = mundialFinal.club1;
+      clubID = mundialFinal.club1.index;
+      clubName2 = mundialFinal.club2.name;
+      clubID2 = mundialFinal.club2.index;
+    }else if(mundialFinal.club2.index == club.index){
+      hasAdversary = true;
+      club = mundialFinal.club2;
+      clubID = mundialFinal.club2.index;
+      clubName2 = mundialFinal.club1.name;
+      clubID2 = mundialFinal.club1.index;
+    }else{
+      hasAdversary = false;
+    }
+
+
+    if(week <= semanaMundial.first){
       isAlreadyPlayed = false;
     }else{
       isAlreadyPlayed = true;
     }
-    if(show.club1.index == club.index || show.club2.index == club.index){
-      hasAdversary = true;
-    }
-    visitante = false;
-    weekLocal = semanaMundial.first;
-    competitionName = LeagueOfficialNames().mundial;
-    if(hasAdversary){
-      club = show.club1;
-      clubID = show.club1.index;
-      clubName2 = show.club2.name;
-      clubID2 = show.club2.index;
-      gol1 = show.confronto.goal1;
-      gol2 = show.confronto.goal2;
+    if(isAlreadyPlayed){
+      gol1 = mundialFinal.confronto.goal1;
+      gol2 = mundialFinal.confronto.goal2;
       placar = gol1.toString() + ' x '+ gol2.toString();
       victoryDrawLoss310 = getVictoryDrawLoss310(gol1, gol2);
       backgroundColor = colorResultBackground(gol1, gol2);
     }
+
+    visitante = false;
+    weekLocal = semanaMundial.first;
+    competitionName = LeagueOfficialNames().mundial;
   }
 
 }
