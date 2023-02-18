@@ -1736,6 +1736,7 @@ class ClubName{
   String andira = "Andirá"; //ACRE
   String aquidauanense = "Aquidauanense";
   String araguaina = "Araguaína"; //TO
+  String arapongas = "Arapongas"; //PR
   String ariquemes = "Ariquemes"; //RO
   String asa = "ASA";
   String assu = "Assu";  //RN
@@ -1758,8 +1759,9 @@ class ClubName{
   String athleticMG = "Athletic";
   String avai = "Avaí";
   String azuriz = "Azuriz";
+  String bacabal = "Bacabal"; //MA
   String bahiafeira = "Bahia de Feira";
-  String bage = "Bagé";
+  String bage = "Bagé"; //RS
   String bangu = "Bangu";
   String baraunas = "Baraúnas";
   String barragarcas = "Barra do Garças"; //MT
@@ -1797,7 +1799,8 @@ class ClubName{
   String capelense = "Capelense"; //AL
   String capivariano = "Capivariano"; //SP
   String carlosrenaux = "Carlos Renaux"; //SC
-  String cascavel = "Cascavel"; //PR
+  String cascavel = "Cascavel FC"; //PR
+  String cascavelcr = "Cascavel CR"; //PR
   String castanhal = "Castanhal"; //PA
   String catuense = "Catuense"; //BA
   String caucaia = "Caucaia"; //CE
@@ -1823,6 +1826,7 @@ class ClubName{
   String confianca = "Confiança";
   String confiancaPB = "Confiança-PB"; //PB
   String conquista = "Vitória da Conquista"; //BA
+  String cordino = "Cordino"; //MA
   String corinthianspp = "Corinthians Presidente Prudente";
   String corinthiansAL = "Corinthians-AL";
   String corisabba = "Cori-Sabbá"; //PI
@@ -1901,6 +1905,7 @@ class ClubName{
   String humaita = "Humaita";
   String holanda = "Holanda"; //AM
   String horizonte = "Horizonte"; //CE
+  String iape = "IAPE"; //MA
   String ibiracu = "Ibiracu"; //ES
   String ibis = "Íbis"; //PB
   String icasa = "Icasa";
@@ -1945,6 +1950,7 @@ class ClubName{
   String lagarto = "Lagarto-SE";
   String leonico = "Leônico"; //BA
   String libermorro = "Libermorro"; //AM
+  String lideral = "Lideral"; //MA
   String limoeiro = "Limoeiro";
   String linense = "Linense";
   String linhares = "Linhares";
@@ -2025,6 +2031,7 @@ class ClubName{
   String pirambu = "Pirambu"; //SE
   String pinheirosPR = "Pinheiros"; //VIROU PARANA
   String pinheirosRO = "Pinheiros-RO"; //RO
+  String pinheiroMA = "Pinheiro-MA";
   String placidocastro = "Plácido de Castro";
   String pocoes = "Poções"; //BA
   String portoPE = "Porto-PE";
@@ -2038,6 +2045,7 @@ class ClubName{
   String princesasolimoes = "Princesa dos Solimões";
   String progressoRR = "Progresso"; //RR
   String prudentina = "Prudentina";
+  String prudentopolis = "Prudentópolis"; //PR
   String radium = "Radium";  //SP
   String remo = "Remo";
   String realArquimedes = "Real Arquimedes"; //RO
@@ -2052,6 +2060,7 @@ class ClubName{
   String riobrancoES = "Rio Branco-ES";
   String riobrancoVN = "Rio Branco VN"; //ES
   String riobrancoMG = "Rio Branco-MG";
+  String riobrancoPR = "Rio Branco-PR";
   String riobrancoRR = "Rio Branco-RR";
   String riobrancoSP = "Rio Branco-SP";
   String rioclaro = "Rio Claro";
@@ -2077,8 +2086,10 @@ class ClubName{
   String saogabriel = "São Gabriel";
   String saojose = "São José";
   String saojoseAP = "São José-AP";
+  String saojoseMA = "São José-MA";
   String saojoseRS = "São José-RS";
-  String saoluizRS = "SãoLuiz Luiz";
+  String saojoseense = "São Joseense"; //PR
+  String saoluizRS = "São Luiz";
   String saomateus = "São Mateus-ES"; //ES
   String saopauloAP = "São Paulo AP";
   String saopauloRS = "São Paulo RS";
@@ -2089,6 +2100,8 @@ class ClubName{
   String santamaria = "Inter Santa Maria";
   String santacruzRN = "Santa Cruz RN";
   String santacruzPB = "Santa Cruz PB";
+  String santaines = "Santa Inês"; //MA
+  String santaquiteria = "Santa Quitéria";
   String santoantonio = "Santo Antônio";
   String santosAP = "Santos-AP"; //AP
   String santanaAP = "Santana"; //AP
@@ -2115,6 +2128,7 @@ class ClubName{
   String tocantinsFC = "Tocantins FC"; //TO
   String tocantinopolis = "Tocantinópolis";
   String tombense = "Tombense";
+  String toledoPR = "Toledo PR";
   String trem = "Trem-AP";
   String treze = "Treze";
   String trindade = "Trindade"; //GO
@@ -2145,6 +2159,7 @@ class ClubName{
   String vilhenense = "Vilhenense"; //RO
   String villanova = "Villa Nova MG";
   String vitoriaES = "Vitória-ES";
+  String vitoriamar = "Vitória do Mar";
   String voltaredonda = "Volta Redonda";
   String xvjau = "XV Jaú";
   String xvpiracicaba = "XV Piracicaba";
