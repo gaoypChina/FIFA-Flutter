@@ -8,7 +8,7 @@ LeagueOfficialNames leagueName = LeagueOfficialNames();
 Map<String,dynamic> mapAfrica = {
 
   leagueName.egito : {
-    2022.0: [n.zamalek,n.pyramids,n.alahly,n.future,n.elgaish,       n.smouha,n.bankegypt,],
+    2022.0: [n.zamalek,n.pyramids,n.alahly,n.future,n.elgeish,       n.smouha,n.bankegypt,],
     2021.0: [n.zamalek,n.alahly,n.pyramids,n.smouha,n.almasry,       n.enppi,n.alexandria,],
     2020.0: [n.alahly,n.zamalek,n.pyramids,n.almokawloon,n.smouha,   n.enppi,n.almasry,],
     2019.0: [n.alahly,n.zamalek,n.pyramids,n.almasry,n.almokawloon,  n.makkasa,n.ismaily,],
@@ -21,9 +21,9 @@ Map<String,dynamic> mapAfrica = {
     2012.0: [],
     2011.0: [n.alahly,n.zamalek,n.ismaily,n.policeunion,n.enppi, ],
     2010.0: [n.alahly,n.zamalek,n.ismaily,n.petrojet,n.policeunion,],
-    2009.0: [n.alahly,n.ismaily,n.petrojet,n.haras,n.enppi,      n.zamalek,n.elgaish],
-    2008.0: [n.alahly,n.ismaily,n.zamalek,n.elgaish,n.petrojet,  n.haras,],
-    2007.0: [n.alahly,n.zamalek,n.ismaily,n.elgaish,n.haras,     ],
+    2009.0: [n.alahly,n.ismaily,n.petrojet,n.haras,n.enppi,      n.zamalek,n.elgeish],
+    2008.0: [n.alahly,n.ismaily,n.zamalek,n.elgeish,n.petrojet,  n.haras,],
+    2007.0: [n.alahly,n.zamalek,n.ismaily,n.elgeish,n.haras,     ],
     2006.0: [n.alahly,n.zamalek,n.enppi,n.ismaily,n.haras,       ],
     2005.0: [n.alahly,n.enppi,n.haras,n.ismaily,n.suez,          n.zamalek,n.almasry,],
     2004.0: [n.zamalek,n.alahly,n.ismaily,n.ghazl,n.alexandria,  ],

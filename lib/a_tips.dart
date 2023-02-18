@@ -221,7 +221,9 @@ Map<String,dynamic> zzzzzzzzz = {
     1927.0: [_name.palermo,],
   },
   //RSSSF.ORG
+  leagueName.goias : {
 
+  },
 
 
 leagueName.cazaquistao : {

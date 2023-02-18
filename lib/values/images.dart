@@ -1210,7 +1210,7 @@ String imageLogo(String timeFoto) {
     map[_name.charlotte] = 'charlotte';
     map[_name.chicago] = 'chicago';
     map[_name.columbuscrew] = 'columbus';
-    map[_name.colorado] = 'colorado';
+    map[_name.coloradorapids] = 'colorado';
     map[_name.dcunited] = 'dcunited';
     map[_name.fcdallas] = 'dallas';
     map[_name.houston] = 'houston';
