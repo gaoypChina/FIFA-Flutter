@@ -210,18 +210,18 @@ Map clubNameMapImmutable = {
     12: clubName.santosLaguna,13: clubName.tigres,14: clubName.tijuana,15: clubName.toluca,
   },
   LeagueOfficialNames().estadosUnidos : {
-    0: clubName.atlanta,1: clubName.columbuscrew,2:clubName.dcunited,3: clubName.fcdallas,
-    4: clubName.intermiami,5: clubName.losangelesfc,6: clubName.lagalaxy,7: clubName.minnesota,
-    8: clubName.nerevolution,9: clubName.nycity,10: clubName.nyredbulls,11: clubName.orlando,
-    12: clubName.portland,13: clubName.seattle,14: clubName.toronto,15:clubName.vancouver,
-    16: clubName.montreal,17:clubName.colorado,18:clubName.houston,19:clubName.kansas,
+    0: clubName.atlanta,1: clubName.austin,2:clubName.chicago,3: clubName.columbuscrew,
+    4: clubName.coloradorapids,5: clubName.fcdallas,6: clubName.dcunited,7: clubName.houston,
+    8: clubName.intermiami,9: clubName.kansas,10: clubName.lagalaxy,11: clubName.losangelesfc,
+    12: clubName.minnesota,13: clubName.nerevolution,14: clubName.nycity,15:clubName.nyredbulls,
+    16: clubName.orlando,17:clubName.philadelphia,18:clubName.portland,19:clubName.seattle,
   },
 
   //RESTO DO MUNDO
   LeagueOfficialNames().asia : {
     0: clubName.shanghaisipg,1: clubName.shandong,2: clubName.kashimaantlers,3: clubName.kawasakifrontale,
     4: clubName.urawareddiamonds,5: clubName.visselkobe,6: clubName.jeonbuk,7: clubName.pohang,
-    8: clubName.alhilal,9: clubName.alIttihad,10: clubName.alnassr,11: clubName.alahli,
+    8: clubName.alhilal,9: clubName.alIttihad,10: clubName.alnassr,11: clubName.alrayyan,
     12: clubName.alsadd,13: clubName.alduhail,14: clubName.alain,15: clubName.aljazira,
     16:clubName.alWahda,17:clubName.persepolis,18: clubName.ulsan,19: clubName.fcseoul,
   },
@@ -232,10 +232,10 @@ Map clubNameMapImmutable = {
     12:clubName.essetif,13:clubName.cotonsport,
   },
   LeagueOfficialNames().outros : {
-    0: clubName.bate,1: clubName.sheriffTiraspol,2: clubName.gent,3: clubName.lechPoznan,
-    4: clubName.arsenalsarandi, 5: clubName.tigre,6: clubName.saprissa,7: clubName.olimpiaHON,
-    8:clubName.cluj,9:clubName.alShabab, 10:clubName.alrayyan,11:clubName.auckland,
-    12:clubName.charlotte, 13:clubName.chicago, 14:clubName.philadelphia, 15:clubName.austin,
+    0: clubName.bate, 1: clubName.cluj,2: clubName.gent,3: clubName.lechPoznan,
+    4: clubName.sheriffTiraspol, 5: clubName.arsenalsarandi,6: clubName.tigre,7: clubName.auckland,
+    8:clubName.alahli, 9:clubName.alShabab, 10:clubName.saprissa,11:clubName.olimpiaHON,
+    12:clubName.charlotte, 13:clubName.montreal, 14:clubName.toronto, 15:clubName.vancouver,
   },
 
 };

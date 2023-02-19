@@ -4378,16 +4378,16 @@ class ClubDetails{
       'Dasarath Rangasala',15000,1982,_country.nepal,60.3,[]];
     //SINGAPORE
     map[n.albirexSINGAPORE] = [ClubColors(Colors.orange,Colors.white),pattern.solid,Coordinates(1.346770647, 103.7298978),
-      'Jurong East Stadium',2700,2004,_country.singapore,62.1,[]];
-    map[n.lionSitySailors] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(1.310122578, 103.86030328),
-      'Estádio Jalan Besar',6000,1946,_country.singapore,61.6,[]];
+      'Jurong East Stadium',2700,2004,_country.singapore,60.1,[]];
+    map[n.lionCitySailors] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(1.310122578, 103.86030328),
+      'Estádio Jalan Besar',6000,1946,_country.singapore,55.6,[]];
     map[n.tampines] = [ClubColors(Colors.yellow,Colors.blue),pattern.solid,Coordinates(1.3528877, 103.940622),
-      'Our Tampines Hub',5000,1945,_country.singapore,64.2,[]];
+      'Our Tampines Hub',5000,1945,_country.singapore,59.2,[]];
     map[n.warriors] = [ClubColors(Colors.blue,Colors.red),pattern.solid,Coordinates(1.391140, 103.74921),
-      'Choa Chu Kang Stadium',10000,1975,_country.singapore,63.6,[]];
+      'Choa Chu Kang Stadium',10000,1975,_country.singapore,58.6,[]];
     //BRUNEI
     map[n.bruneidpmm] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(1.35453962, 103.851562),
-      'Ground Bishan',30000,2000,_country.brunei,62.4,[]];
+      'Ground Bishan',30000,2000,_country.brunei,58.4,[]];
 
     //ORIENTE MÉDIO
     //QATAR

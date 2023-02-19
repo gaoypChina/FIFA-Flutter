@@ -21,11 +21,12 @@ class HistoricClubYear{
     clubID = HistoricMyPlayers().getClubID(year: year);
     clubName = Club(index: clubID).name;
     leagueID = HistoricMyPlayers().getLeagueID(year: year);
-    leagueName = League(index: leagueID).name;
+    League league = League(index: leagueID);
+    leagueName = league.name;
     List clubsIDs = HistoricFunctions().funcHistoricListAll(year, leagueName);
     leaguePosition = clubsIDs.indexOf(clubID)+1;
 
-    internationalLeagueName = League(index: leagueID).internationalLeagueName;
+    internationalLeagueName = league.internationalLeagueName;
     internationalLeaguePosition = '';
     checkPositionClubPlayedGroupPhase(year);
     checkPositionClubPlayedMataMata(year);

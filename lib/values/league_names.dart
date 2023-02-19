@@ -71,6 +71,7 @@ class LeagueOfficialNames{
   String malta = 'Liga Malta';
   String liechtenstein = 'Liga Liechtenstein';
   String luxemburgo = 'Liga Luxemburgo';
+  String kosovo = 'Liga Kosovo';
 
   String ligaEuropa = 'Liga Europeia';  String lesteEuropeu = 'Leste Europeu';
 
@@ -103,17 +104,19 @@ class LeagueOfficialNames{
 
   String china = 'Liga China';
   String japao = 'J1-League';
-  String coreiaSul = 'K-League';
+  String coreiaSul = 'K-League'; String coreiaNorte = 'Liga Coréia do Norte';
   String arabia = 'Liga Arábia Saudita';
   String uzbekistao = 'Liga Uzbekistao'; String tadjiquistao = 'Liga Tadjikistan';
+  String quirguistao = 'Liga Quirguistao'; String turcomenistao = 'Liga Turcomenistao';
   String eau = 'Liga EAU';   String qatar = 'Liga Qatar';String bahrein = 'Liga Bahrein';
   String iran = 'Liga Iran';   String iraque = 'Liga Iraque'; String kuwait = 'Liga Kuwait';
-  String jordania = 'Liga Jordânia';
+  String jordania = 'Liga Jordânia'; String oman = 'Liga Oman';
   String siria = 'Liga Síria'; String libano = 'Liga Líbano';
-  String india = 'Liga India';
+  String india = 'Liga India'; String nepal = 'Liga Nepal'; String bangladesh = 'Liga Bangladesh';
   String tailandia = 'Liga Tailandia';   String vietna = 'Liga Vietnã'; String camboja = 'Liga Camboja';
-  String indonesia = 'Liga Indonesia';    String filipinas = 'Liga Filipinas';
-  String malasia = 'Liga Malásia';
+  String indonesia = 'Liga Indonesia';    String filipinas = 'Liga Filipinas'; String laos = 'Liga Laos';
+  String myanmar = 'Liga Myanmar';
+  String malasia = 'Liga Malásia'; String cingapura = 'Liga Cingapura';
 
 
   String egito = 'Liga Egito';
@@ -209,13 +212,13 @@ class LeagueOfficialNames{
 
      turquiaGrecia,     grecia, chipre,
      holanda,   belgica, escocia, irlanda, irlandanorte, paisgales,
-     suecia,     dinamarca,     noruega,     finlandia, islandia,
+     suecia,     dinamarca,     noruega,     finlandia, islandia, ilhasfaroe,
      austria,     suica,     polonia, repTcheca,
      eslovaquia, eslovenia,
       lituania, estonia, letonia,
 
-      croacia, servia, bosnia,
-      romenia, bulgaria, hungria, montenegro,
+      croacia, servia, bosnia, kosovo, montenegro,
+      romenia, bulgaria, hungria,
       macedonia, albania, belarus, moldova,
       russia, ucrania,   cazaquistao,
       armenia, azerbaijao, georgia, israel,
@@ -230,12 +233,13 @@ class LeagueOfficialNames{
       costaRica, elsalvador, guatemala, honduras, nicaragua, panama,
       repdominicana, jamaica, haiti, suriname,
 
-      china,  japao,     coreiaSul,
-      tailandia, camboja, filipinas, indonesia, malasia, vietna,
+      china,  japao,     coreiaSul, coreiaNorte,
+      tailandia, camboja, cingapura, filipinas,
+      indonesia, laos, malasia, myanmar, vietna,
       arabia, bahrein, eau, qatar,
       iran, iraque,  jordania, kuwait, libano, siria,
-      india,
-      uzbekistao, tadjiquistao,
+      india, bangladesh, nepal, oman,
+      quirguistao, uzbekistao, tadjiquistao, turcomenistao,
       australia, novazelandia,
 
       argelia, egito, libya,  marrocos, tunisia,
@@ -548,6 +552,7 @@ Map getLeagueNationalityMap(){
     leagueName.liechtenstein: Words.country.liechtenstein,
     leagueName.luxemburgo: Words.country.luxembourg,
     leagueName.saomarino: Words.country.sanMarino,
+    leagueName.kosovo: Words.country.kosovo,
 
     leagueName.brasil1: Words.country.brazil,
     leagueName.brasil2: Words.country.brazil,
@@ -582,9 +587,12 @@ Map getLeagueNationalityMap(){
     leagueName.china: Words.country.china,
     leagueName.coreiaSul: Words.country.southKorea,
     leagueName.japao: Words.country.japan,
+    leagueName.coreiaNorte: Words.country.northKorea,
 
     leagueName.uzbekistao: Words.country.uzbekistan,
     leagueName.tadjiquistao: Words.country.tajikistan,
+    leagueName.turcomenistao: Words.country.turkmenistan,
+    leagueName.quirguistao: Words.country.kyrgyzstan,
 
     leagueName.arabia: Words.country.southArabia,
     leagueName.bahrein: Words.country.bahrein,
@@ -595,15 +603,21 @@ Map getLeagueNationalityMap(){
     leagueName.jordania: Words.country.jordan,
     leagueName.kuwait: Words.country.kuwait,
     leagueName.libano: Words.country.lebanon,
+    leagueName.oman: Words.country.oman,
     leagueName.siria: Words.country.syria,
 
     leagueName.india: Words.country.india,
+    leagueName.nepal: Words.country.nepal,
+    leagueName.bangladesh: Words.country.bangladesh,
     leagueName.uzbekistao: Words.country.uzbekistan,
     leagueName.tadjiquistao: Words.country.tajikistan,
 
     leagueName.camboja: Words.country.cambodia,
     leagueName.indonesia: Words.country.indonesia,
+    leagueName.laos: Words.country.laos,
     leagueName.malasia: Words.country.malaysia,
+    leagueName.cingapura: Words.country.singapore,
+    leagueName.myanmar: Words.country.myanmar,
     leagueName.filipinas: Words.country.philippines,
     leagueName.tailandia: Words.country.thailand,
     leagueName.vietna: Words.country.vietnam,

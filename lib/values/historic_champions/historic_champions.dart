@@ -7,6 +7,7 @@ import 'package:fifa/values/historic_champions/europa.dart';
 import 'package:fifa/values/historic_champions/europa_top_leagues.dart';
 import 'package:fifa/values/historic_champions/internationals.dart';
 import 'package:fifa/values/historic_champions/north_america.dart';
+import 'package:fifa/values/historic_champions/oceania.dart';
 import 'package:fifa/values/historic_champions/oriente_medio.dart';
 import 'package:fifa/values/historic_champions/other_leagues.dart';
 
@@ -40,6 +41,10 @@ import 'package:fifa/values/historic_champions/other_leagues.dart';
 
     if(mapEstaduais[league] != null){
       return mapEstaduais[league];
+    }
+
+    if(mapOceania[league] != null){
+      return mapOceania[league];
     }
 
     if(mapCopas[league] != null){

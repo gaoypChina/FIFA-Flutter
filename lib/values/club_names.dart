@@ -1560,9 +1560,12 @@ class ClubName{
   String velezMostar = "Velež Mostar";
   //KOSOVO
   String ballkani = "KF Ballkani";
+  String drita = "Drita";
+  String feronikeli = "Feronikeli";
   String llapi = "KF Llapi";
   String prishtina = "Prishtina";
-  String drita = "Drita";
+  String trepca = "Trepça";
+  String vushtrria = "Vushtrria";
   //MONTENEGRO
   String celik = "Čelik";
   String decic = "Decic";
@@ -2970,7 +2973,8 @@ class ClubName{
   String svayrieng = "Svay Rieng";
   //SINGAPORE
   String albirexSINGAPORE = "Albirex Niigata Singapore";
-  String lionSitySailors = "Lion City Sailors";
+  String geylang = "Geylang United";
+  String lionCitySailors = "Lion City Sailors";
   String tampines = "Tampines Rovers";
   String warriors = "Warriors";
   //INDIA
@@ -3059,6 +3063,7 @@ class ClubName{
   String manangMarshyangdi = "Manang Marshyangdi";
   String himalayan = "Himalayan Sherpa Club";
   String nepalPolice = "Nepal Police";
+  String threestar = "Three Star Club";
   //PHILIPPINNES
   String globalCebu = "Global Cebu";
   String kaya = "Kaya-Iloilo";
@@ -3233,11 +3238,16 @@ class ClubName{
   //OMAN
   String alorouba = "Al Orouba";
   String alnasrOMAN = "Al Nasr SC";
+  String alnahdaOMAN = "Al Nahda Oman";
   String alseeb = "Al Seeb";
+  String alshababOMAN = "Al Shabab Oman";
   String alsuwaiq = "Al Suwaiq";
+  String ahlisidab = "Ahli Sidab";
   String dhofar = "Dhofar Club";
   String fanja = "Fanja SC";
+  String muscat = "Muscat";
   String omanClub = "Oman Club";
+  String sur = "Sur";
   //PAKISTAN
   String wohaib = "Wohaib";
   //PALESTINE

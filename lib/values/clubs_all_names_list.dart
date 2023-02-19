@@ -146,7 +146,7 @@ List clubsAllNameList = [
   ClubName().atlas,  ClubName().queretaro, ClubName().leon,  ClubName().juarez,
 
   ClubName().atlanta,  ClubName().columbuscrew, ClubName().dcunited,  ClubName().fcdallas,
-  ClubName().colorado, ClubName().chicago, ClubName().austin, ClubName().charlotte,
+  ClubName().coloradorapids, ClubName().chicago, ClubName().austin, ClubName().charlotte,
   ClubName().houston,
   ClubName().intermiami,  ClubName().losangelesfc, ClubName().lagalaxy,  ClubName().minnesota,
   ClubName().nerevolution,  ClubName().nycity, ClubName().nyredbulls,  ClubName().orlando,

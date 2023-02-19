@@ -2103,6 +2103,16 @@ Map<String,dynamic> mapEuropa = {
     2001.0: [n.zeljeznicar,n.brotnjo,n.sarajevo,],
   },
 
+  leagueName.kosovo : {
+    //https://en.wikipedia.org/wiki/Football_Superleague_of_Kosovo
+    2022.0: [n.ballkani],
+    2021.0: [n.prishtina,],
+    2020.0: [n.drita,],
+    2019.0: [n.feronikeli,],
+    2018.0: [n.drita,],
+    2017.0: [n.trepca,],
+  },
+
   leagueName.montenegro : {
     2022.0: [n.sutjeska,n.podgorica,n.decic,],
     2021.0: [n.podgorica,n.sutjeska,n.decic,],
