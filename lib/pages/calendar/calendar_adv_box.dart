@@ -58,7 +58,7 @@ Widget wCalendarAdvBox(BuildContext context, int semanaLocal, show){
 Widget wCalendarNotPlayWidget(int semanaLocal,String title, [String? imageName]){
   return Container(
     width: 120,
-    height: 117,
+    height: 127,
     color: semana > semanaLocal ? Colors.black87 : Colors.black38,
     child: Column(
       children: [

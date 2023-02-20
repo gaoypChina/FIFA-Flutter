@@ -12,6 +12,7 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/change_club.dart';
 import 'package:fifa/pages/table_international/table_international.dart';
 import 'package:fifa/theme/custom_toast.dart';
+import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
@@ -51,33 +52,43 @@ class _EndYearState extends State<EndYear> {
                 children: [
 
                   const SizedBox(height: 30),
-                  Text('${Translation(context).text.endOfYear}: ' + ano.toString(),style: EstiloTextoBranco.text30),
 
 
                   //TABELA
                   //tabelaClassificacaoWidget(context,myLeague),
 
                   //Escudo
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Images().getMyEscudo(size: 90),
+                  Container(
+                    margin: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(4),
+                    decoration: blackDecoration(),
+                    child: Column(
+                      children: [
 
-                      Column(
-                        children: [
-                          expectativa(),
-                          performance(),
-                        ],
-                      ),
+                        Text('${Translation(context).text.endOfYear}: ' + ano.toString(),style: EstiloTextoBranco.text30),
 
-                    ],
+                        const SizedBox(height: 10),
+
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Images().getMyEscudo(size: 90),
+
+                            Column(
+                              children: [
+                                expectativa(),
+                                performance(),
+                              ],
+                            ),
+
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
 
                   champions(),
 
-
-
-                  const Spacer(),
                   //VOLTAR
                   customButtonContinue(
                       title: Translation(context).text.next,
@@ -148,24 +159,32 @@ Widget performance(){
     );
   }
 Widget champions(){
-    return Column(
-      children: [
-        const SizedBox(height: 12),
-        const Text('Campeões',style: EstiloTextoBranco.negrito22,),
-        Wrap(
-          children: [
-            for(int leagueID in leaguesListRealIndex)
-              leagueChampion(leagueID)
-          ],
+    return Expanded(
+      child: SingleChildScrollView(
+        child: Container(
+          margin: const EdgeInsets.all(8),
+          padding: const EdgeInsets.all(4),
+          decoration: blackDecoration(),
+          child: Column(
+            children: [
+              const Text('Campeões',style: EstiloTextoBranco.negrito22,),
+              Wrap(
+                children: [
+                  for(int leagueID in leaguesListRealIndex)
+                    leagueChampion(leagueID)
+                ],
+              ),
+              const SizedBox(height: 12),
+              finale(LeagueOfficialNames().championsLeague),
+              finale(LeagueOfficialNames().libertadores),
+              finale(LeagueOfficialNames().europaLeagueOficial),
+              finale(LeagueOfficialNames().copaSulAmericana),
+              const SizedBox(height: 12),
+              mundial(),
+            ],
+          ),
         ),
-        const SizedBox(height: 12),
-        finale(LeagueOfficialNames().championsLeague),
-        finale(LeagueOfficialNames().libertadores),
-        finale(LeagueOfficialNames().europaLeagueOficial),
-        finale(LeagueOfficialNames().copaSulAmericana),
-        const SizedBox(height: 12),
-        mundial(),
-      ],
+      ),
     );
 }
 Widget leagueChampion(int leagueID){
@@ -180,7 +199,10 @@ Widget leagueChampion(int leagueID){
                 names.add(Club(index: clubID).name);
               }
               bottomSheetShowLeagueClassification(context, names);
-        },child: Images().getEscudoWidget(Club(index: championID).name,40,40)
+        },child: Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: Images().getEscudoWidget(Club(index: championID).name,40,40),
+        )
         );
 }
 Widget mundial(){

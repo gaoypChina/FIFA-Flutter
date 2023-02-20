@@ -103,8 +103,8 @@ class Images{
   }
   Image getPlayerPictureWidget(Jogador player,[double height = 50,double width=50]){
     return globalHasInternet
-        ? Image.network(player.imageUrl,height: height, width: width)
-        : Image.asset('assets/icons/generic_user.png',height: height, width: width);
+        ? Image.network(player.imageUrl,height: height, width: width, fit: BoxFit.fill)
+        : Image.asset('assets/icons/generic_user.png',height: height, width: width, fit: BoxFit.fill);
   }
 
   String getGenericPlayerPicture(){

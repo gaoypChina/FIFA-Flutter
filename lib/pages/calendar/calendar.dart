@@ -46,7 +46,7 @@ class _CalendarState extends State<Calendar> {
                 runSpacing: 5,
                 children: [
                   for (int i=1;i<=globalUltimaSemana;i++)
-                    adversarioWidget(i),
+                    adversarioWidget(Semana(i)),
                 ],
               ),
             ),
@@ -59,64 +59,64 @@ class _CalendarState extends State<Calendar> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-  Widget adversarioWidget(int semanaLocal){
+  Widget adversarioWidget(Semana weekLocal){
     Club myClub = Club(index: myTeamClass.clubID);
-    if(Semana(semanaLocal).isJogoCampeonatoNacional){
+    if(weekLocal.isJogoCampeonatoNacional){
       ResultGameNacional show = ResultGameNacional(
-          rodadaLocal: Semana(semanaLocal).rodadaNacional,
+          rodadaLocal: weekLocal.rodadaNacional,
           club: myClub
       );
 
-      if(Semana(semanaLocal).rodadaNacional <= nClubsLeague){
-        return wCalendarAdvBox(context, semanaLocal, show);
+      if(weekLocal.rodadaNacional <= nClubsLeague){
+        return wCalendarAdvBox(context, weekLocal.week, show);
       }else{
         return wCalendarNotPlayWidget(
-          semanaLocal,
-          Semana(semanaLocal).semanaCalendarStr,
+          weekLocal.week,
+          weekLocal.semanaCalendarStr,
           Images().getMyLeagueLogo(),
         );
       }
 
-    }else if(Semana(semanaLocal).isJogoCampeonatoInternacional){
+    }else if(weekLocal.isJogoCampeonatoInternacional){
       ResultGameInternacional show = ResultGameInternacional(
-          weekLocal: semanaLocal,
+          weekLocal: weekLocal.week,
           club: myClub,
           competitionName: myTeamClass.playingInternational
       );
       if(show.hasAdversary) {
-        return wCalendarAdvBox(context, semanaLocal, show);
+        return wCalendarAdvBox(context, weekLocal.week, show);
       }else{
         return wCalendarNotPlayWidget(
-            semanaLocal,
-            Semana(semanaLocal).getTranslated(context),
+            weekLocal.week,
+            weekLocal.getTranslated(context),
             Images().getMyInternationalLeagueLogo()
         );
       }
 
-    }else if(Semana(semanaLocal).isJogoMataMataInternacional){
+    }else if(weekLocal.isJogoMataMataInternacional){
       ResultGameInternacional show = ResultGameInternacional(
-          weekLocal: semanaLocal,
+          weekLocal: weekLocal.week,
           club: myClub,
           competitionName: myTeamClass.playingInternational
       );
       if(show.hasAdversary && semana >= semanasMataMataInternacionais.first) {
-        return wCalendarAdvBox(context, semanaLocal, show);
+        return wCalendarAdvBox(context, weekLocal.week, show);
       }else{
         return wCalendarNotPlayWidget(
-            semanaLocal,
-            Semana(semanaLocal).getTranslated(context),
+            weekLocal.week,
+            weekLocal.getTranslated(context),
             Images().getMyInternationalLeagueLogo()
         );
       }
 
-    }else if(Semana(semanaLocal).isJogoMundial){
+    }else if(weekLocal.isJogoMundial){
       return wCalendarNotPlayWidget(
-          semanaLocal,
-          Semana(semanaLocal).getTranslated(context),
+          weekLocal.week,
+          weekLocal.getTranslated(context),
           Images().getMundialLogo()
       );
     }
-    return wCalendarNotPlayWidget(semanaLocal, '');
+    return wCalendarNotPlayWidget(weekLocal.week, '');
   }
 
 

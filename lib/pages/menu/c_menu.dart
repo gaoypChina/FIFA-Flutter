@@ -1,26 +1,24 @@
 import 'package:fifa/classes/coach/coach_best_results.dart';
 import 'package:fifa/classes/functions/check_internet.dart';
-import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/match/adversario.dart';
 import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/result_game/result_game_nacional.dart';
+import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/simulate/simulate_functions.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/coach/coach_menu.dart';
 import 'package:fifa/pages/historic/historic_menu.dart';
-import 'package:fifa/pages/menu/widgets/calendar_icon.dart';
 import 'package:fifa/pages/menu/widgets/header.dart';
 import 'package:fifa/pages/menu/widgets/menu_button.dart';
 import 'package:fifa/pages/menu/widgets/menu_classification.dart';
+import 'package:fifa/pages/menu/widgets/play_button.dart';
 import 'package:fifa/pages/menu/widgets/stadium_buttons.dart';
 import 'package:fifa/pages/menu/widgets/test_button.dart';
 import 'package:fifa/pages/ranking_clubs/ranking_clubs.dart';
 import 'package:fifa/pages/simulacao/end_year.dart';
-import 'package:fifa/pages/simulacao/not_play.dart';
-import 'package:fifa/pages/simulacao/play.dart';
 import 'package:fifa/pages/table/table_nacional.dart';
 import 'package:fifa/pages/table_international/table_international.dart';
 import 'package:fifa/pages/transfers/transfers.dart';
@@ -99,26 +97,15 @@ class _MenuState extends State<Menu> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
 
-                          wMenuButton(Translation(context).text.play,club,(){
-                            if(adversario.clubName.isNotEmpty){
-                              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Play(adversarioClubID: adversario.clubID, visitante: adversario.visitante)));
-                            }else{
-                              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const NotPlay()));
-                            }
-                          }),
+                          wPlayButton(context, club, adversario, Semana(semana), () => null),
 
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
 
-                            Expanded(
-                              child: wMenuButton('Simular',club,() async{
-                                  await simulateFunction();
-                              }),
-                          ),
 
-                          expandedButton(Translation(context).text.table,club, TableNacional(choosenLeagueIndex: myClass.leagueID)),
-                        ]),
+                          expandedButton(Translation(context).text.myClub,club, const MyTeam()),
+                          ]),
 
 
                           Row(
@@ -126,7 +113,8 @@ class _MenuState extends State<Menu> {
                               children: [
 
                                 expandedButton(Translation(context).text.international,club, TableInternational(leagueInternational: myClass.getMyInternationalLeague())),
-                                expandedButton(Translation(context).text.myClub,club, const MyTeam()),
+                                expandedButton("Nacional",club, TableNacional(choosenLeagueIndex: myClass.leagueID)),
+
 
                               ]),
                           Row(
@@ -158,14 +146,14 @@ class _MenuState extends State<Menu> {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
 
-                        wMenuCalendarIcon(context, semana, adversario),
+                        //wMenuCalendarIcon(context, semana, adversario),
+                        //wLast5Matchs(context),
 
                         Column(
                           children: [
 
                             wMenuClassification(context, myClass),
 
-                            //wLast5Matchs(context),
                           ],
                         ),
 
@@ -174,12 +162,13 @@ class _MenuState extends State<Menu> {
 
                     const SizedBox(height: 4),
 
+
                     //ESTÁDIO
                     Expanded(
                       child: Stack(
                         children: [
 
-                          Image.asset(Images().getMyStadium(),height:  double.maxFinite, width: double.maxFinite,fit: BoxFit.fill,),
+                          //Image.asset(Images().getMyStadium(),height:  double.maxFinite, width: double.maxFinite,fit: BoxFit.fill,),
 
                           close(context),
 
@@ -188,7 +177,6 @@ class _MenuState extends State<Menu> {
                           test(context),
 
                           //train(context)
-
                         ],
                       ),
                     ),

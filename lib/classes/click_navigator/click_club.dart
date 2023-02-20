@@ -15,3 +15,11 @@ clickClub({required BuildContext context, required String clubName}){
 clickClubProfilePage(BuildContext context, Club clubClass){
   Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: clubClass.index)));
 }
+
+navigatorPush(BuildContext context, Widget widget){
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => widget));
+}
+
+navigatorReplace(BuildContext context, Widget widget){
+  Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => widget));
+}

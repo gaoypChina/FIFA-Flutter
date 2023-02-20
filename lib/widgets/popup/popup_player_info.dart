@@ -12,6 +12,7 @@ import 'package:fifa/theme/background_color/background_age.dart';
 import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/background_color/color_grade.dart';
 import 'package:fifa/theme/background_color/moral_icon.dart';
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/theme/custom_toast.dart';
@@ -49,72 +50,86 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   
-                  Row(
-                    children: [
-                      SizedBox(
-                        height: 80,width: 80,
-                        child: Stack(
-                          children: [
-                            Images().getPlayerPictureWidget(jogador,80,80),
-                            Container(alignment: Alignment.bottomRight,child: funcFlagsList(jogador.nationality, 20,30)),
-                            Text(jogador.nationality,style: EstiloTextoBranco.text12),
-                          ],
+                  Container(
+                    margin: const EdgeInsets.all(4),
+                    decoration: blackDecoration(),
+                    child: Row(
+                      children: [
+                        SizedBox(
+                          height: 110,width: 110,
+                          child: Stack(
+                            children: [
+                              Images().getPlayerPictureWidget(jogador,95,95),
+                              Container(alignment: Alignment.bottomRight,child: funcFlagsList(jogador.nationality, 20,30)),
+                              Text(jogador.nationality,style: EstiloTextoBranco.text12),
+                              Container(alignment: Alignment.bottomLeft,child: positionContainer(jogador.position,size: 60,style: EstiloTextoPreto.text16)),
+                            ],
+                          ),
                         ),
-                      ),
-                      const SizedBox(width: 6),
-                      Expanded(
-                       child: Column(
-                        children: [
-                          Text(jogador.name,style: EstiloTextoBranco.negrito22),
-                          mainStatus(context,jogador),
-                        ],
-                      )),
-                      //Escudo da Equipe
-                      Images().getEscudoWidget(jogador.clubName,70,70),
-                      const SizedBox(width: 8),
-                    ],
+                        const SizedBox(width: 6),
+                        Expanded(
+                         child: Column(
+                          children: [
+                            Text(jogador.name,style: EstiloTextoBranco.negrito22),
+                            mainStatus(context,jogador),
+                          ],
+                        )),
+                        //Escudo da Equipe
+                        Images().getEscudoWidget(jogador.clubName,70,70),
+                        const SizedBox(width: 8),
+                      ],
+                    ),
                   ),
 
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 6),
+                  Container(
+                    margin: const EdgeInsets.all(4),
+                    padding: const EdgeInsets.all(4),
+                    decoration: blackDecoration(),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        health(context, jogador),
+                        lesoesCartoes(context, jogador),
+                        nota(jogador),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 6),
+                  Container(
+                    height: 100,
+                    margin: const EdgeInsets.all(4),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        carrerStats(context,jogador),
+                        thisSeasonStats(context,jogador),
+                      ],
+                    ),
+                  ),
+
+
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      positionContainer(jogador.position,size: 60,style: EstiloTextoPreto.text16),
-                      health(context, jogador),
-                      lesoesCartoes(context, jogador),
-                      Column(
-                        children: [
-                          const Text('Nota',style: EstiloTextoBranco.negrito22),
-                          Container(
-                              color: colorGradeBackground(jogador.grade),
-                              padding: const EdgeInsets.all(2),
-                              child: Text(jogador.grade.toStringAsFixed(1),style: EstiloTextoBranco.negrito22)),
-                        ],
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 12),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(height: 100,child: carrerStats(context,jogador)),
-                      SizedBox(height: 100,child: thisSeasonStats(context,jogador)),
-                    ],
-                  ),
 
-                  value(context,jogador),
-
-
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
                       TextButton(
+                          style: TextButton.styleFrom(
+                            backgroundColor: AppColors().greyTransparent,
+                          ),
                           child: Text(Translation(context).text.cancel,style: EstiloTextoBranco.text16,),
                           onPressed: (){
                             Navigator.of(context).pop();
                           }
                       ),
+
+                      value(context,jogador),
+
                       TextButton(
+                          style: TextButton.styleFrom(
+                            backgroundColor: AppColors().greyTransparent,
+                          ),
                           child: Text(actionTransfer.action,style: EstiloTextoBranco.text16,),
                           onPressed: (){
                             onTap(context, jogador,actionTransfer);
@@ -144,35 +159,36 @@ mainStatus(BuildContext context, Jogador jogador){
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children:[
+          const SizedBox(width:50,child: Text('Overall',style: EstiloTextoBranco.text14)),
+          const SizedBox(width: 4),
           Container(
             margin: const EdgeInsets.only(right: 4),
               height:sizeIcon,width: sizeIcon,
               color: colorOverallBackground(jogador.overall),
-              child: Center(child: Text(jogador.overall.toString(), textAlign:TextAlign.center, style: EstiloTextoPreto.text12)),
+              child: Center(child: Text(jogador.overall.toString(), textAlign:TextAlign.center, style: EstiloTextoPreto.text14)),
           ),
-          const SizedBox(width:50,child: Text('Overall',style: EstiloTextoBranco.text14)),
         ],
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children:[
+          const SizedBox(width:50,child: Text('Idade',style: EstiloTextoBranco.text14)),
+          const SizedBox(width: 4),
           Container(
             margin: const EdgeInsets.only(right: 4),
             height:sizeIcon,width: sizeIcon,
             color: colorAgeBackground(jogador.age),
-            child: Center(child: Text(jogador.age.toString(), textAlign:TextAlign.center, style: EstiloTextoPreto.text12)),
+            child: Center(child: Text(jogador.age.toString(), textAlign:TextAlign.center, style: EstiloTextoPreto.text14)),
           ),
-          const SizedBox(width:50,child: Text('Idade',style: EstiloTextoBranco.text14)),
         ],
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children:[
-          moralContainer(jogador,size: sizeIcon),
-          Container(
+          const SizedBox(
               width:50,
-              margin: const EdgeInsets.only(left: 4),
-              child: const Text('Moral',style: EstiloTextoBranco.text14)),
+              child: Text('Moral',style: EstiloTextoBranco.text14)),
+          moralContainer(jogador,size: sizeIcon),
         ],
       ),
     ],
@@ -316,14 +332,26 @@ Widget value(BuildContext context,Jogador jogador){
   return Container(
     decoration: blackDecoration(),
     padding: const EdgeInsets.all(8),
-    margin: const EdgeInsets.all(8),
+    margin: const EdgeInsets.all(4),
     child: Column(
       children: [
-        Text('${Translation(context).text.money}: \$'+My().money.toStringAsFixed(2),style: EstiloTextoBranco.text14),
         Text('${Translation(context).text.value}: \$'+jogador.price.toStringAsFixed(2),
-            style: (globalMyMoney>jogador.price) ? EstiloTextoVerde.text14 : EstiloTextoVermelho.text14),
+            style: (globalMyMoney>jogador.price) ? EstiloTextoVerde.text14 : EstiloTextoVermelho.text20),
+        Text('${Translation(context).text.money}: \$'+My().money.toStringAsFixed(2),style: EstiloTextoBranco.text16),
       ],
     ),
+  );
+}
+
+Widget nota(Jogador jogador){
+  return                       Column(
+    children: [
+      const Text('Nota',style: EstiloTextoBranco.negrito22),
+      Container(
+          color: colorGradeBackground(jogador.grade),
+          padding: const EdgeInsets.all(2),
+          child: Text(jogador.grade.toStringAsFixed(1),style: EstiloTextoPreto.negrito20)),
+    ],
   );
 }
 ////////////////////////////////////////////////////////////////////////////

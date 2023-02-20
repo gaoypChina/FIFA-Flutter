@@ -61,7 +61,7 @@ class _PreMatchState extends State<PreMatch> {
               customButtonContinue(
                 title: Translation(context).text.nextMatchWeek,
                 function: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context) => Play(adversarioClubID: widget.adversarioClubID, visitante: widget.visitante)));
+                  Navigator.push(context,MaterialPageRoute(builder: (context) => Play(adversarioClubID: widget.adversarioClubID, visitante: widget.visitante, isSingleMatch: false)));
                 },
               ),
 

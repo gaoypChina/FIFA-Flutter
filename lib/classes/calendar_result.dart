@@ -9,16 +9,16 @@ class CalendarResult{
   ResultMatch show = ResultMatch();
 
   CalendarResult({required int semanaLocal,required Club club}) {
-
-    if (Semana(semanaLocal).isJogoCampeonatoNacional) {
+    Semana week = Semana(semanaLocal);
+    if (week.isJogoCampeonatoNacional) {
       ResultGameNacional resultGameNacional = ResultGameNacional(
-          rodadaLocal: Semana(semanaLocal).rodadaNacional,
+          rodadaLocal: week.rodadaNacional,
           club: club
       );
       show.fromResultGameNacional(resultGameNacional);
     }
 
-    else if (Semana(semanaLocal).isJogoCampeonatoInternacional) {
+    else if (week.isJogoCampeonatoInternacional) {
       ResultGameInternacional resultGameInternacional = ResultGameInternacional(
           weekLocal: semanaLocal,
           club: club,
@@ -27,7 +27,7 @@ class CalendarResult{
 
       show.fromResultGameInternacional(resultGameInternacional);
 
-    }else if(Semana(semanaLocal).isJogoMundial){
+    }else if(week.isJogoMundial){
       MundialFinal mundial = MundialFinal();
       show.fromMundial(semanaLocal, club, mundial);
     }

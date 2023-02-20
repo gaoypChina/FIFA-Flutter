@@ -253,6 +253,8 @@ class LeagueOfficialNames{
       alagoas,  bahia, ceara, maranhao, paraiba, pernambuco, piaui, potiguar, sergipe,
       df, goias, mt, ms, to,
       para, amazonas, acre, amapa, rondonia, roraima,
+
+      copaNordeste, mundial, championsLeague, europaLeagueOficial, libertadores, copaSulAmericana
     ];
   }
 }

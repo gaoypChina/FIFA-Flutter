@@ -45,7 +45,7 @@ List<int> semanaOitavas = [semanasJogosInternacionais[6],semanasJogosInternacion
     semanaFinal = [semanasJogosInternacionais[12]],
     semanaMundial = [semanasJogosInternacionais.length+semanasJogosNacionais.length+1];
 //List<int> semanasJogosInternacionais = [for(var i=semanasJogosNacionais.last+1; i<=semanasJogosNacionais.last+13; i++) i];
-//List<int> semanasJogosInternacionais = [for(var i=1; i<=13; i++) i];
+
 List<int> semanasJogosInternacionais = [3,5,7,10,12,14,  18,20, 23,25, 28,29, 32];
 
 
@@ -53,7 +53,6 @@ List semanasGruposInternacionais = semanasJogosInternacionais.take(6).toList();
 List<int> semanasMataMataInternacionais = semanaOitavas+semanaQuartas+semanaSemi+semanaFinal;
 
 //List<int> semanasJogosNacionais = [for(var i=1; i<=globalNMaxRodadasNacional; i++) i];
-//List<int> semanasJogosNacionais = [for(var i=semanasJogosInternacionais.last+1; i<=semanasJogosInternacionais.last+globalNMaxRodadasNacional; i++) i];
 List<int> semanasJogosNacionais = [1,2,4,6,8, 9,11,13,15,16, 17,19,21,22,24, 26,27,30,31];
 
 List semanasJogosCopas = [];

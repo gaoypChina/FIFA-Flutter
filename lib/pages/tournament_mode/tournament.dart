@@ -56,7 +56,7 @@ class _TournamentState extends State<Tournament> {
         body:  Stack(
             children: [
 
-            Image.asset('assets/icons/wallpaper blue.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill),
+        Images().getWallpaper(),
 
         SizedBox(
         height: Sized(context).height,
@@ -87,10 +87,10 @@ class _TournamentState extends State<Tournament> {
 
           menuButton('Play Match',(){
             funcChangeClub(club1.name,leaguesListRealIndex[posicaoPais1]);
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) => Play(adversarioClubID: club2.index, visitante: false)));
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => Play(adversarioClubID: club2.index, visitante: false, isSingleMatch: true)));
           }),
 
-
+          tactics(),
         ]),
 
         )
@@ -202,81 +202,91 @@ Widget leagueLogoAndName(int selection, int posicaoPais){
 Widget clubLogoAndKitStack(int selection, Club club, int posicaoPais){
   int indexLeague = leaguesListRealIndex[posicaoPais];
   double imageSize = 120;
-  return  Column(
-    children: [
-      SizedBox(
-        height: imageSize,
-        width: imageSize,
-        child: Stack(
-          children: [
-            //Image.asset(Images().getStadium(club.name),height: 200,width: 200,fit: BoxFit.fill,),
-            //Escudo
-            Images().getEscudoWidget(club.name,imageSize,imageSize),
-            //Uniforme
-            Container(
-                alignment: Alignment.bottomRight,
-                child: Images().getUniformWidget(club.name,imageSize/2,imageSize/2)
-            ),
+  return  SizedBox(
+    height: 170,
+    child: Column(
+      children: [
+        SizedBox(
+          height: imageSize,
+          width: imageSize,
+          child: Stack(
+            children: [
+              //Image.asset(Images().getStadium(club.name),height: 200,width: 200,fit: BoxFit.fill,),
+              //Escudo
+              Images().getEscudoWidget(club.name,imageSize,imageSize),
+              //Uniforme
+              Container(
+                  alignment: Alignment.bottomRight,
+                  child: Images().getUniformWidget(club.name,imageSize/2,imageSize/2)
+              ),
 
-            Row(
-              children: [
-                SizedBox(height: imageSize,width: imageSize*0.5,
-                  child: InkWell(onTap: (){
-                    if(selection == 1){
-                      if(posicao1>0) {
-                        posicao1 --;
-                      }else{
-                        posicao1 = League(index: indexLeague).nClubs-1;
+              Row(
+                children: [
+                  SizedBox(height: imageSize,width: imageSize*0.5,
+                    child: InkWell(onTap: (){
+                      if(selection == 1){
+                        if(posicao1>0) {
+                          posicao1 --;
+                        }else{
+                          posicao1 = League(index: indexLeague).nClubs-1;
+                        }
                       }
-                    }
 
-                    else{
-                      if(posicao2>0) {
-                        posicao2 --;
-                      }else{
-                        posicao2 = League(index: indexLeague).nClubs-1;
+                      else{
+                        if(posicao2>0) {
+                          posicao2 --;
+                        }else{
+                          posicao2 = League(index: indexLeague).nClubs-1;
+                        }
                       }
-                    }
 
-                    setState(() {});
-                  }),
-                ),
-                SizedBox(height: imageSize,width: imageSize*0.5,
-                  child: InkWell(onTap: (){
+                      setState(() {});
+                    }),
+                  ),
+                  SizedBox(height: imageSize,width: imageSize*0.5,
+                    child: InkWell(onTap: (){
 
-                    if(selection == 1){
-                      if(posicao1 < League(index: indexLeague).nClubs-1) {
-                        posicao1 ++;
-                      }else{
-                        posicao1 = 0;
+                      if(selection == 1){
+                        if(posicao1 < League(index: indexLeague).nClubs-1) {
+                          posicao1 ++;
+                        }else{
+                          posicao1 = 0;
+                        }
                       }
-                    }
 
-                    else{
-                      if(posicao2 < League(index: indexLeague).nClubs-1) {
-                        posicao2 ++;
-                      }else{
-                        posicao2 = 0;
+                      else{
+                        if(posicao2 < League(index: indexLeague).nClubs-1) {
+                          posicao2 ++;
+                        }else{
+                          posicao2 = 0;
+                        }
                       }
-                    }
 
-                    setState(() {});
-                  }),
-                ),
-              ],
-            ),
-          ],
-        ),
-      ),
-
-
-      SizedBox(width:imageSize,
-          child: Text(club.name,overflow: TextOverflow.clip,textAlign:TextAlign.center,style:EstiloTextoBranco.text20)
+                      setState(() {});
+                    }),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
 
-    ],
+
+        SizedBox(width:imageSize,
+            child: Text(club.name,overflow: TextOverflow.clip,textAlign:TextAlign.center,style:EstiloTextoBranco.text20)
+          ),
+
+      ],
+    ),
   );
 }
 
+Widget tactics(){
+    return Container(
+      padding: const EdgeInsets.all(4),
+      color: AppColors().greyTransparent,
+      child: const Text("Táticas",style: EstiloTextoBranco.text16),
+    );
+}
 
 }

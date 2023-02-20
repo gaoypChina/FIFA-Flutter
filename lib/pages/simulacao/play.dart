@@ -33,7 +33,8 @@ class Play extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
   final int adversarioClubID;
   final bool visitante;
-  const Play({Key? key,required this.adversarioClubID, required this.visitante}) : super(key: key);
+  final bool isSingleMatch;
+  const Play({Key? key,required this.adversarioClubID, required this.visitante, required this.isSingleMatch}) : super(key: key);
   @override
   _PlayState createState() => _PlayState();
 }
@@ -210,7 +211,9 @@ Widget gameVelocitySlider(){
 //                               FUNCTIONS                                //
 ////////////////////////////////////////////////////////////////////////////
  onContinueButton(){
-    if(counterMatch.milis>=90 && counterMatch.finishedMatch){
+    if(widget.isSingleMatch){
+      Navigator.pop(context);
+    }else if(counterMatch.milis>=90 && counterMatch.finishedMatch){
 
       _timer.cancel();
       //SE FOR A ULTIMA RODADA DO CAMPEONATO MOSTRA A TABELA DE CLASSIFICAÇÃO FINAL

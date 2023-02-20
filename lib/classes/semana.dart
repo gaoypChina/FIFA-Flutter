@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 
 class Semana{
   String semanaStr = semana.toString();
+  int week = semana;
   int rodadaNacional = 1;
   int rodadaGroupInternational = 1;
   bool isJogoIdaMataMata = true;
@@ -25,6 +26,7 @@ class Semana{
   Semana(int weekToCalculate){
     Name name = Name();
 
+    week = weekToCalculate;
     realDate = weekRealDays[semana]!+"/"+ano.toString();
 
     isJogoMundial = semanaMundial.contains(weekToCalculate);
@@ -70,7 +72,11 @@ class Semana{
       semanaCalendarStr = 'Rodada ' + (rodadaNacional).toString();
     }
 
+    if(!isJogoCampeonatoNacional && !isJogoCampeonatoInternacional && !isJogoMundial){
+      semanaCalendarStr = "Week " + week.toString();
     }
+
+}
 
     verifyIsMataMataIdaOrVolta(int weekToCalculate){
       if(semanaOitavas.first == weekToCalculate || semanaQuartas.first == weekToCalculate
