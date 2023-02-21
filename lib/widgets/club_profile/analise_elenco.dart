@@ -3,6 +3,7 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/widgets/club_profile/best_players.dart';
 import 'package:fifa/widgets/number_player_position.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,10 @@ Widget analiseElenco(BuildContext context, Club club){
       color: AppColors().greyTransparent,
       child: Column(
         children: [
-          const Text('Análise do Elenco',style: EstiloTextoBranco.text16),
+          const Text('Análise do Elenco',style: EstiloTextoBranco.negrito16),
+
+          //BEST PLAYERS BOX
+          bestPlayers(club),
 
           //Jogadores por posição
           playersPerPosition(club),

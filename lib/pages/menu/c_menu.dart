@@ -16,7 +16,7 @@ import 'package:fifa/pages/menu/widgets/menu_button.dart';
 import 'package:fifa/pages/menu/widgets/menu_classification.dart';
 import 'package:fifa/pages/menu/widgets/play_button.dart';
 import 'package:fifa/pages/menu/widgets/stadium_buttons.dart';
-import 'package:fifa/pages/menu/widgets/test_button.dart';
+import 'package:fifa/pages/menu/test_button.dart';
 import 'package:fifa/pages/ranking_clubs/ranking_clubs.dart';
 import 'package:fifa/pages/simulacao/end_year.dart';
 import 'package:fifa/pages/table/table_nacional.dart';

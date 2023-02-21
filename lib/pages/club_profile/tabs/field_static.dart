@@ -3,16 +3,16 @@ import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/widgets/popup/popup_player_info.dart';
 import 'package:fifa/theme/background_color/background_age.dart';
 import 'package:fifa/theme/background_color/background_overall.dart';
 import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/club_profile/analise_elenco.dart';
-import 'package:fifa/widgets/club_profile/best_players.dart';
 import 'package:fifa/widgets/field_size.dart';
+import 'package:fifa/widgets/popup/popup_player_info.dart';
 import 'package:flutter/material.dart';
+
 import '../../../theme/textstyle.dart';
 
 class StaticField extends StatefulWidget {
@@ -100,9 +100,6 @@ class _StaticFieldState extends State<StaticField> {
                     ],
                   ),
                 ) : Container(),
-
-                //BEST PLAYERS BOX
-                bestPlayers(clubClass),
 
                 //ANALISE DO ELENCO
                 analiseElenco(context, clubClass),
