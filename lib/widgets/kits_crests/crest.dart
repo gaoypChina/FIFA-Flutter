@@ -15,12 +15,17 @@ class CrestWidgets{
     _height = size;
     _width = size;
   }
-  
+
+  getGradient(String clubName){
+    String patternStr = clubDetails.getPattern(clubName);
+    clubColors = clubDetails.getColors(clubName);
+    LinearGradient pattern = clubPattern.getGradient(patternStr, clubColors);
+    return pattern;
+  }
+
   Widget getCrest(String clubName){
     try {
-      String patternStr = clubDetails.getPattern(clubName);
-      clubColors = clubDetails.getColors(clubName);
-      LinearGradient pattern = clubPattern.getGradient(patternStr, clubColors);
+      LinearGradient pattern = getGradient(clubName);
 
       return crestCircular(clubName, pattern);
     }catch(e){

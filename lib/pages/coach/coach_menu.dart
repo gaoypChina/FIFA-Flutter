@@ -47,6 +47,7 @@ class _CoachMenuState extends State<CoachMenu> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
+    //TODO: ISSO AQUI DA UM ERRO DE WIDGET PRA CARREGAR A PÁGINA
     coachBestResults.updateVariables();
 
     return Scaffold(

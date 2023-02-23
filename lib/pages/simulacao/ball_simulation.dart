@@ -10,6 +10,7 @@ import 'package:fifa/classes/match/adversario.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/widgets/kits_crests/crest.dart';
 import 'package:flutter/material.dart';
 
 class GamePage extends StatefulWidget {
@@ -29,6 +30,7 @@ class _GamePageState extends State<GamePage> {
   late Club advClub;
   late Field field;
   Match match = Match();
+  bool loaded = false;
 
   @override
   void initState() {
@@ -39,17 +41,19 @@ class _GamePageState extends State<GamePage> {
   void onInit(){
     advClub = Club(index: widget.adversario.clubID);
 
-    for (int i=0; i<8; i++){
+    for (int i=0; i<11; i++){
       circles.add(Circle(Random().nextDouble()*360+20, Random().nextDouble()*320+30,
-          speed, speed,
-          Jogador(index: myClub.jogadores[i])
+          myClub.colors,
+          CrestWidgets(size: 0).getGradient(myClub.name),
+          Jogador(index: myClub.escalacao[i])
       ));
       circles.add(Circle(Random().nextDouble()*360+20, Random().nextDouble()*320 + 350,
-          speed, speed,
-          Jogador(index: advClub.jogadores[i])
+          advClub.colors,
+          CrestWidgets(size: 0).getGradient(advClub.name),
+          Jogador(index: advClub.escalacao[i]),
       ));
     }
-    ball = Ball(180, 320, speed, speed, 0, 0);
+    ball = Ball(180, 320, speed, speed);
     timer = Timer.periodic(const Duration(milliseconds: 20), (timer) {
       update();
       if(match.minutes>=90){
@@ -57,6 +61,7 @@ class _GamePageState extends State<GamePage> {
         endMatch();
       }
     });
+    loaded = true;
   }
 
   void endMatch(){
@@ -100,19 +105,26 @@ class _GamePageState extends State<GamePage> {
         for (Circle circle in circles) {
           double direction = Random().nextInt(5)-2;
           var distance = 2;
-          if (Random().nextBool()) {
-            direction = (ball.x - circle.x)/((ball.x - circle.x).abs());
+          if(circle.player.position != "GOL") {
+            direction = (ball.x - circle.x) / ((ball.x - circle.x).abs());
             circle.x += direction * distance;
-          } else {
-            direction = (ball.y - circle.y)/((ball.y - circle.y).abs());
+            direction = (ball.y - circle.y) / ((ball.y - circle.y).abs());
             circle.y += direction * distance;
+          }else{
+            direction = (ball.x - circle.x) / ((ball.x - circle.x).abs());
+            direction += 0.4*Random().nextInt(5)-2;
+            if(circle.x >= field.startGoal && circle.x < field.startGoal+field.lengthGoal){
+              circle.x += direction * distance;
+            }
           }
           // Bounce off the left and right walls
           if (circle.x - circle.r <= field.limitXleft || circle.x + circle.r >= field.limitXright) {
+            direction = (ball.x - circle.x) / ((ball.x - circle.x).abs());
             circle.x += -direction * distance;
           }
           // Bounce off the top and bottom walls
           if (circle.y - circle.r <= field.limitYtop || circle.y + circle.r >= field.limitYbottom) {
+            direction = (ball.y - circle.y) / ((ball.y - circle.y).abs());
             circle.y += -direction * distance;
           }
 
@@ -121,6 +133,52 @@ class _GamePageState extends State<GamePage> {
     });
   }
 
+  void defaultPosition(Circle circle, Field field){
+    if(circle.player.position=="GOL"){
+      circle.x = field.limitXmiddle;
+      circle.y = field.limitYtop+25;
+    }else if(circle.player.position=="ZAG"){
+      circle.x = field.limitXmiddle;
+      circle.y = field.limitYtop+100;
+    }else if(circle.player.position=="LE"){
+      circle.x = field.limitXleft+30;
+      circle.y = field.limitYtop+100;
+    }else if(circle.player.position=="LD"){
+      circle.x = field.limitXright-30;
+      circle.y = field.limitYtop+100;
+    }else if(circle.player.position=="VOL"){
+      circle.x = field.limitXmiddle+10;
+      circle.y = field.limitYtop+130;
+    }else if(circle.player.position=="MC"){
+      circle.x = field.limitXmiddle;
+      circle.y = field.limitYtop+150;
+    }else if(circle.player.position=="MEI"){
+      circle.x = field.limitXmiddle;
+      circle.y = field.limitYtop+180;
+    }else if(circle.player.position=="ME"){
+      circle.x = field.limitXleft+30;
+      circle.y = field.limitYtop+200;
+    }else if(circle.player.position=="MD"){
+      circle.x = field.limitXright-30;
+      circle.y = field.limitYtop+200;
+    }else if(circle.player.position=="PE"){
+      circle.x = field.limitXleft+30;
+      circle.y = field.limitYtop+250;
+    }else if(circle.player.position=="PD"){
+      circle.x = field.limitXright-30;
+      circle.y = field.limitYtop+250;
+    }else if(circle.player.position=="ATA"){
+      circle.x = field.limitXmiddle;
+      circle.y = field.limitYtop+250;
+    }else{
+      circle.x = Random().nextDouble()*field.limitXright+field.limitXleft;
+      circle.y = Random().nextDouble()*field.limitYbottom+field.limitYtop;
+    }
+    if(circle.player.clubID == advClub.index){
+      double invert = (circle.y-field.limitYtop);
+      circle.y = field.limitYbottom - invert;
+    }
+  }
   void isPassCorrect(Circle circle){
     if(match.lastTouch.clubID == circle.player.clubID){
       circles
@@ -179,6 +237,7 @@ class _GamePageState extends State<GamePage> {
           .forEach((circle) {
         circle.goals++;
         customToast('GOAL 1 '+circle.player.name);
+        defaultPosition(circle, field);
       });
       match.goal1 += 1;
       ball.x = 150;
@@ -192,6 +251,7 @@ class _GamePageState extends State<GamePage> {
             .forEach((circle) {
               circle.goals++;
               customToast('GOAL 2 '+circle.player.name);
+              defaultPosition(circle, field);
             });
 
       match.goal2 += 1;
@@ -208,7 +268,7 @@ class _GamePageState extends State<GamePage> {
 
     for (int i=0; i<8; i++){
       for (Circle circle in circles) {
-        circle.y = Random().nextDouble()*field.limitYbottom+field.limitYtop;
+        defaultPosition(circle, field);
       }
     }
   }
@@ -220,8 +280,7 @@ class _GamePageState extends State<GamePage> {
     }
     for (int i=0; i<8; i++){
       for (Circle circle in circles) {
-        circle.x = Random().nextDouble()*field.limitXright+field.limitXleft;
-        circle.y = Random().nextDouble()*field.limitYbottom+field.limitYtop;
+        defaultPosition(circle, field);
       }
     }
   }
@@ -239,25 +298,15 @@ class _GamePageState extends State<GamePage> {
       appBar: AppBar(title: const Text("Game Page")),
       body: Container(
         color: Colors.white,
-        child: Stack(
+        child: loaded ? Stack(
           children: [
 
             Images().getWallpaper(),
 
             Image.asset('assets/icons/campo.png',height: Sized(context).height, width: Sized(context).width, fit: BoxFit.fill),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const SizedBox(width: 45),
-                Text(match.getPossesionPercentage().toStringAsFixed(2)+"%",style: EstiloTextoBranco.text16),
-                Images().getEscudoWidget(myClub.name,50,50),
-                Text(match.goal1.toString()+"x"+match.goal2.toString(),style: EstiloTextoBranco.text16),
-                Images().getEscudoWidget(advClub.name,50,50),
-                Text(match.minutes.toString()+":",style: EstiloTextoBranco.text16),
-                Text(match.seconds.toString()+"'",style: EstiloTextoBranco.text16),
-              ],
-            ),
+
+            header(match, myClub, advClub),
             Text(match.lastTouch.name,style: EstiloTextoBranco.text16),
 
             for (Circle circle in circles)
@@ -271,59 +320,68 @@ class _GamePageState extends State<GamePage> {
                   child: Container(
                     width: circle.r * 2,
                     height: circle.r * 2,
-                    padding: const EdgeInsets.all(2),
+                    padding: const EdgeInsets.all(1),
                     decoration: BoxDecoration(
-                      color: circle.player.clubName == myClub.name
-                          ? myClub.colors.primaryColor
-                          : advClub.colors.primaryColor,
+                      color: circle.colors.primaryColor,
                       shape: BoxShape.circle,
-                      border: Border.all(color: circle.player.clubName == myClub.name
-                          ? myClub.colors.secondColor
-                          : advClub.colors.secondColor, width: 2),
+                      gradient: circle.gradient,
+                      border: Border.all(color: circle.colors.secondColor, width: 2),
                     ),
-                    child: Stack(
-                      children: [
-                        Images().getPlayerPictureWidget(circle.player,circle.r,circle.r),
-                        //Text(circle.passes.toString(),style: EstiloTextoBranco.text16),
-                      ],
-                    ),
+                    child: Images().getPlayerPictureWidget(circle.player,circle.r,circle.r),
                   ),
                 ),
               ),
-            Positioned(
-              left: ball.x - ball.r,
-              top: ball.y - ball.r,
-              child: SizedBox(
-                width: ball.r * 2,
-                height: ball.r * 2,
-                child: Image.asset('assets/icons/bola.png',height: ball.r, width: ball.r,),
-              ),
-            ),
 
-            Positioned(
-              left: field.startGoal,
-              top: field.limitYtop,
-              child: Container(
-                width: field.lengthGoal,
-                height: 2,
-                color: Colors.white,
-              ),
-            ),
+            ballWidget(ball),
 
-            Positioned(
-              left: field.startGoal,
-              top: field.limitYbottom,
-              child: Container(
-                width: field.lengthGoal,
-                height: 2,
-                color: Colors.white,
-              ),
-            ),
+            goalLine(field, field.limitYtop),
+            goalLine(field, field.limitYbottom),
 
           ],
-        ),
+        ) : Container(),
       ),
     );
   }
+
+////////////////////////////////////////////////////////////////////////////
+//                               WIDGETS                                  //
+////////////////////////////////////////////////////////////////////////////
+Widget header(Match match, Club myClub, Club advClub){
+  return             Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      const SizedBox(width: 45),
+      Text(match.getPossesionPercentage().toStringAsFixed(2)+"%",style: EstiloTextoBranco.text16),
+      Images().getEscudoWidget(myClub.name,50,50),
+      Text(match.goal1.toString()+"x"+match.goal2.toString(),style: EstiloTextoBranco.text16),
+      Images().getEscudoWidget(advClub.name,50,50),
+      Text(match.minutes.toString()+":",style: EstiloTextoBranco.text16),
+      Text(match.seconds.toString()+"'",style: EstiloTextoBranco.text16),
+    ],
+  );
+}
+Widget goalLine(Field field, double topDistance){
+  return             Positioned(
+    left: field.startGoal,
+    top: topDistance,
+    child: Container(
+      width: field.lengthGoal,
+      height: 2,
+      color: Colors.white,
+    ),
+  );
+}
+
+Widget ballWidget(Ball ball){
+  return Positioned(
+    left: ball.x - ball.r,
+    top: ball.y - ball.r,
+    child: SizedBox(
+      width: ball.r * 2,
+      height: ball.r * 2,
+      child: Image.asset('assets/icons/bola.png',height: ball.r, width: ball.r,),
+    ),
+  );
+}
 
 }

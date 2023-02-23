@@ -1,6 +1,7 @@
 
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/values/club_details.dart';
 import 'package:flutter/material.dart';
 
 class Match{
@@ -39,15 +40,20 @@ class Circle {
   double x;
   double y;
   double r = 15;
-  double dx;
-  double dy;
+  late double dx;
+  late double dy;
+  ClubColors colors;
+  LinearGradient gradient;
   Jogador player;
   int touchs = 0;
   int passesRight = 0;
   int passesWrong = 0;
   int goals = 0;
   int assists = 0;
-  Circle(this.x, this.y, this.dx, this.dy, this.player);
+  Circle(this.x, this.y, this.colors, this.gradient, this.player){
+    dx = (player.overallDynamic^3).toDouble()/50;
+    dy = (player.overallDynamic^3).toDouble()/50;
+  }
 }
 
 class Field {
@@ -78,7 +84,7 @@ class Ball {
   double r = 6;
   double dx;
   double dy;
-  double ax;
-  double ay;
-  Ball(this.x, this.y, this.dx, this.dy, this.ax, this.ay);
+  double ax = 0.1;
+  double ay = 0.1;
+  Ball(this.x, this.y, this.dx, this.dy);
 }
