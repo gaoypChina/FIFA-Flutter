@@ -1,4 +1,5 @@
 import 'package:fifa/classes/click_navigator/click_club.dart';
+import 'package:fifa/classes/match/adversario.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/simulacao/ball_simulation.dart';
 import 'package:fifa/theme/custom_toast.dart';
@@ -12,7 +13,9 @@ Widget test(BuildContext context){
       child: GestureDetector(
           onTap:(){
             customToast('TESTE DE FUNÇÃO');
-            navigatorPush(context, const GamePage());
+            Adversario adversario = Adversario();
+            adversario.getAdversario();
+            navigatorPush(context, GamePage(adversario: adversario));
           },
           child: const Icon(Icons.terminal_sharp,color:Colors.white,size: 50)
       ),

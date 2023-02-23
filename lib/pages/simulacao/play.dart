@@ -34,7 +34,7 @@ class Play extends StatefulWidget {
   final int adversarioClubID;
   final bool visitante;
   final bool isSingleMatch;
-  const Play({Key? key,required this.adversarioClubID, required this.visitante, required this.isSingleMatch}) : super(key: key);
+  const Play({Key? key, required this.adversarioClubID, required this.visitante, required this.isSingleMatch}) : super(key: key);
   @override
   _PlayState createState() => _PlayState();
 }
