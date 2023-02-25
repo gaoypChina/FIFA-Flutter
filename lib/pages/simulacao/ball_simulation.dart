@@ -40,21 +40,32 @@ class _GamePageState extends State<GamePage> {
 
   void onInit(){
     advClub = Club(index: widget.adversario.clubID);
+    ball = Ball(0, 0, speed, speed);
 
     for (int i=0; i<11; i++){
       circles.add(Circle(Random().nextDouble()*360+20, Random().nextDouble()*320+30,
           myClub.colors,
           CrestWidgets(size: 0).getGradient(myClub.name),
-          Jogador(index: myClub.escalacao[i])
+          Jogador(index: myClub.escalacao[i]),
+          i
       ));
       circles.add(Circle(Random().nextDouble()*360+20, Random().nextDouble()*320 + 350,
           advClub.colors,
           CrestWidgets(size: 0).getGradient(advClub.name),
           Jogador(index: advClub.escalacao[i]),
+          i
       ));
     }
-    ball = Ball(180, 320, speed, speed);
+    print(circles.length);
     timer = Timer.periodic(const Duration(milliseconds: 20), (timer) {
+      if(match.ticks==0){
+        field = Field(context);
+        ball.x = field.limitXmiddle;
+        ball.y = field.limitYmiddle;
+        for (Circle circle in circles) {
+          defaultPosition(circle, field);
+        }
+      }
       update();
       if(match.minutes>=90){
         match.ticks=0;
@@ -62,6 +73,7 @@ class _GamePageState extends State<GamePage> {
       }
     });
     loaded = true;
+
   }
 
   void endMatch(){
@@ -71,12 +83,12 @@ class _GamePageState extends State<GamePage> {
   void update() {
     setState(() {});
     match.updateTime();
-    field = Field(context);
     setState(() {
 
       // Move the ball
       ball.x += ball.dx;
       ball.y += ball.dy;
+
       isGoal();
 
       bounceBall();
@@ -100,80 +112,74 @@ class _GamePageState extends State<GamePage> {
         slowDownBall();
       }
 
-      // Move the circles in a random direction every second
+      // Move the circles every second
       if (timer.tick % 1 == 0) {
         for (Circle circle in circles) {
           double direction = Random().nextInt(5)-2;
-          var distance = 2;
+          double distance = 2;
           if(circle.player.position != "GOL") {
             direction = (ball.x - circle.x) / ((ball.x - circle.x).abs());
-            circle.x += direction * distance;
+            direction += Random().nextDouble()*2-1;
+            double velocity = calculateBallCircleDistance(circle);
+            circle.x += direction * distance * velocity;
             direction = (ball.y - circle.y) / ((ball.y - circle.y).abs());
-            circle.y += direction * distance;
+            circle.y += direction * distance * velocity;
           }else{
             direction = (ball.x - circle.x) / ((ball.x - circle.x).abs());
-            direction += 0.4*Random().nextInt(5)-2;
-            if(circle.x >= field.startGoal && circle.x < field.startGoal+field.lengthGoal){
+            if(circle.x >= field.startGoal && circle.x <= field.startGoal+field.lengthGoal){
               circle.x += direction * distance;
             }
           }
-          // Bounce off the left and right walls
-          if (circle.x - circle.r <= field.limitXleft || circle.x + circle.r >= field.limitXright) {
-            direction = (ball.x - circle.x) / ((ball.x - circle.x).abs());
-            circle.x += -direction * distance;
-          }
-          // Bounce off the top and bottom walls
-          if (circle.y - circle.r <= field.limitYtop || circle.y + circle.r >= field.limitYbottom) {
-            direction = (ball.y - circle.y) / ((ball.y - circle.y).abs());
-            circle.y += -direction * distance;
-          }
+          //BOUNCE OFF THE WALL
+          bounceWall(circle, distance, direction);
 
         }
       }
     });
   }
 
-  void defaultPosition(Circle circle, Field field){
-    if(circle.player.position=="GOL"){
-      circle.x = field.limitXmiddle;
-      circle.y = field.limitYtop+25;
-    }else if(circle.player.position=="ZAG"){
-      circle.x = field.limitXmiddle;
-      circle.y = field.limitYtop+100;
-    }else if(circle.player.position=="LE"){
-      circle.x = field.limitXleft+30;
-      circle.y = field.limitYtop+100;
-    }else if(circle.player.position=="LD"){
-      circle.x = field.limitXright-30;
-      circle.y = field.limitYtop+100;
-    }else if(circle.player.position=="VOL"){
-      circle.x = field.limitXmiddle+10;
-      circle.y = field.limitYtop+130;
-    }else if(circle.player.position=="MC"){
-      circle.x = field.limitXmiddle;
-      circle.y = field.limitYtop+150;
-    }else if(circle.player.position=="MEI"){
-      circle.x = field.limitXmiddle;
-      circle.y = field.limitYtop+180;
-    }else if(circle.player.position=="ME"){
-      circle.x = field.limitXleft+30;
-      circle.y = field.limitYtop+200;
-    }else if(circle.player.position=="MD"){
-      circle.x = field.limitXright-30;
-      circle.y = field.limitYtop+200;
-    }else if(circle.player.position=="PE"){
-      circle.x = field.limitXleft+30;
-      circle.y = field.limitYtop+250;
-    }else if(circle.player.position=="PD"){
-      circle.x = field.limitXright-30;
-      circle.y = field.limitYtop+250;
-    }else if(circle.player.position=="ATA"){
-      circle.x = field.limitXmiddle;
-      circle.y = field.limitYtop+250;
-    }else{
-      circle.x = Random().nextDouble()*field.limitXright+field.limitXleft;
-      circle.y = Random().nextDouble()*field.limitYbottom+field.limitYtop;
+  void bounceWall(Circle circle, double distance, double direction){
+    // Bounce off the left and right walls
+    if (circle.x <= field.limitXleft || circle.x >= field.limitXright) {
+      direction = (field.limitXleft - circle.x) / ((field.limitXleft - circle.x).abs());
+      circle.x += direction * distance;
     }
+    // Bounce off the top and bottom walls
+    if (circle.y <= field.limitYtop || circle.y >= field.limitYbottom) {
+      direction = (field.limitYtop - circle.y) / ((field.limitYtop - circle.y).abs());
+      circle.y += direction * distance;
+    }
+  }
+
+  double calculateBallCircleDistance(Circle circle){
+    double directionX = ((ball.x - circle.x).abs());
+    double directionY = ((ball.y - circle.y).abs());
+    double distance = sqrt(pow(directionX, 2) + pow(directionY, 2));
+
+    // ANEIS DE VELOCIDADE
+    double velocity = 0;
+    if(distance<30){
+      velocity = 1;
+    }else if(distance<50){
+      velocity = 0.7;
+    }else if(distance<100){
+      velocity = 0.5;
+    }else if(distance<200){
+      velocity = 0.3;
+    }else if(distance<400){
+      velocity = 0.1;
+    }
+    return velocity;
+  }
+  void resetPlayersPositions(){
+    for(Circle circle in circles){
+      defaultPosition(circle, field);
+    }
+  }
+  void defaultPosition(Circle circle, Field field){
+    GravityPosition gravityPosition = GravityPosition(context, circle.position);
+    circle.x = gravityPosition.gravityCenter.x;
+    circle.y = gravityPosition.gravityCenter.y;
     if(circle.player.clubID == advClub.index){
       double invert = (circle.y-field.limitYtop);
       circle.y = field.limitYbottom - invert;
@@ -222,8 +228,8 @@ class _GamePageState extends State<GamePage> {
       lateral();
     }
     // Bounce off the top and bottom walls
-    if (ball.y - ball.r  <= field.limitYtop
-        || ball.y + - ball.r >= field.limitYbottom ) {
+    if (ball.y + ball.r  <= field.limitYtop
+        || ball.y - ball.r >= field.limitYbottom ) {
       ball.dy *= -1;
       escanteio();
     }
@@ -237,11 +243,11 @@ class _GamePageState extends State<GamePage> {
           .forEach((circle) {
         circle.goals++;
         customToast('GOAL 1 '+circle.player.name);
-        defaultPosition(circle, field);
       });
       match.goal1 += 1;
-      ball.x = 150;
-      ball.y = 340;
+      ball.x = field.limitXmiddle;
+      ball.y = field.limitYmiddle;
+      resetPlayersPositions();
     }
 
     //GOAL TEAM 2
@@ -251,22 +257,22 @@ class _GamePageState extends State<GamePage> {
             .forEach((circle) {
               circle.goals++;
               customToast('GOAL 2 '+circle.player.name);
-              defaultPosition(circle, field);
             });
 
       match.goal2 += 1;
-      ball.x = 150;
-      ball.y = 340;
+      ball.x = field.limitXmiddle;
+      ball.y = field.limitYmiddle;
+      resetPlayersPositions();
     }
   }
   void escanteio(){
     if(ball.x > field.limitXmiddle){
-      ball.x = field.limitXright;
+      ball.x = field.limitXright-5;
     }else{
-      ball.x = field.limitXleft;
+      ball.x = field.limitXleft+5;
     }
 
-    for (int i=0; i<8; i++){
+    for (int i=0; i<circles.length; i++){
       for (Circle circle in circles) {
         defaultPosition(circle, field);
       }
@@ -274,13 +280,13 @@ class _GamePageState extends State<GamePage> {
   }
   void lateral(){
     if(ball.x < field.limitXleft){
-      ball.x = field.limitXleft;
+      ball.x = field.limitXleft+1;
     }else{
-      ball.x = field.limitXright;
+      ball.x = field.limitXright-1;
     }
-    for (int i=0; i<8; i++){
+    for (int i=0; i<circles.length; i++){
       for (Circle circle in circles) {
-        defaultPosition(circle, field);
+        //defaultPosition(circle, field);
       }
     }
   }
