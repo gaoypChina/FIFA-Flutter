@@ -33,6 +33,7 @@ bool globalSeeProbabilities = true;
 bool globalRandomizePlayers = false;
 double globalInitialMoney = 0;
 
+double pi = 3.14159265359;
 int globalDificuldade = 2; //2-> médio
 int anoInicial = 2023; //ano fixo para contas
 int ano = 2023;

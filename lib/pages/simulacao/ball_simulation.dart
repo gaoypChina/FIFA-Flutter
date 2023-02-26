@@ -23,6 +23,7 @@ class GamePage extends StatefulWidget {
 class _GamePageState extends State<GamePage> {
 
   List<Circle> circles = [];
+  List<GravityPosition> gravities = [];
   late Ball ball;
   late Timer timer;
   final double speed = 6;
@@ -34,8 +35,8 @@ class _GamePageState extends State<GamePage> {
 
   @override
   void initState() {
-    super.initState();
     onInit();
+    super.initState();
   }
 
   void onInit(){
@@ -56,9 +57,12 @@ class _GamePageState extends State<GamePage> {
           i
       ));
     }
-    print(circles.length);
-    timer = Timer.periodic(const Duration(milliseconds: 20), (timer) {
+
+    timer = Timer.periodic(const Duration(milliseconds: 50), (timer) {
       if(match.ticks==0){
+        for (int i=0; i<circles.length; i++) {
+          gravities.add(GravityPosition(context, circles[i].position, circles[i].isMyPlayer));
+        }
         field = Field(context);
         ball.x = field.limitXmiddle;
         ball.y = field.limitYmiddle;
@@ -85,21 +89,29 @@ class _GamePageState extends State<GamePage> {
     match.updateTime();
     setState(() {
 
-      // Move the ball
-      ball.x += ball.dx;
-      ball.y += ball.dy;
+      moveBall();
 
       isGoal();
 
-      bounceBall();
+      bounceBallWalls();
 
+      //SE UM JOGADOR TOCAR NA BOLA
       bool touch = false;
       for (Circle circle in circles) {
         double dist = sqrt(pow(circle.x - ball.x, 2) + pow(circle.y - ball.y, 2));
         if (dist <= circle.r + ball.r) {
           double angle = atan2(ball.y - circle.y, ball.x - circle.x);
+          //MOVIMENTOS POSSÍVEIS
+          angle = gradtorad(playerVision(circle));
+          angle = calcAngleOriginalSystemRad(angle);
+          //Atualiza direção da bola
           ball.dx = speed * cos(angle);
           ball.dy = speed * sin(angle);
+
+          // Move the ball
+          ball.x += ball.dx + Random().nextInt(9)-2;
+          ball.y += ball.dy;
+
           touch = true;
           isPassCorrect(circle);
           match.lastTouch = circle.player;
@@ -108,34 +120,170 @@ class _GamePageState extends State<GamePage> {
         }
       }
 
+      //If nobody touchs the ball
       if(!touch){
         slowDownBall();
       }
 
       // Move the circles every second
       if (timer.tick % 1 == 0) {
-        for (Circle circle in circles) {
-          double direction = Random().nextInt(5)-2;
-          double distance = 2;
-          if(circle.player.position != "GOL") {
-            direction = (ball.x - circle.x) / ((ball.x - circle.x).abs());
-            direction += Random().nextDouble()*2-1;
-            double velocity = calculateBallCircleDistance(circle);
-            circle.x += direction * distance * velocity;
-            direction = (ball.y - circle.y) / ((ball.y - circle.y).abs());
-            circle.y += direction * distance * velocity;
-          }else{
-            direction = (ball.x - circle.x) / ((ball.x - circle.x).abs());
-            if(circle.x >= field.startGoal && circle.x <= field.startGoal+field.lengthGoal){
-              circle.x += direction * distance;
+        movePlayers();
+      }
+
+    });
+  }
+
+  void moveBall(){
+    // Move the ball
+    ball.x += ball.dx;
+    ball.y += ball.dy;
+  }
+  void movePlayers(){
+    for (Circle circle in circles) {
+      if(circle.player.position != "GOL") {
+        playerMovement(circle);
+      }else{
+        goalkeeperMovement(circle);
+      }
+      //BOUNCE OFF THE WALL
+      double distance = 2;
+      double direction = Random().nextInt(5)-2;
+      bounceWall(circle, distance, direction);
+
+    }
+  }
+
+  void playerMovement(Circle circle){
+    double direction = Random().nextInt(5)-2;
+    double distance = 2;
+    if(walkInDirectionBall(circle)) {
+
+      double distance2 = calculateBallCircleDistance(circle);
+      double velocity = calculateBallCircleVelocity(distance2);
+      circle.x += direction * distance * velocity;
+      direction = (ball.y - circle.y) / ((ball.y - circle.y).abs());
+      circle.y += direction * distance * velocity;
+    }
+  }
+  void goalkeeperMovement(Circle circle){
+    //GOLEIRO
+    double distance = 2;
+    double direction = (ball.x - circle.x) / ((ball.x - circle.x).abs());
+    if(circle.x >= field.startGoal && circle.x <= field.startGoal+field.lengthGoal){
+      circle.x += direction * distance;
+    }if(calculateBallCircleDistance(circle)<30){
+      direction = (ball.y - circle.y) / ((ball.y - circle.y).abs());
+      circle.y += direction * distance;
+    }
+  }
+  bool walkInDirectionBall(Circle circle){
+    GravityPosition gravityPosition = GravityPosition(context, circle.position, circle.isMyPlayer);
+    gravityPosition.gravityCenter.x;
+    double distance =  sqrt(pow(circle.x - gravityPosition.gravityCenter.x, 2) + pow(circle.y - gravityPosition.gravityCenter.y, 2));
+    double prob = 100;
+    if(distance<10){
+      prob = 100;
+    }else if(distance<40){
+      prob = 80;
+    }else if(distance<80){
+      prob = 50;
+    }else if(distance<120){
+      prob = 25;
+    }else if(distance<200){
+      prob = 10;
+    }
+    if(Random().nextDouble()*100<prob){
+      return true;
+    }
+    return false;
+  }
+
+  double radtograd(double rad){
+    return rad*180/pi;
+  }
+  double gradtorad(double grad){
+    return grad*pi/180;
+  }
+  double negativeAngleTo360(double originalAngle) {
+    double convertedAngle = originalAngle + 360;
+    while (convertedAngle >= 360) {
+      convertedAngle -= 360;
+    }
+    return convertedAngle;
+  }
+  double negativeAngleFrom360(double originalAngle) {
+    if(originalAngle > 180) {
+      return  originalAngle - 360;
+    }
+    if(originalAngle < -180) {
+      return  originalAngle + 360;
+    }
+    return originalAngle;
+  }
+  double rotateAngleGrad(double originalAngleGrad, double angleOfRotationGrad) {
+    double originalAngle360 = negativeAngleTo360(originalAngleGrad);
+    double angleOfRotation360 = negativeAngleTo360(angleOfRotationGrad);
+    double convertedAngle = originalAngle360 - angleOfRotation360;
+    while (convertedAngle < 0) {
+      convertedAngle += 360;
+    }
+    convertedAngle = negativeAngleFrom360(convertedAngle);
+    return convertedAngle;
+  }
+
+  double calcAngleOriginalSystemRad(double angleRad){
+    return angleRad - pi/2;
+  }
+  double calcAngleGrad(double x, double xRef, double y, double yRef){
+    double angle = atan2(y - yRef, x - xRef)+pi/2;
+    angle = negativeAngleFrom360(radtograd(angle));
+    return angle;
+  }
+  double calcAngleRad(double x, double xRef, double y, double yRef){
+    double angleGrad = calcAngleGrad(x, xRef, y, yRef);
+    return gradtorad(angleGrad);
+  }
+
+  double playerVision(Circle circle1){
+    //ball.x = 100;
+    //ball.y = 350;
+    //circle1.x = ball.x-circle1.r;
+    //circle1.y = ball.y-circle1.r;
+    double angleBall = calcAngleGrad(ball.x, circle1.x, ball.y, circle1.y);
+    late double angleGoalStart;
+    late double angleGoalEnd;
+    if(circle1.player.clubID == myClub.index){
+      angleGoalStart = calcAngleGrad(field.startGoal, circle1.x, field.limitYbottom, circle1.y);
+      angleGoalEnd = calcAngleGrad(field.endGoal, circle1.x, field.limitYbottom, circle1.y);
+    }else{
+      angleGoalStart = calcAngleGrad(field.startGoal, circle1.x, field.limitYtop, circle1.y);
+      angleGoalEnd = calcAngleGrad(field.endGoal, circle1.x, field.limitYtop, circle1.y);
+    }
+    double angleGoalStartBallReference = rotateAngleGrad(angleGoalStart, angleBall);
+    //print("\nLOOP");
+    //print(circle1.player.name);
+    //print(angleGoalStart);
+    //print(angleBall);
+    //print(angleGoalStartBallReference);
+
+    //Se o gol estiver no campo de visao entao chuta pra frente
+    if(angleGoalStartBallReference.abs()<90){
+      return angleGoalStart;
+    }else {
+      //Se não estiver na direção do gol, procura passe
+      for (Circle circle in circles) {
+        if (circle.player.clubID == circle1.player.clubID) {
+            double anglePasse = calcAngleGrad(circle.x, circle1.x, circle.y, circle1.y);
+            //Mudança do eixo de coordenada de referencia para a bola.
+            double anglePasseBallReference = rotateAngleGrad(anglePasse, angleBall);
+            if (anglePasseBallReference.abs() < 90) {//jogador no campo de visao
+              return anglePasse;
             }
           }
-          //BOUNCE OFF THE WALL
-          bounceWall(circle, distance, direction);
-
         }
       }
-    });
+
+    return angleBall;
   }
 
   void bounceWall(Circle circle, double distance, double direction){
@@ -151,11 +299,14 @@ class _GamePageState extends State<GamePage> {
     }
   }
 
-  double calculateBallCircleDistance(Circle circle){
+  double calculateBallCircleDistance(Circle circle) {
     double directionX = ((ball.x - circle.x).abs());
     double directionY = ((ball.y - circle.y).abs());
     double distance = sqrt(pow(directionX, 2) + pow(directionY, 2));
+  return distance;
+  }
 
+  double calculateBallCircleVelocity(double distance) {
     // ANEIS DE VELOCIDADE
     double velocity = 0;
     if(distance<30){
@@ -177,13 +328,9 @@ class _GamePageState extends State<GamePage> {
     }
   }
   void defaultPosition(Circle circle, Field field){
-    GravityPosition gravityPosition = GravityPosition(context, circle.position);
+    GravityPosition gravityPosition = GravityPosition(context, circle.position, circle.isMyPlayer);
     circle.x = gravityPosition.gravityCenter.x;
     circle.y = gravityPosition.gravityCenter.y;
-    if(circle.player.clubID == advClub.index){
-      double invert = (circle.y-field.limitYtop);
-      circle.y = field.limitYbottom - invert;
-    }
   }
   void isPassCorrect(Circle circle){
     if(match.lastTouch.clubID == circle.player.clubID){
@@ -221,7 +368,7 @@ class _GamePageState extends State<GamePage> {
     }
   }
 
-  void bounceBall(){
+  void bounceBallWalls(){
     // Bounce off the left and right walls
     if (ball.x + ball.r <= field.limitXleft || ball.x - ball.r >= field.limitXright) {
       ball.dx *= -1;
@@ -307,36 +454,16 @@ class _GamePageState extends State<GamePage> {
         child: loaded ? Stack(
           children: [
 
-            Images().getWallpaper(),
-
             Image.asset('assets/icons/campo.png',height: Sized(context).height, width: Sized(context).width, fit: BoxFit.fill),
-
 
             header(match, myClub, advClub),
             Text(match.lastTouch.name,style: EstiloTextoBranco.text16),
 
             for (Circle circle in circles)
-              Positioned(
-                left: circle.x - circle.r,
-                top: circle.y - circle.r,
-                child: GestureDetector(
-                  onTap: (){
-                    customToast(circle.player.name);
-                  },
-                  child: Container(
-                    width: circle.r * 2,
-                    height: circle.r * 2,
-                    padding: const EdgeInsets.all(1),
-                    decoration: BoxDecoration(
-                      color: circle.colors.primaryColor,
-                      shape: BoxShape.circle,
-                      gradient: circle.gradient,
-                      border: Border.all(color: circle.colors.secondColor, width: 2),
-                    ),
-                    child: Images().getPlayerPictureWidget(circle.player,circle.r,circle.r),
-                  ),
-                ),
-              ),
+              circlePlayer(circle),
+
+            for (GravityPosition gravity in gravities)
+              gravityPoint(gravity.gravityCenter),
 
             ballWidget(ball),
 
@@ -389,5 +516,45 @@ Widget ballWidget(Ball ball){
     ),
   );
 }
+
+Widget circlePlayer(Circle circle){
+    return               Positioned(
+      left: circle.x - circle.r,
+      top: circle.y - circle.r,
+      child: GestureDetector(
+        onTap: (){
+          customToast(circle.player.name);
+        },
+        child: Container(
+          width: circle.r * 2,
+          height: circle.r * 2,
+          padding: const EdgeInsets.all(1),
+          decoration: BoxDecoration(
+            color: circle.colors.primaryColor,
+            shape: BoxShape.circle,
+            gradient: circle.gradient,
+            border: Border.all(color: circle.colors.secondColor, width: 2),
+          ),
+          child: Images().getPlayerPictureWidget(circle.player,circle.r,circle.r),
+        ),
+      ),
+    );
+}
+
+Widget gravityPoint(GravityCenter gravityCenter){
+    return               Positioned(
+      left: gravityCenter.x,
+      top: gravityCenter.y,
+      child: Container(
+        width: 3,
+        height: 3,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          shape: BoxShape.circle,
+        ),
+      ),
+    );
+}
+
 
 }

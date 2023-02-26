@@ -1,6 +1,9 @@
 
+import 'dart:math';
+
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:flutter/material.dart';
 
@@ -37,6 +40,7 @@ class Match{
 }
 
 class Circle {
+  bool isMyPlayer = false;
   double x;
   double y;
   double r = 15;
@@ -54,6 +58,9 @@ class Circle {
   Circle(this.x, this.y, this.colors, this.gradient, this.player, this.position){
     dx = (player.overallDynamic^3).toDouble()/100;
     dy = (player.overallDynamic^3).toDouble()/100;
+    if(player.clubID == globalMyClubID){
+      isMyPlayer = true;
+    }
   }
 }
 
@@ -64,9 +71,11 @@ class Field {
   late double limitYbottom;
   late double limitYtop;
   late double limitYmiddle;
+  late double sizeY;
 
   double lengthGoal = 150;
   late double startGoal;
+  late double endGoal;
 
   Field(BuildContext context){
     limitXleft = 30;
@@ -75,7 +84,9 @@ class Field {
     limitYtop = 57;
     limitYbottom = MediaQuery.of(context).size.height-142;
     limitYmiddle = MediaQuery.of(context).size.height/2;
+    sizeY = MediaQuery.of(context).size.height;
     startGoal = limitXmiddle - lengthGoal/2;
+    endGoal = startGoal + lengthGoal;
   }
 }
 
@@ -99,7 +110,7 @@ class GravityCenter {
 class GravityPosition{
   GravityCenter gravityCenter = GravityCenter(0, 0);
 
-  GravityPosition(BuildContext context, int position){
+  GravityPosition(BuildContext context, int position, bool isMyPlayer){
     Field field = Field(context);
 
     if(position == 0){
@@ -128,5 +139,10 @@ class GravityPosition{
       gravityCenter = GravityCenter(field.limitXmiddle+30, field.limitYtop+250);
     }
 
+    if(!isMyPlayer){
+      double invert = (gravityCenter.y-field.limitYtop);
+      gravityCenter.y = field.limitYbottom - invert;
+    }
   }
+
 }
