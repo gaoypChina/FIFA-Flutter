@@ -8,9 +8,11 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/match/adversario.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/kits_crests/crest.dart';
+import 'package:fifa/widgets/popup/popup_player_info.dart';
 import 'package:flutter/material.dart';
 
 class GamePage extends StatefulWidget {
@@ -23,7 +25,6 @@ class GamePage extends StatefulWidget {
 class _GamePageState extends State<GamePage> {
 
   List<Circle> circles = [];
-  List<GravityPosition> gravities = [];
   late Ball ball;
   late Timer timer;
   final double speed = 6;
@@ -60,17 +61,24 @@ class _GamePageState extends State<GamePage> {
 
     timer = Timer.periodic(const Duration(milliseconds: 50), (timer) {
       if(match.ticks==0){
-        for (int i=0; i<circles.length; i++) {
-          gravities.add(GravityPosition(context, circles[i].position, circles[i].isMyPlayer));
+        for (Circle circle in circles) {
+          circle.setGravity(context);
         }
         field = Field(context);
+        match.setGravityTeam(field);
         ball.x = field.limitXmiddle;
         ball.y = field.limitYmiddle;
-        for (Circle circle in circles) {
-          defaultPosition(circle, field);
-        }
+        resetPlayersPositions();
       }
-      update();
+
+      if(!match.isPaused){
+        update();
+      }
+
+      if(match.minutes == 45){
+        resetPlayersPositions();
+      }
+
       if(match.minutes>=90){
         match.ticks=0;
         endMatch();
@@ -81,7 +89,8 @@ class _GamePageState extends State<GamePage> {
   }
 
   void endMatch(){
-    Navigator.pop(context);
+    match.isPaused = true;
+    //Navigator.pop(context);
   }
 
   void update() {
@@ -125,14 +134,30 @@ class _GamePageState extends State<GamePage> {
         slowDownBall();
       }
 
+      match.gravityTeam1.moveGravityCenter(ball, field, true);
+      match.gravityTeam2.moveGravityCenter(ball, field, false);
+      for (Circle circle in circles){
+        if(circle.isMyPlayer){
+          circle.gravityCenter.updateGravityCenter(match.gravityTeam1);
+        }else{
+          circle.gravityCenter.updateGravityCenter(match.gravityTeam2);
+        }
+      }
+
       // Move the circles every second
       if (timer.tick % 1 == 0) {
         movePlayers();
       }
 
+
+
+
     });
   }
 
+  //////////////////////////////////////////////////////////////////////////////
+  // MOVEMENTS
+  //////////////////////////////////////////////////////////////////////////////
   void moveBall(){
     // Move the ball
     ball.x += ball.dx;
@@ -140,64 +165,59 @@ class _GamePageState extends State<GamePage> {
   }
   void movePlayers(){
     for (Circle circle in circles) {
-      if(circle.player.position != "GOL") {
-        playerMovement(circle);
-      }else{
-        goalkeeperMovement(circle);
-      }
+      playerMovement(circle);
       //BOUNCE OFF THE WALL
       double distance = 2;
       double direction = Random().nextInt(5)-2;
       bounceWall(circle, distance, direction);
-
+      bouncePlayers(circle);
     }
   }
 
   void playerMovement(Circle circle){
-    double direction = Random().nextInt(5)-2;
-    double distance = 2;
-    if(walkInDirectionBall(circle)) {
-
-      double distance2 = calculateBallCircleDistance(circle);
-      double velocity = calculateBallCircleVelocity(distance2);
-      circle.x += direction * distance * velocity;
-      direction = (ball.y - circle.y) / ((ball.y - circle.y).abs());
-      circle.y += direction * distance * velocity;
+    double distanceGravity = 0;
+    if(circle.x != circle.gravityCenter.x && circle.y != circle.gravityCenter.y){
+      distanceGravity =  sqrt(pow(circle.x - circle.gravityCenter.x, 2) + pow(circle.y - circle.gravityCenter.y, 2));
     }
+    double distanceBall =  sqrt(pow(circle.x - ball.x, 2) + pow(circle.y - ball.y, 2));
+
+    //MOVE PARA O QUE ESTIVER MAIS PERTO
+    // A BOLA OU A POSIÇÃO DO JOGADOR (CENTRO DE GRAVIDADE)
+    double destinyX = ball.x;
+    double destinyY = ball.y;
+    if((distanceBall > 100 || distanceGravity > 100) && distanceGravity != 0){
+      destinyX = circle.gravityCenter.x;
+      destinyY = circle.gravityCenter.y;
+    }
+
+    //Player Velocity
+    double distance2 = calculateBallCircleDistance(circle, destinyX, destinyY);
+    double velocity = calculateBallCircleVelocity(distance2);
+    velocity *= 3;
+
+    double distance = 2;
+    double direction = (destinyX - circle.x) / ((destinyX - circle.x).abs());
+    circle.x += (direction * distance * velocity) + Random().nextInt(3)-1;
+
+    direction = (destinyY - circle.y) / ((destinyY - circle.y).abs());
+    circle.y += direction * distance * velocity;
   }
+
   void goalkeeperMovement(Circle circle){
     //GOLEIRO
     double distance = 2;
     double direction = (ball.x - circle.x) / ((ball.x - circle.x).abs());
     if(circle.x >= field.startGoal && circle.x <= field.startGoal+field.lengthGoal){
       circle.x += direction * distance;
-    }if(calculateBallCircleDistance(circle)<30){
+    }if(calculateBallCircleDistance(circle, ball.x, ball.y)<45){
       direction = (ball.y - circle.y) / ((ball.y - circle.y).abs());
       circle.y += direction * distance;
     }
   }
-  bool walkInDirectionBall(Circle circle){
-    GravityPosition gravityPosition = GravityPosition(context, circle.position, circle.isMyPlayer);
-    gravityPosition.gravityCenter.x;
-    double distance =  sqrt(pow(circle.x - gravityPosition.gravityCenter.x, 2) + pow(circle.y - gravityPosition.gravityCenter.y, 2));
-    double prob = 100;
-    if(distance<10){
-      prob = 100;
-    }else if(distance<40){
-      prob = 80;
-    }else if(distance<80){
-      prob = 50;
-    }else if(distance<120){
-      prob = 25;
-    }else if(distance<200){
-      prob = 10;
-    }
-    if(Random().nextDouble()*100<prob){
-      return true;
-    }
-    return false;
-  }
 
+  //////////////////////////////////////////////////////////////////////////////
+  // PLAYER VISION
+  //////////////////////////////////////////////////////////////////////////////
   double radtograd(double rad){
     return rad*180/pi;
   }
@@ -286,6 +306,9 @@ class _GamePageState extends State<GamePage> {
     return angleBall;
   }
 
+  //////////////////////////////////////////////////////////////////////////////
+  // BOUNCE
+  //////////////////////////////////////////////////////////////////////////////
   void bounceWall(Circle circle, double distance, double direction){
     // Bounce off the left and right walls
     if (circle.x <= field.limitXleft || circle.x >= field.limitXright) {
@@ -299,9 +322,9 @@ class _GamePageState extends State<GamePage> {
     }
   }
 
-  double calculateBallCircleDistance(Circle circle) {
-    double directionX = ((ball.x - circle.x).abs());
-    double directionY = ((ball.y - circle.y).abs());
+  double calculateBallCircleDistance(Circle circle, double destinyX, double destinyY) {
+    double directionX = ((destinyX - circle.x).abs());
+    double directionY = ((destinyY - circle.y).abs());
     double distance = sqrt(pow(directionX, 2) + pow(directionY, 2));
   return distance;
   }
@@ -311,17 +334,20 @@ class _GamePageState extends State<GamePage> {
     double velocity = 0;
     if(distance<30){
       velocity = 1;
-    }else if(distance<50){
-      velocity = 0.7;
+    }else if(distance<60){
+      velocity = 0.8;
     }else if(distance<100){
-      velocity = 0.5;
+      velocity = 0.7;
     }else if(distance<200){
-      velocity = 0.3;
+      velocity = 0.5;
     }else if(distance<400){
-      velocity = 0.1;
+      velocity = 0.2;
     }
     return velocity;
   }
+  //////////////////////////////////////////////////////////////////////////////
+  // PLAYERS POSITION
+  //////////////////////////////////////////////////////////////////////////////
   void resetPlayersPositions(){
     for(Circle circle in circles){
       defaultPosition(circle, field);
@@ -368,6 +394,22 @@ class _GamePageState extends State<GamePage> {
     }
   }
 
+  void bouncePlayers(Circle circle){
+    //VE SE TEM OUTRO JOGADOR MUITO PRÓXIMO
+    for (Circle circle1 in circles){
+      if(circle1 != circle){
+        double dist = sqrt(pow(circle.x - circle1.x, 2) + pow(circle.y - circle1.y, 2));
+        if(dist<10){
+          if (circle.x <= circle1.x+4 && circle.x >= circle1.x-4) {
+            circle.x += -8;
+          }
+          if (circle.y <= circle1.y+4 && circle.y >= circle1.y-4) {
+            circle.y -= -8;
+          }
+        }
+      }
+    }
+  }
   void bounceBallWalls(){
     // Bounce off the left and right walls
     if (ball.x + ball.r <= field.limitXleft || ball.x - ball.r >= field.limitXright) {
@@ -444,32 +486,67 @@ class _GamePageState extends State<GamePage> {
     super.dispose();
   }
 
+  //////////////////////////////////////////////////////////////////////////////
+  // MAIN
+  //////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Game Page")),
       body: Container(
         color: Colors.white,
-        child: loaded ? Stack(
+        child: loaded ? Column(
           children: [
+            const SizedBox(height: 30),
+            Stack(
+              children: [
 
-            Image.asset('assets/icons/campo.png',height: Sized(context).height, width: Sized(context).width, fit: BoxFit.fill),
+                Image.asset('assets/icons/campo.png',height: Sized(context).height-30, width: Sized(context).width, fit: BoxFit.fill),
 
-            header(match, myClub, advClub),
-            Text(match.lastTouch.name,style: EstiloTextoBranco.text16),
+                header(match, myClub, advClub),
 
-            for (Circle circle in circles)
-              circlePlayer(circle),
+                SizedBox(
+                  height: Sized(context).height-35,
+                  child: Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Row(
+                      children: [
+                        Images().getEscudoWidget(match.lastTouch.clubName,20,20),
+                        Container(
+                          color: colorPositionBackground(match.lastTouch.position),
+                          child: Text(match.lastTouch.position, style: EstiloTextoBranco.text14),
+                        ),
+                        Text(match.lastTouch.name,style: EstiloTextoBranco.text14),
+                      ],
+                    ),
+                  ),
+                ),
 
-            for (GravityPosition gravity in gravities)
-              gravityPoint(gravity.gravityCenter),
+                for (Circle circle in circles)
+                  circlePlayer(circle),
 
-            ballWidget(ball),
+                for (Circle circle in circles)
+                  gravityPoint(circle.gravityCenter, 3),
 
-            goalLine(field, field.limitYtop),
-            goalLine(field, field.limitYbottom),
+                gravityPoint(match.gravityTeam1.gravityCenter, 5, Colors.red),
+                gravityPoint(match.gravityTeam2.gravityCenter, 5, Colors.blue),
 
+                ballWidget(ball),
+
+                goalLine(field, field.limitYtop),
+                goalLine(field, field.limitYbottom),
+
+                Padding(
+                  padding: const EdgeInsets.only(top: 16.0),
+                  child: IconButton(
+                      onPressed: (){
+                        match.isPaused = !match.isPaused;
+                        },
+                      icon: Icon(match.isPaused ? Icons.play_arrow : Icons.pause,color: Colors.white,size: 32,)
+                  ),
+                ),
+              ],
+            ),
           ],
         ) : Container(),
       ),
@@ -483,13 +560,12 @@ Widget header(Match match, Club myClub, Club advClub){
   return             Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
-      const SizedBox(width: 45),
       Text(match.getPossesionPercentage().toStringAsFixed(2)+"%",style: EstiloTextoBranco.text16),
       Images().getEscudoWidget(myClub.name,50,50),
-      Text(match.goal1.toString()+"x"+match.goal2.toString(),style: EstiloTextoBranco.text16),
+      Text(match.goal1.toString()+"x"+match.goal2.toString(),style: EstiloTextoBranco.negrito18),
       Images().getEscudoWidget(advClub.name,50,50),
-      Text(match.minutes.toString()+":",style: EstiloTextoBranco.text16),
-      Text(match.seconds.toString()+"'",style: EstiloTextoBranco.text16),
+      Text(match.minutesStr+":",style: EstiloTextoBranco.text16),
+      Text(match.secondsStr+"'",style: EstiloTextoBranco.text16),
     ],
   );
 }
@@ -523,7 +599,10 @@ Widget circlePlayer(Circle circle){
       top: circle.y - circle.r,
       child: GestureDetector(
         onTap: (){
-          customToast(circle.player.name);
+          customToast(circle.player.position+" "+circle.touchs.toString()+" "+circle.player.name);
+        },
+        onDoubleTap: (){
+          popUpOkShowPlayerInfos(context: context, playerID: circle.player.index, funcSetState: (){});
         },
         child: Container(
           width: circle.r * 2,
@@ -541,15 +620,15 @@ Widget circlePlayer(Circle circle){
     );
 }
 
-Widget gravityPoint(GravityCenter gravityCenter){
+Widget gravityPoint(GravityCenter gravityCenter, double size, [Color cor = Colors.white]){
     return               Positioned(
       left: gravityCenter.x,
       top: gravityCenter.y,
       child: Container(
-        width: 3,
-        height: 3,
+        width: size,
+        height: size,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: cor,
           shape: BoxShape.circle,
         ),
       ),

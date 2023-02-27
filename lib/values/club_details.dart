@@ -3387,6 +3387,8 @@ class ClubDetails{
       'Estádio El Cobre',12000,1979,_country.chile,62.0,[]];
     map[n.colocolo] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(-33.506611,-70.605944),
       'Monumental David Arellano',47017,1925,_country.chile,72.5,[]];
+    map[n.copiapo] = [ClubColors(Colors.white,Colors.red),pattern.solid,Coordinates(0,0),
+      'Luis Valenzuela Hermosilla',8000,1999,_country.chile,60.6,[]];
     map[n.coquimbo] = [ClubColors(Colors.yellow,Colors.black),pattern.horStripes2,Coordinates(-29.9652247, -71.338293),
       'Francisco Sánchez Rumoroso',15000,1958,_country.chile,66.8,[]];
     map[n.curico] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(-34.9742154, -71.230767),
@@ -3438,6 +3440,8 @@ class ClubDetails{
       'Hernando Siles',42000,1944,_country.bolivia,62.1,[]];
     map[n.guabira] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(-17.34287, -63.261564),
       'Gilberto Parada',18000,1962,_country.bolivia,65.1,[]];
+    map[n.granmamore] = [ClubColors(Colors.green,Colors.yellow),pattern.solid,Coordinates(0,0),
+      'Estádio Gran Mamoré',12000,2004,_country.bolivia,60.4,[]];
     map[n.indPetrolero] = [ClubColors(Colors.red,Colors.white),pattern.stripes3,Coordinates(-17.34287, -63.261564),
       'Olímpico Patria',32000,1932,_country.bolivia,65.0,[]];
     map[n.jorge] = [ClubColors(Colors.red,Colors.blue),pattern.solid,Coordinates(-17.37959, -66.1617185),
@@ -3452,9 +3456,9 @@ class ClubDetails{
       'Estádio Ramón Tahuichi Aguilera',38500,1955,_country.bolivia,64.2,[]];
     map[n.palmaflor] = [ClubColors(Colors.green,Colors.yellow),pattern.solid,Coordinates(-17.3920347, -66.275128),
       'Municipal de Quillacollo',5000,2008,_country.bolivia,63.7,[]];
-    map[n.realsantacruz] = [ClubColors(Colors.white,Colors.white),pattern.solid,Coordinates(-17.8058075, -63.1661464),
+    map[n.realsantacruz] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(-17.8058075, -63.1661464),
       'Juan Carlos Durán',15000,1962,_country.bolivia,60.8,[]];
-    map[n.realtomayapo] = [ClubColors(Colors.green,Colors.green),pattern.solid,Coordinates(-21.5327864, -64.7248547),
+    map[n.realtomayapo] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(-21.5327864, -64.7248547),
       'Estadio IV Centenario',15000,1999,_country.bolivia,58.6,[]];
     map[n.royalpari] = [ClubColors(Colors.red,Colors.red),pattern.solid,Coordinates(-17.795543, -63.183247),
       'Ramón Tahuichi Aguilera',38000,2002,_country.bolivia,63.1,[]];
@@ -3464,6 +3468,8 @@ class ClubDetails{
       'Víctor Ugarte',32000,1986,_country.bolivia,60.8,[]]; //EXTINTO
     map[n.theStrongest] = [ClubColors(Colors.yellow,Colors.black),pattern.stripes2,Coordinates(-16.499412, -68.12263),
       'Hernando Siles',42000,1908,_country.bolivia,71.7,[n.bolivar]];
+    map[n.vacadiez] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(0,0),
+      'Roberto Jordán Cuéllar',25000,1952,_country.bolivia,61.7,[]];
     map[n.sucre] = [ClubColors(Colors.red,Colors.blue),pattern.solid,Coordinates(-19.03347852, -65.2576612),
       'Olímpico Patria',32000,1961,_country.bolivia,67.5,[]];
     map[n.univVinto] = [ClubColors(Colors.white,Colors.red),pattern.solid2,Coordinates(-17.397434717, -66.3175044),
@@ -3511,7 +3517,7 @@ class ClubDetails{
       'Estadio Rosas Pampa',18000,1967,_country.peru,62.8,[]];
     map[n.sportboys] = [ClubColors(Colors.pink,Colors.black),pattern.solid,Coordinates(-12.059966, -77.1197877),
       'Miguel Grau',15000,1927,_country.peru,63.7,[]];
-    map[n.sportingcristal] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(-12.0362617, -77.045132758),
+    map[n.sportingcristal] = [ClubColors(Colors.blue,Colors.white),pattern.diagonal,Coordinates(-12.0362617, -77.045132758),
       'Alberto Gallardo',11600,1955,_country.peru,72.6,[]];
     map[n.huancayo] = [ClubColors(Colors.pink,Colors.black),pattern.solid,Coordinates(-12.072618, -75.201664),
       'Estádio Huancayo',17000,2007,_country.peru,67.3,[]];
@@ -3521,18 +3527,22 @@ class ClubDetails{
       'Nacional de Lima',45000,2004,_country.peru,64.8,[]];
     map[n.cajamarca] = [ClubColors(Colors.white,Colors.red),pattern.solid,Coordinates(-7.1616760, -78.51101415),
       'Estádio Héroes de San Ramón',18000,1954,_country.peru,65.3,[]];
+    map[n.tarma] = [ClubColors(Colors.blue,Colors.white),pattern.diagonal,Coordinates(0, 0),
+      'Unión Tarma',9000,1929,_country.peru,59.8,[]];
     map[n.unionhuaral] = [ClubColors(Colors.red,Colors.white),pattern.stripes2,Coordinates(-11.49677572, -77.217294),
       'Estádio Julio Lores Colán',6000,1947,_country.peru,59.6,[]];
+    map[n.ucomercio] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(0, 0),
+      'Municipal Carlos Vidaurre García',5000,1994,_country.peru,50.0,[]];
     map[n.chalaco] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(0, 0),
       'Estádio',0,0,_country.peru,50.0,[]];
     map[n.atltorino] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(0, 0),
       'Estádio',0,0,_country.peru,50.0,[]];
     map[n.arica] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(0,0),
       'Estádio',0,0,_country.peru,50.0,[]]; //EXTINTO
-    map[n.ugarte] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(0, 0),
-      'Estádio',0,0,_country.peru,50.0,[]];
-    map[n.defensorlima] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(0, 0),
-      'Estádio',0,0,_country.peru,50.0,[]];
+    map[n.ugarte] = [ClubColors(Colors.white,Colors.red),pattern.diagonal,Coordinates(0, 0),
+      'E. Torres Belón',20000,1928,_country.peru,56.2,[]];
+    map[n.defensorlima] = [ClubColors(vinho,Colors.white),pattern.solid,Coordinates(0, 0),
+      'Estadio Nacional del Perú',43086,1931,_country.peru,54.7,[]];
     map[n.sanagustin] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(0, 0),
       'Estadio Nacional',45000,1970,_country.peru,55.4,[]]; //EXISTE, MAS FORA DO SISTEMA DE LIGAS
 
@@ -3632,6 +3642,8 @@ class ClubDetails{
     map[n.uMagdalena] = [ClubColors(Colors.blue,Colors.red),pattern.stripes3,Coordinates(11.2398636, -74.19507816),
       'Eduardo Santos',23000,1951,_country.colombia,66.1,[]];
 
+    map[n.angostura] = [ClubColors(Colors.yellow,Colors.red),pattern.solid,Coordinates(0,0),
+      'Ricardo Tulio Maya',2500,2007,_country.venezuela,58.6,[]];
     map[n.aragua] = [ClubColors(Colors.yellow,Colors.red),pattern.solid,Coordinates(10.2589723, -67.6123306),
       'Olimpico Hermanos Ghersi Paez',18000,2002,_country.venezuela,60.1,[]];
     map[n.carabobo] = [ClubColors(grena,Colors.white),pattern.solid,Coordinates(10.2230961, -68.0115140),
@@ -3658,8 +3670,12 @@ class ClubDetails{
       'José Antonio Paez',18000,1972,_country.venezuela,61.7,[]];
     map[n.puertoCabello] = [ClubColors(Colors.orange,Colors.blue),pattern.solid,Coordinates(10.467987195, -68.00974328),
       'Complejo Deportivo Socialista',7500,2014,_country.venezuela,61.1,[]];
+    map[n.rayozuliano] = [ClubColors(Colors.yellow,Colors.red),pattern.solid,Coordinates(0,0),
+      'José Encarnación Romero',45800,2005,_country.venezuela,56.0,[]];
     map[n.trujillanos] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(9.33347489, -70.60227),
       'José Alberto Pérez',12000,1981,_country.venezuela,60.6,[]];
+    map[n.ucv] = [ClubColors(Colors.blue,Colors.yellow),pattern.divided,Coordinates(0, 0),
+      'Olímpico de la UCV',27900,1950,_country.venezuela,62.6,[]];
     map[n.zamora] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(8.625075, -70.20694),
       'Estadio Agustín Tovar',28000,1977,_country.venezuela,60.8,[]];
     map[n.zulia] = [ClubColors(Colors.blue,Colors.black),pattern.stripes2,Coordinates(10.6743723, -71.644651),

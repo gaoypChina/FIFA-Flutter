@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 Widget analiseElenco(BuildContext context, Club club){
   return                 //ANALISE DO ELENCO
     Container(
-      height: 200,
+      height: 230,
       margin: const EdgeInsets.all(4),
       padding: const EdgeInsets.all(4),
       width: Sized(context).width,

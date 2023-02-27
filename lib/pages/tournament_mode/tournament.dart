@@ -1,8 +1,11 @@
+import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/functions/change_club_control.dart';
+import 'package:fifa/classes/match/adversario.dart';
+import 'package:fifa/pages/simulacao/ball_simulation.dart';
 import 'package:fifa/pages/simulacao/play.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -24,7 +27,7 @@ class _TournamentState extends State<Tournament> {
   late String leagueName1;
   late Club club1;
 
-  int posicao2=0;
+  int posicao2=1;
   int posicaoPais2=0;
   late String leagueName2;
   late Club club2;
@@ -89,6 +92,14 @@ class _TournamentState extends State<Tournament> {
             funcChangeClub(club1.name,leaguesListRealIndex[posicaoPais1]);
             Navigator.of(context).push(MaterialPageRoute(builder: (context) => Play(adversarioClubID: club2.index, visitante: false, isSingleMatch: true)));
           }),
+
+          menuButton('Simulate Match',(){
+            funcChangeClub(club1.name,leaguesListRealIndex[posicaoPais1]);
+            Adversario adv = Adversario();
+            adv.clubName = club2.name;
+            adv.clubID = club2.index;
+            navigatorPush(context, GamePage(adversario: adv));
+            }),
 
           tactics(),
         ]),
