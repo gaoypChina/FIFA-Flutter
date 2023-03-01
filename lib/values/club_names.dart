@@ -1754,6 +1754,7 @@ class ClubName{
   String atleticoAC = "Atlético Acreano";
   String atleticoMT = "Atlético Matogrossense";
   String atleticoRR = "Atlético Roraima";
+  String itapemirim = "Atlético Itapemirim";
   String aparecidense = "Aparecidense";
   String aracatuba = "Araçatuba";
   String aracruz = "Aracruz"; //ES
@@ -2762,6 +2763,8 @@ class ClubName{
   //BELIZE
   String altitude = "Altitude";
   String bandits = "Belmopan Bandits";
+  String belize = "Belize Defense Force";
+  String placencia = "Placencia";
   String sanPedroPirates = "San Pedro Pirates";
   String verdes = "Verdes FC";
   //CUBA
@@ -2833,7 +2836,7 @@ class ClubName{
   String walking = "Walking Bout Company";
   //TRINIDAD & TOBAGO
   String centralFC = "Central FC";
-  String connection = "Connection";
+  String wconnection = "W Connection";
   String defenseforce = "Defense Force";
   String jabloteh = "San Juan Jabloteh";
   String joepublic = "Joe Public";

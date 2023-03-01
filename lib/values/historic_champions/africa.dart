@@ -1273,7 +1273,7 @@ Map<String,dynamic> mapAfrica = {
     1980.0: [n.suneor,],
   },
 
-  leagueName.sudan : {
+  leagueName.sudao : {
     2022.0: [n.omdurman,n.almerrikh,],
     2021.0: [n.omdurman,n.almerrikh,],
     2020.0: [n.almerrikh,n.omdurman,],

@@ -128,6 +128,17 @@ Map<String,dynamic> mapOtherLeagues = {
     1994.0: [n.sport,n.crb,n.bahia,n.cruzeiroAL,           n.botafogoPB,n.guarany,n.santacruz,n.americaRN,n.csa,n.abc,n.santacruz,n.nautico,n.fortaleza,n.capela,n.asa,n.vitoria],
   },
 
+  leagueName.copaVerde : {
+    2022.0: [n.paysandu,n.vilanova,n.saoraimundo,n.brasiliense,],
+    2021.0: [n.remo,n.vilanova,n.paysandu,n.novamutum,],
+    2020.0: [n.brasiliense,n.remo,n.vilanova,n.manaus,],
+    2019.0: [n.cuiaba,n.paysandu,n.goias,n.remo,],
+    2018.0: [n.paysandu,n.itapemirim,n.manaus,n.luverdense,],
+    2017.0: [n.luverdense,n.paysandu,n.rondoniense,n.santosAP,],
+    2016.0: [n.paysandu,n.gama,n.remo,n.aparecidense,],
+    2015.0: [n.cuiaba,n.remo,n.luverdense,n.paysandu,],
+    2014.0: [n.brasilia,n.paysandu,n.brasiliense,n.remo,],
+  },
 
   leagueName.pequenaTaca:{
     1957.0: [n.barcelona,n.botafogo,n.sevilla,n.nacional,],

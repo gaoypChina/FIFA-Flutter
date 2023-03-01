@@ -163,7 +163,7 @@ Map<String,dynamic> mapInternationals = {
     2010.0: [n.pachuca,n.cruzazul,n.toluca,n.pumas,                    n.comunicaciones,n.arabeunido,n.marathon,n.columbuscrew],
     2009.0: [n.atlante,n.cruzazul,n.santosLaguna,n.puertoRico,         n.houston,n.pumas,n.montreal,n.marathon],
     2008.0: [n.pachuca,n.saprissa,n.dcunited,n.houston,                n.motagua,n.atlante,n.harbourView,n.municipal],
-    2007.0: [n.pachuca,n.chivas,n.houston,n.dcunited,                  n.marquense,n.connection,n.puntarenas,n.olimpiaHON],
+    2007.0: [n.pachuca,n.chivas,n.houston,n.dcunited,                  n.marquense,n.wconnection,n.puntarenas,n.olimpiaHON],
     2006.0: [n.americamex,n.toluca,n.alajuelense,n.saprissa,           n.portmore,n.olimpiaHON,n.nerevolution,n.lagalaxy],
     2005.0: [n.saprissa,n.pumas,n.monterrey,n.dcunited,                n.kansas,n.olimpiaHON,n.municipal,n.harbourView],
     2004.0: [n.alajuelense,n.saprissa,n.chicago,n.monterrey,           n.sanJoseEarthquakes,n.pachuca,n.jabloteh,n.fas],

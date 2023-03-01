@@ -4024,7 +4024,7 @@ class ClubDetails{
     //TRINIDAD TOBAGO
     map[n.centralFC] = [ClubColors(Colors.black,Colors.white),pattern.stripes3,Coordinates(10.42489512, -61.41732595),
       'Ato Boldon Stadium',10000,2012,_country.trinidadTobago,56.6,[]];
-    map[n.connection] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(10.303194782, -61.44113680),
+    map[n.wconnection] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(10.303194782, -61.44113680),
       'Manny Ramjohn Stadium',10000,1999,_country.trinidadTobago,58.6,[]];
     map[n.defenseforce] = [ClubColors(Colors.yellow,Colors.lightBlue),pattern.solid,Coordinates(10.661544, -61.533036),
       'Hasely Crawford',27000,1974,_country.trinidadTobago,61.0,[]];
