@@ -285,7 +285,14 @@ class LeagueOfficialNames{
       df, goias, mt, ms, to,
       para, amazonas, acre, amapa, rondonia, roraima,
 
-      copaNordeste, mundial, championsLeague, europaLeagueOficial, libertadores, copaSulAmericana
+      copaNordeste, copaVerde,
+      mundial, championsLeague, europaLeagueOficial,
+      libertadores, copaSulAmericana, concacaf,
+
+      englandCup, italyCup, spainCup, germanyCup, franceCup, portugalCup, russiaCup,
+      brazilCup,
+
+      recopaeuropa, recopasula,
     ];
   }
 }
@@ -750,6 +757,25 @@ Map getLeagueNationalityMap(){
     leagueName.amapa: Words.country.ap,
     leagueName.rondonia: Words.country.ro,
     leagueName.roraima: Words.country.rr,
+
+    leagueName.copaNordeste: leagueName.copaNordeste,
+    leagueName.copaVerde: leagueName.copaVerde,
+    leagueName.championsLeague: leagueName.championsLeague,
+    leagueName.libertadores: leagueName.libertadores,
+    leagueName.mundial: leagueName.mundial,
+    leagueName.copaSulAmericana: leagueName.copaSulAmericana,
+    leagueName.europaLeagueOficial: leagueName.europaLeagueOficial,
+    leagueName.concacaf: leagueName.concacaf,
+
+    leagueName.englandCup: leagueName.englandCup,
+    leagueName.italyCup: leagueName.italyCup,
+    leagueName.spainCup: leagueName.spainCup,
+    leagueName.germanyCup: leagueName.germanyCup,
+    leagueName.franceCup: leagueName.franceCup,
+    leagueName.portugalCup: leagueName.portugalCup,
+    leagueName.russiaCup: leagueName.russiaCup,
+    leagueName.turkeyCup: leagueName.turkeyCup,
+    leagueName.brazilCup: leagueName.brazilCup,
   };
 }
 

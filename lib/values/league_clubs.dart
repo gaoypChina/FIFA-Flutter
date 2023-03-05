@@ -14,7 +14,7 @@ List defaultChampionsLeagueClubs = [
   clubName.eintrachtfrankfurt,clubName.tottenham,clubName.sporting,clubName.om,
   clubName.milan,clubName.chelsea,clubName.rbsalzburg,clubName.dinamozagreb,
   clubName.realmadrid,clubName.rbleipzig,clubName.shaktardonetsk,clubName.celtic,
-  clubName.manchestercity,clubName.sevilla,clubName.dortmund,clubName.copenhague,
+  clubName.mancity,clubName.sevilla,clubName.dortmund,clubName.copenhague,
   clubName.psg,clubName.juventus,clubName.benfica,clubName.maccabiTelAviv,
 ];
 
@@ -33,7 +33,7 @@ List defaultEuropaLeagueClubs = [
   clubName.fenerbahce,clubName.rennes,clubName.dinamokiev,clubName.aek,
   clubName.realbetis,clubName.roma,clubName.ludogorets,clubName.helsinki,
   clubName.gent,clubName.malmo,clubName.unionBerlin,clubName.braga,
-  clubName.manchesterunited,clubName.realsociedad,clubName.sheriffTiraspol,clubName.apoel,
+  clubName.manutd,clubName.realsociedad,clubName.sheriffTiraspol,clubName.apoel,
   clubName.feyenoord,clubName.lazio,clubName.midtjylland,clubName.rapidviena,
   clubName.nantes,clubName.qarabag,clubName.freiburg,clubName.olympiacos,
   clubName.monaco,clubName.ferencvaros,clubName.estrelavermelha,clubName.trabzonspor,
@@ -59,7 +59,7 @@ Map clubNameMapImmutable = {
     0: clubName.arsenal,1: clubName.astonvilla,2: clubName.bournemouth,3: clubName.brentford,
     4: clubName.brighton,5: clubName.chelsea,6: clubName.crystalpalace,7: clubName.everton,
     8: clubName.fulham,9: clubName.leeds,10: clubName.leicester,11: clubName.liverpool,
-    12: clubName.manchestercity,13: clubName.manchesterunited,14: clubName.newcastle,15: clubName.nottinghamforest,
+    12: clubName.mancity,13: clubName.manutd,14: clubName.newcastle,15: clubName.nottinghamforest,
     16: clubName.tottenham,17: clubName.southampton,18: clubName.westham,19: clubName.wolves,
   },
   LeagueOfficialNames().inglaterra2 : {

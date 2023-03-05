@@ -1,4 +1,6 @@
 import 'package:fifa/classes/countries/words.dart';
+import 'package:fifa/values/images.dart';
+import 'package:fifa/values/league_names.dart';
 import 'package:flutter/material.dart';
 
 //https://hampusborgos.github.io/country-flags/
@@ -8,40 +10,69 @@ Image funcFlagsList(String country, double _height, double _width){
   //Se não tiver país aparece a bandeira da antártida;
   Image code =  Image.asset('icons/flags/png/aq.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height);
 
+  if(country == LeagueOfficialNames().englandCup ||
+      country == LeagueOfficialNames().italyCup ||
+      country == LeagueOfficialNames().spainCup ||
+      country == LeagueOfficialNames().germanyCup ||
+      country == LeagueOfficialNames().franceCup ||
+      country == LeagueOfficialNames().portugalCup ||
+      country == LeagueOfficialNames().russiaCup ||
+      country == LeagueOfficialNames().turkeyCup ||
+      country == LeagueOfficialNames().brazilCup){
+    code = Image.asset(FIFAImages().campeonatoLogo(country), fit: BoxFit.fill,width: _width-10,height: _height);
+  }
+  if(country == LeagueOfficialNames().copaNordeste ||
+      country == LeagueOfficialNames().copaVerde ||
+      country == LeagueOfficialNames().mundial ||
+      country == LeagueOfficialNames().championsLeague ||
+      country == LeagueOfficialNames().libertadores ||
+      country == LeagueOfficialNames().europaLeagueOficial ||
+      country == LeagueOfficialNames().copaSulAmericana ||
+      country == LeagueOfficialNames().concacaf){
+    code = Image.asset(FIFAImages().campeonatoLogo(country), fit: BoxFit.fill,width: _width-10,height: _height);
+  }
+
+  if(country == LeagueOfficialNames().recopasula ||
+      country == LeagueOfficialNames().recopaeuropa ||
+      country == LeagueOfficialNames().recopabrasil
+  ){
+    code = Image.asset(FIFAImages().campeonatoLogo(country), fit: BoxFit.fill,width: _width-10,height: _height);
+  }
+  
   if(country == Words.country.urss){code = Image.asset('assets/flags/urss.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.ddr){code = Image.asset('assets/flags/ddr.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.iuguslavia){code = Image.asset('assets/flags/iuguslavia.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.ddr){code = Image.asset('assets/flags/ddr.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.iuguslavia){code = Image.asset('assets/flags/iuguslavia.png', fit: BoxFit.fill,width: _width,height: _height);}
 
-  if(country == Words.country.sp){code = Image.asset('assets/flags/sp.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.rj){code = Image.asset('assets/flags/rj.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.mg){code = Image.asset('assets/flags/mg.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.es){code = Image.asset('assets/flags/es.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.pr){code = Image.asset('assets/flags/pr.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.rs){code = Image.asset('assets/flags/rs.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.sc){code = Image.asset('assets/flags/sc.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.sp){code = Image.asset('assets/flags/sp.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.rj){code = Image.asset('assets/flags/rj.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.mg){code = Image.asset('assets/flags/mg.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.es){code = Image.asset('assets/flags/es.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.pr){code = Image.asset('assets/flags/pr.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.rs){code = Image.asset('assets/flags/rs.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.sc){code = Image.asset('assets/flags/sc.png', fit: BoxFit.fill,width: _width,height: _height);}
 
-  if(country == Words.country.df){code = Image.asset('assets/flags/df.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.go){code = Image.asset('assets/flags/go.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.mt){code = Image.asset('assets/flags/mt.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.ms){code = Image.asset('assets/flags/ms.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.to){code = Image.asset('assets/flags/to.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.df){code = Image.asset('assets/flags/df.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.go){code = Image.asset('assets/flags/go.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.mt){code = Image.asset('assets/flags/mt.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.ms){code = Image.asset('assets/flags/ms.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.to){code = Image.asset('assets/flags/to.png', fit: BoxFit.fill,width: _width,height: _height);}
 
-  if(country == Words.country.al){code = Image.asset('assets/flags/al.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.ba){code = Image.asset('assets/flags/ba.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.ce){code = Image.asset('assets/flags/ce.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.ma){code = Image.asset('assets/flags/ma.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.pb){code = Image.asset('assets/flags/pb.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.pe){code = Image.asset('assets/flags/pe.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.pi){code = Image.asset('assets/flags/pi.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.rn){code = Image.asset('assets/flags/rn.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.se){code = Image.asset('assets/flags/se.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.al){code = Image.asset('assets/flags/al.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.ba){code = Image.asset('assets/flags/ba.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.ce){code = Image.asset('assets/flags/ce.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.ma){code = Image.asset('assets/flags/ma.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.pb){code = Image.asset('assets/flags/pb.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.pe){code = Image.asset('assets/flags/pe.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.pi){code = Image.asset('assets/flags/pi.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.rn){code = Image.asset('assets/flags/rn.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.se){code = Image.asset('assets/flags/se.png', fit: BoxFit.fill,width: _width,height: _height);}
 
-  if(country == Words.country.ac){code = Image.asset('assets/flags/ac.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.am){code = Image.asset('assets/flags/am.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.ap){code = Image.asset('assets/flags/ap.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.pa){code = Image.asset('assets/flags/pa.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.ro){code = Image.asset('assets/flags/ro.png', fit: BoxFit.fill,width: _width,height: _height);}
-  if(country == Words.country.rr){code = Image.asset('assets/flags/rr.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.ac){code = Image.asset('assets/flags/ac.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.am){code = Image.asset('assets/flags/am.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.ap){code = Image.asset('assets/flags/ap.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.pa){code = Image.asset('assets/flags/pa.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.ro){code = Image.asset('assets/flags/ro.png', fit: BoxFit.fill,width: _width,height: _height);}
+  else if(country == Words.country.rr){code = Image.asset('assets/flags/rr.png', fit: BoxFit.fill,width: _width,height: _height);}
 
 
 

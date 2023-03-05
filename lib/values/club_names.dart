@@ -9,8 +9,8 @@ class ClubName{
   String leeds = "Leeds United";
   String leicester = "Leicester";
   String liverpool = "Liverpool";
-  String manchestercity = "Manchester City";
-  String manchesterunited= "Manchester United";
+  String mancity = "Manchester City";
+  String manutd= "Manchester United";
   String newcastle   = "Newcastle";
   String tottenham   = "Tottenham";
   String southampton = "Southampton";
@@ -60,6 +60,7 @@ class ClubName{
   String exeter = "Exeter City";
   String fleetwood = "Fleetwood";
   String forestgreen = "Forest Green";
+  String gateshead = "Gateshead";
   String gillingham = "Gillingham";
   String grimsby = "Grimsby";
   String hartlepool = "Hartlepool United";

@@ -138,11 +138,11 @@ class ClubDetails{
     map[n.leeds] = [ClubColors(Colors.white,Colors.yellow,Colors.blue),pattern.solid,Coordinates(53.777777777,-1.572222222),
       'Elland Road',37890,1919,_country.england,77.0,[]];
     map[n.liverpool] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(53.430833333,-2.960833333),
-      'Anfield',54167,1892,_country.england,86.5,[n.manchesterunited,n.everton]];
-    map[n.manchestercity] = [ClubColors(Colors.lightBlueAccent,Colors.white),pattern.solid,Coordinates(53.483310, -2.20047039),
-      'Etihad Stadium',53400,1880,_country.england,86.4,[n.manchesterunited]];
-    map[n.manchesterunited] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(53.463055555,-2.291388888),
-      'Old Trafford',76212,1878,_country.england,83.8,[n.manchestercity]];
+      'Anfield',54167,1892,_country.england,86.5,[n.manutd,n.everton]];
+    map[n.mancity] = [ClubColors(Colors.lightBlueAccent,Colors.white),pattern.solid,Coordinates(53.483310, -2.20047039),
+      'Etihad Stadium',53400,1880,_country.england,86.4,[n.manutd]];
+    map[n.manutd] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(53.463055555,-2.291388888),
+      'Old Trafford',76212,1878,_country.england,83.8,[n.mancity]];
     map[n.newcastle] = [ClubColors(Colors.black,Colors.white),pattern.stripes3,Coordinates(54.975555555,-1.621666666),
       'St. James Park',52409,1892,_country.england,78.3,[n.sunderland]];
     map[n.nottinghamforest] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(52.94,-1.132778),

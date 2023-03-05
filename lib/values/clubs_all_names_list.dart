@@ -7,7 +7,7 @@ import 'package:fifa/values/club_names.dart';
 List clubsAllNameList = [
   ClubName().arsenal,  ClubName().astonvilla,  ClubName().chelsea,  ClubName().crystalpalace,
   ClubName().everton,  ClubName().leeds,  ClubName().leicester,  ClubName().liverpool,
-  ClubName().manchestercity,  ClubName().manchesterunited,  ClubName().newcastle,  ClubName().tottenham,
+  ClubName().mancity,  ClubName().manutd,  ClubName().newcastle,  ClubName().tottenham,
   ClubName().southampton,  ClubName().westbromwich,  ClubName().westham,  ClubName().wolves,
 
   ClubName().birmigham,  ClubName().blackburn,  ClubName().bournemouth,  ClubName().burnley,

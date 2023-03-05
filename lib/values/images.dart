@@ -50,12 +50,26 @@ class FIFAImages{
     if(leagueName==LeagueOfficialNames().resto) {      imageLogo = 'rest';       }
     if(leagueName==LeagueOfficialNames().mundial) {      imageLogo = 'mundial';       }
 
+
+    if(leagueName==LeagueOfficialNames().englandCup) {      imageLogo = 'fa cup';       }
+    if(leagueName==LeagueOfficialNames().italyCup) {      imageLogo = 'copa italia';       }
+    if(leagueName==LeagueOfficialNames().spainCup) {      imageLogo = 'copa rey';       }
+    if(leagueName==LeagueOfficialNames().germanyCup) {      imageLogo = 'copa alemanha';       }
+    if(leagueName==LeagueOfficialNames().franceCup) {      imageLogo = 'copa franca';       }
+    if(leagueName==LeagueOfficialNames().portugalCup) {      imageLogo = 'copa portugal';       }
+    if(leagueName==LeagueOfficialNames().russiaCup) {      imageLogo = 'copa russia';       }
+    if(leagueName==LeagueOfficialNames().brazilCup) {      imageLogo = 'copa do brasil';       }
+
+
     if(leagueName==LeagueOfficialNames().latina) {      imageLogo = 'rest';       }
     if(leagueName==LeagueOfficialNames().rioSP) {      imageLogo = 'rio sp';       }
     if(leagueName==LeagueOfficialNames().copaNordeste) {      imageLogo = 'copa nordeste';       }
+    if(leagueName==LeagueOfficialNames().copaVerde) {      imageLogo = 'copa verde';       }
     if(leagueName==LeagueOfficialNames().cupwinners) {      imageLogo = 'cup winners';       }
     if(leagueName==LeagueOfficialNames().pequenaTaca) {      imageLogo = 'cup winners';       }
 
+    if(leagueName==LeagueOfficialNames().recopaeuropa) {      imageLogo = 'recopa europa';       }
+    if(leagueName==LeagueOfficialNames().recopasula) {      imageLogo = 'recopa sula';       }
 
 
 
@@ -81,8 +95,8 @@ String imageLogo(String timeFoto) {
     map[_name.leicester] = 'leicester';
     map[_name.leeds] = 'leeds';
     map[_name.liverpool] = 'liverpool';
-    map[_name.manchestercity] = 'manchestercity';
-    map[_name.manchesterunited] = 'manchesterunited';
+    map[_name.mancity] = 'mancity';
+    map[_name.manutd] = 'manutd';
     map[_name.newcastle] = 'newcastle';
     map[_name.southampton] = 'southampton';
     map[_name.tottenham] = 'tottenham';
