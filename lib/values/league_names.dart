@@ -190,7 +190,8 @@ class LeagueOfficialNames{
   String englandCup = 'FA Cup';String italyCup = 'Coppa Italia';String spainCup = 'Copa del Rey';
   String germanyCup = 'DFB Pokal';String franceCup = 'Coupe de France';
   String portugalCup = 'Taça de Portugal';String turkeyCup = 'Turkiye Kupasi';
-  String russiaCup = 'Copa da Rússia';
+  String russiaCup = 'Copa da Rússia'; String netherlandsCup = 'Copa da Holanda';
+  String belgiumCup = 'Copa da Bélgica'; String scotlandCup = 'Copa da Escócia';
   String ligaEuropaCup = 'Copa da Europa';String eastEuropeCup = 'Leste Europeu Copa';
 
   String brazilCup = 'Copa do Brasil';String argentinaCup = 'Copa Argentina';
@@ -262,16 +263,17 @@ class LeagueOfficialNames{
 
       mexico, estadosUnidos,
       costaRica, elsalvador, guatemala, honduras, nicaragua, panama,
-      repdominicana, jamaica, haiti, suriname,
+      repdominicana, jamaica, haiti, suriname, trinidad,
 
-      china,  japao,     coreiaSul, coreiaNorte,
+      china,  japao,     coreiaSul, coreiaNorte, hongkong,
       tailandia, camboja, cingapura, filipinas,
       indonesia, laos, malasia, myanmar, vietna,
       arabia, bahrein, eau, qatar,
       iran, iraque,  jordania, kuwait, libano, siria,
       india, bangladesh, nepal, oman,
       quirguistao, uzbekistao, tadjiquistao, turcomenistao,
-      australia, novazelandia,
+
+      australia, novazelandia, fiji,
 
       argelia, egito, libya,  marrocos, tunisia,
       africaSul, angola, botswana, caboverde, camaroes,
@@ -670,6 +672,7 @@ Map getLeagueNationalityMap(){
     leagueName.filipinas: Words.country.philippines,
     leagueName.tailandia: Words.country.thailand,
     leagueName.vietna: Words.country.vietnam,
+    leagueName.hongkong: Words.country.hongkong,
 
     //OCEANIA
     leagueName.australia: Words.country.australia,

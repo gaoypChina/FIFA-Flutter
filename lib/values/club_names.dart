@@ -2891,9 +2891,24 @@ class ClubName{
   String yunnan = "Yunnan Hongta"; //1996-2003  merged with chongqing
   String zhejiang = "Zhejiang";
   //HONG KONG
+  String bulova = "Bulova";
+  String citizen = "Citizen";
   String kitchee = "Kitchee";
   String easternSC = "Eastern SC";
+  String jardines = "Jardines";
+  String kmb = "KMB";
+  String instantdict = "Instant Dict";
+  String happyvalley = "Happy Valley";
+  String laisun = "Lai Sun";
   String leeMan = "Lee Man";
+  String pegasus = "Pegasus";
+  String rangersHK = "Rangers HK";
+  String rf = "R&F";
+  String seiko = "Seiko";
+  String southchina = "South China";
+  String sunhei = "Sun Hei";
+  String taipo = "Tai Po";
+  String yuenlong = "Yuen Long";
   //TAIWAN
   String tainanCity = "Tainan City";
   String taiPower = "Tai Power";
@@ -3103,10 +3118,14 @@ class ClubName{
   String nepalPolice = "Nepal Police";
   String threestar = "Three Star Club";
   //PHILIPPINNES
+  String azkals = "Azkals";
+  String cebu = "Cebu";
+  String davao = "Davao Aguilas";
   String globalCebu = "Global Cebu";
   String kaya = "Kaya-Iloilo";
   String lionsPHI = "Lions FC";
   String loyola = "Loyola";
+  String mendiola = "Mendiola";
   String maharlikaManila = "Maharlika Manila";
   String stallionLaguna = "Stallion Laguna";
   String unitedCity = "United City";
@@ -3406,6 +3425,15 @@ class ClubName{
   String westAdelaide = "West Adelaide";
   String stGeorgeAUS = "St. George";
   String apiaLeichhardt = "APIA Leichhardt";
+
+  //FIJI
+  String ba = "Ba";
+  String labasa = "Labasa";
+  String lautoka = "Lautoka";
+  String nadi = "Nadi";
+  String nadroga = "Nadroga";
+  String rewa = "Rewa";
+  String suva = "Suva";
 
   //////////////////////////////////////////////////////////////////////////////
   //AFRICA
@@ -3780,26 +3808,37 @@ class ClubName{
   //NIGERIA
   String akwa = "Akwa United";
   String bayelsa = "Bayelsa United";
+  String bcclions = "BCC Lions";
   String bendel = "Bendel Insurance";
   String dolphin = "Dolphin FC";
+  String elkanemi = "El-Kanemi Warriors";
   String enyimba = "Enyimba";
+  String giwa = "Giwa FC";
+  String gombe = "Gombe United";
+  String kaduna = "Kaduna United";
   String heartland = "Heartland";
   String juliusBerger = "Julius Berger";
   String ifeanyi = "Ifeanyi Ubah";
   String kano = "Kano Pillars";
   String kwaraUtd = "Kwara Utd";
+  String leventis = "Leventis United";
   String lobiStars = "Lobi Stars";
+  String mightyjets = "Mighty Jets";
   String mfm = "MFM FC";
   String nasarawa = "Nasarawa United";
+  String nigerianbank = "New Nigerian Bank";
   String nigerTornadoes = "Niger Tornadoes";
   String oceanBoys = "Ocean Boys";
   String rangersInt = "Enugu Rangers International";
   String plateau = "Plateau United";
+  String raccarovers = "Racca Rovers";
   String remoStars = "Remo Stars";
   String riversUtd = "Rivers United";
+  String sharks = "Sharks";
   String stationeryStores = "Stationery Stores";
   String shootingstars = "Shooting Stars";
   String sunshinestars = "Sunshine Stars";
+  String udoji = "Udoji United";
   String warriWolves = "Warri Wolves";
   String wikki = "Wikki Tourist";
   //RWANDA

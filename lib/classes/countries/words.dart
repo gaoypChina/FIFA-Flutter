@@ -121,6 +121,7 @@ class CountryNames {
   String get guyana => 'Guyana';
   String get haiti => 'Haiti';
   String get honduras => 'Honduras';
+  String get hongkong => 'Hong Kong';
   String get hungary => 'Hungary';
   String get iceland => 'Iceland';
   String get india => 'India';

@@ -10,6 +10,7 @@ import 'package:fifa/values/historic_champions/north_america.dart';
 import 'package:fifa/values/historic_champions/oceania.dart';
 import 'package:fifa/values/historic_champions/oriente_medio.dart';
 import 'package:fifa/values/historic_champions/other_leagues.dart';
+import 'package:fifa/values/historic_champions/supercopa.dart';
 
   Map<double,dynamic> mapChampions(String league){
 
@@ -49,6 +50,10 @@ import 'package:fifa/values/historic_champions/other_leagues.dart';
 
     if(mapCopas[league] != null){
       return mapCopas[league];
+    }
+
+    if(mapSupercopa[league] != null){
+      return mapSupercopa[league];
     }
 
     if(mapOtherLeagues[league] != null){

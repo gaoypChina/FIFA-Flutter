@@ -4078,10 +4078,24 @@ class ClubDetails{
     //HONG KONG
     map[n.easternSC] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(22.326124787, 114.1731577),
       'Mong Kok Stadium',6664,1932,_country.china,62.6,[]];
+    map[n.happyvalley] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(0,0),
+      'Happy Valley Recreation Ground',55000,1950,_country.china,52.2,[]];
     map[n.kitchee] = [ClubColors(Colors.blue,Colors.pink),pattern.solid,Coordinates(22.3260865, 114.1730563),
       'Mong Kok Stadium',6769,1931,_country.china,64.2,[]];
+    map[n.instantdict] = [ClubColors(Colors.purple,Colors.white),pattern.solid,Coordinates(0,0),
+      '',1000,1979,_country.china,49.5,[]]; //2nd div.
     map[n.leeMan] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(22.3119310, 114.2638485),
       'Tseung Kwan O Sports Ground',3500,2017,_country.china,61.5,[]];
+    map[n.rangersHK] = [ClubColors(Colors.blue,Colors.pink),pattern.solid,Coordinates(0,0),
+      'Hammer Hill Road Sports Ground',2200,1958,_country.china,54.6,[]];
+    map[n.seiko] = [ClubColors(darkblue,Colors.white),pattern.oneHorStripe,Coordinates(0,0),
+      '',0,1970,_country.china,50.0,[]]; //EXTINTO 1986
+    map[n.southchina] = [ClubColors(Colors.red,Colors.white),pattern.sleeves,Coordinates(0,0),
+      'Happy Valley Recreation Ground',55000,1904,_country.china,58.2,[]];
+    map[n.sunhei] = [ClubColors(Colors.orange,Colors.black),pattern.solid,Coordinates(0,0),
+      '',0,1986,_country.china,43.5,[]];  //3rd division
+    map[n.taipo] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(0,0),
+      'Tai Po Sports Ground',3200,2002,_country.china,56.2,[]];
     //TAIWAN
     map[n.tainanCity] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(23.3208436, 120.3129334),
       'Tainan Football Field',2000,2016,_country.taiwan,62.7,[]];

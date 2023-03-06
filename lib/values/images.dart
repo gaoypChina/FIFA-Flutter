@@ -42,7 +42,7 @@ class FIFAImages{
     if(leagueName==LeagueOfficialNames().africa) {      imageLogo = 'africa';       }
     if(leagueName==LeagueOfficialNames().outros) {      imageLogo = 'others';       }
 
-    if(leagueName==LeagueOfficialNames().championsLeague) {      imageLogo = 'champions_logo';       }
+    if(leagueName==LeagueOfficialNames().championsLeague) {      imageLogo = 'champions';       }
     if(leagueName==LeagueOfficialNames().libertadores) {      imageLogo = 'libertadores'; }
     if(leagueName==LeagueOfficialNames().europaLeagueOficial) {      imageLogo = 'europaleague'; }
     if(leagueName==LeagueOfficialNames().copaSulAmericana) {      imageLogo = 'sulamericana'; }
@@ -95,8 +95,8 @@ String imageLogo(String timeFoto) {
     map[_name.leicester] = 'leicester';
     map[_name.leeds] = 'leeds';
     map[_name.liverpool] = 'liverpool';
-    map[_name.mancity] = 'mancity';
-    map[_name.manutd] = 'manutd';
+    map[_name.mancity] = 'manchestercity';
+    map[_name.manutd] = 'manchesterunited';
     map[_name.newcastle] = 'newcastle';
     map[_name.southampton] = 'southampton';
     map[_name.tottenham] = 'tottenham';

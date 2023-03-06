@@ -136,6 +136,7 @@ Image funcFlagsList(String country, double _height, double _width){
   else if(country == Words.country.eritrea){code = Image.asset('icons/flags/png/er.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.estonia){code = Image.asset('icons/flags/png/ee.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.faroe){code = Image.asset('icons/flags/png/fo.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.fiji){code = Image.asset('icons/flags/png/fj.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.finland){code = Image.asset('icons/flags/png/fi.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.france){code = Image.asset('icons/flags/png/fr.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.gambia){code = Image.asset('icons/flags/png/gm.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
@@ -153,6 +154,7 @@ Image funcFlagsList(String country, double _height, double _width){
   else if(country == Words.country.guineaBissau){code = Image.asset('icons/flags/png/gw.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.haiti){code = Image.asset('icons/flags/png/ht.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.honduras){code = Image.asset('icons/flags/png/hn.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.hongkong){code = Image.asset('icons/flags/png/hk.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.hungary){code = Image.asset('icons/flags/png/hu.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.iceland){code = Image.asset('icons/flags/png/is.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.italy){code = Image.asset('icons/flags/png/it.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
