@@ -80,9 +80,17 @@ class _MenuState extends State<Menu> {
 
               Images().getWallpaper(),
 
-              SizedBox(
+              Container(
                 height: Sized(context).height,
                 width: Sized(context).width,
+                decoration: BoxDecoration(
+                    gradient:  LinearGradient(
+                      colors: [club.colors.primaryColor.withOpacity(0.6), Colors.transparent, Colors.transparent],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      stops: const [0.2, 0.5, 1],
+                    )
+                ),
                 child: Column(
                   children: [
 
@@ -141,6 +149,7 @@ class _MenuState extends State<Menu> {
                     ),
 
                     //CALENDARIO E CLASSIFICAÇÃO
+
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -148,37 +157,28 @@ class _MenuState extends State<Menu> {
 
                         //wMenuCalendarIcon(context, semana, adversario),
                         //wLast5Matchs(context),
-
-                        Column(
-                          children: [
-
-                            wMenuClassification(context, myClass),
-
-                          ],
-                        ),
-
-
+                        wMenuClassification(context, myClass),
                     ]),
-
-                    const SizedBox(height: 4),
 
 
                     //ESTÁDIO
-                    Expanded(
-                      child: Stack(
-                        children: [
+                    const Spacer(),
 
-                          //Image.asset(Images().getMyStadium(),height:  double.maxFinite, width: double.maxFinite,fit: BoxFit.fill,),
 
-                          close(context),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
 
-                          save(context),
+                                //Image.asset(Images().getMyStadium(),height:  double.maxFinite, width: double.maxFinite,fit: BoxFit.fill,),
 
-                          test(context),
+                        close(context),
 
-                          //train(context)
-                        ],
-                      ),
+                        test(context),
+
+                        save(context),
+
+                                //train(context)
+                      ],
                     ),
 
 

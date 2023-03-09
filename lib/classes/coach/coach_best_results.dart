@@ -41,7 +41,6 @@ class CoachBestResults{
     tryCatchCreateMap(globalHistoricCoachResults, 'maxSequenceVictoryClubID',my.clubID);
   }
   updateVariables(){
-    print(globalHistoricCoachResults);
     maxVictory = globalHistoricCoachResults['maxVictory'];
     maxVictoryClubID = globalHistoricCoachResults['maxVictoryClubID'];
     maxVictoryClubAdvID = globalHistoricCoachResults['maxVictoryClubAdvID'];

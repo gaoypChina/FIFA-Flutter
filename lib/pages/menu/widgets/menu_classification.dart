@@ -2,19 +2,24 @@ import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:flutter/material.dart';
 
 Widget wMenuClassification(BuildContext context, My myClass){
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Text('${Translation(context).text.expectation}: '+myClass.getLastYearExpectativa().toString()+'º',
-          style: EstiloTextoBranco.text16
-      ),
-      classification3(myClass),
-    ],
+  return Container(
+    color: AppColors().greyTransparent,
+    padding: const EdgeInsets.all(4),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('${Translation(context).text.expectation}: '+myClass.getLastYearExpectativa().toString()+'º',
+            style: EstiloTextoBranco.text16
+        ),
+        classification3(myClass),
+      ],
+    ),
   );
 }
 
