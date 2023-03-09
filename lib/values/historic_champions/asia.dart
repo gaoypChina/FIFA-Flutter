@@ -746,6 +746,16 @@ Map<String,dynamic> mapAsia = {
     1992.0: [n.pakhtakor,],
   },
 
+  leagueName.taiwan : {
+    //https://en.wikipedia.org/wiki/Taiwan_Football_Premier_League
+    2022.0: [n.tainanCity,n.taichung,n.taipower,],
+    2021.0: [n.tainanCity,n.taipower,n.taichung,],
+    2020.0: [n.tainanCity,n.taipower,n.taichung,],
+    2019.0: [n.tatung,n.taipower,n.hangyuen,],
+    2018.0: [n.tatung,n.taipower,n.hangyuen,],
+    2017.0: [n.tatung,n.taipower,n.hangyuen,],
+  },
+
   leagueName.vietna : {
     2022.0: [],
     2021.0: [],
@@ -800,16 +810,6 @@ Map<String,dynamic> mapAsia = {
     1972.0: [],
     1971.0: [],
     1970.0: [],
-    1969.0: [],
-    1968.0: [],
-    1967.0: [],
-    1966.0: [],
-    1965.0: [],
-    1964.0: [],
-    1963.0: [],
-    1962.0: [],
-    1961.0: [],
-    1960.0: [],
   },
 
 

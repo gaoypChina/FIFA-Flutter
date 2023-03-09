@@ -258,7 +258,7 @@ String imageLogo(String timeFoto) {
     map[_name.huelva] = 'huelva';
     map[_name.huesca] = 'huesca';
     map[_name.ibiza] = 'ibiza';
-    map[_name.lasPalmas] = 'las palmas';
+    map[_name.laspalmas] = 'las palmas';
     map[_name.leganes] = 'leganes';
     map[_name.lugo] = 'lugo';
     map[_name.malaga] = 'malaga';

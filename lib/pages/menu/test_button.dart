@@ -1,7 +1,7 @@
 import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/match/adversario.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/pages/simulacao/ball_simulation.dart';
+import 'package:fifa/pages/ball_sim/ball_simulation.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:flutter/material.dart';
 

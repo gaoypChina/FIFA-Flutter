@@ -100,8 +100,8 @@ class _ClubGraphicsState extends State<ClubGraphics> {
       child: Container(
         height: 260,
         width: dataGraphics.dataInternational.length > dataGraphics.data.length
-            ? dataGraphics.dataInternational.length * 23 + 50
-            : dataGraphics.data.length * 23 + 50,
+            ? dataGraphics.dataInternational.length * 35 + 50
+            : dataGraphics.data.length * 35 + 50,
         color: AppColors().greyTransparent,
         child: SfCartesianChart(
           tooltipBehavior: _tooltipBehavior,

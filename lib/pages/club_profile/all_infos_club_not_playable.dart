@@ -164,7 +164,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
       scrollDirection: Axis.horizontal,
       child: Container(
         height: 280,
-        width: dataGraphics.dataInternational.length * 23 + 50,
+        width: dataGraphics.dataInternational.length * 35 + 50,
         color: AppColors().greyTransparent,
         child: SfCartesianChart(
           tooltipBehavior: _tooltipBehavior,
@@ -383,7 +383,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
     return Column(
       children: [
         const Text('Desempenho por ano',style: EstiloTextoBranco.text16,),
-        const Text('ANO  EST  COPA   NAC    INT',style: EstiloTextoBranco.text16,),
+        const Text('ANO  EST         COPA        NAC    INT                             ',style: EstiloTextoBranco.text16,),
         for(double i = 1950; i<anoInicial;i++)
           peryearRow(i)
       ],
@@ -393,7 +393,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
   Widget peryearRow(double year){
 
     String estadual = filter(year,10,dataGraphics.dataEstadual,false);
-    String copa = filter(year,10,dataGraphics.dataCups,false);
+    String copa = filter(year,10,dataGraphics.dataCups,true);
     String national = filter(year,-1,dataGraphics.data,false);
     String international = filter(year,32,dataGraphics.dataInternational,true);
 
@@ -406,7 +406,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
           const SizedBox(width: 10),
           positionColor(estadual,40),
           const SizedBox(width: 10),
-          positionColor(copa,40),
+          positionColor(copa,80),
           const SizedBox(width: 10),
           GestureDetector(onTap:(){
             //GET LEAGUE NAME
@@ -429,15 +429,15 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
   }
   Widget positionColor(positionStr, double size){
     if(positionStr =="1º" || positionStr == "Campeão"){
-      return Container(width:size,color:Colors.yellow,child: Text(positionStr,style: EstiloTextoPreto.text14,));
+      return Container(width:size,color:Colors.yellow,child: Center(child: Text(positionStr,style: EstiloTextoPreto.text14,)));
     }
     if(positionStr == "2º" || positionStr == "Vice"){
-      return Container(width:size,color:Colors.blue,child: Text(positionStr,style: EstiloTextoBranco.text14,));
+      return Container(width:size,color:Colors.blue,child: Center(child: Text(positionStr,style: EstiloTextoBranco.text14,)));
     }
     if(positionStr == "3º" || positionStr  == "4º" ){
-      return Container(width:size,color:Colors.blue[100],child: Text(positionStr,style: EstiloTextoPreto.text14,));
+      return Container(width:size,color:Colors.blue[100],child: Center(child: Text(positionStr,style: EstiloTextoPreto.text14,)));
     }
-    return SizedBox(width:size,child: Text(positionStr,style: EstiloTextoBranco.text14,));
+    return SizedBox(width:size,child: Center(child: Text(positionStr,style: EstiloTextoBranco.text14,)));
   }
 
   filter(double year, int positionEliminate,List<ClassificationData> data,bool isMataMata){

@@ -1,6 +1,4 @@
 
-import 'dart:math';
-
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
@@ -173,13 +171,13 @@ class GravityTeam{
       gravityLimitInf = field.limitYbottom * 0.7;
     }
 
-    double velocity = 2;
+    double velocity = 3;
     if(gravityCenter.y >= gravityLimitSup && gravityCenter.y <= gravityLimitInf){
-      gravityCenter.y += velocity * distance + Random().nextInt(3)-1;
+      gravityCenter.y += velocity * distance;
     }else if(gravityCenter.y < gravityLimitSup){
-      gravityCenter.y += velocity * Random().nextInt(3)-1;
+      gravityCenter.y += velocity;
     }else if(gravityCenter.y > gravityLimitInf){
-      gravityCenter.y -= velocity * Random().nextInt(3)-1;
+      gravityCenter.y -= velocity;
     }
 
   }

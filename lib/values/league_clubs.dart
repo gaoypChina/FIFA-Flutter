@@ -96,7 +96,7 @@ Map clubNameMapImmutable = {
   },
   LeagueOfficialNames().espanha2 : {
     0: clubName.alaves,1: clubName.girona,2: clubName.granada,3: clubName.ibiza,
-    4: clubName.lacoruna,5: clubName.lasPalmas,6: clubName.leganes,7: clubName.levante,
+    4: clubName.lacoruna,5: clubName.laspalmas,6: clubName.leganes,7: clubName.levante,
     8: clubName.malaga,9: clubName.sportingGijon,10: clubName.tenerife,11: clubName.zaragoza,
   },
   LeagueOfficialNames().alemanha1 : {

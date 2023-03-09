@@ -246,7 +246,7 @@ class PlayerPastClubs{
   map['Geoff Hurst'] = { 1959:n.westham,1972:n.stoke,1975:n.westbromwich,1976:n.seattle,1977:retired};
   map['George Best'] = { 1963:n.manutd,1974:retired};
   map['George Weah'] = { 1988:n.monaco,1992:n.psg,1995:n.milan,1999:n.chelsea,2000:n.mancity,2001:n.om,2002:retired};
-  map['Gerardo'] = {     1976:n.lasPalmas,1981:n.barcelona,1988:n.lasPalmas,1990:retired};
+  map['Gerardo'] = {     1976:n.laspalmas,1981:n.barcelona,1988:n.laspalmas,1990:retired};
   map['Gerrard'] = {     1998:n.liverpool,2015:n.lagalaxy,2016:retired};
   map['Gervinho'] = {    2005:n.beveren,2007:n.lemans,2009:n.lille,2011:n.arsenal,2013:n.roma,2016:n.hebei,2018:n.parma,2021:n.trabzonspor,2022:retired};
   map['Gianni Rivera'] = {1958:n.alessandria,1960:n.milan,1979:retired};

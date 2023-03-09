@@ -18,15 +18,14 @@ import '../../values/historic_champions/historic_champions.dart';
 
 class HistoricLeague extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
-  final int choosenLeagueIndex;
-  const HistoricLeague({Key? key, required this.choosenLeagueIndex}) : super(key: key);
+  final String choosenLeagueName;
+  const HistoricLeague({Key? key, required this.choosenLeagueName}) : super(key: key);
   @override
   _HistoricLeagueState createState() => _HistoricLeagueState();
 }
 
 class _HistoricLeagueState extends State<HistoricLeague> {
   late Map<double,dynamic> results;
-  late int choosenLeagueIndex;
   late String choosenLeagueName;
   int nTeamsSelected = 0;
   ////////////////////////////////////////////////////////////////////////////
@@ -34,8 +33,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
-    choosenLeagueIndex = widget.choosenLeagueIndex;
-    choosenLeagueName = League(index: choosenLeagueIndex).getName();
+    choosenLeagueName = widget.choosenLeagueName;
     super.initState();
   }
 ////////////////////////////////////////////////////////////////////////////
@@ -157,7 +155,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   Widget yearRow(int year){
     int nRows = nTeamsSelected;
 
-    League league = League(index: choosenLeagueIndex);
+    League league = League(index: leaguesIndexFromName[choosenLeagueName]);
     results = mapChampions(league.name);
     if(league.nClubs < nTeamsSelected){
       nRows = league.nClubs;
@@ -245,7 +243,6 @@ class _HistoricLeagueState extends State<HistoricLeague> {
 
     return GestureDetector(
       onTap: (){
-        choosenLeagueIndex = leagueID;
         choosenLeagueName = leagueName;
         setState(() {});
       },

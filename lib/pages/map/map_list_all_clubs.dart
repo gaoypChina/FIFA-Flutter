@@ -3,9 +3,11 @@ import 'package:fifa/classes/countries/words.dart';
 import 'package:fifa/classes/countries/countries_continents.dart';
 import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
+import 'package:fifa/pages/historic/leagues_historic.dart';
 import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
+import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -68,6 +70,14 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                 children: [
                   backButtonText(context, 'Lista de Clubes'),
                   const Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.only(top:20.0),
+                    child: IconButton(onPressed: (){
+                      Map map = getLeagueNationalityMap();
+                      String choosenLeagueName = map.keys.firstWhere((k) => map[k] == selectedCountry, orElse: () => null);
+                      Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricLeague(choosenLeagueName: choosenLeagueName)));
+                    }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
+                  ),
                   Padding(padding:const EdgeInsets.only(top:18),
                       child: Text(showList.length.toString(),style: EstiloTextoBranco.text20)),
                   const SizedBox(width: 8),

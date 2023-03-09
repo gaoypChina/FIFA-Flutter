@@ -70,6 +70,7 @@ class Continents{
     else if(country == Words.country.eritrea){code = africa;}
     else if(country == Words.country.estonia){code = europa;}
     else if(country == Words.country.faroe){code = europa;}
+    else if(country == Words.country.fiji){code = oceania;}
     else if(country == Words.country.finland){code = europa;}
     else if(country == Words.country.france){code = europa;}
     else if(country == Words.country.gambia){code = africa;}
@@ -87,6 +88,7 @@ class Continents{
     else if(country == Words.country.guineaBissau){code = africa;}
     else if(country == Words.country.haiti){code = americaNorte;}
     else if(country == Words.country.honduras){code = americaNorte;}
+    else if(country == Words.country.hongkong){code = asia;}
     else if(country == Words.country.hungary){code = europa;}
     else if(country == Words.country.iceland){code = europa;}
     else if(country == Words.country.italy){code = europa;}
@@ -104,6 +106,7 @@ class Continents{
     else if(country == Words.country.kenya){code = africa;}
     else if(country == Words.country.kiribati){code = oceania;}
     else if(country == Words.country.kosovo){code = europa;}
+    else if(country == Words.country.kuwait){code = asia;}
     else if(country == Words.country.kyrgyzstan){code = asia;}
     else if(country == Words.country.laos){code = asia;}
     else if(country == Words.country.latvia){code = europa;}
@@ -145,6 +148,7 @@ class Continents{
     else if(country == Words.country.northernIreland){code = europa;}
     else if(country == Words.country.oman){code = asia;}
     else if(country == Words.country.pakistan){code = asia;}
+    else if(country == Words.country.palestine){code = asia;}
     else if(country == Words.country.panama){code = americaNorte;}
     else if(country == Words.country.papua){code = oceania;}
     else if(country == Words.country.paraguay){code = americaSul;}

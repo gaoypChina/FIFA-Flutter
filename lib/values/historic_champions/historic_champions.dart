@@ -27,6 +27,10 @@ import 'package:fifa/values/historic_champions/supercopa.dart';
     if(mapAmerica[league] != null){
         return mapAmerica[league];
     }
+    if(mapEstaduais[league] != null){
+      return mapEstaduais[league];
+    }
+
     if(mapNorthAmerica[league] != null){
       return mapNorthAmerica[league];
     }
@@ -40,10 +44,6 @@ import 'package:fifa/values/historic_champions/supercopa.dart';
       return mapOrienteMedio[league];
     }
 
-    if(mapEstaduais[league] != null){
-      return mapEstaduais[league];
-    }
-
     if(mapOceania[league] != null){
       return mapOceania[league];
     }
@@ -52,12 +52,12 @@ import 'package:fifa/values/historic_champions/supercopa.dart';
       return mapCopas[league];
     }
 
-    if(mapSupercopa[league] != null){
-      return mapSupercopa[league];
-    }
-
     if(mapOtherLeagues[league] != null){
       return mapOtherLeagues[league];
+    }
+
+    if(mapSupercopa[league] != null){
+      return mapSupercopa[league];
     }
 
     return {};

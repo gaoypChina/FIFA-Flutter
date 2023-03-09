@@ -54,6 +54,9 @@ class _ChooseContinentPageState extends State<ChooseContinentPage> {
               menuButtonExpanded(Continents().americaNorte,(){
                     Navigator.push(context,MaterialPageRoute(builder: (context) =>  MapListAllClubs(continent: Continents().americaNorte)));
               }),
+              menuButtonExpanded(Continents().oceania,(){
+                Navigator.push(context,MaterialPageRoute(builder: (context) =>  MapListAllClubs(continent: Continents().oceania)));
+              }),
 
             ],
           ),

@@ -5,7 +5,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/functions/change_club_control.dart';
 import 'package:fifa/classes/match/adversario.dart';
-import 'package:fifa/pages/simulacao/ball_simulation.dart';
+import 'package:fifa/pages/ball_sim/ball_simulation.dart';
 import 'package:fifa/pages/simulacao/play.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';

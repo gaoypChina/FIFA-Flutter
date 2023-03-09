@@ -38,7 +38,7 @@ List clubsAllNameList = [
   ClubName().sevilla,  ClubName().valencia,  ClubName().valladolid,  ClubName().villareal,
 
   ClubName().alaves,ClubName().almeria,ClubName().cadiz,ClubName().elche,
-  ClubName().girona,ClubName().ibiza,ClubName().lacoruna,ClubName().lasPalmas,
+  ClubName().girona,ClubName().ibiza,ClubName().lacoruna,ClubName().laspalmas,
   ClubName().zaragoza,ClubName().malaga,ClubName().mallorca,ClubName().rayoVallecano,
   ClubName().sportingGijon,ClubName().tenerife,ClubName().elche,ClubName().leganes,
   ClubName().eibar,

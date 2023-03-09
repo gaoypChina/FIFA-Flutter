@@ -84,7 +84,7 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
                         Text(' ${Translation(context).text.matchWeek} '+ rodada.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text20),
                         const Spacer(),
                         IconButton(onPressed: (){
-                            Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricLeague(choosenLeagueIndex: choosenLeagueIndex)));
+                            Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricLeague(choosenLeagueName: leagueName)));
                           }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
                       ],
                     ),

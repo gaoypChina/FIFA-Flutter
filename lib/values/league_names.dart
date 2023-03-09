@@ -122,7 +122,7 @@ class LeagueOfficialNames{
   String malasia = 'Liga Malásia'; String cingapura = 'Liga Cingapura';
   String paquistao = 'Liga Paquistão'; String afeganistao = 'Liga Afeganistao';
   String palestina = 'Liga Palestina';
-  String taipei = 'Liga Taipei'; String hongkong = 'Liga Hong Kong';
+  String taiwan = 'Liga Taiwan'; String hongkong = 'Liga Hong Kong';
   String brunei = 'Liga Brunei';
 
   String egito = 'Liga Egito';
@@ -265,7 +265,7 @@ class LeagueOfficialNames{
       costaRica, elsalvador, guatemala, honduras, nicaragua, panama,
       repdominicana, jamaica, haiti, suriname, trinidad,
 
-      china,  japao,     coreiaSul, coreiaNorte, hongkong,
+      china,  japao,     coreiaSul, coreiaNorte, hongkong, taiwan,
       tailandia, camboja, cingapura, filipinas,
       indonesia, laos, malasia, myanmar, vietna,
       arabia, bahrein, eau, qatar,
@@ -278,8 +278,9 @@ class LeagueOfficialNames{
       argelia, egito, libya,  marrocos, tunisia,
       africaSul, angola, botswana, caboverde, camaroes,
       centralAfrica, congo, congoRD, costamarfim, etiopia,
-      guine, madagascar, mali, mauritania, mocambique, namibia, nigeria, quenia,
-      sudao, tanzania, togo, uganda, zambia, zimbabwe,
+      guine, madagascar, mali, mauritania, mocambique,
+      namibia, nigeria, quenia,
+      ruanda, sudao, tanzania, togo, uganda, zambia, zimbabwe,
 
       paulistao, carioca, mineiro, es,
       gaucho,parana,santacatarina,
@@ -672,6 +673,7 @@ Map getLeagueNationalityMap(){
     leagueName.filipinas: Words.country.philippines,
     leagueName.tailandia: Words.country.thailand,
     leagueName.vietna: Words.country.vietnam,
+    leagueName.taiwan: Words.country.taiwan,
     leagueName.hongkong: Words.country.hongkong,
 
     //OCEANIA

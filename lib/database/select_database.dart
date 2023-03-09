@@ -8,7 +8,7 @@ import '../theme/custom_toast.dart';
 class SelectDatabase{
 
   Future load() async{
-    globalSaveNumber = (await SharedPreferenceHelper().getsharedSaveNumber())!;
+    globalSaveNumber = (await SharedPreferenceHelper().getsharedSaveNumber()) ?? 0;
     if(globalSaveNumber == 0){
       await ReadCSV().openCSV();
     }else{
