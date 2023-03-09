@@ -23,11 +23,11 @@ class TableNational{
   int chaveClub2 = Chaves().chaveIndexAdvCampeonato((weekCalculate),  choosenLeagueIndex, chaveClub1)[0];
   teamName2 = leagueClass.getClubName(chaveClub2);
 
-  showGoals = ((rodadaMatch<rodada || semana >= semanasJogosNacionais[leagueClass.nClubs-2]));
+  showGoals = ((weekCalculate<semana || semana >= semanasJogosNacionais[leagueClass.nClubs-2]));
   //quando chega na rodada max ele acabaria nao mostrando, por isso quando termina o campeonato mostra a ultima rodada
   if(showGoals) {
     try {
-      List results = globalHistoricLeagueGoalsAll[rodadaMatch][choosenLeagueIndex];
+      List results = globalHistoricLeagueGoalsAll[rodadaMatch+1][choosenLeagueIndex];
       gol1 = results[chaveClub1];
       gol2 = results[chaveClub2];
     }catch(e){
