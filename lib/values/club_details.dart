@@ -4789,7 +4789,7 @@ class ClubDetails{
       'Marconi Stadium',9000,1958,_country.australia,54.7,[]];
     map[n.melbournecity] = [ClubColors(Colors.lightBlueAccent,Colors.white),pattern.solid,Coordinates(-37.8251, 144.9840),
       'AAMI Park',30050,2009,_country.australia,64.3,[]];
-    map[n.melbournevictory] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(-37.825063012, 144.983956),
+    map[n.melbournevictory] = [ClubColors(darkblue,Colors.white),pattern.solid,Coordinates(-37.825063012, 144.983956),
       'AAMI Park',30050,2004,_country.australia,68.3,[]];
     map[n.newcastlejets] = [ClubColors(Colors.yellow,darkblue),pattern.solid,Coordinates(-32.918943, 151.726707182),
       'Hunter Stadium',34000,2000,_country.australia,65.2,[]];

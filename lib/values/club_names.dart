@@ -2805,6 +2805,23 @@ class ClubName{
   String ubahamas = "University of the Bahamas";
   String westernwar = "Western Warriors";
 
+  //BARBADOS
+  String barbadosdefense = "Barbados Defence Force";
+  String blackbird = "UWI Blackbirds";
+  String brittons = "Brittons Hill United";
+  String ellerton = "Ellerton";
+  String evertonBAR = "Everton Barbados";
+  String empire = "Empire Club";
+  String notredame = "Notre Dame";
+  String silversands = "Silver Sands";
+  String standrewlions = "St. Andrew Lions";
+  String weymouth = "Weymouth Wales";
+  String pinelands = "Pinelands United";
+  String poreysprings = "Porey Springs";
+  String pridegall = "Pride of Gall Hill";
+  String youthmilan = "Youth Milan";
+
+
   //BELIZE
   String altitude = "Altitude";
   String bandits = "Belmopan Bandits";
@@ -3373,6 +3390,17 @@ class ClubName{
   String omanClub = "Oman Club";
   String sur = "Sur";
   //PAKISTAN
+  String afghanchaman = "Afghan Chaman";
+  String karachi = "Karachi United";
+  String kelectric = "K-Electric";
+  String lyallpur = "Lyallpur";
+  String huma = "Huma";
+  String muslim = "Muslim";
+  String pakistanarmy = "Pakistan Army";
+  String pafAF = "Pakistan Air Force";
+  String krl = "Khan Research Laboratories";
+  String sui = "Sui Southern Gas";
+  String wapda = "WAPDA";
   String wohaib = "Wohaib";
   //PALESTINE
   String shababAlKhalil = "Shabab Al-Khalil";
@@ -3750,6 +3778,15 @@ class ClubName{
   String tempeteMocaf = "Tempête Mocaf";
   String tocages = "SCAF Tocages";
   String usca = "USCA";
+  //CHAD
+  String cotontchad = "CotonTchad";
+  String foullah = "Foullah Edifice";
+  String gazelle = "Gazelle";
+  String electsport = "Elect Sports";
+  String postel = "Postel 2000";
+  String renaissance = "Renaissance";
+  String tourbillon = " Tourbillon";
+
   //CONGO
   String aspolice = "AS police";
   String caraBrazaville = "Cara Brazzaville";
@@ -3960,6 +3997,21 @@ class ClubName{
   String portautonome = "UCST Port Autonome ";
   String suneor = "ASC SUNEOR";
   String teungueth = "Teungueth";
+  //SOMALIA
+  String alba = "Alba";
+  String dekedaha = "Dekedaha";
+  String elman = "Elman";
+  String gaaddiidka = "Gaaddiidka";
+  String heegan = "Heegan";
+  String hoga = "Hoga";
+  String horseed = "Horseed";
+  String lavori = "Lavori Publici";
+  String merca = "Merca New Supplies";
+  String mogadishu = "Mogadishu";
+  String portsauthorith = "Ports Authority";
+  String printing = "Printing Agency";
+  String somalipolice = "Somali National Police";
+  String wagad = "Wagad";
   //SUDÃO
   String omdurman = "Al-Hilal Omdurman";
   String almerrikh = "Al-Merrikh";

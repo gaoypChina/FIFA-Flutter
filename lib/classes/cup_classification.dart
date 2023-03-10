@@ -43,6 +43,7 @@ class CupClassification{
     prePhase = (classified + allTeamsLeague).toSet().toList();
 
     Map mapa = {leagueName: {"Classificados": classified, "Pre-fase": prePhase}};
+    return mapa;
   }
 
 }

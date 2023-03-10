@@ -86,6 +86,7 @@ Widget wPlayButton(BuildContext context, Club club, Adversario adversario, Seman
                               adversario.clubName.isNotEmpty ? adversario.visitante
                                   ? Text(Translation(context).text.away,style: EstiloTextoBranco.text14)
                                   : Text(Translation(context).text.home,style: EstiloTextoBranco.text14) : Container(),
+                              adversario.clubName.isNotEmpty ? Container() : Container(height:30),
                             ],
                           ),
                         ),
@@ -107,9 +108,9 @@ Widget wPlayButton(BuildContext context, Club club, Adversario adversario, Seman
                       children: [
                         adversario.clubName.isNotEmpty
                             ? GestureDetector(onTap:(){
-                          Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: adversario.clubID)));
-                        },child: Images().getEscudoWidget(adversario.clubName,80,80))
-                            : Container(height: 80),
+                              Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: adversario.clubID)));
+                            },child: Images().getEscudoWidget(adversario.clubName,80,80))
+                            : const SizedBox(height: 80),
 
                         insideButton("Play", club, (){
                           if(adversario.clubName.isNotEmpty){

@@ -1,4 +1,4 @@
-
+import 'dart:math';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
@@ -63,6 +63,10 @@ class Circle {
   double r = 15;
   late double dx;
   late double dy;
+  late double sightLeft;
+  late double sightRight;
+  late double sightLeftRad;
+  late double sightRightRad;
   ClubColors colors;
   LinearGradient gradient;
   Jogador player;
@@ -80,6 +84,13 @@ class Circle {
     if(player.clubID == globalMyClubID){
       isMyPlayer = true;
     }
+
+    double angle = atan2(dy, dx) * 180 / pi;
+    sightLeft = angle - 30;
+    sightRight = angle + 30;
+
+    sightRightRad = sightRight * pi /180;
+    sightLeftRad = sightLeft * pi /180;
 
   }
   setGravity(context){
@@ -193,7 +204,7 @@ class GravityPosition{
     Field field = Field(context);
 
     if(position == 0){
-      gravityCenter = GravityCenter(field.limitXmiddle, field.limitYtop+25, position);
+      gravityCenter = GravityCenter(field.limitXmiddle, field.limitYtop+30, position);
     }else if(position == 1){
       gravityCenter = GravityCenter(field.limitXleft+30, field.limitYtop+100, position);
     }else if(position == 2){

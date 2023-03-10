@@ -43,8 +43,6 @@ class ResultGameNacional{
     clubName2 = league.getClubName(chaveClub2);
     clubID2 = clubsAllNameList.indexOf(clubName2);
 
-    int rodadaMax = rodada;
-
     if(weekLocal < semana){
       backgroundColor = Colors.black87;
     }

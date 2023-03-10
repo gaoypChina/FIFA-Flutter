@@ -608,6 +608,29 @@ Map<String,dynamic> mapAsia = {
     1977.0: [n.fanja,],
   },
 
+  leagueName.paquistao : {
+    //https://en.wikipedia.org/wiki/Pakistan_Super_League
+    2022.0: [],
+    2021.0: [],
+    2020.0: [],
+    2019.0: [n.krl,n.pakistanarmy,n.sui,],
+    2018.0: [],
+    2017.0: [],
+    2016.0: [],
+    2015.0: [n.kelectric,n.pakistanarmy,n.pafAF,],
+    2014.0: [n.krl,n.kelectric,n.wapda,],
+    2013.0: [n.krl,n.kelectric,n.muslim,],
+    2012.0: [n.krl,n.afghanchaman,n.pakistanarmy,],
+    2011.0: [n.wapda,n.krl,],
+    2010.0: [n.krl,n.pakistanarmy,n.wapda,],
+    2009.0: [n.wapda,n.pakistanarmy,n.krl,],
+    2008.0: [n.wapda,n.pakistanarmy,n.krl,],
+    2007.0: [],
+    2006.0: [n.pakistanarmy,n.wapda,n.krl,],
+    2005.0: [n.wapda,n.pakistanarmy,n.krl,],
+  },
+
+
   leagueName.quirguistao : {
     //https://en.wikipedia.org/wiki/Kyrgyz_Premier_League
     2022.0: [],

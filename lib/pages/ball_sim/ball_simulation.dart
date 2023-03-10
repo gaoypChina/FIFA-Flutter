@@ -490,11 +490,6 @@ class _GamePageState extends State<GamePage> {
     }else{
       ball.x = field.limitXright-1;
     }
-    for (int i=0; i<circles.length; i++){
-      for (Circle circle in circles) {
-        //defaultPosition(circle, field);
-      }
-    }
   }
 
   @override
@@ -541,6 +536,9 @@ class _GamePageState extends State<GamePage> {
 
                 for (Circle circle in circles)
                   circlePlayer(circle),
+
+                for (Circle circle in circles)
+                  visionLine(circle, field),
 
                 for (Circle circle in circles)
                   gravityPoint(circle.gravityCenter, 3),
@@ -611,15 +609,15 @@ Widget ballWidget(Ball ball){
 }
 
 Widget circlePlayer(Circle circle){
-    return               Positioned(
-      left: circle.x - circle.r,
-      top: circle.y - circle.r,
+    return Positioned(
+      left: circle.x - circle.r - 25,
+      top: circle.y - circle.r - 10,
       child: SizedBox(
-        height: circle.r * 2+25,
         width: circle.r * 2+50,
+        height: circle.r * 2+25,
         child: Column(
           children: [
-            Text(circle.player.name,style: EstiloTextoBranco.text8),
+            Text(circle.player.name,style: match.lastTouch==circle.player ? EstiloTextoPreto.text12 : EstiloTextoBranco.text8),
             GestureDetector(
               onTap: (){
                 customToast(circle.player.position+" "+circle.touchs.toString()+" "+circle.player.name);
@@ -661,5 +659,38 @@ Widget gravityPoint(GravityCenter gravityCenter, double size, [Color cor = Color
     );
 }
 
+Widget visionLine(Circle circle, Field field){
+    return  CustomPaint(
+      painter: DiagonalLinePainter(circle: circle),
+      child:  SizedBox(
+        width: field.limitXright,
+        height: field.limitYbottom,
+      ),
+    );
+}
 
+}
+
+class DiagonalLinePainter extends CustomPainter {
+  final Circle circle;
+  DiagonalLinePainter({
+    required this.circle,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint paint = Paint()
+      ..color = Colors.black
+      ..strokeWidth = 2;
+
+    double lineLength = 20;
+
+    canvas.drawLine(
+        Offset(circle.x, circle.y), Offset(circle.x+lineLength, circle.y+lineLength), paint);
+    canvas.drawLine(
+        Offset(circle.x, circle.y), Offset(circle.x+lineLength, circle.y-lineLength), paint);
+  }
+
+  @override
+  bool shouldRepaint(DiagonalLinePainter oldDelegate) => false;
 }
