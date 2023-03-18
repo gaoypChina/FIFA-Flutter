@@ -1622,7 +1622,7 @@ String imageLogo(String timeFoto) {
     map[_name.cnapsSport] = 'cnaps sport';
     //MALI
     map[_name.djoliba] = 'djoliba';
-    map[_name.realBamako] = 'real bamako';
+    map[_name.realbamako] = 'real bamako';
     map[_name.stadeMalien] = 'stade malien';
     //MOZAMBIQUE
     map[_name.costasol] = 'costa do sol';

@@ -8,27 +8,28 @@ LeagueOfficialNames leagueName = LeagueOfficialNames();
 Map<String,dynamic> mapEuropa = {
 
   leagueName.turquiaGrecia : {
-    2022.0: [n.trabzonspor,n.fenerbahce,n.konyaspor,n.instanbul,n.alanyaspor,n.besiktas,n.antalyaspor,n.karagumruk,n.adanaspor,n.sivasspor,     n.kasimpasa,n.hatayspor,n.galatasaray,n.kayserispor,n.gaziantep],
-    2021.0: [n.besiktas,n.galatasaray,n.fenerbahce,n.trabzonspor,n.sivasspor,n.hatayspor,n.alanyaspor,n.karagumruk,n.gaziantep,n.goztepe,       n.konyaspor,n.instanbul,n.rizespor,n.kasimpasa,n.malatyaspor,n.antalyaspor,n.kayserispor,],
+    //2023.0: [],
+    2022.0: [n.trabzonspor,n.fenerbahce,n.konyaspor,n.instanbul,n.alanyaspor,n.besiktas,n.antalyaspor,n.karagumruk,n.adanaspor,n.sivasspor,            n.kasimpasa,n.hatayspor,n.galatasaray,n.kayserispor,n.gaziantep],
+    2021.0: [n.besiktas,n.galatasaray,n.fenerbahce,n.trabzonspor,n.sivasspor,n.hatayspor,n.alanyaspor,n.karagumruk,n.gaziantep,n.goztepe,              n.konyaspor,n.instanbul,n.rizespor,n.kasimpasa,n.malatyaspor,n.antalyaspor,n.kayserispor,],
     2020.0: [n.instanbul,n.trabzonspor,n.besiktas,n.sivasspor,n.alanyaspor,n.galatasaray,n.fenerbahce,n.gaziantepspor,n.antalyaspor],
-    2019.0: [n.galatasaray,n.instanbul,n.besiktas,n.trabzonspor,n.malatyaspor,n.fenerbahce,n.antalyaspor,n.konyaspor,n.alanyaspor],
-    2018.0: [n.galatasaray,n.fenerbahce,n.instanbul,n.besiktas,n.trabzonspor,n.goztepe,n.sivasspor,n.kasimpasa],
+    2019.0: [n.galatasaray,n.instanbul,n.besiktas,n.trabzonspor,n.malatyaspor,n.fenerbahce,n.antalyaspor,n.konyaspor,n.alanyaspor,n.kayserispor,       n.rizespor,n.sivasspor,n.ankaragucu,n.kasimpasa,n.goztepe,n.bursaspor,],
+    2018.0: [n.galatasaray,n.fenerbahce,n.instanbul,n.besiktas,n.trabzonspor,n.goztepe,n.sivasspor,n.kasimpasa,n.kayserispor,n.malatyaspor,            n.akhisar,n.alanyaspor,n.bursaspor,n.antalyaspor,n.konyaspor,n.ankaraspor,n.genclerbirligi,n.karabukspor],
     2017.0: [n.besiktas,n.instanbul,n.fenerbahce,n.galatasaray,n.antalyaspor,n.trabzonspor,n.akhisar,n.genclerbirligi],
-    2016.0: [n.besiktas,n.fenerbahce,n.konyaspor,n.instanbul,n.ankaraspor,n.galatasaray,n.kasimpasa,n.akhisar,],
-    2015.0: [n.galatasaray,n.fenerbahce,n.besiktas,n.instanbul,n.trabzonspor,n.bursaspor,n.mersin,n.konyaspor,n.genclerbirligi],
-    2014.0: [n.fenerbahce,n.galatasaray,n.besiktas,n.trabzonspor,n.sivasspor,n.kasimpasa,n.karabukspor,n.bursaspor,],
-    2013.0: [n.galatasaray,n.fenerbahce,n.besiktas,n.bursaspor,n.kayserispor,n.kasimpasa,n.antalyaspor,n.eskisehirspor,n.trabzonspor,],
+    2016.0: [n.besiktas,n.fenerbahce,n.konyaspor,n.instanbul,n.ankaraspor,n.galatasaray,n.kasimpasa,n.akhisar,n.antalyaspor,n.genclerbirligi,          n.bursaspor,n.trabzonspor,n.rizespor,n.gaziantepspor,n.kayserispor,n.sivasspor,n.eskisehirspor,n.mersin],
+    2015.0: [n.galatasaray,n.fenerbahce,n.besiktas,n.instanbul,n.trabzonspor,n.bursaspor,n.mersin,n.konyaspor,n.genclerbirligi,n.konyaspor,n.kasimpasa, n.karabukspor,n.alanyaspor,n.ankaraspor,n.bursaspor,n.kayserispor,n.rizespor,n.gaziantepspor,n.adanaspor],
+    2014.0: [n.fenerbahce,n.galatasaray,n.besiktas,n.trabzonspor,n.sivasspor,n.kasimpasa,n.karabukspor,n.bursaspor,n.genclerbirligi,n.akhisar,         n.konyaspor,n.eskisehirspor,n.rizespor,],
+    2013.0: [n.galatasaray,n.fenerbahce,n.besiktas,n.bursaspor,n.kayserispor,n.kasimpasa,n.antalyaspor,n.eskisehirspor,n.trabzonspor,n.gaziantepspor,  n.genclerbirligi,n.sivasspor,n.elazigspor,n.akhisar,n.karabukspor,n.instanbul,n.orduspor,n.mersin],
     2012.0: [n.galatasaray,n.fenerbahce,n.trabzonspor,n.besiktas,n.eskisehirspor,n.instanbul,n.sivasspor,n.bursaspor],
-    2011.0: [n.fenerbahce,n.trabzonspor,n.bursaspor,n.gaziantepspor,n.besiktas,n.kayserispor,n.eskisehirspor,n.galatasaray],
-    2010.0: [n.bursaspor,n.fenerbahce,n.galatasaray,n.besiktas,n.trabzonspor,n.instanbul,n.eskisehirspor],
+    2011.0: [n.fenerbahce,n.trabzonspor,n.bursaspor,n.gaziantepspor,n.besiktas,n.kayserispor,n.eskisehirspor,n.galatasaray,n.karabukspor,n.manisaspor,  n.antalyaspor,n.instanbul,n.ankaragucu,n.genclerbirligi,n.sivasspor],
+    2010.0: [n.bursaspor,n.fenerbahce,n.galatasaray,n.besiktas,n.trabzonspor,n.instanbul,n.eskisehirspor,n.kayserispor,n.antalyaspor,n.genclerbirligi,  n.kasimpasa,n.ankaragucu,n.gaziantepspor,n.manisaspor,n.sivasspor,n.diyarbakirspor,n.denizlispor,n.ankaraspor],
     2009.0: [n.besiktas,n.sivasspor,n.trabzonspor,n.fenerbahce,n.galatasaray,n.bursaspor],
     2008.0: [n.galatasaray,n.fenerbahce,n.besiktas,n.sivasspor,n.kayserispor,n.trabzonspor,n.denizlispor,n.ankaragucu],
     2007.0: [n.fenerbahce,n.besiktas,n.galatasaray,n.trabzonspor,n.kayserispor,n.genclerbirligi,n.sivasspor,n.ankaraspor],
     2006.0: [n.galatasaray,n.fenerbahce,n.besiktas,n.trabzonspor,n.kayserispor,n.genclerbirligi,n.konyaspor,n.sivasspor],
-    2005.0: [n.fenerbahce,n.trabzonspor,n.galatasaray,n.besiktas,n.genclerbirligi,n.denizlispor,n.ankaraspor,],
+    2005.0: [n.fenerbahce,n.trabzonspor,n.galatasaray,n.besiktas,n.genclerbirligi,n.denizlispor,n.ankaraspor,n.konyaspor,n.gaziantepspor,n.rizespor,    ],
     2004.0: [n.fenerbahce,n.trabzonspor,n.besiktas,n.gaziantepspor,n.denizlispor,n.galatasaray,n.samsunspor,n.malatyaspor],
     2003.0: [n.besiktas,n.galatasaray,n.genclerbirligi,n.gaziantepspor,n.malatyaspor,n.fenerbahce,n.trabzonspor,n.ankaragucu,],
-    2002.0: [n.galatasaray,n.fenerbahce,n.besiktas,n.ankaragucu,n.denizlispor,n.gaziantepspor,n.genclerbirligi,],
+    2002.0: [n.galatasaray,n.fenerbahce,n.besiktas,n.ankaragucu,n.denizlispor,n.gaziantepspor,n.genclerbirligi,n.goztepe,n.istanbulspor,n.bursaspor,       n.kocaelispor,n.diyarbakirspor,n.trabzonspor,n.malatyaspor,n.samsunspor,n.rizespor,n.antalyaspor],
     2001.0: [n.fenerbahce,n.galatasaray,n.gaziantepspor,n.besiktas,n.trabzonspor,n.ankaragucu,],
     2000.0: [n.galatasaray,n.besiktas,n.gaziantepspor,n.fenerbahce,n.genclerbirligi,n.trabzonspor,n.samsunspor,n.denizlispor,n.adanaspor,n.bursaspor,      ],
     1999.0: [n.galatasaray,n.besiktas,n.fenerbahce,n.trabzonspor,n.kocaelispor,n.antalyaspor,n.gaziantepspor,n.genclerbirligi,n.istanbulspor,n.samsunspor, ],
@@ -62,7 +63,7 @@ Map<String,dynamic> mapEuropa = {
     1971.0: [n.galatasaray,n.fenerbahce,n.goztepe,n.eskisehirspor,n.bursaspor,n.besiktas,n.istanbulspor,n.altay],
     1970.0: [n.fenerbahce,n.eskisehirspor,n.altay,n.mersin,n.goztepe,n.samsunspor,n.galatasaray,n.bursaspor,n.besiktas,n.istanbulspor],
     1969.0: [n.galatasaray,n.eskisehirspor,n.besiktas,n.fenerbahce,n.bursaspor,],
-    1968.0: [n.fenerbahce,n.besiktas,n.goztepe,n.altay,n.bursaspor,],
+    1968.0: [n.fenerbahce,n.besiktas,n.galatasaray,n.goztepe,n.altay,n.bursaspor,n.bursaspor,n.telekomspor,n.genclerbirligi,n.eskisehirspor],
     1967.0: [n.besiktas,n.fenerbahce,n.galatasaray,n.goztepe,n.altay,n.genclerbirligi],
     1966.0: [n.besiktas,n.galatasaray,n.genclerbirligi,n.fenerbahce,n.goztepe,n.altay,n.ankaragucu],
     1965.0: [n.fenerbahce,n.besiktas,n.galatasaray,n.goztepe,n.istanbulspor],
@@ -83,81 +84,83 @@ Map<String,dynamic> mapEuropa = {
     1950.0: [n.goztepe,n.genclerbirligi,n.besiktas],
   },
   leagueName.grecia : {
+    //2023.0: [],
     2022.0: [n.olympiacos,n.paok,n.aris,n.panathinaikos,n.aek,  n.pasGiannina,n.ionikos,n.ofi,n.asteras,n.volos,     ],
     2021.0: [n.olympiacos,n.paok,n.aris,n.aek,n.panathinaikos,  n.asteras,n.volos,n.atromitos,n.pasGiannina,n.lamia,              ],
     2020.0: [n.olympiacos,n.paok,n.aek,n.panathinaikos,n.aris,  n.ofi,n.asteras,n.atromitos,n.larissa,n.lamia,                    ],
     2019.0: [n.paok,n.olympiacos,n.aek,n.atromitos,n.aris,      n.panionios,n.lamia,n.panathinaikos,n.panetolikos,n.larissa,      ],
-    2018.0: [n.aek,n.paok,n.olympiacos,n.atromitos,n.asteras,   n.xanthi,n.panionios,n.panetolikos,n.pasGiannina,n.levadiakos,    ],
+    2018.0: [n.aek,n.paok,n.olympiacos,n.atromitos,n.asteras,   n.xanthi,n.panionios,n.panetolikos,n.pasGiannina,n.levadiakos,    n.panathinaikos,],
     2017.0: [n.olympiacos,n.aek,n.panathinaikos,n.paok,n.panionios, n.xanthi,n.platanias,n.atromitos,n.pasGiannina,n.kerkyra,     ],
     2016.0: [n.olympiacos,n.paok,n.panathinaikos,n.aek,n.panionios, n.pasGiannina,n.asteras,n.atromitos,n.platanias,n.levadiakos, ],
-    2015.0: [n.olympiacos,n.panathinaikos,n.asteras,n.atromitos,        n.pasGiannina,n.panetolikos,n.xanthi,n.platanias,n.kalloni,         ],
-    2014.0: [n.olympiacos,n.panathinaikos,n.paok,n.atromitos,n.asteras, n.ofi,n.ergotelis,n.panetolikos,n.levadiakos,n.panthrakikos,    ],
-    2013.0: [n.olympiacos,n.paok,n.atromitos,n.asteras,n.pasGiannina,   n.panathinaikos,n.xanthi,n.panionios,n.platanias,n.panthrakikos,],
+    2015.0: [n.olympiacos,n.panathinaikos,n.paok,n.asteras,n.atromitos,        n.pasGiannina,n.panetolikos,n.xanthi,n.platanias,n.kalloni,         ],
+    2014.0: [n.olympiacos,n.panathinaikos,n.paok,n.atromitos,n.asteras, n.ofi,n.ergotelis,n.panetolikos,n.levadiakos,n.panthrakikos,        n.pasGiannina,n.kalloni,n.panionios,n.platanias,n.veria,n.xanthi,n.apollonAthens,n.aris],
+    2013.0: [n.olympiacos,n.paok,n.atromitos,n.asteras,n.pasGiannina,   n.panathinaikos,n.xanthi,n.panionios,n.platanias,n.panthrakikos,    n.levadiakos,n.veria,n.aris,n.ofi,n.aek,n.kerkyra,],
     2012.0: [n.olympiacos,n.panathinaikos,n.aek,n.atromitos,n.paok,     n.asteras,n.levadiakos,n.pasGiannina,n.aris,n.ofi,],
     2011.0: [n.olympiacos,n.panathinaikos,n.paok,n.aek,n.volos,         n.volosOlympiacos,n.aris,n.kavala,n.ergotelis,n.xanthi,n.panionios, ],
     2010.0: [n.panathinaikos,n.paok,n.aek,n.aris,n.olympiacos,          n.kavala,n.atromitos,n.larissa,n.panionios,n.iraklis,    ],
     2009.0: [n.olympiacos,n.panathinaikos,n.aek,n.paok,n.larissa,       n.aris,n.xanthi,n.panionios,n.ergotelis,n.iraklis,       ],
     2008.0: [n.olympiacos,n.panathinaikos,n.aek,n.aris,n.panionios,     n.larissa,n.asteras,n.xanthi,n.paok,n.iraklis,       ],
     2007.0: [n.olympiacos,n.aek,n.panathinaikos,n.aris,n.panionios,     n.paok,n.ofi,n.atromitos,n.ergotelis,n.larissa,],
-    2006.0: [n.olympiacos,n.aek,n.panathinaikos,n.iraklis,n.xanthi,     n.paok,n.atromitos,n.larissa,n.apollonKalamarias,n.egaleo],
-    2005.0: [n.olympiacos,n.panathinaikos,n.aek,n.xanthi,n.paok,        n.egaleo,n.iraklis,n.chalkidona,n.kallithea,n.ionikos],
-    2004.0: [n.panathinaikos,n.olympiacos,n.paok,n.aek,n.egaleo,        n.panionios,n.chalkidona,n.iraklis,n.ionikos,n.xanthi,],
-    2003.0: [n.olympiacos,n.panathinaikos,n.aek,n.paok,n.panionios,     n.aris,n.iraklis,n.ofi,n.xanthi,n.egaleo,],
-    2002.0: [n.olympiacos,n.aek,n.panathinaikos,n.paok,n.xanthi,        n.iraklis,n.panionios,n.ofi,n.aris,n.egaleo,],
-    2001.0: [n.olympiacos,n.panathinaikos,n.aek,n.paok,n.iraklis,       ],
-    2000.0: [n.olympiacos,n.panathinaikos,n.aek,n.ofi,n.paok,           ],
-    1999.0: [n.olympiacos,n.aek,n.panathinaikos,n.paok,n.ionikos,       ],
-    1998.0: [n.olympiacos,n.panathinaikos,n.aek,n.paok,n.ionikos,       ],
-    1997.0: [n.olympiacos,n.aek,n.ofi,n.paok,n.panathinaikos,           ],
-    1996.0: [n.panathinaikos,n.aek,n.olympiacos,n.iraklis,n.ofi,        ],
-    1995.0: [n.panathinaikos,n.olympiacos,n.paok,n.apollonAthens,n.aek, ],
-    1994.0: [n.aek,n.panathinaikos,n.olympiacos,n.aris,n.paok,          ],
-    1993.0: [n.aek,n.panathinaikos,n.olympiacos,n.ofi,n.paok,           ],
-    1992.0: [n.aek,n.olympiacos,n.panathinaikos,n.paok,n.apollonAthens, ],
-    1991.0: [n.panathinaikos,n.olympiacos,n.aek,n.paok,n.iraklis,       ],
-    1990.0: [n.panathinaikos,n.aek,n.paok,n.olympiacos,n.iraklis,       ],
-    1989.0: [n.aek,n.olympiacos,n.panathinaikos,n.iraklis,n.ofi,        ],
-    1988.0: [n.larissa,n.aek,n.paok,n.ofi,n.panathinaikos,              ],
-    1987.0: [n.olympiacos,n.panathinaikos,n.ofi,n.panionios,n.paok,     ],
-    1986.0: [n.panathinaikos,n.ofi,n.aek,n.iraklis,n.olympiacos,        ],
-    1985.0: [n.paok,n.panathinaikos,n.aek,n.olympiacos,n.iraklis,       ],
-    1984.0: [n.panathinaikos,n.olympiacos,n.iraklis,n.aris,n.paok,      ],
-    1983.0: [n.olympiacos,n.larissa,n.aek,n.paok,n.aris,                n.panathinaikos,],
+    2006.0: [n.olympiacos,n.aek,n.panathinaikos,n.iraklis,n.xanthi,     n.paok,n.atromitos,n.larissa,n.apollonKalamarias,n.egaleo, n.panionios,n.ionikos,n.ofi,n.levadiakos,n.kallithea,n.akratitos],
+    2005.0: [n.olympiacos,n.panathinaikos,n.aek,n.xanthi,n.paok,        n.egaleo,n.iraklis,n.chalkidona,n.kallithea,n.ionikos,     n.panionios,n.apollonKalamarias,n.ofi,n.aris,n.ergotelis,n.kerkyra],
+    2004.0: [n.panathinaikos,n.olympiacos,n.paok,n.aek,n.egaleo,        n.panionios,n.chalkidona,n.iraklis,n.ionikos,n.xanthi,     n.ofi,n.kallithea,n.aris,],
+    2003.0: [n.olympiacos,n.panathinaikos,n.aek,n.paok,n.panionios,     n.aris,n.iraklis,n.ofi,n.xanthi,n.egaleo,              ],
+    2002.0: [n.olympiacos,n.aek,n.panathinaikos,n.paok,n.xanthi,        n.iraklis,n.panionios,n.ofi,n.aris,n.egaleo,           ],
+    2001.0: [n.olympiacos,n.panathinaikos,n.aek,n.paok,n.iraklis,       n.ionikos,n.aris,n.xanthi,n.panionios,n.ethnikos,      ],
+    2000.0: [n.olympiacos,n.panathinaikos,n.aek,n.ofi,n.paok,           n.iraklis,n.aris,n.panionios,n.kalamata,n.ionikos,     ],
+    1999.0: [n.olympiacos,n.aek,n.panathinaikos,n.paok,n.ionikos,       n.aris,n.xanthi,n.ofi,n.iraklis,n.kavala,              ],
+    1998.0: [n.olympiacos,n.panathinaikos,n.aek,n.paok,n.ionikos,       n.iraklis,n.ofi,n.xanthi,n.veria,n.apollonAthens,      ],
+    1997.0: [n.olympiacos,n.aek,n.ofi,n.paok,n.panathinaikos,           n.kavala,n.paniliakos,n.ionikos,n.apollonAthens,n.veria,],
+    1996.0: [n.panathinaikos,n.aek,n.olympiacos,n.iraklis,n.ofi,        n.xanthi,n.aris,n.ionikos,n.edessaikos,n.athinaikos,   n.apollonAthens,n.paniliakos,n.kalamata,n.paok,n.panachaiki,  n.larissa,n.panionios,n.ethnikos],
+    1995.0: [n.panathinaikos,n.olympiacos,n.paok,n.apollonAthens,n.aek, n.iraklis,n.aris,n.xanthi,n.ofi,n.edessaikos,          ],
+    1994.0: [n.aek,n.panathinaikos,n.olympiacos,n.aris,n.paok,          n.iraklis,n.ofi,n.xanthi,n.panionios,n.larissa,        ],
+    1993.0: [n.aek,n.panathinaikos,n.olympiacos,n.ofi,n.paok,           n.iraklis,n.larissa,n.xanthi,n.aris,n.athinaikos,      ],
+    1992.0: [n.aek,n.olympiacos,n.panathinaikos,n.paok,n.apollonAthens, n.ofi,n.aris,n.larissa,n.iraklis,n.korinthos,          ],
+    1991.0: [n.panathinaikos,n.olympiacos,n.aek,n.paok,n.iraklis,       n.athinaikos,n.doxadrama,n.ofi,n.aris,n.panionios,     ],
+    1990.0: [n.panathinaikos,n.aek,n.paok,n.olympiacos,n.iraklis,       n.ofi,n.aris,n.larissa,n.panionios,n.doxadrama,         ],
+    1989.0: [n.aek,n.olympiacos,n.panathinaikos,n.iraklis,n.ofi,        n.larissa,n.aris,n.paok,n.doxadrama,n.panionios,       ],
+    1988.0: [n.larissa,n.aek,n.paok,n.ofi,n.panathinaikos,              n.iraklis,n.ethnikos,n.olympiacos,n.aris,n.panionios,  ],
+    1987.0: [n.olympiacos,n.panathinaikos,n.ofi,n.panionios,n.paok,     n.iraklis,n.aek,n.larissa,n.veria,n.ethnikos,          ],
+    1986.0: [n.panathinaikos,n.ofi,n.aek,n.iraklis,n.olympiacos,        n.panionios,n.aris,n.larissa,n.apollonKalamarias,n.paok,],
+    1985.0: [n.paok,n.panathinaikos,n.aek,n.olympiacos,n.iraklis,       n.larissa,n.aris,n.panionios,n.ethnikos,n.ofi,         ],
+    1984.0: [n.panathinaikos,n.olympiacos,n.iraklis,n.aris,n.paok,      n.larissa,n.aek,n.ofi,n.ethnikos,n.apollonAthens,      ],
+    1983.0: [n.olympiacos,n.larissa,n.aek,n.paok,n.aris,                n.panathinaikos,n.ofi,n.iraklis,n.pasGiannina,n.apollonAthens,],
     1982.0: [n.olympiacos,n.panathinaikos,n.paok,n.aek,n.aris,          ],
     1981.0: [n.olympiacos,n.aek,n.aris,n.paok,n.panathinaikos,          ],
     1980.0: [n.olympiacos,n.aris,n.panathinaikos,n.aek,n.paok,          ],
     1979.0: [n.aek,n.olympiacos,n.aris,n.paok,n.panathinaikos,          ],
-    1978.0: [n.aek,n.paok,n.panathinaikos,n.olympiacos,n.pasGiannina,   ],
-    1977.0: [n.panathinaikos,n.olympiacos,n.paok,n.aek,n.aris,          ],
-    1976.0: [n.paok,n.aek,n.olympiacos,n.panathinaikos,n.pasGiannina,   ],
-    1975.0: [n.olympiacos,n.aek,n.paok,],
+    1978.0: [n.aek,n.paok,n.panathinaikos,n.olympiacos,n.pasGiannina,   n.aris,n.ethnikos,n.ofi,n.iraklis,n.panachaiki,            ],
+    1977.0: [n.panathinaikos,n.olympiacos,n.paok,n.aek,n.aris,          n.ofi,n.kavala,n.ethnikos,n.panionios,n.kastoria,          ],
+    1976.0: [n.paok,n.aek,n.olympiacos,n.panathinaikos,n.pasGiannina,   n.aris,n.ethnikos,n.iraklis,n.atromitos,n.panachaiki,      ],
+    1975.0: [n.olympiacos,n.aek,n.paok,n.ethnikos,n.panathinaikos,      n.aris,n.panachaiki,n.iraklis,n.pasGiannina,n.panionios,   ],
     1974.0: [n.olympiacos,n.panathinaikos,n.aris,n.paok,n.aek,          ],
     1973.0: [n.olympiacos,n.paok,n.panathinaikos,n.panachaiki,n.aek,    ],
-    1972.0: [n.panathinaikos,n.olympiacos,n.aek,],
-    1971.0: [n.aek,n.panionios,n.panathinaikos,],
-    1970.0: [n.panathinaikos,n.aek,n.olympiacos,],
-    1969.0: [n.panathinaikos,n.olympiacos,n.aris,],
-    1968.0: [n.aek,n.olympiacos,n.panathinaikos,],
-    1967.0: [n.olympiacos,n.aek,n.panathinaikos,],
-    1966.0: [n.olympiacos,n.panathinaikos,n.aek,],
-    1965.0: [n.panathinaikos,n.aek,n.olympiacos,],
-    1964.0: [n.panathinaikos,n.olympiacos,n.aek,],
-    1963.0: [n.aek,n.panathinaikos,n.olympiacos,],
-    1962.0: [n.panathinaikos,n.olympiacos,n.apollonAthens,],
-    1961.0: [n.panathinaikos,n.olympiacos,n.panionios],
-    1960.0: [n.panathinaikos,n.aek,n.olympiacos],
-    1959.0: [n.olympiacos,n.aek,],
-    1958.0: [n.olympiacos,n.aek,],
-    1957.0: [n.olympiacos,n.panathinaikos,],
-    1956.0: [n.olympiacos,n.pireu,],
-    1955.0: [n.olympiacos,n.panathinaikos,],
-    1954.0: [n.olympiacos,n.panathinaikos,],
-    1953.0: [n.panathinaikos,n.olympiacos,],
+    1972.0: [n.panathinaikos,n.olympiacos,n.aek,n.aris,n.paok,          n.panachaiki,n.panionios,n.ethnikos,n.iraklis,n.kavala,    ],
+    1971.0: [n.aek,n.panionios,n.panathinaikos,n.iraklis,n.egaleo,      n.apollon,n.olympiacos,n.paok,n.ethnikos,n.aris,           ],
+    1970.0: [n.panathinaikos,n.aek,n.olympiacos,n.aris,n.paok,          n.iraklis,n.pierikos,n.panserraikos,n.panionios,n.egaleo,  ],
+    1969.0: [n.panathinaikos,n.olympiacos,n.aris,n.panionios,n.paok,    n.aek,n.egaleo,n.ethnikos,n.pierikos,n.panserraikos,       ],
+    1968.0: [n.aek,n.olympiacos,n.panathinaikos,n.aris,n.pierikos,      n.ethnikos,n.vyzas,n.panionios,n.paok,n.veria,             ],
+    1967.0: [n.olympiacos,n.aek,n.panathinaikos,n.paok,n.aris,          n.panionios,n.ethnikos,n.proodeftiki,n.iraklis,n.vyzas,    ],
+    1966.0: [n.olympiacos,n.panathinaikos,n.aek,n.panionios,n.aris,     n.paok,n.ethnikos,n.pierikos,n.egaleo,n.apollonAthens,     ],
+    1965.0: [n.panathinaikos,n.aek,n.olympiacos,n.proodeftiki,n.pierikos, n.apollon,n.aris,n.paok,n.ethnikos,n.panionios,          ],
+    1964.0: [n.panathinaikos,n.olympiacos,n.aek,n.panionios,n.apollon,   n.aris,n.pierikos,n.paok,n.apollonKalamarias,n.ethnikos,  ],
+    1963.0: [n.aek,n.panathinaikos,n.olympiacos,n.paok,n.ethnikos,      n.iraklis,n.panionios,n.apollonAthens,n.pierikos,n.egaleo, ],
+    1962.0: [n.panathinaikos,n.olympiacos,n.apollonAthens,n.aek,n.panionios, n.paok,n.ethnikos,n.iraklis,n.fostiras,n.proodeftiki, ],
+    1961.0: [n.panathinaikos,n.olympiacos,n.panionios,n.aek,n.apollonAthens, n.ethnikos,n.doxadrama,n.iraklis,n.fostiras,n.paok,   ],
+    1960.0: [n.panathinaikos,n.aek,n.olympiacos,n.apollonAthens,n.panionios,  n.doxadrama,n.paok,n.aris,n.iraklis,n.proodeftiki,   ],
+    1959.0: [n.olympiacos,n.aek,n.panionios,n.panathinaikos,n.doxadrama,     n.aris,n.ethnikos,n.paok,n.apollonKalamarias,n.panegialios,],
+    1958.0: [n.olympiacos,n.aek,n.panathinaikos,n.apollonKalamarias,n.panionios,  n.proodeftiki,n.doxadrama,n.paok,n.apollonAthens,n.iraklis,],
+    1957.0: [n.olympiacos,n.panathinaikos,n.apollonAthens,n.paok,n.doxadrama,  n.ethnikos,n.aris,n.panionios,n.proodeftiki,n.panargiakos,],
+    1956.0: [n.olympiacos,n.ethnikos,n.panathinaikos,n.paok,n.apollonAthens,   n.aris,],
+    1955.0: [n.olympiacos,n.panathinaikos,n.apollonAthens,n.paok,n.volosOlympiacos,      n.panetolikos,],
+    1954.0: [n.olympiacos,n.panathinaikos,n.aek,n.paok,n.nikivolos,          n.panachaiki,],
+    1953.0: [n.panathinaikos,n.olympiacos,n.aris,n.iraklis,n.ethnikos,       n.apollonAthens,],
     1952.0: [],
-    1951.0: [n.olympiacos,n.panionios,],
+    1951.0: [n.olympiacos,n.panionios,n.iraklis,n.ethnikos,n.makedonikos,    n.aek,n.paok,n.panathinaikos,n.panelefsiniakos,],
     1950.0: [],
   },
   leagueName.chipre : {
+    //2023.0: [],
     2022.0: [n.apollon,n.aeklarnaca,n.apoel,n.arislimassol,n.anorthosis,n.pafos,       n.omonia,n.aellimassol,n.olynikosia],
     2021.0: [n.omonia,n.apollon,n.aellimassol,n.anorthosis,n.aeklarnaca,n.olynikosia,  n.pafos,n.apoel],
     2020.0: [],
@@ -194,33 +197,34 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.repTcheca : {
-    2022.0: [n.viktoriaPlzen,n.slaviaPraha,n.spartapraga,],
-    2021.0: [n.slaviaPraha,n.spartapraga,n.jablonec,],
-    2020.0: [n.slaviaPraha,n.viktoriaPlzen,n.spartapraga,],
-    2019.0: [n.slaviaPraha,n.viktoriaPlzen,n.spartapraga,],
-    2018.0: [n.viktoriaPlzen,n.slaviaPraha,n.jablonec,],
-    2017.0: [n.slaviaPraha,n.viktoriaPlzen,n.spartapraga,],
-    2016.0: [n.viktoriaPlzen,n.spartapraga,n.slovanLiberec,],
-    2015.0: [n.viktoriaPlzen,n.spartapraga,n.jablonec,],
-    2014.0: [n.spartapraga,n.viktoriaPlzen,n.mladaBoleslav,],
-    2013.0: [n.viktoriaPlzen,n.spartapraga,n.slovanLiberec,],
-    2012.0: [n.slovanLiberec,n.spartapraga,n.viktoriaPlzen,],
-    2011.0: [n.viktoriaPlzen,n.spartapraga,n.jablonec,],
-    2010.0: [n.spartapraga,n.jablonec,n.banikostrava,],
-    2009.0: [n.slaviaPraha,n.spartapraga,n.slovanLiberec,],
-    2008.0: [n.slaviaPraha,n.spartapraga,n.banikostrava,],
-    2007.0: [n.spartapraga,n.slaviaPraha,n.mladaBoleslav,],
-    2006.0: [n.slovanLiberec,n.mladaBoleslav,n.slaviaPraha,],
-    2005.0: [n.spartapraga,n.slaviaPraha,n.teplice,],
-    2004.0: [n.banikostrava,n.spartapraga,n.sigmaOlomouc,],
-    2003.0: [n.spartapraga,n.slaviaPraha,n.viktoriaZizkov],
-    2002.0: [n.slovanLiberec,n.spartapraga,n.viktoriaZizkov],
+    //2023.0: [],
+    2022.0: [n.viktoriaPlzen,n.slaviaPraha,n.spartapraga,n.slovacko,n.banikostrava,       ],
+    2021.0: [n.slaviaPraha,n.spartapraga,n.jablonec,n.slovacko,n.viktoriaPlzen,           ],
+    2020.0: [n.slaviaPraha,n.viktoriaPlzen,n.spartapraga,n.jablonec,n.slovanLiberec,      ],
+    2019.0: [n.slaviaPraha,n.viktoriaPlzen,n.spartapraga,n.jablonec,n.banikostrava,       ],
+    2018.0: [n.viktoriaPlzen,n.slaviaPraha,n.jablonec,n.sigmaOlomouc,n.spartapraga,       ],
+    2017.0: [n.slaviaPraha,n.viktoriaPlzen,n.spartapraga,n.mladaBoleslav,n.teplice,       ],
+    2016.0: [n.viktoriaPlzen,n.spartapraga,n.slovanLiberec,n.mladaBoleslav,n.slaviaPraha, ],
+    2015.0: [n.viktoriaPlzen,n.spartapraga,n.jablonec,n.pribram,n.dukla,                  n.teplice,n.bohemians,n.slovacko,n.vysocina,     n.slaviaPraha,n.slovanLiberec,n.brno],
+    2014.0: [n.spartapraga,n.viktoriaPlzen,n.mladaBoleslav,n.slovanBratislava,n.teplice,  n.slovacko,n.dukla,n.vysocina,n.brno,n.banikostrava,n.jablonec,n.pribram,n.slaviaPraha,n.bohemians,n.sigmaOlomouc,n.znojmo],
+    2013.0: [n.viktoriaPlzen,n.spartapraga,n.slovanLiberec,n.jablonec,n.sigmaOlomouc,     n.dukla,n.slaviaPraha,],
+    2012.0: [n.slovanLiberec,n.spartapraga,n.viktoriaPlzen,n.mladaBoleslav,n.teplice,     n.dukla,n.slovacko,n.jablonec,n.pribram,],
+    2011.0: [n.viktoriaPlzen,n.spartapraga,n.jablonec,n.sigmaOlomouc,n.mladaBoleslav,     n.bohemians,n.slovanLiberec,n.hradec,n.slaviaPraha,n.teplice,             ],
+    2010.0: [n.spartapraga,n.jablonec,n.banikostrava,n.teplice,n.viktoriaPlzen,           n.sigmaOlomouc,n.slaviaPraha,n.mladaBoleslav,n.slovanLiberec,n.pribram,   ],
+    2009.0: [n.slaviaPraha,n.spartapraga,n.slovanLiberec,n.sigmaOlomouc,n.jablonec,       n.mladaBoleslav,n.teplice,n.viktoriaPlzen,n.banikostrava,],
+    2008.0: [n.slaviaPraha,n.spartapraga,n.banikostrava,n.brno,n.teplice,                 n.slovanLiberec,n.mladaBoleslav,n.trinityzlin,n.viktoriaPlzen,n.viktoriaZizkov,  ],
+    2007.0: [n.spartapraga,n.slaviaPraha,n.mladaBoleslav,n.slovanLiberec,n.brno,          n.viktoriaPlzen,n.banikostrava,n.teplice,n.jablonec,],
+    2006.0: [n.slovanLiberec,n.mladaBoleslav,n.slaviaPraha,n.teplice,n.spartapraga,       n.banikostrava,],
+    2005.0: [n.spartapraga,n.slaviaPraha,n.teplice,n.sigmaOlomouc,n.slovanLiberec,        n.jablonec,],
+    2004.0: [n.banikostrava,n.spartapraga,n.sigmaOlomouc,n.slaviaPraha,n.slovacko,        n.slovanLiberec,],
+    2003.0: [n.spartapraga,n.slaviaPraha,n.viktoriaZizkov,n.slovanLiberec,n.banikostrava, n.teplice,],
+    2002.0: [n.slovanLiberec,n.spartapraga,n.viktoriaZizkov,n.bohemians,n.slaviaPraha,    n.banikostrava,],
     2001.0: [n.spartapraga,n.slaviaPraha,n.sigmaOlomouc,],
     2000.0: [n.spartapraga,n.slaviaPraha,n.drnovice,],
     1999.0: [n.spartapraga,n.teplice,n.slaviaPraha,],
     1998.0: [n.spartapraga,n.slaviaPraha,n.sigmaOlomouc,],
     1997.0: [n.spartapraga,n.slaviaPraha,n.jablonec,],
-    1996.0: [n.slaviaPraha,n.sigmaOlomouc,n.jablonec,],
+    1996.0: [n.slaviaPraha,n.sigmaOlomouc,n.jablonec,n.spartapraga,],
     1995.0: [n.spartapraga,n.slaviaPraha,n.bobyBrno,],
     1994.0: [n.spartapraga,n.slaviaPraha,n.banikostrava,],
     //TCHECOSLOVAQUIA
@@ -270,6 +274,7 @@ Map<String,dynamic> mapEuropa = {
     1950.0: [n.slovanBratislava,n.spartapraga,n.bohemians,n.vitkovice,n.dukla,          n.karlin,n.slaviaPraha,n.teplice,n.tatranPresov,n.viktoriaPlzen,   n.kosice,n.zilina,n.trnava,],
   },
   leagueName.eslovaquia : {
+    //2023.0: [],
     2022.0: [n.slovanBratislava,n.ruzomberok,n.trnava,],
     2021.0: [n.slovanBratislava,n.dac1904,n.trnava,],
     2020.0: [n.slovanBratislava,n.zilina,n.dac1904,],
@@ -301,6 +306,7 @@ Map<String,dynamic> mapEuropa = {
     1994.0: [n.slovanBratislava,n.interBratislava,n.dac1904],
   },
   leagueName.eslovenia : {
+    //2023.0: [],
     2022.0: [n.maribor,n.koper,n.ljublijana,],
     2021.0: [n.mura,n.maribor,n.ljublijana,],
     2020.0: [n.celje,n.maribor,n.ljublijana,],
@@ -335,6 +341,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.escocia : {
+    //2023.0: [],
     2022.0: [n.celtic,n.rangers,n.hearts,n.dundee,n.rossCounty,        n.motherwell,n.hibernian,n.livingston,n.aberdeen,n.stmirren,     n.stjohnstone,n.dundeefc],
     2021.0: [n.rangers,n.celtic,n.hibernian,n.aberdeen,n.livingston,  n.stjohnstone,n.stmirren,n.dundee,n.motherwell,n.rossCounty,      n.kilmarnock,n.hamilton],
     2020.0: [n.celtic,n.rangers,n.motherwell,n.aberdeen,n.livingston,  n.stjohnstone,n.hibernian,n.kilmarnock,n.stmirren,n.rossCounty,  n.hamilton,n.hearts],
@@ -410,6 +417,7 @@ Map<String,dynamic> mapEuropa = {
     1950.0: [n.rangers,n.hibernian,n.hearts,n.eastfife,n.celtic,     n.dundeefc,n.partick,n.aberdeen,n.raithrovers,n.motherwell, n.stmirren,n.thirdLanark,n.clyde,n.falkirk],
   },
   leagueName.irlanda : {
+    //2023.0: [],
     2022.0: [n.shamrock,n.derry,n.dundalk,],
     2021.0: [n.shamrock,n.stpatricks,n.sligo,],
     2020.0: [n.shamrock,n.bohemian,n.dundalk,],
@@ -485,6 +493,7 @@ Map<String,dynamic> mapEuropa = {
     1950.0: [n.corkceltic,n.drumcondra,n.shellbourne,],
   },
   leagueName.paisgales : {
+    //2023.0: [],
     2022.0: [n.newsaints,n.balatown,n.newtown],
     2021.0: [n.connahs,n.newsaints,n.balatown,],
     2020.0: [n.connahs,n.newsaints,n.balatown,],
@@ -518,9 +527,10 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.belgica : {
-    2022.0: [n.brugge,n.saintgilloise,n.anderlecht,n.royalAntwerp,       n.gent,n.charleroi,n.mechelen,n.genk,],
-    2021.0: [n.brugge,n.genk,n.royalAntwerp,n.anderlecht,                n.gent,n.mechelen,n.oostende,n.standardliege,  n.beerschot,],
-    2020.0: [n.brugge,n.gent,n.charleroi,n.royalAntwerp,                 n.standardliege,n.mechelen,n.genk,n.anderlecht, ],
+    //2023.0: [],
+    2022.0: [n.brugge,n.saintgilloise,n.anderlecht,n.royalAntwerp,       n.gent,n.charleroi,n.mechelen,n.genk,n.sttruidense,n.cerclebrugge,       n.leuven,n.oostende,n.kortrijk,n.standardliege,n.kaseupen,n.zulteWaregem,n.seraing,n.beerschot],
+    2021.0: [n.brugge,n.genk,n.royalAntwerp,n.anderlecht,                n.gent,n.mechelen,n.oostende,n.standardliege,n.beerschot,n.zulteWaregem, n.leuven,n.kaseupen,n.charleroi,n.kortrijk,n.sttruidense,n.cerclebrugge,n.beveren,n.mouscron],
+    2020.0: [n.brugge,n.gent,n.charleroi,n.royalAntwerp,                 n.standardliege,n.mechelen,n.genk,n.anderlecht,n.zulteWaregem,n.mouscron, n.kortrijk,n.sttruidense,n.kaseupen,n.cerclebrugge,n.oostende,n.beveren],
     2019.0: [n.genk,n.brugge,n.standardliege,n.royalAntwerp,             n.gent,n.anderlecht,n.sttruidense,n.kortrijk,n.charleroi,n.mouscron,    n.zulteWaregem,n.kaseupen,n.cerclebrugge,n.oostende,n.beveren,n.lokeren],
     2018.0: [n.brugge,n.standardliege,n.anderlecht,n.gent,               n.genk,n.charleroi,n.kortrijk,n.royalAntwerp,n.zulteWaregem,n.sttruidense,  n.oostende,n.beveren,n.lokeren,n.mouscron,n.kaseupen,n.mechelen],
     2017.0: [n.anderlecht,n.brugge,n.gent,n.oostende,                    n.charleroi,n.zulteWaregem,n.mechelen,n.genk,n.standardliege,n.kortrijk,    n.lokeren,n.sttruidense,n.kaseupen,n.beveren,n.mouscron,n.westerlo],
@@ -533,45 +543,45 @@ Map<String,dynamic> mapEuropa = {
     2010.0: [n.anderlecht,n.gent,n.brugge,n.sttruidense,                 n.kortrijk,n.zulteWaregem,n.mechelen,n.standardliege,n.cerclebrugge,n.beerschot,  n.genk,n.westerlo,n.charleroi,n.lokeren,n.roeselare,n.mouscron],
     2009.0: [n.standardliege,n.anderlecht,n.brugge,n.gent,               n.zulteWaregem,n.westerlo,n.lokeren,n.genk,n.cerclebrugge,n.mechelen,    n.mouscron,n.charleroi,n.beerschot,n.kortrijk,n.dender,n.roeselare,n.tubize,n.mons],
     2008.0: [n.standardliege,n.anderlecht,n.brugge,n.cerclebrugge,       n.beerschot,n.gent,n.zulteWaregem,n.charleroi,n.westerlo,n.genk,         n.mouscron,n.lokeren,n.mechelen,n.roeselare,n.dender,n.mons,n.sttruidense,n.molenbeek],
-    2007.0: [n.anderlecht,n.genk,n.standardliege,n.gent,n.charleroi,],
-    2006.0: [n.anderlecht,n.standardliege,n.brugge,n.gent,],
-    2005.0: [n.brugge,n.anderlecht,n.genk,n.standardliege,],
-    2004.0: [n.anderlecht,n.brugge,n.standardliege,n.genk,],
-    2003.0: [n.brugge,n.anderlecht,n.lokeren,n.sttruidense,],
-    2002.0: [n.genk,n.brugge,n.anderlecht,n.gent,],
-    2001.0: [n.anderlecht,n.brugge,n.standardliege,n.lokeren,],
-    2000.0: [n.anderlecht,n.brugge,n.gent,n.mouscron,],
-    1999.0: [n.genk,n.brugge,n.anderlecht,n.mouscron,],
-    1998.0: [n.brugge,n.genk,n.beerschot,n.anderlecht,],
-    1997.0: [n.lierse,n.brugge,n.mouscron,n.anderlecht,],
-    1996.0: [n.brugge,n.anderlecht,n.beerschot,n.molenbeek],
-    1995.0: [n.anderlecht,n.standardliege,n.brugge,n.eendrachtAalst,],
-    1994.0: [n.anderlecht,n.brugge,n.seraing,n.charleroi,],
-    1993.0: [n.anderlecht,n.standardliege,n.mechelen,n.waregemKSV,n.royalAntwerp, n.brugge,n.charleroi,n.beveren,n.gent,n.lierse,   n.molenbeek,n.liegeois,n.cerclebrugge,n.beerschot,n.genk,     n.lommel,n.lokeren],
-    1992.0: [n.brugge,n.anderlecht,n.standardliege,n.mechelen,n.royalAntwerp,  n.gent,n.lierse,n.beerschot,n.cerclebrugge,n.waregemKSV,  n.molenbeek,n.beveren,n.charleroi,n.lokeren,n.liegeois,   n.genk,n.kortrijk,n.eendrachtAalst],
-    1991.0: [n.anderlecht,n.mechelen,n.gent,n.brugge,n.beerschot,      n.standardliege,n.royalAntwerp,n.charleroi,n.lokeren,n.liegeois,      n.lierse,n.molenbeek,n.waregemKSV,n.genk,n.kortrijk,n.cerclebrugge,n.sttruidense,n.beerschot],
-    1990.0: [n.brugge,n.anderlecht,n.mechelen,n.royalAntwerp,n.standardliege, n.gent,n.kortrijk,n.beerschot,n.cerclebrugge,n.lierse,         n.lokeren,n.liegeois,n.beerschot,n.charleroi,n.sttruidense,n.waregemKSV,n.beveren,n.mechelen],
-    1989.0: [n.mechelen,n.anderlecht,n.liegeois,n.brugge,n.royalAntwerp,    n.standardliege,n.sttruidense,n.kortrijk,n.waregemKSV,n.lierse,n.charleroi,n.beveren,n.mechelen,n.lokeren,n.cerclebrugge,n.beerschot,n.molenbeek,n.genk],
+    2007.0: [n.anderlecht,n.genk,n.standardliege,n.gent,n.charleroi,     n.brugge,n.beerschot,n.westerlo,n.mons,n.mouscron,                       n.roeselare,n.cerclebrugge,n.daring,n.zulteWaregem,n.sttruidense,n.lokeren,n.lierse,n.beveren],
+    2006.0: [n.anderlecht,n.standardliege,n.brugge,n.gent,n.genk,        n.zulteWaregem,n.beerschot,n.lokeren,n.westerlo,n.daring,             n.charleroi,n.roeselare,n.cerclebrugge,n.mouscron,n.sttruidense,n.beveren,n.lierse,n.lalouviere],
+    2005.0: [n.brugge,n.anderlecht,n.genk,n.standardliege,n.charleroi,   n.gent,n.lalouviere,n.lokeren,n.beerschot,n.lierse,    ],
+    2004.0: [n.anderlecht,n.brugge,n.standardliege,n.genk,n.mouscron,   n.westerlo,n.beerschot,n.lalouviere,n.gent,n.lokeren,   ],
+    2003.0: [n.brugge,n.anderlecht,n.lokeren,n.sttruidense,n.lierse,    n.genk,n.standardliege,n.gent,n.mons,n.westerlo,        ],
+    2002.0: [n.genk,n.brugge,n.anderlecht,n.gent,n.standardliege,       n.mouscron,n.lokeren,n.sttruidense,n.beerschot,n.molenbeek,],
+    2001.0: [n.anderlecht,n.brugge,n.standardliege,n.lokeren,n.gent,    n.beerschot,n.mouscron,n.westerlo,n.charleroi,n.lierse,    n.genk,],
+    2000.0: [n.anderlecht,n.brugge,n.gent,n.mouscron,n.standardliege,   n.westerlo,n.beerschot,n.genk,n.lierse,n.lokeren,          n.mechelen,n.eendrachtAalst,n.sttruidense,n.harelbeke,n.beveren,n.charleroi,n.geel,n.lommel],
+    1999.0: [n.genk,n.brugge,n.anderlecht,n.mouscron,n.lokeren,                n.standardliege,n.lierse,n.gent,n.sttruidense,n.beerschot,       n.harelbeke,n.westerlo,n.eendrachtAalst,n.charleroi,n.beveren,n.lommel,n.kortrijk,n.oostende],
+    1998.0: [n.brugge,n.genk,n.beerschot,n.anderlecht,n.harelbeke,             n.lokeren,n.lierse,n.gent,n.standardliege,n.mouscron,            n.lommel,n.westerlo,n.charleroi,n.sttruidense,n.eendrachtAalst,n.beveren,n.molenbeek,n.royalAntwerp],
+    1997.0: [n.lierse,n.brugge,n.mouscron,n.anderlecht,n.lommel,n.royalAntwerp, n.royalAntwerp,n.standardliege,n.genk,n.harelbeke,n.beerschot,  n.sttruidense,n.lokeren,n.charleroi,n.gent,n.eendrachtAalst,n.molenbeek,n.mechelen,n.cerclebrugge],
+    1996.0: [n.brugge,n.anderlecht,n.beerschot,n.molenbeek,n.lierse,           n.standardliege,n.charleroi,n.cerclebrugge,n.lommel,n.mechelen,  n.harelbeke,n.eendrachtAalst,n.royalAntwerp,n.gent,n.sttruidense,n.seraing,n.beveren,n.waregemKSV],
+    1995.0: [n.anderlecht,n.standardliege,n.brugge,n.eendrachtAalst,n.lierse,  n.beerschot,n.lommel,n.sttruidense,n.seraing,n.beveren,          n.mechelen,n.molenbeek,n.charleroi,n.gent,n.cerclebrugge,n.royalAntwerp,n.oostende,n.liegeois],
+    1994.0: [n.anderlecht,n.brugge,n.seraing,n.charleroi,n.royalAntwerp,       n.standardliege,n.oostende,n.mechelen,n.beveren,n.beerschot,     n.lommel,n.cerclebrugge,n.liegeois,n.gent,n.molenbeek,n.waregemKSV,n.genk],
+    1993.0: [n.anderlecht,n.standardliege,n.mechelen,n.waregemKSV,n.royalAntwerp, n.brugge,n.charleroi,n.beveren,n.gent,n.lierse,               n.molenbeek,n.liegeois,n.cerclebrugge,n.beerschot,n.genk,     n.lommel,n.lokeren],
+    1992.0: [n.brugge,n.anderlecht,n.standardliege,n.mechelen,n.royalAntwerp,  n.gent,n.lierse,n.beerschot,n.cerclebrugge,n.waregemKSV,         n.molenbeek,n.beveren,n.charleroi,n.lokeren,n.liegeois,   n.genk,n.kortrijk,n.eendrachtAalst],
+    1991.0: [n.anderlecht,n.mechelen,n.gent,n.brugge,n.beerschot,              n.standardliege,n.royalAntwerp,n.charleroi,n.lokeren,n.liegeois, n.lierse,n.molenbeek,n.waregemKSV,n.genk,n.kortrijk,n.cerclebrugge,n.sttruidense,n.beerschot],
+    1990.0: [n.brugge,n.anderlecht,n.mechelen,n.royalAntwerp,n.standardliege,  n.gent,n.kortrijk,n.beerschot,n.cerclebrugge,n.lierse,           n.lokeren,n.liegeois,n.beerschot,n.charleroi,n.sttruidense,n.waregemKSV,n.beveren,n.mechelen],
+    1989.0: [n.mechelen,n.anderlecht,n.liegeois,n.brugge,n.royalAntwerp,       n.standardliege,n.sttruidense,n.kortrijk,n.waregemKSV,n.lierse,  n.charleroi,n.beveren,n.mechelen,n.lokeren,n.cerclebrugge,n.beerschot,n.molenbeek,n.genk],
     1988.0: [n.brugge,n.mechelen,n.royalAntwerp,n.anderlecht,n.liegeois,    n.waregemKSV,n.cerclebrugge,n.charleroi,n.kortrijk,n.standardliege],
     1987.0: [n.anderlecht,n.mechelen,n.brugge,n.lokeren,n.beveren,          n.liegeois,n.charleroi,n.waregemKSV,n.beerschot,n.standardliege],
-    1986.0: [n.anderlecht,n.brugge,n.standardliege,n.gent,n.beveren,        n.liegeois,n.beerschot,n.waregemKSV,n.royalAntwerp,n.cerclebrugge,   n.mechelen,n.charleroi,n.molenbeek,n.lokeren,n.kortrijk,],
+    1986.0: [n.anderlecht,n.brugge,n.standardliege,n.gent,n.beveren,        n.liegeois,n.beerschot,n.waregemKSV,n.royalAntwerp,n.cerclebrugge,  n.mechelen,n.charleroi,n.molenbeek,n.lokeren,n.kortrijk,],
     1985.0: [n.anderlecht,n.brugge,n.liegeois,n.waregemKSV,n.beveren,       n.gent,n.royalAntwerp,n.standardliege,n.waterschei,n.lokeren,       n.cerclebrugge,n.mechelen,n.kortrijk,],
-    1984.0: [n.beveren,n.anderlecht,n.brugge,n.standardliege,n.seraing,     n.mechelen,n.waregemKSV,n.royalAntwerp,n.waterschei,n.lokeren,       n.cerclebrugge,n.kortrijk,n.liegeois,n.lierse,n.gent,      n.beerschot,n.molenbeek,n.beringen],
-    1983.0: [n.standardliege,n.anderlecht,n.royalAntwerp,n.gent,n.brugge,   n.beveren,n.waterschei,n.lokeren,n.liegeois,n.molenbeek,             n.kortrijk,n.cerclebrugge,n.seraing,n.lierse,n.beerschot,   n.waregemKSV,],
-    1982.0: [n.standardliege,n.anderlecht,n.gent,n.lokeren,n.royalAntwerp,  n.kortrijk,n.beveren,n.lierse,n.waterschei,n.tongeren,               n.molenbeek,n.waregemKSV,n.winterslag,n.brugge,n.cerclebrugge,  n.liegeois,n.beringen,n.mechelen],
-    1981.0: [n.anderlecht,n.lokeren,n.standardliege,n.beveren,n.winterslag, n.brugge,n.molenbeek,n.lierse,n.royalAntwerp,n.gent,                 n.waregemKSV,n.liegeois,n.kortrijk,n.cerclebrugge,n.beerschot,   ],
-    1980.0: [n.brugge,n.standardliege,n.molenbeek,n.lokeren,n.anderlecht,   n.lierse,n.waterschei,n.winterslag,n.liegeois,n.cerclebrugge,        n.beveren],
-    1979.0: [n.beveren,n.anderlecht,n.standardliege,n.lokeren,n.molenbeek,  n.brugge,n.royalAntwerp,n.lierse,n.charleroi,n.winterslag,           n.waterschei,n.beerschot,n.beringen,n.waregemKSV,],
-    1978.0: [n.brugge,n.anderlecht,n.standardliege,n.lierse,n.beveren,      n.beerschot,n.molenbeek,n.royalAntwerp,n.winterslag,n.beringen,      n.waregemKSV,n.charleroi,],
-    1977.0: [n.brugge,n.anderlecht,n.standardliege,n.molenbeek,n.lokeren,   n.waregemKSV,n.royalAntwerp,n.cerclebrugge,n.beerschot,n.lierse,     n.winterslag,n.kortrijk],
-    1976.0: [n.brugge,n.anderlecht,n.molenbeek,n.lokeren,n.waregemKSV,      n.beveren,n.beerschot,n.standardliege,n.lierse,n.liegeois,           n.royalAntwerp,n.oostende,n.cerclebrugge],
-    1975.0: [n.molenbeek,n.royalAntwerp,n.anderlecht,n.brugge,n.beerschot,  n.standardliege,n.lierse,n.lokeren,n.waregemKSV,n.cerclebrugge,      n.liegeois,n.beveren,n.beringen,n.charleroi],
-    1974.0: [n.anderlecht,n.royalAntwerp,n.molenbeek,n.standardliege,n.brugge,  n.liegeois,n.mechelen,n.cerclebrugge,n.waregemKSV,n.beveren,     ],
-    1973.0: [n.brugge,n.standardliege,n.molenbeek,n.beerschot,n.mechelen,   n.anderlecht,n.royalAntwerp,n.berchem,n.lierse,n.liegeois,           n.cerclebrugge,n.beringen],
-    1972.0: [n.anderlecht,n.brugge,n.standardliege,n.molenbeek,n.cerclebrugge,  n.mechelen,n.lierse,n.liegeois,n.saintgilloise,n.beerschot,      n.sttruidense,n.royalAntwerp,],
-    1971.0: [n.standardliege,n.brugge,n.anderlecht,n.lierse,n.molenbeek,    n.beerschot,n.beveren,n.sttruidense,n.waregemKSV,n.saintgilloise,    n.liegeois,],
-    1970.0: [n.standardliege,n.brugge,n.gent,n.anderlecht,n.beveren,        n.beerschot,n.lierse,n.molenbeek,n.charleroi,n.waregemKSV,           n.liegeois,n.sttruidense],
-    1969.0: [n.standardliege,n.charleroi,n.lierse,n.anderlecht,n.brugge,    n.beveren,n.sttruidense,n.waregemKSV,n.beringen,n.liegeois,          n.gent,n.saintgilloise,n.molenbeek,n.beerschot,n.mechelen],
+    1984.0: [n.beveren,n.anderlecht,n.brugge,n.standardliege,n.seraing,     n.mechelen,n.waregemKSV,n.royalAntwerp,n.waterschei,n.lokeren,      n.cerclebrugge,n.kortrijk,n.liegeois,n.lierse,n.gent,      n.beerschot,n.molenbeek,n.beringen],
+    1983.0: [n.standardliege,n.anderlecht,n.royalAntwerp,n.gent,n.brugge,   n.beveren,n.waterschei,n.lokeren,n.liegeois,n.molenbeek,            n.kortrijk,n.cerclebrugge,n.seraing,n.lierse,n.beerschot,   n.waregemKSV,],
+    1982.0: [n.standardliege,n.anderlecht,n.gent,n.lokeren,n.royalAntwerp,  n.kortrijk,n.beveren,n.lierse,n.waterschei,n.tongeren,              n.molenbeek,n.waregemKSV,n.winterslag,n.brugge,n.cerclebrugge,  n.liegeois,n.beringen,n.mechelen],
+    1981.0: [n.anderlecht,n.lokeren,n.standardliege,n.beveren,n.winterslag, n.brugge,n.molenbeek,n.lierse,n.royalAntwerp,n.gent,                n.waregemKSV,n.liegeois,n.kortrijk,n.cerclebrugge,n.beerschot,   ],
+    1980.0: [n.brugge,n.standardliege,n.molenbeek,n.lokeren,n.anderlecht,   n.lierse,n.waterschei,n.winterslag,n.liegeois,n.cerclebrugge,       n.beveren],
+    1979.0: [n.beveren,n.anderlecht,n.standardliege,n.lokeren,n.molenbeek,  n.brugge,n.royalAntwerp,n.lierse,n.charleroi,n.winterslag,          n.waterschei,n.beerschot,n.beringen,n.waregemKSV,],
+    1978.0: [n.brugge,n.anderlecht,n.standardliege,n.lierse,n.beveren,      n.beerschot,n.molenbeek,n.royalAntwerp,n.winterslag,n.beringen,     n.waregemKSV,n.charleroi,],
+    1977.0: [n.brugge,n.anderlecht,n.standardliege,n.molenbeek,n.lokeren,   n.waregemKSV,n.royalAntwerp,n.cerclebrugge,n.beerschot,n.lierse,    n.winterslag,n.kortrijk],
+    1976.0: [n.brugge,n.anderlecht,n.molenbeek,n.lokeren,n.waregemKSV,      n.beveren,n.beerschot,n.standardliege,n.lierse,n.liegeois,          n.royalAntwerp,n.oostende,n.cerclebrugge],
+    1975.0: [n.molenbeek,n.royalAntwerp,n.anderlecht,n.brugge,n.beerschot,  n.standardliege,n.lierse,n.lokeren,n.waregemKSV,n.cerclebrugge,     n.liegeois,n.beveren,n.beringen,n.charleroi],
+    1974.0: [n.anderlecht,n.royalAntwerp,n.molenbeek,n.standardliege,n.brugge,  n.liegeois,n.mechelen,n.cerclebrugge,n.waregemKSV,n.beveren,    ],
+    1973.0: [n.brugge,n.standardliege,n.molenbeek,n.beerschot,n.mechelen,   n.anderlecht,n.royalAntwerp,n.berchem,n.lierse,n.liegeois,          n.cerclebrugge,n.beringen],
+    1972.0: [n.anderlecht,n.brugge,n.standardliege,n.molenbeek,n.cerclebrugge,  n.mechelen,n.lierse,n.liegeois,n.saintgilloise,n.beerschot,     n.sttruidense,n.royalAntwerp,],
+    1971.0: [n.standardliege,n.brugge,n.anderlecht,n.lierse,n.molenbeek,    n.beerschot,n.beveren,n.sttruidense,n.waregemKSV,n.saintgilloise,   n.liegeois,],
+    1970.0: [n.standardliege,n.brugge,n.gent,n.anderlecht,n.beveren,        n.beerschot,n.lierse,n.molenbeek,n.charleroi,n.waregemKSV,          n.liegeois,n.sttruidense],
+    1969.0: [n.standardliege,n.charleroi,n.lierse,n.anderlecht,n.brugge,    n.beveren,n.sttruidense,n.waregemKSV,n.beringen,n.liegeois,         n.gent,n.saintgilloise,n.molenbeek,n.beerschot,n.mechelen],
     1968.0: [n.anderlecht,n.brugge,n.standardliege,n.waregemKSV,n.sttruidense, n.beerschot,n.lierse,n.charleroi,n.daring,n.liegeois,     n.molenbeek,n.beringen,n.beveren,n.mechelen,n.royalAntwerp,],
     1967.0: [n.anderlecht,n.brugge,n.liegeois,n.standardliege,n.royalAntwerp,  n.sttruidense,n.waregemKSV,n.daring,n.lierse,n.beerschot, n.beringen,n.mechelen,n.molenbeek,n.charleroi,n.gent,n.tilleur],
     1966.0: [n.anderlecht,n.sttruidense,n.standardliege,n.beerschot,n.brugge,  n.mechelen,n.gent,n.tilleur,n.liegeois,n.royalAntwerp,    n.lierse,n.molenbeek,n.daring,n.beringen,n.berchem,n.cerclebrugge],
@@ -595,6 +605,7 @@ Map<String,dynamic> mapEuropa = {
 
 
   leagueName.dinamarca : {
+    //2023.0: [],
     2022.0: [n.copenhague,n.midtjylland,n.silkeborg,n.brondby,n.aalborg,   n.randers],
     2021.0: [n.brondby,n.midtjylland,n.copenhague,n.aarhus,n.nordsjaelland,   n.randers],
     2020.0: [n.midtjylland,n.copenhague,n.aarhus,n.brondby,n.aalborg,         n.nordsjaelland,],
@@ -670,6 +681,7 @@ Map<String,dynamic> mapEuropa = {
     1950.0: [n.kb,n.ab,n.aarhus,n.koge,n.b1903,              n.frem,],
   },
   leagueName.suecia : {
+    //2023.0: [],
     2022.0: [n.hacken,n.djurgarden,n.hammarby,n.kalmar,n.aik,     n.elfsborg,n.malmo,n.ifkgoteborg,n.mjallby,n.varnamo,        n.sirius,n.norrkoping,n.degerfors,n.varberg,n.helsingborg,n.sundsvall],
     2021.0: [n.malmo,n.aik,n.djurgarden,n.elfsborg,n.hammarby,    n.kalmar,n.norrkoping,n.ifkgoteborg,n.mjallby,n.varberg,     n.sirius,n.hacken,n.degerfors,n.halmstads,n.orebro,n.ostersunds],
     2020.0: [n.malmo,n.elfsborg,n.hacken,n.djurgarden,n.mjallby,  n.norrkoping,n.orebro,n.hammarby,n.aik,n.sirius,             n.varberg,n.ifkgoteborg,n.ostersunds,n.kalmar,n.helsingborg,n.falkenbergs],
@@ -750,6 +762,7 @@ Map<String,dynamic> mapEuropa = {
     1945.0: [n.norrkoping,n.elfsborg,n.malmo,n.ifkgoteborg,n.degerfors, n.gais,n.aik,n.halmstads,n.halmia,n.helsingborg,        ],
   },
   leagueName.noruega : {
+    //2023.0: [],
     2022.0: [n.molde,n.glimt,n.rosenborg,n.lillestrom,n.odd,          n.valerenga,n.tromso,n.sarpsborg,n.aalesund,n.haugesund,      n.viking,n.stromsgodset,n.hamkam,n.sanderfjord],
     2021.0: [n.glimt,n.molde,n.viking,n.lillestrom,n.rosenborg,       n.kristiansund,n.valerenga,n.sarpsborg,n.stromsgodset,n.sanderfjord,  ],
     2020.0: [n.glimt,n.molde,n.valerenga,n.rosenborg,n.kristiansund,   n.viking,n.odd,n.stabaek,n.haugesund,n.brann,                        ],
@@ -825,6 +838,7 @@ Map<String,dynamic> mapEuropa = {
     1950.0: [n.fram,n.fredrikstad],
   },
   leagueName.finlandia : {
+    //2023.0: [],
     2022.0: [n.helsinki,n.kups,n.honka,n.haka,n.turku,],
     2021.0: [n.helsinki,n.kups,n.sjk,n.turku,n.ilves,       n.helsingfors],
     2020.0: [n.helsinki,n.turku,n.kups,n.honka,n.ilves,     n.lahti,n.sjk,n.helsingfors,n.mariehamn,n.haka,n.tps,n.rops],
@@ -891,6 +905,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
     leagueName.islandia : {
+      //2023.0: [],
     2022.0: [n.breidablik,],
     2021.0: [n.vikingur,],
     2020.0: [n.valur,],
@@ -957,6 +972,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.suica : {
+    //2023.0: [],
     2022.0: [n.zurich,n.basel,n.youngBoys,n.lugano,n.stgallen,     n.servette,n.sion,n.grasshoppers,n.luzern,n.lausanne],
     2021.0: [n.youngBoys,n.basel,n.servette,n.lugano,n.luzern,     n.lausanne,n.stgallen,n.zurich,n.sion,n.vaduz],
     2020.0: [n.youngBoys,n.stgallen,n.basel,n.servette,n.lugano,   n.luzern,n.zurich,n.sion,n.thun,n.neuchatel],
@@ -1033,6 +1049,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.austria : {
+    //2023.0: [],
     2022.0: [n.rbsalzburg,n.sturmGraz,n.austria,n.wolfsberger,n.rapidviena,    ],
     2021.0: [n.rbsalzburg,n.rapidviena,n.sturmGraz,n.laskLinz,n.wolfsberger,   ],
     2020.0: [n.rbsalzburg,n.rapidviena,n.wolfsberger,n.laskLinz,n.hartberg,    ],
@@ -1109,6 +1126,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.polonia : {
+    //2023.0: [],
     2022.0: [n.lechPoznan,n.rakow,n.pogon,n.lechiagdansk,n.piastGliwice,                  ],
     2021.0: [n.legiaWarszawa,n.rakow,n.pogon,n.slaskwrocklaw,n.wartaPoznan,               ],
     2020.0: [n.legiaWarszawa,n.lechPoznan,n.piastGliwice,n.lechiagdansk,n.slaskwrocklaw,  ],
@@ -1185,6 +1203,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.russia : {
+    //2023.0: [],
     2022.0: [n.zenit,n.sochi,n.dinamoMoscou,n.krasnodar,n.cska,              n.lokomotivMoscou,n.akhmatGrozny,n.krylyaSovetov,n.rostov,n.spartakmoscou,  n.nizhnyNovgorod,n.ural,n.khimki,n.ufa,n.rubinKazan,n.tula],
     2021.0: [n.zenit,n.spartakmoscou,n.lokomotivMoscou,n.rubinKazan,n.sochi,  n.cska,n.dinamoMoscou,n.khimki,n.rostov,n.krasnodar,                       n.akhmatGrozny,n.ural,n.ufa,n.tula,n.rotor,n.tambov],
     2020.0: [n.zenit,n.lokomotivMoscou,n.krasnodar,n.cska,n.rostov,         n.dinamoMoscou,n.spartakmoscou,n.tula,n.ufa,n.rubinKazan,                    n.ural,n.sochi,n.akhmatGrozny,n.tambov,n.krylyaSovetov,n.orenburg],
@@ -1263,6 +1282,7 @@ Map<String,dynamic> mapEuropa = {
 
   leagueName.ucrania : {
     //https://en.wikipedia.org/wiki/1995%E2%80%9396_Vyshcha_Liha
+    //2023.0: [],
     2022.0: [n.shaktardonetsk,n.dinamokiev,n.dnipro1,n.zorya,n.vorskla,  ],
     2021.0: [n.dinamokiev,n.shaktardonetsk,n.zorya,],
     2020.0: [n.shaktardonetsk,n.dinamokiev,n.zorya,],
@@ -1296,6 +1316,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.cazaquistao : {
+    //2023.0: [],
     2022.0: [n.aktobe,n.astana,n.ordabasy,n.tobol,n.kairat,    n.taraz,n.atyrau,n.caspiy,n.shakhter,n.aksu],
     2021.0: [n.tobol,n.astana,n.kairat,n.kyzylzhar,n.ordabasy,  n.shakhter,n.aktobe,n.caspiy,n.akzhayik,n.taraz,  n.atyrau,n.turan,n.kaisar,n.zhetysu],
     2020.0: [n.kairat,n.tobol,n.astana,n.shakhter,n.ordabasy,   n.zhetysu,n.kaisar,],
@@ -1331,6 +1352,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.croacia : {
+    //2023.0: [],
     2022.0: [n.dinamozagreb,n.hadjuksplit,n.osijek,],
     2021.0: [n.dinamozagreb,n.osijek,n.rijeka,],
     2020.0: [n.dinamozagreb,n.lokZagreb,n.rijeka,],
@@ -1365,6 +1387,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.servia : {
+    //2023.0: [],
     2022.0: [n.estrelavermelha,n.partizan,n.cukaricki,n.backaTopola,n.radnicki,],
     2021.0: [n.estrelavermelha,n.partizan,n.cukaricki,n.vojvodina,n.backaTopola,],
     2020.0: [n.estrelavermelha,n.partizan,n.vojvodina,n.backaTopola,n.radnicki,],
@@ -1442,6 +1465,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.romenia : {
+    //2023.0: [],
     2022.0: [],
     2021.0: [n.cluj,n.steauaBucuresti,n.craiova,n.sepsi,n.clinceni,            n.botosani,],
     2020.0: [n.cluj,n.craiova,n.astragiurgiu,n.botosani,n.steauaBucuresti,     n.gazmetan],
@@ -1520,6 +1544,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.bulgaria : {
+    //2023.0: [],
     2022.0: [n.ludogorets,n.litexLovech,],
     2021.0: [n.ludogorets,n.lokplovdiv,],
     2020.0: [n.ludogorets,n.litexLovech,],
@@ -1596,6 +1621,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.hungria : {
+    //2023.0: [],
     2022.0: [n.ferencvaros,n.kisvarda,n.puskas,n.fehervar,n.ujpest,        n.paks,n.debreceni,n.zalaegerszeg,n.honved,n.mezokovesd,  n.mtk,n.gyirmot],
     2021.0: [n.ferencvaros,n.puskas,n.fehervar,n.paks,n.kisvarda,          n.ujpest,n.mtk,n.mezokovesd,n.zalaegerszeg,n.honved,    n.diosgyor,n.budafok],
     2020.0: [n.ferencvaros,n.fehervar,n.puskas,n.mezokovesd,n.honved,      n.ujpest,n.zalaegerszeg,n.kisvarda,n.diosgyor,n.paks,   n.debreceni,n.kaposvar],
@@ -1673,6 +1699,7 @@ Map<String,dynamic> mapEuropa = {
 
 
   leagueName.albania : {
+    //2023.0: [],
     2022.0: [n.tiranafk,n.laci,n.partizanitirane,],
     2021.0: [n.teutaDurres,n.vllaznia,n.partizanitirane,],
     2020.0: [n.tiranafk,n.kukesi,n.laci,],
@@ -1709,6 +1736,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.israel : {
+    //2023.0: [],
     2022.0: [n.maccabiHaifa,n.hapoelBerSheva,n.maccabiTelAviv,],
     2021.0: [n.maccabiHaifa,n.maccabiTelAviv,n.ashdod,],
     2020.0: [n.maccabiTelAviv,n.maccabiHaifa,n.beitarJerusalem,],
@@ -1786,6 +1814,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.armenia : {
+    //2023.0: [],
     2022.0: [n.pyunikyerevan,n.araratArmenia,n.alashkent,],
     2021.0: [n.alashkent,n.noah,n.urartu,],
     2020.0: [n.araratArmenia,n.noah,],
@@ -1820,6 +1849,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.belarus : {
+    //2023.0: [],
     2022.0: [],
     2021.0: [n.soligorsk,n.bate,n.dinamoMinsk,],
     2020.0: [n.soligorsk,n.bate,],
@@ -1854,6 +1884,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.macedonia : {
+    //2023.0: [],
     2022.0: [n.shkupi,n.akaPandev,n.shkendija,],
     2021.0: [n.shkendija,n.shkupi,n.struga,],
     2020.0: [n.vardar,n.silekskratovo,n.shkendija,],
@@ -1886,6 +1917,7 @@ Map<String,dynamic> mapEuropa = {
     1993.0: [n.vardar,n.silekskratovo,n.balkan,],
   },
   leagueName.lituania : {
+    //2023.0: [],
     2022.0: [n.zalgiris,],
     2021.0: [n.zalgiris,],
     2020.0: [n.zalgiris,],
@@ -1911,6 +1943,7 @@ Map<String,dynamic> mapEuropa = {
     2000.0: [n.kaunu,],
   },
   leagueName.estonia : {
+    //2023.0: [],
     2022.0: [n.floratallinn,n.levadiatallinn,n.paide,],
     2021.0: [n.levadiatallinn,n.floratallinn,n.paide,],
     2020.0: [n.floratallinn,n.paide,n.levadiatallinn,],
@@ -1944,6 +1977,7 @@ Map<String,dynamic> mapEuropa = {
     1992.0: [n.norma,],
   },
   leagueName.letonia : {
+    //2023.0: [],
     2022.0: [n.valmiera,],
     2021.0: [n.rigaRFS,],
     2020.0: [n.rigafc,],
@@ -1978,6 +2012,7 @@ Map<String,dynamic> mapEuropa = {
     1991.0: [n.skonto,],
   },
   leagueName.azerbaijao : {
+    //2023.0: [],
     2022.0: [n.qarabag,n.neftci,n.zira,],
     2021.0: [n.neftci,n.qarabag,],
     2020.0: [n.qarabag,n.neftci,],
@@ -2009,6 +2044,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.georgia : {
+    //2023.0: [],
     2022.0: [n.tbilisi,n.batumi,n.dila,],
     2021.0: [n.batumi,n.tbilisi,n.dila,],
     2020.0: [n.tbilisi,n.batumi,n.dila,],
@@ -2045,6 +2081,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
     leagueName.moldova : {
+      //2023.0: [],
     2022.0: [n.sheriffTiraspol,n.petrocub,n.petrocub,],
     2021.0: [n.sheriffTiraspol,n.petrocub,n.petrocub,],
     2020.0: [],
@@ -2079,6 +2116,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.bosnia : {
+    //2023.0: [],
     2022.0: [n.zrinjski,n.tuzla,n.borac,],
     2021.0: [n.borac,n.sarajevo,n.velezMostar,],
     2020.0: [n.sarajevo,n.zeljeznicar,n.zrinjski,],
@@ -2105,6 +2143,7 @@ Map<String,dynamic> mapEuropa = {
 
   leagueName.kosovo : {
     //https://en.wikipedia.org/wiki/Football_Superleague_of_Kosovo
+    //2023.0: [],
     2022.0: [n.ballkani],
     2021.0: [n.prishtina,],
     2020.0: [n.drita,],
@@ -2114,6 +2153,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.montenegro : {
+    //2023.0: [],
     2022.0: [n.sutjeska,n.podgorica,n.decic,],
     2021.0: [n.podgorica,n.sutjeska,n.decic,],
     2020.0: [n.podgorica,n.sutjeska,n.iskra,],
@@ -2133,6 +2173,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
     leagueName.irlandanorte : {
+      //2023.0: [],
     2022.0: [n.linfield,n.cliftonville,],
     2021.0: [n.linfield,n.coleraine,],
     2020.0: [n.linfield,n.coleraine,],
@@ -2209,6 +2250,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
     leagueName.andorra : {
+      //2023.0: [],
     2022.0: [n.escaldes,n.santacoloma,n.santjulia,],
     2021.0: [n.escaldes,n.santjulia,n.santacoloma,],
     2020.0: [n.escaldes,n.santacoloma,n.engordany,],
@@ -2240,6 +2282,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
     leagueName.gibraltar : {
+      //2023.0: [],
     2022.0: [],
     2021.0: [],
     2020.0: [n.europa,],
@@ -2312,6 +2355,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.ilhasfaroe : {
+    //2023.0: [],
     2022.0: [n.klaksvik,n.vikingurFaroe,],
     2021.0: [n.klaksvik,n.hb,],
     2020.0: [n.hb,n.nsi,],
@@ -2388,6 +2432,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
     leagueName.liechtenstein : {
+      //2023.0: [],
     2022.0: [n.vaduz,n.eschenMauren,],
     2021.0: [],
     2020.0: [],
@@ -2464,6 +2509,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
     leagueName.luxemburgo : {
+      //2023.0: [],
     2022.0: [n.dudelange,n.differdange,],
     2021.0: [n.folaesch,n.dudelange,],
     2020.0: [],
@@ -2540,6 +2586,7 @@ Map<String,dynamic> mapEuropa = {
   },
 
     leagueName.malta : {
+      //2023.0: [],
     2022.0: [n.hiberniansMALTA,n.floriana,n.hamrun,n.gzira,n.birkirkara,    ],
     2021.0: [n.hamrun,n.hiberniansMALTA,n.gzira,n.birkirkara,n.sliema,      ],
     2020.0: [n.floriana,n.valletta,n.hiberniansMALTA,n.sirens,n.birkirkara, ],

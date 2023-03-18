@@ -11,6 +11,8 @@ Map<String,dynamic> mapInternationals = {
   ///////////////////////////////////////////////////////////////
 
   leagueName.championsLeague : {
+    //2024.0: [],
+    //2023.0: [],
     2022.0: [n.realmadrid,n.liverpool,n.mancity,n.villareal,        n.chelsea,n.benfica,n.atleticomadrid,n.bayernmunique,      n.psg,n.inter,n.sporting,n.juventus,n.lille,n.ajax,n.manutd,n.rbsalzburg,                                n.dortmund,n.rbleipzig,n.sheriffTiraspol,n.barcelona,n.sevilla,n.atalanta,n.porto,n.zenit,                            n.youngBoys,n.wolfsburg,n.milan,n.brugge,n.shaktardonetsk,n.dinamokiev,n.malmo,n.besiktas,],
     2021.0: [n.chelsea,n.mancity,n.realmadrid,n.psg,                  n.porto,n.dortmund,n.liverpool,n.bayernmunique,          n.atleticomadrid,n.moenchengladbach,n.atalanta,n.barcelona,n.juventus,n.sevilla,n.rbleipzig,n.lazio,               n.rbsalzburg,n.shaktardonetsk,n.olympiacos,n.ajax,n.krasnodar,n.brugge,n.dinamokiev,n.manutd,       n.lokomotivMoscou,n.inter,n.om,n.midtjylland,n.rennes,n.zenit,n.ferencvaros,n.instanbul],
     2020.0: [n.bayernmunique,n.psg,n.lyon,n.rbleipzig,                       n.barcelona,n.atalanta,n.mancity,n.atleticomadrid, n.chelsea,n.dortmund,n.juventus,n.tottenham,n.napoli,n.valencia,n.realmadrid,n.liverpool,                         n.brugge,n.olympiacos,n.shaktardonetsk,n.leverkusen,n.rbsalzburg,n.inter,n.benfica,n.ajax,               n.galatasaray,n.estrelavermelha,n.dinamozagreb,n.lokomotivMoscou,n.genk,n.slaviaPraha,n.zenit,n.lille],
@@ -81,6 +83,8 @@ Map<String,dynamic> mapInternationals = {
   },
 
   leagueName.libertadores : {
+    //2024.0: [],
+    //2023.0: [],
     2022.0: [n.flamengo,n.atleticopr,n.velez,n.palmeiras,             n.atleticomg,n.estudiantes,n.talleres,n.corinthians,             n.riverplate,n.cerroporteno,n.bocajuniors,n.fortaleza,n.colon,n.tolima,n.libertad,n.emelec,                  n.olimpia,n.deportivocali,n.idelvalle,n.nacional,n.colocolo,n.tachira,n.theStrongest,n.univcatolica,    n.caracas,n.bragantino,n.penarol,n.alwaysReady,n.sportingcristal,n.americamg,n.alianzalima,n.indPetrolero],
     2021.0: [n.palmeiras,n.flamengo,n.atleticomg,n.barcelonaequ,      n.saopaulo,n.olimpia,n.riverplate,n.fluminense,                  n.cerroporteno,n.bocajuniors,n.racing,n.velez,n.univcatolica,n.defensayjusticia,n.argentinojuniors,n.internacional,  n.idelvalle,n.tachira,n.santos,n.junior,n.sportingcristal,n.nacional,n.ldu,n.americadecali,        n.universitario,n.alwaysReady,n.theStrongest,n.santafe,n.rentistas,n.atleticonacional,n.laCalera,n.laGuaira],
     2020.0: [n.palmeiras,n.santos,n.riverplate,n.bocajuniors,         n.libertad,n.gremio,n.nacional,n.racing,                         n.ldu,n.atleticopr,n.flamengo,n.delfin,n.idelvalle,n.jorge,n.guaraniPAR,n.internacional,                     n.junior,n.bolivar,n.penarol,n.saopaulo,n.univcatolica,n.estudiantesmerida,n.defensayjusticia,n.caracas,        n.barcelonaequ,n.tigre,n.colocolo,n.binacional,n.americadecali,n.alianzalima,n.olimpia,n.imedellin],
@@ -148,6 +152,8 @@ Map<String,dynamic> mapInternationals = {
 
 
   leagueName.concacaf : {
+    //2024.0: [],
+    //2023.0: [],
     2022.0: [n.seattle,n.pumas,n.nycity,n.cruzazul,                     n.leon,n.nerevolution,n.montreal,n.comunicaciones],
     2021.0: [n.monterrey,n.americamex,n.cruzazul,n.philadelphia,        n.columbuscrew,n.portland,n.toronto,n.atlanta],
     2020.0: [n.tigres,n.losangelesfc,n.olimpiaHON,n.americamex,         n.nycity,n.cruzazul,n.montreal,n.atlanta],
@@ -179,7 +185,7 @@ Map<String,dynamic> mapInternationals = {
     1994.0: [n.cartagines,n.atlante,n.usrobert,n.alianzaELS],
     1993.0: [n.saprissa,n.leon,n.municipal,n.robinhood],
     1992.0: [n.americamex,n.alajuelense,n.robinhood,n.aiglon],
-    1991.0: [n.puebla,n.police,n.rcdespana],
+    1991.0: [n.puebla,n.police,n.rcdespana,n.leonesNegros,              ],
     1990.0: [n.americamex,n.pinardelrio,n.olimpiaHON],
     1989.0: [n.pumas,n.pinardelrio,n.herediano,],
     1988.0: [n.olimpiaHON,n.defenseforce,n.alajuelense,n.robinhood],
@@ -207,6 +213,8 @@ Map<String,dynamic> mapInternationals = {
     1963.0: [n.racingHAITI,n.chivas,n.saprissa,n.xelaju]
   },
   leagueName.asia : {
+    //2024.0: [],
+    //2023.0: [],
     2022.0: [],
     2021.0: [n.alhilal,n.pohang,n.alnassr,n.ulsan,                     n.persepolis,n.nagoya,n.alWahda,n.jeonbuk],
     2020.0: [n.ulsan,n.persepolis,n.alnassr,n.visselkobe,              n.beijingguoan,n.pakhtakor,n.suwonsamsung,n.alahli],
@@ -266,15 +274,17 @@ Map<String,dynamic> mapInternationals = {
   },
 
   leagueName.africa : {
-    2022.0: [n.wydad,n.alahly,n.petroluanda,n.essetif],
-    2021.0: [n.alahly,n.kaizer,n.esperance,n.wydad,                  n.mamelodi,n.simba,n.belouizdad,n.mcalger,         n.horoya,n.zamalek,n.vita,n.mazembe,n.omdurman,n.teungueth,n.almerrikh,n.petroluanda],
-    2020.0: [n.alahly,n.zamalek,n.rajacasablanca,n.wydad,            n.mamelodi,n.esperance,n.etoilesahel,n.mazembe,    n.omdurman,n.kabylie,n.agosto,n.petroluanda,n.vita,n.usmAlger,n.zesco,n.platinum],
-    2019.0: [n.esperance,n.wydad,n.mazembe,n.mamelodi,               n.constantine,n.horoya,n.simba,n.alahly,           n.clubAfricain,n.saoura,n.lobiStars,n.orlandopirates,n.asecmimosas,n.vita,n.platinum,n.ismaily],
-    2018.0: [n.esperance,n.alahly,n.agosto,n.essetif,                n.etoilesahel,n.horoya,n.mazembe,n.wydad,          ],
-    2017.0: [n.wydad,n.alahly,n.usmAlger,n.etoilesahel,              n.mamelodi,n.esperance,n.ferroviariomaputo,n.tripoliLIB],
-    2016.0: [n.mamelodi,n.zamalek,n.zesco,n.wydad,                   n.enyimba,n.alahly,n.essetif,n.asecmimosas],
-    2015.0: [n.mazembe,n.usmAlger,n.almerrikh,n.omdurman,            n.moghrebTetouan,n.essetif,n.smouha,n.elEulma],
-    2014.0: [n.essetif,n.vita,n.mazembe,n.sfaxien,                   n.esperance,n.omdurman,n.benghazi,n.zamalek],
+    //2024.0: [],
+    //2023.0: [],
+    2022.0: [n.wydad,n.alahly,n.petroluanda,n.essetif,               n.belouizdad,n.rajacasablanca,n.mamelodi,n.esperance,   n.amazulu,n.etoilesahel,n.zamalek,n.omdurman,n.almerrikh,n.horoya,n.sagradaesperanca,n.jwaneng,],
+    2021.0: [n.alahly,n.kaizer,n.esperance,n.wydad,                  n.mamelodi,n.simba,n.belouizdad,n.mcalger,            n.horoya,n.zamalek,n.vita,n.mazembe,n.omdurman,n.teungueth,n.almerrikh,n.petroluanda],
+    2020.0: [n.alahly,n.zamalek,n.rajacasablanca,n.wydad,            n.mamelodi,n.esperance,n.etoilesahel,n.mazembe,       n.omdurman,n.kabylie,n.agosto,n.petroluanda,n.vita,n.usmAlger,n.zesco,n.platinum],
+    2019.0: [n.esperance,n.wydad,n.mazembe,n.mamelodi,               n.constantine,n.horoya,n.simba,n.alahly,              n.clubAfricain,n.saoura,n.lobiStars,n.orlandopirates,n.asecmimosas,n.vita,n.platinum,n.ismaily],
+    2018.0: [n.esperance,n.alahly,n.agosto,n.essetif,                n.etoilesahel,n.horoya,n.mazembe,n.wydad,             n.zesco,n.mamelodi,n.kampala,n.difaa,n.mcalger,n.togoport,n.township,n.mbabane,],
+    2017.0: [n.wydad,n.alahly,n.usmAlger,n.etoilesahel,              n.mamelodi,n.esperance,n.ferroviariomaputo,n.tripoliLIB,  n.zanaco,n.almerrikh,n.zamalek,n.stGeorge,n.caps,n.omdurman,n.vita,n.cotonsport],
+    2016.0: [n.mamelodi,n.zamalek,n.zesco,n.wydad,                   n.enyimba,n.alahly,n.essetif,n.asecmimosas,           n.vita,n.almerrikh,n.mazembe,n.etoilesahel,n.stadeMalien,n.yanga,n.tripoliLIB,n.bejaia,],
+    2015.0: [n.mazembe,n.usmAlger,n.almerrikh,n.omdurman,            n.moghrebTetouan,n.essetif,n.smouha,n.elEulma,        n.kaloum,n.sangabalende,n.esperance,n.sfaxien,n.leopardsCON,n.alahly,n.rajacasablanca,n.stadeMalien,],
+    2014.0: [n.essetif,n.vita,n.mazembe,n.sfaxien,                   n.esperance,n.omdurman,n.benghazi,n.zamalek,          n.alahly,n.realbamako,n.seweSport,n.horoya,n.cotonsport,n.leopardsCON,n.kaizer,n.nkana,],
     2013.0: [n.alahly,n.orlandopirates,n.cotonsport,n.esperance,     n.zamalek,n.seweSport,n.leopardsCON,n.libolo],
     2012.0: [n.alahly,n.esperance,n.sunshinestars,n.mazembe,         n.berekum,n.asoChlef,n.zamalek,n.etoilesahel],
     2011.0: [n.esperance,n.wydad,n.omdurman,n.enyimba,               n.alahly,n.cotonsport,n.mcalger,n.rajacasablanca],
@@ -322,10 +332,12 @@ Map<String,dynamic> mapInternationals = {
     1969.0: [n.ismaily,n.mazembe,n.asantekotoko,n.hafia],
     1968.0: [n.mazembe,n.etoilefilante,n.leopardsQUE,n.farRabat],
     1967.0: [n.mazembe,n.asantekotoko,n.stGeorge,n.djoliba],
-    1966.0: [n.stadeDAbidjan,n.realBamako,n.oryx,n.omdurman],
+    1966.0: [n.stadeDAbidjan,n.realbamako,n.oryx,n.omdurman],
   },
 
   leagueName.mundial : {
+    //2024.0: [],
+    //2023.0: [],
     2022.0: [n.realmadrid,n.alhilal,n.flamengo,n.alahly,n.seattle,n.wydad,n.auckland],
     2021.0: [n.chelsea,n.palmeiras,n.alahly,n.alhilal,n.monterrey],
     2020.0: [n.bayernmunique,n.tigres,n.alahly,n.palmeiras],
@@ -401,6 +413,8 @@ Map<String,dynamic> mapInternationals = {
   },
 
   leagueName.europaLeagueOficial : {
+    //2024.0: [],
+    //2023.0: [],
     2022.0: [n.eintrachtfrankfurt,n.rangers,n.westham,n.rbleipzig,  n.barcelona,n.braga,n.lyon,n.atalanta],
     2021.0: [n.villareal,n.manutd,n.arsenal,n.roma,       n.dinamozagreb,n.granada,n.slaviaPraha,n.ajax],
     2020.0: [n.sevilla,n.inter,n.manutd,n.shaktardonetsk, n.wolves,n.leverkusen,n.copenhague,n.basel],
@@ -470,6 +484,8 @@ Map<String,dynamic> mapInternationals = {
 
 
   leagueName.copaSulAmericana : {
+    //2024.0: [],
+    //2023.0: [],
     2022.0: [n.idelvalle,n.saopaulo,n.melgar,n.atleticogo,           n.tachira,n.ceara,n.internacional,n.nacional,          n.lanus,n.univcatolica,n.deportivocali,n.olimpia,n.santos,n.colocolo,n.unionSantaFe,n.theStrongest],
     2021.0: [n.atleticopr,n.bragantino,n.penarol,n.libertad,         n.ldu,n.rosario,n.sportingcristal,n.santos,     n.americadecali,n.idelvalle,n.nacional,n.junior,n.arsenalsarandi,n.gremio,n.tachira,n.independiente],
     2020.0: [n.defensayjusticia,n.lanus,n.coquimbo,n.velez,          n.bahia,n.independiente,n.junior,n.univcatolica,       n.vasco,n.bolivar,n.deportivocali,n.riverURU,n.fenix,n.laCalera,n.huancayo,n.unionSantaFe,                  ],

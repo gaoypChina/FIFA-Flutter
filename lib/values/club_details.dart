@@ -1674,8 +1674,8 @@ class ClubDetails{
       'Toumba Stadium',29000,1926,_country.greece,74.2,[n.aris]];
     map[n.panetolikos] = [ClubColors(Colors.yellow,Colors.blue),pattern.solid,Coordinates(38.6300163, 21.4118706),
       'Panetolikos Stadium',7500,1926,_country.greece,58.6,[]];
-    map[n.pireu] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(0,0),
-      '',0,1923,_country.greece,55.2,[]];
+    map[n.ethnikos] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(0,0),
+      'Perama Municipal Stadium',0,1923,_country.greece,56.2,[]];
     map[n.lamia] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(38.9099234, 22.4304807),
       'Lamia Municipal Stadium',5500,1964,_country.greece,60.6,[]];
     map[n.platanias] = [ClubColors(Colors.red,Colors.white),pattern.stripes2,Coordinates(35.48734503669703, 24.000511911140922),
@@ -5155,7 +5155,7 @@ class ClubDetails{
     //MALI
     map[n.djoliba] = [ClubColors(Colors.red,Colors.green),pattern.solid,Coordinates(12.6038545, -7.9215315),
       'Stade 26 Mars',50000,1960,_country.mali,63.6,[]];
-    map[n.realBamako] = [ClubColors(Colors.black,Colors.white),pattern.stripes2,Coordinates(12.6598898, -7.993129994),
+    map[n.realbamako] = [ClubColors(Colors.black,Colors.white),pattern.stripes2,Coordinates(12.6598898, -7.993129994),
       'Stade Modibo Keïta',25000,1960,_country.mali,65.6,[]];
     map[n.stadeMalien] = [ClubColors(Colors.white,Colors.white),pattern.solid,Coordinates(12.60506870, -7.9218513),
       'Stade 26 Mars',50000,1960,_country.mali,65.0,[]];

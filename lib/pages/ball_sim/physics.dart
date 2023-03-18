@@ -6,6 +6,7 @@ import 'package:fifa/values/club_details.dart';
 import 'package:flutter/material.dart';
 
 class Match{
+  int gameVelocity = 3;
   int goal1 = 0;
   int goal2 = 0;
   int ticks = 0;
@@ -14,30 +15,18 @@ class Match{
   String minutesStr = "00";
   int minutes = 0;
   bool isPaused = false;
-  late GravityTeam gravityTeam1;
-  late GravityTeam gravityTeam2;
   My my = My();
   Jogador lastTouch = Jogador(index: 0);
   int ballPossesionTime1 = 0;
-
-  setGravityTeam(Field field){
-    gravityTeam1 = GravityTeam(field, true);
-    gravityTeam2 = GravityTeam(field, false);
-  }
 
   getPossesionPercentage(){
     return ballPossesionTime1/ticks*100;
   }
 
   updateTime(){
-    int gameVelocity = 3;
     ticks += gameVelocity;
     seconds = ticks % 60;
     minutes = (ticks / 60).ceil();
-
-    if(lastTouch.clubID == my.clubID){
-      ballPossesionTime1 += gameVelocity;
-    }
 
     secondsStr = seconds.toString();
     if(seconds<10){
@@ -49,6 +38,13 @@ class Match{
     }
 
   }
+
+  updateData(){
+    if(lastTouch.clubID == my.clubID){
+      ballPossesionTime1 += gameVelocity;
+    }
+  }
+
   endTime(){
     ticks = 0;
     seconds = 0;
@@ -85,15 +81,19 @@ class Circle {
       isMyPlayer = true;
     }
 
+    getSightVision();
+  }
+
+  void getSightVision(){
     double angle = atan2(dy, dx) * 180 / pi;
     sightLeft = angle - 30;
     sightRight = angle + 30;
 
     sightRightRad = sightRight * pi /180;
     sightLeftRad = sightLeft * pi /180;
-
   }
-  setGravity(context){
+
+  void setGravity(context){
   GravityPosition gravityPosition = GravityPosition(context, position, isMyPlayer);
   gravityCenter = gravityPosition.gravityCenter;
   }
@@ -129,11 +129,11 @@ class Ball {
   double x;
   double y;
   double r = 6;
-  double dx;
-  double dy;
+  double dx = 5;
+  double dy = 5;
   double ax = 0.1;
   double ay = 0.1;
-  Ball(this.x, this.y, this.dx, this.dy);
+  Ball(this.x, this.y);
 }
 
 class GravityCenter {

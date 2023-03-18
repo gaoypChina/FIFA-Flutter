@@ -8,6 +8,7 @@ LeagueOfficialNames leagueName = LeagueOfficialNames();
 Map<String,dynamic> mapCopas = {
 
    leagueName.englandCup : {
+     //2023.0: [],
     2022.0: [n.liverpool, n.chelsea,      n.mancity,n.crystalpalace,         n.nottinghamforest,n.middlesbrough,n.southampton,n.everton,   ],
     2021.0: [n.leicester,n.chelsea,       n.southampton,n.mancity,           n.manutd,n.sheffieldunited,n.bournemouth,n.everton, ],
     2020.0: [n.arsenal,n.chelsea,         n.mancity,n.manutd,                n.sheffieldunited,n.leicester,n.newcastle,n.norwich,],
@@ -88,6 +89,7 @@ Map<String,dynamic> mapCopas = {
   },
   
   leagueName.italyCup : {
+    //2023.0: [],
     2022.0: [n.inter, n.juventus,n.milan,n.fiorentina,],
     2021.0: [n.juventus,n.atalanta,n.napoli,n.inter,],
     2020.0: [n.napoli,n.juventus,n.milan,n.inter,],
@@ -155,6 +157,7 @@ Map<String,dynamic> mapCopas = {
     1958.0: [n.lazio,n.fiorentina,n.bologna,n.juventus],
   },
   leagueName.spainCup : {
+    //2023.0: [],
     2022.0: [n.realbetis, n.valencia,        n.rayoVallecano,n.athleticbilbao,],
     2021.0: [n.barcelona,n.athleticbilbao,   n.sevilla,n.levante,            ],
     2020.0: [n.realsociedad,n.athleticbilbao, n.mirandes,n.granada,          ],
@@ -236,6 +239,7 @@ Map<String,dynamic> mapCopas = {
   },
 
    leagueName.franceCup : {
+     //2023.0: [],
     2022.0: [n.nantes,n.nice],
     2021.0: [n.psg,n.monaco,],
     2020.0: [n.psg,n.saintetienne],
@@ -316,6 +320,7 @@ Map<String,dynamic> mapCopas = {
   },
 
   leagueName.germanyCup : {
+    //2023.0: [],
     2022.0: [n.rbleipzig,n.freiburg,          n.unionBerlin,n.hamburgo,       ],
     2021.0: [n.dortmund,n.rbleipzig,          n.holsteinkiel,n.werderbremen,  ],
     2020.0: [n.bayernmunique,n.leverkusen,    n.eintrachtfrankfurt,n.saarbrucken,],
@@ -389,6 +394,7 @@ Map<String,dynamic> mapCopas = {
   },
 
    leagueName.portugalCup : {
+     //2023.0: [],
     2022.0: [n.porto,n.tondela,],
     2021.0: [n.braga,n.benfica,],
     2020.0: [n.porto,n.benfica,],
@@ -470,6 +476,7 @@ Map<String,dynamic> mapCopas = {
   },
 
   leagueName.turkeyCup : {
+    //2023.0: [],
     2022.0: [n.sivasspor,n.kayserispor,],
     2021.0: [n.besiktas,n.antalyaspor,],
     2020.0: [n.trabzonspor,n.alanyaspor,],
@@ -532,6 +539,7 @@ Map<String,dynamic> mapCopas = {
     1963.0: [n.galatasaray,n.fenerbahce,],
   },
   leagueName.russiaCup : {
+    //2023.0: [],
     2022.0: [n.spartakmoscou,n.dinamoMoscou,],
     2021.0: [n.lokomotivMoscou,n.krylyaSovetov,],
     2020.0: [n.zenit,n.khimki,],
@@ -566,6 +574,7 @@ Map<String,dynamic> mapCopas = {
   
    leagueName.brazilCup : {
      //https://www.bolanaarea.com/copa_do_brasil_2007.htm
+     //2023.0: [],
     2022.0: [n.flamengo,n.corinthians,n.saopaulo,n.fluminense,  n.atleticogo,n.americamg,n.atleticopr,n.fortaleza, n.ceara,n.santos,n.atleticomg,n.palmeiras,n.cruzeiro,n.goias,n.botafogo,n.bahia,               ],
     2021.0: [n.atleticomg, n.atleticopr,n.fortaleza,n.flamengo, n.saopaulo,n.gremio,n.santos,n.fluminense,         n.bahia,n.atleticogo,n.juazeirense,n.crb,n.vitoria,n.vasco,n.criciuma,n.abc,                   ],
     2020.0: [n.palmeiras, n.gremio,n.americamg,n.saopaulo,      n.ceara,n.internacional,n.flamengo,n.cuiaba,       n.botafogo,n.atleticogo,n.juventude,n.fortaleza,n.corinthians,n.santos,n.atleticopr,n.bragantino, ],
@@ -614,6 +623,7 @@ Map<String,dynamic> mapCopas = {
   },
 
   leagueName.argentinaCup : {
+    //2023.0: [],
     2022.0: [n.patronato,n.talleres,],
     2021.0: [],
     2020.0: [n.bocajuniors,n.talleres,],
@@ -628,6 +638,7 @@ Map<String,dynamic> mapCopas = {
   },
 
   leagueName.mexicoCup : {
+    //2023.0: [],
     2022.0: [],
     2021.0: [],
     2020.0: [n.monterrey,n.tijuana,],

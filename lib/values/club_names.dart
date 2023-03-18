@@ -559,7 +559,6 @@ class ClubName{
   String ajax = "Ajax";
   String feyenoord = "Feyenoord";
   String psv = "PSV";
-  String amsterdam = "FC Amsterdam"; //1972-1982
   String agovv = "AGOVV";
   String az = "AZ Alkmaar";
   String blauwwit = "Blauw-Wit Amsterdam";
@@ -601,6 +600,7 @@ class ClubName{
   String willem = "Willem II";
   String zwolle = "PEC Zwolle";
   String dws = "AFC DWS";
+  String amsterdam = "FC Amsterdam"; //1972-1982
 
   //////////////////////////////////////////////////////////////////////////////
   //BÉLGICA
@@ -616,13 +616,15 @@ class ClubName{
   String charleroi = "Charleroi";
   String charleroiM = "Charleroi-Marchienne";
   String cerclebrugge = "Cercle Brugge";
-  String daring = "	Daring Club Bruxelles";
+  String daring = "Daring Club Bruxelles";
   String diest = "Diest";
   String eendrachtAalst = "Eendracht Aalst";
+  String harelbeke = "Zuid-West-Vlaanderen";
   String kaseupen = "KAS Eupen";
   String kortrijk = "KV Kortrijk";
   String krcg = "KRC Gent";
   String leuven = "Leuven";
+  String lalouviere = "La Louvière";
   String liegeois = "Royal FC de Liège";
   String lierse = "Lierse";
   String lokeren = "Lokeren";
@@ -638,7 +640,6 @@ class ClubName{
   String rhodienne = "Rhodienne-De Hoek";
   String royalAntwerp = "Royal Antwerp";
   String saintgilloise = "Union Saint-Gilloise";
-  String seraing = "RFC Seraing"; //EXTINTO
   String standardliege = "Standard Liege";
   String sttruidense = "St. Truidense";
   String tilleur = "Tilleur-Saint-Nicolas";
@@ -647,11 +648,13 @@ class ClubName{
   String turnhout = "Turnhout";
   String tournai = "Tournai";
   String vervietois = "Verviétois";
-  String waregemKSV = "KSV waregem"; //EXTINTO 1925-2001
   String waterschei = "Waterschei Thor Genk";
   String westerlo = "Westerlo";
   String winterslag = "Winterslag";
   String zulteWaregem = "Zulte Waregem";
+  String geel = "Geel"; //EXTINTO
+  String seraing = "RFC Seraing"; //EXTINTO
+  String waregemKSV = "KSV waregem"; //EXTINTO 1925-2001
 
   //ESCÓCIA
   String celtic = "Celtic";
@@ -1026,15 +1029,16 @@ class ClubName{
   String bursaspor = "Bursaspor";
   String denizlispor = "Denizlispor";
   String diyarbakirspor = "Diyarbakırspor";
-  String eskisehirspor = "Eskisehirspor";
   String hatayspor = "Hatayspor";
+  String eskisehirspor = "Eskisehirspor";
+  String elazigspor = "Elazığspor";
   String gaziantepspor = "Gaziantepspor";
   String gaziantep = "Gaziantep";
   String genclerbirligi = "Gençlerbirliği";
   String goztepe = "Göztepe";
   String istanbulspor = "İstanbulspor";
   String izmirspor = "İzmirspor";
-  String karabukspor = "Karabükspor";
+  String karabukspor = "Kardemir Karabükspor";
   String karagumruk = "Karagümrük";
   String kayserispor = "Kayserispor";
   String karsiyaka = "Karşıyaka";
@@ -1043,14 +1047,16 @@ class ClubName{
   String konyaspor = "Konyaspor";
   String kirikkalespor = "Kirikkalespor";
   String malatyaspor = "Malatyaspor";
+  String manisaspor = "Manisaspor";
   String mersin = "Mersin İdmanyurdu";
   String orduspor = "Orduspor";
   String rizespor = "Rizespor";
-  String sakaryaspor = "	Sakaryaspor";
+  String sakaryaspor = "Sakaryaspor";
   String samsunspor = "Samsunspor";
   String sariyer = "Sarıyer";
   String sivasspor = "Sivasspor";
   String trabzonspor = "Trabzonspor";
+  String telekomspor = "Türk Telekomspor";
   String vefa = "Vefa";
   String zonguldakspor = "Zonguldakspor";
   //GRECIA
@@ -1058,33 +1064,51 @@ class ClubName{
   String paok = "PAOK";
   String aek = "AEK";
   String panathinaikos = "Panathinaikos";
+  String akratitos = "Akratitos";
   String aris = "ARIS Tessalônica";
   String atromitos = "Atromitos";
   String apollonKalamarias = "Apollon Kalamarias";
   String apollonAthens = "Apollon Smyrnis";
   String asteras = "Asteras Tripolis";
+  String athinaikos = "Athinaikos";
   String chalkidona = "Chalkidona";
+  String doxadrama = "Doxa Drama";
+  String edessaikos = "Edessaikos";
   String egaleo = "Egaleo";
   String ergotelis = "Ergotelis Crete";
   String ionikos = "Ionikos Nikeas";
+  String fostiras = "Fostiras";
   String kalloni = "AEL Kalloni";
+  String kalamata = "Kalamata";
+  String kastoria = "Kastoria";
   String kavala = "Kavala";
   String kallithea = "Kallithea";
   String kerkyra = "Kerkyra";
+  String korinthos = "Korinthos";
   String lamia = "PAS Lamia 1964";
   String larissa = "AEL Larissa";
   String levadiakos = "Levadiakos";
+  String makedonikos = "Makedonikos";
+  String nikivolos = "Niki Volos";
   String ofi = "OFI Crete";
+  String paniliakos = "Paniliakos";
   String panionios = "Panionios";
   String platanias = "Platanias";
   String iraklis = "Iraklis";
   String panachaiki = "Panachaiki";
+  String panargiakos = "Panargiakos";
   String panthrakikos = "Panthrakikos";
   String pasGiannina = "PAS Giannina";
+  String panegialios = "Panegialios";
   String panetolikos = "Panetolikos";
-  String pireu = "Ethnikos Pireu";
+  String panelefsiniakos = "Panelefsiniakos";
+  String panserraikos = "Panserraikos";
+  String pierikos = "Pierikos";
+  String proodeftiki = "Proodeftiki";
   String volosOlympiacos = "Olympiacos Volos";
+  String veria = "Veria";
   String volos = "Volos NFC";
+  String vyzas = "Vyzas";
   String xanthi = "Xanthi";
   //CHIPRE
   String apoel = "APOEL";
@@ -1469,6 +1493,7 @@ class ClubName{
   String mladaBoleslav = "Mladá Boleslav";
   String jablonec = "Jablonec";
   String teplice = "Teplice";
+  String pribram = "Viagem Příbram";
   String pardubice = "Pardubice";
   String sigmaOlomouc = "Sigma Olomouc";
   String slovacko = "Slovácko";
@@ -1478,6 +1503,8 @@ class ClubName{
   String vitkovice = "Vitkovice";
   String viktoriaPlzen = "Viktoria Plzen";
   String viktoriaZizkov = "Viktoria Žižkov";
+  String vysocina = "Vysočina Jihlava";
+  String znojmo = "Znojmo";
   //HUNGRIA
   String balmazujvaros = "Balmazújváros";
   String bekescsaba = "Békéscsaba";
@@ -3903,7 +3930,7 @@ class ClubName{
   String bakiliBullets = "Bakili Bullets";
   //MALI
   String djoliba = "Djoliba";
-  String realBamako = "Real Bamako";
+  String realbamako = "Real Bamako";
   String stadeMalien = "Stade Malien";
   //MAURITANIA
   String concorde = "Concorde";
@@ -4016,6 +4043,8 @@ class ClubName{
   String omdurman = "Al-Hilal Omdurman";
   String almerrikh = "Al-Merrikh";
   String almourada = "Al-Mourada";
+  //SUAZILANDIA
+  String mbabane = "Mbabane Swallows";
   //TANZANIA
   String africansports = "African Sports";
   String azam = "Azam";

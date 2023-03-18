@@ -20,7 +20,7 @@ class TransferRules{
 
 transferenciaJogador(int id){
 
-  int isSold = Random().nextInt(7); //Probabilidade de ser vendido
+  int isSold = Random().nextInt(4); //Probabilidade de ser vendido
   if(isSold == 0) {
     int currentClubID = globalJogadoresClubIndex[id];
     int playerOverall = globalJogadoresOverall[id];

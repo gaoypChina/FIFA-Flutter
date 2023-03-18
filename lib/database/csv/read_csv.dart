@@ -67,6 +67,9 @@ class ReadCSV{
         playerBasicInfo.overall = overall;
         playerBasicInfo.nationality = nationality;
         playerBasicInfo.imageUrl = imagePlayer;
+        if(playerBasicInfo.imageUrl == "wiki/missing_player.jpg"){
+          playerBasicInfo.imageUrl = "/notfound_0_120.png";
+        }
 
 
         limitNPlayers(clubIDs,playerBasicInfo, clubIndex);
