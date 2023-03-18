@@ -10,8 +10,9 @@ Map<String,dynamic> mapNorthAmerica = {
   // AMERICA DO NORTE
   ///////////////////////////////////////////////////////////////
   leagueName.mexico : {
+    //https://en.wikipedia.org/wiki/List_of_Mexican_football_champions
     //APERTURA
-    2022.0: [],
+    2022.0: [n.pachuca,n.toluca,n.monterrey,n.americamex,           n.santosLaguna,n.tigres,n.cruzazul,n.puebla,n.chivas,n.leon,              n.juarez,n.necaxa,n.sanluis,n.mazatlan,n.tijuana,n.pumas,n.atlas,n.queretaro],
     2021.0: [n.atlas,n.leon,n.pumas,n.tigres,                       n.americamex,n.santosLaguna,n.toluca,n.puebla,n.cruzazul,n.monterrey,     n.chivas,n.sanluis,n.mazatlan,n.necaxa,n.pachuca,n.juarez,n.queretaro,n.tijuana],
     2020.0: [n.leon,n.pumas,n.chivas,n.cruzazul,                    n.americamex,n.monterrey,n.tigres,n.santosLaguna,n.pachuca,n.necaxa,      n.toluca,n.puebla,n.juarez,n.mazatlan,n.tijuana,n.atlas,n.queretaro,n.sanluis],
     2019.0: [n.monterrey,n.americamex,n.necaxa,n.morelia,           n.santosLaguna,n.leon,n.tigres,n.queretaro,n.pachuca,n.chivas,            n.tijuana,n.cruzazul,n.pumas,n.atlas,n.sanluis,n.juarez,n.toluca,n.puebla,n.veracruz],
@@ -851,14 +852,14 @@ Map<String,dynamic> mapNorthAmerica = {
   leagueName.suriname : {
     //2024.0: [],
     //2023.0: [],
-    2022.0: [],
+    2022.0: [n.robinhood,n.intermoengotapoe,n.leovictor,n.notch,n.voorwaarts,   n.wanica,n.pvv,n.transvaal,n.broki,n.santosSUR,  n.snl,n.bintanglair],
     2021.0: [],
     2020.0: [],
-    2019.0: [n.intermoengotapoe,n.robinhood,],
-    2018.0: [n.robinhood,],
-    2017.0: [n.intermoengotapoe,n.leovictor,],
-    2016.0: [n.intermoengotapoe,],
-    2015.0: [n.intermoengotapoe,],
+    2019.0: [n.intermoengotapoe,n.robinhood,n.leovictor,n.transvaal,n.pvv,      n.walking,n.snl,],
+    2018.0: [n.robinhood,n.notch,n.transvaal,n.intermoengotapoe,n.walking,      n.leovictor,n.pvv,],
+    2017.0: [n.intermoengotapoe,n.leovictor,n.walking,n.robinhood,n.wanica,     n.transvaal,n.botopasi,],
+    2016.0: [n.intermoengotapoe,n.transvaal,n.leovictor,n.wanica,n.walking,     n.botopasi,n.robinhood,],
+    2015.0: [n.intermoengotapoe,n.notch,n.walking,n.leovictor,n.transvaal,      n.botopasi,],
     2014.0: [n.intermoengotapoe,],
     2013.0: [n.intermoengotapoe,n.leovictor,],
     2012.0: [n.robinhood,n.intermoengotapoe,],

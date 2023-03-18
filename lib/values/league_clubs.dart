@@ -45,7 +45,7 @@ List defaultSulAmericanaClubs = [
   clubName.saopaulo,clubName.lagalaxy,clubName.cruzazul,clubName.jorge,
   clubName.internacional,clubName.losangelesfc,clubName.imedellin,clubName.saprissa,
   clubName.atleticogo,clubName.ldu,clubName.vancouver,clubName.defensayjusticia,
-  clubName.ceara,clubName.independiente,clubName.tigres,clubName.laGuaira,
+  clubName.ceara,clubName.independiente,clubName.tigres,clubName.laguaira,
   clubName.unionSantaFe,clubName.fluminense,clubName.junior,clubName.chivas,
 ];
 
@@ -198,7 +198,7 @@ Map clubNameMapImmutable = {
     0: clubName.americadecali,1: clubName.atleticonacional,2: clubName.deportivocali,3: clubName.junior,
     4: clubName.imedellin,5: clubName.tolima,6: clubName.millonarios,7: clubName.santafe,
     8: clubName.oncecaldas,
-    9: clubName.caracas,10: clubName.tachira,11: clubName.laGuaira,
+    9: clubName.caracas,10: clubName.tachira,11: clubName.laguaira,
     12: clubName.barcelonaequ,13: clubName.emelec,14: clubName.ldu,15: clubName.idelvalle,
   },
 

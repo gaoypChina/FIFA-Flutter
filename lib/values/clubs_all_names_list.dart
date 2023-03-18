@@ -137,7 +137,7 @@ List clubsAllNameList = [
   ClubName().idelvalle,
   ClubName().barcelonaequ,  ClubName().emelec,  ClubName().ldu,
   //venezuela
-  ClubName().caracas,ClubName().tachira,ClubName().laGuaira,
+  ClubName().caracas,ClubName().tachira,ClubName().laguaira,
 
   //MÉXICO
   ClubName().americamex,  ClubName().chivas, ClubName().cruzazul,  ClubName().monterrey,

@@ -8,7 +8,7 @@ LeagueOfficialNames leagueName = LeagueOfficialNames();
 Map<String,dynamic> mapAsia = {
 
   leagueName.china : {
-    2022.0: [n.wuhan,n.shandong,n.shanghaishenhua],//DESATUALIZADO
+    2022.0: [n.wuhan3towns,n.shandong,n.zhejiang,n.shanghaisipg,n.chengdu,       n.henan,n.beijingguoan,n.tianjin,n.meizhou,n.shanghaishenhua,    n.dalian,n.cangzhou,n.changchun,n.shenzhen,n.ghuangzhouCity,n.wuhan,    n.ghuangzhou,n.hebei],
     2021.0: [n.shandong,n.shanghaisipg,n.ghuangzhou,n.changchun,n.beijingguoan,  n.shenzhen,n.ghuangzhouCity,n.hebei,n.shanghaishenhua,n.henan,   n.cangzhou,n.tianjin,n.chongqing,n.wuhan,n.dalian,n.qingdao],
     2020.0: [n.jiangsu,n.ghuangzhou,n.beijingguoan,n.shanghaisipg,n.chongqing,   n.hebei,n.shandong,n.shanghaishenhua,n.shenzhen,n.wuhan,         n.cangzhou,n.ghuangzhouCity,n.dalian,n.qingdao,n.henan,n.tianjin],
     2019.0: [n.ghuangzhou,n.beijingguoan,n.shanghaisipg,n.jiangsu,n.shandong,    n.wuhan,n.tianjin,n.dalian,n.chongqing,n.hebei,                  n.ghuangzhouCity,n.shanghaishenhua,n.tianjin,n.shenzhen,n.chengfeng],
@@ -47,8 +47,8 @@ Map<String,dynamic> mapAsia = {
   },
 
   leagueName.japao : {
-    2022.0: [],
-    2021.0: [n.kawasakifrontale,n.yokohamamarinos,n.visselkobe,n.kashimaantlers,n.nagoya,   n.urawareddiamonds,n.sagantosu,n.avispa,n.fcTokyo,n.sapporo,    n.hiroshima,n.cerezoOsaka,n.gambaOsaka,n.shimizuSPulse,n.kashiwaReysol,      n.shonanbellmare,n.tokushima,n.oitatrinita,n.vegaltaSendai,n.yokohamaFC],
+    2022.0: [n.yokohamamarinos,n.kawasakifrontale,n.hiroshima,n.kashimaantlers,n.cerezoOsaka, n.fcTokyo,n.kashiwaReysol,n.nagoya,n.urawareddiamonds,n.sapporo,   n.sagantosu,n.shonanbellmare,n.visselkobe,n.avispa,n.kyoto,n.shimizuSPulse,n.jubiloiwata],
+    2021.0: [n.kawasakifrontale,n.yokohamamarinos,n.visselkobe,n.kashimaantlers,n.nagoya,   n.urawareddiamonds,n.sagantosu,n.avispa,n.fcTokyo,n.sapporo,        n.hiroshima,n.cerezoOsaka,n.gambaOsaka,n.shimizuSPulse,n.kashiwaReysol,      n.shonanbellmare,n.tokushima,n.oitatrinita,n.vegaltaSendai,n.yokohamaFC],
     2020.0: [n.kawasakifrontale,n.gambaOsaka,n.nagoya,n.cerezoOsaka,n.kashimaantlers,       n.fcTokyo,n.kashiwaReysol,n.hiroshima,n.yokohamamarinos,n.urawareddiamonds,  n.oitatrinita,n.sapporo,n.sagantosu,n.visselkobe,n.yokohamaFC,  n.shimizuSPulse,n.vegaltaSendai,n.shonanbellmare],
     2019.0: [n.yokohamamarinos,n.fcTokyo,n.kashimaantlers,n.kawasakifrontale,n.cerezoOsaka, n.hiroshima,n.gambaOsaka,n.visselkobe,n.oitatrinita,n.sapporo,  n.vegaltaSendai,n.shimizuSPulse,n.nagoya,n.urawareddiamonds,n.sagantosu,     n.shonanbellmare,n.matsumoto,n.jubiloiwata],
     2018.0: [n.kawasakifrontale,n.hiroshima,n.kashimaantlers,n.sapporo,n.urawareddiamonds,  n.fcTokyo,n.cerezoOsaka,n.shimizuSPulse,n.gambaOsaka,n.visselkobe,  n.vegaltaSendai,n.yokohamamarinos,n.shonanbellmare,n.sagantosu,n.nagoya, n.jubiloiwata,n.kashiwaReysol,],
@@ -81,6 +81,7 @@ Map<String,dynamic> mapAsia = {
   },
 
   leagueName.coreiaSul : {
+    2022.0: [n.ulsan,n.jeonbuk,n.pohang,n.incheon,n.jeju,     n.gangwon,n.suwonFC,n.daegu,n.fcseoul,n.suwonsamsung,       n.gimcheon,n.seongnam],
     2021.0: [n.jeonbuk,n.ulsan,n.daegu,n.jeju,n.suwonFC,      n.suwonsamsung,n.fcseoul,n.incheon,n.pohang,n.seongnam,    n.gangwon,n.gwangju],
     2020.0: [n.jeonbuk,n.ulsan,n.pohang,n.gimcheon,n.daegu,   n.gwangju,n.gangwon,n.suwonsamsung,n.fcseoul,n.seongnam,   n.incheon,n.busan],
     2019.0: [n.jeonbuk,n.ulsan,n.fcseoul,n.pohang,n.daegu,    n.gangwon,n.gimcheon,n.suwonsamsung,n.seongnam,n.incheon,  n.gyeongnam,n.jeju],

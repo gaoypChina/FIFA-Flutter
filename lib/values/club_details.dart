@@ -3706,7 +3706,7 @@ class ClubDetails{
       'Estádio Misael Delgado',14000,1964,_country.venezuela,62.7,[]];
     map[n.caracas] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(10.49220252, -66.885644393),
       'Estádio Olímpico de Caracas',24900,1967,_country.venezuela,68.9,[]];
-    map[n.laGuaira] = [ClubColors(Colors.white,Colors.blue),pattern.solid,Coordinates(10.492202523, -66.885644393),
+    map[n.laguaira] = [ClubColors(Colors.white,Colors.blue),pattern.solid,Coordinates(10.492202523, -66.885644393),
       'Estádio Olímpico de Caracas',24900,2008,_country.venezuela,66.0,[]];
     map[n.tachira] = [ClubColors(Colors.white,Colors.black),pattern.stripes2,Coordinates(7.787385, -72.1980212),
       'Pueblo Nuevo de San Cristóbal',42000,1974,_country.venezuela,67.8,[]];

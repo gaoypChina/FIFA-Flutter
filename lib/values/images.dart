@@ -1173,7 +1173,7 @@ String imageLogo(String timeFoto) {
     //VENEZUELA
     map[_name.carabobo] = 'carabobo'; 
     map[_name.caracas] = 'caracas'; 
-    map[_name.laGuaira] = 'la guaira';  
+    map[_name.laguaira] = 'la guaira';  
     map[_name.tachira] = 'deportivo tachira';  
     map[_name.estudiantesmerida] = 'estudiantes merida';  
     map[_name.deplara] = 'deplara';
