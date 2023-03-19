@@ -3712,14 +3712,17 @@ class ClubName{
   String altahaddi = "Al Tahaddi";
   String tripoliLIB = "Al Ahly Tripoli";
   //MARROCOS
-  String difaa = "Beni Mellal";
-  String beniMellal = "Difaa El Jadida";
-  String chababMohammedia = "Chabab Mohammédia";
-  String chababRifHoceima = "Chabab Rif Hoceima";
   String rajacasablanca = "Raja Casablanca";
   String wydad = "Wydad Casablanca";
-  String farRabat = "FAR Rabat";
+  String difaa = "Beni Mellal";
+  String beniMellal = "Difaa El Jadida";
+  String chababmoh = "Chabab Mohammédia";
+  String chababRifHoceima = "Chabab Rif Hoceima";
+  String car = "Credit Agricole Rabat";
+  String clas = "CLAS Casablanca";
   String fusRabat = "FUS Rabat";
+  String farRabat = "FAR Rabat";
+  String ejs = "Etoile Jeunesse Sportive";
   String jeunesseMassira = "Jeunesse Massira";
   String hassaniaAgadir = "Hassania Agadir";
   String irTanger = "IR Tanger";
@@ -3729,14 +3732,20 @@ class ClubName{
   String meknes = "CODM de Meknès";
   String moulodiaOujda = "Mouloudia Oujda";
   String oCasablanca = "Olympique Casablanca";
+  String ouedzem = "Oued Zem";
   String sale = "AS Salé";
   String safi = "Olympique Safi";
   String khouribga = "Olympique Khouribga";
-  String renBerkane = "Renaissance de Berkane";
+  String berkane = "Renaissance de Berkane";
   String settat = "Renaissance de Settat";
+  String soualem = "JS Soualem";
+  String stademarocain = "Stade Marocain";
   String racingCasablanca = "Racing de Casablanca";
   String maghreb = "Maghreb de Fès";
   String moghrebTetouan = "Moghreb de Tétouan";
+  String sidikacem = "Sidi Kacem";
+  String tihad = "Tihad Athlétique Sport";
+  String youssoufia = "Youssoufia Berrechid";
   //TUNISI
   String bizertin = "Bizertin";
   String clubAfricain = "Club Africain";

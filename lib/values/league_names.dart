@@ -771,6 +771,8 @@ Map getLeagueNationalityMap(){
     leagueName.copaSulAmericana: leagueName.copaSulAmericana,
     leagueName.europaLeagueOficial: leagueName.europaLeagueOficial,
     leagueName.concacaf: leagueName.concacaf,
+    leagueName.recopaeuropa: leagueName.recopaeuropa,
+    leagueName.recopasula: leagueName.recopasula,
 
     leagueName.englandCup: leagueName.englandCup,
     leagueName.italyCup: leagueName.italyCup,

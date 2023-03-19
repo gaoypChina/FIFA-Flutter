@@ -1128,7 +1128,7 @@ Map<String,dynamic> mapEuropa = {
   leagueName.polonia : {
     //https://en.wikipedia.org/wiki/1987%E2%80%9388_Ekstraklasa
     //2023.0: [],
-    2022.0: [n.lechPoznan,n.rakow,n.pogon,n.lechiagdansk,n.piastGliwice,                  ],
+    2022.0: [n.lechPoznan,n.rakow,n.pogon,n.lechiagdansk,n.piastGliwice,                  n.wislaPlock,n.radomiak,n.gornik,n.cracovia,n.legiaWarszawa],
     2021.0: [n.legiaWarszawa,n.rakow,n.pogon,n.slaskwrocklaw,n.wartaPoznan,               ],
     2020.0: [n.legiaWarszawa,n.lechPoznan,n.piastGliwice,n.lechiagdansk,n.slaskwrocklaw,  ],
     2019.0: [n.piastGliwice,n.legiaWarszawa,n.lechiagdansk,n.cracovia,n.jagiellonia,      ],
@@ -1184,10 +1184,10 @@ Map<String,dynamic> mapEuropa = {
     1969.0: [n.legiaWarszawa,n.gornik,n.poloniabytom,n.szombierki,],
     1968.0: [n.ruchchorzow,n.legiaWarszawa,n.gornik,n.poloniabytom,],
     1967.0: [n.gornik,n.zaglebiesosnowiec,n.ruchchorzow,n.legiaWarszawa,],
-    1966.0: [n.gornik,n.wislaKrakow,n.poloniabytom,n.szombierki,],
+    1966.0: [n.gornik,n.wislaKrakow,n.poloniabytom,n.szombierki,n.zaglebiesosnowiec,      n.legiaWarszawa,n.stalrzeszow,n.slaskwrocklaw,],
     1965.0: [n.gornik,n.szombierki,n.zaglebiesosnowiec,n.legiaWarszawa],
     1964.0: [n.gornik,n.zaglebiesosnowiec,n.odraopole,n.legiaWarszawa],
-    1963.0: [n.gornik,n.ruchchorzow,n.zaglebiesosnowiec,n.poloniabytom,],
+    1963.0: [n.gornik,n.ruchchorzow,n.zaglebiesosnowiec,n.poloniabytom,n.odraopole,       n.arkonia,n.legiaWarszawa,n.wislaKrakow,n.stalrzeszow,n.gwardia,    n.pogon,n.lksLodz,n.lechiagdansk,n.lechPoznan],
     1962.0: [n.poloniabytom,n.gornik,n.zaglebiesosnowiec,n.odraopole,n.legiaWarszawa,     n.wislaKrakow,],
     1961.0: [n.gornik,n.poloniabytom,n.legiaWarszawa,n.wislaKrakow],
     1960.0: [n.ruchchorzow,n.legiaWarszawa,n.gornik],
