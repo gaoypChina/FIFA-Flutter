@@ -782,6 +782,8 @@ Map<String,dynamic> mapNorthAmerica = {
     1991.0: [n.fica,],
     1990.0: [n.fica,],
     1989.0: [n.fica,],
+
+    1983.0: [n.violette,],
   },
 
   leagueName.jamaica : {

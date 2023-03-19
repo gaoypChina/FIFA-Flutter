@@ -289,13 +289,16 @@ class LeagueOfficialNames{
       para, amazonas, acre, amapa, rondonia, roraima,
 
       copaNordeste, copaVerde,
+
       mundial, championsLeague, europaLeagueOficial,
       libertadores, copaSulAmericana, concacaf,
+
+      recopaeuropa, recopasula,
 
       englandCup, italyCup, spainCup, germanyCup, franceCup, portugalCup, russiaCup,
       brazilCup,
 
-      recopaeuropa, recopasula,
+
     ];
   }
 }

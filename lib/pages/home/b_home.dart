@@ -176,7 +176,7 @@ class _HomePageState extends State<HomePage> {
                       ),
 
                       //ESCUDO E UNIFORME
-                      loaded ? wHomeClubLogoAndKitStack(club) : Container(),
+                      loaded ? wHomeClubLogoAndKitStack(context, club) : Container(),
 
                     ],
                   ),

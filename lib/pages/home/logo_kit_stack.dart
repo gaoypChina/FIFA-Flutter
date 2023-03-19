@@ -1,10 +1,11 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/stars.dart';
 import 'package:flutter/material.dart';
 
-Widget wHomeClubLogoAndKitStack(Club club){
+Widget wHomeClubLogoAndKitStack(BuildContext context, Club club){
   double imageSize = 200;
   return  Column(
     children: [
@@ -15,7 +16,9 @@ Widget wHomeClubLogoAndKitStack(Club club){
           children: [
             //Image.asset(Images().getStadium(club.name),height: imageSize,width: imageSize,fit: BoxFit.fill,),
             //Escudo
-            Images().getEscudoWidget(club.name,imageSize,imageSize),
+            GestureDetector(onTap:(){
+              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => ClubProfileNotPlayable(clubName: club.name)));
+            },child: Images().getEscudoWidget(club.name,imageSize,imageSize)),
             //Uniforme
             Container(
               alignment: Alignment.bottomRight,

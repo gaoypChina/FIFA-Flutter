@@ -1024,7 +1024,7 @@ class ClubDetails{
       'Parkstad Limburg Stadion',9790,1962,_country.netherlands,65.1,[]];
     map[n.rapidjc] = [ClubColors(Colors.red,Colors.blue),pattern.solid,Coordinates(0,0),
       'Gemeentelijk Sportpark Kaalheide',25000,1954,_country.netherlands,50.0,[]];    //EXTINTO vira roda jc
-    map[n.spartarotterdam] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(51.9200241, 4.4337761),
+    map[n.spartarotterdam] = [ClubColors(Colors.red,Colors.white),pattern.stripes4,Coordinates(51.9200241, 4.4337761),
       'Sparta Stadion Het Kasteel',11026,1888,_country.netherlands,50.0,[]];
     map[n.twente] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(52.2366666,6.8375),
       'De Grolsch Veste',30205,1965,_country.netherlands,70.7,[]];

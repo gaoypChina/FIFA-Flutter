@@ -1860,6 +1860,7 @@ class ClubName{
   String bacabal = "Bacabal"; //MA
   String bahiafeira = "Bahia de Feira";
   String bage = "Bagé"; //RS
+  String bandeirante = "Bandeirante"; //DF
   String bangu = "Bangu";
   String baraunas = "Baraúnas";
   String barragarcas = "Barra do Garças"; //MT
@@ -1897,6 +1898,7 @@ class ClubName{
   String canoas = "Canoas";
   String capela = "Capela"; //AL
   String capelense = "Capelense"; //AL
+  String capital = "Capital"; //DF
   String capivariano = "Capivariano"; //SP
   String carlosrenaux = "Carlos Renaux"; //SC
   String cascavel = "Cascavel FC"; //PR
@@ -1914,6 +1916,7 @@ class ClubName{
   String ceub = "CEUB";
   String cfa = "CFA"; //RO
   String chapadao = "Chapadão"; //MS
+  String cfz = "CFZ"; //DF
   String cianorte = "Cianorte";
   String cliper = "Cliper"; //AM
   String colatina = "Colatina"; //ES
@@ -2122,8 +2125,9 @@ class ClubName{
   String palmeirasBA = "Palmeiras-BA";
   String paragominas = "Paragominas";
   String paranavai = "Paranavaí";
-  String patrocinense = "Patrocinense"; //MG
+  String paranoa = "Paranoá"; //DF
   String parnahyba = "Parnahyba"; //PIAUI
+  String patrocinense = "Patrocinense"; //MG
   String paularamos = "Paula Ramos"; //SC
   String paulista = "Paulista Jundiaí";
   String paysandu = "Paysandu";
@@ -2158,6 +2162,7 @@ class ClubName{
   String radium = "Radium";  //SP
   String remo = "Remo";
   String realArquimedes = "Real Arquimedes"; //RO
+  String realbrasilia = "Real Brasília"; //DF
   String realNoroeste = "Real Noroeste-ES";
   String renner = "Renner"; //RS
   String resende = "Resende";
@@ -2238,6 +2243,7 @@ class ClubName{
   String taquaritinga = "Taquaritinga";
   String taguatinga = "Taguatinga";
   String tiradentes = "Tiradentes";
+  String tiradentesDF = "Tiradentes DF";
   String tocantinsEC = "Tocantins EC"; //TO
   String tocantinsFC = "Tocantins FC"; //TO
   String tocantinopolis = "Tocantinópolis";
@@ -3720,6 +3726,7 @@ class ClubName{
   String chababRifHoceima = "Chabab Rif Hoceima";
   String car = "Credit Agricole Rabat";
   String clas = "CLAS Casablanca";
+  String douanesMAR = "Douanes Marocaines";
   String fusRabat = "FUS Rabat";
   String farRabat = "FAR Rabat";
   String ejs = "Etoile Jeunesse Sportive";
@@ -3745,6 +3752,8 @@ class ClubName{
   String moghrebTetouan = "Moghreb de Tétouan";
   String sidikacem = "Sidi Kacem";
   String tihad = "Tihad Athlétique Sport";
+  String usmohammedia = "Union Sportive Mohammédia";
+  String usmarocaine = "Union Sportive Marocaine";
   String youssoufia = "Youssoufia Berrechid";
   //TUNISI
   String bizertin = "Bizertin";
