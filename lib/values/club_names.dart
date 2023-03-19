@@ -561,12 +561,10 @@ class ClubName{
   String psv = "PSV";
   String agovv = "AGOVV";
   String az = "AZ Alkmaar";
-  String blauwwit = "Blauw-Wit Amsterdam";
   String cambuur = "Cambuur";
   String degraafschap = "De Graafschap";
   String denhaag = "ADO Den Haag";
   String denbosch = "Den Bosch";
-  String dos = "VV DOS";
   String dordrecht = "Dordrecht";
   String emmen = "FC Emmen";
   String eindhoven = "FC Eindhoven";
@@ -578,6 +576,7 @@ class ClubName{
   String groningen = "Groningen";
   String haarlem = "HFC Haarlem";
   String heerenveen = "Heerenveen";
+  String helmond = "Helmond";
   String heracles = "Heracles";
   String hermes = "Hermes DVS";
   String limburgia = "Limburgia";
@@ -589,18 +588,30 @@ class ClubName{
   String rapidjc = "Rapid JC";
   String rch = "Racing Club Heemstede";
   String roda = "Roda JC";
+  String roosendaal = "Roosendaal";
   String spartarotterdam = "Sparta Rotterdam";
+  String svv = "SVV";
   String telstar = "Telstar";
   String twente = "Twente";
+  String veendam = "Veendam";
   String vitesse = "Vitesse";
   String volendam = "Volendam";
+  String volewijckers = "Volewijckers";
   String vvv = "VVV Venlo";
   String utrecht = "Utrecht";
   String waalwijk = "RJK Waalwijk";
+  String wageningen = "Wageningen";
   String willem = "Willem II";
+  String xerxes = "XerxesDZB";
   String zwolle = "PEC Zwolle";
-  String dws = "AFC DWS";
+
+  String fortuna54 = "Fortuna 54"; //EXTINTO - form Fortuna Sittard
+  String sittardia = "Sittardia"; //EXTINTO - form Fortuna Sittard
+  String blauwwit = "Blauw-Wit Amsterdam"; //EXTINTO - form FC Amsterdam
+  String dws = "AFC DWS"; //EXTINTO Merged with Blauw-Wit Amsterdam to form FC Amsterdam
   String amsterdam = "FC Amsterdam"; //1972-1982
+  String dos = "VV DOS"; //EXTINTO - Merged with Elinkwijk & Velox to form FC Utrecht
+  String holland = "Holland Sport"; //EXTINTO Merged with ADO Den Haag to form FC Den Haag
 
   //////////////////////////////////////////////////////////////////////////////
   //BÉLGICA
@@ -3320,15 +3331,22 @@ class ClubName{
 
   //ORIENTE MÉDIO
   //ARABIA SAUDITA
+  String abha = "Abha";
+  String alainARA = "Al Ain Saudi";
+  String aladalah = "Al Adalah";
+  String albatin = "Al Batin";
   String alnassr = "Al Nassr";
   String alahli = "Al Ahli";
   String alansarARABIA = "Al Ansar ARABIA";
   String alhilal = "Al Hilal";
+  String alkhaleej = "Al-Khaleej";
   String alFaisalyARABIA = "Al-Faisaly";
+  String alhazem = "Al Hazem";
   String alIttihad = "Al Ittihad";
   String alShabab = "Al Shabab";
   String alettifaq = "Al Ettifaq";
   String alfateh = "Al Fateh";
+  String alfayha = "Al Fayha";
   String alnahda = "Al Nahda";
   String alnajma = "Al Najma Sport Club";
   String alQadisiya = "Al Qadisiya";
@@ -3340,6 +3358,7 @@ class ClubName{
   String altai = "Al Tai";
   String alwehda = "Al Wehda";
   String damac = "Damac";
+  String najran = "Najran";
   String ohod = "Ohod";
   //EAU
   String alain = "Al Ain-EAU";
@@ -3363,11 +3382,15 @@ class ClubName{
   String alarabi = "Al Arabi";
   String alrayyan = "Al Rayyan";
   String algharafa = "Al Gharafa";
+  String alkharaitiyat = "Al Kharaitiyat";
   String alkhor = "Al Khor";
+  String almarkhiya = "Al-Markhiya";
   String alshamal = "Al Shamal";
+  String alshahania = "Al Shahania";
   String alwakrah = "Al Wakrah";
   String eljaish = "El-Jaish";
   String alsailiya = "Al-Sailiya";
+  String muaither = "Muaither";
   String qatar = "Qatar Sports Club";
   String ummSalal = "Umm Salal";
   //BAHREIN
@@ -3385,15 +3408,23 @@ class ClubName{
   String bahman = "Bahman";
   String esteghlal = "Esteghlal";
   String esteghlalKhuzestan = "Esteghlal Khuzestan";
+  String damash = "Damash";
+  String fajr = "Fajr Sepasi";
   String foolad = "Foolad";
   String homa = "Homa";
   String keshavarz = "Keshavarz";
   String malavan = "Malavan";
+  String meskerman = "Mes Kerman";
   String naftTehran = "Naft Tehran";
   String pastehran = "Pas Tehran"; //EXTINTO
+  String paykan = "Paykan";
   String persepolis = "Persepolis";
+  String rahahan = "Rah Ahan";
+  String sabaqom = "Saba Qom";
   String saipa = "Saipa";
+  String sanat = "Sanat Naft";
   String sepahan = "Sepahan";
+  String steelazin = "Steel Azin";
   String tractor = "Tractor";
   String zobahan = "Zob Ahan";
   //IRAQUE

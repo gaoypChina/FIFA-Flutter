@@ -3,17 +3,14 @@ import 'dart:math';
 
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/functions/size.dart';
-import 'package:fifa/pages/ball_sim/physics.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/match/adversario.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/ball_sim/physics.dart';
 import 'package:fifa/pages/ball_sim/sim_functions.dart';
-import 'package:fifa/pages/menu/widgets/play_button.dart';
 import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
-import 'package:fifa/widgets/kits_crests/crest.dart';
 import 'package:fifa/widgets/popup/popup_player_info.dart';
 import 'package:flutter/material.dart';
 
