@@ -1407,25 +1407,40 @@ class ClubName{
   String partizan = "Partizan";
   String belgradoxi = "Belgrado XI";
   String backaTopola = "Bačka Topola";
+  String banat = "Banat Zrenjanin";
+  String banatski = "Budućnost Banatski Dvor";
+  String becej = "Becej";
+  String bezanija = "Bežanija";
   String borakCacak = "Borac Čačak";
+  String bor = "Bor";
+  String crvenka = "Crvenka";
   String cukaricki = "Čukarički";
   String jagodina = "Jagodina";
+  String javor = "Javor Ivanjica";
+  String kolubara = "Kolubara";
   String kula = "Hajduk Kula";
   String obilic = "Obilic";
+  String milanovac = "Metalac Gornji Milanovac";
+  String mladostapatin = "Mladost Apatin";
   String mladostLucani = "Mladost Lucani";
   String napredakKrusevac = "Napredak Krusevac";
-  String macva = "	Mačva Šabac";
+  String macva = "Mačva Šabac";
   String nasakrila = "Naša Krila Zemun";
   String novisad = "Novi Sad XI";
   String noviPazar = "Novi Pazar";
   String proleter = "Proleter Zrenjanin";
   String ofkBelgrade = "OFK Belgrade";
   String radnicki = "Radnicki";
-  String radnik = "Radnik";
+  String kragujevac = "Radnicki Kragujevac";
+  String radnik = "Radnik Surdulica";
   String rad = "Rad";
+  String smederevo = "Smederevo 1924";
   String subotica = "Spartak Subotica";
+  String uzice = "Sloboda Užice";
   String vojvodina = "Vojvodina";
   String vozdovac = "Voždovac";
+  String zeleznik = "Zeleznik";
+  String zemun = "Zemun";
   //ROMENIA
   String steauaBucuresti = "Steaua Bucareste";
   String dinamoBucuresti = "Dinamo Bucareste";
@@ -1480,8 +1495,9 @@ class ClubName{
   String botevVratsa = "Botev Vratsa";
   String chernomore = "Cherno More Varna";
   String cskaSofia = "CSKA Sofia";
+  String cska1948 = "CSKA 1948";
+  String dunavruse = "Dunav Ruse";
   String hebar = "Hebar";
-  String sofia1948 = "1949 Sofia";
   String levskiSofia = "Levski Sofia";
   String loksofia = "Lokomotiv Sofia";
   String lokplovdiv = "Lokomotiv Plovdiv";
@@ -1493,8 +1509,10 @@ class ClubName{
   String spartakVarna = "Spartak Varna";
   String akasofia = "Akademik Sofia"; //EXTINTO 2012
   String litexLovech = "Litex Lovech";
+  String vereya = "Vereya";
   //CROACIA
   String dinamozagreb = "Dinamo Zagreb";
+  String vinkovci = "Dinamo Vinkovci";
   String hadjuksplit = "Hadjuk Split";
   String rijeka = "Rijeka";
   String gorica = "Gorica";
@@ -1506,6 +1524,7 @@ class ClubName{
   String varazdin = "Varaždin";
   String varteks = "Varteks";
   String slavenBelupo = "Slaven Belupo";
+  String tresnjevka = "Trešnjevka";
   String lokZagreb = "NK Lokomotiva Zagreb";
   String zapresic = "Inter Zaprešić";
   String zagrebxi = "Zagreb XI";
@@ -1676,6 +1695,7 @@ class ClubName{
   String makedonija = "Makedonija Gjorče Petrov";
   String metalurgMAC = "Metalurg";
   String milano = "Milano Kumanovë";
+  String pelister = "Pelister";
   String pobeda = "Pobeda";
   String sloga = "Sloga Jugomagnat";
   String shkendija = "FK Shkendija";
@@ -1684,6 +1704,7 @@ class ClubName{
   String rabotnicki = "Rabotnički";
   String renova = "Renova";
   String struga = "Struga";
+  String teteks = "Teteks";
   String turnovo = "Turnovo";
   String vardar = "FK Vardar";
   //MALTA
@@ -3900,7 +3921,7 @@ class ClubName{
   String electsport = "Elect Sports";
   String postel = "Postel 2000";
   String renaissance = "Renaissance";
-  String tourbillon = " Tourbillon";
+  String tourbillon = "Tourbillon";
 
   //CONGO
   String aspolice = "AS police";

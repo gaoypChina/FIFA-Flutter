@@ -7,7 +7,7 @@ LeagueOfficialNames leagueName = LeagueOfficialNames();
 Map<String,dynamic> mapEstaduais = {
 
   leagueName.paulistao : {
-    //2023.0: [n.palmeiras,n.bragantino,n.ituano,n.aguasanta,    n.saobernardo,n.saopaulo,n.corinthians,n.botafogoSP,   n.mirassol,n.guarani,n.santos,n.santoandre,n.interLimeira,n.portuguesa,n.saobento,n.ferroviaria],
+    //2023.0: [n.palmeiras,n.aguasanta,n.ituano,n.bragantino,    n.saobernardo,n.saopaulo,n.corinthians,n.botafogoSP,   n.mirassol,n.guarani,n.santos,n.santoandre,n.interLimeira,n.portuguesa,n.saobento,n.ferroviaria],
     2022.0: [n.palmeiras,n.saopaulo,n.corinthians,n.bragantino,  n.ituano,n.saobernardo,n.guarani,n.santoandre,n.botafogoSP,n.mirassol,                n.aguasanta,n.ferroviaria,n.interLimeira,n.santos,n.pontepreta,n.novorizontino],
     2021.0: [n.saopaulo,n.palmeiras,n.corinthians,n.mirassol,    n.bragantino,n.ferroviaria,n.interLimeira,n.guarani,n.novorizontino,n.ituano,         n.pontepreta,n.santos,n.santoandre,n.botafogoSP,n.saobento,n.saocaetano],
     2020.0: [n.palmeiras,n.corinthians,n.mirassol,n.pontepreta,  n.bragantino,n.saopaulo,n.santoandre,n.santos,n.guarani,n.novorizontino,              n.interLimeira,n.botafogoSP,n.ferroviaria,n.ituano,n.aguasanta,n.oeste],
@@ -83,7 +83,7 @@ Map<String,dynamic> mapEstaduais = {
     1950.0: [n.palmeiras,n.saopaulo,n.santos,n.portuguesa,      n.corinthians,n.guarani,n.ypirangaSP,n.juventusMooca,n.xvpiracicaba,n.portuguesasantista,  n.nacionalSP,n.jabaquara],
   },
   leagueName.carioca : {
-    // 2023.0: [n.flamengo,n.voltaredonda,n.fluminense,n.vasco],
+    // 2023.0: [n.flamengo,n.fluminense,n.vasco,n.voltaredonda],
     2022.0: [n.fluminense,n.flamengo,n.vasco,n.botafogo,],
     2021.0: [n.flamengo,n.fluminense,n.portuguesaRJ,n.voltaredonda,],
     2020.0: [n.flamengo,n.fluminense,n.voltaredonda,n.boavistaRJ,],

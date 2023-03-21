@@ -2089,7 +2089,7 @@ class ClubDetails{
       'Stadion Dragalevtsi',1800,1944,_country.bulgaria,59.2,[]];
     map[n.slaviaSofia] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(42.675321, 23.27190),
       'Slavia Stadium',15992,1913,_country.bulgaria,69.6,[]];
-    map[n.sofia1948] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(42.5910188, 23.3634639),
+    map[n.cska1948] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(42.5910188, 23.3634639),
       'Stadion Bistritsa',2500,1948,_country.bulgaria,68.7,[]];
     map[n.spartakPlovdiv] = [ClubColors(Colors.blue,Colors.red),pattern.solid,Coordinates(42.1315663, 24.74390948),
       'Todor Diev Stadium',3500,1947,_country.bulgaria,63.4,[]];

@@ -43,7 +43,7 @@ Map<String,dynamic> mapOrienteMedio = {
     1990.0: [n.alhilal,n.alahli,n.alnassr,n.altai,n.alShabab,        n.alQadisiya,n.alettifaq,n.alIttihad,n.alwehda,n.alriad,   ],
     1989.0: [n.alnassr,n.alShabab,n.alhilal,n.alahli,n.alettifaq,    n.alIttihad,n.altai,],
     1988.0: [n.alhilal,n.alettifaq,n.alnassr,n.alIttihad,n.alShabab, n.altai,],
-    1987.0: [n.alettifaq,n.alhilal,n.alnassr,n.altai,n.alShabab,     n.alahli,n.alittihadSYR,n.alwehda,n.alQadisiya,n.alnahda,  ],
+    1987.0: [n.alettifaq,n.alhilal,n.alnassr,n.altai,n.alShabab,     n.alahli,n.alIttihad,n.alwehda,n.alQadisiya,n.alnahda,  ],
     1986.0: [n.alhilal,n.alIttihad,n.alnassr,n.alwehda,n.altai,      n.alahli,],
     1985.0: [n.alhilal,n.alShabab,n.alahli,n.alettifaq,n.alnassr,    n.alIttihad,],
     1984.0: [n.alahli,n.alIttihad,n.alettifaq,n.alQadisiya,n.alnassr, n.alhilal,n.alShabab,],

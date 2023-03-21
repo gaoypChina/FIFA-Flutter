@@ -8,7 +8,7 @@ LeagueOfficialNames leagueName = LeagueOfficialNames();
 Map<String,dynamic> mapEuropaTopLeagues = {
 
   leagueName.inglaterra1 : {
-    //2023.0: [n.arsenal,n.mancity,n.manutd,n.newcastle,n.tottenham,n.brighton,n.chelsea,n.fulham,n.liverpool,n.brentford,            n.astonvilla],
+    //2023.0: [n.arsenal,n.mancity,n.manutd,n.newcastle,n.tottenham,n.brighton,n.liverpool,n.fulham,n.chelsea,n.brentford,            n.astonvilla],
     2022.0: [n.mancity,n.liverpool,n.chelsea,n.tottenham,n.arsenal,n.manutd,n.westham,n.leicester,n.brighton,n.wolves,              n.newcastle,n.crystalpalace,n.brentford,n.astonvilla,n.southampton,n.everton,n.leeds,n.burnley,n.watford,n.norwich],
     2021.0: [n.mancity,n.manutd,n.liverpool,n.chelsea,n.leicester,n.westham,n.tottenham,n.arsenal,n.everton,n.leeds,                n.astonvilla,n.newcastle,n.wolves,n.crystalpalace,n.southampton,n.brighton,n.burnley,n.fulham,n.westbromwich,n.sheffieldunited],
     2020.0: [n.liverpool,n.mancity,n.manutd,n.chelsea,n.leicester,n.tottenham,n.wolves,n.arsenal,n.sheffieldunited,n.burnley,       n.southampton,n.everton,n.newcastle,n.crystalpalace,n.brighton,n.westham,n.astonvilla,n.bournemouth,n.watford,n.norwich],
@@ -164,7 +164,7 @@ Map<String,dynamic> mapEuropaTopLeagues = {
 
   leagueName.espanha1 : {
     //2024.0: [],
-    //2023.0: [],
+    //2023.0: [n.barcelona,n.realmadrid,n.atleticomadrid,n.realbetis,n.realsociedad,n.villareal,n.athleticbilbao],
     2022.0: [n.realmadrid,n.barcelona,n.atleticomadrid,n.sevilla,n.realbetis,n.realsociedad,n.villareal,n.athleticbilbao,n.valencia,n.osasuna,     n.celtavigo,n.rayoVallecano,n.elche,n.espanyol,n.getafe,n.mallorca,n.cadiz,n.granada,n.levante,n.alaves],
     2021.0: [n.atleticomadrid,n.realmadrid,n.barcelona,n.sevilla,n.realsociedad,n.realbetis,n.villareal,n.celtavigo,n.granada,n.athleticbilbao,    n.osasuna,n.cadiz,n.valencia,n.levante,n.getafe,n.alaves,n.elche,n.huesca,n.valladolid,n.eibar],
     2020.0: [n.realmadrid,n.barcelona,n.atleticomadrid,n.sevilla,n.villareal,n.realsociedad,n.granada,n.getafe,n.valencia,n.osasuna,               n.athleticbilbao,n.levante,n.valladolid,n.eibar,n.realbetis,n.alaves,n.celtavigo,n.leganes,n.mallorca,n.espanyol],
@@ -317,7 +317,7 @@ Map<String,dynamic> mapEuropaTopLeagues = {
   },
   leagueName.italia1 : {
     //2024.0: [],
-    //2023.0: [],
+    //2023.0: [n.napoli,n.inter,n.lazio,n.milan,n.roma,      n.atalanta,n.juventus,n.torino,n.fiorentina],
     2022.0: [n.milan,n.inter,n.napoli,n.juventus,n.lazio,n.roma,n.fiorentina,n.atalanta,n.hellasVerona,n.torino,  n.sassuolo,n.udinese,n.bologna,n.empoli,n.sampdoria,n.spezia,n.salernitana,n.cagliari,n.genoa,n.venezia],
     2021.0: [n.inter,n.milan,n.atalanta,n.juventus,n.napoli,n.lazio,n.roma,n.sassuolo,n.sampdoria,n.hellasVerona, n.genoa,n.bologna,n.fiorentina,n.udinese,n.spezia,n.cagliari,n.torino,n.benevento,n.crotone,n.parma],
     2020.0: [n.juventus,n.inter,n.lazio,n.atalanta,n.roma,n.milan,n.napoli,n.sassuolo,n.fiorentina,n.parma,       n.hellasVerona,n.bologna,n.cagliari,n.udinese,n.sampdoria,n.torino,n.genoa,n.lecce,n.brescia,n.spal],
@@ -472,7 +472,7 @@ Map<String,dynamic> mapEuropaTopLeagues = {
   },
   leagueName.alemanha1 : {
     //2024.0: [],
-    //2023.0: [],
+    //2023.0: [n.bayernmunique,n.dortmund,n.rbleipzig,n.unionBerlin,],
     2022.0: [n.bayernmunique,n.dortmund,n.leverkusen,n.rbleipzig,n.unionBerlin,n.freiburg,n.colonia,n.mainz05,n.hoffenheim,n.moenchengladbach,                     n.eintrachtfrankfurt,n.wolfsburg,n.bochum,n.augsburg,n.stuttgart,n.herthaberlim,n.arminiaBiefeld,n.greutherFurth],
     2021.0: [n.bayernmunique,n.rbleipzig,n.dortmund,n.wolfsburg,n.eintrachtfrankfurt,n.leverkusen,n.unionBerlin,n.moenchengladbach,n.stuttgart,n.freiburg,         n.hoffenheim,n.mainz05,n.augsburg,n.herthaberlim,n.arminiaBiefeld,n.colonia,n.werderbremen,n.schalke04],
     2020.0: [n.bayernmunique,n.dortmund,n.rbleipzig,n.moenchengladbach,n.leverkusen,n.hoffenheim,n.wolfsburg,n.freiburg,n.eintrachtfrankfurt,n.herthaberlim,       n.unionBerlin,n.schalke04,n.mainz05,n.colonia,n.augsburg,n.werderbremen,n.fortunaDusseldorf,n.paderborn],
@@ -508,7 +508,7 @@ Map<String,dynamic> mapEuropaTopLeagues = {
     1990.0: [n.bayernmunique,n.colonia,n.eintrachtfrankfurt,n.dortmund,n.leverkusen,n.stuttgart,n.werderbremen,n.nurnberg,n.fortunaDusseldorf,n.karlsruher,        n.hamburgo,n.kaiserslautern,n.stPauli,n.uerdigen,n.moenchengladbach,n.bochum,n.waldhofMannheim,n.homburg],
     1989.0: [n.bayernmunique,n.colonia,n.werderbremen,n.hamburgo,n.stuttgart,n.moenchengladbach,n.dortmund,n.leverkusen,n.kaiserslautern,n.stPauli,                n.karlsruher,n.waldhofMannheim,n.uerdigen,n.nurnberg,n.bochum,n.eintrachtfrankfurt,n.stutKickers,n.hannover96],
     1988.0: [n.werderbremen,n.bayernmunique,n.colonia,n.stuttgart,n.nurnberg,n.hamburgo,n.moenchengladbach,n.leverkusen,n.eintrachtfrankfurt,n.hannover96,                 n.uerdigen,n.bochum,n.dortmund,n.kaiserslautern,n.karlsruher,n.waldhofMannheim,n.homburg,n.schalke04],
-    1987.0: [n.bayernmunique,n.hamburgo,n.moenchengladbach,n.dortmund,n.werderbremen,n.leverkusen,n.kaiserslautern,n.uerdigen,n.nurnberg,n.colon,                  n.bochum,n.stuttgart,n.schalke04,n.waldhofMannheim,n.eintrachtfrankfurt,n.homburg,n.fortunaDusseldorf],
+    1987.0: [n.bayernmunique,n.hamburgo,n.moenchengladbach,n.dortmund,n.werderbremen,n.leverkusen,n.kaiserslautern,n.uerdigen,n.nurnberg,n.colonia,                  n.bochum,n.stuttgart,n.schalke04,n.waldhofMannheim,n.eintrachtfrankfurt,n.homburg,n.fortunaDusseldorf],
     1986.0: [n.bayernmunique,n.werderbremen,n.uerdigen,n.moenchengladbach,n.stuttgart,n.leverkusen,n.hamburgo,n.waldhofMannheim,n.bochum,n.schalke04,                      n.kaiserslautern,n.nurnberg,n.colonia,n.fortunaDusseldorf,n.eintrachtfrankfurt,n.dortmund,n.saarbrucken,n.hannover96],
     1985.0: [n.bayernmunique,n.werderbremen,n.colonia,n.moenchengladbach,n.hamburgo,n.waldhofMannheim,n.uerdigen,n.schalke04,n.bochum,n.stuttgart,                              n.kaiserslautern,n.eintrachtfrankfurt,n.leverkusen,n.dortmund,n.fortunaDusseldorf,n.arminiaBiefeld,n.karlsruher,n.braunschweiger],
     1984.0: [n.stuttgart,n.hamburgo,n.moenchengladbach,n.bayernmunique,n.werderbremen,n.leverkusen,n.arminiaBiefeld,n.braunschweiger,n.uerdigen,                      n.waldhofMannheim,n.kaiserslautern,n.dortmund,n.fortunaDusseldorf,n.bochum,n.eintrachtfrankfurt,n.kickersOffenbach,n.nurnberg],
