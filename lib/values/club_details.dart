@@ -4923,7 +4923,7 @@ class ClubDetails{
     //TUNISIA
     map[n.bizertin] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(37.27906354, 9.8657169),
       'Stade 15 Octobre',20000,1928,_country.tunisia,63.4,[]];
-    map[n.clubAfricain] = [ClubColors(Colors.white,Colors.red),pattern.solid,Coordinates(36.839919, 10.185206),
+    map[n.clubafricain] = [ClubColors(Colors.white,Colors.red),pattern.solid,Coordinates(36.839919, 10.185206),
       'Olympique d\'El Menzah',45000,1920,_country.tunisia,69.6,[]];
     map[n.esperance] = [ClubColors(Colors.red,Colors.yellow),pattern.solid,Coordinates(36.7477777,10.2727777),
       'Estadio Olímpico de Radès',60500,1919,_country.tunisia,72.2,[]];
@@ -4933,7 +4933,7 @@ class ClubDetails{
       'Stade Hamda Laouani',5000,1942,_country.libya,58.5,[]];
     map[n.monastir] = [ClubColors(Colors.lightBlueAccent,Colors.white),pattern.solid,Coordinates(0, 0),
       'Stade Mustapha Ben Jannet',22000,1923,_country.libya,60.5,[]];
-    map[n.stadeTunisien] = [ClubColors(Colors.green,Colors.red,Colors.white),pattern.stripes2,Coordinates(36.81442945, 10.12487585),
+    map[n.stadetunisien] = [ClubColors(Colors.green,Colors.red,Colors.white),pattern.stripes2,Coordinates(36.81442945, 10.12487585),
       'Hedi Ennaifer',11000,1948,_country.tunisia,62.9,[]];
     map[n.sfaxien] = [ClubColors(Colors.black,Colors.white),pattern.solid,Coordinates(34.73365186, 10.74661154),
       'Estádio Taïeb Mehiri',11000,1928,_country.tunisia,68.9,[]];

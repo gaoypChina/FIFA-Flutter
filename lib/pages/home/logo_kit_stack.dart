@@ -17,7 +17,7 @@ Widget wHomeClubLogoAndKitStack(BuildContext context, Club club){
             //Image.asset(Images().getStadium(club.name),height: imageSize,width: imageSize,fit: BoxFit.fill,),
             //Escudo
             GestureDetector(onTap:(){
-              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => ClubProfileNotPlayable(clubName: club.name)));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => ClubProfileNotPlayable(clubName: club.name)));
             },child: Images().getEscudoWidget(club.name,imageSize,imageSize)),
             //Uniforme
             Container(

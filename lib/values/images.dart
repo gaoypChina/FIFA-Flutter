@@ -1559,7 +1559,7 @@ String imageLogo(String timeFoto) {
     map[_name.omdurman] = 'omdurman';
     map[_name.almerrikh] = 'al merrikh';
     //TUNISIA
-    map[_name.clubAfricain] = 'club africain';
+    map[_name.clubafricain] = 'club africain';
     map[_name.esperance] = 'esperance';
     map[_name.etoilesahel] = 'etoile sahel';
     map[_name.sfaxien] = 'sfaxien';

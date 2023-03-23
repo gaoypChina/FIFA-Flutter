@@ -46,6 +46,12 @@ class _TournamentState extends State<Tournament> {
     Club club = Club(index: clubID);
     return club;
   }
+  void urlsLeagues(){
+
+  }
+  void getRealLeagueClassification(){
+
+  }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
