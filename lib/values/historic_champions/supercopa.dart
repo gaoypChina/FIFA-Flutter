@@ -21,7 +21,7 @@ Map<String,dynamic> mapSupercopa = {
     2012.0: [n.atleticomadrid,n.chelsea,],
     2011.0: [n.barcelona,n.porto,],
     2010.0: [n.atleticomadrid,n.inter,],
-    2009.0: [n.barcelona,n.shaktardonetsk,],
+    2009.0: [n.barcelona,n.shakhtardonetsk,],
     2008.0: [n.zenit,n.manutd,],
     2007.0: [n.milan,n.sevilla,],
     2006.0: [n.sevilla,n.barcelona,],

@@ -323,10 +323,10 @@ Map<String,dynamic> mapAsia = {
 
   leagueName.indonesia : {
     //https://en.wikipedia.org/wiki/1994%E2%80%9395_Liga_Indonesia_Premier_Division
-    2022.0: [n.bali,n.persib,],
+    2022.0: [n.bali,n.persib,n.bhayangkara,n.arema,n.persebaya,n.borneo,n.psis,n.persija,n.madura,],
     2021.0: [],
-    2020.0: [],
-    2019.0: [n.bali,n.persebaya,],
+    2020.0: [n.persib,n.bali,n.borneo,n.persipura,n.psis,n.psmMakassar,n.persiraja,n.madura,n.persija,],
+    2019.0: [n.bali,n.persebaya,n.persipura,n.bhayangkara,n.madura,n.persib,n.borneo,n.pss,n.arema,n.persija,n.persela,n.psmMakassar,],
     2018.0: [n.persija,n.psmMakassar,],
     2017.0: [n.bhayangkara,n.bali,],
     2016.0: [],

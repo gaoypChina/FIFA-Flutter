@@ -79,19 +79,19 @@ List clubsAllNameList = [
   ClubName().rosenborg,  ClubName().malmo, ClubName().ifkgoteborg,
   ClubName().copenhague,  ClubName().midtjylland,
   ClubName().helsinki,ClubName().molde,
-  ClubName().legiaWarszawa,ClubName().lechPoznan,
+  ClubName().legiawarszawa,ClubName().lechpoznan,
 
   //russia
   ClubName().zenit,  ClubName().cska,  ClubName().krasnodar,  ClubName().spartakmoscou,
   ClubName().sochi,ClubName().rubinKazan,ClubName().lokomotivMoscou,ClubName().dinamoMoscou,
 
   ClubName().bate,
-  ClubName().qarabag,ClubName().astana,ClubName().vardar,ClubName().sheriffTiraspol,
-  ClubName().estrelavermelha,  ClubName().partizan,  ClubName().ludogorets,  ClubName().cskaSofia,
-  ClubName().shaktardonetsk,  ClubName().dinamokiev,
+  ClubName().qarabag,ClubName().astana,ClubName().vardar,ClubName().sherifftiraspol,
+  ClubName().estrelavermelha,  ClubName().partizan,  ClubName().ludogorets,  ClubName().cskasofia,
+  ClubName().shakhtardonetsk,  ClubName().dinamokiev,
   ClubName().spartapraga,  ClubName().slaviaPraha, ClubName().viktoriaPlzen,
   ClubName().dinamozagreb,ClubName().cluj,ClubName().slovanBratislava,ClubName().ferencvaros,
-  ClubName().steauaBucuresti,ClubName().maccabiTelAviv,
+  ClubName().steauaBucuresti,ClubName().maccabitelaviv,
 
   //////////////////////////////////////////////////////
   ClubName().palmeiras,  ClubName().botafogo,  ClubName().atleticomg,  ClubName().atleticopr,

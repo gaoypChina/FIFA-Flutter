@@ -483,13 +483,13 @@ String imageLogo(String timeFoto) {
     map[_name.stmirren] = 'st mirren';
     //IRLANDA
     map[_name.bohemian] = 'bohemian';
-    map[_name.cork] = 'cork';
-    map[_name.derry] = 'derry';
+    map[_name.corkcity] = 'cork';
+    map[_name.derrycity] = 'derry';
     map[_name.dundalk] = 'dundalk';
     map[_name.limerick] = 'limerick';
-    map[_name.shamrock] = 'shamrock';
-    map[_name.sligo] = 'sligo';
-    map[_name.shellbourne] = 'shellbourne';
+    map[_name.shamrockrovers] = 'shamrock';
+    map[_name.sligorovers] = 'sligo';
+    map[_name.shelbourne] = 'shellbourne';
     map[_name.stpatricks] = 'st patricks';
     map[_name.waterford] = 'waterford';
     //GALES
@@ -563,19 +563,19 @@ String imageLogo(String timeFoto) {
     map[_name.vikingur] = 'vikingur';
     //ILHAS FAROE
     map[_name.b36] = 'b36';
-    map[_name.klaksvik] = 'klaksvik';
+    map[_name.kiklaksvik] = 'klaksvik';
     map[_name.hb] = 'hb';
-    map[_name.vikingurFaroe] = 'vikingur faroe';
+    map[_name.vikingurgota] = 'vikingur faroe';
 
     //AUSTRIA
     map[_name.admira] = 'admira';
     map[_name.austria] = 'austria';
     map[_name.rbsalzburg] = 'rbsalzburg';
     map[_name.rapidviena] = 'rapidviena';
-    map[_name.laskLinz] = 'lask';
+    map[_name.lasklinz] = 'lask';
     map[_name.ried] = 'ried';
-    map[_name.tirol] = 'tirol';
-    map[_name.sturmGraz] = 'sturm';
+    map[_name.tirolinnsbruck] = 'tirol';
+    map[_name.sturmgraz] = 'sturm';
     map[_name.wolfsberger] = 'wolfsberger';
     //SUIÇA
     map[_name.aarau] = 'aarau';
@@ -592,18 +592,18 @@ String imageLogo(String timeFoto) {
     map[_name.winterthur] = 'winterthur';
     map[_name.zurich] = 'zurich';
     //POLONIA
-    map[_name.gornik] = 'gornik';
-    map[_name.gwardia] = 'gwardia';
-    map[_name.legiaWarszawa] = 'legia';
-    map[_name.lechPoznan] = 'lech';
+    map[_name.gornikzabrze] = 'gornik';
+    map[_name.gwardiawarsaw] = 'gwardia';
+    map[_name.legiawarszawa] = 'legia';
+    map[_name.lechpoznan] = 'lech';
     map[_name.lechiagdansk] = 'lechia gdansk';
-    map[_name.pogon] = 'pogon';
-    map[_name.rakow] = 'rakow';
+    map[_name.pogonszczecin] = 'pogon';
+    map[_name.rakowczestochowa] = 'rakow';
     map[_name.ruchchorzow] = 'ruch';
-    map[_name.slaskwrocklaw] = 'slask';
-    map[_name.wislaKrakow] = 'wisla krakow';
-    map[_name.wislaPlock] = 'wisla plock';
-    map[_name.widzew] = 'widzew';
+    map[_name.slaskwroclaw] = 'slask';
+    map[_name.wislakrakow] = 'wisla krakow';
+    map[_name.wislaplock] = 'wisla plock';
+    map[_name.widzewlodz] = 'widzew';
 
     //TURQUIA
     map[_name.galatasaray] = 'galatasaray';
@@ -645,18 +645,18 @@ String imageLogo(String timeFoto) {
     map[_name.aeklarnaca] = 'aek larnaca';
     map[_name.aellimassol] = 'ael limassol';
     map[_name.anorthosis] = 'anorthosis';
-    map[_name.omonia] = 'omonia';
-    map[_name.apollon] = 'apollon';
+    map[_name.omonianicosia] = 'omonia';
+    map[_name.apollonlimassol] = 'apollon';
     //ISRAEL
     map[_name.ashdod] = 'ashdod';
-    map[_name.beitarJerusalem] = 'beitar jerusalem';
-    map[_name.hapoelBerSheva] = 'hapoel ber sheva';
-    map[_name.hapoelPetah] = 'hapoel petah';
-    map[_name.hapoelTelAviv] = 'hapoel tel aviv';
-    map[_name.maccabiHaifa] = 'maccabi haifa';
-    map[_name.maccabiTelAviv] = 'maccabi tel aviv';
-    map[_name.maccabiNetanya] = 'netanya';
-    map[_name.ramatGan] = 'ramat gan';
+    map[_name.beitarjerusalem] = 'beitar jerusalem';
+    map[_name.hapoelbeersheva] = 'hapoel ber sheva';
+    map[_name.hapoelpetahtikva] = 'hapoel petah';
+    map[_name.hapoeltelaviv] = 'hapoel tel aviv';
+    map[_name.maccabihaifa] = 'maccabi haifa';
+    map[_name.maccabitelaviv] = 'maccabi tel aviv';
+    map[_name.maccabinetanya] = 'netanya';
+    map[_name.hapoelramatgan] = 'ramat gan';
 
     //RUSSIA
     map[_name.zenit] = 'zenit';
@@ -683,20 +683,20 @@ String imageLogo(String timeFoto) {
     map[_name.ural] = 'ural';
 
     //EX-URSS
-    map[_name.shaktardonetsk] = 'shaktar';
+    map[_name.shakhtardonetsk] = 'shaktar';
     map[_name.dinamokiev] = 'dinamokiev';
-    map[_name.desna] = 'desna';
+    map[_name.desnachernihiv] = 'desna';
     map[_name.dnipro] = 'dnipro';
     map[_name.lviv] = 'lviv';
-    map[_name.metalist] = 'metalist';
-    map[_name.odesa] = 'odesa';
-    map[_name.vorskla] = 'vorskla';
-    map[_name.zorya] = 'zorya';
+    map[_name.metalist1925kharkiv] = 'metalist';
+    map[_name.chornomoretsodesa] = 'odesa';
+    map[_name.vorsklapoltava] = 'vorskla';
+    map[_name.zoryaluhansk] = 'zorya';
 
     //MOLDOVA
-    map[_name.milsami] = 'milsami';
-    map[_name.sheriffTiraspol] = 'sheriff';
-    map[_name.zimbru] = 'zimbru';
+    map[_name.milsamiorhei] = 'milsami';
+    map[_name.sherifftiraspol] = 'sheriff';
+    map[_name.zimbruchisinau] = 'zimbru';
     //BELARUS
     map[_name.bate] = 'bate';
     map[_name.dinamoBrest] = 'dinamo brest';
@@ -715,10 +715,10 @@ String imageLogo(String timeFoto) {
     map[_name.kutaisi] = 'kutaisi';
     map[_name.saburtalo] = 'saburtalo';
     //ARMENIA
-    map[_name.alashkent] = 'alashkent';
-    map[_name.araratArmenia] = 'ararat armenia';
-    map[_name.araratYerevan] = 'ararat yerevan';
-    map[_name.pyunikyerevan] = 'pyunik yerevan';
+    map[_name.alashkert] = 'alashkent';
+    map[_name.araratarmenia] = 'ararat armenia';
+    map[_name.araratyerevan] = 'ararat yerevan';
+    map[_name.pyunik] = 'pyunik yerevan';
     map[_name.shirak] = 'shirak';
     //KAZAKHSTAN
     map[_name.aktobe] = 'aktobe';
@@ -738,12 +738,12 @@ String imageLogo(String timeFoto) {
     map[_name.levadiatallinn] = 'levadia';
     map[_name.paide] = 'paide';
     //LATVIA
-    map[_name.rigaRFS] = 'riga rfs';
+    map[_name.rigasfs] = 'riga rfs';
     map[_name.rigafc] = 'riga';
     map[_name.valmiera] = 'valmiera';
     //LITUANIA
     map[_name.suduva] = 'suduva';
-    map[_name.kaunu] = 'kaunu';
+    map[_name.kaunozalgiris] = 'kaunu';
     map[_name.zalgiris] = 'zalgiris';
 
     //LESTE EUROPEU
@@ -756,17 +756,17 @@ String imageLogo(String timeFoto) {
     map[_name.vojvodina] = 'vojvodina';
     //BULGARIA
     map[_name.beroe] = 'beroe';
-    map[_name.cskaSofia] = 'cska sofia';
-    map[_name.levskiSofia] = 'levski sofia';
-    map[_name.litexLovech] = 'litex lovech';
+    map[_name.cskasofia] = 'cska sofia';
+    map[_name.levskisofia] = 'levski sofia';
+    map[_name.litexlovech] = 'litex lovech';
     map[_name.lokplovdiv] = 'lok plovdiv';
     map[_name.loksofia] = 'lok sofia';
     map[_name.ludogorets] = 'ludogorets';
-    map[_name.slaviaSofia] = 'slavia sofia';
+    map[_name.slaviasofia] = 'slavia sofia';
     //CROACIA
     map[_name.dinamozagreb] = 'dinamozagreb';
-    map[_name.hadjuksplit] = 'hadjuk split';
-    map[_name.lokZagreb] = 'lok zagreb';
+    map[_name.hajduksplit] = 'hadjuk split';
+    map[_name.lokzagreb] = 'lok zagreb';
     map[_name.rijeka] = 'rijeka';
     map[_name.osijek] = 'osijek';
     //ESLOVAQUIA
@@ -778,7 +778,7 @@ String imageLogo(String timeFoto) {
     //ESLOVENIA
     map[_name.celje] = 'celje';
     map[_name.domzale] = 'domzale';
-    map[_name.ljublijana] = 'ljublijana';
+    map[_name.oljublijana] = 'ljublijana';
     map[_name.maribor] = 'maribor';
     map[_name.mura] = 'mura';
     //REPUBLICA TCHECA
@@ -813,14 +813,14 @@ String imageLogo(String timeFoto) {
     map[_name.steauaBucuresti] = 'steaua bucareste';
     map[_name.arad] = 'uta arad';
     //MACEDONIA
-    map[_name.akaPandev] = 'pandev';
+    map[_name.akademijapandev] = 'pandev';
     map[_name.makedonija] = 'makedonija';
     map[_name.rabotnicki] = 'rabotnicki';
     map[_name.shkendija] = 'shkendija';
     map[_name.shkupi] = 'shkupi';
     map[_name.vardar] = 'vardar';
     //ALBANIA
-    map[_name.tiranafk] = 'tirana fk';
+    map[_name.tirana] = 'tirana fk';
     map[_name.laci] = 'laci';
     map[_name.partizanitirane] = 'partizani tirane';
     map[_name.skenderbeu] = 'skenderbeu';
