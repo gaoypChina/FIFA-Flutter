@@ -644,7 +644,7 @@ Map<String,dynamic> mapAmerica = {
     1977.0: [n.alianzalima,n.sportingcristal,n.melgar,],
     1976.0: [n.unionhuaral,n.sportboys,n.juanaurich,],
     1975.0: [n.alianzalima,n.ugarte,n.universitario,],
-    1974.0: [n.unionhuaral,n.unionhuaral,n.defensorlima,],
+    1974.0: [n.universitario,n.unionhuaral,n.defensorlima,n.alianzalima,],
     1973.0: [n.defensorlima,n.sportingcristal,n.universitario,],
     1972.0: [n.sportingcristal,n.universitario,n.depmunicipal,],
     1971.0: [n.universitario,n.alianzalima,n.defensorlima,],

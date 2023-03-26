@@ -32,7 +32,7 @@ List defaultEuropaLeagueClubs = [
   clubName.arsenal,clubName.psv,clubName.rosenborg,clubName.zurich,
   clubName.fenerbahce,clubName.rennes,clubName.dinamokiev,clubName.aek,
   clubName.realbetis,clubName.roma,clubName.ludogorets,clubName.helsinki,
-  clubName.gent,clubName.malmo,clubName.unionBerlin,clubName.braga,
+  clubName.gent,clubName.malmo,clubName.unionberlin,clubName.braga,
   clubName.manutd,clubName.realsociedad,clubName.sherifftiraspol,clubName.apoel,
   clubName.feyenoord,clubName.lazio,clubName.midtjylland,clubName.rapidviena,
   clubName.nantes,clubName.qarabag,clubName.freiburg,clubName.olympiacos,
@@ -101,15 +101,15 @@ Map clubNameMapImmutable = {
   },
   LeagueOfficialNames().alemanha1 : {
     0: clubName.augsburg,1: clubName.leverkusen,2: clubName.bayernmunique,3: clubName.dortmund,
-    4: clubName.bochum,5: clubName.moenchengladbach,6: clubName.colonia,7: clubName.eintrachtfrankfurt,
+    4: clubName.bochum,5: clubName.moenchengladbach,6: clubName.koln,7: clubName.eintrachtfrankfurt,
     8: clubName.freiburg,9: clubName.herthaberlim,10: clubName.hoffenheim,11: clubName.mainz05,
-    12: clubName.rbleipzig,13: clubName.schalke04,14: clubName.stuttgart,15: clubName.unionBerlin,
+    12: clubName.rbleipzig,13: clubName.schalke04,14: clubName.stuttgart,15: clubName.unionberlin,
     16: clubName.werderbremen,17: clubName.wolfsburg,
   },
   LeagueOfficialNames().alemanha2 : {
-    0: clubName.arminiaBiefeld,1: clubName.darmstadt,2: clubName.dynamoDresden,3: clubName.fortunaDusseldorf,
+    0: clubName.arminiabiefeld,1: clubName.darmstadt,2: clubName.dynamodresden,3: clubName.fortunadusseldorf,
     4: clubName.hamburgo,5: clubName.hannover96,6: clubName.kaiserslautern,7: clubName.nurnberg,
-    8: clubName.paderborn,9: clubName.stPauli,
+    8: clubName.paderborn,9: clubName.stpauli, 
   },
   LeagueOfficialNames().franca1 : {
     0: clubName.ajaccio,1: clubName.angers,2: clubName.auxerre,3: clubName.bordeaux,

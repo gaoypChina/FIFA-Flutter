@@ -44,13 +44,13 @@ List clubsAllNameList = [
   ClubName().eibar,
   //alemanha
   ClubName().moenchengladbach,  ClubName().dortmund,  ClubName().bayernmunique,  ClubName().leverkusen,
-  ClubName().colonia,  ClubName().eintrachtfrankfurt,  ClubName().freiburg,  ClubName().hamburgo,
+  ClubName().koln,  ClubName().eintrachtfrankfurt,  ClubName().freiburg,  ClubName().hamburgo,
   ClubName().augsburg,  ClubName().herthaberlim,  ClubName().hoffenheim,  ClubName().rbleipzig,
   ClubName().schalke04,  ClubName().stuttgart,  ClubName().werderbremen,  ClubName().wolfsburg,
 
-  ClubName().arminiaBiefeld,ClubName().bochum,ClubName().darmstadt,ClubName().dynamoDresden,
-  ClubName().kaiserslautern,ClubName().mainz05,ClubName().fortunaDusseldorf,ClubName().nurnberg,
-  ClubName().hannover96,ClubName().paderborn,ClubName().stPauli,ClubName().unionBerlin,
+  ClubName().arminiabiefeld,ClubName().bochum,ClubName().darmstadt,ClubName().dynamodresden,
+  ClubName().kaiserslautern,ClubName().mainz05,ClubName().fortunadusseldorf,ClubName().nurnberg,
+  ClubName().hannover96,ClubName().paderborn,ClubName().stpauli,ClubName().unionberlin,
   //frança
   ClubName().angers,ClubName().bordeaux,  ClubName().lille,  ClubName().lyon,
   ClubName().montpellier,  ClubName().nantes,  ClubName().nice,  ClubName().om,

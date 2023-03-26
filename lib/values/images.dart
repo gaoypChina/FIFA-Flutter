@@ -287,7 +287,7 @@ String imageLogo(String timeFoto) {
     map[_name.augsburg] = 'augsburg';
     map[_name.freiburg] = 'freiburg';
     map[_name.hamburgo] = 'hamburgo';
-    map[_name.colonia] = 'colonia';
+    map[_name.koln] = 'colonia';
     map[_name.herthaberlim] = 'hertha';
     map[_name.hoffenheim] = 'hoffenheim';
     map[_name.rbleipzig] = 'leipzig';
@@ -296,22 +296,22 @@ String imageLogo(String timeFoto) {
     map[_name.werderbremen] = 'werderbremen';
     map[_name.wolfsburg] = 'wolfsburg';
 
-    map[_name.aachen] = 'aachen';
-    map[_name.arminiaBiefeld] = 'arminia';
+    map[_name.alemanniaaachen] = 'aachen';
+    map[_name.arminiabiefeld] = 'arminia';
     map[_name.berliner] = 'berliner';
     map[_name.bochum] = 'bochum';
     map[_name.carlzeissjena] = 'carl zeiss jena';
     map[_name.chemnitzer] = 'chemnitzer';
     map[_name.darmstadt] = 'darmstadt';
     map[_name.duisburg] = 'duisburg';
-    map[_name.dynamoDresden] = 'dynamo dresden';
+    map[_name.dynamodresden] = 'dynamo dresden';
     map[_name.braunschweiger] = 'braunschweiger';
-    map[_name.energieCottbus] = 'energie cottbus';
+    map[_name.energiecottbus] = 'energie cottbus';
     map[_name.erzgebirgeaue] = 'erzgebirgeaue';
-    map[_name.fortunaDusseldorf] = 'fortuna';
-    map[_name.greutherFurth] = 'greuther furth';
+    map[_name.fortunadusseldorf] = 'fortuna'; 
+    map[_name.greutherfurth] = 'greuther furth';
     map[_name.hannover96] = 'hannover96';
-    map[_name.hansaRostock] = 'hansa';
+    map[_name.hansarostock] = 'hansa';
     map[_name.heidenheim] = 'heidenheim';
     map[_name.holsteinkiel] = 'holstein kiel';
     map[_name.ingolstadt] = 'ingolstadt';
@@ -321,16 +321,16 @@ String imageLogo(String timeFoto) {
     map[_name.lokleipzig] = 'lok leipzig';
     map[_name.magdeburg] = 'magdeburg';
     map[_name.mainz05] = 'mainz';
-    map[_name.munique1860] = 'munique1860';
+    map[_name.munich1860] = 'munique1860';
     map[_name.nurnberg] = 'nurnberg';
     map[_name.paderborn] = 'paderborn';
-    map[_name.rotWeissEssen] = 'rot weiss essen';
+    map[_name.rotweissessen] = 'rot weiss essen';
     map[_name.saarbrucken] = 'saarbrucken';
     map[_name.sachsenleipzig] = 'sachsen leipzig';
     map[_name.sandhausen] = 'sandhausen';
     map[_name.uerdigen] = 'uerdigen';
-    map[_name.unionBerlin] = 'union berlin';
-    map[_name.stPauli] = 'st pauli';
+    map[_name.unionberlin] = 'union berlin';
+    map[_name.stpauli] = 'st pauli';
     map[_name.zwickau] = 'zwickau';
 
     map[_name.bordeaux] = 'bordeaux';
@@ -558,13 +558,13 @@ String imageLogo(String timeFoto) {
     map[_name.akraness] = 'akraness';
     map[_name.breidablik] = 'breidablik';
     map[_name.fh] = 'hafnarfjardar';
-    map[_name.reykjavik] = 'reykjavik';
+    map[_name.kr] = 'reykjavik';
     map[_name.valur] = 'valur';
     map[_name.vikingur] = 'vikingur';
     //ILHAS FAROE
     map[_name.b36] = 'b36';
     map[_name.kiklaksvik] = 'klaksvik';
-    map[_name.hb] = 'hb';
+    map[_name.havnarboltfelag] = 'hb';
     map[_name.vikingurgota] = 'vikingur faroe';
 
     //AUSTRIA
@@ -843,7 +843,7 @@ String imageLogo(String timeFoto) {
     map[_name.trepenne] = 'tre penne';
     //MALTA
     map[_name.floriana] = 'floriana';
-    map[_name.sliema] = 'sliema';
+    map[_name.sliemawanderers] = 'sliema';
     map[_name.hiberniansMALTA] = 'hibernians malta';
     map[_name.valletta] = 'valletta';
     //ANDORRA
@@ -1534,7 +1534,7 @@ String imageLogo(String timeFoto) {
     //EGITO
     map[_name.alahli] = 'al_ahli';  
     map[_name.almasry] = 'al masry';
-    map[_name.cleopatra] = 'cleopatra';
+    map[_name.ceramicacleopatra] = 'cleopatra';
     map[_name.future] = 'future fc';
     map[_name.ismaily] = 'ismaily';
     map[_name.pyramids] = 'pyramids';
@@ -1548,7 +1548,7 @@ String imageLogo(String timeFoto) {
     map[_name.mcoran] = 'mc oran';
     map[_name.usmalger] = 'usm alger';
     //LYBIA
-    map[_name.alIttihadLIB] = 'al ittihad libya';
+    map[_name.alittihadLIB] = 'al ittihad libya';
     map[_name.benghazi] = 'benghazi';
     //MARROCOS
     map[_name.rajacasablanca] = 'raja';  
