@@ -1541,12 +1541,12 @@ String imageLogo(String timeFoto) {
     map[_name.zamalek] = 'zamalek';
     //ALGERIA
     map[_name.belouizdad] = 'belouizdad';
-    map[_name.constantine] = 'constantine';
+    map[_name.csconstantine] = 'constantine';
     map[_name.essetif] = 'es setif';
-    map[_name.kabylie] = 'kabylie';
+    map[_name.jskabylie] = 'kabylie';
     map[_name.mcalger] = 'mc alger';
-    map[_name.mcOran] = 'mc oran';
-    map[_name.usmAlger] = 'usm alger';
+    map[_name.mcoran] = 'mc oran';
+    map[_name.usmalger] = 'usm alger';
     //LYBIA
     map[_name.alIttihadLIB] = 'al ittihad libya';
     map[_name.benghazi] = 'benghazi';

@@ -4873,43 +4873,43 @@ class ClubDetails{
     map[n.moulodiaOujda] = [ClubColors(Colors.white,Colors.green),pattern.solid,Coordinates(34.6596594, -1.93453730),
       'Estádio Honneur',19000,1946,_country.morocco,61.5,[]];
     //ALGERIA
-    map[n.annaba] = [ClubColors(Colors.white,Colors.red),pattern.solid,Coordinates(0, 0),
+    map[n.usmannaba] = [ClubColors(Colors.white,Colors.red),pattern.solid,Coordinates(0, 0),
       '19 May Stadium',56000,1983,_country.algeria,54.8,[]];
-    map[n.asoChlef] = [ClubColors(Colors.red,Colors.white),pattern.sleeves,Coordinates(0,0),
+    map[n.asochlef] = [ClubColors(Colors.red,Colors.white),pattern.sleeves,Coordinates(0,0),
       'Boumezrag Mohamed',30000,1947,_country.algeria,58.6,[]];
     map[n.asmoran] = [ClubColors(Colors.white,Colors.green),pattern.solid,Coordinates(0,0),
       'Habib Bouakeul Stadium',20000,1935,_country.algeria,53.6,[]];
-    map[n.bejaia] = [ClubColors(Colors.red,Colors.green),pattern.solid,Coordinates(0, 0),
+    map[n.jsmbejaia] = [ClubColors(Colors.red,Colors.green),pattern.solid,Coordinates(0, 0),
       'Stade de l\'Unité maghrébine',17500,1936,_country.algeria,59.5,[]];
     map[n.belouizdad] = [ClubColors(Colors.white,Colors.red),pattern.solid,Coordinates(36.7456313, 3.0786813),
       'Stade du 20-Août-1955',10000,1955,_country.algeria,66.5,[]];
-    map[n.blida] = [ClubColors(Colors.green,Colors.white),pattern.stripes3,Coordinates(0,0),
+    map[n.usmblida] = [ClubColors(Colors.green,Colors.white),pattern.stripes3,Coordinates(0,0),
       'Brakni Brothers Stadium',10000,1932,_country.algeria,50.9,[]];
-    map[n.chaouia] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(0, 0),
+    map[n.uschaouia] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(0, 0),
       'Hassouna Zerdani Stadium',5000,1936,_country.algeria,50.8,[]];
-    map[n.constantine] = [ClubColors(Colors.green,Colors.black),pattern.solid,Coordinates(0,0),
+    map[n.csconstantine] = [ClubColors(Colors.green,Colors.black),pattern.solid,Coordinates(0,0),
       'Estádio Chahid Hamlaoui',45000,1898,_country.algeria,63.8,[]];
-    map[n.elharrach] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(0,0),
+    map[n.usmelharrach] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(0,0),
       '1 November 1954 Stadium',5000,1935,_country.algeria,62.6,[]];
     map[n.essetif] = [ClubColors(Colors.black,Colors.white),pattern.solid,Coordinates(36.18707773, 5.3937329179),
       'Estádio 8 de Maio',25000,1958,_country.algeria,70.4,[]];
-    map[n.hussein] = [ClubColors(Colors.yellow,Colors.red),pattern.solid,Coordinates(0, 0),
+    map[n.husseindey] = [ClubColors(Colors.yellow,Colors.red),pattern.solid,Coordinates(0, 0),
       'Stade du 20 Août 1955',10000,1955,_country.algeria,57.8,[]];
-    map[n.kabylie] = [ClubColors(Colors.yellow,Colors.green),pattern.solid,Coordinates(36.706899, 4.0560295),
+    map[n.jskabylie] = [ClubColors(Colors.yellow,Colors.green),pattern.solid,Coordinates(36.706899, 4.0560295),
       'Stade 1er Novembre',22000,1946,_country.algeria,66.2,[]];
-    map[n.kouba] = [ClubColors(Colors.green,Colors.white),pattern.stripes3,Coordinates(0, 0),
+    map[n.rckouba] = [ClubColors(Colors.green,Colors.white),pattern.stripes3,Coordinates(0, 0),
       'Mohamed Benhaddad Stadium',10000,1945,_country.algeria,51.8,[]];
-    map[n.mascara] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(0,0),
+    map[n.gcrmascara] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(0,0),
       'The African Unity Stadium',22000,1925,_country.algeria,49.6,[]];
     map[n.mcalger] = [ClubColors(Colors.green,Colors.red),pattern.horStripes2,Coordinates(36.75986425, 2.99499536),
       'Estádio 5 de Julho de 1962',76000,1921,_country.algeria,69.2,[]];
-    map[n.mcOran] = [ClubColors(Colors.white,Colors.red),pattern.horStripes2,Coordinates(35.683435418, -0.63621669),
+    map[n.mcoran] = [ClubColors(Colors.white,Colors.red),pattern.horStripes2,Coordinates(35.683435418, -0.63621669),
       'Estádio Ahmed Zabana',40000,1917,_country.algeria,65.7,[]];
-    map[n.paradou] = [ClubColors(Colors.yellow,blue),pattern.solid,Coordinates(0,0),
+    map[n.paradouac] = [ClubColors(Colors.yellow,blue),pattern.solid,Coordinates(0,0),
       'Omar Benrabah Stadium',11000,1994,_country.algeria,56.6,[]];
-    map[n.saoura] = [ClubColors(Colors.yellow,Colors.green),pattern.solid,Coordinates(0, 0),
+    map[n.jssaoura] = [ClubColors(Colors.yellow,Colors.green),pattern.solid,Coordinates(0, 0),
       '20 August Stadium',20000,2008,_country.algeria,62.5,[]];
-    map[n.usmAlger] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(36.80114535, 3.04854982),
+    map[n.usmalger] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(36.80114535, 3.04854982),
       'Omar Hamadi Stadium',15000,1937,_country.algeria,69.5,[]];
     //LIBYA
     map[n.tripoliLIB] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(32.8599, 13.1358),
