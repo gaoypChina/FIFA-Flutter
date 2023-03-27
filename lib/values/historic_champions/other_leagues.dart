@@ -73,7 +73,7 @@ Map<String,dynamic> mapOtherLeagues = {
     1984.0: [n.juventus,n.porto,],
     1983.0: [n.aberdeen,n.realmadrid,],
     1982.0: [n.barcelona,n.standardliege,],
-    1981.0: [n.tbilisi,n.carlzeissjena,],
+    1981.0: [n.dinamotbilisi,n.carlzeissjena,],
     1980.0: [n.valencia,n.arsenal,],
     1979.0: [n.barcelona,n.fortunadusseldorf,],
     1978.0: [n.anderlecht,n.austria,],

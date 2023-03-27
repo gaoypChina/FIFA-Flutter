@@ -560,7 +560,7 @@ String imageLogo(String timeFoto) {
     map[_name.fh] = 'hafnarfjardar';
     map[_name.kr] = 'reykjavik';
     map[_name.valur] = 'valur';
-    map[_name.vikingur] = 'vikingur';
+    map[_name.vikingurreykjavik] = 'vikingur';
     //ILHAS FAROE
     map[_name.b36] = 'b36';
     map[_name.kiklaksvik] = 'klaksvik';
@@ -709,11 +709,11 @@ String imageLogo(String timeFoto) {
     map[_name.qarabag] = 'qarabag';
     map[_name.zira] = 'zira';
     //GEORGIA
-    map[_name.batumi] = 'batumi';
-    map[_name.dila] = 'dila';
-    map[_name.tbilisi] = 'tbilisi';
-    map[_name.kutaisi] = 'kutaisi';
-    map[_name.saburtalo] = 'saburtalo';
+    map[_name.dinamobatumi] = 'batumi';
+    map[_name.dilagori] = 'dila';
+    map[_name.dinamotbilisi] = 'tbilisi';
+    map[_name.torpedokutaisi] = 'kutaisi';
+    map[_name.saburtalotbilisi] = 'saburtalo';
     //ARMENIA
     map[_name.alashkert] = 'alashkent';
     map[_name.araratarmenia] = 'ararat armenia';
@@ -736,7 +736,7 @@ String imageLogo(String timeFoto) {
     //ESTONIA
     map[_name.floratallinn] = 'flora talinn';
     map[_name.levadiatallinn] = 'levadia';
-    map[_name.paide] = 'paide';
+    map[_name.paidelinnameeskond] = 'paide';
     //LATVIA
     map[_name.rigasfs] = 'riga rfs';
     map[_name.rigafc] = 'riga';
@@ -831,10 +831,12 @@ String imageLogo(String timeFoto) {
     //KOSOVO
     map[_name.ballkani] = 'ballkani';
     map[_name.drita] = 'drita';
+    map[_name.feronikeli] = 'feronikeli';
     map[_name.llapi] = 'llapi';
     map[_name.prishtina] = 'prishtina';
+    map[_name.trepca89] = 'trepca89';
     //MONTENEGRO
-    map[_name.podgorica] = 'podgorica';
+    map[_name.buducnost] = 'buducnost';
     map[_name.sutjeska] = 'sutjeska';
     //SAN MARINO
     map[_name.folgore] = 'folgore';

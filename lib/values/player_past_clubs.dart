@@ -278,7 +278,7 @@ class PlayerPastClubs{
   map['Maestro Júnior'] = { 1974:n.flamengo,1984:n.torino,1987:n.pescara,1989:n.flamengo,1993:retired};
   map['Juninho Pernambucano'] = {1993:n.sport,1995:n.vasco,2001:n.lyon,2009:n.algharafa,2011:n.vasco,2013:n.nyredbulls,2013.5:n.vasco,2014:retired};
   map['Kaka'] = {        2001:n.saopaulo,2003:n.milan,2009:n.realmadrid,2013:n.milan,2014:n.saopaulo,2015:n.orlando,2017:retired};
-  map['Kaladze'] = {     1993:n.tbilisi,1997:n.dinamokiev,2001:n.milan,2010:n.genoa,2012:retired};
+  map['Kaladze'] = {     1993:n.dinamotbilisi,1997:n.dinamokiev,2001:n.milan,2010:n.genoa,2012:retired};
   map['Kanu'] = {        1993:n.ajax,1996:n.inter,1999:n.arsenal,2004:n.westbromwich,2006:n.portsmouth,2012:retired};
   map['Kenny Dalglish'] = {1969:n.celtic,1977:n.liverpool,1990:retired};
   map['Kießling'] = {    2002:n.nurnberg,2006:n.leverkusen,2018:retired};
