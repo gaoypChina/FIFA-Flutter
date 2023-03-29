@@ -391,7 +391,6 @@ class ClubName{
   String neunkirchen = "Neunkirchen";
   String neuendorf = "Neuendorf";
   String nurnberg = "Nurnberg";
-  String oberhausen = "Oberhausen";
   String paderborn = "Paderborn";
   String pirmasens = "Pirmasens";
   String preubenmunster = "Preußen Münster";
@@ -445,7 +444,7 @@ class ClubName{
   String rotweissahlen = "Rot Weiss Ahlen"; //EX-"LR Ahlen"
   String rotweisserfurt = "Rot-Weiß Erfurt";
   String rotweissludenscheid = "Rot-Weiß Lüdenscheid";
-  String rotweissoberhausen = "Rot-Weiß Oberhausen";
+  String oberhausen = "Rot-Weiß Oberhausen";
   String sgunionsolingen = "SG Union Solingen";
   String sgwattenscheid09 = "SG Wattenscheid 09";
   String sreutlingen = "SReutlingen";

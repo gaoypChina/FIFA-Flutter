@@ -699,6 +699,8 @@ class ClubDetails{
       '',0,0,_country.germany,50.0,[]];
     map[n.holsteinkiel] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(54.349072, 10.12361715),
       'Holstein-Stadion',15034,1900,_country.germany,60.6,[]];
+    map[n.homburg] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+      '',0,0,_country.germany,50.0,[]];
     map[n.ingolstadt] = [ClubColors(Colors.red,Colors.black),pattern.stripes2,Coordinates(48.745434, 11.485777),
       'Audi-Sportpark',15445,2004,_country.germany,64.3,[]];
     map[n.jahnregensburg] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(48.99090071, 12.1074654),
@@ -721,6 +723,8 @@ class ClubDetails{
       'Ellenfeldstadion',23000,1905,_country.germany,55.6,[]];
     map[n.nurnberg] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(49.42632233, 11.126222),
       'Max-Morlock-Stadion',49923,1900,_country.germany,70.4,[]];
+    map[n.oberhausen] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+      '',0,0,_country.germany,50.0,[]];
     map[n.paderborn] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(51.731389,8.710833),
       'Benteler-Arena',15000,1907,_country.germany,69.6,[]];
     map[n.pirmasens] = [ClubColors(Colors.white,Colors.blue),pattern.solid,Coordinates(0,0),

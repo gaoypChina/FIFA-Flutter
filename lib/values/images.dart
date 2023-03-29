@@ -704,6 +704,8 @@ String imageLogo(String timeFoto) {
     map[_name.gomel] = 'gomel';
     map[_name.soligorsk] = 'soligorsk';
     //AZERBAIJAN
+    map[_name.baku] = 'baku fc';
+    map[_name.dilagori] = 'dila';
     map[_name.neftci] = 'neftci';
     map[_name.qabala] = 'qabala';
     map[_name.qarabag] = 'qarabag';
@@ -714,6 +716,7 @@ String imageLogo(String timeFoto) {
     map[_name.dinamotbilisi] = 'tbilisi';
     map[_name.torpedokutaisi] = 'kutaisi';
     map[_name.saburtalotbilisi] = 'saburtalo';
+    map[_name.witgeorgia] = 'wit georgia';
     //ARMENIA
     map[_name.alashkert] = 'alashkent';
     map[_name.araratarmenia] = 'ararat armenia';
@@ -742,7 +745,9 @@ String imageLogo(String timeFoto) {
     //LATVIA
     map[_name.rigasfs] = 'riga rfs';
     map[_name.rigafc] = 'riga';
+    map[_name.skonto] = 'skonto';
     map[_name.valmiera] = 'valmiera';
+    map[_name.ventspils] = 'ventspils';
     //LITUANIA
     map[_name.ekranas] = 'ekranas';
     map[_name.fbkkaunas] = 'fbk kaunas';
@@ -819,19 +824,24 @@ String imageLogo(String timeFoto) {
     //MACEDONIA
     map[_name.akademijapandev] = 'pandev';
     map[_name.makedonija] = 'makedonija';
+    map[_name.pobeda] = 'pobeda';
     map[_name.rabotnicki] = 'rabotnicki';
     map[_name.shkendija] = 'shkendija';
     map[_name.shkupi] = 'shkupi';
+    map[_name.sileks] = 'sileks';
     map[_name.vardar] = 'vardar';
     //ALBANIA
+    map[_name.dinamotirana] = 'dinamo tirana';
     map[_name.tirana] = 'tirana fk';
     map[_name.laci] = 'laci';
     map[_name.partizanitirane] = 'partizani tirane';
     map[_name.skenderbeu] = 'skenderbeu';
     map[_name.vllaznia] = 'vllaznia';
     //BOSNIA
-    map[_name.sarajevo] = 'sarajevo';//BOSNIA
-    map[_name.zrinjski] = 'zrinjski';//BOSNIA
+    map[_name.sarajevo] = 'sarajevo';
+    map[_name.siroki] = 'siroki';
+    map[_name.zeljeznicar] = 'zeljeznicar';
+    map[_name.zrinjski] = 'zrinjski';
     //KOSOVO
     map[_name.ballkani] = 'ballkani';
     map[_name.drita] = 'drita';
@@ -1104,7 +1114,8 @@ String imageLogo(String timeFoto) {
     map[_name.huachipato] = 'huachipato';  
     map[_name.iquique] = 'iquique';  
     map[_name.laCalera] = 'la calera';  
-    map[_name.laserena] = 'la serena';  
+    map[_name.laserena] = 'la serena';
+    map[_name.magallanes] = 'magallanes';
     map[_name.nublense] = 'nublense';  
     map[_name.ohiggins] = 'ohiggins';  
     map[_name.palestino] = 'palestino';  
@@ -1524,6 +1535,8 @@ String imageLogo(String timeFoto) {
     //OCENIA
     map[_name.auckland] = 'auckland';
     map[_name.wellingtonphoenix] = 'wellington phoenix';
+
+    map[_name.ba] = 'ba';
 
     map[_name.adelaide] = 'adelaide';
     map[_name.brisbane] = 'brisbane';
