@@ -720,6 +720,7 @@ String imageLogo(String timeFoto) {
     map[_name.araratyerevan] = 'ararat yerevan';
     map[_name.pyunik] = 'pyunik yerevan';
     map[_name.shirak] = 'shirak';
+    map[_name.urartu] = 'urartu';
     //KAZAKHSTAN
     map[_name.aktobe] = 'aktobe';
     map[_name.astana] = 'astana';
@@ -736,12 +737,15 @@ String imageLogo(String timeFoto) {
     //ESTONIA
     map[_name.floratallinn] = 'flora talinn';
     map[_name.levadiatallinn] = 'levadia';
+    map[_name.narvatrans] = 'narva trans';
     map[_name.paidelinnameeskond] = 'paide';
     //LATVIA
     map[_name.rigasfs] = 'riga rfs';
     map[_name.rigafc] = 'riga';
     map[_name.valmiera] = 'valmiera';
     //LITUANIA
+    map[_name.ekranas] = 'ekranas';
+    map[_name.fbkkaunas] = 'fbk kaunas';
     map[_name.suduva] = 'suduva';
     map[_name.kaunozalgiris] = 'kaunu';
     map[_name.zalgiris] = 'zalgiris';
@@ -1120,7 +1124,7 @@ String imageLogo(String timeFoto) {
     map[_name.realsantacruz] = 'real santa cruz';  
     map[_name.royalpari] = 'royal pari';  
     map[_name.sanJoseBOL] = 'san jose';  
-    map[_name.theStrongest] = 'the strongest';  
+    map[_name.thestrongest] = 'the strongest';  
     map[_name.sucre] = 'sucre';  
     //PERU
     map[_name.alianzalima] = 'alianzalima';  

@@ -19,14 +19,14 @@ List defaultChampionsLeagueClubs = [
 ];
 
 List defaultLibertadoresClubs = [
-  clubName.palmeiras,clubName.tachira,clubName.emelec,clubName.monterrey,
-  clubName.atleticopr,clubName.bolivar,clubName.caracas,clubName.libertad,
-  clubName.bragantino,clubName.nacional,clubName.velez,clubName.estudiantes,
-  clubName.atleticomg,clubName.idelvalle,clubName.tolima,clubName.americamg,
-  clubName.bocajuniors,clubName.corinthians,clubName.alwaysReady,clubName.deportivocali,
-  clubName.riverplate,clubName.fortaleza,clubName.colocolo,clubName.alianzalima,
-  clubName.colon,clubName.penarol,clubName.cerroporteno,clubName.olimpia,
-  clubName.flamengo,clubName.univcatolica,clubName.talleres,clubName.sportingcristal,
+  clubName.flamengo,clubName.racing,clubName.oncecaldas,clubName.lau,
+  clubName.nacional,clubName.internacional,clubName.caracas,clubName.imedellin,
+  clubName.palmeiras,clubName.barcelonaequ,clubName.bolivar,clubName.cerroporteno,
+  clubName.riverplate,clubName.fluminense,clubName.thestrongest,clubName.sportingcristal,
+  clubName.idelvalle,clubName.corinthians,clubName.argentinojuniors,clubName.montevideoCity,
+  clubName.bocajuniors,clubName.colocolo,clubName.tachira,clubName.deportivocali,
+  clubName.atleticopr,clubName.libertad,clubName.alianzalima,clubName.atleticomg,
+  clubName.olimpia,clubName.atleticonacional,clubName.melgar,clubName.talleres,
 ];
 List defaultEuropaLeagueClubs = [
   clubName.arsenal,clubName.psv,clubName.rosenborg,clubName.zurich,
@@ -39,14 +39,14 @@ List defaultEuropaLeagueClubs = [
   clubName.monaco,clubName.ferencvaros,clubName.estrelavermelha,clubName.trabzonspor,
 ];
 List defaultSulAmericanaClubs = [
-  clubName.lanus,clubName.barcelonaequ,clubName.montevideoCity,clubName.caracas,
-  clubName.melgar,clubName.racing,clubName.cuiaba,clubName.theStrongest,
-  clubName.santos,clubName.americamex,clubName.seattle,clubName.banfield,
-  clubName.saopaulo,clubName.lagalaxy,clubName.cruzazul,clubName.jorge,
-  clubName.internacional,clubName.losangelesfc,clubName.imedellin,clubName.saprissa,
-  clubName.atleticogo,clubName.ldu,clubName.vancouver,clubName.defensayjusticia,
-  clubName.ceara,clubName.independiente,clubName.tigres,clubName.laguaira,
-  clubName.unionSantaFe,clubName.fluminense,clubName.junior,clubName.chivas,
+  clubName.ldu,clubName.botafogo,clubName.monterrey,clubName.lagalaxy,
+  clubName.emelec,clubName.guaraniPAR,clubName.chivas,clubName.huracan,
+  clubName.estudiantes,clubName.bragantino,clubName.seattle,clubName.toluca,
+  clubName.saopaulo,clubName.tolima,clubName.tigre,clubName.laguaira,
+  clubName.santos,clubName.newells,clubName.atlanta,clubName.cienciano,
+  clubName.penarol,clubName.defensayjusticia,clubName.americamg,clubName.millonarios,
+  clubName.santafe,clubName.universitario,clubName.goias,clubName.gimnasia,
+  clubName.sanlorenzo,clubName.univcatolica,clubName.americamex,clubName.fortaleza,
 ];
 
 ///////////////////////////////////////////////////////////
@@ -190,7 +190,7 @@ Map clubNameMapImmutable = {
   LeagueOfficialNames().mercosul : {
     0: clubName.cerroporteno,1: clubName.olimpia,2: clubName.guaraniPAR,3: clubName.libertad,
     4: clubName.colocolo,5: clubName.lau,6: clubName.palestino,7: clubName.univcatolica,
-    8: clubName.alwaysReady,9: clubName.bolivar,10: clubName.theStrongest,11: clubName.alianzalima,
+    8: clubName.alwaysReady,9: clubName.bolivar,10: clubName.thestrongest,11: clubName.alianzalima,
     12: clubName.cienciano,13: clubName.jorge,14: clubName.melgar,15: clubName.sportingcristal,
     16: clubName.universitario,17: clubName.montevideoCity,18: clubName.nacional,19: clubName.penarol,
   },

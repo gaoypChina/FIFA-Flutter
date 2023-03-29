@@ -782,9 +782,9 @@ Map<String,dynamic> mapAsia = {
   },
 
   leagueName.vietna : {
-    2022.0: [],
+    2022.0: [n.hanoi,n.haiphong,n.topenland,n.viettel],
     2021.0: [],
-    2020.0: [n.viettel,],
+    2020.0: [n.viettel,n.hanoi,n.saigon,n.thanquangnihh],
     2019.0: [n.hanoi,],
     2018.0: [n.hanoi,],
     2017.0: [n.quangNam,],

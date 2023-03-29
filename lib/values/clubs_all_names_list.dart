@@ -125,7 +125,7 @@ List clubsAllNameList = [
   ClubName().penarol,  ClubName().nacional,  ClubName().montevideoCity,
   ClubName().olimpia,  ClubName().libertad,ClubName().cerroporteno,ClubName().guaraniPAR,
   ClubName().univcatolica, ClubName().colocolo,  ClubName().lau, ClubName().palestino,
-  ClubName().bolivar, ClubName().theStrongest,ClubName().alwaysReady,
+  ClubName().bolivar, ClubName().thestrongest,ClubName().alwaysReady,
   ClubName().sportingcristal,  ClubName().cienciano, ClubName().alianzalima,ClubName().universitario,
   ClubName().jorge,ClubName().melgar,
 
