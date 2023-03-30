@@ -1,3 +1,4 @@
+import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/values/historic_champions/africa.dart';
 import 'package:fifa/values/historic_champions/america.dart';
 import 'package:fifa/values/historic_champions/asia.dart';
@@ -14,6 +15,7 @@ import 'package:fifa/values/historic_champions/supercopa.dart';
 
   Map<double,dynamic> mapChampions(String league){
 
+    customToast('Map Champions');
     if(mapInternationals[league] != null){
       return mapInternationals[league];
     }
@@ -28,7 +30,7 @@ import 'package:fifa/values/historic_champions/supercopa.dart';
         return mapAmerica[league];
     }
     if(mapEstaduais[league] != null){
-      return mapEstaduais[league];
+      //return mapEstaduais[league];
     }
 
     if(mapNorthAmerica[league] != null){
@@ -49,15 +51,15 @@ import 'package:fifa/values/historic_champions/supercopa.dart';
     }
 
     if(mapCopas[league] != null){
-      return mapCopas[league];
+      //return mapCopas[league];
     }
 
     if(mapOtherLeagues[league] != null){
-      return mapOtherLeagues[league];
+      //return mapOtherLeagues[league];
     }
 
     if(mapSupercopa[league] != null){
-      return mapSupercopa[league];
+      //return mapSupercopa[league];
     }
 
     return {};

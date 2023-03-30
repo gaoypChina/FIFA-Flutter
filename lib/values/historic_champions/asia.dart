@@ -587,8 +587,8 @@ Map<String,dynamic> mapAsia = {
     2000.0: [n.alorouba,n.alnasrOMAN,],
     1999.0: [n.dhofar,n.alnasrOMAN,],
     1998.0: [n.alnasrOMAN,n.sur,],
-    1997.0: [n.omanClub,n.sur,],
-    1996.0: [n.sur,n.omanClub,],
+    1997.0: [n.omanclub,n.sur,],
+    1996.0: [n.sur,n.omanclub,],
     1995.0: [n.sur,n.alseeb,],
     1994.0: [n.dhofar,],
     1993.0: [n.dhofar,],
@@ -773,9 +773,9 @@ Map<String,dynamic> mapAsia = {
 
   leagueName.taiwan : {
     //https://en.wikipedia.org/wiki/Taiwan_Football_Premier_League
-    2022.0: [n.tainanCity,n.taichung,n.taipower,],
-    2021.0: [n.tainanCity,n.taipower,n.taichung,],
-    2020.0: [n.tainanCity,n.taipower,n.taichung,],
+    2022.0: [n.tainancity,n.taichung,n.taipower,],
+    2021.0: [n.tainancity,n.taipower,n.taichung,],
+    2020.0: [n.tainancity,n.taipower,n.taichung,],
     2019.0: [n.tatung,n.taipower,n.hangyuen,],
     2018.0: [n.tatung,n.taipower,n.hangyuen,],
     2017.0: [n.tatung,n.taipower,n.hangyuen,],

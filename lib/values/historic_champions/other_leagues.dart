@@ -85,7 +85,7 @@ Map<String,dynamic> mapOtherLeagues = {
     1972.0: [n.rangers,n.dinamoMoscou,],
     1971.0: [n.chelsea,n.realmadrid,],
     1970.0: [n.mancity,n.gornikzabrze,],
-    1969.0: [n.slovanBratislava,n.barcelona,],
+    1969.0: [n.slovanbratislava,n.barcelona,],
     1968.0: [n.milan,n.hamburgo,],
     1967.0: [n.bayernmunique,n.rangers,],
     1966.0: [n.dortmund,n.liverpool,],

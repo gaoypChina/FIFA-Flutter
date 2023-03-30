@@ -118,7 +118,7 @@ String imageLogo(String timeFoto) {
     map[_name.bristol] = 'bristol city';
     map[_name.bristolrovers] = 'bristol rovers';
     map[_name.burton] = 'burton';
-    map[_name.cardiffCity] = 'cardiff city';  
+    map[_name.cardiffcity] = 'cardiff city';  
     map[_name.coventry] = 'coventry';  
     map[_name.charlton] = 'charlton';  
     map[_name.derbycount] = 'derby';
@@ -129,7 +129,7 @@ String imageLogo(String timeFoto) {
     map[_name.grimsby] = 'grimsby';
     map[_name.huddersfield] = 'huddersfield';
     map[_name.hullcity] = 'hullcity';  
-    map[_name.ipswichTown] = 'ipswich';  
+    map[_name.ipswich] = 'ipswich';  
     map[_name.lincoln] = 'lincoln';  
     map[_name.luton] = 'luton';  
     map[_name.middlesbrough] = 'middlesbrough';
@@ -144,13 +144,13 @@ String imageLogo(String timeFoto) {
     map[_name.portsmouth] = 'portsmouth';
     map[_name.portvale] = 'port vale';
     map[_name.plymouth] = 'plymouth';  
-    map[_name.prestonNorthEnd] = 'preston north end';  
+    map[_name.prestonnorthend] = 'preston north end';  
     map[_name.qpr] = 'qpr';
     map[_name.reading] = 'reading';
     map[_name.rotherham] = 'rotherham';  
     map[_name.shrewsbury] = 'shrewsbury';  
     map[_name.sheffieldunited] = 'sheffield';
-    map[_name.sheffieldWednesday] = 'sheffield wed';  
+    map[_name.sheffieldwednesday] = 'sheffield wed';  
     map[_name.stoke] = 'stoke';
     map[_name.sunderland] = 'sunderland';  
     map[_name.swindon] = 'swindon';  
@@ -268,11 +268,11 @@ String imageLogo(String timeFoto) {
     map[_name.numancia] = 'numancia';
     map[_name.ponferradina] = 'ponferradina';
     map[_name.racingSantander] = 'racing santander';
-    map[_name.rayoVallecano] = 'rayo';
+    map[_name.rayovallecano] = 'rayo';
     map[_name.realmadridB] = 'realmadrid';
     map[_name.murcia] = 'real murcia';
     map[_name.realOviedo] = 'real oviedo';
-    map[_name.sportingGijon] = 'sporting gijon';
+    map[_name.sportinggijon] = 'sporting gijon';
     map[_name.salamanca] = 'salamanca';
     map[_name.tenerife] = 'tenerife';
     map[_name.toledo] = 'toledo';
@@ -370,7 +370,7 @@ String imageLogo(String timeFoto) {
     map[_name.nimes] = 'nimes';
     map[_name.orleans] = 'orleans';
     map[_name.pau] = 'pau';
-    map[_name.parisFC] = 'paris';
+    map[_name.parisfc] = 'paris';
     map[_name.redstar] = 'red star';
     map[_name.rodez] = 'rodez';
     map[_name.rouen] = 'rouen';
@@ -588,7 +588,7 @@ String imageLogo(String timeFoto) {
     map[_name.sion] = 'sion';
     map[_name.stgallen] = 'st gallen';
     map[_name.thun] = 'thun';
-    map[_name.youngBoys] = 'young boys';
+    map[_name.youngboys] = 'young boys';
     map[_name.winterthur] = 'winterthur';
     map[_name.zurich] = 'zurich';
     //POLONIA
@@ -781,7 +781,7 @@ String imageLogo(String timeFoto) {
     //ESLOVAQUIA
     map[_name.dac1904] = 'dac1904';
     map[_name.interBratislava] = 'inter bratislava';
-    map[_name.slovanBratislava] = 'slovan bratislava';
+    map[_name.slovanbratislava] = 'slovan bratislava';
     map[_name.trnava] = 'trnava';
     map[_name.zilina] = 'zilina';
     //ESLOVENIA
@@ -819,7 +819,7 @@ String imageLogo(String timeFoto) {
     map[_name.dinamoBucuresti] = 'dinamo bucuresti';
     map[_name.otelul] = 'otelul';
     map[_name.rapidBucuresti] = 'rapid bucuresti';
-    map[_name.steauaBucuresti] = 'steaua bucareste';
+    map[_name.steauabucuresti] = 'steaua bucareste';
     map[_name.arad] = 'uta arad';
     //MACEDONIA
     map[_name.akademijapandev] = 'pandev';
@@ -1040,7 +1040,7 @@ String imageLogo(String timeFoto) {
     map[_name.allboys] = 'allboys';     
     map[_name.almagro] = 'almagro';     
     map[_name.argentinojuniors] = 'argentinosjr';
-    map[_name.atleticoTucuman] = 'atletico tucuman';
+    map[_name.atleticotucuman] = 'atletico tucuman';
     map[_name.rafaela] = 'atl rafaela';
     map[_name.arsenalsarandi] = 'sarandi';     
     map[_name.banfield] = 'banfield';      
@@ -1074,7 +1074,7 @@ String imageLogo(String timeFoto) {
     map[_name.gimnasia] = 'gimnasia'; 
     map[_name.sanmartin] = 'san martin'; 
     map[_name.tigre] = 'tigre'; 
-    map[_name.unionSantaFe] = 'union santa fe'; 
+    map[_name.unionsantafe] = 'union santa fe'; 
     map[_name.velez] = 'velez'; 
 
     //AMÉRICA DO SUL
@@ -1086,11 +1086,11 @@ String imageLogo(String timeFoto) {
     map[_name.defensor] = 'defensor';
     map[_name.fenix] = 'fenix';
     map[_name.liverpoolURU] = 'liverpool uru';
-    map[_name.montevideoCity] = 'montevideo';
+    map[_name.montevideocity] = 'montevideo';
     map[_name.plazacolonia] = 'plaza colonia';  
     map[_name.rentistas] = 'rentistas';  
     map[_name.riverURU] = 'river uru';  
-    map[_name.montWanderers] = 'wanderers';
+    map[_name.montwanderers] = 'wanderers';
 
     map[_name.olimpia] = 'olimpia';      
     map[_name.cerroporteno] = 'cerro';
@@ -1105,7 +1105,7 @@ String imageLogo(String timeFoto) {
 
     map[_name.colocolo] = 'colocolo';
     map[_name.lau] = 'lau';
-    map[_name.audaxItaliano] = 'audax';  
+    map[_name.audaxitaliano] = 'audax';  
     map[_name.cobreloa] = 'cobreloa';
     map[_name.cobresal] = 'cobresal';
     map[_name.coquimbo] = 'coquimbo';  
@@ -1113,7 +1113,7 @@ String imageLogo(String timeFoto) {
     map[_name.evertonchi] = 'everton chile';  
     map[_name.huachipato] = 'huachipato';  
     map[_name.iquique] = 'iquique';  
-    map[_name.laCalera] = 'la calera';  
+    map[_name.lacalera] = 'la calera';  
     map[_name.laserena] = 'la serena';
     map[_name.magallanes] = 'magallanes';
     map[_name.nublense] = 'nublense';  
@@ -1126,12 +1126,12 @@ String imageLogo(String timeFoto) {
     map[_name.aurora] = 'aurora';  
     map[_name.blooming] = 'blooming'; 
     map[_name.bolivar] = 'bolivar'; 
-    map[_name.alwaysReady] = 'always ready';  
+    map[_name.alwaysready] = 'always ready';  
     map[_name.guabira] = 'guabira';  
     map[_name.indPetrolero] = 'ind petrolero';  
     map[_name.nacionalpotosi] = 'nacional potosi';  
     map[_name.palmaflor] = 'palmaflor';  
-    map[_name.orientePetrolero] = 'oriente';  
+    map[_name.orientepetrolero] = 'oriente';  
     map[_name.realsantacruz] = 'real santa cruz';  
     map[_name.royalpari] = 'royal pari';  
     map[_name.sanJoseBOL] = 'san jose';  
@@ -1168,15 +1168,15 @@ String imageLogo(String timeFoto) {
     map[_name.uniequ] = 'uniequ';
     //COLOMBIA
     map[_name.huila] = 'huila';
-    map[_name.rioNegroAguilas] = 'aguilas';
-    map[_name.alianzaPetrolera] = 'alianza petrolera';
+    map[_name.rionegroaguilas] = 'aguilas';
+    map[_name.alianzapetrolera] = 'alianza petrolera';
     map[_name.americadecali] = 'americacali';
     map[_name.atleticonacional] = 'atleticonacional';
     map[_name.boyaca] = 'boyaca chico';
     map[_name.bucaramanga] = 'bucaramanga';
     map[_name.cucuta] = 'cucuta';  
     map[_name.deportivocali] = 'deportivocali';      
-    map[_name.depPasto] = 'dep pasto';
+    map[_name.deppasto] = 'dep pasto';
     map[_name.envigado] = 'envigado';
     map[_name.imedellin] = 'medellin';
     map[_name.junior] = 'junior';
@@ -1217,7 +1217,7 @@ String imageLogo(String timeFoto) {
     map[_name.juarez] = 'juarez';
     map[_name.irapuato] = 'irapuato';
     map[_name.leon] = 'leon'; 
-    map[_name.leonesNegros] = 'leones negros'; 
+    map[_name.leonesnegros] = 'leones negros'; 
     map[_name.mazatlan] = 'mazatlan';  
     map[_name.monterrey] = 'monterrey';  
     map[_name.morelia] = 'morelia'; 
@@ -1227,12 +1227,12 @@ String imageLogo(String timeFoto) {
     map[_name.pumas] = 'pumas';  
     map[_name.queretaro] = 'queretaro';
     map[_name.sanluis] = 'san luis'; 
-    map[_name.santosLaguna] = 'santos laguna';
+    map[_name.santoslaguna] = 'santos laguna';
     map[_name.tecos] = 'tecos';
     map[_name.tigres] = 'tigres';
     map[_name.tijuana] = 'tijuana';
     map[_name.toluca] = 'toluca';
-    map[_name.torosNeza] = 'toros neza';
+    map[_name.torosneza] = 'toros neza';
     map[_name.veracruz] = 'veracruz';
 
     map[_name.atlanta] = 'atlanta';
@@ -1394,14 +1394,14 @@ String imageLogo(String timeFoto) {
     map[_name.ulsan] = 'ulsan';
 
     //SOUTH ARABIA
-    map[_name.alahly] = 'al_ahly';  
+    map[_name.alahli] = 'al_ahli';
     map[_name.alettifaq] = 'al ettifaq';
     map[_name.alhilal] = 'al_hilal';  
     map[_name.alfateh] = 'al fateh';
     map[_name.alIttihad] = 'al ittihad';
     map[_name.alnassr] = 'al_nassr';  
     map[_name.alraed] = 'al raed';
-    map[_name.alShabab] = 'al shabab';
+    map[_name.alshabab] = 'al shabab';
     map[_name.altaawoun] = 'al taawoun';
     map[_name.damac] = 'damac';
     //QATAR
@@ -1413,11 +1413,11 @@ String imageLogo(String timeFoto) {
     map[_name.eljaish] = 'el jaish';
     //EAU
     map[_name.ajman] = 'ajman';  
-    map[_name.alain] = 'al_ain';  
+    map[_name.alain] = 'al_ain';
     map[_name.aljazira] = 'al_jazira';  
     map[_name.alnasrEAU] = 'al nasr';  
     map[_name.alsharjah] = 'al sharjah';
-    map[_name.alWahda] = 'al wahda';
+    map[_name.alwahda] = 'al wahda';
     map[_name.alwasl] = 'al wasl';
     map[_name.baniyas] = 'baniyas';
     map[_name.shababalahli] = 'shabab al ahli';
@@ -1494,9 +1494,9 @@ String imageLogo(String timeFoto) {
     map[_name.alRamtha] = 'al ramtha';
     map[_name.alWehdat] = 'al wehdat';
     //KUWAIT
-    map[_name.alArabiKUW] = 'al arabi kuwait';
-    map[_name.alKuwait] = 'al kuwait';
-    map[_name.alQadsia] = 'al qadsia';
+    map[_name.alarabiKUW] = 'al arabi kuwait';
+    map[_name.alkuwait] = 'al kuwait';
+    map[_name.alqadsia] = 'al qadsia';
     map[_name.kazma] = 'kazma';
     //NEPAL
     map[_name.machhindra] = 'machhindra';
@@ -1551,7 +1551,7 @@ String imageLogo(String timeFoto) {
 
     //AFRICA
     //EGITO
-    map[_name.alahli] = 'al_ahli';  
+    map[_name.alahly] = 'al_ahly';
     map[_name.almasry] = 'al masry';
     map[_name.ceramicacleopatra] = 'cleopatra';
     map[_name.future] = 'future fc';
@@ -1642,19 +1642,19 @@ String imageLogo(String timeFoto) {
     //MALI
     map[_name.djoliba] = 'djoliba';
     map[_name.realbamako] = 'real bamako';
-    map[_name.stadeMalien] = 'stade malien';
+    map[_name.stademalien] = 'stade malien';
     //MOZAMBIQUE
     map[_name.costasol] = 'costa do sol';
     map[_name.libolo] = 'ferroviario libolo';
     //NAMIBIA
-    map[_name.blackAfrica] = 'black africa';
-    map[_name.africanStars] = 'african stars';
+    map[_name.blackafrica] = 'black africa';
+    map[_name.africanstars] = 'african stars';
     //NIGERIA
     map[_name.enyimba] = 'enyimba';
     map[_name.heartland] = 'heartland';
     map[_name.kano] = 'kano';
     map[_name.rangersInt] = 'rangers international';
-    map[_name.riversUtd] = 'rivers united';
+    map[_name.riversutd] = 'rivers united';
     map[_name.shootingstars] = 'shooting stars';
     map[_name.sunshinestars] = 'sunshine stars';
     //SENEGAL
@@ -1675,7 +1675,7 @@ String imageLogo(String timeFoto) {
     map[_name.zesco] = 'zesco';
     //ZIMBABWE
     map[_name.dynamos] = 'dynamos';
-    map[_name.manicaDiamonds] = 'manica';
+    map[_name.manicadiamonds] = 'manica';
     map[_name.platinum] = 'platinum';
 
     if(map.containsKey(timeFoto)){

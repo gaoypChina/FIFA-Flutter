@@ -280,7 +280,8 @@ class LeagueOfficialNames{
       centralAfrica, congo, congoRD, costamarfim, etiopia,
       guine, madagascar, mali, mauritania, mocambique,
       namibia, nigeria, quenia,
-      ruanda, sudao, tanzania, togo, uganda, zambia, zimbabwe,
+      ruanda, senegal, sudao, tanzania, togo,
+      uganda, zambia, zimbabwe,
 
       paulistao, carioca, mineiro, es,
       gaucho,parana,santacatarina,

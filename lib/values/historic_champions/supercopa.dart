@@ -44,7 +44,7 @@ Map<String,dynamic> mapSupercopa = {
     1989.0: [n.milan,n.barcelona,],
     1988.0: [n.mechelen,n.psv,],
     1987.0: [n.porto,n.ajax,],
-    1986.0: [n.steauaBucuresti,n.dinamokiev,],
+    1986.0: [n.steauabucuresti,n.dinamokiev,],
     1985.0: [],
     1984.0: [n.juventus,n.liverpool,],
     1983.0: [n.aberdeen,n.hamburgo,],
