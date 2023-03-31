@@ -320,7 +320,7 @@ Map<String,dynamic> mapEstaduais = {
 
   leagueName.gaucho : {    
     //2024.0: [],
-    //2023.0: [],
+    //2023.0: [n.gremio,n.caxias,n.ypirangaRS,n.internacional],
     2022.0: [n.gremio,n.ypirangaRS,n.internacional,n.brasilPelotas,],
     2021.0: [n.gremio,n.internacional,n.juventude,n.caxias,],
     2020.0: [n.gremio,n.caxias,n.internacional,n.esportivo,],

@@ -30,7 +30,7 @@ import 'package:fifa/values/historic_champions/supercopa.dart';
         return mapAmerica[league];
     }
     if(mapEstaduais[league] != null){
-      //return mapEstaduais[league];
+      return mapEstaduais[league];
     }
 
     if(mapNorthAmerica[league] != null){

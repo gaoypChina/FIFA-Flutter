@@ -20,11 +20,11 @@ List defaultChampionsLeagueClubs = [
 
 List defaultLibertadoresClubs = [
   clubName.flamengo,clubName.racing,clubName.oncecaldas,clubName.lau,
-  clubName.nacional,clubName.internacional,clubName.caracas,clubName.imedellin,
+  clubName.nacional,clubName.internacional,clubName.metropolitanos,clubName.imedellin,
   clubName.palmeiras,clubName.barcelonaequ,clubName.bolivar,clubName.cerroporteno,
   clubName.riverplate,clubName.fluminense,clubName.thestrongest,clubName.sportingcristal,
   clubName.idelvalle,clubName.corinthians,clubName.argentinojuniors,clubName.montevideocity,
-  clubName.bocajuniors,clubName.colocolo,clubName.tachira,clubName.deportivocali,
+  clubName.bocajuniors,clubName.colocolo,clubName.monagas,clubName.deportivocali,
   clubName.atleticopr,clubName.libertad,clubName.alianzalima,clubName.atleticomg,
   clubName.olimpia,clubName.atleticonacional,clubName.melgar,clubName.talleres,
 ];
@@ -42,11 +42,11 @@ List defaultSulAmericanaClubs = [
   clubName.ldu,clubName.botafogo,clubName.monterrey,clubName.lagalaxy,
   clubName.emelec,clubName.guaraniPAR,clubName.chivas,clubName.huracan,
   clubName.estudiantes,clubName.bragantino,clubName.seattle,clubName.toluca,
-  clubName.saopaulo,clubName.tolima,clubName.tigre,clubName.laguaira,
+  clubName.saopaulo,clubName.tolima,clubName.tigre,clubName.caracas,
   clubName.santos,clubName.newells,clubName.atlanta,clubName.cienciano,
   clubName.penarol,clubName.defensayjusticia,clubName.americamg,clubName.millonarios,
   clubName.santafe,clubName.universitario,clubName.goias,clubName.gimnasia,
-  clubName.sanlorenzo,clubName.univcatolica,clubName.americamex,clubName.fortaleza,
+  clubName.sanlorenzo,clubName.palestino,clubName.americamex,clubName.fortaleza,
 ];
 
 ///////////////////////////////////////////////////////////
@@ -236,6 +236,7 @@ Map clubNameMapImmutable = {
     4: clubName.sherifftiraspol, 5: clubName.arsenalsarandi,6: clubName.tigre,7: clubName.auckland,
     8:clubName.alahli, 9:clubName.alshabab, 10:clubName.saprissa,11:clubName.olimpiaHON,
     12:clubName.charlotte, 13:clubName.montreal, 14:clubName.toronto, 15:clubName.vancouver,
+    16:clubName.metropolitanos, 17:clubName.monagas,
   },
 
 };

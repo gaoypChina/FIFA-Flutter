@@ -139,6 +139,8 @@ List clubsAllNameList = [
   //venezuela
   ClubName().caracas,ClubName().tachira,ClubName().laguaira,
 
+  ClubName().metropolitanos,ClubName().monagas,
+
   //MÉXICO
   ClubName().americamex,  ClubName().chivas, ClubName().cruzazul,  ClubName().monterrey,
   ClubName().pachuca,  ClubName().pumas, ClubName().tigres,  ClubName().toluca,
