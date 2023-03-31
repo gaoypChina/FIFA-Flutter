@@ -618,7 +618,7 @@ String imageLogo(String timeFoto) {
     map[_name.gaziantepspor] = 'gaziantepspor';
     map[_name.genclerbirligi] = 'genclerbirligi';
     map[_name.goztepe] = 'goztepe';
-    map[_name.instanbul] = 'instanbul';
+    map[_name.istanbulbasaksehir] = 'instanbul';
     map[_name.karagumruk] = 'karagumruk';
     map[_name.kasimpasa] = 'kasimpasa';
     map[_name.kayserispor] = 'kayserispor';

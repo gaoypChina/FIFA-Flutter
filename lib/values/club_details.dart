@@ -1251,7 +1251,7 @@ class ClubDetails{
     //IRLANDA DO NORTE
     map[n.ards] = [ClubColors(Colors.blue,Colors.red),pattern.stripes3,Coordinates(54.65151833254359, -5.68449113666115),
       'Clandeboye Park',2000,1900,_country.northernIreland,56.4,[]];
-    map[n.ballymena] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+    map[n.ballymenaunited] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
       '',0,0,_country.northernIreland,50.0,[]];
     map[n.cliftonville] = [ClubColors(Colors.red,Colors.green),pattern.solid,Coordinates(54.61942914, -5.947241266),
       'Solitude Stadium',6224,1879,_country.northernIreland,62.7,[]];
@@ -1769,15 +1769,15 @@ class ClubDetails{
     //TURQUIA
     map[n.adanaspor] = [ClubColors(Colors.orange,Colors.black),pattern.solid,Coordinates(37.06372554, 35.37545482),
       'Novo Estádio de Adana',33543,1954,_country.turkey,67.6,[]];
-    map[n.adanaDemispor] = [ClubColors(Colors.blue,Colors.lightBlueAccent),pattern.stripes3,Coordinates(0,0),
+    map[n.adanademirspor] = [ClubColors(Colors.blue,Colors.lightBlueAccent),pattern.stripes3,Coordinates(0,0),
       'Novo Estádio de Adana',33543,1940,_country.turkey,65.2,[]];
-    map[n.akhisar] = [ClubColors(Colors.green,Colors.black),pattern.solid,Coordinates(0,0),
+    map[n.akhisarbelediyespor] = [ClubColors(Colors.green,Colors.black),pattern.solid,Coordinates(0,0),
       'Estádio Municipal de Akhisar',12139,1970,_country.turkey,65.5,[]];
     map[n.alanyaspor] = [ClubColors(Colors.orange,Colors.green),pattern.solid,Coordinates(36.5626171, 32.0791125),
       'Estádio do Colégio Bahçeşehir',10842,1948,_country.turkey,71.5,[]];
     map[n.altay] = [ClubColors(Colors.black,Colors.white),pattern.stripes3,Coordinates(38.43717939, 27.150778738),
       'Mustafa Denizli de Alsancak',14000,1914,_country.turkey,66.8,[]];
-    map[n.ankaraDemispor] = [ClubColors(darkblue,Colors.lightBlueAccent),pattern.stripes3,Coordinates(39.94182728, 32.77232843),
+    map[n.ankarademirspor] = [ClubColors(darkblue,Colors.lightBlueAccent),pattern.stripes3,Coordinates(39.94182728, 32.77232843),
       'TCDD Ankara Demirspor Stadium',3000,1930,_country.turkey,65.6,[]];
     map[n.ankaragucu] = [ClubColors(Colors.yellow,Colors.black),pattern.stripes3,Coordinates(39.98048096, 32.614368196),
       'Estádio de Eryaman',33543,1910,_country.turkey,66.7,[]];
@@ -1789,10 +1789,14 @@ class ClubDetails{
       'Vodafone Park',41903,1903,_country.turkey,77.2,[n.fenerbahce,n.galatasaray]];
     map[n.boluspor] = [ClubColors(Colors.red,Colors.white),pattern.stripes3,Coordinates(40.7362020, 31.60693457),
       'Bolu Atatürk Stadyumu',8456,1965,_country.turkey,56.2,[]];
+    map[n.bucaspor] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+      '',0,0,_country.turkey,50.0,[]];
     map[n.bursaspor] = [ClubColors(Colors.green,Colors.red),pattern.solid,Coordinates(40.210638, 29.009436),
       'Municipal Metropolitano de Bursa',42331,1963,_country.turkey,73.1,[]];
     map[n.denizlispor] = [ClubColors(Colors.green,Colors.black),pattern.stripes2,Coordinates(37.76621147, 29.08265607),
       'Denizli Atatürk Stadyumu',18745,1966,_country.turkey,68.4,[]];
+    map[n.elazigspor] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+    '',0,0,_country.turkey,50.0,[]];
     map[n.eskisehirspor] = [ClubColors(Colors.red,Colors.black),pattern.stripes2,Coordinates(39.7626458, 30.467788155),
       'Estádio Atatürk de Esquiceir',34930,1965,_country.turkey,65.3,[]];
     map[n.fenerbahce] = [ClubColors(Colors.blue,Colors.yellow),pattern.stripes2,Coordinates(40.9877951, 29.036899),
@@ -1803,6 +1807,8 @@ class ClubDetails{
       'Gaziantep Stadium',35574,1988,_country.turkey,64.5,[]];
     map[n.genclerbirligi] = [ClubColors(Colors.red,Colors.black),pattern.stripes3,Coordinates(39.9799511, 32.61372983),
       'Estádio de Eryaman',20560,1923,_country.turkey,70.4,[]];
+    map[n.giresunspor] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+    '',0,0,_country.turkey,50.0,[]];
     map[n.karagumruk] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(41.07463764, 28.765735),
       'Estádio Olímpico Atatürk',75145,1926,_country.turkey,67.1,[]];
     map[n.kasimpasa] = [ClubColors(Colors.white,darkblue),pattern.solid,Coordinates(41.0327862, 28.9723363),
@@ -1811,12 +1817,18 @@ class ClubDetails{
       'Estádio Kadir Has',32864,1966,_country.turkey,66.5,[]];
     map[n.goztepe] = [ClubColors(Colors.red,Colors.yellow),pattern.solid,Coordinates(38.3955952, 27.0760464),
       'Estádio Gürsel Aksel',20035,1925,_country.turkey,69.5,[]];
+    map[n.hacettepe] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+    '',0,0,_country.turkey,50.0,[]];
     map[n.hatayspor] = [ClubColors(grena,Colors.white),pattern.solid,Coordinates(36.258447, 36.2078878),
       'New Hatay Stadium',26600,1967,_country.turkey,65.6,[]];
-    map[n.instanbul] = [ClubColors(Colors.red,Colors.blue),pattern.solid,Coordinates(41.12323595, 28.808461462),
+    map[n.istanbulbasaksehir] = [ClubColors(Colors.red,Colors.blue),pattern.solid,Coordinates(41.12323595, 28.808461462),
       'Fatih Terim de Başakşehir',17319,1990,_country.turkey,73.5,[]];
     map[n.istanbulspor] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(41.02455327, 28.6977618),
       'Necmi Kadıoğlu Stadyumu',4488,1926,_country.turkey,67.1,[]];
+    map[n.kardemirkarabukspor] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+      '',0,0,_country.turkey,50.0,[]];
+    map[n.kayserierciyesspor] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+      '',0,0,_country.turkey,50.0,[]];
     map[n.kocaelispor] = [ClubColors(darkgreen,Colors.black),pattern.stripes2,Coordinates(40.774943, 30.017681438),
       'Estádio de Cocaeli',34712,1966,_country.turkey,63.4,[]];
     map[n.konyaspor] = [ClubColors(Colors.white,Colors.green),pattern.solid,Coordinates(37.9463311, 32.48842835),
@@ -1825,6 +1837,10 @@ class ClubDetails{
       'Estádio de Gaziantepe',35574,1988,_country.turkey,70.4,[]];
     map[n.malatyaspor] = [ClubColors(Colors.yellow,Colors.red),pattern.solid,Coordinates(38.337827, 38.4464651),
       'Novo Estádio de Malatya',27044,1986,_country.turkey,69.4,[]];
+    map[n.manisaspor] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+    '',0,0,_country.turkey,50.0,[]];
+    map[n.mersinidmanyurdu] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+      '',0,0,_country.turkey,50.0,[]];
     map[n.orduspor] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
       '',0,0,_country.turkey,50.0,[]];
     map[n.rizespor] = [ClubColors(Colors.blue,Colors.green),pattern.solid,Coordinates(41.0420904, 40.5733391),
@@ -4284,7 +4300,7 @@ class ClubDetails{
       'Farid Richa',12480,2009,_country.venezuela,64.0,[]];
     map[n.italchacao] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
       '',0,0,_country.venezuela,50.0,[]];
-    map[n.metropolitanos] = [ClubColors(Colors.blue,Colors.black),pattern.solid,Coordinates(10.482750, -66.941810),
+    map[n.metropolitanos] = [ClubColors(Colors.purple,Colors.black),pattern.solid,Coordinates(10.482750, -66.941810),
       'Brígido Iriarte',10000,2011,_country.venezuela,65.1,[]];
     map[n.mineros] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(8.31272986, -62.6962946),
       'C.T.E. Cachamay',42000,1981,_country.venezuela,62.6,[]];

@@ -136,7 +136,7 @@ Map clubNameMapImmutable = {
 
   LeagueOfficialNames().turquiaGrecia : {
     0: clubName.olympiacos,1: clubName.aek,2: clubName.paok,3: clubName.panathinaikos,
-    4: clubName.besiktas,5: clubName.fenerbahce,6: clubName.galatasaray,7: clubName.instanbul,
+    4: clubName.besiktas,5: clubName.fenerbahce,6: clubName.galatasaray,7: clubName.istanbulbasaksehir,
     8: clubName.trabzonspor,9: clubName.apoel,10:clubName.maccabitelaviv,11:clubName.vardar,
   },
   LeagueOfficialNames().ligaEuropa : {
@@ -198,8 +198,9 @@ Map clubNameMapImmutable = {
     0: clubName.americadecali,1: clubName.atleticonacional,2: clubName.deportivocali,3: clubName.junior,
     4: clubName.imedellin,5: clubName.tolima,6: clubName.millonarios,7: clubName.santafe,
     8: clubName.oncecaldas,
-    9: clubName.caracas,10: clubName.tachira,11: clubName.laguaira,
-    12: clubName.barcelonaequ,13: clubName.emelec,14: clubName.ldu,15: clubName.idelvalle,
+    9: clubName.caracas,
+    10: clubName.tachira,11: clubName.laguaira, 12:clubName.metropolitanos, 13:clubName.monagas,
+    14: clubName.barcelonaequ,15: clubName.emelec,16: clubName.ldu,17: clubName.idelvalle,
   },
 
   //AMÉRICA DO NORTE
@@ -236,7 +237,6 @@ Map clubNameMapImmutable = {
     4: clubName.sherifftiraspol, 5: clubName.arsenalsarandi,6: clubName.tigre,7: clubName.auckland,
     8:clubName.alahli, 9:clubName.alshabab, 10:clubName.saprissa,11:clubName.olimpiaHON,
     12:clubName.charlotte, 13:clubName.montreal, 14:clubName.toronto, 15:clubName.vancouver,
-    16:clubName.metropolitanos, 17:clubName.monagas,
   },
 
 };

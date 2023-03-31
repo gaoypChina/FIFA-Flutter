@@ -69,7 +69,7 @@ List clubsAllNameList = [
   ClubName().ajax,  ClubName().feyenoord,  ClubName().psv,ClubName().az,
   ClubName().twente,ClubName().utrecht,ClubName().vitesse,ClubName().heerenveen,
   //turquia-grecia
-  ClubName().galatasaray,  ClubName().fenerbahce,  ClubName().besiktas,  ClubName().instanbul,ClubName().trabzonspor,
+  ClubName().galatasaray,  ClubName().fenerbahce,  ClubName().besiktas,  ClubName().istanbulbasaksehir,ClubName().trabzonspor,
   ClubName().olympiacos,ClubName().aek,ClubName().paok,ClubName().panathinaikos,ClubName().apoel,
 
   ClubName().anderlecht,  ClubName().brugge,  ClubName().standardliege,ClubName().genk,ClubName().gent,
@@ -138,7 +138,6 @@ List clubsAllNameList = [
   ClubName().barcelonaequ,  ClubName().emelec,  ClubName().ldu,
   //venezuela
   ClubName().caracas,ClubName().tachira,ClubName().laguaira,
-
   ClubName().metropolitanos,ClubName().monagas,
 
   //MÉXICO

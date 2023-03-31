@@ -116,7 +116,7 @@ class PlayerPastClubs{
   map['Paredes'] = {     2012:n.bocajuniors,2014:n.roma,2015:n.empoli,2016:n.roma,2017:n.zenit,2019:n.psg,2022:n.juventus};
   map['Pepe'] = {        2002:n.maritimo,2004:n.porto,2007:n.realmadrid,2017:n.besiktas,2019:n.porto};
   map['Philippe Coutinho'] = {2009:n.vasco,2010:n.inter,2012:n.espanyol,2013:n.liverpool,2018:n.barcelona,2019:n.bayernmunique,2020:n.barcelona,2022:n.astonvilla};
-  map['Pizzi'] = {       2009:n.covilha,2010:n.pacosDeFerreira,2011:n.atleticomadrid,2012:n.lacoruna,2013:n.espanyol,2014:n.benfica,2022:n.instanbul,2023:n.alwahda};
+  map['Pizzi'] = {       2009:n.covilha,2010:n.pacosDeFerreira,2011:n.atleticomadrid,2012:n.lacoruna,2013:n.espanyol,2014:n.benfica,2022:n.istanbulbasaksehir,2023:n.alwahda};
   map['Pity Martínez'] = {2011:n.huracan,2015:n.riverplate,2019:n.atlanta,2020:n.alnassr};
   map['Podolski'] = {    2003:n.koln,2006:n.bayernmunique,2009:n.koln,2012:n.arsenal,2015:n.inter,2016:n.galatasaray,2017:n.visselkobe,2019:n.antalyaspor,2021:n.gornikzabrze};
   map['Pogba'] = {       2011:n.manutd, 2012:n.juventus,2016:n.manutd, 2022:n.juventus};
@@ -146,7 +146,7 @@ class PlayerPastClubs{
   //map['A'] = {};
 
   map['Abedi Pele'] = {  1980:n.tamale,1982:n.alsadd,1983:n.zurich,1984:n.dragonsoueme,1985:n.tamale,1986:n.chamois,1987:n.om,1988:n.lille,1989:n.om,1993:n.lyon,1994:n.torino,1996:n.munich1860,1998:n.alain,2000:retired};
-  map['Adebayor'] = {    2001:n.metz,2003:n.monaco,2006:n.arsenal,2009:n.mancity,2011:n.tottenham,2016:n.crystalpalace,2017:n.instanbul,2019:n.kayserispor,2020:n.olimpia,2021:retired};
+  map['Adebayor'] = {    2001:n.metz,2003:n.monaco,2006:n.arsenal,2009:n.mancity,2011:n.tottenham,2016:n.crystalpalace,2017:n.istanbulbasaksehir,2019:n.kayserispor,2020:n.olimpia,2021:retired};
   map['Ademir da Guia'] = {1960:n.bangu,1962:n.palmeiras,1977:retired};
   map['Adriano'] = {     2000:n.flamengo,2001:n.inter,2002:n.fiorentina,2003:n.parma,2004:n.inter,2008:n.saopaulo,2009:n.flamengo,2010:n.roma,2011:n.corinthians,2012:n.flamengo,2013:retired};
   map['Agustín'] = {     1978:n.realmadridB,1980:n.realmadrid,1990:n.tenerife,1994:retired};
@@ -371,7 +371,7 @@ class PlayerPastClubs{
   map['Roberto Carlos'] = {1991:n.uniaoSaoJoao,1993:n.palmeiras,1995:n.inter,1996:n.realmadrid,2007:n.fenerbahce,2010:n.corinthians,2011:n.anzhi,2012:retired};
   map['Roberto Dinamite'] = {1971:n.vasco,1979:n.barcelona,1980:n.vasco,1989:n.portuguesa,1990:n.vasco,1992:retired};
   map['Roberto Pruzzo'] = {1973:n.genoa,1978:n.roma,1988:n.fiorentina,1989:retired};
-  map['Robinho'] = {     2002:n.santos,2005:n.realmadrid,2008:n.mancity,2010:n.santos,2011:n.milan,2014:n.santos,2015:n.ghuangzhou,2016:n.atleticomg,2018:n.sivasspor,2019:n.instanbul,2020:retired};
+  map['Robinho'] = {     2002:n.santos,2005:n.realmadrid,2008:n.mancity,2010:n.santos,2011:n.milan,2014:n.santos,2015:n.ghuangzhou,2016:n.atleticomg,2018:n.sivasspor,2019:n.istanbulbasaksehir,2020:retired};
   map['Rodrigo Palacios'] = {2002:n.huracan,2003:n.banfield,2005:n.bocajuniors,2009:n.genoa,2012:n.inter,2017:n.bologna,2021:retired};
   map['Rogério Ceni'] = {1990:n.sinop,1991:n.saopaulo,2015:retired};
   map['Romario'] = {     1985:n.vasco,1988:n.psv,1993:n.barcelona,1995:n.flamengo,1996:n.valencia,1998:n.flamengo,2000:n.vasco,2002:n.fluminense,2005:n.vasco,2006:n.miamiFusion,2007:retired };
