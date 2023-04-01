@@ -699,10 +699,10 @@ String imageLogo(String timeFoto) {
     map[_name.zimbruchisinau] = 'zimbru';
     //BELARUS
     map[_name.bate] = 'bate';
-    map[_name.dinamoBrest] = 'dinamo brest';
-    map[_name.dinamoMinsk] = 'dinamo minsk';
+    map[_name.dinamobrest] = 'dinamo brest';
+    map[_name.dinamominsk] = 'dinamo minsk';
     map[_name.gomel] = 'gomel';
-    map[_name.soligorsk] = 'soligorsk';
+    map[_name.shakhtyorsoligorsk] = 'soligorsk';
     //AZERBAIJAN
     map[_name.baku] = 'baku fc';
     map[_name.dilagori] = 'dila';

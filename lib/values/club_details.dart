@@ -1253,18 +1253,30 @@ class ClubDetails{
       'Clandeboye Park',2000,1900,_country.northernIreland,56.4,[]];
     map[n.ballymenaunited] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
       '',0,0,_country.northernIreland,50.0,[]];
+    map[n.bangor] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+      '',0,0,_country.northernIreland,50.0,[]];
+    map[n.carrickrangers] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+      '',0,0,_country.northernIreland,50.0,[]];
     map[n.cliftonville] = [ClubColors(Colors.red,Colors.green),pattern.solid,Coordinates(54.61942914, -5.947241266),
       'Solitude Stadium',6224,1879,_country.northernIreland,62.7,[]];
     map[n.coleraine] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(55.1329222, -6.65989578),
       'The Showgrounds',2496,1927,_country.northernIreland,59.6,[]];
     map[n.crusaders] = [ClubColors(Colors.red,Colors.black),pattern.stripes2,Coordinates(54.624341808, -5.92197737),
       'Seaview',3054,1898,_country.northernIreland,63.3,[]];
+    map[n.distillery] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+      '',0,0,_country.northernIreland,50.0,[]];
+    map[n.dungannonswifts] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+      '',0,0,_country.northernIreland,50.0,[]];
     map[n.glenavon] = [ClubColors(Colors.white,Colors.blue),pattern.solid,Coordinates(0,0),
       'Mourneview Park',5000,1889,_country.northernIreland,59.4,[]];
     map[n.glentoran] = [ClubColors(Colors.green,Colors.red),pattern.solid,Coordinates(54.6030087, -5.8911762),
       'The Oval',26556,1882,_country.northernIreland,61.5,[]];
+    map[n.larne] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+      '',0,0,_country.northernIreland,50.0,[]];
     map[n.linfield] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(54.582700, -5.95480680),
       'Windsor Park',21000,1886,_country.northernIreland,64.0,[]];
+    map[n.newrycity] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+      '',0,0,_country.northernIreland,50.0,[]];
     map[n.portadown] = [ClubColors(Colors.red,Colors.yellow),pattern.solid,Coordinates(0,0),
       'Shamrock Park',3942,1889,_country.northernIreland,61.0,[]];
     // GALES
@@ -2149,20 +2161,38 @@ class ClubDetails{
     //BELARUS
     map[n.bate] = [ClubColors(Colors.yellow,Colors.blue),pattern.solid,Coordinates(54.1927777,28.475694444),
       'Borisov Arena',12900,1973,_country.belarus,72.1,[]];
-    map[n.dinamoBrest] = [ClubColors(Colors.white,Colors.lightBlueAccent),pattern.solid,Coordinates(52.089810, 23.6836123),
+    map[n.belshinabobruisk] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+      '',0,0,_country.belarus,50.0,[]];
+    map[n.dinamobrest] = [ClubColors(Colors.white,Colors.lightBlueAccent),pattern.solid,Coordinates(52.089810, 23.6836123),
       'Sport Complex Brestskiy',10060,1960,_country.belarus,70.2,[]];
-    map[n.dinamoMinsk] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(53.881454, 27.6175440),
+    map[n.dinamominsk] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(53.881454, 27.6175440),
       'Traktar Stadium',16500,1927,_country.belarus,70.8,[]];
-    map[n.dnepr] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(53.9054588, 30.34092),
+    map[n.dinamo93minsk] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+      '',0,0,_country.belarus,50.0,[]];
+    map[n.dneprmogilev] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(53.9054588, 30.34092),
       'Spartak Stadion',11200,1960,_country.belarus,61.2,[]];
-    map[n.energetik] = [ClubColors(Colors.orange,Colors.blue),pattern.solid,Coordinates(53.859588, 27.5017443),
+    map[n.energetikbguminsk] = [ClubColors(Colors.orange,Colors.blue),pattern.solid,Coordinates(53.859588, 27.5017443),
       'RCOP-BGU Stadium',15000,1996,_country.belarus,68.1,[]];
     map[n.gomel] = [ClubColors(Colors.white,Colors.green),pattern.solid,Coordinates(52.436713874, 31.0121813),
       'Central Stadium',14307,1959,_country.belarus,65.5,[]];
+    map[n.islochminskraion] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+      '',0,0,_country.belarus,50.0,[]];
+    map[n.minsk] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+      '',0,0,_country.belarus,50.0,[]];
+    map[n.nemangrodno] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+      '',0,0,_country.belarus,50.0,[]];
     map[n.slaviamozyr] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(53.09769, 25.3062183),
       'Yunost Stadium',5353,1987,_country.belarus,58.6,[]];
-    map[n.soligorsk] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(52.79859758, 27.5382051),
+    map[n.shakhtyorsoligorsk] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(52.79859758, 27.5382051),
       'Estádio Stroitel',4200,1961,_country.belarus,67.3,[]];
+    map[n.slutsk] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+      '',0,0,_country.belarus,50.0,[]];
+    map[n.torpedoskaminsk] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+      '',0,0,_country.belarus,50.0,[]];
+    map[n.torpedozhodino] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+      '',0,0,_country.belarus,50.0,[]];
+    map[n.vitebsk] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+      '',0,0,_country.belarus,50.0,[]];
     //AZERBAIJÃO
     map[n.shamakhi] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(40.41097398, 49.89786188),
       'Shafa Stadium',2200,1997,_country.azerbaijan,64.8,[]];
