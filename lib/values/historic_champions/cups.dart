@@ -611,8 +611,8 @@ Map<String,dynamic> mapCopas = {
     1989.0: [n.gremio,n.sport,n.flamengo,n.goias,               n.atleticomg,n.vitoria,n.corinthians,n.bahia,      n.tiradentes,n.mixto,n.guarani,n.vasco,n.cruzeiro,n.internacional,n.nautico,n.blumenau,          ],
 
     //TAÇA BRASIL
-    1967.0: [n.palmeiras,n.nautico,n.gremio,n.cruzeiro,   ],
-    1966.0: [n.cruzeiro,n.santos,n.fluminense,n.nautico,  ],
+    1967.0: [n.palmeiras,n.nautico,n.gremio,n.cruzeiro,   n.atleticomg,n.americaCE,n.botafogo,n.treze,n.goytacaz,n.paysandu,n.leonico,n.riobrancoES,n.csa,n.ferroviarioPR,n.goias,n.americaSE,n.rabello,n.abc,n.piaui,n.motoclub,n.perdigao],
+    1966.0: [n.cruzeiro,n.santos,n.fluminense,n.nautico,  n.palmeiras,n.vitoria,n.gremio,n.fortaleza,n.paysandu,n.csa,n.americanoRJ,n.ferroviarioPR,n.flamengoPI,n.anapolis,n.campinense,n.interlages,n.rabello,n.desportiva,n.sampaio,n.abc,n.confianca,n.rionegro],
     1965.0: [n.santos,n.vasco,n.palmeiras,n.nautico,      ],
     1964.0: [n.santos,n.flamengo,n.palmeiras,n.ceara,     ],
     1963.0: [n.santos,n.bahia,n.gremio,n.botafogo,        ],
