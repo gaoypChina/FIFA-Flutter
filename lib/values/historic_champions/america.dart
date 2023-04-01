@@ -147,7 +147,7 @@ Map<String,dynamic> mapAmerica = {
   },
   leagueName.brasil3 : {
     2022.0: [n.mirassol,n.abc,n.botafogoSP,n.vitoria,         n.figueirense,n.paysandu,n.voltaredonda,n.aparecidense,n.botafogoPB,n.ypirangaRS,  n.saojoseRS,n.remo,n.manaus,n.confianca,n.floresta,             n.altos,n.atleticoCE,n.brasilPelotas,n.ferroviario,n.campinense],
-    2021.0: [n.ituano,n.tombense,n.novorizontino,n.criciuma,   n.botafogoSP,n.manaus,n.paysandu,n.ypirangaRS,n.figueirense,n.voltaredonda, n.ferroviario,n.saojoseRS,n.botafogoSP,n.altos,n.floresta,      n.mirassol,n.jacuipense,n.parana,n.santacruz,n.oeste],
+    2021.0: [n.ituano,n.tombense,n.novorizontino,n.criciuma,   n.botafogoPB,n.manaus,n.paysandu,n.ypirangaRS,n.figueirense,n.voltaredonda, n.ferroviario,n.saojoseRS,n.botafogoSP,n.altos,n.floresta,      n.mirassol,n.jacuipense,n.parana,n.santacruz,n.oeste],
     2020.0: [n.vilanova,n.remo,n.brusque,n.londrina,                 n.santacruz,n.ypirangaRS,n.ituano,n.paysandu,n.tombense,n.manaus,       n.jacuipense,n.ferroviario,n.voltaredonda,n.saojoseRS,n.botafogoPB, n.criciuma,n.treze,n.saobento,n.boaesporte,n.imperatriz],
     2019.0: [n.nautico,n.sampaio,n.juventude,n.confianca,            n.paysandu,n.saojoseRS,n.imperatriz,n.ypirangaRS,n.remo,n.ferroviario,  n.botafogoPB,n.voltaredonda,n.santacruz,n.tombense,n.boaesporte,    n.treze,n.abc,n.globo,n.luverdense,n.atleticoAC],
     2018.0: [n.operarioPR,n.cuiaba,n.bragantino,n.botafogoSP, n.santacruz,n.atleticoAC,n.nautico,n.botafogoPB,n.luverdense,n.confianca,      n.tombense,n.ypirangaRS,n.remo,n.globo,n.abc,              n.voltaredonda,n.tupi,n.juazeirense,n.salgueiro,n.joinville],
