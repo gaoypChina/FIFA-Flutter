@@ -109,11 +109,10 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
       n.peru: ["https://en.wikipedia.org/wiki/2023_Liga_1_(Peru)", 3],
       n.paraguai: ["https://en.wikipedia.org/wiki/2023_Paraguayan_Primera_Divisi%C3%B3n_season", 5],
       n.uruguai: ["https://en.wikipedia.org/wiki/2023_Uruguayan_Primera_Divisi%C3%B3n_season", 3],
-      n.venezuela: ["https://en.wikipedia.org/wiki/2023_Venezuelan_Primera_Divisi%C3%B3n_season", 4],
+      n.venezuela: ["https://en.wikipedia.org/wiki/2023_Venezuelan_Primera_Divisi%C3%B3n_season", 6],
 
       n.mexico: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Liga_MX_season", 18],
       n.estadosUnidos: ["https://en.wikipedia.org/wiki/2023_Major_League_Soccer_season", 5],
-      n.costaRica: ["https://en.wikipedia.org/wiki/2023_Major_League_Soccer_season", 5],
 
       n.australia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_A-League_Men", 4],
 
@@ -167,7 +166,7 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
     for (var row in rows) {
       // get the cells in this row
       final cells = row.querySelectorAll('th, td');
-      // do something with the cell data (e.g. print it to the console)
+
       for (var cell in cells) {
         oneDimensionalList.add(cell.text.trim());
       }
@@ -193,21 +192,33 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
           lines.add(currentLine);
         }
 
-    print(lines);
-        for (dynamic lined in lines){
-          String clubName = lined[0].replaceFirst(" (Y)","").replaceFirst(" (C)","").replaceFirst(" (J)","").replaceFirst(" (R)","").replaceFirst(" (X)","");
-          clubName = clubName.replaceFirst("[a]","").replaceFirst("[b]","").replaceFirst("[c]","").replaceFirst("[d]","");
-          clubName = clubName.replaceFirst(" (Q)","").replaceFirst(" (T, Y)","").replaceFirst(" (Z)","").replaceFirst(" (T)","");
-          clubName = clubName.replaceFirst(" (A)","").replaceFirst(" (C, Q)","");
-          clubName = getAppClubName(clubName);
+    //print(lines);
+    for (dynamic lined in lines){
+        if(lined[0].isNotEmpty){
+          String clubName = lined[0].replaceFirst(" (Y)","").replaceFirst(" (J)","").replaceFirst(" (R)","").replaceFirst(" (X)","");
+          clubName = clubName.replaceFirst(" (A)","").replaceFirst(" (C)","").replaceFirst(" (Q)","");
+          clubName = clubName.replaceFirst(" (S)","").replaceFirst(" (T)","").replaceFirst(" (Z)","");
+          clubName = clubName.replaceFirst(" (C, Q)","").replaceFirst(" (T, Y)","");
+          clubName = clubName.replaceFirst("[a]","").replaceFirst("[b]","").replaceFirst("[c]","").replaceFirst("[d]","").replaceFirst("[e]","");
+          clubName = getAppClubName(clubName, choosenLeagueName, n);
+
+          lined[5] = lined[5].toString().replaceFirst("[a]","").replaceFirst("[b]","").replaceFirst("[c]","").replaceFirst("[d]","").replaceFirst("[e]","");
+          lined[6] = lined[6].toString().replaceFirst("[a]","").replaceFirst("[b]","").replaceFirst("[c]","").replaceFirst("[d]","").replaceFirst("[e]","");
+          lined[5] = int.parse(lined[5].toString());
+          lined[6] = int.parse(lined[6].toString());
+
           _standings.add({
-        'team': clubName,
-        'played': lined[1].toString(),
-        'win': lined[2].toString(),
-        'draw': lined[3].toString(),
-        'loss': lined[4].toString(),
-        'points': lined[8].toString().replaceFirst("[a]","").replaceFirst("[b]","").replaceFirst("[c]","").replaceFirst("[d]",""),
-      });
+            'team': clubName,
+            'matchs': lined[1].toString(),
+            'win': lined[2].toString(),
+            'draw': lined[3].toString(),
+            'loss': lined[4].toString(),
+            'GM': lined[5].toString(),
+            'GS': lined[6].toString(),
+            'SG': (lined[5]-lined[6]).toString(),
+            'points': lined[8].toString().replaceFirst("[a]","").replaceFirst("[b]","").replaceFirst("[c]","").replaceFirst("[d]",""),
+          });
+        }
     }
 
     setState(() {});
@@ -249,9 +260,11 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
 
           Column(
             children: [
-              backButtonText(context,'RealClassificationPage'),
+              backButtonText(context,'Tabela de Classificação'),
               Expanded(
                 child: ListView.builder(
+                  shrinkWrap: true,
+                  padding: EdgeInsets.zero,
                   itemCount: _standings.length,
                   itemBuilder: (context, index) {
                     Map data = _standings[index];
@@ -293,14 +306,15 @@ Widget rowTile(int index,Map data){
         clickClub(context: context, clubName: clubName);
     },
       child: ListTile(
+        visualDensity: const VisualDensity(horizontal: 0, vertical: -2),
         leading: Text((index + 1).toString(),style: EstiloTextoBranco.text16),
         title: Row(
           children: [
             Images().getEscudoWidget(clubName, 30,30),
-            Text(clubName,style: EstiloTextoBranco.text16),
+            Text(clubName, style: EstiloTextoBranco.text20),
           ],
         ),
-        subtitle: Text('W: ${data['win']}, D: ${data['draw']}, L: ${data['loss']}',style: EstiloTextoBranco.text12),
+        subtitle: Text('J: ${data['matchs']} W: ${data['win']}, D: ${data['draw']}, L: ${data['loss']} GM: ${data['GM']} GS: ${data['GS']} SG: ${data['SG']}',style: EstiloTextoBranco.text12),
         trailing: Text(data['points'],style: EstiloTextoBranco.negrito18),
       ),
     );
@@ -338,9 +352,11 @@ Widget rowTile(int index,Map data){
   }
 }
 
-String getAppClubName(String name){
+String getAppClubName(String name, String leagueName, LeagueOfficialNames l){
   ClubName n = ClubName();
-  if(name == "Brighton & Hove Albion"){    name = n.brighton;  }
+  if(name == "Arsenal"  && leagueName == l.inglaterra1){    name = n.arsenal;  }
+  else if(name == "Liverpool"  && leagueName == l.inglaterra1){    name = n.liverpool;  }
+  else if(name == "Brighton & Hove Albion"){    name = n.brighton;  }
   else if(name == "Leicester City"){    name = n.leicester;  }
   else if(name == "Newcastle United"){    name = n.newcastle;  }
   else if(name == "Tottenham Hotspur"){    name = n.tottenham;  }
@@ -371,6 +387,7 @@ String getAppClubName(String name){
 
   else if(name == "Alavés"){    name = n.alaves;  }
   else if(name == "Andorra"){    name = n.andorra;  }
+  else if(name == "Barcelona"  && leagueName == l.espanha1){    name = n.barcelona;  }
   else if(name == "Celta Vigo"){    name = n.celtavigo;  }
   else if(name == "Girona"){    name = n.girona;  }
   else if(name == "Mirandés"){    name = n.mirandes;  }
@@ -461,7 +478,7 @@ String getAppClubName(String name){
   else if(name == "Beroe"){    name = n.beroe;  }
   else if(name == "Hebar"){    name = n.hebarpazardzhik;  }
   else if(name == "Ludogorets Razgrad"){    name = n.ludogorets;  }
-  else if(name == "Cherno More"){    name = n.chernomorets;  }
+  else if(name == "Cherno More"){    name = n.chernomorevarna;  }
   //CAZAQUISTAO
   else if(name == "Ordabasy"){    name = n.ordabasy;  }
   else if(name == "Tobol"){    name = n.tobol;  }
@@ -491,6 +508,16 @@ String getAppClubName(String name){
   //ESLOVAQUIA
   else if(name == "DAC Dunajská Streda"){    name = n.dac1904;  }
   else if(name == "Dukla Banská Bystrica"){    name = n.duklaBanska;  }
+  //ESTONIA
+  else if(name == "Harju"){    name = n.harju;  }
+  else if(name == "FCI Levadia"){    name = n.levadiatallinn;  }
+  else if(name == "Flora"){    name = n.floratallinn;  }
+  //FINLANDIA
+  else if(name == "HJK"){    name = n.helsinki;  }
+  else if(name == "KTP"){    name = n.ktp;  }
+  else if(name == "Lahti"){    name = n.lahti;  }
+  else if(name == "Oulu"){    name = n.oulu;  }
+  else if(name == "VPS"){    name = n.vps;  }
   //GIBRALTAR
   else if(name == "Europa"){    name = n.europa;  }
   //GRECIA
@@ -500,14 +527,30 @@ String getAppClubName(String name){
   else if(name == "Lamia"){    name = n.lamia;  }
   else if(name == "Volos"){    name = n.volos;  }
   else if(name == "OFI"){    name = n.ofi;  }
+  //HUNGRIA
+  else if(name == "Debrecen"){    name = n.debreceni;  }
+  else if(name == "Ferencváros"){    name = n.ferencvaros;  }
+  else if(name == "Kecskemét"){    name = n.kecskemet;  }
+  else if(name == "Budapest Honvéd"){    name = n.honved;  }
+  else if(name == "Puskás Akadémia"){    name = n.puskas;  }
+  else if(name == "Újpest"){    name = n.ujpest;  }
+  //ILHAS FAROE
+  else if(name == "AB Argir"){    name = n.abFaroe;  }
+  else if(name == "EB/Streymur"){    name = n.ebstreymur;  }
+  else if(name == "ÍF"){    name = n.iffuglafjordur;  }
+  else if(name == "KÍ"){    name = n.kiklaksvik;  }
+  else if(name == "07 Vestur"){    name = n.vestur;  }
+  else if(name == "Víkingur"){    name = n.vikingurgota;  }
   //IRLANDA
   else if(name == "Derry City"){    name = n.derrycity;  }
   else if(name == "Drogheda United"){    name = n.drogheda;  }
   //ISRAEL
   else if(name == "F.C. Ashdod"){    name = n.ashdod;  }
+  //KOSOVO
+  else if(name == "Trepça '89"){    name = n.trepca89;  }
   //LATVIA LETONIA
   else if(name == "Auda"){    name = n.fkauda;  }
-  else if(name == "Daugavips"){    name = n.daugavadaugavpils;  }
+  else if(name == "Daugavpils"){    name = n.bfcdaugavpils;  }
   else if(name == "Metta"){    name = n.mettalu;  }
   else if(name == "Riga"){    name = n.rigafc;  }
   else if(name == "RFS"){    name = n.rigasfs;  }
@@ -522,11 +565,16 @@ String getAppClubName(String name){
   else if(name == "Hibernians"){    name = n.hiberniansMALTA;  }
   //MOLDAVIA MOLDOVA
   else if(name == "Zimbru Chișinău"){    name = n.zimbruchisinau;  }
+  //MONTENEGRO
+  else if(name == "Budućnost"){    name = n.buducnost;  }
+  else if(name == "Sutjeska"){    name = n.sutjeska;  }
   //NORUEGA
   else if(name == "Odd"){    name = n.odd;  }
   else if(name == "Sandefjord"){    name = n.sanderfjord;  }
   else if(name == "Tromsø"){    name = n.tromso;  }
   else if(name == "Vålerenga"){    name = n.valerenga;  }
+  //PAIS DE GALES
+  else if(name == "Newtown"){    name = n.newtown;  }
   //POLONIA
   else if(name == "Jagiellonia Białystok"){    name = n.jagiellonia;  }
   else if(name == "Legia Warsaw"){    name = n.legiawarszawa;  }
@@ -541,6 +589,12 @@ String getAppClubName(String name){
   else if(name == "Sparta Prague"){    name = n.spartapraga;  }
   else if(name == "Bohemians 1905"){    name = n.bohemians;  }
   else if(name == "Mladá Boleslav"){    name = n.mladaBoleslav;  }
+  else if(name == "Viktoria Plzeň"){    name = n.viktoriaPlzen;  }
+  //ROMENIA
+  else if(name == "CFR Cluj"){    name = n.cluj;  }
+  else if(name == "Farul Constanţa"){    name = n.farul;  }
+  else if(name == "Rapid București"){    name = n.rapidbucuresti;  }
+  else if(name == "FCSB"){    name = n.steauabucuresti;  }
   //RUSSIA
   else if(name == "CSKA Moscow"){    name = n.cska;  }
   else if(name == "Dynamo Moscow"){    name = n.dinamoMoscou;  }
@@ -553,10 +607,24 @@ String getAppClubName(String name){
   else if(name == "Torpedo Moscow"){    name = n.torpedo;  }
   else if(name == "Ural Yekaterinburg"){    name = n.ural;  }
   else if(name == "Zenit Saint Petersburg"){    name = n.zenit;  }
-
+  //SAN MARINO
+  else if(name == "Folgore"){    name = n.folgore;  }
   //SERVIA
+  else if(name == "TSC Bačka Topola"){    name = n.backatopola;  }
   else if(name == "Red Star Belgrade"){    name = n.estrelavermelha;  }
   else if(name == "Novi Pazar"){    name = n.noviPazar;  }
+  else if(name == "Radnički 1923"){    name = n.radnicki;  }
+  //SUECIA
+  else if(name == "Degerfors IF"){    name = n.degerfors;  }
+  else if(name == "IF Elfsborg"){    name = n.elfsborg;  }
+  else if(name == "BK Häcken"){    name = n.hacken;  }
+  else if(name == "Halmstads BK"){    name = n.halmstads;  }
+  else if(name == "Hammarby IF"){    name = n.hammarby;  }
+  else if(name == "Kalmar FF"){    name = n.kalmar;  }
+  else if(name == "Malmö FF"){    name = n.malmo;  }
+  else if(name == "Mjällby AIF"){    name = n.mjallby;  }
+  else if(name == "IFK Norrköping"){    name = n.norrkoping;  }
+  else if(name == "IK Sirius"){    name = n.sirius;  }
   //SUICA
   else if(name == "Grasshopper"){    name = n.grasshoppers;  }
   else if(name == "Zürich"){    name = n.zurich;  }
@@ -570,26 +638,34 @@ String getAppClubName(String name){
   else if(name == "Atlético Mineiro"){    name = n.atleticomg;  }
   else if(name == "Athletico Paranaense"){    name = n.atleticopr;  }
   else if(name == "Atlético Goianiense"){    name = n.atleticogo;  }
+  else if(name == "Red Bull Bragantino"){    name = n.bragantino;  }
   else if(name == "Náutico"){    name = n.nautico;  }
   else if(name == "Novorizontino"){    name = n.novorizontino;  }
   else if(name == "Operário Ferroviário"){    name = n.operarioPR;  }
-  else if(name == "Red Bull Bragantino"){    name = n.bragantino;  }
+  else if(name == "Portuguesa" && leagueName == l.brasil1){    name = n.portuguesa;  }
   else if(name == "Ypiranga"){    name = n.ypirangaRS;  }
-
+  //ARGENTINA
   else if(name == "Estudiantes (LP)"){    name = n.estudiantes;  }
   else if(name == "Central Córdoba (SdE)"){    name = n.centralCordoba;  }
   else if(name == "Gimnasia y Esgrima (LP)"){    name = n.gimnasia;  }
   else if(name == "Instituto"){    name = n.instituto;  }
+  else if(name == "Racing"  && leagueName == l.argentina){    name = n.racing;  }
+  else if(name == "River Plate"  && leagueName == l.argentina){    name = n.riverplate;  }
   else if(name == "Unión"){    name = n.unionsantafe;  }
-
+  else if(name == "Arsenal" && leagueName == l.argentina){    name = n.arsenalsarandi;  }
+  //URUGUAI
   else if(name == "Cerro"){    name = n.cerrouru;  }
   else if(name == "Defensor Sporting"){    name = n.defensor;  }
   else if(name == "Fénix"){    name = n.fenix;  }
   else if(name == "La Luz"){    name = n.laluz;  }
+  else if(name == "Nacional" && leagueName == l.uruguai){    name = n.nacional;  }
+  else if(name == "Liverpool" && leagueName == l.uruguai){    name = n.liverpoolURU;  }
   else if(name == "Montevideo City Torque"){    name = n.montevideocity;  }
-
+  else if(name == "Racing" && leagueName == l.uruguai){    name = n.racinguru;  }
+  else if(name == "River Plate" && leagueName == l.uruguai){    name = n.riverURU;  }
+  //BOLIVIA
   else if(name == "Palmaflor del Trópico"){    name = n.palmaflor;  }
-
+  //PERU
   else if(name == "Carlos A. Mannucci"){    name = n.carlosmanucci;  }
   else if(name == "Alianza Atlético"){    name = n.alianzasullana;  }
   else if(name == "Universidad César Vallejo"){    name = n.cesarvallejo;  }
@@ -600,6 +676,7 @@ String getAppClubName(String name){
   else if(name == "Deportes Copiapó"){    name = n.copiapo;  }
   else if(name == "Universidad de Chile"){    name = n.lau;  }
   else if(name == "Unión La Calera"){    name = n.lacalera;  }
+  else if(name == "Everton" && leagueName == l.chile){    name = n.evertonchi;  }
 
   else if(name == "Guaraní"){    name = n.guaraniPAR;  }
   else if(name == "Sportivo Ameliano"){    name = n.ameliano;  }
@@ -616,6 +693,14 @@ String getAppClubName(String name){
   else if(name == "Independiente del Valle"){    name = n.idelvalle;  }
   else if(name == "LDU Quito"){    name = n.ldu;  }
   else if(name == "Técnico Universitario"){    name = n.tecnicoUniv;  }
+  //VENEZUELA
+  else if(name == "Hermanos Colmenarez"){    name = n.hermanoscolmenarez;  }
+  else if(name == "Academia Puerto Cabello"){    name = n.puertoCabello;  }
+  else if(name == "Deportivo La Guaira"){    name = n.laguaira;  }
+  else if(name == "Mineros de Guayana"){    name = n.mineros;  }
+  else if(name == "Portuguesa" && leagueName == l.venezuela){    name = n.portuguesaven;  }
+  else if(name == "Universidad Central"){    name = n.ucv;  }
+  else if(name == "Deportivo Rayo Zuliano"){    name = n.zulia;  }
 
   //MÉXICO
   else if(name == "Atlético San Luis"){    name = n.sanluis;  }
@@ -635,11 +720,49 @@ String getAppClubName(String name){
   else if(name == "Minnesota United FC"){    name = n.minnesota;  }
   else if(name == "New England Revolution"){    name = n.nerevolution;  }
   else if(name == "New York City FC"){    name = n.nycity;  }
+  else if(name == "New York Red Bulls"){    name = n.nyredbulls;  }
   else if(name == "Orlando City SC"){    name = n.orlando;  }
   else if(name == "Seattle Sounders FC"){    name = n.seattle;  }
   else if(name == "St. Louis City SC"){    name = n.stlouis;  }
   else if(name == "Vancouver Whitecaps FC"){    name = n.vancouver;  }
 
+  //CHINA
+  else if(name == "Chengdu Roncheng"){    name = n.chengdu;  }
+  else if(name == "Dalian Pro"){    name = n.dalian;  }
+  else if(name == "Henan Songshan Longmen"){    name = n.henan;  }
+  else if(name == "Shanghai Port"){    name = n.shanghaisipg;  }
+  else if(name == "Tianjin Jinmen Tiger"){    name = n.tianjin;  }
+  //COREIA DO SUL
+  else if(name == "Daejeon Hana Citizen"){    name = n.daejeon;  }
+  else if(name == "Gwangju FC"){    name = n.gwangju;  }
+  else if(name == "Incheon United"){    name = n.incheon;  }
+  else if(name == "Jeonbuk Hyundai Motors"){    name = n.jeonbuk;  }
+  else if(name == "Suwon Samsung Bluewings"){    name = n.suwonsamsung;  }
+  //INDIA
+  else if(name == "ATK Mohun Bagan"){    name = n.mohunbagan;  }
+  else if(name == "Bengaluru"){    name = n.bengaluru;  }
+  else if(name == "East Bengal"){    name = n.eastbengal;  }
+  else if(name == "Goa"){    name = n.goa;  }
+  else if(name == "NorthEast United"){    name = n.northeast;  }
+  else if(name == "Odisha"){    name = n.odisha;  }
+  //INDONESIA
+  else if(name == "Arema"){    name = n.arema;  }
+  else if(name == "Madura United"){    name = n.madura;  }
+  else if(name == "Persib"){    name = n.persib;  }
+  else if(name == "Persebaya"){    name = n.persebaya;  }
+  else if(name == "PSM"){    name = n.psmMakassar;  }
+  else if(name == "PSS"){    name = n.pss;  }
+  //NEPAL
+  else if(name == "Machhindra FC"){    name = n.machhindra;  }
+  else if(name == "Manang Marshyangdi F.C."){    name = n.manangMarshyangdi;  }
+  //TAILANDIA
+  else if(name == "BG Pathum United"){    name = n.pathum;  }
+  else if(name == "Port"){    name = n.portFC;  }
+  else if(name == "Ratchaburi"){    name = n.ratchaburi;  }
+  //VIETNA
+  else if(name == "Hanoi FC"){    name = n.hanoi;  }
+  else if(name == "Ho Chi Minh City FC"){    name = n.hochiminh;  }
+  
   //ARABIA SAUDITA
   else if(name == "Al-Adalah"){    name = n.aladalah;  }
   else if(name == "Al-Batin"){    name = n.albatin;  }
@@ -647,22 +770,42 @@ String getAppClubName(String name){
   else if(name == "Al-Fateh"){    name = n.alfateh;  }
   else if(name == "Al-Fayha"){    name = n.alfayha;  }
   else if(name == "Al-Hilal"){    name = n.alhilal;  }
-  else if(name == "Al-Ittihad"){    name = n.alIttihad;  }
+  else if(name == "Al-Ittihad" && leagueName==l.arabia){    name = n.alIttihad;  }
   else if(name == "Al-Khaleej"){    name = n.alkhaleej;  }
   else if(name == "Al-Nassr"){    name = n.alnassr;  }
   else if(name == "Al-Raed"){    name = n.alraed;  }
-  else if(name == "Al-Shabab"){    name = n.alshabab;  }
+  else if(name == "Al-Shabab" && leagueName==l.arabia){    name = n.alshabab;  }
   else if(name == "Al-Tai"){    name = n.altai;  }
   else if(name == "Al-Taawoun"){    name = n.altaawoun;  }
   else if(name == "Al-Wehda"){    name = n.alwehda;  }
+  //BAHREIN
+  else if(name == "Al-Ahli" && leagueName==l.bahrein){    name = n.alahliBAH;  }
+  else if(name == "Al Shabab" && leagueName==l.bahrein){    name = n.alshababBAH;  }
+  else if(name == "Bahrain SC"){    name = n.bahrain;  }
+  //EAU
+  else if(name == "Al Ain"){    name = n.alain;  }
+  else if(name == "Sharjah"){    name = n.alsharjah;  }
+  else if(name == "Shabab Al Ahli"){    name = n.shababalahli;  }
 
+  //EGITO
+  else if(name == "Al-Ittihad" && leagueName==l.egito){    name = n.alittihadalexandriaclub;  }
   //MARROCOS
   else if(name == "RS Berkane"){    name = n.berkane;  }
+  else if(name == "Difaâ El Jadidi"){    name = n.difaa;  }
+  else if(name == "AS FAR"){    name = n.farRabat;  }
   else if(name == "Fath Union Sport"){    name = n.fusRabat;  }
+  else if(name == "Ittihad Tanger"){    name = n.irTanger;  }
   else if(name == "Raja CA"){    name = n.rajacasablanca;  }
-  else if(name == "Olympic Club de Safi"){    name = n.safi;  }
+  else if(name == "MC Oujda"){    name = n.moulodiaOujda;  }
+  else if(name == "Olympic Safi"){    name = n.safi;  }
   else if(name == "Jeunesse Sportive Soualem"){    name = n.soualem;  }
-  else if(name == "Wydad CA"){    name = n.wydad;  }
+  else if(name == "Moghreb Tétouan"){    name = n.moghrebTetouan;  }
+  else if(name == "Wydad AC"){    name = n.wydad;  }
+  //TUNISIA
+  else if(name == "Olympique Béja"){    name = n.olympiquebeja;  }
+  else if(name == "US Ben Guerdane"){    name = n.benguerdane;  }
+  else if(name == "CS Sfaxien"){    name = n.sfaxien;  }
+  else if(name == "US Tataouine"){    name = n.tataouine;  }
 
   //AFRICA DO SUL
   else if(name == "AmaZulu"){    name = n.amazulu;  }

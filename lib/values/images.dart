@@ -820,7 +820,7 @@ String imageLogo(String timeFoto) {
     map[_name.craiova] = 'craiova';
     map[_name.dinamoBucuresti] = 'dinamo bucuresti';
     map[_name.otelul] = 'otelul';
-    map[_name.rapidBucuresti] = 'rapid bucuresti';
+    map[_name.rapidbucuresti] = 'rapid bucuresti';
     map[_name.steauabucuresti] = 'steaua bucareste';
     map[_name.arad] = 'uta arad';
     //MACEDONIA
@@ -1425,8 +1425,8 @@ String imageLogo(String timeFoto) {
     map[_name.shababalahli] = 'shabab al ahli';
     //BAHREIN
     map[_name.alhidd] = 'al hidd';
-    map[_name.alMuharraq] = 'al muharraq';
-    map[_name.alRiffa] = 'al riffa';
+    map[_name.almuharraq] = 'al muharraq';
+    map[_name.alriffa] = 'al riffa';
     map[_name.manama] = 'manama';
     //PHILLIPINES
     map[_name.maharlikaManila] = 'manila';
@@ -1445,11 +1445,11 @@ String imageLogo(String timeFoto) {
     //INDIA
     map[_name.bengaluru] = 'bengaluru';
     map[_name.chennaiyin] = 'chennaiyin';
-    map[_name.eastBengal] = 'east bengal';
+    map[_name.eastbengal] = 'east bengal';
     map[_name.hyderabad] = 'hyderabad';
     map[_name.goa] = 'goa';
     map[_name.kerala] = 'kerala blasters';
-    map[_name.mohunBagan] = 'mohun bagan';
+    map[_name.mohunbagan] = 'mohun bagan';
     map[_name.mumbai] = 'mumbai';
     map[_name.northeast] = 'northeast';
     map[_name.odisha] = 'odisha';
