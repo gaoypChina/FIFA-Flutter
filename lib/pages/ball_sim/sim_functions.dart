@@ -81,7 +81,7 @@ class SimFunctions{
         double distTarget = playerVision(circle)[1];
         double ballSpeed = 6;
         if(distTarget>0){
-          ballSpeed *= 3;
+          ballSpeed *= 5;
         }
         angle = gradtorad(angle);
         angle = calcAngleOriginalSystemRad(angle);
@@ -140,28 +140,37 @@ class SimFunctions{
     }
 
     //Player Velocity
-    double distance2 = calculateBallCircleDistance(circle, destinyX, destinyY);
-    double velocity = calculateBallCircleVelocity(distance2);
-    velocity *= 3;
+    double distanceDestiny = calculateDestinyCircleDistance(circle, destinyX, destinyY);
+    double velocity = calculateCircleVelocity(distanceDestiny);
+    velocity *= 6;
 
-    double distance = 2;
-    double direction = (destinyX - circle.x) / ((destinyX - circle.x).abs());
-    circle.x += (direction * distance * velocity);
+    double directionX = (destinyX - circle.x) / ((destinyX - circle.x).abs());
+    if(destinyX - circle.x < 2){
+      directionX *= 0.2;
+    }
+    circle.dx = directionX * velocity;
 
-    direction = (destinyY - circle.y) / ((destinyY - circle.y).abs());
-    circle.y += direction * distance * velocity;
+    double directionY = (destinyY - circle.y) / ((destinyY - circle.y).abs());
+    if(destinyY - circle.y < 2){
+      directionY *= 0.2;
+    }
+    circle.dy = directionY * velocity;
+
+    circle.move();
   }
 
   void goalkeeperMovement(Circle circle){
     //GOLEIRO
-    double distance = 2;
+    double multiplier = 2;
     double direction = (ball.x - circle.x) / ((ball.x - circle.x).abs());
     if(circle.x >= field.startGoal && circle.x <= field.startGoal+field.lengthGoal){
-      circle.x += direction * distance;
-    }if(calculateBallCircleDistance(circle, ball.x, ball.y)<45){
+      circle.dx = direction * multiplier;
+    }if(calculateDestinyCircleDistance(circle, ball.x, ball.y)<45){
       direction = (ball.y - circle.y) / ((ball.y - circle.y).abs());
-      circle.y += direction * distance;
+      circle.dy = direction * multiplier;
     }
+
+    circle.move();
   }
 
   //////////////////////////////////////////////////////////////////////////////
@@ -282,14 +291,14 @@ class SimFunctions{
     }
   }
 
-  double calculateBallCircleDistance(Circle circle, double destinyX, double destinyY) {
+  double calculateDestinyCircleDistance(Circle circle, double destinyX, double destinyY) {
     double directionX = ((destinyX - circle.x).abs());
     double directionY = ((destinyY - circle.y).abs());
     double distance = sqrt(pow(directionX, 2) + pow(directionY, 2));
     return distance;
   }
 
-  double calculateBallCircleVelocity(double distance) {
+  double calculateCircleVelocity(double distance) {
     // ANEIS DE VELOCIDADE
     double velocity = 0;
     if(distance<30){
@@ -308,13 +317,13 @@ class SimFunctions{
   //////////////////////////////////////////////////////////////////////////////
   // PLAYERS POSITION
   //////////////////////////////////////////////////////////////////////////////
-  void resetPlayersPositions(){
+  void resetPlayersPositions(bool restartMyTeam){
     for(Circle circle in circles){
-      defaultPosition(circle, field);
+      defaultPosition(circle, field, restartMyTeam);
     }
   }
-  void defaultPosition(Circle circle, Field field){
-    GravityPosition gravityPosition = GravityPosition(context, circle.position, circle.isMyPlayer);
+  void defaultPosition(Circle circle, Field field, bool restartMyTeam){
+    GravityPosition gravityPosition = GravityPosition(context, circle.position, circle.isMyPlayer, restartMyTeam);
     circle.x = gravityPosition.gravityCenter.x;
     circle.y = gravityPosition.gravityCenter.y;
   }
@@ -396,7 +405,7 @@ class SimFunctions{
       match.goal1 += 1;
       ball.x = field.limitXmiddle;
       ball.y = field.limitYmiddle;
-      resetPlayersPositions();
+      resetPlayersPositions(true);
     }
 
     //GOAL TEAM 2
@@ -411,7 +420,7 @@ class SimFunctions{
       match.goal2 += 1;
       ball.x = field.limitXmiddle;
       ball.y = field.limitYmiddle;
-      resetPlayersPositions();
+      resetPlayersPositions(false);
     }
   }
 
@@ -424,7 +433,7 @@ class SimFunctions{
 
     for (int i=0; i<circles.length; i++){
       for (Circle circle in circles) {
-        defaultPosition(circle, field);
+        defaultPosition(circle, field, false);
       }
     }
   }

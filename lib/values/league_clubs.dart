@@ -40,8 +40,8 @@ List defaultEuropaLeagueClubs = [
 ];
 List defaultSulAmericanaClubs = [
   clubName.ldu,clubName.botafogo,clubName.monterrey,clubName.lagalaxy,
-  clubName.emelec,clubName.guaraniPAR,clubName.chivas,clubName.huracan,
-  clubName.estudiantes,clubName.bragantino,clubName.seattle,clubName.toluca,
+  clubName.emelec,clubName.guaraniPAR,clubName.danubio,clubName.huracan,
+  clubName.estudiantes,clubName.bragantino,clubName.orientepetrolero,clubName.toluca,
   clubName.saopaulo,clubName.tolima,clubName.tigre,clubName.caracas,
   clubName.santos,clubName.newells,clubName.atlanta,clubName.cienciano,
   clubName.penarol,clubName.defensayjusticia,clubName.americamg,clubName.millonarios,
@@ -192,7 +192,7 @@ Map clubNameMapImmutable = {
     4: clubName.colocolo,5: clubName.lau,6: clubName.palestino,7: clubName.univcatolica,
     8: clubName.alwaysready,9: clubName.bolivar,10: clubName.thestrongest,11: clubName.alianzalima,
     12: clubName.cienciano,13: clubName.jorge,14: clubName.melgar,15: clubName.sportingcristal,
-    16: clubName.universitario,17: clubName.montevideocity,18: clubName.nacional,19: clubName.penarol,
+    16: clubName.universitario,17: clubName.danubio,18: clubName.nacional,19: clubName.penarol,
   },
   LeagueOfficialNames().colombia : {
     0: clubName.americadecali,1: clubName.atleticonacional,2: clubName.deportivocali,3: clubName.junior,
@@ -237,6 +237,7 @@ Map clubNameMapImmutable = {
     4: clubName.sherifftiraspol, 5: clubName.arsenalsarandi,6: clubName.tigre,7: clubName.auckland,
     8:clubName.alahli, 9:clubName.alshabab, 10:clubName.saprissa,11:clubName.olimpiaHON,
     12:clubName.charlotte, 13:clubName.montreal, 14:clubName.toronto, 15:clubName.vancouver,
+    16:clubName.montevideocity, 17:clubName.orientepetrolero,
   },
 
 };

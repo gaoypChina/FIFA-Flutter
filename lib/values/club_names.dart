@@ -740,7 +740,7 @@ class ClubName{
   String falkirk = "Falkirk";
   String gretna = "Gretna";
   String hamilton = "Hamilton";
-  String hearts = "Hearts";
+  String hearts = "Heart of Midlothian";
   String hibernian = "Hibernian";
   String inverness = "Inverness";
   String kilmarnock = "Kilmarnock";
@@ -1726,7 +1726,7 @@ class ClubName{
   //BELARUS
   String arsenaldzerzhinsk = "Arsenal Dzerzhinsk";
   String atakaminsk = "Ataka Minsk";
-  String bate = "BATE Borisov";
+  String bate = "BATE";
   String belazzhodino = "BelAZ Zhodino";
   String bobruisk = "FC Bobruisk";
   String belshinabobruisk = "Belshina Bobruisk";
@@ -2009,7 +2009,7 @@ class ClubName{
   String rantomiks = "Ranto-Miks";
   String rigafc = "Riga FC";
   String rigasfs = "Rigas FS";
-  String sksupernova = "SK Super Nova";
+  String supernova = "Super Nova";
   String skonto = "Skonto";
   String skontometals = "Skonto Metals";
   String spartaksjurmala = "Spartaks Jurmala";
@@ -2482,7 +2482,7 @@ class ClubName{
   String lipstovsky = "Tatran Liptovský Mikuláš";
   String trnava = "Spartak Trnava";
   String trencin = "AS Trencin";
-  String zilina = "MSK Zilina";
+  String zilina = "MSK Žilina";
   String zemplin = "Zemplín Michalovce";
   String zlate = "Zlaté Moravce";
   //OUTROS
@@ -2490,72 +2490,52 @@ class ClubName{
   String maji24 = "24 Maji";
   String korriku = "31 Korriku";
   String albaniatabak = "Albania Tabak";
-  String albpetrol = "Albpetrol";
-  String apolonia = "Apolonia";
+  String albpetrol = "Albpetrol Patos";
+  String apolonia = "Apolonia Fier";
   String besa = "Besa";
-  String beselidhja = "Besëlidhja";
+  String beselidhja = "Besëlidhja Lezhë";
   String burreli = "Burreli";
   String bylis = "Bylis";
   String dinamodurresi = "Dinamo Durrësi";
   String dinamoshkodra = "Dinamo Shkodra";
   String dinamotirana = "Dinamo Tirana";
-  String durresi = "Durrësi";
+  String dinamovlora = "Dinamo Vlora";
   String egnatia = "Egnatia";
   String elbasani = "Elbasani";
   String erzeni = "Erzeni";
-  String fieri = "Fieri";
   String flamurtari = "Flamurtari";
   String gramozi = "Gramozi";
   String iliria = "Iliria";
   String kamza = "Kamza";
   String kastrioti = "Kastrioti";
-  String kavaja = "Kavaja";
   String korabi = "Korabi";
-  String korca = "Korça";
   String kukesi = "Kukësi";
-  String labinoti = "Labinoti";
   String laci = "Laçi";
   String lezha = "Lezha";
   String lokomotivadurres = "Lokomotiva Durrës";
   String luftetari = "Luftëtari";
+  String luftetarienver = "Luftëtari Enver Hoxha Tiranë";
   String lushnja = "Lushnja";
   String naftetari = "Naftëtari";
   String olimpik = "Olimpik";
   String partizanitirane = "Partizani Tiranë";
-  String pogradeci = "Pogradeci";
-  String punaberat = "Puna Berat";
-  String punadurres = "Puna Durrës";
-  String punaelbasan = "Puna Elbasan";
-  String punafier = "Puna Fier";
-  String punagjirokaster = "Puna Gjirokastër";
-  String punakavaje = "Puna Kavajë";
-  String punakorce = "Puna Korçë";
-  String punaqytetistalin = "Puna Qyteti Stalin";
-  String punashkoder = "Puna Shkodër";
-  String punatirane = "Puna Tiranë";
-  String punavlore = "Puna Vlorë";
   String punetori = "Punëtori";
   String selenica = "Selenica";
-  String shkodra = "Shkodra";
   String shkumbini = "Shkumbini";
   String shkendijatirane = "Shkëndija Tiranë";
-  String shqiponja = "Shqiponja";
   String skenderbeu = "Skënderbeu";
   String sopoti = "Sopoti";
-  String spartakpogradeci = "Spartak Pogradeci";
-  String spartakupogradec = "Spartaku Pogradec";
+  String pogradeci = "Pogradeci";
   String spartakushkoder = "Spartaku Shkodër";
   String spartakutirane = "Spartaku Tiranë";
+  String spartakukorce = "Spartaku Korçë";
   String studentitirane = "Studenti Tiranë";
   String tekstilisti = "Tekstilisti";
   String teuta = "Teuta Durrës";
   String tirana = "Tirana";
   String tomori = "Tomori";
-  String traktori = "Traktori";
   String terbuni = "Tërbuni";
   String vllaznia = "Vllaznia";
-  String vlora = "Vlora";
-  String ylliikuq = "Ylli i Kuq";
   //ESLOVENIA
   String aluminij = "Aluminij";
   String ankaran = "Ankaran";
@@ -2563,7 +2543,7 @@ class ClubName{
   String beltinci = "Beltinci";
   String bravo = "Bravo";
   String celje = "Celje";
-  String domzale = "Domzale";
+  String domzale = "Domžale";
   String dravaptuj = "Drava Ptuj";
   String dravograd = "Dravograd";
   String jadrandekani = "Jadran Dekani";
@@ -2608,7 +2588,7 @@ class ClubName{
   String sarajevo = "Sarajevo";
   String zrinjski = "HSK Zrinjski";
   String zeljeznicar = "Željezničar";
-  String slobodaTuzla = "Sloboda Tuzla";
+  String slobodatuzla = "Sloboda Tuzla";
   String velezMostar = "Velež Mostar";
   //KOSOVO
   String korriku2 = "2 Korriku";
@@ -2790,20 +2770,25 @@ class ClubName{
   String europa = "Europa FC";
   String gibraltar = "Gibraltar United";
   String glacis = "Glacis United";
+  String lynx = "Lynx";
   String manchester62 = "Manchester 62";
   String lincolnRedImps = "Lincoln Red Imps";
   String stJosephs = "St Joseph's";
   String stTheresas = "St Theresa's";
   //ANDORRA
+  String atleticescaldes = "Atlètic Club d'Escaldes";
   String constellacio = "Constellació Esportiva";
   String encamp = "Encamp";
   String engordany = "Engordany";
   String escaldes = "Inter Club d'Escaldes";
   String fcrangers = "FC Rangers";
+  String ordino = "FC Ordino";
   String lusitanos = "Lusitanos";
+  String penyaencarnada = "Penya Encarnada d'Andorra";
   String principat = "Principat";
   String santjulia = "Sant Julià";
-  String santacoloma = "Santa Coloma";
+  String santacolomafc = "Santa Coloma";
+  String santacolomaue = "UE Santa Coloma";
 
 
   //////////////////////////////////////////////////////////////////////////////
@@ -3428,6 +3413,7 @@ class ClubName{
   String frontera = "Frontera Rivera";
   String buceo = "Huracán Buceo";
   String juventud = "Juventud";
+  String laluz = "La Luz";
   String liverpoolURU = "Liverpool-URU";
   String miramar = "Miramar Misiones";
   String montevideocity = "Montevideo City";

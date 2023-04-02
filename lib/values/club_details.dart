@@ -856,7 +856,7 @@ class ClubDetails{
       'Stade de la Licorne',12097,1901,_country.france,67.4,[]];
     map[n.angouleme] = [ClubColors(Colors.black,Colors.white),pattern.solid,Coordinates(0,0),
       'Stade Lebon',6500,1920,_country.france,57.6,[]];
-    map[n.annecy] = [ClubColors(Colors.red,Colors.red),pattern.solid,Coordinates(45.9165575, 6.1180684),
+    map[n.annecy] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(45.9165575, 6.1180684),
       'Parc des Sports',15714,1927,_country.france,65.1,[]];
     map[n.bastia] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(42.6514,9.442619),
       'Stade Armand Cesari',16500,1905,_country.france,68.6,[]];
@@ -2769,8 +2769,6 @@ class ClubDetails{
       'Selman Stermasi Stadium',7000,1920,_country.albania,68.1,[]];
     map[n.kukesi] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(42.079203526, 20.42031655),
       'Zeqir Ymeri Stadium',6000,1930,_country.albania,63.2,[]];
-    map[n.labinoti] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
-      '',0,0,_country.albania,50.0,[]];
     map[n.luftetari] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
       '',0,0,_country.albania,50.0,[]];
     map[n.laci] = [ClubColors(Colors.white,Colors.black),pattern.stripes2,Coordinates(41.6424706, 19.711743),
@@ -3072,7 +3070,7 @@ class ClubDetails{
       'Andorra Football Federation stadiums',1800,1999,_country.andorra,52.1,[]]; //EXTINTO 2020
     map[n.principat] = [ClubColors(Colors.purple,Colors.black),pattern.oneHorStripe,Coordinates(0, 0),
       'Andorra Football Federation stadiums',1800,1989,_country.andorra,50.0,[]]; //EXTINTO 2015
-    map[n.santacoloma] = [ClubColors(Colors.white,Colors.red),pattern.solid,Coordinates(42.50147, 1.514271),
+    map[n.santacolomafc] = [ClubColors(Colors.white,Colors.red),pattern.solid,Coordinates(42.50147, 1.514271),
       'Estádio Comunal de Aixovall',1800,1986,_country.andorra,62.1,[]];
     map[n.santjulia] = [ClubColors(Colors.orange,Colors.white),pattern.sleeves,Coordinates(42.50118, 1.51387),
       'Estádio Comunal de Aixovall',1800,1982,_country.andorra,60.2,[]];

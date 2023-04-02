@@ -52,6 +52,7 @@ class Match{
   }
 }
 
+
 class Circle {
   bool isMyPlayer = false;
   double x;
@@ -59,6 +60,8 @@ class Circle {
   double r = 15;
   late double dx;
   late double dy;
+  double ax = 0;
+  double ay = 0;
   late double sightLeft;
   late double sightRight;
   late double sightLeftRad;
@@ -94,8 +97,15 @@ class Circle {
   }
 
   void setGravity(context){
-  GravityPosition gravityPosition = GravityPosition(context, position, isMyPlayer);
+  GravityPosition gravityPosition = GravityPosition(context, position, isMyPlayer, true);
   gravityCenter = gravityPosition.gravityCenter;
+  }
+
+  void move(){
+    dx += ax;
+    dy += ay;
+    x += dx;
+    y += dy;
   }
 }
 
@@ -200,7 +210,7 @@ class GravityTeam{
 class GravityPosition{
   late GravityCenter gravityCenter;
 
-  GravityPosition(BuildContext context, int position, isMyPlayer){
+  GravityPosition(BuildContext context, int position, isMyPlayer, restartMyTeam){
     Field field = Field(context);
 
     if(position == 0){
@@ -227,6 +237,14 @@ class GravityPosition{
       gravityCenter = GravityCenter(field.limitXmiddle-30, field.limitYtop+250, position);
     }else if(position == 10){
       gravityCenter = GravityCenter(field.limitXmiddle+30, field.limitYtop+250, position);
+    }
+
+    if((restartMyTeam && isMyPlayer) || (!restartMyTeam && !isMyPlayer)){
+      if(position == 9){
+        gravityCenter = GravityCenter(field.limitXmiddle-30, field.limitYtop+310, position);
+      }else if(position == 10){
+        gravityCenter = GravityCenter(field.limitXmiddle+30, field.limitYtop+310, position);
+      }
     }
 
     gravityCenter.invertYAxis(field, isMyPlayer);

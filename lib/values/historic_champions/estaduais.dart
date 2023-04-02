@@ -398,7 +398,7 @@ Map<String,dynamic> mapEstaduais = {
 
   leagueName.parana : {    
     //2024.0: [],
-    //2023.0: [],
+    //2023.0: [n.atleticopr,n.cascavel,n.coritiba,],
     2022.0: [n.coritiba,n.maringaFC,n.operarioPR,n.atleticopr,  n.cascavel,n.londrina,n.cianorte,n.saojoseense,  n.riobrancoPR,n.azuriz, ],
     2021.0: [n.londrina,n.cascavel,n.operarioPR,n.atleticopr,   n.cianorte,n.parana,n.maringaFC,n.azuriz,          n.coritiba,n.riobrancoPR,],
     2020.0: [n.atleticopr,n.coritiba,n.cascavel,n.cianorte,     n.operarioPR,n.londrina,n.riobrancoPR,n.parana,  n.cascavelcr,n.toledoPR,],
@@ -708,7 +708,7 @@ Map<String,dynamic> mapEstaduais = {
   },
   leagueName.ceara : {
     //2024.0: [],
-    //2023.0: [],
+    //2023.0: [n.fortaleza,n.ceara,],
     2022.0: [n.fortaleza,n.caucaia,n.ferroviario,],
     2021.0: [n.fortaleza,n.ceara,n.ferroviario,],
     2020.0: [n.fortaleza,n.ceara,n.ferroviario,],

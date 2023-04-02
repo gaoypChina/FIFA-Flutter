@@ -236,6 +236,7 @@ String imageLogo(String timeFoto) {
     map[_name.valladolid] = 'valladolid';
     map[_name.valencia] = 'valencia';
     map[_name.villareal] = 'villareal';
+    map[_name.villarrealB] = 'villareal';
 
     map[_name.andorra] = 'andorra';
     map[_name.alaves] = 'alaves';
@@ -703,6 +704,7 @@ String imageLogo(String timeFoto) {
     map[_name.dinamominsk] = 'dinamo minsk';
     map[_name.gomel] = 'gomel';
     map[_name.shakhtyorsoligorsk] = 'soligorsk';
+    map[_name.torpedominsk] = 'torpedo minsk';
     //AZERBAIJAN
     map[_name.baku] = 'baku fc';
     map[_name.dilagori] = 'dila';
@@ -863,7 +865,7 @@ String imageLogo(String timeFoto) {
     map[_name.hiberniansMALTA] = 'hibernians malta';
     map[_name.valletta] = 'valletta';
     //ANDORRA
-    map[_name.santacoloma] = 'santa coloma';
+    map[_name.santacolomafc] = 'santa coloma';
     //GIBRALTAR
     map[_name.europa] = 'europa';
     map[_name.lincolnRedImps] = 'lincoln red imps';
@@ -1082,7 +1084,7 @@ String imageLogo(String timeFoto) {
     map[_name.nacional] = 'nacional';
     map[_name.bostonriver] = 'boston river';
     map[_name.cerrouru] = 'cerro uru';
-    map[_name.danubio] = 'danubio';  
+    map[_name.danubio] = 'danubio';
     map[_name.defensor] = 'defensor';
     map[_name.fenix] = 'fenix';
     map[_name.liverpoolURU] = 'liverpool uru';
@@ -1213,7 +1215,7 @@ String imageLogo(String timeFoto) {
     map[_name.chivas] = 'chivas';  
     map[_name.cruzazul] = 'cruzazul';
     map[_name.dorados] = 'dorados';
-    map[_name.jaguares] = 'jaguares'; 
+    map[_name.jaguares] = 'jaguares';
     map[_name.juarez] = 'juarez';
     map[_name.irapuato] = 'irapuato';
     map[_name.leon] = 'leon'; 
@@ -1553,6 +1555,7 @@ String imageLogo(String timeFoto) {
     //EGITO
     map[_name.alahly] = 'al_ahly';
     map[_name.almasry] = 'al masry';
+    map[_name.alittihadalexandriaclub] = 'alexandria';
     map[_name.ceramicacleopatra] = 'cleopatra';
     map[_name.future] = 'future fc';
     map[_name.ismaily] = 'ismaily';

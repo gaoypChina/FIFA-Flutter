@@ -9,6 +9,7 @@ import 'package:fifa/pages/historic/leagues_historic.dart';
 import 'package:fifa/pages/historic/mundial.dart';
 import 'package:fifa/pages/historic/my_players_historic.dart';
 import 'package:fifa/pages/historic/players_historic.dart';
+import 'package:fifa/pages/historic/real_classification.dart';
 import 'package:fifa/pages/historic/year_resume/year_resume.dart';
 import 'package:fifa/pages/map/choose_continent_page.dart';
 import 'package:fifa/pages/map/map_exploration.dart';
@@ -130,11 +131,22 @@ class _HistoricMenuState extends State<HistoricMenu> {
                         ],
                       ),
 
-                      box(
-                          'Copa',
-                          Image.asset('assets/league_logos/cup winners.png',height: imageSize,),
-                              (){Navigator.push(context,MaterialPageRoute(builder: (context) => const CupMain()));
-                          }
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+
+                          box(
+                              'Copa',
+                              Image.asset('assets/league_logos/cup winners.png',height: imageSize,),
+                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => const CupMain()));
+                              }
+                          ),
+                          box(
+                              'Tabela Real',
+                              Icon(Icons.line_weight,color: Colors.white, size: imageSize),
+                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => const RealClassificationPage()));}
+                          ),
+                        ],
                       ),
 
                     ],

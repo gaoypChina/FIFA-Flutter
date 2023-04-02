@@ -1,15 +1,14 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/match/adversario.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/ball_sim/diagonal_line_painter.dart';
 import 'package:fifa/pages/ball_sim/physics.dart';
 import 'package:fifa/pages/ball_sim/sim_functions.dart';
 import 'package:fifa/theme/background_color/background_position.dart';
-import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/popup/popup_player_info.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +27,9 @@ class _GamePageState extends State<GamePage> {
   Match match = Match();
   bool loaded = false;
   SimFunctions simFunctions = SimFunctions();
+  double maxSliderDistance = 500;
+  double matchVelocity = 450;
+  String showStats = "";
 
   @override
   void initState() {
@@ -40,7 +42,16 @@ class _GamePageState extends State<GamePage> {
     simFunctions.onInit(match, Club(index: globalMyClubID), context);
     simFunctions.initParameters(widget.adversario.clubID);
 
-    timer = Timer.periodic(const Duration(milliseconds: 50), (timer) {
+    counter(true);
+
+  }
+
+  void counter(bool isTimerFirstTime){
+    if(!isTimerFirstTime){
+      timer.cancel();
+    }
+    timer = Timer.periodic(Duration(milliseconds:  int.parse(maxSliderDistance.floor().toString()) - matchVelocity.toInt()), (timer) {
+
       if(match.ticks==0){
         for (Circle circle in simFunctions.circles) {
           circle.setGravity(context);
@@ -49,10 +60,9 @@ class _GamePageState extends State<GamePage> {
         simFunctions.field = field;
         simFunctions.setGravityTeam(field);
 
-
         simFunctions.resetBallPosition();
         loaded = true;
-        simFunctions.resetPlayersPositions();
+        simFunctions.resetPlayersPositions(true);
       }
 
       if(!match.isPaused){
@@ -60,7 +70,7 @@ class _GamePageState extends State<GamePage> {
       }
 
       if(match.minutes == 45){
-        simFunctions.resetPlayersPositions();
+        simFunctions.resetPlayersPositions(false);
       }
 
       if(match.minutes>=90){
@@ -68,9 +78,7 @@ class _GamePageState extends State<GamePage> {
         endMatch();
       }
     });
-
   }
-
   void endMatch(){
     match.isPaused = true;
   }
@@ -121,6 +129,10 @@ class _GamePageState extends State<GamePage> {
 
                 header(match, simFunctions.myClub, simFunctions.advClub),
 
+                showStats.isNotEmpty
+                    ? playerStats(simFunctions.circles.where((circle) => circle.player.name==showStats).first)
+                    : Container(),
+
                 SizedBox(
                   height: Sized(context).height-35,
                   child: Align(
@@ -140,8 +152,6 @@ class _GamePageState extends State<GamePage> {
 
                 loaded ? Stack(
                   children: [
-                    for (Circle circle in simFunctions.circles)
-                      circlePlayer(circle),
 
                     for (Circle circle in simFunctions.circles)
                       visionLine(circle, field),
@@ -152,6 +162,9 @@ class _GamePageState extends State<GamePage> {
                     gravityPoint(simFunctions.gravityTeam1.gravityCenter, 5, Colors.red),
                     gravityPoint(simFunctions.gravityTeam2.gravityCenter, 5, Colors.blue),
 
+                    for (Circle circle in simFunctions.circles)
+                      circlePlayer(circle),
+
                     ballWidget(simFunctions.ball),
 
                     goalLine(field, field.limitYtop),
@@ -159,12 +172,19 @@ class _GamePageState extends State<GamePage> {
                   ],
                 ) : Container(),
 
+                SizedBox(
+                    height: Sized(context).height-35,
+                    child: Align(
+                        alignment: Alignment.bottomLeft,
+                        child: gameVelocitySlider()
+                    )),
 
                 Padding(
                   padding: const EdgeInsets.only(top: 16.0),
                   child: IconButton(
                       onPressed: (){
                         match.isPaused = !match.isPaused;
+                        setState((){});
                         },
                       icon: Icon(match.isPaused ? Icons.play_arrow : Icons.pause,color: Colors.white,size: 32,)
                   ),
@@ -228,30 +248,55 @@ Widget circlePlayer(Circle circle){
           children: [
             Text(circle.player.name,style: match.lastTouch==circle.player ? EstiloTextoPreto.text12 : EstiloTextoBranco.text8),
             GestureDetector(
-              onTap: (){
-                customToast(circle.player.position+" "+circle.touchs.toString()+" "+circle.player.name);
-              },
-              onDoubleTap: (){
-                popUpOkShowPlayerInfos(context: context, playerID: circle.player.index, funcSetState: (){});
-              },
-              child: Container(
-                width: circle.r * 2,
-                height: circle.r * 2,
-                padding: const EdgeInsets.all(1),
-                decoration: BoxDecoration(
-                  color: circle.colors.primaryColor,
-                  shape: BoxShape.circle,
-                  gradient: circle.gradient,
-                  border: Border.all(color: circle.colors.secondColor, width: 2),
-                ),
-                child: Images().getPlayerPictureWidget(circle.player,circle.r,circle.r),
+            onTap: (){
+              match.isPaused = true;
+              if(showStats ==  circle.player.name){
+                showStats = "";
+              }else{
+                showStats = circle.player.name;
+              }
+              setState((){});
+            },
+            onDoubleTap: (){
+              popUpOkShowPlayerInfos(context: context, playerID: circle.player.index, funcSetState: (){});
+            },
+            child: Container(
+              width: circle.r * 2,
+              height: circle.r * 2,
+              padding: const EdgeInsets.all(1),
+              decoration: BoxDecoration(
+                color: circle.colors.primaryColor,
+                shape: BoxShape.circle,
+                gradient: circle.gradient,
+                border: Border.all(color: circle.colors.secondColor, width: 2),
               ),
+              child: Images().getPlayerPictureWidget(circle.player,circle.r,circle.r),
             ),
+            ),
+
           ],
         ),
       ),
     );
 }
+
+Widget gameVelocitySlider(){
+    return SizedBox(
+      width: field.limitXright,
+      height: 50,
+      child: Slider(
+        activeColor: Colors.red,
+        value: matchVelocity,
+        min: 0, max: maxSliderDistance-5,
+        onChanged: (double value) {
+          setState(() {
+            matchVelocity = value;
+            counter(false);
+          });
+        },
+      ),
+    );
+  }
 
 Widget gravityPoint(GravityCenter gravityCenter, double size, [Color cor = Colors.white]){
     return               Positioned(
@@ -279,32 +324,23 @@ Widget visionLine(Circle circle, Field field){
     );
 }
 
+
+Widget playerStats(Circle circle){
+    return Container(
+      color: Colors.white54,
+      child: Column(
+        children: [
+          Text(circle.player.name,style: EstiloTextoBranco.text16),
+          Text(circle.sightLeftRad.toStringAsFixed(2)+"º",style: EstiloTextoBranco.text16),
+          Text(circle.sightRight.toStringAsFixed(2)+"º",style: EstiloTextoBranco.text16),
+          Text("Vel. X:" + circle.dx.toStringAsFixed(2),style: EstiloTextoBranco.text16),
+          Text("Vel. Y:" + circle.dy.toStringAsFixed(2),style: EstiloTextoBranco.text16),
+          Text("Passes:" + circle.touchs.toString(),style: EstiloTextoBranco.text16),
+          Text("Passes Certos:" + circle.passesRight.toString(),style: EstiloTextoBranco.text16),
+          Text("Passes Errados:" + circle.passesWrong.toString(),style: EstiloTextoBranco.text16),
+        ],
+      ),
+    );
 }
 
-class DiagonalLinePainter extends CustomPainter {
-  final Circle circle;
-  DiagonalLinePainter({
-    required this.circle,
-  });
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    double lineLength = 20;
-    double xl = lineLength * cos(circle.sightLeftRad) + circle.x;
-    double yl = lineLength * sin(circle.sightLeftRad) + circle.y;
-    double xr = lineLength * cos(circle.sightRightRad) + circle.x;
-    double yr = lineLength * sin(circle.sightRightRad) + circle.y;
-    Paint paint = Paint()
-      ..color = Colors.black
-      ..strokeWidth = 2;
-
-
-    canvas.drawLine(
-        Offset(circle.x, circle.y), Offset(xl, yl), paint);
-    canvas.drawLine(
-        Offset(circle.x, circle.y), Offset(xr, yr), paint);
-  }
-
-  @override
-  bool shouldRepaint(DiagonalLinePainter oldDelegate) => false;
 }

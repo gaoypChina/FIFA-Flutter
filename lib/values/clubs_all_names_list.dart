@@ -122,12 +122,13 @@ List clubsAllNameList = [
   ClubName().huracan,ClubName().gimnasia,ClubName().unionsantafe,ClubName().godoycruz,
   ClubName().atleticotucuman,ClubName().tigre,
 
-  ClubName().penarol,  ClubName().nacional,  ClubName().montevideocity,
+  //MERCOSUL
+  ClubName().penarol,  ClubName().nacional,  ClubName().montevideocity, ClubName().danubio,
   ClubName().olimpia,  ClubName().libertad,ClubName().cerroporteno,ClubName().guaraniPAR,
   ClubName().univcatolica, ClubName().colocolo,  ClubName().lau, ClubName().palestino,
   ClubName().bolivar, ClubName().thestrongest,ClubName().alwaysready,
   ClubName().sportingcristal,  ClubName().cienciano, ClubName().alianzalima,ClubName().universitario,
-  ClubName().jorge,ClubName().melgar,
+  ClubName().jorge,ClubName().melgar,ClubName().orientepetrolero,
 
   //colombia
   ClubName().americadecali,  ClubName().atleticonacional, ClubName().deportivocali,  ClubName().junior,
