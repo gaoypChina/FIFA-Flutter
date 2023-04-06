@@ -572,7 +572,7 @@ String imageLogo(String timeFoto) {
     map[_name.admira] = 'admira';
     map[_name.austria] = 'austria';
     map[_name.rbsalzburg] = 'rbsalzburg';
-    map[_name.rapidviena] = 'rapidviena';
+    map[_name.rapidwien] = 'rapid wien';
     map[_name.lasklinz] = 'lask';
     map[_name.ried] = 'ried';
     map[_name.tirolinnsbruck] = 'tirol';

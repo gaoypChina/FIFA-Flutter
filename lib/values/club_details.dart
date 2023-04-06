@@ -1659,7 +1659,7 @@ class ClubDetails{
       'Pappelstadion',17100,1922,_country.austria,65.1,[]]; //EXTINTO 2020
     map[n.pasching] = [ClubColors(Colors.green,Colors.black),pattern.stripes2,Coordinates(46.77307336, 15.6994585),
       'Waldstadion',7152,1946,_country.austria,69.6,[]];
-    map[n.rapidviena] = [ClubColors(Colors.green,Colors.white),pattern.dividedHor,Coordinates(48.19810877, 16.2660961),
+    map[n.rapidwien] = [ClubColors(Colors.green,Colors.white),pattern.dividedHor,Coordinates(48.19810877, 16.2660961),
       'Allianz Stadion',28000,1899,_country.austria,70.5,[]];
     map[n.rbsalzburg] = [ClubColors(Colors.white,Colors.red),pattern.solid,Coordinates(47.8163615, 12.9986015),
       'Red Bull Arena',31895,2005,_country.austria,74.4,[]];

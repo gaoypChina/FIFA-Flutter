@@ -74,7 +74,7 @@ List clubsAllNameList = [
 
   ClubName().anderlecht,  ClubName().brugge,  ClubName().standardliege,ClubName().genk,ClubName().gent,
   ClubName().celtic,  ClubName().rangers,
-  ClubName().rbsalzburg,  ClubName().rapidviena,
+  ClubName().rbsalzburg,  ClubName().rapidwien,
   ClubName().basel,ClubName().youngboys,ClubName().zurich,
   ClubName().rosenborg,  ClubName().malmo, ClubName().ifkgoteborg,
   ClubName().copenhague,  ClubName().midtjylland,
@@ -120,7 +120,7 @@ List clubsAllNameList = [
   ClubName().lanus,  ClubName().newells,  ClubName().racing,  ClubName().riverplate,
   ClubName().rosario,  ClubName().sanlorenzo,  ClubName().talleres,  ClubName().velez,
   ClubName().huracan,ClubName().gimnasia,ClubName().unionsantafe,ClubName().godoycruz,
-  ClubName().atleticotucuman,ClubName().tigre,
+  ClubName().atleticotucuman,ClubName().tigre,ClubName().patronato,
 
   //MERCOSUL
   ClubName().penarol,  ClubName().nacional,  ClubName().montevideocity, ClubName().danubio,
@@ -135,11 +135,11 @@ List clubsAllNameList = [
   ClubName().imedellin,  ClubName().oncecaldas, ClubName().millonarios,  ClubName().santafe,
   ClubName().tolima,
   //equador
-  ClubName().idelvalle,
+  ClubName().idelvalle, ClubName().aucas,
   ClubName().barcelonaequ,  ClubName().emelec,  ClubName().ldu,
   //venezuela
   ClubName().caracas,ClubName().tachira,ClubName().laguaira,
-  ClubName().metropolitanos,ClubName().monagas,
+  ClubName().metropolitanos,ClubName().monagas,ClubName().estudiantesmerida,
 
   //MÉXICO
   ClubName().americamex,  ClubName().chivas, ClubName().cruzazul,  ClubName().monterrey,
@@ -164,14 +164,16 @@ List clubsAllNameList = [
   ClubName().aljazira,  ClubName().jeonbuk, ClubName().alnassr,
   ClubName().alain,ClubName().alwahda, ClubName().alshabab,
   ClubName().alsadd,  ClubName().alduhail, ClubName().alrayyan,
-  ClubName().alahli,  ClubName().alhilal,ClubName().alIttihad,
+  ClubName().alhilal,ClubName().alIttihad,
   ClubName().persepolis,
 
   ClubName().melbournevictory,ClubName().sydneyFC,ClubName().auckland,
 
   ClubName().alahly, ClubName().zamalek,ClubName().rajacasablanca,ClubName().wydad,
-  ClubName().esperance,ClubName().essetif,
+  ClubName().esperance, ClubName().essetif,
+  ClubName().belouizdad, ClubName().omdurman,
   ClubName().mamelodi,  ClubName().orlandopirates,  ClubName().kaizer,
   ClubName().mazembe, ClubName().agosto,  ClubName().cotonsport,
+
 
 ];

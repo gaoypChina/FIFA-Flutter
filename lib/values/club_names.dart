@@ -1169,7 +1169,7 @@ class ClubName{
   String pasching = "Pasching";
   String radenthein = "WSG Radenthein";
   String rbsalzburg = "RB Salzburg";
-  String rapidviena = "Rapid Viena";
+  String rapidwien = "Rapid Wien";
   String rapidoberlaa = "Rapid Oberlaa";
   String ried = "SV Ried";
   String salzburgak = "Salzburg AK 1914";
@@ -1349,7 +1349,7 @@ class ClubName{
   String goztepe = "Göztepe";
   String hacettepe = "Hacettepe";
   String hatayspor = "Hatayspor";
-  String istanbulbasaksehir = "İstanbul Başakşehir";
+  String istanbulbasaksehir = "Instanbul Basaksehir";
   String istanbulspor = "İstanbulspor";
   String izmirspor = "İzmirspor";
   String kahramanmarassporas = "Kahramanmaraşspor A.Ş.";

@@ -450,7 +450,7 @@ String getAppClubName(String name, String leagueName, LeagueOfficialNames l){
   //AUSTRIA
   else if(name == "Austria Wien"){    name = n.austria;  }
   else if(name == "LASK"){    name = n.lasklinz;  }
-  else if(name == "Rapid Wien"){    name = n.rapidviena;  }
+  else if(name == "Rapid Wien"){    name = n.rapidwien;  }
   else if(name == "Red Bull Salzburg"){    name = n.rbsalzburg;  }
   else if(name == "WSG Tirol"){    name = n.wsgtirol;  }
   //AZERBAIJAO

@@ -52,8 +52,6 @@ class ReadCSV{
       //CORRIGE A POSIÇÃO
       position = correctPlayerPostion(position);
 
-      imagePlayer = correctImageUrl(imagePlayer);
-
       //VARIAVEIS GLOBAIS
       int clubIndex = clubsAllNameList.indexOf(club);
       if(clubIndex >= 0) { //se o clube existir e estiver cadastrado certo
@@ -67,9 +65,11 @@ class ReadCSV{
         playerBasicInfo.overall = overall;
         playerBasicInfo.nationality = nationality;
         playerBasicInfo.imageUrl = imagePlayer;
-        if(playerBasicInfo.imageUrl == "wiki/missing_player.jpg"){
+        if(playerBasicInfo.imageUrl == "wiki/missing_player.jpg"
+              || playerBasicInfo.imageUrl.contains("header/default.jpg?lm=1")){
           playerBasicInfo.imageUrl = "/notfound_0_120.png";
         }
+        playerBasicInfo.imageUrl = correctImageUrl(playerBasicInfo.imageUrl);
 
 
         limitNPlayers(clubIDs,playerBasicInfo, clubIndex);
@@ -97,80 +97,6 @@ class ReadCSV{
       clubIDs.removeLast();
     }
   }
-  //Função antiga de leitura dos csvs
-
-  // readCSVfunc(String filename) async {
-  //   List<List<dynamic>> _data = [];
-  //   try{
-  //     final _rawData   = await rootBundle.loadString("assets/csv/$filename.csv");
-  //     List<List<dynamic>> _listData = const CsvToListConverter().convert(_rawData);
-  //     _data = _listData;
-  //   }catch(e){
-  //     customToast('Arquivo Inexistente: '+ filename);
-  //   }
-  //
-  //   if(_data.length==1){
-  //     customToast('Erro no arquivo '+ filename);
-  //   }
-  //
-  //   for(int line=1;line<30;line++){//*Linha 0 é o nome dos times
-  //     for(int team=0;team<21;team++) { //até 20 times por arquivo
-  //       int nVariables = 7;
-  //       try{
-  //       //Se tiver nome salva o jogador
-  //         String club = _data[0][team * nVariables + 1];
-  //         String name = _data[line][team * nVariables + 1].toString();
-  //         String position = _data[line][team * nVariables + 2].toString();//VOLMCZAG =>VOL
-  //         int age = int.parse(_data[line][team * nVariables + 3].toString().substring(0,2));
-  //         int overall = int.parse(_data[line][team * nVariables + 4].toString().substring(0,2));
-  //         String nationality = _data[line][team * nVariables + 5].toString();
-  //         String imagePlayer = _data[line][team * nVariables + 6].toString();
-  //
-  //           if (name.isNotEmpty && position.isNotEmpty && age > 10) {
-  //
-  //             //REMOVE L form last character
-  //             if(name[name.length-1]=='L'){name = name.substring(0, name.length - 1);}
-  //             //CORRIGE A POSIÇÃO
-  //             position = correctPlayerPostion(position);
-  //
-  //             imagePlayer = correctImageUrl(imagePlayer);
-  //
-  //             //VARIAVEIS GLOBAIS
-  //             int clubIndex = clubsAllNameList.indexOf(club);
-  //             if(clubIndex >= 0) { //se o clube existir e estiver cadastrado certo
-  //
-  //               PlayerBasicInfo playerBasicInfo = PlayerBasicInfo();
-  //               playerBasicInfo.clubID = clubIndex;
-  //               playerBasicInfo.playerID = indexJog;
-  //               playerBasicInfo.name = name;
-  //               playerBasicInfo.position = position;
-  //               playerBasicInfo.age = age;
-  //               playerBasicInfo.overall = overall;
-  //               playerBasicInfo.nationality = nationality;
-  //               playerBasicInfo.imagePlayer = imagePlayer;
-  //               playerBasicInfo.createNewPlayerToDatabase();
-  //               indexJog++;
-  //
-  //               //test jogadores importados
-  //               // if(club == ClubName().arsenal){
-  //               // print('JOGADOR: $indexJog $name $position $overall $nationality $imagePlayer       ...$club ${clubIndex.toString()}');
-  //               // }
-  //             }else{
-  //               //ERRO NA IMPORTAÇÃO DO TIME
-  //               //Provavelmente falta adicionar o nome do clube em: clubsAllNameList
-  //               //print('ERRO IMPORTAÇÃO JOGADOR: $name $club ${clubIndex.toString()}');
-  //             }
-  //       }
-  //       }catch(e){
-  //         //Jogador com alguma informação errada
-  //         //print('ERROR LOADING DATA: ');
-  //         //print('ERRO DADOS DO JOGADOR:\nName: ${_data[line][team * 5 + 1].toString()} POSIÇÃO: ${_data[line][team * 5 + 2]} Club: ${_data[0][team * 5 + 1]}');
-  //       }
-  //
-  //     }
-  //   }
-  //
-  // }
 
   reorganizeIndexIDs(){
     PlayerBasicInfo playerBasicInfo = PlayerBasicInfo();
@@ -213,6 +139,9 @@ class ReadCSV{
     if(imagePlayer.contains('wiki')){
       imagePlayer = imagePlayer.substring(5,);
       imagePlayer = 'https://cdn.soccerwiki.org/images/player/' + imagePlayer;
+    }
+    else if(imagePlayer.contains("header/")){
+      imagePlayer = "https://img.a.transfermarkt.technology/portrait/" + imagePlayer;
     }
     else{
       imagePlayer = imagePlayer.substring(1,);
