@@ -3253,7 +3253,7 @@ class ClubName{
   String saofranciscoRR = "São Francisco-RR";
   String saogabriel = "São Gabriel";
   String saogoncaloRN = "São Gonçalo-RN"; //RN
-  String saojose = "São José";
+  String saojose = "São José-SP";
   String saojoseAP = "São José-AP";
   String saojoseMA = "São José-MA";
   String saojoseRS = "São José-RS";
@@ -4866,7 +4866,6 @@ class ClubName{
   String easterncompany = "Eastern Company";
   String eldakhleya = "El Dakhleya";
   String elentagelharby = "El Entag El Harby";
-  String elgeish = "El Geish";
   String elgouna = "El Gouna";
   String elkoroum = "El Koroum";
   String elmansoura = "El Mansoura";

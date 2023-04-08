@@ -24,8 +24,8 @@ class Images{
     }else{
       //Logos genericos
       return Padding(
-        padding: EdgeInsets.only(left: _height*0.12,top: _height*0.13,bottom: _height*0.12),
-        child: CrestWidgets(size: _height*0.7).getCrest(clubName),
+        padding: EdgeInsets.only(left: _height*0.07,right: _height*0.07,top: _height*0.13,bottom: _height*0.12),
+        child: CrestWidgets(size: _height*0.77).getCrest(clubName),
       );
     }
   }

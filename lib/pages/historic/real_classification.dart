@@ -2,15 +2,19 @@ import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
+import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/historic/leagues_historic.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/club_names.dart';
+import 'package:fifa/values/historic_champions/historic_champions.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/back_button.dart';
+import 'package:fifa/widgets/bottom_sheet_league_classification.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:html/parser.dart' as parser;
+import 'package:http/http.dart' as http;
 
 class RealClassificationPage extends StatefulWidget {
   const RealClassificationPage({Key? key}) : super(key: key);
@@ -237,7 +241,29 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
 
           Column(
             children: [
-              backButtonText(context,'Tabela de Classificação'),
+              Row(
+                children: [
+                  backButtonText(context,'Tabela de Classificação'),
+                  const Spacer(),
+                  Container(
+                    color: Colors.red,
+                    height:25,
+                    width:25,
+                    child: GestureDetector(
+                      onTap:(){
+                        List classificationNames = mapChampions(choosenLeagueName)[ano-1];
+                        bottomSheetShowLeagueClassification(context, classificationNames);
+                      }
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top:20.0),
+                    child: IconButton(onPressed: (){
+                      navigatorPush(context, HistoricLeague(choosenLeagueName: choosenLeagueName));
+                    }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
+                  )
+                ],
+              ),
               Expanded(
                 child: ListView.builder(
                   shrinkWrap: true,
@@ -278,21 +304,37 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
 
 Widget rowTile(int index,Map data){
     String clubName = data['team'];
-    return GestureDetector(
-      onTap: (){
-        clickClub(context: context, clubName: clubName);
-    },
-      child: ListTile(
-        visualDensity: const VisualDensity(horizontal: 0, vertical: -2),
-        leading: Text((index + 1).toString(),style: EstiloTextoBranco.text16),
-        title: Row(
+    return Container(
+      padding: const EdgeInsets.only(top:5, bottom: 5),
+      color: ClubDetails().getColors(clubName).primaryColor.withOpacity(0.5),
+      child: GestureDetector(
+        onTap: (){
+          clickClub(context: context, clubName: clubName);
+      },
+        child: Row(
           children: [
-            Images().getEscudoWidget(clubName, 30,30),
-            Text(clubName, style: EstiloTextoBranco.text20),
+            SizedBox(
+              width: 30,
+              child: Text((index + 1).toString(),style: EstiloTextoBranco.negrito18)),
+            Images().getEscudoWidget(clubName, 45,45),
+            Container(width: 4),
+            SizedBox(
+              width: 150,
+              child: Text(clubName, style: EstiloTextoBranco.text16),),
+            SizedBox(
+              width: 30,
+              child: Text(data['points'],style: EstiloTextoBranco.negrito18)),
+            Container(width: 4),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('OVR: ${ClubDetails().getOverall(clubName).toStringAsFixed(1)}',style: EstiloTextoBranco.negrito14),
+                const Text('J  V  E  D   GM GS SG',style: EstiloTextoBranco.text12),
+                Text('${data['matchs']} ${data['win']} ${data['draw']} ${data['loss']}    ${data['GM']}  ${data['GS']}  ${data['SG']}',style: EstiloTextoBranco.text12),
+              ],
+            ),
           ],
         ),
-        subtitle: Text('OVR: ${ClubDetails().getOverall(clubName).toStringAsFixed(1)}\nJ: ${data['matchs']} W: ${data['win']}, D: ${data['draw']}, L: ${data['loss']} GM: ${data['GM']} GS: ${data['GS']} SG: ${data['SG']}',style: EstiloTextoBranco.text12),
-        trailing: Text(data['points'],style: EstiloTextoBranco.negrito18),
       ),
     );
 }
@@ -678,6 +720,7 @@ String getAppClubName(String name, String leagueName, LeagueOfficialNames l){
   else if(name == "Novorizontino"){    name = n.novorizontino;  }
   else if(name == "Operário Ferroviário"){    name = n.operarioPR;  }
   else if(name == "Portuguesa" && leagueName == l.brasil1){    name = n.portuguesa;  }
+  else if(name == "São José" && leagueName == l.brasil3){    name = n.saojoseRS;  }
   else if(name == "Ypiranga"){    name = n.ypirangaRS;  }
   //ARGENTINA
   else if(name == "Estudiantes (LP)"){    name = n.estudiantes;  }

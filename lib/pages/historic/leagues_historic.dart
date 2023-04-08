@@ -12,6 +12,7 @@ import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/back_button.dart';
+import 'package:fifa/widgets/bottom_sheet_league_classification.dart';
 import 'package:flutter/material.dart';
 
 import '../../values/historic_champions/historic_champions.dart';
@@ -289,11 +290,11 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                 String clubName = Club(index: clubID).name;
                 classificationNames.add(clubName);
               }
-              bottomSheetShowLeagueClassification(classificationNames);
+              bottomSheetShowLeagueClassification(context, classificationNames);
             }else{
 
               List classificationNames = mapChampions(choosenLeagueName)[year];
-              bottomSheetShowLeagueClassification(classificationNames);
+              bottomSheetShowLeagueClassification(context, classificationNames);
             }
           },
           child: SizedBox(width:24, child: Images().getEscudoWidget(clubName,24,24)));
@@ -315,39 +316,6 @@ class _HistoricLeagueState extends State<HistoricLeague> {
         child: funcFlagsList(getCountryFromLeague(leagueName), 35, 50),
       ),
     );
-  }
-
-
-  bottomSheetShowLeagueClassification(List classificationNames){
-    return showModalBottomSheet(
-        barrierColor: Colors.transparent,
-        context: context, builder: (c){
-      return SingleChildScrollView(
-          child: Column(
-            children: [
-
-              for(int i=0; i<classificationNames.length;i++)
-                GestureDetector(
-                  onTap: (){
-                    clickClub(classificationNames[i]);
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child: Row(
-                      children: [
-                        SizedBox(width:35,child: Text((i+1).toString()+'º ',textAlign: TextAlign.right,style:EstiloTextoPreto.text16)),
-                        Padding(
-                          padding: const EdgeInsets.all(6.0),
-                          child: Images().getEscudoWidget(classificationNames[i],30,30),
-                        ),
-                        Text(classificationNames[i],style:EstiloTextoPreto.text16),
-                      ],
-                    ),
-                  ),
-                ),
-            ],
-          ));
-    });
   }
 
   rankBestClubs(){
