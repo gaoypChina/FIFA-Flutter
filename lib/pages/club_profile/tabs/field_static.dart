@@ -192,14 +192,16 @@ class _StaticFieldState extends State<StaticField> {
               child: Stack(
                 children: [
 
-                  //Uniforme
+                  //Uniforme/Player Image
                   Center(
                     child: (player.injury >0 || player.redCard >0)
                         ? Opacity(
                         opacity: 0.4,
                         child: Images().getUniformWidget(player.clubName,imageSize-15,imageSize+15),
                     )
-                        : globalHasInternet ? Image.network(player.imageUrl) : Images().getUniformWidget(player.clubName,imageSize-15,imageSize+15),
+                        : globalHasInternet
+                          ? Images().getPlayerPictureWidget(player)
+                          : Images().getUniformWidget(player.clubName,imageSize-15,imageSize+15),
                   ),
 
                   //CIRCULO

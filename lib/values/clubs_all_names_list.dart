@@ -89,7 +89,7 @@ List clubsAllNameList = [
   ClubName().qarabag,ClubName().astana,ClubName().vardar,ClubName().sherifftiraspol,
   ClubName().estrelavermelha,  ClubName().partizan,  ClubName().ludogorets,  ClubName().cskasofia,
   ClubName().shakhtardonetsk,  ClubName().dinamokiev,
-  ClubName().spartapraga,  ClubName().slaviaPraha, ClubName().viktoriaPlzen,
+  ClubName().spartapraga,  ClubName().slaviapraha, ClubName().viktoriaplzen,
   ClubName().dinamozagreb,ClubName().cluj,ClubName().slovanbratislava,ClubName().ferencvaros,
   ClubName().steauabucuresti,ClubName().maccabitelaviv,
 

@@ -10,7 +10,7 @@ ClubName clubName = ClubName();
 List defaultChampionsLeagueClubs = [
   clubName.ajax,clubName.liverpool,clubName.napoli,clubName.rangers,
   clubName.porto,clubName.atleticomadrid,clubName.leverkusen,clubName.brugge,
-  clubName.bayernmunique,clubName.barcelona,clubName.inter,clubName.slaviaPraha,
+  clubName.bayernmunique,clubName.barcelona,clubName.inter,clubName.slaviapraha,
   clubName.eintrachtfrankfurt,clubName.tottenham,clubName.sporting,clubName.om,
   clubName.milan,clubName.chelsea,clubName.rbsalzburg,clubName.dinamozagreb,
   clubName.realmadrid,clubName.rbleipzig,clubName.shakhtardonetsk,clubName.celtic,
@@ -30,25 +30,25 @@ List defaultEuropaLeagueClubs = [
 ];
 
 List defaultLibertadoresClubs = [
-  clubName.flamengo,clubName.racing,clubName.aucas,clubName.lau,
-  clubName.nacional,clubName.internacional,clubName.metropolitanos,clubName.imedellin,
-  clubName.palmeiras,clubName.barcelonaequ,clubName.bolivar,clubName.cerroporteno,
-  clubName.riverplate,clubName.fluminense,clubName.thestrongest,clubName.sportingcristal,
-  clubName.idelvalle,clubName.corinthians,clubName.argentinojuniors,clubName.montevideocity,
-  clubName.bocajuniors,clubName.colocolo,clubName.monagas,clubName.deportivocali,
-  clubName.atleticopr,clubName.libertad,clubName.alianzalima,clubName.atleticomg,
-  clubName.olimpia,clubName.atleticonacional,clubName.melgar,clubName.patronato,
+  clubName.flamengo,clubName.lau,clubName.racing,clubName.aucas,
+  clubName.nacional,clubName.imedellin,clubName.internacional,clubName.metropolitanos,
+  clubName.palmeiras,clubName.cerroporteno,clubName.barcelonaequ,clubName.bolivar,
+  clubName.riverplate,clubName.sportingcristal,clubName.fluminense,clubName.thestrongest,
+  clubName.idelvalle,clubName.montevideocity,clubName.corinthians,clubName.argentinojuniors,
+  clubName.bocajuniors,clubName.deportivocali,clubName.colocolo,clubName.monagas,
+  clubName.atleticopr,clubName.atleticomg,clubName.libertad,clubName.alianzalima,
+  clubName.atleticonacional,clubName.melgar,clubName.olimpia,clubName.patronato,
 ];
 
 List defaultSulAmericanaClubs = [
-  clubName.ldu,clubName.botafogo,clubName.monterrey,clubName.lagalaxy,
-  clubName.emelec,clubName.guaraniPAR,clubName.danubio,clubName.huracan,
-  clubName.estudiantes,clubName.bragantino,clubName.orientepetrolero,clubName.toluca,
-  clubName.saopaulo,clubName.tolima,clubName.tigre,clubName.caracas,
-  clubName.santos,clubName.newells,clubName.atlanta,clubName.cienciano,
-  clubName.penarol,clubName.defensayjusticia,clubName.americamg,clubName.millonarios,
-  clubName.santafe,clubName.universitario,clubName.goias,clubName.gimnasia,
-  clubName.sanlorenzo,clubName.palestino,clubName.estudiantesmerida,clubName.fortaleza,
+  clubName.ldu,clubName.monterrey,clubName.botafogo,clubName.lagalaxy,
+  clubName.emelec,clubName.huracan,clubName.guaraniPAR,clubName.danubio,
+  clubName.estudiantes,clubName.toluca,clubName.bragantino,clubName.orientepetrolero,
+  clubName.tolima,clubName.tigre,clubName.saopaulo,clubName.caracas,
+  clubName.newells,clubName.atlanta,clubName.santos,clubName.cienciano,
+  clubName.defensayjusticia,clubName.americamg,clubName.penarol,clubName.millonarios,
+  clubName.santafe,clubName.gimnasia,clubName.universitario,clubName.goias,
+  clubName.sanlorenzo,clubName.fortaleza,clubName.palestino,clubName.estudiantesmerida,
 ];
 
 ///////////////////////////////////////////////////////////
@@ -142,11 +142,11 @@ Map clubNameMapImmutable = {
     8: clubName.trabzonspor,9: clubName.apoel,10:clubName.maccabitelaviv,11:clubName.vardar,
   },
   LeagueOfficialNames().ligaEuropa : {
-    0: clubName.celtic,1: clubName.rangers,2: clubName.slaviaPraha,3: clubName.spartapraga,
+    0: clubName.celtic,1: clubName.rangers,2: clubName.slaviapraha,3: clubName.spartapraga,
     4: clubName.basel,5: clubName.zurich,6: clubName.youngboys,7: clubName.legiawarszawa,
     8: clubName.rapidwien,9: clubName.rbsalzburg,10: clubName.malmo,11: clubName.midtjylland,
     12: clubName.copenhague,13: clubName.molde,14: clubName.rosenborg,15: clubName.helsinki,
-    16: clubName.viktoriaPlzen,17: clubName.ifkgoteborg,
+    16: clubName.viktoriaplzen,17: clubName.ifkgoteborg,
   },
   LeagueOfficialNames().lesteEuropeu : {
     0: clubName.cska,1: clubName.dinamoMoscou,2: clubName.krasnodar,3: clubName.lokomotivMoscou,

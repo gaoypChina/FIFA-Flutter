@@ -101,9 +101,15 @@ class Images{
   Widget getWallpaper(){
     return Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill);
   }
+
   Image getPlayerPictureWidget(Jogador player,[double height = 50,double width=50]){
     return globalHasInternet
-        ? Image.network(player.imageUrl,height: height, width: width, fit: BoxFit.fill)
+        ? Image.network(player.imageUrl,height: height, width: width, fit: BoxFit.fill,
+      errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
+        // Return a fallback image when the original image fails to load
+        return Image.asset('assets/icons/generic_user.png',height: height, width: width, fit: BoxFit.fill);
+      },
+    )
         : Image.asset('assets/icons/generic_user.png',height: height, width: width, fit: BoxFit.fill);
   }
 

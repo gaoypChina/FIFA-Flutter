@@ -423,17 +423,17 @@ class Chaves{
   List obterChaveGrupoInternacional(int semana){
     List chave = [];
     if(semana == semanasGruposInternacionais[0])
-    {chave = [1,2,3,0];         }
+    {chave = [3,0, 1,2,];         }
     else if(semana == semanasGruposInternacionais[1])
-    { chave = [0,1,2,3];       }
+    { chave = [0,1, 2,3];       }
     else if(semana == semanasGruposInternacionais[2])
-    {chave = [1,3,0,2];        }
+    {chave = [1,3, 2,0];         }
     else if(semana == semanasGruposInternacionais[3])
-    {chave = [1,0,3,2];         }
+    {chave = [1,0, 3,2];         }
     else if(semana == semanasGruposInternacionais[4])
-    {chave = [2,1,0,3];       }
+    {chave = [3,1, 0,2];        }
     else if(semana == semanasGruposInternacionais[5])
-    {chave = [3,1,2,0];           }
+    {chave = [2,1, 0,3];        }
 
     return chave; //lista dos adversario
   }

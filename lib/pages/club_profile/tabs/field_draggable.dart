@@ -255,7 +255,9 @@ class _FieldDraggableState extends State<FieldDraggable> {
                         opacity: 0.4,
                         child: Images().getMyUniform(height: imageSize-15,width: imageSize+15)
                     )
-                        : globalHasInternet ? Image.network(player.imageUrl) : Images().getMyUniform(height: imageSize-15,width: imageSize+15),
+                        : globalHasInternet 
+                          ? Images().getPlayerPictureWidget(player)
+                          : Images().getMyUniform(height: imageSize-15,width: imageSize+15),
                   ),
 
                   //CIRCULO

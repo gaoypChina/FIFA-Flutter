@@ -517,7 +517,7 @@ String imageLogo(String timeFoto) {
     //SWEDEN
     map[_name.malmo] = 'malmo';
     map[_name.aik] = 'aik';
-    map[_name.djurgarden] = 'djurgarden';
+    map[_name.djurgardens] = 'djurgardens';
     map[_name.elfsborg] = 'elfsborg';
     map[_name.hacken] = 'hacken';
     map[_name.hammarby] = 'hammarby';
@@ -686,7 +686,7 @@ String imageLogo(String timeFoto) {
     //EX-URSS
     map[_name.shakhtardonetsk] = 'shaktar';
     map[_name.dinamokiev] = 'dinamokiev';
-    map[_name.desnachernihiv] = 'desna';
+    map[_name.dnipro1] = 'dnipro1';
     map[_name.dnipro] = 'dnipro';
     map[_name.lviv] = 'lviv';
     map[_name.metalist1925kharkiv] = 'metalist';
@@ -763,7 +763,7 @@ String imageLogo(String timeFoto) {
     map[_name.partizan] = 'partizan';
     map[_name.cukaricki] = 'cukaricki';
     map[_name.radnik] = 'radnik';
-    map[_name.radnicki] = 'radnicki';
+    map[_name.radnickinis] = 'radnicki';
     map[_name.vojvodina] = 'vojvodina';
     //BULGARIA
     map[_name.beroe] = 'beroe';
@@ -782,7 +782,7 @@ String imageLogo(String timeFoto) {
     map[_name.osijek] = 'osijek';
     //ESLOVAQUIA
     map[_name.dac1904] = 'dac1904';
-    map[_name.interBratislava] = 'inter bratislava';
+    map[_name.interbratislava] = 'inter bratislava';
     map[_name.slovanbratislava] = 'slovan bratislava';
     map[_name.trnava] = 'trnava';
     map[_name.zilina] = 'zilina';
@@ -798,12 +798,12 @@ String imageLogo(String timeFoto) {
     map[_name.brno] = 'brno';
     map[_name.dukla] = 'dukla';
     map[_name.jablonec] = 'jablonec';
-    map[_name.slaviaPraha] = 'slavia praha';
+    map[_name.slaviapraha] = 'slavia praha';
     map[_name.slovacko] = 'slovacko';
-    map[_name.slovanLiberec] = 'slovan liberec';
+    map[_name.slovanliberec] = 'slovan liberec';
     map[_name.spartapraga] = 'spartapraga';
     map[_name.teplice] = 'teplice';
-    map[_name.viktoriaPlzen] = 'viktoria';
+    map[_name.viktoriaplzen] = 'viktoria';
     //HUNGRIA
     map[_name.ferencvaros] = 'ferencvaros';
     map[_name.debreceni] = 'debreceni';
@@ -815,10 +815,10 @@ String imageLogo(String timeFoto) {
     map[_name.ujpest] = 'ujpest';
     map[_name.vasas] = 'vasas';
     //ROMENIA
-    map[_name.argesPitesti] = 'arges pitesti';
+    map[_name.argespitesti] = 'arges pitesti';
     map[_name.cluj] = 'cluj';
     map[_name.craiova] = 'craiova';
-    map[_name.dinamoBucuresti] = 'dinamo bucuresti';
+    map[_name.dinamobucuresti] = 'dinamo bucuresti';
     map[_name.otelul] = 'otelul';
     map[_name.rapidbucuresti] = 'rapid bucuresti';
     map[_name.steauabucuresti] = 'steaua bucareste';
@@ -1342,7 +1342,7 @@ String imageLogo(String timeFoto) {
     map[_name.henan] = 'henan';
     map[_name.liaoning] = 'liaoning';
     map[_name.nantong] = 'nantong';
-    map[_name.qingdao] = 'qingdao';
+    map[_name.qingdaofc] = 'qingdao';
     map[_name.shandong] = 'shandong_luneng';      
     map[_name.shanghaisipg] = 'shanghai';
     map[_name.shanghaishenhua] = 'shanghai shenhua';
@@ -1439,7 +1439,7 @@ String imageLogo(String timeFoto) {
     map[_name.chonburi] = 'chonburi';
     map[_name.muangthong] = 'muangthong';
     map[_name.pathum] = 'pathum';
-    map[_name.becToroSasana] = 'police tero';
+    map[_name.policetero] = 'police tero';
     map[_name.portFC] = 'portfc';
     map[_name.ratchaburi] = 'ratchaburi';
     //INDIA
@@ -1507,7 +1507,7 @@ String imageLogo(String timeFoto) {
     map[_name.hanoi] = 'hanoi';
     //LEBANON
     map[_name.alahed] = 'al ahed';
-    map[_name.alAnsar] = 'al ansar';
+    map[_name.alansar] = 'al ansar';
     map[_name.nejmeh] = 'nejmeh';
     //MALASYA
     map[_name.johorDarul] = 'johor';
@@ -1524,8 +1524,8 @@ String imageLogo(String timeFoto) {
     map[_name.ulaanbaatar] = 'ulaanbaatar city';
     //SIRIA
     map[_name.alkaramah] = 'al karamah';
-    map[_name.alJaish] = 'al jaish';
-    map[_name.alShortaDamascus] = 'al shorta';
+    map[_name.aljaish] = 'al jaish';
+    map[_name.alshortadamascus] = 'al shorta';
     map[_name.tishreen] = 'tishreen';
     //TAJIKISTAN
     map[_name.istiklol] = 'istiklol';
