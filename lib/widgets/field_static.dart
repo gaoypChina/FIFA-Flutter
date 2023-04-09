@@ -264,7 +264,9 @@ Widget playerWidgetMatch(int jogadorIndex, String clubName){
 
             Container(
                 alignment: Alignment.topCenter,
-                child: globalHasInternet ? Image.network(jogadorClass.imageUrl,height: headSize,width: headSize) : Container(),
+                child: globalHasInternet
+                    ? Images().getPlayerPictureWidget(jogadorClass, headSize, headSize)
+                    : Container(),
             ),
 
 

@@ -3,7 +3,6 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/classes/table_matchs_control.dart';
-import 'package:fifa/pages/table_international/widget_bottom.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
@@ -20,6 +19,7 @@ class TableMatchs extends StatefulWidget {
 
 class _TableMatchsState extends State<TableMatchs> {
 
+  My my = My();
   String leagueInternational = '';
   int rodadaShow = semanasGruposInternacionais.contains(semana)
                     ? semanasGruposInternacionais.indexOf(semana)+1
@@ -31,7 +31,6 @@ class _TableMatchsState extends State<TableMatchs> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
-    leagueInternational = widget.leagueInternational;
     super.initState();
   }
 ////////////////////////////////////////////////////////////////////////////
@@ -39,6 +38,7 @@ class _TableMatchsState extends State<TableMatchs> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
+    leagueInternational = widget.leagueInternational;
     return Scaffold(
 
       body:  Stack(
@@ -48,7 +48,6 @@ class _TableMatchsState extends State<TableMatchs> {
 
             Column(
                 children: [
-                  const SizedBox(height: 30),
 
                   //TABELA
                   Expanded(
@@ -62,15 +61,6 @@ class _TableMatchsState extends State<TableMatchs> {
 
                   chooseRodada(),
 
-                  customWidgetBottomBar(
-                      context,
-                      WidgetBottomInternational().partidas,
-                      leagueInternational,
-                          (value){
-                        setState(() {});
-                        leagueInternational=value;
-                      }
-                  ),
 
                 ]),
 
@@ -120,7 +110,7 @@ class _TableMatchsState extends State<TableMatchs> {
   }
   TableRow groupRow(int groupNumber, int nConfronto){
     MatchResultInternational match = MatchResultInternational(rodadaNumber: rodadaShow-1,groupNumber: groupNumber, nConfronto: nConfronto, competitionName: leagueInternational);
-    My my = My();
+
 
     String teamNameA = match.clubName1;
     String teamNameB =  match.clubName2;

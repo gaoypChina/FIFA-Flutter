@@ -14,8 +14,8 @@ class ReadCSV{
   openCSV() async{
 
     customToast('Loading CSV Files...');
-    resetOnLoadData();
     resetData();
+    resetOnLoadData();
 
     //READ CSV
     indexJog = 0;

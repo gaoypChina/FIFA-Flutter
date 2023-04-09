@@ -1,10 +1,9 @@
 import 'package:fifa/classes/functions/name.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/mata_mata/mata_mata_class.dart';
+import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/pages/table_international/widget_bottom.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/background_image/backimage_international_league.dart';
@@ -27,7 +26,6 @@ class _TableMataMataState extends State<TableMataMata> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
-    leagueInternational = widget.leagueInternational;
     super.initState();
   }
 ////////////////////////////////////////////////////////////////////////////
@@ -35,6 +33,7 @@ class _TableMataMataState extends State<TableMataMata> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
+    leagueInternational = widget.leagueInternational;
     return Scaffold(
 
       body:  Stack(
@@ -44,8 +43,6 @@ class _TableMataMataState extends State<TableMataMata> {
 
             Column(
                 children: [
-                  const SizedBox(height: 30),
-
                   Expanded(
                     child: Center(
                       child: Container(
@@ -66,15 +63,6 @@ class _TableMataMataState extends State<TableMataMata> {
                   ),
 
 
-                  customWidgetBottomBar(
-                      context,
-                      WidgetBottomInternational().matamata,
-                      leagueInternational,
-                          (value){
-                        setState(() {});
-                        leagueInternational=value;
-                      }
-                  ),
 
                 ]),
 

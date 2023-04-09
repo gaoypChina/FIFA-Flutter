@@ -127,11 +127,12 @@ resetOnLoadData(){
     InternationalLeague().resetAll();
     InternationalLeague().setDefaultTeams();
   }
+
 }
 
 resetData(){
-  semana= testInitRodada;//testInitRodada = variavel global
-  rodada= testInitRodada;//testInitRodada = variavel global
+  semana = testInitRodada;//testInitRodada = variavel global
+  rodada = testInitRodada;//testInitRodada = variavel global
   alreadyChangedClubThisSeason = false;
 
   //Zera Status dos jogadores

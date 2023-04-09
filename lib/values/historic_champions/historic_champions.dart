@@ -1,4 +1,3 @@
-import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/values/historic_champions/africa.dart';
 import 'package:fifa/values/historic_champions/america.dart';
 import 'package:fifa/values/historic_champions/asia.dart';
@@ -15,53 +14,49 @@ import 'package:fifa/values/historic_champions/supercopa.dart';
 
   Map<double,dynamic> mapChampions(String league){
 
-    customToast('Map Champions');
-    if(mapInternationals[league] != null){
-      return mapInternationals[league];
-    }
+    Map<String, Map<String, dynamic>> allMaps = {
+      "international": mapInternationals,
+      "europa_top_leagues": mapEuropaTopLeagues,
+      "europa": mapEuropa,
+      "america": mapAmerica,
+      "north_america": mapNorthAmerica,
+      "africa": mapAfrica,
+      "asia": mapAsia,
+      "oriente_medio": mapOrienteMedio,
+      "oceania": mapOceania,
+      "estaduais": mapEstaduais,
+      "copas": mapCopas,
+      "other_leagues": mapOtherLeagues,
+      "supercopa": mapSupercopa,
+    };
 
-    if(mapEuropaTopLeagues[league] != null){
-      return mapEuropaTopLeagues[league];
-    }
-    if(mapEuropa[league] != null){
-        return mapEuropa[league];
-    }
-    if(mapAmerica[league] != null){
-        return mapAmerica[league];
-    }
-    if(mapEstaduais[league] != null){
-      return mapEstaduais[league];
-    }
-
-    if(mapNorthAmerica[league] != null){
-      return mapNorthAmerica[league];
-    }
-    if(mapAfrica[league] != null) {
-        return mapAfrica[league];
-    }
-    if(mapAsia[league] != null){
-        return mapAsia[league];
-    }
-    if(mapOrienteMedio[league] != null){
-      return mapOrienteMedio[league];
-    }
-
-    if(mapOceania[league] != null){
-      return mapOceania[league];
-    }
-
-    if(mapCopas[league] != null){
-      //return mapCopas[league];
-    }
-
-    if(mapOtherLeagues[league] != null){
-      //return mapOtherLeagues[league];
-    }
-
-    if(mapSupercopa[league] != null){
-      //return mapSupercopa[league];
-    }
-
-    return {};
+      for (var continentMap in allMaps.values) {
+        if (continentMap.containsKey(league)) {
+          return continentMap[league];
+        }
+      }
+      return {};
 
   }
+
+void saveMapToCsv(String filePath) async {
+    // Função em teste
+  //Carregar as páginas com os mapas demora muito
+  //Estou pensando em pegar eles desses csvs
+  List<List<dynamic>> rows = [];
+
+  // Add header row
+  rows.add(['League', 'Year', 'Teams']);
+
+  mapInternationals.forEach((leagueName, years) {
+    years.forEach((double year, List clubNames) {
+      rows.add([leagueName, year.toStringAsFixed(1), clubNames.toString()]);
+    });
+    //
+  });
+
+  // Write CSV file
+  //File file = File(filePath);
+  //String csv = const ListToCsvConverter().convert(rows);
+  //await file.writeAsString(csv);
+}

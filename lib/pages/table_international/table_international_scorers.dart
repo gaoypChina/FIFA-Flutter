@@ -4,7 +4,6 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/functions/order_list.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/pages/table_international/widget_bottom.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
@@ -34,7 +33,6 @@ class _TableInternationalScorersState extends State<TableInternationalScorers> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
-    leagueInternational = widget.leagueInternational;
     super.initState();
   }
 ////////////////////////////////////////////////////////////////////////////
@@ -42,6 +40,7 @@ class _TableInternationalScorersState extends State<TableInternationalScorers> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
+    leagueInternational = widget.leagueInternational;
 
     return Scaffold(
 
@@ -52,7 +51,6 @@ class _TableInternationalScorersState extends State<TableInternationalScorers> {
 
             Column(
                 children: [
-                  const SizedBox(height: 30),
 
                   //TABELA
                   Expanded(
@@ -80,15 +78,6 @@ class _TableInternationalScorersState extends State<TableInternationalScorers> {
                     ),
                   ),
 
-                  customWidgetBottomBar(
-                      context,
-                      WidgetBottomInternational().artilheiros,
-                      leagueInternational,
-                          (value){
-                        setState(() {});
-                        leagueInternational=value;
-                      }
-                  ),
 
                 ]),
 

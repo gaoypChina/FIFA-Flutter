@@ -4,11 +4,14 @@ import 'package:fifa/classes/international.dart';
 import 'package:fifa/classes/international_league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/click_navigator/click_club.dart';
+import 'package:fifa/pages/table_international/table_international_scorers.dart';
+import 'package:fifa/pages/table_international/table_mata_mata.dart';
+import 'package:fifa/pages/table_international/table_matchs.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/pages/table_international/widget_bottom.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/background_image/backimage_international_league.dart';
 import 'package:flutter/material.dart';
@@ -21,9 +24,10 @@ class TableInternational extends StatefulWidget {
   _TableInternationalState createState() => _TableInternationalState();
 }
 
-class _TableInternationalState extends State<TableInternational> {
+class _TableInternationalState extends State<TableInternational>  with TickerProviderStateMixin {
 
   String leagueInternational = '';
+  late TabController _tabController;
   List clubsID = [];
 
   ////////////////////////////////////////////////////////////////////////////
@@ -36,6 +40,8 @@ class _TableInternationalState extends State<TableInternational> {
     super.initState();
   }
   onStart(){
+    _tabController = TabController(vsync: this, length: 4);
+
     leagueInternational = widget.leagueInternational;
     if(leagueInternational == LeagueOfficialNames().resto){
       leagueInternational = LeagueOfficialNames().championsLeague;
@@ -56,63 +62,111 @@ class _TableInternationalState extends State<TableInternational> {
       }
 
   }
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
+    return DefaultTabController(
+      length: 4,
+      child: Scaffold(
 
-        body:  Stack(
-            children: [
+          body:  Stack(
+              children: [
 
-              backgroundInternationalLeague(leagueInternational),
+                backgroundInternationalLeague(leagueInternational),
 
-              Column(
-                children: [
-                  const SizedBox(height: 30),
+                Column(
+                  children: [
+                    const SizedBox(height: 30),
 
-                      //CLASSIFICAÇÃO
-                      Expanded(
-                        child: Container(
-                          color: AppColors().greyTransparent,
-                          child: SingleChildScrollView(
-                            child: Table(
-                              columnWidths: const{0: FractionColumnWidth(.05),1: FractionColumnWidth(.05),2: FractionColumnWidth(.4)},
-                              children: [
-                            for (int groupNumber = 0; groupNumber < 8; groupNumber++)
-                              for (int i = 0; i < 5; i++)
-                                  if (i == 0)
-                                    groupTitle(groupNumber)
-                                   else
-                                    groupRow(i,4*groupNumber+(i-1))
-                              ],
-                            ),
-                          ),
-                        ),
+                    SizedBox(
+                      height: 30,
+                      child: TabBar(
+                        isScrollable: true,
+                        controller: _tabController,
+                        unselectedLabelColor: Colors.white54,
+                        tabs: [
+                          Tab(text: Translation(context).text.classification),
+                          Tab(text: Translation(context).text.matchs),
+                          Tab(text: Translation(context).text.knockoutStage),
+                          Tab(text: Translation(context).text.topScorers),
+                        ],
                       ),
+                    ),
+
+                    Expanded(
+                      child: TabBarView(
+                        controller: _tabController,
+                        children: [
+                          groupStageTable(),
+                          TableMatchs(leagueInternational: leagueInternational),
+                          TableMataMata(leagueInternational: leagueInternational),
+                          TableInternationalScorers(leagueInternational: leagueInternational),
+                        ],
+                      ),
+                    ),
 
 
-                  customWidgetBottomBar(
-                      context,
-                      WidgetBottomInternational().classificacao,
-                      leagueInternational,
-                          (value){
-                        setState(() {});
-                        leagueInternational=value;
-                        selectTeams();
-                      }
-                  ),
+                    intleagueSelection(),
 
-              ]),
+                ]),
 
-        ]),
+          ]),
+      ),
     );
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Widget intleagueSelection(){
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        intLeagueImage(LeagueOfficialNames().championsLeague),
+        intLeagueImage(LeagueOfficialNames().libertadores),
+        intLeagueImage(LeagueOfficialNames().europaLeagueOficial),
+        intLeagueImage(LeagueOfficialNames().copaSulAmericana),
+      ],
+    );
+  }
+  Widget intLeagueImage(String leagueIntImage){
+    return GestureDetector(
+      onTap: (){
+        leagueInternational = leagueIntImage;
+        selectTeams();
+        setState((){});
+      },
+      child: Container(
+          color: leagueInternational == leagueIntImage ? Colors.deepPurple : Colors.transparent,
+          child: Image.asset(FIFAImages().campeonatoLogo(leagueIntImage), width: 50,height: 50)),
+    );
+  }
+  Widget groupStageTable(){
+    return Container(
+          color: AppColors().greyTransparent,
+          child: SingleChildScrollView(
+            child: Table(
+              columnWidths: const{0: FractionColumnWidth(.05),1: FractionColumnWidth(.05),2: FractionColumnWidth(.4)},
+              children: [
+                for (int groupNumber = 0; groupNumber < 8; groupNumber++)
+                  for (int i = 0; i < 5; i++)
+                    if (i == 0)
+                      groupTitle(groupNumber)
+                    else
+                      groupRow(i,4*groupNumber+(i-1))
+              ],
+            ),
+          ),
+        );
+  }
+
 TableRow groupTitle(int groupNumber){
     String groupLetter = 'A';
     if(groupNumber==1){groupLetter='B';}

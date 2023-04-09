@@ -25,6 +25,7 @@ funcChangeClub(String newClubName, int newLeagueID){
   globalHistoricCoachResults['actualSequenceVictory'] = 0;
   globalHistoricCoachResults['actualSequenceNoLosses'] = 0;
 
+
 }
 
 funcCalculateMoney({required double overall}){

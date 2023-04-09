@@ -31,12 +31,13 @@ class InternationalLeague{
   // SET
   ///////////////////////////////////////////////////////
   setDefaultTeams(){
-    if(semana<semanasJogosInternacionais[0] && ano==anoInicial || semanasJogosInternacionais[0]==1) {
+    // Tirar essa parte comentada
+    //if(semana<semanasJogosInternacionais.first && ano==anoInicial || semanasJogosInternacionais.first==1) {
       for (var internationalName in internationalLeagueNames) {
         reset32Zeros(internationalName);
         defineDefaultTeams(internationalName);
       }
-    }
+    //}
   }
   defineDefaultTeams(String leagueInternational){
       for(int i=0; i<32; i++) {

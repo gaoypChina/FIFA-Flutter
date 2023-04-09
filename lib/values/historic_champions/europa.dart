@@ -1942,7 +1942,7 @@ Map<String,dynamic> mapEuropa = {
     2001.0: [n.pyunik,n.zvartnotsaal,n.spartakyerevan,n.shirak,n.araratyerevan,n.mika,n.urartu,n.lernagortskapan,n.ulisses,n.kotayk,n.karabakhyerevan,n.lorivanadzor,n.kilikia],
     2000.0: [n.araksararat,n.araratyerevan,n.shirak,n.mika,n.zvartnotsaal,n.kilikia,n.lernagortskapan,n.ulisses,n.yerevan,n.erebunihomenmen],
     1999.0: [n.shirak,n.araratyerevan,n.araksararat,n.zvartnotsaal,n.yerevan,n.erebunihomenmen,n.kilikia,n.dvinartashat,n.gyumri,n.karabakhstepanakert],
-    1998.0: [n.shirak,n.araksararat,n.yerevan,n.erebunihomenmen,n.araratyerevan,n.pyunik,n.dvinartashat,n.karabakhyerevan,n.aragats,n.kotayk],
+    1998.0: [n.araksararat,n.shirak,n.yerevan,n.erebunihomenmen,n.araratyerevan,n.pyunik,n.dvinartashat,n.karabakhyerevan,n.aragats,n.kotayk],
     1997.0: [n.pyunik,n.araratyerevan,n.yerevan,n.shirak,n.araksararat,n.vanyerevan,n.kotayk,n.karabakhyerevan,n.erebunihomenmen,n.arabkir,n.zangezour,n.bkmayerevan],
     1996.0: [n.pyunik,n.shirak,n.yerevan,n.araratyerevan,n.araksararat,n.kotayk,n.karabakhyerevan,n.vanyerevan,n.erebunihomenmen,n.zangezour,n.aragats,n.aznavour],
     1995.0: [],
