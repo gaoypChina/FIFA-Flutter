@@ -1,11 +1,19 @@
 import 'package:fifa/classes/classification.dart';
+import 'package:fifa/classes/club.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/league_divisions.dart';
 import 'package:fifa/values/league_names.dart';
 
 class CupClassification{
+  String keyClassificados = "Classificados";
+  String keyPrePhase = "Pre-fase";
 
-  setClubs(String leagueName){
-    definePrePhaseTeams(getDivisionClassification(leagueName), leagueName);
+  setClubs(){
+    globalCup = {};
+    for (String leagueName in getAvailableLeaguesNames()){
+      Map<String, Map<String, dynamic>> mapa = definePrePhaseTeams(getDivisionClassification(leagueName), leagueName);
+      globalCup = {...globalCup, ...mapa};
+    }
   }
   getDivisionClassification(String leagueName){
     List<String> divisionLeagueNames = Divisions().leagueDivisionsStructure(leagueName);
@@ -22,28 +30,53 @@ class CupClassification{
     return listAllClubsClassificationsInLeague;
   }
 
-  definePrePhaseTeams(List allTeamsLeague, String leagueName){
+  Map<String, Map<String, dynamic>> definePrePhaseTeams(List allTeamsLeague, String leagueName){
     List classified = [];
     List prePhase = [];
     if(allTeamsLeague.length>=4 && allTeamsLeague.length<8){
-       classified = allTeamsLeague.take(4).toList();
+       classified = allTeamsLeague.sublist(0, allTeamsLeague.length - 4).toList();
     }
     else if(allTeamsLeague.length>=8 && allTeamsLeague.length<16){
-       classified = allTeamsLeague.take(8).toList();
+       classified = allTeamsLeague.sublist(0, allTeamsLeague.length - 8).toList();
     }
     else if(allTeamsLeague.length>=16 && allTeamsLeague.length<32){
-       classified = allTeamsLeague.take(16).toList();
+       classified = allTeamsLeague.sublist(0, allTeamsLeague.length - 16).toList();
     }
     else if(allTeamsLeague.length>=32 && allTeamsLeague.length<64){
-       classified = allTeamsLeague.take(32).toList();
+       classified = allTeamsLeague.sublist(0, allTeamsLeague.length - 32).toList();
     }
     else if(allTeamsLeague.length>=64){
-       classified = allTeamsLeague.take(64).toList();
+       classified = allTeamsLeague.sublist(0, allTeamsLeague.length - 64).toList();
     }
-    prePhase = (classified + allTeamsLeague).toSet().toList();
 
-    Map mapa = {leagueName: {"Classificados": classified, "Pre-fase": prePhase}};
+    prePhase = allTeamsLeague.where((team) => !classified.contains(team)).toList();
+
+    Map<String, Map<String, dynamic>> mapa = {};
+    mapa = {getCup(leagueName): {
+                  "Classificados": classified,
+                  "Pre-fase": prePhase,
+    }};
     return mapa;
+  }
+
+  List<Club> getListClubsPrePhase(String cupName){
+    Map<String, dynamic>? cupData = globalCup[cupName];
+    List clubsIDs = cupData![CupClassification().keyPrePhase];
+    List<Club> clubs = [];
+    for (int clubID in clubsIDs) {
+      clubs.add(Club(index: clubID));
+    }
+    return clubs;
+  }
+
+  List<Club> getListClubsClassificados(String cupName){
+    Map<String, dynamic>? cupData = globalCup[cupName];
+    List clubsIDs = cupData![CupClassification().keyClassificados];
+    List<Club> clubs = [];
+    for (int clubID in clubsIDs) {
+      clubs.add(Club(index: clubID));
+    }
+    return clubs;
   }
 
 }

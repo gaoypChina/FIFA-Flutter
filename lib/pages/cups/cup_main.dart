@@ -45,6 +45,7 @@ class _CupMainState extends State<CupMain> with TickerProviderStateMixin{
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
+    String leagueName = leaguesMap[choosenLeagueIndex].getName();
 
     return DefaultTabController(
       length: 3,
@@ -75,7 +76,7 @@ class _CupMainState extends State<CupMain> with TickerProviderStateMixin{
                     child: TabBarView(
                       controller: _tabController,
                       children: [
-                        cupPhaseWidget(),
+                        cupPhaseWidget(context, getCup(leagueName)),
                         cupBrackets(context),
                         const CupStatistics(),
                       ],

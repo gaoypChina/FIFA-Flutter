@@ -24,7 +24,7 @@ class _CupStatisticsState extends State<CupStatistics> {
           Row(
             children: [
               buttonSelection("Artilheiros"),
-              buttonSelection("Assistencias"),
+              buttonSelection("Assistências"),
               buttonSelection("Melhor Jogador"),
             ],
           ),
@@ -50,7 +50,7 @@ class _CupStatisticsState extends State<CupStatistics> {
                 child: Column(
                   children: [
                     for(int i=1;i<=50;i++)
-                      rowPlayer(Jogador(index: i*37),i),
+                      rowPlayer(Jogador(index: i*37), i),
                   ],
                 ),
               ),
@@ -65,8 +65,9 @@ class _CupStatisticsState extends State<CupStatistics> {
   Widget rowPlayer(Jogador player, int result){
     return Row(
       children: [
-        Images().getEscudoWidget(player.clubName,20,20),
-        SizedBox(width:120,child: Text(player.name,style: EstiloTextoBranco.text14)),
+        SizedBox(width: 35,child: Text(result.toString()+"- ",style: EstiloTextoBranco.text14)),
+        SizedBox(width:180,child: Text(player.name,style: EstiloTextoBranco.text14)),
+        Images().getEscudoWidget(player.clubName,25,25),
         Text(result.toString(),style: EstiloTextoBranco.text14),
       ],
     );

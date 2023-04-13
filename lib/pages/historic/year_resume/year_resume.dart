@@ -50,7 +50,11 @@ class _YearResumeState extends State<YearResume> {
 
           Column(
             children: [
-              backButtonText(context,'Resumo do ano'),
+              Row(
+                children: [
+                  backButtonText(context,'Resumo do ano'),
+                ],
+              ),
 
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -65,6 +69,7 @@ class _YearResumeState extends State<YearResume> {
                   ],
                 ),
               ),
+
               int.parse(selectedYear) < anoInicial ?  SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: internationalChampionsSelection(),

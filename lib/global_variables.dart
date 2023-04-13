@@ -174,6 +174,10 @@ Map globalInternationalMataMataGoals = {};
 //Clubs IDs: Champions, Libertadores, Europa League e SulAmericana
 Map globalInternational = {};
 
+///////////////////////////
+//COPA
+Map<String, Map<String, dynamic>> globalCup = {};
+
 /////////////////////
 //POSITIONS
 List<String> globalAllPositions = ['GOL','ZAG','LE','LD','VOL','MC','MEI','ME','MD','PE','ATA','PD'];

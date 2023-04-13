@@ -200,7 +200,7 @@ class _StaticFieldState extends State<StaticField> {
                         child: Images().getUniformWidget(player.clubName,imageSize-15,imageSize+15),
                     )
                         : globalHasInternet
-                          ? Images().getPlayerPictureWidget(player)
+                          ? Images().getPlayerPictureWidget(player,imageSize-15,imageSize+15)
                           : Images().getUniformWidget(player.clubName,imageSize-15,imageSize+15),
                   ),
 

@@ -32,29 +32,32 @@ class DatabaseButton extends StatefulWidget {
 class _DatabaseButtonState extends State<DatabaseButton> {
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap:() async{
-        bool sucessLoadingDatabase = false;
-        while(!sucessLoadingDatabase){
-          globalSaveNumber++;
-          if(globalSaveNumber == globalMaxSavesPermitted+1){
-            globalSaveNumber=0;
-          }
-          await SharedPreferenceHelper().savesharedSaveNumber(globalSaveNumber);
+    return
+    Material(
+    color: Colors.transparent,
+    child: InkWell(
+    customBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+    onTap: () async{
+      bool sucessLoadingDatabase = false;
+      while(!sucessLoadingDatabase){
+        globalSaveNumber++;
+      if(globalSaveNumber == globalMaxSavesPermitted+1){
+        globalSaveNumber=0;
+      }
+      await SharedPreferenceHelper().savesharedSaveNumber(globalSaveNumber);
 
-          customToast('${Translation(context).text.loading} Database $globalSaveNumber...');
-          try {
-            await SelectDatabase().load();
-            sucessLoadingDatabase = true;
-          }catch(e){
-            customToast('Erro no carregamento do Database $globalSaveNumber');
-          }
+      customToast('${Translation(context).text.loading} Database $globalSaveNumber...');
+      try {
+      await SelectDatabase().load();
+        sucessLoadingDatabase = true;
+      }catch(e){
+        customToast('Erro no carregamento do Database $globalSaveNumber');
+      }
+      }
 
-        }
-
-        setState(() {});
-      },
-      child: Container(
+    setState(() {});
+    },
+    child: Container(
         padding: const EdgeInsets.all(4),
         decoration: decoratorHomeButtons(),
         child: Column(
@@ -66,34 +69,40 @@ class _DatabaseButtonState extends State<DatabaseButton> {
           ],
         ),
       ),
-    );
+    ));
   }
 }
 
 Widget editClub(BuildContext context, int clubID){
   return
-    GestureDetector(
-      onTap: (){
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) => CustomizePlayers(clubID: clubID)));
-      },
-      child: Container(
-        padding: const EdgeInsets.all(4),
-        decoration: decoratorHomeButtons(),
-        child: Column(
-          children: [
-            const Icon(Icons.edit,color:Colors.white,size:40),
-            Text(Translation(context).text.editTeam,style: EstiloTextoBranco.text14)
-          ],
+      Material(
+        color: Colors.transparent,
+        child: InkWell(
+        customBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+        onTap: (){
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => CustomizePlayers(clubID: clubID)));
+        },
+        child: Container(
+          padding: const EdgeInsets.all(4),
+          decoration: decoratorHomeButtons(),
+          child: Column(
+            children: [
+              const Icon(Icons.edit,color:Colors.white,size:40),
+              Text(Translation(context).text.editTeam,style: EstiloTextoBranco.text14)
+            ],
+          ),
         ),
-      ),
-    );
+      ));
 }
 
 Widget configurations(BuildContext context){
-  return GestureDetector(
-    onTap: (){
-      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Configuration()));
-    },
+  return Material(
+      color: Colors.transparent,
+      child: InkWell(
+          customBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+      onTap: (){
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Configuration()));
+      },
     child: Container(
       padding: const EdgeInsets.all(4),
       decoration: decoratorHomeButtons(),
@@ -104,16 +113,19 @@ Widget configurations(BuildContext context){
         ],
       ),
     ),
-  );
+  ));
 }
 
 Widget moreOptions(BuildContext context){
   return
-    GestureDetector(
-      onTap: (){
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Tournament()));
-      },
-      child: Container(
+    Material(
+      color: Colors.transparent,
+      child: InkWell(
+      customBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+  onTap: (){
+  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Tournament()));
+  },
+  child: Container(
         padding: const EdgeInsets.all(4),
         decoration: decoratorHomeButtons(),
         child: Column(
@@ -123,7 +135,7 @@ Widget moreOptions(BuildContext context){
           ],
         ),
       ),
-    );
+    ));
 }
 
 BoxDecoration decoratorHomeButtons(){

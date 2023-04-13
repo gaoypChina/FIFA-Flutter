@@ -1,6 +1,5 @@
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/jogador.dart';
-import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/images.dart';

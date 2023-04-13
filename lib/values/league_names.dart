@@ -80,7 +80,7 @@ class LeagueOfficialNames{
   String alagoas = 'Alagoano'; String paraiba = 'Paraibano'; String piaui = 'Piaui'; String maranhao = 'Maranhão'; String sergipe = 'Sergipe';
   String goias = 'Goias'; String df = 'Distrito Federal'; String mt = 'Mato Grosso'; String ms = 'Mato Grosso do Sul'; String to = 'Tocantins';
   String para = 'Para'; String amazonas = 'Amazonas'; String acre = 'Acre'; String amapa = 'Amapa';String rondonia = 'Rondônia';String roraima = 'Roraima';
-  String argentina = 'Campeonato Argentino';String sulamericano = 'Sul-Americano';
+  String argentina = 'Primera División';String sulamericano = 'Sul-Americano';
   String mercosul = 'Mercosul';
   String colombia = 'Merconorte';
   String uruguai = 'Campeonato uruguaio';
@@ -351,6 +351,8 @@ List leaguesListRealIndex = [
   1,2,3,5,6, 7,8,  9,10,11,12,15,25,16, 20,21,    50,51,52,53, 60,61,62,   70,71,  80, 85, 90
 ];
 
+
+
 List getAvailableLeaguesNames(){
   List availableLeaguesNames = [];
   leaguesIndexFromName.forEach((leagueName, leagueID) {
@@ -376,11 +378,10 @@ List leagueNames = [
   LeagueOfficialNames().brasil1,LeagueOfficialNames().brasil2,LeagueOfficialNames().brasil3,
   LeagueOfficialNames().brasil4,
   LeagueOfficialNames().argentina,LeagueOfficialNames().mercosul,LeagueOfficialNames().colombia,
-  LeagueOfficialNames().mexico,LeagueOfficialNames().estadosUnidos,LeagueOfficialNames().costaRica,
+  LeagueOfficialNames().mexico,LeagueOfficialNames().estadosUnidos,
   LeagueOfficialNames().asia,LeagueOfficialNames().orienteMedio,LeagueOfficialNames().africa,
   LeagueOfficialNames().outros,
 ];
-
 
 Map leaguesIndexFromName = {
   LeagueOfficialNames().inglaterra1: 1,
