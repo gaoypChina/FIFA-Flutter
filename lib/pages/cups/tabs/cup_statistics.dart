@@ -17,10 +17,10 @@ class _CupStatisticsState extends State<CupStatistics> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
+    return Column(
         children: [
 
+          const SizedBox(height: 6),
           Row(
             children: [
               buttonSelection("Artilheiros"),
@@ -28,17 +28,16 @@ class _CupStatisticsState extends State<CupStatistics> {
               buttonSelection("Melhor Jogador"),
             ],
           ),
+          const SizedBox(height: 6),
 
           statisticsBox(typeSelected),
         ],
-      ),
     );
   }
 
   Widget statisticsBox(String title){
     return Flexible(
       child: Container(
-        height: 200,
         color: AppColors().greyTransparent,
         padding: const EdgeInsets.all(2),
         margin: const EdgeInsets.all(4),
@@ -50,7 +49,7 @@ class _CupStatisticsState extends State<CupStatistics> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    for(int i=1;i<=20;i++)
+                    for(int i=1;i<=50;i++)
                       rowPlayer(Jogador(index: i*37),i),
                   ],
                 ),

@@ -66,7 +66,7 @@ class _TableInternationalScorersState extends State<TableInternationalScorers> {
                             Row(
                               children: [
                                 Container(width:260,alignment:Alignment.center,
-                                    child: Text(Translation(context).text.topScorers,style: EstiloTextoBranco.text16)),
+                                    child: Text(typeSelected,style: EstiloTextoBranco.text16)),
                                 Text('${Translation(context).text.playedP}   ${Translation(context).text.goalsG}    ${Translation(context).text.assistsA}',style: EstiloTextoBranco.text16),
 
                               ],

@@ -49,7 +49,25 @@ class _FieldDraggableState extends State<FieldDraggable> {
               children: [
 
                 //Widget do campo
-                fieldWidget(),
+                Stack(
+                  children: [
+                    fieldWidget(),
+
+                    Padding(
+                    padding: const EdgeInsets.only(top:310),
+                    child: button(title: 'Auto-organize',
+                        function: (){
+                          setState(() {});
+                          myClub.optimizeBestSquadClub();
+                          globalMyJogadores = myClub.escalacao;
+                          widget.notifyParent();
+                          my = My();
+
+                        })
+                    ),
+
+                  ],
+                ),
 
                 const SizedBox(height: 4),
                 Container(
@@ -94,23 +112,6 @@ class _FieldDraggableState extends State<FieldDraggable> {
                     children: [
                       button(title: Translation(context).text.ovr3, function: (){setState(() {});show = 'OVR';}),
                       button(title: Translation(context).text.age, function: (){setState(() {});show = 'Idade';}),
-                      button(title: 'Auto-organize',
-                          function: (){
-                            setState(() {});
-                            myClub.optimizeBestSquadClub();
-                            globalMyJogadores = myClub.escalacao;
-                            widget.notifyParent();
-                            my = My();
-
-                          }),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(top:4.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
                       button(title: Translation(context).text.matchs, function: (){setState(() {});show = 'Jogos';}),
                       button(title: Translation(context).text.goals, function: (){setState(() {});show = 'Gols';}),
                       button(title: Translation(context).text.assists, function: (){setState(() {});show = 'Assists';}),
@@ -256,7 +257,7 @@ class _FieldDraggableState extends State<FieldDraggable> {
                         child: Images().getMyUniform(height: imageSize-15,width: imageSize+15)
                     )
                         : globalHasInternet 
-                          ? Images().getPlayerPictureWidget(player)
+                          ? Images().getPlayerPictureWidget(player, imageSize-15, imageSize-15)
                           : Images().getMyUniform(height: imageSize-15,width: imageSize+15),
                   ),
 

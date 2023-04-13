@@ -50,19 +50,19 @@ Widget cupMatchRow(Confronto confronto, My my){
     children: [
 
       //TIME A
-      Column(
-        children: [
-          Row(
-            children: [
-              Images().getUniformWidget(teamNameA,imageSize,imageSize),
-              Container(
-                  color: teamNameA == my.clubName ? Colors.green : Colors.transparent,
-                  child: Text(teamNameA,textAlign:TextAlign.end,style: EstiloTextoBranco.text14)),
-              Images().getEscudoWidget(teamNameA,imageSize,imageSize),
-            ],
+          Flexible(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Images().getUniformWidget(teamNameA,imageSize,imageSize),
+                const Spacer(),
+                Container(
+                    color: teamNameA == my.clubName ? Colors.green : Colors.transparent,
+                    child: Text(teamNameA,textAlign:TextAlign.end,style: EstiloTextoBranco.text14)),
+                Images().getEscudoWidget(teamNameA,imageSize,imageSize),
+              ],
+            ),
           ),
-        ],
-      ),
 
 
       golsA >= 0
@@ -70,21 +70,19 @@ Widget cupMatchRow(Confronto confronto, My my){
           : const Text('X',textAlign:TextAlign.center,style: EstiloTextoBranco.text22),
 
       //TIME B
-      Column(
-        children: [
-          Row(
-            children: [
-              Images().getEscudoWidget(teamNameB,imageSize,imageSize),
-              Container(
-                color: teamNameB == my.clubName ? Colors.green : Colors.transparent,
-                child: Text(teamNameB,style: EstiloTextoBranco.text14),
-              ),
-              Images().getUniformWidget(teamNameB,imageSize,imageSize),
-            ],
+          Flexible(
+            child: Row(
+              children: [
+                Images().getEscudoWidget(teamNameB,imageSize,imageSize),
+                Container(
+                  color: teamNameB == my.clubName ? Colors.green : Colors.transparent,
+                  child: Text(teamNameB,style: EstiloTextoBranco.text14),
+                ),
+                const Spacer(),
+                Images().getUniformWidget(teamNameB,imageSize,imageSize),
+              ],
+            ),
           ),
-
-        ],
-      ),
 
 
     ],

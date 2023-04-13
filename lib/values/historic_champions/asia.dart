@@ -296,7 +296,9 @@ Map<String,dynamic> mapAsia = {
     2008.0: [n.buriram,n.chonburi,n.policetero,n.samutPrakan,],
     2007.0: [n.muangthong,],
     2006.0: [n.muangthong,],
-
+    2005.0: [],
+    2004.0: [],
+    2003.0: [],
     2002.0: [n.policetero,],
     2001.0: [],
     2000.0: [n.policetero,],
@@ -311,12 +313,13 @@ Map<String,dynamic> mapAsia = {
     1991.0: [],
     1990.0: [n.thai,],
     1989.0: [n.bangkokBank,],
-
+    1988.0: [],
     1987.0: [n.thaiAirForce,],
     1986.0: [n.bangkokBank,],
-
+    1985.0: [],
     1984.0: [n.bangkokBank,],
-
+    1983.0: [],
+    1982.0: [],
     1981.0: [n.bangkokBank,],
   },
 
@@ -376,16 +379,6 @@ Map<String,dynamic> mapAsia = {
     1972.0: [],
     1971.0: [],
     1970.0: [],
-    1969.0: [],
-    1968.0: [],
-    1967.0: [],
-    1966.0: [],
-    1965.0: [],
-    1964.0: [],
-    1963.0: [],
-    1962.0: [],
-    1961.0: [],
-    1960.0: [],
   },
 
   leagueName.filipinas : {

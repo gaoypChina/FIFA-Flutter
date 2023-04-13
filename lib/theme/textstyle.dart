@@ -185,6 +185,15 @@ abstract class EstiloTextoPreto {
   );
 }
 
+abstract class EstiloTextoVinho {
+  static const TextStyle negrito16 = TextStyle(
+    color: Colors.red,
+    fontFamily: 'Roboto',
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
+  );
+}
+
 abstract class EstiloTextoVermelho {
   static const TextStyle text40 = TextStyle(
     color: Colors.redAccent,
@@ -255,6 +264,12 @@ abstract class EstiloTextoVerde {
     color: Colors.green,
     fontFamily: 'Roboto',
     fontSize: 14,
+  );
+  static const TextStyle negrito16 = TextStyle(
+    color: Colors.green,
+    fontFamily: 'Roboto',
+    fontSize: 16,
+    fontWeight: FontWeight.bold,
   );
   static const TextStyle underline14 = TextStyle(
     color: Colors.green,

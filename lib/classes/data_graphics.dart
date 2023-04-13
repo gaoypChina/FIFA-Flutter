@@ -36,6 +36,7 @@ class DataGraphics{
   int nTitulos = 0;
   int n2ndivision = 0;
   int n1ndivision = 0;
+  int g2Years = 0;
   int g4Years = 0;
   int g10Years = 0;
   int g20Years = 0;
@@ -159,10 +160,12 @@ class DataGraphics{
       }
     }
   }
-  defineHistoricClassification(String clubName, String leagueName){
+  defineHistoricClassification(String clubName, String leaguename){
 
     //NOME DAS DIVISÕES
-    List<String> divisionLeagueNames = Divisions().leagueDivisionsStructure(leagueName);
+    List<String> divisionLeagueNames = Divisions().leagueDivisionsStructure(leaguename);
+    leagueName = divisionLeagueNames.first;
+
     //MAPA COM O HISTÓRICO DE CLASSIFICAÇÃO DE CADA DIVISÃO
     List<Map<double,dynamic>> listDivisionsHistoricResults = [];
     for( String division in divisionLeagueNames){
@@ -232,6 +235,9 @@ class DataGraphics{
   }
 
   addGxCount(int position){
+    if(position <= 2){
+      g2Years ++;
+    }
     if(position <= 4){
       g4Years ++;
     }
@@ -333,7 +339,7 @@ class DataGraphics{
       List finalClassificationIDs = HistoricChampionsLeague().get32finalClassificationIDs(i, internationalLeague);
 
       //verifica se naquele ano tem o time
-      int position = 32;
+      int position = 33;
       if(finalClassificationIDs.contains(club.index)){
         position = finalClassificationIDs.indexOf(club.index) + 1;
       }
@@ -347,7 +353,7 @@ class DataGraphics{
     for(var keyYear in mapChampions(internationalLeagueName).keys) {
       List classificationNames = mapChampions(internationalLeagueName)[keyYear];
       //verifica se naquele ano tem o time
-      int position = 32;
+      int position = 33;
       if(classificationNames.contains(clubName)){
         position = classificationNames.indexOf(clubName) + 1;
       }
@@ -358,7 +364,7 @@ class DataGraphics{
 
   participationsInternational(){
     for(ClassificationData classificationData in dataInternational){
-      if(classificationData.position<32){
+      if(classificationData.position<33){
         participationInternational++;
       }
       if(classificationData.position==1){

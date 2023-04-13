@@ -83,22 +83,26 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
               children: [
 
                 //BACK BUTTON
-                Row(
-                  children: [
-                    backButtonText(context, widget.clubName),
-                    const Spacer(),
-                    isPlayableClub ? Padding(
-                      padding: const EdgeInsets.only(top:20.0),
-                      child: IconButton(onPressed: (){
-                           Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: clubsAllNameList.indexOf(widget.clubName))));
-                      }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
-                    ) : Container(),
-                  ],
+                Container(
+                  color: clubdetails.getColors(widget.clubName).primaryColor.withOpacity(0.7),
+                  child: Row(
+                    children: [
+                      backButtonText(context, widget.clubName),
+                      const Spacer(),
+                      isPlayableClub ? Padding(
+                        padding: const EdgeInsets.only(top:20.0),
+                        child: IconButton(onPressed: (){
+                             Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: clubsAllNameList.indexOf(widget.clubName))));
+                        }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
+                      ) : Container(),
+                    ],
+                  ),
                 ),
 
                 //HEADER
-                Padding(
-                  padding: const EdgeInsets.only(left: 8.0),
+                Container(
+                  padding: const EdgeInsets.only(left: 8.0,top: 8),
+                  color: clubdetails.getColors(widget.clubName).primaryColor.withOpacity(0.3),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -172,7 +176,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
 
         totalTrophyWidget(widget.clubName, dataGraphics),
 
-        positionYears(widget.clubName, dataGraphics, 1),
+        predictions(dataGraphics.data),
 
       ],
     );
@@ -208,7 +212,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Container(
-        height: 280,
+        height: 260,
         width: dataGraphics.dataInternational.length * 35 + 50,
         color: AppColors().greyTransparent,
         child: SfCartesianChart(
@@ -218,8 +222,9 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
           primaryXAxis: CategoryAxis(),
           series: <ChartSeries>[
             // Initialize line series
+            //CAMPEONATO NACIONAL
             LineSeries<ClassificationData, String>(
-              onPointTap: (ChartPointDetails tapDetails) {
+              onPointLongPress: (ChartPointDetails tapDetails) {
                 int year = ano - tapDetails.pointIndex! - 1;
                 //GET LEAGUE NAME
                 Map leagueNationality = getLeagueNationalityMap();
@@ -255,8 +260,9 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
             ),
 
             // Initialize line series
+            //CHAMPIONS LEAGUE
             LineSeries<ClassificationData, String>(
-              onPointTap: (ChartPointDetails tapDetails) {
+              onPointLongPress: (ChartPointDetails tapDetails) {
                 int year = ano - tapDetails.pointIndex! - 1;
                 List classificationNames = mapChampions(dataGraphics.internationalLeagueName)[year];
                 bottomSheetShowLeagueClassification(context, classificationNames);
@@ -293,27 +299,32 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          dataGraphics.dataEstadual.isNotEmpty ? trophyColumn("Estadual", dataGraphics.nTitulosEstadual) : Container(),
-          trophyColumn(dataGraphics.cupName, dataGraphics.nTitulosCups),
-          trophyColumn(dataGraphics.leagueName, dataGraphics.nTitulos),
-          trophyColumn(dataGraphics.internationalLeagueName, dataGraphics.nTitulosInternational),
-          trophyColumn(LeagueOfficialNames().mundial, dataGraphics.nTitulosMundial),
+          dataGraphics.dataEstadual.isNotEmpty ? trophyColumn("Estadual", dataGraphics.dataEstadual, dataGraphics.nTitulosEstadual) : Container(),
+          trophyColumn(dataGraphics.cupName, dataGraphics.dataCups, dataGraphics.nTitulosCups),
+          trophyColumn(dataGraphics.leagueName, dataGraphics.data, dataGraphics.nTitulos),
+          trophyColumn(dataGraphics.internationalLeagueName, dataGraphics.dataInternational, dataGraphics.nTitulosInternational),
+          trophyColumn(LeagueOfficialNames().mundial, dataGraphics.dataMundial, dataGraphics.nTitulosMundial),
         ],
       ),
     );
   }
 
-  Widget trophyColumn(String leagueName, int titles){
-    return SizedBox(
-      width: 70,
-      height: 130,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(leagueName.toString(), style: EstiloTextoBranco.text12),
-          Images().getTrophy(leagueName,60,60),
-          Text(titles.toString(), style: EstiloTextoBranco.text20),
-        ],
+  Widget trophyColumn(String leagueName, List<ClassificationData> classificationData, int titles){
+    return GestureDetector(
+      onTap:(){
+        bottomSheetShowTitles(context, leagueName, classificationData);
+      },
+      child: SizedBox(
+        width: 70,
+        height: 130,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(leagueName.toString(), style: EstiloTextoBranco.text12),
+            Images().getTrophy(leagueName,60,60),
+            Text(titles.toString(), style: EstiloTextoBranco.text20),
+          ],
+        ),
       ),
     );
   }
@@ -328,6 +339,18 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
 
+          //G-2
+          Column(
+            children: [
+              const Text('G-2', style: EstiloTextoBranco.text14),
+              Text(Translation(context).text.years,
+                  style: EstiloTextoBranco.text14),
+              const SizedBox(height: 6),
+              Text(dataGraphics.g2Years.toString(),
+                  style: EstiloTextoBranco.text20),
+            ],
+          ),
+
           //G-4
           Column(
             children: [
@@ -336,6 +359,18 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
                   style: EstiloTextoBranco.text14),
               const SizedBox(height: 6),
               Text(dataGraphics.g4Years.toString(),
+                  style: EstiloTextoBranco.text20),
+            ],
+          ),
+
+          //G-10
+          Column(
+            children: [
+              const Text('G-10', style: EstiloTextoBranco.text14),
+              Text(Translation(context).text.years,
+                  style: EstiloTextoBranco.text14),
+              const SizedBox(height: 6),
+              Text(dataGraphics.g10Years.toString(),
                   style: EstiloTextoBranco.text20),
             ],
           ),
@@ -380,37 +415,6 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
         ],
       ),
     );
-  }
-
-  Widget positionYears(String clubName, DataGraphics dataGraphics, int position) {
-    List championYear = [];
-
-    for(ClassificationData data in dataGraphics.data)
-      {
-        if(data.position==position){
-          championYear.add(data.year.toStringAsFixed(0));
-        }
-      }
-    if(championYear.isNotEmpty){
-      return Container(
-        width: Sized(context).width,
-        color: AppColors().greyTransparent,
-        margin: const EdgeInsets.all(4),
-        padding: const EdgeInsets.all(4),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            position == 1
-                ? const Text('Campeão:',style: EstiloTextoBranco.negrito16)
-                : Text(position.toString()+'º',style: EstiloTextoBranco.negrito16) ,
-            Text(championYear.toString(),style: EstiloTextoBranco.text14),
-          ],
-        ),
-      );
-    }else{
-      return Container();
-    }
-
   }
 
   Widget heatMapPositions(String name, List<ClassificationData> dataClassificationList){
@@ -471,9 +475,9 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
         const SizedBox(height: 6),
         const Text('Desempenho por ano',style: EstiloTextoBranco.negrito16,),
         const SizedBox(height: 6),
-        const Text('ANO  EST         COPA        NAC    INT                             ',style: EstiloTextoBranco.text16,),
+        const Text('   ANO   EST         COPA         NAC           INT',style: EstiloTextoBranco.text16,),
         SizedBox(
-          height: 230,
+          height: 220,
           child: ListView.builder(
             padding: EdgeInsets.zero,
             shrinkWrap: true,
@@ -493,7 +497,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
     String estadual = filter(year,10,dataGraphics.dataEstadual,false);
     String copa = filter(year,10,dataGraphics.dataCups,true);
     String national = filter(year,-1,dataGraphics.data,false);
-    String international = filter(year,32,dataGraphics.dataInternational,true);
+    String international = filter(year,33,dataGraphics.dataInternational,true);
 
     return SizedBox(
       height: 30,
@@ -572,5 +576,68 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
       //print();
     }
     return positionStr;
+  }
+
+  Widget predictions(List<ClassificationData> classificationData){
+    List<int> firstTenPositions = [];
+    for (int i = 0; i < classificationData.length && i < 10; i++) {
+      firstTenPositions.add(classificationData[i].position);
+    }
+    return Container(
+      width: Sized(context).width-8,
+      color: AppColors().greyTransparent,
+      child: Column(
+        children: [
+          const Text("Predição", style: EstiloTextoBranco.negrito16),
+          const SizedBox(height: 8),
+          Text((ano).toString()+" "+predictionValue(firstTenPositions).toString()+"º", style: EstiloTextoBranco.negrito16),
+        ],
+      ),
+    );
+  }
+
+  predictionValue(List values){
+    int value = 0;
+    dynamic soma = 0;
+    for (int i = 0; i < values.length; i++) {
+      soma += values[i] * (values.length-i);
+    }
+    //DA Ainda mais peso pros anos recentes
+    soma += values[0]*15;
+    soma += values[1]*5;
+    soma += values[2]*2;
+    value = soma ~/ values.length;
+    value = value ~/ 9;
+    return value;
+  }
+
+  Future bottomSheetShowTitles(BuildContext context, String leagueName, List<ClassificationData> classificationData){
+    List<int> championYear = [];
+
+    for(ClassificationData data in classificationData)
+    {
+      if(data.position==1){
+        championYear.add(data.year.toInt());
+      }
+    }
+    championYear.sort((a, b) => a == championYear.reduce((x, y) => x > y ? x : y) ? 1 : b == championYear.reduce((x, y) => x > y ? x : y) ? -1 : a - b);
+
+    return showModalBottomSheet(
+        barrierColor: Colors.transparent,
+        context: context, builder: (c){
+      return SingleChildScrollView(
+          child:Padding(
+            padding: const EdgeInsets.all(8),
+            child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              Text('Campeão ' + leagueName,style: EstiloTextoPreto.negrito16),
+              const SizedBox(height: 8),
+              Text(championYear.toString().replaceAll("[", "").replaceAll("]", ""),style: EstiloTextoPreto.text14),
+              const SizedBox(height: 8),
+              ],
+            ),
+          ));
+    });
   }
 }

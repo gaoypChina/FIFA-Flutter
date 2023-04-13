@@ -53,8 +53,7 @@ class _TableMatchsState extends State<TableMatchs> {
                   Expanded(
                     child: Container(
                         color: AppColors().greyTransparent,
-                        height: Sized(context).height*0.9,
-                        width: Sized(context).width*0.92,
+                        width: Sized(context).width*0.94,
                         child: SingleChildScrollView(child: tableWidget())
                     ),
                   ),
@@ -100,7 +99,7 @@ class _TableMatchsState extends State<TableMatchs> {
     if(groupNumber==7){groupLetter='H';}
     return TableRow(
       children: [
-        Text('\n${Translation(context).text.group} ' + groupLetter,style: EstiloTextoBranco.text16),
+        Text('\n${Translation(context).text.group} ' + groupLetter,style: EstiloTextoBranco.negrito16),
         Container(),
         Container(),
         Container(),

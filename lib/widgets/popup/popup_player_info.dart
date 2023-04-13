@@ -56,10 +56,10 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
                     child: Row(
                       children: [
                         SizedBox(
-                          height: 110,width: 110,
+                          height: 110,width: 100,
                           child: Stack(
                             children: [
-                              Images().getPlayerPictureWidget(jogador,95,95),
+                              Images().getPlayerPictureWidget(jogador,95,90),
                               Container(alignment: Alignment.bottomRight,child: funcFlagsList(jogador.nationality, 20,30)),
                               Text(jogador.nationality,style: EstiloTextoBranco.text12),
                               Container(alignment: Alignment.bottomLeft,child: positionContainer(jogador.position,size: 60,style: EstiloTextoPreto.text16)),
@@ -331,14 +331,17 @@ Widget lesoesCartoes(BuildContext context, Jogador jogador){
 Widget value(BuildContext context,Jogador jogador){
   return Container(
     decoration: blackDecoration(),
-    padding: const EdgeInsets.all(8),
     margin: const EdgeInsets.all(4),
-    child: Column(
-      children: [
-        Text('${Translation(context).text.value}: \$'+jogador.price.toStringAsFixed(2),
-            style: (globalMyMoney>jogador.price) ? EstiloTextoVerde.text14 : EstiloTextoVermelho.text20),
-        Text('${Translation(context).text.money}: \$'+My().money.toStringAsFixed(2),style: EstiloTextoBranco.text16),
-      ],
+    child: Container(
+      decoration: blackDecoration(),
+      padding: const EdgeInsets.all(8),
+      child: Column(
+        children: [
+          Text('${Translation(context).text.money}: \$'+My().money.toStringAsFixed(2),style: EstiloTextoBranco.text16),
+          Text('${Translation(context).text.value}: \$'+jogador.price.toStringAsFixed(2),
+              style: (globalMyMoney>jogador.price) ? EstiloTextoVerde.negrito16 : EstiloTextoVinho.negrito16),
+        ],
+      ),
     ),
   );
 }

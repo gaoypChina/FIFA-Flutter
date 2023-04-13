@@ -120,8 +120,8 @@ Widget matchBox(){
     double imageSize = 32;
 
     return Container(
-      height: 90,
-      width: 80,
+      height: 85,
+      width: 72,
       padding: const EdgeInsets.all(4),
       color: AppColors().greyTransparent,
       child: Column(
@@ -129,7 +129,7 @@ Widget matchBox(){
         children: [
           Row(
             children: [
-                    Images().getEscudoWidget(confrontoIda.clubName1,imageSize,imageSize),
+              Images().getEscudoWidget(confrontoIda.clubName1,imageSize,imageSize),
               Images().getEscudoWidget(confrontoIda.clubName2,imageSize,imageSize),
             ],
           ),
