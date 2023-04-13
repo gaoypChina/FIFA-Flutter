@@ -2892,7 +2892,9 @@ class ClubName{
   String autoesportePI = "Auto Esporte-PI";
   String autoesporteAM = "Auto Esporte"; //AM
   String atleticoCE = "Atlético-CE";
+  String atlcatarinense = "Atlético Catarinense";
   String atleticoAC = "Atlético Acreano";
+  String atleticocerrado = "Atlético Cerrado";
   String atleticoMT = "Atlético Matogrossense";
   String atleticoRR = "Atlético Roraima";
   String itapemirim = "Atlético Itapemirim";
@@ -2901,6 +2903,7 @@ class ClubName{
   String aracruz = "Aracruz"; //ES
   String araguacema = "Araguacema"; //TO
   String araguaia = "Araguaia"; //MT
+  String aruko = "Aruko"; //PR
   String carazinho = "Atlético Carazinho";
   String athleticMG = "Athletic";
   String avai = "Avaí";
@@ -2910,6 +2913,7 @@ class ClubName{
   String bage = "Bagé"; //RS
   String bandeirante = "Bandeirante"; //DF
   String bangu = "Bangu";
+  String barbalha = "Barbalha"; //CE
   String baraunas = "Baraúnas";
   String barragarcas = "Barra do Garças"; //MT
   String barcelonaRO = "Barcelona-RO"; //RO
@@ -2917,8 +2921,9 @@ class ClubName{
   String bare = "Baré"; //Roraima
   String barraSC = "Barra-SC"; //SC
   String barras = "Barras"; //PI
+  String belavistaTO = "Bela Vista Cachoeirense"; //TO
   String betim = "Betim";
-  String blumenau = "Blumenau";
+  String blumenau = "Blumenau"; //SC
   String boavistaRJ = "Boavista-RJ";
   String bocaSE = "Boca Júnior";
   String bonsucesso = "Bonsucesso"; //RJ
@@ -2948,6 +2953,7 @@ class ClubName{
   String capela = "Capela"; //AL
   String capelense = "Capelense"; //AL
   String capital = "Capital"; //DF
+  String capitalTO = "Capital TO"; //TO
   String capivariano = "Capivariano"; //SP
   String carlosrenaux = "Carlos Renaux"; //SC
   String cascavel = "Cascavel FC"; //PR
@@ -2991,14 +2997,16 @@ class ClubName{
   String coxim = "Coxim";
   String crac = "CRAC";
   String crb = "CRB";
-  String cruzeiroAL = "Cruzeiro-AL";
+  String cruzeiroAL = "Cruzeiro de Arapiraca";
   String cristalAP = "Cristal-AP"; //AP
   String cruzeiroRS = "Cruzeiro-RS";
   String csa = "CSA"; //AL
   String cse = "CSE"; //AL
   String csp = "Centro Sportivo Paraibano-CSP"; //PB
-  String democrata = "Democrata MG";
+  String democrataGV = "Democrata GV";
+  String democrataSL = "Democrata SL";
   String desportiva = "Desportiva";
+  String desportivoalianca = "Desportivo Aliança"; //CE
   String desportivobrasil = "Desportivo Brasil";
   String docemel = "Doce Mel"; //BA
   String dombosco = "Dom Bosco"; //MT
@@ -3029,6 +3037,7 @@ class ClubName{
   String formiga = "Formiga";
   String foziguacu = "Foz do Iguaçu";
   String francana = "Francana";
+  String frederiquense = "União Frederiquense"; //RS
   String freipaulistano = "Freipaulistano"; //SE
   String friburguense = "Friburguense";
   String galvez = "Galvez";
@@ -3069,6 +3078,7 @@ class ClubName{
   String ibis = "Íbis"; //PB
   String icasa = "Icasa";
   String ilheus = "Colo-Colo Ilhéus";
+  String iguatu = "Iguatu"; //CE
   String imperatriz = "Imperatriz";
   String independenteAP = "Independente"; //AP
   String independencia = "Independência";
@@ -3092,6 +3102,7 @@ class ClubName{
   String jacarezinho = "Jacarezinho"; //PR
   String jacobinense = "Jacobinense"; //BA
   String jacuipense = "Jacuipense";
+  String jacyoba = "Jacyoba"; //AL
   String jaragua = "Jaraguá"; //GO
   String jataiense = "Jataiense"; //GO
   String jiparana = "Ji-Paraná"; //RONDONIA
@@ -3124,6 +3135,7 @@ class ClubName{
   String mamore = "Mamoré";
   String manaus = "Manaus";
   String mandaguari = "Mandaguari";
+  String maracana = "Maracanã"; //CE
   String maranguape = "Maranguape";
   String maranhao = "Maranhão";
   String marciliodias = "Marcílio Dias";
@@ -3142,6 +3154,7 @@ class ClubName{
   String mogimirim = "Mogi Mirim";
   String montealegre = "Monte Alegre"; //PR
   String monteazul = "Monte Azul";
+  String morrinhos = "Morrinhos"; //GO
   String motoclub = "Moto Club";
   String munizfreire = "Muniz Freire"; //ES
   String murici = "Murici"; //AL
@@ -3175,6 +3188,7 @@ class ClubName{
   String palmas = "Palmas";
   String palmeirasBA = "Palmeiras-BA";
   String paragominas = "Paragominas";
+  String paraisoTO = "NC Paraíso"; //TO
   String paranavai = "Paranavaí";
   String paranoa = "Paranoá"; //DF
   String parnahyba = "Parnahyba"; //PIAUI
@@ -3210,6 +3224,7 @@ class ClubName{
   String progressoRR = "Progresso"; //RR
   String prudentina = "Prudentina";
   String prudentopolis = "Prudentópolis"; //PR
+  String queimadense = "Queimadense"; //PB
   String rabello = "Rabello"; //DF
   String radium = "Radium"; //SP
   String remo = "Remo";
@@ -3261,6 +3276,7 @@ class ClubName{
   String saoluizRS = "São Luiz";
   String saomateus = "São Mateus-ES"; //ES
   String saopauloAP = "São Paulo AP";
+  String saopauloPB = "São Paulo Crystal";
   String saopauloRS = "São Paulo RS";
   String saoraimundo = "São Raimundo";
   String saoraimundoPA = "São Raimundo-PA";
@@ -3277,6 +3293,7 @@ class ClubName{
   String santosPB = "Santos-PB"; //AP
   String santanaAP = "Santana"; //AP
   String serjuventude = "SER Juventude"; //MT
+  String serrabranca = "Serra Branca"; //PB
   String serra = "Serra";
   String serrano = "Serrano"; //BA
   String sergipe = "Sergipe";

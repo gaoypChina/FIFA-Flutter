@@ -22,6 +22,8 @@ class TableInternationalScorers extends StatefulWidget {
 
 class _TableInternationalScorersState extends State<TableInternationalScorers> {
 
+  List types = ["Artilheiros", "Assistências", "Best Player"];
+  String typeSelected = "Artilheiros";
   String leagueInternational = '';
   int rodadaShow = semanasGruposInternacionais.contains(semana)
       ? semanasGruposInternacionais.indexOf(semana)+1
@@ -52,6 +54,7 @@ class _TableInternationalScorersState extends State<TableInternationalScorers> {
             Column(
                 children: [
 
+                  selectType(),
                   //TABELA
                   Expanded(
                     child: Container(
@@ -87,6 +90,38 @@ class _TableInternationalScorersState extends State<TableInternationalScorers> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Widget selectType(){
+    return Container(
+      height: 30,
+      margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 4),
+      child: Row(
+        children: [
+          for (String type in types)
+            buttonSelection(type)
+        ],
+      ),
+    );
+  }
+  Widget buttonSelection(String title){
+    return GestureDetector(
+      onTap: (){
+        typeSelected = title;
+        setState((){});
+      },
+      child: Container(
+        padding: const EdgeInsets.all(2),
+        margin: const EdgeInsets.all(2),
+        decoration: BoxDecoration(
+          color: AppColors().greyTransparent,
+          border: Border.all(
+            color: typeSelected == title ? Colors.white : AppColors().greyTransparent,
+            width: 1.0,
+          ),
+        ),
+        child: Text(title, style: EstiloTextoBranco.text16),
+      ),
+    );
+  }
   Widget tableWidget() {
     listOfTopScorers();
     return Column(

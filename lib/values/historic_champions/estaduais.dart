@@ -83,7 +83,7 @@ Map<String,dynamic> mapEstaduais = {
     1950.0: [n.palmeiras,n.saopaulo,n.santos,n.portuguesa,      n.corinthians,n.guarani,n.ypirangaSP,n.juventusMooca,n.xvpiracicaba,n.portuguesasantista,  n.nacionalSP,n.jabaquara],
   },
   leagueName.carioca : {
-    // 2023.0: [n.flamengo,n.fluminense,n.vasco,n.voltaredonda],
+    // 2023.0: [n.fluminense,n.flamengo,n.vasco,n.voltaredonda,  n.botafogo,n.audax,n.novaiguacu,n.portuguesaRJ,n.bangu,n.madureira,   n.boavistaRJ,n.resende],
     2022.0: [n.fluminense,n.flamengo,n.vasco,n.botafogo,],
     2021.0: [n.flamengo,n.fluminense,n.portuguesaRJ,n.voltaredonda,],
     2020.0: [n.flamengo,n.fluminense,n.voltaredonda,n.boavistaRJ,],
@@ -161,8 +161,8 @@ Map<String,dynamic> mapEstaduais = {
 
 
   leagueName.mineiro : {
-    //2023.0: [n.atleticomg,n.athleticMG,n.athleticMG,n.cruzeiro,],
-    2022.0: [n.atleticomg,n.cruzeiro,n.athleticMG,n.caldense,],
+    2023.0: [n.atleticomg,n.americamg,n.athleticMG,n.cruzeiro,   n.tombense,n.villanova,n.pousoalegre,n.democrataGV,n.ipatinga,n.patrocinense,   n.caldense,n.democrataSL],
+    2022.0: [n.atleticomg,n.cruzeiro,n.athleticMG,n.caldense,    n.democrataGV,n.tombense,n.villanova,n.americaMG,n.patrocinense,n.pousoalegre,  n.uberlandia,n.urt],
     2021.0: [n.atleticomg,n.americamg,n.tombense,n.cruzeiro,],
     2020.0: [n.atleticomg,n.tombense,n.americamg,n.caldense,],
     2019.0: [n.cruzeiro,n.atleticomg,n.americamg,n.boaesporte,],
@@ -174,10 +174,10 @@ Map<String,dynamic> mapEstaduais = {
     2013.0: [n.atleticomg,n.cruzeiro,n.tombense,n.villanova,],
     2012.0: [n.atleticomg,n.americamg,n.cruzeiro,n.tupi,],
     2011.0: [n.cruzeiro,n.atleticomg,n.americamg,n.americaMG,],
-    2010.0: [n.atleticomg,n.ipatinga,n.cruzeiro,n.democrata,],
+    2010.0: [n.atleticomg,n.ipatinga,n.cruzeiro,n.democrataGV,],
     2009.0: [n.cruzeiro,n.atleticomg,n.boaesporte,n.riobrancoMG],
     2008.0: [n.cruzeiro,n.atleticomg,n.tupi,n.boaesporte,],
-    2007.0: [n.atleticomg,n.cruzeiro,n.democrata,n.tupi,],
+    2007.0: [n.atleticomg,n.cruzeiro,n.democrataGV,n.tupi,],
     2006.0: [n.cruzeiro,n.ipatinga,n.atleticomg,n.americamg,],
     2005.0: [n.ipatinga,n.cruzeiro,n.urt,n.atleticomg,],
     2004.0: [n.cruzeiro,n.atleticomg,n.americamg,n.caldense,],
@@ -190,10 +190,10 @@ Map<String,dynamic> mapEstaduais = {
     1997.0: [n.cruzeiro,n.villanova,n.americamg,n.social,],
     1996.0: [n.cruzeiro,n.atleticomg,n.caldense,n.villanova,],
     1995.0: [n.atleticomg,n.americamg,n.cruzeiro,n.mamore,],
-    1994.0: [n.cruzeiro,n.atleticomg,n.americamg,n.democrata],
-    1993.0: [n.americamg,n.atleticomg,n.cruzeiro,n.democrata,],
+    1994.0: [n.cruzeiro,n.atleticomg,n.americamg,n.democrataGV],
+    1993.0: [n.americamg,n.atleticomg,n.cruzeiro,n.democrataGV,],
     1992.0: [n.cruzeiro,n.americamg,n.atleticomg,n.riobrancoMG,],
-    1991.0: [n.atleticomg,n.democrata,n.cruzeiro,n.americamg,],
+    1991.0: [n.atleticomg,n.democrataGV,n.cruzeiro,n.americamg,],
     1990.0: [n.cruzeiro,n.atleticomg,n.americamg,n.riobrancoMG],
     1989.0: [n.atleticomg,n.cruzeiro,n.americamg,],
     1988.0: [n.atleticomg,n.cruzeiro,n.fabril,n.valeriodoce,],
@@ -221,15 +221,15 @@ Map<String,dynamic> mapEstaduais = {
     1966.0: [n.cruzeiro,n.atleticomg,n.uberaba,],
     1965.0: [n.cruzeiro,n.americamg,n.siderurgica,n.atleticomg,],
     1964.0: [n.siderurgica,n.americamg,n.cruzeiro,n.uberaba],
-    1963.0: [n.atleticomg,n.democrata,n.cruzeiro,n.siderurgica,],
+    1963.0: [n.atleticomg,n.democrataSL,n.cruzeiro,n.siderurgica,],
     1962.0: [n.atleticomg,n.cruzeiro,n.americamg,n.villanova,],
-    1961.0: [n.cruzeiro,n.americamg,n.atleticomg,n.democrata],
+    1961.0: [n.cruzeiro,n.americamg,n.atleticomg,n.democrataSL],
     1960.0: [n.cruzeiro,n.siderurgica,n.americamg,n.villanova],
-    1959.0: [n.cruzeiro,n.americamg,n.villanova,n.democrata],
+    1959.0: [n.cruzeiro,n.americamg,n.villanova,n.democrataSL],
     1958.0: [n.atleticomg,n.americamg,n.cruzeiro,n.siderurgica],
-    1957.0: [n.americamg,n.democrata,n.atleticomg,n.siderurgica],
+    1957.0: [n.americamg,n.democrataSL,n.atleticomg,n.siderurgica],
     1956.0: [],
-    1955.0: [n.atleticomg,n.democrata,n.americamg,n.siderurgica],
+    1955.0: [n.atleticomg,n.democrataSL,n.americamg,n.siderurgica],
     1954.0: [n.atleticomg,n.cruzeiro,n.americamg,n.siderurgica],
     1953.0: [n.atleticomg,n.villanova,n.siderurgica,n.setembro7],
     1952.0: [n.atleticomg,n.siderurgica,n.americamg,n.villanova],
@@ -320,8 +320,8 @@ Map<String,dynamic> mapEstaduais = {
 
   leagueName.gaucho : {    
     //2024.0: [],
-    //2023.0: [n.gremio,n.caxias,n.ypirangaRS,n.internacional],
-    2022.0: [n.gremio,n.ypirangaRS,n.internacional,n.brasilPelotas,],
+    2023.0: [n.gremio,n.caxias,n.internacional,n.ypirangaRS,        n.juventude,n.saojoseRS,n.brasilPelotas,n.novohamburgo,n.avenida,n.saoluizRS,   n.esportivo,n.aimore],
+    2022.0: [n.gremio,n.ypirangaRS,n.internacional,n.brasilPelotas, n.caxias,n.saojoseRS,n.novohamburgo,n.aimore,n.saoluizRS,n.juventude,    n.frederiquense,n.guaranybage],
     2021.0: [n.gremio,n.internacional,n.juventude,n.caxias,],
     2020.0: [n.gremio,n.caxias,n.internacional,n.esportivo,],
     2019.0: [n.gremio,n.internacional,n.caxias,n.saoluizRS],
@@ -398,7 +398,7 @@ Map<String,dynamic> mapEstaduais = {
 
   leagueName.parana : {    
     //2024.0: [],
-    //2023.0: [n.atleticopr,n.cascavel,n.coritiba,],
+    2023.0: [n.atleticopr,n.cascavel,n.operarioPR,n.maringa,    n.coritiba,n.cianorte,n.aruko,n.saojoseense,n.azuriz,n.londrina,  n.riobrancoPR,n.foziguacu],
     2022.0: [n.coritiba,n.maringaFC,n.operarioPR,n.atleticopr,  n.cascavel,n.londrina,n.cianorte,n.saojoseense,  n.riobrancoPR,n.azuriz, ],
     2021.0: [n.londrina,n.cascavel,n.operarioPR,n.atleticopr,   n.cianorte,n.parana,n.maringaFC,n.azuriz,          n.coritiba,n.riobrancoPR,],
     2020.0: [n.atleticopr,n.coritiba,n.cascavel,n.cianorte,     n.operarioPR,n.londrina,n.riobrancoPR,n.parana,  n.cascavelcr,n.toledoPR,],
@@ -476,7 +476,7 @@ Map<String,dynamic> mapEstaduais = {
 
   leagueName.santacatarina : {    
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [n.criciuma,n.brusque,n.hercilioluz,n.barraSC,     n.chapecoense,n.avai,n.concordia,n.figueirense,n.joinville,n.marciliodias, n.camboriu,n.atlcatarinense],
     2022.0: [n.brusque,n.camboriu,n.concordia,n.figueirense,   n.hercilioluz,n.chapecoense,n.marciliodias,n.avai,n.joinville,n.barraSC,   n.prospera,n.jaragua],
     2021.0: [n.avai,n.chapecoense,n.brusque,n.marciliodias,    n.jaragua,n.prospera,n.joinville,n.figueirense,n.concordia,n.hercilioluz,  n.criciuma,n.metropolitano],
     2020.0: [n.chapecoense,n.brusque,n.criciuma,n.jaragua,     ],
@@ -708,7 +708,7 @@ Map<String,dynamic> mapEstaduais = {
   },
   leagueName.ceara : {
     //2024.0: [],
-    //2023.0: [n.fortaleza,n.ceara,],
+    2023.0: [n.fortaleza,n.ceara,n.iguatu,n.ferroviario,   n.maracana,n.caucaia,n.barbalha,n.pacajus,n.guaranyjuazeiro],
     2022.0: [n.fortaleza,n.caucaia,n.ferroviario,],
     2021.0: [n.fortaleza,n.ceara,n.ferroviario,],
     2020.0: [n.fortaleza,n.ceara,n.ferroviario,],
@@ -785,8 +785,8 @@ Map<String,dynamic> mapEstaduais = {
   },
   leagueName.alagoas : {
     //2024.0: [],
-    //2023.0: [],
-    2022.0: [n.crb,n.asa,n.csa,n.murici],
+    2023.0: [n.crb,n.asa,n.murici,n.coruripe,   n.csa,n.cse,n.cruzeiroAL,n.desportivoalianca],
+    2022.0: [n.crb,n.asa,n.csa,n.murici,        n.cse,n.cruzeiroAL,n.desportivoalianca,n.jacyoba],
     2021.0: [n.csa,n.crb,n.cse,],
     2020.0: [n.crb,n.csa,n.murici,n.asa],
     2019.0: [n.csa,n.crb,n.coruripe,],
@@ -942,7 +942,7 @@ Map<String,dynamic> mapEstaduais = {
 
   leagueName.paraiba : {
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [n.treze,n.sousa,n.saopauloPB,n.botafogoPB,  n.nacionalPB,n.campinense,n.csp,n.serrabranca,n.queimadense,n.autoesportePB],
     2022.0: [n.campinense,n.botafogoPB,],
     2021.0: [n.campinense,n.sousa,],
     2020.0: [n.treze,n.campinense,],
@@ -1245,8 +1245,8 @@ Map<String,dynamic> mapEstaduais = {
 
   leagueName.goias : {
     //2024.0: [],
-    //2023.0: [],
-    2022.0: [n.atleticogo,n.goias,n.vilanova,n.ipora,],
+    2023.0: [n.atleticogo,n.goias,n.aparecidense,n.anapolis,  n.crac,n.vilanova,n.ipora,n.goiania,n.goianesia,n.morrinhos,   n.gremioanapolis,n.inhumas],
+    2022.0: [n.atleticogo,n.goias,n.vilanova,n.ipora,         n.anapolis,n.crac,n.morrinhos,n.goianesia,n.aparecidense,n.gremioanapolis,n.jataiense,n.goiatuba],
     2021.0: [n.gremioanapolis,n.vilanova,n.atleticogo,n.aparecidense,],
     2020.0: [n.atleticogo,n.goianesia,n.jaragua,n.aparecidense,],
     2019.0: [n.atleticogo,n.goias,n.vilanova,n.goiania,],
@@ -1377,7 +1377,7 @@ Map<String,dynamic> mapEstaduais = {
 
   leagueName.mt : {
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [n.cuiaba,n.uniaorondonopolis,],
     2022.0: [n.cuiaba,n.uniaorondonopolis,],
     2021.0: [n.cuiaba,n.operarioMT,],
     2020.0: [n.novamutum,n.uniaorondonopolis,],
@@ -1541,11 +1541,11 @@ Map<String,dynamic> mapEstaduais = {
 
   leagueName.to : {
     //2024.0: [],
-    //2023.0: [],
-    2022.0: [n.tocantinopolis,n.interporto,],
-    2021.0: [n.tocantinopolis,n.araguacema,n.interporto,n.palmas,],
-    2020.0: [n.palmas,n.tocantinopolis,n.interporto,n.araguacema,],
-    2019.0: [n.palmas,n.tocantinopolis,n.interporto],
+    2023.0: [n.tocantinopolis,n.capitalTO,n.belavistaTO,n.tocantinsEC,n.gurupi,n.uniaoTO,n.interporto,n.palmas],
+    2022.0: [n.tocantinopolis,n.interporto,n.capitalTO,n.uniaoTO,n.belavistaTO,n.palmas,n.paraisoTO,n.araguacema,n.gurupi,n.tocantinsEC],
+    2021.0: [n.tocantinopolis,n.araguacema,n.interporto,n.palmas,n.paraisoTO,n.tocantinsEC,n.capitalTO,n.gurupi],
+    2020.0: [n.palmas,n.tocantinopolis,n.interporto,n.araguacema,n.capitalTO,n.paraisoTO,n.sparta,n.atleticocerrado],
+    2019.0: [n.palmas,n.tocantinopolis,n.interporto,n.sparta,n.atleticocerrado],
     2018.0: [n.palmas,n.gurupi,n.interporto,n.tocantinopolis,],
     2017.0: [n.interporto,n.sparta,n.gurupi,n.tocantinopolis,],
     2016.0: [n.gurupi,n.tocantinsEC,n.interporto,],

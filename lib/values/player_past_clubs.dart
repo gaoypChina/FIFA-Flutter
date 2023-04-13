@@ -210,7 +210,7 @@ class PlayerPastClubs{
   map['Didier Deschamps'] = {1985:n.nantes,1989:n.om,1990:n.bordeaux,1991:n.om,1994:n.juventus,1999:n.chelsea,2000:n.valencia,2001:retired};
   map['Diego Forlán'] = {1997:n.independiente,2002:n.manutd,2004:n.villareal,2007:n.atleticomadrid,2011:n.inter,2012:n.internacional,2014:n.cerezoOsaka,2015:n.penarol,2016:n.mumbai,2017:n.kitchee,2018:retired};
   map['Dino Zoff'] = {   1961:n.udinese,1963:n.mantova,1967:n.napoli,1972:n.juventus,1983:retired};
-  map['Dirceu Lopes'] = {1964:n.cruzeiro,1977:n.fluminense,1979:n.uberlandia,1980:n.democrata,1982:retired};
+  map['Dirceu Lopes'] = {1964:n.cruzeiro,1977:n.fluminense,1979:n.uberlandia,1980:n.democrataGV,1982:retired};
   map['Djalma Santos'] = {1948:n.portuguesa,1959:n.palmeiras,1968:n.atleticopr,1972:retired};
   map['Djalminha'] = {   1989:n.flamengo,1993:n.guarani,1994:n.shimizuSPulse,1995:n.guarani,1996:n.palmeiras,1997:n.lacoruna,2002:n.austria,2003:n.lacoruna,2004:retired};
   map['Dodô'] = {        1992:n.nacionalSP,1994:n.fluminense,1995:n.saopaulo,1999:n.santos,2001:n.botafogo,2002:n.palmeiras,2003:n.ulsan,2005:n.goias,2006:n.botafogo,2008:n.fluminense,2010:n.vasco,2011:n.portuguesa,2012:retired};
