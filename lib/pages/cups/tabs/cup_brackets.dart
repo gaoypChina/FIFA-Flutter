@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-  Widget cupHistoric(BuildContext context){
+  Widget cupBrackets(BuildContext context){
     return Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -114,9 +114,10 @@ import 'package:flutter/material.dart';
 
 Widget matchBox(){
     
-    Confronto confronto = Confronto(clubName1: 'Peñarol', clubName2: 'Milan', goal1: 1, goal2: 3);
-    confronto.setPenalties(penaltis1: 2, penaltis2: 3);
-    double imageSize = 35;
+    Confronto confrontoIda = Confronto(clubName1: 'Peñarol', clubName2: 'Milan', goal1: 1, goal2: 3);
+    Confronto confrontoVolta = Confronto(clubName1: 'Peñarol', clubName2: 'Milan', goal1: 2, goal2: 0);
+    confrontoVolta.setPenalties(penaltis1: 2, penaltis2: 3);
+    double imageSize = 32;
 
     return Container(
       height: 90,
@@ -128,14 +129,15 @@ Widget matchBox(){
         children: [
           Row(
             children: [
-                    Images().getEscudoWidget(confronto.clubName1,imageSize,imageSize),
-              Images().getEscudoWidget(confronto.clubName2,imageSize,imageSize),
+                    Images().getEscudoWidget(confrontoIda.clubName1,imageSize,imageSize),
+              Images().getEscudoWidget(confrontoIda.clubName2,imageSize,imageSize),
             ],
           ),
-          Text('${confronto.goal1.toString()}  x  ${confronto.goal2.toString()}',style: EstiloTextoBranco.text16),
+          Text('${confrontoIda.goal1.toString()}  x  ${confrontoIda.goal2.toString()}',style: EstiloTextoBranco.text14),
+          Text('${confrontoVolta.goal1.toString()}  x  ${confrontoVolta.goal2.toString()}',style: EstiloTextoBranco.text14),
 
-          confronto.hasPenaltis
-              ? Text('Pen: (${confronto.penaltis1.toString()} x ${confronto.penaltis2.toString()})',style: EstiloTextoBranco.text10)
+          confrontoVolta.hasPenaltis
+              ? Text('Pen: (${confrontoVolta.penaltis1.toString()} x ${confrontoVolta.penaltis2.toString()})',style: EstiloTextoBranco.text10)
               : Container(),
         ],
       ),

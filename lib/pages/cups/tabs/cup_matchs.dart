@@ -6,32 +6,38 @@ import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
 Widget cupPhaseWidget(){
+  My my = My();
   return SingleChildScrollView(
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(Name().oitavas,style: EstiloTextoBranco.text16),
-        cupMatchRow(Confronto(clubName1: 'Santos', clubName2: 'Grêmio', goal1: 2, goal2: 1)),
-        cupMatchRow(Confronto(clubName1: 'Santos', clubName2: 'Grêmio', goal1: 2, goal2: 1)),
-        cupMatchRow(Confronto(clubName1: 'Santos', clubName2: 'Grêmio', goal1: 2, goal2: 1)),
-        cupMatchRow(Confronto(clubName1: 'Santos', clubName2: 'Grêmio', goal1: 2, goal2: 1)),
-        cupMatchRow(Confronto(clubName1: 'Santos', clubName2: 'Grêmio', goal1: 2, goal2: 1)),
-        cupMatchRow(Confronto(clubName1: 'Santos', clubName2: 'Grêmio', goal1: 2, goal2: 1)),
-        cupMatchRow(Confronto(clubName1: 'Santos', clubName2: 'Grêmio', goal1: 2, goal2: 1)),
-        Text(Name().quartas,style: EstiloTextoBranco.text16),
-        cupMatchRow(Confronto(clubName1: 'Santos', clubName2: 'Grêmio', goal1: 2, goal2: 1)),
-        cupMatchRow(Confronto(clubName1: 'Santos', clubName2: 'Grêmio', goal1: 2, goal2: 1)),
-        cupMatchRow(Confronto(clubName1: 'Santos', clubName2: 'Grêmio', goal1: 2, goal2: 1)),
-        Text(Name().semifinal,style: EstiloTextoBranco.text16),
-        cupMatchRow(Confronto(clubName1: 'Santos', clubName2: 'Grêmio', goal1: 2, goal2: 1)),
-        cupMatchRow(Confronto(clubName1: 'Santos', clubName2: 'Grêmio', goal1: 2, goal2: 1)),
-        Text(Name().finale,style: EstiloTextoBranco.text16),
-        cupMatchRow(Confronto(clubName1: 'Santos', clubName2: 'Grêmio', goal1: 2, goal2: 1)),
-      ],
+    child: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 4.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(Name().finale,style: EstiloTextoBranco.negrito16),
+          cupMatchRow(Confronto(clubName1: 'Santos', clubName2: 'Grêmio', goal1: 2, goal2: 1),my),
+          Text(Name().semifinal,style: EstiloTextoBranco.negrito16),
+          cupMatchRow(Confronto(clubName1: 'Santos', clubName2: 'Grêmio', goal1: 2, goal2: 1),my),
+          cupMatchRow(Confronto(clubName1: 'Santos', clubName2: 'Grêmio', goal1: 2, goal2: 1),my),
+          Text(Name().quartas,style: EstiloTextoBranco.negrito16),
+          cupMatchRow(Confronto(clubName1: 'Botafogo', clubName2: 'Grêmio', goal1: 2, goal2: 1),my),
+          cupMatchRow(Confronto(clubName1: 'Porto', clubName2: 'Benfica', goal1: 2, goal2: 1),my),
+          cupMatchRow(Confronto(clubName1: 'Racing', clubName2: 'Juventus', goal1: 2, goal2: 1),my),
+          cupMatchRow(Confronto(clubName1: 'Santos', clubName2: 'Napoli', goal1: 2, goal2: 1),my),
+          Text(Name().oitavas,style: EstiloTextoBranco.negrito16),
+          cupMatchRow(Confronto(clubName1: 'Santos', clubName2: 'Grêmio', goal1: 2, goal2: 1),my),
+          cupMatchRow(Confronto(clubName1: 'Benfica', clubName2: 'Inter', goal1: 2, goal2: 1),my),
+          cupMatchRow(Confronto(clubName1: 'Porto', clubName2: 'Chelsea', goal1: 2, goal2: 1),my),
+          cupMatchRow(Confronto(clubName1: 'Arsenal', clubName2: 'Fiorentina', goal1: 2, goal2: 1),my),
+          cupMatchRow(Confronto(clubName1: 'Santos', clubName2: 'Juventude', goal1: 2, goal2: 1),my),
+          cupMatchRow(Confronto(clubName1: 'Real Betis', clubName2: 'Milan', goal1: 2, goal2: 1),my),
+          cupMatchRow(Confronto(clubName1: 'Juventus', clubName2: 'Sporting', goal1: 2, goal2: 1),my),
+          cupMatchRow(Confronto(clubName1: 'Sampdoria', clubName2: 'Napoli', goal1: 2, goal2: 1),my),
+        ],
+      ),
     ),
   );
 }
-Widget cupMatchRow(Confronto confronto){
+Widget cupMatchRow(Confronto confronto, My my){
 
   String teamNameA = confronto.clubName1;
   String teamNameB = confronto.clubName2;
@@ -48,14 +54,13 @@ Widget cupMatchRow(Confronto confronto){
         children: [
           Row(
             children: [
+              Images().getUniformWidget(teamNameA,imageSize,imageSize),
+              Container(
+                  color: teamNameA == my.clubName ? Colors.green : Colors.transparent,
+                  child: Text(teamNameA,textAlign:TextAlign.end,style: EstiloTextoBranco.text14)),
               Images().getEscudoWidget(teamNameA,imageSize,imageSize),
-              Images().getUniformWidget(teamNameA,imageSize,imageSize)
             ],
           ),
-          Container(
-              margin: const EdgeInsets.only(top: 8),
-              color: teamNameA == My().clubName ? Colors.green : Colors.transparent,
-              child: Text(teamNameA,textAlign:TextAlign.end,style: EstiloTextoBranco.text14)),
         ],
       ),
 
@@ -70,14 +75,14 @@ Widget cupMatchRow(Confronto confronto){
           Row(
             children: [
               Images().getEscudoWidget(teamNameB,imageSize,imageSize),
+              Container(
+                color: teamNameB == my.clubName ? Colors.green : Colors.transparent,
+                child: Text(teamNameB,style: EstiloTextoBranco.text14),
+              ),
               Images().getUniformWidget(teamNameB,imageSize,imageSize),
             ],
           ),
-          Container(
-            margin: const EdgeInsets.only(top: 8),
-            color: teamNameB == My().clubName ? Colors.green : Colors.transparent,
-            child: Text(teamNameB,style: EstiloTextoBranco.text14),
-          ),
+
         ],
       ),
 

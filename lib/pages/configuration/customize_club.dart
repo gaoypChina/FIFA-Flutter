@@ -1,3 +1,4 @@
+import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/widgets/popup/poup_edit.dart';
 import 'package:fifa/theme/colors.dart';
@@ -44,106 +45,106 @@ class _CustomizeClubState extends State<CustomizeClub> {
 
           Images().getWallpaper(),
 
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
 
-              backButtonText(context,'Customize Club'),
+                backButtonText(context,'Customize Club'),
 
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    GestureDetector(
-                      onTap: (){
-                        popupEdit(
-                            context: context,
-                            title: 'Nome do Time',
-                            variable: clubName,
-                            isStringType: true,
-                            maxNcharacters: 30,
-                            functionOK: (value){
-                              clubName = value;
-                              setState((){});
-                            });
-                      },
-                      child: Row(
+                    const SizedBox(height: 16),
+                    Container(
+                      color: AppColors().greyTransparent,
+                      child: Column(
                         children: [
-                          const Text('Nome do Time: ',style: EstiloTextoBranco.text16),
-                          Text(clubName,style: EstiloTextoBranco.underline16),
+                          editClubName(),
+                          const SizedBox(height: 8),
+                          chooseColorRow('Cor Primária', true),
+                          chooseColorRow('Cor Secundária', false),
                         ],
-                      ),
+                      )
                     ),
-                    const SizedBox(height: 16),
-
-                    const SizedBox(height: 16),
-                    chooseColorRow('Cor Primária', true),
-                    chooseColorRow('Cor Secundária', false),
-                    const SizedBox(height: 16),
-                    const Text('Escolha o tipo de uniforme',style: EstiloTextoBranco.text16),
+                    const SizedBox(height: 8),
                   ],
                 ),
-              ),
 
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  typesKit(uniformCustom.clubPattern.stripes2),
-                  typesKit(uniformCustom.clubPattern.stripes3),
-                  typesKit(uniformCustom.clubPattern.stripes4),
-                  typesKit(uniformCustom.clubPattern.stripesThin),
-                  typesKit(uniformCustom.clubPattern.stripesTricolor),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  typesKit(uniformCustom.clubPattern.oneHorStripe),
-                  typesKit(uniformCustom.clubPattern.oneVertStripe),
-                  typesKit(uniformCustom.clubPattern.diagonal),
-                  typesKit(uniformCustom.clubPattern.diagonalInv),
-                  typesKit(uniformCustom.clubPattern.monaco),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  typesKit(uniformCustom.clubPattern.horStripes2),
-                  typesKit(uniformCustom.clubPattern.horStripes3),
-                  typesKit(uniformCustom.clubPattern.horStripes4),
-                  typesKit(uniformCustom.clubPattern.horStripesThin),
-                  typesKit(uniformCustom.clubPattern.dividedHor),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    typesKit(uniformCustom.clubPattern.sp),
-                    typesKit(uniformCustom.clubPattern.sleeves),
-                    typesKit(uniformCustom.clubPattern.solid),
-                    typesKit(uniformCustom.clubPattern.solid2),
-                    typesKit(uniformCustom.clubPattern.solid3),
-
-              ]),
-
-
-              Center(
-                child: Container(
-                  padding: const EdgeInsets.all(4),
-                  decoration: BoxDecoration(
+                Container(
                     color: AppColors().greyTransparent,
-                    border:  Border.all(color: Colors.white, width:1),
-                  ),
-                  child: Images().getEscudoWidget(clubName,120,120),
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('Escolha o tipo de uniforme',style: EstiloTextoBranco.negrito16),
+                        const SizedBox(height: 8),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            typesKit(uniformCustom.clubPattern.stripes2),
+                            typesKit(uniformCustom.clubPattern.stripes3),
+                            typesKit(uniformCustom.clubPattern.stripes4),
+                            typesKit(uniformCustom.clubPattern.stripesThin),
+                            typesKit(uniformCustom.clubPattern.stripesTricolor),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            typesKit(uniformCustom.clubPattern.oneHorStripe),
+                            typesKit(uniformCustom.clubPattern.oneVertStripe),
+                            typesKit(uniformCustom.clubPattern.diagonal),
+                            typesKit(uniformCustom.clubPattern.diagonalInv),
+                            typesKit(uniformCustom.clubPattern.monaco),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            typesKit(uniformCustom.clubPattern.horStripes2),
+                            typesKit(uniformCustom.clubPattern.horStripes3),
+                            typesKit(uniformCustom.clubPattern.horStripes4),
+                            typesKit(uniformCustom.clubPattern.horStripesThin),
+                            typesKit(uniformCustom.clubPattern.dividedHor),
+                          ],
+                        ),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              typesKit(uniformCustom.clubPattern.sp),
+                              typesKit(uniformCustom.clubPattern.sleeves),
+                              typesKit(uniformCustom.clubPattern.solid),
+                              typesKit(uniformCustom.clubPattern.solid2),
+                              typesKit(uniformCustom.clubPattern.solid3),
+                            ]),
+                      ],
+                    )
                 ),
-              ),
 
-              const Center(child: Icon(Icons.camera_alt,size: 40,color: Colors.white)),
+                const SizedBox(height: 8),
+                Stack(
+                  children: [
+                    Center(
+                      child: Container(
+                        padding: const EdgeInsets.all(4),
+                        decoration: BoxDecoration(
+                          color: AppColors().greyTransparent,
+                          border:  Border.all(color: Colors.white, width:1),
+                        ),
+                        child: Images().getEscudoWidget(clubName,120,120),
+                      ),
+                    ),
+                    Container(margin: EdgeInsets.only(top:100, left: 40+Sized(context).width*0.5),
+                        child: const Icon(Icons.camera_alt,size: 50,color: Colors.white)),
+                  ],
+                ),
 
 
-            ],
+
+              ],
+            ),
           ),
 
 
@@ -155,14 +156,44 @@ class _CustomizeClubState extends State<CustomizeClub> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Widget editClubName(){
+    return GestureDetector(
+      onTap: (){
+        popupEdit(
+            context: context,
+            title: 'Nome do Time',
+            variable: clubName,
+            isStringType: true,
+            maxNcharacters: 30,
+            functionOK: (value){
+              clubName = value;
+              setState((){});
+            });
+      },
+      child: Container(
+        color: AppColors().greyTransparent,
+        padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 6),
+        child: Row(
+          children: [
+            const Icon(Icons.edit, color: Colors.white),
+            const SizedBox(width: 4),
+            const Text('Nome do Time: ',style: EstiloTextoBranco.negrito16),
+            Text(clubName,style: EstiloTextoBranco.text20),
+          ],
+        ),
+      ),
+    );
+  }
   Widget chooseColorRow(String title, bool isPrimaryColor){
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4.0),
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 6.0, horizontal: 4),
       child: GestureDetector(
         onTap:(){popupColorPicker(isPrimaryColor: isPrimaryColor);},
         child: Row(
           children: [
-            SizedBox(width:120, child: Text(title,style: EstiloTextoBranco.underline16)),
+            const Icon(Icons.edit, color: Colors.white),
+            const SizedBox(width: 4),
+            SizedBox(width:120, child: Text(title,style: EstiloTextoBranco.negrito16)),
 
             const SizedBox(width: 8),
             Container(
@@ -233,7 +264,6 @@ class _CustomizeClubState extends State<CustomizeClub> {
           color: uniformCustom.compareLinearGradient(pattern)
               ? Colors.green
               : AppColors().greyTransparent,
-          border: Border.all(width: 1.0, color: Colors.white)
         ),
         child: uniformCustom.kit(),
       ),

@@ -76,70 +76,72 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                       ),
                       const SizedBox(width: 8),
 
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
 
-                          SizedBox(
-                            width: Sized(context).width - escudoSize-10,
-                            child: Row(
-                              children: [
+                            SizedBox(
+                              width: Sized(context).width - escudoSize - 10,
+                              child: Row(
+                                children: [
 
-                                Column(
-                                  children: [
-                                    Text(club.name,style: EstiloTextoBranco.negrito22),
-                                    //N Jogadores
-                                    Text('${Translation(context).text.player}: ${club.jogadores.length.toString()}',style: EstiloTextoBranco.text16),
-                                  ],
-                                ),
+                                  Column(
+                                    children: [
+                                      Text(club.name,style: EstiloTextoBranco.negrito22),
+                                      //N Jogadores
+                                      Text('${Translation(context).text.player}: ${club.jogadores.length.toString()}',style: EstiloTextoBranco.text16),
+                                    ],
+                                  ),
 
-                                const Spacer(),
-                                buttonDesign(
-                                    title: 'Edit Club',
-                                    function: (){
-                                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => CustomizeClub(clubName: club.name)));
-                                    }),
-                              ],
-                            ),
-                          ),
-
-                          //CUSTOMIZE
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-
-                              buttonDesign(
-                                  title: Translation(context).text.save,
-                                  function: (){
-                                    //Salva os dados
-                                    popUpSaveAllData(context: context);
-                                    //Navigator.pop(context);
-                                  }),
-
-                              buttonDesign(
-                                  title: Translation(context).text.createPlayer,
-                                  function: (){
-                                    setState(() {});
-                                    popUpCreatePlayer(
-                                        context: context,
-                                        club: club,
-                                        function: (){
-                                          setState(() {});
-                                        }
-                                    );
-                                  }
+                                  const Spacer(),
+                                  buttonDesign(
+                                      title: 'Edit Club',
+                                      function: (){
+                                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => CustomizeClub(clubName: club.name)));
+                                      }),
+                                ],
                               ),
+                            ),
 
-                              buttonDesign(
-                                  title: EsquemaTatico().e442,
-                                  function: (){
+                            //CUSTOMIZE
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
 
-                                  }),
+                                  buttonDesign(
+                                      title: Translation(context).text.save,
+                                      function: (){
+                                        //Salva os dados
+                                        popUpSaveAllData(context: context);
+                                        //Navigator.pop(context);
+                                      }),
 
-                            ],
-                          ),
+                                  buttonDesign(
+                                      title: Translation(context).text.createPlayer,
+                                      function: (){
+                                        setState(() {});
+                                        popUpCreatePlayer(
+                                            context: context,
+                                            club: club,
+                                            function: (){
+                                              setState(() {});
+                                            }
+                                        );
+                                      }
+                                  ),
 
-                        ],
+                                  buttonDesign(
+                                      title: EsquemaTatico().e442,
+                                      function: (){
+
+                                      }),
+
+                                ],
+                            ),
+
+                          ],
+                        ),
                       ),
 
                     ],

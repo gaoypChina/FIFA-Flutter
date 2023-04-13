@@ -2,7 +2,6 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/player_past_clubs.dart';
-import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 
 class HistoricBestPlayersPage extends StatefulWidget {

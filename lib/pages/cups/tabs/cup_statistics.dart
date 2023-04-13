@@ -4,70 +4,95 @@ import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
-Widget cupStatistics(){
-  return SingleChildScrollView(
-    child: Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            statisticsBox('Artilheiros'),
-            statisticsBox('Assistências'),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            statisticsBox('Melhores Jogadores'),
-            statisticsBox('Clean Sheets'),
-          ],
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            statisticsBox('Cartão Amarelo'),
-            statisticsBox('Cartão Vermelho'),
-          ],
-        ),
-      ],
-    ),
-  );
+class CupStatistics extends StatefulWidget {
+  const CupStatistics({Key? key}) : super(key: key);
+
+  @override
+  State<CupStatistics> createState() => _CupStatisticsState();
 }
 
-Widget statisticsBox(String title){
-  return Flexible(
-    child: Container(
-      height: 200,
-      color: AppColors().greyTransparent,
-      padding: const EdgeInsets.all(2),
-      margin: const EdgeInsets.all(4),
+class _CupStatisticsState extends State<CupStatistics> {
+
+  String typeSelected = "Artilheiros";
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
       child: Column(
         children: [
-          Text(title,style: EstiloTextoBranco.negrito18),
 
-          Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  for(int i=1;i<=20;i++)
-                    rowPlayer(Jogador(index: i*37),i),
-                ],
-              ),
-            ),
+          Row(
+            children: [
+              buttonSelection("Artilheiros"),
+              buttonSelection("Assistencias"),
+              buttonSelection("Melhor Jogador"),
+            ],
           ),
 
+          statisticsBox(typeSelected),
         ],
       ),
-    ),
-  );
-}
+    );
+  }
 
-Widget rowPlayer(Jogador player, int result){
-  return Row(
-    children: [
+  Widget statisticsBox(String title){
+    return Flexible(
+      child: Container(
+        height: 200,
+        color: AppColors().greyTransparent,
+        padding: const EdgeInsets.all(2),
+        margin: const EdgeInsets.all(4),
+        child: Column(
+          children: [
+            Text(title,style: EstiloTextoBranco.negrito18),
+
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    for(int i=1;i<=20;i++)
+                      rowPlayer(Jogador(index: i*37),i),
+                  ],
+                ),
+              ),
+            ),
+
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget rowPlayer(Jogador player, int result){
+    return Row(
+      children: [
         Images().getEscudoWidget(player.clubName,20,20),
         SizedBox(width:120,child: Text(player.name,style: EstiloTextoBranco.text14)),
         Text(result.toString(),style: EstiloTextoBranco.text14),
-    ],
-  );
+      ],
+    );
+  }
+
+  Widget buttonSelection(String title){
+    return GestureDetector(
+      onTap: (){
+        typeSelected = title;
+        setState((){});
+      },
+      child: Container(
+        padding: const EdgeInsets.all(2),
+        margin: const EdgeInsets.all(2),
+        decoration: BoxDecoration(
+          color: AppColors().greyTransparent,
+          border: Border.all(
+            color: typeSelected == title ? Colors.white : AppColors().greyTransparent,
+            width: 1.0,
+          ),
+        ),
+        child: Text(title, style: EstiloTextoBranco.text16),
+      ),
+    );
+  }
 }
+
+
