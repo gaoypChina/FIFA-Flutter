@@ -52,7 +52,8 @@ class DataGraphics{
   double pointsEstadual = 0;
 
   //COPA
-  List<ClassificationData> dataCups=[];
+  String cupName = "";
+  List<ClassificationData> dataCups = [];
   int nTitulosCups = 0;
   int finalsCups = 0;
   double pointsCups = 0;
@@ -299,11 +300,11 @@ class DataGraphics{
   // COPAS
   ////////////////////////////////////////////////////////////////////////////
   void defineHistoricCups(String clubName){
-    String cup = getCup(leagueName);
+    cupName = getCup(leagueName);
 
     //para cada ano
-    for(var keyYear in mapChampions(cup).keys) {
-      List classificationNames = mapChampions(cup)[keyYear];
+    for(var keyYear in mapChampions(cupName).keys) {
+      List classificationNames = mapChampions(cupName)[keyYear];
       //verifica se naquele ano tem o time
       int position = 10;
       if(classificationNames.contains(clubName)){

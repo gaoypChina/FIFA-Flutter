@@ -9,6 +9,7 @@ import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/back_button.dart';
+import 'package:fifa/widgets/stars.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -174,6 +175,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                               Expanded(child: Text(clubDetails.getStadium(clubName),maxLines: 2,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14)),
                             ],
                           ),
+                          starsWidgetFromOverall(clubDetails.getOverall(clubName)),
                         ],
                       ),
                     ),
