@@ -11,6 +11,7 @@ import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
+import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 
 class Tournament extends StatefulWidget {
@@ -66,10 +67,10 @@ class _TournamentState extends State<Tournament> {
         width: Sized(context).width,
         child: Column(
         children: [
-              const SizedBox(height: 260),
+              backButtonText(context, 'Amistoso'),
 
-              const Text('Jogo Único',style:EstiloTextoBranco.negrito22),
-              const SizedBox(height: 40),
+              Images().getStadiumWidget(club1.name, 200, Sized(context).width),
+              const SizedBox(height: 20),
               //LIGAS
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -84,9 +85,17 @@ class _TournamentState extends State<Tournament> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               clubLogoAndKitStack(1,club1, posicaoPais1),
+              const Text("X", style: EstiloTextoBranco.text40),
               clubLogoAndKitStack(2,club2, posicaoPais2),
             ],
           ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              tactics(),
+              tactics(),
+          ],),
 
           menuButton('Play Match',(){
             funcChangeClub(club1.name,leaguesListRealIndex[posicaoPais1]);
@@ -100,8 +109,6 @@ class _TournamentState extends State<Tournament> {
             adv.clubID = club2.index;
             navigatorPush(context, GamePage(adversario: adv));
             }),
-
-          tactics(),
         ]),
 
         )
@@ -295,8 +302,16 @@ Widget clubLogoAndKitStack(int selection, Club club, int posicaoPais){
 Widget tactics(){
     return Container(
       padding: const EdgeInsets.all(4),
-      color: AppColors().greyTransparent,
-      child: const Text("Táticas",style: EstiloTextoBranco.text16),
+      margin: const EdgeInsets.all(4),
+      decoration: BoxDecoration(
+        color: AppColors().greyTransparent,
+        border: Border.all(
+          width: 2.0,
+          color: Colors.green,
+        ),
+        borderRadius: const BorderRadius.all(Radius.circular(15.0)),
+      ),
+      child: const Text("Escalação",style: EstiloTextoBranco.text16),
     );
 }
 

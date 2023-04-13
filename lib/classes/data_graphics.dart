@@ -58,6 +58,7 @@ class DataGraphics{
   double pointsCups = 0;
 
   //INTERNATIONAL
+  String internationalLeagueName = "";
   List<ClassificationData> dataInternational=[];
   int nTitulosInternational = 0;
   int finalsInternational = 0;
@@ -86,7 +87,7 @@ class DataGraphics{
     //GET CONTINENT NAME
     String continent = Continents().funcCountryContinents(country);
 
-    String internationalLeagueName = getInternationalLeagueFromContinent(continent);
+    internationalLeagueName = getInternationalLeagueFromContinent(continent);
 
     //historico de campeoes ligas
     defineHistoricClassification(clubName,leagueName);

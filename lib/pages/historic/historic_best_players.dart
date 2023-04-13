@@ -39,8 +39,6 @@ class _HistoricPlayersBestPageState extends State<HistoricBestPlayersPage> {
 
           Column(
             children: [
-              backButtonText(context,'Jogadores Históricos'),
-
               Expanded(
                 child: SingleChildScrollView(
                   scrollDirection: Axis.vertical,

@@ -25,9 +25,10 @@ class ClubProfileNotPlayable extends StatefulWidget {
   State<ClubProfileNotPlayable> createState() => _ClubProfileNotPlayableState();
 }
 
-class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
+class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with TickerProviderStateMixin {
 
   late TooltipBehavior _tooltipBehavior;
+  late TabController _tabController;
 
   DataGraphics dataGraphics = DataGraphics();
   late String clubCountry;
@@ -37,6 +38,8 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
+
+    _tabController = TabController(vsync: this, length: 3);
 
     clubState = ClubDetails().getState(widget.clubName);
 
@@ -51,6 +54,11 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
 
     super.initState();
   }
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
@@ -61,102 +69,120 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
     if(clubsAllNameList.contains(widget.clubName)){
       isPlayableClub = true;
     }
-  return Scaffold(
-      body: Stack(
-        children: [
-          Images().getWallpaper(),
+  return DefaultTabController(
+    length: 3,
+    child: Scaffold(
+        body: Stack(
+          children: [
+            Images().getWallpaper(),
 
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
 
-              Row(
-                children: [
-                  backButtonText(context, widget.clubName),
-                  const Spacer(),
-                  isPlayableClub ? Padding(
-                    padding: const EdgeInsets.only(top:20.0),
-                    child: IconButton(onPressed: (){
-                         Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: clubsAllNameList.indexOf(widget.clubName))));
-                    }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
-                  ) : Container(),
-                ],
-              ),
-
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                Row(
                   children: [
-                    Images().getEscudoWidget(widget.clubName,90,90),
-                    Images().getUniformWidget(widget.clubName,100,100),
-                    Column(
-                      children: [
-                        Row(
-                          children: [
-                            funcFlagsList(ClubDetails().getCountry(widget.clubName), 35, 50),
-                            clubState.isNotEmpty ? funcFlagsList(ClubDetails().getState(widget.clubName), 35, 50) : Container(),
-                          ],
-                        ),
-                        Text(ClubDetails().getFoundationYear(widget.clubName).toString(),style: EstiloTextoBranco.text16),
-                        Text(ClubDetails().getStadium(widget.clubName),overflow:TextOverflow.ellipsis,style: EstiloTextoBranco.text14),
-                        Text(ClubDetails().getStadiumCapacityPointFormat(widget.clubName),style: EstiloTextoBranco.text16),
-                      ],
-                    ),
+                    backButtonText(context, widget.clubName),
+                    const Spacer(),
+                    isPlayableClub ? Padding(
+                      padding: const EdgeInsets.only(top:20.0),
+                      child: IconButton(onPressed: (){
+                           Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: clubsAllNameList.indexOf(widget.clubName))));
+                      }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
+                    ) : Container(),
                   ],
                 ),
-              ),
 
 
-              Row(
-                children: [
-                  Container(
-                    color: AppColors().greyTransparent,
-                    margin: const EdgeInsets.only(left: 4.0),
-                    child: TextButton(onPressed: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricBestPlayersPage(clubName: widget.clubName)));
-                    }, child: const Text('Jogadores Históricos',style:EstiloTextoBranco.text16)),
-                  ),
-                ],
-              ),
-
-
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Column(
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-
-                      totalTrophyWidget(widget.clubName, dataGraphics),
-
-                      positionYears(widget.clubName, dataGraphics,1),
-                      positionYears(widget.clubName, dataGraphics,2),
-
+                      Images().getEscudoWidget(widget.clubName,90,90),
+                      Images().getUniformWidget(widget.clubName,100,100),
                       Column(
                         children: [
-                          dataGraphics.data.isNotEmpty ? graphics(dataGraphics) : Container(),
+                          Row(
+                            children: [
+                              funcFlagsList(ClubDetails().getCountry(widget.clubName), 35, 50),
+                              clubState.isNotEmpty ? funcFlagsList(ClubDetails().getState(widget.clubName), 35, 50) : Container(),
+                            ],
+                          ),
+                          Text(ClubDetails().getFoundationYear(widget.clubName).toString(),style: EstiloTextoBranco.text16),
+                          Text(ClubDetails().getStadium(widget.clubName),overflow:TextOverflow.ellipsis,style: EstiloTextoBranco.text14),
+                          Text(ClubDetails().getStadiumCapacityPointFormat(widget.clubName),style: EstiloTextoBranco.text16),
                         ],
                       ),
-                      ClubDetails().getState(widget.clubName).isNotEmpty
-                          ? heatMapPositions('Estadual',dataGraphics.dataEstadual)
-                          : Container(),
-                      heatMapPositions('Nacional',dataGraphics.data),
-                      heatMapPositions('Internacional',dataGraphics.dataInternational),
-
-                      peryear(),
                     ],
                   ),
                 ),
-              ),
 
-            ],
-          ),
-        ],
+                Container(
+                  height: 30,
+                  color: ClubDetails().getColors(widget.clubName).primaryColor.withOpacity(0.3),
+                  child: TabBar(
+                    controller: _tabController,
+                    unselectedLabelColor: Colors.white54,
+                    labelColor: ClubDetails().getColors(widget.clubName).secondColor,
+                    indicatorColor: ClubDetails().getColors(widget.clubName).secondColor,
+                    tabs: const [
+                      Tab(text: "Gráfico"),
+                      Tab(text: "Histórico"),
+                      Tab(text: "Jogadores Históricos"),
+                    ],
+                  ),
+                ),
+
+                Expanded(
+                  child: TabBarView(
+                      controller: _tabController,
+                      children: [
+                        graphicsTab(),
+                        historicTab(),
+                        HistoricBestPlayersPage(clubName: widget.clubName),
+                      ],
+                    ),
+                ),
+
+              ],
+            ),
+          ],
+        ),
       ),
-    );
+  );
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Widget graphicsTab(){
+    return Column(
+      children: [
+        totalTrophyWidget(widget.clubName, dataGraphics),
+
+        positionYears(widget.clubName, dataGraphics,1),
+        positionYears(widget.clubName, dataGraphics,2),
+
+        dataGraphics.data.isNotEmpty ? graphics(dataGraphics) : Container(),
+
+      ],
+    );
+  }
+  Widget historicTab(){
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          ClubDetails().getState(widget.clubName).isNotEmpty
+              ? heatMapPositions('Estadual',dataGraphics.dataEstadual)
+              : Container(),
+          heatMapPositions('Nacional',dataGraphics.data),
+          heatMapPositions('Internacional',dataGraphics.dataInternational),
+
+          peryear(),
+        ],
+      ),
+    );
+  }
 
   Widget graphics(DataGraphics dataGraphics) {
 
@@ -174,6 +200,18 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
           series: <ChartSeries>[
             // Initialize line series
             LineSeries<ClassificationData, String>(
+              onPointTap: (ChartPointDetails tapDetails) {
+                int year = ano - tapDetails.pointIndex! - 1;
+                //GET LEAGUE NAME
+                Map leagueNationality = getLeagueNationalityMap();
+                late String leagueName;
+                leagueNationality.forEach((key, value) {
+                if(value==clubCountry){
+                  leagueName = key;
+                  List classificationNames = mapChampions(leagueName)[year];
+                  bottomSheetShowLeagueClassification(context, classificationNames);
+                }});
+              },
               xAxisName: Translation(context).text.years,
               yAxisName: Translation(context).text.position,
               name: widget.clubName,
@@ -199,6 +237,11 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> {
 
             // Initialize line series
             LineSeries<ClassificationData, String>(
+              onPointTap: (ChartPointDetails tapDetails) {
+                int year = ano - tapDetails.pointIndex! - 1;
+                List classificationNames = mapChampions(dataGraphics.internationalLeagueName)[year];
+                bottomSheetShowLeagueClassification(context, classificationNames);
+              },
               color: Colors.green,
               xAxisName: Translation(context).text.years,
               yAxisName: Translation(context).text.position,

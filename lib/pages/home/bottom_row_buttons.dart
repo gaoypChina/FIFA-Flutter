@@ -18,7 +18,7 @@ Widget wHomeBottomRowButtons(BuildContext context, int clubID){
       const DatabaseButton(),
       editClub(context, clubID),
       configurations(context),
-      openTournament(context),
+      moreOptions(context),
     ],
   );
 }
@@ -107,7 +107,7 @@ Widget configurations(BuildContext context){
   );
 }
 
-Widget openTournament(BuildContext context){
+Widget moreOptions(BuildContext context){
   return
     GestureDetector(
       onTap: (){
@@ -118,8 +118,8 @@ Widget openTournament(BuildContext context){
         decoration: decoratorHomeButtons(),
         child: Column(
           children: const [
-            Icon(Icons.gamepad,color:Colors.white,size:40),
-            Text('Single Match',style: EstiloTextoBranco.text14)
+            Icon(Icons.add,color:Colors.white,size:40),
+            Text('More',style: EstiloTextoBranco.text14)
           ],
         ),
       ),
