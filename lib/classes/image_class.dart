@@ -74,7 +74,7 @@ class Images{
   String getMyActualCampeonatoLogo(){
     My myClass = My();
     late String campeonatoLogo;
-    if(semanasJogosNacionais.contains(semana) && semana < League(index: myClass.leagueID).nClubs){
+    if(semanasJogosNacionais.contains(semana)){
       campeonatoLogo = FIFAImages().campeonatoLogo(myClass.campeonatoName);
     }
     else if(myClass.playingInternational.isNotEmpty  && Semana(semana).isJogoGruposInternacional){

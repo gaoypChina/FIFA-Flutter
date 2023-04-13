@@ -929,7 +929,8 @@ String imageLogo(String timeFoto) {
     map[_name.atleticoAC] = 'atletico ac';
     map[_name.azuriz] = 'azuriz';  
     map[_name.bahiafeira] = 'bahia feira';  
-    map[_name.bangu] = 'bangu';  
+    map[_name.bangu] = 'bangu';
+    map[_name.bare] = 'bare';
     map[_name.boaesporte] = 'boa esporte';  
     map[_name.boavistaRJ] = 'boavista rj';  
     map[_name.botafogoPB] = 'botafogo pb';  
@@ -965,7 +966,8 @@ String imageLogo(String timeFoto) {
     map[_name.ipatinga] = 'ipatinga';
     map[_name.itabaiana] = 'itabaiana'; 
     map[_name.ituano] = 'ituano'; 
-    map[_name.interLimeira] = 'interlimeira';  
+    map[_name.interLimeira] = 'interlimeira';
+    map[_name.jiparana] = 'ji parana';
     map[_name.joinville] = 'joinville'; 
     map[_name.juventusMooca] = 'juventus mooca';  
     map[_name.linense] = 'linense'; 
@@ -1013,6 +1015,7 @@ String imageLogo(String timeFoto) {
     map[_name.saojose] = 'sao jose';  
     map[_name.saojoseRS] = 'sao jose rs';  
     map[_name.saoraimundo] = 'sao raimundo';
+    map[_name.saoraimundoRR] = 'sao raimundo rr';
     map[_name.serra] = 'serra';
     map[_name.sergipe] = 'sergipe';
     map[_name.sinop] = 'sinop';

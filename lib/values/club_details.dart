@@ -3465,6 +3465,8 @@ class ClubDetails{
       '',0,0,_country.brazil,50.0,[],{},_country.df];
     map[n.luziania] = [ClubColors(Colors.lightBlueAccent,Colors.white),pattern.stripes3,Coordinates(0,0),
       'Zequinha Roriz',21564,1926,_country.brazil,50.0,[],{},_country.df];
+    map[n.realbrasilia] = [ClubColors(darkblue,Colors.white),pattern.solid,Coordinates(0,0),
+      'Defelê',6875,1996,_country.brazil,50.0,[],{},_country.df];
     map[n.sobradinho] = [ClubColors(Colors.black,Colors.white),pattern.stripes2,Coordinates(-15.6526257, -47.7852544),
       'Augustinho Lima',10000,1975,_country.brazil,50.0,[],{},_country.df];
     map[n.taguatinga] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(0,0),

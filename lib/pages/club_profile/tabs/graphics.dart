@@ -64,9 +64,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
 
                   positionThisYear(),
 
-
                   totalTrophyWidget(widget.club, dataGraphics),
-
 
                   Text('Fundado: '+widget.club.foundationYear.toString(),style: EstiloTextoBranco.negrito22),
                   Text(widget.club.stadiumName+': '+widget.club.stadiumSize.toString(),style: EstiloTextoBranco.text20),
@@ -351,7 +349,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
                 name: widget.club.name,
                 dataSource: lista,
                 enableTooltip: true,
-                xValueMapper: (GraphPointInt data, _) => data.x.toString()+'ª',
+                xValueMapper: (GraphPointInt data, _) => (data.x+1).toString()+'ª',
                 yValueMapper: (GraphPointInt data, _) => data.y,
                 dataLabelSettings: const DataLabelSettings(
                     isVisible: true,
