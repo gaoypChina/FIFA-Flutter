@@ -27,6 +27,9 @@ class Simulate{
     if(Semana(semana).isJogoCampeonatoNacional) {
       nationalMatchs(simulMyMatch);
     }
+    if(Semana(semana).isJogoCopa) {
+      cupMatchs(simulMyMatch);
+    }
     if(Semana(semana).isJogoGruposInternacional){
       internationalMatchsGroups(simulMyMatch);
     }
@@ -121,6 +124,11 @@ class Simulate{
       }
 
   }
+
+  cupMatchs(bool simulMyMatch){
+
+  }
+
   internationalMatchsGroups(bool simulMyMatch) {
     for(int i=0; i<InternationalLeagueManipulation().funcNInternationalLeagues();i++){
       internationalMatchsGroupsLeague(

@@ -21,18 +21,11 @@ Widget cupPhaseWidget(BuildContext context, String cupName){
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(Name().finale,style: EstiloTextoBranco.negrito16),
-          cupMatchRow(context, Confronto(clubName1: 'Santos', clubName2: 'Grêmio', goal1: 2, goal2: 1),my),
           Text(Name().semifinal,style: EstiloTextoBranco.negrito16),
-          cupMatchRow(context, Confronto(clubName1: 'Santos', clubName2: 'Grêmio', goal1: 2, goal2: 1),my),
-          cupMatchRow(context, Confronto(clubName1: 'Santos', clubName2: 'Grêmio', goal1: 2, goal2: 1),my),
           Text(Name().quartas,style: EstiloTextoBranco.negrito16),
-          cupMatchRow(context, Confronto(clubName1: 'Botafogo', clubName2: 'Grêmio', goal1: 2, goal2: 1),my),
-          cupMatchRow(context, Confronto(clubName1: 'Porto', clubName2: 'Benfica', goal1: 2, goal2: 1),my),
-          cupMatchRow(context, Confronto(clubName1: 'Racing', clubName2: 'Juventus', goal1: 2, goal2: 1),my),
-          cupMatchRow(context, Confronto(clubName1: 'Santos', clubName2: 'Napoli', goal1: 2, goal2: 1),my),
           Text(Name().oitavas,style: EstiloTextoBranco.negrito16),
           for (int i=0; i<clubs.length/2; i++)
-            cupMatchRow(context, Confronto(clubName1: clubs[i].name, clubName2: clubs[clubs.length-i-1].name, goal1: 2, goal2: 1),my),
+            cupMatchRow(context, Confronto(clubName1: clubs[i].name, clubName2: clubs[clubs.length-i-1].name),my),
 
           clubspre.isNotEmpty ?
               Column(
@@ -40,7 +33,7 @@ Widget cupPhaseWidget(BuildContext context, String cupName){
                 children: [
                   Text(Name().groupsPhase,style: EstiloTextoBranco.negrito16),
                   for(int i=0; i<clubspre.length/2; i++)
-                    cupMatchRow(context, Confronto(clubName1: clubspre[i].name, clubName2: clubspre[i+(clubspre.length/2).floor()].name, goal1: 2, goal2: 1),my)
+                    cupMatchRow(context, Confronto(clubName1: clubspre[i].name, clubName2: clubspre[i+(clubspre.length/2).floor()].name),my)
                   ],
               )
           : Container(),
@@ -54,8 +47,6 @@ Widget cupMatchRow(BuildContext context, Confronto confronto, My my){
 
   String teamNameA = confronto.clubName1;
   String teamNameB = confronto.clubName2;
-  int golsA = confronto.goal1;
-  int golsB = confronto.goal2;
   double imageSize = 30;
 
   return Row(
@@ -85,8 +76,8 @@ Widget cupMatchRow(BuildContext context, Confronto confronto, My my){
           ),
 
 
-      golsA >= 0
-          ? Text(' '+ golsA.toString()+'x'+golsB.toString()+' ',style: EstiloTextoBranco.text22)
+      confronto.hasGoals
+          ? Text(' '+ confronto.goal1.toString()+'x'+confronto.goal2.toString()+' ',style: EstiloTextoBranco.text22)
           : const Text('X',textAlign:TextAlign.center,style: EstiloTextoBranco.text22),
 
       //TIME B

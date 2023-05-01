@@ -23,6 +23,10 @@ class Adversario{
     if (weekClass.isJogoCampeonatoNacional) {
       getLeagueAdversario();
     }
+    //ADVERSARIO COPA
+    if (weekClass.isJogoCopa) {
+      getCupAdverssario();
+    }
     //ADVERSARIO FASE DE GRUPOS CHAMPIONS OU LIBERTADORES
     else if (myClass.isPlayingInternational && weekClass.isJogoGruposInternacional) {
       getInternationalAdversario(semana);
@@ -31,6 +35,10 @@ class Adversario{
     else if (weekClass.isJogoMataMataInternacional) {
       getMataMataInternationalAdversario(semana);
     }
+  }
+
+  getCupAdverssario(){
+
   }
 
   getLeagueAdversario(){

@@ -8,7 +8,7 @@ LeagueOfficialNames leagueName = LeagueOfficialNames();
 Map<String,dynamic> mapEuropaTopLeagues = {
 
   leagueName.inglaterra1 : {
-    //2023.0: [n.arsenal,n.mancity,n.manutd,n.newcastle,n.tottenham,n.brighton,n.liverpool,n.fulham,n.chelsea,n.brentford,            n.astonvilla],
+    //2023.0: [n.mancity,n.arsenal,n.manutd,n.newcastle,n.tottenham,n.brighton,n.liverpool,n.fulham,n.chelsea,n.brentford,            n.astonvilla],
     2022.0: [n.mancity,n.liverpool,n.chelsea,n.tottenham,n.arsenal,n.manutd,n.westham,n.leicester,n.brighton,n.wolves,              n.newcastle,n.crystalpalace,n.brentford,n.astonvilla,n.southampton,n.everton,n.leeds,n.burnley,n.watford,n.norwich],
     2021.0: [n.mancity,n.manutd,n.liverpool,n.chelsea,n.leicester,n.westham,n.tottenham,n.arsenal,n.everton,n.leeds,                n.astonvilla,n.newcastle,n.wolves,n.crystalpalace,n.southampton,n.brighton,n.burnley,n.fulham,n.westbromwich,n.sheffieldunited],
     2020.0: [n.liverpool,n.mancity,n.manutd,n.chelsea,n.leicester,n.tottenham,n.wolves,n.arsenal,n.sheffieldunited,n.burnley,       n.southampton,n.everton,n.newcastle,n.crystalpalace,n.brighton,n.westham,n.astonvilla,n.bournemouth,n.watford,n.norwich],
@@ -86,7 +86,7 @@ Map<String,dynamic> mapEuropaTopLeagues = {
 
   leagueName.inglaterra2 : {
     //2024.0: [],
-    //2023.0: [],
+    //2023.0: [n.burnley,],
     2022.0: [n.fulham,n.bournemouth,n.huddersfield,n.nottinghamforest,n.sheffieldunited, n.luton,n.middlesbrough,n.blackburn,n.millwall,n.westbromwich,            n.qpr,n.coventry,n.prestonnorthend,n.stoke,n.swansea,                   n.blackpool,n.bristol,n.cardiffcity,n.hullcity,n.birmigham,             n.reading,n.peterborough,n.derbycount,n.barnsley],
     2021.0: [n.norwich,n.watford,n.brentford,n.swansea,n.barnsley,                       n.bournemouth,n.reading,n.cardiffcity,n.qpr,n.middlesbrough,              n.millwall,n.luton,n.prestonnorthend,n.stoke,n.blackburn,               n.coventry,n.nottinghamforest,n.birmigham,n.bristol,n.huddersfield,     n.derbycount,n.wycombe,n.rotherham,n.sheffieldwednesday],
     2020.0: [n.leeds,n.westbromwich,n.brentford,n.fulham,n.cardiffcity,                  n.swansea,n.nottinghamforest,n.millwall,n.prestonnorthend,n.derbycount,   n.blackburn,n.bristol,n.qpr,n.reading,n.stoke,                          n.sheffieldwednesday,n.middlesbrough,n.huddersfield,n.luton,n.birmigham, n.barnsley,n.charlton,n.wigan,n.hullcity],

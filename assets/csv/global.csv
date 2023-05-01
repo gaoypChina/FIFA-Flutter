@@ -239,7 +239,7 @@ Chelsea,N. Kanté,VOL MC,31,88,France,/215/914/23_60.png
 Chelsea,Thiago Silva,ZAG,37,86,Brazil,/164/240/23_60.png
 Chelsea,K. Koulibaly,ZAG,31,85,Senegal,/201/024/23_60.png
 Chelsea,R. Sterling,PE PD ATA,27,82,England,/202/652/23_60.png
-Chelsea,R. Lukaku,ATA,29,85,Belgium,/192/505/23_60.png
+Inter,R. Lukaku,ATA,29,85,Belgium,/192/505/23_60.png
 Chelsea,E. Fernández,MC VOL,21,85,Argentina,/247/090/23_60.png
 Chelsea,R. James,LD LD,22,84,England,/238/074/23_60.png
 Chelsea,É. Mendy,GOL,30,84,Senegal,/234/642/23_60.png
@@ -280,7 +280,7 @@ Chelsea,G. Slonina,GOL,18,66,United States,/248/158/23_60.png
 Chelsea,O. Hutchinson,MEI MD,18,64,Jamaica,/260/145/23_60.png
 Chelsea,C. Chukwuemeka,MC MEI ATA,18,64,England,/259/356/23_60.png
 Chelsea,L. Hall,MC LE LE,17,61,England,/266/127/23_60.png
-Manchester City,K. De Bruyne,MC MEI,31,89,Belgium,/192/985/23_60.png
+Manchester City,K. De Bruyne,MC MEI,31,90,Belgium,/192/985/23_60.png
 Manchester City,E. Haaland,ATA,21,91,Norway,/239/085/23_60.png
 Manchester City,Ederson,GOL,28,87,Brazil,/210/257/23_60.png
 Manchester City,Rúben Dias,ZAG,25,88,Portugal,/239/818/23_60.png
@@ -414,11 +414,11 @@ Arsenal,A. Cozier-Duberry,PE MEI,17,59,England,/271/743/23_60.png
 Arsenal,G. Lewis,PE PD,22,59,Norway,/259/095/23_60.png
 Arsenal,L. Sousa,LE,17,58,England,/271/808/23_60.png
 Liverpool,Alisson,GOL,29,85,Brazil,/212/831/23_60.png
-Liverpool,M. Salah,PD,30,89,Egypt,/209/331/23_60.png
+Liverpool,M. Salah,PD,30,88,Egypt,/209/331/23_60.png
 Liverpool,V. van Dijk,ZAG,30,88,Netherlands,/203/376/23_60.png
 Liverpool,Fabinho,VOL,28,83,Brazil,/209/499/23_60.png
-Liverpool,Thiago,MC,31,86,Spain,/189/509/23_60.png
-Liverpool,A. Robertson,LE,28,86,Scotland,/216/267/23_60.png
+Liverpool,Thiago,MC,31,85,Spain,/189/509/23_60.png
+Liverpool,A. Robertson,LE,28,84,Scotland,/216/267/23_60.png
 Liverpool,T. Alexander-Arnold,LD,23,85,England,/231/281/23_60.png
 Liverpool,Diogo Jota,ATA PE,25,82,Portugal,/224/458/23_60.png
 Liverpool,L. Díaz,PE ME,25,84,Colombia,/241/084/23_60.png
@@ -2255,7 +2255,7 @@ Barcelona,Fabio Blanco,PD,18,62,Spain,/262/954/23_60.png
 Barcelona,C. Riad,ZAG,19,61,Morocco,/258/490/23_60.png
 Barcelona,Álex Valle,LE,18,61,Spain,/273/875/23_60.png
 Barcelona,Moha Moukhliss,MC,22,59,Spain,/271/956/23_60.png
-Real Madrid,K. Benzema,ATA ATA,34,91,France,/165/153/23_60.png
+Real Madrid,K. Benzema,ATA ATA,34,90,France,/165/153/23_60.png
 Real Madrid,T. Courtois,GOL,30,90,Belgium,/192/119/23_60.png
 Real Madrid,T. Kroos,MC VOL,32,88,Germany,/182/521/23_60.png
 Real Madrid,L. Modrić,MC,36,89,Croatia,/177/003/23_60.png
@@ -2442,8 +2442,8 @@ Valencia,Javi Guerra,MC,19,62,Spain,/266/436/23_60.png
 Valencia,Diego López,ATA ME,20,62,Spain,/264/238/23_60.png
 Valencia,Yellu Santiago,VOL MC,18,60,Spain,/270/698/23_60.png
 Valencia,Darío Serra,ME ATA MD,19,59,Spain,/273/903/23_60.png
-Villarreal,Parejo,MC VOL,33,86,Spain,/189/513/23_60.png
-Villarreal,Gerard Moreno,ATA,30,85,Spain,/208/093/23_60.png
+Villarreal,Parejo,MC VOL,33,84,Spain,/189/513/23_60.png
+Villarreal,Gerard Moreno,ATA,30,84,Spain,/208/093/23_60.png
 Villarreal,Pau Torres,ZAG,25,83,Spain,/241/464/23_60.png
 Villarreal,Raúl Albiol,ZAG,36,82,Spain,/157/481/23_60.png
 Villarreal,F. Coquelin,MC ME MD,31,80,France,/189/271/23_60.png
@@ -3333,15 +3333,15 @@ Juventus,A. Di Pardo,LD MD,22,66,Italy,/261/243/23_60.png
 Juventus,C. Da Graca,ATA,20,64,Italy,/271/582/23_60.png
 Juventus,E. Barrenechea,VOL MC,21,64,Argentina,/246/871/23_60.png
 Juventus,G. Garofani,GOL,19,61,Italy,/271/583/23_60.png
-Inter,M. Škriniar,ZAG,27,86,Slovakia,/232/363/23_60.png
+Inter,M. Škriniar,ZAG,27,85,Slovakia,/232/363/23_60.png
 Inter,N. Barella,MC,25,85,Italy,/224/232/23_60.png
 Inter,L. Martínez,ATA,24,86,Argentina,/231/478/23_60.png
 Inter,M. Brozović,VOL MC,29,85,Croatia,/216/352/23_60.png
 Inter,H. Çalhanoğlu,MC VOL,28,84,Turkey,/208/128/23_60.png
 Inter,A. Bastoni,ZAG,23,84,Italy,/237/383/23_60.png
-Inter,E. Džeko,ATA,36,84,Bosnia,/180/930/23_60.png
+Inter,E. Džeko,ATA,36,82,Bosnia,/180/930/23_60.png
 Inter,S. de Vrij,ZAG,30,83,Netherlands,/198/176/23_60.png
-Inter,A. Onana,GOL,26,83,Cameroon,/226/753/23_60.png
+Inter,A. Onana,GOL,26,84,Cameroon,/226/753/23_60.png
 Inter,F. Acerbi,ZAG,34,82,Italy,/199/845/23_60.png
 Inter,S. Handanovič,GOL,37,82,Slovenia,/162/835/23_60.png
 Inter,R. Gosens,LE ME,27,81,Germany,/223/697/23_60.png
@@ -3386,7 +3386,7 @@ Napoli,M. Politano,PD MD,28,81,Italy,/216/409/23_60.png
 Napoli,A. Meret,GOL,25,80,Italy,/225/116/23_60.png
 Napoli,A. Rrahmani,ZAG,28,80,Kosovo,/244/263/23_60.png
 Napoli,K. Kvaratskhelia,PE MEI,21,87,Georgia,/247/635/23_60.png
-Napoli,Kim Min Jae,ZAG,25,84,South Korea,/237/086/23_60.png
+Napoli,Kim Min Jae,ZAG,25,83,South Korea,/237/086/23_60.png
 Napoli,Mário Rui,LE,31,81,Portugal,/204/614/23_60.png
 Napoli,E. Elmas,MEI MC PE,22,79,North Macedonia,/241/390/23_60.png
 Napoli,G. Raspadori,ATA MEI ATA,22,80,Italy,/253/002/23_60.png
@@ -3434,10 +3434,10 @@ Lazio,E. Cicerelli,PE PD MD,27,65,Italy,/241/165/23_60.png
 Lazio,Mario Gila,ZAG,21,64,Spain,/268/804/23_60.png
 Lazio,M. Adamonis,GOL,25,64,Lithuania,/233/691/23_60.png
 Milan,M. Maignan,GOL,26,87,France,/215/698/23_60.png
-Milan,T. Hernández,LE ME,24,85,France,/232/656/23_60.png
+Milan,T. Hernández,LE ME,24,86,France,/232/656/23_60.png
+Milan,Rafael Leão,PE ATA ATA,23,85,Portugal,/241/721/23_60.png
 Milan,S. Tonali,VOL MC,22,84,Italy,/241/096/23_60.png
 Milan,F. Tomori,ZAG,24,84,England,/232/756/23_60.png
-Milan,Rafael Leão,PE ATA ATA,23,84,Portugal,/241/721/23_60.png
 Milan,I. Bennacer,VOL MC,24,82,Algeria,/226/754/23_60.png
 Milan,O. Giroud,ATA,35,82,France,/178/509/23_60.png
 Milan,S. Kjær,ZAG,33,82,Denmark,/179/645/23_60.png
@@ -4494,7 +4494,7 @@ Bayern Munique,T. Müller,MEI ATA ATA,32,86,Germany,/189/596/23_60.png
 Bayern Munique,M. de Ligt,ZAG,22,85,Netherlands,/235/243/23_60.png
 Bayern Munique,K. Coman,MD ME,26,85,France,/213/345/23_60.png
 Bayern Munique,Y. Sommer,GOL,33,85,Switzerland,/177/683/23_60.png
-Bayern Munique,J. Musiala,MEI ME MC,19,84,Germany,/256/790/23_60.png
+Bayern Munique,J. Musiala,MEI ME MC,19,85,Germany,/256/790/23_60.png
 Bayern Munique,S. Gnabry,MD ME,26,84,Germany,/206/113/23_60.png
 Bayern Munique,L. Sané,ME MD ATA,26,84,Germany,/222/492/23_60.png
 Bayern Munique,L. Hernández,ZAG LE,26,84,France,/220/814/23_60.png
@@ -5631,7 +5631,7 @@ Saarbrücken,T. Paterok,GOL,29,62,Germany,/218/873/23_60.png
 Saarbrücken,J. Bauer,GOL,22,56,Germany,/266/383/23_60.png
 Saarbrücken,F. Recktenwald,LD VOL,19,54,Germany,/262/915/23_60.png
 Saarbrücken,A. Breuer,MC ATA VOL,16,52,Germany,/270/839/23_60.png
-PSG,L. Messi,PD,35,90,Argentina,/158/023/23_60.png
+PSG,L. Messi,PD,35,91,Argentina,/158/023/23_60.png
 PSG,K. Mbappé,ATA PE,23,91,France,/231/747/23_60.png
 PSG,Neymar Jr,PE,30,89,Brazil,/190/871/23_60.png
 PSG,Marquinhos,ZAG,28,88,Brazil,/207/865/23_60.png
@@ -10352,44 +10352,44 @@ Zrinjski,Antonio Prskalo,ATA,18,60,Bosnia,wiki/missing_player.jpg
 Palmeiras,Weverton,GOL,35,84,Brazil,wiki/47936.png
 Palmeiras,Gustavo Gomez,ZAG,29,83,Paraguay,wiki/50937.png
 Palmeiras,Dudu,PE MEI,31,81,Brazil,wiki/41517.png
-Palmeiras,Raphael Veiga,MEI,27,80,Brazil,wiki/87006.png
+Palmeiras,Raphael Veiga,MEI,27,81,Brazil,wiki/87006.png
 Palmeiras,Rony,ATA MEI,27,80,Brazil,wiki/99213.png
-Palmeiras,Ze Rafael,MC MEI MD,29,78,Brazil,wiki/68908.png
+Palmeiras,Ze Rafael,MC MEI MD,29,79,Brazil,wiki/68908.png
 Palmeiras,Marcos Rocha,MD LD ZAG,34,79,Brazil,wiki/41184.png
-Palmeiras,Artur Guimaraes,PE MEI,25,79,Brazil,wiki/94127.png
-Palmeiras,Murilo Cerqueira,ZAG,26,79,Brazil,wiki/90543.png
+Palmeiras,Artur Guimaraes,PE MEI,25,78,Brazil,wiki/94127.png
+Palmeiras,Murilo Cerqueira,ZAG,26,80,Brazil,wiki/90543.png
 Palmeiras,Luan Garcia,ZAG,29,78,Brazil,wiki/61630.png
-Palmeiras,Joaquin Piquerez,MD LE ZAG,24,78,Uruguay,wiki/95046.png
-Palmeiras,Gabriel Menino,MD MC LD,22,77,Brazil,wiki/103732.png
-Palmeiras,Atuesta,MC MEI MD,25,77,Colombia,wiki/89399.png
+Palmeiras,Piquerez,MD LE ZAG,24,78,Uruguay,wiki/95046.png
+Palmeiras,Gabriel Menino,MD MC LD,22,78,Brazil,wiki/103732.png
+Palmeiras,Atuesta,MC MEI MD,25,76,Colombia,wiki/89399.png
 Palmeiras,Jose Manuel Lopez,ATA,22,77,Argentina,wiki/109574.png
 Palmeiras,Jailson Siqueira,MD MC ZAG,27,75,Brazil,wiki/87110.png
-Palmeiras,Rafael Navarro,ATA,22,73,Brazil,wiki/104746.png
+Palmeiras,Rafael Navarro,ATA,22,74,Brazil,wiki/104746.png
 Palmeiras,Marcelo Lomba,GOL,36,75,Brazil,wiki/43625.png
-Palmeiras,Rocha Mayke,MD MC PD ZAG,30,75,Brazil,wiki/65767.png
+Palmeiras,Mayke,MD MC PD ZAG,30,75,Brazil,wiki/65767.png
 Palmeiras,Bruno Tabata,MEI,26,75,Brazil,wiki/96079.png
 Palmeiras,Breno Lopes,ATA MEI,27,75,Brazil,wiki/108485.png
-Palmeiras,Barbosa Vanderlan,MD LE LE,20,69,Brazil,wiki/108621.png
+Palmeiras,Barbosa Vanderlan,MD LE LE,20,73,Brazil,wiki/108621.png
 Palmeiras,Vinicius Silvestre,GOL,29,68,Brazil,wiki/82289.png
-Palmeiras,Henrique Giovani,PE ATA,19,73,Brazil,wiki/111934.png
-Palmeiras,Fabinho Silva,MC MD,20,65,Brazil,wiki/118073.png
-Palmeiras,Michel Augusto,ZAG,19,65,Brazil,wiki/117962.png
-Palmeiras,Richard Rios,MC,22,65,Colombia,wiki/108639.png
+Palmeiras,Giovani,PE ATA,19,73,Brazil,wiki/111934.png
+Palmeiras,Endrick,ATA MEI,16,73,Brazil,wiki/117462.png
+Palmeiras,Fabinho Silva,MC MD,20,68,Brazil,wiki/118073.png
+Palmeiras,Richard Rios,MC,22,74,Colombia,wiki/108639.png
 Palmeiras,Gustavo Garcia,MD LD ZAG,21,65,Brazil,wiki/112416.png
-Palmeiras,Felipe Endrick,ATA MEI,16,73,Brazil,wiki/117462.png
-Palmeiras,Kaiky Naves,ZAG,20,62,Brazil,wiki/128249.png
 Palmeiras,Luis Guilherme,PE MEI,17,62,Brazil,wiki/123318.png
-Palmeiras,Jhon Jhon,PE MEI,20,62,Brazil,wiki/missing_player.jpg
+Palmeiras,Jhon Jhon,PE MEI,20,68,Brazil,wiki/missing_player.jpg
+Palmeiras,Kaiky Naves,ZAG,20,62,Brazil,wiki/128249.png
 Palmeiras,Daniel Alves,LE,21,59,Brazil,wiki/missing_player.jpg
-Corinthians,Barberan Maycon,MC MD,25,80,Brazil,wiki/85483.png
+Palmeiras,Michel Augusto,ZAG,19,63,Brazil,wiki/117962.png
+Corinthians,Maycon Barberan,MC MD,25,78,Brazil,wiki/85483.png
 Corinthians,Roger Guedes,ATA MEI,26,80,Brazil,wiki/86483.png
-Corinthians,Ramos Cassio,GOL,35,81,Brazil,wiki/18237.png
-Corinthians,Renato Augusto,MEI MC,35,79,Brazil,wiki/18281.png
+Corinthians,Cassio,GOL,35,81,Brazil,wiki/18237.png
+Corinthians,Renato Augusto,MEI MC,35,80,Brazil,wiki/18281.png
 Corinthians,Fabian Balbuena,ZAG,31,79,Paraguay,wiki/62739.png
 Corinthians,Ángel Romero,ATA MEI,30,79,Paraguay,wiki/63347.png
 Corinthians,Bezerra Paulinho,MEI MC,34,78,Brazil,wiki/26843.png
-Corinthians,Victor Giuliano,MEI MC,32,78,Brazil,wiki/37955.png
-Corinthians,Conserva Fagner,MD LD ZAG,33,78,Brazil,wiki/18276.png
+Corinthians,Victor Giuliano,MEI MC,32,77,Brazil,wiki/37955.png
+Corinthians,Fagner,MD LD ZAG,33,78,Brazil,wiki/18276.png
 Corinthians,Carlos Gil,ZAG,35,78,Brazil,wiki/41229.png
 Corinthians,Yuri Alberto,ATA MEI,22,78,Brazil,wiki/94668.png
 Corinthians,Victor Cantillo,MC MD,29,77,Colombia,wiki/67189.png
@@ -10507,29 +10507,29 @@ Santos,Silva Derick,ZAG,20,59,Brazil,wiki/108600.png
 Santos,Joao Balao,MC MD,20,57,Brazil,wiki/missing_player.jpg
 Santos,Vinicius Diogenes,GOL,22,57,Brazil,wiki/missing_player.jpg
 Santos,Paulo Mazoti,GOL,22,57,Brazil,wiki/missing_player.jpg
-Atlético-MG,Guilherme Arana,MD LE ZAG,25,81,Brazil,wiki/81016.png
-Atlético-MG,Santos Edenilson,MD MC LD,33,80,Brazil,wiki/51238.png
+Atlético-MG,Guilherme Arana,MD LE ZAG,25,80,Brazil,wiki/81016.png
+Atlético-MG,Edenilson,MD MC LD,33,78,Brazil,wiki/51238.png
 Atlético-MG,Matias Zaracho,MEI,25,80,Argentina,wiki/90310.png
-Atlético-MG,Givanildo Hulk,ATA MEI,36,80,Brazil,wiki/33654.png
-Atlético-MG,Passos Otavio,MC MD,28,79,Brazil,wiki/73544.png
-Atlético-MG,Delmino Pedrinho,MEI MC,24,79,Brazil,wiki/90580.png
+Atlético-MG,Hulk,ATA MEI,36,81,Brazil,wiki/33654.png
+Atlético-MG,Otavio,MC MD,28,78,Brazil,wiki/73544.png
+Atlético-MG,Pedrinho,MEI MC,24,78,Brazil,wiki/90580.png
 Atlético-MG,Felipe Éverson,GOL,32,79,Brazil,wiki/47457.png
 Atlético-MG,Cristian Pavon,ATA MEI,27,79,Argentina,wiki/73146.png
 Atlético-MG,Igor Gomes,MEI MC,24,78,Brazil,wiki/99243.png
 Atlético-MG,Allan Souza,MC MD,26,78,Brazil,wiki/82325.png
-Atlético-MG,Bezerra Patrick,MC MEI VOL,30,78,Brazil,wiki/76921.png
+Atlético-MG,Patrick Bezerra,MC MEI VOL,30,77,Brazil,wiki/76921.png
 Atlético-MG,Eduardo Vargas,ATA ATA,33,78,Chile,wiki/32459.png
 Atlético-MG,Igor Rabello,ZAG,27,78,Brazil,wiki/87421.png
-Atlético-MG,Rodrigo Battaglia,MC MD,31,78,Argentina,wiki/47374.png
+Atlético-MG,Rodrigo Battaglia,MC MD,31,76,Argentina,wiki/47374.png
 Atlético-MG,Junior Ademir,PE ATA,28,77,Brazil,wiki/99172.png
-Atlético-MG,Filho Paulinho,PE MEI,22,77,Brazil,wiki/91630.png
+Atlético-MG,Paulinho,PE MEI,22,79,Brazil,wiki/91630.png
 Atlético-MG,Mariano Ferreira,MD LD ZAG,36,77,Brazil,wiki/27948.png
 Atlético-MG,Renzo Saravia,LD ZAG,29,77,Argentina,wiki/69289.png
 Atlético-MG,Nathan Silva,MD MC ZAG,25,77,Brazil,wiki/97019.png
-Atlético-MG,Dalmoro Hyoran,MEI MC,29,76,Brazil,wiki/76947.png
-Atlético-MG,Humberto Rever,ZAG,38,76,Brazil,wiki/34047.png
+Atlético-MG,Hyoran,MEI MC,29,76,Brazil,wiki/76947.png
+Atlético-MG,Rever,ZAG,38,76,Brazil,wiki/34047.png
 Atlético-MG,Ribeiro Dodo,MD LE ZAG,31,75,Brazil,wiki/43456.png
-Atlético-MG,Nascimento Jemerson,ZAG,30,75,Brazil,wiki/69010.png
+Atlético-MG,Jemerson,ZAG,30,75,Brazil,wiki/69010.png
 Atlético-MG,Alan Kardec,ATA,34,75,Brazil,wiki/29441.jpg
 Atlético-MG,Allan Nathan,MEI MC,27,75,Brazil,wiki/73413.png
 Atlético-MG,Bruno Fuchs,ZAG,24,74,Brazil,wiki/102296.png
@@ -10567,25 +10567,25 @@ Internacional,Matheus Dias,MC MEI MD,20,62,Brazil,wiki/128244.png
 Internacional,Anthoni Sousa,GOL,21,62,Brazil,wiki/missing_player.jpg
 Internacional,Emerson Junior,GOL,23,59,Brazil,wiki/missing_player.jpg
 Internacional,Tavares Lucca,ATA MEI,20,59,Brazil,wiki/missing_player.jpg
-Flamengo,Giorgian de Arrascaeta,PE MEI,28,83,Uruguay,wiki/64661.png
+Flamengo,Giorgian de Arrascaeta,PE MEI,28,82,Uruguay,wiki/64661.png
 Flamengo,Gabriel Barbosa,ATA PD,26,81,Brazil,wiki/68166.png
-Flamengo,Santos Gerson,MC MEI VOL,25,80,Brazil,wiki/79604.png
-Flamengo,Guilherme Pedro,ATA,25,82,Brazil,wiki/87068.png
-Flamengo,Everton Cebolinha,MEI MC,27,80,Brazil,wiki/73914.png
+Flamengo,Gerson,MC MEI VOL,25,79,Brazil,wiki/79604.png
+Flamengo,Pedro,ATA,25,83,Brazil,wiki/87068.png
+Flamengo,Everton Cebolinha,MEI MC,27,79,Brazil,wiki/73914.png
 Flamengo,Éverton Ribeiro,MEI MC,33,80,Brazil,wiki/32347.png
-Flamengo,Erick Pulgar,MC MD,29,79,Chile,wiki/72125.png
+Flamengo,Erick Pulgar,MC MD,29,76,Chile,wiki/72125.png
 Flamengo,Arturo Vidal,MC MEI MD,35,77,Chile,wiki/17566.png
 Flamengo,Bruno Henrique,ATA MEI,32,79,Brazil,wiki/81439.png
-Flamengo,Filipe Luis,MD LE ZAG,37,79,Brazil,wiki/3086.png
+Flamengo,Filipe Luis,MD LE ZAG,37,78,Brazil,wiki/3086.png
 Flamengo,Aderbar Santos,GOL,33,78,Brazil,wiki/54606.png
 Flamengo,Nascimento Pablo,ZAG,31,77,Brazil,wiki/48539.png
 Flamengo,Rodrigo Caio,ZAG,29,78,Brazil,wiki/51236.png
-Flamengo,David Luiz,ZAG,35,78,Brazil,wiki/22645.png
+Flamengo,David Luiz,ZAG,35,77,Brazil,wiki/22645.png
 Flamengo,Ayrton Lucas,MD LE ZAG,25,79,Brazil,wiki/87065.png
 Flamengo,Leo Pereira,LE,27,77,Brazil,wiki/72236.png
 Flamengo,Thiago Maia,MC MD,26,78,Brazil,wiki/81405.png
-Flamengo,Silva Matheuzinho,MD LD ZAG,22,78,Brazil,wiki/105988.png
-Flamengo,Costa Marinho,ATA MEI,32,77,Brazil,wiki/43627.png
+Flamengo,Matheuzinho,MD LD ZAG,22,78,Brazil,wiki/105988.png
+Flamengo,Marinho,ATA MEI,32,77,Brazil,wiki/43627.png
 Flamengo,Hugo Souza,GOL,24,76,Brazil,wiki/98276.png
 Flamengo,Guillermo Varela,MD LD LE,30,75,Uruguay,wiki/66592.png
 Flamengo,Fabricio Bruno,ZAG,27,75,Brazil,wiki/85980.png
@@ -10648,21 +10648,21 @@ Botafogo,Da Silva Rai,PE MEI,20,59,Brazil,wiki/119751.png
 Botafogo,Matheus Cabral,ZAG,23,59,Brazil,wiki/missing_player.jpg
 Botafogo,J P Galvao,ZAG,21,57,Brazil,wiki/missing_player.jpg
 Fluminense,Marcilio Nino,ZAG,25,79,Brazil,wiki/101136.png
-Fluminense,Vieira Marcelo,MD LE ZAG,34,79,Brazil,wiki/13726.png
-Fluminense,German Cano,ATA,35,82,Argentina,wiki/32359.png
+Fluminense,Vieira Marcelo,MD LE ZAG,34,80,Brazil,wiki/13726.png
+Fluminense,German Cano,ATA,35,83,Argentina,wiki/32359.png
 Fluminense,Claudio Guga,MD LD ZAG,24,78,Brazil,wiki/98159.png
 Fluminense,Franca Keno,PE ATA,33,78,Brazil,wiki/7823.png
 Fluminense,Andre Trindade,MD MC ZAG,21,77,Brazil,wiki/105080.png
 Fluminense,Messias Manoel,ZAG,33,77,Brazil,wiki/41232.png
-Fluminense,Paulo Henrique Ganso,MEI MC,33,78,Brazil,wiki/33533.png
-Fluminense,Jhon Arias,MEI,25,78,Colombia,wiki/89088.png
+Fluminense,Paulo Henrique Ganso,MEI MC,33,79,Brazil,wiki/33533.png
+Fluminense,Jhon Arias,MEI,25,79,Colombia,wiki/89088.png
 Fluminense,Deivson Fabio,GOL,42,77,Brazil,wiki/3690.png
 Fluminense,Jorge Moraes,LE,27,77,Brazil,wiki/81736.png
 Fluminense,Matheus Martinelli,MC MD,21,76,Brazil,wiki/108643.png
 Fluminense,Samuel Xavier,LD ZAG,32,76,Brazil,wiki/64841.png
 Fluminense,Michel Araujo,ATA ATA,26,76,Uruguay,wiki/89558.png
 Fluminense,David Braz,ZAG,35,75,Brazil,wiki/27889.png
-Fluminense,Alan Carvalho,ATA,33,75,China,wiki/33328.png
+Fluminense,Alan Carvalho,ATA,33,76,China,wiki/33328.png
 Fluminense,Vinicius Lima,MEI MC,26,75,Brazil,wiki/94267.png
 Fluminense,Liberato Marrony,ATA MEI,24,75,Brazil,wiki/99186.png
 Fluminense,Felipe Melo,VOL ZAG,39,75,Brazil,wiki/6162.png
@@ -10685,10 +10685,10 @@ Atlético-PR,Luiz Fernandinho,MD MC ZAG,37,81,Brazil,wiki/4165.png
 Atlético-PR,David Terans,ATA ATA,28,79,Uruguay,wiki/71042.png
 Atlético-PR,Thiago Heleno,ZAG,34,78,Brazil,wiki/18266.png
 Atlético-PR,Pedro Henrique,ZAG,27,78,Brazil,wiki/85142.png
-Atlético-PR,Krepski Bento,GOL,23,77,Brazil,wiki/105112.png
+Atlético-PR,Bento Krepski,GOL,23,77,Brazil,wiki/105112.png
 Atlético-PR,Oliveira Khellven,MD LD ZAG,22,77,Brazil,wiki/101268.png
 Atlético-PR,Agustin Canobbio,PE ATA,24,77,Uruguay,wiki/89651.png
-Atlético-PR,Felipe Pablo,ATA MEI,30,77,Brazil,wiki/52042.png
+Atlético-PR,Pablo Felipe,ATA MEI,30,77,Brazil,wiki/52042.png
 Atlético-PR,Cardoso Christian,MC MD,22,77,Brazil,wiki/104784.png
 Atlético-PR,Leo Cittadini,MC MEI MD,29,76,Brazil,wiki/65108.png
 Atlético-PR,Carvalho Erick,MD MC LD,25,76,Brazil,wiki/102295.png
@@ -10696,7 +10696,7 @@ Atlético-PR,Vitor Bueno,ATA ATA,28,76,Brazil,wiki/86874.png
 Atlético-PR,Guilherme Bissoli,ATA,25,75,Brazil,wiki/99245.png
 Atlético-PR,Ferreira Madson,MD LD ZAG,31,75,Brazil,wiki/61293.png
 Atlético-PR,Hugo Moura,MC MD,25,75,Brazil,wiki/101129.png
-Atlético-PR,Siqueira Willian,ATA MEI,36,75,Brazil,wiki/18270.png
+Atlético-PR,Willian Siqueira,ATA MEI,36,75,Brazil,wiki/18270.png
 Atlético-PR,Marcelo Cirino,ATA MEI,31,75,Brazil,wiki/43276.jpg
 Atlético-PR,Alex Santana,MC MEI MD,27,75,Brazil,wiki/94279.png
 Atlético-PR,Tomas Cuello,MEI MC,23,75,Argentina,wiki/96122.png
@@ -10753,7 +10753,7 @@ Coritiba,Sidnei Fernandes,GOL,20,57,Brazil,wiki/missing_player.jpg
 Coritiba,Kaio Cesar,MEI,19,52,Brazil,wiki/131194.png
 Fortaleza,Silvio Romero,ATA,34,77,Argentina,wiki/45770.png
 Fortaleza,Thiago Galhardo,ATA ATA,33,77,Brazil,wiki/51216.png
-Fortaleza,Yago Pikachu,MD MC PD ZAG,30,76,Brazil,wiki/64058.png
+Fortaleza,Yago Pikachu,MD MC PD ZAG,30,77,Brazil,wiki/64058.png
 Fortaleza,Juan Martin Lucero,ATA ATA,31,76,Argentina,wiki/69825.png
 Fortaleza,Bruno Pacheco,MD LE ZAG,31,75,Brazil,wiki/90505.png
 Fortaleza,Guilherme Tinga,MD LD LD,29,75,Brazil,wiki/73911.png

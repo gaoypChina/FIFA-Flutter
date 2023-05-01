@@ -80,8 +80,6 @@ class ResultGameNacional{
     }
 
 
-
-
   }
 
 

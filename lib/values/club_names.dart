@@ -2993,6 +2993,7 @@ class ClubName{
   String coritibaSE = "Coritiba-SE";
   String corumbaense = "Corumbaense"; //MS
   String coruripe = "Coruripe"; //AL
+  String costarica = "Costa Rica"; //MS
   String cotinguiba = "Cotinguiba"; //SE
   String coxim = "Coxim";
   String crac = "CRAC";
@@ -3011,6 +3012,7 @@ class ClubName{
   String docemel = "Doce Mel"; //BA
   String dombosco = "Dom Bosco"; //MT
   String douradense = "Douradense";
+  String dourados = "Dourados"; //MS
   String doze = "Doze"; //ES
   String duque = "Duque de Caxias";
   String espigao = "Espigão"; //RO
@@ -3131,9 +3133,11 @@ class ClubName{
   String macae = "Macaé";
   String macapa = "Macapá"; //AP
   String madureira = "Madureira";
+  String maguary = "Maguary"; //PE
   String malutrom = "Malutrom";
   String mamore = "Mamoré";
   String manaus = "Manaus";
+  String manauara = "Manauara"; //AM
   String mandaguari = "Mandaguari";
   String maracana = "Maracanã"; //CE
   String maranguape = "Maranguape";
@@ -3178,6 +3182,7 @@ class ClubName{
   String olimpicoAM = "Olimpico Clube"; //AM
   String olimpicoBlumenau = "Olimpico Blumenau"; //SC
   String olimpicoSE = "Olimpico-SE"; //SE
+  String operarioAM = "Operário-AM";
   String operarioPR = "Operário-PR";
   String operarioms = "Operário-MS";
   String operarioMT = "Operário-MT";
@@ -3191,6 +3196,7 @@ class ClubName{
   String paraisoTO = "NC Paraíso"; //TO
   String paranavai = "Paranavaí";
   String paranoa = "Paranoá"; //DF
+  String parintins = "Parintins"; //AM
   String parnahyba = "Parnahyba"; //PIAUI
   String patrocinense = "Patrocinense"; //MG
   String paularamos = "Paula Ramos"; //SC
@@ -3202,6 +3208,7 @@ class ClubName{
   String penarolAM = "Peñarol-AM";
   String penedense = "Penedense"; //AL
   String perdigao = "Perdigão"; //SC
+  String petrolina = "Petrolina"; //PE
   String piaui = "Piauí"; //PIAUI
   String picos = "Picos"; //PIAUI
   String pirambu = "Pirambu"; //SE

@@ -24,7 +24,8 @@ class MundialFinal{
   void simulate(){
       getClubs();
       simulateScore();
-      confronto = Confronto(clubName1: club1.name, clubName2: club2.name, goal1: _goal1, goal2: _goal2);
+      confronto = Confronto(clubName1: club1.name, clubName2: club2.name);
+      confronto.setGoals(goal1: _goal1, goal2: _goal2);
       simulatePenaltis();
 
       saveResults();
@@ -91,9 +92,8 @@ class MundialFinal{
     confronto = Confronto(
         clubName1: result['champion'],
         clubName2: result['vice'],
-        goal1: result['goal_champion'],
-        goal2: result['goal_vice']
     );
+    confronto.setGoals(goal1: result['goal_champion'], goal2: result['goal_vice']);
   }
 
 }

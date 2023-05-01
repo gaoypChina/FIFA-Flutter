@@ -11,6 +11,7 @@ class Confronto{
   late int goal2;
   late String result;
   bool isMyMatch = false;
+  bool hasGoals = false;
 
   bool hasPenaltis = false;
   int penaltis1 = -1;
@@ -20,12 +21,20 @@ class Confronto{
   String draw = 'Draw';
   String loss = 'Loss';
 
-  Confronto({required this.clubName1, required this.clubName2, required this.goal1,required this.goal2}){
+  Confronto({required this.clubName1, required this.clubName2}){
     clubID1 = clubsAllNameList.indexOf(clubName1);
     clubID2 = clubsAllNameList.indexOf(clubName2);
     if(clubID1 == globalMyClubID || clubID2 == globalMyClubID){
       isMyMatch = true;
     }
+
+  }
+
+  setGoals({required goal1,required goal2}){
+    hasGoals = true;
+    this.goal1 = goal1;
+    this.goal1 = goal2;
+
     if(goal1>goal2){
       result = victory;
     }
@@ -41,6 +50,10 @@ class Confronto{
     hasPenaltis = true;
     this.penaltis1 = penaltis1;
     this.penaltis2 = penaltis2;
+  }
+
+  fromMap(){
+
   }
 
 }

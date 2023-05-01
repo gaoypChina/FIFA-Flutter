@@ -239,7 +239,7 @@ Map<String,dynamic> mapCopas = {
   },
 
    leagueName.franceCup : {
-     //2023.0: [],
+    2023.0: [n.toulouse,n.nantes,],
     2022.0: [n.nantes,n.nice],
     2021.0: [n.psg,n.monaco,],
     2020.0: [n.psg,n.saintetienne],

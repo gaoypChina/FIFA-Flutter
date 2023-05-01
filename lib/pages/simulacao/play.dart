@@ -234,7 +234,8 @@ Widget gameVelocitySlider(){
 
       //**Só funciona se ja tiver simulado todos os outros jogos
       //Tem uma dependencia pelo ResultGameNacional
-      Confronto confronto = Confronto(clubName1: myClubClass.name, clubName2: adversarioClubClass.name, goal1: myMatchSimulation.meuGolMarcado, goal2: myMatchSimulation.meuGolSofrido);
+      Confronto confronto = Confronto(clubName1: myClubClass.name, clubName2: adversarioClubClass.name);
+      confronto.setGoals(goal1: myMatchSimulation.meuGolMarcado, goal2: myMatchSimulation.meuGolSofrido);
       CoachBestResults coachBestResults = CoachBestResults();
       coachBestResults.updateSequence(confronto);
     }else{

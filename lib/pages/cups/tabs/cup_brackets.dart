@@ -114,8 +114,10 @@ import 'package:flutter/material.dart';
 
 Widget matchBox(){
     
-    Confronto confrontoIda = Confronto(clubName1: 'Peñarol', clubName2: 'Milan', goal1: 1, goal2: 3);
-    Confronto confrontoVolta = Confronto(clubName1: 'Peñarol', clubName2: 'Milan', goal1: 2, goal2: 0);
+    Confronto confrontoIda = Confronto(clubName1: 'Peñarol', clubName2: 'Milan');
+    Confronto confrontoVolta = Confronto(clubName1: 'Peñarol', clubName2: 'Milan');
+    confrontoIda.setGoals(goal1: 1, goal2: 3);
+    confrontoVolta.setGoals(goal1: 4, goal2: 2);
     confrontoVolta.setPenalties(penaltis1: 2, penaltis2: 3);
     double imageSize = 32;
 

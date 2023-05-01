@@ -198,7 +198,8 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
     //print(lines);
     for (dynamic lined in lines){
         if(lined[0].isNotEmpty){
-          String clubName = lined[0].replaceFirst(" (Y)","").replaceFirst(" (J)","").replaceFirst(" (R)","").replaceFirst(" (X)","");
+          String clubName = lined[0].replaceFirst(" (Y)","").replaceFirst(" (J)","").replaceFirst(" (R)","");
+          clubName = lined[0].replaceFirst(" (P)","").replaceFirst(" (X)","");
           clubName = clubName.replaceFirst(" (A)","").replaceFirst(" (C)","").replaceFirst(" (Q)","");
           clubName = clubName.replaceFirst(" (S)","").replaceFirst(" (T)","").replaceFirst(" (Z)","");
           clubName = clubName.replaceFirst(" (C, Q)","").replaceFirst(" (T, Y)","");
