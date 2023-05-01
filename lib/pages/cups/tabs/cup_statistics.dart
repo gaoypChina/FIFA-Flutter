@@ -66,9 +66,10 @@ class _CupStatisticsState extends State<CupStatistics> {
     return Row(
       children: [
         SizedBox(width: 35,child: Text(result.toString()+"- ",style: EstiloTextoBranco.text14)),
-        SizedBox(width:180,child: Text(player.name,style: EstiloTextoBranco.text14)),
         Images().getEscudoWidget(player.clubName,25,25),
-        Text(result.toString(),style: EstiloTextoBranco.text14),
+        const SizedBox(width: 5),
+        SizedBox(width: 30,child: Text(result.toString(),style: EstiloTextoBranco.negrito16)),
+        SizedBox(width:180,child: Text(player.name,style: EstiloTextoBranco.text14)),
       ],
     );
   }

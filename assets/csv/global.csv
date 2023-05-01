@@ -286,7 +286,7 @@ Manchester City,Ederson,GOL,28,87,Brazil,/210/257/23_60.png
 Manchester City,Rúben Dias,ZAG,25,88,Portugal,/239/818/23_60.png
 Manchester City,Bernardo Silva,MC,27,88,Portugal,/218/667/23_60.png
 Manchester City,Rodri,VOL,26,87,Spain,/231/866/23_60.png
-Manchester City,João Cancelo,LD LE MD,28,87,Portugal,/210/514/23_60.png
+Bayern Munique,João Cancelo,LD LE MD,28,87,Portugal,/210/514/23_60.png
 Manchester City,A. Laporte,ZAG,28,86,Spain,/212/218/23_60.png
 Manchester City,İ. Gündoğan,MC VOL,31,85,Germany,/186/942/23_60.png
 Manchester City,R. Mahrez,PD MD,31,85,Algeria,/204/485/23_60.png
@@ -354,11 +354,11 @@ Manchester United,A. Elanga,PD MD ATA,20,73,Sweden,/257/470/23_60.png
 Manchester United,T. Heaton,GOL,36,72,England,/163/264/23_60.png
 Manchester United,E. Laird,LD LD,20,71,England,/246/159/23_60.png
 Manchester United,J. Butland,GOL,29,71,England,/203/042/23_60.png
-Manchester United,F. Pellistri,PD MD,20,71,Uruguay,/253/283/23_60.png
+Manchester United,F. Pellistri,PD MD,20,73,Uruguay,/253/283/23_60.png
 Manchester United,P. Jones,ZAG,30,71,England,/194/957/23_60.png
 Manchester United,A. Diallo,MD MEI,19,71,Ivory Coast,/254/088/23_60.png
 Manchester United,Alejandro Garnacho,PE ME,18,70,Argentina,/268/438/23_60.png
-Manchester United,Álvaro Fernández,LE LE,19,69,Spain,/268/889/23_60.png
+Manchester United,Álvaro Fernández,LE,19,69,Spain,/268/889/23_60.png
 Manchester United,D. Bernard,ZAG LD,21,68,England,/253/034/23_60.png
 Manchester United,T. Mengi,ZAG,20,67,England,/253/465/23_60.png
 Manchester United,H. Mejbri,MEI MC,19,65,Tunisia,/258/171/23_60.png
@@ -464,7 +464,7 @@ Tottenham,C. Romero,ZAG,24,83,Argentina,/232/488/23_60.png
 Tottenham,Pedro Porro,LD MD,22,82,Spain,/243/576/23_60.png
 Tottenham,A. Danjuma,ATA ME,25,82,Netherlands,/236/276/23_60.png
 Tottenham,R. Bentancur,MC,25,82,Uruguay,/227/535/23_60.png
-Tottenham,I. Perišić,LE ME,33,81,Croatia,/181/458/23_60.png
+Tottenham,I. Perišić,LE ME,33,82,Croatia,/181/458/23_60.png
 Tottenham,Richarlison,ATA PE,25,81,Brazil,/231/943/23_60.png
 Tottenham,D. Kulusevski,PD,22,81,Sweden,/247/394/23_60.png
 Tottenham,G. Lo Celso,MEI ME ATA,26,81,Argentina,/226/226/23_60.png
@@ -507,7 +507,7 @@ Everton,M. Keane,ZAG,29,77,England,/207/599/23_60.png
 Everton,V. Mykolenko,LE LE,23,76,Ukraine,/244/380/23_60.png
 Everton,D. McNeil,ME MD,22,76,England,/243/282/23_60.png
 Everton,B. Godfrey,ZAG LE,24,76,England,/225/793/23_60.png
-Everton,Y. Mina,ZAG,27,76,Colombia,/220/523/23_60.png
+Everton,Y. Mina,ZAG,27,77,Colombia,/220/523/23_60.png
 Everton,A. Iwobi,MD MC,26,76,Nigeria,/213/655/23_60.png
 Everton,N. Maupay,ATA,25,75,France,/211/784/23_60.png
 Everton,A. Begović,GOL,35,75,Bosnia,/172/723/23_60.png
@@ -1215,24 +1215,24 @@ Norwich,F. Clarke,MEI MC,19,61,Scotland,/256/506/23_60.png
 Norwich,A. Kamara,ATA,18,60,England,/270/379/23_60.png
 Norwich,T. Dickson-Peters,ATA,19,58,Scotland,/253/971/23_60.png
 Norwich,J. McCracken,GOL,22,56,Scotland,/242/983/23_60.png
-Nottingham Forest,K. Navas,GOL,35,87,Costa Rica,/193/041/23_60.png
+Nottingham Forest,K. Navas,GOL,35,86,Costa Rica,/193/041/23_60.png
+Nottingham Forest,Danilo,VOL MC,21,80,Brazil,/273/106/23_60.png
 Nottingham Forest,Felipe,ZAG,33,79,Brazil,/207/863/23_60.png
-Nottingham Forest,Renan Lodi,LE LE ME,24,79,Brazil,/251/573/23_60.png
+Nottingham Forest,Renan Lodi,LE LE ME,24,78,Brazil,/251/573/23_60.png
 Nottingham Forest,R. Freuler,MC VOL,30,79,Switzerland,/202/024/23_60.png
 Nottingham Forest,S. Aurier,LD LD,29,78,Ivory Coast,/197/853/23_60.png
 Nottingham Forest,M. Niakhaté,ZAG,26,78,Senegal,/225/859/23_60.png
+Nottingham Forest,Gustavo Scarpa,MEI MC ME,28,78,Brazil,/223/211/23_60.png
 Nottingham Forest,W. Boly,ZAG,31,77,Ivory Coast,/202/750/23_60.png
 Nottingham Forest,Hwang Ui Jo,ATA,29,77,South Korea,/212/260/23_60.png
 Nottingham Forest,M. Gibbs-White,MEI ATA PE,22,76,England,/236/015/23_60.png
 Nottingham Forest,J. Shelvey,MC VOL,30,76,England,/189/165/23_60.png
-Nottingham Forest,Danilo,VOL MC,21,76,Brazil,/273/106/23_60.png
 Nottingham Forest,J. Lingard,MEI ATA,29,76,England,/207/494/23_60.png
 Nottingham Forest,T. Awoniyi,ATA,24,76,Nigeria,/230/978/23_60.png
 Nottingham Forest,C. Kouyaté,VOL ZAG MC,32,76,Senegal,/186/801/23_60.png
 Nottingham Forest,O. Mangala,MC VOL,24,76,Belgium,/234/078/23_60.png
 Nottingham Forest,E. Dennis,ATA PE PD,24,75,Nigeria,/239/015/23_60.png
 Nottingham Forest,B. Johnson,PD ATA,21,75,Wales,/251/421/23_60.png
-Nottingham Forest,Gustavo Scarpa,MEI MC ME,28,75,Brazil,/223/211/23_60.png
 Nottingham Forest,A. Ayew,ATA PD PE,32,75,Ghana,/176/571/23_60.png
 Nottingham Forest,J. Worrall,ZAG,25,74,England,/230/708/23_60.png
 Nottingham Forest,R. Yates,VOL MC,24,74,England,/235/642/23_60.png
@@ -10919,7 +10919,7 @@ Goiás,Eduardo Thuram,ZAG,25,59,Brazil,wiki/missing_player.jpg
 Goiás,Joao Paulo,MEI,20,59,Brazil,wiki/missing_player.jpg
 Goiás,Carlos Maia,MEI,21,59,Brazil,wiki/missing_player.jpg
 Goiás,Luiz Filipe,MEI,21,59,Brazil,wiki/missing_player.jpg
-Grêmio,Luis Suarez,ATA,36,82,Uruguay,wiki/6378.png
+Grêmio,Luis Suarez,ATA,36,81,Uruguay,wiki/6378.png
 Grêmio,Manoel Reinaldo,MD LE ZAG,33,78,Brazil,wiki/57600.png
 Grêmio,Franco Cristaldo,MEI MC,26,78,Argentina,wiki/79202.png
 Grêmio,Pedro Geromel,ZAG,37,78,Brazil,wiki/12464.png
@@ -10988,7 +10988,6 @@ América-MG,Robson Nascimento,GOL,22,62,Brazil,wiki/missing_player.jpg
 América-MG,Martin Thalys,MD MC LD,23,60,Brazil,wiki/missing_player.jpg
 América-MG,Breno Cascardo,MC MD,19,57,Brazil,wiki/missing_player.jpg
 América-MG,Soares Adyson,PE ATA,17,57,Brazil,wiki/120598.png
-Bahia,Ricardo Goulart,ATA ATA,31,78,Brazil,wiki/41270.png
 Bahia,Yago Felipe,MC MEI MD,28,76,Brazil,wiki/81741.png
 Bahia,Raul Gustavo,ZAG,23,76,Brazil,wiki/113335.png
 Bahia,Oliveira Cauly,PE MEI,27,76,Brazil,wiki/78108.png
@@ -11042,7 +11041,7 @@ Chapecoense,Maxwell Souza,ATA MEI,28,65,Brazil,wiki/100461.png
 Chapecoense,Gianluca Mancha,MD LE ZAG,22,62,Brazil,wiki/missing_player.jpg
 Chapecoense,Vitor Becker,ZAG,21,62,Brazil,wiki/123728.png
 Chapecoense,Joao Cesco,ZAG,22,59,Brazil,wiki/missing_player.jpg
-Cuiabá,Acosta Deyverson,ATA,31,77,Brazil,wiki/65387.png
+Cuiabá,Deyverson,ATA,31,77,Brazil,wiki/65387.png
 Cuiabá,Fernando Sobral,MEI MC,28,75,Brazil,wiki/77876.png
 Cuiabá,Capeloza Walter,GOL,35,75,Brazil,wiki/69814.png
 Cuiabá,Alan Empereur,ZAG,29,74,Brazil,wiki/79453.png
@@ -11078,10 +11077,10 @@ Cuiabá,Ricardo Cerqueira,ZAG,20,57,Brazil,wiki/missing_player.jpg
 Cuiabá,Joao Maranini,ZAG,20,57,Brazil,wiki/missing_player.jpg
 Cuiabá,Gustavo Cafe,MD LD ZAG,20,57,Brazil,wiki/missing_player.jpg
 Cuiabá,Alexandre Thainan,MD LD ZAG,21,52,Brazil,wiki/missing_player.jpg
-Criciúma,Citadin Eder,PE ATA,36,75,Italy,wiki/15311.png
+Criciúma,Eder Citadin,PE ATA,36,75,Italy,wiki/15311.png
 Criciúma,Marquinhos Gabriel,MEI MC,32,72,Brazil,wiki/41179.png
 Criciúma,Marcelo Hermes,MD LE ZAG,28,72,Brazil,wiki/81933.png
-Criciúma,Machado Romulo,MC MD,27,70,Brazil,wiki/102036.png
+Criciúma,Romulo Machado,MC MD,27,70,Brazil,wiki/102036.png
 Criciúma,Ítalo Melo,PE MEI,30,70,Brazil,wiki/68956.jpg
 Criciúma,Roberto Cristovam,MD LD ZAG,32,68,Brazil,wiki/72171.png
 Criciúma,Arilson Alves,VOL,29,68,Brazil,wiki/missing_player.jpg
@@ -11135,9 +11134,9 @@ Cruzeiro,Weverton Silva,ZAG,20,62,Brazil,wiki/111321.png
 Cruzeiro,Junior Denivys,GOL,21,62,Brazil,wiki/missing_player.jpg
 Cruzeiro,Franklim Pedrao,ZAG,19,62,Brazil,wiki/130526.png
 Cruzeiro,Rodrigo Bazilio,GOL,20,57,Brazil,wiki/missing_player.jpg
-Figueirense,Rodrigues Wilson,GOL,39,72,Brazil,wiki/27916.png
+Figueirense,Wilson Rodrigues,GOL,39,72,Brazil,wiki/27916.png
 Figueirense,William Matheus,MD LE ZAG,33,72,Brazil,wiki/34203.png
-Figueirense,Junior Serginho,MD MC LD,36,68,Brazil,wiki/34196.png
+Figueirense,Serginho Junior,MD MC LD,36,68,Brazil,wiki/34196.png
 Figueirense,Guilherme Pato,PE ATA,22,68,Brazil,wiki/104777.png
 Figueirense,Gabriel Gasparotto,GOL,30,67,Brazil,wiki/73869.png
 Figueirense,Junior Dida,GOL,35,67,Brazil,wiki/72035.jpg

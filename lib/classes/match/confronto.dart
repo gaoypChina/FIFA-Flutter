@@ -30,18 +30,18 @@ class Confronto{
 
   }
 
-  setGoals({required goal1,required goal2}){
+  setGoals({required int goal1,required int goal2}){
     hasGoals = true;
     this.goal1 = goal1;
-    this.goal1 = goal2;
+    this.goal2 = goal2;
 
-    if(goal1>goal2){
+    if(goal1 > goal2){
       result = victory;
     }
-    if(goal1==goal2){
+    if(goal1 == goal2){
       result = draw;
     }
-    if(goal2>goal1){
+    if(goal2 > goal1){
       result = loss;
     }
   }
@@ -52,8 +52,5 @@ class Confronto{
     this.penaltis2 = penaltis2;
   }
 
-  fromMap(){
-
-  }
 
 }

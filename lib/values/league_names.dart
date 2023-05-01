@@ -497,6 +497,7 @@ String getCup(String leagueNameIn){
     leagueName.alemanha1: leagueName.germanyCup,
     leagueName.alemanha2: leagueName.germanyCup,
     leagueName.portugal: leagueName.portugalCup,
+    leagueName.holanda: leagueName.netherlandsCup,
     leagueName.turquiaGrecia: leagueName.turkeyCup,
     leagueName.russia: leagueName.russiaCup,
 

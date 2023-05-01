@@ -77,7 +77,7 @@ class _CupMainState extends State<CupMain> with TickerProviderStateMixin{
                       controller: _tabController,
                       children: [
                         cupPhaseWidget(context, getCup(leagueName)),
-                        cupBrackets(context),
+                        cupBrackets(context, getCup(leagueName)),
                         const CupStatistics(),
                       ],
                     ),

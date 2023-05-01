@@ -1,18 +1,20 @@
 import 'package:fifa/classes/match/confronto.dart';
 
 class ResultDict{
-  String keyTeamName1 = "team 1";
-  String keyTeamName2 = "team 2";
-  String keyGol1 = "gol 1";
-  String keyGol2 = "gol 1";
-  String keyPenalti1 = "penalti 1";
-  String keyPenalti2 = "penalti 2";
+  String keyTeamName1 = "team1";
+  String keyTeamName2 = "team2";
+  String keyGol1 = "gol1";
+  String keyGol2 = "gol2";
+  String keyPenalti1 = "penalti1";
+  String keyPenalti2 = "penalti2";
+  String keyIda = "isIda";
 
   //////////////////////////////////////////////////////////////////////////////
   Map startNames(String team1, String team2){
     return {
       keyTeamName1: team1,
       keyTeamName2: team2,
+      keyIda: true,
     };
   }
 
@@ -25,6 +27,11 @@ class ResultDict{
   Map savePenaltis(Map matchMap, int penalti1, int penalti2){
     matchMap[keyPenalti1] = penalti1;
     matchMap[keyPenalti2] = penalti2;
+    return matchMap;
+  }
+
+  Map saveVolta(Map matchMap){
+    matchMap[keyIda] = false;
     return matchMap;
   }
 

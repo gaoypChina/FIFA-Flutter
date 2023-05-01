@@ -36,13 +36,12 @@ class ResultGameCopa{
 
     Semana weekClass = Semana(weekLocal);
     CupClassification cupClass = CupClassification();
-    Map allCupResults = cupClass.getCupPhaseResults(weekClass.week, competitionName);
+    Map allCupResults = cupClass.getCupPhaseResultsWeek(weekClass.week, competitionName);
     ResultDict result = ResultDict();
     Confronto confronto = result.getConfronto(allCupResults);
 
 
     competitionName = club.leagueName;
-    weekLocal = 0;
     visitante = (club.name == confronto.clubName2);
     clubID = club.index;
     clubName2 = confronto.clubName2;

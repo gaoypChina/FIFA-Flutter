@@ -1,6 +1,8 @@
+import 'package:fifa/classes/cup_classification.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/match/confronto.dart';
+import 'package:fifa/classes/match/result_dict.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
@@ -11,25 +13,25 @@ import 'package:flutter/material.dart';
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-  Widget cupBrackets(BuildContext context){
+  Widget cupBrackets(BuildContext context, String cupName){
     return Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                matchBox(),
-                matchBox(),
-                matchBox(),
-                matchBox(),
+                matchBox(cupName, CupClassification().keyOitavas, 1),
+                matchBox(cupName, CupClassification().keyOitavas, 2),
+                matchBox(cupName, CupClassification().keyOitavas, 3),
+                matchBox(cupName, CupClassification().keyOitavas, 4),
               ],
             ),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                matchBox(),
-                matchBox(),
+                matchBox(cupName, CupClassification().keyQuartas, 1),
+                matchBox(cupName, CupClassification().keyQuartas, 2),
               ],
             ),
 
@@ -43,9 +45,9 @@ import 'package:flutter/material.dart';
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        matchBox(),
+                        matchBox(cupName, CupClassification().keySemifinal, 1),
                         const SizedBox(height: 8),
-                        matchBox(),
+                        matchBox(cupName, CupClassification().keyFinal, 1),
                       ],
                     ),
                   ),
@@ -60,7 +62,7 @@ import 'package:flutter/material.dart';
                     child: Row(
                       children: [
                         const Spacer(),
-                        matchBox(),
+                        matchBox(cupName, CupClassification().keySemifinal, 2),
                         Stack(
                           children: [
                             Images().getTrophy(My().getMyInternationalLeague(),95,50),
@@ -81,22 +83,23 @@ import 'package:flutter/material.dart';
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                matchBox(),
-                matchBox(),
+                matchBox(cupName, CupClassification().keyQuartas, 3),
+                matchBox(cupName, CupClassification().keyQuartas, 4),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                matchBox(),
-                matchBox(),
-                matchBox(),
-                matchBox(),
+                matchBox(cupName, CupClassification().keyOitavas, 5),
+                matchBox(cupName, CupClassification().keyOitavas, 6),
+                matchBox(cupName, CupClassification().keyOitavas, 7),
+                matchBox(cupName, CupClassification().keyOitavas, 8),
               ],
             ),
           ],
         );
   }
+
   Widget selectYearButton(int year){
     return Container(
       padding: const EdgeInsets.all(6),
@@ -112,37 +115,52 @@ import 'package:flutter/material.dart';
     );
   }
 
-Widget matchBox(){
-    
-    Confronto confrontoIda = Confronto(clubName1: 'Peñarol', clubName2: 'Milan');
-    Confronto confrontoVolta = Confronto(clubName1: 'Peñarol', clubName2: 'Milan');
-    confrontoIda.setGoals(goal1: 1, goal2: 3);
-    confrontoVolta.setGoals(goal1: 4, goal2: 2);
-    confrontoVolta.setPenalties(penaltis1: 2, penaltis2: 3);
-    double imageSize = 32;
+Widget matchBox(String cupName, String phaseName, int matchNumber){
+  Map results = {};
+  late Confronto confrontoIda;
+  late Confronto confrontoVolta;
+  try{
+    results = CupClassification().getCupPhaseResults(phaseName, cupName)[matchNumber];
+    confrontoIda = Confronto(clubName1: results[ResultDict().keyTeamName1], clubName2: results[ResultDict().keyTeamName2]);
+    confrontoVolta = Confronto(clubName1: results[ResultDict().keyTeamName1], clubName2: results[ResultDict().keyTeamName2]);
 
+    //confrontoIda.setGoals(goal1: 1, goal2: 3);
+    //confrontoVolta.setGoals(goal1: 0, goal2: 0);
+    //confrontoVolta.setPenalties(penaltis1: 2, penaltis2: 3);
+  }catch(e){
+      //Não tem o confronto da fase
+  }
     return Container(
       height: 85,
       width: 72,
       padding: const EdgeInsets.all(4),
       color: AppColors().greyTransparent,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Row(
-            children: [
-              Images().getEscudoWidget(confrontoIda.clubName1,imageSize,imageSize),
-              Images().getEscudoWidget(confrontoIda.clubName2,imageSize,imageSize),
-            ],
-          ),
-          Text('${confrontoIda.goal1.toString()}  x  ${confrontoIda.goal2.toString()}',style: EstiloTextoBranco.text14),
-          Text('${confrontoVolta.goal1.toString()}  x  ${confrontoVolta.goal2.toString()}',style: EstiloTextoBranco.text14),
+      child: results.isNotEmpty ? showMatchBoxClubs(confrontoIda, confrontoVolta) : Container(),
+    );
+}
 
-          confrontoVolta.hasPenaltis
-              ? Text('Pen: (${confrontoVolta.penaltis1.toString()} x ${confrontoVolta.penaltis2.toString()})',style: EstiloTextoBranco.text10)
-              : Container(),
-        ],
-      ),
+Widget showMatchBoxClubs(Confronto confrontoIda,Confronto confrontoVolta){
+  double imageSize = 32;
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Row(
+          children: [
+            Images().getEscudoWidget(confrontoIda.clubName1,imageSize,imageSize),
+            Images().getEscudoWidget(confrontoIda.clubName2,imageSize,imageSize),
+          ],
+        ),
+        confrontoIda.hasGoals
+            ? Text('${confrontoIda.goal1.toString()}  x  ${confrontoIda.goal2.toString()}',style: EstiloTextoBranco.text14)
+            :Container(),
+        confrontoVolta.hasGoals
+            ? Text('${confrontoVolta.goal1.toString()}  x  ${confrontoVolta.goal2.toString()}',style: EstiloTextoBranco.text14)
+            : Container(),
+
+        confrontoVolta.hasPenaltis
+            ? Text('Pen: (${confrontoVolta.penaltis1.toString()} x ${confrontoVolta.penaltis2.toString()})',style: EstiloTextoBranco.text10)
+            : Container(),
+      ],
     );
 }
 

@@ -665,7 +665,7 @@ Map<String,dynamic> mapEuropaTopLeagues = {
     1996.0: [n.auxerre,n.psg,n.monaco,n.metz,n.lens,n.montpellier,n.nantes,n.rennes,n.strasbourg,n.guingamp,     n.lyon,n.nice,n.lehavre,n.cannes,n.bastia,n.bordeaux,n.lille,n.gueugnon,n.saintetienne,n.martigues],
     1995.0: [n.nantes,n.lyon,n.psg,n.auxerre,n.lens,n.monaco,n.bordeaux,n.metz,n.cannes,n.strasbourg,            n.martigues,n.lehavre,n.rennes,n.lille,n.bastia,n.nice,n.montpellier,n.saintetienne,n.caen,n.sochaux],
     1994.0: [n.psg,n.om,n.auxerre,n.bordeaux,n.nantes,n.cannes,n.montpellier,n.lyon,n.monaco,n.lens,             n.saintetienne,n.metz,n.strasbourg,n.sochaux,n.lille,n.caen,n.lehavre,n.martigues,n.toulouse,n.angers],
-    //1993.0: [],
+    1993.0: [],
     1992.0: [n.om,n.monaco,n.psg,n.auxerre,n.caen,n.montpellier,n.lehavre,n.lens,n.nantes,n.saintetienne,   n.toulouse,n.metz,n.lille,n.toulon,n.nimes,n.lyon,n.sochaux,n.rennes,n.cannes,n.nancy],
     1991.0: [n.om,n.monaco,n.auxerre,n.cannes,n.lyon,n.lille,n.montpellier,n.caen,n.psg,n.bordeaux,         n.brest,n.metz,n.saintetienne,n.nice,n.nantes,n.toulon,n.nancy,n.sochaux,n.toulouse,n.rennes],
     1990.0: [n.om,n.bordeaux,n.monaco,n.sochaux,n.psg,n.auxerre,n.nantes,n.lyon,n.toulouse,n.brest,         n.cannes,n.toulon,n.montpellier,n.metz,n.saintetienne,n.caen,n.lille,n.nice,n.racingParis],

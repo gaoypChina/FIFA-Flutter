@@ -199,10 +199,10 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
     for (dynamic lined in lines){
         if(lined[0].isNotEmpty){
           String clubName = lined[0].replaceFirst(" (Y)","").replaceFirst(" (J)","").replaceFirst(" (R)","");
-          clubName = lined[0].replaceFirst(" (P)","").replaceFirst(" (X)","");
+          clubName = clubName.replaceFirst(" (P)","").replaceFirst(" (X)","");
           clubName = clubName.replaceFirst(" (A)","").replaceFirst(" (C)","").replaceFirst(" (Q)","");
           clubName = clubName.replaceFirst(" (S)","").replaceFirst(" (T)","").replaceFirst(" (Z)","");
-          clubName = clubName.replaceFirst(" (C, Q)","").replaceFirst(" (T, Y)","");
+          clubName = clubName.replaceFirst(" (C, Q)","").replaceFirst(" (T, Y)","").replaceFirst(" (C, P)","");
           clubName = clubName.replaceFirst("[a]","").replaceFirst("[b]","").replaceFirst("[c]","").replaceFirst("[d]","").replaceFirst("[e]","");
           clubName = getAppClubName(clubName, choosenLeagueName, n);
 
@@ -320,8 +320,8 @@ Widget rowTile(int index,Map data){
             Images().getEscudoWidget(clubName, 45,45),
             Container(width: 4),
             SizedBox(
-              width: 150,
-              child: Text(clubName, style: EstiloTextoBranco.text16),),
+              width: 140,
+              child: Text(clubName, style: EstiloTextoBranco.text14),),
             SizedBox(
               width: 30,
               child: Text(data['points'],style: EstiloTextoBranco.negrito18)),
@@ -401,6 +401,7 @@ String getAppClubName(String name, String leagueName, LeagueOfficialNames l){
   else if(name == "Wycombe Wanderers"){    name = n.wycombe;  }
 
   if(name == "Inter Milan"){    name = n.inter;  }
+  if(name == "Internazionale"){    name = n.inter;  }
   else if(name == "AC Milan"){    name = n.milan;  }
   else if(name == "Süd Tirol"){    name = n.sudtirol;  }
   else if(name == "Südtirol"){    name = n.sudtirol;  }
@@ -408,6 +409,7 @@ String getAppClubName(String name, String leagueName, LeagueOfficialNames l){
 
   else if(name == "Alavés"){    name = n.alaves;  }
   else if(name == "Andorra"){    name = n.andorra;  }
+  else if(name == "Atlético Madrid"){    name = n.atleticomadrid;  }
   else if(name == "Barcelona"  && leagueName == l.espanha1){    name = n.barcelona;  }
   else if(name == "Celta Vigo"){    name = n.celtavigo;  }
   else if(name == "Girona"){    name = n.girona;  }
