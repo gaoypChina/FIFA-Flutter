@@ -509,7 +509,7 @@ String getCup(String leagueNameIn){
     leagueName.brasil3: leagueName.brazilCup,
     leagueName.brasil4: leagueName.brazilCup,
     leagueName.argentina: leagueName.argentinaCup,
-    leagueName.sulamericano: leagueName.mercosulCup,
+    leagueName.mercosul: leagueName.mercosulCup,
     leagueName.colombia: leagueName.merconorteCup,
 
     leagueName.mexico: leagueName.mexicoCup,

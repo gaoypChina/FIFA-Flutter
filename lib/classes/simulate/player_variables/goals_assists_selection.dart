@@ -20,4 +20,13 @@ class GoalAssistsSelection{
     jogadorID = Assists().setAssists(clubClass);
     Assists().saveAssistsInternational(jogadorID);
   }
+
+  //GOALS E ASSISTENCIAS CUP
+  goalsAssistsCup(Club clubClass){
+    int jogadorID = Goal().setGoals(clubClass);
+    Goal().saveGoalsCup(jogadorID);
+
+    jogadorID = Assists().setAssists(clubClass);
+    Assists().saveAssistsCup(jogadorID);
+  }
 }

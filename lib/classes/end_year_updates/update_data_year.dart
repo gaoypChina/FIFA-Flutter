@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/cup_classification.dart';
 import 'package:fifa/classes/end_year_updates/aposentadoria.dart';
 import 'package:fifa/classes/functions/fim_campeonato_local.dart';
 import 'package:fifa/classes/historic/historic_club_year.dart';
@@ -47,6 +48,9 @@ void funcUpdateDataAfterSeason(){
 
 //HISTORICO
 saveHistoricalData(){
+  //TIMES DAS COPAS
+  CupClassification().setClubs();
+
   saveLeagueResults();
   saveInternationalLeagueResults();
   resetInternationalGoalsData();

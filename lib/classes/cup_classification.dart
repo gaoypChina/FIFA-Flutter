@@ -9,8 +9,10 @@ import 'package:fifa/values/league_divisions.dart';
 import 'package:fifa/values/league_names.dart';
 
 class CupClassification{
+
   String keyClassificados = "Classificados";
   String keyPrePhase = "Pre-fase";
+  String keyChampion = "Campeão";
 
   String keyFinal = "Final";
   String keySemifinal = "Semifinal";
@@ -20,6 +22,13 @@ class CupClassification{
   String key32round = "Fase 32";
   String key64round = "Fase 64";
   String key128round = "Fase 128";
+
+  String keyPlayerMatchs = "Player Matchs Played";
+  String keyPlayerGoals = "Player Goals";
+  String keyPlayerAssists = "Player Assists";
+  String keyPlayerCleanSheets = "Player Clean Sheets";
+  String keyPlayerGolsSofridos = "Player Gols Sofridos";
+
 
   List<String> listPhases(){
     return [key128round, key64round, key32round, keyOitavas, keyQuartas, keySemifinal, keyFinal];
@@ -58,7 +67,7 @@ class CupClassification{
   setClubs(){
     globalCup = {};
     for (String leagueName in getAvailableLeaguesNames()){
-      Map<String, Map<String, dynamic>> mapa = definePrePhaseTeams(getDivisionClassification(leagueName), leagueName);
+      Map<String, dynamic> mapa = definePrePhaseTeams(getDivisionClassification(leagueName), leagueName);
       globalCup = {...globalCup, ...mapa};
     }
   }
@@ -87,7 +96,7 @@ class CupClassification{
     return classified;
   }
 
-  Map<String, Map<String, dynamic>> definePrePhaseTeams(List allTeamsLeague, String leagueName){
+  Map<String, dynamic> definePrePhaseTeams(List allTeamsLeague, String leagueName){
     List classified = [];
     List prePhase = [];
     String keyPhase = "";
@@ -125,12 +134,21 @@ class CupClassification{
 
     Map idaVoltaInitialMap = saveIdaVoltaTeamNames(prePhaseNames);
 
-    Map<String, Map<String, dynamic>> mapa = {};
-    mapa = {getCup(leagueName): {
+    Map<String, dynamic> mapa = {};
+    mapa = {
+      getCup(leagueName): {
                 keyClassificados: classifiedNames,
                 keyPrePhase: prePhaseNames,
                 keyPhase: idaVoltaInitialMap,
-    }};
+    },
+    };
+    globalCupPlayers = {
+      keyPlayerMatchs: List.filled(globalMaxPlayersPermitted, 0),
+      keyPlayerGoals: List.filled(globalMaxPlayersPermitted, 0),
+      keyPlayerAssists: List.filled(globalMaxPlayersPermitted, 0),
+      keyPlayerCleanSheets: List.filled(globalMaxPlayersPermitted, 0),
+      keyPlayerGolsSofridos: List.filled(globalMaxPlayersPermitted, 0),
+    };
     return mapa;
   }
 
@@ -181,7 +199,6 @@ class CupClassification{
 
   nextPhaseClassified(){
 
-
     List cupNames = getAllCupNames();
     for (int i = 0; i < cupNames.length; i++) {
       List classifiedClubs = [];
@@ -191,7 +208,15 @@ class CupClassification{
       //IF PHASE INSIDE LEAGUE EXISTS
       try {
         String phaseName = getPhaseKeyName(semana);
-        String nextPhaseName = listPhases()[listPhases().indexOf(phaseName)+1];
+
+        late String nextPhaseName;
+        if(phaseName == keyFinal){
+          nextPhaseName = keyChampion;
+        }else{
+          nextPhaseName = listPhases()[listPhases().indexOf(phaseName)+1];
+        }
+
+        if(phaseName == keyFinal){nextPhaseName = keyChampion;}
         String idaOrVoltaKey = getIdaOrVoltaKey(phaseName, semana);
         matchMapCurrentPhase = CupClassification().getCupPhaseResults(cupName, phaseName, idaOrVoltaKey);
 
@@ -236,10 +261,15 @@ class CupClassification{
             classifiedClubs = classifiedClubs + globalCup[cupName]![keyClassificados];
           }
 
-          //SAVE CLASSIFIED CLUBS TO NEW PHASE
-          Map idaVoltaInitialMap = saveIdaVoltaTeamNames(classifiedClubs);
+          if(phaseName == keyFinal){
+            globalCup[cupName]![keyChampion] = classifiedClubs.first;
+          }else{
+            //SAVE CLASSIFIED CLUBS TO NEW PHASE
+            Map idaVoltaInitialMap = saveIdaVoltaTeamNames(classifiedClubs);
 
-          globalCup[cupName]![nextPhaseName] = idaVoltaInitialMap;
+            globalCup[cupName]![nextPhaseName] = idaVoltaInitialMap;
+          }
+
 
         }
 
@@ -256,10 +286,12 @@ class CupClassification{
     for (String phaseName in phasesNames) {
         if(globalCup[cupName]!.containsKey(phaseName)){
           firstPhaseName = phaseName;
+          break;
         }
     }
     return firstPhaseName;
   }
+
 }
 
 

@@ -114,11 +114,17 @@ Widget cupMatchRow(BuildContext context, Map match, My my){
           ),
 
 
-      confronto.hasPenaltis ? Text(confronto.penaltis1.toString()+"x"+confronto.penaltis2.toString(),style: EstiloTextoBranco.text10) : Container(),
 
-      confronto.hasGoals
-          ? Text(' '+ confronto.goal1.toString()+'x'+confronto.goal2.toString()+' ',style: EstiloTextoBranco.text22)
-          : const Text('  X  ',textAlign:TextAlign.start,style: EstiloTextoBranco.text22),
+      //PLACAR
+      Column(
+        children: [
+          confronto.hasGoals
+              ? Text(' '+ confronto.goal1.toString()+'x'+confronto.goal2.toString()+' ',style: EstiloTextoBranco.text22)
+              : const Text('  X  ',textAlign:TextAlign.start,style: EstiloTextoBranco.text22),
+
+          confronto.hasPenaltis ? Text("Pen:" + confronto.penaltis1.toString()+"x"+confronto.penaltis2.toString(),style: EstiloTextoBranco.text10) : Container(),
+        ],
+      ),
 
       //TIME B
           Flexible(

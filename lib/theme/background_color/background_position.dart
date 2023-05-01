@@ -7,7 +7,7 @@ Widget positionContainer(String position,{double size=25,TextStyle style = Estil
     width: size,
     decoration: BoxDecoration(
       color: colorPositionBackground(position),
-      borderRadius: const BorderRadius.all(Radius.circular(5.0) ),
+      borderRadius: BorderRadius.all(Radius.circular(size*0.2) ),
     ),
     padding: const EdgeInsets.all(2),
     child: Text(position, textAlign: TextAlign.center, style: style),

@@ -1,3 +1,4 @@
+import 'package:fifa/classes/cup_classification.dart';
 import 'package:fifa/classes/functions/esquemas_taticos.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
@@ -37,6 +38,13 @@ class Jogador{
   late int cleanSheetsInternational;
   late int golsSofridosInternational;
 
+  late int matchsCup;
+  late int goalsCup;
+  late int assistsCup;
+  late int cleanSheetsCup;
+  late int golsSofridosCup;
+  late double gradeCup;
+
   late int matchsYear;
   late int goalsYear;
   late int assistsYear;
@@ -75,6 +83,23 @@ class Jogador{
     assistsInternational = globalJogadoresInternationalAssists[index];
     cleanSheetsInternational = globalJogadoresInternationalCleanSheets[index];
     golsSofridosInternational = globalJogadoresInternationalGolsSofridos[index];
+    //copa
+    try{
+      matchsCup = globalCupPlayers[CupClassification().keyPlayerMatchs]![index];
+      goalsCup = globalCupPlayers[CupClassification().keyPlayerGoals]![index];
+      assistsCup = globalCupPlayers[CupClassification().keyPlayerAssists]![index];
+      cleanSheetsCup = globalCupPlayers[CupClassification().keyPlayerCleanSheets]![index];
+      golsSofridosCup = globalCupPlayers[CupClassification().keyPlayerGolsSofridos]![index];
+      gradeCup = (goalsCup*3+assistsCup)/(matchsCup+1);
+    }catch(e){
+      matchsCup = 0;
+      goalsCup = 0;
+      assistsCup = 0;
+      cleanSheetsCup = 0;
+      golsSofridosCup = 0;
+      gradeCup = 0;
+    }
+
     matchsYear = matchsInternational+matchsLeague;
     goalsYear = goalsInternational+goalsLeague;
     assistsYear = assistsInternational+assistsLeague;

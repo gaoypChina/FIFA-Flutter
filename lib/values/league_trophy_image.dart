@@ -37,5 +37,11 @@ getTrophyImage(String leagueName){
 
   if(leagueName == LeagueOfficialNames().mundial){trophyName = 'trophymundial';}
 
+
+  if(leagueName == LeagueOfficialNames().englandCup){trophyName = 'trophyfacup';}
+  if(leagueName == LeagueOfficialNames().italyCup){trophyName = 'italia_cup';}
+  if(leagueName == LeagueOfficialNames().germanyCup){trophyName = 'germany_cup';}
+  if(leagueName == LeagueOfficialNames().brazilCup){trophyName = 'brasil_cup';}
+
   return trophyName;
 }

@@ -3,7 +3,6 @@ import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/match/result_dict.dart';
-import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -53,11 +52,6 @@ import 'package:flutter/material.dart';
                   ),
 
                   Container(
-                    margin: const EdgeInsets.only(top:70,left: 60),
-                    child: selectYearButton(ano),
-                  ),
-
-                  Container(
                     padding: const EdgeInsets.only(top:50),
                     child: Row(
                       children: [
@@ -65,11 +59,14 @@ import 'package:flutter/material.dart';
                         matchBox(cupName, CupClassification().keyFinal, 1),
                         Stack(
                           children: [
-                            Images().getTrophy(My().getMyInternationalLeague(),95,50),
+                            Images().getTrophy(cupName,70,70),
                             Container(
-                                height: 95,width: 50,
+                                height: 70,width: 70,
                                 alignment: Alignment.bottomRight,
-                                child: Images().getEscudoWidget('Milan',40,40)),
+                                child: globalCup[cupName]!.containsKey(CupClassification().keyChampion)
+                                    ? Images().getEscudoWidget(globalCup[cupName]![CupClassification().keyChampion], 40, 40)
+                                    : Container(),
+                            ),
                           ],
                         ),
                         const SizedBox(width: 8),

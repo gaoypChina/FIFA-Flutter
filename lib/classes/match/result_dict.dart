@@ -59,13 +59,5 @@ class ResultDict{
     return confronto;
   }
 
-  //////////////////////////////////////////////////////////////////////////////
-  bool hasClubName(Map matchMap, String clubName){
-    if(matchMap[keyTeamName1] == clubName || matchMap[keyTeamName2] == clubName){
-      return true;
-    }else{
-      return false;
-    }
 
-  }
 }

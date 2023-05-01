@@ -23,6 +23,10 @@ class UpdatePlayerVariable{
       GoalAssistsSelection().goalsAssistsInternational(clubClass);
     }
 
+    if(Semana(semana).isJogoCopa){
+      GoalAssistsSelection().goalsAssistsCup(clubClass);
+    }
+
   }
 
 
