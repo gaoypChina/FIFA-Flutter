@@ -14,8 +14,8 @@ class Confronto{
   bool hasGoals = false;
 
   bool hasPenaltis = false;
-  int penaltis1 = -1;
-  int penaltis2 = -1;
+  late int penaltis1;
+  late int penaltis2;
 
   String victory = 'Victory';
   String draw = 'Draw';

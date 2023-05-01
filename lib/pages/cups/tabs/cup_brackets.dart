@@ -47,7 +47,7 @@ import 'package:flutter/material.dart';
                       children: [
                         matchBox(cupName, CupClassification().keySemifinal, 1),
                         const SizedBox(height: 8),
-                        matchBox(cupName, CupClassification().keyFinal, 1),
+                        matchBox(cupName, CupClassification().keySemifinal, 2),
                       ],
                     ),
                   ),
@@ -62,7 +62,7 @@ import 'package:flutter/material.dart';
                     child: Row(
                       children: [
                         const Spacer(),
-                        matchBox(cupName, CupClassification().keySemifinal, 2),
+                        matchBox(cupName, CupClassification().keyFinal, 1),
                         Stack(
                           children: [
                             Images().getTrophy(My().getMyInternationalLeague(),95,50),
@@ -116,17 +116,25 @@ import 'package:flutter/material.dart';
   }
 
 Widget matchBox(String cupName, String phaseName, int matchNumber){
-  Map results = {};
+  Map resultsIda = {};
+  Map resultsVolta = {};
   late Confronto confrontoIda;
   late Confronto confrontoVolta;
   try{
-    results = CupClassification().getCupPhaseResults(phaseName, cupName)[matchNumber];
-    confrontoIda = Confronto(clubName1: results[ResultDict().keyTeamName1], clubName2: results[ResultDict().keyTeamName2]);
-    confrontoVolta = Confronto(clubName1: results[ResultDict().keyTeamName1], clubName2: results[ResultDict().keyTeamName2]);
+    resultsIda = CupClassification().getCupPhaseResults(cupName, phaseName, ResultDict().keyIda)[matchNumber];
+    resultsVolta = CupClassification().getCupPhaseResults(cupName, phaseName, ResultDict().keyVolta)[matchNumber];
+    confrontoIda = Confronto(clubName1: resultsIda[ResultDict().keyTeamName1], clubName2: resultsIda[ResultDict().keyTeamName2]);
+    confrontoVolta = Confronto(clubName1: resultsVolta[ResultDict().keyTeamName1], clubName2: resultsVolta[ResultDict().keyTeamName2]);
 
-    //confrontoIda.setGoals(goal1: 1, goal2: 3);
-    //confrontoVolta.setGoals(goal1: 0, goal2: 0);
-    //confrontoVolta.setPenalties(penaltis1: 2, penaltis2: 3);
+    if(resultsIda.containsKey(ResultDict().keyGol1)){
+      confrontoIda.setGoals(goal1: resultsIda[ResultDict().keyGol1], goal2: resultsIda[ResultDict().keyGol2]);
+    }
+    if(resultsVolta.containsKey(ResultDict().keyGol1)){
+      confrontoVolta.setGoals(goal1: resultsVolta[ResultDict().keyGol2], goal2: resultsVolta[ResultDict().keyGol1]);
+    }
+    if(resultsVolta.containsKey(ResultDict().keyPenalti1)){
+      confrontoVolta.setPenalties(penaltis1: resultsVolta[ResultDict().keyPenalti2], penaltis2: resultsVolta[ResultDict().keyPenalti1]);
+    }
   }catch(e){
       //Não tem o confronto da fase
   }
@@ -135,7 +143,7 @@ Widget matchBox(String cupName, String phaseName, int matchNumber){
       width: 72,
       padding: const EdgeInsets.all(4),
       color: AppColors().greyTransparent,
-      child: results.isNotEmpty ? showMatchBoxClubs(confrontoIda, confrontoVolta) : Container(),
+      child: resultsIda.isNotEmpty ? showMatchBoxClubs(confrontoIda, confrontoVolta) : Container(),
     );
 }
 

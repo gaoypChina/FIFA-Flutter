@@ -1,4 +1,5 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/cup_classification.dart';
 import 'package:fifa/classes/functions/international_league_manipulation.dart';
 import 'package:fifa/classes/historic/historic_my_tranfers.dart';
 import 'package:fifa/classes/historic_positions_this_year.dart';
@@ -6,6 +7,7 @@ import 'package:fifa/classes/international_league.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/mata_mata/mata_mata_class.dart';
 import 'package:fifa/classes/mata_mata/mata_mata_simulation.dart';
+import 'package:fifa/classes/match/result_dict.dart';
 import 'package:fifa/classes/mundial.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/chaves.dart';
@@ -13,6 +15,7 @@ import 'package:fifa/classes/simulate/after_simulation/historic.dart';
 import 'package:fifa/classes/simulate/match_simulation.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/custom_toast.dart';
+import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/league_names.dart';
 
 import '../semana.dart';
@@ -42,8 +45,12 @@ class Simulate{
       data.simulate();
     }
 
+    //classified teams cup
+    CupClassification().nextPhaseClassified();
+
     //APÓS A SIMULAÇÃO
     updateWeek();
+
 
     setTeamsInternational();
 
@@ -126,6 +133,31 @@ class Simulate{
   }
 
   cupMatchs(bool simulMyMatch){
+
+    List cupNames = CupClassification().getAllCupNames();
+
+    for (int i = 0; i < cupNames.length; i++) {
+      String cupName = cupNames[i];
+      Map matchMap = {};
+      //IF PHASE INSIDE LEAGUE EXISTS
+      try {
+        String phaseName = CupClassification().getPhaseKeyName(semana);
+        String idaOrVoltaKey = CupClassification().getIdaOrVoltaKey(phaseName, semana);
+        matchMap = CupClassification().getCupPhaseResults(cupName, phaseName, idaOrVoltaKey);
+
+
+        for (int nConfronto = 1; nConfronto <= matchMap.length; nConfronto++) {
+          Club club1 = Club(index: clubsAllNameList.indexOf(matchMap[nConfronto][ResultDict().keyTeamName1]), clubDetails: false);
+          Club club2 = Club(index: clubsAllNameList.indexOf(matchMap[nConfronto][ResultDict().keyTeamName2]), clubDetails: false);
+          MatchSimulation match = MatchSimulation(club1,club2);
+          //SALVA O PLACAR NO HISTÓRICO
+          globalCup[cupName]![phaseName][idaOrVoltaKey][nConfronto] = ResultDict().saveGoals(matchMap[nConfronto], match.variableGol1, match.variableGol2);
+        }
+
+      }catch(e){
+        //COPA NÃO TEM ESSA FASE
+      }
+    }
 
   }
 

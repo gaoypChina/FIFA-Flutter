@@ -16,6 +16,7 @@ List globalMyJogadores = [];
 String globalCoachName = 'Eu';
 int globalCoachPoints = 0;
 bool alreadyChangedClubThisSeason = false;
+bool globalGoalForaDeCasa = false;
 
 //SAVE
 const globalMaxSavesPermitted = 2;
@@ -56,7 +57,7 @@ List<int> semanasMataMataInternacionais = semanaOitavas+semanaQuartas+semanaSemi
 //List<int> semanasJogosNacionais = [for(var i=1; i<=globalNMaxRodadasNacional; i++) i];
 List<int> semanasJogosNacionais = [1,2,4,6,8, 9,11,13,15,16, 17,19,21,22,24, 26,27,30,31];
 
-List semanasJogosCopas = [1,2, 3,4, 5,6, 7,8, 9,10, 11,12];
+List semanasJogosCopas = [-1,-2, 1,2, 3,4, 5,6, 9,10, 11,12, 13,14];
 int globalUltimaSemana = semanaMundial.last+1;
 
 Map<int,String> weekRealDays = {

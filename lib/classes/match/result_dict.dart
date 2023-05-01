@@ -7,14 +7,14 @@ class ResultDict{
   String keyGol2 = "gol2";
   String keyPenalti1 = "penalti1";
   String keyPenalti2 = "penalti2";
-  String keyIda = "isIda";
+  String keyIda = "Ida";
+  String keyVolta = "Volta";
 
   //////////////////////////////////////////////////////////////////////////////
   Map startNames(String team1, String team2){
     return {
       keyTeamName1: team1,
       keyTeamName2: team2,
-      keyIda: true,
     };
   }
 
@@ -27,11 +27,6 @@ class ResultDict{
   Map savePenaltis(Map matchMap, int penalti1, int penalti2){
     matchMap[keyPenalti1] = penalti1;
     matchMap[keyPenalti2] = penalti2;
-    return matchMap;
-  }
-
-  Map saveVolta(Map matchMap){
-    matchMap[keyIda] = false;
     return matchMap;
   }
 

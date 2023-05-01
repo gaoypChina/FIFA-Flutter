@@ -49,6 +49,7 @@ class SaveMatchHistoric{
     }
   }
 
+
   setHistoricGoalsGruposInternational(String internationalName, int clubID1, int clubID2,int goal1, int goal2){
     if(Semana(semana).isJogoCampeonatoInternacional){
       int rodadaAtual = semanasGruposInternacionais.indexOf(semana);

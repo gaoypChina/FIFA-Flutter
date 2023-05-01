@@ -1,7 +1,6 @@
 import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/cup_classification.dart';
-import 'package:fifa/classes/functions/name.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/match/result_dict.dart';
@@ -14,6 +13,8 @@ Widget cupPhaseWidget(BuildContext context, String cupName){
 
   List<Club> clubs = CupClassification().getListClubsClassificados(cupName);
 
+  List<String> listCupPhases = CupClassification().listPhases();
+
   My my = My();
   return SingleChildScrollView(
     child: Padding(
@@ -22,14 +23,13 @@ Widget cupPhaseWidget(BuildContext context, String cupName){
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
 
-          cupPhaseColumn(context, cupName, CupClassification().keyFinal, my),
-          cupPhaseColumn(context, cupName, CupClassification().keySemifinal, my),
-          cupPhaseColumn(context, cupName, CupClassification().keyQuartas, my),
-          cupPhaseColumn(context, cupName, CupClassification().keyOitavas, my),
-          cupPhaseColumn(context, cupName, CupClassification().key32round, my),
-          cupPhaseColumn(context, cupName, CupClassification().key64round, my),
-          cupPhaseColumn(context, cupName, CupClassification().key128round, my),
-
+          for(int i=listCupPhases.length-1; i>=0;i--)
+            Column(
+              children: [
+                cupPhaseColumn(context, cupName, listCupPhases[i], ResultDict().keyVolta, my),
+                cupPhaseColumn(context, cupName, listCupPhases[i], ResultDict().keyIda, my),
+              ],
+            ),
 
           const SizedBox(height: 12),
           const Text("Já qualificados: ",style: EstiloTextoBranco.negrito16),
@@ -42,23 +42,23 @@ Widget cupPhaseWidget(BuildContext context, String cupName){
   );
 }
 
-Widget cupPhaseColumn(BuildContext context,  String cupName, String phaseName, My my){
+Widget cupPhaseColumn(BuildContext context,  String cupName, String phaseName, String idaOrVoltaKey, My my){
 
   try {
-    Map matchs = CupClassification().getCupPhaseResults(phaseName, cupName);
+    Map matchs = CupClassification().getCupPhaseResults(cupName, phaseName, idaOrVoltaKey);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+
+        idaOrVoltaKey==ResultDict().keyVolta ? const SizedBox(height: 12) : Container(),
+
         const SizedBox(height: 12),
-        Text(phaseName,style: EstiloTextoBranco.negrito16),
+        Text(phaseName + " - " + idaOrVoltaKey,style: EstiloTextoBranco.negrito16),
         for(int i=1; i<=matchs.length; i++)
           cupMatchRow(
               context,
-              Confronto(
-                clubName1: matchs[i][ResultDict().keyTeamName1],
-                clubName2: matchs[i][ResultDict().keyTeamName2],
-              ),
+              matchs[i],
               my)
       ],
     );
@@ -66,10 +66,22 @@ Widget cupPhaseColumn(BuildContext context,  String cupName, String phaseName, M
     return Container();
   }
 
-
 }
 
-Widget cupMatchRow(BuildContext context, Confronto confronto, My my){
+Widget cupMatchRow(BuildContext context, Map match, My my){
+
+  Confronto confronto = Confronto(
+    clubName1: match[ResultDict().keyTeamName1],
+    clubName2: match[ResultDict().keyTeamName2],
+  );
+
+  if(match.containsKey(ResultDict().keyGol1)){
+    confronto.setGoals(goal1: match[ResultDict().keyGol1], goal2: match[ResultDict().keyGol2]);
+  }
+
+  if(match.containsKey(ResultDict().keyPenalti1)){
+    confronto.setPenalties(penaltis1: match[ResultDict().keyPenalti1], penaltis2: match[ResultDict().keyPenalti2]);
+  }
 
   String teamNameA = confronto.clubName1;
   String teamNameB = confronto.clubName2;
@@ -101,6 +113,8 @@ Widget cupMatchRow(BuildContext context, Confronto confronto, My my){
             ),
           ),
 
+
+      confronto.hasPenaltis ? Text(confronto.penaltis1.toString()+"x"+confronto.penaltis2.toString(),style: EstiloTextoBranco.text10) : Container(),
 
       confronto.hasGoals
           ? Text(' '+ confronto.goal1.toString()+'x'+confronto.goal2.toString()+' ',style: EstiloTextoBranco.text22)
