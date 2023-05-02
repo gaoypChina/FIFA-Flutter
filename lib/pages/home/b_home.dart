@@ -13,6 +13,7 @@ import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
+import 'package:fifa/widgets/loader.dart';
 import 'package:flutter/material.dart';
 
 import '../../classes/league.dart';
@@ -91,6 +92,7 @@ class _HomePageState extends State<HomePage> {
       return Scaffold(
           body:  Container(
             height: Sized(context).height,
+            width: Sized(context).width,
             decoration: Images().getWallpaperContainerDecoration(),
             child: SingleChildScrollView(
               child: Column(
@@ -176,7 +178,10 @@ class _HomePageState extends State<HomePage> {
                       ),
 
                       //ESCUDO E UNIFORME
-                      loaded ? wHomeClubLogoAndKitStack(context, club) : Container(),
+                      loaded ? wHomeClubLogoAndKitStack(context, club) : Container(
+                        height: 200+40,
+                        width: 200,
+                      child:  loader()),
 
                     ],
                   ),

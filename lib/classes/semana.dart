@@ -60,7 +60,7 @@ class Semana{
     else if(semanaFinal.contains(weekToCalculate)){semanaStr = name.finale;}
     else if(semanaMundial.contains(weekToCalculate)){semanaStr = name.mundial;}
 
-    else if(semanasJogosCopas.contains(weekToCalculate)){semanaStr = CupClassification().getPhaseKeyName(weekToCalculate);}
+    else if(isJogoCopa){semanaStr = CupClassification().getPhaseKeyName(weekToCalculate);}
 
     verifyIsMataMataIdaOrVolta(weekToCalculate);
 
@@ -74,7 +74,7 @@ class Semana{
       semanaCalendarStr = 'Rodada ' + (rodadaNacional).toString();
     }
 
-    if(!isJogoCampeonatoNacional && !isJogoCampeonatoInternacional && !isJogoMundial){
+    if(!isJogoCampeonatoNacional && !isJogoCampeonatoInternacional && !isJogoMundial && !isJogoCopa){
       semanaCalendarStr = "Week " + week.toString();
     }
 

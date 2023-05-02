@@ -15,9 +15,9 @@ class LeagueOfficialNames{
   final String mundial = 'Mundial de Clubes da FIFA';
 
   //LIGAS
-  String inglaterra1 = 'Premier League';  String inglaterra2 = 'Championship'; String inglaterra3 = 'Championship2';
+  String inglaterra1 = 'Premier League';  String inglaterra2 = 'Championship'; String inglaterra3 = 'League One';
   String italia1 = 'Serie A TIM';  String italia2 = 'Serie B TIM';
-  String espanha1 = 'La Liga';  String espanha2 = 'La Liga2';
+  String espanha1 = 'La Liga';  String espanha2 = 'La Liga 2';
   String franca1 = 'Ligue 1'; String franca2 = 'Ligue 2';
   String alemanha1 = 'Bundesliga';  String alemanha2 = 'Bundesliga 2';String alemanhaOriental = 'DDR-Oberliga';
   String portugal = 'Liga Portugal Bwin'; String turquiaGrecia = 'Liga Greco-Turca';

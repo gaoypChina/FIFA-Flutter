@@ -188,6 +188,28 @@ class CupClassification{
     return Map.from(globalCup[cupName]![phaseKeyName][idaOrVoltaKey]);
   }
 
+  Map getCupClubMatchMap(String cupName, int week, String clubName){
+    Map<int, dynamic> allMatchsPhase = {};
+    Map match = {};
+    try{
+      allMatchsPhase = CupClassification().getCupPhaseResultsMap(cupName, week);
+
+      late int matchKey;
+      allMatchsPhase.forEach((key, value) {
+        if(value.containsValue(clubName)){
+          matchKey = key;
+        }
+      });
+
+      match = allMatchsPhase[matchKey];
+
+    }catch(e){
+      // O CAMPEONATO AINDA NAO TEM ESSA FASE
+    }
+
+    return match;
+  }
+
 
   List<String> getAllCupNames(){
     List leagueNames = getAvailableLeaguesNames();

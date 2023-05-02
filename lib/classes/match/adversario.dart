@@ -2,12 +2,14 @@
 import 'package:fifa/classes/chaves.dart';
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/cup_classification.dart';
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/international.dart';
 import 'package:fifa/classes/international_league.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/values/league_names.dart';
 
 class Adversario{
   String clubName = '';
@@ -38,6 +40,7 @@ class Adversario{
   }
 
   getCupAdverssario(){
+    Map<int, dynamic> mapAllMatchsPhase = CupClassification().getCupPhaseResultsMap(getCup(myClass.getLeagueName()), semana);
 
   }
 

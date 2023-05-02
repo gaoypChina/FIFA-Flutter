@@ -124,27 +124,11 @@ class ResultMatch{
     isAlreadyPlayed = false;
 
     competitionName = getCup(club.leagueName);
-    Map<int, dynamic> allMatchsPhase = {};
 
-    bool leagueHasPhase = false;
-    try{
-      allMatchsPhase = CupClassification().getCupPhaseResultsMap(competitionName, week);
-      leagueHasPhase = true;
-    }catch(e){
-      // O CAMPEONATO AINDA NAO TEM ESSA FASE
-    }
+    Map match = CupClassification().getCupClubMatchMap(competitionName, week, club.name);
 
-    if(leagueHasPhase){
-
-      late int matchKey;
-      allMatchsPhase.forEach((key, value) {
-        if(value.containsValue(club.name)){
-          matchKey = key;
-          hasAdversary = true;
-        }
-      });
-
-      Map match = allMatchsPhase[matchKey];
+    if(match.isNotEmpty){
+      hasAdversary = true;
 
       if(match[ResultDict().keyTeamName1] == club.name){
         club = club;

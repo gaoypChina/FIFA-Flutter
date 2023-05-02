@@ -1,3 +1,4 @@
+import 'package:fifa/classes/cup_classification.dart';
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/global_variables.dart';
 
@@ -12,8 +13,18 @@ class UpdatePlayerVariableMatch{
     if(Semana(semana).isJogoCampeonatoInternacional) {
       updatePlayerMatchInternational(clubClass);
     }
+    if(Semana(semana).isJogoCopa) {
+      updatePlayerMatchCup(clubClass);
+    }
   }
 
+  updatePlayerMatchCup(Club clubClass){
+    List titularPlayers = setMatchPlus1(clubClass);
+    for (int playerID in titularPlayers){
+      globalCupPlayers[CupClassification().keyPlayerMatchs]![playerID]++;
+      globalJogadoresCarrerMatchs[playerID]++;
+    }
+  }
 
   updatePlayerMatchNational(Club clubClass){
     List titularPlayers = setMatchPlus1(clubClass);
