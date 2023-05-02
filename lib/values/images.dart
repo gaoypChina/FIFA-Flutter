@@ -196,7 +196,7 @@ String imageLogo(String timeFoto) {
     map[_name.empoli] = 'empoli';
     map[_name.foggia] = 'foggia';
     map[_name.frosinone] = 'frosinone';
-    map[_name.hellasVerona] = 'hellas';
+    map[_name.hellasverona] = 'hellas';
     map[_name.lecce] = 'lecce';
     map[_name.livorno] = 'livorno';
     map[_name.messina] = 'messina';
@@ -401,7 +401,7 @@ String imageLogo(String timeFoto) {
     map[_name.famalicao] = 'famalicao';
     map[_name.farense] = 'farense';
     map[_name.feirense] = 'feirense';
-    map[_name.gilVicente] = 'gil vicente';
+    map[_name.gilvicente] = 'gil vicente';
     map[_name.leixoes] = 'leixoes';
     map[_name.mafra] = 'mafra';
     map[_name.maritimo] = 'maritimo';
@@ -409,12 +409,12 @@ String imageLogo(String timeFoto) {
     map[_name.nacionalMadeira] = 'nacional madeira';
     map[_name.naval] = 'naval';
     map[_name.olhanense] = 'olhanense';
-    map[_name.pacosDeFerreira] = 'paços de ferreira';
+    map[_name.pacosferreira] = 'paços de ferreira';
     map[_name.penafiel] = 'penafiel';
     map[_name.portimonense] = 'portimonense';
-    map[_name.rioAve] = 'rio ave';
+    map[_name.rioave] = 'rio ave';
     map[_name.salgueiros] = 'salgueiros';
-    map[_name.santaClara] = 'santa clara';
+    map[_name.santaclara] = 'santa clara';
     map[_name.tondela] = 'tondela';
     map[_name.leiria] = 'leiria';
     map[_name.varzim] = 'varzim';
@@ -467,7 +467,7 @@ String imageLogo(String timeFoto) {
     map[_name.sttruidense] = 'st truidense';
     map[_name.saintgilloise] = 'st gilloise';
     map[_name.westerlo] = 'westerlo';
-    map[_name.zulteWaregem] = 'zulte waregem';
+    map[_name.zultewaregem] = 'zulte waregem';
 
     //ESCOCIA
     map[_name.celtic] = 'celtic';
@@ -479,7 +479,7 @@ String imageLogo(String timeFoto) {
     map[_name.kilmarnock] = 'kilmarnock';
     map[_name.livingston] = 'livingston';
     map[_name.motherwell] = 'motherwell';
-    map[_name.rossCounty] = 'ross county';
+    map[_name.rosscounty] = 'ross county';
     map[_name.stjohnstone] = 'st johnstone';
     map[_name.stmirren] = 'st mirren';
     //IRLANDA

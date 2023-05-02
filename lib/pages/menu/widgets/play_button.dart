@@ -175,7 +175,7 @@ Widget backgroundStadium(BuildContext context, String clubName){
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0),
                   image: DecorationImage(
-                    fit: BoxFit.fitWidth,
+                    fit: BoxFit.fill,
                     alignment: FractionalOffset.center,
                     image: AssetImage(Images().getStadium(clubName)),
                   )

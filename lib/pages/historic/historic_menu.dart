@@ -3,7 +3,6 @@ import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/pages/cups/cup_main.dart';
 import 'package:fifa/pages/historic/international/international_historic.dart';
 import 'package:fifa/pages/historic/leagues_historic.dart';
 import 'package:fifa/pages/historic/mundial.dart';
@@ -134,13 +133,6 @@ class _HistoricMenuState extends State<HistoricMenu> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-
-                          box(
-                              'Copa',
-                              Image.asset('assets/league_logos/cup winners.png',height: imageSize,),
-                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => const CupMain()));
-                              }
-                          ),
                           box(
                               'Tabela Real',
                               Icon(Icons.line_weight,color: Colors.white, size: imageSize),

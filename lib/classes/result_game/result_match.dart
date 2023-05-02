@@ -1,10 +1,13 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/cup_classification.dart';
+import 'package:fifa/classes/match/result_dict.dart';
 import 'package:fifa/classes/mundial.dart';
 import 'package:fifa/classes/result_game/result_game_internacional.dart';
 import 'package:fifa/classes/result_game/result_game_nacional.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/background_color/background_score.dart';
 import 'package:fifa/theme/colors.dart';
+import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:flutter/material.dart';
 
@@ -36,7 +39,7 @@ class ResultMatch{
     this.weekLocal = weekLocal;
     isAlreadyPlayed = false;
     hasAdversary = false;
-    competitionName = LeagueOfficialNames().mundial;
+    competitionName = LeagueOfficialNames().resto;
   }
 
   fromResultGameNacional(ResultGameNacional show){
@@ -115,4 +118,66 @@ class ResultMatch{
     competitionName = LeagueOfficialNames().mundial;
   }
 
+  fromCopa(int week, Club club){
+
+    hasAdversary = false;
+    isAlreadyPlayed = false;
+
+    competitionName = getCup(club.leagueName);
+    Map<int, dynamic> allMatchsPhase = {};
+
+    bool leagueHasPhase = false;
+    try{
+      allMatchsPhase = CupClassification().getCupPhaseResultsMap(competitionName, week);
+      leagueHasPhase = true;
+    }catch(e){
+      // O CAMPEONATO AINDA NAO TEM ESSA FASE
+    }
+
+    if(leagueHasPhase){
+
+      late int matchKey;
+      allMatchsPhase.forEach((key, value) {
+        if(value.containsValue(club.name)){
+          matchKey = key;
+          hasAdversary = true;
+        }
+      });
+
+      Map match = allMatchsPhase[matchKey];
+
+      if(match[ResultDict().keyTeamName1] == club.name){
+        club = club;
+        clubID = club.index;
+        clubName2 = match[ResultDict().keyTeamName2];
+        clubID2 = clubsAllNameList.indexOf(clubName2);
+
+        if(match.containsKey(ResultDict().keyGol1)) {
+          gol1 = match[ResultDict().keyGol1];
+          gol2 = match[ResultDict().keyGol2];
+        }
+      }else if(match[ResultDict().keyTeamName2] == club.name){
+        String clubName = match[ResultDict().keyTeamName1];
+        clubID = clubsAllNameList.indexOf(clubName);
+        club = Club(index: clubID);
+        clubName2 = club.name;
+        clubID2 = club.index;
+        visitante = true;
+        if(match.containsKey(ResultDict().keyGol1)) {
+          gol1 = match[ResultDict().keyGol2];
+          gol2 = match[ResultDict().keyGol1];
+        }
+      }
+
+      if(match.containsKey(ResultDict().keyGol1)){
+        placar = gol1.toString() + ' x '+ gol2.toString();
+        victoryDrawLoss310 = getVictoryDrawLoss310(gol1, gol2);
+        backgroundColor = colorResultBackground(gol1, gol2);
+        isAlreadyPlayed = true;
+      }
+    }
+
+    weekLocal = week;
+
+  }
 }

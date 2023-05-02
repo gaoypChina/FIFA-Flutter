@@ -78,7 +78,7 @@ Map clubNameMapImmutable = {
   },
   LeagueOfficialNames().italia1 : {
     0: clubName.atalanta, 1: clubName.bologna,2: clubName.cremonese,3: clubName.empoli,
-    4: clubName.fiorentina,5: clubName.monza,6: clubName.hellasVerona,7: clubName.inter,
+    4: clubName.fiorentina,5: clubName.monza,6: clubName.hellasverona,7: clubName.inter,
     8: clubName.juventus,9: clubName.lazio,10: clubName.lecce,11: clubName.milan,
     12: clubName.napoli,13: clubName.roma,14: clubName.salernitana,15: clubName.sampdoria,
     16: clubName.sassuolo,17: clubName.spezia,18: clubName.torino,19: clubName.udinese,
@@ -126,7 +126,7 @@ Map clubNameMapImmutable = {
   },
   LeagueOfficialNames().portugal : {
     0: clubName.benfica,1: clubName.porto,2: clubName.sporting,3: clubName.braga,
-    4: clubName.belenenses,5: clubName.boavista,6: clubName.coimbra,7: clubName.gilVicente,
+    4: clubName.belenenses,5: clubName.boavista,6: clubName.coimbra,7: clubName.gilvicente,
     8: clubName.famalicao,9: clubName.maritimo,10: clubName.portimonense,11: clubName.vitoriaguimaraes,
   },
 

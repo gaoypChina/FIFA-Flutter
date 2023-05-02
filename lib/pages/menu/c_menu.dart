@@ -10,6 +10,7 @@ import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/simulate/simulate_functions.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/coach/coach_menu.dart';
+import 'package:fifa/pages/cups/cup_main.dart';
 import 'package:fifa/pages/historic/historic_menu.dart';
 import 'package:fifa/pages/menu/widgets/header.dart';
 import 'package:fifa/pages/menu/widgets/menu_button.dart';
@@ -111,7 +112,7 @@ class _MenuState extends State<Menu> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
 
-
+                          expandedButton("Nacional",club, TableNacional(choosenLeagueIndex: myClass.leagueID)),
                           expandedButton(Translation(context).text.myClub,club, const MyTeam()),
                           ]),
 
@@ -121,14 +122,15 @@ class _MenuState extends State<Menu> {
                               children: [
 
                                 expandedButton(Translation(context).text.international,club, TableInternational(leagueInternational: myClass.getMyInternationalLeague())),
-                                expandedButton("Nacional",club, TableNacional(choosenLeagueIndex: myClass.leagueID)),
 
+                                expandedButton(Translation(context).text.coach,club, const CoachMenu()),
 
                               ]),
+
                           Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                expandedButton(Translation(context).text.historic,club, const HistoricMenu()),
+                                expandedButton("Copa",club, const CupMain()),
                                 Expanded(
                                   child: wMenuButton(Translation(context).text.ranking,club,(){
                                     customToast(Translation(context).text.loading);
@@ -140,7 +142,7 @@ class _MenuState extends State<Menu> {
                           Row(
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
-                                expandedButton(Translation(context).text.coach,club, const CoachMenu()),
+                                expandedButton(Translation(context).text.historic,club, const HistoricMenu()),
                                 expandedButton(Translation(context).text.transfers,club, const Transfers()),
                               ]),
 

@@ -30,6 +30,8 @@ class CalendarResult{
     }else if(week.isJogoMundial){
       MundialFinal mundial = MundialFinal();
       show.fromMundial(semanaLocal, club, mundial);
+    }else if(week.isJogoCopa){
+      show.fromCopa(semanaLocal, club);
     }
     else{
       show.setDefault(semanaLocal);

@@ -89,6 +89,11 @@ class Images{
     My myClass = My();
     return FIFAImages().campeonatoLogo(myClass.campeonatoName);
   }
+  String getMyCupLogo(){
+    My myClass = My();
+    return FIFAImages().campeonatoLogo(myClass.cupName);
+  }
+
   String getMyInternationalLeagueLogo(){
     My myClass = My();
     return FIFAImages().campeonatoLogo(myClass.getMyInternationalLeague());

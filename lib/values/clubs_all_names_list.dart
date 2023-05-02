@@ -27,7 +27,7 @@ List clubsAllNameList = [
   ClubName().sampdoria,  ClubName().sassuolo,  ClubName().torino,  ClubName().udinese,
 
   ClubName().bari,ClubName().brescia,ClubName().benevento,ClubName().cagliari,
-  ClubName().crotone,ClubName().empoli,ClubName().hellasVerona,ClubName().lecce,
+  ClubName().crotone,ClubName().empoli,ClubName().hellasverona,ClubName().lecce,
   ClubName().monza,ClubName().palermo,ClubName().parma,ClubName().perugia,
   ClubName().pisa,ClubName().spal,ClubName().spezia,ClubName().venezia,
   ClubName().ascoli,ClubName().frosinone,ClubName().como,ClubName().reggina,
@@ -64,7 +64,7 @@ List clubsAllNameList = [
   //portugal
   ClubName().benfica,  ClubName().porto,  ClubName().sporting,  ClubName().braga,
   ClubName().boavista,ClubName().maritimo,ClubName().portimonense,ClubName().vitoriaguimaraes,
-  ClubName().coimbra,ClubName().famalicao,ClubName().gilVicente,ClubName().belenenses,
+  ClubName().coimbra,ClubName().famalicao,ClubName().gilvicente,ClubName().belenenses,
   //holanda
   ClubName().ajax,  ClubName().feyenoord,  ClubName().psv,ClubName().az,
   ClubName().twente,ClubName().utrecht,ClubName().vitesse,ClubName().heerenveen,

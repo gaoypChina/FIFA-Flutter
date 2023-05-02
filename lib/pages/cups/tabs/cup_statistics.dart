@@ -68,14 +68,20 @@ class _CupStatisticsState extends State<CupStatistics> {
     for(int index=0; index<globalJogadoresClubIndex.length; index++){
       String playerClubName = clubsAllNameList[globalJogadoresClubIndex[index]];
       if(allClubsCup.contains(playerClubName)) {
-        if(categoryKey == "Melhor Jogador"){
+        if(title == "Melhor Jogador"){
           double points = (globalCupPlayers[CupClassification().keyPlayerGoals]![index]*3 + globalCupPlayers[CupClassification().keyPlayerAssists]![index]).toDouble();
           points = points/ (globalCupPlayers[CupClassification().keyPlayerMatchs]![index]+1);
           copyVariableList.add(points);
+          cupPlayers.add(index);
+        }else if(title == "Clean Sheets"){
+          if(globalJogadoresPosition[index] == "GOL"){
+            copyVariableList.add(globalCupPlayers[categoryKey]![index]);
+            cupPlayers.add(index);
+          }
         }else{
           copyVariableList.add(globalCupPlayers[categoryKey]![index]);
+          cupPlayers.add(index);
         }
-        cupPlayers.add(index);
       }
     }
 
@@ -95,7 +101,7 @@ class _CupStatisticsState extends State<CupStatistics> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    for(int i=0;i<100 && i<=cupPlayers.length;i++)
+                    for(int i=0;i<100 && i<cupPlayers.length;i++)
                       rowPlayer(Jogador(index: cupPlayers[i]), i+1, categoryKey),
                   ],
                 ),

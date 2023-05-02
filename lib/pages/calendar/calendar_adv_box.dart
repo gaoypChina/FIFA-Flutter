@@ -32,7 +32,9 @@ Widget wCalendarAdvBox(BuildContext context, int semanaLocal, show){
                       ? Image.asset(Images().getMyInternationalLeagueLogo(),height: 22, width: 22)
                       : Semana(semanaLocal).isJogoCampeonatoNacional
                         ? Image.asset(Images().getMyLeagueLogo(),height: 22, width: 22)
-                        : Container(),
+                        : Semana(semanaLocal).isJogoCopa
+                          ? Image.asset(Images().getMyCupLogo(),height: 22, width: 22)
+                            : Container(),
                   Center(child: Images().getEscudoWidget(show.clubName2,45,45)),
                 ],
               ),

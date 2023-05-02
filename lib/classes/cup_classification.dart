@@ -182,6 +182,12 @@ class CupClassification{
     return globalCup[cupName]![phaseKeyName][idaOrVoltaKey];
   }
 
+  Map<int, dynamic> getCupPhaseResultsMap(String cupName, int week){
+    String phaseKeyName = getPhaseKeyName(week);
+    String idaOrVoltaKey = getIdaOrVoltaKey(phaseKeyName, week);
+    return Map.from(globalCup[cupName]![phaseKeyName][idaOrVoltaKey]);
+  }
+
 
   List<String> getAllCupNames(){
     List leagueNames = getAvailableLeaguesNames();

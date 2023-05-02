@@ -11,6 +11,7 @@ import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/values/league_trophy_image.dart';
+import 'package:fifa/widgets/bottom_sheet_titles.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -253,7 +254,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
           //TITULOS NACIONAIS
           GestureDetector(
             onTap: (){
-              titleYearBottomSheet(dataGraphics.data);
+              bottomSheetShowTitles(context, club.leagueName, dataGraphics.data);
             },
             child: Column(
               children: [
@@ -270,7 +271,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
           //TITULOS INTERNACIONAIS
           GestureDetector(
             onTap: (){
-              titleYearBottomSheet(dataGraphics.dataInternational);
+              bottomSheetShowTitles(context, club.internationalLeagueName, dataGraphics.dataInternational);
             },
             child: Column(
               children: [
@@ -287,7 +288,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
           //TITULOS MUNDIAIS
           GestureDetector(
             onTap: (){
-              titleYearBottomSheet(dataGraphics.dataMundial);
+              bottomSheetShowTitles(context, LeagueOfficialNames().mundial, dataGraphics.dataMundial);
             },
             child: Column(
               children: [
@@ -362,37 +363,6 @@ class _ClubGraphicsState extends State<ClubGraphics> {
         ],
       ),
     ) : Container();
-  }
-
-
-  Future titleYearBottomSheet(List<ClassificationData> yearTitles){
-    List<ClassificationData> lista = yearTitles.where((ClassificationData classificationData) => classificationData.position==1).toList();
-
-    return showModalBottomSheet(
-        barrierColor: Colors.transparent,
-        context: context, builder: (c) {
-      return Container(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Text('Campeão',style: EstiloTextoPreto.negrito16,),
-            const Text('Anos:',style: EstiloTextoPreto.text16,),
-            const SizedBox(height: 8),
-            SizedBox(
-              height: 100,
-              child: GridView.count(
-              crossAxisCount: 5,
-              childAspectRatio: 2.5,
-              children: List.generate(lista.length, (index) {
-                  return Text(lista[index].year.toInt().toString());
-                }),
-              ),
-            ),
-      ]),
-    );
-   });
   }
 
   Widget mapWidget(){

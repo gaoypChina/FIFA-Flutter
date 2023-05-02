@@ -114,6 +114,7 @@ class Jogador{
     grade = globalJogadoresGrades[index] ?? 0;
     gradeAvg = grade/matchsYear;
     trainLevel = 0;
+
   }
 
   printData(){

@@ -14,6 +14,7 @@ import 'package:fifa/values/historic_champions/historic_champions.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:fifa/widgets/bottom_sheet_league_classification.dart';
+import 'package:fifa/widgets/bottom_sheet_titles.dart';
 import 'package:fifa/widgets/stars.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -611,33 +612,5 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
     return value;
   }
 
-  Future bottomSheetShowTitles(BuildContext context, String leagueName, List<ClassificationData> classificationData){
-    List<int> championYear = [];
 
-    for(ClassificationData data in classificationData)
-    {
-      if(data.position==1){
-        championYear.add(data.year.toInt());
-      }
-    }
-    championYear.sort((a, b) => a == championYear.reduce((x, y) => x > y ? x : y) ? 1 : b == championYear.reduce((x, y) => x > y ? x : y) ? -1 : a - b);
-
-    return showModalBottomSheet(
-        barrierColor: Colors.transparent,
-        context: context, builder: (c){
-      return SingleChildScrollView(
-          child:Padding(
-            padding: const EdgeInsets.all(8),
-            child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Text('Campeão ' + leagueName,style: EstiloTextoPreto.negrito16),
-              const SizedBox(height: 8),
-              Text(championYear.toString().replaceAll("[", "").replaceAll("]", ""),style: EstiloTextoPreto.text14),
-              const SizedBox(height: 8),
-              ],
-            ),
-          ));
-    });
-  }
 }

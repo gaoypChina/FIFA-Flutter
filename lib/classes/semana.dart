@@ -1,3 +1,4 @@
+import 'package:fifa/classes/cup_classification.dart';
 import 'package:fifa/classes/functions/name.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:flutter/cupertino.dart';
@@ -50,8 +51,7 @@ class Semana{
         isJogoIdaLeague = false;
       }
     }
-    if(semanasJogosCopas.contains(weekToCalculate)){semanaStr = 'Jogo das Copas';}
-    else if(isJogoGruposInternacional){
+    if(isJogoGruposInternacional){
       semanaStr = name.groupsPhase;
       rodadaGroupInternational = semanasGruposInternacionais.indexOf(weekToCalculate)+1;}
     else if(semanaOitavas.contains(weekToCalculate)){semanaStr = name.oitavas;    }
@@ -59,6 +59,8 @@ class Semana{
     else if(semanaSemi.contains(weekToCalculate)){semanaStr = name.semifinal;}
     else if(semanaFinal.contains(weekToCalculate)){semanaStr = name.finale;}
     else if(semanaMundial.contains(weekToCalculate)){semanaStr = name.mundial;}
+
+    else if(semanasJogosCopas.contains(weekToCalculate)){semanaStr = CupClassification().getPhaseKeyName(weekToCalculate);}
 
     verifyIsMataMataIdaOrVolta(weekToCalculate);
 

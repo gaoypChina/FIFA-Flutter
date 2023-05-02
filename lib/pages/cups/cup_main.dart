@@ -1,5 +1,6 @@
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
+import 'package:fifa/classes/my.dart';
 import 'package:fifa/pages/cups/tabs/cup_brackets.dart';
 import 'package:fifa/pages/cups/tabs/cup_matchs.dart';
 import 'package:fifa/pages/cups/tabs/cup_statistics.dart';
@@ -19,12 +20,11 @@ class CupMain extends StatefulWidget {
 
 class _CupMainState extends State<CupMain> with TickerProviderStateMixin{
 
-
   late TabController _tabController;
-  Map leaguesMap = {};
-  int choosenLeagueIndex = 1;
+  Map<int, League> leaguesMap = {};
+  late int choosenLeagueIndex;
 
-  ////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
   @override
@@ -39,14 +39,19 @@ class _CupMainState extends State<CupMain> with TickerProviderStateMixin{
       int leagueID = leaguesListRealIndex[i];
       leaguesMap[leagueID] = League(index: leaguesListRealIndex[i]);
     }
+    //initial value
+    choosenLeagueIndex = leaguesMap[My().leagueID]!.index;
   }
+
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    String leagueName = leaguesMap[choosenLeagueIndex].getName();
+
+    String leagueName = leaguesMap[choosenLeagueIndex]!.name;
     String cupName = getCup(leagueName);
+
     return DefaultTabController(
       length: 3,
       child: Scaffold(

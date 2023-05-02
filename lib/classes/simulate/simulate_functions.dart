@@ -150,7 +150,7 @@ class Simulate{
           Club club1 = Club(index: clubsAllNameList.indexOf(matchMap[nConfronto][ResultDict().keyTeamName1]), clubDetails: false);
           Club club2 = Club(index: clubsAllNameList.indexOf(matchMap[nConfronto][ResultDict().keyTeamName2]), clubDetails: false);
           MatchSimulation match = MatchSimulation(club1,club2);
-          //SALVA O PLACAR NO HISTÓRICO
+          //SALVA O PLACAR
           globalCup[cupName]![phaseName][idaOrVoltaKey][nConfronto] = ResultDict().saveGoals(matchMap[nConfronto], match.variableGol1, match.variableGol2);
         }
 

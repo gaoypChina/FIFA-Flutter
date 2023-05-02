@@ -15,6 +15,7 @@ class My{
   late int clubID;
   late int leagueID;
   late String campeonatoName;
+  late String cupName;
   late int posicaoChave;
   late int scoreGame;
   late double money;
@@ -28,6 +29,7 @@ class My{
     clubID = globalMyClubID;
     clubName = clubsAllNameList[globalMyClubID];
     campeonatoName = getLeagueName();
+    cupName = getCup(campeonatoName);
     leagueID = getLeagueID();
     posicaoChave = getChaveLeague();
     esquemaTatico = globalMyEsquemaTatico;

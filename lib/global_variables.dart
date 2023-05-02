@@ -45,19 +45,19 @@ List<int> semanaOitavas = [semanasJogosInternacionais[6],semanasJogosInternacion
     semanaQuartas = [semanasJogosInternacionais[8],semanasJogosInternacionais[9]],
     semanaSemi = [semanasJogosInternacionais[10],semanasJogosInternacionais[11]],
     semanaFinal = [semanasJogosInternacionais[12]],
-    semanaMundial = [semanasJogosInternacionais.length+semanasJogosNacionais.length+1];
+    semanaMundial = [semanasJogosCopas.length-2+semanasJogosInternacionais.length+semanasJogosNacionais.length+1];
 //List<int> semanasJogosInternacionais = [for(var i=semanasJogosNacionais.last+1; i<=semanasJogosNacionais.last+13; i++) i];
 
-List<int> semanasJogosInternacionais = [3,5,7,10,12,14,  18,20, 23,25, 28,29, 32];
-
+List<int> semanasJogosInternacionais = [8,10,12, 18,20,22, 31,32,  37,38, 40,41, 44];
+//3,5,7,10,12,14,  18,20, 23,25, 28,29, 32
 
 List semanasGruposInternacionais = semanasJogosInternacionais.take(6).toList();
 List<int> semanasMataMataInternacionais = semanaOitavas+semanaQuartas+semanaSemi+semanaFinal;
 
 //List<int> semanasJogosNacionais = [for(var i=1; i<=globalNMaxRodadasNacional; i++) i];
-List<int> semanasJogosNacionais = [1,2,4,6,8, 9,11,13,15,16, 17,19,21,22,24, 26,27,30,31];
-
-List semanasJogosCopas = [for(var i=-1; i<=12; i++) i]; //-1,0,...,12 FASE128 NAO EXISTE
+List<int> semanasJogosNacionais = [5,6,7,9,11, 13,15,17,19,21, 23,26,29,30,33,  36,39,42,43];
+//1,2,4,6,8, 9,11,13,15,16, 17,19,21,22,24, 26,27,30,31
+List semanasJogosCopas = [-1,0, 1,2, 3,4, 14,16, 24,25, 27,28, 34,35]; //-1,0,...,12 FASE128 NAO EXISTE
 int globalUltimaSemana = semanaMundial.last+1;
 
 Map<int,String> weekRealDays = {

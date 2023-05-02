@@ -73,6 +73,7 @@ Widget calendarRow(int week){
         child: Row(
           children: [
             Image.asset(FIFAImages().campeonatoLogo(calendarResult.show.competitionName),height:30,width: 30,),
+
             const SizedBox(width: 8),
             Column(
               children: [

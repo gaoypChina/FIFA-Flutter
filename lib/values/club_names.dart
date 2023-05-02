@@ -159,7 +159,7 @@ class ClubName{
   String gallipoli = "Gallipoli";
   String grosseto = "Grosseto";
   String gubbio = "Gubbio";
-  String hellasVerona = "Hellas Verona";
+  String hellasverona = "Hellas Verona";
   String juvestabia = "Juve Stabia";
   String latina = "Latina";
   String lecce = "Lecce";
@@ -307,6 +307,7 @@ class ClubName{
   String puertollano = "Puertollano"; //antigo calvo sotelo
   String racingSantander = "Racing Santander";
   String rayovallecano = "Rayo Vallecano";
+  String realaviles = "Real Avilés";
   String realmadridB = "Real Madrid Castilla";
   String realsociedadB = "Real Sociedad B";
   String rayomajadahonda = "Rayo Majadahonda";
@@ -322,6 +323,7 @@ class ClubName{
   String tarrassa = "Tarrassa";
   String unionistas = "Unionistas";
   String toledo = "Toledo";
+  String valenciaB = "Mestalla";
   String villarrealB = "Villarreal B";
   String xerez = "Xerez";
   String zaragoza = "Real Zaragoza";
@@ -578,7 +580,7 @@ class ClubName{
   String farense = "Farense";
   String feirense = "Feirense";
   String felgueiras = "Felgueiras";
-  String gilVicente = "Gil Vicente";
+  String gilvicente = "Gil Vicente";
   String leca = "Leça FC";
   String leixoes = "Leixões";
   String lusitanovrsa = "Lusitano VRSA";
@@ -588,15 +590,15 @@ class ClubName{
   String montijo = "Montijo";
   String naval = "Naval";
   String nacionalMadeira = "Nacional Madeira";
-  String pacosDeFerreira = "Paços de Ferreira";
+  String pacosferreira = "Paços de Ferreira";
   String penafiel = "Penafiel";
   String portimonense = "Portimonense";
   String olhanense = "Olhanense";
   String oriental = "Oriental";
-  String rioAve = "Rio Ave";
+  String rioave = "Rio Ave";
   String riopele = "Riopele";
   String salgueiros = "Salgueiros";
-  String santaClara = "Santa Clara";
+  String santaclara = "Santa Clara";
   String seixal = "Seixal FC";
   String tirsense = "Tirsense";
   String torreense = "Torreense";
@@ -721,7 +723,7 @@ class ClubName{
   String waterschei = "Waterschei Thor Genk";
   String westerlo = "Westerlo";
   String winterslag = "Winterslag";
-  String zulteWaregem = "Zulte Waregem";
+  String zultewaregem = "Zulte Waregem";
   String geel = "Geel"; //EXTINTO
   String waregemKSV = "KSV waregem"; //EXTINTO 1925-2001
 
@@ -751,7 +753,7 @@ class ClubName{
   String queenspark = "Queen's Park";
   String queensouth = "Queen of the South";
   String raithrovers = "Raith Rovers";
-  String rossCounty = "Ross County";
+  String rosscounty = "Ross County";
   String stjohnstone = "St. Johnstone";
   String stmirren = "St. Mirren";
   String stirlingalbion = "Stirling Albion";
@@ -1195,6 +1197,8 @@ class ClubName{
   String villacher = "Villacher";
   String wien = "Wien";
   String wiener = "Wiener Sportclub";
+  String wienerac = "Wiener AC";
+  String wienerneustadter = "Wiener Neustädter";
   String wolfsberger = "Wolfsberger AC";
   String wackerinnsbruck = "Wacker Innsbruck"; //1915-1999
   String stahlLinz = "Stahl Linz"; //1946-1997
