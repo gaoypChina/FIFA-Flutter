@@ -312,7 +312,7 @@ Map<String,dynamic> mapEuropaTopLeagues = {
     1954.0: [n.alaves,n.laspalmas,],
     1953.0: [n.osasuna,n.jaen,],
     1952.0: [n.realOviedo,n.malaga,],
-    1951.0: [n.sportinggijon,n.moghrebTetouan,n.laspalmas,n.zaragoza,n.malaga,n.murcia,  n.sabadell,n.salamanca,],
+    1951.0: [n.sportinggijon,n.moghrebtetouan,n.laspalmas,n.zaragoza,n.malaga,n.murcia,  n.sabadell,n.salamanca,],
     1950.0: [n.racingSantander,n.alcoyano,n.lleida,n.murcia,],
   },
   leagueName.italia1 : {

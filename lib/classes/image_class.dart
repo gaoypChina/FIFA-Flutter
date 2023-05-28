@@ -80,6 +80,8 @@ class Images{
       campeonatoLogo = FIFAImages().campeonatoLogo(myClass.getMyInternationalLeague());
     }else if(myClass.playingInternational.isNotEmpty  && Semana(semana).isJogoMataMataInternacional){
       campeonatoLogo = FIFAImages().campeonatoLogo(myClass.getMyInternationalLeague());
+    }else if(semanasJogosCopas.contains(semana)){
+      campeonatoLogo = FIFAImages().campeonatoLogo(myClass.cupName);
     }else {
       campeonatoLogo = '';
     }

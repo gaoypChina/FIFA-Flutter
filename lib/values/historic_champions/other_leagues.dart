@@ -97,7 +97,8 @@ Map<String,dynamic> mapOtherLeagues = {
   },
 
   leagueName.copaNordeste : {
-    2022.0: [n.fortaleza,n.sport, n.nautico,n.crb,          n.ceara,n.botafogoPB,n.csa,n.alagoinhas,  ],
+    2023.0: [n.ceara,n.sport,n.fortaleza,n.abc,             n.nautico,n.ferroviario,n.crb,n.sergipe,  n.santacruz,n.sampaio,n.bahia,n.campinense,n.csa,n.alagoinhas,n.vitoria,n.fluminensePI],
+    2022.0: [n.fortaleza,n.sport, n.nautico,n.crb,          n.ceara,n.botafogoPB,n.csa,n.alagoinhas,  n.bahia,n.sousa,n.altos,n.sampaio,n.floresta,n.campinense,n.globo,n.sergipe],
     2021.0: [n.bahia,n.ceara,n.fortaleza,n.vitoria,         n.crb,n.altos,n.csa,n.sampaio,            n.abc,n.treze,n.salgueiro,n.confianca,n.botafogoPB,n.julho4,n.sport,n.santacruz],
     2020.0: [n.ceara,n.bahia,n.fortaleza,n.confianca,       n.santacruz,n.vitoria,n.botafogoPB,n.sport,   n.nautico,n.abc,n.crb,n.csa,n.imperatriz,n.americaRN,n.freipaulistano,n.riverPI],
     2019.0: [n.fortaleza,n.botafogoPB,n.nautico,n.santacruz, n.ceara,n.csa,n.crb,n.vitoria,           n.bahia,n.abc,n.motoclub,n.confianca,n.salgueiro,n.sampaio,n.sergipe,n.altos],
@@ -129,15 +130,18 @@ Map<String,dynamic> mapOtherLeagues = {
   },
 
   leagueName.copaVerde : {
-    2022.0: [n.paysandu,n.vilanova,n.saoraimundo,n.brasiliense,],
-    2021.0: [n.remo,n.vilanova,n.paysandu,n.novamutum,],
-    2020.0: [n.brasiliense,n.remo,n.vilanova,n.manaus,],
-    2019.0: [n.cuiaba,n.paysandu,n.goias,n.remo,],
-    2018.0: [n.paysandu,n.itapemirim,n.manaus,n.luverdense,],
-    2017.0: [n.luverdense,n.paysandu,n.rondoniense,n.santosAP,],
-    2016.0: [n.paysandu,n.gama,n.remo,n.aparecidense,],
-    2015.0: [n.cuiaba,n.remo,n.luverdense,n.paysandu,],
-    2014.0: [n.brasilia,n.paysandu,n.brasiliense,n.remo,],
+    //2025.0: [],
+    //2024.0: [],
+    //2023.0: [n.goias,n.paysandu,n.cuiaba,n.remo,                ],
+    2022.0: [n.paysandu,n.vilanova,n.saoraimundo,n.brasiliense, ],
+    2021.0: [n.remo,n.vilanova,n.paysandu,n.novamutum,          ],
+    2020.0: [n.brasiliense,n.remo,n.vilanova,n.manaus,          ],
+    2019.0: [n.cuiaba,n.paysandu,n.goias,n.remo,                ],
+    2018.0: [n.paysandu,n.itapemirim,n.manaus,n.luverdense,     ],
+    2017.0: [n.luverdense,n.paysandu,n.rondoniense,n.santosAP,  ],
+    2016.0: [n.paysandu,n.gama,n.remo,n.aparecidense,           ],
+    2015.0: [n.cuiaba,n.remo,n.luverdense,n.paysandu,           ],
+    2014.0: [n.brasilia,n.paysandu,n.brasiliense,n.remo,        ],
   },
 
   leagueName.pequenaTaca:{

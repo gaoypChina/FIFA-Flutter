@@ -10,7 +10,7 @@ import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/widgets/popup/popup_player_info.dart';
 import 'package:flutter/material.dart';
 
-class filterPlayersTitle{
+class FilterPlayersTitle{
   String artilheiros = "Artilheiros";
   String assists = "Assistências";
   String bestPlayer = "Melhor Jogador";
@@ -28,7 +28,7 @@ class CupStatistics extends StatefulWidget {
 
 class _CupStatisticsState extends State<CupStatistics> {
 
-  String typeSelected = filterPlayersTitle().artilheiros;
+  String typeSelected = FilterPlayersTitle().artilheiros;
 
   @override
   Widget build(BuildContext context) {
@@ -40,10 +40,10 @@ class _CupStatisticsState extends State<CupStatistics> {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
-                buttonSelection(filterPlayersTitle().artilheiros),
-                buttonSelection(filterPlayersTitle().assists),
-                buttonSelection(filterPlayersTitle().bestPlayer),
-                buttonSelection(filterPlayersTitle().cleanSheets),
+                buttonSelection(FilterPlayersTitle().artilheiros),
+                buttonSelection(FilterPlayersTitle().assists),
+                buttonSelection(FilterPlayersTitle().bestPlayer),
+                buttonSelection(FilterPlayersTitle().cleanSheets),
               ],
             ),
           ),
@@ -56,11 +56,11 @@ class _CupStatisticsState extends State<CupStatistics> {
 
   List filterPlayers(String title){
     String categoryKey = "";
-    if(title == filterPlayersTitle().artilheiros){
+    if(title == FilterPlayersTitle().artilheiros){
       categoryKey = CupClassification().keyPlayerGoals;
-    }else if(title == filterPlayersTitle().assists){
+    }else if(title == FilterPlayersTitle().assists){
       categoryKey = CupClassification().keyPlayerAssists;
-    }else if(title == filterPlayersTitle().cleanSheets){
+    }else if(title == FilterPlayersTitle().cleanSheets){
       categoryKey = CupClassification().keyPlayerCleanSheets;
     }else{
       categoryKey = title;
@@ -76,12 +76,12 @@ class _CupStatisticsState extends State<CupStatistics> {
     for(int index=0; index<globalJogadoresClubIndex.length; index++){
       String playerClubName = clubsAllNameList[globalJogadoresClubIndex[index]];
       if(allClubsCup.contains(playerClubName)) {
-        if(title == filterPlayersTitle().bestPlayer){
+        if(title == FilterPlayersTitle().bestPlayer){
           double points = (globalCupPlayers[CupClassification().keyPlayerGoals]![index]*3 + globalCupPlayers[CupClassification().keyPlayerAssists]![index]).toDouble();
           points = points/ (globalCupPlayers[CupClassification().keyPlayerMatchs]![index]+1);
           copyVariableList.add(points);
           cupPlayers.add(index);
-        }else if(title == filterPlayersTitle().cleanSheets){
+        }else if(title == FilterPlayersTitle().cleanSheets){
           if(globalJogadoresPosition[index] == "GOL"){
             copyVariableList.add(globalCupPlayers[categoryKey]![index]);
             cupPlayers.add(index);
@@ -140,10 +140,10 @@ class _CupStatisticsState extends State<CupStatistics> {
             SizedBox(width: 35,child: Text(result.toString()+"- ",style: EstiloTextoBranco.text14)),
             Images().getEscudoWidget(player.clubName,25,25),
             //Images().getPlayerPictureWidget(player, 35, 35),
-            title == filterPlayersTitle().artilheiros ? SizedBox(width: 30,child: Text(player.goalsCup.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.negrito16)) : Container(),
-            title == filterPlayersTitle().assists ? SizedBox(width: 30,child: Text(player.assistsCup.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.negrito16)) : Container(),
-            title == filterPlayersTitle().cleanSheets ? SizedBox(width: 30,child: Text(player.cleanSheetsCup.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.negrito16)) : Container(),
-            title == filterPlayersTitle().bestPlayer ? SizedBox(width: 40,child: Text(player.gradeCup.toStringAsFixed(1),textAlign: TextAlign.center,style: EstiloTextoBranco.negrito16)) : Container(),
+            title == FilterPlayersTitle().artilheiros ? SizedBox(width: 30,child: Text(player.goalsCup.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.negrito16)) : Container(),
+            title == FilterPlayersTitle().assists ? SizedBox(width: 30,child: Text(player.assistsCup.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.negrito16)) : Container(),
+            title == FilterPlayersTitle().cleanSheets ? SizedBox(width: 30,child: Text(player.cleanSheetsCup.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.negrito16)) : Container(),
+            title == FilterPlayersTitle().bestPlayer ? SizedBox(width: 40,child: Text(player.gradeCup.toStringAsFixed(1),textAlign: TextAlign.center,style: EstiloTextoBranco.negrito16)) : Container(),
 
             positionContainer(player.position,size: 30,style: EstiloTextoPreto.text12),
             SizedBox(width:180,child: Text(player.name,style: EstiloTextoBranco.text16)),

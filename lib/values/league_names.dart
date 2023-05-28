@@ -2,6 +2,8 @@ import 'package:fifa/classes/countries/words.dart';
 import 'package:fifa/classes/countries/countries_continents.dart';
 
 class LeagueOfficialNames{
+
+  //INTERNACIONAL
   final String championsLeague = 'Champions League';
   final String libertadores = 'Libertadores';
   final String concacaf = 'Concacaf champions';
@@ -80,8 +82,9 @@ class LeagueOfficialNames{
   String alagoas = 'Alagoano'; String paraiba = 'Paraibano'; String piaui = 'Piaui'; String maranhao = 'Maranhão'; String sergipe = 'Sergipe';
   String goias = 'Goias'; String df = 'Distrito Federal'; String mt = 'Mato Grosso'; String ms = 'Mato Grosso do Sul'; String to = 'Tocantins';
   String para = 'Para'; String amazonas = 'Amazonas'; String acre = 'Acre'; String amapa = 'Amapa';String rondonia = 'Rondônia';String roraima = 'Roraima';
-  String argentina = 'Primera División';String sulamericano = 'Sul-Americano';
+  String argentina = 'Primera División';
   String mercosul = 'Mercosul';
+  String merconorte = 'Merconorte';
   String colombia = 'Merconorte';
   String uruguai = 'Campeonato uruguaio';
   String paraguai = 'Campeonato paraguaio';
@@ -103,7 +106,7 @@ class LeagueOfficialNames{
 
   String asia = 'Liga Ásia';  String orienteMedio = 'Liga Oriente Médio';  String africa = 'Liga África';
 
-  String china = 'Liga China';
+  String china = 'Superliga Chinesa';
   String japao = 'J1-League';
   String coreiaSul = 'K-League'; String coreiaNorte = 'Liga Coréia do Norte';
   String arabia = 'Liga Arábia Saudita';
@@ -116,8 +119,8 @@ class LeagueOfficialNames{
   String siria = 'Liga Síria'; String libano = 'Liga Líbano';
   String india = 'Liga India'; String nepal = 'Liga Nepal'; String bangladesh = 'Liga Bangladesh';
   String butao = 'Liga Butão'; String srilanka = "Liga Sri Lanka";
-  String tailandia = 'Liga Tailandia';   String vietna = 'Liga Vietnã'; String camboja = 'Liga Camboja';
-  String indonesia = 'Liga Indonesia';    String filipinas = 'Liga Filipinas'; String laos = 'Liga Laos';
+  String tailandia = 'Liga Tailandia'; String vietna = 'Liga Vietnã'; String camboja = 'Liga Camboja';
+  String indonesia = 'Liga Indonesia'; String filipinas = 'Liga Filipinas'; String laos = 'Liga Laos';
   String myanmar = 'Liga Myanmar';
   String malasia = 'Liga Malásia'; String cingapura = 'Liga Cingapura';
   String paquistao = 'Liga Paquistão'; String afeganistao = 'Liga Afeganistao';
@@ -183,7 +186,6 @@ class LeagueOfficialNames{
   String samoa = 'Liga Samoa';
   String timor = 'Liga Timor-Leste';
 
-
   String outros = 'Outros';
 
   //COPAS
@@ -196,12 +198,13 @@ class LeagueOfficialNames{
 
   String brazilCup = 'Copa do Brasil';String argentinaCup = 'Copa Argentina';
   String mercosulCup = 'Copa America';String merconorteCup = 'Copa Merconorte';
+  String colombiaCup = 'Copa Colombia';
 
   String mexicoCup = 'Copa MX';String usaCup = 'MLS Cup';
   String asiaCup = 'Asia Cup';String africaCup = 'África Cup';
   String othersCup = 'Outros Cup';
 
-  //INTERNACIONAL
+  //SELEÇÕES
   String copamundo = "Copa do Mundo";
   String eurocopa = "Eurocopa";
   String copaamerica = "Copa América";
@@ -210,7 +213,7 @@ class LeagueOfficialNames{
   String copaconcacaf = "Copa Concacaf";
   String copaconfederacoes = "Copa Confederacoes";
 
-  //SUPERCOPA
+  //SUPERCOPAS
   String recopaeuropa = "Supercopa da UEFA";
   String recopasula = "Recopa Sulamericana";
   String recopabrasil = "Supercopa do Brasil";
@@ -320,19 +323,21 @@ getInternationalLeagueNumber(String internationalLeague){
 }
 
 getInternationalLeagueFromContinent(String continent){
-  String internationalLeague = LeagueOfficialNames().championsLeague;
+  LeagueOfficialNames leagueOfficialNames =  LeagueOfficialNames();
+  String internationalLeague = leagueOfficialNames.championsLeague;
   if(continent==Continents().americaSul){
-    internationalLeague = LeagueOfficialNames().libertadores;
+    internationalLeague = leagueOfficialNames.libertadores;
   }
   else if(continent==Continents().americaNorte){
-    internationalLeague = LeagueOfficialNames().concacaf;
+    internationalLeague = leagueOfficialNames.concacaf;
   }
   else if(continent==Continents().africa){
-    internationalLeague = LeagueOfficialNames().africa;
+    internationalLeague = leagueOfficialNames.africa;
   }
   else if(continent==Continents().asia){
-    internationalLeague = LeagueOfficialNames().asia;
+    internationalLeague = leagueOfficialNames.asia;
   }
+
   return internationalLeague;
 }
 
@@ -510,7 +515,7 @@ String getCup(String leagueNameIn){
     leagueName.brasil4: leagueName.brazilCup,
     leagueName.argentina: leagueName.argentinaCup,
     leagueName.mercosul: leagueName.mercosulCup,
-    leagueName.colombia: leagueName.merconorteCup,
+    leagueName.colombia: leagueName.colombiaCup,
 
     leagueName.mexico: leagueName.mexicoCup,
     leagueName.estadosUnidos: leagueName.usaCup,
@@ -541,6 +546,7 @@ bool leaguePlayInternationalCompetition(String name){
 Map getLeagueNationalityMap(){
   LeagueOfficialNames leagueName = LeagueOfficialNames();
   return {
+    //EUROPA
     leagueName.inglaterra1: Words.country.england,
     leagueName.inglaterra2: Words.country.england,
     leagueName.inglaterra3: Words.country.england,
@@ -604,6 +610,7 @@ Map getLeagueNationalityMap(){
     leagueName.saomarino: Words.country.sanMarino,
     leagueName.kosovo: Words.country.kosovo,
 
+    //AMERICA DO SUL
     leagueName.brasil1: Words.country.brazil,
     leagueName.brasil2: Words.country.brazil,
     leagueName.brasil3: Words.country.brazil,
@@ -618,6 +625,7 @@ Map getLeagueNationalityMap(){
     leagueName.colombia: Words.country.colombia,
     leagueName.venezuela: Words.country.venezuela,
 
+    //AMERICA DO NORTE
     leagueName.mexico: Words.country.mexico,
     leagueName.estadosUnidos: Words.country.unitedStates,
     leagueName.canada: Words.country.canada,

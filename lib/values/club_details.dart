@@ -4544,10 +4544,8 @@ class ClubDetails{
       '',0,0,_country.ecuador,50.0,[],{}];
     map[n.mushucruna] = [ClubColors(grena,Colors.green),pattern.solid,Coordinates(-1.30916165, -78.7278448),
       'Estádio Mushuc Runa COAC',6000,2003,_country.ecuador,63.2,[],{}];
-    map[n.nueveoctubre] = [ClubColors(Colors.white,Colors.blue),pattern.stripes3,Coordinates(-2.1794787, -79.89441178),
-      'Modelo Alberto Spencer',42000,1912,_country.ecuador,68.9,[],{}];
     map[n.octubre9] = [ClubColors(Colors.white,Colors.blue),pattern.stripesThin,Coordinates(-2.17903931490244, -79.8944434402961),
-      'Modelo Alberto Spencer',42000,1912,_country.ecuador,63.6,[],{}];
+      'Modelo Alberto Spencer',42000,1912,_country.ecuador,64.6,[],{}];
     map[n.olmedo] = [ClubColors(Colors.blue,Colors.red),pattern.solid,Coordinates(-1.6662906, -78.6604288),
       'Olímpico de Riobamba',20000,1919,_country.ecuador,62.6,[],{}];
     map[n.orense] = [ClubColors(darkgreen,Colors.black),pattern.solid,Coordinates(-3.25437008, -79.9627357),
@@ -4648,7 +4646,7 @@ class ClubDetails{
       '',0,0,_country.venezuela,50.0,[],{}];
     map[n.portuguesaven] = [ClubColors(Colors.red,Colors.black),pattern.stripes3,Coordinates(9.570767650, -69.21027962),
       'José Antonio Paez',18000,1972,_country.venezuela,61.7,[],{}];
-    map[n.puertoCabello] = [ClubColors(Colors.orange,Colors.blue),pattern.solid,Coordinates(10.467987195, -68.00974328),
+    map[n.puertocabello] = [ClubColors(Colors.orange,Colors.blue),pattern.solid,Coordinates(10.467987195, -68.00974328),
       'Complejo Deportivo Socialista',7500,2014,_country.venezuela,61.1,[],{}];
     map[n.rayozuliano] = [ClubColors(Colors.yellow,Colors.red),pattern.solid,Coordinates(10.673866285295034, -71.64514477771036),
       'José Encarnación Romero',45800,2005,_country.venezuela,56.0,[],{}];
@@ -6220,13 +6218,13 @@ class ClubDetails{
       'Bachir Stadium',11000,1948,_country.morocco,63.1,[],{}];
     map[n.difaa] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(0,0),
       'Stade El Abdi',8000,1956,_country.morocco,62.4,[],{}];
-    map[n.farRabat] = [ClubColors(Colors.black,Colors.green),pattern.solid,Coordinates(33.959915, -6.8890915),
+    map[n.farrabat] = [ClubColors(Colors.black,Colors.green),pattern.solid,Coordinates(33.959915, -6.8890915),
       'Estádio Príncipe Moulay Abdellah',53000,1958,_country.morocco,70.4,[],{}];
-    map[n.fusRabat] = [ClubColors(Colors.white,Colors.red),pattern.stripes2,Coordinates(34.0100016, -6.84037124),
+    map[n.fusrabat] = [ClubColors(Colors.white,Colors.red),pattern.stripes2,Coordinates(34.0100016, -6.84037124),
       'Stade Belvédère',15000,1946,_country.morocco,67.2,[],{}];
     map[n.hassaniaAgadir] = [ClubColors(Colors.red,Colors.white),pattern.stripes3,Coordinates(30.4281448, -9.5405740),
       'Stade Adrar',45480,1946,_country.morocco,64.5,[],{}];
-    map[n.irTanger] = [ClubColors(Colors.blue,Colors.white),pattern.stripes3,Coordinates(35.74091688, -5.85791870),
+    map[n.irtanger] = [ClubColors(Colors.blue,Colors.white),pattern.stripes3,Coordinates(35.74091688, -5.85791870),
       'Estádio Ibn Batouta',45000,1983,_country.morocco,60.8,[],{}];
     map[n.kawkab] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(31.7071404, -7.9804646),
       'Stade de Marrakech',45240,1947,_country.morocco,65.1,[],{}];
@@ -6242,7 +6240,7 @@ class ClubDetails{
       '',0,0,_country.morocco,50.0,[],{}];
     map[n.ouedzem] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
       '',0,0,_country.morocco,50.0,[],{}];
-    map[n.racingCasablanca] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
+    map[n.racingcasablanca] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
       '',0,0,_country.morocco,50.0,[],{}];
     map[n.safi] = [ClubColors(darkblue,Colors.red),pattern.stripes2,Coordinates(0,0),
       'Stade El Massira',7000,1921,_country.morocco,65.0,[],{}];
@@ -6254,9 +6252,9 @@ class ClubDetails{
       'Stade Errazi a Berrechid',2000,1984,_country.morocco,60.7,[],{}];
     map[n.uniontouarga] = [ClubColors(Colors.yellow,Colors.green),pattern.solid,Coordinates(0,0),
       'Estádio Barid',0,1969,_country.morocco,63.6,[],{}];
-    map[n.moghrebTetouan] = [ClubColors(Colors.red,Colors.white,Colors.blue),pattern.solid,Coordinates(35.5728560, -5.3487861),
+    map[n.moghrebtetouan] = [ClubColors(Colors.red,Colors.white,Colors.blue),pattern.solid,Coordinates(35.5728560, -5.3487861),
       'Stade Saniat Rmel',10000,1922,_country.morocco,63.6,[],{}];
-    map[n.moulodiaOujda] = [ClubColors(Colors.white,Colors.green),pattern.solid,Coordinates(34.6596594, -1.93453730),
+    map[n.moulodiaoujda] = [ClubColors(Colors.white,Colors.green),pattern.solid,Coordinates(34.6596594, -1.93453730),
       'Estádio Honneur',19000,1946,_country.morocco,61.5,[],{}];
     map[n.youssoufia] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
       '',0,0,_country.morocco,50.0,[],{}];

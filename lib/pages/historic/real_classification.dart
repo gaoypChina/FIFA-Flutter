@@ -37,122 +37,122 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
   void initState() {
     super.initState();
     getUrls();
-  }
+}
   getUrls(){
     urls = {
-      n.inglaterra1: ['https://en.wikipedia.org/wiki/2022%E2%80%9323_Premier_League', 3],
-      n.inglaterra2: ['https://en.wikipedia.org/wiki/2022%E2%80%9323_EFL_Championship', 3],
-      n.inglaterra3: ['https://en.wikipedia.org/wiki/2022%E2%80%9323_EFL_League_One', 3],
-      n.espanha1: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_La_Liga", 4],
-      n.espanha2: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Segunda_Divisi%C3%B3n", 4],
-      n.italia1: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Serie_A", 5],
-      n.italia2: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Serie_B", 4],
-      n.alemanha1: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Bundesliga", 4],
-      n.alemanha2: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_2._Bundesliga", 4],
-      n.franca1: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Ligue_1", 5],
-      n.franca2: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Ligue_2", 4],
-      n.holanda: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Eredivisie", 4],
-      n.portugal: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Primeira_Liga", 3],
-      n.turquiaGrecia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_S%C3%BCper_Lig", 3],
-      n.albania: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Kategoria_Superiore", 4],
-      n.andorra: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Primera_Divisi%C3%B3", 1],
-      n.armenia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Armenian_Premier_League", 3],
-      n.austria: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Austrian_Football_Bundesliga", 2],
-      n.azerbaijao: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Azerbaijan_Premier_League", 5],
-      n.belarus: ["https://en.wikipedia.org/wiki/2023_Belarusian_Premier_League", 1],
-      n.belgica: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Belgian_Pro_League", 4],
-      n.bosnia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Premier_League_of_Bosnia_and_Herzegovina", 2],
-      n.bulgaria: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_First_Professional_Football_League_(Bulgaria)", 3],
-      n.cazaquistao: ["https://en.wikipedia.org/wiki/2023_Kazakhstan_Premier_League", 4],
-      n.chipre: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Cypriot_First_Division", 1],
-      n.croacia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Croatian_Football_League", 5],
-      n.dinamarca: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Danish_Superliga", 3],
-      n.escocia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Scottish_Premiership", 3],
-      n.eslovenia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Slovenian_PrvaLiga", 3],
-      n.eslovaquia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Slovak_First_Football_League", 4],
-      n.estonia: ["https://en.wikipedia.org/wiki/2023_Meistriliiga", 3],
-      n.georgia: ["https://en.wikipedia.org/wiki/2023_Erovnuli_Liga", 2],
-      n.finlandia: ["https://en.wikipedia.org/wiki/2023_Veikkausliiga", 1],
-      n.gibraltar: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Gibraltar_Football_League", 4],
-      n.grecia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Super_League_Greece", 3],
-      n.hungria: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Nemzeti_Bajnoks%C3%A1g_I", 4],
-      n.ilhasfaroe: ["https://en.wikipedia.org/wiki/2023_Faroe_Islands_Premier_League", 1],
-      n.irlanda: ["https://en.wikipedia.org/wiki/2023_League_of_Ireland_Premier_Division", 2],
-      n.irlandanorte: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_NIFL_Premiership", 1],
-      n.islandia: ["https://en.wikipedia.org/wiki/2023_Besta_deild_karla", 1],
-      n.israel: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Israeli_Premier_League", 5],
-      n.kosovo: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Football_Superleague_of_Kosovo", 2],
-      n.letonia: ["https://en.wikipedia.org/wiki/2023_Latvian_Higher_League", 1],
-      n.lituania: ["https://en.wikipedia.org/wiki/2023_A_Lyga", 3],
-      n.luxemburgo: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Luxembourg_National_Division", 1],
-      n.macedonia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Macedonian_First_Football_League", 3],
-      n.malta: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Maltese_Premier_League", 4],
-      n.moldova: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Moldovan_Super_Liga", 4],
-      n.montenegro: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Montenegrin_First_League", 2],
-      n.noruega: ["https://en.wikipedia.org/wiki/2023_Eliteserien", 3],
-      n.paisgales: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Cymru_Premier", 3],
-      n.polonia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Ekstraklasa", 5],
-      n.repTcheca: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Czech_First_League", 4],
-      n.romenia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_SuperLiga", 3],
-      n.russia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Russian_Premier_League", 3],
-      n.saomarino: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Campionato_Sammarinese_di_Calcio", 1],
-      n.servia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Serbian_SuperLiga", 4],
-      n.suecia: ["https://en.wikipedia.org/wiki/2023_Allsvenskan", 3],
-      n.suica: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Swiss_Super_League", 3],
-      n.ucrania: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Ukrainian_Premier_League", 3],
+  n.inglaterra1: ['https://en.wikipedia.org/wiki/2022%E2%80%9323_Premier_League', 3],
+  n.inglaterra2: ['https://en.wikipedia.org/wiki/2022%E2%80%9323_EFL_Championship', 3],
+  n.inglaterra3: ['https://en.wikipedia.org/wiki/2022%E2%80%9323_EFL_League_One', 3],
+  n.espanha1: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_La_Liga", 4],
+  n.espanha2: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Segunda_Divisi%C3%B3n", 4],
+  n.italia1: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Serie_A", 5],
+  n.italia2: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Serie_B", 4],
+  n.alemanha1: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Bundesliga", 4],
+  n.alemanha2: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_2._Bundesliga", 4],
+  n.franca1: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Ligue_1", 5],
+  n.franca2: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Ligue_2", 4],
+  n.holanda: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Eredivisie", 4],
+  n.portugal: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Primeira_Liga", 3],
+  n.turquiaGrecia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_S%C3%BCper_Lig", 3],
+  n.albania: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Kategoria_Superiore", 4],
+  n.andorra: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Primera_Divisi%C3%B3", 1],
+  n.armenia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Armenian_Premier_League", 3],
+  n.austria: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Austrian_Football_Bundesliga", 2],
+  n.azerbaijao: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Azerbaijan_Premier_League", 5],
+  n.belarus: ["https://en.wikipedia.org/wiki/2023_Belarusian_Premier_League", 1],
+  n.belgica: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Belgian_Pro_League", 4],
+  n.bosnia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Premier_League_of_Bosnia_and_Herzegovina", 2],
+  n.bulgaria: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_First_Professional_Football_League_(Bulgaria)", 3],
+  n.cazaquistao: ["https://en.wikipedia.org/wiki/2023_Kazakhstan_Premier_League", 4],
+  n.chipre: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Cypriot_First_Division", 1],
+  n.croacia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Croatian_Football_League", 5],
+  n.dinamarca: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Danish_Superliga", 3],
+  n.escocia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Scottish_Premiership", 3],
+  n.eslovenia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Slovenian_PrvaLiga", 3],
+  n.eslovaquia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Slovak_First_Football_League", 4],
+  n.estonia: ["https://en.wikipedia.org/wiki/2023_Meistriliiga", 3],
+  n.georgia: ["https://en.wikipedia.org/wiki/2023_Erovnuli_Liga", 2],
+  n.finlandia: ["https://en.wikipedia.org/wiki/2023_Veikkausliiga", 1],
+  n.gibraltar: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Gibraltar_Football_League", 4],
+  n.grecia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Super_League_Greece", 3],
+  n.hungria: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Nemzeti_Bajnoks%C3%A1g_I", 4],
+  n.ilhasfaroe: ["https://en.wikipedia.org/wiki/2023_Faroe_Islands_Premier_League", 1],
+  n.irlanda: ["https://en.wikipedia.org/wiki/2023_League_of_Ireland_Premier_Division", 2],
+  n.irlandanorte: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_NIFL_Premiership", 1],
+  n.islandia: ["https://en.wikipedia.org/wiki/2023_Besta_deild_karla", 1],
+  n.israel: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Israeli_Premier_League", 5],
+  n.kosovo: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Football_Superleague_of_Kosovo", 2],
+  n.letonia: ["https://en.wikipedia.org/wiki/2023_Latvian_Higher_League", 1],
+  n.lituania: ["https://en.wikipedia.org/wiki/2023_A_Lyga", 3],
+  n.luxemburgo: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Luxembourg_National_Division", 1],
+  n.macedonia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Macedonian_First_Football_League", 3],
+  n.malta: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Maltese_Premier_League", 4],
+  n.moldova: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Moldovan_Super_Liga", 4],
+  n.montenegro: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Montenegrin_First_League", 2],
+  n.noruega: ["https://en.wikipedia.org/wiki/2023_Eliteserien", 3],
+  n.paisgales: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Cymru_Premier", 3],
+  n.polonia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Ekstraklasa", 5],
+  n.repTcheca: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Czech_First_League", 4],
+  n.romenia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_SuperLiga", 3],
+  n.russia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Russian_Premier_League", 3],
+  n.saomarino: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Campionato_Sammarinese_di_Calcio", 1],
+  n.servia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Serbian_SuperLiga", 4],
+  n.suecia: ["https://en.wikipedia.org/wiki/2023_Allsvenskan", 3],
+  n.suica: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Swiss_Super_League", 3],
+  n.ucrania: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Ukrainian_Premier_League", 3],
 
-      n.brasil1: ["https://en.wikipedia.org/wiki/2022_Campeonato_Brasileiro_S%C3%A9rie_A", 7],
-      n.brasil2: ["https://en.wikipedia.org/wiki/2023_Campeonato_Brasileiro_S%C3%A9rie_B", 6],
-      n.brasil3: ["https://en.wikipedia.org/wiki/2023_Campeonato_Brasileiro_S%C3%A9rie_C", 6],
-      n.argentina: ["https://en.wikipedia.org/wiki/2023_Argentine_Primera_Divisi%C3%B3n", 4],
-      n.bolivia: ["https://en.wikipedia.org/wiki/2023_Bolivian_Primera_Divisi%C3%B3n", 3],
-      n.colombia: ["https://en.wikipedia.org/wiki/2023_Categor%C3%ADa_Primera_A_season", 3],
-      n.chile: ["https://en.wikipedia.org/wiki/2023_Chilean_Primera_Divisi%C3%B3n", 3],
-      n.equador: ["https://en.wikipedia.org/wiki/2023_Ecuadorian_Serie_A", 3],
-      n.peru: ["https://en.wikipedia.org/wiki/2023_Liga_1_(Peru)", 3],
-      n.paraguai: ["https://en.wikipedia.org/wiki/2023_Paraguayan_Primera_Divisi%C3%B3n_season", 5],
-      n.uruguai: ["https://en.wikipedia.org/wiki/2023_Uruguayan_Primera_Divisi%C3%B3n_season", 3],
-      n.venezuela: ["https://en.wikipedia.org/wiki/2023_Venezuelan_Primera_Divisi%C3%B3n_season", 6],
+  n.brasil1: ["https://pt.wikipedia.org/wiki/Campeonato_Brasileiro_de_Futebol_de_2023_-_S%C3%A9rie_A", 2],
+  n.brasil2: ["https://en.wikipedia.org/wiki/2023_Campeonato_Brasileiro_S%C3%A9rie_B", 6],
+  n.brasil3: ["https://en.wikipedia.org/wiki/2023_Campeonato_Brasileiro_S%C3%A9rie_C", 6],
+  n.argentina: ["https://en.wikipedia.org/wiki/2023_Argentine_Primera_Divisi%C3%B3n", 4],
+  n.bolivia: ["https://en.wikipedia.org/wiki/2023_Bolivian_Primera_Divisi%C3%B3n", 3],
+  n.colombia: ["https://en.wikipedia.org/wiki/2023_Categor%C3%ADa_Primera_A_season", 3],
+  n.chile: ["https://en.wikipedia.org/wiki/2023_Chilean_Primera_Divisi%C3%B3n", 3],
+  n.equador: ["https://en.wikipedia.org/wiki/2023_Ecuadorian_Serie_A", 3],
+  n.peru: ["https://en.wikipedia.org/wiki/2023_Liga_1_(Peru)", 3],
+  n.paraguai: ["https://en.wikipedia.org/wiki/2023_Paraguayan_Primera_Divisi%C3%B3n_season", 5],
+  n.uruguai: ["https://en.wikipedia.org/wiki/2023_Uruguayan_Primera_Divisi%C3%B3n_season", 3],
+  n.venezuela: ["https://en.wikipedia.org/wiki/2023_Venezuelan_Primera_Divisi%C3%B3n_season", 6],
 
-      n.mexico: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Liga_MX_season", 18],
-      n.estadosUnidos: ["https://en.wikipedia.org/wiki/2023_Major_League_Soccer_season", 5],
+  n.mexico: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Liga_MX_season", 18],
+  n.estadosUnidos: ["https://en.wikipedia.org/wiki/2023_Major_League_Soccer_season", 5],
 
-      n.australia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_A-League_Men", 4],
+  n.australia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_A-League_Men", 4],
 
-      n.arabia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Saudi_Professional_League", 4],
-      n.bahrein: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Bahraini_Premier_League", 0],
-      n.eau: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_UAE_Pro_League", 4],
-      n.iran: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Persian_Gulf_Pro_League", 5],
-      n.iraque: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Iraqi_Premier_League", 2],
-      n.kuwait: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Kuwaiti_Premier_League", 0],
-      n.libano: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Lebanese_Premier_League", 2],
-      n.qatar: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Qatar_Stars_League", 3],
-      n.siria: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Syrian_Premier_League", 3],
+  n.arabia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Saudi_Professional_League", 4],
+  n.bahrein: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Bahraini_Premier_League", 0],
+  n.eau: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_UAE_Pro_League", 4],
+  n.iran: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Persian_Gulf_Pro_League", 5],
+  n.iraque: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Iraqi_Premier_League", 2],
+  n.kuwait: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Kuwaiti_Premier_League", 0],
+  n.libano: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Lebanese_Premier_League", 2],
+  n.qatar: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Qatar_Stars_League", 3],
+  n.siria: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Syrian_Premier_League", 3],
 
-      n.uzbekistao: ["https://en.wikipedia.org/wiki/2023_Uzbekistan_Super_League", 3],
+  n.uzbekistao: ["https://en.wikipedia.org/wiki/2023_Uzbekistan_Super_League", 3],
 
-      n.cingapura: ["https://en.wikipedia.org/wiki/2023_Singapore_Premier_League", 5],
-      n.china: ["https://en.wikipedia.org/wiki/2023_Chinese_Super_League", 3],
-      n.coreiaSul: ["https://en.wikipedia.org/wiki/2023_K_League_1", 4],
-      n.japao: ["https://en.wikipedia.org/wiki/2023_J1_League", 4],
+  n.cingapura: ["https://en.wikipedia.org/wiki/2023_Singapore_Premier_League", 5],
+  n.china: ["https://en.wikipedia.org/wiki/2023_Chinese_Super_League", 3],
+  n.coreiaSul: ["https://en.wikipedia.org/wiki/2023_K_League_1", 4],
+  n.japao: ["https://en.wikipedia.org/wiki/2023_J1_League", 4],
       //n.filipinas: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Philippines_Football_League", 4],
-      n.india: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Indian_Super_League", 4],
-      n.indonesia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Liga_1_(Indonesia)", 4],
-      n.malasia: ["https://en.wikipedia.org/wiki/2023_Malaysia_Super_League", 6],
-      n.nepal: ["https://en.wikipedia.org/wiki/2023_Martyr%27s_Memorial_A-Division_League", 4],
-      n.tailandia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Thai_League_1", 5],
-      n.vietna: ["https://en.wikipedia.org/wiki/2023_V.League_1", 5],
+  n.india: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Indian_Super_League", 4],
+  n.indonesia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Liga_1_(Indonesia)", 4],
+  n.malasia: ["https://en.wikipedia.org/wiki/2023_Malaysia_Super_League", 6],
+  n.nepal: ["https://en.wikipedia.org/wiki/2023_Martyr%27s_Memorial_A-Division_League", 4],
+  n.tailandia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Thai_League_1", 5],
+  n.vietna: ["https://en.wikipedia.org/wiki/2023_V.League_1", 5],
 
-      n.argelia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Algerian_Ligue_Professionnelle_1", 4],
-      n.egito: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Egyptian_Premier_League", 4],
-      n.marrocos: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Botola", 5],
-      n.tunisia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Tunisian_Ligue_Professionnelle_1", 7],
-      n.angola: ["https://en.wikipedia.org/wiki/2021%E2%80%9322_Girabola", 0],
-      n.africaSul: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_South_African_Premier_Division", 2],
-      n.nigeria: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Nigeria_Professional_Football_League", 0],
+  n.argelia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Algerian_Ligue_Professionnelle_1", 4],
+  n.egito: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Egyptian_Premier_League", 4],
+  n.marrocos: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Botola", 5],
+  n.tunisia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Tunisian_Ligue_Professionnelle_1", 7],
+  n.angola: ["https://en.wikipedia.org/wiki/2021%E2%80%9322_Girabola", 0],
+  n.africaSul: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_South_African_Premier_Division", 2],
+  n.nigeria: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Nigeria_Professional_Football_League", 0],
 
-    };
-  }
+  };
+}
   Future<void> getLeagueTable(List parameters) async {
     String url = parameters[0];
     int tableNumber = parameters[1];
@@ -172,8 +172,8 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
 
       for (var cell in cells) {
         oneDimensionalList.add(cell.text.trim());
-      }
     }
+  }
 
 
     List<dynamic> lista = oneDimensionalList.map((str) => int.tryParse(str) ?? str).toList();
@@ -186,20 +186,20 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
               currentLine.removeLast();
               lines.add(currentLine);
               currentLine = [];
-            }
           }
-          currentLine.add(lista[i]);
         }
+          currentLine.add(lista[i]);
+      }
 
         if (currentLine.isNotEmpty) {
           lines.add(currentLine);
-        }
+      }
 
     //print(lines);
     for (dynamic lined in lines){
         if(lined[0].isNotEmpty){
           String clubName = lined[0].replaceFirst(" (Y)","").replaceFirst(" (J)","").replaceFirst(" (R)","");
-          clubName = clubName.replaceFirst(" (P)","").replaceFirst(" (X)","");
+          clubName = clubName.replaceFirst(" (O)","").replaceFirst(" (P)","").replaceFirst(" (X)","");
           clubName = clubName.replaceFirst(" (A)","").replaceFirst(" (C)","").replaceFirst(" (Q)","");
           clubName = clubName.replaceFirst(" (S)","").replaceFirst(" (T)","").replaceFirst(" (Z)","");
           clubName = clubName.replaceFirst(" (C, Q)","").replaceFirst(" (T, Y)","").replaceFirst(" (C, P)","");
@@ -221,12 +221,12 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
             'GS': lined[6].toString(),
             'SG': (lined[5]-lined[6]).toString(),
             'points': lined[8].toString().replaceFirst("[a]","").replaceFirst("[b]","").replaceFirst("[c]","").replaceFirst("[d]",""),
-          });
-        }
-    }
+        });
+      }
+  }
 
     setState(() {});
-  }
+}
 
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -246,15 +246,14 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
                 children: [
                   backButtonText(context,'Tabela de Classificação'),
                   const Spacer(),
-                  Container(
-                    color: Colors.red,
-                    height:25,
-                    width:25,
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20),
                     child: GestureDetector(
                       onTap:(){
                         List classificationNames = mapChampions(choosenLeagueName)[ano-1];
                         bottomSheetShowLeagueClassification(context, classificationNames);
-                      }
+                      },
+                      child: const Icon(Icons.table_chart,color:Colors.white,size: 32),
                     ),
                   ),
                   Padding(
@@ -273,7 +272,7 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
                   itemBuilder: (context, index) {
                     Map data = _standings[index];
                     return rowTile(index, data);
-                  },
+                },
                 ),
               ),
 
@@ -297,7 +296,7 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
         ],
       ),
     );
-  }
+}
 
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
@@ -311,7 +310,7 @@ Widget rowTile(int index,Map data){
       child: GestureDetector(
         onTap: (){
           clickClub(context: context, clubName: clubName);
-      },
+    },
         child: Row(
           children: [
             SizedBox(
@@ -348,635 +347,648 @@ Widget rowTile(int index,Map data){
         choosenLeagueName = leagueName;
         getLeagueTable(urls[choosenLeagueName]);
         setState(() {});
-      },
+    },
       child: Container(
         padding: const EdgeInsets.all(2),
         color: choosenLeagueName == leagueName ? Colors.redAccent: Colors.white54,
         child: Image.asset(FIFAImages().campeonatoLogo(leagueName),height: 50,width: 50,),
       ),
     );
-  }
+}
   Widget leagueHistoric(String leagueName) {
     return GestureDetector(
       onTap: (){
         choosenLeagueName = leagueName;
         getLeagueTable(urls[choosenLeagueName]);
         setState(() {});
-      },
+    },
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 9),
         color: choosenLeagueName == leagueName ? Colors.redAccent: Colors.white54,
         child: funcFlagsList(getCountryFromLeague(leagueName), 35, 50),
       ),
     );
-  }
+}
 }
 
 String getAppClubName(String name, String leagueName, LeagueOfficialNames l){
   ClubName n = ClubName();
-  if(name == "Arsenal"  && leagueName == l.inglaterra1){    name = n.arsenal;  }
-  else if(name == "Liverpool"  && leagueName == l.inglaterra1){    name = n.liverpool;  }
-  else if(name == "Brighton & Hove Albion"){    name = n.brighton;  }
-  else if(name == "Leicester City"){    name = n.leicester;  }
-  else if(name == "Newcastle United"){    name = n.newcastle;  }
-  else if(name == "Tottenham Hotspur"){    name = n.tottenham;  }
-  else if(name == "West Ham United"){    name = n.westham;  }
-  else if(name == "Wolverhampton Wanderers"){    name = n.wolves;  }
-  else if(name == "Accrington Stanley"){    name = n.accrington;  }
-  else if(name == "Birmingham City"){    name = n.birmigham;  }
-  else if(name == "Blackburn Rovers"){    name = n.blackburn;  }
-  else if(name == "Bolton Wanderers"){    name = n.bolton;  }
-  else if(name == "Cambridge United"){    name = n.cambridge;  }
-  else if(name == "Cheltenham Town"){    name = n.cheltenham;  }
-  else if(name == "Coventry City"){    name = n.coventry;  }
-  else if(name == "Fleetwood Town"){    name = n.fleetwood;  }
-  else if(name == "Forest Green Rovers"){    name = n.forestgreen;  }
-  else if(name == "Norwich City"){    name = n.norwich;  }
-  else if(name == "Oxford United"){    name = n.oxford;  }
-  else if(name == "Queens Park Rangers"){    name = n.qpr;  }
-  else if(name == "Peterborough United"){    name = n.peterborough;  }
-  else if(name == "Swansea City"){    name = n.swansea;  }
-  else if(name == "Shrewsbury Town"){    name = n.shrewsbury;  }
-  else if(name == "West Bromwich Albion"){    name = n.westbromwich;  }
-  else if(name == "Wycombe Wanderers"){    name = n.wycombe;  }
 
-  if(name == "Inter Milan"){    name = n.inter;  }
-  if(name == "Internazionale"){    name = n.inter;  }
-  else if(name == "AC Milan"){    name = n.milan;  }
-  else if(name == "Süd Tirol"){    name = n.sudtirol;  }
-  else if(name == "Südtirol"){    name = n.sudtirol;  }
-  else if(name == "Venezia"){    name = n.venezia;  }
+  //Clubs with duplicate names
+  if(name == "Arsenal"  && leagueName == l.inglaterra1) return n.arsenal;
+  if(name == "Liverpool"  && leagueName == l.inglaterra1) return n.liverpool;
+  if(name == "Barcelona"  && leagueName == l.espanha1) return n.barcelona;
+  if(name == "Sabah" && leagueName == l.azerbaijao) return n.sabahFK;
+  if(name == "Gorica" && leagueName==l.croacia) return n.gorica;
+  if(name == "Gorica" && leagueName==l.eslovenia) return n.goricaSLO;
+  if(name == "Bohemians"  && leagueName == l.irlanda) return n.bohemian;
+  if(name == "Arsenal" && leagueName == l.montenegro) return n.arsenaltivat;
+  if(name == "Portuguesa" && leagueName == l.brasil1) return n.portuguesa;
+  if(name == "São José" && leagueName == l.brasil3) return n.saojoseRS;
+  if(name == "Racing"  && leagueName == l.argentina) return n.racing;
+  if(name == "River Plate"  && leagueName == l.argentina) return n.riverplate;
+  if(name == "Arsenal" && leagueName == l.argentina) return n.arsenalsarandi;
+  if(name == "Libertad" && leagueName == l.uruguai) return n.libertad;
+  if(name == "Nacional" && leagueName == l.uruguai) return n.nacional;
+  if(name == "Liverpool" && leagueName == l.uruguai) return n.liverpoolURU;
+  if(name == "Racing" && leagueName == l.uruguai) return n.racinguru;
+  if(name == "River Plate" && leagueName == l.uruguai) return n.riverURU;
+  if(name == "Everton" && leagueName == l.chile) return n.evertonchi;
+  if(name == "Nacional" && leagueName == l.paraguai) return n.nacionalPAR;
+  if(name == "Libertad" && leagueName == l.equador) return n.libertadEQU;
+  if(name == "Portuguesa" && leagueName == l.venezuela) return n.portuguesaven;
+  if(name == "Olympic" && leagueName==l.uzbekistao) return n.olympictashkent;
+  if(name == "Al-Ittihad" && leagueName==l.arabia) return n.alIttihad;
+  if(name == "Al-Shabab" && leagueName==l.arabia) return n.alshabab;
+  if(name == "Al-Ahli" && leagueName==l.bahrein) return n.alahliBAH;
+  if(name == "Al-Shabab" && leagueName==l.bahrein) return n.alshababBAH;
+  if(name == "Al Nasr" && leagueName==l.eau) return n.alnasrEAU;
+  if(name == "Al-Ahli" && leagueName==l.qatar) return n.alahlidoha;
+  if(name == "Al-Arabi" && leagueName==l.kuwait) return n.alarabiKUW;
+  if(name == "Al-Ittihad" && leagueName==l.siria) return n.alittihadSYR;
+  if(name == "Al-Jazeera" && leagueName==l.siria) return n.aljazeeraSYR;
+  if(name == "Al-Wahda" && leagueName==l.siria) return n.alwahdaSYR;
+  if(name == "Al Ittihad" && leagueName==l.egito) return n.alittihadalexandriaclub;
 
-  else if(name == "Alavés"){    name = n.alaves;  }
-  else if(name == "Andorra"){    name = n.andorra;  }
-  else if(name == "Atlético Madrid"){    name = n.atleticomadrid;  }
-  else if(name == "Barcelona"  && leagueName == l.espanha1){    name = n.barcelona;  }
-  else if(name == "Celta Vigo"){    name = n.celtavigo;  }
-  else if(name == "Girona"){    name = n.girona;  }
-  else if(name == "Mirandés"){    name = n.mirandes;  }
-  else if(name == "Oviedo"){    name = n.realOviedo;  }
-  else if(name == "Sporting Gijón"){    name = n.sportinggijon;  }
-  else if(name == "Villarreal B"){    name = n.villarrealB;  }
-  else if(name == "Zaragoza"){    name = n.zaragoza;  }
+  Map map = {};
 
-  else if(name == "Annecy"){    name = n.annecy;  }
-  else if(name == "Brest"){    name = n.brest;  }
-  else if(name == "Laval"){    name = n.lavallois;  }
-  else if(name == "Lorient"){    name = n.lorient;  }
-  else if(name == "Nîmes"){    name = n.nimes;  }
-  else if(name == "Niort"){    name = n.chamois;  }
-  else if(name == "Paris Saint-Germain"){    name = n.psg;  }
-  else if(name == "Marseille"){    name = n.om;  }
-  else if(name == "Pau"){    name = n.pau;  }
-  else if(name == "Rodez"){    name = n.rodez;  }
-  else if(name == "Saint-Étienne"){    name = n.saintetienne;  }
+  map["Brighton & Hove Albion"] = n.brighton;
+  map["Leicester City"] = n.leicester;
+  map["Newcastle United"] = n.newcastle;
+  map["Tottenham Hotspur"] = n.tottenham;
+  map["West Ham United"] = n.westham;
+  map["Wolverhampton Wanderers"] = n.wolves;
+  map["Accrington Stanley"] = n.accrington;
+  map["Birmingham City"] = n.birmigham;
+  map["Blackburn Rovers"] = n.blackburn;
+  map["Bolton Wanderers"] = n.bolton;
+  map["Cambridge United"] = n.cambridge;
+  map["Cheltenham Town"] = n.cheltenham;
+  map["Coventry City"] = n.coventry;
+  map["Fleetwood Town"] = n.fleetwood;
+  map["Forest Green Rovers"] = n.forestgreen;
+  map["Norwich City"] = n.norwich;
+  map["Oxford United"] = n.oxford;
+  map["Queens Park Rangers"] = n.qpr;
+  map["Peterborough United"] = n.peterborough;
+  map["Swansea City"] = n.swansea;
+  map["Shrewsbury Town"] = n.shrewsbury;
+  map["West Bromwich Albion"] = n.westbromwich;
+  map["Wycombe Wanderers"] = n.wycombe;
+
+  map["Inter Milan"] = n.inter;
+  map["Internazionale"] = n.inter;
+  map["AC Milan"] = n.milan;
+  map["Süd Tirol"] = n.sudtirol;
+  map["Südtirol"] = n.sudtirol;
+  map["Venezia"] = n.venezia;
+
+  map["Alavés"] = n.alaves;
+  map["Andorra"] = n.andorra;
+  map["Atlético Madrid"] = n.atleticomadrid;
+  map["Celta Vigo"] = n.celtavigo;
+  map["Girona"] = n.girona;
+  map["Mirandés"] = n.mirandes;
+  map["Oviedo"] = n.realOviedo;
+  map["Sporting Gijón"] = n.sportinggijon;
+  map["Villarreal B"] = n.villarrealB;
+  map["Zaragoza"] = n.zaragoza;
+
+  map["Annecy"] = n.annecy;
+  map["Brest"] = n.brest;
+  map["Laval"] = n.lavallois;
+  map["Lorient"] = n.lorient;
+  map["Nîmes"] = n.nimes;
+  map["Niort"] = n.chamois;
+  map["Paris Saint-Germain"] = n.psg;
+  map["Marseille"] = n.om;
+  map["Pau"] = n.pau;
+  map["Rodez"] = n.rodez;
+  map["Saint-Étienne"] = n.saintetienne;
   //ALEMANHA
-  else if(name == "FC Augsburg"){    name = n.augsburg;  }
-  else if(name == "Bayern Munich"){    name = n.bayernmunique;  }
-  else if(name == "VfL Bochum"){    name = n.bochum;  }
-  else if(name == "Darmstadt 98"){    name = n.darmstadt;  }
-  else if(name == "Eintracht Braunschweig"){    name = n.braunschweiger;  }
-  else if(name == "Fortuna Düsseldorf"){    name = n.fortunadusseldorf;  }
-  else if(name == "Hamburger SV"){    name = n.hamburgo;  }
-  else if(name == "1. FC Heidenheim"){    name = n.heidenheim;  }
-  else if(name == "Hertha BSC"){    name = n.herthaberlim;  }
-  else if(name == "1899 Hoffenheim"){    name = n.hoffenheim;  }
-  else if(name == "1. FC Kaiserslautern"){    name = n.kaiserslautern;  }
-  else if(name == "Karlsruher SC"){    name = n.karlsruher;  }
-  else if(name == "Jahn Regensburg"){    name = n.jahnregensburg;  }
-  else if(name == "1. FC Köln"){    name = n.koln;  }
-  else if(name == "SC Freiburg"){    name = n.freiburg;  }
-  else if(name == "1. FC Magdeburg"){    name = n.magdeburg;  }
-  else if(name == "Borussia Mönchengladbach"){    name = n.moenchengladbach;  }
-  else if(name == "1. FC Nürnberg"){    name = n.nurnberg;  }
-  else if(name == "SC Paderborn"){    name = n.paderborn;  }
-  else if(name == "SV Sandhausen"){    name = n.sandhausen;  }
-  else if(name == "Schalke 04"){    name = n.schalke04;  }
-  else if(name == "VfB Stuttgart"){    name = n.stuttgart;  }
-  else if(name == "FC St. Pauli"){    name = n.stpauli;  }
-  else if(name == "VfL Wolfsburg"){    name = n.wolfsburg;  }
+  map["FC Augsburg"] = n.augsburg;
+  map["Bayern Munich"] = n.bayernmunique;
+  map["VfL Bochum"] = n.bochum;
+  map["Darmstadt 98"] = n.darmstadt;
+  map["Eintracht Braunschweig"] = n.braunschweiger;
+  map["Fortuna Düsseldorf"] = n.fortunadusseldorf;
+  map["Hamburger SV"] = n.hamburgo;
+  map["1. FC Heidenheim"] = n.heidenheim;
+  map["Hertha BSC"] = n.herthaberlim;
+  map["1899 Hoffenheim"] = n.hoffenheim;
+  map["1. FC Kaiserslautern"] = n.kaiserslautern;
+  map["Karlsruher SC"] = n.karlsruher;
+  map["Jahn Regensburg"] = n.jahnregensburg;
+  map["1. FC Köln"] = n.koln;
+  map["SC Freiburg"] = n.freiburg;
+  map["1. FC Magdeburg"] = n.magdeburg;
+  map["Borussia Mönchengladbach"] = n.moenchengladbach;
+  map["1. FC Nürnberg"] = n.nurnberg;
+  map["SC Paderborn"] = n.paderborn;
+  map["SV Sandhausen"] = n.sandhausen;
+  map["Schalke 04"] = n.schalke04;
+  map["VfB Stuttgart"] = n.stuttgart;
+  map["FC St. Pauli"] = n.stpauli;
+  map["VfL Wolfsburg"] = n.wolfsburg;
   //PORTUGAL
-  else if(name == "Sporting CP"){    name = n.sporting;  }
-  else if(name == "Vitória de Guimarães"){    name = n.vitoriaguimaraes;  }
+  map["Sporting CP"] = n.sporting;
+  map["Vitória de Guimarães"] = n.vitoriaguimaraes;
   //HOLANDA
-  else if(name == "AZ"){    name = n.az;  }
-  else if(name == "Emmen"){    name = n.emmen;  }
-  else if(name == "NEC"){    name = n.necnijmegen;  }
-  else if(name == "PSV Eindhoven"){    name = n.psv;  }
-  else if(name == "RKC Waalwijk"){    name = n.waalwijk;  }
-  else if(name == "SC Heerenveen"){    name = n.heerenveen;  }
+  map["AZ"] = n.az;
+  map["Emmen"] = n.emmen;
+  map["NEC"] = n.necnijmegen;
+  map["PSV Eindhoven"] = n.psv;
+  map["RKC Waalwijk"] = n.waalwijk;
+  map["SC Heerenveen"] = n.heerenveen;
   //TURQUIA
-  else if(name == "İstanbul Başakşehir"){    name = n.istanbulbasaksehir;  }
+  map["İstanbul Başakşehir"] = n.istanbulbasaksehir;
   //ALBANIA
-  else if(name == "Partizani"){    name = n.partizanitirane;  }
-  else if(name == "Teuta"){    name = n.teuta;  }
+  map["Partizani"] = n.partizanitirane;
+  map["Teuta"] = n.teuta;
   //ANDORRA
-  else if(name == "FC Santa Coloma"){    name = n.santacolomafc;  }
-  else if(name == "Ordino"){    name = n.ordino;  }
-  else if(name == "Penya Encarnada"){    name = n.penyaencarnada;  }
+  map["FC Santa Coloma"] = n.santacolomafc;
+  map["Ordino"] = n.ordino;
+  map["Penya Encarnada"] = n.penyaencarnada;
   //ARMENIA
-  else if(name == "BKMA"){    name = n.bkmayerevan;  }
-  else if(name == "Pyunik"){    name = n.pyunik;  }
+  map["BKMA"] = n.bkmayerevan;
+  map["Pyunik"] = n.pyunik;
   //AUSTRIA
-  else if(name == "Austria Wien"){    name = n.austria;  }
-  else if(name == "LASK"){    name = n.lasklinz;  }
-  else if(name == "Rapid Wien"){    name = n.rapidwien;  }
-  else if(name == "Red Bull Salzburg"){    name = n.rbsalzburg;  }
-  else if(name == "WSG Tirol"){    name = n.wsgtirol;  }
+  map["Austria Wien"] = n.austria;
+  map["LASK"] = n.lasklinz;
+  map["Rapid Wien"] = n.rapidwien;
+  map["Red Bull Salzburg"] = n.rbsalzburg;
+  map["WSG Tirol"] = n.wsgtirol;
   //AZERBAIJAO
-  else if(name == "Kapaz"){    name = n.kapaz;  }
-  else if(name == "Gabala"){    name = n.qabala;  }
-  else if(name == "Neftçi"){    name = n.neftci;  }
-  else if(name == "Sabah" && leagueName == l.azerbaijao){    name = n.sabahFK;  }
-  else if(name == "Sabail"){    name = n.sebail;  }
-  else if(name == "Shamakhi"){    name = n.shamakhi;  }
-  else if(name == "Sumgayit"){    name = n.sumgayit;  }
-  else if(name == "Qarabağ"){    name = n.qarabag;  }
+  map["Kapaz"] = n.kapaz;
+  map["Gabala"] = n.qabala;
+  map["Neftçi"] = n.neftci;
+  map["Sabail"] = n.sebail;
+  map["Shamakhi"] = n.shamakhi;
+  map["Sumgayit"] = n.sumgayit;
+  map["Qarabağ"] = n.qarabag;
   //BELGICA
-  else if(name == "Club Brugge"){    name = n.brugge;  }
-  else if(name == "Eupen"){    name = n.kaseupen;  }
-  else if(name == "Kortrijk"){    name = n.kortrijk;  }
-  else if(name == "OH Leuven"){    name = n.leuven;  }
-  else if(name == "Antwerp"){    name = n.royalAntwerp;  }
-  else if(name == "Seraing"){    name = n.seraing;  }
-  else if(name == "Union SG"){    name = n.saintgilloise;  }
-  else if(name == "Standard Liège"){    name = n.standardliege;  }
-  else if(name == "Sint-Truiden"){    name = n.sttruidense;  }
+  map["Club Brugge"] = n.brugge;
+  map["Eupen"] = n.kaseupen;
+  map["Kortrijk"] = n.kortrijk;
+  map["OH Leuven"] = n.leuven;
+  map["Antwerp"] = n.royalAntwerp;
+  map["Seraing"] = n.seraing;
+  map["Union SG"] = n.saintgilloise;
+  map["Standard Liège"] = n.standardliege;
+  map["Sint-Truiden"] = n.sttruidense;
   //BELARUS
-  else if(name == "BATE Borisov"){    name = n.bate;  }
-  else if(name == "Dynamo Brest"){    name = n.dinamobrest;  }
+  map["BATE Borisov"] = n.bate;
+  map["Dynamo Brest"] = n.dinamobrest;
   //BOSNIA
-  else if(name == "Leotar"){    name = n.leotar;  }
-  else if(name == "Posušje"){    name = n.posusje;  }
-  else if(name == "Sloboda Tuzla"){    name = n.slobodatuzla;  }
-  else if(name == "Zrinjski Mostar"){    name = n.zrinjski;  }
-  else if(name == "Tuzla City"){    name = n.tuzla;  }
+  map["Leotar"] = n.leotar;
+  map["Posušje"] = n.posusje;
+  map["Sloboda Tuzla"] = n.slobodatuzla;
+  map["Zrinjski Mostar"] = n.zrinjski;
+  map["Tuzla City"] = n.tuzla;
   //BULGARIA
-  else if(name == "Beroe"){    name = n.beroe;  }
-  else if(name == "Hebar"){    name = n.hebarpazardzhik;  }
-  else if(name == "Ludogorets Razgrad"){    name = n.ludogorets;  }
-  else if(name == "Cherno More"){    name = n.chernomorevarna;  }
+  map["Beroe"] = n.beroe;
+  map["Hebar"] = n.hebarpazardzhik;
+  map["Ludogorets Razgrad"] = n.ludogorets;
+  map["Cherno More"] = n.chernomorevarna;
   //CAZAQUISTAO
-  else if(name == "Ordabasy"){    name = n.ordabasy;  }
-  else if(name == "Tobol"){    name = n.tobol;  }
+  map["Ordabasy"] = n.ordabasy;
+  map["Tobol"] = n.tobol;
   //CROACIA
-  else if(name == "Lokomotiva"){    name = n.lokzagreb;  }
-  else if(name == "Gorica" && leagueName==l.croacia){    name = n.gorica;  }
+  map["Lokomotiva"] = n.lokzagreb;
   //CHIPRE
-  else if(name == "Omonia"){    name = n.omonianicosia;  }
-  else if(name == "Karmiotissa"){    name = n.karmiotissa;  }
+  map["Omonia"] = n.omonianicosia;
+  map["Karmiotissa"] = n.karmiotissa;
   //DINAMARCA
-  else if(name == "AaB"){    name = n.aalborg;  }
-  else if(name == "AGF"){    name = n.aarhus;  }
-  else if(name == "Brøndby"){    name = n.brondby;  }
-  else if(name == "Copenhagen"){    name = n.copenhague;  }
-  else if(name == "Nordsjælland"){    name = n.nordsjaelland;  }
-  else if(name == "OB"){    name = n.obodense;  }
+  map["AaB"] = n.aalborg;
+  map["AGF"] = n.aarhus;
+  map["Brøndby"] = n.brondby;
+  map["Copenhagen"] = n.copenhague;
+  map["Nordsjælland"] = n.nordsjaelland;
+  map["OB"] = n.obodense;
   //ESCÓCIA
-  else if(name == "Heart of Midlothian"){    name = n.hearts;  }
-  else if(name == "Rangers"){    name = n.rangers;  }
-  else if(name == "St Mirren"){    name = n.stmirren;  }
-  else if(name == "St Johnstone"){    name = n.stjohnstone;  }
+  map["Heart of Midlothian"] = n.hearts;
+  map["Rangers"] = n.rangers;
+  map["St Mirren"] = n.stmirren;
+  map["St Johnstone"] = n.stjohnstone;
   //ESLOVAQUIA
-  else if(name == "Žilina"){    name = n.zilina;  }
+  map["Žilina"] = n.zilina;
   //ESLOVENIA
-  else if(name == "Bravo"){    name = n.bravo;  }
-  else if(name == "Domžale"){    name = n.domzale;  }
-  else if(name == "Gorica" && leagueName==l.eslovenia){    name = n.goricaSLO;  }
-  else if(name == "Olimpija Ljubljana"){    name = n.oljublijana;  }
-  else if(name == "Mura"){    name = n.mura;  }
+  map["Bravo"] = n.bravo;
+  map["Domžale"] = n.domzale;
+  map["Olimpija Ljubljana"] = n.oljublijana;
+  map["Mura"] = n.mura;
   //ESLOVAQUIA
-  else if(name == "DAC Dunajská Streda"){    name = n.dac1904;  }
-  else if(name == "Dukla Banská Bystrica"){    name = n.duklaBanska;  }
-  else if(name == "Trenčín"){    name = n.trencin;  }
+  map["DAC Dunajská Streda"] = n.dac1904;
+  map["Dukla Banská Bystrica"] = n.duklaBanska;
+  map["Trenčín"] = n.trencin;
   //ESTONIA
-  else if(name == "Harju"){    name = n.harju;  }
-  else if(name == "FCI Levadia"){    name = n.levadiatallinn;  }
-  else if(name == "Flora"){    name = n.floratallinn;  }
-  else if(name == "Tammeka"){    name = n.tartutammeka;  }
+  map["Harju"] = n.harju;
+  map["FCI Levadia"] = n.levadiatallinn;
+  map["Flora"] = n.floratallinn;
+  map["Tammeka"] = n.tartutammeka;
   //FINLANDIA
-  else if(name == "HJK"){    name = n.helsinki;  }
-  else if(name == "KTP"){    name = n.ktp;  }
-  else if(name == "Lahti"){    name = n.lahti;  }
-  else if(name == "Oulu"){    name = n.oulu;  }
-  else if(name == "VPS"){    name = n.vps;  }
+  map["HJK"] = n.helsinki;
+  map["KTP"] = n.ktp;
+  map["Lahti"] = n.lahti;
+  map["Oulu"] = n.oulu;
+  map["VPS"] = n.vps;
   //GEORGIA
-  else if(name == "FC Samtredia"){    name = n.samtredia;  }
+  map["FC Samtredia"] = n.samtredia;
   //GIBRALTAR
-  else if(name == "Europa"){    name = n.europa;  }
+  map["Europa"] = n.europa;
   //GRECIA
-  else if(name == "AEK Athens"){    name = n.aek;  }
-  else if(name == "Aris"){    name = n.aris;  }
-  else if(name == "Ionikos"){    name = n.ionikos;  }
-  else if(name == "Lamia"){    name = n.lamia;  }
-  else if(name == "Volos"){    name = n.volos;  }
-  else if(name == "OFI"){    name = n.ofi;  }
+  map["AEK Athens"] = n.aek;
+  map["Aris"] = n.aris;
+  map["Ionikos"] = n.ionikos;
+  map["Lamia"] = n.lamia;
+  map["Volos"] = n.volos;
+  map["OFI"] = n.ofi;
   //HUNGRIA
-  else if(name == "Debrecen"){    name = n.debreceni;  }
-  else if(name == "Ferencváros"){    name = n.ferencvaros;  }
-  else if(name == "Kecskemét"){    name = n.kecskemet;  }
-  else if(name == "Budapest Honvéd"){    name = n.honved;  }
-  else if(name == "Puskás Akadémia"){    name = n.puskas;  }
-  else if(name == "Újpest"){    name = n.ujpest;  }
+  map["Debrecen"] = n.debreceni;
+  map["Ferencváros"] = n.ferencvaros;
+  map["Kecskemét"] = n.kecskemet;
+  map["Budapest Honvéd"] = n.honved;
+  map["Puskás Akadémia"] = n.puskas;
+  map["Újpest"] = n.ujpest;
   //ILHAS FAROE
-  else if(name == "AB Argir"){    name = n.abFaroe;  }
-  else if(name == "EB/Streymur"){    name = n.ebstreymur;  }
-  else if(name == "ÍF"){    name = n.iffuglafjordur;  }
-  else if(name == "KÍ"){    name = n.kiklaksvik;  }
-  else if(name == "07 Vestur"){    name = n.vestur;  }
-  else if(name == "Víkingur"){    name = n.vikingurgota;  }
+  map["AB Argir"] = n.abFaroe;
+  map["EB/Streymur"] = n.ebstreymur;
+  map["ÍF"] = n.iffuglafjordur;
+  map["KÍ"] = n.kiklaksvik;
+  map["07 Vestur"] = n.vestur;
+  map["Víkingur"] = n.vikingurgota;
   //IRLANDA
-  else if(name == "Bohemians"  && leagueName == l.irlanda){    name = n.bohemian;  }
-  else if(name == "Derry City"){    name = n.derrycity;  }
-  else if(name == "Drogheda United"){    name = n.drogheda;  }
+  map["Derry City"] = n.derrycity;
+  map["Drogheda United"] = n.drogheda;
   //ISLANDIA
-  else if(name == "Breiðablik"){    name = n.breidablik;  }
-  else if(name == "FH"){    name = n.fh;  }
-  else if(name == "HK"){    name = n.hk;  }
-  else if(name == "ÍBV"){    name = n.ibv;  }
-  else if(name == "KR"){    name = n.kr;  }
-  else if(name == "Stjarnan"){    name = n.stjarnan;  }
+  map["Breiðablik"] = n.breidablik;
+  map["FH"] = n.fh;
+  map["HK"] = n.hk;
+  map["ÍBV"] = n.ibv;
+  map["KR"] = n.kr;
+  map["Stjarnan"] = n.stjarnan;
   //ISRAEL
-  else if(name == "F.C. Ashdod"){    name = n.ashdod;  }
+  map["F.C. Ashdod"] = n.ashdod;
   //KOSOVO
-  else if(name == "Trepça '89"){    name = n.trepca89;  }
+  map["Trepça '89"] = n.trepca89;
   //LATVIA LETONIA
-  else if(name == "Auda"){    name = n.fkauda;  }
-  else if(name == "Daugavpils"){    name = n.bfcdaugavpils;  }
-  else if(name == "Liepāja"){    name = n.liepaja;  }
-  else if(name == "Metta"){    name = n.mettalu;  }
-  else if(name == "Riga"){    name = n.rigafc;  }
-  else if(name == "RFS"){    name = n.rigasfs;  }
-  else if(name == "Tukums 2000"){    name = n.tukums;  }
+  map["Auda"] = n.fkauda;
+  map["Daugavpils"] = n.bfcdaugavpils;
+  map["Liepāja"] = n.liepaja;
+  map["Metta"] = n.mettalu;
+  map["Riga"] = n.rigafc;
+  map["RFS"] = n.rigasfs;
+  map["Tukums 2000"] = n.tukums;
   //LITUANIA
-  else if(name == "Banga"){    name = n.bangakaunas;  }
-  else if(name == "Hegelmann"){    name = n.hegelmann;  }
-  else if(name == "Sūduva"){    name = n.suduva;  }
+  map["Banga"] = n.bangakaunas;
+  map["Hegelmann"] = n.hegelmann;
+  map["Sūduva"] = n.suduva;
   //LUXEMBURGO
-  else if(name == "Racing Union"){    name = n.unionlux;  }
-  else if(name == "UN Käerjéng 97"){    name = n.kaerjeng;  }
+  map["Racing Union"] = n.unionlux;
+  map["UN Käerjéng 97"] = n.kaerjeng;
+  //Macedonia
+  map["Sileks"] = n.sileks;
+  map["Makedonija G.P."] = n.makedonija;
+  map["Rabotnicki"] = n.rabotnicki;
   //MALTA
-  else if(name == "Gżira United"){    name = n.gziraunited;  }
-  else if(name == "Ħamrun Spartans"){    name = n.hamrunspartans;  }
-  else if(name == "Hibernians"){    name = n.hiberniansMALTA;  }
-  else if(name == "Santa Lucia"){    name = n.stlucia;  }
-  else if(name == "Żebbuġ Rangers"){    name = n.zebbugrangers;  }
+  map["Gżira United"] = n.gziraunited;
+  map["Ħamrun Spartans"] = n.hamrunspartans;
+  map["Hibernians"] = n.hiberniansMALTA;
+  map["Santa Lucia"] = n.stlucia;
+  map["Żebbuġ Rangers"] = n.zebbugrangers;
   //MOLDAVIA MOLDOVA
-  else if(name == "Zimbru Chișinău"){    name = n.zimbruchisinau;  }
+  map["Zimbru Chișinău"] = n.zimbruchisinau;
   //MONTENEGRO
-  else if(name == "Arsenal" && leagueName == l.montenegro){    name = n.arsenaltivat;  }
-  else if(name == "Budućnost"){    name = n.buducnost;  }
-  else if(name == "Dečić"){    name = n.decic;  }
-  else if(name == "Sutjeska"){    name = n.sutjeska;  }
-  else if(name == "Iskra"){    name = n.iskra;  }
+  map["Budućnost"] = n.buducnost;
+  map["Dečić"] = n.decic;
+  map["Sutjeska"] = n.sutjeska;
+  map["Iskra"] = n.iskra;
   //NORUEGA
-  else if(name == "Odd"){    name = n.odd;  }
-  else if(name == "Sandefjord"){    name = n.sanderfjord;  }
-  else if(name == "Tromsø"){    name = n.tromso;  }
-  else if(name == "Vålerenga"){    name = n.valerenga;  }
+  map["Odd"] = n.odd;
+  map["Sandefjord"] = n.sanderfjord;
+  map["Tromsø"] = n.tromso;
+  map["Vålerenga"] = n.valerenga;
   //PAIS DE GALES
-  else if(name == "Newtown"){    name = n.newtown;  }
-  else if(name == "Cardiff Metropolitan University"){    name = n.cardiffuni;  }
+  map["Newtown"] = n.newtown;
+  map["Cardiff Metropolitan University"] = n.cardiffuni;
   //POLONIA
-  else if(name == "Jagiellonia Białystok"){    name = n.jagiellonia;  }
-  else if(name == "Legia Warsaw"){    name = n.legiawarszawa;  }
-  else if(name == "Lech Poznań"){    name = n.lechpoznan;  }
-  else if(name == "Widzew Łódź"){    name = n.widzewlodz;  }
-  else if(name == "Wisła Płock"){    name = n.wislaplock;  }
-  else if(name == "Zagłębie Lubin"){    name = n.zaglebielubin;  }
-  else if(name == "Śląsk Wrocław"){    name = n.slaskwroclaw;  }
+  map["Jagiellonia Białystok"] = n.jagiellonia;
+  map["Legia Warsaw"] = n.legiawarszawa;
+  map["Lech Poznań"] = n.lechpoznan;
+  map["Widzew Łódź"] = n.widzewlodz;
+  map["Wisła Płock"] = n.wislaplock;
+  map["Zagłębie Lubin"] = n.zaglebielubin;
+  map["Śląsk Wrocław"] = n.slaskwroclaw;
   //REP. TCHECA
-  else if(name == "Baník Ostrava"){    name = n.banikostrava;  }
-  else if(name == "Slavia Prague"){    name = n.slaviapraha;  }
-  else if(name == "Sparta Prague"){    name = n.spartapraga;  }
-  else if(name == "Bohemians 1905"){    name = n.bohemians;  }
-  else if(name == "České Budějovice"){    name = n.budejovice;  }
-  else if(name == "Mladá Boleslav"){    name = n.mladaboleslav;  }
-  else if(name == "Viktoria Plzeň"){    name = n.viktoriaplzen;  }
+  map["Baník Ostrava"] = n.banikostrava;
+  map["Slavia Prague"] = n.slaviapraha;
+  map["Sparta Prague"] = n.spartapraga;
+  map["Bohemians 1905"] = n.bohemians;
+  map["České Budějovice"] = n.budejovice;
+  map["Mladá Boleslav"] = n.mladaboleslav;
+  map["Viktoria Plzeň"] = n.viktoriaplzen;
   //ROMENIA
-  else if(name == "Argeș Pitești"){    name = n.argespitesti;  }
-  else if(name == "Botoșani"){    name = n.botosani;  }
-  else if(name == "Chindia Târgoviște"){    name = n.chindiatargoviste;  }
-  else if(name == "CFR Cluj"){    name = n.cluj;  }
-  else if(name == "Farul Constanța"){    name = n.farul;  }
-  else if(name == "FC U Craiova 1948"){    name = n.craiova;  }
-  else if(name == "Petrolul Ploiești"){    name = n.petrolul;  }
-  else if(name == "Rapid București"){    name = n.rapidbucuresti;  }
-  else if(name == "FCSB"){    name = n.steauabucuresti;  }
-  else if(name == "Universitatea Cluj"){    name = n.unicluj;  }
-  else if(name == "Voluntari"){    name = n.voluntari;  }
+  map["Argeș Pitești"] = n.argespitesti;
+  map["Botoșani"] = n.botosani;
+  map["Chindia Târgoviște"] = n.chindiatargoviste;
+  map["CFR Cluj"] = n.cluj;
+  map["Farul Constanța"] = n.farul;
+  map["FC U Craiova 1948"] = n.craiova;
+  map["Petrolul Ploiești"] = n.petrolul;
+  map["Rapid București"] = n.rapidbucuresti;
+  map["FCSB"] = n.steauabucuresti;
+  map["Universitatea Cluj"] = n.unicluj;
+  map["Voluntari"] = n.voluntari;
   //RUSSIA
-  else if(name == "CSKA Moscow"){    name = n.cska;  }
-  else if(name == "Dynamo Moscow"){    name = n.dinamoMoscou;  }
-  else if(name == "Fakel Voronezh"){    name = n.fakel;  }
-  else if(name == "Khimki"){    name = n.khimki;  }
-  else if(name == "Krylia Sovetov Samara"){    name = n.krylyaSovetov;  }
-  else if(name == "Lokomotiv Moscow"){    name = n.lokomotivMoscou;  }
-  else if(name == "Pari Nizhny Novgorod"){    name = n.nizhnyNovgorod;  }
-  else if(name == "Spartak Moscow"){    name = n.spartakmoscou;  }
-  else if(name == "Torpedo Moscow"){    name = n.torpedo;  }
-  else if(name == "Ural Yekaterinburg"){    name = n.ural;  }
-  else if(name == "Zenit Saint Petersburg"){    name = n.zenit;  }
+  map["CSKA Moscow"] = n.cska;
+  map["Dynamo Moscow"] = n.dinamoMoscou;
+  map["Fakel Voronezh"] = n.fakel;
+  map["Khimki"] = n.khimki;
+  map["Krylia Sovetov Samara"] = n.krylyaSovetov;
+  map["Lokomotiv Moscow"] = n.lokomotivMoscou;
+  map["Pari Nizhny Novgorod"] = n.nizhnyNovgorod;
+  map["Spartak Moscow"] = n.spartakmoscou;
+  map["Torpedo Moscow"] = n.torpedo;
+  map["Ural Yekaterinburg"] = n.ural;
+  map["Zenit Saint Petersburg"] = n.zenit;
   //SAN MARINO
-  else if(name == "Folgore"){    name = n.folgore;  }
+  map["Folgore"] = n.folgore;
   //SERVIA
-  else if(name == "TSC"){    name = n.backatopola;  }
-  else if(name == "TSC Bačka Topola"){    name = n.backatopola;  }
-  else if(name == "Red Star Belgrade"){    name = n.estrelavermelha;  }
-  else if(name == "Javor-Matis"){    name = n.javor;  }
-  else if(name == "Kolubara"){    name = n.kolubara;  }
-  else if(name == "Mladost GAT"){    name = n.mladostnovisad;  }
-  else if(name == "Mladost Lučani"){    name = n.mladostlucani;  }
-  else if(name == "Napredak Kruševac"){    name = n.napredakkrusevac;  }
-  else if(name == "Novi Pazar"){    name = n.novipazar;  }
-  else if(name == "Radnički 1923"){    name = n.radnicki1923;  }
-  else if(name == "Radnički Niš"){    name = n.radnickinis;  }
+  map["TSC"] = n.backatopola;
+  map["TSC Bačka Topola"] = n.backatopola;
+  map["Red Star Belgrade"] = n.estrelavermelha;
+  map["Javor-Matis"] = n.javor;
+  map["Kolubara"] = n.kolubara;
+  map["Mladost GAT"] = n.mladostnovisad;
+  map["Mladost Lučani"] = n.mladostlucani;
+  map["Napredak Kruševac"] = n.napredakkrusevac;
+  map["Novi Pazar"] = n.novipazar;
+  map["Radnički 1923"] = n.radnicki1923;
+  map["Radnički Niš"] = n.radnickinis;
   //SUECIA
-  else if(name == "IF Brommapojkarna"){    name = n.brommapojkarna;  }
-  else if(name == "Degerfors IF"){    name = n.degerfors;  }
-  else if(name == "Djurgårdens IF"){    name = n.djurgardens;  }
-  else if(name == "IF Elfsborg"){    name = n.elfsborg;  }
-  else if(name == "BK Häcken"){    name = n.hacken;  }
-  else if(name == "Halmstads BK"){    name = n.halmstads;  }
-  else if(name == "Hammarby IF"){    name = n.hammarby;  }
-  else if(name == "Kalmar FF"){    name = n.kalmar;  }
-  else if(name == "Malmö FF"){    name = n.malmo;  }
-  else if(name == "Mjällby AIF"){    name = n.mjallby;  }
-  else if(name == "IFK Norrköping"){    name = n.norrkoping;  }
-  else if(name == "IK Sirius"){    name = n.sirius;  }
-  else if(name == "Varbergs BoIS"){    name = n.varbergs;  }
-  else if(name == "IFK Värnamo"){    name = n.varnamo;  }
+  map["IF Brommapojkarna"] = n.brommapojkarna;
+  map["Degerfors IF"] = n.degerfors;
+  map["Djurgårdens IF"] = n.djurgardens;
+  map["IF Elfsborg"] = n.elfsborg;
+  map["BK Häcken"] = n.hacken;
+  map["Halmstads BK"] = n.halmstads;
+  map["Hammarby IF"] = n.hammarby;
+  map["Kalmar FF"] = n.kalmar;
+  map["Malmö FF"] = n.malmo;
+  map["Mjällby AIF"] = n.mjallby;
+  map["IFK Norrköping"] = n.norrkoping;
+  map["IK Sirius"] = n.sirius;
+  map["Varbergs BoIS"] = n.varbergs;
+  map["IFK Värnamo"] = n.varnamo;
   //SUICA
-  else if(name == "Grasshopper"){    name = n.grasshoppers;  }
-  else if(name == "Zürich"){    name = n.zurich;  }
+  map["Grasshopper"] = n.grasshoppers;
+  map["Zürich"] = n.zurich;
   //UCRANIA
-  else if(name == "Dynamo Kyiv"){    name = n.dinamokiev;  }
+  map["Dynamo Kyiv"] = n.dinamokiev;
 
   //BRASIL
-  else if(name == "América Mineiro"){    name = n.americamg;  }
-  else if(name == "América de Natal"){    name = n.americaRN;  }
-  else if(name == "Atlético Mineiro"){    name = n.atleticomg;  }
-  else if(name == "Athletico Paranaense"){    name = n.atleticopr;  }
-  else if(name == "Atlético Goianiense"){    name = n.atleticogo;  }
-  else if(name == "Red Bull Bragantino"){    name = n.bragantino;  }
-  else if(name == "Náutico"){    name = n.nautico;  }
-  else if(name == "Novorizontino"){    name = n.novorizontino;  }
-  else if(name == "Operário Ferroviário"){    name = n.operarioPR;  }
-  else if(name == "Portuguesa" && leagueName == l.brasil1){    name = n.portuguesa;  }
-  else if(name == "São José" && leagueName == l.brasil3){    name = n.saojoseRS;  }
-  else if(name == "Ypiranga"){    name = n.ypirangaRS;  }
+  map["América Mineiro"] = n.americamg;
+  map["América de Natal"] = n.americaRN;
+  map["Atlético Mineiro"] = n.atleticomg;
+  map["Athletico Paranaense"] = n.atleticopr;
+  map["Atlético Goianiense"] = n.atleticogo;
+  map["Red Bull Bragantino"] = n.bragantino;
+  map["Náutico"] = n.nautico;
+  map["Novorizontino"] = n.novorizontino;
+  map["Operário Ferroviário"] = n.operarioPR;
+  map["Vasco da Gama"] = n.vasco;
+  map["Ypiranga"] = n.ypirangaRS;
   //ARGENTINA
-  else if(name == "Estudiantes (LP)"){    name = n.estudiantes;  }
-  else if(name == "Central Córdoba (SdE)"){    name = n.centralCordoba;  }
-  else if(name == "Gimnasia y Esgrima (LP)"){    name = n.gimnasia;  }
-  else if(name == "Instituto"){    name = n.instituto;  }
-  else if(name == "Racing"  && leagueName == l.argentina){    name = n.racing;  }
-  else if(name == "River Plate"  && leagueName == l.argentina){    name = n.riverplate;  }
-  else if(name == "Unión"){    name = n.unionsantafe;  }
-  else if(name == "Arsenal" && leagueName == l.argentina){    name = n.arsenalsarandi;  }
+  map["Estudiantes (LP)"] = n.estudiantes;
+  map["Central Córdoba (SdE)"] = n.centralCordoba;
+  map["Gimnasia y Esgrima (LP)"] = n.gimnasia;
+  map["Instituto"] = n.instituto;
+  map["Unión"] = n.unionsantafe;
   //URUGUAI
-  else if(name == "Cerro"){    name = n.cerrouru;  }
-  else if(name == "Defensor Sporting"){    name = n.defensor;  }
-  else if(name == "Fénix"){    name = n.fenix;  }
-  else if(name == "La Luz"){    name = n.laluz;  }
-  else if(name == "Libertad" && leagueName == l.uruguai){    name = n.libertad;  }
-  else if(name == "Nacional" && leagueName == l.uruguai){    name = n.nacional;  }
-  else if(name == "Liverpool" && leagueName == l.uruguai){    name = n.liverpoolURU;  }
-  else if(name == "Montevideo City Torque"){    name = n.montevideocity;  }
-  else if(name == "Racing" && leagueName == l.uruguai){    name = n.racinguru;  }
-  else if(name == "River Plate" && leagueName == l.uruguai){    name = n.riverURU;  }
+  map["Cerro"] = n.cerrouru;
+  map["Defensor Sporting"] = n.defensor;
+  map["Fénix"] = n.fenix;
+  map["La Luz"] = n.laluz;
+  map["Montevideo City Torque"] = n.montevideocity;
   //BOLIVIA
-  else if(name == "Palmaflor del Trópico"){    name = n.palmaflor;  }
+  map["Palmaflor del Trópico"] = n.palmaflor;
   //PERU
-  else if(name == "ADT"){    name = n.tarma;  }
-  else if(name == "Carlos A. Mannucci"){    name = n.carlosmanucci;  }
-  else if(name == "Alianza Atlético"){    name = n.alianzasullana;  }
-  else if(name == "Universidad César Vallejo"){    name = n.cesarvallejo;  }
-  else if(name == "Unión Comercio"){    name = n.ucomercio;  }
-  else if(name == "Deportivo Municipal"){    name = n.depmunicipal;  }
-  else if(name == "UTC"){    name = n.cajamarca;  }
+  map["ADT"] = n.tarma;
+  map["Carlos A. Mannucci"] = n.carlosmanucci;
+  map["Alianza Atlético"] = n.alianzasullana;
+  map["Universidad César Vallejo"] = n.cesarvallejo;
+  map["Unión Comercio"] = n.ucomercio;
+  map["Deportivo Municipal"] = n.depmunicipal;
+  map["UTC"] = n.cajamarca;
   //CHILE
-  else if(name == "Deportes Copiapó"){    name = n.copiapo;  }
-  else if(name == "Universidad de Chile"){    name = n.lau;  }
-  else if(name == "Unión La Calera"){    name = n.lacalera;  }
-  else if(name == "Everton" && leagueName == l.chile){    name = n.evertonchi;  }
+  map["Deportes Copiapó"] = n.copiapo;
+  map["Universidad de Chile"] = n.lau;
+  map["Unión La Calera"] = n.lacalera;
   //PARAGUAI
-  else if(name == "Guaraní"){    name = n.guaraniPAR;  }
-  else if(name == "Nacional" && leagueName == l.paraguai){    name = n.nacionalPAR;  }
-  else if(name == "Sportivo Ameliano"){    name = n.ameliano;  }
-  else if(name == "Sportivo Trinidense"){    name = n.trinidense;  }
-  else if(name == "General Caballero (JLM)"){    name = n.generalcaballero;  }
+  map["Guaraní"] = n.guaraniPAR;
+  map["Sportivo Ameliano"] = n.ameliano;
+  map["Sportivo Trinidense"] = n.trinidense;
+  map["General Caballero (JLM)"] = n.generalcaballero;
   //COLOMBIA
-  else if(name == "Águilas Doradas"){    name = n.rionegroaguilas;  }
-  else if(name == "Atlético Bucaramanga"){    name = n.bucaramanga;  }
-  else if(name == "Independiente Medellín"){    name = n.imedellin;  }
-  else if(name == "Jaguares"){    name = n.jaguaresCOL;  }
-  else if(name == "Deportes Tolima"){    name = n.tolima;  }
-  else if(name == "Santa Fe"){    name = n.santafe;  }
+  map["Águilas Doradas"] = n.rionegroaguilas;
+  map["Atlético Bucaramanga"] = n.bucaramanga;
+  map["Independiente Medellín"] = n.imedellin;
+  map["Jaguares"] = n.jaguaresCOL;
+  map["Deportes Tolima"] = n.tolima;
+  map["Santa Fe"] = n.santafe;
   //EQUADOR
-  else if(name == "Independiente del Valle"){    name = n.idelvalle;  }
-  else if(name == "Libertad" && leagueName == l.equador){    name = n.libertadEQU;  }
-  else if(name == "LDU Quito"){    name = n.ldu;  }
-  else if(name == "Técnico Universitario"){    name = n.tecnicoUniv;  }
+  map["Independiente del Valle"] = n.idelvalle;
+  map["LDU Quito"] = n.ldu;
+  map["Técnico Universitario"] = n.tecnicoUniv;
   //VENEZUELA
-  else if(name == "Hermanos Colmenarez"){    name = n.hermanoscolmenarez;  }
-  else if(name == "Academia Puerto Cabello"){    name = n.puertoCabello;  }
-  else if(name == "Deportivo La Guaira"){    name = n.laguaira;  }
-  else if(name == "Mineros de Guayana"){    name = n.mineros;  }
-  else if(name == "Portuguesa" && leagueName == l.venezuela){    name = n.portuguesaven;  }
-  else if(name == "Universidad Central"){    name = n.ucv;  }
-  else if(name == "Deportivo Rayo Zuliano"){    name = n.zulia;  }
+  map["Hermanos Colmenarez"] = n.hermanoscolmenarez;
+  map["Academia Puerto Cabello"] = n.puertocabello;
+  map["Deportivo La Guaira"] = n.laguaira;
+  map["Mineros de Guayana"] = n.mineros;
+  map["Universidad Central"] = n.ucv;
+  map["Deportivo Rayo Zuliano"] = n.zulia;
 
   //MÉXICO
-  else if(name == "Atlético San Luis"){    name = n.sanluis;  }
-  else if(name == "León"){    name = n.leon;  }
-  else if(name == "América"){    name = n.americamex;  }
-  else if(name == "Guadalajara"){    name = n.chivas;  }
-  else if(name == "UANL"){    name = n.tigres;  }
-  else if(name == "UNAM"){    name = n.pumas;  }
+  map["Atlético San Luis"] = n.sanluis;
+  map["León"] = n.leon;
+  map["América"] = n.americamex;
+  map["Guadalajara"] = n.chivas;
+  map["UANL"] = n.tigres;
+  map["UNAM"] = n.pumas;
   //EUA
-  else if(name == "Atlanta United FC"){    name = n.atlanta;  }
-  else if(name == "Chicago Fire FC"){    name = n.chicago;  }
-  else if(name == "FC Cincinnati"){    name = n.cincinnati;  }
-  else if(name == "D.C. United"){    name = n.dcunited;  }
-  else if(name == "Houston Dynamo FC"){    name = n.houston;  }
-  else if(name == "Inter Miami CF"){    name = n.intermiami;  }
-  else if(name == "CF Montréal"){    name = n.montreal;  }
-  else if(name == "Minnesota United FC"){    name = n.minnesota;  }
-  else if(name == "New England Revolution"){    name = n.nerevolution;  }
-  else if(name == "New York City FC"){    name = n.nycity;  }
-  else if(name == "New York Red Bulls"){    name = n.nyredbulls;  }
-  else if(name == "Orlando City SC"){    name = n.orlando;  }
-  else if(name == "Seattle Sounders FC"){    name = n.seattle;  }
-  else if(name == "St. Louis City SC"){    name = n.stlouiscity;  }
-  else if(name == "Vancouver Whitecaps FC"){    name = n.vancouver;  }
+  map["Atlanta United FC"] = n.atlanta;
+  map["Chicago Fire FC"] = n.chicago;
+  map["FC Cincinnati"] = n.cincinnati;
+  map["D.C. United"] = n.dcunited;
+  map["Houston Dynamo FC"] = n.houston;
+  map["Inter Miami CF"] = n.intermiami;
+  map["CF Montréal"] = n.montreal;
+  map["Minnesota United FC"] = n.minnesota;
+  map["New England Revolution"] = n.nerevolution;
+  map["New York City FC"] = n.nycity;
+  map["New York Red Bulls"] = n.nyredbulls;
+  map["Orlando City SC"] = n.orlando;
+  map["Seattle Sounders FC"] = n.seattle;
+  map["St. Louis City SC"] = n.stlouiscity;
+  map["Vancouver Whitecaps FC"] = n.vancouver;
 
   //CHINA
-  else if(name == "Chengdu Roncheng"){    name = n.chengdu;  }
-  else if(name == "Dalian Pro"){    name = n.dalian;  }
-  else if(name == "Henan Songshan Longmen"){    name = n.henan;  }
-  else if(name == "Henan"){    name = n.henan;  }
-  else if(name == "Shanghai Port"){    name = n.shanghaisipg;  }
-  else if(name == "Tianjin Jinmen Tiger"){    name = n.tianjin;  }
+  map["Chengdu Roncheng"] = n.chengdu;
+  map["Dalian Pro"] = n.dalian;
+  map["Henan Songshan Longmen"] = n.henan;
+  map["Henan"] = n.henan;
+  map["Shanghai Port"] = n.shanghaisipg;
+  map["Tianjin Jinmen Tiger"] = n.tianjin;
   //COREIA DO SUL
-  else if(name == "Daejeon Hana Citizen"){    name = n.daejeon;  }
-  else if(name == "Gwangju FC"){    name = n.gwangju;  }
-  else if(name == "Incheon United"){    name = n.incheon;  }
-  else if(name == "Jeonbuk Hyundai Motors"){    name = n.jeonbuk;  }
-  else if(name == "Suwon Samsung Bluewings"){    name = n.suwonsamsung;  }
+  map["Daejeon Hana Citizen"] = n.daejeon;
+  map["Gwangju FC"] = n.gwangju;
+  map["Incheon United"] = n.incheon;
+  map["Jeonbuk Hyundai Motors"] = n.jeonbuk;
+  map["Suwon Samsung Bluewings"] = n.suwonsamsung;
   //INDIA
-  else if(name == "ATK Mohun Bagan"){    name = n.mohunbagan;  }
-  else if(name == "Bengaluru"){    name = n.bengaluru;  }
-  else if(name == "East Bengal"){    name = n.eastbengal;  }
-  else if(name == "Goa"){    name = n.goa;  }
-  else if(name == "NorthEast United"){    name = n.northeast;  }
-  else if(name == "Odisha"){    name = n.odisha;  }
+  map["ATK Mohun Bagan"] = n.mohunbagan;
+  map["Bengaluru"] = n.bengaluru;
+  map["East Bengal"] = n.eastbengal;
+  map["Goa"] = n.goa;
+  map["NorthEast United"] = n.northeast;
+  map["Odisha"] = n.odisha;
   //INDONESIA
-  else if(name == "Arema"){    name = n.arema;  }
-  else if(name == "Borneo Samarinda"){    name = n.borneo;  }
-  else if(name == "Madura United"){    name = n.madura;  }
-  else if(name == "Persib"){    name = n.persib;  }
-  else if(name == "Persebaya"){    name = n.persebaya;  }
-  else if(name == "Persikabo 1973"){    name = n.persikabo;  }
-  else if(name == "PSM"){    name = n.psmMakassar;  }
-  else if(name == "PSS"){    name = n.pss;  }
-  else if(name == "PSIS"){    name = n.psis;  }
+  map["Arema"] = n.arema;
+  map["Borneo Samarinda"] = n.borneo;
+  map["Madura United"] = n.madura;
+  map["Persib"] = n.persib;
+  map["Persebaya"] = n.persebaya;
+  map["Persikabo 1973"] = n.persikabo;
+  map["PSM"] = n.psmMakassar;
+  map["PSS"] = n.pss;
+  map["PSIS"] = n.psis;
   //MALASIA
-  else if(name == "Kuala Lumpur City"){    name = n.kualaLumpur;  }
+  map["Kuala Lumpur City"] = n.kualaLumpur;
   //NEPAL
-  else if(name == "Jawalakhel YC"){    name = n.jawalakhel;  }
-  else if(name == "FC Khumaltar"){    name = n.khumaltar;  }
-  else if(name == "Machhindra FC"){    name = n.machhindra;  }
-  else if(name == "Manang Marshyangdi F.C."){    name = n.manangMarshyangdi;  }
-  else if(name == "Nepal APF F.C."){    name = n.nepalapf;  }
-  else if(name == "Nepal Police Club"){    name = n.nepalPolice;  }
-  else if(name == "New Road Team F.C."){    name = n.newroad;  }
-  else if(name == "Sankata BSC"){    name = n.sankata;  }
-  else if(name == "Satdobato Youth Club"){    name = n.satdobatoyouth;  }
-  else if(name == "Tribhuvan Army F.C."){    name = n.tribhuvanarmy;  }
+  map["Jawalakhel YC"] = n.jawalakhel;
+  map["FC Khumaltar"] = n.khumaltar;
+  map["Machhindra FC"] = n.machhindra;
+  map["Manang Marshyangdi F.C."] = n.manangMarshyangdi;
+  map["Nepal APF F.C."] = n.nepalapf;
+  map["Nepal Police Club"] = n.nepalPolice;
+  map["New Road Team F.C."] = n.newroad;
+  map["Sankata BSC"] = n.sankata;
+  map["Satdobato Youth Club"] = n.satdobatoyouth;
+  map["Tribhuvan Army F.C."] = n.tribhuvanarmy;
   //TAILANDIA
-  else if(name == "Lamphun Warriors"){    name = n.lamphun;  }
-  else if(name == "BG Pathum United"){    name = n.pathum;  }
-  else if(name == "Port"){    name = n.portFC;  }
-  else if(name == "PT Prachuap"){    name = n.prachuap;  }
-  else if(name == "Ratchaburi"){    name = n.ratchaburi;  }
-  else if(name == "Sukhotai"){    name = n.sukhothai;  }
+  map["Lamphun Warriors"] = n.lamphun;
+  map["BG Pathum United"] = n.pathum;
+  map["Port"] = n.portFC;
+  map["PT Prachuap"] = n.prachuap;
+  map["Ratchaburi"] = n.ratchaburi;
+  map["Sukhotai"] = n.sukhothai;
   //VIETNA
-  else if(name == "Haiphong FC"){    name = n.haiphong;  }
-  else if(name == "Hanoi FC"){    name = n.hanoi;  }
-  else if(name == "Hanoi Police"){    name = n.hanoipolice;  }
-  else if(name == "Khanh Hoa FC"){    name = n.khanhhoa;  }
-  else if(name == "Hoang Anh Gia Lai"){    name = n.gialai;  }
-  else if(name == "Ho Chi Minh City FC"){    name = n.hochiminh;  }
-  else if(name == "Thep Xanh Nam Dinh"){    name = n.namdinh;  }
-  else if(name == "Topenland Binh Dinh"){    name = n.topenland;  }
-  else if(name == "Dong A Thanh Hoa"){    name = n.thanhoa;  }
+  map["Haiphong FC"] = n.haiphong;
+  map["Hanoi FC"] = n.hanoi;
+  map["Hanoi Police"] = n.hanoipolice;
+  map["Khanh Hoa FC"] = n.khanhhoa;
+  map["Hoang Anh Gia Lai"] = n.gialai;
+  map["Ho Chi Minh City FC"] = n.hochiminh;
+  map["Thep Xanh Nam Dinh"] = n.namdinh;
+  map["Topenland Binh Dinh"] = n.topenland;
+  map["Dong A Thanh Hoa"] = n.thanhoa;
   //UZBEQUISTAO
-  else if(name == "AGMK"){    name = n.agmk;  }
-  else if(name == "Metallurg"){    name = n.metallurg;  }
-  else if(name == "Navbahor"){    name = n.navbahor;  }
-  else if(name == "Nasaf"){    name = n.nasafQarshi;  }
-  else if(name == "Neftchi"){    name = n.neftchifargona;  }
-  else if(name == "Olympic" && leagueName==l.uzbekistao){    name = n.olympictashkent;  }
-  else if(name == "Sogdiana"){    name = n.sogdiyona;  }
-  else if(name == "Surkhon"){    name = n.surkhon;  }
+  map["AGMK"] = n.agmk;
+  map["Metallurg"] = n.metallurg;
+  map["Navbahor"] = n.navbahor;
+  map["Nasaf"] = n.nasafQarshi;
+  map["Neftchi"] = n.neftchifargona;
+  map["Sogdiana"] = n.sogdiyona;
+  map["Surkhon"] = n.surkhon;
   
   //ARABIA SAUDITA
-  else if(name == "Al-Adalah"){    name = n.aladalah;  }
-  else if(name == "Al-Batin"){    name = n.albatin;  }
-  else if(name == "Al-Ettifaq"){    name = n.alettifaq;  }
-  else if(name == "Al-Fateh"){    name = n.alfateh;  }
-  else if(name == "Al-Fayha"){    name = n.alfayha;  }
-  else if(name == "Al-Hilal"){    name = n.alhilal;  }
-  else if(name == "Al-Ittihad" && leagueName==l.arabia){    name = n.alIttihad;  }
-  else if(name == "Al-Khaleej"){    name = n.alkhaleej;  }
-  else if(name == "Al-Nassr"){    name = n.alnassr;  }
-  else if(name == "Al-Raed"){    name = n.alraed;  }
-  else if(name == "Al-Shabab" && leagueName==l.arabia){    name = n.alshabab;  }
-  else if(name == "Al-Tai"){    name = n.altai;  }
-  else if(name == "Al-Taawoun"){    name = n.altaawoun;  }
-  else if(name == "Al-Wehda"){    name = n.alwehda;  }
+  map["Al-Adalah"] = n.aladalah;
+  map["Al-Batin"] = n.albatin;
+  map["Al-Ettifaq"] = n.alettifaq;
+  map["Al-Fateh"] = n.alfateh;
+  map["Al-Fayha"] = n.alfayha;
+  map["Al-Hilal"] = n.alhilal;
+  map["Al-Khaleej"] = n.alkhaleej;
+  map["Al-Nassr"] = n.alnassr;
+  map["Al-Raed"] = n.alraed;
+  map["Al-Tai"] = n.altai;
+  map["Al-Taawoun"] = n.altaawoun;
+  map["Al-Wehda"] = n.alwehda;
   //BAHREIN
-  else if(name == "Al-Ahli" && leagueName==l.bahrein){    name = n.alahliBAH;  }
-  else if(name == "Al-Shabab" && leagueName==l.bahrein){    name = n.alshababBAH;  }
-  else if(name == "Bahrain SC"){    name = n.bahrain;  }
+  map["Bahrain SC"] = n.bahrain;
   //EAU
-  else if(name == "Al Ain"){    name = n.alain;  }
-  else if(name == "Al Bataeh"){    name = n.albataeh;  }
-  else if(name == "Al Nasr" && leagueName==l.eau){    name = n.alnasrEAU;  }
-  else if(name == "Sharjah"){    name = n.alsharjah;  }
-  else if(name == "Dibba Al Fujairah"){    name = n.dibbafuj;  }
-  else if(name == "Shabab Al Ahli"){    name = n.shababalahli;  }
+  map["Al Ain"] = n.alain;
+  map["Al Bataeh"] = n.albataeh;
+  map["Sharjah"] = n.alsharjah;
+  map["Dibba Al Fujairah"] = n.dibbafuj;
+  map["Shabab Al Ahli"] = n.shababalahli;
   //IRÃ
-  else if(name == "Mes Kerman"){    name = n.meskerman;  }
-  else if(name == "Naft Masjed Soleyman"){    name = n.naftmasjedsoleyman;  }
-  else if(name == "Sanat Naft"){    name = n.sanatnaft;  }
+  map["Mes Kerman"] = n.meskerman;
+  map["Naft Masjed Soleyman"] = n.naftmasjedsoleyman;
+  map["Sanat Naft"] = n.sanatnaft;
   //KUWAIT
-  else if(name == "Al-Arabi" && leagueName==l.kuwait){    name = n.alarabiKUW;  }
   //LEBANON
-  else if(name == "Ansar"){    name = n.alansar;  }
-  else if(name == "Ahed"){    name = n.alahed;  }
-  else if(name == "Safa"){    name = n.alsafa;  }
-  else if(name == "Tadamoun Sour"){    name = n.tadamonsour;  }
-  else if(name == "Tripoli"){    name = n.tripoliLEB;  }
+  map["Ansar"] = n.alansar;
+  map["Ahed"] = n.alahed;
+  map["Safa"] = n.alsafa;
+  map["Tadamoun Sour"] = n.tadamonsour;
+  map["Tripoli"] = n.tripoliLEB;
   //QATAR
-  else if(name == "Al-Ahli" && leagueName==l.qatar){    name = n.alahlidoha;  }
-  else if(name == "Al-Arabi"){    name = n.alarabi;  }
-  else if(name == "Al-Duhail"){    name = n.alduhail;  }
-  else if(name == "Al-Gharafa"){    name = n.algharafa;  }
-  else if(name == "Al-Markhiya"){    name = n.almarkhiya;  }
-  else if(name == "Al-Rayyan"){    name = n.alrayyan;  }
-  else if(name == "Al-Sadd"){    name = n.alsadd;  }
-  else if(name == "Al-Sailiya"){    name = n.alsailiya;  }
-  else if(name == "Al-Shamal"){    name = n.alshamal;  }
-  else if(name == "Al-Wakrah"){    name = n.alwakrah;  }
-  else if(name == "Qatar SC"){    name = n.qatar;  }
+  map["Al-Arabi"] = n.alarabi;
+  map["Al-Duhail"] = n.alduhail;
+  map["Al-Gharafa"] = n.algharafa;
+  map["Al-Markhiya"] = n.almarkhiya;
+  map["Al-Rayyan"] = n.alrayyan;
+  map["Al-Sadd"] = n.alsadd;
+  map["Al-Sailiya"] = n.alsailiya;
+  map["Al-Shamal"] = n.alshamal;
+  map["Al-Wakrah"] = n.alwakrah;
+  map["Qatar SC"] = n.qatar;
   //SYRIA
-  else if(name == "Al-Ittihad" && leagueName==l.siria){    name = n.alittihadSYR;  }
-  else if(name == "Al-Jazeera" && leagueName==l.siria){    name = n.aljazeeraSYR;  }
-  else if(name == "Al-Wahda" && leagueName==l.siria){    name = n.alwahdaSYR;  }
-  else if(name == "Al-Taliya"){    name = n.altaliya;  }
+  map["Al-Taliya"] = n.altaliya;
 
   //AUSTRALIA
-  else if(name == "Western Sydney Wanderers"){    name = n.sydneywanderers;  }
+  map["Western Sydney Wanderers"] = n.sydneywanderers;
 
   //ARGELIA
-  else if(name == "HB Chelghoum Laïd"){    name = n.chelghoumlaid;  }
+  map["HB Chelghoum Laïd"] = n.chelghoumlaid;
   //EGITO
-  else if(name == "Al Ittihad" && leagueName==l.egito){    name = n.alittihadalexandriaclub;  }
   //MARROCOS
-  else if(name == "RS Berkane"){    name = n.berkane;  }
-  else if(name == "Difaâ El Jadidi"){    name = n.difaa;  }
-  else if(name == "AS FAR"){    name = n.farRabat;  }
-  else if(name == "Fath Union Sport"){    name = n.fusRabat;  }
-  else if(name == "Ittihad Tanger"){    name = n.irTanger;  }
-  else if(name == "SCC Mohammédia"){    name = n.chababmoh;  }
-  else if(name == "Raja CA"){    name = n.rajacasablanca;  }
-  else if(name == "MC Oujda"){    name = n.moulodiaOujda;  }
-  else if(name == "Olympic Club de Safi"){    name = n.safi;  }
-  else if(name == "Jeunesse Sportive Soualem"){    name = n.soualem;  }
-  else if(name == "Moghreb Tétouan"){    name = n.moghrebTetouan;  }
-  else if(name == "Wydad AC"){    name = n.wydad;  }
+  map["RS Berkane"] = n.berkane;
+  map["Difaâ El Jadidi"] = n.difaa;
+  map["AS FAR"] = n.farrabat;
+  map["Fath Union Sport"] = n.fusrabat;
+  map["Ittihad Tanger"] = n.irtanger;
+  map["SCC Mohammédia"] = n.chababmoh;
+  map["Raja CA"] = n.rajacasablanca;
+  map["MC Oujda"] = n.moulodiaoujda;
+  map["Olympic Club de Safi"] = n.safi;
+  map["Jeunesse Sportive Soualem"] = n.soualem;
+  map["Moghreb Tétouan"] = n.moghrebtetouan;
+  map["Wydad AC"] = n.wydad;
   //TUNISIA
-  else if(name == "Olympique Béja"){    name = n.olympiquebeja;  }
-  else if(name == "US Ben Guerdane"){    name = n.benguerdane;  }
-  else if(name == "CS Sfaxien"){    name = n.sfaxien;  }
-  else if(name == "US Tataouine"){    name = n.tataouine;  }
+  map["Olympique Béja"] = n.olympiquebeja;
+  map["US Ben Guerdane"] = n.benguerdane;
+  map["CS Sfaxien"] = n.sfaxien;
+  map["US Tataouine"] = n.tataouine;
 
   //AFRICA DO SUL
-  else if(name == "AmaZulu"){    name = n.amazulu;  }
-  else if(name == "Lamontville Golden Arrows"){    name = n.goldenarrows;  }
-  else if(name == "SuperSport United"){    name = n.supersport;  }
+  map["AmaZulu"] = n.amazulu;
+  map["Lamontville Golden Arrows"] = n.goldenarrows;
+  map["SuperSport United"] = n.supersport;
   //ANGOLA
-  else if(name == "Primeiro de Agosto"){    name = n.agosto;  }
-  else if(name == "Cuando Cubango FC"){    name = n.cuandocubango;  }
-  else if(name == "Desportivo da Lunda Sul"){    name = n.lundasul;  }
-  else if(name == "Desportivo da Huíla"){    name = n.huilaANG;  }
-  else if(name == "Recreativo do Libolo"){    name = n.libolo;  }
-  else if(name == "Bravos do Maquis"){    name = n.maquis;  }
-  else if(name == "Sporting de Cabinda"){    name = n.sptCabinda;  }
-  else if(name == "Wiliete SC"){    name = n.wiliete;  }
+  map["Primeiro de Agosto"] = n.agosto;
+  map["Cuando Cubango FC"] = n.cuandocubango;
+  map["Desportivo da Lunda Sul"] = n.lundasul;
+  map["Desportivo da Huíla"] = n.huilaANG;
+  map["Recreativo do Libolo"] = n.libolo;
+  map["Bravos do Maquis"] = n.maquis;
+  map["Sporting de Cabinda"] = n.sptCabinda;
+  map["Wiliete SC"] = n.wiliete;
 
-
-  return name;
+  if(map.containsKey(name)){
+    return map[name];
+  }else{
+    return name;
+  }
 }

@@ -87,7 +87,7 @@ class _HistoricMenuState extends State<HistoricMenu> {
                           ),
                           box(
                               'Mundial',
-                              Image.asset('assets/league_logos/mundial.png',height: imageSize,),
+                              Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().mundial),height: imageSize,),
                                   (){Navigator.push(context,MaterialPageRoute(builder: (context) => const TableMundial()));
                               }
                           ),

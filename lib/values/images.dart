@@ -5,86 +5,99 @@ import 'league_names.dart';
 
 class FIFAImages{
 
-  String mundialLogo(){
-    return 'assets/league_logos/mundial.png';
-  }
-
   String campeonatoLogo(String leagueName) {
-    String imageLogo = 'championship';
+    LeagueOfficialNames l = LeagueOfficialNames();
+    String imageLogo = 'generic';
 
-    if(leagueName==LeagueOfficialNames().inglaterra1) {       imageLogo = 'premierleague';}
-    if(leagueName==LeagueOfficialNames().inglaterra2) {       imageLogo = 'championship';}
-    if(leagueName==LeagueOfficialNames().inglaterra3) {       imageLogo = 'inglaterra3';}
-    if(leagueName==LeagueOfficialNames().italia1) {      imageLogo = 'italia1';}
-    if(leagueName==LeagueOfficialNames().italia2) {      imageLogo = 'italia2';}
-    if(leagueName==LeagueOfficialNames().espanha1) {       imageLogo = 'laliga';}
-    if(leagueName==LeagueOfficialNames().espanha2) {       imageLogo = 'laliga2';}
-    if(leagueName==LeagueOfficialNames().franca1) {       imageLogo = 'ligue1';}
-    if(leagueName==LeagueOfficialNames().franca2) {       imageLogo = 'ligue2'; }
-    if(leagueName==LeagueOfficialNames().alemanha1) {     imageLogo = 'bundesliga';}
-    if(leagueName==LeagueOfficialNames().alemanha2) {     imageLogo = 'bundesliga2';}
-    if(leagueName==LeagueOfficialNames().portugal) {      imageLogo = 'portugal';}
-    if(leagueName==LeagueOfficialNames().holanda) {      imageLogo = 'holanda';}
-    if(leagueName==LeagueOfficialNames().turquiaGrecia) {      imageLogo = 'turquia';}
-    if(leagueName==LeagueOfficialNames().ligaEuropa) {      imageLogo = 'liga1';}
-    if(leagueName==LeagueOfficialNames().lesteEuropeu) {    imageLogo = 'leste';}
-    if(leagueName==LeagueOfficialNames().brasil1) {      imageLogo = 'brasil a';}
-    if(leagueName==LeagueOfficialNames().brasil2) {     imageLogo = 'brasil b';}
-    if(leagueName==LeagueOfficialNames().brasil3) {     imageLogo = 'brasil c';}
-    if(leagueName==LeagueOfficialNames().brasil4) {     imageLogo = 'brasil d';}
-    if(leagueName==LeagueOfficialNames().paulistao) {     imageLogo = 'brasileirao';}
-    if(leagueName==LeagueOfficialNames().argentina) {      imageLogo = 'argentina';}
-    if(leagueName==LeagueOfficialNames().mercosul) {      imageLogo = 'mercosul'; }
-    if(leagueName==LeagueOfficialNames().colombia) {      imageLogo = 'colombia';       }
-    if(leagueName==LeagueOfficialNames().mexico) {      imageLogo = 'mexico';       }
-    if(leagueName==LeagueOfficialNames().estadosUnidos) {      imageLogo = 'mls';     }
-    if(leagueName==LeagueOfficialNames().asia) {      imageLogo = 'asialeague';     }
-    if(leagueName==LeagueOfficialNames().africa) {      imageLogo = 'africa';       }
-    if(leagueName==LeagueOfficialNames().outros) {      imageLogo = 'others';       }
+    Map map = {};
+    map[l.inglaterra1] = 'premierleague';
+    map[l.inglaterra1] = 'premierleague';
+    map[l.inglaterra1] = 'premierleague';
+    map[l.inglaterra2] = 'championship';
+    map[l.inglaterra3] = 'inglaterra3';
+    map[l.italia1] = 'italia1';
+    map[l.italia2] = 'italia2';
+    map[l.espanha1] = 'laliga';
+    map[l.espanha2] = 'laliga2';
+    map[l.franca1] = 'ligue1';
+    map[l.franca2] = 'ligue2';
+    map[l.alemanha1] = 'bundesliga';
+    map[l.alemanha2] = 'bundesliga2';
+    map[l.portugal] = 'portugal league';
+    map[l.holanda] = 'eredivisie';
+    map[l.turquiaGrecia] = 'turquia';
+    map[l.ligaEuropa] = 'liga1';
+    map[l.lesteEuropeu] = 'leste';
+    map[l.brasil1] = 'brasil a';
+    map[l.brasil2] = 'brasil b';
+    map[l.brasil3] = 'brasil c';
+    map[l.brasil4] = 'brasil d';
+    map[l.paulistao] = 'brasileirao';
+    map[l.argentina] = 'argentina league';
+    map[l.mercosul] = 'mercosul';
+    map[l.merconorte] = 'merconorte';
+    map[l.colombia] = 'colombia league';
+    map[l.mexico] = 'mexico league';
+    map[l.estadosUnidos] = 'mls';
+    map[l.asia] = 'asia league';
+    map[l.africa] = 'africa league';
+    map[l.outros] = 'others';
 
-    if(leagueName==LeagueOfficialNames().championsLeague) {      imageLogo = 'champions';       }
-    if(leagueName==LeagueOfficialNames().libertadores) {      imageLogo = 'libertadores'; }
-    if(leagueName==LeagueOfficialNames().europaLeagueOficial) {      imageLogo = 'europaleague'; }
-    if(leagueName==LeagueOfficialNames().copaSulAmericana) {      imageLogo = 'sulamericana'; }
-    if(leagueName==LeagueOfficialNames().concacaf) {      imageLogo = 'concacaf'; }
-    if(leagueName==LeagueOfficialNames().resto) {      imageLogo = 'rest';       }
-    if(leagueName==LeagueOfficialNames().mundial) {      imageLogo = 'mundial';       }
+    map[l.championsLeague] = 'international/champions';
+    map[l.libertadores] = 'international/libertadores';
+    map[l.europaLeagueOficial] = 'international/europaleague';
+    map[l.copaSulAmericana] = 'international/sulamericana';
+    map[l.concacaf] = 'international/concacaf';
+    map[l.resto] = 'international/rest';
+    map[l.mundial] = 'international/mundial';
 
+    map[l.recopaeuropa] = 'international/recopa europa';
+    map[l.recopasula] = 'international/recopa sula';
 
-    if(leagueName==LeagueOfficialNames().englandCup) {      imageLogo = 'fa cup';       }
-    if(leagueName==LeagueOfficialNames().italyCup) {      imageLogo = 'copa italia';       }
-    if(leagueName==LeagueOfficialNames().spainCup) {      imageLogo = 'copa rey';       }
-    if(leagueName==LeagueOfficialNames().germanyCup) {      imageLogo = 'copa alemanha';       }
-    if(leagueName==LeagueOfficialNames().franceCup) {      imageLogo = 'copa franca';       }
-    if(leagueName==LeagueOfficialNames().portugalCup) {      imageLogo = 'copa portugal';       }
-    if(leagueName==LeagueOfficialNames().russiaCup) {      imageLogo = 'copa russia';       }
-    if(leagueName==LeagueOfficialNames().brazilCup) {      imageLogo = 'copa do brasil';       }
+    map[l.englandCup] = 'cup/england';
+    map[l.italyCup] = 'cup/italy';
+    map[l.spainCup] = 'cup/spain';
+    map[l.germanyCup] = 'cup/germany';
+    map[l.franceCup] = 'cup/france';
+    map[l.portugalCup] = 'cup/portugal';
+    map[l.netherlandsCup] = 'cup/netherlands';
+    map[l.turkeyCup] = 'cup/turkey';
+    map[l.ligaEuropaCup] = 'cup/generic';
+    map[l.russiaCup] = 'cup/russia';
+    map[l.brazilCup] = 'cup/brazil';
+    map[l.argentinaCup] = 'cup/argentina';
+    map[l.mercosulCup] = 'cup/generic';
+    map[l.colombiaCup] = 'cup/colombia';
+    map[l.mexicoCup] = 'cup/mexico';
+    map[l.usaCup] = 'cup/usa';
+    map[l.asiaCup] = 'cup/asia';
+    map[l.africaCup] = 'cup/africa';
+    map[l.othersCup] = 'cup/generic';
 
+    map[l.latina] = 'rest';
+    map[l.latina] = 'others/copa latina';
+    map[l.rioSP] = 'others/rio sp';
+    map[l.copaNordeste] = 'others/copa nordeste';
+    map[l.copaVerde] = 'others/copa verde';
+    map[l.cupwinners] = 'others/cup winners';
+    map[l.pequenaTaca] = 'others/pequena taca';
 
-    if(leagueName==LeagueOfficialNames().latina) {      imageLogo = 'rest';       }
-    if(leagueName==LeagueOfficialNames().rioSP) {      imageLogo = 'rio sp';       }
-    if(leagueName==LeagueOfficialNames().copaNordeste) {      imageLogo = 'copa nordeste';       }
-    if(leagueName==LeagueOfficialNames().copaVerde) {      imageLogo = 'copa verde';       }
-    if(leagueName==LeagueOfficialNames().cupwinners) {      imageLogo = 'cup winners';       }
-    if(leagueName==LeagueOfficialNames().pequenaTaca) {      imageLogo = 'cup winners';       }
-
-    if(leagueName==LeagueOfficialNames().recopaeuropa) {      imageLogo = 'recopa europa';       }
-    if(leagueName==LeagueOfficialNames().recopasula) {      imageLogo = 'recopa sula';       }
-
-
+    if(map.containsKey(leagueName)){
+        imageLogo = map[leagueName];
+    }
 
     imageLogo = 'assets/league_logos/$imageLogo.png';
-    return imageLogo;
-  }
 
+    return imageLogo;
+ }
 
 
 String imageLogo(String timeFoto) {
     ClubName _name = ClubName();
 
     if(globalShowRealLogos == false){
-        return 'generic';
-    }
+   return 'generic';
+   }
 
     Map map = {};
     map[_name.arsenal] = 'arsenal';
@@ -819,6 +832,7 @@ String imageLogo(String timeFoto) {
     map[_name.cluj] = 'cluj';
     map[_name.craiova] = 'craiova';
     map[_name.dinamobucuresti] = 'dinamo bucuresti';
+    map[_name.farul] = 'farul';
     map[_name.otelul] = 'otelul';
     map[_name.rapidbucuresti] = 'rapid bucuresti';
     map[_name.steauabucuresti] = 'steaua bucareste';
@@ -903,7 +917,7 @@ String imageLogo(String timeFoto) {
     map[_name.atleticogo] = 'atleticogo';
     map[_name.cuiaba] = 'cuiaba';
     map[_name.chapecoense] = 'chapecoense';     
-    map[_name.bragantino] = 'bragantino';      
+    map[_name.bragantino] = 'bragantino'; 
     map[_name.ceara] = 'ceara';
     map[_name.coritiba] = 'coritiba';
     map[_name.criciuma] = 'criciuma';
@@ -1048,12 +1062,12 @@ String imageLogo(String timeFoto) {
     map[_name.atleticotucuman] = 'atletico tucuman';
     map[_name.rafaela] = 'atl rafaela';
     map[_name.arsenalsarandi] = 'sarandi';     
-    map[_name.banfield] = 'banfield';      
-    map[_name.barracas] = 'barracas';      
-    map[_name.belgrano] = 'belgrano';      
+    map[_name.banfield] = 'banfield'; 
+    map[_name.barracas] = 'barracas'; 
+    map[_name.belgrano] = 'belgrano'; 
     map[_name.bocajuniors] = 'bocajuniors';
-    map[_name.chacarita] = 'chacarita';      
-    map[_name.centralCordoba] = 'central cordoba';      
+    map[_name.chacarita] = 'chacarita'; 
+    map[_name.centralCordoba] = 'central cordoba'; 
     map[_name.colon] = 'colon';
     map[_name.defensayjusticia] = 'defensa';
     map[_name.estudiantes] = 'estudiantes';
@@ -1097,8 +1111,9 @@ String imageLogo(String timeFoto) {
     map[_name.riverURU] = 'river uru';  
     map[_name.montwanderers] = 'wanderers';
 
-    map[_name.olimpia] = 'olimpia';      
+    map[_name.olimpia] = 'olimpia'; 
     map[_name.cerroporteno] = 'cerro';
+    map[_name.generalcaballero] = 'general caballero';
     map[_name.libertad] = 'libertad';
     map[_name.guaraniPAR] = 'guarani paraguai';  
     map[_name.nacionalPAR] = 'nacional paraguai';  
@@ -1106,6 +1121,7 @@ String imageLogo(String timeFoto) {
     map[_name.octubre12] = '12 de octubre';
     map[_name.soldeamerica] = 'sol de america';  
     map[_name.luqueno] = 'luqueno';
+    map[_name.rubionu] = 'rubio nu';
     map[_name.tacuary] = 'tacuary';
 
     map[_name.colocolo] = 'colocolo';
@@ -1144,7 +1160,8 @@ String imageLogo(String timeFoto) {
     map[_name.sucre] = 'sucre';  
     //PERU
     map[_name.alianzalima] = 'alianzalima';  
-    map[_name.binacional] = 'binacional';  
+    map[_name.binacional] = 'binacional';
+    map[_name.cajamarca] = 'cajamarca';
     map[_name.cesarvallejo] = 'cesar vallejo';  
     map[_name.carlosmanucci] = 'carlos manucci';  
     map[_name.cienciano] = 'cienciano';  
@@ -1153,7 +1170,8 @@ String imageLogo(String timeFoto) {
     map[_name.jorge] = 'jorge';
     map[_name.juanaurich] = 'juan aurich';
     map[_name.melgar] = 'melgar';  
-    map[_name.universitario] = 'universitario';  
+    map[_name.universitario] = 'universitario';
+    map[_name.unisanmartin] = 'uni san martin';
     map[_name.sportingcristal] = 'sportingcristal'; 
     map[_name.sportboys] = 'sport boys';  
     //EQUADOR
@@ -1180,7 +1198,7 @@ String imageLogo(String timeFoto) {
     map[_name.boyaca] = 'boyaca chico';
     map[_name.bucaramanga] = 'bucaramanga';
     map[_name.cucuta] = 'cucuta';  
-    map[_name.deportivocali] = 'deportivocali';      
+    map[_name.deportivocali] = 'deportivocali'; 
     map[_name.deppasto] = 'dep pasto';
     map[_name.envigado] = 'envigado';
     map[_name.imedellin] = 'medellin';
@@ -1203,8 +1221,10 @@ String imageLogo(String timeFoto) {
     map[_name.mineros] = 'mineros'; 
     map[_name.minerven] = 'minerven'; 
     map[_name.monagas] = 'monagas'; 
-    map[_name.portuguesaven] = 'portuguesa ven'; 
-    map[_name.trujillanos] = 'trujillanos'; 
+    map[_name.portuguesaven] = 'portuguesa ven';
+    map[_name.puertocabello] = 'puerto cabello';
+    map[_name.trujillanos] = 'trujillanos';
+    map[_name.ucv] = 'ucv';
     map[_name.zamora] = 'zamora'; 
     map[_name.zulia] = 'zulia'; 
 
@@ -1257,7 +1277,7 @@ String imageLogo(String timeFoto) {
     map[_name.nashville] = 'nashville';  
     map[_name.nerevolution] = 'nerevolution'; 
     map[_name.nycity] = 'nycity';  
-    map[_name.nyredbulls] = 'nyredbull';      
+    map[_name.nyredbulls] = 'nyredbull'; 
     map[_name.orlando] = 'orlando'; 
     map[_name.portland] = 'portland'; 
     map[_name.seattle] = 'seattle'; 
@@ -1346,9 +1366,10 @@ String imageLogo(String timeFoto) {
     map[_name.liaoning] = 'liaoning';
     map[_name.nantong] = 'nantong';
     map[_name.qingdaofc] = 'qingdao';
-    map[_name.shandong] = 'shandong_luneng';      
+    map[_name.shandong] = 'shandong luneng';
     map[_name.shanghaisipg] = 'shanghai';
     map[_name.shanghaishenhua] = 'shanghai shenhua';
+    map[_name.shenzhen] = 'shenzhen';
     map[_name.tianjin] = 'tianjin';     
     map[_name.wuhan] = 'wuhan';
     map[_name.wuhan3towns] = 'wuhan three towns';
@@ -1368,7 +1389,7 @@ String imageLogo(String timeFoto) {
     map[_name.kashimaantlers] = 'kashima';
     map[_name.kashiwaReysol] = 'kashiwa reysol';
     map[_name.kyoto] = 'kyoto';
-    map[_name.kawasakifrontale] = 'kawasaki_frontale'; 
+    map[_name.kawasakifrontale] = 'kawasaki frontale';
     map[_name.nagoya] = 'nagoya';
     map[_name.omiyaardija] = 'omiya ardija';
     map[_name.oitatrinita] = 'oita trinita';
@@ -1386,11 +1407,12 @@ String imageLogo(String timeFoto) {
     map[_name.busan] = 'busan'; 
     map[_name.daegu] = 'daegu';
     map[_name.daejeon] = 'daejeon';
-    map[_name.jeonbuk] = 'jeonbuk'; 
-    map[_name.jeju] = 'jeju';
     map[_name.gimcheon] = 'gimcheon';
     map[_name.gyeongnam] = 'gyeongnam';
-    map[_name.incheon] = 'incheon';
+    map[_name.jeonnam] = 'jeonnam dragons';
+    map[_name.jeonbuk] = 'jeonbuk';
+    map[_name.jeju] = 'jeju';
+    map[_name.gimcheon] = 'gimcheon';
     map[_name.fcseoul] = 'fc seoul';
     map[_name.gangwon] = 'gangwon';
     map[_name.pohang] = 'pohang';  
@@ -1399,27 +1421,29 @@ String imageLogo(String timeFoto) {
     map[_name.ulsan] = 'ulsan';
 
     //SOUTH ARABIA
-    map[_name.alahli] = 'al_ahli';
+    map[_name.alahli] = 'al ahli';
     map[_name.alettifaq] = 'al ettifaq';
-    map[_name.alhilal] = 'al_hilal';  
+    map[_name.alhilal] = 'al hilal';
     map[_name.alfateh] = 'al fateh';
     map[_name.alIttihad] = 'al ittihad';
-    map[_name.alnassr] = 'al_nassr';  
+    map[_name.alnassr] = 'al nassr';
     map[_name.alraed] = 'al raed';
     map[_name.alshabab] = 'al shabab';
     map[_name.altaawoun] = 'al taawoun';
     map[_name.damac] = 'damac';
     //QATAR
+    map[_name.alahlidoha] = 'al ahli doha';
     map[_name.alarabi] = 'al arabi';
     map[_name.alduhail] = 'duhail';
     map[_name.algharafa] = 'al gharafa';
     map[_name.alrayyan] = 'al rayyan';  
     map[_name.alsadd] = 'sadd';
     map[_name.eljaish] = 'el jaish';
+    map[_name.qatar] = 'qatar sc';
     //EAU
     map[_name.ajman] = 'ajman';  
-    map[_name.alain] = 'al_ain';
-    map[_name.aljazira] = 'al_jazira';  
+    map[_name.alain] = 'al ain';
+    map[_name.aljazira] = 'al jazira';
     map[_name.alnasrEAU] = 'al nasr';  
     map[_name.alsharjah] = 'al sharjah';
     map[_name.alwahda] = 'al wahda';
@@ -1460,8 +1484,6 @@ String imageLogo(String timeFoto) {
     //BANGLADESH
     map[_name.bashundhara] = 'bashundhara';
     map[_name.dhakaAbahani] = 'dhaka';
-    map[_name.saif] = 'saif';
-    //map[_name.sheikhJamal] = 'sheikh jamal';
     //BRUNEI
     map[_name.bruneidpmm] = 'brunei';
     //SINGAPORE
@@ -1498,11 +1520,16 @@ String imageLogo(String timeFoto) {
     map[_name.alFaisalyJORD] = 'al faisaly';
     map[_name.alRamtha] = 'al ramtha';
     map[_name.alWehdat] = 'al wehdat';
+    //QUIRGUISTÃO
+    map[_name.algaBishkek] = 'alga bishkek';
+    map[_name.dordoiBishkek] = 'dordoi bishkek';
     //KUWAIT
     map[_name.alarabiKUW] = 'al arabi kuwait';
     map[_name.alkuwait] = 'al kuwait';
     map[_name.alqadsia] = 'al qadsia';
     map[_name.kazma] = 'kazma';
+    //LAOS
+    map[_name.chanthabouly] = 'chanthabouly';
     //NEPAL
     map[_name.machhindra] = 'machhindra';
     map[_name.manangMarshyangdi] = 'manang';
@@ -1556,7 +1583,7 @@ String imageLogo(String timeFoto) {
 
     //AFRICA
     //EGITO
-    map[_name.alahly] = 'al_ahly';
+    map[_name.alahly] = 'al ahly';
     map[_name.almasry] = 'al masry';
     map[_name.alittihadalexandriaclub] = 'alexandria';
     map[_name.ceramicacleopatra] = 'cleopatra';
@@ -1578,8 +1605,11 @@ String imageLogo(String timeFoto) {
     //MARROCOS
     map[_name.rajacasablanca] = 'raja';  
     map[_name.wydad] = 'wydad';
-    map[_name.farRabat] = 'far rabat';
+    map[_name.farrabat] = 'far rabat';
+    map[_name.irtanger] = 'ir tanger';
+    map[_name.fusrabat] = 'fus rabat';
     map[_name.maghreb] = 'maghreb';
+    map[_name.moghrebtetouan] = 'moghreb tetouan';
     //SUDAN
     map[_name.omdurman] = 'omdurman';
     map[_name.almerrikh] = 'al merrikh';
@@ -1685,12 +1715,12 @@ String imageLogo(String timeFoto) {
     map[_name.platinum] = 'platinum';
 
     if(map.containsKey(timeFoto)){
-      return map[timeFoto];
-    }else{
-      //Se o time não tiver uma imagem
-      return 'generic';
-    }
- }
+ return map[timeFoto];
+   }else{
+ //Se o time não tiver uma imagem
+ return 'generic';
+   }
+}
 
 
 }

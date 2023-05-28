@@ -824,11 +824,11 @@ Map<String,dynamic> mapAmerica = {
   },
 
   leagueName.venezuela : {
-    2022.0: [n.metropolitanos,n.monagas,n.carabobo,n.zamora,        n.estudiantesmerida,n.tachira,n.caracas,n.puertoCabello,n.deplara,n.hermanoscolmenarez,n.laguaira,n.portuguesaven,n.mineros,n.zulia,n.ucv,n.aragua],
-    2021.0: [n.tachira,n.caracas,n.monagas,n.deplara,n.laguaira,    n.estudiantesmerida,n.metropolitanos,n.hermanoscolmenarez,n.portuguesaven,n.aragua,    n.puertoCabello,n.atlVenezuela,],
+    2022.0: [n.metropolitanos,n.monagas,n.carabobo,n.zamora,        n.estudiantesmerida,n.tachira,n.caracas,n.puertocabello,n.deplara,n.hermanoscolmenarez,n.laguaira,n.portuguesaven,n.mineros,n.zulia,n.ucv,n.aragua],
+    2021.0: [n.tachira,n.caracas,n.monagas,n.deplara,n.laguaira,    n.estudiantesmerida,n.metropolitanos,n.hermanoscolmenarez,n.portuguesaven,n.aragua,    n.puertocabello,n.atlVenezuela,],
     2020.0: [n.laguaira,n.tachira,],
     2019.0: [n.caracas,n.estudiantesmerida,],
-    2018.0: [n.zamora,n.deplara,n.caracas,n.mineros,n.deplara,      n.estudiantesmerida,n.tachira,n.monagas,n.carabobo,n.trujillanos,   n.zulia,n.atlVenezuela,n.aragua,n.puertoCabello,],
+    2018.0: [n.zamora,n.deplara,n.caracas,n.mineros,n.deplara,      n.estudiantesmerida,n.tachira,n.monagas,n.carabobo,n.trujillanos,   n.zulia,n.atlVenezuela,n.aragua,n.puertocabello,],
     2017.0: [n.monagas,n.deplara,n.carabobo,n.tachira,n.mineros,    n.zamora,n.caracas,n.laguaira,n.estudiantesmerida,n.zulia,          n.trujillanos,n.anzoategui,n.aragua,n.portuguesaven,n.metropolitanos,     ],
     2016.0: [n.zamora,n.zulia,n.carabobo,n.tachira,n.caracas,       n.anzoategui,n.laguaira,n.deplara,n.atlVenezuela,n.mineros,         n.aragua,n.monagas,n.estudiantesmerida,n.trujillanos,],
     2015.0: [n.tachira,n.trujillanos,],

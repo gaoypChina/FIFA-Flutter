@@ -144,7 +144,7 @@ class _TableMundialState extends State<TableMundial> {
 
         Flexible(
             flex: 3,
-            child: Image.asset(FIFAImages().mundialLogo(), height: 80, width: 80)),
+            child: Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().mundial), height: 80, width: 80)),
 
         Flexible(
           flex: 7,

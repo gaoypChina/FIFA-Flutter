@@ -178,7 +178,7 @@ class _HomePageState extends State<HomePage> {
                       ),
 
                       //ESCUDO E UNIFORME
-                      loaded ? wHomeClubLogoAndKitStack(context, club) : Container(
+                      loaded ? wHomeClubLogoAndKitStack(context, club) : SizedBox(
                         height: 200+40,
                         width: 200,
                       child:  loader()),

@@ -55,7 +55,7 @@ Widget wPlayButton(BuildContext context, Club club, Adversario adversario, Seman
                             ? Image.asset(Images().getMyActualCampeonatoLogo(),height: 80,width: 80)
                             : const SizedBox(height: 80,width: 80),
 
-
+                        const SizedBox(height: 10),
                         insideButton("Simular", club, ()async{
                           await simulateFunction(adversario, My());
                           if(semana > globalUltimaSemana){
@@ -79,7 +79,7 @@ Widget wPlayButton(BuildContext context, Club club, Adversario adversario, Seman
                               Text(week.semanaCalendarStr.toString(),style: EstiloTextoBranco.negrito18),
                               adversario.clubName.isNotEmpty ? Text(adversario.clubName,style: EstiloTextoBranco.negrito14) : Container(),
                               adversario.clubName.isNotEmpty
-                                  ? week.isJogoMataMataInternacional
+                                  ? week.isJogoMataMataInternacional || week.isJogoCopa
                                   ? Text(week.semanaStr,style: EstiloTextoBranco.text14)
                                   : Text('${Translation(context).text.position}: '+adversario.posicao.toString()+'º',style: EstiloTextoBranco.text14)
                                   : Container(),
@@ -112,6 +112,7 @@ Widget wPlayButton(BuildContext context, Club club, Adversario adversario, Seman
                             },child: Images().getEscudoWidget(adversario.clubName,80,80))
                             : const SizedBox(height: 80),
 
+                        const SizedBox(height: 10),
                         insideButton("Play", club, (){
                           if(adversario.clubName.isNotEmpty){
                             navigatorReplace(context, Play(

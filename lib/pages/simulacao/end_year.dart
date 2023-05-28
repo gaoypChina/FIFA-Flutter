@@ -214,7 +214,7 @@ Widget mundial(){
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(FIFAImages().mundialLogo(),height: 35,width:35,),
+            Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().mundial),height: 35,width:35,),
             Images().getEscudoWidget(mundial.confronto.clubName1,35,35),
             const SizedBox(width: 8),
             Text(mundial.confronto.goal1.toString(),style: EstiloTextoBranco.text16),

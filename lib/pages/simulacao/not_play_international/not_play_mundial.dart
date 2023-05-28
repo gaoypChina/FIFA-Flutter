@@ -4,6 +4,7 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
+import 'package:fifa/values/league_names.dart';
 import 'package:flutter/material.dart';
 
 Widget notPlayMundial(BuildContext context){
@@ -11,7 +12,7 @@ Widget notPlayMundial(BuildContext context){
   return SingleChildScrollView(
     child: Column(
       children: [
-        Image.asset(FIFAImages().mundialLogo(),height: 50,width: 50),
+        Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().mundial),height: 50,width: 50),
         Text(Translation(context).text.finale, style: EstiloTextoBranco.negrito22),
         row(My()),
       ],

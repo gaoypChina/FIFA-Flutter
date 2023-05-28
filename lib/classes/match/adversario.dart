@@ -3,12 +3,14 @@ import 'package:fifa/classes/chaves.dart';
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/cup_classification.dart';
+import 'package:fifa/classes/match/result_dict.dart';
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/international.dart';
 import 'package:fifa/classes/international_league.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/league_names.dart';
 
 class Adversario{
@@ -26,8 +28,8 @@ class Adversario{
       getLeagueAdversario();
     }
     //ADVERSARIO COPA
-    if (weekClass.isJogoCopa) {
-      getCupAdverssario();
+    else if (weekClass.isJogoCopa) {
+      getCupAdversario();
     }
     //ADVERSARIO FASE DE GRUPOS CHAMPIONS OU LIBERTADORES
     else if (myClass.isPlayingInternational && weekClass.isJogoGruposInternacional) {
@@ -39,9 +41,21 @@ class Adversario{
     }
   }
 
-  getCupAdverssario(){
-    Map<int, dynamic> mapAllMatchsPhase = CupClassification().getCupPhaseResultsMap(getCup(myClass.getLeagueName()), semana);
+  getCupAdversario() {
 
+    Map match = CupClassification().getCupClubMatchMap(getCup(myClass.getLeagueName()), semana, myClass.clubName);
+
+    if (match.isNotEmpty) {
+      if (match[ResultDict().keyTeamName1] == myClass.clubName) {
+        clubName = match[ResultDict().keyTeamName2];
+        clubID = clubsAllNameList.indexOf(clubName);
+        visitante = false;
+      }else if (match[ResultDict().keyTeamName2] == myClass.clubName) {
+        clubName = match[ResultDict().keyTeamName1];
+        clubID = clubsAllNameList.indexOf(clubName);
+        visitante = true;
+      }
+    }
   }
 
   getLeagueAdversario(){

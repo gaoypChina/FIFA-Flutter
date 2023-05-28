@@ -203,6 +203,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
             ),
 
             peryear(),
+
           ],
         ),
     );
@@ -478,7 +479,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
         const SizedBox(height: 6),
         const Text('   ANO   EST         COPA         NAC           INT',style: EstiloTextoBranco.text16,),
         SizedBox(
-          height: 220,
+          height: 210,
           child: ListView.builder(
             padding: EdgeInsets.zero,
             shrinkWrap: true,

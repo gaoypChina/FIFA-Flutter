@@ -1215,7 +1215,7 @@ Norwich,F. Clarke,MEI MC,19,61,Scotland,/256/506/23_60.png
 Norwich,A. Kamara,ATA,18,60,England,/270/379/23_60.png
 Norwich,T. Dickson-Peters,ATA,19,58,Scotland,/253/971/23_60.png
 Norwich,J. McCracken,GOL,22,56,Scotland,/242/983/23_60.png
-Nottingham Forest,K. Navas,GOL,35,86,Costa Rica,/193/041/23_60.png
+Nottingham Forest,Keylor Navas,GOL,35,86,Costa Rica,/193/041/23_60.png
 Nottingham Forest,Danilo,VOL MC,21,80,Brazil,/273/106/23_60.png
 Nottingham Forest,Felipe,ZAG,33,79,Brazil,/207/863/23_60.png
 Nottingham Forest,Renan Lodi,LE LE ME,24,78,Brazil,/251/573/23_60.png
@@ -10381,14 +10381,14 @@ Palmeiras,Jhon Jhon,PE MEI,20,68,Brazil,wiki/missing_player.jpg
 Palmeiras,Kaiky Naves,ZAG,20,62,Brazil,wiki/128249.png
 Palmeiras,Daniel Alves,LE,21,59,Brazil,wiki/missing_player.jpg
 Palmeiras,Michel Augusto,ZAG,19,63,Brazil,wiki/117962.png
-Corinthians,Maycon Barberan,MC MD,25,78,Brazil,wiki/85483.png
-Corinthians,Roger Guedes,ATA MEI,26,80,Brazil,wiki/86483.png
+Corinthians,Maycon Barberan,MC MD,25,77,Brazil,wiki/85483.png
+Corinthians,Roger Guedes,ATA MEI,26,79,Brazil,wiki/86483.png
 Corinthians,Cassio,GOL,35,81,Brazil,wiki/18237.png
 Corinthians,Renato Augusto,MEI MC,35,80,Brazil,wiki/18281.png
-Corinthians,Fabian Balbuena,ZAG,31,79,Paraguay,wiki/62739.png
-Corinthians,Ángel Romero,ATA MEI,30,79,Paraguay,wiki/63347.png
+Corinthians,Fabian Balbuena,ZAG,31,77,Paraguay,wiki/62739.png
+Corinthians,Ángel Romero,ATA MEI,30,77,Paraguay,wiki/63347.png
 Corinthians,Bezerra Paulinho,MEI MC,34,78,Brazil,wiki/26843.png
-Corinthians,Victor Giuliano,MEI MC,32,77,Brazil,wiki/37955.png
+Corinthians,Victor Giuliano,MEI MC,32,76,Brazil,wiki/37955.png
 Corinthians,Fagner,MD LD ZAG,33,78,Brazil,wiki/18276.png
 Corinthians,Carlos Gil,ZAG,35,78,Brazil,wiki/41229.png
 Corinthians,Yuri Alberto,ATA MEI,22,78,Brazil,wiki/94668.png
@@ -10396,12 +10396,12 @@ Corinthians,Victor Cantillo,MC MD,29,77,Colombia,wiki/67189.png
 Corinthians,Junior Moraes,ATA,36,77,Ukraine,wiki/27998.png
 Corinthians,Fabio Santos,MD LE ZAG,37,77,Brazil,wiki/17676.png
 Corinthians,Du Queiroz,MC MD,23,77,Brazil,wiki/114436.png
-Corinthians,Fausto Vera,MC MD,23,77,Argentina,wiki/103745.png
-Corinthians,Vieira Luan,ATA ATA,30,76,Brazil,wiki/72230.png
+Corinthians,Fausto Vera,MC MD,23,76,Argentina,wiki/103745.png
+Corinthians,Vieira Luan,ATA ATA,30,75,Brazil,wiki/72230.png
 Corinthians,Bruno Mendez,LD,23,76,Uruguay,wiki/94940.png
-Corinthians,Rafael Ramos,MD LD ZAG,28,75,Portugal,wiki/74840.png
+Corinthians,Rafael Ramos,MD LD ZAG,28,74,Portugal,wiki/74840.png
 Corinthians,Gustavo Mosquito,PE ATA,25,75,Brazil,wiki/105103.png
-Corinthians,Ferreira Adson,PE MEI,22,75,Brazil,wiki/114244.png
+Corinthians,Ferreira Adson,PE MEI,22,74,Brazil,wiki/114244.png
 Corinthians,Joao Caetano,LE,23,74,Brazil,wiki/104287.png
 Corinthians,Medeiros Roni,MC MD,23,74,Brazil,wiki/105101.png
 Corinthians,Matheus Bidu,MD LE ZAG,23,72,Brazil,wiki/112545.png
@@ -10652,14 +10652,14 @@ Fluminense,Vieira Marcelo,MD LE ZAG,34,80,Brazil,wiki/13726.png
 Fluminense,German Cano,ATA,35,83,Argentina,wiki/32359.png
 Fluminense,Claudio Guga,MD LD ZAG,24,78,Brazil,wiki/98159.png
 Fluminense,Franca Keno,PE ATA,33,78,Brazil,wiki/7823.png
-Fluminense,Andre Trindade,MD MC ZAG,21,77,Brazil,wiki/105080.png
+Fluminense,Andre Trindade,MD MC ZAG,21,79,Brazil,wiki/105080.png
 Fluminense,Messias Manoel,ZAG,33,77,Brazil,wiki/41232.png
 Fluminense,Paulo Henrique Ganso,MEI MC,33,79,Brazil,wiki/33533.png
 Fluminense,Jhon Arias,MEI,25,79,Colombia,wiki/89088.png
-Fluminense,Deivson Fabio,GOL,42,77,Brazil,wiki/3690.png
+Fluminense,Deivson Fabio,GOL,42,78,Brazil,wiki/3690.png
 Fluminense,Jorge Moraes,LE,27,77,Brazil,wiki/81736.png
 Fluminense,Matheus Martinelli,MC MD,21,76,Brazil,wiki/108643.png
-Fluminense,Samuel Xavier,LD ZAG,32,76,Brazil,wiki/64841.png
+Fluminense,Samuel Xavier,LD ZAG,32,78,Brazil,wiki/64841.png
 Fluminense,Michel Araujo,ATA ATA,26,76,Uruguay,wiki/89558.png
 Fluminense,David Braz,ZAG,35,75,Brazil,wiki/27889.png
 Fluminense,Alan Carvalho,ATA,33,76,China,wiki/33328.png
@@ -10753,16 +10753,16 @@ Coritiba,Sidnei Fernandes,GOL,20,57,Brazil,wiki/missing_player.jpg
 Coritiba,Kaio Cesar,MEI,19,52,Brazil,wiki/131194.png
 Fortaleza,Silvio Romero,ATA,34,77,Argentina,wiki/45770.png
 Fortaleza,Thiago Galhardo,ATA ATA,33,77,Brazil,wiki/51216.png
-Fortaleza,Yago Pikachu,MD MC PD ZAG,30,77,Brazil,wiki/64058.png
+Fortaleza,Yago Pikachu,MD MC PD,30,78,Brazil,wiki/64058.png
 Fortaleza,Juan Martin Lucero,ATA ATA,31,76,Argentina,wiki/69825.png
 Fortaleza,Bruno Pacheco,MD LE ZAG,31,75,Brazil,wiki/90505.png
 Fortaleza,Guilherme Tinga,MD LD LD,29,75,Brazil,wiki/73911.png
-Fortaleza,Fernando Miguel,GOL,38,75,Brazil,wiki/59230.png
+Fortaleza,Fernando Miguel,GOL,38,76,Brazil,wiki/59230.png
 Fortaleza,Lucas Crispim,LE MC MEI ZAG,28,75,Brazil,wiki/73535.png
 Fortaleza,Marcelo Benevenuto,ZAG,27,75,Brazil,wiki/87022.png
 Fortaleza,Tarouco Titi,ZAG,35,75,Brazil,wiki/27979.png
-Fortaleza,Pedro Rocha,ATA MEI,28,75,Brazil,wiki/81743.png
-Fortaleza,Renato Kayzer,ATA MEI,27,75,Brazil,wiki/102134.png
+Fortaleza,Pedro Rocha,ATA MEI,28,76,Brazil,wiki/81743.png
+Fortaleza,Renato Kayzer,ATA MEI,27,76,Brazil,wiki/102134.png
 Fortaleza,Emanuel Britez,ZAG,31,75,Argentina,wiki/69973.png
 Fortaleza,Luis Dudu,MD LD ZAG,25,74,Brazil,wiki/94807.png
 Fortaleza,Junior Santos,ATA,28,74,Brazil,wiki/101000.png
@@ -10817,21 +10817,21 @@ Ceará,David Loiola,ZAG,20,62,Brazil,wiki/missing_player.jpg
 Ceará,Vieira Álvaro,ATA,25,60,Brazil,wiki/missing_player.jpg
 Ceará,Ferreira Pedrinho,MEI,21,59,Brazil,wiki/missing_player.jpg
 Ceará,Andre Luiz,GOL,23,57,Brazil,wiki/missing_player.jpg
-Bragantino,Leo Ortiz,ZAG,27,79,Brazil,wiki/90698.png
-Bragantino,Schwengber Cleiton,GOL,25,78,Brazil,wiki/90604.png
-Bragantino,Eduardo Sasha,ATA MEI,31,78,Brazil,wiki/47327.png
+Bragantino,Leo Ortiz,ZAG,27,78,Brazil,wiki/90698.png
+Bragantino,Schwengber Cleiton,GOL,25,77,Brazil,wiki/90604.png
+Bragantino,Eduardo Sasha,ATA MEI,31,77,Brazil,wiki/47327.png
 Bragantino,Luan Cândido,MD LE ZAG,22,77,Brazil,wiki/99258.png
-Bragantino,Lucas Evangelista,MC MEI MD,27,77,Brazil,wiki/67783.png
-Bragantino,Bernardo Natan,ZAG,22,77,Brazil,wiki/106523.png
+Bragantino,Lucas Evangelista,MC MEI MD,27,76,Brazil,wiki/67783.png
+Bragantino,Bernardo Natan,ZAG,22,75,Brazil,wiki/106523.png
 Bragantino,Raul Goncalves,MC MD,26,76,Brazil,wiki/94129.png
 Bragantino,Eric Ramires,MC MEI MD,22,76,Brazil,wiki/99191.png
-Bragantino,Junio Helinho,PE MEI,22,76,Brazil,wiki/99242.png
+Bragantino,Junio Helinho,PE MEI,22,75,Brazil,wiki/99242.png
 Bragantino,Matheus Fernandes,MC MD,24,76,Brazil,wiki/90591.png
 Bragantino,Juninho Capixaba,MD LE ZAG,25,75,Brazil,wiki/90477.png
 Bragantino,Lima Aderlan,MD LD ZAG,32,75,Brazil,wiki/76721.png
 Bragantino,Souza Alerrandro,ATA,23,75,Brazil,wiki/99227.png
 Bragantino,Meemyas Jadsom,MD MC LD,21,75,Brazil,wiki/104201.png
-Bragantino,Santos Vitinho,PE MEI,24,75,Brazil,wiki/102176.png
+Bragantino,Santos Vitinho,PE MEI,24,74,Brazil,wiki/102176.png
 Bragantino,Bruno Praxedes,MEI MC,21,75,Brazil,wiki/104090.png
 Bragantino,Thiago Borbas,ATA,20,74,Uruguay,wiki/107648.png
 Bragantino,Marcos Sorriso,PE ATA,22,74,Brazil,wiki/114570.png
@@ -12120,7 +12120,7 @@ River Plate,M. Suárez,ATA PE,34,76,Argentina,/188/042/23_60.png
 River Plate,E. Mammana,ZAG LD,26,75,Argentina,/221/551/23_60.png
 River Plate,R. Rojas,LD ZAG,26,75,Paraguay,/246/914/23_60.png
 River Plate,R. Aliendro,MC VOL,31,75,Argentina,/233/029/23_60.png
-River Plate,A. Palavecino,MC MEI,25,75,Argentina,/247/450/23_60.png
+River Plate,A. Palavecino,MC MEI,25,76,Argentina,/247/450/23_60.png
 River Plate,E. Díaz,LE ZAG,26,74,Argentina,/246/870/23_60.png
 River Plate,D. Martínez,ZAG LE,24,74,Paraguay,/241/569/23_60.png
 River Plate,P. Solari,MD ATA ME,21,74,Argentina,/256/509/23_60.png
@@ -12129,12 +12129,12 @@ River Plate,B. Zuculini,VOL MC,29,74,Argentina,/203/864/23_60.png
 River Plate,L. González Pirez,ZAG,30,73,Argentina,/199/669/23_60.png
 River Plate,S. Rondón,ATA,32,73,Venezuela,/189/250/23_60.png
 River Plate,E. Gómez,LE LE,28,73,Argentina,/221/053/23_60.png
-River Plate,L. Beltrán,ATA,21,73,Argentina,/246/258/23_60.png
+River Plate,L. Beltrán,ATA,21,74,Argentina,/246/258/23_60.png
 River Plate,J. Paradela,ME MC MD,23,72,Argentina,/245/354/23_60.png
 River Plate,A. Herrera,LD LD,23,72,Argentina,/246/106/23_60.png
-River Plate,J. Maidana,ZAG,36,72,Argentina,/172/018/23_60.png
+River Plate,J. Maidana,ZAG,36,73,Argentina,/172/018/23_60.png
 River Plate,E. Centurión,GOL,25,70,Argentina,/246/236/23_60.png
-River Plate,M. Kranevitter,VOL MC,29,70,Argentina,/214/977/23_60.png
+River Plate,M. Kranevitter,VOL MC,29,72,Argentina,/214/977/23_60.png
 River Plate,A. Batalla,GOL,26,70,Argentina,/227/186/23_60.png
 River Plate,C. Ferreira,MC MEI,22,69,Argentina,/241/568/23_60.png
 River Plate,F. Peña,ZAG VOL,21,66,Argentina,/264/323/23_60.png
@@ -15792,7 +15792,7 @@ Olimpia-HON,Jose Garcia,ZAG,24,65,Honduras,wiki/missing_player.jpg
 Olimpia-HON,Edrick Menjivar,GOL,30,65,Honduras,wiki/missing_player.jpg
 Olimpia-HON,Carlos Pineda,MC MD,25,65,Honduras,wiki/missing_player.jpg
 Olimpia-HON,Alex Guity,GOL,25,59,Honduras,wiki/missing_player.jpg
-Shanghai Port,Oscar,MEI MC PE,30,79,Brazil,/188/152/23_60.png
+Shanghai Port,Oscar,MEI MC PE,30,81,Brazil,/188/152/23_60.png
 Shanghai Port,M. Vargas,ME MD ATA,25,76,Argentina,/228/819/23_60.png
 Shanghai Port,Yan Junling,GOL,31,73,China,/224/599/23_60.png
 Shanghai Port,Wu Lei,ATA ME MD,30,73,China,/221/445/23_60.png
@@ -16830,7 +16830,7 @@ Al Nassr,D. Ospina,GOL,33,80,Colombia,/176/550/23_60.png
 Al Nassr,G. Konan,LE LE,26,77,Ivory Coast,/235/634/23_60.png
 Al Nassr,Luiz Gustavo,VOL MC,34,76,Brazil,/185/221/23_60.png
 Al Nassr,Álvaro,ZAG,32,75,Spain,/202/935/23_60.png
-Al Nassr,G. Martínez,MD MEI ME,29,74,Argentina,/226/377/23_60.png
+Al Nassr,G. Martínez,MD MEI ME,29,78,Argentina,/226/377/23_60.png
 Al Nassr,S. Al Ghannam,LD,28,71,South Arabia,/232/477/23_60.png
 Al Nassr,A. Al Amri,ZAG LD,25,70,South Arabia,/241/197/23_60.png
 Al Nassr,J. Masharipov,ME,28,70,Uzbekistan,/262/595/23_60.png
