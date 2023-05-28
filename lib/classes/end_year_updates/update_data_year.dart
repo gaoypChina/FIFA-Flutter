@@ -17,6 +17,7 @@ import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/functions/international_league_manipulation.dart';
+import 'package:fifa/classes/player_stats_keys.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/coach/controller/coach_ranking_controller.dart';
 import 'package:fifa/theme/custom_toast.dart';
@@ -147,11 +148,15 @@ resetData(){
   globalJogadoresLeagueAssists = List.filled(globalMaxPlayersPermitted, 0);
   globalJogadoresLeagueCleanSheets = List.filled(globalMaxPlayersPermitted, 0);
   globalJogadoresLeagueGolsSofridos = List.filled(globalMaxPlayersPermitted, 0);
-  globalJogadoresInternationalMatchs = List.filled(globalMaxPlayersPermitted, 0);
-  globalJogadoresInternationalGoals = List.filled(globalMaxPlayersPermitted, 0);
-  globalJogadoresInternationalAssists = List.filled(globalMaxPlayersPermitted, 0);
-  globalJogadoresInternationalCleanSheets = List.filled(globalMaxPlayersPermitted, 0);
-  globalJogadoresInternationalGolsSofridos = List.filled(globalMaxPlayersPermitted, 0);
+
+  globalInternationalPlayers = {
+    PlayerStatsKeys().keyPlayerMatchs: List.filled(globalMaxPlayersPermitted, 0),
+    PlayerStatsKeys().keyPlayerGoals: List.filled(globalMaxPlayersPermitted, 0),
+    PlayerStatsKeys().keyPlayerAssists: List.filled(globalMaxPlayersPermitted, 0),
+    PlayerStatsKeys().keyPlayerCleanSheets: List.filled(globalMaxPlayersPermitted, 0),
+    PlayerStatsKeys().keyPlayerGolsSofridos: List.filled(globalMaxPlayersPermitted, 0),
+  };
+
   globalJogadoresRedCard = List.filled(globalMaxPlayersPermitted, 0);
   globalJogadoresGrades = List.filled(globalMaxPlayersPermitted, 6.0);
   globalJogadoresYellowCard = List.filled(globalMaxPlayersPermitted, 0);

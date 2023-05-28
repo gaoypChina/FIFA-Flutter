@@ -3,10 +3,13 @@ import 'dart:math';
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/match/result_dict.dart';
+import 'package:fifa/classes/player_stats_keys.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/league_divisions.dart';
 import 'package:fifa/values/league_names.dart';
+
+
 
 class CupClassification{
 
@@ -22,12 +25,6 @@ class CupClassification{
   String key32round = "Fase 32";
   String key64round = "Fase 64";
   String key128round = "Fase 128";
-
-  String keyPlayerMatchs = "Player Matchs Played";
-  String keyPlayerGoals = "Player Goals";
-  String keyPlayerAssists = "Player Assists";
-  String keyPlayerCleanSheets = "Player Clean Sheets";
-  String keyPlayerGolsSofridos = "Player Gols Sofridos";
 
 
   List<String> listPhases(){
@@ -143,11 +140,11 @@ class CupClassification{
     },
     };
     globalCupPlayers = {
-      keyPlayerMatchs: List.filled(globalMaxPlayersPermitted, 0),
-      keyPlayerGoals: List.filled(globalMaxPlayersPermitted, 0),
-      keyPlayerAssists: List.filled(globalMaxPlayersPermitted, 0),
-      keyPlayerCleanSheets: List.filled(globalMaxPlayersPermitted, 0),
-      keyPlayerGolsSofridos: List.filled(globalMaxPlayersPermitted, 0),
+      PlayerStatsKeys().keyPlayerMatchs: List.filled(globalMaxPlayersPermitted, 0),
+      PlayerStatsKeys().keyPlayerGoals: List.filled(globalMaxPlayersPermitted, 0),
+      PlayerStatsKeys().keyPlayerAssists: List.filled(globalMaxPlayersPermitted, 0),
+      PlayerStatsKeys().keyPlayerCleanSheets: List.filled(globalMaxPlayersPermitted, 0),
+      PlayerStatsKeys().keyPlayerGolsSofridos: List.filled(globalMaxPlayersPermitted, 0),
     };
     return mapa;
   }

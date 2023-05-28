@@ -1,4 +1,4 @@
-import 'package:fifa/classes/cup_classification.dart';
+import 'package:fifa/classes/player_stats_keys.dart';
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/global_variables.dart';
 
@@ -21,7 +21,7 @@ class UpdatePlayerVariableMatch{
   updatePlayerMatchCup(Club clubClass){
     List titularPlayers = setMatchPlus1(clubClass);
     for (int playerID in titularPlayers){
-      globalCupPlayers[CupClassification().keyPlayerMatchs]![playerID]++;
+      globalCupPlayers[PlayerStatsKeys().keyPlayerMatchs]![playerID]++;
       globalJogadoresCarrerMatchs[playerID]++;
     }
   }
@@ -36,7 +36,7 @@ class UpdatePlayerVariableMatch{
   updatePlayerMatchInternational(Club clubClass){
     List titularPlayers = setMatchPlus1(clubClass);
     for (int playerID in titularPlayers){
-      globalJogadoresInternationalMatchs[playerID]++;
+      globalInternationalPlayers[PlayerStatsKeys().keyPlayerMatchs]![playerID]++;
       globalJogadoresCarrerMatchs[playerID]++;
     }
   }

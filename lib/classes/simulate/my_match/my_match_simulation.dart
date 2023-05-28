@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/player_stats_keys.dart';
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/historic/total_victories.dart';
 import 'package:fifa/classes/jogador.dart';
@@ -95,7 +96,7 @@ class MyMatchSimulation{
     if(Semana(semana).isJogoCampeonatoNacional){
       globalJogadoresLeagueGoals[jogadorID]++;
     }else if(Semana(semana).isJogoCampeonatoInternacional){
-      globalJogadoresInternationalGoals[jogadorID]++;
+      globalInternationalPlayers[PlayerStatsKeys().keyPlayerGoals]![jogadorID]++;
     }
     globalJogadoresMatchGoals[jogadorID]++;
     globalJogadoresCarrerGoals[jogadorID]++;
@@ -115,7 +116,7 @@ class MyMatchSimulation{
       if(Semana(semana).isJogoCampeonatoNacional){
         globalJogadoresLeagueAssists[jogadorID]++;
       }else if(Semana(semana).isJogoCampeonatoInternacional){
-        globalJogadoresInternationalAssists[jogadorID]++;
+        globalInternationalPlayers[PlayerStatsKeys().keyPlayerAssists]![jogadorID]++;
       }
       globalJogadoresMatchAssists[jogadorID]++;
       globalJogadoresCarrerAssists[jogadorID]++;

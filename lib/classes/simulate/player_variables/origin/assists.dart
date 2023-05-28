@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:fifa/classes/cup_classification.dart';
+import 'package:fifa/classes/player_stats_keys.dart';
 
 import '../../../../classes/club.dart';
 import '../../../../global_variables.dart';
@@ -30,13 +30,13 @@ class Assists{
   }
   saveAssistsInternational(int jogadorID){
     if(jogadorID>=0) {
-      globalJogadoresInternationalAssists[jogadorID]++;
+      globalInternationalPlayers[PlayerStatsKeys().keyPlayerAssists]![jogadorID]++;
       globalJogadoresCarrerAssists[jogadorID]++;
     }
   }
   saveAssistsCup(int jogadorID){
     if(jogadorID>=0) {
-      globalCupPlayers[CupClassification().keyPlayerAssists]![jogadorID]++;
+      globalCupPlayers[PlayerStatsKeys().keyPlayerAssists]![jogadorID]++;
       globalJogadoresCarrerGoals[jogadorID]++;
     }
   }

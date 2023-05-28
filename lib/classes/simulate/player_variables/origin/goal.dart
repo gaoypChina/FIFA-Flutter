@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/cup_classification.dart';
+import 'package:fifa/classes/player_stats_keys.dart';
 import 'package:fifa/global_variables.dart';
 
 class Goal{
@@ -30,12 +30,12 @@ class Goal{
   }
 
   saveGoalsInternational(int jogadorID){
-    globalJogadoresInternationalGoals[jogadorID]++;
+    globalInternationalPlayers[PlayerStatsKeys().keyPlayerGoals]![jogadorID]++;
     globalJogadoresCarrerGoals[jogadorID]++;
   }
 
   saveGoalsCup(int jogadorID){
-    globalCupPlayers[CupClassification().keyPlayerGoals]![jogadorID]++;
+    globalCupPlayers[PlayerStatsKeys().keyPlayerGoals]![jogadorID]++;
     globalJogadoresCarrerGoals[jogadorID]++;
   }
 

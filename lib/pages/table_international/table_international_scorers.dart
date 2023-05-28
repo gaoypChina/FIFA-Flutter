@@ -1,16 +1,14 @@
-import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/functions/size.dart';
-import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/classes/international.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/functions/order_list.dart';
+import 'package:fifa/classes/player_stats_keys.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
-import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/background_image/backimage_international_league.dart';
+import 'package:fifa/widgets/row_player_stats.dart';
 import 'package:flutter/material.dart';
-
-import '../../classes/my.dart';
 
 class TableInternationalScorers extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
@@ -22,8 +20,7 @@ class TableInternationalScorers extends StatefulWidget {
 
 class _TableInternationalScorersState extends State<TableInternationalScorers> {
 
-  List types = ["Artilheiros", "Assistências", "Best Player"];
-  String typeSelected = "Artilheiros";
+  String typeSelected = FilterPlayersTitle().artilheiros;
   String leagueInternational = '';
   int rodadaShow = semanasGruposInternacionais.contains(semana)
       ? semanasGruposInternacionais.indexOf(semana)+1
@@ -42,6 +39,7 @@ class _TableInternationalScorersState extends State<TableInternationalScorers> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
+
     leagueInternational = widget.leagueInternational;
 
     return Scaffold(
@@ -63,14 +61,9 @@ class _TableInternationalScorersState extends State<TableInternationalScorers> {
                         width: Sized(context).width*0.92,
                         child: Column(
                           children: [
-                            Row(
-                              children: [
-                                Container(width:260,alignment:Alignment.center,
-                                    child: Text(typeSelected,style: EstiloTextoBranco.text16)),
-                                Text('${Translation(context).text.playedP}   ${Translation(context).text.goalsG}    ${Translation(context).text.assistsA}',style: EstiloTextoBranco.text16),
 
-                              ],
-                            ),
+                            Text(typeSelected,style: EstiloTextoBranco.negrito18),
+
                             Expanded(
                                 child: SingleChildScrollView(
                                     child: tableWidget()
@@ -94,11 +87,14 @@ class _TableInternationalScorersState extends State<TableInternationalScorers> {
     return Container(
       height: 30,
       margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 4),
-      child: Row(
-        children: [
-          for (String type in types)
-            buttonSelection(type)
-        ],
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            for (String type in FilterPlayersTitle().getList())
+              buttonSelection(type)
+          ],
+        ),
       ),
     );
   }
@@ -122,54 +118,89 @@ class _TableInternationalScorersState extends State<TableInternationalScorers> {
       ),
     );
   }
+  String playerStats(String title, Jogador player){
+    String value = "";
+    if(title == FilterPlayersTitle().bestPlayer){ value =  player.gradeInt.toStringAsFixed(1);}
+    if(title == FilterPlayersTitle().artilheiros){ value =  player.goalsInternational.toString();}
+    if(title == FilterPlayersTitle().assists){ value =  player.assistsInternational.toString();}
+    if(title == FilterPlayersTitle().cleanSheets){ value =  player.cleanSheetsInternational.toString();}
+    return value;
+  }
+
   Widget tableWidget() {
-    listOfTopScorers();
+    List listPlayers = filterPlayers(typeSelected);
+
     return Column(
       children: [
-        for(int i=0;i<topScorersID.length;i++)
-          scorerRowWidget(i)
+        for(int i=0; i < 100 && i < listPlayers.length; i++)
+          rowPlayer(context, Jogador(index: listPlayers[i]), i+1, playerStats(typeSelected, Jogador(index: listPlayers[i]))),
       ],
     );
   }
-  Widget scorerRowWidget(int i) {
-    int playerID = topScorersID[i];
-    Jogador player = Jogador(index: playerID);
-    return Row(
-      children: [
-          i+1<10
-              ? Text('  ${(i+1).toString()}- ',style: EstiloTextoBranco.text16)
-              : Text('${(i+1).toString()}- ',style: EstiloTextoBranco.text16),
-        Images().getEscudoWidget(player.clubName,25,25),
-          const SizedBox(width: 6),
-          Container(
-              width:200,
-              color: player.clubID == My().clubID ? Colors.teal : Colors.transparent,
-              child: Text(player.name,style: EstiloTextoBranco.text16)),
-          SizedBox(width:20,child: Text(player.matchsInternational.toString(),style: EstiloTextoBranco.text16)),
-          const SizedBox(width: 6),
-          SizedBox(width:20,child: Text(player.goalsInternational.toString(),style: EstiloTextoBranco.text16)),
-          const SizedBox(width: 6),
-          SizedBox(width:20,child: Text(player.assistsInternational.toString(),style: EstiloTextoBranco.text16)),
-      ],
-    );
-  }
+
+
 ////////////////////////////////////////////////////////////////////////////
 //                               FUNCTIONS                                //
 ////////////////////////////////////////////////////////////////////////////
-  listOfTopScorers(){
-    topScorersID = [];
-    List<int> topScorersGoals = [];
-    for(int index=0; index<globalJogadoresIndex.length; index++){
-      if (globalJogadoresInternationalGoals[index]>0) {
-        int clubID = Jogador(index: index).clubID;
-        if(Club(index: clubID).internationalLeagueName == leagueInternational){
-          topScorersID.add(index);
-          topScorersGoals.add(globalJogadoresInternationalGoals[index]);
+  // listOfTopScorers(){
+  //   topScorersID = [];
+  //   List<int> topScorersGoals = [];
+  //   for(int index=0; index<globalJogadoresIndex.length; index++){
+  //     if (globalJogadoresInternationalGoals[index]>0) {
+  //       int clubID = Jogador(index: index).clubID;
+  //       if(Club(index: clubID).internationalLeagueName == leagueInternational){
+  //         topScorersID.add(index);
+//         topScorersGoals.add(globalJogadoresInternationalGoals[index]);
+//       }
+//     }
+  //   }
+    //ARTILHEIROS/lista EM ORDEM
+//   topScorersID = Order().listDecrescente(listA: topScorersGoals, listB: topScorersID, length: topScorersID.length)[1];
+  //  }
+
+  List filterPlayers(String title){
+    String categoryKey = "";
+    if(title == FilterPlayersTitle().artilheiros){
+      categoryKey = PlayerStatsKeys().keyPlayerGoals;
+    }else if(title == FilterPlayersTitle().assists){
+      categoryKey = PlayerStatsKeys().keyPlayerAssists;
+    }else if(title == FilterPlayersTitle().cleanSheets){
+      categoryKey = PlayerStatsKeys().keyPlayerCleanSheets;
+    }else{
+      categoryKey = title;
+    }
+
+    List allClubsPlayingID = International(widget.leagueInternational).clubIDs;
+
+    List copyVariableList = [];
+    List players = [];
+
+    for(int index=0; index < globalJogadoresName.length; index++){
+      int clubID = globalJogadoresClubIndex[index];
+      if(allClubsPlayingID.contains(clubID)) {
+        if(title == FilterPlayersTitle().bestPlayer){
+          double points = (globalInternationalPlayers[PlayerStatsKeys().keyPlayerGoals]![index]*2
+              + globalInternationalPlayers[PlayerStatsKeys().keyPlayerAssists]![index]
+              + globalInternationalPlayers[PlayerStatsKeys().keyPlayerCleanSheets]![index]*1.5
+          ).toDouble();
+          points = points / (globalInternationalPlayers[PlayerStatsKeys().keyPlayerMatchs]![index]+1);
+          copyVariableList.add(points);
+          players.add(index);
+        }else if(title == FilterPlayersTitle().cleanSheets){
+          if(globalJogadoresPosition[index] == "GOL"){
+            copyVariableList.add(globalInternationalPlayers[categoryKey]![index]);
+            players.add(index);
+          }
+        }else{
+          copyVariableList.add(globalInternationalPlayers[categoryKey]![index]);
+          players.add(index);
         }
       }
     }
-    //ARTILHEIROS/lista EM ORDEM
-    topScorersID = Order().listDecrescente(listA: topScorersGoals, listB: topScorersID, length: topScorersID.length)[1];
+
+    //lista EM ORDEM
+    players = Order().listDecrescente(listA: copyVariableList, listB: players, length: players.length)[1];
+    return players;
   }
 
 }

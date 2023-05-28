@@ -1,5 +1,5 @@
-import 'package:fifa/classes/cup_classification.dart';
 import 'package:fifa/classes/functions/esquemas_taticos.dart';
+import 'package:fifa/classes/player_stats_keys.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 
@@ -37,6 +37,7 @@ class Jogador{
   late int assistsInternational;
   late int cleanSheetsInternational;
   late int golsSofridosInternational;
+  late double gradeInt;
 
   late int matchsCup;
   late int goalsCup;
@@ -78,19 +79,29 @@ class Jogador{
     redCard = globalJogadoresRedCard[index] ?? 0;
     yellowCard = globalJogadoresYellowCard[index] ?? 0;
     injury = globalJogadoresInjury[index] ?? 0;
-    matchsInternational = globalJogadoresInternationalMatchs[index];
-    goalsInternational = globalJogadoresInternationalGoals[index];
-    assistsInternational = globalJogadoresInternationalAssists[index];
-    cleanSheetsInternational = globalJogadoresInternationalCleanSheets[index];
-    golsSofridosInternational = globalJogadoresInternationalGolsSofridos[index];
+    try{
+      matchsInternational = globalInternationalPlayers[PlayerStatsKeys().keyPlayerMatchs]![index];
+      goalsInternational = globalInternationalPlayers[PlayerStatsKeys().keyPlayerGoals]![index];
+      assistsInternational = globalInternationalPlayers[PlayerStatsKeys().keyPlayerAssists]![index];
+      cleanSheetsInternational = globalInternationalPlayers[PlayerStatsKeys().keyPlayerCleanSheets]![index];
+      golsSofridosInternational = globalInternationalPlayers[PlayerStatsKeys().keyPlayerGolsSofridos]![index];
+      gradeInt = (goalsInternational*2+assistsInternational+cleanSheetsInternational*1.5)/(matchsInternational+1);
+    }catch(e){
+      matchsInternational = 0;
+      goalsInternational = 0;
+      assistsInternational = 0;
+      cleanSheetsInternational = 0;
+      golsSofridosInternational = 0;
+      gradeInt = 0.0;
+    }
     //copa
     try{
-      matchsCup = globalCupPlayers[CupClassification().keyPlayerMatchs]![index];
-      goalsCup = globalCupPlayers[CupClassification().keyPlayerGoals]![index];
-      assistsCup = globalCupPlayers[CupClassification().keyPlayerAssists]![index];
-      cleanSheetsCup = globalCupPlayers[CupClassification().keyPlayerCleanSheets]![index];
-      golsSofridosCup = globalCupPlayers[CupClassification().keyPlayerGolsSofridos]![index];
-      gradeCup = (goalsCup*3+assistsCup)/(matchsCup+1);
+      matchsCup = globalCupPlayers[PlayerStatsKeys().keyPlayerMatchs]![index];
+      goalsCup = globalCupPlayers[PlayerStatsKeys().keyPlayerGoals]![index];
+      assistsCup = globalCupPlayers[PlayerStatsKeys().keyPlayerAssists]![index];
+      cleanSheetsCup = globalCupPlayers[PlayerStatsKeys().keyPlayerCleanSheets]![index];
+      golsSofridosCup = globalCupPlayers[PlayerStatsKeys().keyPlayerGolsSofridos]![index];
+      gradeCup = (goalsCup*2+assistsCup+cleanSheetsCup*1.5)/(matchsCup+1);
     }catch(e){
       matchsCup = 0;
       goalsCup = 0;

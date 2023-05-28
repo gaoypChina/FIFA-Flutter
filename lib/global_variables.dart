@@ -140,11 +140,6 @@ List globalJogadoresLeagueGoals = [];
 List globalJogadoresLeagueAssists = [];
 List globalJogadoresLeagueCleanSheets = [];
 List globalJogadoresLeagueGolsSofridos = [];
-List globalJogadoresInternationalMatchs = [];
-List globalJogadoresInternationalGoals = [];
-List globalJogadoresInternationalAssists = [];
-List globalJogadoresInternationalCleanSheets = [];
-List globalJogadoresInternationalGolsSofridos = [];
 List globalJogadoresYellowCard = [];
 List globalJogadoresRedCard = [];
 List globalJogadoresGrades = [];
@@ -176,6 +171,10 @@ Map globalInternationalMataMataGoals = {};
 Map globalInternational = {};
 
 ///////////////////////////
+//INTERNACIONAL - NOVO FORMATO
+Map<String, List<int>> globalNationalPlayers = {}; //NÃO CRIADO AINDA TODO
+Map<String, List<int>> globalInternationalPlayers = {};
+
 //COPA
 Map<String, Map<String, dynamic>> globalCup = {};
 Map<String, List<int>> globalCupPlayers = {};

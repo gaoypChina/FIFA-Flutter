@@ -82,6 +82,10 @@ class MatchSimulation{
   }
 
   matchSimulationAfter(Club clubClass1,Club clubClass2){
+    //SAVE GOALS TAKEN OR CLEAN SHEETS
+    UpdatePlayerVariable().setGoalkeeperStats(clubClass1, variableGol2);
+    UpdatePlayerVariable().setGoalkeeperStats(clubClass2, variableGol1);
+
     //+1 Match
     UpdatePlayerVariableMatch().update(clubClass1);
     UpdatePlayerVariableMatch().update(clubClass2);
@@ -107,40 +111,51 @@ class MatchSimulation{
 
   List result(double ovr1, double ovr2){
 
-    int gol = Random().nextInt(100);
-    late int probVit,probEmp;
-    if(ovr1 > ovr2+10){probVit = 90;probEmp = 95;}
-    else if(ovr1 > ovr2+7){probVit = 75;probEmp = 95;}
-    else if(ovr1 > ovr2+5){probVit = 65;probEmp = 90;}
-    else if(ovr1 > ovr2+4){probVit = 60;probEmp = 85;}
-    else if(ovr1 > ovr2+3){probVit = 55;probEmp = 80;}
-    else if(ovr1 > ovr2+2){probVit = 50;probEmp = 75;}
-    else if(ovr1 > ovr2+1){probVit = 40;probEmp = 70;}
-    else if(ovr1 > ovr2)  {probVit = 33;probEmp = 66;}
-    else if(ovr1 > ovr2-1){probVit = 30;probEmp = 60;}
-    else if(ovr1 > ovr2-2){probVit = 25;probEmp = 50;}
-    else if(ovr1 > ovr2-3){probVit = 20;probEmp = 45;}
-    else if(ovr1 > ovr2-4){probVit = 15;probEmp = 35;}
-    else if(ovr1 > ovr2-5){probVit = 10;probEmp = 35;}
-    else if(ovr1 > ovr2-7){probVit = 5;probEmp = 25;}
-    else if(ovr1 <= ovr2-7){probVit = 5;probEmp = 10;}
+    // Média de Gols por jogo
+    late double probGol1, probGol2;
+    if(ovr1 > ovr2+10){probGol1 = 3.5;probGol2 = 1.8;}
+    else if(ovr1 > ovr2+7){probGol1 = 3.3;probGol2 = 2.0;}
+    else if(ovr1 > ovr2+5){probGol1 = 3.2;probGol2 = 2.15;}
+    else if(ovr1 > ovr2+4){probGol1 = 3.1;probGol2 = 2.3;}
+    else if(ovr1 > ovr2+3){probGol1 = 3.0;probGol2 = 2.4;}
+    else if(ovr1 > ovr2+2){probGol1 = 2.9;probGol2 = 2.5;}
+    else if(ovr1 > ovr2+1){probGol1 = 2.8;probGol2 = 2.6;}
 
-    late int golTime1;
-    late int golTime2;
+    else if(ovr1 > ovr2)  {probGol1 = 2.7;probGol2 = 2.7;}
+
+    else if(ovr1 > ovr2-1){probGol1 = 2.6;probGol2 = 2.8;}
+    else if(ovr1 > ovr2-2){probGol1 = 2.5;probGol2 = 2.9;}
+    else if(ovr1 > ovr2-3){probGol1 = 2.4;probGol2 = 3.0;}
+    else if(ovr1 > ovr2-4){probGol1 = 2.3;probGol2 = 3.1;}
+    else if(ovr1 > ovr2-5){probGol1 = 2.15;probGol2 = 3.2;}
+    else if(ovr1 > ovr2-7){probGol1 = 2.0;probGol2 = 3.3;}
+    else if(ovr1 <= ovr2-7){probGol1 = 1.8;probGol2 = 3.5;}
+    //FATOR CASA
+    if(ovr1 > ovr2){
+      probGol1 *= 1.2;
+      probGol2 *= 0.9;
+    }
+
+    int golTime1 = 0;
+    int golTime2 = 0;
     //Vitória time 1
-    if(gol<probVit){
-      golTime1 = Random().nextInt(5)+1;
-      golTime2 = golTime1>1 ? Random().nextInt(golTime1) : 0;
+    //Chance de gol a cada 10 min
+    for(int i=0; i<10; i++){
+
+      probGol1 = (probGol1/9) * 12;
+      probGol2 = (probGol2/9) * 12;
+
+
+      int value1 = Random().nextInt(100);
+      if(value1 < probGol1){
+        golTime1 += 1;
+      }
+      int value2 = Random().nextInt(100);
+      if(value2 < probGol2){
+        golTime2 += 1;
+      }
     }
-    //EMPATE
-    else if(gol<probEmp){
-      golTime1 = Random().nextInt(4);
-      golTime2 = golTime1;
-      //Vitória time 2
-    }else{
-      golTime2 = Random().nextInt(5)+1;
-      golTime1 = golTime2>1 ? Random().nextInt(golTime2) : 0;
-    }
+
     return [golTime1, golTime2];
   }
 
