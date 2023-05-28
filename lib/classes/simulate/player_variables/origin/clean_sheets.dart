@@ -4,33 +4,33 @@ import '../../../player_stats_keys.dart';
 
 class CleanSheets{
 
-  saveNational(int jogadorID, int goalsTaken){
+  saveNational(int playerID, int goalsTaken){
     if(goalsTaken==0){
-      globalJogadoresLeagueCleanSheets[jogadorID]++;
-      globalJogadoresCarrerCleanSheets[jogadorID]++;
+      globalInternationalPlayers[PlayerStatsKeys().keyPlayerCleanSheets]![playerID]++;
+      globalJogadoresCarrerCleanSheets[playerID]++;
     }else{
-      globalJogadoresLeagueGolsSofridos[jogadorID]++;
-      globalJogadoresCarrerGolsSofridos[jogadorID]++;
+      globalInternationalPlayers[PlayerStatsKeys().keyPlayerGolsSofridos]![playerID]++;
+      globalJogadoresCarrerGolsSofridos[playerID]++;
     }
   }
 
-  saveInternational(int jogadorID, int goalsTaken){
+  saveInternational(int playerID, int goalsTaken){
     if(goalsTaken==0){
-      globalInternationalPlayers[PlayerStatsKeys().keyPlayerCleanSheets]![jogadorID]++;
-      globalJogadoresCarrerCleanSheets[jogadorID]++;
+      globalInternationalPlayers[PlayerStatsKeys().keyPlayerCleanSheets]![playerID]++;
+      globalJogadoresCarrerCleanSheets[playerID]++;
     }else{
-      globalInternationalPlayers[PlayerStatsKeys().keyPlayerGolsSofridos]![jogadorID]++;
-      globalJogadoresCarrerGolsSofridos[jogadorID]++;
+      globalInternationalPlayers[PlayerStatsKeys().keyPlayerGolsSofridos]![playerID]++;
+      globalJogadoresCarrerGolsSofridos[playerID]++;
     }
   }
 
-  saveCup(int jogadorID, int goalsTaken){
+  saveCup(int playerID, int goalsTaken){
     if(goalsTaken==0){
-      globalCupPlayers[PlayerStatsKeys().keyPlayerCleanSheets]![jogadorID]++;
-      globalJogadoresCarrerCleanSheets[jogadorID]++;
+      globalCupPlayers[PlayerStatsKeys().keyPlayerCleanSheets]![playerID]++;
+      globalJogadoresCarrerCleanSheets[playerID]++;
     }else{
-      globalCupPlayers[PlayerStatsKeys().keyPlayerGolsSofridos]![jogadorID]++;
-      globalJogadoresCarrerGolsSofridos[jogadorID]++;
+      globalCupPlayers[PlayerStatsKeys().keyPlayerGolsSofridos]![playerID]++;
+      globalJogadoresCarrerGolsSofridos[playerID]++;
     }
   }
 

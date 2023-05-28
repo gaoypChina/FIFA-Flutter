@@ -16,21 +16,21 @@ class RedCard{
     }
 
     int probJog = Random().nextInt(11); //Posição do jogador [0-11]
-    int jogadorID = escalacao[probJog];//Posição do jogador [0-11]
-    globalJogadoresRedCard[jogadorID]++;
-    globalJogadoresMatchRedCards[jogadorID]++;
+    int playerID = escalacao[probJog];//Posição do jogador [0-11]
+    globalJogadoresRedCard[playerID]++;
+    globalJogadoresMatchRedCards[playerID]++;
 
-    Grade().redCardMyMatch(jogadorID);
+    Grade().redCardMyMatch(playerID);
   }
 
   notMy(Club clubClass,int jogPOS) {
-    int jogadorID = clubClass.escalacao[jogPOS];
-    globalJogadoresRedCard[jogadorID]++;
+    int playerID = clubClass.escalacao[jogPOS];
+    globalJogadoresRedCard[playerID]++;
   }
 
-  minus1(int jogadorID){
-    if(globalJogadoresRedCard[jogadorID]>0){
-      globalJogadoresRedCard[jogadorID]--;
+  minus1(int playerID){
+    if(globalJogadoresRedCard[playerID]>0){
+      globalJogadoresRedCard[playerID]--;
     }
   }
 

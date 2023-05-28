@@ -13,15 +13,15 @@ class CardsInjury{
   setMinus1InjuryRedYellowCardAllTeam(Club clubClass){
     //Para todos os jogadores
     for(int i=0; i<clubClass.nJogadores; i++) {
-      int jogadorID = clubClass.jogadores[i];
+      int playerID = clubClass.jogadores[i];
       if (clubClass.index == globalMyClubID) {
-        jogadorID = globalMyJogadores[i];
+        playerID = globalMyJogadores[i];
       }
 
       //Em qualquer rodada:
-      RedCard().minus1(jogadorID);
-      YellowCard().minus1(jogadorID);
-      Injury().minus1(jogadorID);
+      RedCard().minus1(playerID);
+      YellowCard().minus1(playerID);
+      Injury().minus1(playerID);
 
     }
   }

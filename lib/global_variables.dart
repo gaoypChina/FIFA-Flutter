@@ -135,11 +135,6 @@ List globalJogadoresCarrerGoals = List.filled(globalMaxPlayersPermitted, 0);
 List globalJogadoresCarrerAssists = List.filled(globalMaxPlayersPermitted, 0);
 List globalJogadoresCarrerCleanSheets = List.filled(globalMaxPlayersPermitted, 0);
 List globalJogadoresCarrerGolsSofridos = List.filled(globalMaxPlayersPermitted, 0);
-List globalJogadoresLeagueMatchs = [];
-List globalJogadoresLeagueGoals = [];
-List globalJogadoresLeagueAssists = [];
-List globalJogadoresLeagueCleanSheets = [];
-List globalJogadoresLeagueGolsSofridos = [];
 List globalJogadoresYellowCard = [];
 List globalJogadoresRedCard = [];
 List globalJogadoresGrades = [];
@@ -172,7 +167,7 @@ Map globalInternational = {};
 
 ///////////////////////////
 //INTERNACIONAL - NOVO FORMATO
-Map<String, List<int>> globalNationalPlayers = {}; //NÃO CRIADO AINDA TODO
+Map<String, List<int>> globalLeaguePlayers = {}; //NÃO CRIADO AINDA TODO
 Map<String, List<int>> globalInternationalPlayers = {};
 
 //COPA

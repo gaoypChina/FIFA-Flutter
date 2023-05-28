@@ -17,27 +17,27 @@ class Assists{
       if(clubClass.index == globalMyClubID) {
         escalacao = globalMyJogadores;
       }
-      int jogadorID = escalacao[quemfez];
-      return jogadorID;
+      int playerID = escalacao[quemfez];
+      return playerID;
     }
     return -1;
   }
-  saveAssistsNational(int jogadorID){
-    if(jogadorID>=0) {
-      globalJogadoresLeagueAssists[jogadorID]++;
-      globalJogadoresCarrerAssists[jogadorID]++;
+  saveAssistsNational(int playerID){
+    if(playerID>=0) {
+      globalLeaguePlayers[PlayerStatsKeys().keyPlayerAssists]![playerID]++;
+      globalJogadoresCarrerAssists[playerID]++;
     }
   }
-  saveAssistsInternational(int jogadorID){
-    if(jogadorID>=0) {
-      globalInternationalPlayers[PlayerStatsKeys().keyPlayerAssists]![jogadorID]++;
-      globalJogadoresCarrerAssists[jogadorID]++;
+  saveAssistsInternational(int playerID){
+    if(playerID>=0) {
+      globalInternationalPlayers[PlayerStatsKeys().keyPlayerAssists]![playerID]++;
+      globalJogadoresCarrerAssists[playerID]++;
     }
   }
-  saveAssistsCup(int jogadorID){
-    if(jogadorID>=0) {
-      globalCupPlayers[PlayerStatsKeys().keyPlayerAssists]![jogadorID]++;
-      globalJogadoresCarrerGoals[jogadorID]++;
+  saveAssistsCup(int playerID){
+    if(playerID>=0) {
+      globalCupPlayers[PlayerStatsKeys().keyPlayerAssists]![playerID]++;
+      globalJogadoresCarrerGoals[playerID]++;
     }
   }
 

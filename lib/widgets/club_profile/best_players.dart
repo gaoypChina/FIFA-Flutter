@@ -8,8 +8,8 @@ Widget bestPlayers(Club club) {
   List<Jogador> jogadoresClass = [];
   List craqueValue=[],artilheiroValue=[],assistenteValue=[],mvpValue=[];
 
-  for(int jogadorID in jogadores){
-    jogadoresClass.add(Jogador(index: jogadorID));
+  for(int playerID in jogadores){
+    jogadoresClass.add(Jogador(index: playerID));
     craqueValue.add(jogadoresClass.last.overall);
     mvpValue.add(jogadoresClass.last.price.floor());
     artilheiroValue.add(jogadoresClass.last.goalsLeague);

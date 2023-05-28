@@ -20,23 +20,23 @@ class Goal{
     if(clubClass.index == globalMyClubID) {
       escalacao = globalMyJogadores;
     }
-    int jogadorID = escalacao[quemfez];
-    return jogadorID;
+    int playerID = escalacao[quemfez];
+    return playerID;
   }
 
-  saveGoalsNational(int jogadorID){
-    globalJogadoresLeagueGoals[jogadorID]++;
-    globalJogadoresCarrerGoals[jogadorID]++;
+  saveGoalsNational(int playerID){
+    globalLeaguePlayers[PlayerStatsKeys().keyPlayerGoals]![playerID]++;
+    globalJogadoresCarrerGoals[playerID]++;
   }
 
-  saveGoalsInternational(int jogadorID){
-    globalInternationalPlayers[PlayerStatsKeys().keyPlayerGoals]![jogadorID]++;
-    globalJogadoresCarrerGoals[jogadorID]++;
+  saveGoalsInternational(int playerID){
+    globalInternationalPlayers[PlayerStatsKeys().keyPlayerGoals]![playerID]++;
+    globalJogadoresCarrerGoals[playerID]++;
   }
 
-  saveGoalsCup(int jogadorID){
-    globalCupPlayers[PlayerStatsKeys().keyPlayerGoals]![jogadorID]++;
-    globalJogadoresCarrerGoals[jogadorID]++;
+  saveGoalsCup(int playerID){
+    globalCupPlayers[PlayerStatsKeys().keyPlayerGoals]![playerID]++;
+    globalJogadoresCarrerGoals[playerID]++;
   }
 
   int funcQuemfezgol(){

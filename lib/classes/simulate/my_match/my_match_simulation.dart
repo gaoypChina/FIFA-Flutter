@@ -84,24 +84,24 @@ class MyMatchSimulation{
     
 
     //Procura o nome do jogador na lista de todos os jogadores e adiciona um gol pra ele
-    late int jogadorID;
+    late int playerID;
     if(clubMyorAdv==1){
-      jogadorID=myClass.jogadores[quemfez];
-      globalMatchGoalScorerIDMy.add(jogadorID);
+      playerID=myClass.jogadores[quemfez];
+      globalMatchGoalScorerIDMy.add(playerID);
     }
     if(clubMyorAdv==2){
-      jogadorID=adversarioEscalacao[quemfez];
-      globalMatchGoalScorerIDAdv.add(jogadorID);
+      playerID=adversarioEscalacao[quemfez];
+      globalMatchGoalScorerIDAdv.add(playerID);
     }
     if(Semana(semana).isJogoCampeonatoNacional){
-      globalJogadoresLeagueGoals[jogadorID]++;
+      globalLeaguePlayers[PlayerStatsKeys().keyPlayerGoals]![playerID]++;
     }else if(Semana(semana).isJogoCampeonatoInternacional){
-      globalInternationalPlayers[PlayerStatsKeys().keyPlayerGoals]![jogadorID]++;
+      globalInternationalPlayers[PlayerStatsKeys().keyPlayerGoals]![playerID]++;
     }
-    globalJogadoresMatchGoals[jogadorID]++;
-    globalJogadoresCarrerGoals[jogadorID]++;
+    globalJogadoresMatchGoals[playerID]++;
+    globalJogadoresCarrerGoals[playerID]++;
 
-    Grade().goalMyMatch(jogadorID);
+    Grade().goalMyMatch(playerID);
   }
 
   funcQuemfezAssistencia(int clubMyorAdv){
@@ -110,19 +110,19 @@ class MyMatchSimulation{
     if(quemfez >= 0) { //nem todos gols tem assitencia, 75% tem
 
       //Procura o nome do jogador na lista de todos os jogadores e adiciona uma assistencia pra ele
-      late int jogadorID;
-      if(clubMyorAdv==1){jogadorID=myClass.jogadores[quemfez];}
-      if(clubMyorAdv==2){jogadorID=adversarioEscalacao[quemfez];}
+      late int playerID;
+      if(clubMyorAdv==1){playerID=myClass.jogadores[quemfez];}
+      if(clubMyorAdv==2){playerID=adversarioEscalacao[quemfez];}
       if(Semana(semana).isJogoCampeonatoNacional){
-        globalJogadoresLeagueAssists[jogadorID]++;
+        globalLeaguePlayers[PlayerStatsKeys().keyPlayerAssists]![playerID]++;
       }else if(Semana(semana).isJogoCampeonatoInternacional){
-        globalInternationalPlayers[PlayerStatsKeys().keyPlayerAssists]![jogadorID]++;
+        globalInternationalPlayers[PlayerStatsKeys().keyPlayerAssists]![playerID]++;
       }
-      globalJogadoresMatchAssists[jogadorID]++;
-      globalJogadoresCarrerAssists[jogadorID]++;
+      globalJogadoresMatchAssists[playerID]++;
+      globalJogadoresCarrerAssists[playerID]++;
 
 
-      Grade().assistMyMatch(jogadorID);
+      Grade().assistMyMatch(playerID);
     }
   }
 

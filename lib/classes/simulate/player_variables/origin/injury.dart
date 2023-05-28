@@ -16,24 +16,24 @@ class Injury{
 
     if(prob<=20) {
       int probJog = Random().nextInt(11); //Posição do jogador [0-11]
-      int jogadorID = escalacao[probJog];//Posição do jogador [0-11]
+      int playerID = escalacao[probJog];//Posição do jogador [0-11]
       int tempoLesao = Random().nextInt(10) + 1;
-      globalJogadoresInjury[jogadorID] = tempoLesao;
-      globalJogadoresMatchInjury[jogadorID] = tempoLesao;
+      globalJogadoresInjury[playerID] = tempoLesao;
+      globalJogadoresMatchInjury[playerID] = tempoLesao;
     }
   }
   notMy(Club clubClass, int jogPOS){
 
     int prob = Random().nextInt(110);
     if(prob<=2) {
-      int jogadorID = clubClass.escalacao[jogPOS];
+      int playerID = clubClass.escalacao[jogPOS];
       int tempoLesao = Random().nextInt(10) + 1;
-      globalJogadoresInjury[jogadorID] = tempoLesao;
+      globalJogadoresInjury[playerID] = tempoLesao;
     }
   }
-  minus1(int jogadorID){
-    if(globalJogadoresInjury[jogadorID]>0){
-      globalJogadoresInjury[jogadorID]--;
+  minus1(int playerID){
+    if(globalJogadoresInjury[playerID]>0){
+      globalJogadoresInjury[playerID]--;
     }
   }
 }

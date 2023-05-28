@@ -71,14 +71,26 @@ class Jogador{
     price = setPreco();
     clubID = globalJogadoresClubIndex[index];
     clubName = clubsAllNameList[clubID];
-    matchsLeague = globalJogadoresLeagueMatchs[index] ?? 0;
-    goalsLeague = globalJogadoresLeagueGoals[index] ?? 0;
-    assistsLeague = globalJogadoresLeagueAssists[index] ?? 0;
     cleanSheetsLeague = globalJogadoresCarrerCleanSheets[index] ?? 0;
     golsSofridosLeague = globalJogadoresCarrerGolsSofridos[index] ?? 0;
     redCard = globalJogadoresRedCard[index] ?? 0;
     yellowCard = globalJogadoresYellowCard[index] ?? 0;
     injury = globalJogadoresInjury[index] ?? 0;
+    try{
+      matchsLeague = globalLeaguePlayers[PlayerStatsKeys().keyPlayerMatchs]![index];
+      goalsLeague = globalLeaguePlayers[PlayerStatsKeys().keyPlayerGoals]![index];
+      assistsLeague = globalLeaguePlayers[PlayerStatsKeys().keyPlayerAssists]![index];
+      cleanSheetsLeague = globalLeaguePlayers[PlayerStatsKeys().keyPlayerCleanSheets]![index];
+      golsSofridosLeague = globalLeaguePlayers[PlayerStatsKeys().keyPlayerGolsSofridos]![index];
+      grade = (goalsLeague*2+assistsLeague+cleanSheetsLeague*1.5)/(matchsLeague+1);
+    }catch(e){
+      matchsLeague = 0;
+      goalsLeague = 0;
+      assistsLeague = 0;
+      cleanSheetsLeague = 0;
+      golsSofridosLeague = 0;
+      grade = 0.0;
+    }
     try{
       matchsInternational = globalInternationalPlayers[PlayerStatsKeys().keyPlayerMatchs]![index];
       goalsInternational = globalInternationalPlayers[PlayerStatsKeys().keyPlayerGoals]![index];

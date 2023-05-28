@@ -15,20 +15,20 @@ class YellowCard{
     }
 
     int probJog = Random().nextInt(11); //Posição do jogador [0-11]
-    int jogadorID = escalacao[probJog]; //Posição do jogador [0-11]
-    globalJogadoresYellowCard[jogadorID]++;
-    globalJogadoresMatchYellowCards[jogadorID]++;
+    int playerID = escalacao[probJog]; //Posição do jogador [0-11]
+    globalJogadoresYellowCard[playerID]++;
+    globalJogadoresMatchYellowCards[playerID]++;
 
-    Grade().yellowCardMyMatch(jogadorID);
+    Grade().yellowCardMyMatch(playerID);
 
   }
   notMy(Club clubClass, int jogPOS) {
-    int jogadorID = clubClass.escalacao[jogPOS];
-    globalJogadoresYellowCard[jogadorID]++;
+    int playerID = clubClass.escalacao[jogPOS];
+    globalJogadoresYellowCard[playerID]++;
   }
-  minus1(int jogadorID){
-    if(globalJogadoresYellowCard[jogadorID]>0){
-      globalJogadoresYellowCard[jogadorID]--;
+  minus1(int playerID){
+    if(globalJogadoresYellowCard[playerID]>0){
+      globalJogadoresYellowCard[playerID]--;
     }
   }
 }

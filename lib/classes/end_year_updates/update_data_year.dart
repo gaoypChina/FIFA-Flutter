@@ -143,11 +143,14 @@ resetData(){
   //Zera Status dos jogadores
   globalJogadoresHealth = List.filled(globalMaxPlayersPermitted, 1.0);
   globalJogadoresMoral = List.filled(globalMaxPlayersPermitted, globalJogadoresMoralNames[Random().nextInt(globalJogadoresMoralNames.length)]);
-  globalJogadoresLeagueMatchs = List.filled(globalMaxPlayersPermitted, 0);
-  globalJogadoresLeagueGoals = List.filled(globalMaxPlayersPermitted, 0);
-  globalJogadoresLeagueAssists = List.filled(globalMaxPlayersPermitted, 0);
-  globalJogadoresLeagueCleanSheets = List.filled(globalMaxPlayersPermitted, 0);
-  globalJogadoresLeagueGolsSofridos = List.filled(globalMaxPlayersPermitted, 0);
+
+  globalLeaguePlayers = {
+    PlayerStatsKeys().keyPlayerMatchs: List.filled(globalMaxPlayersPermitted, 0),
+    PlayerStatsKeys().keyPlayerGoals: List.filled(globalMaxPlayersPermitted, 0),
+    PlayerStatsKeys().keyPlayerAssists: List.filled(globalMaxPlayersPermitted, 0),
+    PlayerStatsKeys().keyPlayerCleanSheets: List.filled(globalMaxPlayersPermitted, 0),
+    PlayerStatsKeys().keyPlayerGolsSofridos: List.filled(globalMaxPlayersPermitted, 0),
+  };
 
   globalInternationalPlayers = {
     PlayerStatsKeys().keyPlayerMatchs: List.filled(globalMaxPlayersPermitted, 0),

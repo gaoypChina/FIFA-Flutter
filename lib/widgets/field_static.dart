@@ -53,98 +53,98 @@ Widget fieldGameplay442(int clubID){
 Widget fieldGameplay433(int clubID){
   Club club = Club(index: clubID);
   String clubName = club.name;
-  List jogadores = club.escalacao;
+  List players = club.escalacao;
   if(My().clubID == clubID){
-    jogadores = globalMyJogadores;
+    players = globalMyJogadores;
   }
   return Column(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       //ATACANTES
-      playerWidgetRow([jogadores[8],jogadores[9],jogadores[10]],clubName),
+      playerWidgetRow([players[8],players[9],players[10]],clubName),
       //MEIAS
-      playerWidgetRow([jogadores[7]],clubName),
+      playerWidgetRow([players[7]],clubName),
       //VOLANTES
-      playerWidgetRow([jogadores[5],jogadores[6]],clubName),
+      playerWidgetRow([players[5],players[6]],clubName),
       //ZAGUEIROS
-      playerWidgetRow([jogadores[1],jogadores[2],jogadores[3],jogadores[4]],clubName),
+      playerWidgetRow([players[1],players[2],players[3],players[4]],clubName),
       //GOLEIRO
-      playerWidgetRow([jogadores[0]],clubName),
+      playerWidgetRow([players[0]],clubName),
     ],
   );
 }
 Widget fieldGameplay343(int clubID){
   Club club = Club(index: clubID);
   String clubName = club.name;
-  List jogadores = club.escalacao;
+  List players = club.escalacao;
   if(My().clubID == clubID){
-    jogadores = globalMyJogadores;
+    players = globalMyJogadores;
   }
   return Column(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       //ATACANTES
-      playerWidgetRow([jogadores[8],jogadores[9],jogadores[10]],clubName),
+      playerWidgetRow([players[8],players[9],players[10]],clubName),
       //MEIAS
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          playerWidgetMatch(jogadores[6],clubName),
-          playerWidgetMatch(jogadores[7],clubName),
+          playerWidgetMatch(players[6],clubName),
+          playerWidgetMatch(players[7],clubName),
         ],
       ),
       //VOLANTES
-      playerWidgetRow([jogadores[4],jogadores[5]],clubName),
+      playerWidgetRow([players[4],players[5]],clubName),
       //ZAGUEIROS
-      playerWidgetRow([jogadores[1],jogadores[2],jogadores[3]],clubName),
+      playerWidgetRow([players[1],players[2],players[3]],clubName),
       //GOLEIRO
-      playerWidgetRow([jogadores[0]],clubName),
+      playerWidgetRow([players[0]],clubName),
     ],
   );
 }
 Widget fieldGameplay451(int clubID){
   Club club = Club(index: clubID);
   String clubName = club.name;
-  List jogadores = club.escalacao;
+  List players = club.escalacao;
   if(My().clubID == clubID){
-    jogadores = globalMyJogadores;
+    players = globalMyJogadores;
   }
   return Column(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       //ATACANTES
-      playerWidgetRow([jogadores[10]],clubName),
+      playerWidgetRow([players[10]],clubName),
       //MEIAS
-      playerWidgetRow([jogadores[7],jogadores[8],jogadores[9]],clubName),
+      playerWidgetRow([players[7],players[8],players[9]],clubName),
       //VOLANTES
-      playerWidgetRow([jogadores[5],jogadores[6]],clubName),
+      playerWidgetRow([players[5],players[6]],clubName),
       //ZAGUEIROS
-      playerWidgetRow([jogadores[1],jogadores[2],jogadores[3],jogadores[4]],clubName),
+      playerWidgetRow([players[1],players[2],players[3],players[4]],clubName),
       //GOLEIRO
-      playerWidgetRow([jogadores[0]],clubName),
+      playerWidgetRow([players[0]],clubName),
     ],
   );
 }
 Widget fieldGameplay541(int clubID){
   Club club = Club(index: clubID);
   String clubName = club.name;
-  List jogadores = club.escalacao;
+  List players = club.escalacao;
   if(My().clubID == clubID){
-    jogadores = globalMyJogadores;
+    players = globalMyJogadores;
   }
   return Column(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       //ATACANTES
-      playerWidgetRow([jogadores[10]],clubName),
+      playerWidgetRow([players[10]],clubName),
       //MEIAS
-      playerWidgetRow([jogadores[7],jogadores[8]],clubName),
+      playerWidgetRow([players[7],players[8]],clubName),
       //VOLANTES
-      playerWidgetRow([jogadores[5],jogadores[6]],clubName),
+      playerWidgetRow([players[5],players[6]],clubName),
       //ZAGUEIROS
-      playerWidgetRow([jogadores[1],jogadores[2],jogadores[3],jogadores[4],jogadores[5]],clubName),
+      playerWidgetRow([players[1],players[2],players[3],players[4],players[5]],clubName),
       //GOLEIRO
-      playerWidgetRow([jogadores[0]],clubName),
+      playerWidgetRow([players[0]],clubName),
     ],
   );
 }

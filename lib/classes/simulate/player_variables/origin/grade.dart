@@ -5,9 +5,9 @@ import 'package:fifa/global_variables.dart';
 
 class Grade{
 
-  addMyGameRandomScore(int jogadorID){
+  addMyGameRandomScore(int playerID){
     double randomNum = (Random().nextInt(7)-2)/100; //[-0.02,0.05]
-    add(jogadorID, randomNum);
+    add(playerID, randomNum);
   }
 
 
@@ -28,9 +28,9 @@ class Grade{
     }
 
     int probJog = Random().nextInt(11); //Posição do jogador [0-11]
-    int jogadorID = escalacao[probJog];//Posição do jogador [0-11]
+    int playerID = escalacao[probJog];//Posição do jogador [0-11]
 
-    return jogadorID;
+    return playerID;
   }
 
 
@@ -38,17 +38,17 @@ class Grade{
     globalJogadoresMatchGrade = List.filled(globalMaxPlayersPermitted, 6.0);
   }
 
-  goalMyMatch(int jogadorID){
-    add(jogadorID, 1.2);
+  goalMyMatch(int playerID){
+    add(playerID, 1.2);
   }
-  assistMyMatch(int jogadorID){
-    add(jogadorID, 0.75);
+  assistMyMatch(int playerID){
+    add(playerID, 0.75);
   }
-  redCardMyMatch(int jogadorID){
-    add(jogadorID, -1.5);
+  redCardMyMatch(int playerID){
+    add(playerID, -1.5);
   }
-  yellowCardMyMatch(int jogadorID){
-    add(jogadorID, -0.5);
+  yellowCardMyMatch(int playerID){
+    add(playerID, -0.5);
   }
 
   add(int playerID,double value){

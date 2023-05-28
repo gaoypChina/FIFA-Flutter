@@ -6,27 +6,27 @@ class GoalAssistsSelection{
   ////////////////////////////////////////////
   //GOALS E ASSISTENCIAS NACIONAIS
   goalsAssistsNational(Club clubClass){
-    int jogadorID = Goal().setGoals(clubClass);
-    Goal().saveGoalsNational(jogadorID);
-    jogadorID = Assists().setAssists(clubClass);
-    Assists().saveAssistsNational(jogadorID);
+    int playerID = Goal().setGoals(clubClass);
+    Goal().saveGoalsNational(playerID);
+    playerID = Assists().setAssists(clubClass);
+    Assists().saveAssistsNational(playerID);
   }
 
   //GOALS E ASSISTENCIAS INTERNACIONAIS
   goalsAssistsInternational(Club clubClass){
-    int jogadorID = Goal().setGoals(clubClass);
-    Goal().saveGoalsInternational(jogadorID);
+    int playerID = Goal().setGoals(clubClass);
+    Goal().saveGoalsInternational(playerID);
 
-    jogadorID = Assists().setAssists(clubClass);
-    Assists().saveAssistsInternational(jogadorID);
+    playerID = Assists().setAssists(clubClass);
+    Assists().saveAssistsInternational(playerID);
   }
 
   //GOALS E ASSISTENCIAS CUP
   goalsAssistsCup(Club clubClass){
-    int jogadorID = Goal().setGoals(clubClass);
-    Goal().saveGoalsCup(jogadorID);
+    int playerID = Goal().setGoals(clubClass);
+    Goal().saveGoalsCup(playerID);
 
-    jogadorID = Assists().setAssists(clubClass);
-    Assists().saveAssistsCup(jogadorID);
+    playerID = Assists().setAssists(clubClass);
+    Assists().saveAssistsCup(playerID);
   }
 }

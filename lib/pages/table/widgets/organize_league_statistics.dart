@@ -1,5 +1,6 @@
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/functions/order_list.dart';
+import 'package:fifa/classes/player_stats_keys.dart';
 import 'package:fifa/global_variables.dart';
 
 List organizarVariavelLeague(League league, int goalOrYellowOrRed) {
@@ -7,10 +8,10 @@ List organizarVariavelLeague(League league, int goalOrYellowOrRed) {
   //Mostra no Widget de League Results
 
   List global = [];
-  if(goalOrYellowOrRed==0){global = globalJogadoresLeagueGoals;}
+  if(goalOrYellowOrRed==0){global = globalLeaguePlayers[PlayerStatsKeys().keyPlayerAssists]!;}
   if(goalOrYellowOrRed==1){global = globalJogadoresYellowCard;}
   if(goalOrYellowOrRed==2){global = globalJogadoresRedCard;}
-  if(goalOrYellowOrRed==3){global = globalJogadoresLeagueAssists;}
+  if(goalOrYellowOrRed==3){global = globalLeaguePlayers[PlayerStatsKeys().keyPlayerAssists]!;}
   if(goalOrYellowOrRed==4){global = globalJogadoresGrades;}
 
   List copyVariableList = [];
