@@ -8,9 +8,12 @@ import 'package:fifa/pages/ranking_clubs/ranking_clubs_control.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/values/images.dart';
+import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
+import '../../classes/countries/countries_continents.dart';
 import '../../widgets/loader.dart';
 import '../club_profile/club_profile.dart';
 
@@ -31,6 +34,8 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
   List listClubsID = League(index: My().leagueID).getAllClubsIDList();
 
   bool isLoaded = false;
+  String continent = "";
+  String choosenLeagueName = "";
 
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
@@ -42,8 +47,10 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
   }
   organizarRanking(){
     rankingClubs.organizeRanking();
-    rankingClubs.organizeMyContinentalRanking();
-    rankingClubs.organizeMyNationalRanking();
+    continent = Club(index: myClub.clubID,calcInternationalLeaguePlaying:false).continent;
+    rankingClubs.organizeContinentalRanking(continent);
+    choosenLeagueName = myClub.getLeagueName();
+    rankingClubs.organizeNationalRanking(choosenLeagueName);
 
     _tabController = TabController(vsync: this, length: 3);
     isLoaded=true;
@@ -94,9 +101,9 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
                       child: TabBarView(
                         controller: _tabController,
                         children: [
-                          listRanking(rankingClubs.clubs),
-                          listRanking(rankingClubs.copyClubsContinental),
-                          listRanking(rankingClubs.copyClubsNational),
+                          listRanking(context, rankingClubs.clubs, 0),
+                          listRanking(context, rankingClubs.copyClubsContinental, 1),
+                          listRanking(context, rankingClubs.copyClubsNational, 2),
                         ],
                       ),
                     ),
@@ -114,30 +121,99 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-  Widget listRanking(List listClubs){
+  Widget listRanking(BuildContext context, List listClubs, int type){
 
-    return ShaderMask(
-      shaderCallback: (Rect rect) {
-        return const LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [Colors.transparent, Colors.black],
-          stops: [0.97, 1.0], // 10% purple, 80% transparent, 10% purple
-        ).createShader(rect);
+    return Column(
+      children: [
+        Expanded(
+          child: ShaderMask(
+            shaderCallback: (Rect rect) {
+              return const LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [Colors.transparent, Colors.black],
+                stops: [0.97, 1.0], // 10% purple, 80% transparent, 10% purple
+              ).createShader(rect);
+            },
+            blendMode: BlendMode.dstOut,
+            child: DraggableScrollbar.semicircle(
+              alwaysVisibleScrollThumb: true,
+              controller: _scrollController,
+              child: ListView.builder(
+                  padding: EdgeInsets.zero,
+                  controller: _scrollController,
+                  itemCount: listClubs.length,
+                  itemBuilder: (c,i) => rowClub(i, listClubs[i])
+              ),
+            ),
+          ),
+        ),
+
+        type==1 ? selectContinent()
+        : type==2 ? selectLeagueWidget(context)
+        : Container()
+      ],
+    );
+  }
+
+  Widget selectLeagueWidget(BuildContext context){
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: [
+          for(int i=0;i<leaguesListRealIndex.length;i++)
+            leagueSelectionRow(i)
+        ],
+      ),
+    );
+  }
+
+  Widget leagueSelectionRow(int i){
+    int leagueID = leaguesListRealIndex[i];
+    String leagueName = League(index: leagueID).getName();
+
+    return GestureDetector(
+      onTap: (){
+        choosenLeagueName = leagueName;
+        rankingClubs.organizeNationalRanking(choosenLeagueName);
+        setState(() {});
       },
-      blendMode: BlendMode.dstOut,
-      child: DraggableScrollbar.semicircle(
-        alwaysVisibleScrollThumb: true,
-        controller: _scrollController,
-        child: ListView.builder(
-            padding: EdgeInsets.zero,
-            controller: _scrollController,
-            itemCount: listClubs.length,
-            itemBuilder: (c,i) => rowClub(i, listClubs[i])
+      child: Container(
+        padding: const EdgeInsets.all(2),
+        color: choosenLeagueName == leagueName ? Colors.redAccent: Colors.white54,
+        child: Image.asset(FIFAImages().campeonatoLogo(leagueName),height: 50,width: 50,),
+      ),
+    );
+  }
+
+  Widget selectContinent(){
+    return Row(
+      children: [
+        continentSelection(Continents().europa),
+        continentSelection(Continents().americaSul),
+        continentSelection(Continents().asia),
+        continentSelection(Continents().africa),
+        continentSelection(Continents().americaNorte),
+      ],
+    );
+  }
+  Widget continentSelection(String continentName){
+    return GestureDetector(
+      onTap: (){
+        continent = continentName;
+        rankingClubs.organizeContinentalRanking(continent);
+        setState((){});
+      },
+      child: Container(
+        color: continentName == continent ? Colors.red : Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.all(4.0),
+          child: Images().getContinentLogo(continentName),
         ),
       ),
     );
   }
+
   Color colorRankingClubs(Club club){
     //Cor de Fundo
     Color colorBackground = Colors.transparent;
@@ -182,7 +258,7 @@ Widget rowClub(int ranking, Club club){
             ),
             Padding(
               padding: const EdgeInsets.only(left: 6.0,right: 28),
-              child: Text(overall.toStringAsFixed(2),style: EstiloTextoBranco.text16),
+              child: Text(overall.toStringAsFixed(2),style: EstiloTextoBranco.negrito16),
             ),
           ],
         ),

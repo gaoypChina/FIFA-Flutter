@@ -9,6 +9,7 @@ import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/background_color/background_overall.dart';
+import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/widgets/popup/popup_player_info.dart';
 import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -213,8 +214,8 @@ Widget header(){
       },
       child: Row(
         children: [
-          Images().getPlayerPictureWidget(jogador,25,25),
-          SizedBox(width:40,child: Text(jogador.position,style: EstiloTextoBranco.text16)),
+          positionContainer(jogador.position),
+          Images().getPlayerPictureWidget(jogador,30,30),
           const SizedBox(width: 4),
           SizedBox(width:150,child: Text(historicPlayerData.name,style: EstiloTextoBranco.text16)),
           const SizedBox(width: 4),

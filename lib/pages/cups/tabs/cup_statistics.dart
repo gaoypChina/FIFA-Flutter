@@ -130,22 +130,25 @@ class _CupStatisticsState extends State<CupStatistics> {
 
 
   Widget buttonSelection(String title){
-    return GestureDetector(
-      onTap: (){
-        typeSelected = title;
-        setState((){});
-      },
-      child: Container(
-        padding: const EdgeInsets.all(2),
-        margin: const EdgeInsets.all(2),
-        decoration: BoxDecoration(
-          color: AppColors().greyTransparent,
-          border: Border.all(
-            color: typeSelected == title ? Colors.white : AppColors().greyTransparent,
-            width: 1.0,
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: (){
+          typeSelected = title;
+          setState((){});
+        },
+        child: Container(
+          padding: const EdgeInsets.all(2),
+          margin: const EdgeInsets.all(2),
+          decoration: BoxDecoration(
+            color: AppColors().greyTransparent,
+            border: Border.all(
+              color: typeSelected == title ? Colors.white : AppColors().greyTransparent,
+              width: 1.0,
+            ),
           ),
+          child: Text(title, style: EstiloTextoBranco.text16),
         ),
-        child: Text(title, style: EstiloTextoBranco.text16),
       ),
     );
   }

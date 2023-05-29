@@ -79,6 +79,7 @@ class _TableMundialState extends State<TableMundial> {
                         },
                         blendMode: BlendMode.dstOut,
                         child: ListView.builder(
+                            padding: EdgeInsets.zero,
                             itemCount: results.length,
                             itemBuilder: (c, i) => finals((results.keys.first.toInt() - i))
                         ),

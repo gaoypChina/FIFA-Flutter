@@ -257,6 +257,18 @@ class MyMatchSimulation{
       globalClubsInternationalGS[myClass.clubID] += meuGolSofrido;
       globalClubsInternationalGM[adversarioClubClass.index] += meuGolSofrido;
       globalClubsInternationalGS[adversarioClubClass.index] += meuGolMarcado;
+    }else if(Semana(semana).isJogoCopa || Semana(semana).isJogoMundial){
+      if (meuGolMarcado > meuGolSofrido) {
+        globalMyLeagueLastResults.add(3);
+      }
+      //EMPATE
+      if (meuGolMarcado == meuGolSofrido) {
+        globalMyLeagueLastResults.add(1);
+      }
+      //DERROTA
+      if (meuGolMarcado < meuGolSofrido) {
+        globalMyLeagueLastResults.add(0);
+      }
     }
 
   }

@@ -2,6 +2,7 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/functions/change_club_control.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/back_button.dart';
@@ -84,24 +85,27 @@ Widget clubWidget(int clubID){
 
   ClubClassification clubClassification = ClubClassification(club: Club(index: clubID));
 
-    return GestureDetector(
-      onTap: (){
-        funcChangeClub(clubClassification.clubName, clubClassification.leagueID);
-        alreadyChangedClubThisSeason = true;
-        Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Menu()));
-      },
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
-        child: Container(
-          height: 220,width: 170,
-          color: Colors.black12,
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: Column(
-            children: [
-              Images().getEscudoWidget(clubClassification.clubName,130,130),
-              Text(clubClassification.clubName,textAlign:TextAlign.center,style: EstiloTextoBranco.negrito22),
-              Text('${Translation(context).text.position}: '+clubClassification.posicaoTabela.toString()+'º',style: EstiloTextoBranco.text14)
-            ],
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: (){
+            funcChangeClub(clubClassification.clubName, clubClassification.leagueID);
+            alreadyChangedClubThisSeason = true;
+            Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Menu()));
+          },
+          child: Container(
+            height: 220,width: 170,
+            color: AppColors().greyTransparent,
+            padding: const EdgeInsets.symmetric(vertical: 8.0),
+            child: Column(
+              children: [
+                Images().getEscudoWidget(clubClassification.clubName,130,130),
+                Text(clubClassification.clubName,textAlign:TextAlign.center,style: EstiloTextoBranco.negrito22),
+                Text('${Translation(context).text.position}: '+clubClassification.posicaoTabela.toString()+'º',style: EstiloTextoBranco.text14)
+              ],
+            ),
           ),
         ),
       ),

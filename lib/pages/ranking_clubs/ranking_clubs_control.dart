@@ -49,21 +49,20 @@ class RankingClubsControl{
 
   }
 
-  organizeMyContinentalRanking(){
-    String myContinent = Club(index: my.clubID,calcInternationalLeaguePlaying:false).continent;
+  organizeContinentalRanking(String continent){
     copyClubsContinental = List.from(clubs);
-    copyClubsContinental.removeWhere((club) => !club.continent.contains(myContinent));
+    copyClubsContinental.removeWhere((club) => !club.continent.contains(continent));
   }
 
-  organizeMyNationalRanking(){
-    List divisionsName = Divisions().leagueDivisionsStructure(my.campeonatoName);
+  organizeNationalRanking(String leagueName){
+    List divisionsName = Divisions().leagueDivisionsStructure(leagueName);
     List allClubsName = [];
     for(String leagueName in divisionsName){
       int leagueIndex = leaguesIndexFromName[leagueName];
       allClubsName += League(index: leagueIndex).allClubsName;
     }
 
-    copyClubsNational = List.from(copyClubsContinental);
+    copyClubsNational = List.from(clubs);
     copyClubsNational.removeWhere((club) => !allClubsName.contains(club.name));
   }
 

@@ -29,7 +29,7 @@ class UpdatePlayerVariableMatch{
   updatePlayerMatchNational(Club clubClass){
     List titularPlayers = setMatchPlus1(clubClass);
     for (int playerID in titularPlayers){
-      globalInternationalPlayers[PlayerStatsKeys().keyPlayerMatchs]![playerID]++;
+      globalLeaguePlayers[PlayerStatsKeys().keyPlayerMatchs]![playerID]++;
       globalJogadoresCarrerMatchs[playerID]++;
     }
   }

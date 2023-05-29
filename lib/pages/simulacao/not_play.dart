@@ -1,6 +1,5 @@
 import 'package:fifa/classes/functions/name.dart';
 import 'package:fifa/classes/semana.dart';
-import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/classes/my.dart';
@@ -40,11 +39,7 @@ class _NotPlayState extends State<NotPlay> {
         body:  Stack(
             children: [
 
-              Semana(semana).isJogoCampeonatoNacional
-                  ? Images().getWallpaper()
-                  : Semana(semana).isJogoMundial
-                    ? backgroundMundial()
-                    : backgroundInternationalLeague(league.internationalLeagueNameWhenNotPlay),
+              backgroundTournament(Semana(semana),My()),
 
               Column(
                 children: [
@@ -56,11 +51,13 @@ class _NotPlayState extends State<NotPlay> {
                   Expanded(
                       child: Semana(semana).isJogoCampeonatoNacional
                           ? tabelaClassificacaoWidget(context,league)
-                          : Semana(semana).isJogoGruposInternacional
-                            ? notPlayShowInternationalGroups(context, league.internationalLeagueNameWhenNotPlay)
-                            : Semana(semana).isJogoMataMataInternacional
-                              ? notPlayShowInternationalMataMata(context,league.internationalLeagueNameWhenNotPlay)
-                              : notPlayMundial(context),
+                          : Semana(semana).isJogoCopa
+                            ? tabelaClassificacaoWidget(context,league)
+                            : Semana(semana).isJogoGruposInternacional
+                              ? notPlayShowInternationalGroups(context, league.internationalLeagueNameWhenNotPlay)
+                              : Semana(semana).isJogoMataMataInternacional
+                                ? notPlayShowInternationalMataMata(context,league.internationalLeagueNameWhenNotPlay)
+                                : notPlayMundial(context),
                   ),
 
 

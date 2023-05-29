@@ -8,6 +8,8 @@ Widget backgroundTournament(Semana week, My myClass){
     return Image.asset('assets/icons/fundomundial.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill);
   }else if(week.isJogoCampeonatoNacional){
     return Image.asset('assets/icons/wallpaper.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill);
+  }else if(week.isJogoCopa){
+    return Image.asset('assets/icons/wallpaper blue.png',height: double.infinity,width: double.infinity,fit: BoxFit.fill);
   }else{
     return backgroundInternationalLeague(myClass.getMyInternationalLeague());
   }

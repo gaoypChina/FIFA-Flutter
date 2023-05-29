@@ -2,6 +2,7 @@ import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/classes/player_stats_keys.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/historic/leagues_historic.dart';
 import 'package:fifa/pages/table/widgets/matchs.dart';
@@ -41,7 +42,7 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
     super.initState();
   }
   doThisOnLaunch() {
-    _tabController = TabController(vsync: this, length: 1);
+    _tabController = TabController(vsync: this, length: 2);
     //INDEX INICIAL
     choosenLeagueIndex = widget.choosenLeagueIndex;
     //rodada inicial mostrada
@@ -65,7 +66,7 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
     String leagueName = leaguesMap[choosenLeagueIndex].getName();
 
     return  DefaultTabController(
-        length: 1,
+        length: 2,
         child: Scaffold(
         body:  Stack(
             children: [
@@ -76,42 +77,51 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
                 margin: const EdgeInsets.only(bottom: 40),
                 child: Column(
                   children: [
+
                     const SizedBox(height: 32),
-                    Row(
-                      children: [
-                        backButton(context),
-                        Image.asset(FIFAImages().campeonatoLogo(leagueName),height:25,width: 25),
-                        Text(' ${Translation(context).text.matchWeek} '+ rodada.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text20),
-                        const Spacer(),
-                        IconButton(onPressed: (){
+                    Container(
+                      color: AppColors().primary.withOpacity(0.5),
+                      child: Row(
+                        children: [
+                          backButton(context),
+                          Image.asset(FIFAImages().campeonatoLogo(leagueName),height: 32,width: 32),
+                          const SizedBox(width: 8),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(leagueName,textAlign:TextAlign.center,style: EstiloTextoBranco.negrito16),
+                              Text('${Translation(context).text.matchWeek} ' + rodada.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+                            ],
+                          ),
+                          const Spacer(),
+                          IconButton(onPressed: (){
                             Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricLeague(choosenLeagueName: leagueName)));
                           }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
-                      ],
-                    ),
-
-                    SizedBox(
-                      height: Sized(context).height-130,
-                      child: TabBarView(
-                        controller: _tabController,
-                        children: [
-
-                          SingleChildScrollView(
-                            child: Column(
-                              children: [
-                                tabelaClassificacaoWidget(context,leaguesMap[choosenLeagueIndex]),                            ///////////////////
-                                //PRÓXIMAS PARTIDAS
-                                ///////////////////
-                                const SizedBox(height: 8),
-                                rowStatistics(),
-                                const SizedBox(height: 8),
-                              ],
-                            ),
-                          ),
-
                         ],
                       ),
                     ),
 
+                    Container(
+                      height: 30,
+                      color: AppColors().primary.withOpacity(0.5),
+                      child: TabBar(
+                        indicatorColor: AppColors().primary,
+                        controller: _tabController,
+                        tabs: const [
+                          Tab(text: "Tabela"),
+                          Tab(text: "Estatísticas"),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: TabBarView(
+                        controller: _tabController,
+                        children: [
+                          fullTable(leagueName),
+                          rowStatistics(),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -128,6 +138,15 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+
+  Widget fullTable(String leagueName){
+    return SizedBox(
+      height: Sized(context).height-160,
+      child: SingleChildScrollView(
+        child: tabelaClassificacaoWidget(context,leaguesMap[choosenLeagueIndex]),
+      ),
+    );
+  }
   Widget rowStatistics(){
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -141,30 +160,31 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
               : choosenIcon==4 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 2)
               : choosenIcon==5 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 3)
               : choosenIcon==6 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 4)
+              : choosenIcon==7 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 5)
               : Container(),
         ),
-
-        SizedBox(
-          height: 70,
+        const Spacer(),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              componentTable(0),
-              componentButton(1, 'assets/icons/versus.png'),
-              componentButton(2, 'assets/icons/artilheiro.png'),
-              componentButton(5, 'assets/icons/assists.png'),
-              componentButton(3, 'assets/icons/cartao-amarelo.png'),
-              componentButton(4, 'assets/icons/cartao-vermelho.png'),
-              componentButton(6, 'assets/icons/craque.png'),
+              componentButton(1, 'Matchs'),
+              componentButton(2, FilterPlayersTitle().artilheiros),
+              componentButton(5, FilterPlayersTitle().assists),
+              componentButton(6, FilterPlayersTitle().bestPlayer),
+              componentButton(7, FilterPlayersTitle().cleanSheets),
+              componentButton(3, FilterPlayersTitle().yellowCards),
+              componentButton(4, FilterPlayersTitle().redCards),
             ],
           ),
         ),
-
-
-
+        const SizedBox(height: 8),
 
       ],
     );
   }
+
  Widget selectLeagueWidget(BuildContext context){
     return              Container(
       padding: EdgeInsets.only(top:Sized(context).height- 50),
@@ -198,21 +218,32 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
 
 
 ////////////////////////////////////////////////////////////////////////////
-//                               FUNCTIONS                                 //
+//                               FUNCTIONS                                //
 ////////////////////////////////////////////////////////////////////////////
-Widget componentButton(int optionNumber, String image){
-  return Container(
-    color: choosenIcon==optionNumber ? Colors.teal : Colors.transparent,
-    padding: const  EdgeInsets.all(2),
-    child: GestureDetector(
-      onTap:(){
-        choosenIcon = optionNumber;
-        setState(() {});
-      },
-      child: Image.asset(image,height:50),
-    ),
-  );
-}
+
+  Widget componentButton(int optionNumber, String title){
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: (){
+          choosenIcon = optionNumber;
+          setState((){});
+        },
+        child: Container(
+          padding: const EdgeInsets.all(4),
+          margin: const EdgeInsets.all(4),
+          decoration: BoxDecoration(
+            color: AppColors().greyTransparent,
+            border: Border.all(
+              color: choosenIcon == optionNumber ? Colors.white : AppColors().greyTransparent,
+              width: 1.0,
+            ),
+          ),
+          child: Text(title, style: EstiloTextoBranco.text16),
+        ),
+      ),
+    );
+  }
   Widget componentTable(int optionNumber){
     return Container(
       color: choosenIcon==optionNumber ? Colors.teal : Colors.transparent,
@@ -229,7 +260,7 @@ Widget componentButton(int optionNumber, String image){
 Widget matchsWidget(){
 
   League choosenLeagueClass = leaguesMap[choosenLeagueIndex];
-  if(rodadaMatch>=choosenLeagueClass.nClubs-1){
+  if(rodadaMatch >= choosenLeagueClass.nClubs-1){
     rodadaMatch = choosenLeagueClass.nClubs-1;
   }
   return Column(

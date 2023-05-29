@@ -36,8 +36,14 @@ void premiacao(){
     else if(leagueName==LeagueOfficialNames().asia){premio=1.0;}//asia
     else if(leagueName==LeagueOfficialNames().africa){premio=0.6;}//africa
 
+
+    else{
+      premio=1.0;
+    }
+
+  }else if(Semana(semana).isJogoCopa) {
     //PREMIAÇÕES COPAS
-    else if(leagueName==LeagueOfficialNames().englandCup){premio=0.6;}
+    if(leagueName==LeagueOfficialNames().englandCup){premio=0.6;}
     else if(leagueName==LeagueOfficialNames().italyCup){premio=0.6;}
     else if(leagueName==LeagueOfficialNames().spainCup){premio=0.6;}
     else if(leagueName==LeagueOfficialNames().germanyCup){premio=0.6;}
@@ -55,23 +61,18 @@ void premiacao(){
     else if(leagueName==LeagueOfficialNames().asiaCup){premio=0.6;}
     else if(leagueName==LeagueOfficialNames().africaCup){premio=0.6;}
     else if(leagueName==LeagueOfficialNames().othersCup){premio=0.6;}
-
-    else{
-      premio=1.0;
-    }
-
   }else{
     if(myClass.getMyInternationalLeague() == LeagueOfficialNames().championsLeague){
       premio=3;
       if(semanaOitavas.contains(rodada) || semanaQuartas.contains(rodada)) premio=4.0;
       if(semanaSemi.contains(rodada) || semanaFinal.contains(rodada)) premio=5.0;
     }
-    if(myClass.getMyInternationalLeague() == LeagueOfficialNames().libertadores){
+    else if(myClass.getMyInternationalLeague() == LeagueOfficialNames().libertadores){
       premio=2;
       if(semanaOitavas.contains(rodada) || semanaQuartas.contains(rodada)) premio=2.5;
       if(semanaSemi.contains(rodada) || semanaFinal.contains(rodada)) premio=3.2;
     }
-    if(myClass.getMyInternationalLeague() == LeagueOfficialNames().resto){
+    else if(myClass.getMyInternationalLeague() == LeagueOfficialNames().resto){
       premio=1.5;
       if(semanaOitavas.contains(rodada) || semanaQuartas.contains(rodada)) premio=2;
       if(semanaSemi.contains(rodada) || semanaFinal.contains(rodada)) premio=3;

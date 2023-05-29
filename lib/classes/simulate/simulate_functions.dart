@@ -30,17 +30,16 @@ class Simulate{
     if(Semana(semana).isJogoCampeonatoNacional) {
       nationalMatchs(simulMyMatch);
     }
-    if(Semana(semana).isJogoCopa) {
+    else if(Semana(semana).isJogoCopa) {
       cupMatchs(simulMyMatch);
     }
-    if(Semana(semana).isJogoGruposInternacional){
+    else if(Semana(semana).isJogoGruposInternacional){
       internationalMatchsGroups(simulMyMatch);
     }
-    if(Semana(semana).isJogoMataMataInternacional) {
+    else if(Semana(semana).isJogoMataMataInternacional) {
       MataMataSimulation().simulateMatchs(simulMyMatch);
     }
-
-    if(Semana(semana).isJogoMundial) {
+    else if(Semana(semana).isJogoMundial) {
       MundialFinal data = MundialFinal();
       data.simulate();
     }
@@ -50,7 +49,6 @@ class Simulate{
 
     //APÓS A SIMULAÇÃO
     updateWeek();
-
 
     setTeamsInternational();
 

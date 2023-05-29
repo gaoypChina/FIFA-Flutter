@@ -5060,7 +5060,7 @@ class ClubDetails{
       '',0,0,_country.trinidadTobago,50.0,[],{}];
     map[n.police] = [ClubColors(Colors.blue,Colors.black),pattern.solid,Coordinates(10.30349244, -61.4417926),
       'Manny Ramjohn Stadium',10000,1975,_country.trinidadTobago,57.3,[],{}];
-    map[n.stAnnRangers] = [ClubColors(Colors.red,Colors.red),pattern.solid,Coordinates(10.6615435, -61.53307856),
+    map[n.stAnnRangers] = [ClubColors(Colors.red,Colors.blue),pattern.solid,Coordinates(10.6615435, -61.53307856),
       'Hasely Crawford Stadium',24000,1979,_country.trinidadTobago,55.1,[],{}];
 
     //////////////////////////////////////////////////////////////////////////////////

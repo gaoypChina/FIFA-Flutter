@@ -21,6 +21,7 @@ import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
+import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/best_player_box/best_player_box.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:flutter/material.dart';
@@ -147,6 +148,8 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
 
                 weekClass.isJogoCampeonatoNacional
                     ? weekMatchs()
+                    : weekClass.isJogoCopa ? Container()
+                    : weekClass.isJogoMundial ? Container()
                     : weekClass.isJogoGruposInternacional
                       ? tableWidget()
                       : tableWidgetMataMata(),
@@ -175,6 +178,8 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
     String textRodada = '';
     if(weekClass.isJogoCampeonatoNacional) {
       textRodada = '${Translation(context).text.matchWeek} ' + (rodada-1).toString() + '/' + (League(index: myClass.leagueID).getNTeams()-1).toString();
+    }else if(weekClass.isJogoCopa){
+      textRodada = weekClass.semanaStr;
     }else{
       textRodada = Name().groupsPhase;
       if(weekClass.isJogoGruposInternacional){textRodada += ' ${weekClass.rodadaGroupInternational}'; }
@@ -190,8 +195,9 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
 
         Column(
           children: [
-            weekClass.isJogoCampeonatoNacional
-                ? Image.asset(FIFAImages().campeonatoLogo(myClubClass.leagueName),height: 30,width: 30)
+            weekClass.isJogoCampeonatoNacional ? Image.asset(FIFAImages().campeonatoLogo(myClubClass.leagueName),height: 30,width: 30)
+                : weekClass.isJogoCopa ? Image.asset(FIFAImages().campeonatoLogo(myClass.cupName),height: 35,width: 35)
+                : weekClass.isJogoMundial ? Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().mundial),height: 35,width: 35)
                 : Image.asset(FIFAImages().campeonatoLogo(myClass.getMyInternationalLeague()),height: 35,width: 35),
             Text(textRodada,style: EstiloTextoBranco.text16),
             widget.visitante
@@ -338,9 +344,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
 
   Widget classificationBox(){
     List classificationClubsIndexes = [];
-    if(weekClass.isJogoCampeonatoNacional){
-      classificationClubsIndexes = Classification(leagueIndex: myClass.getLeagueID()).classificationClubsIndexes;
-    }else{
+    if(weekClass.isJogoCampeonatoInternacional){
       List classificationClubsIndexesAll = International(myClass.getMyInternationalLeague()).getClassification();
       myClass = My();
       int index = myClass.getMyClubInternationalGroup()*4;
@@ -350,6 +354,8 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
         classificationClubsIndexesAll[index+2],
         classificationClubsIndexesAll[index+3]
       ];
+    }else{
+      classificationClubsIndexes = Classification(leagueIndex: myClass.getLeagueID()).classificationClubsIndexes;
     }
 
     return             //CONTENT
@@ -359,7 +365,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
         child: ListView.builder(
             padding: EdgeInsets.zero,
             itemCount: classificationClubsIndexes.length,
-            itemBuilder: (c,i)=>classificationRow(i,classificationClubsIndexes[i])
+            itemBuilder: (c,i)=>classificationRow(i, classificationClubsIndexes[i])
         ),
       );
   }

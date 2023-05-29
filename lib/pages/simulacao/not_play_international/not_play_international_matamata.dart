@@ -25,7 +25,7 @@ import 'package:flutter/material.dart';
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-Widget phaseTableMataMataWidget(String internationalLeagueName,int weekToShow,int phaseStage) {
+Widget phaseTableMataMataWidget(String internationalLeagueName, int weekToShow,int phaseStage) {
   int phaseRows = 9;
   int weekShow = 0;
   if(phaseStage==0 || phaseStage==1){phaseRows=8;weekShow = semanaOitavas.first;} //OITAVAS

@@ -6,10 +6,10 @@ class CleanSheets{
 
   saveNational(int playerID, int goalsTaken){
     if(goalsTaken==0){
-      globalInternationalPlayers[PlayerStatsKeys().keyPlayerCleanSheets]![playerID]++;
+      globalLeaguePlayers[PlayerStatsKeys().keyPlayerCleanSheets]![playerID]++;
       globalJogadoresCarrerCleanSheets[playerID]++;
     }else{
-      globalInternationalPlayers[PlayerStatsKeys().keyPlayerGolsSofridos]![playerID]++;
+      globalLeaguePlayers[PlayerStatsKeys().keyPlayerGolsSofridos]![playerID]++;
       globalJogadoresCarrerGolsSofridos[playerID]++;
     }
   }

@@ -8,11 +8,12 @@ List organizarVariavelLeague(League league, int goalOrYellowOrRed) {
   //Mostra no Widget de League Results
 
   List global = [];
-  if(goalOrYellowOrRed==0){global = globalLeaguePlayers[PlayerStatsKeys().keyPlayerAssists]!;}
+  if(goalOrYellowOrRed==0){global = globalLeaguePlayers[PlayerStatsKeys().keyPlayerGoals]!;}
   if(goalOrYellowOrRed==1){global = globalJogadoresYellowCard;}
   if(goalOrYellowOrRed==2){global = globalJogadoresRedCard;}
   if(goalOrYellowOrRed==3){global = globalLeaguePlayers[PlayerStatsKeys().keyPlayerAssists]!;}
   if(goalOrYellowOrRed==4){global = globalJogadoresGrades;}
+  if(goalOrYellowOrRed==5){global = globalLeaguePlayers[PlayerStatsKeys().keyPlayerCleanSheets]!;}
 
   List copyVariableList = [];
   List leaguePlayers = [];
@@ -32,6 +33,5 @@ List organizarVariavelLeague(League league, int goalOrYellowOrRed) {
   }
   //ARTILHEIROS/lista EM ORDEM
   leaguePlayers = Order().listDecrescente(listA: copyVariableList, listB: leaguePlayers, length: leaguePlayers.length)[1];
-
   return leaguePlayers;
 }

@@ -129,6 +129,19 @@ abstract class EstiloTextoBranco {
   );
 }
 
+abstract class EstiloTextoCinza {
+  static const TextStyle text16 = TextStyle(
+    fontFamily: 'Roboto',
+    color: Colors.grey,
+    fontSize: 16,
+  );
+  static const TextStyle text14 = TextStyle(
+    fontFamily: 'Roboto',
+    color: Colors.grey,
+    fontSize: 14,
+  );
+}
+
 abstract class EstiloTextoPreto {
   static const TextStyle text40 = TextStyle(
     color: Colors.black,

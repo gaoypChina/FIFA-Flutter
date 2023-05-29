@@ -135,23 +135,23 @@ class Images{
     return Image.asset('assets/trophy/${getTrophyImage(leagueName)}.png',height: _height,width: _width);
   }
 
-  String getContinentLogo(String continent) {
+  Widget getContinentLogo(String continent, [double _height=40.0, double _width=40.0]) {
     if (continent == 'Europa') {
-      return 'assets/continents/europe.png';
+      return Image.asset('assets/continents/europe.png',height: _height,width: _width);
     }
     if (continent == 'América do Sul') {
-      return 'assets/continents/south america.png';
+      return  Image.asset('assets/continents/south america.png',height: _height,width: _width);
     }
     if (continent == 'América do Norte') {
-      return 'assets/continents/north america.png';
+      return  Image.asset('assets/continents/north america.png',height: _height,width: _width);
     }
     if (continent == 'Ásia') {
-      return 'assets/continents/asia.png';
+      return  Image.asset('assets/continents/asia.png',height: _height,width: _width);
     }
     if (continent == 'África') {
-      return 'assets/continents/africa.png';
+      return  Image.asset('assets/continents/africa.png',height: _height,width: _width);
     }
-    return 'assets/continents/europe.png';
+    return  Image.asset('assets/continents/europe.png',height: _height,width: _width);
   }
 
 }

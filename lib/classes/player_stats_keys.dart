@@ -13,8 +13,11 @@ class FilterPlayersTitle{
   String assists = "Assistências";
   String bestPlayer = "Melhor Jogador";
   String cleanSheets = "Clean Sheets";
+  String redCards = "Cartões Vermelhos";
+  String yellowCards = "Cartões Amarelos";
 
   getList(){
     return [artilheiros, assists, bestPlayer, cleanSheets];
   }
+
 }

@@ -12,6 +12,7 @@ import '../../../theme/colors.dart';
 
 Widget tabelaClassificacaoWidget(BuildContext context,League league){
   List classificationClubsIndexes = Classification(leagueIndex: league.index).classificationClubsIndexes;
+
   return Column(
     children: [
       Container(
@@ -19,15 +20,15 @@ Widget tabelaClassificacaoWidget(BuildContext context,League league){
         child: Row(
           children: [
             const SizedBox(width: 220),
-            Text(Translation(context).text.points3,style:EstiloTextoBranco.text14),
+            Text(Translation(context).text.points3,style:EstiloTextoBranco.negrito14),
             const SizedBox(width: 10),
-            Text(Translation(context).text.goalsFor3,style:EstiloTextoBranco.text14),
+            Text(Translation(context).text.goalsFor3,style:EstiloTextoBranco.negrito14),
             const SizedBox(width: 15),
-            Text(Translation(context).text.goalsAgainst,style:EstiloTextoBranco.text14),
+            Text(Translation(context).text.goalsAgainst,style:EstiloTextoBranco.negrito14),
             const SizedBox(width: 15),
-            Text(Translation(context).text.goalDifference3,style:EstiloTextoBranco.text14),
+            Text(Translation(context).text.goalDifference3,style:EstiloTextoBranco.negrito14),
             const SizedBox(width: 15),
-            Text(Translation(context).text.ovr3,style: EstiloTextoBranco.text14),
+            Text(Translation(context).text.ovr3,style: EstiloTextoBranco.negrito14),
           ],
         ),
       ),
@@ -44,7 +45,7 @@ Widget tabelaClassificacaoWidget(BuildContext context,League league){
           },
           children: [
             for(int i=0; i<league.nClubs;i++)
-              rowTableNacionalLayout(context, i,classificationClubsIndexes[i], league)
+              rowTableNacionalLayout(context, i, classificationClubsIndexes[i], league)
           ],
         ),
       ),
@@ -65,21 +66,23 @@ TableRow rowTableNacionalLayout(BuildContext context, int position, int indexClu
 
   return TableRow(
     children: [
-      Text((position+1).toString()+'-',style: EstiloTextoBranco.text14),
+      Center(child: Text((position+1).toString()+'°',style: EstiloTextoBranco.text14)),
       GestureDetector(
         onTap: (){
           clickClubProfilePage(context,clubClass);
           },
-          child: Images().getEscudoWidget(clubClass.name,25,25)),
+          child: Images().getEscudoWidget(clubClass.name,26,26)),
       GestureDetector(
         onTap: (){
           clickClubProfilePage(context,clubClass);
         },
         child: Container(
-            width:170,
-            padding: const EdgeInsets.all(2),
+            width: 170,
+            height: 28,
+            padding: const EdgeInsets.all(4),
+            margin: const EdgeInsets.all(1),
             color: backgroundColor,
-            child: Text(clubName,style: EstiloTextoBranco.text16)
+            child: Text(clubName, style: EstiloTextoBranco.text16)
         ),
       ),
       Center(child: Text(points.toString(),style: EstiloTextoBranco.text14)),

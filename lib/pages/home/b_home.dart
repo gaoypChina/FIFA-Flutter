@@ -188,7 +188,10 @@ class _HomePageState extends State<HomePage> {
 
 
                   const SizedBox(height: 30),
-                  continueButton(),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: continueButton(),
+                  ),
                   const SizedBox(height: 28),
 
                   wHomeBottomRowButtons(context, clubID),

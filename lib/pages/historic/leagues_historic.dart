@@ -5,6 +5,7 @@ import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
@@ -55,14 +56,13 @@ class _HistoricLeagueState extends State<HistoricLeague> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    selectButton('Resumo', 0),
-                    selectButton('1º', 1),
-                    selectButton('G-2', 2),
-                    selectButton('G-4', 4),
-                    selectButton('G-10', 10),
-                    selectButton(Translation(context).text.all, 20),
+                    selectCategory('Resumo', 0),
+                    selectCategory('G-1', 1),
+                    selectCategory('G-2', 2),
+                    selectCategory('G-4', 4),
+                    selectCategory('G-10', 10),
+                    selectCategory(Translation(context).text.all, 20),
                   ],
                 ),
               ),
@@ -84,17 +84,20 @@ class _HistoricLeagueState extends State<HistoricLeague> {
 
               //TABELA
               nTeamsSelected>0 ? Expanded(
-                child: nTeamsSelected>2 ? SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
+                child: nTeamsSelected>1 ? SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
 
-                      for(int year=ano-1;year>=anoInicial;year--)
-                        yearRow(year),
+                        for(int year=ano-1;year>=anoInicial;year--)
+                          yearRow(year),
 
-                      for(int year=ano-1;year>ano-(anoInicial-1950)-1;year--)
-                        yearRowPast(year),
-                    ],
+                        for(int year=ano-1;year>ano-(anoInicial-1950)-1;year--)
+                          yearRowPast(year),
+                      ],
+                    ),
                   ),
                 ) : SingleChildScrollView(
                   child: Column(
@@ -133,23 +136,27 @@ class _HistoricLeagueState extends State<HistoricLeague> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-  Widget selectButton(String text,int nteams){
-    return Column(
-      children: [
-        Text(text,style: EstiloTextoBranco.text16),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: GestureDetector(
-            onTap: (){
-              nTeamsSelected = nteams;
-              setState(() {});
-            },
-            child: nTeamsSelected == nteams
-                ? const Icon(Icons.radio_button_checked,color: Colors.white, size: 28)
-                : const Icon(Icons.radio_button_off,color: Colors.white, size: 28),
+  Widget selectCategory(String title, int nteams){
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: (){
+          nTeamsSelected = nteams;
+          setState(() {});
+        },
+        child: Container(
+          padding: const EdgeInsets.all(4),
+          margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+          decoration: BoxDecoration(
+            color: AppColors().greyTransparent,
+            border: Border.all(
+              color: nTeamsSelected == nteams ? Colors.white : AppColors().greyTransparent,
+              width: 1.0,
+            ),
           ),
+          child: Text(title, style: EstiloTextoBranco.text16),
         ),
-      ],
+      ),
     );
   }
 
@@ -210,6 +217,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
           children: [
             Text(ano.toString(),style: EstiloTextoBranco.negrito16),
             classificationRow(position,clubName),
+            const SizedBox(height: 6),
           ],
         );
       }
@@ -222,19 +230,24 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   ////////////////////////////////////////////////////////////////////////////
   Widget classificationRow(int position,String clubName){
     return GestureDetector(
-      onTap: (){
-        clickClub(clubName);
-      },
-      child: Row(
-        children: [
-          position+1<10
-              ? Text('  ${(position+1).toString()}º ',style: EstiloTextoBranco.text14)
-              : Text('${(position+1).toString()}º ',style: EstiloTextoBranco.text14),
-          Images().getEscudoWidget(clubName,24,24),
-          SizedBox(width:80,child: Text(clubName,maxLines:1,overflow:TextOverflow.ellipsis,style: EstiloTextoBranco.text10)),
-        ],
-      ),
-    );
+        onTap: (){
+          clickClub(clubName);
+        },
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                position+1 < 10
+                    ? Text('  ${(position+1).toString()}º ',style: EstiloTextoBranco.text14)
+                    : Text('${(position+1).toString()}º ',style: EstiloTextoBranco.text14),
+                Images().getEscudoWidget(clubName,24,24),
+              ],
+            ),
+            SizedBox(width:82,child: Center(child: Text(clubName,maxLines:1,overflow:TextOverflow.ellipsis,style: EstiloTextoBranco.text10))),
+          ],
+        ),
+      );
   }
 
   ////////////////////////////////////////////////////////////////////////////

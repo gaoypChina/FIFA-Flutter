@@ -31,6 +31,7 @@ class _TransfersState extends State<Transfers> {
   FilterPlayers filterPlayers = FilterPlayers();
 
   bool showMatchsGoalsAssists = false;
+  final ScrollController _scrollController = ScrollController();
 
   int showRows = 0;
   ////////////////////////////////////////////////////////////////////////////
@@ -40,6 +41,11 @@ class _TransfersState extends State<Transfers> {
   void initState() {
     filterPlayers.setOverall();
     super.initState();
+  }
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -95,6 +101,7 @@ class _TransfersState extends State<Transfers> {
                   color: AppColors().greyTransparent,
                   padding: const EdgeInsets.symmetric(horizontal: 6),
                   child: SingleChildScrollView(
+                    controller: _scrollController,
                     child: Table(
                       columnWidths: const {
                         0: FractionColumnWidth(.08),
@@ -104,8 +111,8 @@ class _TransfersState extends State<Transfers> {
                         5: FractionColumnWidth(.18),
                       },
                       children: [
-                        for (int i = filterPlayers.transferParameters.page * 50;
-                            i < filterPlayers.copyJogadoresID.length && showRows < 50;
+                        for (int i = filterPlayers.transferParameters.page * 70;
+                            i < filterPlayers.copyJogadoresID.length && showRows < 70;
                             i++)
                           showMatchsGoalsAssists
                               ? playersRow2(filterPlayers.copyJogadoresID[i])
@@ -177,6 +184,11 @@ class _TransfersState extends State<Transfers> {
                                 } else {
                                   customToast(Translation(context).text.loading);
                                 }
+                                _scrollController.animateTo(
+                                  0,
+                                  duration: const Duration(milliseconds: 800),
+                                  curve: Curves.easeInOut,
+                                );
                                 setState(() {});
                               },
                               child: Image.asset('assets/icons/button_left.png',width: 50),
@@ -190,6 +202,11 @@ class _TransfersState extends State<Transfers> {
                                   filterPlayers.transferParameters.page++;
                                   customToast(Translation(context).text.loading);
                                 }
+                                _scrollController.animateTo(
+                                  0,
+                                  duration: const Duration(milliseconds: 800),
+                                  curve: Curves.easeInOut,
+                                );
                                 setState(() {});
                               },
                               child: Image.asset('assets/icons/button_right.png',width: 50),

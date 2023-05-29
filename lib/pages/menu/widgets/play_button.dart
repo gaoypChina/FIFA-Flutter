@@ -24,7 +24,7 @@ import 'package:flutter/material.dart';
 
 import '../../calendar/calendar.dart';
 
-Widget wPlayButton(BuildContext context, Club club, Adversario adversario, Semana week, Function() function){
+Widget wPlayButton(BuildContext context, Club club, Adversario adversario, Semana week){
   return Container(
     margin: const EdgeInsets.all(4),
     decoration: BoxDecoration(
@@ -37,7 +37,9 @@ Widget wPlayButton(BuildContext context, Club club, Adversario adversario, Seman
     child: Material(
       color: Colors.transparent,
       child: InkWell(
-          onTap: function,
+          onTap: (){
+            playFunction(context, adversario);
+          },
           child: Stack(
             children: [
 
@@ -114,15 +116,7 @@ Widget wPlayButton(BuildContext context, Club club, Adversario adversario, Seman
 
                         const SizedBox(height: 10),
                         insideButton("Play", club, (){
-                          if(adversario.clubName.isNotEmpty){
-                            navigatorReplace(context, Play(
-                                adversarioClubID: adversario.clubID,
-                                visitante: adversario.visitante,
-                                isSingleMatch: false
-                            ));
-                          }else{
-                            navigatorReplace(context, const NotPlay());
-                          }
+                          playFunction(context, adversario);
                         }),
 
                       ],
@@ -187,6 +181,18 @@ Widget backgroundStadium(BuildContext context, String clubName){
       ),
     ),
   );
+}
+
+playFunction(BuildContext context,Adversario adversario){
+  if(adversario.clubName.isNotEmpty){
+    navigatorReplace(context, Play(
+        adversarioClubID: adversario.clubID,
+        visitante: adversario.visitante,
+        isSingleMatch: false
+    ));
+  }else{
+    navigatorReplace(context, const NotPlay());
+  }
 }
 
 simulateFunction(Adversario adversario, My myClass) async{

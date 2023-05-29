@@ -4,6 +4,7 @@ import 'package:fifa/classes/international.dart';
 import 'package:fifa/classes/international_league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/click_navigator/click_club.dart';
+import 'package:fifa/pages/table_international/table_brackets.dart';
 import 'package:fifa/pages/table_international/table_international_scorers.dart';
 import 'package:fifa/pages/table_international/table_mata_mata.dart';
 import 'package:fifa/pages/table_international/table_matchs.dart';
@@ -40,7 +41,7 @@ class _TableInternationalState extends State<TableInternational>  with TickerPro
     super.initState();
   }
   onStart(){
-    _tabController = TabController(vsync: this, length: 4);
+    _tabController = TabController(vsync: this, length: 5);
 
     leagueInternational = widget.leagueInternational;
     if(leagueInternational == LeagueOfficialNames().resto){
@@ -74,7 +75,7 @@ class _TableInternationalState extends State<TableInternational>  with TickerPro
   Widget build(BuildContext context) {
 
     return DefaultTabController(
-      length: 4,
+      length: 5,
       child: Scaffold(
 
           body:  Stack(
@@ -96,6 +97,7 @@ class _TableInternationalState extends State<TableInternational>  with TickerPro
                           Tab(text: Translation(context).text.classification),
                           Tab(text: Translation(context).text.matchs),
                           Tab(text: Translation(context).text.knockoutStage),
+                          const Tab(text: 'Brackets'),
                           Tab(text: Translation(context).text.topScorers),
                         ],
                       ),
@@ -108,6 +110,7 @@ class _TableInternationalState extends State<TableInternational>  with TickerPro
                           groupStageTable(),
                           TableMatchs(leagueInternational: leagueInternational),
                           TableMataMata(leagueInternational: leagueInternational),
+                          interBrackets(context, leagueInternational),
                           TableInternationalScorers(leagueInternational: leagueInternational),
                         ],
                       ),

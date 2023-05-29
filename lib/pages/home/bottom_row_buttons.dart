@@ -1,3 +1,4 @@
+import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/database/local_database/shared_preferences.dart';
 import 'package:fifa/database/select_database.dart';
 import 'package:fifa/pages/configuration/configuration.dart';
@@ -15,10 +16,18 @@ Widget wHomeBottomRowButtons(BuildContext context, int clubID){
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children:[
-      const DatabaseButton(),
-      editClub(context, clubID),
-      configurations(context),
-      moreOptions(context),
+      SizedBox(width: Sized(context).width*0.22,
+          child: const DatabaseButton()
+      ),
+      SizedBox(width: Sized(context).width*0.22,
+          child: editClub(context, clubID)
+      ),
+      SizedBox(width: Sized(context).width*0.22,
+          child: configurations(context)
+      ),
+      SizedBox(width: Sized(context).width*0.22,
+          child: moreOptions(context)
+      ),
     ],
   );
 }
@@ -64,8 +73,8 @@ class _DatabaseButtonState extends State<DatabaseButton> {
           children: [
             const Icon(Icons.save,color:Colors.white,size:40),
             globalSaveNumber==0
-                ? const Text('Database padrão',style: EstiloTextoBranco.text14)
-                : Text('Database: '+globalSaveNumber.toString(),style: EstiloTextoBranco.text14),
+                ? const Text('Database: 0',style: EstiloTextoBranco.text12)
+                : Text('Database: '+globalSaveNumber.toString(),style: EstiloTextoBranco.text12),
           ],
         ),
       ),
@@ -88,7 +97,7 @@ Widget editClub(BuildContext context, int clubID){
           child: Column(
             children: [
               const Icon(Icons.edit,color:Colors.white,size:40),
-              Text(Translation(context).text.editTeam,style: EstiloTextoBranco.text14)
+              Text(Translation(context).text.editTeam,style: EstiloTextoBranco.text12)
             ],
           ),
         ),
@@ -103,13 +112,13 @@ Widget configurations(BuildContext context){
       onTap: (){
         Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Configuration()));
       },
-    child: Container(
+      child: Container(
       padding: const EdgeInsets.all(4),
       decoration: decoratorHomeButtons(),
       child: Column(
         children: [
           const Icon(Icons.miscellaneous_services,color:Colors.white,size:40),
-          Text(Translation(context).text.configuration,style: EstiloTextoBranco.text14),
+          Text(Translation(context).text.configuration,style: EstiloTextoBranco.text12),
         ],
       ),
     ),
@@ -122,16 +131,16 @@ Widget moreOptions(BuildContext context){
       color: Colors.transparent,
       child: InkWell(
       customBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-  onTap: (){
-  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Tournament()));
-  },
-  child: Container(
+      onTap: (){
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Tournament()));
+      },
+      child: Container(
         padding: const EdgeInsets.all(4),
         decoration: decoratorHomeButtons(),
         child: Column(
           children: const [
             Icon(Icons.add,color:Colors.white,size:40),
-            Text('More',style: EstiloTextoBranco.text14)
+            Text('More',style: EstiloTextoBranco.text12)
           ],
         ),
       ),
@@ -144,7 +153,7 @@ BoxDecoration decoratorHomeButtons(){
     borderRadius: const BorderRadius.all(Radius.circular(5.0) ),
     border: Border.all(
       width: 1.0,
-      color: Colors.lightGreenAccent,
+      color: AppColors().green,
     ),
   );
 }

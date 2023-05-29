@@ -45,48 +45,35 @@ class _AllInfosClubState extends State<AllInfosClub> {
                     child: Container(
                       color: AppColors().greyTransparent,
                       padding: const EdgeInsets.symmetric(horizontal: 6),
-                      child: SingleChildScrollView(
-                        child: selection==0
-                            ? tableWidget0()
-                            : selection==1 ? tableWidget1()
-                            : selection==2 ? tableWidget3()
-                            : tableWidget2(),
-                      ),
+                      child: selection==0
+                          ? tableWidget0()
+                          : selection==1 ? tableWidgetLeague()
+                          : selection==2 ? tableWidgetCups()
+                          : selection==3 ? tableWidgetInternational()
+                          : selection==4 ? tableWidgetCarrer()
+                          : selection==5 ? tableWidgetCards()
+                          : Container(),
                     ),
                   ),
-
 
                   const SizedBox(height: 10),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
+
+                  for(int i=0; i <= 5; i++)
                       buttonSquareSelection(
-                          conditionWhenTrue: selection==0,
+                          conditionWhenTrue: selection==i,
                           height: 25, width: 50,
                           function: (){
-                            selection = 0;
-                            setState(() {});
-                          }),
-                      buttonSquareSelection(
-                          conditionWhenTrue: selection==1,
-                          height: 25, width: 50,
-                          function: (){
-                            selection = 1;
-                            setState(() {});
-                          }),
-                      buttonSquareSelection(
-                          conditionWhenTrue: selection==2,
-                          height: 25, width: 50,
-                          function: (){
-                            selection = 2;
+                            selection = i;
                             setState(() {});
                           }),
                     ],
                   ),
 
                   const SizedBox(height: 10),
-
 
                 ],
               ),
@@ -98,142 +85,186 @@ class _AllInfosClubState extends State<AllInfosClub> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-  Table tableWidget0(){
-    return Table(
-      columnWidths: const {
-        0: FractionColumnWidth(.09),
-        1: FractionColumnWidth(.09),
-        2: FractionColumnWidth(.4),
-        3: FractionColumnWidth(.09),
-        4: FractionColumnWidth(.09),
-        5: FractionColumnWidth(.16),
-      },
+  Widget title(String t1, String t2, String t3, String t4){
+    return Row(
       children: [
-
-        TableRow(
-      children: [
-        const Text(''),
-        const Text(''),
-        Text(Translation(context).text.name, style: EstiloTextoBranco.text16),
-        Text(Translation(context).text.age3, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-        Text(Translation(context).text.ovr3, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-        const Text('\$', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-        ]),
-
-        for(int i=0; i<widget.club.escalacao.length; i++)
-          playersRow0(i,widget.club.escalacao[i])
-      ],
-    );
-  }
-  Table tableWidget1(){
-    return Table(
-      columnWidths: const {
-        0: FractionColumnWidth(.09),
-        1: FractionColumnWidth(.09),
-        2: FractionColumnWidth(.45),
-        3: FractionColumnWidth(.1),
-        4: FractionColumnWidth(.1),
-        5: FractionColumnWidth(.1),
-      },
-      children: [
-
-        TableRow(
+        Text(t1, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+        const Spacer(),
+        SizedBox(
+          width: 140,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              const Text(''),
-              const Text(''),
-              Text(Translation(context).text.name, style: EstiloTextoBranco.text16),
-              Text(Translation(context).text.playedP, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              Text(Translation(context).text.goalsG, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              Text(Translation(context).text.assistsA, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-            ]),
-
-        for(int i=0; i<widget.club.escalacao.length; i++)
-          playersRow0(i,widget.club.escalacao[i])
+              Text(t2, textAlign:TextAlign.center,style: EstiloTextoBranco.text12),
+              Text(t3, textAlign:TextAlign.center,style: EstiloTextoBranco.text12),
+              Text(t4, textAlign:TextAlign.center,style: EstiloTextoBranco.text12),
+            ],
+          ),
+        ),
       ],
     );
   }
-  Table tableWidget2(){
-    return Table(
-      columnWidths: const {
-        0: FractionColumnWidth(.09),
-        1: FractionColumnWidth(.09),
-        2: FractionColumnWidth(.45),
-        3: FractionColumnWidth(.1),
-        4: FractionColumnWidth(.1),
-        5: FractionColumnWidth(.1),
-      },
-      children: [
-        TableRow(
-            children: [
-              const Text(''),
-              const Text(''),
-              Text(Translation(context).text.name, style: EstiloTextoBranco.text16),
-              const Text('+', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              Text(Translation(context).text.yellowCards3, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              Text(Translation(context).text.redCards3, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-            ]),
 
-        for(int i=0; i<widget.club.escalacao.length; i++)
-          playersRow0(i,widget.club.escalacao[i])
+  Widget displayRows(int option){
+    return         Expanded(
+      child: ListView.builder(
+        itemCount: widget.club.escalacao.length,
+        padding: EdgeInsets.zero,
+        itemBuilder: (BuildContext context, int i) {
+          return  playerRow(i, widget.club.escalacao[i], option);
+        },
+      ),
+    );
+  }
+  Widget tableWidget0(){
+    return Column(
+      children: <Widget>[
+
+        title(
+            Translation(context).text.name,
+            Translation(context).text.age3,
+            Translation(context).text.ovr3,
+            '\$',
+        ),
+
+        displayRows(0),
+
       ],
     );
   }
-  Table tableWidget3(){
-    return Table(
-      columnWidths: const {
-        0: FractionColumnWidth(.09),
-        1: FractionColumnWidth(.09),
-        2: FractionColumnWidth(.45),
-        3: FractionColumnWidth(.1),
-        4: FractionColumnWidth(.1),
-        5: FractionColumnWidth(.1),
-      },
-      children: [
+  Widget tableWidgetLeague(){
+    return Column(
+      children: <Widget>[
 
-        TableRow(
-            children: [
-              const Text(''),
-              const Text(''),
-              Text(Translation(context).text.name, style: EstiloTextoBranco.text16),
-              Text('${Translation(context).text.playedP}*', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              Text('${Translation(context).text.goalsG}*', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-              Text('${Translation(context).text.assistsA}*', textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-            ]),
+        title(
+          Translation(context).text.name,
+          Translation(context).text.playedP,
+          Translation(context).text.goalsG,
+          Translation(context).text.assistsA,
+        ),
 
-        for(int i=0; i<widget.club.escalacao.length; i++)
-          playersRow3(i,widget.club.escalacao[i])
+        displayRows(1),
+
       ],
     );
   }
-  TableRow playersRow0(int row,int playerIndex){
 
+  Widget tableWidgetCups(){
+    return Column(
+      children: <Widget>[
+
+        title(
+          Translation(context).text.name,
+          'Cup ${Translation(context).text.playedP}',
+          'Cup ${Translation(context).text.goalsG}',
+          'Cup ${Translation(context).text.assistsA}',
+        ),
+
+        displayRows(2),
+
+      ],
+    );
+  }
+  Widget tableWidgetInternational(){
+    return Column(
+      children: <Widget>[
+
+        title(
+          Translation(context).text.name,
+          'Int ${Translation(context).text.playedP}',
+          'Int ${Translation(context).text.goalsG}',
+          'Int ${Translation(context).text.assistsA}',
+        ),
+
+        displayRows(3),
+
+      ],
+    );
+  }
+  Widget tableWidgetCarrer(){
+    return Column(
+      children: <Widget>[
+
+        title(
+          Translation(context).text.name,
+          'All ${Translation(context).text.playedP}',
+          'All ${Translation(context).text.goalsG}',
+          'All ${Translation(context).text.assistsA}',
+        ),
+
+        displayRows(4),
+
+      ],
+    );
+  }
+  Widget tableWidgetCards(){
+    return Column(
+      children: <Widget>[
+
+        title(
+          Translation(context).text.name,
+          '+',
+          Translation(context).text.yellowCards3,
+          Translation(context).text.redCards3,
+        ),
+
+        displayRows(5),
+
+      ],
+    );
+  }
+
+
+  Widget playerRow(int row, int playerIndex, int option){
     Jogador player = Jogador(index: playerIndex);
     Color background = Colors.transparent;
     if(row<11){
       background = Colors.black;
     }
-
-    if(selection==1){
-      return playersRow1(row,playerIndex);
-    }
-    if(selection==3){
-      return playersRow2(row,playerIndex);
-    }
-
-    return TableRow(
+    return Container(
       decoration: BoxDecoration(
         color: background,
       ),
-      children: [
-        Container(
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            child: positionContainer(player.position)),
-        funcFlagsList(player.nationality, 20, 20),
-        playerNameWidget(player),
-        Container(
-            color: colorAgeBackground(player.age),
-            padding: const EdgeInsets.all(4),
-            child: Text(player.age.toString(), textAlign:TextAlign.center,style: EstiloTextoPreto.text16)),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 2.0),
+        child: Row(
+          children: [
+            funcFlagsList(player.nationality, 20, 30),
+            const SizedBox(width: 5),
+            Images().getPlayerPictureWidget(player, 36, 36),
+            positionContainer(player.position),
+            const SizedBox(width: 5),
+            playerNameWidget(player),
+            const Spacer(),
+            SizedBox(
+              width: 140,
+              child: option == 0 ? playersStatsWidget0(player)
+                  : option == 1 ? playersStatsWidgetLeague(player)
+                  : option == 2 ? playersStatsWidgetCups(player)
+                  : option == 3 ? playersStatsWidgetInternational(player)
+                  : option == 4 ? playersStatsWidgetCarrer(player)
+                  : option == 5 ? playersStatsWidgetCards(player)
+                  : Container(),
+            ),
+
+          ],
+        ),
+      ),
+    );
+  }
+
+
+
+
+  Widget playersStatsWidget0(Jogador player){
+    return
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Container(
+              color: colorAgeBackground(player.age),
+              padding: const EdgeInsets.all(4),
+              child: Text(player.age.toString(), textAlign:TextAlign.center,style: EstiloTextoPreto.text16)),
         Container(
             color: colorOverallBackground(player.overall),
             padding: const EdgeInsets.all(4),
@@ -241,97 +272,82 @@ class _AllInfosClubState extends State<AllInfosClub> {
                 textAlign:TextAlign.center,
                 style: EstiloTextoPreto.text16)
         ),
-        Text(player.price.toStringAsFixed(2) + 'mi',
-            textAlign:TextAlign.center,
-            style: EstiloTextoBranco.text14),
-      ],
-    );
-  }
-
-
-  TableRow playersRow1(int row,int playerIndex){
-
-    Jogador player = Jogador(index: playerIndex);
-    Color background = Colors.transparent;
-    if(row<11){
-      background = Colors.black;
-    }
-
-    return TableRow(
-      decoration: BoxDecoration(
-        color: background,
-      ),
-      children: [
-        Container(
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            child: positionContainer(player.position)),
-        funcFlagsList(player.nationality, 20, 20),
-        playerNameWidget(player),
-        Text(player.matchsLeague.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-        Text(player.goalsLeague.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-        Text(player.assistsLeague.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-      ],
-    );
-  }
-
-  TableRow playersRow2(int row,int playerIndex){
-
-    Jogador player = Jogador(index: playerIndex);
-
-    Color background = Colors.transparent;
-    if(row<11){
-      background = Colors.black;
-    }
-
-    return TableRow(
-      decoration: BoxDecoration(
-        color: background,
-      ),
-      children: [
-        Container(
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            child: positionContainer(player.position)),
-        funcFlagsList(player.nationality, 20, 20),
-        playerNameWidget(player),
-        Text(player.injury.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-        Container(
-          width: 15,
-            color: Colors.yellow,
-            child: Text(player.yellowCard.toString(),textAlign:TextAlign.center,style: EstiloTextoPreto.text14)
+        SizedBox(
+          width: 40,
+          child: Text(player.price.toStringAsFixed(2),
+              textAlign: TextAlign.center,
+              style: EstiloTextoBranco.text14),
         ),
-        Container(
-            width: 15,
-          color: Colors.red,
-            child: Text(player.redCard.toString(),textAlign:TextAlign.center,style: EstiloTextoPreto.text14)
-        ),
-      ],
-    );
+        ],
+      );
+  }
+  Widget playersStatsWidgetLeague(Jogador player){
+    return
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Text(player.matchsLeague.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+          Text(player.goalsLeague.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+          Text(player.assistsLeague.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+        ],
+      );
+  }
+  Widget playersStatsWidgetCards(Jogador player){
+    return
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Text(player.injury.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+          Container(
+              width: 22,
+              height: 22,
+              color: Colors.yellow,
+              child: Center(child: Text(player.yellowCard.toString(),textAlign:TextAlign.center,style: EstiloTextoPreto.text14))
+          ),
+          Container(
+              width: 22,
+              height: 22,
+              color: Colors.red,
+              child: Center(child: Text(player.redCard.toString(),textAlign:TextAlign.center,style: EstiloTextoPreto.text14))
+          ),
+        ],
+      );
+  }
+  Widget playersStatsWidgetCups(Jogador player){
+    return
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Text(player.matchsCup.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+          Text(player.goalsCup.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+          Text(player.assistsCup.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+        ],
+      );
+  }
+  Widget playersStatsWidgetInternational(Jogador player){
+    return
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Text(player.matchsInternational.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+          Text(player.goalsInternational.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+          Text(player.assistsInternational.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+        ],
+      );
+  }
+  Widget playersStatsWidgetCarrer(Jogador player){
+    return
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Text(player.matchsCarrer.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+          Text(player.goalsCarrer.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+          Text(player.assistsCarrer.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+        ],
+      );
   }
 
-  TableRow playersRow3(int row,int playerIndex){
 
-    Jogador player = Jogador(index: playerIndex);
-    Color background = Colors.transparent;
-    if(row<11){
-      background = Colors.black;
-    }
-
-    return TableRow(
-      decoration: BoxDecoration(
-        color: background,
-      ),
-      children: [
-        Container(
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            child: positionContainer(player.position)),
-        funcFlagsList(player.nationality, 20, 20),
-        playerNameWidget(player),
-        Text(player.matchsCarrer.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-        Text(player.goalsCarrer.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-        Text(player.assistsCarrer.toString(), textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
-      ],
-    );
-  }
 
   Widget playerNameWidget(Jogador player){
 
@@ -339,7 +355,7 @@ class _AllInfosClubState extends State<AllInfosClub> {
     if(player.injury>0 || player.redCard>0 || player.yellowCard==3){
       nameColor = Colors.red;
     }
-    return         GestureDetector(
+    return GestureDetector(
       onTap:(){
         popUpOkShowPlayerInfos(
             context: context,
@@ -351,7 +367,6 @@ class _AllInfosClubState extends State<AllInfosClub> {
             );
       },
       child: Container(
-          width: 170,
           margin: const EdgeInsets.only(left: 6),
           child: Text(player.name, style: TextStyle(
             color: nameColor,

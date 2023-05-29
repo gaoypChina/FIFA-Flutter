@@ -19,18 +19,18 @@ import 'package:flutter/material.dart';
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                matchBox(cupName, CupClassification().keyOitavas, 1),
-                matchBox(cupName, CupClassification().keyOitavas, 2),
-                matchBox(cupName, CupClassification().keyOitavas, 3),
-                matchBox(cupName, CupClassification().keyOitavas, 4),
+                matchBoxCup(cupName, CupClassification().keyOitavas, 1),
+                matchBoxCup(cupName, CupClassification().keyOitavas, 2),
+                matchBoxCup(cupName, CupClassification().keyOitavas, 3),
+                matchBoxCup(cupName, CupClassification().keyOitavas, 4),
               ],
             ),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                matchBox(cupName, CupClassification().keyQuartas, 1),
-                matchBox(cupName, CupClassification().keyQuartas, 2),
+                matchBoxCup(cupName, CupClassification().keyQuartas, 1),
+                matchBoxCup(cupName, CupClassification().keyQuartas, 2),
               ],
             ),
 
@@ -44,9 +44,9 @@ import 'package:flutter/material.dart';
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        matchBox(cupName, CupClassification().keySemifinal, 1),
+                        matchBoxCup(cupName, CupClassification().keySemifinal, 1),
                         const SizedBox(height: 8),
-                        matchBox(cupName, CupClassification().keySemifinal, 2),
+                        matchBoxCup(cupName, CupClassification().keySemifinal, 2),
                       ],
                     ),
                   ),
@@ -56,7 +56,7 @@ import 'package:flutter/material.dart';
                     child: Row(
                       children: [
                         const Spacer(),
-                        matchBox(cupName, CupClassification().keyFinal, 1),
+                        matchBoxCup(cupName, CupClassification().keyFinal, 1),
                         Stack(
                           children: [
                             Images().getTrophy(cupName,70,70),
@@ -80,39 +80,25 @@ import 'package:flutter/material.dart';
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                matchBox(cupName, CupClassification().keyQuartas, 3),
-                matchBox(cupName, CupClassification().keyQuartas, 4),
+                matchBoxCup(cupName, CupClassification().keyQuartas, 3),
+                matchBoxCup(cupName, CupClassification().keyQuartas, 4),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                matchBox(cupName, CupClassification().keyOitavas, 5),
-                matchBox(cupName, CupClassification().keyOitavas, 6),
-                matchBox(cupName, CupClassification().keyOitavas, 7),
-                matchBox(cupName, CupClassification().keyOitavas, 8),
+                matchBoxCup(cupName, CupClassification().keyOitavas, 5),
+                matchBoxCup(cupName, CupClassification().keyOitavas, 6),
+                matchBoxCup(cupName, CupClassification().keyOitavas, 7),
+                matchBoxCup(cupName, CupClassification().keyOitavas, 8),
               ],
             ),
           ],
         );
   }
 
-  Widget selectYearButton(int year){
-    return Container(
-      padding: const EdgeInsets.all(6),
-      decoration: BoxDecoration(
-        color: AppColors().greyTransparent,
-        borderRadius: const BorderRadius.all(Radius.circular(5)),
-        border: Border.all(
-            color: Colors.greenAccent,
-            width: 1.0,
-        ),
-      ),
-      child: Text(year.toString(),style: EstiloTextoBranco.negrito18),
-    );
-  }
 
-Widget matchBox(String cupName, String phaseName, int matchNumber){
+Widget matchBoxCup(String cupName, String phaseName, int matchNumber){
   Map resultsIda = {};
   Map resultsVolta = {};
   late Confronto confrontoIda;
@@ -156,10 +142,10 @@ Widget showMatchBoxClubs(Confronto confrontoIda,Confronto confrontoVolta){
           ],
         ),
         confrontoIda.hasGoals
-            ? Text('${confrontoIda.goal1.toString()}  x  ${confrontoIda.goal2.toString()}',style: EstiloTextoBranco.text14)
-            :Container(),
+            ? goals(confrontoIda.goal1, confrontoIda.goal2)
+            : Container(),
         confrontoVolta.hasGoals
-            ? Text('${confrontoVolta.goal1.toString()}  x  ${confrontoVolta.goal2.toString()}',style: EstiloTextoBranco.text14)
+            ? goals(confrontoVolta.goal1, confrontoVolta.goal2)
             : Container(),
 
         confrontoVolta.hasPenaltis
@@ -169,5 +155,24 @@ Widget showMatchBoxClubs(Confronto confrontoIda,Confronto confrontoVolta){
     );
 }
 
+
+RichText goals(int goal1, int goal2){
+    TextStyle style1 = EstiloTextoBranco.text14;
+    TextStyle style2 = EstiloTextoBranco.text14;
+    if(goal1 < goal2){
+      style1 = EstiloTextoCinza.text14;
+    }
+    else if(goal1 > goal2){
+      style2 = EstiloTextoCinza.text14;
+    }
+    return RichText(
+        text: TextSpan(
+        children: <TextSpan>[
+          TextSpan( text: goal1.toString(), style: style1),
+          TextSpan( text: '  x  ', style: style1),
+          TextSpan( text: goal2.toString(), style: style2),
+        ])
+    );
+}
 
 

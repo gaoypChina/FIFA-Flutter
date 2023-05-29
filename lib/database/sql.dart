@@ -119,10 +119,10 @@ class SaveSQL{
   }
 
   printDatabaseValues() async{
-    List<PlayerSaveData> list = await funcPlayerSavedDataResult();
-    for (PlayerSaveData row in list){
-      print(row.printToString());
-    }
+    //List<PlayerSaveData> list = await funcPlayerSavedDataResult();
+    //for (PlayerSaveData row in list){
+      //print(row.printToString());
+    //}
   }
 
   Future<void> deletePlayerSaveData(int id) async {

@@ -30,7 +30,9 @@ Widget headerPlay(BuildContext context, MyMatchSimulation myMatchSimulation){
         children: [
           Semana(semana).isJogoCampeonatoNacional
               ? Image.asset(FIFAImages().campeonatoLogo(myMatchSimulation.myClass.campeonatoName),height: 30,width: 30)
-              : Image.asset(FIFAImages().campeonatoLogo(myMatchSimulation.myClass.getMyInternationalLeague()),height: 35,width: 35),
+              : Semana(semana).isJogoCopa  ? Image.asset(FIFAImages().campeonatoLogo(myMatchSimulation.myClass.cupName),height: 35,width: 35)
+              : Semana(semana).isJogoCampeonatoNacional  ? Image.asset(FIFAImages().campeonatoLogo(myMatchSimulation.myClass.getMyInternationalLeague()),height: 35,width: 35)
+              : Container(),
           Text(textRodada,style: EstiloTextoBranco.text16),
           myMatchSimulation.visitante
               ? Text(myMatchSimulation.meuGolSofrido.toString() +'X'+ myMatchSimulation.meuGolMarcado.toString(),style: EstiloTextoBranco.text30)

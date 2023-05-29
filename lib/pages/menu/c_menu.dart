@@ -106,7 +106,7 @@ class _MenuState extends State<Menu> {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
 
-                          wPlayButton(context, club, adversario, Semana(semana), () => null),
+                          wPlayButton(context, club, adversario, Semana(semana)),
 
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -171,7 +171,7 @@ class _MenuState extends State<Menu> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
 
-                                //Image.asset(Images().getMyStadium(),height:  double.maxFinite, width: double.maxFinite,fit: BoxFit.fill,),
+                       //Image.asset(Images().getMyStadium(),height:  double.maxFinite, width: double.maxFinite,fit: BoxFit.fill,),
 
                         close(context),
 

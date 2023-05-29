@@ -33,10 +33,11 @@ getTrophyImage(String leagueName){
 
   if(leagueName == LeagueOfficialNames().libertadores){trophyName = 'trophylibertadores';}
   if(leagueName == LeagueOfficialNames().championsLeague){trophyName = 'trophychampions';}
+  if(leagueName == LeagueOfficialNames().europaLeagueOficial){trophyName = 'trophyeuropaleague';}
+  if(leagueName == LeagueOfficialNames().copaSulAmericana){trophyName = 'trophysulamericana';}
   if(leagueName == LeagueOfficialNames().resto){trophyName = 'trophychampions';}
 
   if(leagueName == LeagueOfficialNames().mundial){trophyName = 'trophymundial';}
-
 
   if(leagueName == LeagueOfficialNames().englandCup){trophyName = 'trophyfacup';}
   if(leagueName == LeagueOfficialNames().italyCup){trophyName = 'italia_cup';}

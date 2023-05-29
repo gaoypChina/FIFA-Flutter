@@ -30,7 +30,7 @@ Widget wHomeClubLogoAndKitStack(BuildContext context, Club club){
           ],
         ),
       ),
-      Text(club.name,style:EstiloTextoBranco.text25),
+      Text(club.name,style:EstiloTextoBranco.negrito22),
       starsWidgetFromOverall(club.getOverall()),
     ],
   );
