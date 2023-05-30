@@ -113,6 +113,7 @@ List clubsAllNameList = [
   ClubName().mirassol,ClubName().botafogoSP,ClubName().botafogoPB,ClubName().caxias,
   ClubName().bangu,ClubName().joinville,ClubName().paulista,ClubName().campinense,
   ClubName().brasiliense,ClubName().ferroviaria,ClubName().ibis,ClubName().juventusMooca,
+  ClubName().voltaredonda,
 
   //argentina
   ClubName().argentinojuniors,  ClubName().arsenalsarandi,  ClubName().banfield,  ClubName().bocajuniors,
@@ -123,7 +124,7 @@ List clubsAllNameList = [
   ClubName().atleticotucuman,ClubName().tigre,ClubName().patronato,
 
   //MERCOSUL
-  ClubName().penarol,  ClubName().nacional,  ClubName().montevideocity, ClubName().danubio,
+  ClubName().penarol,  ClubName().nacional,  ClubName().danubio,
   ClubName().olimpia,  ClubName().libertad,ClubName().cerroporteno,ClubName().guaraniPAR,
   ClubName().univcatolica, ClubName().colocolo,  ClubName().lau, ClubName().palestino,
   ClubName().bolivar, ClubName().thestrongest,ClubName().alwaysready,

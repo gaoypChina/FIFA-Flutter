@@ -1,4 +1,3 @@
-import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
 TextStyle matchStyle1(int goal1, int goal2, double size){

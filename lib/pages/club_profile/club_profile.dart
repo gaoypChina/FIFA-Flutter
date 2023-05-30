@@ -7,6 +7,7 @@ import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
 import 'package:fifa/pages/club_profile/tabs/club_calendar.dart';
 import 'package:fifa/pages/club_profile/compare.dart';
 import 'package:fifa/pages/club_profile/tabs/field_static.dart';
+import 'package:fifa/pages/club_profile/tabs/geral.dart';
 import 'package:fifa/pages/club_profile/tabs/graphics.dart';
 import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -37,7 +38,7 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(vsync: this, length: 4);
+    _tabController = TabController(vsync: this, length: 5);
     clubClass = Club(index: widget.clubID);
     dataGraphics.getData(clubClass);
   }
@@ -54,7 +55,7 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
 
 
     return DefaultTabController(
-      length: 4,
+      length: 5,
       child: Scaffold(
 
           body:  Stack(
@@ -133,6 +134,7 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                       height: 30,
                       color: clubClass.colors.primaryColor.withOpacity(0.3),
                       child: TabBar(
+                        isScrollable: true,
                         controller: _tabController,
                         unselectedLabelColor: Colors.white54,
                         labelColor: clubClass.colors.secondColor,
@@ -142,6 +144,7 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                           Tab(text: Translation(context).text.allInfos),
                           Tab(text: Translation(context).text.historic),
                           Tab(text: Translation(context).text.calendar),
+                          const Tab(text: "Geral"),
                         ],
                       ),
                     ),
@@ -154,6 +157,7 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                           AllInfosClub(club: clubClass,notifyParent: (){}),
                           ClubGraphics(club: clubClass),
                           ClubCalendar(club: clubClass),
+                          ClubGeralInfosPage(club: clubClass),
                         ],
                       ),
                     ),

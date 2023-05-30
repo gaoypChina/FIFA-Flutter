@@ -240,7 +240,7 @@ Map clubNameMapImmutable = {
   LeagueOfficialNames().outros : {
     0: clubName.bate, 1: clubName.cluj,2: clubName.gent,3: clubName.lechpoznan,
     4: clubName.sherifftiraspol, 5: clubName.arsenalsarandi,6: clubName.tigre,7: clubName.patronato,
-    8:clubName.montevideocity, 9:clubName.jorge, 10:clubName.saprissa,11:clubName.olimpiaHON,
+    8:clubName.voltaredonda, 9:clubName.jorge, 10:clubName.saprissa,11:clubName.olimpiaHON,
     12:clubName.charlotte, 13:clubName.montreal, 14:clubName.toronto, 15:clubName.vancouver,
     16:clubName.alshabab, 17:clubName.auckland,
   },

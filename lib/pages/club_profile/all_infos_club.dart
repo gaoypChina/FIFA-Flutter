@@ -88,16 +88,16 @@ class _AllInfosClubState extends State<AllInfosClub> {
   Widget title(String t1, String t2, String t3, String t4){
     return Row(
       children: [
-        Text(t1, textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
+        Text(t1, textAlign:TextAlign.center,style: EstiloTextoBranco.negrito14),
         const Spacer(),
         SizedBox(
-          width: 140,
+          width: 145,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text(t2, textAlign:TextAlign.center,style: EstiloTextoBranco.text12),
-              Text(t3, textAlign:TextAlign.center,style: EstiloTextoBranco.text12),
-              Text(t4, textAlign:TextAlign.center,style: EstiloTextoBranco.text12),
+              Text(t2, textAlign:TextAlign.center,style: EstiloTextoBranco.negrito14),
+              Text(t3, textAlign:TextAlign.center,style: EstiloTextoBranco.negrito14),
+              Text(t4, textAlign:TextAlign.center,style: EstiloTextoBranco.negrito14),
             ],
           ),
         ),
@@ -231,9 +231,15 @@ class _AllInfosClubState extends State<AllInfosClub> {
           children: [
             funcFlagsList(player.nationality, 20, 30),
             const SizedBox(width: 5),
-            Images().getPlayerPictureWidget(player, 36, 36),
-            positionContainer(player.position),
-            const SizedBox(width: 5),
+            Stack(
+              children: [
+                Images().getPlayerPictureWidget(player, 36, 36),
+                Padding(
+                  padding: const EdgeInsets.only(top: 28.0, left: 18),
+                  child: positionContainer(player.position, size:20, style:EstiloTextoBranco.text8),
+                ),
+              ],
+            ),
             playerNameWidget(player),
             const Spacer(),
             SizedBox(
@@ -371,7 +377,7 @@ class _AllInfosClubState extends State<AllInfosClub> {
           child: Text(player.name, style: TextStyle(
             color: nameColor,
             fontFamily: 'Roboto',
-            fontSize: 16,
+            fontSize: 14,
           ))
       ),
     );

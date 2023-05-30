@@ -53,7 +53,8 @@ class _FieldDraggableState extends State<FieldDraggable> {
                   children: [
                     fieldWidget(),
 
-                    Padding(
+                    Container(
+                        width: 140,
                     padding: const EdgeInsets.only(top:310),
                     child: button(title: 'Auto-organize',
                         function: (){
@@ -68,12 +69,26 @@ class _FieldDraggableState extends State<FieldDraggable> {
 
                   ],
                 ),
+                //FILTRAR POR TÓPICOS
+                Padding(
+                  padding: const EdgeInsets.only(top:4.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      button(title: Translation(context).text.ovr3, function: (){setState(() {});show = 'OVR';}),
+                      button(title: Translation(context).text.age, function: (){setState(() {});show = 'Idade';}),
+                      button(title: Translation(context).text.matchs, function: (){setState(() {});show = 'Jogos';}),
+                      button(title: Translation(context).text.goals, function: (){setState(() {});show = 'Gols';}),
+                      button(title: Translation(context).text.assists, function: (){setState(() {});show = 'Assists';}),
+                    ],
+                  ),
+                ),
 
                 const SizedBox(height: 4),
                 Container(
                     width: Sized(context).width,
                     color: AppColors().greyTransparent,
-                    child: Text('${Translation(context).text.substitutes}:', style: EstiloTextoBranco.text22)
+                    child: Text('${Translation(context).text.substitutes}:', style: EstiloTextoBranco.negrito16)
                 ),
 
                 Container(
@@ -104,20 +119,6 @@ class _FieldDraggableState extends State<FieldDraggable> {
                   ),
                 ),
 
-                //FILTRAR POR TÓPICOS
-                Padding(
-                  padding: const EdgeInsets.only(top:4.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      button(title: Translation(context).text.ovr3, function: (){setState(() {});show = 'OVR';}),
-                      button(title: Translation(context).text.age, function: (){setState(() {});show = 'Idade';}),
-                      button(title: Translation(context).text.matchs, function: (){setState(() {});show = 'Jogos';}),
-                      button(title: Translation(context).text.goals, function: (){setState(() {});show = 'Gols';}),
-                      button(title: Translation(context).text.assists, function: (){setState(() {});show = 'Assists';}),
-                    ],
-                  ),
-                ),
 
                 //ANALISE DO ELENCO
                 analiseElenco(context, myClub),
@@ -158,22 +159,26 @@ class _FieldDraggableState extends State<FieldDraggable> {
   }
 
   button({required String title, required Function()? function}) {
-    return InkWell(
-      onTap: function,
-      child: Container(
-        padding: const EdgeInsets.all(6),
-        decoration: const BoxDecoration(
-          color: Colors.black38,
-          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              title,
-              style: EstiloTextoBranco.text16,
-            ),
-          ],
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: function,
+        child: Container(
+          padding: const EdgeInsets.all(6),
+          decoration: BoxDecoration(
+            color: Colors.black38,
+            borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+            border: Border.all(color: AppColors().green, width: 1),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                title,
+                style: EstiloTextoBranco.text16,
+              ),
+            ],
+          ),
         ),
       ),
     );

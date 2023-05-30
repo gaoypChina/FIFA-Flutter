@@ -7,13 +7,11 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
-import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/values/league_trophy_image.dart';
 import 'package:fifa/widgets/bottom_sheet_titles.dart';
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../../../classes/club.dart';
@@ -29,6 +27,8 @@ class ClubGraphics extends StatefulWidget {
 class _ClubGraphicsState extends State<ClubGraphics> {
 
   late TooltipBehavior _tooltipBehavior;
+  late TooltipBehavior _tooltipBehavior2;
+  late TooltipBehavior _tooltipBehavior3;
 
   DataGraphics dataGraphics = DataGraphics();
 
@@ -47,6 +47,8 @@ class _ClubGraphicsState extends State<ClubGraphics> {
   @override
   Widget build(BuildContext context) {
     _tooltipBehavior = TooltipBehavior(enable: true);
+    _tooltipBehavior2 = TooltipBehavior(enable: true);
+    _tooltipBehavior3 = TooltipBehavior(enable: true);
 
     return Scaffold(
       body: Stack(
@@ -67,17 +69,9 @@ class _ClubGraphicsState extends State<ClubGraphics> {
 
                   totalTrophyWidget(widget.club, dataGraphics),
 
-                  Text('Fundado: '+widget.club.foundationYear.toString(),style: EstiloTextoBranco.negrito22),
-                  Text(widget.club.stadiumName+': '+widget.club.stadiumSize.toString(),style: EstiloTextoBranco.text20),
-                  Row(
-                    children: [
-                      Images().getStadiumWidget(widget.club.name,130,240),
-                      Images().getUniformWidget(widget.club.name,130,130),
-                    ],
-                  ),
-
-                  mapWidget(),
-
+                  histogram(dataGraphics.data, _tooltipBehavior2, "Nacional"),
+                  histogram(dataGraphics.dataInternational, _tooltipBehavior3,
+                      "Internacional"),
 
                 ],
               ),
@@ -92,6 +86,37 @@ class _ClubGraphicsState extends State<ClubGraphics> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Widget histogram(List<ClassificationData> dataGraphics,
+      TooltipBehavior _tooltipbehave, String title) {
+    dataGraphics.removeWhere((element) => element.position >= 32);
+
+    if (dataGraphics.isNotEmpty) {
+      return SizedBox(
+        height: 200,
+        child: SfCartesianChart(
+            tooltipBehavior: _tooltipbehave,
+            title: ChartTitle(text: 'Histograma ' + title,
+                textStyle: EstiloTextoBranco.negrito14),
+            primaryXAxis: NumericAxis(labelStyle: EstiloTextoBranco.text12),
+            primaryYAxis: NumericAxis(labelStyle: EstiloTextoBranco.text12),
+            series: <ChartSeries>[
+              histogramSeries(dataGraphics, widget.club.colors.primaryColor)
+            ]
+        ),
+      );
+    } else {
+      return Container();
+    }
+  }
+
+
+  HistogramSeries histogramSeries(List<ClassificationData> dataSource, Color color) {
+    return HistogramSeries<ClassificationData, double>(
+        color: color,
+        dataSource: dataSource,
+        binInterval: 2,
+        yValueMapper: (ClassificationData data, _) => data.position);
+  }
 
   Widget graphics(DataGraphics dataGraphics) {
     return SingleChildScrollView(
@@ -142,7 +167,9 @@ class _ClubGraphicsState extends State<ClubGraphics> {
               name: widget.club.name,
               dataSource: dataGraphics.dataInternational,
               enableTooltip: true,
-              xValueMapper: (ClassificationData data, _) => data.year.toInt().toString(), //ano.0 -> ano
+              xValueMapper: (ClassificationData data, _) =>
+                  data.year.toInt().toString(),
+              //ano.0 -> ano
               yValueMapper: (ClassificationData data, _) => data.position,
               //dataLabelSettings:const DataLabelSettings(isVisible : true,color: Colors.white),
               markerSettings: const MarkerSettings(
@@ -238,14 +265,20 @@ class _ClubGraphicsState extends State<ClubGraphics> {
           //POSIÇÃO ATUAL
           Column(
             children: [
-              Text(Translation(context).text.position,style: EstiloTextoBranco.text16),
+              Text(Translation(context).text.position,
+                  style: EstiloTextoBranco.text16),
               Stack(
                 children: [
-                  Opacity(opacity:0.3,child: Image.asset(FIFAImages().campeonatoLogo(club.leagueName),height: 50,width: 50)),
+                  Opacity(opacity: 0.3,
+                      child: Image.asset(
+                          FIFAImages().campeonatoLogo(club.leagueName),
+                          height: 50, width: 50)),
                   Container(
-                      width:50,height:50,
+                      width: 50, height: 50,
                       padding: const EdgeInsets.only(top: 12),
-                      child: Text(dataGraphics.currentPosition.toString() + 'º',textAlign:TextAlign.center,style: EstiloTextoBranco.negrito22)),
+                      child: Text(dataGraphics.currentPosition.toString() + 'º',
+                          textAlign: TextAlign.center,
+                          style: EstiloTextoBranco.negrito22)),
                 ],
               ),
             ],
@@ -253,14 +286,16 @@ class _ClubGraphicsState extends State<ClubGraphics> {
 
           //TITULOS NACIONAIS
           GestureDetector(
-            onTap: (){
-              bottomSheetShowTitles(context, club.leagueName, dataGraphics.data);
+            onTap: () {
+              bottomSheetShowTitles(
+                  context, club.leagueName, dataGraphics.data);
             },
             child: Column(
               children: [
                 Text(Translation(context).text.titles,
                     style: EstiloTextoBranco.text16),
-                Image.asset('assets/trophy/${getTrophyImage(club.leagueName)}.png',
+                Image.asset(
+                    'assets/trophy/${getTrophyImage(club.leagueName)}.png',
                     height: 50, width: 50),
                 Text(dataGraphics.nTitulos.toString(),
                     style: EstiloTextoBranco.text20),
@@ -270,14 +305,16 @@ class _ClubGraphicsState extends State<ClubGraphics> {
 
           //TITULOS INTERNACIONAIS
           GestureDetector(
-            onTap: (){
-              bottomSheetShowTitles(context, club.internationalLeagueName, dataGraphics.dataInternational);
+            onTap: () {
+              bottomSheetShowTitles(context, club.internationalLeagueName,
+                  dataGraphics.dataInternational);
             },
             child: Column(
               children: [
                 Text(Translation(context).text.titles,
                     style: EstiloTextoBranco.text16),
-                Image.asset('assets/trophy/${getTrophyImage(club.internationalLeagueName)}.png',
+                Image.asset('assets/trophy/${getTrophyImage(
+                    club.internationalLeagueName)}.png',
                     height: 50, width: 50),
                 Text(dataGraphics.nTitulosInternational.toString(),
                     style: EstiloTextoBranco.text20),
@@ -287,21 +324,22 @@ class _ClubGraphicsState extends State<ClubGraphics> {
 
           //TITULOS MUNDIAIS
           GestureDetector(
-            onTap: (){
-              bottomSheetShowTitles(context, LeagueOfficialNames().mundial, dataGraphics.dataMundial);
+            onTap: () {
+              bottomSheetShowTitles(context, LeagueOfficialNames().mundial,
+                  dataGraphics.dataMundial);
             },
             child: Column(
               children: [
                 Text(Translation(context).text.titles,
                     style: EstiloTextoBranco.text16),
-                Image.asset('assets/trophy/${getTrophyImage(LeagueOfficialNames().mundial)}.png',height: 50, width: 50),
+                Image.asset('assets/trophy/${getTrophyImage(
+                    LeagueOfficialNames().mundial)}.png', height: 50,
+                    width: 50),
                 Text(dataGraphics.nTitulosMundial.toString(),
                     style: EstiloTextoBranco.text20),
               ],
             ),
           ),
-
-
 
 
         ],
@@ -310,16 +348,13 @@ class _ClubGraphicsState extends State<ClubGraphics> {
   }
 
 
-
-
-
-  Widget positionThisYear(){
-
-    List<int> positions = HistoricPositionsThisYear().getGlobal(widget.club.name);
+  Widget positionThisYear() {
+    List<int> positions = HistoricPositionsThisYear().getGlobal(
+        widget.club.name);
 
     List<GraphPointInt> lista = [];
-    for(int week=0;week < positions.length;week++){
-      if(testInitRodada==1){
+    for (int week = 0; week < positions.length; week++) {
+      if (testInitRodada == 1) {
         lista.add(GraphPointInt(week, positions[week]));
       }
     }
@@ -331,13 +366,14 @@ class _ClubGraphicsState extends State<ClubGraphics> {
       padding: const EdgeInsets.all(4),
       child: Column(
         children: [
-          Text('Histórico de posição '+ano.toString(),style: EstiloTextoBranco.negrito18),
+          Text('Histórico de posição ' + ano.toString(),
+              style: EstiloTextoBranco.negrito18),
 
           SfCartesianChart(
             //https://pub.dev/documentation/syncfusion_flutter_charts/latest/charts/SfCartesianChart-class.html?utm_source=pubdev&utm_medium=listing&utm_campaign=flutter-charts-pubdev
             // Initialize category axis
             primaryXAxis: CategoryAxis(
-                labelStyle: EstiloTextoBranco.text12,
+              labelStyle: EstiloTextoBranco.text12,
             ),
             primaryYAxis: CategoryAxis(
               labelStyle: EstiloTextoBranco.text12,
@@ -350,11 +386,12 @@ class _ClubGraphicsState extends State<ClubGraphics> {
                 name: widget.club.name,
                 dataSource: lista,
                 enableTooltip: true,
-                xValueMapper: (GraphPointInt data, _) => (data.x+1).toString()+'ª',
+                xValueMapper: (GraphPointInt data, _) =>
+                (data.x + 1).toString() + 'ª',
                 yValueMapper: (GraphPointInt data, _) => data.y,
                 dataLabelSettings: const DataLabelSettings(
-                    isVisible: true,
-                    color: Colors.white,
+                  isVisible: true,
+                  color: Colors.white,
                 ),
               ),
 
@@ -364,27 +401,6 @@ class _ClubGraphicsState extends State<ClubGraphics> {
       ),
     ) : Container();
   }
-
-  Widget mapWidget(){
-    return SizedBox(
-      height: 300,
-      child: GoogleMap(
-        mapType: MapType.satellite,
-        tiltGesturesEnabled: false,
-        indoorViewEnabled: false,
-        rotateGesturesEnabled: false,
-        compassEnabled: false,
-
-        initialCameraPosition: CameraPosition(
-          target: LatLng(ClubDetails().getCoordinate(widget.club.name).latitude, ClubDetails().getCoordinate(widget.club.name).longitude),
-          zoom: 16.4,
-        ),
-        //onMapCreated: getClubsLocation,
-      ),
-    );
-  }
-}
-
 
 
 /*
@@ -404,4 +420,5 @@ class _ClubGraphicsState extends State<ClubGraphics> {
                     axisLineColor: Colors.white,
                     color: Colors.red,
                     labelStyle: EstiloTextoBranco.text16,
- */
+*/
+}

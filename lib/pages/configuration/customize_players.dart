@@ -52,7 +52,7 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
   Widget build(BuildContext context) {
 
     club = Club(index: widget.clubID);
-    double escudoSize = 80;
+    double escudoSize = 60;
 
     return Scaffold(
         resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
@@ -87,6 +87,7 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                                 children: [
 
                                   Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Text(club.name,style: EstiloTextoBranco.negrito22),
                                       //N Jogadores
@@ -94,55 +95,55 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                                     ],
                                   ),
 
-                                  const Spacer(),
-                                  buttonDesign(
-                                      title: 'Edit Club',
-                                      function: (){
-                                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => CustomizeClub(clubName: club.name)));
-                                      }),
                                 ],
                               ),
-                            ),
-
-                            //CUSTOMIZE
-                            Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-
-                                  buttonDesign(
-                                      title: Translation(context).text.save,
-                                      function: (){
-                                        //Salva os dados
-                                        popUpSaveAllData(context: context);
-                                        //Navigator.pop(context);
-                                      }),
-
-                                  buttonDesign(
-                                      title: Translation(context).text.createPlayer,
-                                      function: (){
-                                        setState(() {});
-                                        popUpCreatePlayer(
-                                            context: context,
-                                            club: club,
-                                            function: (){
-                                              setState(() {});
-                                            }
-                                        );
-                                      }
-                                  ),
-
-                                  buttonDesign(
-                                      title: EsquemaTatico().e442,
-                                      function: (){
-
-                                      }),
-
-                                ],
                             ),
 
                           ],
                         ),
                       ),
+
+                    ],
+                  ),
+
+                  //CUSTOMIZE
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+
+                      buttonDesign(
+                          title: Translation(context).text.save,
+                          function: (){
+                            //Salva os dados
+                            popUpSaveAllData(context: context);
+                            //Navigator.pop(context);
+                          }),
+
+                      buttonDesign(
+                          title: Translation(context).text.createPlayer,
+                          function: (){
+                            setState(() {});
+                            popUpCreatePlayer(
+                                context: context,
+                                club: club,
+                                function: (){
+                                  setState(() {});
+                                }
+                            );
+                          }
+                      ),
+
+                      buttonDesign(
+                          title: 'Edit Club',
+                          function: (){
+                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => CustomizeClub(clubName: club.name)));
+                          }),
+
+                      buttonDesign(
+                          title: EsquemaTatico().e442,
+                          function: (){
+
+                          }),
 
                     ],
                   ),
@@ -157,14 +158,14 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                     child: Row(
                       children: [
                         const SizedBox(width: 8),
-                        Text(Translation(context).text.pos3,style: EstiloTextoBranco.text16),
+                        Text(Translation(context).text.pos3,style: EstiloTextoBranco.negrito16),
                         const SizedBox(width: 90),
                         SizedBox(width:170,
-                            child: Text(Translation(context).text.name.toUpperCase(),style: EstiloTextoBranco.text16)
+                            child: Text(Translation(context).text.name.toUpperCase(),style: EstiloTextoBranco.negrito16)
                         ),
-                        Text(Translation(context).text.age3,style: EstiloTextoBranco.text16),
+                        Text(Translation(context).text.age3,style: EstiloTextoBranco.negrito16),
                         const SizedBox(width: 5),
-                        Text(Translation(context).text.ovr3,style: EstiloTextoBranco.text16),
+                        Text(Translation(context).text.ovr3,style: EstiloTextoBranco.negrito16),
                       ],
                     ),
                   ),
