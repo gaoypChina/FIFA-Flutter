@@ -76,7 +76,7 @@ class _CoachMenuState extends State<CoachMenu> {
                     Container(
                       color: AppColors().greyTransparent,
                       padding: const EdgeInsets.all(8),
-                      margin: const EdgeInsets.all(8),
+                      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
@@ -221,8 +221,7 @@ Widget coachAchievements(BuildContext context){
 
 
 
-
-Widget trophyWidget(BuildContext context, int i){
+Widget trophyWidget(BuildContext context, int i) {
   late String name;
   late String image;
   late int qntd;
@@ -237,18 +236,38 @@ Widget trophyWidget(BuildContext context, int i){
     image = getTrophyImage(My().getMyInternationalLeague());
     qntd = HistoricFunctions().myInternationalTitle();
   }
-  return Column(
-    children: [
-      SizedBox(
-          width: 100,
-          child: Text(name,textAlign:TextAlign.center,style: EstiloTextoBranco.text14)
-      ),
-      const SizedBox(height: 4),
-      Image.asset('assets/trophy/$image.png',height: 100,width: 100),
-      Text(qntd.toString(),style: EstiloTextoBranco.text20),
-    ],
+  return Container(
+    height: 160,
+    width: 120,
+    color: AppColors().greyTransparent,
+    child: Stack(
+      children: [
+        //LOGO DE FUNDO OPACA
+        SizedBox(
+          height: 200,width: 200,
+          child: Opacity(
+            opacity: 0.4,
+            child: Container(
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                    fit: BoxFit.fitHeight,
+                    alignment: FractionalOffset.center,
+                    image: AssetImage('assets/trophy/$image.png')),
+                  )
+              ),
+            ),
+          ),
+        Center(child: Text(name,textAlign:TextAlign.center,style: EstiloTextoBranco.text14)),
+        Padding(
+          padding: const EdgeInsets.only(top: 110, left: 50),
+          child: Text(qntd.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.negrito40),
+        ),
+
+      ],
+    ),
   );
-}
+  }
+
 
 Widget pieChart(Map<String,double> dataMap){
   return  SizedBox(
@@ -286,7 +305,7 @@ Widget expectations(){
         children: [
           Row(
             children: [
-              Text(Translation(context).text.expectation,style: EstiloTextoBranco.text20),
+              Text(Translation(context).text.expectation,style: EstiloTextoBranco.negrito18),
               const Spacer(),
               buttonMoreMoney(),
             ],
@@ -314,7 +333,7 @@ Widget expectations(){
           ),
 
           const SizedBox(height: 12),
-          const Text('Desempenho',style: EstiloTextoBranco.text20),
+          const Text('Desempenho',style: EstiloTextoBranco.negrito18),
           const SizedBox(height: 6),
 
           expectationBar(),
@@ -364,7 +383,7 @@ Widget sequenceWidget(String text, String value, int clubID, [int? advClubID]){
     margin: const EdgeInsets.all(4),
     child: Column(
       children: [
-        Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.text14),
+        Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.negrito14),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 6.0),
           child: Row(
@@ -464,14 +483,13 @@ Widget financeWidget(){
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
 
-          Text('Finanças - '+ano.toString(),style: EstiloTextoBranco.text20),
+          Text('Finanças - '+ano.toString(),style: EstiloTextoBranco.negrito18),
 
           const SizedBox(height: 12),
 
           graphFinance(balanceByWeek),
 
-          const SizedBox(height: 10),
-          const Text('Saldo',style: EstiloTextoBranco.text16),
+          const Text('Saldo',style: EstiloTextoBranco.negrito16),
           Text('\$'+my.money.toStringAsFixed(2),style: EstiloTextoBranco.text16),
         ],
       ),

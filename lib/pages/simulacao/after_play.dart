@@ -18,6 +18,7 @@ import 'package:fifa/pages/simulacao/not_play_international/not_play_internation
 import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/background_color/color_grade.dart';
 import 'package:fifa/theme/colors.dart';
+import 'package:fifa/theme/match_x_testyle.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
@@ -426,9 +427,11 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
     TableNational tableNational = TableNational(
         choosenLeagueIndex: myClass.leagueID,
         leagueClass: leagueClass,
-        rodadaMatch: rodada-1,
+        rodadaMatch: rodada,
         numeroDoConfronto: numeroDoConfronto
     );
+    TextStyle style1 = matchStyle1(tableNational.gol1, tableNational.gol2, 14);
+    TextStyle style2 = matchStyle2(tableNational.gol1, tableNational.gol2, 14);
 
     return Container(
       margin: const EdgeInsets.only(bottom: 4),
@@ -442,9 +445,9 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
                 Container(
                     padding: const EdgeInsets.all(1),
                     color:(myClass.clubName == tableNational.teamName1) ?Colors.purple:Colors.transparent,
-                    child: Text(tableNational.teamName1,style:EstiloTextoBranco.text14)),
+                    child: Text(tableNational.teamName1,style:style1)),
                 Images().getEscudoWidget(tableNational.teamName1,25,25),
-                Text(tableNational.gol1.toString(),style:EstiloTextoBranco.text14),
+                Text(tableNational.gol1.toString(),style:style1),
               ],
             ),
           ),
@@ -455,12 +458,12 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text(tableNational.gol2.toString(),style:EstiloTextoBranco.text14),
+                Text(tableNational.gol2.toString(),style:style2),
                 Images().getEscudoWidget(tableNational.teamName2,25,25),
                 Container(
                     padding: const EdgeInsets.all(1),
                     color:(myClass.clubName == tableNational.teamName2) ?Colors.purple:Colors.transparent,
-                    child: Text(tableNational.teamName2,style:EstiloTextoBranco.text14)),
+                    child: Text(tableNational.teamName2,style:style2)),
               ],
             ),
           ),

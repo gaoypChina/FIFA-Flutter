@@ -187,14 +187,17 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
   }
 
   Widget selectContinent(){
-    return Row(
-      children: [
-        continentSelection(Continents().europa),
-        continentSelection(Continents().americaSul),
-        continentSelection(Continents().asia),
-        continentSelection(Continents().africa),
-        continentSelection(Continents().americaNorte),
-      ],
+    return Container(
+      color: Colors.white.withOpacity(0.7),
+      child: Row(
+        children: [
+          continentSelection(Continents().europa),
+          continentSelection(Continents().americaSul),
+          continentSelection(Continents().asia),
+          continentSelection(Continents().africa),
+          continentSelection(Continents().americaNorte),
+        ],
+      ),
     );
   }
   Widget continentSelection(String continentName){
@@ -205,7 +208,7 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
         setState((){});
       },
       child: Container(
-        color: continentName == continent ? Colors.red : Colors.white,
+        color: continentName == continent ? Colors.red : Colors.transparent,
         child: Padding(
           padding: const EdgeInsets.all(4.0),
           child: Images().getContinentLogo(continentName),

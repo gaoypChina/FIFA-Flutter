@@ -4,6 +4,7 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/tabela_national.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
+import 'package:fifa/theme/match_x_testyle.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ Widget wMatchsTable(int rodadaMatch, League leagueClass, int choosenLeagueIndex)
           wRowMatchesVersus(TableNational(
               choosenLeagueIndex: choosenLeagueIndex,
               leagueClass: leagueClass,
-              rodadaMatch: rodadaMatch-1,
+              rodadaMatch: rodadaMatch,
               numeroDoConfronto: i*2
           )),
       ],
@@ -29,22 +30,25 @@ Widget wMatchsTable(int rodadaMatch, League leagueClass, int choosenLeagueIndex)
 }
 
 TableRow wRowMatchesVersus(TableNational tableNational) {
+  TextStyle style1 = matchStyle1(tableNational.gol1, tableNational.gol2, 14);
+  TextStyle style2 = matchStyle2(tableNational.gol1, tableNational.gol2, 14);
+
   My my = My();
   return TableRow(
     children: [
       Container(
         color: tableNational.teamName1 == my.clubName ? Colors.teal : Colors.transparent,
-          child: Text(tableNational.teamName1,textAlign:TextAlign.end,style: EstiloTextoBranco.text14)),
+          child: Text(tableNational.teamName1,textAlign:TextAlign.end,style: style1)),
       Images().getEscudoWidget(tableNational.teamName1,22,22),
       (tableNational.showGoals)
-          ? Text(tableNational.gol1.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text14) : Container(),
+          ? Text(tableNational.gol1.toString(),textAlign:TextAlign.center,style: style1) : Container(),
       const Text('x',style: EstiloTextoBranco.text16,textAlign: TextAlign.center,),
       (tableNational.showGoals)
-          ? Text(tableNational.gol2.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.text14) : Container(),
+          ? Text(tableNational.gol2.toString(),textAlign: TextAlign.center,style: style2) : Container(),
       Images().getEscudoWidget(tableNational.teamName2,22,22),
       Container(
           color: tableNational.teamName2 == my.clubName ? Colors.teal : Colors.transparent,
-          child: Text(tableNational.teamName2,textAlign:TextAlign.start,style: EstiloTextoBranco.text14)),
+          child: Text(tableNational.teamName2,textAlign:TextAlign.start,style: style2)),
     ],
   );
 }

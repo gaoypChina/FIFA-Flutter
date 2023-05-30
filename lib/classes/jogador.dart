@@ -123,11 +123,11 @@ class Jogador{
       gradeCup = 0;
     }
 
-    matchsYear = matchsInternational+matchsLeague;
-    goalsYear = goalsInternational+goalsLeague;
-    assistsYear = assistsInternational+assistsLeague;
-    cleanSheetsYear = cleanSheetsInternational + cleanSheetsLeague;
-    golsSofridosYear = golsSofridosInternational + golsSofridosLeague;
+    matchsYear = matchsInternational+matchsLeague+matchsCup;
+    goalsYear = goalsInternational+goalsLeague+goalsLeague;
+    assistsYear = assistsInternational+assistsLeague+assistsCup;
+    cleanSheetsYear = cleanSheetsInternational + cleanSheetsLeague+cleanSheetsCup;
+    golsSofridosYear = golsSofridosInternational + golsSofridosLeague+golsSofridosCup;
     matchsCarrer = globalJogadoresCarrerMatchs[index];
     goalsCarrer = globalJogadoresCarrerGoals[index];
     assistsCarrer = globalJogadoresCarrerAssists[index];

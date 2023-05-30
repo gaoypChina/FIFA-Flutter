@@ -155,6 +155,7 @@ class _TableInternationalState extends State<TableInternational>  with TickerPro
     return Container(
           color: AppColors().greyTransparent,
           child: SingleChildScrollView(
+            padding: EdgeInsets.zero,
             child: Table(
               columnWidths: const{0: FractionColumnWidth(.05),1: FractionColumnWidth(.05),2: FractionColumnWidth(.4)},
               children: [
@@ -187,11 +188,11 @@ TableRow groupTitle(int groupNumber){
           width: 200,
           child: Text('\n${Translation(context).text.group} ' + groupLetter,style: EstiloTextoBranco.negrito16),
         ),
-        const Text('\nPTS ',style: EstiloTextoBranco.text16),
-        const Text('\n GM ',style: EstiloTextoBranco.text16),
-        const Text('\n GS ',style: EstiloTextoBranco.text16),
-        const Text('\n SG ',style: EstiloTextoBranco.text16),
-        const Text('\nOVR ',style: EstiloTextoBranco.text16),
+        const Text('\nPTS ',style: EstiloTextoCinza.text16),
+        const Text('\n GM ',style: EstiloTextoCinza.text16),
+        const Text('\n GS ',style: EstiloTextoCinza.text16),
+        const Text('\n SG ',style: EstiloTextoCinza.text16),
+        const Text('\nOVR ',style: EstiloTextoCinza.text16),
       ],
     );
   }
@@ -203,7 +204,7 @@ TableRow groupTitle(int groupNumber){
 
     return  TableRow(
       children: [
-        Text(i.toString()+'-',style: EstiloTextoBranco.text16),
+        Text(i.toString()+'º',style: EstiloTextoBranco.text16),
         //Escudo
         Images().getEscudoWidget(clubClass.name,20,20),
         GestureDetector(
@@ -219,7 +220,7 @@ TableRow groupTitle(int groupNumber){
             child: Text(clubClass.name,style: EstiloTextoBranco.text16),
           ),
         ),
-        Text(' ${clubClass.internationalPoints.toString()}',style: EstiloTextoBranco.text14),
+        Text(' ${clubClass.internationalPoints.toString()}',style: EstiloTextoBranco.negrito14),
         Text(clubClass.internationalGM.toString(),style: EstiloTextoBranco.text14),
         Text(clubClass.internationalGS.toString(),style: EstiloTextoBranco.text14),
         Text(saldoGols.toString(),style: EstiloTextoBranco.text14),

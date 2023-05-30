@@ -5,6 +5,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/match/result_dict.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/theme/match_x_testyle.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
@@ -87,6 +88,11 @@ Widget cupMatchRow(BuildContext context, Map match, My my){
   String teamNameB = confronto.clubName2;
   double imageSize = 30;
 
+  TextStyle style1 = matchStyle1(confronto.goal1, confronto.goal2, 14);
+  TextStyle style2 = matchStyle2(confronto.goal1, confronto.goal2, 14);
+  TextStyle style10 = matchStyle1(confronto.goal1, confronto.goal2, 22);
+  TextStyle style20 = matchStyle2(confronto.goal1, confronto.goal2, 22);
+
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
@@ -105,7 +111,7 @@ Widget cupMatchRow(BuildContext context, Map match, My my){
                     child: Container(
                         padding: const EdgeInsets.all(4),
                         color: teamNameA == my.clubName ? Colors.green : Colors.transparent,
-                        child: Text(teamNameA,textAlign:TextAlign.end,style: EstiloTextoBranco.text14)),
+                        child: Text(teamNameA,textAlign:TextAlign.end,style: style1)),
                   ),
                   Images().getEscudoWidget(teamNameA,imageSize,imageSize),
                 ],
@@ -119,7 +125,13 @@ Widget cupMatchRow(BuildContext context, Map match, My my){
       Column(
         children: [
           confronto.hasGoals
-              ? Text(' '+ confronto.goal1.toString()+'x'+confronto.goal2.toString()+' ',style: EstiloTextoBranco.text22)
+              ? Row(
+              children: [
+                Text(' '+ confronto.goal1.toString(),style: style10),
+                const Text(' x ',style: EstiloTextoBranco.text22),
+                Text(confronto.goal2.toString()+' ',style: style20)
+              ],
+            )
               : const Text('  X  ',textAlign:TextAlign.start,style: EstiloTextoBranco.text22),
 
           confronto.hasPenaltis ? Text("Pen:" + confronto.penaltis1.toString()+"x"+confronto.penaltis2.toString(),style: EstiloTextoBranco.text10) : Container(),
@@ -139,7 +151,7 @@ Widget cupMatchRow(BuildContext context, Map match, My my){
                         child: Container(
                           padding: const EdgeInsets.all(4),
                           color: teamNameB == my.clubName ? Colors.green : Colors.transparent,
-                          child: Text(teamNameB,style: EstiloTextoBranco.text14),
+                          child: Text(teamNameB,style: style2),
                         ),
                       ),
                       Images().getUniformWidget(teamNameB,imageSize,imageSize),

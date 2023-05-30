@@ -19,6 +19,7 @@ import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/background_color/background_overall.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/images.dart';
+import 'package:fifa/values/league_names.dart';
 import 'package:flutter/material.dart';
 
 
@@ -97,7 +98,7 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
                   ),
                   const SizedBox(height: 6),
                   Container(
-                    height: 100,
+                    height: 120,
                     margin: const EdgeInsets.all(4),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -197,11 +198,12 @@ mainStatus(BuildContext context, Jogador jogador){
 
 Widget health(BuildContext context, Jogador jogador){
   return    Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      const Text('Saúde', style: EstiloTextoBranco.text20),
+      const Text('Saúde', style: EstiloTextoBranco.negrito18),
       //Barra de saúde
       SizedBox(
-        width: Sized(context).width*0.3,
+        width: Sized(context).width*0.4,
         child: LinearProgressIndicator(
           value: jogador.health,
           color: Colors.teal,
@@ -219,7 +221,7 @@ Widget carrerStats(BuildContext context, Jogador jogador){
     child: Column(
       children: [
 
-        const Text('Carreira', style: EstiloTextoBranco.text20),
+        const Text('Carreira', style: EstiloTextoBranco.negrito18),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -252,13 +254,13 @@ Widget carrerStats(BuildContext context, Jogador jogador){
 
 Widget thisSeasonStats(BuildContext context, Jogador jogador){
   return Container(
-    width: Sized(context).width*0.5,
+    width: Sized(context).width*0.6,
     padding: const EdgeInsets.all(4),
     decoration: blackDecoration(),
     child: Column(
       children: [
 
-        const Text('Essa temporada', style: EstiloTextoBranco.text20),
+        const Text('Essa temporada', style: EstiloTextoBranco.negrito18),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -266,6 +268,7 @@ Widget thisSeasonStats(BuildContext context, Jogador jogador){
               children: [
                 const Text('', style: EstiloTextoBranco.text12),
                 Image.asset(FIFAImages().campeonatoLogo(Club(index: jogador.clubID).leagueName),height: 25,width: 25),
+                Image.asset(FIFAImages().campeonatoLogo(getCup(Club(index: jogador.clubID).leagueName)),height: 25,width: 25),
                 Image.asset(FIFAImages().campeonatoLogo(Club(index: jogador.clubID).internationalLeagueName),height: 25,width: 25),
               ],
             ),
@@ -273,6 +276,7 @@ Widget thisSeasonStats(BuildContext context, Jogador jogador){
               children: [
                 const Text('Jogos', style: EstiloTextoBranco.text12),
                 Text(jogador.matchsLeague.toString(), style: EstiloTextoBranco.text16),
+                Text(jogador.matchsCup.toString(), style: EstiloTextoBranco.text16),
                 Text(jogador.matchsInternational.toString(), style: EstiloTextoBranco.text16),
               ],
             ),
@@ -280,6 +284,7 @@ Widget thisSeasonStats(BuildContext context, Jogador jogador){
               children: [
                 Image.asset('assets/icons/bola.png',height: 15,width: 15),
                 Text(jogador.goalsLeague.toString(), style: EstiloTextoBranco.text16),
+                Text(jogador.goalsCup.toString(), style: EstiloTextoBranco.text16),
                 Text(jogador.goalsInternational.toString(), style: EstiloTextoBranco.text16),
               ],
             ),
@@ -287,6 +292,7 @@ Widget thisSeasonStats(BuildContext context, Jogador jogador){
               children: [
                 Image.asset('assets/icons/assists.png',height: 15,width: 15),
                 Text(jogador.assistsLeague.toString(), style: EstiloTextoBranco.text16),
+                Text(jogador.assistsCup.toString(), style: EstiloTextoBranco.text16),
                 Text(jogador.assistsInternational.toString(), style: EstiloTextoBranco.text16),
               ],
             ),

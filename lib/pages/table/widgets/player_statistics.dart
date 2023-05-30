@@ -1,5 +1,3 @@
-
-import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
@@ -8,7 +6,6 @@ import 'package:fifa/classes/player_stats_keys.dart';
 import 'package:fifa/pages/table/widgets/organize_league_statistics.dart';
 import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/textstyle.dart';
-import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/popup/popup_player_info.dart';
 import 'package:fifa/widgets/row_player_stats.dart';
 import 'package:flutter/material.dart';

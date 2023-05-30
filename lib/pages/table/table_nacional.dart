@@ -32,7 +32,7 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
   Map leaguesMap = {};
 
   late TabController _tabController;
-  int choosenIcon = 1;
+  int choosenIcon = 2;
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
@@ -152,24 +152,26 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
 
-        Container(
-          color: AppColors().greyTransparent,
-          child: choosenIcon==1 ? matchsWidget()
-              : choosenIcon==2 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 0)
-              : choosenIcon==3 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 1)
-              : choosenIcon==4 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 2)
-              : choosenIcon==5 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 3)
-              : choosenIcon==6 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 4)
-              : choosenIcon==7 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 5)
-              : Container(),
+        matchsWidget(),
+
+        Expanded(
+          child: Container(
+            color: AppColors().greyTransparent,
+            child: choosenIcon==2 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 0)
+                : choosenIcon==3 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 1)
+                : choosenIcon==4 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 2)
+                : choosenIcon==5 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 3)
+                : choosenIcon==6 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 4)
+                : choosenIcon==7 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 5)
+                : Container(),
+          ),
         ),
-        const Spacer(),
+
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              componentButton(1, 'Matchs'),
               componentButton(2, FilterPlayersTitle().artilheiros),
               componentButton(5, FilterPlayersTitle().assists),
               componentButton(6, FilterPlayersTitle().bestPlayer),
@@ -263,40 +265,43 @@ Widget matchsWidget(){
   if(rodadaMatch >= choosenLeagueClass.nClubs-1){
     rodadaMatch = choosenLeagueClass.nClubs-1;
   }
-  return Column(
-    children: [
-      Row(
-        children: [
+  return Container(
+    color: AppColors().greyTransparent,
+    child: Column(
+      children: [
+        Row(
+          children: [
 
-          GestureDetector(
-              onTap:(){
-                if(rodadaMatch>1) {
-                  rodadaMatch --;
-                }
-                setState(() {});
-              },
-              child: const Icon(Icons.arrow_left,color:Colors.white,size:50)
-          ),
+            GestureDetector(
+                onTap:(){
+                  if(rodadaMatch>1) {
+                    rodadaMatch --;
+                  }
+                  setState(() {});
+                },
+                child: const Icon(Icons.arrow_left,color:Colors.white,size:50)
+            ),
 
-          Expanded(child: Text('${Translation(context).text.matchWeek} '+rodadaMatch.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text16)),
+            Expanded(child: Text('${Translation(context).text.matchWeek} '+rodadaMatch.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.negrito16)),
 
-          GestureDetector(
-              onTap:(){
-                if(rodadaMatch<choosenLeagueClass.getNTeams()-1) {
-                  rodadaMatch ++;
-                }
-                setState(() {});
-              },
-              child: const Icon(Icons.arrow_right,color:Colors.white,size:50)
-          ),
+            GestureDetector(
+                onTap:(){
+                  if(rodadaMatch<choosenLeagueClass.getNTeams()-1) {
+                    rodadaMatch ++;
+                  }
+                  setState(() {});
+                },
+                child: const Icon(Icons.arrow_right,color:Colors.white,size:50)
+            ),
 
 
-        ],
-      ),
+          ],
+        ),
 
-      wMatchsTable(rodadaMatch, leaguesMap[choosenLeagueIndex], choosenLeagueIndex),
+        wMatchsTable(rodadaMatch, leaguesMap[choosenLeagueIndex], choosenLeagueIndex),
 
-    ],
+      ],
+    ),
   );
 }
 

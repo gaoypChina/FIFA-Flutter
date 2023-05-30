@@ -1,6 +1,7 @@
 import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/coach/coach_best_results.dart';
+import 'package:fifa/classes/cup_classification.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
@@ -25,6 +26,17 @@ import 'package:flutter/material.dart';
 import '../../calendar/calendar.dart';
 
 Widget wPlayButton(BuildContext context, Club club, Adversario adversario, Semana week){
+
+  String positionText = "";
+  if(adversario.clubName.isNotEmpty && week.isJogoCampeonatoNacional){
+    positionText = '${Translation(context).text.position}: '+adversario.posicao.toString()+'º';
+  }else if(adversario.clubName.isNotEmpty && week.isJogoMataMataInternacional){
+    positionText = week.semanaStr;
+  } else if(week.isJogoCopa){
+    String phaseName = CupClassification().getPhaseKeyName(week.week);
+    positionText = CupClassification().getIdaOrVoltaKey(phaseName, week.week);
+  }
+
   return Container(
     margin: const EdgeInsets.all(4),
     decoration: BoxDecoration(
@@ -45,7 +57,7 @@ Widget wPlayButton(BuildContext context, Club club, Adversario adversario, Seman
 
               backgroundStadium(context, adversario.visitante ? adversario.clubName : club.name),
 
-              Padding(
+              Container(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -75,16 +87,13 @@ Widget wPlayButton(BuildContext context, Club club, Adversario adversario, Seman
 
                         Container(
                           color: AppColors().greyTransparent,
+                          width: Sized(context).width*0.36,
                           padding:  const EdgeInsets.all(4),
                           child: Column(
                             children: [
                               Text(week.semanaCalendarStr.toString(),style: EstiloTextoBranco.negrito18),
                               adversario.clubName.isNotEmpty ? Text(adversario.clubName,style: EstiloTextoBranco.negrito14) : Container(),
-                              adversario.clubName.isNotEmpty
-                                  ? week.isJogoMataMataInternacional || week.isJogoCopa
-                                  ? Text(week.semanaStr,style: EstiloTextoBranco.text14)
-                                  : Text('${Translation(context).text.position}: '+adversario.posicao.toString()+'º',style: EstiloTextoBranco.text14)
-                                  : Container(),
+                              Text(positionText,style: EstiloTextoBranco.text14),
                               adversario.clubName.isNotEmpty ? adversario.visitante
                                   ? Text(Translation(context).text.away,style: EstiloTextoBranco.text14)
                                   : Text(Translation(context).text.home,style: EstiloTextoBranco.text14) : Container(),

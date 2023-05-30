@@ -37,7 +37,7 @@ class Assists{
   saveAssistsCup(int playerID){
     if(playerID>=0) {
       globalCupPlayers[PlayerStatsKeys().keyPlayerAssists]![playerID]++;
-      globalJogadoresCarrerGoals[playerID]++;
+      globalJogadoresCarrerAssists[playerID]++;
     }
   }
 

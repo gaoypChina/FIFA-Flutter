@@ -54,7 +54,10 @@ class _TableMatchsState extends State<TableMatchs> {
                     child: Container(
                         color: AppColors().greyTransparent,
                         width: Sized(context).width*0.94,
-                        child: SingleChildScrollView(child: tableWidget())
+                        child: SingleChildScrollView(
+                            padding: EdgeInsets.zero,
+                            child: tableWidget()
+                        )
                     ),
                   ),
 
