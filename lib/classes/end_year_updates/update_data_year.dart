@@ -20,6 +20,7 @@ import 'package:fifa/classes/functions/international_league_manipulation.dart';
 import 'package:fifa/classes/player_stats_keys.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/coach/controller/coach_ranking_controller.dart';
+import 'package:fifa/pages/negotiation/negotiation_class.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/values/league_names.dart';
 
@@ -139,6 +140,8 @@ resetData(){
   semana = testInitRodada;//testInitRodada = variavel global
   rodada = testInitRodada;//testInitRodada = variavel global
   alreadyChangedClubThisSeason = false;
+
+  Negotiation().resetNegotiatedPlayers();
 
   //Zera Status dos jogadores
   globalJogadoresHealth = List.filled(globalMaxPlayersPermitted, 1.0);

@@ -14,6 +14,7 @@ import 'package:fifa/classes/chaves.dart';
 import 'package:fifa/classes/simulate/after_simulation/historic.dart';
 import 'package:fifa/classes/simulate/match_simulation.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/negotiation/negotiation_class.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/league_names.dart';
@@ -59,6 +60,9 @@ class Simulate{
 
     //Salva o saldo financeiro atual para o histórico
     HistoricMyTransfers().saveWeekBalance();
+
+    //Update negotiations
+    Negotiation().updateOffers();
   }
 
   startVariables(){

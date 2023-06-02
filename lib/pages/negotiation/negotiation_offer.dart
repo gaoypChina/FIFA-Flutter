@@ -3,16 +3,20 @@ import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/negotiation/negotiation_class.dart';
 import 'package:fifa/theme/background_color/background_age.dart';
 import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/background_color/moral_icon.dart';
 import 'package:fifa/theme/colors.dart';
+import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/painter/colorize_image.dart';
 import 'package:fifa/theme/painter/trapezoid.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:fifa/widgets/button/button_design.dart';
+import 'package:fifa/widgets/popup/popup_player_info.dart';
 import 'package:flutter/material.dart';
 
 class NegotiationOfferPage extends StatefulWidget {
@@ -26,26 +30,32 @@ class NegotiationOfferPage extends StatefulWidget {
 class _NegotiationOfferPageState extends State<NegotiationOfferPage> {
 
   My my = My();
-  String isBuy = "Comprar";
-  final String emoji = '\u{1F600}'; // Unicode value of the desired emoji
+  String isBuy = Negotiation().typeBuy;
 
-  TextEditingController _controller1 = TextEditingController();
-  TextEditingController _controller2 = TextEditingController();
+  TextEditingController _controllerPrice = TextEditingController();
+  TextEditingController _controllerSalary = TextEditingController();
 
+  int sliderDuration = 1;
+
+  void updateValueFromChild(double newValue) {
+    setState(() {
+      sliderDuration = newValue.toInt();
+    });
+  }
   ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
     super.initState();
-    _controller1 = TextEditingController(text: widget.player.price.toStringAsFixed(3));
-    _controller2 = TextEditingController(text: widget.player.salaryK.toStringAsFixed(3));
+    _controllerPrice = TextEditingController(text: Negotiation().getPrice(widget.player.index).toStringAsFixed(3));
+    _controllerSalary = TextEditingController(text: Negotiation().getSalary(widget.player.index).toStringAsFixed(3));
   }
 
   @override
   void dispose() {
-    _controller1.dispose();
-    _controller2.dispose();
+    _controllerPrice.dispose();
+    _controllerSalary.dispose();
     super.dispose();
   }
 
@@ -90,23 +100,27 @@ class _NegotiationOfferPageState extends State<NegotiationOfferPage> {
                             children: [
                               Column(
                                 children: [
-                                  Row(
-                                    children: const [
-                                      Text('Oferta',style: EstiloTextoBranco.negrito18),
-                                      Text('\u{1F600}',style: TextStyle(fontSize: 30)),
-                                    ],
-                                  ),
+
                                   Row(
                                     children: [
-                                      Column(
+                                      const Text('Oferta',style: EstiloTextoBranco.negrito18),
+                                      Text(selectEmojiFace(widget.player),style: const TextStyle(fontSize: 30)),
+                                    ],
+                                  ),
+
+                                  Column(
+                                    children: [
+                                      Row(
                                         children: [
-                                          isBuy=="Comprar" ? typeValue("Compra", _controller1) : Container(),
-                                          typeValue("Salário", _controller2),
+                                          isBuy==Negotiation().typeBuy ? typeValue("Compra", _controllerPrice, clubColors) : Container(),
+
+                                          isBuy==Negotiation().typeBuy ? order() : Container(),
                                         ],
                                       ),
-                                      Column(
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                                         children: [
-                                          isBuy=="Comprar" ? order() : Container(),
+                                          typeValue("Salário", _controllerSalary, clubColors),
                                           propose(),
                                         ],
                                       ),
@@ -114,7 +128,12 @@ class _NegotiationOfferPageState extends State<NegotiationOfferPage> {
                                     ],
                                   ),
 
-                                  FixedIntervalSlider(clubColors: clubColors),
+                                  //Slider
+                                  FixedIntervalSlider(
+                                    initialValue: Negotiation().getDuration(widget.player.index),
+                                    clubColors: clubColors,
+                                    onUpdateValue: updateValueFromChild,
+                                  ),
 
                                 ],
                               ),
@@ -126,8 +145,28 @@ class _NegotiationOfferPageState extends State<NegotiationOfferPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            buttonDesign2(title: 'Cancelar', function: (){Navigator.of(context).pop();}),
-                            buttonDesign2(title: 'Negociar', function: (){}),
+
+                            buttonDesign2(title: 'Cancelar Negócio',
+                                function: (){
+                              Negotiation().cancelOffer(widget.player.index);
+                              Navigator.of(context).pop();
+                            }),
+
+                            buttonDesign2(title: 'Negociar', 
+                                function: (){
+                              if(isBuy != Negotiation().typeBuy || double.parse(_controllerPrice.text.toString())<globalMyMoney){
+                                Negotiation().saveNewOffer(
+                                    widget.player.index,
+                                    double.parse(_controllerPrice.text.toString()),
+                                    double.parse(_controllerSalary.text.toString()),
+                                    sliderDuration,
+                                    Negotiation().typeBuy
+                                );
+                                Navigator.of(context).pop();
+                              }else{
+                                customToast("Sem dinheiro suficiente");
+                              }
+                            }),
                           ],
                         ),
 
@@ -146,10 +185,56 @@ class _NegotiationOfferPageState extends State<NegotiationOfferPage> {
   }
 
 ////////////////////////////////////////////////////////////////////////////
+//                               FUNCTIONS                                //
+////////////////////////////////////////////////////////////////////////////
+  String selectEmojiFace(Jogador player){
+    const String emojiAngry = '\u{1F614}'; // Unicode value of the desired emoji
+    const String emojiNeutral = '\u{1F610}'; // Unicode value of the desired emoji
+    const String emojiHappy = '\u{1F600}'; // Unicode value of the desired emoji
+    int price = 0;
+    int salary = 0;
+    try{
+      price = double.parse(_controllerPrice.text.toString()).toInt();
+      salary = double.parse(_controllerSalary.text.toString()).toInt();
+    }catch(e){
+      price = 0;
+      salary = 0;
+    }
+
+    if(isBuy == Negotiation().typeRent){
+      if(((salary/ player.salaryK)) <= 0.5){
+        return emojiAngry;
+      }else if(((salary/ player.salaryK)) >= 1) {
+        return emojiHappy;
+      }else {
+        return emojiNeutral;
+      }
+    }
+
+    if((price/ player.price) <= 0.6){
+      return emojiAngry;
+    }else if(((salary/ player.salaryK)) <= 0.5){
+      return emojiAngry;
+    }else if(((salary/ player.salaryK)) >= 3){
+      return emojiHappy;
+    }else if((price/ player.price) >= 0.6 && (price/ player.price) <=1){
+      return emojiNeutral;
+    }else if((price/ player.price) >= 1){
+      return emojiHappy;
+    }else if(((salary/ player.salaryK)) >= 1){
+      return emojiHappy;
+    }else{
+      return emojiNeutral;
+    }
+
+  }
+
+////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
 
 Widget playerCard(ClubColors clubColors){
+    double _heightCard = 120;
   return
     Container(
       decoration: BoxDecoration(
@@ -159,7 +244,7 @@ Widget playerCard(ClubColors clubColors){
       child: Column(
         children: [
           SizedBox(
-            height: 100,
+            height: _heightCard,
             width: Sized(context).width,
             child: Stack(
               children: [
@@ -167,18 +252,18 @@ Widget playerCard(ClubColors clubColors){
                 ColorizedImage(
                   imagePath: 'assets/icons/background.png',
                   color: clubColors.primaryColor,
-                  height: 100,
+                  height: _heightCard,
                   width: Sized(context).width,
                 ),
 
-                Align(alignment:Alignment.center,child: Images().getPlayerPictureWidget(widget.player,100,100)),
+                Align(alignment:Alignment.center,child: Images().getPlayerPictureWidget(widget.player,_heightCard,_heightCard)),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(widget.player.overall.toString(),style: EstiloTextoBranco.negrito40),
                 ),
                 //FLAG
                 Padding(
-                  padding: EdgeInsets.only(top:80, left:(Sized(context).width-16)/2+20),
+                  padding: EdgeInsets.only(top:_heightCard*0.8, left:(Sized(context).width-16)/2+20),
                   child: funcFlagsList(widget.player.nationality, 30, 35),
                 ),
                 //TRAPEZOIDE
@@ -205,39 +290,55 @@ Widget playerCard(ClubColors clubColors){
 
                 //POSITION
                 Padding(
-                    padding: EdgeInsets.only(top:80, left:(Sized(context).width-16)/2-70),
+                    padding: EdgeInsets.only(top:_heightCard*0.82, left:(Sized(context).width-16)/2-70),
                     child: positionContainer(widget.player.position, size: 50, style: EstiloTextoBranco.text16)),
+
+                //IDADE
+                Padding(
+                  padding: EdgeInsets.only(top:_heightCard*0.5),
+                  child: Row(
+                    children: [
+                      const Text("Idade", style: EstiloTextoBranco.negrito16),
+                      const SizedBox(width: 10),
+                      ageContainer(widget.player.age),
+                    ],
+                  ),
+                ),
+
+                //MORAL
+                Padding(
+                  padding: EdgeInsets.only(top:_heightCard*0.8),
+                  child: Row(
+                    children: [
+                      const Text("Moral", style: EstiloTextoBranco.negrito16),
+                      const SizedBox(width: 8),
+                      moralContainer(widget.player.moral),
+                    ],
+                  ),
+                ),
+
+                Padding(
+                    padding: EdgeInsets.only(top:_heightCard*0.6, left: Sized(context).width*0.7),
+                    child: lesoesCartoes(context, widget.player),
+                )
 
               ],
             ),
           ),
 
+          //NOME
           Container(
             color: clubColors.primaryColor.withOpacity(0.7),
-            padding: const EdgeInsets.symmetric(vertical: 4),
+            padding: const EdgeInsets.symmetric(vertical: 8),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(widget.player.name,style: EstiloTextoBranco.negrito16),
+                Text(widget.player.name,style: EstiloTextoBranco.negrito18),
               ],
             ),
           ),
 
-          Row(
-            children: [
-              const Text("Idade", style: EstiloTextoBranco.negrito16),
-              const SizedBox(width: 10),
-              ageContainer(widget.player.age),
-            ],
-          ),
 
-          Row(
-            children: [
-              const Text("Moral", style: EstiloTextoBranco.negrito16),
-              const SizedBox(width: 8),
-              moralContainer(widget.player.moral),
-            ],
-          ),
         ],
       ),
     );
@@ -261,16 +362,27 @@ Widget myFinanceBalance(){
 }
 
   Widget selectionButton(String title){
+    bool selected = false;
+    if(isBuy==Negotiation().typeBuy && title=="Comprar" ){
+      selected = true;
+    }
+    if(isBuy==Negotiation().typeRent && title!="Comprar" ){
+      selected = true;
+    }
     return Expanded(
       child: Container(
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: AppColors().greyTransparent2,
-          border: Border.all(color: isBuy==title ? AppColors().green : Colors.transparent, width: 1),
+          border: Border.all(color: selected ? AppColors().green : Colors.transparent, width: 1),
         ),
         child: InkWell(
           onTap: (){
-            isBuy = title;
+            if(title=="Comprar"){
+              isBuy = Negotiation().typeBuy;
+            }else{
+              isBuy = Negotiation().typeRent;
+            }
             setState((){});
           },
           child: Center(child: Text(title,style: EstiloTextoBranco.negrito16)),
@@ -284,7 +396,9 @@ Widget order(){
     return Column(
         children: [
           const Text('Valor',style: EstiloTextoBranco.negrito16),
-          Text('\$ '+widget.player.price.toStringAsFixed(3)+'mi',style: EstiloTextoBranco.text14),
+          const SizedBox(height: 12),
+          Text('\$ '+widget.player.price.toStringAsFixed(3)+'mi',style: EstiloTextoBranco.text16),
+          const SizedBox(height: 12),
         ],
       );
   }
@@ -293,33 +407,46 @@ Widget order(){
     return Column(
       children: [
         const Text('Salário',style: EstiloTextoBranco.negrito16),
-        Text('\$ '+widget.player.salaryK.toStringAsFixed(3)+'k',style: EstiloTextoBranco.text14),
+        const SizedBox(height: 12),
+        Text('\$ '+widget.player.salaryK.toStringAsFixed(3)+'k',style: EstiloTextoBranco.text16),
+        const SizedBox(height: 12),
       ],
     );
   }
 
-  Widget typeValue(String hintText, TextEditingController _controller){
+  Widget typeValue(String hintText, TextEditingController _controller, ClubColors clubColors){
     return Container(
-      width: Sized(context).width*0.5,
+      width: Sized(context).width * 0.5,
       padding: const EdgeInsets.all(16.0),
       child: Column(
         children: [
           Text(hintText,style: EstiloTextoBranco.negrito16),
-          Container(
-            padding: EdgeInsets.zero, // Remove padding
-            child: TextField(
-              controller: _controller,
-              cursorColor: AppColors().green,
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.grey[200], // Change background color
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(color: AppColors().green), // Change border color
-                ),
-                hintText: hintText,
+          TextField(
+            keyboardType: TextInputType.number,
+            controller: _controller,
+            cursorColor: AppColors().green,
+            onChanged: (String value){
+
+              setState((){});
+            },
+            style: TextStyle(color: clubColors.primaryColor),
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: clubColors.secondColor.withOpacity(0.5), // Change background color
+              border: OutlineInputBorder(
+                borderSide: BorderSide(color: AppColors().green), // Change border color
+                borderRadius: BorderRadius.circular(8.0),
               ),
-              maxLines: 1, // Specify the number of lines for the text box
+              contentPadding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
+              focusedBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: AppColors().green,
+                ),
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+              hintText: hintText,
             ),
+            maxLines: 1, // Specify the number of lines for the text box
           ),
         ],
       ),
@@ -335,18 +462,35 @@ Widget order(){
 
 
 class FixedIntervalSlider extends StatefulWidget {
+  final int initialValue;
   final ClubColors clubColors;
-  const FixedIntervalSlider({Key? key, required this.clubColors}) : super(key: key);
+  final Function(double) onUpdateValue;
+  const FixedIntervalSlider({Key? key, required this.initialValue, required this.clubColors, required this.onUpdateValue}) : super(key: key);
   @override
   _FixedIntervalSliderState createState() => _FixedIntervalSliderState();
 }
 
 class _FixedIntervalSliderState extends State<FixedIntervalSlider> {
-  double _value = 1.0;
+  double _value = 1;
+
+  void _updateParentValue() {
+    widget.onUpdateValue(_value);
+  }
+  ////////////////////////////////////////////////////////////////////////////
+//                               INIT                                     //
+////////////////////////////////////////////////////////////////////////////
+  @override
+  void initState() {
+    super.initState();
+    _value = widget.initialValue.toDouble();
+  }
+  ////////////////////////////////////////////////////////////////////////////
+//                               WIDGET                                     //
+////////////////////////////////////////////////////////////////////////////
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: Sized(context).width-50,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -360,6 +504,7 @@ class _FixedIntervalSliderState extends State<FixedIntervalSlider> {
                 activeColor: widget.clubColors.primaryColor,
                 inactiveColor: widget.clubColors.secondColor,
                 onChanged: (double newValue) {
+                  _updateParentValue();
                   setState(() {
                     _value = newValue;
                   });

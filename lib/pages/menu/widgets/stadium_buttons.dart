@@ -24,7 +24,7 @@ Widget negotiationButton(BuildContext context){
         onTap:(){
           navigatorPush(context, const NegotiationListPage());
         },
-        child: const Icon(Icons.transfer_within_a_station,color:Colors.white,size: 50)
+        child: const Icon(Icons.transfer_within_a_station,color:Colors.white,size: 45)
     ),
   );
 }

@@ -34,7 +34,6 @@ class MyApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
       ],
 
-
       debugShowCheckedModeBanner: false,
       title: 'Flutter App',
       theme: ThemeData(

@@ -1,12 +1,16 @@
+import 'package:fifa/classes/data_graphics.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/theme/background_color/background_classification.dart';
+import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/player_past_clubs.dart';
 import 'package:flutter/material.dart';
 
 class HistoricBestPlayersPage extends StatefulWidget {
   final String clubName;
-  const HistoricBestPlayersPage({Key? key,required this.clubName}) : super(key: key);
+  final DataGraphics dataGraphics;
+  const HistoricBestPlayersPage({Key? key,required this.clubName, required this.dataGraphics}) : super(key: key);
 
   @override
   State<HistoricBestPlayersPage> createState() => _HistoricPlayersBestPageState();
@@ -43,19 +47,11 @@ class _HistoricPlayersBestPageState extends State<HistoricBestPlayersPage> {
                   scrollDirection: Axis.vertical,
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
-                    child: Column(
+                    child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        for(int index=0;index<yearPlayers.keys.length;index++)
-                          SizedBox(
-                            height:35,
-                            child: Row(
-                              children: [
-                                Text(yearPlayers.keys.elementAt(index).toString(),style: EstiloTextoBranco.text16),
-                                Text(yearPlayers.values.elementAt(index).toString(),style: EstiloTextoBranco.text16),
-                              ],
-                            ),
-                          ),
+                        for(int index=yearPlayers.keys.length-1;index>0;index--)
+                          playerRow(index)
                       ],
                     ),
                   ),
@@ -74,6 +70,60 @@ class _HistoricPlayersBestPageState extends State<HistoricBestPlayersPage> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Widget playerRow(int index){
+    int year = yearPlayers.keys.elementAt(index);
+    bool hasData = false;
+    try{
+      widget.dataGraphics.dataInternational.firstWhere((element) => element.year.toInt() == year);
+      hasData = true;
+    }catch(e){
+      hasData = false;
+    }
+
+    return SizedBox(
+      width:140,
+      child: Column(
+        children: [
+          const Text(""),
+          Text(year.toString(),style: EstiloTextoBranco.negrito22),
+
+          hasData ? Container(
+            width:130,
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text("Nacional ",style: EstiloTextoBranco.text16),
+                    classificationContainer(year, widget.dataGraphics.data),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text("Copa ",style: EstiloTextoBranco.text16),
+                    classificationContainer(year, widget.dataGraphics.dataCups),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text("Internacional ",style: EstiloTextoBranco.text16),
+                    classificationContainer(year, widget.dataGraphics.dataInternational),
+                  ],
+                ),
+                ],
+            ),
+          ) : Container(),
+
+          const Text(""),
+          for(int i=0; i<yearPlayers.values.elementAt(index).length;i++)
+            Text(yearPlayers.values.elementAt(index)[i].toString(),style: EstiloTextoBranco.text16),
+        ],
+      ),
+    );
+  }
+
   getLegendsCarrerFullMap(){
     Map playersMap  = PlayerPastClubs().map;
     //TRANSFORM CARRER MAP

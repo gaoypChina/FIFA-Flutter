@@ -5,6 +5,7 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/classes/data_graphics.dart';
 import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:fifa/pages/historic/historic_best_players.dart';
+import 'package:fifa/theme/background_color/background_classification.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
@@ -153,7 +154,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
                       children: [
                         graphicsTab(),
                         historicTab(),
-                        HistoricBestPlayersPage(clubName: widget.clubName),
+                        HistoricBestPlayersPage(clubName: widget.clubName, dataGraphics: dataGraphics,),
                       ],
                     ),
                 ),
@@ -442,31 +443,10 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           for(int i=0;i<10;i++)
-            rowChampionsPosition(year+i,dataClassificationList)
+            classificationContainer(year+i,dataClassificationList)
         ],
       ),
     );
-  }
-  Widget rowChampionsPosition(int year,List<ClassificationData> dataClassificationList){
-    try{
-      var data = dataClassificationList.where((element) => element.year == year.toDouble());
-      ClassificationData classificationData = data.first;
-      if(classificationData.position == 1){
-        return Container(width:30,color:Colors.amber,child: Text(classificationData.position.toString(),textAlign: TextAlign.center,style: EstiloTextoPreto.text14));
-      }
-      if(classificationData.position <= 2){
-        return Container(width:30,color:Colors.lightBlueAccent,child: Text(classificationData.position.toString(),textAlign: TextAlign.center,style: EstiloTextoPreto.text14));
-      }
-      if(classificationData.position <= 4){
-        return Container(width:30,color:Colors.black38,child: Text(classificationData.position.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.text14));
-      }
-      if(classificationData.position <= 8){
-        return Container(width:30,color:Colors.black12,child: Text(classificationData.position.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.text14));
-      }
-      return SizedBox(width:30,child: Text(classificationData.position.toString(),textAlign: TextAlign.center,style: EstiloTextoBranco.text14));
-    }catch(e){
-      return Container(width:30,);
-    }
   }
 
 

@@ -1,7 +1,5 @@
-import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
-import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/negotiation/negotiation_class.dart';
 import 'package:fifa/pages/negotiation/negotiation_offer.dart';
 import 'package:fifa/theme/background_color/background_overall.dart';
@@ -68,10 +66,12 @@ class _NegotiationListPageState extends State<NegotiationListPage> {
 
 Widget negotiationRow(Jogador player, int startNegotiationWeek){
     String status = Negotiation().getStatus(player.index);
+    int playerID = player.index;
 
     Map mapStatus = {
       Negotiation().negotiating: Colors.lightBlue,
-      Negotiation().done: Colors.green,
+      Negotiation().accepted: Colors.green,
+      Negotiation().rejected: Colors.orange,
       Negotiation().cancelled: Colors.red,
     };
 
@@ -79,7 +79,20 @@ Widget negotiationRow(Jogador player, int startNegotiationWeek){
       color: Colors.transparent,
       child: InkWell(
         onTap: (){
-          navigatorPush(context, NegotiationOfferPage(player: player));
+          if(Negotiation().isNegotiating(playerID)){
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => NegotiationOfferPage(player: player))
+            ).then((_) => setState(() {}));
+          }else{
+            showModalBottomSheet(
+                  barrierColor: AppColors().greyTransparent,
+                  context: context, builder: (c){
+                return const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text("Jogador já negociado",style: EstiloTextoPreto.text16),
+                );
+                  });
+            }
         },
         child: Container(
           color: AppColors().greyTransparent,
@@ -103,19 +116,19 @@ Widget negotiationRow(Jogador player, int startNegotiationWeek){
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(player.name,overflow: TextOverflow.fade, style: EstiloTextoBranco.negrito16),
-                    Text(player.price.toStringAsFixed(2)+'mi',style: EstiloTextoBranco.text14),
-                    Text(player.salaryK.toStringAsFixed(2)+'k',style: EstiloTextoBranco.text14),
+                    Text("Valor: \$"+Negotiation().getPrice(playerID).toStringAsFixed(3)+'mi',style: EstiloTextoBranco.text10),
+                    Text("Salário: \$"+Negotiation().getSalary(playerID).toStringAsFixed(3)+'k',style: EstiloTextoBranco.text10),
                   ],
                 ),
               ),
               Column(
                 children: [
                   const Icon(Icons.compare_arrows, color: Colors.white, size: 30),
-                  Text("Week" + startNegotiationWeek.toString(),style: EstiloTextoBranco.text14),
+                  Text("Week" + Negotiation().getWeek(playerID).toString(),style: EstiloTextoBranco.text14),
                 ],
               ),
               const SizedBox(width: 8),
-              Images().getEscudoWidget(player.clubName),
+              Images().getEscudoWidget(Negotiation().getClubName(playerID)),
               const SizedBox(width: 8),
               CircleAvatar(backgroundColor: mapStatus[status], radius: 10)
             ],

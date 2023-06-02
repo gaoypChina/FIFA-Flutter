@@ -7,6 +7,7 @@ import 'package:fifa/database/select_database.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/home/bottom_row_buttons.dart';
 import 'package:fifa/pages/home/logo_kit_stack.dart';
+import 'package:fifa/pages/negotiation/negotiation_class.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
@@ -70,6 +71,8 @@ class _HomePageState extends State<HomePage> {
     await SelectDatabase().load();
 
     globalNumberClubsTotal = funcNumberClubsTotal(); //get number of total clubs
+
+    Negotiation().resetNegotiatedPlayers();
 
     loaded = true;
     setState(() {});

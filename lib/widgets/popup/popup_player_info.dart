@@ -392,6 +392,9 @@ onTap(BuildContext context, Jogador jogador,ActionTransfer actionTransfer){
   }
 }
 onTapSell(BuildContext context, Jogador jogador){
+
+  Negotiation().saveSellPlayer(jogador);
+
   //TODO tornar o clube que compra o jogador mais coerente
   if(globalMyJogadores.length>18) {
     int destinyClub = Random().nextInt(200);
@@ -406,12 +409,7 @@ onTapSell(BuildContext context, Jogador jogador){
 }
 onTapBuy(BuildContext context, Jogador jogador){
 
-  globalNegotiation[jogador.index] = {
-    Negotiation().keyWeek: semana,
-    Negotiation().keyPrice: jogador.price,
-    Negotiation().keySalary: jogador.salaryK,
-    Negotiation().keyStatus: Negotiation().negotiating,
-  };
+  Negotiation().saveBuyPlayer(jogador);
 
   if(globalMyJogadores.length<34) {
     if (globalMyMoney > jogador.price) {
