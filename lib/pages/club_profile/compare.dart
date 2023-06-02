@@ -584,9 +584,9 @@ class _CompareState extends State<Compare> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Image.asset('assets/league_logos/mundial.png',height: 40,width: 40),
+          Image.asset(Images().getMundialLogo(),height: 40,width: 40),
           Text(Translation(context).text.mundial,style: EstiloTextoBranco.negrito22),
-          Image.asset('assets/league_logos/mundial.png',height: 40,width: 40),
+          Image.asset(Images().getMundialLogo(),height: 40,width: 40),
         ],
       ),
     );

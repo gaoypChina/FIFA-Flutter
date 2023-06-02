@@ -51,7 +51,7 @@ TableRow groupTitle(BuildContext context, int groupNumber){
       const Text('',style: EstiloTextoBranco.text16),
       SizedBox(
         width: 200,
-        child: Text('\n${Translation(context).text.group} ' + groupLetter,style: EstiloTextoBranco.text16),
+        child: Text('\n${Translation(context).text.group} ' + groupLetter,style: EstiloTextoBranco.negrito16),
       ),
       const Text('\nPTS ',style: EstiloTextoBranco.text16),
       const Text('\n GM ',style: EstiloTextoBranco.text16),

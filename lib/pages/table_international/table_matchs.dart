@@ -4,6 +4,7 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/classes/table_matchs_control.dart';
 import 'package:fifa/theme/colors.dart';
+import 'package:fifa/theme/match_x_testyle.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/background_image/backimage_international_league.dart';
@@ -118,17 +119,25 @@ class _TableMatchsState extends State<TableMatchs> {
     String teamNameB =  match.clubName2;
     int golsA = match.goals1;
     int golsB = match.goals2;
+    TextStyle style1 = matchStyle1(golsA, golsB, 16);
+    TextStyle style2 = matchStyle2(golsA, golsB, 16);
 
     return  TableRow(
       children: [
         Container(
           color: teamNameA == my.clubName ? Colors.green : Colors.transparent,
-            child: Text(teamNameA,textAlign: TextAlign.right,style: EstiloTextoBranco.text16)),
+            child: Text(teamNameA,textAlign: TextAlign.right,style: style1)),
         //Escudo
         Images().getEscudoWidget(teamNameA,20,20),
 
         match.isAlreadyPlayed
-            ? Text(golsA.toString()+'x'+golsB.toString(),style: EstiloTextoBranco.text16)
+            ? Row(
+            children: [
+              Text(golsA.toString(),style: style1),
+              const Text('x',style: EstiloTextoBranco.text16),
+              Text(golsB.toString(),style: style2),
+            ],
+          )
             : const Center(child: Text('x',style: EstiloTextoBranco.text16)),
 
         //Escudo
@@ -136,7 +145,7 @@ class _TableMatchsState extends State<TableMatchs> {
 
         Container(
             color: teamNameB == my.clubName ? Colors.green : Colors.transparent,
-            child: Text(teamNameB,style: EstiloTextoBranco.text16)),
+            child: Text(teamNameB,style: style2)),
       ],
     );
   }

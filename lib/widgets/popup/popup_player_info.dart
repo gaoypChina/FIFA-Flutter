@@ -8,6 +8,7 @@ import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/negotiation/negotiation_class.dart';
 import 'package:fifa/theme/background_color/background_age.dart';
 import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/background_color/color_grade.dart';
@@ -189,7 +190,7 @@ mainStatus(BuildContext context, Jogador jogador){
           const SizedBox(
               width:50,
               child: Text('Moral',style: EstiloTextoBranco.text14)),
-          moralContainer(jogador,size: sizeIcon),
+          moralContainer(jogador.moral,size: sizeIcon),
         ],
       ),
     ],
@@ -376,7 +377,7 @@ playerPositionColor(String position){
   else if(position == 'ATA' || position == 'PE' || position == 'PD'){colorBackground = Colors.red;}
   return colorBackground;
 }
-isBuyOrSell(Jogador jogador,ActionTransfer actionTransfer){
+isBuyOrSell(Jogador jogador, ActionTransfer actionTransfer){
   if(jogador.clubID == My().clubID){
     actionTransfer.action = actionTransfer._sell;
   }else{
@@ -404,6 +405,14 @@ onTapSell(BuildContext context, Jogador jogador){
   }
 }
 onTapBuy(BuildContext context, Jogador jogador){
+
+  globalNegotiation[jogador.index] = {
+    Negotiation().keyWeek: semana,
+    Negotiation().keyPrice: jogador.price,
+    Negotiation().keySalary: jogador.salaryK,
+    Negotiation().keyStatus: Negotiation().negotiating,
+  };
+
   if(globalMyJogadores.length<34) {
     if (globalMyMoney > jogador.price) {
       if(Club(index: jogador.clubID).nJogadores>15){

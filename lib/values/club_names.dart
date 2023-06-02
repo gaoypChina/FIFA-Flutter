@@ -4333,13 +4333,13 @@ class ClubName{
   String youngElephants = "Young Elephants";
   String yotha = "Yotha";
   //MALASIA
-  String johorDarul = "Johor Darul Ta'zim";
+  String johordarul = "Johor Darul Ta'zim";
   String felda = "Felda United";
   String kedah = "Kedah Darul Aman";
   String kelantan = "Kelantan";
   String kelantanunited = "Kelantan United";
   String kuching = "Kuching City";
-  String kualaLumpur = "Kuala Lumpur";
+  String kualalumpur = "Kuala Lumpur";
   String federalTerritory = "Federal Territory";
   String lionsxii = "Lions XII";
   String negeri = "Negeri Sembilan";
@@ -4775,7 +4775,7 @@ class ClubName{
   String metallurg = "Metallurg Bekabad";
   String mhsk = "MHSK";
   String mubarek = "Mash'al Mubarek";
-  String nasafQarshi = "Nasaf Qarshi";
+  String nasafqarshi = "Nasaf Qarshi";
   String navbahor = "Navbahor Namangan";
   String neftchifargona = "Neftchi Fargona";
   String olympictashkent = "Olympic Tashkent";

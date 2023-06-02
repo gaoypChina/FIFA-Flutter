@@ -10,6 +10,7 @@ import 'package:fifa/theme/background_color/background_overall.dart';
 import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/widgets/button/button.dart';
 import 'package:fifa/widgets/club_profile/analise_elenco.dart';
 import 'package:fifa/widgets/field_size.dart';
 import 'package:fifa/widgets/popup/popup_player_info.dart';
@@ -51,37 +52,43 @@ class _FieldDraggableState extends State<FieldDraggable> {
                 //Widget do campo
                 Stack(
                   children: [
+
                     fieldWidget(),
 
+                    //AUTO ORGANIZE BUTTON
                     Container(
-                        width: 140,
-                    padding: const EdgeInsets.only(top:310),
-                    child: button(title: 'Auto-organize',
-                        function: (){
-                          setState(() {});
-                          myClub.optimizeBestSquadClub();
-                          globalMyJogadores = myClub.escalacao;
-                          widget.notifyParent();
-                          my = My();
+                      padding: const EdgeInsets.only(top:300),
+                      margin: const EdgeInsets.symmetric(horizontal: 4),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                              width: 140,
+                              child: button(title: 'Auto-organize',
+                                  function: (){
+                                    setState(() {});
+                                    myClub.optimizeBestSquadClub();
+                                    globalMyJogadores = myClub.escalacao;
+                                    widget.notifyParent();
+                                    my = My();
+                                  })
+                          ),
 
-                        })
-                    ),
+                          const Spacer(),
+
+                          //FILTER SELECTION
+                          SizedBox(
+                            width: 50,
+                            child: buttonIcon(
+                                widget: const Icon(Icons.filter_alt_rounded, color: Colors.white,),
+                                function: (){bottomSheetFilterOptions(context);}
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+
 
                   ],
-                ),
-                //FILTRAR POR TÓPICOS
-                Padding(
-                  padding: const EdgeInsets.only(top:4.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      button(title: Translation(context).text.ovr3, function: (){setState(() {});show = 'OVR';}),
-                      button(title: Translation(context).text.age, function: (){setState(() {});show = 'Idade';}),
-                      button(title: Translation(context).text.matchs, function: (){setState(() {});show = 'Jogos';}),
-                      button(title: Translation(context).text.goals, function: (){setState(() {});show = 'Gols';}),
-                      button(title: Translation(context).text.assists, function: (){setState(() {});show = 'Assists';}),
-                    ],
-                  ),
                 ),
 
                 const SizedBox(height: 4),
@@ -149,6 +156,28 @@ class _FieldDraggableState extends State<FieldDraggable> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Future bottomSheetFilterOptions(BuildContext context){
+
+    //FILTRAR POR TÓPICOS
+    return showModalBottomSheet(
+        barrierColor: Colors.transparent,
+        context: context, builder: (c){
+      return Padding(
+        padding: const EdgeInsets.all(8),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            buttonText(title: Translation(context).text.ovr3, function: (){setState(() {});show = 'OVR';}),
+            buttonText(title: Translation(context).text.age, function: (){setState(() {});show = 'Idade';}),
+            buttonText(title: Translation(context).text.matchs, function: (){setState(() {});show = 'Jogos';}),
+            buttonText(title: Translation(context).text.goals, function: (){setState(() {});show = 'Gols';}),
+            buttonText(title: Translation(context).text.assists, function: (){setState(() {});show = 'Assists';}),
+          ],
+        ),
+      );
+    });
+  }
+
   Widget dragPlayerSelection(int index){
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 2.0),

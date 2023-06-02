@@ -1,3 +1,4 @@
+import 'package:fifa/classes/data_graphics.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/countries/words.dart';
 import 'package:fifa/classes/countries/countries_continents.dart';
@@ -7,6 +8,7 @@ import 'package:fifa/pages/historic/leagues_historic.dart';
 import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
+import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/back_button.dart';
 import 'package:fifa/widgets/stars.dart';
@@ -104,6 +106,8 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
   Widget clubRow(String clubName){
+    DataGraphics dataGraphics = DataGraphics();
+    dataGraphics.getDataNotPlayabale(clubName, ClubDetails().getCountry(clubName), ClubDetails().getState(clubName));
     return GestureDetector(
       onTap: (){
           //showClubMap(clubName);
@@ -158,9 +162,23 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                                     ),
                                     Row(
                                       children: [
+                                        SizedBox(
+                                          height: 30,
+                                          width: 30,
+                                          child: Stack(
+                                            children: [
+                                              const Opacity(opacity:0.7, child: Icon(Icons.star,color: Colors.amber,size: 30)),
+                                              Center(child: Text(dataGraphics.nTitulos.toString(),style: EstiloTextoBranco.negrito14)),
+                                            ],
+                                          ),
+                                        ),
+                                        const SizedBox(width: 16),
                                         funcFlagsList(clubDetails.getCountry(clubName), 15, 25),
                                         const SizedBox(width: 16),
                                         Text(clubDetails.getFoundationYear(clubName).toString(),style: EstiloTextoBranco.text16),
+
+
+
                                       ],
                                     ),
                                   ],
@@ -179,17 +197,20 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                         ],
                       ),
                     ),
-                    //ESTADIO
-                    Padding(
-                      padding: const EdgeInsets.only(top: 5),
-                      child: Images().getStadiumWidget(clubName,90,110),
-                    ),
+
                   ],
                 ),
+
+                //ESTADIO
+                if (FIFAImages().imageLogo(clubName) != 'generic') Padding(
+                  padding: const EdgeInsets.only(left:250, top: 5),
+                  child: Images().getStadiumWidget(clubName,90,140),
+                ) else Container(),
+
                 //UNIFORME
                 Padding(
-                    padding: const EdgeInsets.only(left:270,top: 10),
-                    child: Images().getUniformWidget(clubName)
+                    padding: const EdgeInsets.only(left:265,top: 10),
+                    child: Images().getUniformWidget(clubName, 80, 100)
                 ),
 
 

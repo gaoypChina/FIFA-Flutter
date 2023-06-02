@@ -150,7 +150,7 @@ class PlayerPastClubs{
   map['Ademir da Guia'] = {1960:n.bangu,1962:n.palmeiras,1977:retired};
   map['Adriano'] = {     2000:n.flamengo,2001:n.inter,2002:n.fiorentina,2003:n.parma,2004:n.inter,2008:n.saopaulo,2009:n.flamengo,2010:n.roma,2011:n.corinthians,2012:n.flamengo,2013:retired};
   map['Agustín'] = {     1978:n.realmadridB,1980:n.realmadrid,1990:n.tenerife,1994:retired};
-  map['Aimar'] = {       1997:n.riverplate,2001:n.valencia,2006:n.zaragoza,2008:n.benfica,2013:n.johorDarul,2014:retired};
+  map['Aimar'] = {       1997:n.riverplate,2001:n.valencia,2006:n.zaragoza,2008:n.benfica,2013:n.johordarul,2014:retired};
   map['Alan Shearer'] = {1988:n.southampton,1992:n.blackburn,1996:n.newcastle,2006:retired};
   map['Allan Evans'] = { 1973:n.dunfermline,1977:n.astonvilla,1989:n.leicester,1990:retired};
   map['Alex'] = {        1995:n.coritiba,1997:n.palmeiras,2000:n.parma,2001:n.palmeiras,2002:n.cruzeiro,2004:n.fenerbahce,2013:n.coritiba,2014:retired};

@@ -370,7 +370,7 @@ Widget buttonMoreMoney(){
         color: AppColors().greyTransparent,
         padding: const EdgeInsets.all(4),
         margin: const EdgeInsets.all(4),
-        child: const Text('Pedir + Dinheiro',style: EstiloTextoBranco.text16))
+        child: const Text('Pedir Dinheiro',style: EstiloTextoBranco.text16))
     );
 }
 Widget sequenceWidget(String text, String value, int clubID, [int? advClubID]){

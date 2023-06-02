@@ -71,10 +71,10 @@ class _DatabaseButtonState extends State<DatabaseButton> {
         decoration: decoratorHomeButtons(),
         child: Column(
           children: [
-            const Icon(Icons.save,color:Colors.white,size:40),
+            const Icon(Icons.file_upload_outlined,color:Colors.white,size:40),
             globalSaveNumber==0
                 ? const Text('Database: 0',style: EstiloTextoBranco.text12)
-                : Text('Database: '+globalSaveNumber.toString(),style: EstiloTextoBranco.text12),
+                : Text('Database: ' + globalSaveNumber.toString(),style: EstiloTextoBranco.text12),
           ],
         ),
       ),

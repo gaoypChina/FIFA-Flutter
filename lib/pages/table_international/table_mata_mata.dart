@@ -5,6 +5,7 @@ import 'package:fifa/classes/mata_mata/mata_mata_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
+import 'package:fifa/theme/match_x_testyle.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/background_image/backimage_international_league.dart';
 import 'package:flutter/material.dart';
@@ -140,24 +141,32 @@ class _TableMataMataState extends State<TableMataMata> {
     String teamNameB = data.clubName2;
     int golsA = data.goal1;
     int golsB = data.goal2;
+    TextStyle style1 = matchStyle1(golsA, golsB, 14);
+    TextStyle style2 = matchStyle2(golsA, golsB, 14);
+    My my = My();
 
     return  TableRow(
       children: [
         Container(
-          color: teamNameA == My().clubName ? Colors.green : Colors.transparent,
-            child: Text(teamNameA,textAlign:TextAlign.end,style: EstiloTextoBranco.text14)),
+          color: teamNameA == my.clubName ? Colors.green : Colors.transparent,
+            child: Text(teamNameA,textAlign:TextAlign.end,style: style1)),
         //Escudo
         Images().getEscudoWidget(teamNameA,20,20),
 
         golsA >= 0
-            ? Text(' '+ golsA.toString()+'x'+golsB.toString()+' ',style: EstiloTextoBranco.text14)
-            : const Text('X',textAlign:TextAlign.center,style: EstiloTextoBranco.text14),
+            ? Row(
+          children: [
+            Text(" " + golsA.toString(),style: style1),
+            const Text('x',style: EstiloTextoBranco.text16),
+            Text(golsB.toString() + " ",style: style2),
+          ],
+        ) : const Text('X',textAlign:TextAlign.center,style: EstiloTextoBranco.text14),
         //Escudo
         Images().getEscudoWidget(teamNameB,20,20),
 
         Container(
           color: teamNameB == My().clubName ? Colors.green : Colors.transparent,
-            child: Text(teamNameB,style: EstiloTextoBranco.text14),
+            child: Text(teamNameB,style: style2),
         ),
       ],
     );

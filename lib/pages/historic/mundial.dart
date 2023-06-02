@@ -74,12 +74,11 @@ class _TableMundialState extends State<TableMundial> {
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
                             colors: [Colors.purple, Colors.transparent, Colors.transparent, Colors.purple],
-                            stops: [0.0, 0.1, 0.95, 1.0], // 10% purple, 80% transparent, 10% purple
+                            stops: [0.0, 0.05, 0.95, 1.0], // 10% purple, 80% transparent, 10% purple
                           ).createShader(rect);
                         },
                         blendMode: BlendMode.dstOut,
                         child: ListView.builder(
-                            padding: EdgeInsets.zero,
                             itemCount: results.length,
                             itemBuilder: (c, i) => finals((results.keys.first.toInt() - i))
                         ),

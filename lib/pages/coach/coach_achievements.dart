@@ -1,6 +1,7 @@
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/pages/coach/controller/coach_achievements_controller.dart';
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/back_button.dart';
@@ -31,15 +32,22 @@ class _CoachAchievementsState extends State<CoachAchievements> {
           children: [
             backButtonText(context, Translation(context).text.coachAchievements),
             const SizedBox(height: 8),
-            title(),
+            Container(
+                color: AppColors().greyTransparent,
+                child: title()
+            ),
 
             Expanded(
-              child: ListView.builder(
-                  padding: EdgeInsets.zero,
-                  itemCount: controller.achievements.length,
-                  itemBuilder: (c,i) => row(controller.achievements.keys.elementAt(i)),
+              child: Container(
+                color: AppColors().greyTransparent,
+                child: ListView.builder(
+                    padding: EdgeInsets.zero,
+                    itemCount: controller.achievements.length,
+                    itemBuilder: (c,i) => row(controller.achievements.keys.elementAt(i)),
+                ),
               ),
             ),
+
           ],
         ),
       )

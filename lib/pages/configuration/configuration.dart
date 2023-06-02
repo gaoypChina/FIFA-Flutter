@@ -80,8 +80,6 @@ class _ConfigurationState extends State<Configuration> {
                     SizedBox(height: spaceBetweenWidgets),
                     userTerms(),
                     SizedBox(height: spaceBetweenWidgets),
-                    tutorial(),
-                    SizedBox(height: spaceBetweenWidgets),
                     //test(),
                   ],
                 ),

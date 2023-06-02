@@ -1,5 +1,6 @@
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/pages/coach/controller/coach_ranking_controller.dart';
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/back_button.dart';
@@ -41,13 +42,21 @@ class _CoachRankingState extends State<CoachRanking> {
           Column(
             children: [
               backButtonText(context,'Melhores treinadores'),
-              title(),
+
+              Container(
+                  color: AppColors().greyTransparent,
+                  child: title()
+              ),
+
               controller.savedCoachsListSeparated.isNotEmpty
                   ? Expanded(
-                child: ListView.builder(
-                  padding: EdgeInsets.zero,
-                    itemCount: controller.savedCoachsListSeparated.length,
-                    itemBuilder: (c,i)=> row(i,controller.savedCoachsListSeparated[i])
+                child: Container(
+                  color: AppColors().greyTransparent,
+                  child: ListView.builder(
+                    padding: EdgeInsets.zero,
+                      itemCount: controller.savedCoachsListSeparated.length,
+                      itemBuilder: (c,i)=> row(i,controller.savedCoachsListSeparated[i])
+                  ),
                 ),
               )
                   : Container(),
@@ -82,7 +91,7 @@ class _CoachRankingState extends State<CoachRanking> {
       children: [
         SizedBox(
           width: 35,
-          child: Text((i+1).toString()+'º',style: EstiloTextoBranco.text16),
+          child: Center(child: Text((i+1).toString()+'º',style: EstiloTextoBranco.text16)),
         ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,

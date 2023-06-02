@@ -8,6 +8,7 @@ import 'package:fifa/theme/background_color/background_overall.dart';
 import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/widgets/button/button.dart';
 import 'package:fifa/widgets/club_profile/analise_elenco.dart';
 import 'package:fifa/widgets/field_size.dart';
 import 'package:fifa/widgets/popup/popup_player_info.dart';
@@ -44,13 +45,30 @@ class _StaticFieldState extends State<StaticField> {
               children: [
 
                 //Widget do campo
-                fieldGameplay442(),
+                Stack(
+                  children: [
+
+                    fieldGameplay442(),
+
+                    //FILTER SELECTION
+                    Container(
+                      width: 50,
+                      padding: const EdgeInsets.only(top:300),
+                      child: buttonIcon(
+                          widget: const Icon(Icons.filter_alt_rounded, color: Colors.white,),
+                          function: (){bottomSheetFilterOptions(context);}
+                      ),
+                    ),
+
+                  ],
+                ),
+
 
                 widget.hasReserves ? Container(
                   padding: const EdgeInsets.only(top: 4),
                     width: Sized(context).width,
                     color: AppColors().greyTransparent,
-                    child: Text('${Translation(context).text.substitutes}:', style: EstiloTextoBranco.text22)
+                    child: Text('${Translation(context).text.substitutes}:', style: EstiloTextoBranco.negrito18)
                 ) : Container(),
 
                 widget.hasReserves ? Container(
@@ -86,21 +104,6 @@ class _StaticFieldState extends State<StaticField> {
                   ),
                 ) : Container(),
 
-                //FILTRAR POR TÓPICOS
-                widget.hasReserves ? Padding(
-                  padding: const EdgeInsets.only(top:4.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      button(title: 'OVR', function: (){setState(() {});show = 'OVR';}),
-                      button(title: Translation(context).text.age, function: (){setState(() {});show = 'Idade';}),
-                      button(title: Translation(context).text.matchs, function: (){setState(() {});show = 'Jogos';}),
-                      button(title: Translation(context).text.goals, function: (){setState(() {});show = 'Gols';}),
-                      button(title: Translation(context).text.assists, function: (){setState(() {});show = 'Assists';}),
-                    ],
-                  ),
-                ) : Container(),
-
                 //ANALISE DO ELENCO
                 analiseElenco(context, clubClass),
 
@@ -125,33 +128,27 @@ class _StaticFieldState extends State<StaticField> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Future bottomSheetFilterOptions(BuildContext context){
 
-  button({required String title, required Function()? function}) {
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: function,
-        customBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        child: Container(
-          padding: const EdgeInsets.all(6),
-          decoration: const BoxDecoration(
-            color: Colors.black38,
-            borderRadius: BorderRadius.all(Radius.circular(10.0)),
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                title,
-                style: EstiloTextoBranco.text16,
-              ),
-            ],
-          ),
+    //FILTRAR POR TÓPICOS
+    return showModalBottomSheet(
+        barrierColor: Colors.transparent,
+        context: context, builder: (c){
+      return Padding(
+        padding: const EdgeInsets.all(8),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            buttonText(title: Translation(context).text.ovr3, function: (){setState(() {});show = 'OVR';}),
+            buttonText(title: Translation(context).text.age, function: (){setState(() {});show = 'Idade';}),
+            buttonText(title: Translation(context).text.matchs, function: (){setState(() {});show = 'Jogos';}),
+            buttonText(title: Translation(context).text.goals, function: (){setState(() {});show = 'Gols';}),
+            buttonText(title: Translation(context).text.assists, function: (){setState(() {});show = 'Assists';}),
+          ],
         ),
-      ),
-    );
+      );
+    });
   }
-
 
   Widget playerWidgetOVR(int playerIndex){
     Jogador player = Jogador(index: playerIndex);

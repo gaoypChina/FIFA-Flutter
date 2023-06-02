@@ -863,7 +863,7 @@ String getAppClubName(String name, String leagueName, LeagueOfficialNames l){
   map["PSS"] = n.pss;
   map["PSIS"] = n.psis;
   //MALASIA
-  map["Kuala Lumpur City"] = n.kualaLumpur;
+  map["Kuala Lumpur City"] = n.kualalumpur;
   //NEPAL
   map["Jawalakhel YC"] = n.jawalakhel;
   map["FC Khumaltar"] = n.khumaltar;
@@ -896,7 +896,7 @@ String getAppClubName(String name, String leagueName, LeagueOfficialNames l){
   map["AGMK"] = n.agmk;
   map["Metallurg"] = n.metallurg;
   map["Navbahor"] = n.navbahor;
-  map["Nasaf"] = n.nasafQarshi;
+  map["Nasaf"] = n.nasafqarshi;
   map["Neftchi"] = n.neftchifargona;
   map["Sogdiana"] = n.sogdiyona;
   map["Surkhon"] = n.surkhon;

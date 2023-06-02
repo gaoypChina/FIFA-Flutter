@@ -177,6 +177,8 @@ class _MenuState extends State<Menu> {
 
                         test(context),
 
+                        negotiationButton(context),
+
                         save(context),
 
                                 //train(context)

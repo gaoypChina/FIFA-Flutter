@@ -85,7 +85,7 @@ Widget kit(){
     children: [
 
       Container(
-        padding: const EdgeInsets.only(left: 2.0),
+        padding: EdgeInsets.only(top:heightCentralBox*0.05, left: widthCentralBox*0.35),
         child: Stack(
             children: [
 

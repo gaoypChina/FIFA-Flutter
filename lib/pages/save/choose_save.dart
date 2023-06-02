@@ -75,7 +75,7 @@ class _ChooseSaveState extends State<ChooseSave> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 20.0),
       child: FloatingActionButton(
-          backgroundColor: AppColors().primary,
+          backgroundColor: AppColors().greyTransparent,
           child: const Icon(Icons.plus_one),
           onPressed: () async{
             if(saveController.basicGameInfos.length < globalMaxPossibleSaves) {

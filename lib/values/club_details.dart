@@ -5460,7 +5460,7 @@ class ClubDetails{
     //MALAYSIA
     map[n.felda] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
       '',0,0,_country.malaysia,50.0,[],{}];
-    map[n.johorDarul] = [ClubColors(Colors.blue,Colors.red),pattern.solid,Coordinates(1.497541866, 103.751479),
+    map[n.johordarul] = [ClubColors(Colors.blue,Colors.red),pattern.solid,Coordinates(1.497541866, 103.751479),
       'Larkin Stadium',30000,1970,_country.malaysia,68.4,[],{}];
     map[n.kedah] = [ClubColors(Colors.yellow,Colors.green),pattern.solid,Coordinates(6.135977965, 100.3716979),
       'Darul Aman Stadium',32387,1924,_country.malaysia,62.6,[],{}];
@@ -5468,7 +5468,7 @@ class ClubDetails{
       'Sultan Muhammad IV Stadium',22000,2016,_country.malaysia,55.3,[],{}];
     map[n.kelantan] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(6.1242980, 102.243682),
       'Sultan Muhammad IV Stadium',22000,1946,_country.malaysia,58.4,[],{}];
-    map[n.kualaLumpur] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(3.10071364, 101.721440),
+    map[n.kualalumpur] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(3.10071364, 101.721440),
       'Kuala Lumpur Stadium',18000,1974,_country.malaysia,65.8,[],{}];
     map[n.kuching] = [ClubColors(Colors.green,Colors.red),pattern.solid,Coordinates(0,0),
       'Sarawak State Stadium',40000,2015,_country.malaysia,55.7,[],{}];
@@ -6045,7 +6045,7 @@ class ClubDetails{
       'Metallurg Bekabad Stadium',15000,1945,_country.uzbekistan,63.7,[],{}];
     map[n.mhsk] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
       '',0,0,_country.uzbekistan,50.0,[],{}];
-    map[n.nasafQarshi] = [ClubColors(Colors.blue,Colors.red),pattern.solid,Coordinates(41.24051632, 71.546443),
+    map[n.nasafqarshi] = [ClubColors(Colors.blue,Colors.red),pattern.solid,Coordinates(41.24051632, 71.546443),
       'Markaziy Stadium',21000,1986,_country.uzbekistan,65.4,[],{}];
     map[n.navbahor] = [ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(0,0),
       'Markaziy Stadium',22000,1978,_country.uzbekistan,67.6,[],{}];

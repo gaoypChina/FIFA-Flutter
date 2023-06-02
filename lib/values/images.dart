@@ -1511,7 +1511,7 @@ String imageLogo(String timeFoto) {
     //UZBEQUISTAO
     map[_name.agmk] = 'agmk';
     map[_name.bunyodkor] = 'bunyodkor';
-    map[_name.nasafQarshi] = 'nasaf';
+    map[_name.nasafqarshi] = 'nasaf';
     map[_name.pakhtakor] = 'pakhtakor';
     map[_name.loktashkent] = 'tashkent';
     //CAMBOJA
@@ -1540,9 +1540,9 @@ String imageLogo(String timeFoto) {
     map[_name.alansar] = 'al ansar';
     map[_name.nejmeh] = 'nejmeh';
     //MALASYA
-    map[_name.johorDarul] = 'johor';
+    map[_name.johordarul] = 'johor';
     map[_name.kedah] = 'kedah';
-    map[_name.kualaLumpur] = 'kuala lumpur';
+    map[_name.kualalumpur] = 'kuala lumpur';
     map[_name.penang] = 'penang';
     map[_name.sabah] = 'sabah';
     map[_name.sripahang] = 'sri pahang';
@@ -1715,10 +1715,10 @@ String imageLogo(String timeFoto) {
     map[_name.platinum] = 'platinum';
 
     if(map.containsKey(timeFoto)){
- return map[timeFoto];
-   }else{
- //Se o time não tiver uma imagem
- return 'generic';
+       return map[timeFoto];
+    }else{
+       //Se o time não tiver uma imagem
+       return 'generic';
    }
 }
 

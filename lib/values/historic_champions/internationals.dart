@@ -215,7 +215,7 @@ Map<String,dynamic> mapInternationals = {
   leagueName.asia : {
     //2024.0: [],
     //2023.0: [],
-    2022.0: [],
+    2022.0: [n.urawareddiamonds,n.alhilal,n.alduhail,n.jeonbuk,        n.pathum,n.foolad,n.visselkobe,n.alshabab,            n.alrayyan,n.nasafqarshi,n.alFaisalyARABIA,n.shababalahli,n.yokohamamarinos,n.daegu,n.johordarul,n.kitchee],
     2021.0: [n.alhilal,n.pohang,n.alnassr,n.ulsan,                     n.persepolis,n.nagoya,n.alwahda,n.jeonbuk],
     2020.0: [n.ulsan,n.persepolis,n.alnassr,n.visselkobe,              n.beijingguoan,n.pakhtakor,n.suwonsamsung,n.alahli],
     2019.0: [n.alhilal,n.urawareddiamonds,n.alsadd,n.ghuangzhou,       n.alIttihad,n.shanghaisipg,n.alnassr,n.kashimaantlers],
@@ -235,7 +235,7 @@ Map<String,dynamic> mapInternationals = {
     2005.0: [n.alIttihad,n.alain,n.shenzhen,n.busan,                   n.shandong,n.pastehran,n.alahli,n.alsadd],
     2004.0: [n.alIttihad,n.seongnam,n.jeonbuk,n.pakhtakor,             n.dalian,n.alsharjah,n.alain,n.alwahda],
     2003.0: [n.alain,n.policetero,n.dalian,n.pakhtakor,             n.alsadd,n.daejeon,n.seongnam,n.persepolis,],
-    2002.0: [n.suwonsamsung,n.fcseoul,n.esteghlal,n.nasafQarshi,       n.dalian,n.kashimaantlers,n.alkuwait,n.alwahda],
+    2002.0: [n.suwonsamsung,n.fcseoul,n.esteghlal,n.nasafqarshi,       n.dalian,n.kashimaantlers,n.alkuwait,n.alwahda],
     2001.0: [n.suwonsamsung,n.jubiloiwata,n.persepolis,n.irtysh,       n.shandong,n.psmMakassar,n.alIttihad,n.alhilal],
     2000.0: [n.alhilal,n.jubiloiwata,n.persepolis,n.suwonsamsung,      n.alShortaIRAQ,n.kashimaantlers,n.irtysh,n.sinthana],
     1999.0: [n.jubiloiwata,n.esteghlal,n.alain,n.dalian,               n.pohang,n.alhilal,n.busan,n.kopetdag],
@@ -414,7 +414,7 @@ Map<String,dynamic> mapInternationals = {
 
   leagueName.europaLeagueOficial : {
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [n.sevilla,n.roma,n.juventus,n.leverkusen,              n.manutd,n.feyenoord,n.sporting,n.saintgilloise,      n.fenerbahce,n.realsociedad,n.freiburg,n.arsenal,n.realbetis,n.unionberlin,n.ferencvaros,n.shakhtardonetsk],
     2022.0: [n.eintrachtfrankfurt,n.rangers,n.westham,n.rbleipzig,  n.barcelona,n.braga,n.lyon,n.atalanta],
     2021.0: [n.villareal,n.manutd,n.arsenal,n.roma,       n.dinamozagreb,n.granada,n.slaviapraha,n.ajax],
     2020.0: [n.sevilla,n.inter,n.manutd,n.shakhtardonetsk, n.wolves,n.leverkusen,n.copenhague,n.basel],

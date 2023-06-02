@@ -17,6 +17,9 @@ class Jogador{
   late int overall;
   late int overallDynamic;
   late double price;
+  late double salaryMi;
+  late double salaryK;
+  late double contract;
   late double health;
   late String moral;
   late double trainLevel;
@@ -69,6 +72,8 @@ class Jogador{
     imageUrl = globalJogadoresImageUrl[index];
     overallDynamic = setOverall();
     price = setPreco();
+    salaryMi = price / 20;
+    salaryK = salaryMi * 1000;
     clubID = globalJogadoresClubIndex[index];
     clubName = clubsAllNameList[clubID];
     cleanSheetsLeague = globalJogadoresCarrerCleanSheets[index] ?? 0;
@@ -137,7 +142,6 @@ class Jogador{
     grade = globalJogadoresGrades[index] ?? 0;
     gradeAvg = grade/matchsYear;
     trainLevel = 0;
-
   }
 
   printData(){

@@ -1,4 +1,14 @@
+import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
+
+Widget ageContainer(int overall,{double size=25,TextStyle style = EstiloTextoPreto.text14}){
+  return Container(
+    margin: const EdgeInsets.only(right: 4),
+    height: size, width: size,
+    color: colorAgeBackground(overall),
+    child: Center(child: Text(overall.toString(), textAlign:TextAlign.center, style: style)),
+  );
+}
 
 Color colorAgeBackground(int age){
   Color colorBackground = Colors.green;

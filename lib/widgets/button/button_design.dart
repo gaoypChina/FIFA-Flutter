@@ -25,9 +25,35 @@ buttonDesign({required String title, required Function()? function}) {
           children: [
             Text(
               title,
-              style: EstiloTextoBranco.text16,
+              style: EstiloTextoBranco.negrito14,
             ),
           ],
+        ),
+      ),
+    ),
+  );
+}
+
+
+Widget buttonDesign2({required String title, required Function()? function}){
+  return Container(
+    margin: const EdgeInsets.all(4),
+    decoration: BoxDecoration(
+        color: AppColors().greyTransparent,
+        border: Border.all(color: AppColors().green, width: 1),
+        borderRadius: const BorderRadius.all(Radius.circular(10))
+    ),
+    child: Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: function,
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Row(
+            children: [
+              Text(title, style: EstiloTextoBranco.negrito22),
+            ],
+          ),
         ),
       ),
     ),

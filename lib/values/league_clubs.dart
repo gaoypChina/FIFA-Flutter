@@ -34,7 +34,7 @@ List defaultLibertadoresClubs = [
   clubName.nacional,clubName.imedellin,clubName.internacional,clubName.metropolitanos,
   clubName.palmeiras,clubName.cerroporteno,clubName.barcelonaequ,clubName.bolivar,
   clubName.riverplate,clubName.sportingcristal,clubName.fluminense,clubName.thestrongest,
-  clubName.idelvalle,clubName.montevideocity,clubName.corinthians,clubName.argentinojuniors,
+  clubName.idelvalle,clubName.danubio,clubName.corinthians,clubName.argentinojuniors,
   clubName.bocajuniors,clubName.deportivocali,clubName.colocolo,clubName.monagas,
   clubName.atleticopr,clubName.atleticomg,clubName.libertad,clubName.alianzalima,
   clubName.atleticonacional,clubName.melgar,clubName.olimpia,clubName.patronato,
@@ -42,7 +42,7 @@ List defaultLibertadoresClubs = [
 
 List defaultSulAmericanaClubs = [
   clubName.ldu,clubName.monterrey,clubName.botafogo,clubName.lagalaxy,
-  clubName.emelec,clubName.huracan,clubName.guaraniPAR,clubName.danubio,
+  clubName.emelec,clubName.huracan,clubName.guaraniPAR,clubName.cruzazul,
   clubName.estudiantes,clubName.toluca,clubName.bragantino,clubName.orientepetrolero,
   clubName.tolima,clubName.tigre,clubName.saopaulo,clubName.caracas,
   clubName.newells,clubName.atlanta,clubName.santos,clubName.cienciano,

@@ -36,7 +36,7 @@ double globalInitialMoney = 0;
 
 double pi = 3.14159265359;
 int globalDificuldade = 2; //2-> médio
-int anoInicial = 2023; //ano fixo para contas
+int anoInicial = 2024; //ano fixo para contas
 int ano = 2023;
 int semana = 1, rodada = 1;
 int globalNMaxRodadasNacional = globalLeagueIdaVolta ? 38 : 19;
@@ -113,6 +113,8 @@ List globalJogadoresMatchInjury = [];
 List globalJogadoresMatchHealth = [];
 List globalJogadoresMatchGrade = [];
 
+// Negotiation
+Map globalNegotiation = {};
 
 //Jogadores
 //ALL Players Data
