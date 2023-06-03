@@ -222,7 +222,9 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
           tooltipBehavior: _tooltipBehavior,
           //https://pub.dev/documentation/syncfusion_flutter_charts/latest/charts/SfCartesianChart-class.html?utm_source=pubdev&utm_medium=listing&utm_campaign=flutter-charts-pubdev
           // Initialize category axis
-          primaryXAxis: CategoryAxis(),
+          primaryXAxis: CategoryAxis(
+            labelStyle: EstiloTextoBranco.text12,
+          ),
           series: <ChartSeries>[
             // Initialize line series
             //CAMPEONATO NACIONAL

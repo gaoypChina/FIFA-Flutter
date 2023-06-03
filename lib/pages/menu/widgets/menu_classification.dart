@@ -14,19 +14,20 @@ Widget wMenuClassification(BuildContext context, My myClass){
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('${Translation(context).text.expectation}: '+myClass.getLastYearExpectativa().toString()+'º',
+        Text('${Translation(context).text.expectation}: ' + myClass.getLastYearExpectativa().toString()+'º',
             style: EstiloTextoBranco.text16
         ),
-        classification3(myClass),
+        classification3(myClass.clubID, myClass.leagueID),
       ],
     ),
   );
 }
 
-Widget classification3(My myClass){
+Widget classification3(int clubID, int leagueID){
 
-  List classificationList = Classification(leagueIndex: myClass.leagueID).classificationClubsIndexes;
-  int myPosition = classificationList.indexOf(myClass.clubID);
+  List classificationList = Classification(leagueIndex: leagueID).classificationClubsIndexes;
+  int myPosition = classificationList.indexOf(clubID);
+  My myClass = My();
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -37,7 +38,7 @@ Widget classification3(My myClass){
     ],
   );
 }
-Widget rowClassification(int position, Club club, My myClass){
+Widget rowClassification(int position, Club club,  myClass){
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [

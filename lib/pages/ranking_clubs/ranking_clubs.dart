@@ -52,7 +52,7 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
     choosenLeagueName = myClub.getLeagueName();
     rankingClubs.organizeNationalRanking(choosenLeagueName);
 
-    _tabController = TabController(vsync: this, length: 3);
+    _tabController = TabController(vsync: this, length: 4);
     isLoaded=true;
     setState(() {});
   }
@@ -75,7 +75,7 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
               Images().getWallpaper(),
 
               isLoaded ? DefaultTabController(
-                length: 3,
+                length: 4,
                 child: Column(
                   children: [
 
@@ -94,17 +94,22 @@ class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMix
                           Tab(text: Translation(context).text.rankingGlobalClubs),
                           Tab(text: Translation(context).text.rankingContinentalClubs),
                           Tab(text: Translation(context).text.rankingNationalClubs),
+                          const Tab(text: "Ligas"),
                         ],
                       ),
                     ),
                     Expanded(
-                      child: TabBarView(
-                        controller: _tabController,
-                        children: [
-                          listRanking(context, rankingClubs.clubs, 0),
-                          listRanking(context, rankingClubs.copyClubsContinental, 1),
-                          listRanking(context, rankingClubs.copyClubsNational, 2),
-                        ],
+                      child: Container(
+                        color: AppColors().greyTransparent,
+                        child: TabBarView(
+                          controller: _tabController,
+                          children: [
+                            listRanking(context, rankingClubs.clubs, 0),
+                            listRanking(context, rankingClubs.copyClubsContinental, 1),
+                            listRanking(context, rankingClubs.copyClubsNational, 2),
+                            leaguesRanking(context, rankingClubs.leagueNames),
+                          ],
+                        ),
                       ),
                     ),
 
@@ -248,10 +253,13 @@ Widget rowClub(int ranking, Club club){
             Container(
                 width:35,
                 padding: const EdgeInsets.only(left: 4.0),
-                child: Text((ranking+1).toString()+'º',textAlign:TextAlign.end,style: EstiloTextoBranco.text14)
+                child: Text((ranking+1).toString()+'º',textAlign:TextAlign.center,style: EstiloTextoBranco.text14)
             ),
+            const SizedBox(width: 2),
             funcFlagsList(club.nationality, 15, 22),
+            const SizedBox(width: 2),
             Images().getEscudoWidget(club.name,32,32),
+            const SizedBox(width: 2),
             Expanded(
               child: Container(
                 color: colorBackground,
@@ -268,5 +276,50 @@ Widget rowClub(int ranking, Club club){
       ),
     );
 }
+
+  Widget leaguesRanking(BuildContext context, Map<String, double> listLeagues){
+
+    return Column(
+      children: [
+        Expanded(
+          child: ShaderMask(
+            shaderCallback: (Rect rect) {
+              return const LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [Colors.transparent, Colors.black],
+                stops: [0.97, 1.0], // 10% purple, 80% transparent, 10% purple
+              ).createShader(rect);
+            },
+            blendMode: BlendMode.dstOut,
+            child: DraggableScrollbar.semicircle(
+              alwaysVisibleScrollThumb: true,
+              controller: _scrollController,
+              child: ListView.builder(
+                  padding: EdgeInsets.zero,
+                  controller: _scrollController,
+                  itemCount: listLeagues.length,
+                  itemBuilder: (c,i) => rowLeague(i, listLeagues),
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+  rowLeague(int ranking, Map<String, double> listLeagues){
+    String leagueName = listLeagues.keys.elementAt(ranking);
+    return Row(
+      children: [
+        Image.asset(FIFAImages().campeonatoLogo(leagueName),width: 50,height: 50,),
+        const SizedBox(width: 4),
+        Text(leagueName,style: EstiloTextoBranco.text16),
+        const Spacer(),
+        Text(listLeagues[leagueName]!.toStringAsFixed(2),style: EstiloTextoBranco.negrito16),
+        const SizedBox(width: 30),
+      ],
+    );
+  }
 
 }

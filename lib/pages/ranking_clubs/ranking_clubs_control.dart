@@ -14,6 +14,7 @@ class RankingClubsControl{
   List copyClubsName = [];
   List<Club> copyClubsNational = [];
   List<Club> copyClubsContinental = [];
+  Map<String, double> leagueNames = {};
   My my = My();
 
   organizeRanking(){
@@ -22,17 +23,31 @@ class RankingClubsControl{
       //Search name by index;
       String leagueName = leaguesIndexFromName.keys.firstWhere((k) => leaguesIndexFromName[k] == leagueID, orElse: () => null);
       Map allClubsMap = clubNameMap[leagueName];
+      //Filtra os clubes da liga
       List allClubsNameList = allClubsMap.values.toList();
       //List allClubsIDList = League(index: leagueID).getAllClubsIDList();
+      leagueNames[leagueName] = 0;
       customToast('LOADING: $leagueName');
-      for(int i=0; i<allClubsNameList.length; i++) {
+      for(int i=0; i < allClubsNameList.length; i++) {
         int clubID = clubsAllNameList.indexOf(allClubsNameList[i]);
         Club clubClass = Club(index: clubID);
         clubs.add(clubClass);
-        clubsOVR.add(clubClass.getOverall());
+        double ovr = clubClass.getOverall();
+        clubsOVR.add(ovr);
         copyClubsName.add(clubClass.name);
+
+        leagueNames[leagueName] = leagueNames[leagueName]! + ovr;
       }
+
+      leagueNames[leagueName] = leagueNames[leagueName]! / allClubsNameList.length;
+
+      List<MapEntry<String, double>> sortedEntries = leagueNames.entries.toList()
+        ..sort((a, b) => b.value.compareTo(a.value));
+
+      leagueNames = Map.fromEntries(sortedEntries);
+
     }
+
 
     for(int i=0; i<clubsOVR.length-1; i++) {
       for(int k=i+1; k<clubsOVR.length; k++) {

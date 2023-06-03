@@ -1,9 +1,12 @@
+import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/data_graphics.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/historic_positions_this_year.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/menu/widgets/menu_classification.dart';
+import 'package:fifa/pages/table/table_nacional.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
@@ -63,9 +66,20 @@ class _ClubGraphicsState extends State<ClubGraphics> {
 
                   currentPosition(widget.club, dataGraphics),
 
+                  InkWell(
+                    onTap: (){
+                      navigatorPush(context, TableNacional(choosenLeagueIndex: widget.club.leagueID));
+                    },
+                    child: Container(
+                        color: AppColors().greyTransparent,
+                        margin: const EdgeInsets.symmetric(vertical: 4),
+                        child: classification3(widget.club.index, widget.club.leagueID)),
+                  ),
+
                   graphics(dataGraphics),
 
                   positionThisYear(),
+
 
                   totalTrophyWidget(widget.club, dataGraphics),
 
@@ -91,8 +105,10 @@ class _ClubGraphicsState extends State<ClubGraphics> {
     dataGraphics.removeWhere((element) => element.position >= 32);
 
     if (dataGraphics.isNotEmpty) {
-      return SizedBox(
+      return Container(
         height: 200,
+        margin: const EdgeInsets.symmetric(vertical: 4),
+        color: AppColors().greyTransparent,
         child: SfCartesianChart(
             tooltipBehavior: _tooltipbehave,
             title: ChartTitle(text: 'Histograma ' + title,
@@ -256,7 +272,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
     return Container(
       width: Sized(context).width,
       color: AppColors().greyTransparent,
-      margin: const EdgeInsets.all(4),
+      margin: const EdgeInsets.symmetric(vertical: 4),
       padding: const EdgeInsets.all(4),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

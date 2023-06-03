@@ -513,6 +513,7 @@ class ClubName{
   String chamois = "Chamois Niortais";
   String chateauroux = "Châteauroux";
   String caen = "Caen";
+  String chamblyoise = "Chambly Oise";
   String clermont = "Clermont";
   String dijon = "Dijon";
   String evian = "Evian";
@@ -535,6 +536,7 @@ class ClubName{
   String rodez = "Rodez Aveyron";
   String roubaix = "Excelsior Roubaix";
   String rouen = "Rouen";
+  String rumilly = "Rumilly-Vallières";
   String sedan = "Sedan";
   String sete = "Sète";
   String sochaux = "Sochaux";
@@ -544,6 +546,7 @@ class ClubName{
   String troyes = "Troyes";
   String toulouse = "Toulouse";
   String valenciennes = "Valenciennes";
+  String versailles = "Versailles 78";
   String vendee = "Vendée Les Herbiers";
   String villefranche = "Villefranche";
   //PORTUGAL

@@ -211,31 +211,39 @@ class _CompareState extends State<Compare> {
   }
 
   Widget changeClub({required bool isClubLeft}){
-    return GestureDetector(
-      onTap: (){
-        PopupSelectClub popupConfig = PopupSelectClub();
-        popUpSelectClub(originalContext: context, popupConfig: popupConfig);
-        Timer.periodic(const Duration(milliseconds: 100), (timer) {
-          if (popupConfig.popupClosed) {
-            if(isClubLeft){
-              club=popupConfig.newClub;
-              dataGraphicsCompare = DataGraphics();
-              dataGraphicsCompare.getData(popupConfig.newClub);
-            }else{
-              club2=popupConfig.newClub;
-              dataGraphics = DataGraphics();
-              dataGraphics.getData(popupConfig.newClub);
-            }
-            setState((){});
-            timer.cancel();
-          }
-        });
-      },
-      child: Container(
-        color: AppColors().greyTransparent,
-        margin: const EdgeInsets.all(4),
-        padding: const EdgeInsets.all(4),
-        child: const Text('Selecionar',style: EstiloTextoBranco.text16),
+    return Container(
+      margin: const EdgeInsets.all(4),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: (){
+            PopupSelectClub popupConfig = PopupSelectClub();
+            popUpSelectClub(originalContext: context, popupConfig: popupConfig);
+            Timer.periodic(const Duration(milliseconds: 100), (timer) {
+              if (popupConfig.popupClosed) {
+                if(isClubLeft){
+                  club=popupConfig.newClub;
+                  dataGraphicsCompare = DataGraphics();
+                  dataGraphicsCompare.getData(popupConfig.newClub);
+                }else{
+                  club2=popupConfig.newClub;
+                  dataGraphics = DataGraphics();
+                  dataGraphics.getData(popupConfig.newClub);
+                }
+                setState((){});
+                timer.cancel();
+              }
+            });
+          },
+          child: Container(
+            decoration: BoxDecoration(
+              color: AppColors().greyTransparent,
+              border: Border.all(color: AppColors().green, width: 1),
+            ),
+            padding: const EdgeInsets.all(4),
+            child: const Text('Selecionar',style: EstiloTextoBranco.text16),
+          ),
+        ),
       ),
     );
   }

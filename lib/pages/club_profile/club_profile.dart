@@ -9,6 +9,7 @@ import 'package:fifa/pages/club_profile/compare.dart';
 import 'package:fifa/pages/club_profile/tabs/field_static.dart';
 import 'package:fifa/pages/club_profile/tabs/geral.dart';
 import 'package:fifa/pages/club_profile/tabs/graphics.dart';
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
@@ -174,14 +175,20 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
   }
 
   Widget compare(){
-    return GestureDetector(
-      onTap: (){
-        Navigator.push(context,MaterialPageRoute(builder: (context) => Compare(club: clubClass)));
-      },
-      child: Container(
-        decoration: blackDecoration(),
-        padding: const EdgeInsets.all(4.0),
-        child: const Text('Comparar',style: EstiloTextoBranco.text16),
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: (){
+          Navigator.push(context,MaterialPageRoute(builder: (context) => Compare(club: clubClass)));
+        },
+        child: Container(
+          decoration: BoxDecoration(
+            color: AppColors().greyTransparent,
+            border: Border.all(color: AppColors().green, width: 1),
+          ),
+          padding: const EdgeInsets.all(4.0),
+          child: const Text('Comparar',style: EstiloTextoBranco.text16),
+        ),
       ),
     );
   }
