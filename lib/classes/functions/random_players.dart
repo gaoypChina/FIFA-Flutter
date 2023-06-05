@@ -55,7 +55,8 @@ class AddRandomPlayer{
         ];
     }
 
-    else if(club.nationality == Words.country.germany || club.nationality == Words.country.austria){
+    else if(club.nationality == Words.country.germany
+        || club.nationality == Words.country.austria){
       return [
         'Miroslav Klose',        'Gerd Muller',
         'Beethoven',        'Backenbauer',
@@ -94,6 +95,7 @@ class AddRandomPlayer{
         'Tuco Aguiar',        'Manfrini',        'Rubens Nicola',        'Ubiratan Leal',
         'Paulo Amaral',   'Luis Inácio',         'Denis Vicente',        'Jorge Vargas',
         'Roberto Carlos',        'Levy Fidelix',        'Michel Temer',  'Christian Castro',
+        "Lúcio Costa", "Fernando Santos", "Simas Oliveira", "Robertinho", "Natanael",
       ];
     }
 

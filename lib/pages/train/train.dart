@@ -2,7 +2,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/pages/train/widgets/row_train.dart';
-import 'package:fifa/widgets/back_button.dart';
+import 'package:fifa/widgets/button/back_button.dart';
 import 'package:flutter/material.dart';
 
 class TrainPlayersPage extends StatefulWidget {

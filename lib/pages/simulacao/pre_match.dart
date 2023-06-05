@@ -9,7 +9,7 @@ import 'package:fifa/pages/simulacao/play.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
-import 'package:fifa/widgets/back_button.dart';
+import 'package:fifa/widgets/button/back_button.dart';
 import 'package:fifa/widgets/background_image/backimage_international_league.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:flutter/material.dart';

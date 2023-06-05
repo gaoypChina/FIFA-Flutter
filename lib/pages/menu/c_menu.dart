@@ -134,7 +134,7 @@ class _MenuState extends State<Menu> {
                                 Expanded(
                                   child: wMenuButton(Translation(context).text.ranking,club,(){
                                     customToast(Translation(context).text.loading);
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RankingClubs()))
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RankingClubsPage()))
                                         .then((value) {setState(() {});});
                                   }),
                                 ),

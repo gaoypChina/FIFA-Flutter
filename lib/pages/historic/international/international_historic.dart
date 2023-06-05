@@ -11,7 +11,7 @@ import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/historic_champions/historic_champions.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
-import 'package:fifa/widgets/back_button.dart';
+import 'package:fifa/widgets/button/back_button.dart';
 import 'package:flutter/material.dart';
 
 

@@ -10,21 +10,21 @@ import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
-import 'package:fifa/widgets/back_button.dart';
+import 'package:fifa/widgets/button/back_button.dart';
 import 'package:flutter/material.dart';
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 import '../../classes/countries/countries_continents.dart';
 import '../../widgets/loader.dart';
 import '../club_profile/club_profile.dart';
 
-class RankingClubs extends StatefulWidget {
+class RankingClubsPage extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
-  const RankingClubs({Key? key}) : super(key: key);
+  const RankingClubsPage({Key? key}) : super(key: key);
   @override
-  _RankingClubsState createState() => _RankingClubsState();
+  _RankingClubsPageState createState() => _RankingClubsPageState();
 }
 
-class _RankingClubsState extends State<RankingClubs> with TickerProviderStateMixin  {
+class _RankingClubsPageState extends State<RankingClubsPage> with TickerProviderStateMixin  {
 
   int numberClubsTotal = funcNumberClubsTotal();
   My myClub = My();

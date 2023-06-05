@@ -3,6 +3,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/theme/background_color/background_age.dart';
 import 'package:fifa/theme/background_color/background_overall.dart';
+import 'package:fifa/widgets/player_templates/health_bar.dart';
 import 'package:flutter/material.dart';
 
 import '../../../theme/textstyle.dart';
@@ -18,10 +19,14 @@ class _WTrainRowState extends State<WTrainRow> {
   bool checkedValue = false;
   @override
   Widget build(BuildContext context) {
+
     Jogador player = widget.player;
+
     return Row(
       children: [
+
         Images().getPlayerPictureWidget(player),
+
         Column(
           children: [
 
@@ -37,16 +42,12 @@ class _WTrainRowState extends State<WTrainRow> {
 
             const SizedBox(height: 8),
             //Barra de saúde
-            SizedBox(
-              width: Sized(context).width*0.7,
-              height: 6,
-              child: LinearProgressIndicator(
-                value: player.health,
-                color: Colors.teal,
-                backgroundColor: Colors.grey,
-              ),
-            ),
-            //Barra de saúde
+
+            //Barra de progresso
+            healthBar(context, player, width: Sized(context).width*0.7),
+
+            trainBar(context, player, width: Sized(context).width*0.7),
+
             SizedBox(
               width: Sized(context).width*0.7,
               height: 6,

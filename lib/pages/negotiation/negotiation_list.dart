@@ -6,7 +6,7 @@ import 'package:fifa/theme/background_color/background_overall.dart';
 import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
-import 'package:fifa/widgets/back_button.dart';
+import 'package:fifa/widgets/button/back_button.dart';
 import 'package:flutter/material.dart';
 
 class NegotiationListPage extends StatefulWidget {

@@ -7,7 +7,7 @@ import 'package:fifa/pages/club_profile/tabs/field_static.dart';
 import 'package:fifa/theme/background_color/background_overall.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
-import 'package:fifa/widgets/back_button.dart';
+import 'package:fifa/widgets/button/back_button.dart';
 import 'package:fifa/widgets/button/dropdown_button.dart';
 import 'package:flutter/material.dart';
 

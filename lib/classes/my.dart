@@ -2,7 +2,7 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/international_league.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
-import 'package:fifa/classes/functions/international_league_manipulation.dart';
+import 'package:fifa/classes/functions/internat_league_manipulation.dart';
 import 'package:fifa/classes/playing_international.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';

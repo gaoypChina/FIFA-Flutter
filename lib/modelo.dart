@@ -1,6 +1,6 @@
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/theme/textstyle.dart';
-import 'package:fifa/widgets/back_button.dart';
+import 'package:fifa/widgets/button/back_button.dart';
 import 'package:flutter/material.dart';
 
 class ChooseContinentPage extends StatefulWidget {

@@ -16,7 +16,7 @@ import 'package:fifa/classes/international_league.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/classes/functions/international_league_manipulation.dart';
+import 'package:fifa/classes/functions/internat_league_manipulation.dart';
 import 'package:fifa/classes/player_stats_keys.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/coach/controller/coach_ranking_controller.dart';
@@ -26,7 +26,7 @@ import 'package:fifa/values/league_names.dart';
 
 import 'ovr_update.dart';
 import 'player_transfer.dart';
-import 'rebaixamento.dart';
+import 'relegation.dart';
 
 void funcUpdateDataAfterSeason(){
   customToast('10% - Salvando dados históricos');
@@ -37,7 +37,8 @@ void funcUpdateDataAfterSeason(){
 
   customToast('70% - Alterando os times de divisão');
   FimDoCampeonatoLocal().setAll032InternationalTeams(); //Define Times na champions e libertadores
-  trocaClubesRebaixamento();
+  
+  relegateClubsOperation();
 
   customToast('80% - Resetando cartões, gols, assistencias');
   resetData(); //clear cartoes amarelos, gols, assistencias etc...
@@ -168,7 +169,7 @@ resetData(){
   globalJogadoresYellowCard = List.filled(globalMaxPlayersPermitted, 0);
   globalJogadoresInjury = List.filled(globalMaxPlayersPermitted, 0);
 
-  //Clubes
+  //Clubs
   globalClubsLeaguePoints = List.filled(globalMaxClubsPermitted, 0);
   globalClubsLeagueGM = List.filled(globalMaxClubsPermitted, 0);
   globalClubsLeagueGS = List.filled(globalMaxClubsPermitted, 0);
@@ -179,26 +180,27 @@ resetData(){
 }
 
 
-void trocaClubesRebaixamento(){
+void relegateClubsOperation(){
   List leagueClassifications = [];
+  LeagueOfficialNames l = LeagueOfficialNames();
   for (int index in leaguesListRealIndex){
     leagueClassifications.add(League(index: index).getClassification());
   }
 
-  funcRebaixamentoLeague(leagueClassifications,LeagueOfficialNames().inglaterra1,LeagueOfficialNames().inglaterra2,3);
-  funcRebaixamentoLeague(leagueClassifications,LeagueOfficialNames().inglaterra2,LeagueOfficialNames().inglaterra3,3);
-  funcRebaixamentoLeague(leagueClassifications,LeagueOfficialNames().espanha1,LeagueOfficialNames().espanha2,3);
-  funcRebaixamentoLeague(leagueClassifications,LeagueOfficialNames().italia1,LeagueOfficialNames().italia2,3);
-  funcRebaixamentoLeague(leagueClassifications,LeagueOfficialNames().alemanha1,LeagueOfficialNames().alemanha2,3);
-  funcRebaixamentoLeague(leagueClassifications,LeagueOfficialNames().franca1,LeagueOfficialNames().franca2,3);
-  funcRebaixamentoLeague(leagueClassifications,LeagueOfficialNames().brasil1,LeagueOfficialNames().brasil2,3);
-  funcRebaixamentoLeague(leagueClassifications,LeagueOfficialNames().brasil2,LeagueOfficialNames().brasil3,3);
-  funcRebaixamentoLeague(leagueClassifications,LeagueOfficialNames().brasil3,LeagueOfficialNames().brasil4,3);
+  funcRelegationLeague(leagueClassifications,l.inglaterra1,l.inglaterra2,3);
+  funcRelegationLeague(leagueClassifications,l.inglaterra2,l.inglaterra3,3);
+  funcRelegationLeague(leagueClassifications,l.espanha1,l.espanha2,3);
+  funcRelegationLeague(leagueClassifications,l.italia1,l.italia2,3);
+  funcRelegationLeague(leagueClassifications,l.alemanha1,l.alemanha2,3);
+  funcRelegationLeague(leagueClassifications,l.franca1,l.franca2,3);
+  funcRelegationLeague(leagueClassifications,l.brasil1,l.brasil2,3);
+  funcRelegationLeague(leagueClassifications,l.brasil2,l.brasil3,3);
+  funcRelegationLeague(leagueClassifications,l.brasil3,l.brasil4,3);
 }
 
 
 void atualizaStatusJogadores(){
-  for(int id=0;id<globalJogadoresIndex.length;id++){
+  for(int id=0; id<globalJogadoresIndex.length; id++){
 
     Jogador player = Jogador(index: id);
     //Set New Overall
@@ -208,7 +210,7 @@ void atualizaStatusJogadores(){
     globalJogadoresAge[id]++;
 
     //Transferencia
-    transferenciaJogador(id);
+    transferPlayer(id);
 
     //aposentadoria
     AposentarJogador(player);

@@ -5,10 +5,11 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
-import 'package:fifa/widgets/back_button.dart';
+import 'package:fifa/widgets/button/back_button.dart';
+import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:flutter/material.dart';
 
-import 'menu/c_menu.dart';
+import '../menu/c_menu.dart';
 
 class ChangeClub extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
@@ -30,7 +31,6 @@ class _ChangeClubState extends State<ChangeClub> {
 
     return Scaffold(
 
-        resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
         body:  Stack(
             children: [
 
@@ -81,24 +81,22 @@ class _ChangeClubState extends State<ChangeClub> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-Widget clubWidget(int clubID){
+Widget clubWidget(Club club){
 
-  ClubClassification clubClassification = ClubClassification(club: Club(index: clubID));
+  ClubClassification clubClassification = ClubClassification(club: club);
 
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: (){
-            funcChangeClub(clubClassification.clubName, clubClassification.leagueID);
-            alreadyChangedClubThisSeason = true;
-            Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Menu()));
-          },
+      child: PressableButton(
+              function: (){
+                funcChangeClub(clubClassification.clubName, clubClassification.leagueID);
+                alreadyChangedClubThisSeason = true;
+                Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Menu()));
+              },
           child: Container(
-            height: 220,width: 170,
-            color: AppColors().greyTransparent,
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
+          height: 220,width: 170,
+          color: AppColors().greyTransparent,
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
             child: Column(
               children: [
                 Images().getEscudoWidget(clubClassification.clubName,130,130),
@@ -106,9 +104,8 @@ Widget clubWidget(int clubID){
                 Text('${Translation(context).text.position}: '+clubClassification.posicaoTabela.toString()+'º',style: EstiloTextoBranco.text14)
               ],
             ),
-          ),
         ),
-      ),
+      )
     );
 }
 }

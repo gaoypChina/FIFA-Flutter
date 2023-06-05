@@ -18,7 +18,7 @@ import 'package:fifa/pages/simulacao/not_play_international/not_play_internation
 import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/background_color/color_grade.dart';
 import 'package:fifa/theme/colors.dart';
-import 'package:fifa/theme/match_x_testyle.dart';
+import 'package:fifa/theme/background_color/match_x_testyle.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';

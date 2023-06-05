@@ -1,6 +1,6 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/cup_classification.dart';
-import 'package:fifa/classes/functions/international_league_manipulation.dart';
+import 'package:fifa/classes/functions/internat_league_manipulation.dart';
 import 'package:fifa/classes/historic/historic_my_tranfers.dart';
 import 'package:fifa/classes/historic_positions_this_year.dart';
 import 'package:fifa/classes/international_league.dart';

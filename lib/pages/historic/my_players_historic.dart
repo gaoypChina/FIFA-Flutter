@@ -14,7 +14,7 @@ import 'package:fifa/widgets/popup/popup_player_info.dart';
 import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/images.dart';
-import 'package:fifa/widgets/back_button.dart';
+import 'package:fifa/widgets/button/back_button.dart';
 import 'package:fifa/widgets/best_player_box/best_player_box.dart';
 import 'package:fifa/widgets/button/dropdown_button.dart';
 import 'package:flutter/material.dart';

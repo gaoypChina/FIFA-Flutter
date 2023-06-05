@@ -4,6 +4,8 @@ import 'package:fifa/values/historic_champions/asia.dart';
 import 'package:fifa/values/historic_champions/cups.dart';
 import 'package:fifa/values/historic_champions/estaduais.dart';
 import 'package:fifa/values/historic_champions/europa.dart';
+import 'package:fifa/values/historic_champions/europa_leste.dart';
+import 'package:fifa/values/historic_champions/europa_nord_balt.dart';
 import 'package:fifa/values/historic_champions/europa_top_leagues.dart';
 import 'package:fifa/values/historic_champions/internationals.dart';
 import 'package:fifa/values/historic_champions/north_america.dart';
@@ -18,6 +20,8 @@ import 'package:fifa/values/historic_champions/supercopa.dart';
       "international": mapInternationals,
       "europa_top_leagues": mapEuropaTopLeagues,
       "europa": mapEuropa,
+      "europa_leste": mapEuropaLeste,
+      "europa_nordicos": mapEuropaNordicosBalticos,
       "america": mapAmerica,
       "north_america": mapNorthAmerica,
       "africa": mapAfrica,
@@ -30,7 +34,7 @@ import 'package:fifa/values/historic_champions/supercopa.dart';
       "supercopa": mapSupercopa,
     };
 
-      for (var continentMap in allMaps.values) {
+      for (Map<String, dynamic> continentMap in allMaps.values) {
         if (continentMap.containsKey(league)) {
           return continentMap[league];
         }

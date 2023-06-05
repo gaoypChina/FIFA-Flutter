@@ -4,7 +4,7 @@ import 'package:fifa/values/club_names.dart';
 ///////////////////////////
 // CLUBS
 //A ordem vai ser a dos "IDs" no jogo
-List clubsAllNameList = [
+List<String> clubsAllNameList = [
   ClubName().arsenal,  ClubName().astonvilla,  ClubName().chelsea,  ClubName().crystalpalace,
   ClubName().everton,  ClubName().leeds,  ClubName().leicester,  ClubName().liverpool,
   ClubName().mancity,  ClubName().manutd,  ClubName().newcastle,  ClubName().tottenham,
@@ -175,6 +175,5 @@ List clubsAllNameList = [
   ClubName().belouizdad, ClubName().omdurman,
   ClubName().mamelodi,  ClubName().orlandopirates,  ClubName().kaizer,
   ClubName().mazembe, ClubName().agosto,  ClubName().cotonsport,
-
 
 ];

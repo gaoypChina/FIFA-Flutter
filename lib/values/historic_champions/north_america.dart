@@ -12,6 +12,9 @@ Map<String,dynamic> mapNorthAmerica = {
   leagueName.mexico : {
     //https://en.wikipedia.org/wiki/List_of_Mexican_football_champions
     //APERTURA
+    //2025.0: [],
+    //2024.0: [],
+    //2023.0: [],
     2022.0: [n.pachuca,n.toluca,n.monterrey,n.americamex,           n.santoslaguna,n.tigres,n.cruzazul,n.puebla,n.chivas,n.leon,              n.juarez,n.necaxa,n.sanluis,n.mazatlan,n.tijuana,n.pumas,n.atlas,n.queretaro],
     2021.0: [n.atlas,n.leon,n.pumas,n.tigres,                       n.americamex,n.santoslaguna,n.toluca,n.puebla,n.cruzazul,n.monterrey,     n.chivas,n.sanluis,n.mazatlan,n.necaxa,n.pachuca,n.juarez,n.queretaro,n.tijuana],
     2020.0: [n.leon,n.pumas,n.chivas,n.cruzazul,                    n.americamex,n.monterrey,n.tigres,n.santoslaguna,n.pachuca,n.necaxa,      n.toluca,n.puebla,n.juarez,n.mazatlan,n.tijuana,n.atlas,n.queretaro,n.sanluis],

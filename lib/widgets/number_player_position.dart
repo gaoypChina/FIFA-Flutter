@@ -36,8 +36,10 @@ Widget positionsCount(String position, int number){
       position == 'LD' && number >3 ||
       position == 'VOL' && number >4 ||
       position == 'MC' && number >4 ||
-      position == 'MEI' && number > 6 ||
-      position == 'ATA' && number > 6
+      position == 'MEI' && number > 5 ||
+      position == 'ATA' && number > 6 ||
+      position == 'PD' && number > 2 ||
+      position == 'PE' && number > 2
   ){
     textStyle = EstiloTextoVerde.text16;
   }

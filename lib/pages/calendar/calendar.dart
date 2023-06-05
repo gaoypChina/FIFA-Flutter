@@ -9,7 +9,7 @@ import 'package:fifa/classes/result_game/result_game_nacional.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/calendar/calendar_adv_box.dart';
 import 'package:fifa/theme/translation.dart';
-import 'package:fifa/widgets/back_button.dart';
+import 'package:fifa/widgets/button/back_button.dart';
 import 'package:flutter/material.dart';
 
 class Calendar extends StatefulWidget {
@@ -23,11 +23,14 @@ class _CalendarState extends State<Calendar> {
   My myTeamClass = My();
   int nClubsLeague = (League(index: My().leagueID).nClubs) - 1;
   ScrollController _scrollController = ScrollController();
+  late Club myClub;
+
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
+    myClub = Club(index: myTeamClass.clubID);
     _scrollController = ScrollController(initialScrollOffset: 125*((semana-1)-((semana-1)%3))/3);
     super.initState();
   }
@@ -48,27 +51,29 @@ class _CalendarState extends State<Calendar> {
 
           Images().getWallpaper(),
 
-      Column(
-        children: [
-          backButtonText(context, Translation(context).text.calendar),
-          Expanded(
-            child: Container(
-              margin: const EdgeInsets.only(left: 8,right: 8,top: 8),
-              child: SingleChildScrollView(
-                controller: _scrollController,
-                child: Wrap(
-                  spacing: 5,
-                  runSpacing: 5,
-                  children: [
-                    for (int i=1;i<=globalUltimaSemana;i++)
-                      adversarioWidget(Semana(i)),
-                  ],
+          Column(
+            children: [
+
+              backButtonText(context, Translation(context).text.calendar),
+
+              Expanded(
+                child: Container(
+                  margin: const EdgeInsets.only(left: 8,right: 8,top: 8),
+                  child: SingleChildScrollView(
+                    controller: _scrollController,
+                    child: Wrap(
+                      spacing: 5,
+                      runSpacing: 5,
+                      children: [
+                        for (int i=1;i<=globalUltimaSemana;i++)
+                          adversarioWidget(Semana(i)),
+                      ],
+                    ),
+                  ),
                 ),
               ),
-            ),
+            ],
           ),
-        ],
-      ),
     ]));
   }
 
@@ -76,7 +81,6 @@ class _CalendarState extends State<Calendar> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
   Widget adversarioWidget(Semana weekLocal){
-    Club myClub = Club(index: myTeamClass.clubID);
     if(weekLocal.isJogoCampeonatoNacional){
       ResultGameNacional show = ResultGameNacional(
           rodadaLocal: weekLocal.rodadaNacional,

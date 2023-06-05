@@ -7,7 +7,7 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/background_image/backimage_international_league.dart';
-import 'package:fifa/widgets/row_player_stats.dart';
+import 'package:fifa/widgets/player_templates/row_player_stats.dart';
 import 'package:flutter/material.dart';
 
 class TableInternationalScorers extends StatefulWidget {

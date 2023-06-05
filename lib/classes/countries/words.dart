@@ -257,7 +257,7 @@ List<String> globalCountryNames = [
   word.denmark,word.djibouti,word.dominicanRepublic,
   word.ecuador,word.egypt,word.england,word.estonia,word.ethiopia,
   word.finland,word.france,
-  word.gabon,word.gambia,word.germany,word.ghana,word.guinea,word.guineaBissau,word.guineaEquatorial,word.greece,
+  word.gabon,word.gambia,word.georgia,word.germany,word.ghana,word.greece,word.guinea,word.guineaBissau,word.guineaEquatorial,
   word.honduras,word.hungary,
   word.iceland,word.india,word.indonesia,word.iraq,word.iran,word.ireland,word.italy,word.ivorycoast,
   word.jamaica,word.japan,

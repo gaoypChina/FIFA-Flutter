@@ -10,11 +10,10 @@ import 'package:fifa/pages/club_profile/tabs/field_static.dart';
 import 'package:fifa/pages/club_profile/tabs/geral.dart';
 import 'package:fifa/pages/club_profile/tabs/graphics.dart';
 import 'package:fifa/theme/colors.dart';
-import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
-import 'package:fifa/widgets/back_button.dart';
+import 'package:fifa/widgets/button/back_button.dart';
 import 'package:fifa/widgets/stars.dart';
 import 'package:flutter/material.dart';
 

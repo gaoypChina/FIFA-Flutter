@@ -9,8 +9,8 @@ class NTeamsIntLeague{
 
   NTeamsIntLeague({required this.leagueName, required this.internationalName}){
     offset = 0;
-    if(internationalName == LeagueOfficialNames().championsLeague ||
-        internationalName == LeagueOfficialNames().libertadores ){
+    List<String> allowedLeagues = [LeagueOfficialNames().championsLeague, LeagueOfficialNames().libertadores];
+    if(allowedLeagues.contains(internationalName)){
       nTeamsClassifiedValue = nTeamsClassified[leagueName];
 
     }else{

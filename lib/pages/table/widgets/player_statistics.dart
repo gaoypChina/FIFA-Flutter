@@ -7,7 +7,7 @@ import 'package:fifa/pages/table/widgets/organize_league_statistics.dart';
 import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/popup/popup_player_info.dart';
-import 'package:fifa/widgets/row_player_stats.dart';
+import 'package:fifa/widgets/player_templates/row_player_stats.dart';
 import 'package:flutter/material.dart';
 
 Widget wYellowRedCardWidget(BuildContext context, League league, int goalOrYellowOrRed){

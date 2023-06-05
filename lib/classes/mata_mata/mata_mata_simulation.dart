@@ -1,5 +1,5 @@
 
-import 'package:fifa/classes/functions/international_league_manipulation.dart';
+import 'package:fifa/classes/functions/internat_league_manipulation.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/simulate/match_simulation.dart';
 

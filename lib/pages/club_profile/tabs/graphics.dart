@@ -13,7 +13,7 @@ import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/values/league_trophy_image.dart';
-import 'package:fifa/widgets/bottom_sheet_titles.dart';
+import 'package:fifa/widgets/bottom_sheet/bottom_sheet_titles.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 

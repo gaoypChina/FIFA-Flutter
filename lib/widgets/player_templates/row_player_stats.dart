@@ -7,7 +7,7 @@ import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:flutter/material.dart';
 
-import 'popup/popup_player_info.dart';
+import '../popup/popup_player_info.dart';
 
 Widget rowPlayer(BuildContext context, Jogador player, int result, String value){
   return GestureDetector(
@@ -36,7 +36,6 @@ Widget rowPlayer(BuildContext context, Jogador player, int result, String value)
           SizedBox(width: 40,child: Text(value,textAlign: TextAlign.center,style: EstiloTextoBranco.negrito16)),
 
           SizedBox(width:Sized(context).width*0.5,child: Text(player.name,style: EstiloTextoBranco.text16)),
-
 
         ],
       ),

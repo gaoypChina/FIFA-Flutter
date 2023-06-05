@@ -37,7 +37,7 @@ funcCalculateMoney({required double overall}){
 
 class OptionsClubs{
 
-  List teams = [];
+  List<Club> teams = [];
   Club myClub = Club(index: My().clubID);
 
   OptionsClubs(){
@@ -46,16 +46,17 @@ class OptionsClubs{
     }
   }
 
-  int chooseClub(){
+  Club chooseClub(){
     //Checa se o clube tem alguma liga
     int clubID = -1;
+    Club club = Club(index: 1);
     bool clubHasLeague = false;
     while(!clubHasLeague){
       try{
         clubID = Random().nextInt(funcNumberClubsTotal());
-        Club club = Club(index: clubID);
+        club = Club(index: clubID);
         club.getChaveLeague();
-        if(!teams.contains(clubID)
+        if(!teams.any((element) => element.index == clubID)
             && club.getOverall()<myClub.getOverall()+3
              && club.getOverall()>myClub.getOverall()-4){
           clubHasLeague = true;
@@ -64,7 +65,7 @@ class OptionsClubs{
         clubHasLeague = false;
       }
     }
-    return clubID;
+    return club;
   }
 
 }

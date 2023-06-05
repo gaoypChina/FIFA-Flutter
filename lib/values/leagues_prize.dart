@@ -6,73 +6,61 @@ import 'package:fifa/values/league_names.dart';
 
 void premiacao(){
   My myClass = My();
+  LeagueOfficialNames l = LeagueOfficialNames();
   double premio=0;
   String leagueName = myClass.campeonatoName;
   if(Semana(semana).isJogoCampeonatoNacional){
-    if(leagueName==LeagueOfficialNames().inglaterra1){premio=2.2;}//premierleague
-    else if(leagueName==LeagueOfficialNames().inglaterra2){premio=1.2;}//championship
-    else if(leagueName==LeagueOfficialNames().inglaterra3){premio=0.7;}//championship
-    else if(leagueName==LeagueOfficialNames().italia1
-        || leagueName==LeagueOfficialNames().espanha1
-        ||leagueName==LeagueOfficialNames().alemanha1){premio=2.0;}//italia, espanha, alemanha
-    else if(leagueName==LeagueOfficialNames().italia2){premio=0.6;}
-    else if(leagueName==LeagueOfficialNames().espanha2){premio=0.6;}
-    else if(leagueName==LeagueOfficialNames().alemanha2){premio=0.6;}
-    else if(leagueName==LeagueOfficialNames().franca1){premio=1.8;}//frances
-    else if(leagueName==LeagueOfficialNames().franca2){premio=0.5;}
-    else if(leagueName==LeagueOfficialNames().portugal){premio=1.6;}
-    else if(leagueName==LeagueOfficialNames().holanda){premio=1.6;}
-    else if(leagueName==LeagueOfficialNames().turquiaGrecia){premio=1.5;}
-    else if(leagueName==LeagueOfficialNames().ligaEuropa){premio=1.4;}//ocidente
-    else if(leagueName==LeagueOfficialNames().lesteEuropeu){premio=1.4;}//leste
-    else if(leagueName==LeagueOfficialNames().brasil1){premio=1.4;}//brasileiro
-    else if(leagueName==LeagueOfficialNames().brasil2){premio=0.7;}//serie b
-    else if(leagueName==LeagueOfficialNames().brasil3){premio=0.7;}//serie c
-    else if(leagueName==LeagueOfficialNames().argentina){premio=1.1;}//argentina
-    else if(leagueName==LeagueOfficialNames().mercosul){premio=1.0;}//sulamerica
-    else if(leagueName==LeagueOfficialNames().colombia){premio=1.1;}//colombia
-    else if(leagueName==LeagueOfficialNames().mexico){premio=1.3;}//mexico
-    else if(leagueName==LeagueOfficialNames().estadosUnidos){premio=1.4;}//mls
-    else if(leagueName==LeagueOfficialNames().asia){premio=1.0;}//asia
-    else if(leagueName==LeagueOfficialNames().africa){premio=0.6;}//africa
+    Map prizesMap = {
+      l.inglaterra1: 2.2,
+      l.inglaterra2: 1.2,
+      l.inglaterra3: 0.7,
+      l.italia1: 2.0,
+      l.italia2: 1.0,
+      l.espanha1: 2.0,
+      l.espanha2: 1.0,
+      l.alemanha1: 2.0,
+      l.alemanha2: 1.0,
+      l.franca1: 1.8,
+      l.franca2: 0.5,
+      l.portugal: 1.6,
+      l.holanda: 1.6,
+      l.turquiaGrecia: 1.5,
+      l.ligaEuropa: 1.4,
+      l.lesteEuropeu: 1.4,
+      l.brasil1: 1.4,
+      l.brasil2: 0.9,
+      l.brasil3: 0.6,
+      l.brasil4: 0.3,
+      l.argentina: 1.1,
+      l.mercosul: 1.0,
+      l.colombia: 1.0,
+      l.mexico: 1.3,
+      l.estadosUnidos: 1.6,
+      l.asia: 1.0,
+      l.africa: 0.6,
+    };
 
-
-    else{
+    if(prizesMap.containsKey(leagueName)){
+      premio = prizesMap[leagueName];
+    }else{
       premio=1.0;
     }
 
   }else if(Semana(semana).isJogoCopa) {
     //PREMIAÇÕES COPAS
-    if(leagueName==LeagueOfficialNames().englandCup){premio=0.6;}
-    else if(leagueName==LeagueOfficialNames().italyCup){premio=0.6;}
-    else if(leagueName==LeagueOfficialNames().spainCup){premio=0.6;}
-    else if(leagueName==LeagueOfficialNames().germanyCup){premio=0.6;}
-    else if(leagueName==LeagueOfficialNames().franceCup){premio=0.6;}
-    else if(leagueName==LeagueOfficialNames().portugalCup){premio=0.6;}
-    else if(leagueName==LeagueOfficialNames().turkeyCup){premio=0.6;}
-    else if(leagueName==LeagueOfficialNames().ligaEuropaCup){premio=0.6;}
-    else if(leagueName==LeagueOfficialNames().eastEuropeCup){premio=0.6;}
-    else if(leagueName==LeagueOfficialNames().brazilCup){premio=0.6;}
-    else if(leagueName==LeagueOfficialNames().argentinaCup){premio=0.6;}
-    else if(leagueName==LeagueOfficialNames().mercosulCup){premio=0.6;}
-    else if(leagueName==LeagueOfficialNames().merconorteCup){premio=0.6;}
-    else if(leagueName==LeagueOfficialNames().mexicoCup){premio=0.6;}
-    else if(leagueName==LeagueOfficialNames().usaCup){premio=0.6;}
-    else if(leagueName==LeagueOfficialNames().asiaCup){premio=0.6;}
-    else if(leagueName==LeagueOfficialNames().africaCup){premio=0.6;}
-    else if(leagueName==LeagueOfficialNames().othersCup){premio=0.6;}
+    premio = 0.6;
   }else{
-    if(myClass.getMyInternationalLeague() == LeagueOfficialNames().championsLeague){
+    if(myClass.getMyInternationalLeague() == l.championsLeague){
       premio=3;
       if(semanaOitavas.contains(rodada) || semanaQuartas.contains(rodada)) premio=4.0;
       if(semanaSemi.contains(rodada) || semanaFinal.contains(rodada)) premio=5.0;
     }
-    else if(myClass.getMyInternationalLeague() == LeagueOfficialNames().libertadores){
+    else if(myClass.getMyInternationalLeague() == l.libertadores){
       premio=2;
       if(semanaOitavas.contains(rodada) || semanaQuartas.contains(rodada)) premio=2.5;
       if(semanaSemi.contains(rodada) || semanaFinal.contains(rodada)) premio=3.2;
     }
-    else if(myClass.getMyInternationalLeague() == LeagueOfficialNames().resto){
+    else if(myClass.getMyInternationalLeague() == l.resto){
       premio=1.5;
       if(semanaOitavas.contains(rodada) || semanaQuartas.contains(rodada)) premio=2;
       if(semanaSemi.contains(rodada) || semanaFinal.contains(rodada)) premio=3;

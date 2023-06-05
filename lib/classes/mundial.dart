@@ -9,8 +9,8 @@ import 'package:fifa/values/league_names.dart';
 
 class MundialFinal{
 
-  Club club1 = Club(index: 25);
-  Club club2 = Club(index: 57);
+  Club club1 = Club(index: 0);
+  Club club2 = Club(index: 0);
   bool isChampionClub1 = true;
   bool hasPenaltis = false;
   int _goal1 = 0;
@@ -18,8 +18,9 @@ class MundialFinal{
   late Confronto confronto;
 
   getClubs(){
-    club1 = finalistName(LeagueOfficialNames().championsLeague);
-    club2 = finalistName(LeagueOfficialNames().libertadores);
+    LeagueOfficialNames l = LeagueOfficialNames();
+    club1 = finalistName(l.championsLeague);
+    club2 = finalistName(l.libertadores);
   }
   void simulate(){
       getClubs();

@@ -12,7 +12,7 @@ import 'package:fifa/pages/negotiation/negotiation_class.dart';
 import 'package:fifa/theme/background_color/background_age.dart';
 import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/background_color/color_grade.dart';
-import 'package:fifa/theme/background_color/moral_icon.dart';
+import 'package:fifa/theme/background_color/background_moral.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/translation.dart';

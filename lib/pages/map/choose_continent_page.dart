@@ -4,7 +4,7 @@ import 'package:fifa/classes/countries/countries_continents.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/pages/map/map_list_all_clubs.dart';
 import 'package:fifa/theme/textstyle.dart';
-import 'package:fifa/widgets/back_button.dart';
+import 'package:fifa/widgets/button/back_button.dart';
 import 'package:flutter/material.dart';
 
 class ChooseContinentPage extends StatefulWidget {

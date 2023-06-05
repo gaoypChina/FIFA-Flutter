@@ -15,20 +15,20 @@ class TransferRules{
   }
 
 
-
 }
 
-transferenciaJogador(int id){
+void transferPlayer(int id){
 
   int isSold = Random().nextInt(4); //Probabilidade de ser vendido
   if(isSold == 0) {
     int currentClubID = globalJogadoresClubIndex[id];
     int playerOverall = globalJogadoresOverall[id];
     try{
-    if(Club(index: currentClubID, clubDetails: false).nJogadores>18){ //se o clube atual tem o numero minimo de jogadores
+    if(Club(index: currentClubID, clubDetails: false, calcInternationalLeaguePlaying: false).nJogadores>18){ //se o clube atual tem o numero minimo de jogadores
 
       int randomClubID = Random().nextInt(globalNumberClubsTotal);
-      double destinyClubOverall = Club(index: randomClubID,clubDetails: false).overallAproximated;
+      Club destinyClub = Club(index: randomClubID,clubDetails: false, calcInternationalLeaguePlaying: false);
+      double destinyClubOverall = destinyClub.overallAproximated;
       if(destinyClubOverall<playerOverall+7 && destinyClubOverall>playerOverall-4) { //se o clube for mais ou menos daquele potencial
         if(randomClubID != globalMyClubID && currentClubID != globalMyClubID){//se não é o meu time
           globalJogadoresClubIndex[id] = randomClubID; //vende o jogador

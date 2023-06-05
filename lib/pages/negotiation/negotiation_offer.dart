@@ -7,14 +7,14 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/negotiation/negotiation_class.dart';
 import 'package:fifa/theme/background_color/background_age.dart';
 import 'package:fifa/theme/background_color/background_position.dart';
-import 'package:fifa/theme/background_color/moral_icon.dart';
+import 'package:fifa/theme/background_color/background_moral.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/painter/colorize_image.dart';
 import 'package:fifa/theme/painter/trapezoid.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
-import 'package:fifa/widgets/back_button.dart';
+import 'package:fifa/widgets/button/back_button.dart';
 import 'package:fifa/widgets/button/button_design.dart';
 import 'package:fifa/widgets/popup/popup_player_info.dart';
 import 'package:flutter/material.dart';
@@ -271,14 +271,14 @@ Widget playerCard(ClubColors clubColors){
                   padding: const EdgeInsets.only(right:60.0),
                   child: Align(alignment:Alignment.topRight,
                     child: CustomPaint(
-                      painter: TrapezoidPainter(color:clubColors.secondColor,size: 20),
+                      painter: TrapezoidPainter(color:clubColors.secondColor,sizeObject: 20),
                     ),),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(right:70.0),
                   child: Align(alignment:Alignment.topRight,
                     child: CustomPaint(
-                      painter: TrapezoidPainter(color:clubColors.primaryColor,size: 20),
+                      painter: TrapezoidPainter(color:clubColors.primaryColor,sizeObject: 20),
                     ),),
                 ),
 

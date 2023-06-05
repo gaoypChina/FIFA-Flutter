@@ -1,48 +1,62 @@
 import 'package:fifa/values/league_names.dart';
 
-getTrophyImage(String leagueName){
+String getTrophyImage(String leagueName){
+
   String trophyName = 'trophyliga';
-  if(leagueName == LeagueOfficialNames().inglaterra1){trophyName = 'trophypremier';}
-  if(leagueName == LeagueOfficialNames().inglaterra2){trophyName = 'trophy2division';}
-  if(leagueName == LeagueOfficialNames().inglaterra3){trophyName = 'trophy2division';}
-  if(leagueName == LeagueOfficialNames().italia1){trophyName = 'trophyitalia';}
-  if(leagueName == LeagueOfficialNames().italia2){trophyName = 'trophyitalia';}
-  if(leagueName == LeagueOfficialNames().alemanha1){trophyName = 'trophybundesliga';}
-  if(leagueName == LeagueOfficialNames().alemanha2){trophyName = 'trophybundesliga';}
-  if(leagueName == LeagueOfficialNames().espanha1){trophyName = 'trophylaliga';}
-  if(leagueName == LeagueOfficialNames().espanha2){trophyName = 'trophylaliga';}
-  if(leagueName == LeagueOfficialNames().franca1){trophyName = 'trophyligue1';}
-  if(leagueName == LeagueOfficialNames().franca2){trophyName = 'trophyligue1';}
-  if(leagueName == LeagueOfficialNames().portugal){trophyName = 'trophyportugal';}
-  if(leagueName == LeagueOfficialNames().holanda){trophyName = 'trophyportugal';}
-  if(leagueName == LeagueOfficialNames().turquiaGrecia){trophyName = 'trophyturquia';}
-  if(leagueName == LeagueOfficialNames().ligaEuropa){trophyName = 'trophyeuropaleague';}
-  if(leagueName == LeagueOfficialNames().lesteEuropeu){trophyName = 'trophyrussia';}
-  if(leagueName == LeagueOfficialNames().brasil1){trophyName = 'trophybrasileirao';}
-  if(leagueName == LeagueOfficialNames().brasil2){trophyName = 'trophy2division';}
-  if(leagueName == LeagueOfficialNames().brasil3){trophyName = 'trophy2division';}
-  if(leagueName == LeagueOfficialNames().brasil4){trophyName = 'trophy2division';}
-  if(leagueName == LeagueOfficialNames().argentina){trophyName = 'trophyargentina';}
-  if(leagueName == LeagueOfficialNames().mercosul){trophyName = 'trophysulamericana';}
-  if(leagueName == LeagueOfficialNames().colombia){trophyName = 'trophyliga';}
-  if(leagueName == LeagueOfficialNames().mexico){trophyName = 'trophymexico';}
-  if(leagueName == LeagueOfficialNames().estadosUnidos){trophyName = 'trophymls';}
-  if(leagueName == LeagueOfficialNames().asia){trophyName = 'trophyasia';}
-  if(leagueName == LeagueOfficialNames().africa){trophyName = 'trophyafrica';}
-  if(leagueName == LeagueOfficialNames().outros){trophyName = 'trophychile';}
+  LeagueOfficialNames l = LeagueOfficialNames();
 
-  if(leagueName == LeagueOfficialNames().libertadores){trophyName = 'trophylibertadores';}
-  if(leagueName == LeagueOfficialNames().championsLeague){trophyName = 'trophychampions';}
-  if(leagueName == LeagueOfficialNames().europaLeagueOficial){trophyName = 'trophyeuropaleague';}
-  if(leagueName == LeagueOfficialNames().copaSulAmericana){trophyName = 'trophysulamericana';}
-  if(leagueName == LeagueOfficialNames().resto){trophyName = 'trophychampions';}
+  Map trophiesMap = {
+    l.inglaterra1: 'trophypremier',
+    l.inglaterra2: 'trophy2division',
+    l.inglaterra3: 'trophy2division',
+    l.italia1: 'trophyitalia',
+    l.italia2: 'trophyitalia',
+    l.espanha1: 'trophylaliga',
+    l.espanha2: 'trophylaliga',
+    l.alemanha1: 'trophybundesliga',
+    l.alemanha2: 'trophybundesliga',
+    l.franca1: 'trophyligue1',
+    l.franca2: 'trophyligue1',
+    l.portugal: 'trophyportugal',
+    l.holanda: 'trophyportugal', //TODO: MUDAR TROFEU
+    l.turquiaGrecia: 'trophyturquia',
+    l.ligaEuropa: 'trophyeuropaleague',
+    l.lesteEuropeu: 'trophyrussia',
+    l.brasil1: 'trophybrasileirao',
+    l.brasil2: 'trophy2division',
+    l.brasil3: 'trophy2division',
+    l.brasil4: 'trophy2division',
+    l.argentina: 'trophyargentina',
+    l.mercosul: 'trophysulamericana',
+    l.colombia: 'trophyliga',
+    l.mexico: 'trophymexico',
+    l.estadosUnidos: 'trophymls',
+    l.asia: 'trophyasia',
+    l.africa: 'trophyafrica',
+    l.outros: 'trophychile',
+  };
 
-  if(leagueName == LeagueOfficialNames().mundial){trophyName = 'trophymundial';}
+  if(trophiesMap.containsKey(leagueName)){
+    trophyName = trophiesMap[leagueName];
+  }
 
-  if(leagueName == LeagueOfficialNames().englandCup){trophyName = 'trophyfacup';}
-  if(leagueName == LeagueOfficialNames().italyCup){trophyName = 'italia_cup';}
-  if(leagueName == LeagueOfficialNames().germanyCup){trophyName = 'germany_cup';}
-  if(leagueName == LeagueOfficialNames().brazilCup){trophyName = 'brasil_cup';}
+  Map trophiesMap2 = {
+    l.libertadores: 'trophylibertadores',
+    l.championsLeague: 'trophychampions',
+    l.europaLeagueOficial: 'trophyeuropaleague',
+    l.copaSulAmericana: 'trophysulamericana',
+    l.resto: 'trophychampions',
+
+    l.mundial: 'trophymundial',
+
+    l.englandCup: 'trophyfacup',
+    l.italyCup: 'italia_cup',
+    l.germanyCup: 'germany_cup',
+    l.brazilCup: 'brasil_cup',
+  };
+  if(trophiesMap2.containsKey(leagueName)){
+    trophyName = trophiesMap2[leagueName];
+  }
 
   return trophyName;
 }

@@ -2,14 +2,15 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/values/league_names.dart';
 
-funcRebaixamentoLeague(List leagueClassifications,String leagueName1,String leagueName2, int nClubsRebaixados){
+funcRelegationLeague(List leagueClassifications,String leagueName1,String leagueName2, int nClubsRebaixados){
   int leagueIDRebaixados = leaguesIndexFromName[leagueName1];
   int leagueIDClassificados = leaguesIndexFromName[leagueName2];
-  //Classificão final da liga
+
+  //Final League Classification
   List clubIDRebaixados = leagueClassifications[leaguesListRealIndex.indexOf(leagueIDRebaixados)];
   List clubIDClassificados = leagueClassifications[leaguesListRealIndex.indexOf(leagueIDClassificados)];
 
-  //troca os clubes
+  //Change Clubs
   int lengthLeague = clubIDRebaixados.length-1;
   for(int i=0;i<nClubsRebaixados;i++){
 

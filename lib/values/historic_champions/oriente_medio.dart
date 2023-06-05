@@ -8,6 +8,9 @@ LeagueOfficialNames leagueName = LeagueOfficialNames();
 Map<String,dynamic> mapOrienteMedio = {
 
   leagueName.arabia : {
+    //2025.0: [],
+    //2024.0: [],
+    //2023.0: [],
     2022.0: [n.alhilal,n.alIttihad,n.alnassr,n.alshabab,n.damac,         n.altai,n.alraed,n.alfateh,n.abha,n.alfayha,              n.alettifaq,n.altaawoun,n.albatin,n.alFaisalyARABIA,n.alahli,n.alhazem],
     2021.0: [n.alhilal,n.alshabab,n.alIttihad,n.altaawoun,n.alettifaq,   n.alnassr,n.alfateh,n.alahli,n.alFaisalyARABIA,n.alraed,  n.damac,n.albatin,n.abha,n.alQadisiya,n.alwehda,n.alainARA],
     2020.0: [n.alhilal,n.alnassr,n.alahli,n.alwehda,n.alFaisalyARABIA,   n.alraed,n.alshabab,n.alettifaq,n.abha,n.damac,                 n.alIttihad,n.altaawoun,n.alfateh,n.alfayha,n.alhazem,n.aladalah],
@@ -59,6 +62,9 @@ Map<String,dynamic> mapOrienteMedio = {
   },
 
   leagueName.bahrein : {
+    //2025.0: [],
+    //2024.0: [],
+    //2023.0: [],
     2022.0: [n.alriffa,],
     2021.0: [n.alriffa,],
     2020.0: [n.alhidd],
@@ -128,6 +134,9 @@ Map<String,dynamic> mapOrienteMedio = {
   },
 
   leagueName.qatar : {
+    //2025.0: [],
+    //2024.0: [],
+    //2023.0: [],
     2022.0: [n.alsadd,n.alduhail,n.alwakrah,n.alarabi,n.algharafa,n.ummsalal,n.alahlidoha,n.alrayyan,n.qatar,n.alshamal,n.alsailiya,n.alkhor],
     2021.0: [n.alsadd,n.alduhail,n.alrayyan,n.algharafa,n.alahlidoha,n.qatar,n.alarabi,n.alwakrah,n.alsailiya,n.ummsalal,n.alkhor,n.alkharaitiyat],
     2020.0: [n.alduhail,n.alrayyan,n.alsadd,n.algharafa,n.alsailiya,n.alwakrah,n.alarabi,n.qatar,n.alahlidoha,n.ummsalal,n.alkhor,n.alshahania],
@@ -181,6 +190,9 @@ Map<String,dynamic> mapOrienteMedio = {
   },
 
   leagueName.eau : {
+    //2025.0: [],
+    //2024.0: [],
+    //2023.0: [],
     2022.0: [n.alain,n.alsharjah,n.alwahda,n.aljazira,n.shababalahli,n.alwasl,n.ajman,n.alnasrEAU,n.baniyas,n.khorfakkan,n.kalba,n.aldhafra,n.alurooba,n.emirates],
     2021.0: [n.aljazira,n.baniyas,n.shababalahli,n.alsharjah,n.alnasrEAU,n.alain,n.alwahda,n.kalba,n.alwasl,n.khorfakkan,n.aldhafra,n.ajman,n.alfujairah,n.hatta],
     2020.0: [n.shababalahli,n.alain,n.aljazira,n.alsharjah,n.alwahda,n.alnasrEAU,n.aldhafra,n.alwasl,n.baniyas,n.ajman,n.kalba,n.khorfakkan,n.hatta,n.alfujairah],
@@ -233,6 +245,9 @@ Map<String,dynamic> mapOrienteMedio = {
 },
 
   leagueName.iran : {
+    //2025.0: [],
+    //2024.0: [],
+    //2023.0: [],
     2022.0: [n.esteghlal,n.persepolis,n.sepahan,n.golgohar,n.foolad,n.mesrafsanjan,n.zobahan,n.aluminiumarak,n.paykan,n.sanatnaft,n.havadar,n.nassajimazandaran,n.tractor,n.naftmasjedsoleyman,n.shahrkhodro,n.fajrsepasi],
     2021.0: [n.persepolis,n.sepahan,n.esteghlal,n.tractor,n.golgohar,n.foolad,n.paykan,n.mesrafsanjan,n.shahrkhodro,n.sanatnaft,n.aluminiumarak,n.nassajimazandaran,n.naftmasjedsoleyman,n.zobahan,n.saipa,n.machinesazi],
     2020.0: [n.persepolis,n.esteghlal,n.foolad,n.tractor,n.sepahan,n.shahrkhodro,n.sanatnaft,n.naftmasjedsoleyman,n.nassajimazandaran,n.golgohar,n.machinesazi,n.zobahan,n.paykan,n.saipa,n.parsjonoubijam,n.shahinbushehr],
@@ -285,6 +300,9 @@ Map<String,dynamic> mapOrienteMedio = {
   },
 
   leagueName.iraque : {
+    //2025.0: [],
+    //2024.0: [],
+    //2023.0: [],
     2022.0: [n.alShortaIRAQ,n.alQuwaAlJawiya,n.alTalaba,n.alnaft,n.naftAlwasat,  n.alzawraa,n.alnajaf,],
     2021.0: [n.alQuwaAlJawiya,n.alzawraa,n.alnajaf,n.alShortaIRAQ,n.naftAlwasat, n.alnaft,],
     2020.0: [],
@@ -337,6 +355,9 @@ Map<String,dynamic> mapOrienteMedio = {
   },
 
   leagueName.jordania : {
+    //2025.0: [],
+    //2024.0: [],
+    //2023.0: [],
     2022.0: [n.alFaisalyJORD,n.alWehdat,n.alhussein,n.shababAlOrdon,n.alaqaba, ],
     2021.0: [n.alRamtha,n.alWehdat,n.alsalt,n.alFaisalyJORD,n.alhussein,       ],
     2020.0: [n.alWehdat,n.aljazeeraJORD,n.alRamtha,n.alsalt,n.alFaisalyJORD,       ],
@@ -412,6 +433,9 @@ Map<String,dynamic> mapOrienteMedio = {
     1950.0: [n.alahliJOR,],
   },
   leagueName.kuwait : {
+    //2025.0: [],
+    //2024.0: [],
+    //2023.0: [],
     2022.0: [n.alkuwait,],
     2021.0: [n.alarabiKUW,],
     2020.0: [n.alkuwait,],
@@ -476,6 +500,9 @@ Map<String,dynamic> mapOrienteMedio = {
   },
 
   leagueName.siria : {
+    //2025.0: [],
+    //2024.0: [],
+    //2023.0: [],
     2022.0: [n.tishreen,n.alWathba,n.aljaish,],
     2021.0: [n.tishreen,n.aljaish,n.alkaramah,],
     2020.0: [n.tishreen,n.alWathba,n.hutteen,],
@@ -521,6 +548,9 @@ Map<String,dynamic> mapOrienteMedio = {
     1980.0: [n.alshortadamascus,n.alhurriya,n.alittihadSYR,],
   },
   leagueName.libano : {
+    //2025.0: [],
+    //2024.0: [],
+    //2023.0: [],
     2022.0: [n.alahed,],
     2021.0: [n.alansar,],
     2020.0: [],
@@ -597,6 +627,9 @@ Map<String,dynamic> mapOrienteMedio = {
   },
 
   leagueName.siria : {
+    //2025.0: [],
+    //2024.0: [],
+    //2023.0: [],
     2022.0: [n.tishreen,n.alWathba,n.aljaish,],
     2021.0: [n.tishreen,n.aljaish,n.alkaramah,],
     2020.0: [n.tishreen,n.alWathba,n.hutteen,],
