@@ -23,6 +23,7 @@ import 'package:fifa/pages/simulacao/end_year.dart';
 import 'package:fifa/pages/table/table_nacional.dart';
 import 'package:fifa/pages/table_international/table_international.dart';
 import 'package:fifa/pages/transfers/transfers.dart';
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/popup/popup_expectativa.dart';
@@ -97,7 +98,7 @@ class _MenuState extends State<Menu> {
 
                     const SizedBox(height: 40),
 
-                    wHomeHeader(context, myClass),
+                    wHomeHeader(context, myClass, club),
 
                     //BOTÕES
                     Padding(
@@ -167,22 +168,25 @@ class _MenuState extends State<Menu> {
                     const Spacer(),
 
 
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                    Container(
+                      color: AppColors().greyTransparent,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
 
-                       //Image.asset(Images().getMyStadium(),height:  double.maxFinite, width: double.maxFinite,fit: BoxFit.fill,),
+                         //Image.asset(Images().getMyStadium(),height:  double.maxFinite, width: double.maxFinite,fit: BoxFit.fill,),
 
-                        close(context),
+                          close(context),
 
-                        test(context),
+                          test(context),
 
-                        negotiationButton(context),
+                          negotiationButton(context),
 
-                        save(context),
+                          save(context),
 
-                                //train(context)
-                      ],
+                                  //train(context)
+                        ],
+                      ),
                     ),
 
 

@@ -42,10 +42,10 @@ class _RankingClubsPageState extends State<RankingClubsPage> with TickerProvider
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
-    organizarRanking();
+    organizeRanking();
     super.initState();
   }
-  organizarRanking(){
+  void organizeRanking(){
     rankingClubs.organizeRanking();
     continent = Club(index: myClub.clubID,calcInternationalLeaguePlaying:false).continent;
     rankingClubs.organizeContinentalRanking(continent);
@@ -79,16 +79,13 @@ class _RankingClubsPageState extends State<RankingClubsPage> with TickerProvider
                 child: Column(
                   children: [
 
-                    Container(
-                        color: AppColors().primary.withOpacity(0.5),
-                        child: backButtonText(context, 'Ranking'),
-                    ),
+                    backButtonText(context, 'Ranking', true),
 
                     Container(
                       height: 30,
-                      color: AppColors().primary.withOpacity(0.5),
+                      color: appBarMyClubColor(),
                       child: TabBar(
-                        indicatorColor: AppColors().primary,
+                        indicatorColor: AppColors().green,
                         controller: _tabController,
                         tabs: [
                           Tab(text: Translation(context).text.rankingGlobalClubs),
@@ -308,17 +305,25 @@ Widget rowClub(int ranking, Club club){
     );
   }
 
-  rowLeague(int ranking, Map<String, double> listLeagues){
+  Widget rowLeague(int ranking, Map<String, double> listLeagues){
     String leagueName = listLeagues.keys.elementAt(ranking);
-    return Row(
-      children: [
-        Image.asset(FIFAImages().campeonatoLogo(leagueName),width: 50,height: 50,),
-        const SizedBox(width: 4),
-        Text(leagueName,style: EstiloTextoBranco.text16),
-        const Spacer(),
-        Text(listLeagues[leagueName]!.toStringAsFixed(2),style: EstiloTextoBranco.negrito16),
-        const SizedBox(width: 30),
-      ],
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4),
+      padding: const EdgeInsets.all(4),
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.all(Radius.circular(5)),
+        color: AppColors().greyTransparent,
+      ),
+      child: Row(
+        children: [
+          Image.asset(FIFAImages().campeonatoLogo(leagueName),width: 50,height: 50,),
+          const SizedBox(width: 8),
+          Text(leagueName,style: EstiloTextoBranco.text16),
+          const Spacer(),
+          Text(listLeagues[leagueName]!.toStringAsFixed(2),style: EstiloTextoBranco.negrito16),
+          const SizedBox(width: 30),
+        ],
+      ),
     );
   }
 

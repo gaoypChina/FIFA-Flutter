@@ -80,7 +80,7 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
 
                     const SizedBox(height: 32),
                     Container(
-                      color: AppColors().primary.withOpacity(0.5),
+                      color: appBarMyClubColor(),
                       child: Row(
                         children: [
                           backButton(context),
@@ -103,9 +103,9 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
 
                     Container(
                       height: 30,
-                      color: AppColors().primary.withOpacity(0.5),
+                      color: appBarMyClubColor(),
                       child: TabBar(
-                        indicatorColor: AppColors().primary,
+                        indicatorColor: AppColors().green,
                         controller: _tabController,
                         tabs: const [
                           Tab(text: "Tabela"),

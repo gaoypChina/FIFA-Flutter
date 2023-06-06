@@ -52,7 +52,8 @@ class _PlayersHistoricState extends State<PlayersHistoric> {
           width: Sized(context).width,
           child: Column(
             children: [
-              backButtonText(context, Translation(context).text.playersHistoric),
+
+              backButtonText(context, Translation(context).text.playersHistoric, true),
 
               const SizedBox(height: 8),
 

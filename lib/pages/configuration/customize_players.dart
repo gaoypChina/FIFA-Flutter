@@ -53,107 +53,122 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
 
     club = Club(index: widget.clubID);
     double escudoSize = 60;
+    Color colorAppBar = club.colors.primaryColor.withOpacity(0.3);
 
     return Scaffold(
         resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
         body:  Stack(
             children: [
               Images().getWallpaper(),
-              backButtonText(context,Translation(context).text.customizePlayers),
+              Container(
+                  color: colorAppBar,
+                  child: backButtonText(context,Translation(context).text.customizePlayers)
+              ),
 
               Column(
                 children: [
 
-                  const SizedBox(height: 80),
+                  const SizedBox(height: 78),
 
                   //LOGO DO CLUBE
-                  Row(
-                    children: [
-                      GestureDetector(
-                          onTap:(){
-                          },
-                          child: Images().getEscudoWidget(club.name,escudoSize,escudoSize),
-                      ),
-                      const SizedBox(width: 8),
-
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-
-                            SizedBox(
-                              width: Sized(context).width - escudoSize - 10,
-                              child: Row(
-                                children: [
-
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(club.name,style: EstiloTextoBranco.negrito22),
-                                      //N Jogadores
-                                      Text('${Translation(context).text.player}: ${club.jogadores.length.toString()}',style: EstiloTextoBranco.text16),
-                                    ],
-                                  ),
-
-                                ],
-                              ),
-                            ),
-
-                          ],
+                  Container(
+                    color: colorAppBar,
+                    child: Row(
+                      children: [
+                        GestureDetector(
+                            onTap:(){
+                            },
+                            child: Images().getEscudoWidget(club.name,escudoSize,escudoSize),
                         ),
-                      ),
+                        const SizedBox(width: 8),
 
-                    ],
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+
+                              SizedBox(
+                                width: Sized(context).width - escudoSize - 10,
+                                child: Row(
+                                  children: [
+
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(club.name,style: EstiloTextoBranco.negrito22),
+                                        //N Jogadores
+                                        Text('${Translation(context).text.player}: ${club.jogadores.length.toString()}',style: EstiloTextoBranco.text16),
+                                      ],
+                                    ),
+
+                                  ],
+                                ),
+                              ),
+
+                            ],
+                          ),
+                        ),
+
+                      ],
+                    ),
                   ),
 
                   //CUSTOMIZE
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
+                  Container(
+                    color: colorAppBar,
+                    padding: const EdgeInsets.only(top: 8),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
 
-                      buttonDesign(
-                          title: Translation(context).text.save,
-                          function: (){
-                            //Salva os dados
-                            popUpSaveAllData(context: context);
-                            //Navigator.pop(context);
-                          }),
+                        buttonDesign(
+                            title: Translation(context).text.save,
+                            function: (){
+                              //Salva os dados
+                              popUpSaveAllData(context: context);
+                              //Navigator.pop(context);
+                            }),
 
-                      buttonDesign(
-                          title: Translation(context).text.createPlayer,
-                          function: (){
-                            setState(() {});
-                            popUpCreatePlayer(
-                                context: context,
-                                club: club,
-                                function: (){
-                                  setState(() {});
-                                }
-                            );
-                          }
-                      ),
+                        buttonDesign(
+                            title: Translation(context).text.createPlayer,
+                            function: (){
+                              setState(() {});
+                              popUpCreatePlayer(
+                                  context: context,
+                                  club: club,
+                                  function: (){
+                                    setState(() {});
+                                  }
+                              );
+                            }
+                        ),
 
-                      buttonDesign(
-                          title: 'Edit Club',
-                          function: (){
-                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => CustomizeClub(clubName: club.name)));
-                          }),
+                        buttonDesign(
+                            title: 'Edit Club',
+                            function: (){
+                              Navigator.of(context).push(MaterialPageRoute(builder: (context) => CustomizeClub(clubName: club.name)));
+                            }),
 
-                      buttonDesign(
-                          title: EsquemaTatico().e442,
-                          function: (){
+                        buttonDesign(
+                            title: EsquemaTatico().e442,
+                            function: (){
 
-                          }),
+                            }),
 
-                    ],
+                      ],
+                    ),
                   ),
 
                   //Jogadores por posição
-                  playersPerPosition(club),
+                  Container(
+                      color: colorAppBar,
+                      padding: const EdgeInsets.only(top: 8),
+                      child: playersPerPosition(club),
+                  ),
 
-                  const SizedBox(height: 4),
                   //SHOW TABLE PLAYERS TITLE
                   Container(
+                    padding: const EdgeInsets.only(top: 8),
                     color: AppColors().greyTransparent,
                     child: Row(
                       children: [

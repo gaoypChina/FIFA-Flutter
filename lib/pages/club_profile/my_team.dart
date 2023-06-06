@@ -43,9 +43,8 @@ class _MyTeamState extends State<MyTeam> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    myClub = Club(index: My().clubID);
-    averageAge = myClub.getAverageAge();
     my = My();
+    myClub = Club(index: my.clubID);
 
     return DefaultTabController(
       length: 5,
@@ -88,11 +87,17 @@ class _MyTeamState extends State<MyTeam> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
+                                Row(
+                                  children: [
+                                    Text(myClub.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.negrito22),
+                                    const SizedBox(width: 4),
+                                    const Text('Valor:',style: EstiloTextoBranco.text12),
+                                    Text(' \$' + myClub.getClubValue().toStringAsFixed(2),style: EstiloTextoBranco.negrito14),
+                                  ],
+                                ),
                                 starsWidgetFromOverall(myClub.getOverall()),
-                                Text('${Translation(context).text.overall}: '+myClub.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.negrito16),
-                                Text('${Translation(context).text.avgAge}: '+averageAge.toStringAsFixed(2), style: EstiloTextoBranco.text14),
-                                Text('${Translation(context).text.player}: '+myClub.nJogadores.toString(), style: EstiloTextoBranco.text14),
-                              ],
+
+                                ],
                             ),
                           ),
 

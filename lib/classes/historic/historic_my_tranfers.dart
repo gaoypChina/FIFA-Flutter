@@ -18,7 +18,7 @@ class HistoricMyTransfers{
   String valueKeyword = 'Value';
   String overallKeyword = 'Overall';
 
-  resetGlobalVariable(){
+  void resetGlobalVariable(){
     globalHistoricMyTransfers
     = {
       sellKeyword: {},//'Sell':{anoInicial: {67:{'ClubName':{},'Value':{},'Overall':{}}}
@@ -27,10 +27,10 @@ class HistoricMyTransfers{
     globalBalance = [];
   }
 
-  saveWeekBalance(){
+  void saveWeekBalance(){
     globalBalance.add(globalMyMoney);
   }
-  getWeekBalance(int week){
+  double getWeekBalance(int week){
     if(globalBalance.length>=week) {
       return globalBalance[week-1];
     }else{
@@ -38,7 +38,7 @@ class HistoricMyTransfers{
     }
   }
 
-  checkMapHistoricTranfersNew(String sellORbuyStr, Jogador player, int clubID){
+  void checkMapHistoricTranfersNew(String sellORbuyStr, Jogador player, int clubID){
     Map<int,Map<String,dynamic>> allPlayersMap = {};
     try{
       allPlayersMap = globalHistoricMyTransfers[sellORbuyStr]![ano]!;

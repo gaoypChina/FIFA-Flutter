@@ -16,6 +16,7 @@ import 'package:fifa/pages/coach/change_club.dart';
 import 'package:fifa/pages/coach/coach_achievements.dart';
 import 'package:fifa/pages/coach/coachs_ranking.dart';
 import 'package:fifa/pages/historic/my_players_historic.dart';
+import 'package:fifa/widgets/button/button_border_green.dart';
 import 'package:fifa/widgets/popup/popup_ask_money.dart';
 import 'package:fifa/widgets/popup/popup_player_info.dart';
 import 'package:fifa/theme/colors.dart';
@@ -56,16 +57,19 @@ class _CoachMenuState extends State<CoachMenu> {
         child: Column(
           children: [
 
-            backButtonText(context,Translation(context).text.coachMenu),
+            backButtonText(context,Translation(context).text.coachMenu, true),
 
             //Botões
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                changeClub(context),
-                coachAchievements(context),
-                coachPoints(context),
-              ],
+            Container(
+              color: appBarMyClubColor(),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  changeClub(context),
+                  coachAchievements(context),
+                  coachPoints(context),
+                ],
+              ),
             ),
 
             Expanded(
@@ -161,41 +165,26 @@ class _CoachMenuState extends State<CoachMenu> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
 Widget coachPoints(BuildContext context){
-  return GestureDetector(
-    onTap: (){
-      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CoachRanking()));
-    },
-    child: Container(
-      color: AppColors().greyTransparent,
-      padding: const EdgeInsets.all(8),
-      margin: const EdgeInsets.all(8),
-      child: Text('${Translation(context).text.points}: ${my.scoreGame} ',style: EstiloTextoBranco.text16),
-
-    ),
+  return ButtonBorderGreen(
+      onTap: (){
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CoachRanking()));
+      },
+      child: Text('${Translation(context).text.points}: ${my.scoreGame} ',style: EstiloTextoBranco.text16)
   );
 }
 Widget changeClub(BuildContext context){
   return Column(
     children: [
-      Container(
-        color: AppColors().greyTransparent,
-        margin: const EdgeInsets.all(8),
-        child: Material(
-          color: AppColors().greyTransparent,
-          child: InkWell(
-            onTap:(){
-              customToast(Translation(context).text.loading);
-              if(!alreadyChangedClubThisSeason){
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ChangeClub()));
-              }else{
-                customToast(Translation(context).text.alreadyChangedYourClub);
-              }
-            },
-            child: Container(
-                padding: const EdgeInsets.all(8),
-                child: Text(Translation(context).text.changeClub,style: EstiloTextoBranco.text16)),
-          ),
-        ),
+      ButtonBorderGreen(
+      onTap: (){
+        customToast(Translation(context).text.loading);
+        if(!alreadyChangedClubThisSeason){
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ChangeClub()));
+        }else{
+          customToast(Translation(context).text.alreadyChangedYourClub);
+        }
+      },
+        child: Text(Translation(context).text.changeClub,style: EstiloTextoBranco.text16)
       ),
     ],
   );
@@ -203,17 +192,12 @@ Widget changeClub(BuildContext context){
 Widget coachAchievements(BuildContext context){
   return Column(
     children: [
-      Container(
-        color: AppColors().greyTransparent,
-        padding: const EdgeInsets.all(8),
-        margin: const EdgeInsets.all(8),
-        child: GestureDetector(
-          onTap:(){
+      ButtonBorderGreen(
+          onTap: (){
             Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CoachAchievements()));
-              customToast(Translation(context).text.inDevelopment);
+            customToast(Translation(context).text.inDevelopment);
           },
-          child: Text(Translation(context).text.coachAchievements,style: EstiloTextoBranco.text16),
-        ),
+          child: Text(Translation(context).text.coachAchievements,style: EstiloTextoBranco.text16)
       ),
     ],
   );

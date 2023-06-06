@@ -1,6 +1,5 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/international_league.dart';
-import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/functions/internat_league_manipulation.dart';
 import 'package:fifa/classes/playing_international.dart';
@@ -119,17 +118,6 @@ class My{
   int getMyClubInternationalGroupPosition(){
     late int position = getMyClubInternationalPosition032() % 4;
     return position;
-  }
-  /////////////////////////////////////////////////////////////
-  //
-  /////////////////////////////////////////////////////////////
-  getClubValue(){
-    double clubValue = 0.0;
-    List jogadores = Club(index: clubID).jogadores;
-    for (int index in jogadores){
-      clubValue += Jogador(index: index).price;
-    }
-    return clubValue;
   }
 
 }

@@ -17,11 +17,12 @@ class MundialFinal{
   int _goal2 = 0;
   late Confronto confronto;
 
-  getClubs(){
+  void getClubs(){
     LeagueOfficialNames l = LeagueOfficialNames();
     club1 = finalistName(l.championsLeague);
     club2 = finalistName(l.libertadores);
   }
+
   void simulate(){
       getClubs();
       simulateScore();
@@ -47,7 +48,8 @@ class MundialFinal{
       return Club(index: clubIndex2);
     }
   }
-  simulateScore(){
+
+  void simulateScore(){
 
     MatchSimulation match = MatchSimulation(club1, club2);
     _goal1 = match.variableGol1;
@@ -61,7 +63,8 @@ class MundialFinal{
       hasPenaltis = true;
     }
   }
-  simulatePenaltis(){
+
+  void simulatePenaltis(){
     if(hasPenaltis){
       confronto.penaltis1 = Random().nextInt(5);
       confronto.penaltis2 = Random().nextInt(5);
@@ -76,7 +79,7 @@ class MundialFinal{
     }
   }
 
-  saveResults(){
+  void saveResults(){
     Map result = {};
     if(isChampionClub1){
       result = {'goal_champion': confronto.goal1,'goal_vice': confronto.goal2,
@@ -88,7 +91,7 @@ class MundialFinal{
     globalHistoricClassification['Mundial'][ano] = result;
   }
 
-  getResults(int year){
+  void getResults(int year){
     Map result = globalHistoricClassification['Mundial'][year];
     confronto = Confronto(
         clubName1: result['champion'],

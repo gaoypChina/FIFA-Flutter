@@ -48,38 +48,41 @@ class _LeaguesConfigurationState extends State<LeaguesConfiguration> with Ticker
         length: 2,
         child: Container(
           decoration: Images().getWallpaperContainerDecoration(),
-          child: Stack(
+          child: Column(
             children: [
-              backButtonText(context,'Trocar'),
+              backButtonText(context, 'Trocar', true),
 
-              Container(
-                height: Sized(context).height,
-                padding: const EdgeInsets.all(8.0),
-                margin: const EdgeInsets.only(top:60),
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 30,
-                      child: TabBar(
-                        controller: controller.tabController,
-                        indicatorColor: AppColors().primary,
-                        tabs: const [
-                          Tab(text: 'nºtimes/nº rebaixados'),
-                          Tab(text: 'Internacional'),
-                        ],
+              Expanded(
+                child: Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 35,
+                        color: appBarMyClubColor(),
+                        child: TabBar(
+                          controller: controller.tabController,
+                          indicatorColor: AppColors().green,
+                          tabs: const [
+                            Tab(text: 'nºtimes/nº rebaixados'),
+                            Tab(text: 'Internacional'),
+                          ],
+                        ),
                       ),
-                    ),
-                    Expanded(
-                      child: TabBarView(
-                        controller: controller.tabController,
-                        children: [
-                          leagues(),
-                          leaguesInternational(),
-                        ],
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.all(8),
+                          child: TabBarView(
+                            controller: controller.tabController,
+                            children: [
+                              leagues(),
+                              leaguesInternational(),
+                            ],
+                          ),
+                        ),
                       ),
-                    ),
 
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ],

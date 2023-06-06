@@ -51,9 +51,10 @@ class _HistoricLeagueState extends State<HistoricLeague> {
           child: Column(
             children: [
 
-              backButtonText(context, Translation(context).text.leagueHistoric),
+              backButtonText(context, Translation(context).text.leagueHistoric, true),
 
-              Padding(
+              Container(
+                color: appBarMyClubColor(),
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   children: [
@@ -66,6 +67,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                   ],
                 ),
               ),
+              const SizedBox(height: 8),
 
               nTeamsSelected == 0 ? Column(
                 children: [

@@ -69,7 +69,8 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
           decoration: Images().getWallpaperContainerDecoration(),
           child: isLoaded ? Column(
             children: [
-              backButtonText(context, leagueInternational),
+
+              backButtonText(context, leagueInternational, true),
 
               !isList ?
               int.parse(selectedYear) >= anoInicial ?

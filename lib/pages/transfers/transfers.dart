@@ -65,28 +65,32 @@ class _TransfersState extends State<Transfers> {
               children: [
             Column(
               children: [
-                Row(
-                  children: [
-                    backButtonText(context, Translation(context).text.transfers),
-                    const Spacer(),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 28.0,right: 4),
-                      child: RichText(
-                        text: TextSpan(
-                          children: <TextSpan>[
-                            TextSpan(
-                                text: '${Translation(context).text.money}: ', style: EstiloTextoBranco.text16),
-                            TextSpan(
-                                text: '\$ ${My().money.toStringAsFixed(2)} mi',
-                                style: EstiloTextoVerde.text20),
-                          ],
+                Container(
+                  color: appBarMyClubColor(),
+                  child: Row(
+                    children: [
+                      backButtonText(context, Translation(context).text.transfers),
+                      const Spacer(),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 28.0,right: 4),
+                        child: RichText(
+                          text: TextSpan(
+                            children: <TextSpan>[
+                              TextSpan(
+                                  text: '${Translation(context).text.money}: ', style: EstiloTextoBranco.text16),
+                              TextSpan(
+                                  text: '\$ ${My().money.toStringAsFixed(2)} mi',
+                                  style: EstiloTextoVerde.text20),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
 
-                Padding(
+                Container(
+                  color: appBarMyClubColor(),
                   padding: const EdgeInsets.all(8.0),
                   child: searchNameBar(),
                 ),

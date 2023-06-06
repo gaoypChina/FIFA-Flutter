@@ -19,7 +19,7 @@ class MataMata {
   int phaseIdaVolta = 0;
   int nInternationalLeagues = internationalLeagueNames.length;
 
-  defineClubsOitavas() {
+  void defineClubsOitavas() {
     for (int i = 0; i < nInternationalLeagues; i++) {
       String internationalName = internationalLeagueNames[i];
 
@@ -41,17 +41,17 @@ class MataMata {
     }
   }
 
-  defineClubsQuartas() {
+  void defineClubsQuartas() {
     defineClubsPhase(Name().oitavas,Name().quartas,8);
   }
-  defineClubsSemi() {
+  void defineClubsSemi() {
     defineClubsPhase(Name().quartas,Name().semifinal,4);
   }
-  defineClubsFinal() {
+  void defineClubsFinal() {
     defineClubsPhase(Name().semifinal,Name().finale,2);
   }
 
-  defineClubsPhase(String previousPhase, String nextPhase, int nClubsNextPhase) {
+  void defineClubsPhase(String previousPhase, String nextPhase, int nClubsNextPhase) {
     for (int i = 0; i < nInternationalLeagues; i++) {
       String internationalName = internationalLeagueNames[i];
 
@@ -127,7 +127,7 @@ class MataMata {
     return matchRows;
   }
 
-  getData(String internationalName, String weekPhase, int matchRow,int phaseIdaVolta) {
+  void getData(String internationalName, String weekPhase, int matchRow,int phaseIdaVolta) {
 
     try {
       final List clubsID = List.from(globalInternationalMataMataClubsID[internationalName][weekPhase]);

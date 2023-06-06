@@ -10,7 +10,7 @@ import 'mata_mata_class.dart';
 
 class MataMataSimulation{
 
-  simulateMatchs(bool simulMyMatch){
+  void simulateMatchs(bool simulMyMatch){
     My myClass = My();
     MataMata mataMata = MataMata();
     for (int i = 0; i < internationalLeagueNames.length; i++) {
@@ -43,7 +43,7 @@ class MataMataSimulation{
 
   }
 
-  setGoals(int clubID1, int clubID2, int goal1, int goal2){
+  void setGoals(int clubID1, int clubID2, int goal1, int goal2){
 
     int phaseIdaVolta = MataMata().getPhaseIdaVolta(semana);
     String weekPhase = MataMata().getSemanaPhase(semana);

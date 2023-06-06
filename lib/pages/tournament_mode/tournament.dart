@@ -67,7 +67,7 @@ class _TournamentState extends State<Tournament> {
         width: Sized(context).width,
         child: Column(
         children: [
-              backButtonText(context, 'Amistoso'),
+              backButtonText(context, 'Amistoso', true),
 
               Images().getStadiumWidget(club1.name, 200, Sized(context).width),
               const SizedBox(height: 20),

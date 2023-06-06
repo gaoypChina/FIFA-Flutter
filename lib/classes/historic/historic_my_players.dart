@@ -12,7 +12,7 @@ class HistoricPlayerData{
   late int assists;
   late double price;
 
-  getData({required int year, required int playerID}){
+  void getData({required int year, required int playerID}){
     Map values = Map.from(globalHistoricMyClub[year][playerID]);
     this.playerID = playerID;
     name = values['name'];
@@ -29,6 +29,7 @@ class HistoricMyPlayers{
   Map getData({required int year}){
     return Map.from(globalHistoricMyClub[year]);
   }
+
   Map getOnlyPlayers({required int year}){
     Map data = getData(year: year);
     data.remove('clubID');
@@ -43,7 +44,7 @@ class HistoricMyPlayers{
     return globalHistoricMyClub[year]['leagueID'];
   }
 
-  saveMyClubData(My my){
+  void saveMyClubData(My my){
     List<Jogador> players = [];
     for (int playerID in my.jogadores) {
       players.add(Jogador(index: playerID));
@@ -95,7 +96,7 @@ class HistoricMyPlayers{
     return historicPlayerDatas;
   }
 
-  getBestPlayer({required List<HistoricPlayerData> historicPlayerDatas}){
+  int getBestPlayer({required List<HistoricPlayerData> historicPlayerDatas}){
     int ovrMax = 0;
     late HistoricPlayerData bestPlayer;
     for (HistoricPlayerData historicPlayerData in historicPlayerDatas) {
@@ -106,7 +107,8 @@ class HistoricMyPlayers{
     }
     return bestPlayer.playerID;
   }
-  getArtilheiro({required List<HistoricPlayerData> historicPlayerDatas}){
+
+  int getArtilheiro({required List<HistoricPlayerData> historicPlayerDatas}){
     int goalsMax = 0;
     late HistoricPlayerData bestPlayer;
     for (HistoricPlayerData historicPlayerData in historicPlayerDatas) {
@@ -117,7 +119,7 @@ class HistoricMyPlayers{
     }
     return bestPlayer.playerID;
   }
-  getAssistente({required List<HistoricPlayerData> historicPlayerDatas}){
+  int getAssistant({required List<HistoricPlayerData> historicPlayerDatas}){
     int assistsMax = 0;
     late HistoricPlayerData bestPlayer;
     for (HistoricPlayerData historicPlayerData in historicPlayerDatas) {
@@ -128,7 +130,7 @@ class HistoricMyPlayers{
     }
     return bestPlayer.playerID;
   }
-  getMVP({required List<HistoricPlayerData> historicPlayerDatas}){
+  int getMVP({required List<HistoricPlayerData> historicPlayerDatas}){
     double priceMax = 0;
     late HistoricPlayerData bestPlayer;
     for (HistoricPlayerData historicPlayerData in historicPlayerDatas) {

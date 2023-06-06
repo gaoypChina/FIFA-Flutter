@@ -96,11 +96,16 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                starsWidgetFromOverall(clubClass.getOverall()),
-                                Text('${Translation(context).text.overall}: '+clubClass.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.negrito16),
-                                Text('${Translation(context).text.avgAge}: '+clubClass.getAverageAge().toStringAsFixed(2), style: EstiloTextoBranco.text14),
-                                Text('${Translation(context).text.player}: '+clubClass.nJogadores.toString(), style: EstiloTextoBranco.text14),
-                                compare(),
+
+                                Row(
+                                  children: [
+                                    Text(clubClass.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.negrito22),
+                                    const SizedBox(width: 4),
+                                    const Text('Valor:',style: EstiloTextoBranco.text12),
+                                    Text(' \$' + clubClass.getClubValue().toStringAsFixed(2),style: EstiloTextoBranco.negrito14),
+                                  ],
+                                ),
+                                starsWidgetFromOverall(clubClass.getOverall()),compare(),
                               ],
                             ),
                           ),

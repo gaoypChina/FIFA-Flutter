@@ -87,6 +87,14 @@ class Club{
 
   }
 
+  double getClubValue(){
+    double clubValue = 0.0;
+    for (int index in jogadores){
+      clubValue += Jogador(index: index).price;
+    }
+    return clubValue;
+  }
+
   String getLeagueName() {
     //SEARCH IN ALL LEAGUES
     for (var nameLeague in leagueNames) {

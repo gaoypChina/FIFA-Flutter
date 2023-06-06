@@ -30,10 +30,10 @@ class _CoachAchievementsState extends State<CoachAchievements> {
         decoration: Images().getWallpaperContainerDecoration(),
         child: Column(
           children: [
-            backButtonText(context, Translation(context).text.coachAchievements),
-            const SizedBox(height: 8),
+            backButtonText(context, Translation(context).text.coachAchievements, true),
             Container(
                 color: AppColors().greyTransparent,
+                padding: const EdgeInsets.only(top: 8),
                 child: title()
             ),
 

@@ -177,12 +177,12 @@ Widget field(){
                   SizedBox(
                     width: Sized(context).width-30,
                     height: 430,
-                    child: visitante ? fieldGameplay442(widget.adversarioClubID) : fieldWidget(),
+                    child: visitante ? fieldGameplay442(adversarioClubClass) : fieldWidget(),
                   ),
                   SizedBox(
                     width: Sized(context).width,
                     height: 430,
-                    child: visitante ? fieldWidget() : fieldGameplay442(widget.adversarioClubID),
+                    child: visitante ? fieldWidget() : fieldGameplay442(adversarioClubClass),
                   ),
                 ],
               ),

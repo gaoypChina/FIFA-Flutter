@@ -42,7 +42,9 @@ class _HistoricMenuState extends State<HistoricMenu> {
 
           Column(
             children: [
-              backButtonText(context,'Menu Histórico'),
+
+              backButtonText(context, 'Menu Histórico', true),
+              const SizedBox(height: 8),
 
               Expanded(
                 child: SingleChildScrollView(

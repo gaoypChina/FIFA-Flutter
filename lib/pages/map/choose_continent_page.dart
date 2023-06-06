@@ -4,7 +4,9 @@ import 'package:fifa/classes/countries/countries_continents.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/pages/map/map_list_all_clubs.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/values/club_details.dart';
 import 'package:fifa/widgets/button/back_button.dart';
+import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:flutter/material.dart';
 
 class ChooseContinentPage extends StatefulWidget {
@@ -37,7 +39,9 @@ class _ChooseContinentPageState extends State<ChooseContinentPage> {
 
           Column(
             children: [
-              backButtonText(context,'Choose Continent'),
+              backButtonText(context,'Choose Continent', true),
+
+              const SizedBox(height: 20),
 
               menuButtonExpanded(Continents().europa,(){
                 Navigator.push(context,MaterialPageRoute(builder: (context) => MapListAllClubs(continent: Continents().europa)));
@@ -71,26 +75,28 @@ class _ChooseContinentPageState extends State<ChooseContinentPage> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
   Widget menuButtonExpanded(String text, Function() function){
+    ClubColors myColors = Club(index: My().clubID).colors;
     return  Container(
       margin: const EdgeInsets.all(4),
       decoration: BoxDecoration(
-        color: Club(index: My().clubID).colors.primaryColor.withOpacity(0.4),
+        color: myColors.primaryColor.withOpacity(0.4),
         border: Border.all(
           width: 2.0,
-          color: Club(index: My().clubID).colors.secondColor,
+          color: myColors.secondColor,
         ),
-        borderRadius: const BorderRadius.all(Radius.circular(15.0)),
+        borderRadius: const BorderRadius.all(Radius.circular(20.0)),
       ),
       child: Row(
         children: [
+          const SizedBox(width: 8),
+          Images().getContinentLogo(text),
           Expanded(
-            child: Material(
-              color: Colors.transparent,
-              child: InkWell(
-                  onTap: function,
-                  child: Padding(
+            child: PressableButton(
+                onTap: function,
+                child: Padding(
                       padding: const EdgeInsets.all(12),
-                      child: Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.text22))),
+                      child: Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.text22)
+                )
             ),
           ),
         ],

@@ -36,7 +36,7 @@ class _ConfigurationState extends State<Configuration> {
         child: Stack(
           children: [
 
-            backButtonText(context, 'Configurações'),
+            backButtonText(context, 'Configurações', true),
 
             Container(
               padding: const EdgeInsets.all(8.0),

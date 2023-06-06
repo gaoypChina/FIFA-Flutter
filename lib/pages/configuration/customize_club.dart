@@ -51,25 +51,29 @@ class _CustomizeClubState extends State<CustomizeClub> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
 
-                backButtonText(context,'Customize Club'),
+                backButtonText(context, 'Customize Club'),
 
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(height: 16),
-                    Container(
-                      color: AppColors().greyTransparent,
-                      child: Column(
-                        children: [
-                          editClubName(),
-                          const SizedBox(height: 8),
-                          chooseColorRow('Cor Primária', true),
-                          chooseColorRow('Cor Secundária', false),
-                        ],
-                      )
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(height: 16),
+                        Container(
+                          color: AppColors().greyTransparent,
+                          child: Column(
+                            children: [
+                              editClubName(),
+                              const SizedBox(height: 8),
+                              chooseColorRow('Cor Primária', true),
+                              chooseColorRow('Cor Secundária', false),
+                            ],
+                          )
+                        ),
+                        const SizedBox(height: 8),
+                      ],
                     ),
-                    const SizedBox(height: 8),
-                  ],
+                  ),
                 ),
 
                 Container(
@@ -86,8 +90,7 @@ class _CustomizeClubState extends State<CustomizeClub> {
                             typesKit(uniformCustom.clubPattern.stripes2),
                             typesKit(uniformCustom.clubPattern.stripes3),
                             typesKit(uniformCustom.clubPattern.stripes4),
-                            typesKit(uniformCustom.clubPattern.stripesThin),
-                            typesKit(uniformCustom.clubPattern.stripesTricolor),
+                            typesKit(uniformCustom.clubPattern.sp),
                           ],
                         ),
                         Row(
@@ -97,7 +100,6 @@ class _CustomizeClubState extends State<CustomizeClub> {
                             typesKit(uniformCustom.clubPattern.oneVertStripe),
                             typesKit(uniformCustom.clubPattern.diagonal),
                             typesKit(uniformCustom.clubPattern.diagonalInv),
-                            typesKit(uniformCustom.clubPattern.monaco),
                           ],
                         ),
                         Row(
@@ -107,17 +109,23 @@ class _CustomizeClubState extends State<CustomizeClub> {
                             typesKit(uniformCustom.clubPattern.horStripes3),
                             typesKit(uniformCustom.clubPattern.horStripes4),
                             typesKit(uniformCustom.clubPattern.horStripesThin),
-                            typesKit(uniformCustom.clubPattern.dividedHor),
                           ],
                         ),
                         Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              typesKit(uniformCustom.clubPattern.sp),
                               typesKit(uniformCustom.clubPattern.sleeves),
                               typesKit(uniformCustom.clubPattern.solid),
                               typesKit(uniformCustom.clubPattern.solid2),
                               typesKit(uniformCustom.clubPattern.solid3),
+                            ]),
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              typesKit(uniformCustom.clubPattern.stripesThin),
+                              typesKit(uniformCustom.clubPattern.stripesTricolor),
+                              typesKit(uniformCustom.clubPattern.monaco),
+                              typesKit(uniformCustom.clubPattern.dividedHor),
                             ]),
                       ],
                     )
@@ -133,10 +141,10 @@ class _CustomizeClubState extends State<CustomizeClub> {
                           color: AppColors().greyTransparent,
                           border:  Border.all(color: Colors.white, width:1),
                         ),
-                        child: Images().getEscudoWidget(clubName,120,120),
+                        child: Images().getEscudoWidget(clubName,110,110),
                       ),
                     ),
-                    Container(margin: EdgeInsets.only(top:100, left: 40+Sized(context).width*0.5),
+                    Container(margin: EdgeInsets.only(top:90, left: 40+Sized(context).width*0.5),
                         child: const Icon(Icons.camera_alt,size: 50,color: Colors.white)),
                   ],
                 ),

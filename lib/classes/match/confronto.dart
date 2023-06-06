@@ -30,7 +30,7 @@ class Confronto{
 
   }
 
-  setGoals({required int goal1,required int goal2}){
+  void setGoals({required int goal1,required int goal2}){
     hasGoals = true;
     this.goal1 = goal1;
     this.goal2 = goal2;
@@ -46,7 +46,7 @@ class Confronto{
     }
   }
 
-  setPenalties({required penaltis1,required penaltis2}){
+  void setPenalties({required penaltis1,required penaltis2}){
     hasPenaltis = true;
     this.penaltis1 = penaltis1;
     this.penaltis2 = penaltis2;

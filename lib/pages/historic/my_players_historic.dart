@@ -72,7 +72,7 @@ class _MyPlayersHistoricState extends State<MyPlayersHistoric> {
           Images().getWallpaper(),
           Column(
             children: [
-              backButtonText(context,'Histórico dos meus times'),
+              backButtonText(context,'Histórico dos meus times', true),
 
               header(),
 
@@ -174,7 +174,7 @@ Widget header(){
         children: [
           bestPlayerBox('Craque',Jogador(index: HistoricMyPlayers().getBestPlayer(historicPlayerDatas: historicPlayerDatas)),''),
           bestPlayerBox('Artilheiro',Jogador(index: HistoricMyPlayers().getArtilheiro(historicPlayerDatas: historicPlayerDatas)),''),
-          bestPlayerBox('Assistente',Jogador(index: HistoricMyPlayers().getAssistente(historicPlayerDatas: historicPlayerDatas)),''),
+          bestPlayerBox('Assistente',Jogador(index: HistoricMyPlayers().getAssistant(historicPlayerDatas: historicPlayerDatas)),''),
           bestPlayerBox('MVP',Jogador(index: HistoricMyPlayers().getMVP(historicPlayerDatas: historicPlayerDatas)),''),
         ],
       ),

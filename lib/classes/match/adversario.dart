@@ -20,7 +20,7 @@ class Adversario{
   bool visitante = false;
   My myClass = My();
 
-  getAdversario() {
+  void getAdversario() {
 
     Semana weekClass = Semana(semana);
     //ADVERSARIO CAMPEONATO
@@ -41,7 +41,7 @@ class Adversario{
     }
   }
 
-  getCupAdversario() {
+  void getCupAdversario() {
 
     Map match = CupClassification().getCupClubMatchMap(getCup(myClass.getLeagueName()), semana, myClass.clubName);
 
@@ -58,7 +58,7 @@ class Adversario{
     }
   }
 
-  getLeagueAdversario(){
+  void getLeagueAdversario(){
     late int indexAdv; //de 0-16
     List chaves = Chaves().obterChave(semana, myClass.leagueID);
     if (chaves.isNotEmpty) {
@@ -74,7 +74,7 @@ class Adversario{
     }
   }
 
-  getInternationalAdversario(int semana){
+  void getInternationalAdversario(int semana){
     late int indexAdv; //0-4
     List chaves = Chaves().obterChave(semana, -1);
     int minhaPosicaoChave = myClass.getMyClubInternationalGroupPosition();
@@ -94,7 +94,7 @@ class Adversario{
     posicao = (adversarioPosicao032 % 4)+1;
   }
 
-  getMataMataInternationalAdversario(int semana){
+  void getMataMataInternationalAdversario(int semana){
     late int indexAdv; //de 0-16
     try {
       List listIDs = globalInternationalMataMataClubsID[myClass.getMyInternationalLeague()][Semana(semana).semanaStr];

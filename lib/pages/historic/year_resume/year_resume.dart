@@ -50,11 +50,7 @@ class _YearResumeState extends State<YearResume> {
 
           Column(
             children: [
-              Row(
-                children: [
-                  backButtonText(context,'Resumo do ano'),
-                ],
-              ),
+                  backButtonText(context, 'Resumo do ano', true),
 
               Padding(
                 padding: const EdgeInsets.all(8.0),

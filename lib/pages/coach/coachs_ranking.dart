@@ -41,10 +41,11 @@ class _CoachRankingState extends State<CoachRanking> {
           Images().getWallpaper(),
           Column(
             children: [
-              backButtonText(context,'Melhores treinadores'),
+              backButtonText(context,'Melhores treinadores', true),
 
               Container(
                   color: AppColors().greyTransparent,
+                  padding: const EdgeInsets.only(top: 8),
                   child: title()
               ),
 

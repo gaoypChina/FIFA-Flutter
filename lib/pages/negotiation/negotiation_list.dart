@@ -2,11 +2,12 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/pages/negotiation/negotiation_class.dart';
 import 'package:fifa/pages/negotiation/negotiation_offer.dart';
-import 'package:fifa/theme/background_color/background_overall.dart';
 import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/values/club_details.dart';
 import 'package:fifa/widgets/button/back_button.dart';
+import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:flutter/material.dart';
 
 class NegotiationListPage extends StatefulWidget {
@@ -31,6 +32,7 @@ class _NegotiationListPageState extends State<NegotiationListPage> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
+
     List playersIDs = Negotiation().getPlayers();
 
     return Scaffold(
@@ -41,15 +43,17 @@ class _NegotiationListPageState extends State<NegotiationListPage> {
 
           Column(
             children: [
-              backButtonText(context,'Negotiation'),
-              Expanded(child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    for (int i=0; i < playersIDs.length; i++)
-                      negotiationRow(Jogador(index: playersIDs[i]), i),
-                  ],
-                ),
-              ))
+              backButtonText(context,'Negotiation', true),
+              Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        for (int i=0; i < playersIDs.length; i++)
+                          negotiationRow(Jogador(index: playersIDs[i]), i),
+                      ],
+                    ),
+                  )
+              )
 
             ],
           ),
@@ -68,6 +72,14 @@ Widget negotiationRow(Jogador player, int startNegotiationWeek){
     String status = Negotiation().getStatus(player.index);
     int playerID = player.index;
 
+    String type = Negotiation().getType(playerID);
+
+    Map mapType = {
+      Negotiation().typeBuy: Colors.lightBlue,
+      Negotiation().typeSell: Colors.red,
+      Negotiation().typeRent: Colors.orange,
+    };
+
     Map mapStatus = {
       Negotiation().negotiating: Colors.lightBlue,
       Negotiation().accepted: Colors.green,
@@ -75,9 +87,13 @@ Widget negotiationRow(Jogador player, int startNegotiationWeek){
       Negotiation().cancelled: Colors.red,
     };
 
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
+    return Container(
+      margin: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: AppColors().greyTransparent,
+        borderRadius: const BorderRadius.all(Radius.circular(5)),
+      ),
+      child: PressableButton(
         onTap: (){
           if(Negotiation().isNegotiating(playerID)){
             Navigator.of(context).push(
@@ -95,42 +111,92 @@ Widget negotiationRow(Jogador player, int startNegotiationWeek){
             }
         },
         child: Container(
-          color: AppColors().greyTransparent,
           padding: const EdgeInsets.all(4),
           child: Row(
             children: [
               Stack(
                 children: [
-                  Images().getPlayerPictureWidget(player),
+                  //IMAGE
+                  Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(color: ClubDetails().getColors(player.clubName).secondColor, width: 2.0),
+                      color: ClubDetails().getColors(player.clubName).primaryColor,
+                    ),
+                    child: ClipOval(
+                        child: Images().getPlayerPictureWidget(player,60,60)
+                    ),
+                  ),
+                  //OVR
+                  Text(player.overall.toString(), style: EstiloTextoBranco.negrito22),
+                  //POSITION
                   Padding(
-                    padding: const EdgeInsets.only(top:40,left:25),
+                    padding: const EdgeInsets.only(top:50,left:35),
                     child: positionContainer(player.position)
                   )
                 ],
               ),
               const SizedBox(width: 8),
-              ovrContainer(player.overall),
-              const SizedBox(width: 8),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(player.name,overflow: TextOverflow.fade, style: EstiloTextoBranco.negrito16),
-                    Text("Valor: \$"+Negotiation().getPrice(playerID).toStringAsFixed(3)+'mi',style: EstiloTextoBranco.text10),
-                    Text("Salário: \$"+Negotiation().getSalary(playerID).toStringAsFixed(3)+'k',style: EstiloTextoBranco.text10),
+                    Row(
+                      children: [
+                        Expanded(child: Text(player.name, overflow: TextOverflow.fade, style: EstiloTextoBranco.negrito16)),
+                        Container(
+                          padding: const EdgeInsets.all(4),
+                            child: Text(status,style: TextStyle(color: mapStatus[status], fontSize: 16))
+                        ),
+                      ],
+                    ),
+
+                    Row(
+                      children: [
+                        Column(
+                          children: [
+                            Text("Valor: \$"+player.price.toStringAsFixed(3)+'mi',style: EstiloTextoBranco.text10),
+                            Text("Salário: \$"+player.salaryK.toStringAsFixed(3)+'k',style: EstiloTextoBranco.text10),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            const Icon(Icons.compare_arrows, color: Colors.white, size: 30),
+                            Text("Week" + Negotiation().getWeek(playerID).toString(),style: EstiloTextoBranco.text14),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Text("\$"+Negotiation().getPrice(playerID).toStringAsFixed(3)+'mi',style: EstiloTextoBranco.text12),
+                            Text("\$"+Negotiation().getSalary(playerID).toStringAsFixed(3)+'k',style: EstiloTextoBranco.text12),
+                          ],
+                        ),
+                        const SizedBox(width: 8),
+                        Images().getEscudoWidget(Negotiation().getClubName(playerID)),
+                        const SizedBox(width: 8),
+                      ],
+                    ),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Container(
+                            padding: const EdgeInsets.all(4),
+                            decoration: BoxDecoration(
+                              borderRadius: const BorderRadius.all(Radius.circular(5)),
+                              color: mapType[type],
+                            ),
+                            child: const Text('Compra',style: EstiloTextoBranco.text16)
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
-              Column(
-                children: [
-                  const Icon(Icons.compare_arrows, color: Colors.white, size: 30),
-                  Text("Week" + Negotiation().getWeek(playerID).toString(),style: EstiloTextoBranco.text14),
-                ],
-              ),
-              const SizedBox(width: 8),
-              Images().getEscudoWidget(Negotiation().getClubName(playerID)),
-              const SizedBox(width: 8),
-              CircleAvatar(backgroundColor: mapStatus[status], radius: 10)
+
+
+
+
             ],
           ),
         ),

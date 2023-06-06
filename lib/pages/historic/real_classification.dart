@@ -101,7 +101,7 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
   n.suica: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Swiss_Super_League", 3],
   n.ucrania: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Ukrainian_Premier_League", 3],
 
-  n.brasil1: ["https://pt.wikipedia.org/wiki/Campeonato_Brasileiro_de_Futebol_de_2023_-_S%C3%A9rie_A", 2],
+  n.brasil1: ["https://en.wikipedia.org/wiki/2023_Campeonato_Brasileiro_S%C3%A9rie_A", 7],
   n.brasil2: ["https://en.wikipedia.org/wiki/2023_Campeonato_Brasileiro_S%C3%A9rie_B", 6],
   n.brasil3: ["https://en.wikipedia.org/wiki/2023_Campeonato_Brasileiro_S%C3%A9rie_C", 6],
   n.argentina: ["https://en.wikipedia.org/wiki/2023_Argentine_Primera_Divisi%C3%B3n", 4],
@@ -242,27 +242,30 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
 
           Column(
             children: [
-              Row(
-                children: [
-                  backButtonText(context,'Tabela de Classificação'),
-                  const Spacer(),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20),
-                    child: GestureDetector(
-                      onTap:(){
-                        List classificationNames = mapChampions(choosenLeagueName)[ano-1];
-                        bottomSheetShowLeagueClassification(context, classificationNames);
-                      },
-                      child: const Icon(Icons.table_chart,color:Colors.white,size: 32),
+              Container(
+                color: appBarMyClubColor(),
+                child: Row(
+                  children: [
+                    backButtonText(context,'Tabela de Classificação'),
+                    const Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 20),
+                      child: GestureDetector(
+                        onTap:(){
+                          List classificationNames = mapChampions(choosenLeagueName)[ano-1];
+                          bottomSheetShowLeagueClassification(context, classificationNames);
+                        },
+                        child: const Icon(Icons.table_chart,color:Colors.white,size: 32),
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top:20.0),
-                    child: IconButton(onPressed: (){
-                      navigatorPush(context, HistoricLeague(choosenLeagueName: choosenLeagueName));
-                    }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
-                  )
-                ],
+                    Padding(
+                      padding: const EdgeInsets.only(top:20.0),
+                      child: IconButton(onPressed: (){
+                        navigatorPush(context, HistoricLeague(choosenLeagueName: choosenLeagueName));
+                      }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
+                    )
+                  ],
+                ),
               ),
               Expanded(
                 child: ListView.builder(

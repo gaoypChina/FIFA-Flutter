@@ -95,7 +95,18 @@ class _FieldDraggableState extends State<FieldDraggable> {
                 Container(
                     width: Sized(context).width,
                     color: AppColors().greyTransparent,
-                    child: Text('${Translation(context).text.substitutes}:', style: EstiloTextoBranco.negrito16)
+                    child: Row(
+                      children: [
+                        Text('${Translation(context).text.substitutes}:', style: EstiloTextoBranco.negrito16),
+                        const Spacer(),
+                        Column(
+                          children: [
+                            Text('${Translation(context).text.avgAge}: ' + myClub.getAverageAge().toStringAsFixed(2), style: EstiloTextoBranco.text14),
+                            Text('${Translation(context).text.player}: ' + myClub.nJogadores.toString(), style: EstiloTextoBranco.text14),
+                          ],
+                        ),
+                      ],
+                    )
                 ),
 
                 Container(
@@ -126,6 +137,8 @@ class _FieldDraggableState extends State<FieldDraggable> {
                   ),
                 ),
 
+                Text('${Translation(context).text.avgAge}: '+myClub.getAverageAge().toStringAsFixed(2), style: EstiloTextoBranco.text14),
+                Text('${Translation(context).text.player}: '+myClub.nJogadores.toString(), style: EstiloTextoBranco.text14),
 
                 //ANALISE DO ELENCO
                 analiseElenco(context, myClub),

@@ -4,7 +4,7 @@ import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
 Widget playersPerPosition(Club club){
-  return                   Container(
+  return Container(
     margin: const EdgeInsets.symmetric(vertical: 6),
     child: SingleChildScrollView(
       scrollDirection: Axis.horizontal,
@@ -17,6 +17,7 @@ Widget playersPerPosition(Club club){
     ),
   );
 }
+
 Widget positionsCount(String position, int number){
   TextStyle textStyle = EstiloTextoBranco.text16;
   if(position == 'GOL' && number <3  ||

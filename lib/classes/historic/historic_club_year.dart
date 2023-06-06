@@ -33,7 +33,7 @@ class HistoricClubYear{
 
   }
 
-  checkPositionClubPlayedGroupPhase(int year){
+  void checkPositionClubPlayedGroupPhase(int year){
     try {
       List allParticipantsClubsID = globalHistoricInternationalClassification[year][internationalLeagueName];
       if (allParticipantsClubsID.contains(clubID)) {
@@ -44,7 +44,7 @@ class HistoricClubYear{
     }
   }
 
-  checkPositionClubPlayedMataMata(int year){
+  void checkPositionClubPlayedMataMata(int year){
     isInternationalChampion = false;
 
     try {

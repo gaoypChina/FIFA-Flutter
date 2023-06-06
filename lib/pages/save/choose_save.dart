@@ -43,16 +43,17 @@ class _ChooseSaveState extends State<ChooseSave> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      //ADD SAVE
+        //ADD SAVE
         floatingActionButton: floatingButton(),
+
         body:  Stack(
             children: [
               Container(
                 decoration: Images().getWallpaperContainerDecoration(),
                 child: Column(
                   children: [
-                    backButtonText(context, 'Salvar'),
 
+                    backButtonText(context, 'Salvar', true),
 
                     Expanded(child: Column(children: [
                       for(int i=0; i<saveController.basicGameInfos.length;i++)

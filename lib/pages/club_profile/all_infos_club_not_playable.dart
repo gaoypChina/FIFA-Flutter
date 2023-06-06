@@ -115,18 +115,27 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
                         ],
                       ),
                       Images().getUniformWidget(widget.clubName,100,100),
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              funcFlagsList(clubdetails.getCountry(widget.clubName), 35, 50),
-                              clubState.isNotEmpty ? funcFlagsList(clubdetails.getState(widget.clubName), 35, 50) : Container(),
-                            ],
-                          ),
-                          Text(clubdetails.getFoundationYear(widget.clubName).toString(),style: EstiloTextoBranco.text16),
-                          Text(clubdetails.getStadium(widget.clubName),overflow:TextOverflow.ellipsis,style: EstiloTextoBranco.text14),
-                          Text(clubdetails.getStadiumCapacityPointFormat(widget.clubName),style: EstiloTextoBranco.text16),
-                        ],
+                      SizedBox(
+                        width: Sized(context).width*0.34,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                funcFlagsList(clubdetails.getCountry(widget.clubName), 35, 50),
+                                clubState.isNotEmpty ? funcFlagsList(clubdetails.getState(widget.clubName), 35, 50) : Container(),
+                              ],
+                            ),
+                            Text(clubdetails.getFoundationYear(widget.clubName).toString(),style: EstiloTextoBranco.text16),
+                            Row(
+                              children: const [
+                                Expanded(child: Text("Estadio Nacional de Marrocos Mohammed",maxLines: 2, overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14)),
+                              ],
+                            ),
+                            Text(clubdetails.getStadiumCapacityPointFormat(widget.clubName),style: EstiloTextoBranco.text16),
+                          ],
+                        ),
                       ),
                     ],
                   ),

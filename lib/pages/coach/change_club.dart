@@ -6,6 +6,7 @@ import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/back_button.dart';
+import 'package:fifa/widgets/button/button_border_green.dart';
 import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:flutter/material.dart';
 
@@ -39,35 +40,38 @@ class _ChangeClubState extends State<ChangeClub> {
               Column(
                 children: [
 
-                  backButtonText(context, Translation(context).text.changeClub),
+                  backButtonText(context, Translation(context).text.changeClub, true),
 
-                  Expanded(
-                    child: SingleChildScrollView(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              clubWidget(options.teams[0]),
-                              clubWidget(options.teams[1]),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              clubWidget(options.teams[2]),
-                              clubWidget(options.teams[3]),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              clubWidget(options.teams[4]),
-                              clubWidget(options.teams[5]),
-                            ],
-                          ),
-                        ],
+                  Container(
+                    color: AppColors().greyTransparent,
+                    child: Expanded(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                clubWidget(options.teams[0]),
+                                clubWidget(options.teams[1]),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                clubWidget(options.teams[2]),
+                                clubWidget(options.teams[3]),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                clubWidget(options.teams[4]),
+                                clubWidget(options.teams[5]),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -88,15 +92,15 @@ Widget clubWidget(Club club){
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: PressableButton(
-              function: (){
+        onTap: (){
                 funcChangeClub(clubClassification.clubName, clubClassification.leagueID);
                 alreadyChangedClubThisSeason = true;
                 Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Menu()));
               },
           child: Container(
           height: 220,width: 170,
-          color: AppColors().greyTransparent,
           padding: const EdgeInsets.symmetric(vertical: 8.0),
+            decoration: decorationGreen(),
             child: Column(
               children: [
                 Images().getEscudoWidget(clubClassification.clubName,130,130),

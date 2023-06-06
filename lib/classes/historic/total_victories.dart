@@ -16,7 +16,7 @@ class TotalVictories{
     tryCatchCreateMap2(globalHistoricCoachResults, ano, lossField,0);
   }
 
-  getTotalResults(){
+  void getTotalResults(){
     for(var keys in globalHistoricCoachResults.keys){
       try{
         int years = keys;
@@ -38,17 +38,17 @@ class TotalVictories{
 
     }
   }
-  add1Victory(){
+  void add1Victory(){
     add1(victoryField);
   }
-  add1Draw(){
+  void add1Draw(){
     add1(drawField);
   }
-  add1Loss(){
+  void add1Loss(){
     add1(lossField);
   }
 
-  add1(String fieldName){
+  void add1(String fieldName){
     globalHistoricCoachResults[ano][fieldName] = globalHistoricCoachResults[ano][fieldName]+1;
   }
 }

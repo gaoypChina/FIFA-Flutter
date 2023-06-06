@@ -9,142 +9,136 @@ import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
 Widget fieldWidget(){
-  if(My().esquemaTatico == EsquemaTatico().e442) return fieldGameplay442(My().clubID);
-  if(My().esquemaTatico == EsquemaTatico().e433) return fieldGameplay433(My().clubID);
-  if(My().esquemaTatico == EsquemaTatico().e343) return fieldGameplay343(My().clubID);
-  if(My().esquemaTatico == EsquemaTatico().e451) return fieldGameplay451(My().clubID);
-  if(My().esquemaTatico == EsquemaTatico().e541) return fieldGameplay541(My().clubID);
+  My my = My();
+  if(my.esquemaTatico == EsquemaTatico().e442) return fieldGameplay442(Club(index: my.clubID));
+  if(my.esquemaTatico == EsquemaTatico().e433) return fieldGameplay433(Club(index: my.clubID));
+  if(my.esquemaTatico == EsquemaTatico().e343) return fieldGameplay343(Club(index: my.clubID));
+  if(my.esquemaTatico == EsquemaTatico().e451) return fieldGameplay451(Club(index: my.clubID));
+  if(my.esquemaTatico == EsquemaTatico().e541) return fieldGameplay541(Club(index: my.clubID));
 
   return Container();
 }
 
-Widget fieldGameplay442(int clubID){
-  Club club = Club(index: clubID);
-  String clubName = club.name;
-  List jogadores = club.escalacao;
-  if(My().clubID == clubID){
-    jogadores = globalMyJogadores;
+
+List _getPlayersEscalacao(Club club){
+  List players = club.escalacao;
+  if(My().clubID == club.index){
+    players = globalMyJogadores;
   }
+  return players;
+}
+
+Widget fieldGameplay442(Club club){
+
+  List players = _getPlayersEscalacao(club);
+
   return Column(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       //ATACANTES
-      playerWidgetRow([jogadores[9],jogadores[10]],clubName),
+      playerWidgetRow([players[9],players[10]],club.name),
       //MEIAS
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          playerWidgetMatch(jogadores[7],clubName),
-          playerWidgetMatch(jogadores[8],clubName),
+          playerWidgetMatch(players[7],club.name),
+          playerWidgetMatch(players[8],club.name),
         ],
       ),
       //VOLANTES
-      playerWidgetRow([jogadores[5],jogadores[6]],clubName),
+      playerWidgetRow([players[5],players[6]],club.name),
       //ZAGUEIROS
-      playerWidgetRow([jogadores[1],jogadores[2],jogadores[3],jogadores[4]],clubName),
+      playerWidgetRow([players[1],players[2],players[3],players[4]],club.name),
       //GOLEIRO
-      playerWidgetRow([jogadores[0]],clubName),
+      playerWidgetRow([players[0]],club.name),
 
     ],
   );
 }
 
+Widget fieldGameplay433(Club club){
 
-Widget fieldGameplay433(int clubID){
-  Club club = Club(index: clubID);
-  String clubName = club.name;
-  List players = club.escalacao;
-  if(My().clubID == clubID){
-    players = globalMyJogadores;
-  }
+  List players = _getPlayersEscalacao(club);
+
   return Column(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       //ATACANTES
-      playerWidgetRow([players[8],players[9],players[10]],clubName),
+      playerWidgetRow([players[8],players[9],players[10]],club.name),
       //MEIAS
-      playerWidgetRow([players[7]],clubName),
+      playerWidgetRow([players[7]],club.name),
       //VOLANTES
-      playerWidgetRow([players[5],players[6]],clubName),
+      playerWidgetRow([players[5],players[6]],club.name),
       //ZAGUEIROS
-      playerWidgetRow([players[1],players[2],players[3],players[4]],clubName),
+      playerWidgetRow([players[1],players[2],players[3],players[4]],club.name),
       //GOLEIRO
-      playerWidgetRow([players[0]],clubName),
+      playerWidgetRow([players[0]],club.name),
     ],
   );
 }
-Widget fieldGameplay343(int clubID){
-  Club club = Club(index: clubID);
-  String clubName = club.name;
-  List players = club.escalacao;
-  if(My().clubID == clubID){
-    players = globalMyJogadores;
-  }
+Widget fieldGameplay343(Club club){
+
+  List players = _getPlayersEscalacao(club);
+
   return Column(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       //ATACANTES
-      playerWidgetRow([players[8],players[9],players[10]],clubName),
+      playerWidgetRow([players[8],players[9],players[10]],club.name),
       //MEIAS
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          playerWidgetMatch(players[6],clubName),
-          playerWidgetMatch(players[7],clubName),
+          playerWidgetMatch(players[6],club.name),
+          playerWidgetMatch(players[7],club.name),
         ],
       ),
       //VOLANTES
-      playerWidgetRow([players[4],players[5]],clubName),
+      playerWidgetRow([players[4],players[5]],club.name),
       //ZAGUEIROS
-      playerWidgetRow([players[1],players[2],players[3]],clubName),
+      playerWidgetRow([players[1],players[2],players[3]],club.name),
       //GOLEIRO
-      playerWidgetRow([players[0]],clubName),
+      playerWidgetRow([players[0]],club.name),
     ],
   );
 }
-Widget fieldGameplay451(int clubID){
-  Club club = Club(index: clubID);
-  String clubName = club.name;
-  List players = club.escalacao;
-  if(My().clubID == clubID){
-    players = globalMyJogadores;
-  }
+Widget fieldGameplay451(Club club){
+
+  List players = _getPlayersEscalacao(club);
+
   return Column(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       //ATACANTES
-      playerWidgetRow([players[10]],clubName),
+      playerWidgetRow([players[10]],club.name),
       //MEIAS
-      playerWidgetRow([players[7],players[8],players[9]],clubName),
+      playerWidgetRow([players[7],players[8],players[9]],club.name),
       //VOLANTES
-      playerWidgetRow([players[5],players[6]],clubName),
+      playerWidgetRow([players[5],players[6]],club.name),
       //ZAGUEIROS
-      playerWidgetRow([players[1],players[2],players[3],players[4]],clubName),
+      playerWidgetRow([players[1],players[2],players[3],players[4]],club.name),
       //GOLEIRO
-      playerWidgetRow([players[0]],clubName),
+      playerWidgetRow([players[0]],club.name),
     ],
   );
 }
-Widget fieldGameplay541(int clubID){
-  Club club = Club(index: clubID);
-  String clubName = club.name;
-  List players = club.escalacao;
-  if(My().clubID == clubID){
-    players = globalMyJogadores;
-  }
+Widget fieldGameplay541(Club club){
+
+  List players = _getPlayersEscalacao(club);
+
   return Column(
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       //ATACANTES
-      playerWidgetRow([players[10]],clubName),
+      playerWidgetRow([players[10]],club.name),
       //MEIAS
-      playerWidgetRow([players[7],players[8]],clubName),
+      playerWidgetRow([players[7],players[8]],club.name),
       //VOLANTES
-      playerWidgetRow([players[5],players[6]],clubName),
+      playerWidgetRow([players[5],players[6]],club.name),
       //ZAGUEIROS
-      playerWidgetRow([players[1],players[2],players[3],players[4],players[5]],clubName),
+      playerWidgetRow([players[1],players[2],players[3],players[4],players[5]],club.name),
       //GOLEIRO
-      playerWidgetRow([players[0]],clubName),
+      playerWidgetRow([players[0]],club.name),
     ],
   );
 }

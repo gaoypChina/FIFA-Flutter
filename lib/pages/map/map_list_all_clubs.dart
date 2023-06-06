@@ -69,26 +69,30 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
 
           Column(
             children: [
-              Row(
-                children: [
-                  backButtonText(context, 'Lista de Clubes'),
-                  const Spacer(),
-                  Padding(
-                    padding: const EdgeInsets.only(top:20.0),
-                    child: IconButton(onPressed: (){
-                      Map map = getLeagueNationalityMap();
-                      String choosenLeagueName = map.keys.firstWhere((k) => map[k] == selectedCountry, orElse: () => null);
-                      Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricLeague(choosenLeagueName: choosenLeagueName)));
-                    }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
-                  ),
-                  Padding(padding:const EdgeInsets.only(top:18),
-                      child: Text(showList.length.toString(),style: EstiloTextoBranco.text20)),
-                  const SizedBox(width: 8),
-                ],
+              Container(
+                color: appBarMyClubColor(),
+                child: Row(
+                  children: [
+                    backButtonText(context, 'Lista de Clubes'),
+                    const Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.only(top:20.0),
+                      child: IconButton(onPressed: (){
+                        Map map = getLeagueNationalityMap();
+                        String choosenLeagueName = map.keys.firstWhere((k) => map[k] == selectedCountry, orElse: () => null);
+                        Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricLeague(choosenLeagueName: choosenLeagueName)));
+                      }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
+                    ),
+                    Padding(padding:const EdgeInsets.only(top:18),
+                        child: Text(showList.length.toString(),style: EstiloTextoBranco.text20)),
+                    const SizedBox(width: 8),
+                  ],
+                ),
               ),
               Expanded(
                 child: Scrollbar(
                   child: ListView.builder(
+                      padding: EdgeInsets.zero,
                       itemCount: showList.length,
                       itemBuilder: (c,i)=>clubRow(showList.elementAt(i))
                   ),

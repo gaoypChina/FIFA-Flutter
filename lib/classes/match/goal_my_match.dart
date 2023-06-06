@@ -6,13 +6,13 @@ class GoalMyMatch{
   late String playerName;
   late int clubID;
 
-  getMyGoal(int i){
+  void getMyGoal(int i){
     minute = globalMatchGoalsMinutesMy[i];
     playerID = globalMatchGoalScorerIDMy[i];
     playerName = globalJogadoresName[playerID];
     clubID = globalJogadoresClubIndex[playerID];
   }
-  getAdvGoal(int i){
+  void getAdvGoal(int i){
     minute = globalMatchGoalsMinutesAdv[i];
     playerID = globalMatchGoalScorerIDAdv[i];
     playerName = globalJogadoresName[playerID];

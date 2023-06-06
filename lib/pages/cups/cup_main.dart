@@ -63,16 +63,19 @@ class _CupMainState extends State<CupMain> with TickerProviderStateMixin{
             Column(
               children: [
 
-                backButtonText(context,'Cup'),
+                backButtonText(context,'Cup', true),
 
-                TabBar(
-                  controller: _tabController,
-                  indicatorColor: AppColors().primary,
-                  tabs: [
-                    const Tab(text: 'Partidas'),
-                    Tab(text: Translation(context).text.historic),
-                    const Tab(text: 'Jogadores'),
-                  ],
+                Container(
+                  color: appBarMyClubColor(),
+                  child: TabBar(
+                    controller: _tabController,
+                    indicatorColor: AppColors().green,
+                    tabs: [
+                      const Tab(text: 'Partidas'),
+                      Tab(text: Translation(context).text.historic),
+                      const Tab(text: 'Jogadores'),
+                    ],
+                  ),
                 ),
 
                 Expanded(

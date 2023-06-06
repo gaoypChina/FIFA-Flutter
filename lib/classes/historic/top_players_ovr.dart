@@ -15,7 +15,7 @@ class TopPlayersOVR{
     return allHistoricTopPlayers[year];
   }
 
-  getInPosition(int year, int position){
+  void getInPosition(int year, int position){
     Map playersMap = getDataYear(year);
     List listVariables = playersMap[position];
     playerID = listVariables[0];
@@ -24,7 +24,7 @@ class TopPlayersOVR{
     clubName = Club(index: listVariables[2]).name;
   }
 
-  orderAndSave(List best, List bestID){
+  void orderAndSave(List best, List bestID){
     //ORGANIZA EM ORDEM DECRESCENTE AS LISTAS
     List result = Order().listDecrescente(listA: best, listB: bestID, length: best.length);
     Map mapResultBest = {};
