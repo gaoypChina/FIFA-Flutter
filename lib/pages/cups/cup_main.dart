@@ -7,7 +7,6 @@ import 'package:fifa/pages/cups/tabs/cup_statistics.dart';
 import 'package:fifa/pages/ranking_clubs/league_selection_row.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/translation.dart';
-import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/back_button.dart';
 import 'package:flutter/material.dart';

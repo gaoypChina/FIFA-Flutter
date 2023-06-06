@@ -10,12 +10,14 @@ class ButtonBorderGreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(8),
       margin: const EdgeInsets.all(8),
       decoration: decorationGreen(),
       child: PressableButton(
           onTap: onTap,
-          child: child
+          child: Container(
+            padding: const EdgeInsets.all(8),
+            child: child,
+          )
       )
     );
   }

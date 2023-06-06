@@ -6,6 +6,7 @@ import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/match/result_dict.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/theme/background_color/match_x_testyle.dart';
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
@@ -24,12 +25,18 @@ Widget cupPhaseWidget(BuildContext context, String cupName){
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
 
-          for(int i=listCupPhases.length-1; i>=0;i--)
-            Column(
-              children: [
-                cupPhaseColumn(context, cupName, listCupPhases[i], ResultDict().keyVolta, my),
-                cupPhaseColumn(context, cupName, listCupPhases[i], ResultDict().keyIda, my),
-              ],
+          for(int i=listCupPhases.length-1; i>=0; i--)
+            Container(
+              decoration: BoxDecoration(
+                color: AppColors().greyTransparent,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Column(
+                children: [
+                  cupPhaseColumn(context, cupName, listCupPhases[i], ResultDict().keyVolta, my),
+                  cupPhaseColumn(context, cupName, listCupPhases[i], ResultDict().keyIda, my),
+                ],
+              ),
             ),
 
           const SizedBox(height: 12),
@@ -52,10 +59,12 @@ Widget cupPhaseColumn(BuildContext context,  String cupName, String phaseName, S
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
 
-        idaOrVoltaKey==ResultDict().keyVolta ? const SizedBox(height: 12) : Container(),
+        idaOrVoltaKey==ResultDict().keyVolta
+            ? const SizedBox(height: 4)
+            : const SizedBox(height: 12),
 
-        const SizedBox(height: 12),
         Text(phaseName + " - " + idaOrVoltaKey,style: EstiloTextoBranco.negrito16),
+        const SizedBox(height: 4),
         for(int i=1; i<=matchs.length; i++)
           cupMatchRow(
               context,
@@ -93,75 +102,78 @@ Widget cupMatchRow(BuildContext context, Map match, My my){
   TextStyle style10 = matchStyle1(confronto.goal1, confronto.goal2, 22);
   TextStyle style20 = matchStyle2(confronto.goal1, confronto.goal2, 22);
 
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.center,
-    children: [
+  return Container(
+    margin: const EdgeInsets.symmetric(vertical: 4),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
 
-      //TIME A
-          Flexible(
-            child: GestureDetector(
-            onTap: (){
-              clickClubProfilePage(context, Club(index: confronto.clubID1));
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Images().getUniformWidget(teamNameA,imageSize,imageSize),
-                  Expanded(
-                    child: Container(
-                        padding: const EdgeInsets.all(4),
-                        color: teamNameA == my.clubName ? Colors.green : Colors.transparent,
-                        child: Text(teamNameA,textAlign:TextAlign.end,style: style1)),
-                  ),
-                  Images().getEscudoWidget(teamNameA,imageSize,imageSize),
-                ],
-              ),
-            ),
-          ),
-
-
-
-      //PLACAR
-      Column(
-        children: [
-          confronto.hasGoals
-              ? Row(
-              children: [
-                Text(' '+ confronto.goal1.toString(),style: style10),
-                const Text(' x ',style: EstiloTextoBranco.text22),
-                Text(confronto.goal2.toString()+' ',style: style20)
-              ],
-            )
-              : const Text('  X  ',textAlign:TextAlign.start,style: EstiloTextoBranco.text22),
-
-          confronto.hasPenaltis ? Text("Pen:" + confronto.penaltis1.toString()+"x"+confronto.penaltis2.toString(),style: EstiloTextoBranco.text10) : Container(),
-        ],
-      ),
-
-      //TIME B
-          Flexible(
-                child: GestureDetector(
-                  onTap: (){
-                    clickClubProfilePage(context, Club(index: confronto.clubID2));
-                  },
-                  child: Row(
-                    children: [
-                      Images().getEscudoWidget(teamNameB,imageSize,imageSize),
-                      Expanded(
-                        child: Container(
+        //TIME A
+            Flexible(
+              child: GestureDetector(
+              onTap: (){
+                clickClubProfilePage(context, Club(index: confronto.clubID1));
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Images().getUniformWidget(teamNameA,imageSize,imageSize),
+                    Expanded(
+                      child: Container(
                           padding: const EdgeInsets.all(4),
-                          color: teamNameB == my.clubName ? Colors.green : Colors.transparent,
-                          child: Text(teamNameB,style: style2),
-                        ),
-                      ),
-                      Images().getUniformWidget(teamNameB,imageSize,imageSize),
-                    ],
-                  ),
+                          color: teamNameA == my.clubName ? Colors.green : Colors.transparent,
+                          child: Text(teamNameA,textAlign:TextAlign.end,style: style1)),
+                    ),
+                    Images().getEscudoWidget(teamNameA,imageSize,imageSize),
+                  ],
                 ),
               ),
+            ),
 
 
-        ]
+
+        //PLACAR
+        Column(
+          children: [
+            confronto.hasGoals
+                ? Row(
+                children: [
+                  Text(' '+ confronto.goal1.toString(),style: style10),
+                  const Text(' x ',style: EstiloTextoBranco.text22),
+                  Text(confronto.goal2.toString()+' ',style: style20)
+                ],
+              )
+                : const Text('  X  ',textAlign:TextAlign.start,style: EstiloTextoBranco.text22),
+
+            confronto.hasPenaltis ? Text("Pen:" + confronto.penaltis1.toString()+"x"+confronto.penaltis2.toString(),style: EstiloTextoBranco.text10) : Container(),
+          ],
+        ),
+
+        //TIME B
+            Flexible(
+                  child: GestureDetector(
+                    onTap: (){
+                      clickClubProfilePage(context, Club(index: confronto.clubID2));
+                    },
+                    child: Row(
+                      children: [
+                        Images().getEscudoWidget(teamNameB,imageSize,imageSize),
+                        Expanded(
+                          child: Container(
+                            padding: const EdgeInsets.all(4),
+                            color: teamNameB == my.clubName ? Colors.green : Colors.transparent,
+                            child: Text(teamNameB,style: style2),
+                          ),
+                        ),
+                        Images().getUniformWidget(teamNameB,imageSize,imageSize),
+                      ],
+                    ),
+                  ),
+                ),
+
+
+          ]
+    ),
   );
 }
 

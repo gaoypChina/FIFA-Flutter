@@ -1,10 +1,7 @@
 
 import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/classes/functions/size.dart';
-import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
-import 'package:fifa/theme/background_color/background_position.dart';
-import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/player_templates/health_bar.dart';
 import 'package:fifa/widgets/player_templates/row_player_stats.dart';
 import 'package:fifa/widgets/popup/popup_player_info.dart';

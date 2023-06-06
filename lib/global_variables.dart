@@ -145,12 +145,12 @@ List globalJogadoresMoralNames = ['Excelent','Good','Average','Bad','Terrible'];
 
 /////////////////////
 //CLUBS
-List globalClubsLeaguePoints = [];
-List globalClubsLeagueGM = [];
-List globalClubsLeagueGS = [];
-List globalClubsInternationalPoints = [];
-List globalClubsInternationalGM = [];
-List globalClubsInternationalGS = [];
+List<int> globalClubsLeaguePoints = [];
+List<int> globalClubsLeagueGM = [];
+List<int> globalClubsLeagueGS = [];
+List<int> globalClubsInternationalPoints = [];
+List<int> globalClubsInternationalGM = [];
+List<int> globalClubsInternationalGS = [];
 
 Map<String,List<int>> globalHistoricPositionsThisYear = {}; //{'Palmeiras': [1,4,6,4,3,4,4], 'Santos': ...};
 

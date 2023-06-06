@@ -85,7 +85,7 @@ TableRow rowTableNacionalLayout(BuildContext context, int position, int indexClu
             child: Text(clubName, style: EstiloTextoBranco.text16)
         ),
       ),
-      Center(child: Text(points.toString(),style: EstiloTextoBranco.text14)),
+      Center(child: Text(points.toString(),style: EstiloTextoBranco.negrito14)),
       Center(child: Text(golsMarcados.toString(),style: EstiloTextoBranco.text14)),
       Center(child: Text(golsSofridos.toString(),style: EstiloTextoBranco.text14)),
       Center(child: Text(saldo.toString(),style: EstiloTextoBranco.text14)),

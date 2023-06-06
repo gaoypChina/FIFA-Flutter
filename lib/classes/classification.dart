@@ -21,7 +21,7 @@ class Classification{
     List saldo = [];
     League ligaClass = League(index: leagueIndex);
     int nClubs = ligaClass.nClubs;
-    for (int i = 0; i <nClubs; i++) {
+    for (int i = 0; i < nClubs; i++) {
       int clubIndex = ligaClass.getClubRealID(i);
       classificationLeagueIndex.add(clubIndex);
       points.add(globalClubsLeaguePoints[clubIndex]);

@@ -1,3 +1,4 @@
+import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
@@ -12,10 +13,13 @@ import 'package:fifa/pages/table/widgets/table_widget.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/back_button.dart';
+import 'package:fifa/widgets/button/button_border_green.dart';
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class TableNacional extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
@@ -34,6 +38,13 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
 
   late TabController _tabController;
   int choosenIcon = 2;
+
+
+  late GoogleMapController googleMapController;
+  final List<Coordinates> coordinates = [];
+  List<Marker> _markers = <Marker>[];
+  List<Marker> _markersShow = <Marker>[];
+
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
@@ -60,6 +71,48 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
 
     setState(() {});
   }
+
+  getClubsMarkers(GoogleMapController googleMapControllerLocal, League league) async{
+    ClubDetails clubDetails = ClubDetails();
+    googleMapController = googleMapControllerLocal;
+    _markers = [];
+    List<BitmapDescriptor> customIcon = [];
+    for (String clubName in league.allClubsName) {
+      if(clubDetails.getCoordinate(clubName).latitude != 0){
+        coordinates.add(clubDetails.getCoordinate(clubName));
+
+        //ADD MARKER
+        await BitmapDescriptor.fromAssetImage(
+            const ImageConfiguration(size: Size(100, 100)),
+            'assets/clubs/'+FIFAImages().imageLogo(clubName)+'.png')
+            .then((d) {
+          customIcon.add(d);
+        });
+             _markers.add(
+              Marker(
+                markerId: MarkerId(clubName),
+                position: LatLng(coordinates.last.latitude,coordinates.last.longitude),
+                onTap: () async{},
+                icon: customIcon.last,
+                //infoWindow: InfoWindow(title: clubName),
+                //icon: clubsAllNameList.indexOf(clubName) < 40 ? _markersIcons[clubsAllNameList.indexOf(clubName)] : BitmapDescriptor.defaultMarker,
+              ),
+            );
+
+        CameraPosition newPosition = CameraPosition(
+          target: LatLng(coordinates.last.latitude, coordinates.last.longitude), // New York coordinates
+          zoom: 3.0,
+        );
+        googleMapController.animateCamera(CameraUpdate.newCameraPosition(newPosition));
+
+      }
+    }
+
+    _markersShow = [];
+    _markersShow = List.from(_markers);
+    setState(() {});
+  }
+
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
@@ -95,9 +148,11 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
                             ],
                           ),
                           const Spacer(),
-                          IconButton(onPressed: (){
-                            Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricLeague(choosenLeagueName: choosenLeagueName)));
-                          }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
+                          ButtonBorderGreen(
+                            onTap: (){
+                              navigatorPush(context, HistoricLeague(choosenLeagueName: choosenLeagueName));
+                            }, child: Text(ano.toString(), style: EstiloTextoBranco.text14)
+                          ),
                         ],
                       ),
                     ),
@@ -136,6 +191,7 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
                     leaguesListRealIndex: leaguesListRealIndex,
                     onTap: (String leagueName){
                       choosenLeagueName = leagueName;
+                      getClubsMarkers(googleMapController, leaguesMap[choosenLeagueName]);
                       setState(() {});
                     }
                 ),
@@ -151,13 +207,42 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
 ////////////////////////////////////////////////////////////////////////////
 
   Widget fullTable(String leagueName){
-    return SizedBox(
-      height: Sized(context).height-160,
-      child: SingleChildScrollView(
-        child: tabelaClassificacaoWidget(context,leaguesMap[choosenLeagueName]),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          tabelaClassificacaoWidget(context,leaguesMap[choosenLeagueName]),
+          //mapLeagueClubs(leaguesMap[choosenLeagueName]),
+        ],
       ),
     );
   }
+
+  Widget mapLeagueClubs(League league){
+    return  SizedBox(
+      height: 200,
+      width: 300,
+      child: GoogleMap(
+        mapType: MapType.satellite,
+        tiltGesturesEnabled: false,
+        indoorViewEnabled: false,
+        rotateGesturesEnabled: false,
+        compassEnabled: false,
+
+        initialCameraPosition: CameraPosition(
+        target: LatLng(
+            ClubDetails().getCoordinate(league.allClubsName[0]).latitude,
+            ClubDetails().getCoordinate(league.allClubsName[0]).latitude,
+        ),
+        zoom: 4.0,
+        ),
+        onMapCreated: (GoogleMapController googleMapControllerLocal){
+          getClubsMarkers(googleMapControllerLocal,leaguesMap[choosenLeagueName]);
+        },
+        markers: Set<Marker>.of(_markersShow),
+      ),
+    );
+  }
+
   Widget rowStatistics(){
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
