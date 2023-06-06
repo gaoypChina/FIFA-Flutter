@@ -10,7 +10,7 @@ Map<String,dynamic> mapEuropaTopLeagues = {
   leagueName.inglaterra1 : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [n.mancity,n.arsenal,n.manutd,n.newcastle,n.tottenham,n.brighton,n.liverpool,n.fulham,n.chelsea,n.brentford,            n.astonvilla],
+    2023.0: [n.mancity,n.arsenal,n.manutd,n.newcastle,n.brighton,n.liverpool,n.astonvilla,n.tottenham,n.brentford,n.fulham,         n.crystalpalace,n.chelsea,n.wolves,n.westham,n.bournemouth,n.nottinghamforest,n.everton,n.leicester,n.leeds,n.southampton],
     2022.0: [n.mancity,n.liverpool,n.chelsea,n.tottenham,n.arsenal,n.manutd,n.westham,n.leicester,n.brighton,n.wolves,              n.newcastle,n.crystalpalace,n.brentford,n.astonvilla,n.southampton,n.everton,n.leeds,n.burnley,n.watford,n.norwich],
     2021.0: [n.mancity,n.manutd,n.liverpool,n.chelsea,n.leicester,n.westham,n.tottenham,n.arsenal,n.everton,n.leeds,                n.astonvilla,n.newcastle,n.wolves,n.crystalpalace,n.southampton,n.brighton,n.burnley,n.fulham,n.westbromwich,n.sheffieldunited],
     2020.0: [n.liverpool,n.mancity,n.manutd,n.chelsea,n.leicester,n.tottenham,n.wolves,n.arsenal,n.sheffieldunited,n.burnley,       n.southampton,n.everton,n.newcastle,n.crystalpalace,n.brighton,n.westham,n.astonvilla,n.bournemouth,n.watford,n.norwich],
@@ -168,7 +168,7 @@ Map<String,dynamic> mapEuropaTopLeagues = {
   leagueName.espanha1 : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [n.barcelona,n.realmadrid,n.atleticomadrid,n.realbetis,n.realsociedad,n.villareal,n.athleticbilbao],
+    2023.0: [n.barcelona,n.realmadrid,n.atleticomadrid,n.realsociedad,n.villareal,n.realbetis,n.osasuna,n.athleticbilbao,n.mallorca,n.girona,      n.rayovallecano,n.sevilla,n.celtavigo,n.cadiz,n.getafe,n.valencia,n.almeria,n.valladolid,n.espanyol,n.elche],
     2022.0: [n.realmadrid,n.barcelona,n.atleticomadrid,n.sevilla,n.realbetis,n.realsociedad,n.villareal,n.athleticbilbao,n.valencia,n.osasuna,     n.celtavigo,n.rayovallecano,n.elche,n.espanyol,n.getafe,n.mallorca,n.cadiz,n.granada,n.levante,n.alaves],
     2021.0: [n.atleticomadrid,n.realmadrid,n.barcelona,n.sevilla,n.realsociedad,n.realbetis,n.villareal,n.celtavigo,n.granada,n.athleticbilbao,    n.osasuna,n.cadiz,n.valencia,n.levante,n.getafe,n.alaves,n.elche,n.huesca,n.valladolid,n.eibar],
     2020.0: [n.realmadrid,n.barcelona,n.atleticomadrid,n.sevilla,n.villareal,n.realsociedad,n.granada,n.getafe,n.valencia,n.osasuna,               n.athleticbilbao,n.levante,n.valladolid,n.eibar,n.realbetis,n.alaves,n.celtavigo,n.leganes,n.mallorca,n.espanyol],
@@ -246,7 +246,7 @@ Map<String,dynamic> mapEuropaTopLeagues = {
   leagueName.espanha2 : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [n.eibar,n.granada,n.levante,n.alaves,n.laspalmas,                  n.albacete,n.cartagena,n.burgos,n.realOviedo,n.mirandes,                 n.andorra,n.tenerife,n.zaragoza,n.huesca,n.sportinggijon,    n.racingSantander,n.leganes,n.villarrealB,n.malaga,n.ponferradina,n.ibiza,n.lugo],
+    2023.0: [n.granada,n.laspalmas,n.levante,n.alaves,n.eibar,                  n.albacete,n.andorra,n.realOviedo,n.cartagena,n.tenerife,             n.burgos,n.racingSantander,n.zaragoza,n.leganes,n.huesca,    n.mirandes,n.sportinggijon,n.villarrealB,n.ponferradina,n.malaga,n.ibiza,n.lugo],
     2022.0: [n.almeria,n.valladolid,n.eibar,n.laspalmas,n.tenerife,             n.girona,n.realOviedo,n.ponferradina,n.cartagena,n.burgos,            n.huesca,n.leganes,n.zaragoza,n.mirandes,n.lugo,             n.sportinggijon,n.malaga,n.amorebieta,n.realsociedadB,n.fuenlabrada,n.alcorcon],
     2021.0: [n.espanyol,n.mallorca,n.leganes,n.almeria,n.girona,                n.rayovallecano,n.sportinggijon,n.ponferradina,n.laspalmas,n.mirandes,   n.fuenlabrada,n.malaga,n.realOviedo,n.tenerife,n.zaragoza,   n.cartagena,n.alcorcon,n.lugo,n.sabadell,n.logrones,     n.castellon,n.albacete,],
     2020.0: [n.huesca,n.cadiz,n.zaragoza,n.almeria,n.girona,                    n.elche,n.rayovallecano,n.fuenlabrada,n.laspalmas,n.alcorcon,            n.mirandes,n.tenerife,n.sportinggijon,n.malaga,n.realOviedo, n.lugo,n.albacete,n.ponferradina,n.lacoruna,n.numancia,  n.extremadura,n.racingSantander],
@@ -323,7 +323,7 @@ Map<String,dynamic> mapEuropaTopLeagues = {
   leagueName.italia1 : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [n.napoli,n.inter,n.lazio,n.milan,n.roma,n.juventus,n.atalanta,n.fiorentina,n.bologna,n.monza,      n.sassuolo,n.torino,n.udinese,n.salernitana,n.empoli,n.lecce,n.spezia,n.hellasverona,n.cremonese,n.sampdoria],
+    2023.0: [n.napoli,n.lazio,n.inter,n.milan,n.atalanta,n.roma,n.juventus,n.fiorentina,n.bologna,n.torino,       n.monza,n.udinese,n.sassuolo,n.empoli,n.salernitana,n.lecce,n.spezia,n.hellasverona,n.cremonese,n.sampdoria],
     2022.0: [n.milan,n.inter,n.napoli,n.juventus,n.lazio,n.roma,n.fiorentina,n.atalanta,n.hellasverona,n.torino,  n.sassuolo,n.udinese,n.bologna,n.empoli,n.sampdoria,n.spezia,n.salernitana,n.cagliari,n.genoa,n.venezia],
     2021.0: [n.inter,n.milan,n.atalanta,n.juventus,n.napoli,n.lazio,n.roma,n.sassuolo,n.sampdoria,n.hellasverona, n.genoa,n.bologna,n.fiorentina,n.udinese,n.spezia,n.cagliari,n.torino,n.benevento,n.crotone,n.parma],
     2020.0: [n.juventus,n.inter,n.lazio,n.atalanta,n.roma,n.milan,n.napoli,n.sassuolo,n.fiorentina,n.parma,       n.hellasverona,n.bologna,n.cagliari,n.udinese,n.sampdoria,n.torino,n.genoa,n.lecce,n.brescia,n.spal],
@@ -400,6 +400,7 @@ Map<String,dynamic> mapEuropaTopLeagues = {
   },
 
   leagueName.italia2 : {
+    //2025.0: [],
     //2024.0: [],
     2023.0: [n.frosinone,n.genoa,n.bari,n.parma,n.cagliari,n.sudtirol,n.reggina,n.venezia,n.palermo,n.modena,          n.pisa,n.ascoli,n.como,n.ternana,n.cittadella,n.brescia,n.cosenza,n.perugia,n.spal,n.benevento],
     2022.0: [n.lecce,n.cremonese,n.monza,n.pisa,n.brescia,     n.ascoli,n.benevento,n.perugia,n.frosinone,n.ternana,  n.cittadella,n.parma,n.como,n.reggina,n.spal,n.cosenza,n.vicenza,n.alessandria,n.crotone,n.pordenone],
@@ -644,7 +645,7 @@ Map<String,dynamic> mapEuropaTopLeagues = {
   leagueName.franca1 : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [n.psg,n.lens,n.om,n.monaco,n.lille,n.rennes,n.lyon,n.clermont,n.nice,n.lorient,                   n.reims,n.montpellier,n.toulouse,n.brest,n.strasbourg,n.auxerre,n.nantes,n.troyes,n.ajaccio,n.angers],
+    2023.0: [n.psg,n.lens,n.om,n.rennes,n.lille,n.monaco,n.lyon,n.clermont,n.nice,n.lorient,                     n.reims,n.montpellier,n.toulouse,n.brest,n.strasbourg,n.nantes,n.auxerre,n.ajaccio,n.troyes,n.angers],
     2022.0: [n.psg,n.om,n.monaco,n.rennes,n.nice,n.strasbourg,n.lens,n.lyon,n.nantes,n.lille,                    n.brest,n.reims,n.montpellier,n.angers,n.troyes,n.lorient,n.clermont,n.saintetienne,n.metz,n.bordeaux],
     2021.0: [n.lille,n.psg,n.monaco,n.lyon,n.om,n.rennes,n.lens,n.montpellier,n.nice,n.metz,                     n.saintetienne,n.bordeaux,n.angers,n.reims,n.strasbourg,n.lorient,n.brest,n.nantes,n.nimes,n.dijon],
     2020.0: [n.psg,n.om,n.rennes,n.lille,n.nice,n.reims,n.montpellier,n.monaco,n.lyon,n.angers,                  n.strasbourg,n.bordeaux,n.nantes,n.brest,n.metz,n.saintetienne,n.dijon,n.nimes,n.amiens,n.toulouse],
@@ -799,6 +800,7 @@ Map<String,dynamic> mapEuropaTopLeagues = {
   },
 
   leagueName.holanda : {
+    //2025.0: [],
     //2024.0: [],
     2023.0: [n.feyenoord,n.psv,n.ajax,n.az,n.twente,        n.spartarotterdam,n.utrecht,n.heerenveen,n.waalwijk,n.vitesse,  n.goaheadeagles,n.necnijmegen,n.fortunasittard,n.volendam, n.excelsior,n.emmen,  n.cambuur,n.groningen],
     2022.0: [n.ajax,n.psv,n.feyenoord,n.twente,n.az,        n.vitesse,n.utrecht,n.heerenveen,n.cambuur,n.waalwijk,       n.necnijmegen,n.groningen,n.goaheadeagles,n.spartarotterdam,n.fortunasittard,   n.heracles,n.willem,n.zwolle],

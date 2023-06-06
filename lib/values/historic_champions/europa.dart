@@ -10,7 +10,7 @@ Map<String,dynamic> mapEuropa = {
   leagueName.turquiaGrecia : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    //2023.0: [n.galatasaray,n.fenerbahce,n.besiktas,n.adanademirspor,n.istanbulbasaksehir,n.trabzonspor,n.karagumruk,],
     2022.0: [n.trabzonspor,n.fenerbahce,n.konyaspor,n.istanbulbasaksehir,n.alanyaspor,n.besiktas,n.antalyaspor,n.karagumruk,n.adanademirspor,n.sivasspor,n.kasimpasa,n.hatayspor,n.galatasaray,n.kayserispor,n.gaziantep,n.giresunspor,n.rizespor,n.altay,n.goztepe,n.yenimalatyaspor],
     2021.0: [n.besiktas,n.galatasaray,n.fenerbahce,n.trabzonspor,n.sivasspor,n.hatayspor,n.alanyaspor,n.karagumruk,n.gaziantep,n.goztepe,n.konyaspor,n.istanbulbasaksehir,n.rizespor,n.kasimpasa,n.yenimalatyaspor,n.antalyaspor,n.kayserispor,n.erzurumspor,n.ankaragucu,n.genclerbirligi,n.denizlispor],
     2020.0: [n.istanbulbasaksehir,n.trabzonspor,n.besiktas,n.sivasspor,n.alanyaspor,n.galatasaray,n.fenerbahce,n.gaziantep,n.antalyaspor,n.kasimpasa,n.goztepe,n.genclerbirligi,n.konyaspor,n.denizlispor,n.rizespor,n.yenimalatyaspor,n.kayserispor,n.ankaragucu],
@@ -88,7 +88,7 @@ Map<String,dynamic> mapEuropa = {
   leagueName.grecia : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [n.aek,n.panathinaikos,n.olympiakos,n.paok,n.aris,n.volos,n.ofi,n.atromitos,n.pasGiannina,n.asteras,n.panetolikos,n.lamia,n.ionikos,n.levadiakos],
+    2023.0: [n.aek,n.panathinaikos,n.olympiacos,n.paok,n.aris,n.volos,  n.ofi,n.atromitos,n.pasGiannina,n.asteras,n.panetolikos,n.lamia,n.ionikos,n.levadiakos],
     2022.0: [n.olympiacos,n.paok,n.aris,n.panathinaikos,n.aek,  n.pasGiannina,n.ionikos,n.ofi,n.asteras,n.volos,      n.panetolikos,n.atromitos,n.lamia,n.apollonAthens],
     2021.0: [n.olympiacos,n.paok,n.aris,n.aek,n.panathinaikos,  n.asteras,n.volos,n.atromitos,n.pasGiannina,n.lamia,              n.apollonAthens,n.ofi,n.panetolikos,n.larissa],
     2020.0: [n.olympiacos,n.paok,n.aek,n.panathinaikos,n.aris,  n.ofi,n.asteras,n.atromitos,n.larissa,n.lamia,                    n.volos,n.panetolikos,n.xanthi,n.panionios],
@@ -166,7 +166,7 @@ Map<String,dynamic> mapEuropa = {
   leagueName.chipre : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [n.arislimassol,n.apoel,n.aeklarnaca,n.apollonlimassol,n.pafos,n.omonianicosia,n.anorthosis,n.neasalamina,n.aellimassol,n.karmiotissa,n.doxakatokopias,n.paralimniou,n.akritas,n.olympiakosnicosia],
+    2023.0: [n.arislimassol,n.apoel,n.aeklarnaca,n.pafos,n.apollonlimassol,n.omonianicosia,n.anorthosis,n.neasalamis,n.aellimassol,n.karmiotissa,n.doxakatokopias,n.enosisneonparalimni,n.akritaschlorakas,n.olympiakosnicosia],
     2022.0: [n.apollonlimassol,n.aeklarnaca,n.apoel,n.arislimassol,n.anorthosis,n.pafos,n.omonianicosia,n.aellimassol,n.olympiakosnicosia,n.doxakatokopias,n.ethnikosachna,n.paeek],
     2021.0: [n.omonianicosia,n.apollonlimassol,n.aellimassol,n.anorthosis,n.aeklarnaca,n.olympiakosnicosia,n.pafos,n.apoel,n.ethnikosachna,n.doxakatokopias,n.neasalamis,n.ermisaradippou,n.enosisneonparalimni,n.karmiotissa],
     2020.0: [n.omonianicosia,n.anorthosis,n.apoel,n.apollonlimassol,n.aeklarnaca,n.aellimassol,n.pafos,n.neasalamis,n.olympiakosnicosia,n.enosisneonparalimni,n.ethnikosachna,n.doxakatokopias],
@@ -245,7 +245,7 @@ Map<String,dynamic> mapEuropa = {
   leagueName.escocia : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [n.celtic,n.rangers,n.aberdeen,n.hearts,n.hibernian,       n.stmirren,n.motherwell,n.livingston,n.stjohnstone,n.kilmarnock, n.rosscountyn.dundee,],
+    2023.0: [n.celtic,n.rangers,n.aberdeen,n.hearts,n.hibernian,       n.stmirren,n.motherwell,n.livingston,n.stjohnstone,n.kilmarnock, n.rosscounty,n.dundee,],
     2022.0: [n.celtic,n.rangers,n.hearts,n.dundee,n.rosscounty,        n.motherwell,n.hibernian,n.livingston,n.aberdeen,n.stmirren,     n.stjohnstone,n.dundeefc],
     2021.0: [n.rangers,n.celtic,n.hibernian,n.aberdeen,n.livingston,   n.stjohnstone,n.stmirren,n.dundee,n.motherwell,n.rosscounty,      n.kilmarnock,n.hamilton],
     2020.0: [n.celtic,n.rangers,n.motherwell,n.aberdeen,n.livingston,  n.stjohnstone,n.hibernian,n.kilmarnock,n.stmirren,n.rosscounty,  n.hamilton,n.hearts],
@@ -323,7 +323,7 @@ Map<String,dynamic> mapEuropa = {
   leagueName.irlanda : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [n.derrycity,n.shamrockrovers,n.bohemian,n.stpatricks,n.dundalk,n.shelbourne,n.sligorovers,n.drogheda,n.corkcity,n.ucd],
+    2023.0: [n.shamrockrovers,n.derrycity,n.stpatricks,n.bohemian,n.shelbourne,n.dundalk,n.sligorovers,n.corkcity,n.drogheda,n.ucd],
     2022.0: [n.shamrockrovers,n.derrycity,n.dundalk,n.stpatricks,n.sligorovers,n.bohemian,n.shelbourne,n.drogheda,n.ucd,n.finnharps],
     2021.0: [n.shamrockrovers,n.stpatricks,n.sligorovers,n.derrycity,n.bohemian,n.dundalk,n.drogheda,n.finnharps,n.waterford,n.longfordtown],
     2020.0: [n.shamrockrovers,n.bohemian,n.dundalk,n.sligorovers,n.waterford,n.stpatricks,n.derrycity,n.finnharps,n.shelbourne,n.corkcity],
@@ -401,7 +401,7 @@ Map<String,dynamic> mapEuropa = {
   leagueName.paisgales : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [n.newsaints,n.connahs,n.penybont,n.cardiffuni,n.balatown,n.newtown,n.haverfordwest,n.pontypridd,n.caernarfon,n.aberystwyth,n.flinttown,n.airbusuk],
+    2023.0: [n.newsaints,n.connahs,n.penybont,n.cardiffuni,n.balatown,n.newtown,n.haverfordwest,n.pontypridd,n.caernarfon,n.aberystwyth,n.flinttown,n.airbusuk],
     2022.0: [n.newsaints,n.balatown,n.newtown,n.caernarfon,n.flinttown,n.penybont,n.cardiffuni,n.aberystwyth,n.connahs,n.haverfordwest,n.barrytown,n.cefndruids],
     2021.0: [n.connahs,n.newsaints,n.balatown,n.penybont,n.barrytown,n.caernarfon,n.newtown,n.cardiffuni,n.haverfordwest,n.aberystwyth,n.flinttown,n.cefndruids],
     2020.0: [n.connahs,n.newsaints,n.balatown,n.barrytown,n.caernarfon,n.newtown,n.cardiffuni,n.cefndruids,n.aberystwyth,n.penybont,n.carmarthen,n.airbusuk],
@@ -437,7 +437,7 @@ Map<String,dynamic> mapEuropa = {
   leagueName.belgica : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [n.genk,n.saintgilloise,n.royalAntwerp,n.brugge,             n.gent,n.standardliege,n.cerclebrugge,n.westerlo,n.charleroi,n.leuven,   n.anderlecht,n.sttruidense,n.mechelen,n.kortrijk,n.kaseupen,n.oostende,n.zultewaregem,n.seraing],
+    2023.0: [n.royalAntwerp,n.genk,n.saintgilloise,n.brugge,             n.gent,n.cerclebrugge,n.standardliege,n.westerlo,n.charleroi,n.leuven,   n.anderlecht,n.sttruidense,n.mechelen,n.kortrijk,n.kaseupen,n.oostende,n.zultewaregem,n.seraing],
     2022.0: [n.brugge,n.saintgilloise,n.anderlecht,n.royalAntwerp,       n.gent,n.charleroi,n.mechelen,n.genk,n.sttruidense,n.cerclebrugge,       n.leuven,n.oostende,n.kortrijk,n.standardliege,n.kaseupen,n.zultewaregem,n.seraing,n.beerschot],
     2021.0: [n.brugge,n.genk,n.royalAntwerp,n.anderlecht,                n.gent,n.mechelen,n.oostende,n.standardliege,n.beerschot,n.zultewaregem, n.leuven,n.kaseupen,n.charleroi,n.kortrijk,n.sttruidense,n.cerclebrugge,n.beveren,n.mouscron],
     2020.0: [n.brugge,n.gent,n.charleroi,n.royalAntwerp,                 n.standardliege,n.mechelen,n.genk,n.anderlecht,n.zultewaregem,n.mouscron, n.kortrijk,n.sttruidense,n.kaseupen,n.cerclebrugge,n.oostende,n.beveren],
@@ -514,8 +514,9 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.suica : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [n.youngboys,n.lugano,n.luzern,n.servette,n.basel,   n.grasshopper,n.stgallen,n.sion,n.winterhur],
+    2023.0: [n.youngboys,n.servette,n.lugano,n.luzern,n.basel,     n.stgallen,n.grasshoppers,n.winterthur,n.sion,],
     2022.0: [n.zurich,n.basel,n.youngboys,n.lugano,n.stgallen,     n.servette,n.sion,n.grasshoppers,n.luzern,n.lausanne],
     2021.0: [n.youngboys,n.basel,n.servette,n.lugano,n.luzern,     n.lausanne,n.stgallen,n.zurich,n.sion,n.vaduz],
     2020.0: [n.youngboys,n.stgallen,n.basel,n.servette,n.lugano,   n.luzern,n.zurich,n.sion,n.thun,n.neuchatel],
@@ -592,8 +593,9 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.austria : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [n.rbsalzburg,n.sturmgraz,n.lasklinz,n.austria,n.rapidwien,n.austriaklagenfurt,n.austrialustenau,n.wolfsberger,n.wsgtirol,n.hartberg,n.altach,n.ried],
+    2023.0: [n.rbsalzburg,n.sturmgraz,n.lasklinz,n.rapidwien,n.austria,n.austriaklagenfurt,n.wolfsberger,n.austrialustenau,n.wsgtirol,n.hartberg,n.altach,n.ried],
     2022.0: [n.rbsalzburg,n.sturmgraz,n.austria,n.wolfsberger,n.rapidwien,n.austriaklagenfurt,n.wsgtirol,n.lasklinz,n.altach,n.ried,n.hartberg,n.admira],
     2021.0: [n.rbsalzburg,n.rapidwien,n.sturmgraz,n.lasklinz,n.wolfsberger,n.wsgtirol,n.hartberg,n.austria,n.ried,n.altach,n.admira,n.stpolten],
     2020.0: [n.rbsalzburg,n.rapidwien,n.wolfsberger,n.lasklinz,n.hartberg,n.sturmgraz,n.austria,n.altach,n.stpolten,n.mattersburg,n.admira,n.wsgtirol],
@@ -671,8 +673,9 @@ Map<String,dynamic> mapEuropa = {
 
   leagueName.polonia : {
     //https://en.wikipedia.org/wiki/1987%E2%80%9388_Ekstraklasa
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [n.rakowczestochowa,n.legiawarszawa,n.lechpoznan,n.pogonszczecin,n.piastgliwice,n.gornikzabrze,n.wartapoznan,n.radomiak],
+    2023.0: [n.rakowczestochowa,n.legiawarszawa,n.lechpoznan,n.pogonszczecin,n.piastgliwice,n.gornikzabrze,n.cracovia,n.wartapoznan,n.zaglebielubin,n.radomiakradom, n.stalmielec,n.widzewlodz,n.koronakielce,n.slaskwroclaw,n.wislaplock,n.lechiagdansk,n.miedzlegnica],
     2022.0: [n.lechpoznan,n.rakowczestochowa,n.pogonszczecin,n.lechiagdansk,n.piastgliwice,n.wislaplock,n.radomiakradom,n.gornikzabrze,n.cracovia,n.legiawarszawa,n.wartapoznan,n.jagiellonia,n.zaglebielubin,n.stalmielec,n.slaskwroclaw,n.brukbettermalicanieciecza,n.wislakrakow,n.gornikleczna],
     2021.0: [n.legiawarszawa,n.rakowczestochowa,n.pogonszczecin,n.slaskwroclaw,n.wartapoznan,n.piastgliwice,n.lechiagdansk,n.zaglebielubin,n.jagiellonia,n.gornikzabrze,n.lechpoznan,n.wislaplock,n.wislakrakow,n.cracovia,n.stalmielec,n.podbeskidziebielskobiala],
     2020.0: [n.legiawarszawa,n.lechpoznan,n.piastgliwice,n.lechiagdansk,n.slaskwroclaw,n.pogonszczecin,n.cracovia,n.jagiellonia,n.gornikzabrze,n.rakowczestochowa,n.zaglebielubin,n.wislaplock,n.wislakrakow,n.arkagdynia,n.koronakielce,n.lkslodz],
@@ -750,8 +753,9 @@ Map<String,dynamic> mapEuropa = {
   },
 
   leagueName.israel : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [n.maccabihaifa,n.hapoelbeersheva,n.maccabitelaviv,n.hapoeljerusalem,n.maccabinetanya,n.ashdod,n.hapoelhaifa,n.beitarjerusalem,n.bneisakhnin,n.hapoeltelaviv,n.maccabibneireineh,n.hapoelhadera,n.ironikiryatshmona,n.sektzianessziona],
     2022.0: [n.maccabihaifa,n.hapoelbeersheva,n.maccabitelaviv,n.maccabinetanya,n.hapoeltelaviv,n.bneisakhnin,n.ironikiryatshmona,n.hapoelhadera,n.ashdod,n.beitarjerusalem,n.hapoelhaifa,n.hapoeljerusalem,n.maccabipetahtikva,n.hapoelnofhagalil],
     2021.0: [n.maccabihaifa,n.maccabitelaviv,n.ashdod,n.hapoelbeersheva,n.maccabipetahtikva,n.ironikiryatshmona,n.maccabinetanya,n.hapoelhadera,n.hapoelhaifa,n.beitarjerusalem,n.hapoeltelaviv,n.bneisakhnin,n.bneiyehudatelaviv,n.hapoelkfarsaba],
     2020.0: [n.maccabitelaviv,n.maccabihaifa,n.beitarjerusalem,n.hapoelbeersheva,n.hapoeltelaviv,n.hapoelhaifa,n.bneiyehudatelaviv,n.ashdod,n.hapoelhadera,n.maccabinetanya,n.hapoelkfarsaba,n.ironikiryatshmona,n.sektzianessziona,n.hapoelraanana],
@@ -831,7 +835,7 @@ Map<String,dynamic> mapEuropa = {
   leagueName.irlandanorte : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [n.larne,n.linfield,n.glentoran,n.cliftonville,n.crusaders,n.coleraine,n.glenavon,n.carrickrangers,n.ballymenaunited,n.newrycity,n.dungannonswifts,n.portadown],
     2022.0: [n.linfield,n.cliftonville,n.glentoran,n.crusaders,n.larne,n.coleraine,n.glenavon,n.ballymenaunited,n.dungannonswifts,n.carrickrangers,n.portadown,n.warrenpointtown],
     2021.0: [n.linfield,n.coleraine,n.glentoran,n.larne,n.cliftonville,n.crusaders,n.glenavon,n.ballymenaunited,n.portadown,n.warrenpointtown,n.carrickrangers,n.dungannonswifts],
     2020.0: [n.linfield,n.coleraine,n.crusaders,n.cliftonville,n.glentoran,n.larne,n.glenavon,n.carrickrangers,n.dungannonswifts,n.ballymenaunited,n.warrenpointtown,n.institute],
@@ -945,18 +949,18 @@ Map<String,dynamic> mapEuropa = {
   leagueName.gibraltar : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
-    2022.0: [],
+    2023.0: [n.lincolnRedImps,n.europa],
+    2022.0: [n.lincolnRedImps,n.europa],
     2021.0: [],
-    2020.0: [n.europa,],
-    2019.0: [n.lincolnRedImps,],
-    2018.0: [n.lincolnRedImps,],
-    2017.0: [n.europa,],
-    2016.0: [n.lincolnRedImps,],
-    2015.0: [n.lincolnRedImps,],
-    2014.0: [n.lincolnRedImps,],
-    2013.0: [n.lincolnRedImps,],
-    2012.0: [n.lincolnRedImps,],
+    2020.0: [n.europa,n.stJosephs,n.lincolnRedImps,],
+    2019.0: [n.lincolnRedImps,n.europa,n.stJosephs,],
+    2018.0: [n.lincolnRedImps,n.europa,n.stJosephs,],
+    2017.0: [n.europa,n.lincolnRedImps,n.stJosephs,],
+    2016.0: [n.lincolnRedImps,n.europa,n.stJosephs,],
+    2015.0: [n.lincolnRedImps,n.europa,n.lynx,],
+    2014.0: [n.lincolnRedImps,n.manchester62,n.lynx,],
+    2013.0: [n.lincolnRedImps,n.stJosephs,n.manchester62,],
+    2012.0: [n.lincolnRedImps,n.stJosephs,n.manchester62,],
     2011.0: [n.lincolnRedImps,],
     2010.0: [n.lincolnRedImps,],
     2009.0: [n.lincolnRedImps,],
@@ -1099,7 +1103,7 @@ Map<String,dynamic> mapEuropa = {
   leagueName.luxemburgo : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [n.swifthesperange,n.niederkorn,n.dudelange,n.unionpetange,n.mondorf,n.jeunesseesch,n.unionlux,n.unastrassen,n.wiltz71],
     2022.0: [n.dudelange,n.differdange,],
     2021.0: [n.folaesch,n.dudelange,],
     2020.0: [],
@@ -1259,8 +1263,8 @@ Map<String,dynamic> mapEuropa = {
   leagueName.saomarino : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
-    2022.0: [n.lafiorita,],
+    2023.0: [n.cosmos,n.lafiorita,n.libertas,n.virtus],
+    2022.0: [n.lafiorita,n.pennarossa,n.fiorentino,n.libertas],
     2021.0: [n.folgore,n.lafiorita,n.trepenne,n.libertas,],
     2020.0: [n.trepenne,n.folgore,n.trepenne,n.lafiorita,],
     2019.0: [n.trepenne,n.lafiorita,n.trefiori,n.libertas,],
