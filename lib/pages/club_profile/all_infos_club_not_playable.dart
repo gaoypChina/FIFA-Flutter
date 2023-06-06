@@ -129,8 +129,8 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
                             ),
                             Text(clubdetails.getFoundationYear(widget.clubName).toString(),style: EstiloTextoBranco.text16),
                             Row(
-                              children: const [
-                                Expanded(child: Text("Estadio Nacional de Marrocos Mohammed",maxLines: 2, overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14)),
+                              children: [
+                                Expanded(child: Text(clubdetails.getStadium(widget.clubName),maxLines: 2, overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14)),
                               ],
                             ),
                             Text(clubdetails.getStadiumCapacityPointFormat(widget.clubName),style: EstiloTextoBranco.text16),

@@ -1,4 +1,3 @@
-import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
@@ -53,36 +52,34 @@ class _LeaguesConfigurationState extends State<LeaguesConfiguration> with Ticker
               backButtonText(context, 'Trocar', true),
 
               Expanded(
-                child: Container(
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 35,
-                        color: appBarMyClubColor(),
-                        child: TabBar(
+                child: Column(
+                  children: [
+                    Container(
+                      height: 35,
+                      color: appBarMyClubColor(),
+                      child: TabBar(
+                        controller: controller.tabController,
+                        indicatorColor: AppColors().green,
+                        tabs: const [
+                          Tab(text: 'nºtimes/nº rebaixados'),
+                          Tab(text: 'Internacional'),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: TabBarView(
                           controller: controller.tabController,
-                          indicatorColor: AppColors().green,
-                          tabs: const [
-                            Tab(text: 'nºtimes/nº rebaixados'),
-                            Tab(text: 'Internacional'),
+                          children: [
+                            leagues(),
+                            leaguesInternational(),
                           ],
                         ),
                       ),
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsets.all(8),
-                          child: TabBarView(
-                            controller: controller.tabController,
-                            children: [
-                              leagues(),
-                              leaguesInternational(),
-                            ],
-                          ),
-                        ),
-                      ),
+                    ),
 
-                    ],
-                  ),
+                  ],
                 ),
               ),
             ],

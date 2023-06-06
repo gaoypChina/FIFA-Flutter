@@ -160,12 +160,16 @@ class _TransfersState extends State<Transfers> {
                         Row(
                           children: [
                             buttonSquareSelection(
+                                primaryColor: AppColors().green,
+                                secondColor: Colors.black,
                                 conditionWhenTrue: showMatchsGoalsAssists == false,
                                 height: 20, width: 40,
                                 function: (){showMatchsGoalsAssists = false;setState((){});}
                             ),
                             const SizedBox(width: 4),
                             buttonSquareSelection(
+                                primaryColor: AppColors().green,
+                                secondColor: Colors.black,
                                 conditionWhenTrue: showMatchsGoalsAssists == true,
                                 height: 20, width: 40,
                                 function: (){showMatchsGoalsAssists = true;setState((){});}

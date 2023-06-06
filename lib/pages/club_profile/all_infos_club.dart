@@ -2,7 +2,7 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/countries/flags_list.dart';
-import 'package:fifa/widgets/popup/popup_player_info.dart';
+import 'package:fifa/pages/club_profile/tabs/player_row_all_infos.dart';
 import 'package:fifa/theme/background_color/background_age.dart';
 import 'package:fifa/theme/background_color/background_overall.dart';
 import 'package:fifa/theme/background_color/background_position.dart';
@@ -64,6 +64,8 @@ class _AllInfosClubState extends State<AllInfosClub> {
 
                   for(int i=0; i <= 5; i++)
                       buttonSquareSelection(
+                          primaryColor: widget.club.colors.primaryColor,
+                          secondColor: widget.club.colors.secondColor,
                           conditionWhenTrue: selection==i,
                           height: 25, width: 50,
                           function: (){
@@ -111,7 +113,25 @@ class _AllInfosClubState extends State<AllInfosClub> {
         itemCount: widget.club.escalacao.length,
         padding: EdgeInsets.zero,
         itemBuilder: (BuildContext context, int i) {
-          return  playerRow(i, widget.club.escalacao[i], option);
+          Jogador player = Jogador(index: widget.club.escalacao[i]);
+          return  PlayerRowAllInfos(
+              row: i,
+              playerIndex: widget.club.escalacao[i],
+              option: option,
+              child: SizedBox(
+                width: 140,
+                child: option == 0 ? playersStatsWidget0(player)
+                    : option == 1 ? playersStatsWidgetLeague(player)
+                    : option == 2 ? playersStatsWidgetCups(player)
+                    : option == 3 ? playersStatsWidgetInternational(player)
+                    : option == 4 ? playersStatsWidgetCarrer(player)
+                    : option == 5 ? playersStatsWidgetCards(player)
+                    : Container(),
+              ),
+            notifyParent: (){
+              widget.notifyParent();
+            },
+          );
         },
       ),
     );
@@ -240,7 +260,7 @@ class _AllInfosClubState extends State<AllInfosClub> {
                 ),
               ],
             ),
-            playerNameWidget(player),
+            //playerNameWidget(player),
             const Spacer(),
             SizedBox(
               width: 140,
@@ -355,31 +375,5 @@ class _AllInfosClubState extends State<AllInfosClub> {
 
 
 
-  Widget playerNameWidget(Jogador player){
 
-    Color nameColor = Colors.white;
-    if(player.injury>0 || player.redCard>0 || player.yellowCard==3){
-      nameColor = Colors.red;
-    }
-    return GestureDetector(
-      onTap:(){
-        popUpOkShowPlayerInfos(
-            context: context,
-            playerID: player.index,
-            funcSetState: (){
-              setState(() {});
-              widget.notifyParent();
-            }
-            );
-      },
-      child: Container(
-          margin: const EdgeInsets.only(left: 6),
-          child: Text(player.name, style: TextStyle(
-            color: nameColor,
-            fontFamily: 'Roboto',
-            fontSize: 14,
-          ))
-      ),
-    );
-  }
 }

@@ -5,6 +5,7 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/save/controller/save_controller.dart';
 import 'package:fifa/pages/home/b_home.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
+import 'package:fifa/widgets/button/button_border_green.dart';
 import 'package:fifa/widgets/popup/popup_ok_cancel.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
@@ -55,11 +56,15 @@ class _ChooseSaveState extends State<ChooseSave> {
 
                     backButtonText(context, 'Salvar', true),
 
-                    Expanded(child: Column(children: [
-                      for(int i=0; i<saveController.basicGameInfos.length;i++)
-                        saveRow(i),
-                    ],)),
-
+                    Expanded(child:
+                      ListView.builder(
+                        padding: EdgeInsets.zero,
+                        itemCount: saveController.basicGameInfos.length,
+                        itemBuilder: (context, index) {
+                          return saveRow(index);
+                        },
+                      ),
+                    ),
 
                   ],
                 ),
@@ -109,9 +114,12 @@ class _ChooseSaveState extends State<ChooseSave> {
       },
       child: Container(
         width: Sized(context).width,
-        color: AppColors().greyTransparent,
         padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: 12),
-        margin: const EdgeInsets.symmetric(vertical: 4.0),
+        margin: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8),
+        decoration: BoxDecoration(
+          color: AppColors().greyTransparent,
+          borderRadius: const BorderRadius.all(Radius.circular(8)),
+        ),
         child: Row(
           children: [
             //DELETAR
@@ -158,11 +166,8 @@ class _ChooseSaveState extends State<ChooseSave> {
               },
               child: Container(
                 padding: const EdgeInsets.all(4),
-                decoration: const BoxDecoration(
-                  color: Colors.grey,
-                  shape: BoxShape.circle,
-                ),
-                  child: const Icon(Icons.upload,color: Colors.white,size: 35),
+                decoration: decorationGreen(),
+                  child: const Icon(Icons.upload,color: Colors.white,size: 32),
               ),
             ),
           ],

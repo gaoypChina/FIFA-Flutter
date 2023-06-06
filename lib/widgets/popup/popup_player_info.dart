@@ -21,6 +21,7 @@ import 'package:fifa/theme/background_color/background_overall.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
+import 'package:fifa/widgets/player_templates/health_bar.dart';
 import 'package:flutter/material.dart';
 
 
@@ -63,7 +64,6 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
                             children: [
                               Images().getPlayerPictureWidget(jogador,95,90),
                               Container(alignment: Alignment.bottomRight,child: funcFlagsList(jogador.nationality, 20,30)),
-                              Text(jogador.nationality,style: EstiloTextoBranco.text12),
                               Container(alignment: Alignment.bottomLeft,child: positionContainer(jogador.position,size: 60,style: EstiloTextoPreto.text16)),
                             ],
                           ),
@@ -91,7 +91,7 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        health(context, jogador),
+                        healthWithTitle(context, jogador),
                         lesoesCartoes(context, jogador),
                         nota(jogador),
                       ],
@@ -197,24 +197,17 @@ mainStatus(BuildContext context, Jogador jogador){
   );
 }
 
-Widget health(BuildContext context, Jogador jogador){
+Widget healthWithTitle(BuildContext context, Jogador player){
   return    Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       const Text('Saúde', style: EstiloTextoBranco.negrito18),
       //Barra de saúde
-      SizedBox(
-        width: Sized(context).width*0.4,
-        child: LinearProgressIndicator(
-          value: jogador.health,
-          color: Colors.teal,
-          backgroundColor: Colors.grey,
-        ),
-      ),
+      healthBar(context, player, width: Sized(context).width*0.4),
     ],
   );
 }
-Widget carrerStats(BuildContext context, Jogador jogador){
+Widget carrerStats(BuildContext context, Jogador player){
   return Container(
     width: Sized(context).width*0.35,
     padding: const EdgeInsets.all(4),
@@ -230,19 +223,19 @@ Widget carrerStats(BuildContext context, Jogador jogador){
             Column(
               children: [
                 const Text('Jogos', style: EstiloTextoBranco.text12),
-                Text(jogador.matchsCarrer.toString(), style: EstiloTextoBranco.text16),
+                Text(player.matchsCarrer.toString(), style: EstiloTextoBranco.text16),
               ],
             ),
             Column(
               children: [
                 Image.asset('assets/icons/bola.png',height: 15,width: 15),
-                Text(jogador.goalsCarrer.toString(), style: EstiloTextoBranco.text16),
+                Text(player.goalsCarrer.toString(), style: EstiloTextoBranco.text16),
               ],
             ),
             Column(
               children: [
                 Image.asset('assets/icons/assists.png',height: 15,width: 15),
-                Text(jogador.assistsCarrer.toString(), style: EstiloTextoBranco.text16),
+                Text(player.assistsCarrer.toString(), style: EstiloTextoBranco.text16),
               ],
             ),
           ],

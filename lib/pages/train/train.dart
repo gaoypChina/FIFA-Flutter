@@ -36,7 +36,9 @@ class _TrainPlayersPageState extends State<TrainPlayersPage> {
 
           Column(
             children: [
-              backButtonText(context,'Treinar Jogadores'),
+
+              backButtonText(context,'Treinar', true),
+
               Expanded(
                 child: ListView.builder(
                     itemCount: My().jogadores.length,

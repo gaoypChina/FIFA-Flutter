@@ -1,7 +1,7 @@
 import 'package:fifa/theme/colors.dart';
 import 'package:flutter/material.dart';
 
-buttonSquareSelection({required bool conditionWhenTrue, required double height, required double width, required Function()? function}) {
+buttonSquareSelection({required Color primaryColor, required Color secondColor, required bool conditionWhenTrue, required double height, required double width, required Function()? function}) {
   return InkWell(
     onTap: function,
     child: Container(
@@ -10,8 +10,8 @@ buttonSquareSelection({required bool conditionWhenTrue, required double height, 
       height: height,
       width: width,
       decoration: BoxDecoration(
-        color: conditionWhenTrue ? Colors.lightGreenAccent : AppColors().greyTransparent,
-        border: Border.all(color: conditionWhenTrue ? Colors.black : Colors.lightGreenAccent, width:1),
+        color: conditionWhenTrue ? primaryColor : AppColors().greyTransparent,
+        border: Border.all(color: conditionWhenTrue ? secondColor : primaryColor, width:1),
       ),
       ),
     );

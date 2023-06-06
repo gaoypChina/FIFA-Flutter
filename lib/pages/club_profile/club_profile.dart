@@ -39,7 +39,6 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
   void initState() {
     super.initState();
     _tabController = TabController(vsync: this, length: 5);
-    clubClass = Club(index: widget.clubID);
     dataGraphics.getData(clubClass);
   }
   @override
@@ -52,7 +51,7 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-
+    clubClass = Club(index: widget.clubID);
 
     return DefaultTabController(
       length: 5,
@@ -159,7 +158,7 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                         controller: _tabController,
                         children: [
                           StaticField(clubID: widget.clubID,hasReserves: true,),
-                          AllInfosClub(club: clubClass,notifyParent: (){}),
+                          AllInfosClub(club: clubClass, notifyParent: notifyParent),
                           ClubGraphics(club: clubClass),
                           ClubCalendar(club: clubClass),
                           ClubGeralInfosPage(club: clubClass),
@@ -195,6 +194,10 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
         ),
       ),
     );
+  }
+
+  notifyParent(){
+    setState(() {});
   }
 
 }

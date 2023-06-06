@@ -54,7 +54,7 @@ class _CalendarState extends State<Calendar> {
           Column(
             children: [
 
-              backButtonText(context, Translation(context).text.calendar),
+              backButtonText(context, Translation(context).text.calendar, true),
 
               Expanded(
                 child: Container(
@@ -64,10 +64,9 @@ class _CalendarState extends State<Calendar> {
                     child: Wrap(
                       spacing: 5,
                       runSpacing: 5,
-                      children: [
-                        for (int i=1;i<=globalUltimaSemana;i++)
-                          adversarioWidget(Semana(i)),
-                      ],
+                      children: List.generate(globalUltimaSemana, (index) {
+                        return adversarioWidget(Semana(index + 1));
+                      }),
                     ),
                   ),
                 ),
