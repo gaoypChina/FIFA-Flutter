@@ -20,7 +20,7 @@ Widget rowPlayer(BuildContext context, Jogador player, int result, String value)
         children: [
           SizedBox(width: 35,child: Center(child: Text(result.toString()+"° ",style: EstiloTextoBranco.text14))),
           positionContainer(player.position,size: 30,style: EstiloTextoPreto.text12),
-          PlayerCircle(player: player, scale: 1.0, hasPosition: true),
+          PlayerCircle(player: player, scale: 1.0, hasPosition: false),
           SizedBox(width: 40,child: Text(value,textAlign: TextAlign.center,style: EstiloTextoBranco.negrito16)),
 
           SizedBox(width:Sized(context).width*0.5,child: Text(player.name,style: EstiloTextoBranco.text16)),

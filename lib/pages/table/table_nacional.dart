@@ -5,6 +5,7 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/player_stats_keys.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/historic/leagues_historic.dart';
+import 'package:fifa/pages/ranking_clubs/league_selection_row.dart';
 import 'package:fifa/pages/table/widgets/matchs.dart';
 import 'package:fifa/pages/table/widgets/player_statistics.dart';
 import 'package:fifa/pages/table/widgets/table_widget.dart';
@@ -26,7 +27,7 @@ class TableNacional extends StatefulWidget {
 
 class _TableNacionalState extends State<TableNacional>  with TickerProviderStateMixin  {
 
-  late int choosenLeagueIndex;
+  late String choosenLeagueName;
   League myLeague = League(index: My().leagueID);
   late int rodadaMatch = myLeague.nClubs-1;
   Map leaguesMap = {};
@@ -44,7 +45,7 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
   doThisOnLaunch() {
     _tabController = TabController(vsync: this, length: 2);
     //INDEX INICIAL
-    choosenLeagueIndex = widget.choosenLeagueIndex;
+    choosenLeagueName = League(index: widget.choosenLeagueIndex).name;
     //rodada inicial mostrada
     if(rodada < myLeague.nClubs-1){
       rodadaMatch = rodada;
@@ -53,7 +54,8 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
     //GET LEAGUES CLASSES
     for(int i=0;i<leaguesListRealIndex.length;i++){
       int leagueID = leaguesListRealIndex[i];
-      leaguesMap[leagueID] = League(index: leagueID);
+      League league = League(index: leagueID);
+      leaguesMap[league.name] = league;
     }
 
     setState(() {});
@@ -63,7 +65,6 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    String leagueName = leaguesMap[choosenLeagueIndex].getName();
 
     return  DefaultTabController(
         length: 2,
@@ -84,18 +85,18 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
                       child: Row(
                         children: [
                           backButton(context),
-                          Image.asset(FIFAImages().campeonatoLogo(leagueName),height: 32,width: 32),
+                          Image.asset(FIFAImages().campeonatoLogo(choosenLeagueName),height: 32,width: 32),
                           const SizedBox(width: 8),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(leagueName,textAlign:TextAlign.center,style: EstiloTextoBranco.negrito16),
+                              Text(choosenLeagueName,textAlign:TextAlign.center,style: EstiloTextoBranco.negrito16),
                               Text('${Translation(context).text.matchWeek} ' + rodada.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
                             ],
                           ),
                           const Spacer(),
                           IconButton(onPressed: (){
-                            Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricLeague(choosenLeagueName: leagueName)));
+                            Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricLeague(choosenLeagueName: choosenLeagueName)));
                           }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
                         ],
                       ),
@@ -117,7 +118,7 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
                       child: TabBarView(
                         controller: _tabController,
                         children: [
-                          fullTable(leagueName),
+                          fullTable(choosenLeagueName),
                           rowStatistics(),
                         ],
                       ),
@@ -128,7 +129,17 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
 
               ////////////////////////////////////
               //SELECT LEAGUE
-              selectLeagueWidget(context),
+              Container(
+                padding: EdgeInsets.only(top:Sized(context).height- 50),
+                child: LeagueSelectionRow(
+                    choosenLeagueName: choosenLeagueName,
+                    leaguesListRealIndex: leaguesListRealIndex,
+                    onTap: (String leagueName){
+                      choosenLeagueName = leagueName;
+                      setState(() {});
+                    }
+                ),
+              ),
 
             ]
         )
@@ -143,7 +154,7 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
     return SizedBox(
       height: Sized(context).height-160,
       child: SingleChildScrollView(
-        child: tabelaClassificacaoWidget(context,leaguesMap[choosenLeagueIndex]),
+        child: tabelaClassificacaoWidget(context,leaguesMap[choosenLeagueName]),
       ),
     );
   }
@@ -157,12 +168,12 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
         Expanded(
           child: Container(
             color: AppColors().greyTransparent,
-            child: choosenIcon==2 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 0)
-                : choosenIcon==3 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 1)
-                : choosenIcon==4 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 2)
-                : choosenIcon==5 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 3)
-                : choosenIcon==6 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 4)
-                : choosenIcon==7 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueIndex], 5)
+            child: choosenIcon==2 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueName], 0)
+                : choosenIcon==3 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueName], 1)
+                : choosenIcon==4 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueName], 2)
+                : choosenIcon==5 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueName], 3)
+                : choosenIcon==6 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueName], 4)
+                : choosenIcon==7 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueName], 5)
                 : Container(),
           ),
         ),
@@ -186,37 +197,6 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
       ],
     );
   }
-
- Widget selectLeagueWidget(BuildContext context){
-    return              Container(
-      padding: EdgeInsets.only(top:Sized(context).height- 50),
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Row(
-          children: [
-            for(int i=0;i<leaguesListRealIndex.length;i++)
-              leagueRow(i)
-          ],
-        ),
-      ),
-    );
- }
-  Widget leagueRow(int league){
-    int leagueID = leaguesListRealIndex[league];
-    String leagueName = leaguesMap[leagueID].getName();
-    return GestureDetector(
-      onTap: (){
-        choosenLeagueIndex = leagueID;
-        setState(() {});
-      },
-      child: Container(
-        padding: const EdgeInsets.all(2),
-        color: choosenLeagueIndex == leagueID ? Colors.redAccent: Colors.white54,
-        child: Image.asset(FIFAImages().campeonatoLogo(leagueName),height: 50,width: 50,),
-      ),
-    );
-}
-
 
 
 ////////////////////////////////////////////////////////////////////////////
@@ -261,7 +241,7 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
   }
 Widget matchsWidget(){
 
-  League choosenLeagueClass = leaguesMap[choosenLeagueIndex];
+  League choosenLeagueClass = leaguesMap[choosenLeagueName];
   if(rodadaMatch >= choosenLeagueClass.nClubs-1){
     rodadaMatch = choosenLeagueClass.nClubs-1;
   }
@@ -298,7 +278,7 @@ Widget matchsWidget(){
           ],
         ),
 
-        wMatchsTable(rodadaMatch, leaguesMap[choosenLeagueIndex], choosenLeagueIndex),
+        wMatchsTable(rodadaMatch, leaguesMap[choosenLeagueName]),
 
       ],
     ),

@@ -4,6 +4,7 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/pages/cups/tabs/cup_brackets.dart';
 import 'package:fifa/pages/cups/tabs/cup_matchs.dart';
 import 'package:fifa/pages/cups/tabs/cup_statistics.dart';
+import 'package:fifa/pages/ranking_clubs/league_selection_row.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
@@ -22,7 +23,7 @@ class _CupMainState extends State<CupMain> with TickerProviderStateMixin{
 
   late TabController _tabController;
   Map<int, League> leaguesMap = {};
-  late int choosenLeagueIndex;
+  late String choosenLeagueName;
 
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
@@ -40,7 +41,7 @@ class _CupMainState extends State<CupMain> with TickerProviderStateMixin{
       leaguesMap[leagueID] = League(index: leaguesListRealIndex[i]);
     }
     //initial value
-    choosenLeagueIndex = leaguesMap[My().leagueID]!.index;
+    choosenLeagueName = leaguesMap[My().leagueID]!.name;
   }
 
 ////////////////////////////////////////////////////////////////////////////
@@ -48,9 +49,7 @@ class _CupMainState extends State<CupMain> with TickerProviderStateMixin{
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-
-    String leagueName = leaguesMap[choosenLeagueIndex]!.name;
-    String cupName = getCup(leagueName);
+    String cupName = getCup(choosenLeagueName);
 
     return DefaultTabController(
       length: 3,
@@ -94,7 +93,15 @@ class _CupMainState extends State<CupMain> with TickerProviderStateMixin{
 
                 ////////////////////////////////////
                 //SELECT LEAGUE
-                selectLeagueWidget(leaguesMap)
+
+                LeagueSelectionRow(
+                    choosenLeagueName: choosenLeagueName,
+                    leaguesListRealIndex: leaguesListRealIndex,
+                    onTap: (String leagueName){
+                      choosenLeagueName = leagueName;
+                      setState(() {});
+                    }
+                ),
 
               ],
             ),
@@ -110,32 +117,5 @@ class _CupMainState extends State<CupMain> with TickerProviderStateMixin{
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
 
-  Widget selectLeagueWidget(Map leaguesMap){
-    return              SizedBox(
-      height: 50,
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Row(
-          children: [
-            for(int i=0;i<leaguesListRealIndex.length;i++)
-              leagueRow(leaguesMap[leaguesListRealIndex[i]])
-          ],
-        ),
-      ),
-    );
-  }
-  Widget leagueRow(League league){
-    return GestureDetector(
-      onTap: (){
-        choosenLeagueIndex = league.index;
-        setState((){});
-      },
-      child: Container(
-        padding: const EdgeInsets.all(2),
-        color: choosenLeagueIndex == league.index ? Colors.redAccent: Colors.white54,
-        child: Image.asset(FIFAImages().campeonatoLogo(league.name),height: 50,width: 50,),
-      ),
-    );
-  }
 
 }

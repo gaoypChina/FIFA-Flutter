@@ -186,7 +186,7 @@ Widget negotiationRow(Jogador player, int startNegotiationWeek){
                               borderRadius: const BorderRadius.all(Radius.circular(5)),
                               color: mapType[type],
                             ),
-                            child: const Text('Compra',style: EstiloTextoBranco.text16)
+                            child: Text(type,style: EstiloTextoBranco.text16)
                         ),
                       ],
                     ),

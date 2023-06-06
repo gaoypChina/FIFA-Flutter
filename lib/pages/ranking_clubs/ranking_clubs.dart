@@ -4,6 +4,7 @@ import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/classes/functions/func_number_clubs_total.dart';
+import 'package:fifa/pages/ranking_clubs/league_selection_row.dart';
 import 'package:fifa/pages/ranking_clubs/ranking_clubs_control.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -152,41 +153,20 @@ class _RankingClubsPageState extends State<RankingClubsPage> with TickerProvider
         ),
 
         type==1 ? selectContinent()
-        : type==2 ? selectLeagueWidget(context)
+        : type==2 ? LeagueSelectionRow(
+            choosenLeagueName: choosenLeagueName,
+            leaguesListRealIndex: leaguesListRealIndex,
+            onTap: (String leagueName){
+              choosenLeagueName = leagueName;
+              rankingClubs.organizeNationalRanking(choosenLeagueName);
+              setState(() {});
+            }
+        )
         : Container()
       ],
     );
   }
 
-  Widget selectLeagueWidget(BuildContext context){
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: [
-          for(int i=0;i<leaguesListRealIndex.length;i++)
-            leagueSelectionRow(i)
-        ],
-      ),
-    );
-  }
-
-  Widget leagueSelectionRow(int i){
-    int leagueID = leaguesListRealIndex[i];
-    String leagueName = League(index: leagueID).getName();
-
-    return GestureDetector(
-      onTap: (){
-        choosenLeagueName = leagueName;
-        rankingClubs.organizeNationalRanking(choosenLeagueName);
-        setState(() {});
-      },
-      child: Container(
-        padding: const EdgeInsets.all(2),
-        color: choosenLeagueName == leagueName ? Colors.redAccent: Colors.white54,
-        child: Image.asset(FIFAImages().campeonatoLogo(leagueName),height: 50,width: 50,),
-      ),
-    );
-  }
 
   Widget selectContinent(){
     return Container(
@@ -210,7 +190,7 @@ class _RankingClubsPageState extends State<RankingClubsPage> with TickerProvider
         setState((){});
       },
       child: Container(
-        color: continentName == continent ? Colors.red : Colors.transparent,
+        color: continentName == continent ? AppColors().green : Colors.transparent,
         child: Padding(
           padding: const EdgeInsets.all(4.0),
           child: Images().getContinentLogo(continentName),
