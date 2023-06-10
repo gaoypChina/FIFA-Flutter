@@ -145,7 +145,7 @@ class Simulate{
       try {
         String phaseName = CupClassification().getPhaseKeyName(semana);
         String idaOrVoltaKey = CupClassification().getIdaOrVoltaKey(phaseName, semana);
-        matchMap = CupClassification().getCupPhaseResults(cupName, phaseName, idaOrVoltaKey);
+        matchMap = CupClassification().getPhaseResults(cupName, phaseName, idaOrVoltaKey);
 
 
         for (int nConfronto = 1; nConfronto <= matchMap.length; nConfronto++) {

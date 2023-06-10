@@ -169,7 +169,7 @@ Map globalInternational = {};
 
 ///////////////////////////
 //INTERNACIONAL - NOVO FORMATO
-Map<String, List<int>> globalLeaguePlayers = {}; //NÃO CRIADO AINDA TODO
+Map<String, List<int>> globalLeaguePlayers = {};
 Map<String, List<int>> globalInternationalPlayers = {};
 
 //COPA

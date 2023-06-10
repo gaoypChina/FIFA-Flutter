@@ -3,7 +3,9 @@ import 'dart:math';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/functions/name.dart';
 import 'package:fifa/classes/international.dart';
+import 'package:fifa/classes/mata_mata/knockout_stage.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/league_names.dart';
 
 class MataMata {
@@ -37,6 +39,8 @@ class MataMata {
         listClubsID[i * 2 + 1] = listClubsID[randomAdv * 2 + 1];
         listClubsID[randomAdv * 2 + 1] = aux;
       }
+      Map idaVoltaInitialMap = KnockoutStage().saveIdaVoltaTeamNames(getListClubNames(listClubsID));
+      globalInternationalMataMataClubsID[internationalName]![Name().oitavas] = idaVoltaInitialMap;
       globalInternationalMataMataClubsID[internationalName][Name().oitavas] = List.from(listClubsID);
     }
   }
@@ -77,7 +81,18 @@ class MataMata {
       }
       //SALVA A LISTA FINAL
       globalInternationalMataMataClubsID[internationalName][nextPhase] = List.from(listClubsID);
+
+      //Map idaVoltaInitialMap = KnockoutStage().saveIdaVoltaTeamNames(getListClubNames(listClubsID));
+      //globalInternationalMataMataClubsID[internationalName]![nextPhase] = idaVoltaInitialMap;
     }
+  }
+
+  List<String> getListClubNames(List listClubsID){
+    List<String> listClubsNames = [];
+    for (int clubID in listClubsID) {
+      listClubsNames.add(clubsAllNameList[clubID]);
+    }
+    return listClubsNames;
   }
 
   String getSemanaPhase(int week) {
@@ -127,10 +142,10 @@ class MataMata {
     return matchRows;
   }
 
-  void getData(String internationalName, String weekPhase, int matchRow,int phaseIdaVolta) {
+  void getData(String internationalName, String phaseName, int matchRow, int phaseIdaVolta) {
 
     try {
-      final List clubsID = List.from(globalInternationalMataMataClubsID[internationalName][weekPhase]);
+      final List clubsID = List.from(globalInternationalMataMataClubsID[internationalName][phaseName]);
       //print("SEMANA: $weekPhase $clubsID");
       //print("GOLS: ${globalInternationalMataMataGoals[internationalName][0]}");
       if (phaseIdaVolta == 0) {
@@ -145,8 +160,8 @@ class MataMata {
       clubName2 = Club(index: clubID2).name;
 
       try {
-        goal1 = globalInternationalMataMataGoals[internationalName][weekPhase][clubID1][phaseIdaVolta];
-        goal2 = globalInternationalMataMataGoals[internationalName][weekPhase][clubID2][phaseIdaVolta];
+        goal1 = globalInternationalMataMataGoals[internationalName][phaseName][clubID1][phaseIdaVolta];
+        goal2 = globalInternationalMataMataGoals[internationalName][phaseName][clubID2][phaseIdaVolta];
         if(goal1>=0 &&  goal2>=0){
           isAlreadyPlayed = true;
         }

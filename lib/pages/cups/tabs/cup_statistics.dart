@@ -115,7 +115,7 @@ class _CupStatisticsState extends State<CupStatistics> {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    for(int i=0;i < 100 && i < listPlayers.length;i++)
+                    for(int i=0;i < 50 && i < listPlayers.length;i++)
                       rowPlayer(context, Jogador(index: listPlayers[i]), i+1, playerStats(title, Jogador(index: listPlayers[i]))),
                   ],
                 ),

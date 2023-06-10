@@ -39,6 +39,7 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
   void initState() {
     super.initState();
     _tabController = TabController(vsync: this, length: 5);
+    clubClass = Club(index: widget.clubID);
     dataGraphics.getData(clubClass);
   }
   @override

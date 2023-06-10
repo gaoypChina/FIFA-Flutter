@@ -2,6 +2,7 @@ import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/cup_classification.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/classes/mata_mata/knockout_stage.dart';
 import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/match/result_dict.dart';
 import 'package:fifa/classes/my.dart';
@@ -15,7 +16,7 @@ Widget cupPhaseWidget(BuildContext context, String cupName){
 
   List<Club> clubs = CupClassification().getListClubsClassificados(cupName);
 
-  List<String> listCupPhases = CupClassification().listPhases();
+  List<String> listCupPhases = KnockoutStage().listPhases();
 
   My my = My();
   return SingleChildScrollView(
@@ -53,7 +54,7 @@ Widget cupPhaseWidget(BuildContext context, String cupName){
 Widget cupPhaseColumn(BuildContext context,  String cupName, String phaseName, String idaOrVoltaKey, My my){
 
   try {
-    Map matchs = CupClassification().getCupPhaseResults(cupName, phaseName, idaOrVoltaKey);
+    Map matchs = CupClassification().getPhaseResults(cupName, phaseName, idaOrVoltaKey);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

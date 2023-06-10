@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/mata_mata/knockout_stage.dart';
 import 'package:fifa/classes/match/result_dict.dart';
 import 'package:fifa/classes/player_stats_keys.dart';
 import 'package:fifa/global_variables.dart';
@@ -17,29 +18,19 @@ class CupClassification{
   String keyPrePhase = "Pre-fase";
   String keyChampion = "Campeão";
 
-  String keyFinal = "Final";
-  String keySemifinal = "Semifinal";
-  String keyQuartas = "Quartas";
-  String keyOitavas = "Oitavas";
-  String key16round = "Fase 16";
-  String key32round = "Fase 32";
-  String key64round = "Fase 64";
-  String key128round = "Fase 128";
 
 
-  List<String> listPhases(){
-    return [key128round, key64round, key32round, keyOitavas, keyQuartas, keySemifinal, keyFinal];
-  }
+
 
   Map<String,List<int>> mapDates(){
     Map<String,List<int>> map = {
-      keyFinal: [semanasJogosCopas[12], semanasJogosCopas[13]],
-      keySemifinal:[semanasJogosCopas[10], semanasJogosCopas[11]],
-      keyQuartas: [semanasJogosCopas[8], semanasJogosCopas[9]],
-      keyOitavas: [semanasJogosCopas[6], semanasJogosCopas[7]],
-      key32round: [semanasJogosCopas[4], semanasJogosCopas[5]],
-      key64round: [semanasJogosCopas[2], semanasJogosCopas[3]],
-      key128round: [semanasJogosCopas[0], semanasJogosCopas[1]],
+      KnockoutStage().keyFinal: [semanasJogosCopas[12], semanasJogosCopas[13]],
+      KnockoutStage().keySemifinal:[semanasJogosCopas[10], semanasJogosCopas[11]],
+      KnockoutStage().keyQuartas: [semanasJogosCopas[8], semanasJogosCopas[9]],
+      KnockoutStage().keyOitavas: [semanasJogosCopas[6], semanasJogosCopas[7]],
+      KnockoutStage().key32round: [semanasJogosCopas[4], semanasJogosCopas[5]],
+      KnockoutStage().key64round: [semanasJogosCopas[2], semanasJogosCopas[3]],
+      KnockoutStage().key128round: [semanasJogosCopas[0], semanasJogosCopas[1]],
     };
     return map;
   }
@@ -108,12 +99,12 @@ class CupClassification{
 
     prePhase = allTeamsLeague.where((team) => !classified.contains(team)).toList();
 
-    if(allTeamsLeague.length==4){ keyPhase = keySemifinal;}
-    else if(allTeamsLeague.length>4 && allTeamsLeague.length<=8){ keyPhase = keyQuartas;}
-    else if(allTeamsLeague.length>8 && allTeamsLeague.length<=16){ keyPhase = keyOitavas;}
-    else if(allTeamsLeague.length>16 && allTeamsLeague.length<=32){ keyPhase = key32round;}
-    else if(allTeamsLeague.length>32 && allTeamsLeague.length<=64){ keyPhase = key64round;}
-    else if(allTeamsLeague.length>64 && allTeamsLeague.length<=128){ keyPhase = key128round;}
+    if(allTeamsLeague.length==4){ keyPhase = KnockoutStage().keySemifinal;}
+    else if(allTeamsLeague.length>4 && allTeamsLeague.length<=8){ keyPhase = KnockoutStage().keyQuartas;}
+    else if(allTeamsLeague.length>8 && allTeamsLeague.length<=16){ keyPhase = KnockoutStage().keyOitavas;}
+    else if(allTeamsLeague.length>16 && allTeamsLeague.length<=32){ keyPhase = KnockoutStage().key32round;}
+    else if(allTeamsLeague.length>32 && allTeamsLeague.length<=64){ keyPhase = KnockoutStage().key64round;}
+    else if(allTeamsLeague.length>64 && allTeamsLeague.length<=128){ keyPhase = KnockoutStage().key128round;}
 
     //Embaralha os times;
     classified.shuffle();
@@ -129,7 +120,7 @@ class CupClassification{
       classifiedNames.add(clubsAllNameList[clubID]);
     }
 
-    Map idaVoltaInitialMap = saveIdaVoltaTeamNames(prePhaseNames);
+    Map idaVoltaInitialMap = KnockoutStage().saveIdaVoltaTeamNames(prePhaseNames);
 
     Map<String, dynamic> mapa = {};
     mapa = {
@@ -149,20 +140,7 @@ class CupClassification{
     return mapa;
   }
 
-  Map saveIdaVoltaTeamNames(List classifiedTeams){
-    Map matchsMapIda = {};
-    Map matchsMapVolta = {};
-    int k=0;
-    for(int i=0; i<classifiedTeams.length; i+=2){
-      k += 1;
-      matchsMapIda[k] = ResultDict().startNames(classifiedTeams[i], classifiedTeams[i+1]);
-      matchsMapVolta[k] = ResultDict().startNames(classifiedTeams[i+1], classifiedTeams[i]);
-    }
-    Map result = {ResultDict().keyIda: matchsMapIda,
-      ResultDict().keyVolta: matchsMapVolta,
-    };
-    return result;
-  }
+
 
 
   List<Club> getListClubsClassificados(String cupName){
@@ -175,8 +153,12 @@ class CupClassification{
     return clubs;
   }
 
-  Map getCupPhaseResults(String cupName, String phaseKeyName, String idaOrVoltaKey){
+  Map getPhaseResults(String cupName, String phaseKeyName, String idaOrVoltaKey){
     return globalCup[cupName]![phaseKeyName][idaOrVoltaKey];
+  }
+
+  Map getPhaseMatchData(String cupName, String phaseKeyName, String idaOrVoltaKey, int matchNumber){
+    return globalCup[cupName]![phaseKeyName][idaOrVoltaKey][matchNumber];
   }
 
   Map<int, dynamic> getCupPhaseResultsMap(String cupName, int week){
@@ -235,23 +217,23 @@ class CupClassification{
         String phaseName = getPhaseKeyName(semana);
 
         late String nextPhaseName;
-        if(phaseName == keyFinal){
+        if(phaseName == KnockoutStage().keyFinal){
           nextPhaseName = keyChampion;
         }else{
-          nextPhaseName = listPhases()[listPhases().indexOf(phaseName)+1];
+          nextPhaseName = KnockoutStage().listPhases()[KnockoutStage().listPhases().indexOf(phaseName)+1];
         }
 
-        if(phaseName == keyFinal){nextPhaseName = keyChampion;}
+        if(phaseName == KnockoutStage().keyFinal){nextPhaseName = keyChampion;}
         String idaOrVoltaKey = getIdaOrVoltaKey(phaseName, semana);
-        matchMapCurrentPhase = CupClassification().getCupPhaseResults(cupName, phaseName, idaOrVoltaKey);
+        matchMapCurrentPhase = CupClassification().getPhaseResults(cupName, phaseName, idaOrVoltaKey);
 
         if(idaOrVoltaKey == ResultDict().keyVolta){
 
           //Salva os classificados
           for (int nConfronto = 1; nConfronto <= matchMapCurrentPhase.length; nConfronto++) {
 
-            Map matchMapIda = getCupPhaseResults(cupName, phaseName, ResultDict().keyIda)[nConfronto];
-            Map matchMapVolta = getCupPhaseResults(cupName, phaseName, ResultDict().keyVolta)[nConfronto];
+            Map matchMapIda = getPhaseResults(cupName, phaseName, ResultDict().keyIda)[nConfronto];
+            Map matchMapVolta = getPhaseResults(cupName, phaseName, ResultDict().keyVolta)[nConfronto];
 
             String team1 = matchMapIda[ResultDict().keyTeamName1];
             String team2 = matchMapIda[ResultDict().keyTeamName2];
@@ -286,11 +268,11 @@ class CupClassification{
             classifiedClubs = classifiedClubs + globalCup[cupName]![keyClassificados];
           }
 
-          if(phaseName == keyFinal){
+          if(phaseName == KnockoutStage().keyFinal){
             globalCup[cupName]![keyChampion] = classifiedClubs.first;
           }else{
             //SAVE CLASSIFIED CLUBS TO NEW PHASE
-            Map idaVoltaInitialMap = saveIdaVoltaTeamNames(classifiedClubs);
+            Map idaVoltaInitialMap = KnockoutStage().saveIdaVoltaTeamNames(classifiedClubs);
 
             globalCup[cupName]![nextPhaseName] = idaVoltaInitialMap;
           }
@@ -306,7 +288,7 @@ class CupClassification{
   }
 
   String getFirstPhaseStageName(String cupName){
-    List phasesNames = listPhases();
+    List phasesNames = KnockoutStage().listPhases();
     late String firstPhaseName;
     for (String phaseName in phasesNames) {
         if(globalCup[cupName]!.containsKey(phaseName)){

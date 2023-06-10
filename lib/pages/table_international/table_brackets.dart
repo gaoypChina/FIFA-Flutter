@@ -1,12 +1,14 @@
-import 'package:fifa/classes/cup_classification.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/classes/mata_mata/knockout_international.dart';
+import 'package:fifa/classes/mata_mata/knockout_stage.dart';
+import 'package:fifa/classes/mata_mata/mata_mata_class.dart';
 import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/match/result_dict.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/cups/tabs/cup_brackets.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:flutter/material.dart';
-
 
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
@@ -18,18 +20,18 @@ Widget interBrackets(BuildContext context, String leagueInternational){
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          matchBox(leagueInternational, CupClassification().keyOitavas, 1),
-          matchBox(leagueInternational, CupClassification().keyOitavas, 2),
-          matchBox(leagueInternational, CupClassification().keyOitavas, 3),
-          matchBox(leagueInternational, CupClassification().keyOitavas, 4),
+          matchBox(leagueInternational, KnockoutStage().keyOitavas, 1),
+          matchBox(leagueInternational, KnockoutStage().keyOitavas, 2),
+          matchBox(leagueInternational, KnockoutStage().keyOitavas, 3),
+          matchBox(leagueInternational, KnockoutStage().keyOitavas, 4),
         ],
       ),
 
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          matchBox(leagueInternational, CupClassification().keyQuartas, 1),
-          matchBox(leagueInternational, CupClassification().keyQuartas, 2),
+          matchBox(leagueInternational, KnockoutStage().keyQuartas, 1),
+          matchBox(leagueInternational, KnockoutStage().keyQuartas, 2),
         ],
       ),
 
@@ -43,9 +45,9 @@ Widget interBrackets(BuildContext context, String leagueInternational){
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  matchBox(leagueInternational, CupClassification().keySemifinal, 1),
+                  matchBox(leagueInternational, KnockoutStage().keySemifinal, 1),
                   const SizedBox(height: 8),
-                  matchBox(leagueInternational, CupClassification().keySemifinal, 2),
+                  matchBox(leagueInternational, KnockoutStage().keySemifinal, 2),
                 ],
               ),
             ),
@@ -55,7 +57,7 @@ Widget interBrackets(BuildContext context, String leagueInternational){
               child: Row(
                 children: [
                   const Spacer(),
-                  matchBox(leagueInternational, CupClassification().keyFinal, 1),
+                  matchBox(leagueInternational, KnockoutStage().keyFinal, 1),
                   Stack(
                     children: [
                       Images().getTrophy(leagueInternational,70,70),
@@ -79,17 +81,17 @@ Widget interBrackets(BuildContext context, String leagueInternational){
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          matchBox(leagueInternational, CupClassification().keyQuartas, 3),
-          matchBox(leagueInternational, CupClassification().keyQuartas, 4),
+          matchBox(leagueInternational, KnockoutStage().keyQuartas, 3),
+          matchBox(leagueInternational, KnockoutStage().keyQuartas, 4),
         ],
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          matchBox(leagueInternational, CupClassification().keyOitavas, 5),
-          matchBox(leagueInternational, CupClassification().keyOitavas, 6),
-          matchBox(leagueInternational, CupClassification().keyOitavas, 7),
-          matchBox(leagueInternational, CupClassification().keyOitavas, 8),
+          matchBox(leagueInternational, KnockoutStage().keyOitavas, 5),
+          matchBox(leagueInternational, KnockoutStage().keyOitavas, 6),
+          matchBox(leagueInternational, KnockoutStage().keyOitavas, 7),
+          matchBox(leagueInternational, KnockoutStage().keyOitavas, 8),
         ],
       ),
     ],
@@ -97,24 +99,26 @@ Widget interBrackets(BuildContext context, String leagueInternational){
 }
 
 Widget matchBox(String leagueInternational, String phaseName, int matchNumber){
+
+  MataMata data = MataMata();
+  data.getData(leagueInternational, phaseName, matchNumber, 0);
+
   Map resultsIda = {};
   Map resultsVolta = {};
   late Confronto confrontoIda;
   late Confronto confrontoVolta;
   try{
-    resultsIda = CupClassification().getCupPhaseResults(leagueInternational, phaseName, ResultDict().keyIda)[matchNumber];
-    resultsVolta = CupClassification().getCupPhaseResults(leagueInternational, phaseName, ResultDict().keyVolta)[matchNumber];
-    confrontoIda = Confronto(clubName1: resultsIda[ResultDict().keyTeamName1], clubName2: resultsIda[ResultDict().keyTeamName2]);
-    confrontoVolta = Confronto(clubName1: resultsVolta[ResultDict().keyTeamName1], clubName2: resultsVolta[ResultDict().keyTeamName2]);
+    String idaOrVoltaKey = ResultDict().keyIda;
+    resultsIda = KnockoutInternational().getPhaseMatchData(leagueInternational, phaseName, idaOrVoltaKey, matchNumber);
+    confrontoIda = Confronto(clubName1: resultsIda[data.clubName1], clubName2: resultsIda[data.clubName2]);
+    confrontoVolta = Confronto(clubName1: resultsVolta[data.clubName1], clubName2: resultsVolta[data.clubName2]);
 
-    if(resultsIda.containsKey(ResultDict().keyGol1)){
-      confrontoIda.setGoals(goal1: resultsIda[ResultDict().keyGol1], goal2: resultsIda[ResultDict().keyGol2]);
-    }
+    confrontoIda.setGoals(goal1: data.goal1, goal2: data.goal2);
     if(resultsVolta.containsKey(ResultDict().keyGol1)){
-      confrontoVolta.setGoals(goal1: resultsVolta[ResultDict().keyGol2], goal2: resultsVolta[ResultDict().keyGol1]);
+      confrontoVolta.setGoals(goal1: data.goal2, goal2: data.goal1);
     }
     if(resultsVolta.containsKey(ResultDict().keyPenalti1)){
-      confrontoVolta.setPenalties(penaltis1: resultsVolta[ResultDict().keyPenalti2], penaltis2: resultsVolta[ResultDict().keyPenalti1]);
+      confrontoVolta.setPenalties(penaltis1: data.goal1, penaltis2: data.goal2);
     }
   }catch(e){
     //Não tem o confronto da fase

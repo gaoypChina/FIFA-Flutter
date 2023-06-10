@@ -191,7 +191,7 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
                     leaguesListRealIndex: leaguesListRealIndex,
                     onTap: (String leagueName){
                       choosenLeagueName = leagueName;
-                      getClubsMarkers(googleMapController, leaguesMap[choosenLeagueName]);
+                      // getClubsMarkers(googleMapController, leaguesMap[choosenLeagueName]);
                       setState(() {});
                     }
                 ),
