@@ -1,9 +1,9 @@
 import 'package:fifa/classes/click_navigator/click_club.dart';
+import 'package:fifa/classes/dict_keys/player_stats_keys.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/classes/player_stats_keys.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/historic/leagues_historic.dart';
 import 'package:fifa/pages/ranking_clubs/league_selection_row.dart';

@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/dict_keys/player_stats_keys.dart';
 import 'package:fifa/classes/mata_mata/cup_classification.dart';
 import 'package:fifa/classes/end_year_updates/aposentadoria.dart';
 import 'package:fifa/classes/functions/fim_campeonato_local.dart';
@@ -17,7 +18,6 @@ import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/functions/internat_league_manipulation.dart';
-import 'package:fifa/classes/player_stats_keys.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/coach/controller/coach_ranking_controller.dart';
 import 'package:fifa/pages/negotiation/negotiation_class.dart';

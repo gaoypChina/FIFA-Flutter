@@ -1,6 +1,5 @@
+import 'package:fifa/classes/dict_keys/player_stats_keys.dart';
 import 'package:fifa/global_variables.dart';
-
-import '../../../player_stats_keys.dart';
 
 class CleanSheets{
 

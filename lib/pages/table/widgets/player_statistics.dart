@@ -1,6 +1,6 @@
+import 'package:fifa/classes/dict_keys/player_stats_keys.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
-import 'package:fifa/classes/player_stats_keys.dart';
 import 'package:fifa/pages/table/widgets/organize_league_statistics.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/player_templates/row_player_stats.dart';

@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/player_stats_keys.dart';
+import 'package:fifa/classes/dict_keys/player_stats_keys.dart';
 import 'package:fifa/global_variables.dart';
 
 class Goal{

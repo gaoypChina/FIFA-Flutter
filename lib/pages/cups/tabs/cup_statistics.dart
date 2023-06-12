@@ -1,7 +1,7 @@
+import 'package:fifa/classes/dict_keys/player_stats_keys.dart';
 import 'package:fifa/classes/mata_mata/cup_classification.dart';
 import 'package:fifa/classes/functions/order_list.dart';
 import 'package:fifa/classes/jogador.dart';
-import 'package:fifa/classes/player_stats_keys.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';

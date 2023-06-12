@@ -1,6 +1,6 @@
+import 'package:fifa/classes/dict_keys/player_stats_keys.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/functions/order_list.dart';
-import 'package:fifa/classes/player_stats_keys.dart';
 import 'package:fifa/global_variables.dart';
 
 List organizarVariavelLeague(League league, int goalOrYellowOrRed) {
