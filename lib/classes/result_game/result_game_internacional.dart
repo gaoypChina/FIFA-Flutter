@@ -49,13 +49,13 @@ class ResultGameInternacional{
               nConfronto: nConfronto,
               competitionName: competitionName);
 
-          isAlreadyPlayed = matchResultInternational.isAlreadyPlayed;
+          isAlreadyPlayed = matchResultInternational.confronto.hasGoals;
           //SE SOU O TIME 1
-          if(matchResultInternational.clubID1 == clubID){
+          if(matchResultInternational.confronto.clubID1 == clubID){
             ifMyTeamIsLocal(matchResultInternational);
           }
           //SE SOU O TIME 2
-          if(matchResultInternational.clubID2 == clubID){
+          if(matchResultInternational.confronto.clubID2 == clubID){
             ifMyTeamIsVisitor(matchResultInternational);
           }
         }
@@ -132,10 +132,10 @@ class ResultGameInternacional{
 
   ifMyTeamIsLocal(MatchResultInternational matchResultInternational){
     visitante = false;
-    clubID2 = matchResultInternational.clubID2;
+    clubID2 = matchResultInternational.confronto.clubID2;
     clubName2 = Club(index: clubID2).name;
-    gol1 = matchResultInternational.goals1;
-    gol2 = matchResultInternational.goals2;
+    gol1 = matchResultInternational.confronto.goal1;
+    gol2 = matchResultInternational.confronto.goal2;
     hasAdversary = true;
     if(isAlreadyPlayed){
       placar = gol1.toString() + ' x '+ gol2.toString();
@@ -145,10 +145,10 @@ class ResultGameInternacional{
   }
   ifMyTeamIsVisitor(MatchResultInternational matchResultInternational){
     visitante = true;
-    clubID2 = matchResultInternational.clubID1;
+    clubID2 = matchResultInternational.confronto.clubID1;
     clubName2 = Club(index: clubID2).name;
-    gol1 = matchResultInternational.goals2;
-    gol2 = matchResultInternational.goals1;
+    gol1 = matchResultInternational.confronto.goal2;
+    gol2 = matchResultInternational.confronto.goal1;
     hasAdversary = true;
     if(isAlreadyPlayed){
       placar = gol1.toString() + ' x '+ gol2.toString();

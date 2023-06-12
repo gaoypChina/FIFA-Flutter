@@ -522,10 +522,10 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
     MatchResultInternational match = MatchResultInternational(rodadaNumber: semanasGruposInternacionais.indexOf(semana-1),groupNumber: groupNumber, nConfronto: nConfronto, competitionName: myClass.getMyInternationalLeague());
     My my = My();
 
-    String teamNameA = match.clubName1;
-    String teamNameB =  match.clubName2;
-    int golsA = match.goals1;
-    int golsB = match.goals2;
+    String teamNameA = match.confronto.clubName1;
+    String teamNameB =  match.confronto.clubName2;
+    int golsA = match.confronto.goal1;
+    int golsB = match.confronto.goal2;
 
     return  TableRow(
       children: [
@@ -535,7 +535,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
         //Escudo
         Images().getEscudoWidget(teamNameA,20,20),
 
-        match.isAlreadyPlayed
+        match.confronto.hasGoals
             ? Text(golsA.toString()+'x'+golsB.toString(),style: EstiloTextoBranco.text16)
             : const Center(child: Text('x',style: EstiloTextoBranco.text16)),
 

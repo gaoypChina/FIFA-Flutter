@@ -6,10 +6,10 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/historic/international/widgets/column.dart';
 import 'package:fifa/pages/historic/international/widgets/list_clubs_view.dart';
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
-import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/historic_champions/historic_champions.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
@@ -96,9 +96,11 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                   : wListViewChampions(context, leagueInternational),
 
 
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              Container(
+                color: AppColors().greyTransparent,
+                padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical:4),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     internationalLogoSelection(),
                     const SizedBox(width: 6),
@@ -111,7 +113,6 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                   ],
                 ),
               ),
-              const SizedBox(height: 10),
 
             ],
           ) : Container(),

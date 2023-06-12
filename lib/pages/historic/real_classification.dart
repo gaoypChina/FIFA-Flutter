@@ -292,14 +292,14 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
                     ),
 
                     for(String leagueName in LeagueOfficialNames().getAllLeagueNames())
-                      leagueHistoricBottomWidget(
-                          leagueName,
-                          choosenLeagueName,
-                              (){
-                        choosenLeagueName = leagueName;
-                        getLeagueTable(urls[choosenLeagueName]);
-                        setState(() {});
-                      })
+                      countryFlagsSelectionBottomWidget2(
+                          leagueName: leagueName,
+                          choosenLeagueName: choosenLeagueName,
+                          onTap: (){
+                            choosenLeagueName = leagueName;
+                            getLeagueTable(urls[choosenLeagueName]);
+                            setState(() {});
+                          })
                   ],
                 ),
               ),

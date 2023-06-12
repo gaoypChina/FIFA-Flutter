@@ -130,14 +130,15 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                         }
                     ),
                     for(String leagueName in LeagueOfficialNames().getAllLeagueNames())
-                      leagueHistoricBottomWidget(
-                          leagueName,
-                          choosenLeagueName,
-                              () {
+                      countryFlagsSelectionBottomWidget2(
+                          leagueName: leagueName,
+                          choosenLeagueName: choosenLeagueName,
+                          onTap: () {
                                 choosenLeagueName = leagueName;
                                 setState(() {});
                               }
-                      )
+                      ),
+
                   ],
                 ),
               ),

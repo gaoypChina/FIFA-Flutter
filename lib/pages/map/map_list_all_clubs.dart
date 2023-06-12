@@ -11,6 +11,8 @@ import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/back_button.dart';
+import 'package:fifa/widgets/button/pressable_button.dart';
+import 'package:fifa/widgets/league_selection_row.dart';
 import 'package:fifa/widgets/stars.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -231,12 +233,21 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: countryOptions.length,
-          itemBuilder: (c,i)=>countrySelection(countryOptions[i])
+          itemBuilder: (c, i) {
+            return countryFlagsSelectionBottomWidget(
+              country: countryOptions[i],
+              choosenCountryName: selectedCountry,
+              onTap: () {
+                selectedCountry = countryOptions[i];
+                setState(() {});
+              },
+            );
+          }
       ),
     );
   }
   Widget countrySelection(String country){
-    return GestureDetector(
+    return PressableButton(
       onTap: (){
         selectedCountry = country;
         setState((){});
@@ -244,7 +255,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
       child: Center(
           child: Container(
             height: 60,
-            color: country == selectedCountry ? Colors.green[300] : Colors.transparent,
+            color: country == selectedCountry ? Colors.green : Colors.transparent,
            padding: const EdgeInsets.symmetric(horizontal: 2.0,vertical: 10),
             child: funcFlagsList(country, 40, 50),
       )),

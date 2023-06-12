@@ -7,13 +7,31 @@ import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:flutter/material.dart';
 
-Widget leagueHistoricBottomWidget(String leagueName, String choosenLeagueName, Function() onTap) {
+Widget countryFlagsSelectionBottomWidget({required String country, required String choosenCountryName,required Function() onTap}) {
+
   return PressableButton(
     onTap: onTap,
     child: Container(
       padding: EdgeInsets.symmetric(
-          vertical:  choosenLeagueName == leagueName ? 7.5 : 12.5,
-          horizontal: choosenLeagueName == leagueName ? 3.5 : 6,
+        vertical:  choosenCountryName == country ? 7.5 : 12.5,
+        horizontal: choosenCountryName == country ? 3.5 : 6,
+      ),
+      color: choosenCountryName == country ? AppColors().green : AppColors().greyTransparent,
+      child: funcFlagsList(
+          country,
+          choosenCountryName == country ? 35 : 25,
+          choosenCountryName == country ? 45 : 40),
+    ),
+  );
+}
+
+Widget countryFlagsSelectionBottomWidget2({required String leagueName, required String choosenLeagueName, required Function() onTap}) {
+  return PressableButton(
+    onTap: onTap,
+    child: Container(
+      padding: EdgeInsets.symmetric(
+        vertical:  choosenLeagueName == leagueName ? 7.5 : 12.5,
+        horizontal: choosenLeagueName == leagueName ? 3.5 : 6,
       ),
       color: choosenLeagueName == leagueName ? AppColors().green : AppColors().greyTransparent,
       child: funcFlagsList(

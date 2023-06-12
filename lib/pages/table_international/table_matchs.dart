@@ -115,10 +115,10 @@ class _TableMatchsState extends State<TableMatchs> {
     MatchResultInternational match = MatchResultInternational(rodadaNumber: rodadaShow-1,groupNumber: groupNumber, nConfronto: nConfronto, competitionName: leagueInternational);
 
 
-    String teamNameA = match.clubName1;
-    String teamNameB =  match.clubName2;
-    int golsA = match.goals1;
-    int golsB = match.goals2;
+    String teamNameA = match.confronto.clubName1;
+    String teamNameB =  match.confronto.clubName2;
+    int golsA = match.confronto.goal1;
+    int golsB = match.confronto.goal2;
     TextStyle style1 = matchStyle1(golsA, golsB, 16);
     TextStyle style2 = matchStyle2(golsA, golsB, 16);
 
@@ -130,7 +130,7 @@ class _TableMatchsState extends State<TableMatchs> {
         //Escudo
         Images().getEscudoWidget(teamNameA,20,20),
 
-        match.isAlreadyPlayed
+        match.confronto.hasGoals
             ? Row(
             children: [
               Text(golsA.toString(),style: style1),
