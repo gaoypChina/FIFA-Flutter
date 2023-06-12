@@ -146,14 +146,14 @@ Map<String,dynamic> mapAsia = {
     2017.0: [],
     2016.0: [n.dhakaAbahani,n.chittagong,n.sheikhrussel,],
     2015.0: [n.sheikhJamal,n.sheikhrussel,n.mohammedan,],
-    2014.0: [n.sheikhJamal,n.dhakaAbahani,n.muktijoddha,],
+    2014.0: [n.sheikhJamal,n.dhakaAbahani,n.muktijoddgrenlandha,],
     2013.0: [n.sheikhrussel,n.sheikhJamal,n.dhakaAbahani,],
-    2012.0: [n.dhakaAbahani,n.muktijoddha,n.mohammedan,],
-    2011.0: [n.sheikhJamal,n.muktijoddha,n.sheikhrussel,],
+    2012.0: [n.dhakaAbahani,n.muktijoddgrenlandha,n.mohammedan,],
+    2011.0: [n.sheikhJamal,n.muktijoddgrenlandha,n.sheikhrussel,],
     2010.0: [n.dhakaAbahani,n.mohammedan,n.sheikhrussel,],
     2009.0: [n.dhakaAbahani,n.mohammedan,n.sheikhrussel,],
     2008.0: [],
-    2007.0: [n.dhakaAbahani,n.mohammedan,n.muktijoddha,],
+    2007.0: [n.dhakaAbahani,n.mohammedan,n.muktijoddgrenlandha,],
   },
 
   leagueName.cingapura : {

@@ -1404,7 +1404,7 @@ class ClubDetails{
       '',0,0,_country.norway,50.0,[],{}];
     map[n.fredrikstad] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(59.2116267, 10.9374700),
       'Nye Fredrikstad Stadion',13300,1903,_country.norway,65.4,[],{}];
-    map[n.glimt] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(67.27666691, 14.38474245),
+    map[n.bodoglimt] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(67.27666691, 14.38474245),
       'Aspmyra Stadion',7354,1916,_country.norway,67.9,[],{}];
     map[n.haugesund] = [ClubColors(Colors.white,Colors.blue),pattern.solid,Coordinates(59.413128478967714, 5.279157306889031),
       'Haugesund Stadion',8754,1993,_country.norway,63.8,[],{}];
@@ -1414,7 +1414,7 @@ class ClubDetails{
       'Gjemselund Stadion',6700,1892,_country.norway,54.7,[],{}];
     map[n.kristiansund] = [ClubColors(darkblue,Colors.white),pattern.solid,Coordinates(63.124852083959716, 7.718145699044887),
       'Kristiansund Stadion',4444,2003,_country.norway,64.5,[],{}];
-    map[n.larvik] = [ClubColors(Colors.white,Colors.blue),pattern.solid,Coordinates(0,0),
+    map[n.larvikturn] = [ClubColors(Colors.white,Colors.blue),pattern.solid,Coordinates(0,0),
       'Lovisenlund',0,1865,_country.norway,54.6,[],{}];
     map[n.lillestrom] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(59.962752,11.063458),
       'Åråsen Stadion',12000,1917,_country.norway,67.1,[],{}];
@@ -1424,11 +1424,11 @@ class ClubDetails{
       'Aker Stadion',11167,1911,_country.norway,69.6,[n.rosenborg],{}];
     map[n.moss] = [ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(0,0),
       'Estádio',0,0,_country.norway,50.0,[],{}];
-    map[n.odd] = [ClubColors(Colors.black,Colors.white),pattern.solid,Coordinates(59.2114814, 9.5900116),
+    map[n.oddgrenland] = [ClubColors(Colors.black,Colors.white),pattern.solid,Coordinates(59.2114814, 9.5900116),
       'Skagerak Arena',13500,1894,_country.norway,64.4,[],{}];
     map[n.rosenborg] = [ClubColors(Colors.black,Colors.white),pattern.solid,Coordinates(63.41251977, 10.405168),
       'Lerkendal Stadion',21405,1917,_country.norway,69.1,[n.molde],{}];
-    map[n.sanderfjord] = [ClubColors(Colors.blue,Colors.red),pattern.solid,Coordinates(0,0),
+    map[n.sandefjord] = [ClubColors(Colors.blue,Colors.red),pattern.solid,Coordinates(0,0),
       'Release Arena',6582,1998,_country.norway,61.3,[],{}];
     map[n.sarpsborg] = [ClubColors(Colors.blue,Colors.white),pattern.oneVertStripe,Coordinates(59.2863530, 11.0975386),
       'Sarpsborg Stadion',4700,2008,_country.norway,58.6,[],{}];

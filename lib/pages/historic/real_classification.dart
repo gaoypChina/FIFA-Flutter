@@ -1,17 +1,15 @@
 import 'package:fifa/classes/click_navigator/click_club.dart';
-import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/classes/league.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/historic/leagues_historic.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/club_names.dart';
 import 'package:fifa/values/historic_champions/historic_champions.dart';
-import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/back_button.dart';
 import 'package:fifa/widgets/bottom_sheet/bottom_sheet_league_classification.dart';
+import 'package:fifa/widgets/league_selection_row.dart';
 import 'package:flutter/material.dart';
 import 'package:html/parser.dart' as parser;
 import 'package:http/http.dart' as http;
@@ -77,7 +75,7 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
   n.grecia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Super_League_Greece", 3],
   n.hungria: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Nemzeti_Bajnoks%C3%A1g_I", 4],
   n.ilhasfaroe: ["https://en.wikipedia.org/wiki/2023_Faroe_Islands_Premier_League", 1],
-  n.irlanda: ["https://en.wikipedia.org/wiki/2023_League_of_Ireland_Premier_Division", 2],
+  n.irlanda: ["https://en.wikipedia.org/wiki/2023_League_of_Ireland_Premier_Division", 3],
   n.irlandanorte: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_NIFL_Premiership", 1],
   n.islandia: ["https://en.wikipedia.org/wiki/2023_Besta_deild_karla", 1],
   n.israel: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Israeli_Premier_League", 5],
@@ -283,11 +281,25 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    for(int i=0;i<leaguesListRealIndex.length;i++)
-                      leagueSelectionRow(i),
+                    LeagueSelectionRow(
+                        choosenLeagueName: choosenLeagueName,
+                        leaguesListRealIndex: leaguesListRealIndex,
+                        onTap: (String leagueName){
+                          choosenLeagueName = leagueName;
+                          getLeagueTable(urls[choosenLeagueName]);
+                          setState(() {});
+                        }
+                    ),
 
                     for(String leagueName in LeagueOfficialNames().getAllLeagueNames())
-                      leagueHistoric(leagueName)
+                      leagueHistoricBottomWidget(
+                          leagueName,
+                          choosenLeagueName,
+                              (){
+                        choosenLeagueName = leagueName;
+                        getLeagueTable(urls[choosenLeagueName]);
+                        setState(() {});
+                      })
                   ],
                 ),
               ),
@@ -338,37 +350,6 @@ Widget rowTile(int index,Map data){
             ),
           ],
         ),
-      ),
-    );
-}
-  Widget leagueSelectionRow(int i){
-    int leagueID = leaguesListRealIndex[i];
-    String leagueName = League(index: leagueID).getName();
-
-    return GestureDetector(
-      onTap: (){
-        choosenLeagueName = leagueName;
-        getLeagueTable(urls[choosenLeagueName]);
-        setState(() {});
-    },
-      child: Container(
-        padding: const EdgeInsets.all(2),
-        color: choosenLeagueName == leagueName ? Colors.redAccent: Colors.white54,
-        child: Image.asset(FIFAImages().campeonatoLogo(leagueName),height: 50,width: 50,),
-      ),
-    );
-}
-  Widget leagueHistoric(String leagueName) {
-    return GestureDetector(
-      onTap: (){
-        choosenLeagueName = leagueName;
-        getLeagueTable(urls[choosenLeagueName]);
-        setState(() {});
-    },
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 9),
-        color: choosenLeagueName == leagueName ? Colors.redAccent: Colors.white54,
-        child: funcFlagsList(getCountryFromLeague(leagueName), 35, 50),
       ),
     );
 }
@@ -667,8 +648,8 @@ String getAppClubName(String name, String leagueName, LeagueOfficialNames l){
   map["Sutjeska"] = n.sutjeska;
   map["Iskra"] = n.iskra;
   //NORUEGA
-  map["Odd"] = n.odd;
-  map["Sandefjord"] = n.sanderfjord;
+  map["Odd"] = n.oddgrenland;
+  map["Sandefjord"] = n.sandefjord;
   map["Tromsø"] = n.tromso;
   map["Vålerenga"] = n.valerenga;
   //PAIS DE GALES

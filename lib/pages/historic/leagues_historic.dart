@@ -131,7 +131,14 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                         }
                     ),
                     for(String leagueName in LeagueOfficialNames().getAllLeagueNames())
-                      leagueHistoric(leagueName)
+                      leagueHistoricBottomWidget(
+                          leagueName,
+                          choosenLeagueName,
+                              () {
+                                choosenLeagueName = leagueName;
+                                setState(() {});
+                              }
+                      )
                   ],
                 ),
               ),
@@ -260,24 +267,6 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   }
 
   ////////////////////////////////////////////////////////////////////////////
-  Widget leagueSelectionRow(int i){
-    int leagueID = leaguesListRealIndex[i];
-    String leagueName = League(index: leagueID).getName();
-
-    return GestureDetector(
-      onTap: (){
-        choosenLeagueName = leagueName;
-        setState(() {});
-      },
-      child: Container(
-        padding: const EdgeInsets.all(2),
-        color: choosenLeagueName == leagueName ? Colors.redAccent: Colors.white54,
-        child: Image.asset(FIFAImages().campeonatoLogo(leagueName),height: 50,width: 50,),
-      ),
-    );
-  }
-
-
   Widget rowChampions(int year){
     return Expanded(
       child: Row(

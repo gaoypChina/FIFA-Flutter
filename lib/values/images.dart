@@ -519,10 +519,10 @@ String imageLogo(String timeFoto) {
     //NORUEGA
     map[_name.aalesund] = 'aalesund';
     map[_name.fredrikstad] = 'fredrikstad';
-    map[_name.glimt] = 'glimt';
+    map[_name.bodoglimt] = 'glimt';
     map[_name.lillestrom] = 'lillestrom';
     map[_name.lyn] = 'lyn';
-    map[_name.odd] = 'odd';
+    map[_name.oddgrenland] = 'odd';
     map[_name.molde] = 'molde';
     map[_name.rosenborg] = 'rosenborg';
     map[_name.valerenga] = 'valerenga';

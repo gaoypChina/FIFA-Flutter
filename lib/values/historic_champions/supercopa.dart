@@ -66,7 +66,6 @@ Map<String,dynamic> mapSupercopa = {
   leagueName.recopasula : {
     //2025.0: [],
     //2024.0: [],
-    2023.0: [],
     2023.0: [n.idelvalle,n.flamengo,],
     2022.0: [n.palmeiras,n.atleticopr,],
     2021.0: [n.defensayjusticia,n.palmeiras,],
