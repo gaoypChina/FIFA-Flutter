@@ -69,10 +69,10 @@ class CupClassification extends KnockoutStage{
     Confronto confronto = getConfrontoFromMapMatch(results);
 
     if(results.containsKey(ResultDict().keyGol1)){
-      confronto.setGoals(goal1: results[ResultDict().keyGol2], goal2: results[ResultDict().keyGol1]);
+      confronto.setGoals(goal1: results[ResultDict().keyGol1], goal2: results[ResultDict().keyGol2]);
     }
-    if(results.containsKey(ResultDict().keyPenalti1)){
-      confronto.setPenalties(penaltis1: results[ResultDict().keyPenalti2], penaltis2: results[ResultDict().keyPenalti1]);
+    if(results.containsKey(ResultDict().keyPenalty1)){
+      confronto.setPenalties(penaltis1: results[ResultDict().keyPenalty2], penaltis2: results[ResultDict().keyPenalty1]);
     }
 
     return confronto;
@@ -215,6 +215,8 @@ class CupClassification extends KnockoutStage{
           Map matchMapIda = getPhaseMatchData(competitionName, phaseName, ResultDict().keyIda, nMatch);
           Map matchMapVolta = getPhaseMatchData(competitionName, phaseName, ResultDict().keyVolta, nMatch);
 
+          print(matchMapIda);
+          print(matchMapVolta);
           String team1 = matchMapIda[ResultDict().keyTeamName1];
           String team2 = matchMapIda[ResultDict().keyTeamName2];
 
@@ -239,9 +241,10 @@ class CupClassification extends KnockoutStage{
               winnerName = team2;
             }
             //SAVE PENALTY - penaly order inverted, because é salvo no map da volta
-            saveClassifiedAfterPenalties(competitionName, phaseName, nMatch, ResultDict().savePenaltis(matchMapVolta, penalty2, penalty1));
+            saveClassifiedAfterPenalties(competitionName, phaseName, nMatch, ResultDict().savePenaltis(matchMapVolta, penalty1, penalty2));
           }
 
+          print(winnerName);
           classifiedClubs.add(winnerName);
         }
 

@@ -4,10 +4,10 @@ class ResultDict{
 
   String keyTeamName1 = "team1";
   String keyTeamName2 = "team2";
-  String keyGol1 = "gol1";
-  String keyGol2 = "gol2";
-  String keyPenalti1 = "penalti1";
-  String keyPenalti2 = "penalti2";
+  String keyGol1 = "g1";
+  String keyGol2 = "g2";
+  String keyPenalty1 = "pen1";
+  String keyPenalty2 = "pen2";
   String keyIda = "Ida";
   String keyVolta = "Volta";
 
@@ -27,8 +27,8 @@ class ResultDict{
   }
 
   Map savePenaltis(Map matchMap, int penalti1, int penalti2){
-    matchMap[keyPenalti1] = penalti1;
-    matchMap[keyPenalti2] = penalti2;
+    matchMap[keyPenalty1] = penalti1;
+    matchMap[keyPenalty2] = penalti2;
 
     return matchMap;
   }
@@ -54,7 +54,7 @@ class ResultDict{
 
     //GET PENALTIS
     try{
-      confronto.setPenalties(penaltis1: matchMap[keyPenalti1], penaltis2: matchMap[keyPenalti2]);
+      confronto.setPenalties(penaltis1: matchMap[keyPenalty1], penaltis2: matchMap[keyPenalty2]);
     }catch(e){
       //o jogo nao teve penaltis
     }

@@ -134,7 +134,7 @@ Widget showMatchBoxClubs(Confronto confrontoIda,Confronto confrontoVolta){
             ? goals(confrontoIda.goal1, confrontoIda.goal2)
             : Container(),
         confrontoVolta.hasGoals
-            ? goals(confrontoVolta.goal1, confrontoVolta.goal2)
+            ? goals(confrontoVolta.goal2, confrontoVolta.goal1)
             : Container(),
 
         confrontoVolta.hasPenaltis

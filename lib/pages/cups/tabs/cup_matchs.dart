@@ -57,6 +57,7 @@ Widget cupPhaseColumn(BuildContext context,  String competitionName, String phas
   Map matchs = {};
   try {
     matchs = CupClassification().getPhaseResults(competitionName, phaseKeyName, idaOrVoltaKey);
+    print(matchs);
   }catch(e){
     return Container();
   }
@@ -75,7 +76,8 @@ Widget cupPhaseColumn(BuildContext context,  String competitionName, String phas
           cupMatchRow(
               context,
               CupClassification().getConfrontoFromMapMatch(matchs[i]),
-              my)
+              my
+          )
       ],
     );
 

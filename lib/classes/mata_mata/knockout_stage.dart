@@ -1,5 +1,6 @@
 import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/match/result_dict.dart';
+import 'package:fifa/theme/custom_toast.dart';
 
 class KnockoutStage{
   final Map<String,List<int>> _mapDates = {};
@@ -34,10 +35,10 @@ class KnockoutStage{
     Confronto confronto = Confronto(clubName1: results[ResultDict().keyTeamName1], clubName2: results[ResultDict().keyTeamName2]);
 
     if(results.containsKey(ResultDict().keyGol1)){
-      confronto.setGoals(goal1: results[ResultDict().keyGol2], goal2: results[ResultDict().keyGol1]);
+      confronto.setGoals(goal1: results[ResultDict().keyGol1], goal2: results[ResultDict().keyGol2]);
     }
-    if(results.containsKey(ResultDict().keyPenalti1)){
-      confronto.setPenalties(penaltis1: results[ResultDict().keyPenalti2], penaltis2: results[ResultDict().keyPenalti1]);
+    if(results.containsKey(ResultDict().keyPenalty1)){
+      confronto.setPenalties(penaltis1: results[ResultDict().keyPenalty2], penaltis2: results[ResultDict().keyPenalty1]);
     }
     return confronto;
   }
@@ -88,7 +89,7 @@ class KnockoutStage{
 
   bool hasChampion(String competitionName){
     if(globalVariable.containsKey(competitionName)
-        && globalVariable.containsValue(KnockoutStage().keyChampion)){
+        && globalVariable[competitionName].containsKey(KnockoutStage().keyChampion)){
       return true;
     }else{
       return false;
