@@ -12,25 +12,19 @@ import 'package:fifa/values/league_names.dart';
 
 class MundialFinal{
 
-  Club club1 = Club(index: 0);
-  Club club2 = Club(index: 0);
   bool isChampionClub1 = true;
-  bool hasPenaltis = false;
-  int _goal1 = 0;
-  int _goal2 = 0;
   late Confronto confronto;
 
   void getClubs(){
     LeagueOfficialNames l = LeagueOfficialNames();
-    club1 = finalistName(l.championsLeague);
-    club2 = finalistName(l.libertadores);
+    Club club1 = finalistName(l.championsLeague);
+    Club club2 = finalistName(l.libertadores);
+    confronto = Confronto(clubName1: club1.name, clubName2: club2.name);
   }
 
   void simulate(){
       getClubs();
       simulateScore();
-      confronto = Confronto(clubName1: club1.name, clubName2: club2.name);
-      confronto.setGoals(goal1: _goal1, goal2: _goal2);
       simulatePenaltis();
 
       saveResults();
@@ -45,32 +39,23 @@ class MundialFinal{
 
   void simulateScore(){
 
-    MatchSimulation match = MatchSimulation(club1, club2);
-    _goal1 = match.variableGol1;
-    _goal2 = match.variableGol2;
-    if(_goal1>_goal2){
-      isChampionClub1 = true;
-    }else{
-      isChampionClub1 = false;
-    }
-    if(_goal1==_goal2){
-      hasPenaltis = true;
+    MatchSimulation match = MatchSimulation(Club(index: confronto.clubID1), Club(index: confronto.clubID2));
+    confronto.setGoals(goal1: match.variableGol1, goal2: match.variableGol2);
+
+    if(confronto.goal1 == confronto.goal2){
+      simulatePenaltis();
     }
   }
 
   void simulatePenaltis(){
-    if(hasPenaltis){
-      confronto.penaltis1 = Random().nextInt(5);
-      confronto.penaltis2 = Random().nextInt(5);
-      if(confronto.penaltis1 > confronto.penaltis2){
-        isChampionClub1 = true;
-      }else{
-        isChampionClub1 = false;
-      }
+      confronto.setPenalties(
+          penaltis1: Random().nextInt(5),
+          penaltis2: Random().nextInt(5)
+      );
+
       if(confronto.penaltis1 == confronto.penaltis2){
         simulatePenaltis();
       }
-    }
   }
 
   void saveResults(){

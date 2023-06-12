@@ -4,7 +4,7 @@ import 'package:fifa/values/league_names.dart';
 ClubName n = ClubName();
 LeagueOfficialNames leagueName = LeagueOfficialNames();
 
-Map<String,dynamic> mapInternationals = {
+Map<String, dynamic> mapInternationals = {
 
   ///////////////////////////////////////////////////////////////
   // CONTINENTS CHAMPIONS

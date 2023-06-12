@@ -1,24 +1,25 @@
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
 Widget dropDownButton({required String selectedYearStr, required List<String> possibleYears, required Function(String value) setStateFunc}){
-  return                   Container(
+  return Container(
     decoration: BoxDecoration(
-      color:Colors.white, //background_color color of dropdown button
-      border: Border.all(color: Colors.black38, width:2), //border of dropdown button
+      color: AppColors().greyTransparent, //background_color color of dropdown button
+      border: Border.all(color: AppColors().green, width:2), //border of dropdown button
       borderRadius: BorderRadius.circular(10),
     ),
     child: Padding(
-      padding: const EdgeInsets.symmetric(horizontal:10.0,vertical: 4),
+      padding: const EdgeInsets.symmetric(horizontal:10.0,vertical: 1),
       child: DropdownButton<String>(
         value: selectedYearStr,
         style: const TextStyle(fontSize: 18, color: Colors.white),
-        iconEnabledColor: Colors.black, //Icon color
+        iconEnabledColor: Colors.white, //Icon color
         underline: Container(), //empty line
-        dropdownColor: Colors.white,
+        dropdownColor: Colors.black,
         items: possibleYears.map((value) {
           return DropdownMenuItem(
-            child: Text(value,style: EstiloTextoPreto.text16),
+            child: Text(value,style: EstiloTextoBranco.text16),
             value: value,
           );
         }).toList(),

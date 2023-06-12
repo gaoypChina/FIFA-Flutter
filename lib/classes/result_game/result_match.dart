@@ -83,18 +83,18 @@ class ResultMatch{
   fromMundial(int week, Club club, MundialFinal mundialFinal){
 
     //THE TEAM WILL PLAY THE FINAL?
-    if(mundialFinal.club1.index == club.index) {
+    if(mundialFinal.confronto.clubID1 == club.index) {
       hasAdversary = true;
-      club = mundialFinal.club1;
-      clubID = mundialFinal.club1.index;
-      clubName2 = mundialFinal.club2.name;
-      clubID2 = mundialFinal.club2.index;
-    }else if(mundialFinal.club2.index == club.index){
+      club = Club(index: mundialFinal.confronto.clubID1);
+      clubID = mundialFinal.confronto.clubID1;
+      clubName2 = mundialFinal.confronto.clubName2;
+      clubID2 = mundialFinal.confronto.clubID2;
+    }else if(mundialFinal.confronto.clubID2 == club.index){
       hasAdversary = true;
-      club = mundialFinal.club2;
-      clubID = mundialFinal.club2.index;
-      clubName2 = mundialFinal.club1.name;
-      clubID2 = mundialFinal.club1.index;
+      club = Club(index: mundialFinal.confronto.clubID2);
+      clubID = mundialFinal.confronto.clubID2;
+      clubName2 = mundialFinal.confronto.clubName1;
+      clubID2 = mundialFinal.confronto.clubID1;
     }else{
       hasAdversary = false;
     }

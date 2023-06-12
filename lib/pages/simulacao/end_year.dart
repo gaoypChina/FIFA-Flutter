@@ -232,7 +232,7 @@ Widget mundial(){
 Widget finale(String internationalLeagueName){
 
   MataMata data = MataMata();
-  Confronto confronto = data.getData(internationalLeagueName, Name().finale,0, 0);
+  Confronto confronto = data.getData(internationalLeagueName, Name().finale, 1, 0);
 
   return GestureDetector(
     onTap: (){

@@ -86,7 +86,8 @@ Map globalHistoricInternationalGoalsAll = {};
 
 Map globalHistoricLeagueClassification = {};
 Map globalHistoricInternationalClassification = {};
-Map globalHistoricClassification = {'Mundial':{}};
+Map globalHistoricCup = {};
+Map globalHistoricClassification = {'Mundial': {}};
 
 Map globalHistoricMyClub = {};
 Map globalHistoricBestPlayers = {};
@@ -159,16 +160,14 @@ Map globalLeagueClassified = {};
 int globalNumberClubsTotal = 0;
 
 ///////////////////////////
-//CHAMPIONS E LIBERTADORES
-Map globalInternationalMataMata = {};
-
-//Clubs IDs: Champions, Libertadores, Europa League e SulAmericana
+//Champions, Libertadores, Europa League e SulAmericana
 Map globalInternational = {};
-
 
 
 ///////////////////////////
 //INTERNACIONAL - NOVO FORMATO
+Map globalInternationalMataMata = {};
+
 Map<String, List<int>> globalLeaguePlayers = {};
 Map<String, List<int>> globalInternationalPlayers = {};
 

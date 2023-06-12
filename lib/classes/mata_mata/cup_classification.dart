@@ -215,8 +215,6 @@ class CupClassification extends KnockoutStage{
           Map matchMapIda = getPhaseMatchData(competitionName, phaseName, ResultDict().keyIda, nMatch);
           Map matchMapVolta = getPhaseMatchData(competitionName, phaseName, ResultDict().keyVolta, nMatch);
 
-          print(matchMapIda);
-          print(matchMapVolta);
           String team1 = matchMapIda[ResultDict().keyTeamName1];
           String team2 = matchMapIda[ResultDict().keyTeamName2];
 
@@ -244,7 +242,6 @@ class CupClassification extends KnockoutStage{
             saveClassifiedAfterPenalties(competitionName, phaseName, nMatch, ResultDict().savePenaltis(matchMapVolta, penalty1, penalty2));
           }
 
-          print(winnerName);
           classifiedClubs.add(winnerName);
         }
 

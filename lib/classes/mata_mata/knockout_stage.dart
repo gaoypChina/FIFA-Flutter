@@ -1,6 +1,5 @@
 import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/match/result_dict.dart';
-import 'package:fifa/theme/custom_toast.dart';
 
 class KnockoutStage{
   final Map<String,List<int>> _mapDates = {};

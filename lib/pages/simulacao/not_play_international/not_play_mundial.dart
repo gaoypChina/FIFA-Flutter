@@ -24,11 +24,12 @@ Widget notPlayMundial(BuildContext context){
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
 Widget row(My myclass){
+
     MundialFinal data = MundialFinal();
     data.getClubs();
 
-    String teamNameA = data.club1.name;
-    String teamNameB = data.club2.name;
+    String teamNameA = data.confronto.clubName1;
+    String teamNameB = data.confronto.clubName2;
     double imageSize = 25;
 
     return  Column(

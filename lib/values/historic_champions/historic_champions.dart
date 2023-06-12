@@ -53,7 +53,7 @@ void saveMapToCsv(String filePath) async {
   rows.add(['League', 'Year', 'Teams']);
 
   mapInternationals.forEach((leagueName, years) {
-    years.forEach((double year, List clubNames) {
+    years.forEach((double year, clubNames) {
       rows.add([leagueName, year.toStringAsFixed(1), clubNames.toString()]);
     });
     //

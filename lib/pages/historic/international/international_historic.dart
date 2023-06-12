@@ -1,6 +1,7 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/functions/name.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/classes/match/result_dict.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/historic/international/widgets/column.dart';
@@ -8,6 +9,7 @@ import 'package:fifa/pages/historic/international/widgets/list_clubs_view.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/historic_champions/historic_champions.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
@@ -253,24 +255,22 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
         Text(Name().showTranslated(context, Name().finale).toUpperCase(),
             style: EstiloTextoBranco.negrito14),
         for(int idaVolta = 0; idaVolta < 1; idaVolta++)
-          for(int i = 0; i < 2; i += 2)
-            internationalHistoricRow(
-                internationalLeagueName, Name().finale, i, idaVolta, ano),
+            internationalHistoricRow(internationalLeagueName, Name().finale, 1, idaVolta == 0 ? ResultDict().keyIda : ResultDict().keyVolta, ano),
 
         const Text('', style: EstiloTextoBranco.text16),
         Text(Name().showTranslated(context, Name().semifinal).toUpperCase(),
             style: EstiloTextoBranco.negrito14),
-        iteratePhase(ano, Name().semifinal, 4, internationalLeagueName),
+        iteratePhase(ano, Name().semifinal, 2, internationalLeagueName),
 
         const Text('', style: EstiloTextoBranco.text16),
         Text(Name().showTranslated(context, Name().quartas).toUpperCase(),
             style: EstiloTextoBranco.negrito14),
-        iteratePhase(ano, Name().quartas, 8, internationalLeagueName),
+        iteratePhase(ano, Name().quartas, 4, internationalLeagueName),
 
         const Text('', style: EstiloTextoBranco.text16),
         Text(Name().showTranslated(context, Name().oitavas).toUpperCase(),
             style: EstiloTextoBranco.negrito14),
-        iteratePhase(ano, Name().oitavas, 16, internationalLeagueName),
+        iteratePhase(ano, Name().oitavas, 8, internationalLeagueName),
 
         const Text('', style: EstiloTextoBranco.text16),
         const Text('', style: EstiloTextoBranco.text16),
@@ -281,33 +281,24 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
     return Column(
       children: [
         for(int idaVolta = 0; idaVolta < 2; idaVolta++)
-          for(int i = 0; i < iterations; i += 2)
+          for(int i = 1; i <= iterations; i += 1)
             internationalHistoricRow(
-                internationalLeagueName, phase, i, idaVolta, ano
+                internationalLeagueName, phase, i,  idaVolta == 0 ? ResultDict().keyIda : ResultDict().keyVolta, ano
             ),
       ],
     );
   }
 
-  Widget internationalHistoricRow(String internationalLeague, String phase,
-      int position, int idaVolta, int ano) {
-    Map map = globalHistoricInternationalGoalsAll[ano][internationalLeague][phase];
+  Widget internationalHistoricRow(
+      String internationalLeague, String phase, int nMatch, String idaVolta, int ano
+      ) {
+    Map map = globalHistoricInternationalGoalsAll[ano][internationalLeague][phase][idaVolta][nMatch];
 
-    int clubID1 = map.keys.elementAt(position);
-    if (idaVolta == 1) {
-      clubID1 = map.keys.elementAt(position + 1);
-    }
-    String clubName1 = Club(index: clubID1).name;
-    String goal1 = globalHistoricInternationalGoalsAll[ano][internationalLeague][phase][clubID1][idaVolta]
-        .toString();
+    String clubName1 = map[ResultDict().keyTeamName1];
+    int goal1 = map[ResultDict().keyGol1];
 
-    int clubID2 = map.keys.elementAt(position + 1);
-    if (idaVolta == 1) {
-      clubID2 = map.keys.elementAt(position);
-    }
-    String clubName2 = Club(index: clubID2).name;
-    String goal2 = globalHistoricInternationalGoalsAll[ano][internationalLeague][phase][clubID2][idaVolta]
-        .toString();
+    String clubName2 = map[ResultDict().keyTeamName2];
+    int goal2 = map[ResultDict().keyGol2];
 
     return Padding(
       padding: const EdgeInsets.all(1.0),

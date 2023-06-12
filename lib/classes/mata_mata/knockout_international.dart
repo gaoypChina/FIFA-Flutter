@@ -29,6 +29,21 @@ class KnockoutInternational extends KnockoutStage{
       nextPhaseClassifiedCompetition(competitionName, classifiedClubs);
     }
   }
+  List setPenalties(String team1, String team2){
+    late String winnerName;
+    int penalty1 = Random().nextInt(5);
+    int penalty2 = Random().nextInt(5);
+    while(penalty1==penalty2){
+      penalty2 = Random().nextInt(5);
+    }
+    if(penalty1 > penalty2){
+      winnerName = team1;
+    }else{
+      winnerName = team2;
+    }
+    return [winnerName, penalty1, penalty2];
+  }
+
   void nextPhaseClassifiedCompetition(String competitionName, List<String> classifiedClubs){
 
     String winnerName = "";
@@ -65,18 +80,14 @@ class KnockoutInternational extends KnockoutStage{
             winnerName = team2;
             //PENALTY
           }else if(goal1==goal2){
-            int penalty1 = Random().nextInt(5);
-            int penalty2 = Random().nextInt(5);
-            while(penalty1==penalty2){
-              penalty2 = Random().nextInt(5);
-            }
-            if(penalty1>penalty2){
-              winnerName = team1;
-            }else{
-              winnerName = team2;
-            }
+
+            List resultPenalties = setPenalties(team1, team2);
+            winnerName = resultPenalties[0];
+            int penalty1 = resultPenalties[1];
+            int penalty2 = resultPenalties[2];
             //SAVE PENALTY - penaly order inverted, because é salvo no map da volta
             saveClassifiedAfterPenalties(competitionName, phaseName, nMatch, ResultDict().savePenaltis(matchMapVolta, penalty2, penalty1));
+
           }
 
           classifiedClubs.add(winnerName);
@@ -90,6 +101,19 @@ class KnockoutInternational extends KnockoutStage{
         // In the final there is only 1 match
         if(phaseName == KnockoutStage().keyFinal) {
           Confronto confronto = getConfronto(competitionName, phaseName, idaOrVoltaKey, 1);
+          // SE A FINAL FOR PARA OS PENALTIS
+          if(confronto.goal1==confronto.goal2){
+            Map matchMapIda = getPhaseMatchData(competitionName, phaseName, ResultDict().keyIda, 1);
+            List resultPenalties = setPenalties(confronto.clubName1, confronto.clubName2);
+            winnerName = resultPenalties[0];
+            int penalty1 = resultPenalties[1];
+            int penalty2 = resultPenalties[2];
+            //SAVE PENALTY
+            saveClassifiedAfterPenalties(competitionName, phaseName, 1, ResultDict().savePenaltis(matchMapIda, penalty1, penalty2));
+
+            confronto = getConfronto(competitionName, phaseName, idaOrVoltaKey, 1);
+          }
+          //SAVE CHAMPION NAME
           saveChampionName(competitionName, confronto.winnerName);
         }
       }

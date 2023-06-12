@@ -9,14 +9,16 @@ import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/background_color/background_overall.dart';
-import 'package:fifa/theme/background_color/background_position.dart';
-import 'package:fifa/widgets/popup/popup_player_info.dart';
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/images.dart';
-import 'package:fifa/widgets/button/back_button.dart';
 import 'package:fifa/widgets/best_player_box/best_player_box.dart';
+import 'package:fifa/widgets/button/back_button.dart';
 import 'package:fifa/widgets/button/dropdown_button.dart';
+import 'package:fifa/widgets/button/pressable_button.dart';
+import 'package:fifa/widgets/player_templates/row_player_stats.dart';
+import 'package:fifa/widgets/popup/popup_player_info.dart';
 import 'package:flutter/material.dart';
 
 class MyPlayersHistoric extends StatefulWidget {
@@ -182,29 +184,35 @@ Widget header(){
   }
 
   Widget listPlayersWidget(){
-    return Column(
-      children: [
-        const Text('Lista de Jogadores',style: EstiloTextoBranco.negrito18),
-        SizedBox(
-          height: 300,
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                for (HistoricPlayerData historicPlayerData in historicPlayerDatas)
-                  oldPlayerRow(historicPlayerData)
-              ],
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 8),
+      color: AppColors().greyTransparent,
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      child: Column(
+        children: [
+          const SizedBox(height: 4),
+          const Text('Lista de Jogadores',style: EstiloTextoBranco.negrito18),
+          SizedBox(
+            height: 300,
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  for (HistoricPlayerData historicPlayerData in historicPlayerDatas)
+                    oldPlayerRow(historicPlayerData)
+                ],
+              ),
             ),
           ),
-        ),
 
-      ],
+        ],
+      ),
     );
   }
 
   Widget oldPlayerRow(HistoricPlayerData historicPlayerData){
     Jogador jogador = Jogador(index: historicPlayerData.playerID);
-    return GestureDetector(
+    return PressableButton(
       onTap: (){
         popUpOkShowPlayerInfos(
             context: context,
@@ -214,8 +222,7 @@ Widget header(){
       },
       child: Row(
         children: [
-          positionContainer(jogador.position),
-          Images().getPlayerPictureWidget(jogador,30,30),
+          PlayerCircle(player: jogador, scale: 1.0, hasPosition: true),
           const SizedBox(width: 4),
           SizedBox(width:150,child: Text(historicPlayerData.name,style: EstiloTextoBranco.text16)),
           const SizedBox(width: 4),

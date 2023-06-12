@@ -12,12 +12,12 @@ Widget bestPlayerBox(String atribute, Jogador player, String info){
     decoration: blackDecoration(),
     child: Column(
       children: [
-        Text(atribute,textAlign:TextAlign.center, style: EstiloTextoBranco.negrito16),
-        Images().getPlayerPictureWidget(player,60,60),
+        Text(atribute,textAlign:TextAlign.center, style: EstiloTextoBranco.negrito14),
+        Images().getPlayerPictureWidget(player,50,50),
         const SizedBox(height: 4),
-        Text(player.name,textAlign:TextAlign.center, maxLines: 2, style: EstiloTextoBranco.text12),
+        Text(player.name,textAlign:TextAlign.center, maxLines: 2, style: EstiloTextoBranco.text10),
         const SizedBox(height: 4),
-        Text(info,textAlign:TextAlign.center, maxLines: 2, style: EstiloTextoBranco.text12),
+        Text(info,textAlign:TextAlign.center, maxLines: 2, style: EstiloTextoBranco.text10),
         const SizedBox(height: 4),
       ],
     ),
