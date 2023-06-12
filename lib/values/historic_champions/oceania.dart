@@ -10,8 +10,8 @@ Map<String,dynamic> mapOceania = {
   leagueName.australia : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
-    2022.0: [],
+    2023.0: [n.centralcoast,n.melbournecity,n.adelaide,n.sydneywanderers,n.sydneyFC,n.wellingtonphoenix,n.westernunited,n.brisbane,n.perth,n.newcastlejets,n.melbournevictory,n.macarthur],
+    2022.0: [n.westernunited,n.melbournecity,n.melbournevictory,n.adelaide,n.centralcoast,n.wellingtonphoenix,n.macarthur,n.sydneyFC,n.newcastlejets,n.sydneywanderers,n.brisbane,n.perth,n.newcastlejets,n.melbournevictory,n.macarthur,],
     2021.0: [n.melbournecity,n.sydneyFC,n.macarthur,n.adelaide,      n.centralcoast,n.brisbane,n.wellingtonphoenix,n.sydneywanderers,n.perth,n.westernunited,               n.newcastlejets,n.melbournevictory],
     2020.0: [n.sydneyFC,n.melbournecity,n.perth,n.westernunited,     n.wellingtonphoenix,n.brisbane,n.adelaide,n.newcastlejets,n.sydneywanderers,n.melbournevictory,   n.centralcoast],
     2019.0: [n.sydneyFC,n.perth,n.melbournevictory,n.adelaide,       n.melbournecity,n.wellingtonphoenix,n.newcastlejets,n.sydneywanderers,n.brisbane,n.centralcoast],
@@ -28,7 +28,6 @@ Map<String,dynamic> mapOceania = {
     2008.0: [n.newcastlejets,n.centralcoast,n.sydneyFC,n.brisbane,            n.melbournevictory,n.adelaide,n.perth,n.wellingtonphoenix],
     2007.0: [n.melbournevictory,n.adelaide,n.newcastlejets,n.sydneyFC,       n.brisbane,n.centralcoast,n.perth,n.newZealandKnights],
     2006.0: [n.sydneyFC,n.centralcoast,n.adelaide,n.newcastlejets,           n.perth,n.brisbane,n.melbournevictory,n.newZealandKnights],
-
     2005.0: [],
     //National_Soccer_League
     2004.0: [n.perth,n.parramattaPower,n.adelaide,n.marconiStallions,n.southMelbourne],
@@ -65,7 +64,7 @@ Map<String,dynamic> mapOceania = {
     //https://en.wikipedia.org/wiki/2022_New_Zealand_National_League
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.auckland,n.wellingtonoly,n.aucklandutd,n.birkenhead,n.melville,n.wellingtonphoenix,n.cashmere,n.napier,n.christchurch,n.miramarNZL],
     2021.0: [n.teamwellington,n.auckland,n.hamiltonwanderers,n.easternsuburbs,n.waitakere,  n.canterbury,n.hawkebay,n.wellingtonphoenix],
     2020.0: [n.auckland,n.teamwellington,n.waitakere,n.easternsuburbs,n.tasman,n.hamiltonwanderers,n.southernunited,n.wellingtonphoenix,n.hawkebay,n.canterbury],
@@ -89,7 +88,7 @@ Map<String,dynamic> mapOceania = {
   leagueName.fiji : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.rewa,],
     2021.0: [n.lautoka,],
     2020.0: [n.suva,],

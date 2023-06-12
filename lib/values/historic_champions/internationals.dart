@@ -152,6 +152,7 @@ Map<String,dynamic> mapInternationals = {
 
 
   leagueName.concacaf : {
+    //2025.0: [],
     //2024.0: [],
     2023.0: [n.leon,n.losangelesfc,n.tigres,n.philadelphia,          n.violette,n.motagua,n.vancouver,n.atlas,          n.austin,n.tauro,n.orlando,n.pachuca,n.rcdespana,n.alajuelense,n.olimpia,n.alianzaELS],
     2022.0: [n.seattle,n.pumas,n.nycity,n.cruzazul,                  n.leon,n.nerevolution,n.montreal,n.comunicaciones, n.depGuastatoya,n.motagua,n.coloradorapids,n.santosGuapiles,n.saprissa,n.cavaly,n.santoslaguna,n.forge],
@@ -213,6 +214,7 @@ Map<String,dynamic> mapInternationals = {
     1963.0: [n.racingHAITI,n.chivas,n.saprissa,n.xelaju]
   },
   leagueName.asia : {
+    //2025.0: [],
     //2024.0: [],
     //2023.0: [],
     2022.0: [n.urawareddiamonds,n.alhilal,n.alduhail,n.jeonbuk,        n.pathum,n.foolad,n.visselkobe,n.alshabab,            n.alrayyan,n.nasafqarshi,n.alFaisalyARABIA,n.shababalahli,n.yokohamamarinos,n.daegu,n.johordarul,n.kitchee],
@@ -274,6 +276,7 @@ Map<String,dynamic> mapInternationals = {
   },
 
   leagueName.africa : {
+    //2025.0: [],
     //2024.0: [],
     2023.0: [n.alahly,n.wydad,n.esperance,n.mamelodi,                n.rajacasablanca,n.simba,n.jskabylie,n.belouizdad,      n.omdurman,n.zamalek,n.petroluanda,n.horoya,n.almerreikh,n.vita,n.vipers,n.cotonsport],
     2022.0: [n.wydad,n.alahly,n.petroluanda,n.essetif,               n.belouizdad,n.rajacasablanca,n.mamelodi,n.esperance,   n.amazulu,n.etoilesahel,n.zamalek,n.omdurman,n.almerrikh,n.horoya,n.sagradaesperanca,n.jwaneng,],
@@ -336,8 +339,9 @@ Map<String,dynamic> mapInternationals = {
   },
 
   leagueName.mundial : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    //2023.0: [n.mancity,n.leon,n.alahly,],
     2022.0: [n.realmadrid,n.alhilal,n.flamengo,n.alahly,n.seattle,n.wydad,n.auckland],
     2021.0: [n.chelsea,n.palmeiras,n.alahly,n.alhilal,n.monterrey],
     2020.0: [n.bayernmunique,n.tigres,n.alahly,n.palmeiras],
@@ -413,6 +417,7 @@ Map<String,dynamic> mapInternationals = {
   },
 
   leagueName.europaLeagueOficial : {
+    //2025.0: [],
     //2024.0: [],
     2023.0: [n.sevilla,n.roma,n.juventus,n.leverkusen,              n.manutd,n.feyenoord,n.sporting,n.saintgilloise,      n.fenerbahce,n.realsociedad,n.freiburg,n.arsenal,n.realbetis,n.unionberlin,n.ferencvaros,n.shakhtardonetsk],
     2022.0: [n.eintrachtfrankfurt,n.rangers,n.westham,n.rbleipzig,  n.barcelona,n.braga,n.lyon,n.atalanta],
@@ -484,6 +489,7 @@ Map<String,dynamic> mapInternationals = {
 
 
   leagueName.copaSulAmericana : {
+    //2025.0: [],
     //2024.0: [],
     //2023.0: [],
     2022.0: [n.idelvalle,n.saopaulo,n.melgar,n.atleticogo,           n.tachira,n.ceara,n.internacional,n.nacional,          n.lanus,n.univcatolica,n.deportivocali,n.olimpia,n.santos,n.colocolo,n.unionsantafe,n.thestrongest],

@@ -10,7 +10,7 @@ Map<String,dynamic> mapSupercopa = {
   leagueName.recopaeuropa : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.realmadrid,n.eintrachtfrankfurt,],
     2021.0: [n.chelsea,n.villareal,],
     2020.0: [n.bayernmunique,n.sevilla,],
@@ -66,7 +66,7 @@ Map<String,dynamic> mapSupercopa = {
   leagueName.recopasula : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2023.0: [n.idelvalle,n.flamengo,],
     2022.0: [n.palmeiras,n.atleticopr,],
     2021.0: [n.defensayjusticia,n.palmeiras,],

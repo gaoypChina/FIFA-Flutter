@@ -21,7 +21,7 @@ import 'package:fifa/pages/menu/test_button.dart';
 import 'package:fifa/pages/ranking_clubs/ranking_clubs.dart';
 import 'package:fifa/pages/simulacao/end_year.dart';
 import 'package:fifa/pages/table/table_nacional.dart';
-import 'package:fifa/pages/table_international/table_international.dart';
+import 'package:fifa/pages/table_international/main_tabs.dart';
 import 'package:fifa/pages/transfers/transfers.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';

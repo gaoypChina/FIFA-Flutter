@@ -5,7 +5,7 @@ import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
-import 'package:fifa/pages/ranking_clubs/league_selection_row.dart';
+import 'package:fifa/widgets/league_selection_row.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
@@ -334,8 +334,10 @@ class _HistoricLeagueState extends State<HistoricLeague> {
       },
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 9),
-        color: choosenLeagueName == leagueName ? AppColors().green : Colors.white54,
-        child: funcFlagsList(getCountryFromLeague(leagueName), 35, 50),
+        color: choosenLeagueName == leagueName ? AppColors().green : AppColors().greyTransparent,
+        child: funcFlagsList(
+                  getCountryFromLeague(leagueName), 35, 50
+        ),
       ),
     );
   }

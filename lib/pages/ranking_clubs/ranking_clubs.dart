@@ -4,7 +4,7 @@ import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/classes/functions/func_number_clubs_total.dart';
-import 'package:fifa/pages/ranking_clubs/league_selection_row.dart';
+import 'package:fifa/widgets/league_selection_row.dart';
 import 'package:fifa/pages/ranking_clubs/ranking_clubs_control.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';

@@ -593,6 +593,7 @@ class ClubName{
   String montijo = "Montijo";
   String naval = "Naval";
   String nacionalMadeira = "Nacional Madeira";
+  String oliveirense = "Oliveirense";
   String pacosferreira = "Paços de Ferreira";
   String penafiel = "Penafiel";
   String portimonense = "Portimonense";
@@ -2206,6 +2207,7 @@ class ClubName{
   String chindiatargoviste = "Chindia Targoviste";
   String corvinul = "Corvinul";
   String craiova = "Universitatea Craiova";
+  String craiova1948 = "Universitatea Craiova 1948";
   String cluj = "Cluj";
   String farul = "Farul Constanta";
   String gazmetan = "Gaz Metan";

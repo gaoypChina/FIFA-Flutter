@@ -8,7 +8,8 @@ LeagueOfficialNames leagueName = LeagueOfficialNames();
 Map<String,dynamic> mapAfrica = {
 
   leagueName.egito : {
-    //2023.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.zamalek,n.pyramids,n.alahly,n.talaeaelgaish,n.future,n.smouha,n.nationalbankofegypt,n.pharco,n.enppi,n.almokawloonalarab,n.ismaily,n.alittihadalexandriaclub,n.almasry,n.ceramicacleopatra,n.ghazlelmahalla,n.elgouna,n.easterncompany,n.misrelmakasa],
     2021.0: [n.zamalek,n.alahly,n.pyramids,n.smouha,n.almasry,n.enppi,n.alittihadalexandriaclub,n.talaeaelgaish,n.almokawloonalarab,n.ceramicacleopatra,n.ismaily,n.elgouna,n.misrelmakasa,n.nationalbankofegypt,n.ghazlelmahalla,n.wadidegla,n.elentagelharby,n.aswan],
     2020.0: [n.alahly,n.zamalek,n.pyramids,n.almokawloonalarab,n.smouha,n.enppi,n.almasry,n.elentagelharby,n.misrelmakasa,n.alittihadalexandriaclub,n.ismaily,n.talaeaelgaish,n.elgouna,n.aswan,n.wadidegla,n.haraselhodoud,n.tanta,n.zed],
@@ -86,7 +87,7 @@ Map<String,dynamic> mapAfrica = {
 
   leagueName.libya : {
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.alittihadLIB,],
     2021.0: [n.alittihadLIB,],
     2020.0: [],
@@ -151,8 +152,9 @@ Map<String,dynamic> mapAfrica = {
   leagueName.marrocos : {
     //https://en.wikipedia.org/wiki/2007%E2%80%9308_Botola
     //https://www.rsssf.org/tablesm/maro98.html
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.wydad,n.rajacasablanca,n.farrabat,n.maghreb,n.fusrabat,       n.berkane,n.safi,n.difaa,n.soualem,n.khouribga],
     2021.0: [n.wydad,n.rajacasablanca,n.farrabat,n.berkane,n.moulodiaoujda,  n.hassaniaAgadir,n.maghreb,n.irtanger,n.fusrabat,n.chababmoh,  ],
     2020.0: [n.rajacasablanca,n.wydad,n.berkane,n.fusrabat,n.moulodiaoujda,  n.farrabat,n.maghreb,n.hassaniaAgadir,n.ouedzem,n.youssoufia,  ],
@@ -222,8 +224,9 @@ Map<String,dynamic> mapAfrica = {
   },
 
   leagueName.tunisia : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.esperance,n.monastir,n.sfaxien,n.clubafricain,n.etoilesahel,n.benguerdane],
     2021.0: [n.esperance,n.etoilesahel,n.benguerdane,n.soliman,n.sfaxien,n.rejiche,n.clubafricain,n.tataouine,n.metlaoui,n.monastir,n.bizertin,n.olympiquebeja,n.stadetunisien,n.jskairouan],
     2020.0: [n.esperance,n.sfaxien,n.monastir,n.etoilesahel,n.clubafricain,n.stadetunisien,n.benguerdane,n.chebba,n.soliman,n.tataouine,n.metlaoui,n.bizertin,n.hammamlif,n.jskairouan],
@@ -291,8 +294,9 @@ Map<String,dynamic> mapAfrica = {
   },
 
   leagueName.argelia : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.belouizdad,n.jskabylie,n.jssaoura,n.usmalger,n.csconstantine,n.paradouac,n.essetif,n.mcalger,n.asochlef,n.usbiskra,n.mcoran,n.chelghoumlaid,n.ncmagra,n.rcarbaa,n.olympiquedemedea,n.nahusseindey,n.rcrelizane,n.widaddetlemcen],
     2021.0: [n.belouizdad,n.essetif,n.jssaoura,n.usmalger,n.jskabylie,n.mcoran,n.mcalger,n.csconstantine,n.ncmagra,n.olympiquedemedea,n.paradouac,n.nahusseindey,n.rcrelizane,n.usbiskra,n.widaddetlemcen,n.asochlef,n.asainmlila,n.usmbelabbes,n.cabordjbouarreridj,n.jsmskikda],
     2020.0: [n.belouizdad,n.mcalger,n.essetif,n.jskabylie,n.csconstantine,n.usmalger,n.jssaoura,n.asainmlila,n.mcoran,n.paradouac,n.usmbelabbes,n.asochlef,n.cabordjbouarreridj,n.usbiskra,n.nahusseindey,n.ncmagra],
@@ -362,11 +366,10 @@ Map<String,dynamic> mapAfrica = {
   //////////////////////////////////////////////////////////////////////////
 
   //////////////////////////////////////////////////////////////////////////
-
-
   leagueName.africaSul : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.mamelodi,n.capetown,n.royalAM,n.stellenbosch,n.kaizer,            n.orlandopirates,n.amazulu,n.supersport,n.goldenarrows,n.marumo,      n.sekhukhune,n.maritzburg,n.tsgalaxy,n.chippa,n.morokaSwallows,n.baroka],
     2021.0: [n.mamelodi,n.amazulu,n.orlandopirates,n.goldenarrows,n.supersport,  n.morokaSwallows,n.capetown,n.kaizer,n.tsgalaxy,n.baroka,             n.royalAM,n.marumo,n.maritzburg,n.stellenbosch,n.chippa,n.blackLeopards],
     2020.0: [n.mamelodi,n.kaizer,n.orlandopirates,n.bidvestWits,n.supersport,    n.capetown,n.maritzburg,n.royalAM,n.highlandspark,n.stellenbosch,     n.chippa,n.goldenarrows,n.amazulu,n.baroka,n.blackLeopards,n.polokwane],
@@ -396,8 +399,9 @@ Map<String,dynamic> mapAfrica = {
   },
 
   leagueName.angola : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.petroluanda,n.agosto,n.sagradaesperanca,],
     2021.0: [n.sagradaesperanca,n.petroluanda,n.agosto,],
     2020.0: [],
@@ -446,8 +450,9 @@ Map<String,dynamic> mapAfrica = {
 
   leagueName.botswana : {
     //https://pt.wikipedia.org/wiki/Campeonato_Botsuano_de_Futebol
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.gaborone,],
     2021.0: [],
     2020.0: [n.jwaneng,],
@@ -508,8 +513,9 @@ Map<String,dynamic> mapAfrica = {
 
   leagueName.burundi : {
     // https://en.wikipedia.org/wiki/Burundi_Ligue_A
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.flambeaucentre],
     2021.0: [n.lemessager,],
     2020.0: [n.lemessager,],
@@ -573,8 +579,9 @@ Map<String,dynamic> mapAfrica = {
   },
 
   leagueName.caboverde : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.acadmindelo,],
     2021.0: [],
     2020.0: [],
@@ -617,8 +624,9 @@ Map<String,dynamic> mapAfrica = {
   },
 
   leagueName.camaroes : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.cotonsport,],
     2021.0: [n.cotonsport,],
     2020.0: [],
@@ -684,8 +692,9 @@ Map<String,dynamic> mapAfrica = {
   },
 
   leagueName.centralAfrica : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.bangui,],
     2021.0: [n.dfc8,],
     2020.0: [],
@@ -742,8 +751,9 @@ Map<String,dynamic> mapAfrica = {
 
   leagueName.chade : {
     //https://en.wikipedia.org/wiki/Chad_Premier_League
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.electsport,],
     2021.0: [],
     2020.0: [n.gazelle,],
@@ -782,8 +792,9 @@ Map<String,dynamic> mapAfrica = {
   },
 
   leagueName.etiopia : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.stGeorge,],
     2021.0: [n.fasil,],
     2020.0: [],
@@ -851,8 +862,9 @@ Map<String,dynamic> mapAfrica = {
 
 
   leagueName.congo : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.otoho,],
     2021.0: [n.otoho,],
     2020.0: [n.otoho,],
@@ -917,8 +929,9 @@ Map<String,dynamic> mapAfrica = {
     1961.0: [n.diablesNoirs,],
   },
   leagueName.congoRD : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.mazembe,n.vita,n.lupopo,n.maniema,n.groupebazano,],
     2021.0: [n.vita,n.mazembe,n.maniema,n.lupopo,n.sangabalende,],
     2020.0: [n.mazembe,n.vita,n.maniema,n.motema,n.groupebazano,],
@@ -981,8 +994,9 @@ Map<String,dynamic> mapAfrica = {
     1963.0: [n.motema,],
   },
   leagueName.costamarfim : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.asecmimosas,],
     2021.0: [n.asecmimosas,],
     2020.0: [n.racabidjan,],
@@ -1046,8 +1060,9 @@ Map<String,dynamic> mapAfrica = {
     1962.0: [n.stadeDAbidjan,],
   },
   leagueName.guine : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.horoya,],
     2021.0: [n.horoya,],
     2020.0: [n.horoya,],
@@ -1109,8 +1124,9 @@ Map<String,dynamic> mapAfrica = {
   },
 
   leagueName.madagascar : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [],
     2021.0: [n.adema,],
     2020.0: [],
@@ -1137,8 +1153,9 @@ Map<String,dynamic> mapAfrica = {
   },
 
   leagueName.mali : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.djoliba,],
     2021.0: [n.stademalien,],
     2020.0: [n.stademalien,],
@@ -1199,8 +1216,9 @@ Map<String,dynamic> mapAfrica = {
   },
 
   leagueName.mauritania : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [],
     2021.0: [n.nouadhibou,n.tevraghzeina,],
     2020.0: [n.nouadhibou,n.tevraghzeina,],
@@ -1230,8 +1248,9 @@ Map<String,dynamic> mapAfrica = {
 
   leagueName.mocambique : {
     // https://en.wikipedia.org/wiki/Mo%C3%A7ambola
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.songo,],
     2021.0: [n.blackbulls,],
     2020.0: [],
@@ -1282,8 +1301,9 @@ Map<String,dynamic> mapAfrica = {
   },
 
   leagueName.namibia : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [],
     2021.0: [],
     2020.0: [],
@@ -1320,8 +1340,9 @@ Map<String,dynamic> mapAfrica = {
   },
 
   leagueName.nigeria : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.riversutd,n.plateau,n.remostars,n.kwaraUtd,n.rangersInt,   n.nasarawa,n.enyimba],
     2021.0: [n.akwa,n.enyimba,n.kwaraUtd,n.nasarawa,n.kano,       n.riversutd,n.rangersInt,n.lobiStars,n.plateau,n.mfm,   ],
     2020.0: [n.plateau,n.enyimba,n.riversutd,n.lobiStars,n.rangersInt,  n.kano],
@@ -1376,8 +1397,9 @@ Map<String,dynamic> mapAfrica = {
   },
 
   leagueName.quenia : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.tusker,],
     2021.0: [n.tusker,],
     2020.0: [],
@@ -1441,8 +1463,9 @@ Map<String,dynamic> mapAfrica = {
   },
 
   leagueName.ruanda : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.apr,],
     2021.0: [n.apr,],
     2020.0: [n.apr,],
@@ -1500,8 +1523,9 @@ Map<String,dynamic> mapAfrica = {
   },
 
   leagueName.senegal : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.casasports],
     2021.0: [n.teungueth,],
     2020.0: [],
@@ -1549,8 +1573,9 @@ Map<String,dynamic> mapAfrica = {
 
   leagueName.somalia : {
     //https://en.wikipedia.org/wiki/Somali_First_Division
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [],
     2021.0: [n.horseed,],
     2020.0: [n.mogadishu,],
@@ -1610,8 +1635,9 @@ Map<String,dynamic> mapAfrica = {
   },
 
   leagueName.sudao : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.omdurman,n.almerrikh,],
     2021.0: [n.omdurman,n.almerrikh,],
     2020.0: [n.almerrikh,n.omdurman,],
@@ -1638,8 +1664,9 @@ Map<String,dynamic> mapAfrica = {
   },
   leagueName.tanzania : {
     //https://www.rsssf.org/tablest/tanzchamp.html
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.yanga,n.simba,n.azam,],
     2021.0: [n.simba,n.yanga,n.azam,],
     2020.0: [n.simba,n.yanga,n.azam,],
@@ -1699,8 +1726,9 @@ Map<String,dynamic> mapAfrica = {
 
   leagueName.togo : {
     //https://en.wikipedia.org/wiki/Togolese_Championnat_National
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.askoKara,],
     2021.0: [n.askoKara,],
     2020.0: [n.askoKara,],
@@ -1766,8 +1794,9 @@ Map<String,dynamic> mapAfrica = {
   },
 
   leagueName.uganda : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.vipers,],
     2021.0: [n.express,],
     2020.0: [n.vipers,],
@@ -1825,8 +1854,9 @@ Map<String,dynamic> mapAfrica = {
   },
 
   leagueName.zambia : {
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.redArrows,],
     2021.0: [n.zesco,],
     2020.0: [n.nkana,],
@@ -1892,8 +1922,9 @@ Map<String,dynamic> mapAfrica = {
 
   leagueName.zimbabwe : {
     //https://en.wikipedia.org/wiki/List_of_Zimbabwean_football_champions
+    //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.platinum,n.chickeninn,],
     2021.0: [],
     2020.0: [],

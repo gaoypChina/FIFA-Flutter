@@ -1,3 +1,4 @@
+import 'package:fifa/classes/countries/countries_continents.dart';
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
@@ -136,20 +137,23 @@ class Images{
   }
 
   Widget getContinentLogo(String continent, [double _height=40.0, double _width=40.0]) {
-    if (continent == 'Europa') {
+    if (continent == Continents().europa) {
       return Image.asset('assets/continents/europe.png',height: _height,width: _width);
     }
-    if (continent == 'América do Sul') {
+    if (continent == Continents().americaSul) {
       return  Image.asset('assets/continents/south america.png',height: _height,width: _width);
     }
-    if (continent == 'América do Norte') {
+    if (continent == Continents().americaNorte) {
       return  Image.asset('assets/continents/north america.png',height: _height,width: _width);
     }
-    if (continent == 'Ásia') {
+    if (continent == Continents().asia) {
       return  Image.asset('assets/continents/asia.png',height: _height,width: _width);
     }
-    if (continent == 'África') {
+    if (continent == Continents().africa) {
       return  Image.asset('assets/continents/africa.png',height: _height,width: _width);
+    }
+    if (continent == Continents().oceania) {
+      return  Image.asset('assets/continents/oceania.png',height: _height,width: _width);
     }
     return  Image.asset('assets/continents/europe.png',height: _height,width: _width);
   }

@@ -183,7 +183,7 @@ class CupClassification extends KnockoutStage{
         String phaseName = getPhaseKeyName(semana);
         if(phaseName == getFirstPhaseStageName(competitionName)){
           if(globalVariable[competitionName]!.containsKey(keyClassificados)){
-            classifiedClubs = classifiedClubs + globalVariable[competitionName]![keyClassificados].cast<dynamic>();
+            classifiedClubs = classifiedClubs + globalVariable[competitionName]![keyClassificados].cast<String>();
           }
         }
 
@@ -200,17 +200,14 @@ class CupClassification extends KnockoutStage{
     try {
 
       String phaseName = getPhaseKeyName(semana);
-      print(phaseName);
 
       String nextPhaseName = getNextPhaseName(phaseName);
-      print(nextPhaseName);
 
       String idaOrVoltaKey = getIdaOrVoltaKey(phaseName, semana);
-      print(idaOrVoltaKey);
-
-      matchMapCurrentPhase = getPhaseResults(competitionName, phaseName, idaOrVoltaKey);
 
       if(idaOrVoltaKey == ResultDict().keyVolta){
+
+        matchMapCurrentPhase = getPhaseResults(competitionName, phaseName, idaOrVoltaKey);
 
         //Save classified teams
         for (int nMatch = 1; nMatch <= matchMapCurrentPhase.length; nMatch++) {
@@ -244,15 +241,15 @@ class CupClassification extends KnockoutStage{
             //SAVE PENALTY - penaly order inverted, because é salvo no map da volta
             saveClassifiedAfterPenalties(competitionName, phaseName, nMatch, ResultDict().savePenaltis(matchMapVolta, penalty2, penalty1));
           }
-        }
 
-        classifiedClubs.add(winnerName);
+          classifiedClubs.add(winnerName);
+        }
 
         if(phaseName == KnockoutStage().keyFinal){
           saveChampionName(competitionName, classifiedClubs.first);
         }else{
           //SAVE CLASSIFIED CLUBS TO NEW PHASE
-          Map nextPhaseInitialMap = KnockoutStage().saveIdaVoltaTeamNames(classifiedClubs);
+          Map nextPhaseInitialMap = CupClassification().saveIdaVoltaTeamNames(classifiedClubs);
 
           saveNextPhaseInitialMap(competitionName, nextPhaseName, nextPhaseInitialMap);
         }

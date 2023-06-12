@@ -14,6 +14,9 @@ Map<String,dynamic> mapAmerica = {
   // BRASIL
   ///////////////////////////////////////////////////////////////
   leagueName.brasil1 : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.palmeiras,n.internacional,n.fluminense,n.corinthians,n.flamengo,n.atleticopr,n.atleticomg,n.fortaleza,n.saopaulo,n.americamg,  n.botafogo,n.santos,n.goias,n.bragantino,n.coritiba,n.cuiaba,n.ceara,n.avai,n.atleticogo,n.juventude],
     2021.0: [n.atleticomg,n.flamengo,n.palmeiras,n.fortaleza,n.corinthians,n.bragantino,n.fluminense,n.americamg,n.atleticogo,n.santos, n.ceara,n.internacional,n.saopaulo,n.atleticopr,n.cuiaba,n.juventude,n.gremio,n.bahia,n.sport,n.chapecoense],
     2020.0: [n.flamengo,n.internacional,n.atleticomg,n.saopaulo,n.fluminense,n.palmeiras,n.gremio,n.santos,n.atleticopr,n.bragantino,  n.ceara,n.corinthians,n.atleticogo,n.bahia,n.sport,n.fortaleza,n.vasco,n.goias,n.coritiba,n.botafogo],
@@ -100,7 +103,9 @@ Map<String,dynamic> mapAmerica = {
     1967.0: [n.palmeiras,n.internacional,n.corinthians,n.gremio,n.portuguesa,n.santos,n.cruzeiro,n.atleticomg,n.bangu,n.saopaulo,       n.flamengo,n.vasco,n.fluminense,n.botafogo,n.parana],
   },
   leagueName.brasil2 : {
-    //**ARRUMAR 2022
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.cruzeiro,n.gremio,n.bahia,n.vasco,n.sampaio,             n.ituano,n.sport,n.criciuma,n.londrina,n.guarani,             n.crb,n.pontepreta,n.vilanova,n.chapecoense,n.tombense,       n.novorizontino,n.csa,n.brusque,n.operarioPR,n.nautico],
     2021.0: [n.botafogo,n.goias,n.coritiba,n.avai,n.csa,                n.guarani,n.crb,n.nautico,n.vilanova,n.vasco,                 n.pontepreta,n.operarioPR,n.brusque,n.cruzeiro,n.sampaio,     n.londrina,n.remo,n.vitoria,n.confianca,n.brasilPelotas],
     2020.0: [n.chapecoense,n.americamg,n.juventude,n.cuiaba,n.csa,      n.sampaio,n.pontepreta,n.operarioPR,n.avai,n.crb,             n.cruzeiro,n.brasilPelotas,n.guarani,n.vitoria,n.confianca,   n.nautico,n.figueirense,n.parana,n.botafogoSP,n.oeste],
@@ -146,6 +151,9 @@ Map<String,dynamic> mapAmerica = {
     1980.0: [n.londrina,n.csa,n.ferroviaria,n.botafogoSP,n.paysandu,       n.comercial,n.uberaba,n.juventusMooca,n.caxias,n.maringa,   n.fortaleza,n.uberlandia,n.anapolina,n.itumbiara,n.abc,     n.sampaio,n.tunaluso],
   },
   leagueName.brasil3 : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.mirassol,n.abc,n.botafogoSP,n.vitoria,         n.figueirense,n.paysandu,n.voltaredonda,n.aparecidense,n.botafogoPB,n.ypirangaRS,  n.saojoseRS,n.remo,n.manaus,n.confianca,n.floresta,             n.altos,n.atleticoCE,n.brasilPelotas,n.ferroviario,n.campinense],
     2021.0: [n.ituano,n.tombense,n.novorizontino,n.criciuma,   n.botafogoPB,n.manaus,n.paysandu,n.ypirangaRS,n.figueirense,n.voltaredonda, n.ferroviario,n.saojoseRS,n.botafogoSP,n.altos,n.floresta,      n.mirassol,n.jacuipense,n.parana,n.santacruz,n.oeste],
     2020.0: [n.vilanova,n.remo,n.brusque,n.londrina,                 n.santacruz,n.ypirangaRS,n.ituano,n.paysandu,n.tombense,n.manaus,       n.jacuipense,n.ferroviario,n.voltaredonda,n.saojoseRS,n.botafogoPB, n.criciuma,n.treze,n.saobento,n.boaesporte,n.imperatriz],
@@ -183,6 +191,9 @@ Map<String,dynamic> mapAmerica = {
     1987.0: [n.americanoRJ,n.uberlandia,n.juventude,n.pontepreta,n.botafogo,   n.caxias,n.juventusMooca,n.uberaba,n.chapecoense,n.santacruz,   n.tupi,n.corumbaense,n.avai,n.santoandre,n.americamg,    n.desportiva,n.anapolina],
   },
   leagueName.brasil4 : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.americaRN,n.pousoalegre,n.amazonas,n.saobernardo,  n.caxias,n.asa,n.tocantinopolis,n.portuguesaRJ,     n.lagarto,n.riobrancoAC,n.motoclub,n.bahiafeira,n.realNoroeste,n.novavenecia,n.parana,n.santacruz,],
     2021.0: [n.aparecidense,n.campinense,n.abc,n.atleticoCE,      n.ferroviaria,n.americaRN,n.uberlandia,n.caxias,    n.joinville,n.guarany,n.paragominas,n.julho4,n.uniaorondonopolis,n.motoclub,n.cianorte,n.esportivo,],
     2020.0: [n.mirassol,n.floresta,n.novorizontino,n.altos, n.americaRN,n.aparecidense,n.fast,n.marciliodias,   n.brasiliense,n.goiania,n.salgueiro,n.saoluizRS,n.galvez,n.goianesia,n.samas,n.globo,],
@@ -202,6 +213,9 @@ Map<String,dynamic> mapAmerica = {
   // MERCOSUL
   ///////////////////////////////////////////////////////////////
   leagueName.argentina : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     //https.0://es.wikipedia.org/wiki/Campeonato_de_Primera_Divisi%C3%B3n_2002-03_(Argentina)
     2022.0: [n.bocajuniors,n.racing,n.riverplate,n.huracan,n.atleticotucuman,               n.sanlorenzo,n.tigre,n.argentinojuniors,n.gimnasia,n.patronato,            n.newells,n.defensayjusticia,n.talleres,n.independiente,n.godoycruz,       n.centralCordoba,n.barracas,n.estudiantes,n.platense,n.rosario,     n.sarmiento,n.unionsantafe,n.arsenalsarandi,n.banfield,n.colon,n.velez,n.lanus,n.aldosivi],
     2021.0: [n.riverplate,n.defensayjusticia,n.talleres,n.bocajuniors,n.velez,              n.estudiantes,n.colon,n.huracan,n.independiente,n.lanus,                   n.gimnasia,n.unionsantafe,n.aldosivi,n.argentinojuniors,n.racing,                   n.rosario,n.godoycruz,n.platense,n.newells,n.banfield,     n.sanlorenzo,n.centralCordoba,n.patronato,n.sarmiento,n.atleticotucuman,n.arsenalsarandi],
@@ -285,6 +299,9 @@ Map<String,dynamic> mapAmerica = {
 
   },
   leagueName.uruguai : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.nacional,n.liverpoolURU,n.deportivomaldonado,n.bostonriver,n.riverURU,   n.penarol,n.defensor,n.danubio,n.montwanderers,n.fenix,                 n.cerrouru,n.albion,n.montevideocity,n.plazacolonia,n.rentistas,n.cerrito],
     2021.0: [n.penarol,n.plazacolonia,n.nacional,n.montevideocity,n.cerroLargo,   n.montwanderers,n.liverpoolURU,n.riverURU,n.fenix,n.cerrito,       n.bostonriver,n.progreso,n.deportivomaldonado,n.sudamerica,n.rentistas,n.villaespanola],
     2020.0: [n.nacional,n.rentistas,n.liverpoolURU,n.penarol,n.montevideocity,    n.montwanderers,n.cerroLargo,n.fenix,n.riverURU,n.plazacolonia,    n.deportivomaldonado,n.defensor,n.bostonriver,n.progreso,n.danubio,n.cerrouru],
@@ -360,6 +377,9 @@ Map<String,dynamic> mapAmerica = {
     1950.0: [n.nacional,n.penarol,n.rampla,n.centralespanol,n.cerrouru,  n.danubio,n.liverpoolURU,n.riverURU,n.montwanderers,n.bellavista],
   },
   leagueName.chile : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.colocolo,n.curico,n.nublense,n.palestino,n.unionespanola,              n.cobresal,n.audaxitaliano,n.evertonchi,n.ohiggins,n.univcatolica,    n.huachipato,n.lacalera,n.antofagasta,n.lau,n.laserena,n.coquimbo],
     2021.0: [n.univcatolica,n.colocolo,n.audaxitaliano,n.lacalera,n.unionespanola,    n.antofagasta,n.nublense,n.palestino,n.cobresal,n.laserena,   n.lau,n.evertonchi,n.ohiggins,n.curico,n.huachipato,n.melipilla,n.santiagowanderers],
     2020.0: [n.univcatolica,n.lacalera,n.lau,n.unionespanola,n.palestino,             n.antofagasta,n.cobresal,n.huachipato,n.curico,n.ohiggins,    n.santiagowanderers,n.evertonchi,n.audaxitaliano,n.concepcion,n.laserena,n.colocolo,n.iquique,n.coquimbo],
@@ -441,6 +461,9 @@ Map<String,dynamic> mapAmerica = {
     1950.0: [n.evertonchi,n.unionespanola,],
   },
   leagueName.paraguai : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.libertad,n.cerroporteno,n.olimpia,n.guaraniPAR,n.resistencia,  n.nacionalPAR,n.soldeamerica,n.guairena,n.generalcaballero,n.tacuary,  n.ameliano,n.octubre12],
     2021.0: [n.libertad,n.olimpia,n.nacionalPAR,n.cerroporteno,n.guairena,    n.guaraniPAR,n.octubre12,n.luqueno,n.riverPAR],
     2020.0: [n.cerroporteno,n.olimpia,n.libertad,n.guaraniPAR,n.riverPAR,     n.guairena,n.nacionalPAR,n.luqueno,n.octubre12,n.soldeamerica,    ],
@@ -519,6 +542,9 @@ Map<String,dynamic> mapAmerica = {
   },
 
   leagueName.bolivia : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.bolivar,n.thestrongest,],
     2021.0: [n.indPetrolero,n.alwaysready,n.thestrongest,n.bolivar,n.royalpari,    n.orientepetrolero,n.jorge,n.guabira,n.palmaflor,n.nacionalpotosi,     n.realsantacruz,n.aurora,n.realtomayapo,n.blooming,n.realpotosi,n.sanJoseBOL],
     2020.0: [n.alwaysready,n.thestrongest,n.bolivar,n.royalpari,n.jorge,           n.guabira,n.nacionalpotosi,n.palmaflor,n.blooming,n.orientepetrolero,  n.aurora,n.realpotosi,n.realsantacruz,n.sanJoseBOL],
@@ -596,6 +622,9 @@ Map<String,dynamic> mapAmerica = {
   },
 
   leagueName.peru : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.melgar,n.alianzalima,n.sportingcristal,n.huancayo,n.universitario,         n.cesarvallejo,n.cienciano,n.binacional,n.alianzasullana,n.atlGrau, n.cajamarca,n.depmunicipal,n.tarma,n.cantolao,n.carlosmanucci,      n.sportboys,n.ayacucho,n.unisanmartin,n.carlosstein],
     2021.0: [n.alianzalima,n.sportingcristal,n.universitario,n.cesarvallejo,n.melgar,     n.cienciano,n.sportboys,n.ayacucho,n.carlosmanucci,n.cajamarca,  n.huancayo,n.depmunicipal,n.cantolao,n.alianzasullana,n.binacional, n.unisanmartin,n.cusco,n.huanuco],
     2020.0: [n.sportingcristal,n.universitario,n.cesarvallejo,n.ayacucho,n.carlosmanucci, n.huancayo,n.cajamarca,n.melgar,n.cienciano,n.huanuco,           n.unisanmartin,n.cusco,n.binacional,n.sportboys,n.depmunicipal,     n.cantolao,n.carlosstein,n.alianzalima,n.atlGrau,],
@@ -674,6 +703,9 @@ Map<String,dynamic> mapAmerica = {
   // MERCONORTE
   ///////////////////////////////////////////////////////////////
   leagueName.equador : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.aucas,n.barcelonaequ,n.uniequ,n.idelvalle,n.ldu,  n.emelec,n.depcuenca,n.delfin,n.orense,n.guayaquil,      n.gualaceo,n.tecnicoUniv,n.mushucruna,n.cumbaya,n.macara,n.octubre9],
     2021.0: [n.idelvalle,n.emelec,n.uniequ,n.barcelonaequ,n.octubre9,  n.ldu,n.mushucruna,n.delfin,n.aucas,n.macara,n.tecnicoUniv,n.depcuenca,n.orense,n.guayaquil,n.manta,n.olmedo],
     2020.0: [n.barcelonaequ,n.ldu,n.idelvalle,n.uniequ,n.emelec,       n.guayaquil,n.macara,n.aucas,n.tecnicoUniv,n.delfin,  n.mushucruna,n.depcuenca,n.orense,n.olmedo,n.portoviejo,n.elnacional],
@@ -747,6 +779,9 @@ Map<String,dynamic> mapAmerica = {
 
   leagueName.colombia : {
     //apertura
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.atleticonacional,n.tolima,n.millonarios,n.imedellin,          n.junior,n.envigado,n.laequidad,n.bucaramanga,n.alianzapetrolera,n.santafe,          n.jaguaresCOL,n.oncecaldas,n.rionegroaguilas,n.pereira,n.americadecali,  n.deppasto,n.patriotas,n.cortulua,n.deportivocali,n.uMagdalena],
     2021.0: [n.tolima,n.millonarios,n.atleticonacional,n.santafe,            n.deportivocali,n.laequidad,n.junior,n.americadecali,n.imedellin,n.jaguaresCOL,      n.bucaramanga,n.deppasto,n.boyaca,n.pereira,n.oncecaldas,            n.envigado,n.patriotas,n.rionegroaguilas,n.alianzapetrolera],
     2020.0: [n.americadecali,n.santafe,n.tolima,n.atleticonacional,          n.deportivocali,n.deppasto,n.junior,n.laequidad,n.rionegroaguilas,n.millonarios,     n.oncecaldas,n.envigado,n.bucaramanga,n.imedellin,n.alianzapetrolera,  n.pereira,n.jaguaresCOL,n.patriotas,n.boyaca,n.cucuta],
@@ -824,6 +859,9 @@ Map<String,dynamic> mapAmerica = {
   },
 
   leagueName.venezuela : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.metropolitanos,n.monagas,n.carabobo,n.zamora,        n.estudiantesmerida,n.tachira,n.caracas,n.puertocabello,n.deplara,n.hermanoscolmenarez,n.laguaira,n.portuguesaven,n.mineros,n.zulia,n.ucv,n.aragua],
     2021.0: [n.tachira,n.caracas,n.monagas,n.deplara,n.laguaira,    n.estudiantesmerida,n.metropolitanos,n.hermanoscolmenarez,n.portuguesaven,n.aragua,    n.puertocabello,n.atlVenezuela,],
     2020.0: [n.laguaira,n.tachira,],

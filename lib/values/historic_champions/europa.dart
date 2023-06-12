@@ -10,7 +10,7 @@ Map<String,dynamic> mapEuropa = {
   leagueName.turquiaGrecia : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [n.galatasaray,n.fenerbahce,n.besiktas,n.adanademirspor,n.istanbulbasaksehir,n.trabzonspor,n.karagumruk,],
+    2023.0: [n.galatasaray,n.fenerbahce,n.besiktas,n.adanademirspor,n.istanbulbasaksehir,n.trabzonspor,n.karagumruk,n.konyaspor,n.kayserispor,n.kasimpasa,n.ankaragucu,n.istanbulspor,n.antalyaspor,n.sivasspor,n.alanyaspor,n.giresunspor,n.umraniyespor,n.gaziantep,n.hatayspor],
     2022.0: [n.trabzonspor,n.fenerbahce,n.konyaspor,n.istanbulbasaksehir,n.alanyaspor,n.besiktas,n.antalyaspor,n.karagumruk,n.adanademirspor,n.sivasspor,n.kasimpasa,n.hatayspor,n.galatasaray,n.kayserispor,n.gaziantep,n.giresunspor,n.rizespor,n.altay,n.goztepe,n.yenimalatyaspor],
     2021.0: [n.besiktas,n.galatasaray,n.fenerbahce,n.trabzonspor,n.sivasspor,n.hatayspor,n.alanyaspor,n.karagumruk,n.gaziantep,n.goztepe,n.konyaspor,n.istanbulbasaksehir,n.rizespor,n.kasimpasa,n.yenimalatyaspor,n.antalyaspor,n.kayserispor,n.erzurumspor,n.ankaragucu,n.genclerbirligi,n.denizlispor],
     2020.0: [n.istanbulbasaksehir,n.trabzonspor,n.besiktas,n.sivasspor,n.alanyaspor,n.galatasaray,n.fenerbahce,n.gaziantep,n.antalyaspor,n.kasimpasa,n.goztepe,n.genclerbirligi,n.konyaspor,n.denizlispor,n.rizespor,n.yenimalatyaspor,n.kayserispor,n.ankaragucu],
@@ -1024,7 +1024,7 @@ Map<String,dynamic> mapEuropa = {
   leagueName.liechtenstein : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.vaduz,n.eschenMauren,],
     2021.0: [],
     2020.0: [],
@@ -1182,7 +1182,7 @@ Map<String,dynamic> mapEuropa = {
   leagueName.malta : {
       //2025.0: [],
       //2024.0: [],
-      //2023.0: [],
+      2023.0: [n.hamrunspartans,n.birkirkara,n.gziraunited,n.balzan,n.hiberniansMALTA,n.mosta,n.floriana,n.valletta,n.sirens,n.gudjaunited,n.marsaxlokk,n.stlucia,n.zebbugrangers,n.pietahotspurs],
       2022.0: [n.hiberniansMALTA,n.floriana,n.hamrunspartans,n.gziraunited,n.birkirkara,n.gudjaunited,n.valletta,n.sirens,n.mosta,n.balzan,n.stlucia,n.sliemawanderers],
       2021.0: [n.hamrunspartans,n.hiberniansMALTA,n.gziraunited,n.birkirkara,n.sliemawanderers,n.mosta,n.valletta,n.stlucia,n.sirens,n.balzan,n.gudjaunited,n.floriana,n.zejtuncorinthians,n.tarxienrainbows,n.lijaathletic,n.sengleaathletics],
       2020.0: [n.floriana,n.valletta,n.hiberniansMALTA,n.sirens,n.birkirkara,n.gziraunited,n.balzan,n.mosta,n.hamrunspartans,n.sliemawanderers,n.gudjaunited,n.stlucia,n.sengleaathletics,n.tarxienrainbows],

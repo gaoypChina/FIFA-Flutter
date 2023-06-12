@@ -9,7 +9,7 @@ Map<String,dynamic> mapEuropaLeste = {
 
   leagueName.albania : {
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [n.partizanitirane,n.tirana,n.egnatia,n.vllaznia,n.laci,n.teuta,n.kukesi,n.erzeni,n.bylis,n.kastrioti],
     2022.0: [n.tirana,n.laci,n.partizanitirane,n.kukesi,n.vllaznia,n.teuta,n.kastrioti,n.egnatia,n.dinamotirana,n.skenderbeu],
     2021.0: [n.teuta,n.vllaznia,n.partizanitirane,n.laci,n.tirana,n.kukesi,n.skenderbeu,n.kastrioti,n.bylis,n.apolonia],
     2020.0: [n.tirana,n.kukesi,n.laci,n.skenderbeu,n.teuta,n.partizanitirane,n.bylis,n.vllaznia,n.flamurtari,n.luftetari],
@@ -88,7 +88,7 @@ Map<String,dynamic> mapEuropaLeste = {
 
   leagueName.armenia : {
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [n.urartu,n.pyunik,n.araratarmenia,n.alashkert,n.van,n.araratyerevan,n.shirak,n.noah,n.bkmayerevan,n.lernayinartsakh],
     2022.0: [n.pyunik,n.araratarmenia,n.alashkert,n.araratyerevan,n.urartu,n.noah,n.noravank,n.van,n.bkmayerevan,n.sevan],
     2021.0: [n.alashkert,n.noah,n.urartu,n.araratyerevan,n.araratarmenia,n.van,n.pyunik,n.lorivanadzor,n.shirak,n.gandzasarkapan],
     2020.0: [n.araratarmenia,n.noah,n.alashkert,n.shirak,n.lorivanadzor,n.araratyerevan,n.urartu,n.pyunik,n.gandzasarkapan,n.yerevan],
@@ -125,7 +125,7 @@ Map<String,dynamic> mapEuropaLeste = {
   leagueName.azerbaijao : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [n.qarabag,n.sabah,n.neftci,n.qabala,n.zira,n.turantovuz,n.sumgayit,n.kapaz,n.sebail,n.shamakhi,],
     2022.0: [n.qarabag,n.neftci,n.zira,n.qabala,n.sabah,n.stdsumgayit,n.shamakhi,n.sebail],
     2021.0: [n.neftci,n.qarabag,n.stdsumgayit,n.zira,n.sabah,n.shamakhi,n.qabala,n.sebail],
     2020.0: [n.qarabag,n.neftci,n.shamakhi,n.stdsumgayit,n.zira,n.sabah,n.sebail,n.qabala],
@@ -161,7 +161,7 @@ Map<String,dynamic> mapEuropaLeste = {
   leagueName.belarus : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.shakhtyorsoligorsk,n.energetikbguminsk,n.bate,n.dinamominsk,n.islochminskraion,n.minsk,n.gomel,n.torpedozhodino,n.nemangrodno,n.slaviamozyr,n.slutsk,n.belshinabobruisk,n.dinamobrest,n.arsenaldzerzhinsk,n.vitebsk,n.dneprmogilev],
     2021.0: [n.shakhtyorsoligorsk,n.bate,n.dinamominsk,n.gomel,n.rukhbrest,n.dinamobrest,n.vitebsk,n.torpedozhodino,n.slutsk,n.islochminskraion,n.nemangrodno,n.minsk,n.energetikbguminsk,n.slaviamozyr,n.smorgon,n.sputnikrechitsa],
     2020.0: [n.shakhtyorsoligorsk,n.bate,n.torpedozhodino,n.dinamobrest,n.nemangrodno,n.dinamominsk,n.islochminskraion,n.rukhbrest,n.slaviamozyr,n.energetikbguminsk,n.minsk,n.vitebsk,n.gorodeya,n.slutsk,n.belshinabobruisk,n.smolevichi],
@@ -197,7 +197,7 @@ Map<String,dynamic> mapEuropaLeste = {
   leagueName.bosnia : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.zrinjski,n.tuzla,n.borac,],
     2021.0: [n.borac,n.sarajevo,n.velezMostar,],
     2020.0: [n.sarajevo,n.zeljeznicar,n.zrinjski,],
@@ -224,7 +224,7 @@ Map<String,dynamic> mapEuropaLeste = {
 
   leagueName.bulgaria : {
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [n.ludogorets,n.cskasofia,n.cska1948,n.levskisofia,n.lokplovdiv,n.chernomorevarna,n.arda,n.slaviasofia,n.loksofia,n.botevplovdiv,n.pirinblagoevgrad,n.hebarpazardzhik,n.botevvratsa,n.beroe,n.septemvrisofia,n.spartakvarna],
     2022.0: [n.ludogorets,n.cskasofia,n.botevplovdiv,n.levskisofia,n.chernomorevarna,n.slaviasofia,n.beroe,n.cska1948,n.lokplovdiv,n.arda,n.loksofia,n.pirinblagoevgrad,n.botevvratsa,n.tsarskoselo],
     2021.0: [n.ludogorets,n.lokplovdiv,n.cskasofia,n.arda,n.cska1948,n.beroe,n.chernomorevarna,n.levskisofia,n.tsarskoselo,n.botevplovdiv,n.slaviasofia,n.botevvratsa,n.montana,n.etarvelikotarnovo],
     2020.0: [n.ludogorets,n.cskasofia,n.slaviasofia,n.levskisofia,n.lokplovdiv,n.beroe,n.chernomorevarna,n.arda,n.botevplovdiv,n.etarvelikotarnovo,n.tsarskoselo,n.botevvratsa,n.dunavruse,n.vitoshabistritsa],
@@ -303,7 +303,8 @@ Map<String,dynamic> mapEuropaLeste = {
   leagueName.cazaquistao : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [n.astana,n.ordabasy,n.qyzyljar,n.aktobe,n.kairat,n.atyrau,n.kaysar,n.tobol,n.okzhetpes,n.shakhter],
+    //2023.0: [n.astana,n.ordabasy,n.aktobe,n.qyzyljar,n.kairat,n.tobol,n.atyrau,n.kaisar,n.zhetysu,n.shakhter,n.okzhetpes,n.caspiy,],
+    2023.0: [],
     2022.0: [n.astana,n.aktobe,n.tobol,n.kairat,n.ordabasy,    n.aksu,n.shakhter,n.maktaaral,n.caspiy,n.qyzyljar,n.atyrau,n.taraz,n.turan,n.akzhayik],
     2021.0: [n.tobol,n.astana,n.kairat,n.kyzylzhar,n.ordabasy,  n.shakhter,n.aktobe,n.caspiy,n.akzhayik,n.taraz,  n.atyrau,n.turan,n.kaisar,n.zhetysu],
     2020.0: [n.kairat,n.tobol,n.astana,n.shakhter,n.ordabasy,   n.zhetysu,n.kaisar,],
@@ -339,7 +340,7 @@ Map<String,dynamic> mapEuropaLeste = {
 
   leagueName.croacia : {
     //2024.0: [],
-    //2023.0: [n.dinamozagreb,n.hajduksplit,n.osijek,n.rijeka,n.istra,n.varazdin,n.lokzagreb,n.slavenbelupo,n.gorica,n.sibenik],
+    2023.0: [n.dinamozagreb,n.hajduksplit,n.osijek,n.rijeka,n.istra,n.varazdin,n.lokzagreb,n.slavenbelupo,n.gorica,n.sibenik],
     2022.0: [n.dinamozagreb,n.hajduksplit,n.osijek,n.rijeka,n.lokzagreb,n.gorica,n.slavenbelupo,n.sibenik,n.istra,n.hrvatskidragovoljac],
     2021.0: [n.dinamozagreb,n.osijek,n.rijeka,n.hajduksplit,n.gorica,n.sibenik,n.slavenbelupo,n.lokzagreb,n.istra,n.varazdin],
     2020.0: [n.dinamozagreb,n.lokzagreb,n.rijeka,n.osijek,n.hajduksplit,n.gorica,n.slavenbelupo,n.varazdin,n.istra,n.interzapresic],
@@ -375,8 +376,8 @@ Map<String,dynamic> mapEuropaLeste = {
   leagueName.eslovaquia : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [n.slovanbratislava,n.dac1904,n.trnava,n.podbrezova,n.banska,n.zilina,n.ruzomberok,n.skalica,n.michalovce,n.trencin,n.zlate,n.lipstovsky],
-    2022.0: [n.slovanbratislava,n.ruzomberok,n.trnava,n.dac1904,n.sered,      n.zilina,n.trencin,n.lipstovsky,n.zemplin,n.senica,        n.zlate,n.pohronie],
+    2023.0: [n.slovanbratislava,n.dac1904,n.trnava,n.podbrezova,n.duklaBanska, n.zilina,n.ruzomberok,n.skalica,n.trencin,n.zemplin,   n.zlate,n.lipstovsky],
+    2022.0: [n.slovanbratislava,n.ruzomberok,n.trnava,n.dac1904,n.sered,      n.zilina,n.trencin,n.lipstovsky,n.zemplin,n.senica,     n.zlate,n.pohronie],
     2021.0: [n.slovanbratislava,n.dac1904,n.trnava,n.zilina,n.zlate,n.trencin, n.sered,n.ruzomberok,n.pohronie,n.zemplin,             n.senica,n.nitra],
     2020.0: [n.slovanbratislava,n.zilina,n.dac1904,n.trnava,n.ruzomberok,     n.zemplin,n.trencin,n.zlate,n.sered,n.senica,           n.pohronie,n.nitra],
     2019.0: [n.slovanbratislava,n.dac1904,n.ruzomberok,n.zilina,n.zemplin,    n.sered,n.trnava,n.senica,n.nitra,n.zlate,              n.trencin,n.podbrezova],
@@ -409,7 +410,7 @@ Map<String,dynamic> mapEuropaLeste = {
   leagueName.eslovenia : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [n.oljublijana,n.celje,n.maribor,n.domzale,n.mura,n.koper,n.radomlje,n.bravo,n.goricaSLO,n.taborsezana],
+    2023.0: [n.oljublijana,n.celje,n.maribor,n.domzale,n.mura,n.koper,n.radomlje,n.bravo,n.goricaSLO,n.taborsezana],
     2022.0: [n.maribor,n.koper,n.oljublijana,n.mura,n.bravo,n.radomlje,n.domzale,n.celje,n.taborsezana,n.aluminij],
     2021.0: [n.mura,n.maribor,n.oljublijana,n.domzale,n.bravo,n.taborsezana,n.celje,n.aluminij,n.koper,n.goricaSLO],
     2020.0: [n.celje,n.maribor,n.oljublijana,n.mura,n.aluminij,n.bravo,n.taborsezana,n.domzale,n.triglavkranj,n.rudarvelenje],
@@ -447,7 +448,7 @@ Map<String,dynamic> mapEuropaLeste = {
    leagueName.georgia : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [n.dinamobatumi,n.saburtalotbilisi,n.samguralitskhaltubo,n.dinamotbilisi,n.dilagori,n.torpedokutaisi,n.gagra,n.shukurakobuleti,n.samtredia,n.telavi,],
     2022.0: [n.dinamotbilisi,n.dinamobatumi,n.dilagori,n.samguralitsqaltubo,n.torpedokutaisi,n.saburtalotbilisi,n.telavi,n.sionibolnisi,n.gagra,n.locomotivetbilisi],
     2021.0: [n.dinamobatumi,n.dinamotbilisi,n.dilagori,n.saburtalotbilisi,n.locomotivetbilisi,n.telavi,n.samguralitsqaltubo,n.torpedokutaisi,n.shukurakobuleti,n.samtredia],
     2020.0: [n.dinamotbilisi,n.dinamobatumi,n.dilagori,n.locomotivetbilisi,n.saburtalotbilisi,n.telavi,n.samtredia,n.torpedokutaisi,n.chikhurasachkhere,n.meranitbilisi],
@@ -486,7 +487,7 @@ Map<String,dynamic> mapEuropaLeste = {
 
   leagueName.hungria : {
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [n.ferencvaros,n.kecskemet,n.debreceni,n.puskas,n.paks,n.kisvarda,n.mezokovesd,n.ujpest,n.zalaegerszeg,n.fehervar,n.honved,n.vasas,],
     2022.0: [n.ferencvaros,n.kisvarda,n.puskas,n.fehervar,n.ujpest,        n.paks,n.debreceni,n.zalaegerszeg,n.honved,n.mezokovesd,  n.mtk,n.gyirmot],
     2021.0: [n.ferencvaros,n.puskas,n.fehervar,n.paks,n.kisvarda,          n.ujpest,n.mtk,n.mezokovesd,n.zalaegerszeg,n.honved,    n.diosgyor,n.budafok],
     2020.0: [n.ferencvaros,n.fehervar,n.puskas,n.mezokovesd,n.honved,      n.ujpest,n.zalaegerszeg,n.kisvarda,n.diosgyor,n.paks,   n.debreceni,n.kaposvar],
@@ -568,7 +569,7 @@ Map<String,dynamic> mapEuropaLeste = {
     //https://en.wikipedia.org/wiki/Football_Superleague_of_Kosovo
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.ballkani,n.drita,n.gjilani,n.llapi,n.prishtina,n.drenica,n.dukagjini,n.malisheva,n.ulpiana,n.feronikeli],
     2021.0: [n.prishtina,n.drita,n.ballkani,n.gjilani,n.llapi,n.drenica,n.feronikeli,n.trepca89,n.arberia,n.besapeje],
     2020.0: [n.drita,n.gjilani,n.ballkani,n.prishtina,n.feronikeli,n.llapi,n.trepca89,n.drenica,n.flamurtariKOS,n.ferizaj,n.vushtrria,n.dukagjini],
@@ -590,7 +591,7 @@ Map<String,dynamic> mapEuropaLeste = {
   leagueName.macedonia : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [n.struga,n.shkupi,n.shkendija,n.sileks,n.bregalnica,n.tikvesh,n.makedonija,n.rabotnicki,n.akademijapandev,n.skopje,n.pobeda,n.renova],
     2022.0: [n.shkupi,n.akademijapandev,n.shkendija,n.makedonija,n.renova,n.struga,n.bregalnica,n.rabotnicki,n.skopje,n.tikvesh,n.borec,n.pelister],
     2021.0: [n.shkendija,n.shkupi,n.struga,n.makedonija,n.rabotnicki,n.pelister,n.akademijapandev,n.borec,n.sileks,n.renova,n.vardar,n.belasica],
     2020.0: [n.vardar,n.sileks,n.shkendija,n.renova,n.shkupi,n.makedonija,n.akademijapandev,n.rabotnicki,n.borec,n.struga],
@@ -625,7 +626,7 @@ Map<String,dynamic> mapEuropaLeste = {
   leagueName.moldova : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [n.sherifftiraspol,n.petrocubhincesti,n.zimbruchisinau,n.milsamiorhei,n.sfintulgheorghe,n.balti,],
     2022.0: [n.sherifftiraspol,n.petrocubhincesti,n.milsamiorhei,n.sfintulgheorghe,n.balti,n.dinamoautotiraspol,n.zimbruchisinau,n.floresti],
     2021.0: [n.sherifftiraspol,n.petrocubhincesti,n.milsamiorhei,n.sfintulgheorghe,n.daciabuiucani,n.dinamoautotiraspol,n.floresti,n.zimbruchisinau,n.sperantanisporeni,n.codrulozova],
     2020.0: [n.sherifftiraspol,n.sfintulgheorghe,n.petrocubhincesti,n.dinamoautotiraspol,n.milsamiorhei,n.sperantanisporeni,n.zimbruchisinau,n.codrulozova],
@@ -661,7 +662,7 @@ Map<String,dynamic> mapEuropaLeste = {
   leagueName.montenegro : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [n.buducnost,n.sutjeska,n.arsenal,n.decic,n.jedinstvo,n.petrovac,n.jezero,n.mornar,n.rudar,n.iskra],
     2022.0: [n.sutjeska,n.buducnost,n.decic,n.iskra,n.mornar,n.jezero,n.petrovac,n.rudar,n.podgorica,n.zeta],
     2021.0: [n.buducnost,n.sutjeska,n.decic,n.podgorica,n.jezero,n.zeta,n.rudar,n.iskra,n.petrovac,n.ofktitograd],
     2020.0: [n.buducnost,n.sutjeska,n.iskra,n.zeta,n.podgorica,n.petrovac,n.rudar,n.ofktitograd,n.kom,n.grbalj],
@@ -686,7 +687,7 @@ Map<String,dynamic> mapEuropaLeste = {
   leagueName.repTcheca : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [[n.spartapraga,n.slaviapraha,n.viktoriaplzen,n.bohemians,n.slovacko,n.sigmaolomouc,n.banikostrava,n.jablonec,n.teplice,n.brno,n.pardubice,n.trinityzlin],
+    2023.0: [n.spartapraga,n.slaviapraha,n.viktoriaplzen,n.bohemians,n.slovacko,n.sigmaolomouc,n.banikostrava,n.teplice,n.jablonec,n.pardubice,n.trinityzlin,n.brno],
     2022.0: [n.viktoriaplzen,n.slaviapraha,n.spartapraga,n.slovacko,n.banikostrava,       ],
     2021.0: [n.slaviapraha,n.spartapraga,n.jablonec,n.slovacko,n.viktoriaplzen,           ],
     2020.0: [n.slaviapraha,n.viktoriaplzen,n.spartapraga,n.jablonec,n.slovanliberec,      ],
@@ -767,7 +768,7 @@ Map<String,dynamic> mapEuropaLeste = {
   leagueName.romenia : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [n.farul,n.steauabucuresti,n.cluj,n.craiova,n.rapidbucuresti,      n.sepsi,n.craiova1948,n.petrolul,n.voluntari,n.unicluj,n.hermannstadt,n.botosani,n.arad,n.argespitesti,n.chindiatargoviste,n.mioveni],
     2022.0: [n.cluj,n.steauabucuresti,n.craiova,n.voluntari,n.farul,           n.argespitesti],
     2021.0: [n.cluj,n.steauabucuresti,n.craiova,n.sepsi,n.clinceni,            n.botosani,],
     2020.0: [n.cluj,n.craiova,n.astragiurgiu,n.botosani,n.steauabucuresti,     n.gazmetan],
@@ -841,11 +842,10 @@ Map<String,dynamic> mapEuropaLeste = {
     1952.0: [n.steauabucuresti,n.dinamobucuresti,n.moldovenesc,n.targuMures,              ],
     1951.0: [n.steauabucuresti,n.dinamobucuresti,n.oradea,n.arad,n.petrolul,          ],
     1950.0: [n.arad,n.rapidbucuresti,n.timisoara,n.steauabucuresti,                       n.jiul,n.oradea,n.dinamobucuresti,n.targuMures,n.petrolul,n.sibiu],
-
   },
 
-
   leagueName.russia : {
+    //2025.0: [],
     //2024.0: [],
     2023.0: [n.zenit,n.cska,n.spartakmoscou,n.rostov,n.akhmatGrozny,        n.krasnodar,n.orenburg,n.lokomotivMoscou,n.dinamoMoscou,n.sochi,             n.ural,n.krylyaSovetov,n.nizhnyNovgorod,n.fakel,n.khimki,n.torpedo],
     2022.0: [n.zenit,n.sochi,n.dinamoMoscou,n.krasnodar,n.cska,              n.lokomotivMoscou,n.akhmatGrozny,n.krylyaSovetov,n.rostov,n.spartakmoscou,  n.nizhnyNovgorod,n.ural,n.khimki,n.ufa,n.rubinKazan,n.tula],
@@ -925,6 +925,7 @@ Map<String,dynamic> mapEuropaLeste = {
   },
 
   leagueName.servia : {
+    //2025.0: [],
     //2024.0: [],
     2023.0: [n.estrelavermelha,n.backatopola,n.cukaricki,n.partizan,n.vojvodina,n.novipazar,n.vozdovac,n.radnicki1923,   n.napredakkrusevac,n.subotica,n.mladostlucani,n.radnickinis,n.javor,n.radnik,n.kolubara,n.mladostnovisad,],
     2022.0: [n.estrelavermelha,n.partizan,n.cukaricki,n.backatopola,n.radnickinis, n.vozdovac,n.vojvodina,n.napredakkrusevac,n.radnik,    n.kolubara,n.mladostlucani,n.subotica,n.novipazar,n.radnicki1923,n.milanovac,n.novisad],
@@ -1038,7 +1039,5 @@ Map<String,dynamic> mapEuropaLeste = {
     1994.0: [n.dinamokiev,n.shakhtardonetsk,n.chornomoretsodesa,n.dnipro,n.karpatylviv,n.kryvbaskryvyirih,n.nyvaternopil,n.tavriyasimferopol,n.tempshepetivka,n.nyvavinnytsia,n.volynlutsk,n.veresrivne,n.torpedozaporizhzhia,n.zoryaluhansk,n.kreminkremenchuk,n.metalurhzaporizhya,n.bukovynachernivtsi,n.metalistkharkiv],
     1993.0: [n.dinamokiev,n.dnipro,n.chornomoretsodesa,n.shakhtardonetsk,n.metalistkharkiv,n.karpatylviv,n.metalurhzaporizhya,n.kryvbaskryvyirih,n.kreminkremenchuk,n.tavriyasimferopol,n.volynlutsk,n.bukovynachernivtsi,n.torpedozaporizhzhia,n.nyvaternopil,n.zoryaluhansk,n.veresrivne],
   },
-
-
 
 };

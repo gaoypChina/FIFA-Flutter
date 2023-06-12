@@ -14,7 +14,7 @@ Map<String,dynamic> mapNorthAmerica = {
     //APERTURA
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.pachuca,n.toluca,n.monterrey,n.americamex,           n.santoslaguna,n.tigres,n.cruzazul,n.puebla,n.chivas,n.leon,              n.juarez,n.necaxa,n.sanluis,n.mazatlan,n.tijuana,n.pumas,n.atlas,n.queretaro],
     2021.0: [n.atlas,n.leon,n.pumas,n.tigres,                       n.americamex,n.santoslaguna,n.toluca,n.puebla,n.cruzazul,n.monterrey,     n.chivas,n.sanluis,n.mazatlan,n.necaxa,n.pachuca,n.juarez,n.queretaro,n.tijuana],
     2020.0: [n.leon,n.pumas,n.chivas,n.cruzazul,                    n.americamex,n.monterrey,n.tigres,n.santoslaguna,n.pachuca,n.necaxa,      n.toluca,n.puebla,n.juarez,n.mazatlan,n.tijuana,n.atlas,n.queretaro,n.sanluis],
@@ -95,7 +95,7 @@ Map<String,dynamic> mapNorthAmerica = {
   },
   leagueName.estadosUnidos : {
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.losangelesfc,n.philadelphia,n.austin,n.nycity,          n.lagalaxy,n.cincinnati,n.fcdallas,n.montreal,n.nyredbulls,n.lagalaxy,n.nashville,n.minnesota,n.miamifc,n.orlando,n.realSaltLake,n.portland,n.columbuscrew,n.vancouver,n.colorado,n.charlotte,n.nerevolution,    n.seattle,n.kansas,n.atlanta,n.chicago,n.houston,n.sanJoseEarthquakes,n.toronto,n.dcunited],
     2021.0: [n.nycity,n.portland,n.philadelphia,n.realSaltLake,        n.nerevolution,n.coloradorapids,n.seattle,n.kansas,n.nashville,n.atlanta,n.orlando,n.minnesota,n.vancouver,n.nyredbulls,n.lagalaxy,n.dcunited,n.columbuscrew,n.montreal,n.losangelesfc,n.intermiami,             n.sanJoseEarthquakes,n.chicago,n.fcdallas,n.austin,n.houston,n.toronto,n.cincinnati],
     2020.0: [n.columbuscrew,n.seattle,n.nerevolution,n.minnesota,      n.philadelphia,n.toronto,n.kansas,n.orlando,n.nycity,n.portland,n.coloradorapids,n.fcdallas,n.losangelesfc,n.nyredbulls,n.nashville,n.sanJoseEarthquakes,n.vancouver,n.montreal,n.intermiami,n.lagalaxy,         n.chicago,n.realSaltLake,n.atlanta,n.houston,n.dcunited,n.cincinnati],
@@ -155,7 +155,7 @@ Map<String,dynamic> mapNorthAmerica = {
   leagueName.bahamas : {
     //https://en.wikipedia.org/wiki/BFA_Senior_League
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [],
     2021.0: [],
     2020.0: [],
@@ -192,7 +192,7 @@ Map<String,dynamic> mapNorthAmerica = {
   leagueName.barbados : {
     //https://en.wikipedia.org/wiki/Barbados_Premier_League
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [],
     2021.0: [],
     2020.0: [],
@@ -259,7 +259,7 @@ Map<String,dynamic> mapNorthAmerica = {
   leagueName.belize : {
     //https://en.wikipedia.org/wiki/Belize_Premier_Football_League
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [],
     2021.0: [],
     2020.0: [n.verdes,],
@@ -278,7 +278,7 @@ Map<String,dynamic> mapNorthAmerica = {
 
   leagueName.costaRica : {
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.herediano,n.saprissa,],
     2021.0: [n.alajuelense,],
     2020.0: [n.herediano,n.alajuelense,],
@@ -356,7 +356,7 @@ Map<String,dynamic> mapNorthAmerica = {
 
   leagueName.cuba : {
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [],
     2021.0: [],
     2020.0: [],
@@ -406,7 +406,7 @@ Map<String,dynamic> mapNorthAmerica = {
   leagueName.granada : {
     //https://en.wikipedia.org/wiki/GFA_Premier_League
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.hurricanes,],
     2021.0: [],
     2020.0: [n.hurricanes,],
@@ -451,7 +451,7 @@ Map<String,dynamic> mapNorthAmerica = {
 
   leagueName.honduras : {
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.olimpiaHON,n.rcdespana,n.vida,n.motagua,],
     2021.0: [n.olimpiaHON,n.marathon,n.motagua,n.vida,],
     2020.0: [n.olimpiaHON,n.marathon,n.motagua,n.upnfm,],
@@ -520,7 +520,7 @@ Map<String,dynamic> mapNorthAmerica = {
   leagueName.elsalvador : {
     //https://en.wikipedia.org/wiki/Primera_Divisi%C3%B3n_de_F%C3%BAtbol_de_El_Salvador
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [],
     2021.0: [],
     2020.0: [n.alianzaELS,],
@@ -587,11 +587,10 @@ Map<String,dynamic> mapNorthAmerica = {
   },
   leagueName.guatemala : {
     //2024.0: [],
-    //2023.0: [],
-    2023.0: [n.coban,],
-    2022.0: [n.malacateco,],
-    2021.0: [n.depGuastatoya,],
-    2020.0: [n.municipal,],
+    2023.0: [],
+    2022.0: [n.coban,],
+    2021.0: [n.malacateco,],
+    2020.0: [n.depGuastatoya,],
     2019.0: [n.antiguaGuatemala,],
     2018.0: [n.depGuastatoya,],
     2017.0: [n.municipal,],
@@ -666,7 +665,7 @@ Map<String,dynamic> mapNorthAmerica = {
 
   leagueName.nicaragua : {
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.diriangen,n.walterferreti,n.managua,n.realEsteli],
     2021.0: [n.diriangen,n.managua,n.walterferreti,n.realEsteli,],
     2020.0: [n.realEsteli,n.managua,n.diriangen,n.jalapa,],
@@ -720,7 +719,7 @@ Map<String,dynamic> mapNorthAmerica = {
 
   leagueName.panama : {
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.alianzaPAN,n.sanMiguelito,],
     2021.0: [n.plazaAmador,n.chorrillo,],
     2020.0: [n.independienteChorrera,n.sanfranciscoPAN,],
@@ -760,7 +759,7 @@ Map<String,dynamic> mapNorthAmerica = {
 
   leagueName.haiti : {
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [],
     2021.0: [n.violette,],
     2020.0: [],
@@ -805,7 +804,7 @@ Map<String,dynamic> mapNorthAmerica = {
 
   leagueName.jamaica : {
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [],
     2021.0: [n.cavalier,n.waterhouse,],
     2020.0: [],
@@ -844,7 +843,7 @@ Map<String,dynamic> mapNorthAmerica = {
   leagueName.repdominicana : {
     //https://www.rsssf.org/tablesd/domrepchamp.html
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.cibao,],
     2021.0: [n.cibao,],
     2020.0: [n.omFC],
@@ -870,7 +869,7 @@ Map<String,dynamic> mapNorthAmerica = {
 
   leagueName.suriname : {
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.robinhood,n.intermoengotapoe,n.leovictor,n.notch,n.voorwaarts,   n.wanica,n.pvv,n.transvaal,n.broki,n.santosSUR,  n.snl,n.bintanglair],
     2021.0: [],
     2020.0: [],
@@ -950,7 +949,7 @@ Map<String,dynamic> mapNorthAmerica = {
     //https://en.wikipedia.org/wiki/List_of_Trinidad_and_Tobago_football_champions
     //https://www.rsssf.org/tablest/trinchamp.html
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [],
     2021.0: [],
     2020.0: [n.defenseforce,],

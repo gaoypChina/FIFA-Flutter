@@ -10,7 +10,7 @@ Map<String,dynamic> mapEuropaNordicosBalticos = {
   leagueName.dinamarca : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.copenhague,n.midtjylland,n.silkeborg,n.brondby,n.aalborg,n.randers,n.viborg,n.obodense,n.nordsjaelland,n.aarhus,n.vejle,n.sonderjyske],
     2021.0: [n.brondby,n.midtjylland,n.copenhague,n.aarhus,n.nordsjaelland,n.randers,n.aalborg,n.sonderjyske,n.obodense,n.vejle,n.lyngby,n.horsens],
     2020.0: [n.midtjylland,n.copenhague,n.aarhus,n.brondby,n.aalborg,n.nordsjaelland],
@@ -88,7 +88,7 @@ Map<String,dynamic> mapEuropaNordicosBalticos = {
 
   leagueName.finlandia : {
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.helsinki,n.kups,n.honka,n.haka,n.turku,n.sjk,n.oulu,n.vps,n.ilves,n.mariehamn,n.lahti,n.hifk],
     2021.0: [n.helsinki,n.kups,n.sjk,n.turku,n.ilves,n.hifk,n.lahti,n.haka,n.honka,n.mariehamn,n.oulu,n.ktp],
     2020.0: [n.helsinki,n.turku,n.kups,n.honka,n.ilves,n.lahti,n.sjk,n.hifk,n.mariehamn,n.haka,n.tps,n.rops],
@@ -166,7 +166,7 @@ Map<String,dynamic> mapEuropaNordicosBalticos = {
 
   leagueName.islandia : {
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.breidablik,n.ka,n.vikingurreykjavik,n.kr,n.stjarnan,n.valur,n.keflavik,n.ibv,n.framIslandia,n.fh,n.akraness,n.leiknirreykjavik],
     2021.0: [n.vikingurreykjavik,n.breidablik,n.kr,n.ka,n.valur,n.fh,n.stjarnan,n.leiknirreykjavik,n.akraness,n.keflavik,n.hk,n.fylkir],
     2020.0: [n.valur,n.fh,n.stjarnan,n.breidablik,n.kr,n.fylkir,n.ka,n.akraness,n.hk,n.vikingurreykjavik,n.grotta,n.fjolnir],
@@ -244,7 +244,7 @@ Map<String,dynamic> mapEuropaNordicosBalticos = {
   leagueName.suecia : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.hacken,n.djurgardens,n.hammarby,n.kalmar,n.aik,     n.elfsborg,n.malmo,n.ifkgoteborg,n.mjallby,n.varnamo,        n.sirius,n.norrkoping,n.degerfors,n.varbergs,n.helsingborg,n.sundsvall],
     2021.0: [n.malmo,n.aik,n.djurgardens,n.elfsborg,n.hammarby,    n.kalmar,n.norrkoping,n.ifkgoteborg,n.mjallby,n.varbergs,     n.sirius,n.hacken,n.degerfors,n.halmstads,n.orebro,n.ostersunds],
     2020.0: [n.malmo,n.elfsborg,n.hacken,n.djurgardens,n.mjallby,  n.norrkoping,n.orebro,n.hammarby,n.aik,n.sirius,             n.varbergs,n.ifkgoteborg,n.ostersunds,n.kalmar,n.helsingborg,n.falkenbergs],
@@ -328,7 +328,7 @@ Map<String,dynamic> mapEuropaNordicosBalticos = {
   leagueName.ilhasfaroe : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.kiklaksvik,n.vikingurgota,n.havnarboltfelag,n.b36,n.ebstreymur,n.b68,n.vestur,n.abFaroe,n.nsirunavik,n.skala],
     2021.0: [n.kiklaksvik,n.havnarboltfelag,n.vikingurgota,n.nsirunavik,n.b36,n.vestur,n.ebstreymur,n.b68,n.iffuglafjordur,n.tbtvoroyri],
     2020.0: [n.havnarboltfelag,n.nsirunavik,n.kiklaksvik,n.b36,n.vikingurgota,n.iffuglafjordur,n.ebstreymur,n.tbtvoroyri,n.abFaroe,n.skala],
@@ -411,7 +411,7 @@ Map<String,dynamic> mapEuropaNordicosBalticos = {
   leagueName.estonia : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.floratallinn,n.levadiatallinn,n.paidelinnameeskond,n.nommekalju,n.kuressaare,n.tartutammeka,n.narvatrans,n.tallinnakalev,n.legion,n.vaprus],
     2021.0: [n.levadiatallinn,n.floratallinn,n.paidelinnameeskond,n.nommekalju,n.legion,n.narvatrans,n.kuressaare,n.viljanditulevik,n.tartutammeka,n.vaprus],
     2020.0: [n.floratallinn,n.paidelinnameeskond,n.levadiatallinn,n.nommekalju,n.tartutammeka,n.viljanditulevik,n.tjklegion,n.narvatrans,n.kuressaare,n.tallinnakalev],
@@ -447,7 +447,7 @@ Map<String,dynamic> mapEuropaNordicosBalticos = {
   leagueName.letonia : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.valmiera,n.rigafc,n.rigasfs,n.liepaja,n.fkauda,n.tukums,n.bfcdaugavpils,n.spartaksjurmala,n.mettalu,n.supernova],
     2021.0: [n.rigasfs,n.valmiera,n.liepaja,n.rigafc,n.spartaksjurmala,n.bfcdaugavpils,n.mettalu,n.noahjurmala],
     2020.0: [n.rigafc,n.rigasfs,n.valmiera,n.ventspils,n.liepaja,n.spartaksjurmala,n.jelgava,n.bfcdaugavpils,n.mettalu,n.tukums],
@@ -483,7 +483,7 @@ Map<String,dynamic> mapEuropaNordicosBalticos = {
   leagueName.lituania : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.zalgiris,n.kaunozalgiris,n.panevezys,n.hegelmann,n.riteriai,n.suduva,n.siauliai,n.bangakaunas,n.dziugas,n.jonava],
     2021.0: [n.zalgiris,n.suduva,n.kaunozalgiris,n.panevezys,n.hegelmann,n.riteriai,n.bangakaunas,n.dziugas,n.dainava,n.nevezis],
     2020.0: [n.zalgiris,n.suduva,n.kaunozalgiris,n.bangakaunas,n.panevezys,n.riteriai],

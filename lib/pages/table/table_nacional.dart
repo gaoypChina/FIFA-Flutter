@@ -6,7 +6,7 @@ import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/historic/leagues_historic.dart';
-import 'package:fifa/pages/ranking_clubs/league_selection_row.dart';
+import 'package:fifa/widgets/league_selection_row.dart';
 import 'package:fifa/pages/table/widgets/matchs.dart';
 import 'package:fifa/pages/table/widgets/player_statistics.dart';
 import 'package:fifa/pages/table/widgets/table_widget.dart';

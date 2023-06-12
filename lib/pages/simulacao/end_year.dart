@@ -11,7 +11,7 @@ import 'package:fifa/classes/mundial.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/coach/change_club.dart';
-import 'package:fifa/pages/table_international/table_international.dart';
+import 'package:fifa/pages/table_international/main_tabs.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';

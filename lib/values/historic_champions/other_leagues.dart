@@ -97,6 +97,8 @@ Map<String,dynamic> mapOtherLeagues = {
   },
 
   leagueName.copaNordeste : {
+    //2025.0: [],
+    //2024.0: [],
     2023.0: [n.ceara,n.sport,n.fortaleza,n.abc,             n.nautico,n.ferroviario,n.crb,n.sergipe,  n.santacruz,n.sampaio,n.bahia,n.campinense,n.csa,n.alagoinhas,n.vitoria,n.fluminensePI],
     2022.0: [n.fortaleza,n.sport, n.nautico,n.crb,          n.ceara,n.botafogoPB,n.csa,n.alagoinhas,  n.bahia,n.sousa,n.altos,n.sampaio,n.floresta,n.campinense,n.globo,n.sergipe],
     2021.0: [n.bahia,n.ceara,n.fortaleza,n.vitoria,         n.crb,n.altos,n.csa,n.sampaio,            n.abc,n.treze,n.salgueiro,n.confianca,n.botafogoPB,n.julho4,n.sport,n.santacruz],

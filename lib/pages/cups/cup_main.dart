@@ -4,7 +4,7 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/pages/cups/tabs/cup_brackets.dart';
 import 'package:fifa/pages/cups/tabs/cup_matchs.dart';
 import 'package:fifa/pages/cups/tabs/cup_statistics.dart';
-import 'package:fifa/pages/ranking_clubs/league_selection_row.dart';
+import 'package:fifa/widgets/league_selection_row.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/league_names.dart';

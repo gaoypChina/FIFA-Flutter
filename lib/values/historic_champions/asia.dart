@@ -8,6 +8,9 @@ LeagueOfficialNames leagueName = LeagueOfficialNames();
 Map<String,dynamic> mapAsia = {
 
   leagueName.china : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.wuhan3towns,n.shandong,n.zhejiang,n.shanghaisipg,n.chengdu,       n.henan,n.beijingguoan,n.tianjin,n.meizhou,n.shanghaishenhua,    n.dalian,n.cangzhou,n.changchun,n.shenzhen,n.ghuangzhouCity,n.wuhan,    n.ghuangzhou,n.hebei],
     2021.0: [n.shandong,n.shanghaisipg,n.ghuangzhou,n.changchun,n.beijingguoan,  n.shenzhen,n.ghuangzhouCity,n.hebei,n.shanghaishenhua,n.henan,   n.cangzhou,n.tianjin,n.chongqing,n.wuhan,n.dalian,n.qingdaofc],
     2020.0: [n.jiangsu,n.ghuangzhou,n.beijingguoan,n.shanghaisipg,n.chongqing,   n.hebei,n.shandong,n.shanghaishenhua,n.shenzhen,n.wuhan,         n.cangzhou,n.ghuangzhouCity,n.dalian,n.qingdaofc,n.henan,n.tianjin],
@@ -47,6 +50,9 @@ Map<String,dynamic> mapAsia = {
   },
 
   leagueName.japao : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.yokohamamarinos,n.kawasakifrontale,n.hiroshima,n.kashimaantlers,n.cerezoOsaka, n.fcTokyo,n.kashiwaReysol,n.nagoya,n.urawareddiamonds,n.sapporo,   n.sagantosu,n.shonanbellmare,n.visselkobe,n.avispa,n.kyoto,n.shimizuSPulse,n.jubiloiwata],
     2021.0: [n.kawasakifrontale,n.yokohamamarinos,n.visselkobe,n.kashimaantlers,n.nagoya,   n.urawareddiamonds,n.sagantosu,n.avispa,n.fcTokyo,n.sapporo,        n.hiroshima,n.cerezoOsaka,n.gambaOsaka,n.shimizuSPulse,n.kashiwaReysol,      n.shonanbellmare,n.tokushima,n.oitatrinita,n.vegaltaSendai,n.yokohamaFC],
     2020.0: [n.kawasakifrontale,n.gambaOsaka,n.nagoya,n.cerezoOsaka,n.kashimaantlers,       n.fcTokyo,n.kashiwaReysol,n.hiroshima,n.yokohamamarinos,n.urawareddiamonds,  n.oitatrinita,n.sapporo,n.sagantosu,n.visselkobe,n.yokohamaFC,  n.shimizuSPulse,n.vegaltaSendai,n.shonanbellmare],
@@ -81,6 +87,9 @@ Map<String,dynamic> mapAsia = {
   },
 
   leagueName.coreiaSul : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.ulsan,n.jeonbuk,n.pohang,n.incheon,n.jeju,     n.gangwon,n.suwonFC,n.daegu,n.fcseoul,n.suwonsamsung,       n.gimcheon,n.seongnam],
     2021.0: [n.jeonbuk,n.ulsan,n.daegu,n.jeju,n.suwonFC,      n.suwonsamsung,n.fcseoul,n.incheon,n.pohang,n.seongnam,    n.gangwon,n.gwangju],
     2020.0: [n.jeonbuk,n.ulsan,n.pohang,n.gimcheon,n.daegu,   n.gwangju,n.gangwon,n.suwonsamsung,n.fcseoul,n.seongnam,   n.incheon,n.busan],
@@ -125,6 +134,10 @@ Map<String,dynamic> mapAsia = {
 
   leagueName.bangladesh : {
     //https://en.wikipedia.org/wiki/Bangladesh_Premier_League_(football)
+
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.bashundhara,n.dhakaAbahani,n.saif,],
     2021.0: [n.bashundhara,n.sheikhJamal,n.dhakaAbahani,],
     2020.0: [],
@@ -144,6 +157,9 @@ Map<String,dynamic> mapAsia = {
   },
 
   leagueName.cingapura : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.albirexSINGAPORE,],
     2021.0: [n.lionCitySailors,],
     2020.0: [n.tampines,],
@@ -175,6 +191,10 @@ Map<String,dynamic> mapAsia = {
 
   leagueName.hongkong : {
     //https://en.wikipedia.org/wiki/List_of_Hong_Kong_football_champions
+
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [],
     2021.0: [n.kitchee,n.easternSC,n.leeMan,],
     2020.0: [n.kitchee,n.easternSC,n.rf,],
@@ -251,6 +271,9 @@ Map<String,dynamic> mapAsia = {
   },
 
   leagueName.india : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.hyderabad,n.kerala,n.jamshedpur,n.mohunbagan,  n.mumbai,n.bengaluru,n.odisha,n.chennaiyin,n.goa,n.northeast,              n.eastbengal],
     2021.0: [n.mumbai,n.mohunbagan,n.northeast,n.goa,         n.hyderabad,n.jamshedpur,n.bengaluru,n.chennaiyin,n.eastbengal,n.kerala,   n.odisha],
     2020.0: [n.mohunbagan,n.chennaiyin,n.goa,n.bengaluru,     n.mumbai,n.odisha,n.kerala,n.jamshedpur,n.northeast,n.hyderabad],
@@ -279,6 +302,9 @@ Map<String,dynamic> mapAsia = {
     1997.0: [n.jct,n.churchill,n.eastbengal,],
   },
   leagueName.tailandia : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.buriram],
     2021.0: [n.pathum,n.buriram,n.portFC,n.chiangrai,n.bangkok,   n.samutPrakan,n.muangthong,],
     2020.0: [],
@@ -326,6 +352,10 @@ Map<String,dynamic> mapAsia = {
 
   leagueName.indonesia : {
     //https://en.wikipedia.org/wiki/1994%E2%80%9395_Liga_Indonesia_Premier_Division
+
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.bali,n.persib,n.bhayangkara,n.arema,n.persebaya,n.borneo,n.psis,n.persija,n.madura,],
     2021.0: [],
     2020.0: [n.persib,n.bali,n.borneo,n.persipura,n.psis,n.psmMakassar,n.persiraja,n.madura,n.persija,],
@@ -382,6 +412,9 @@ Map<String,dynamic> mapAsia = {
   },
 
   leagueName.filipinas : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [],
     2021.0: [],
     2020.0: [n.unitedCity,n.kaya,n.azkals,],
@@ -397,6 +430,9 @@ Map<String,dynamic> mapAsia = {
   },
 
   leagueName.camboja : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.preahKhan,n.visakha,n.phnomPenhCrown,n.boeungKet,n.nagaworld,      ],
     2021.0: [n.phnomPenhCrown,n.preahKhan,n.visakha,n.nagaworld,n.boeungKet,      ],
     2020.0: [n.boeungKet,n.preahKhan,n.phnomPenhCrown,n.tiffy,n.visakha,          ],
@@ -419,6 +455,9 @@ Map<String,dynamic> mapAsia = {
 
   leagueName.coreiaNorte : {
     //https://www.rsssf.org/tablesn/nkorchamp.html
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [],
     2021.0: [],
     2020.0: [],
@@ -461,6 +500,9 @@ Map<String,dynamic> mapAsia = {
 
   leagueName.laos : {
     //https://en.wikipedia.org/wiki/Lao_Premier_League
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.youngElephants,],
     2021.0: [],
     2020.0: [n.chanthabouly,],
@@ -486,6 +528,9 @@ Map<String,dynamic> mapAsia = {
   },
 
   leagueName.malasia : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.johordarul,n.terengganu,n.sabah,],
     2021.0: [n.johordarul,n.kedah,n.penang,],
     2020.0: [n.johordarul,n.kedah,n.terengganu,],
@@ -508,6 +553,9 @@ Map<String,dynamic> mapAsia = {
   },
 
   leagueName.myanmar : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.shanUnited,n.yangon,],
     2021.0: [],
     2020.0: [n.shanUnited,n.hanthawaddy,],
@@ -526,6 +574,9 @@ Map<String,dynamic> mapAsia = {
 
   leagueName.nepal : {
     //https://www.rsssf.org/tablesn/nepalchamp.html
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.machhindra,],
     2021.0: [],
     2020.0: [n.machhindra,],
@@ -555,6 +606,9 @@ Map<String,dynamic> mapAsia = {
   },
 
   leagueName.oman : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.alseeb,n.alnahdaOMAN,],
     2021.0: [],
     2020.0: [n.alseeb,n.dhofar,],
@@ -605,6 +659,9 @@ Map<String,dynamic> mapAsia = {
 
   leagueName.paquistao : {
     //https://en.wikipedia.org/wiki/Pakistan_Super_League
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [],
     2021.0: [],
     2020.0: [],
@@ -628,6 +685,9 @@ Map<String,dynamic> mapAsia = {
 
   leagueName.quirguistao : {
     //https://en.wikipedia.org/wiki/Kyrgyz_Premier_League
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [],
     2021.0: [n.dordoiBishkek,],
     2020.0: [n.dordoiBishkek,],
@@ -662,6 +722,9 @@ Map<String,dynamic> mapAsia = {
   },
 
   leagueName.tadjiquistao : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.istiklol,n.ravshan,n.khujand,],
     2021.0: [n.istiklol,n.khujand,n.pamirDushanbe,],
     2020.0: [n.istiklol,n.khujand,n.pamirDushanbe,],
@@ -697,6 +760,9 @@ Map<String,dynamic> mapAsia = {
 
   leagueName.turcomenistao : {
     //https://en.wikipedia.org/wiki/%C3%9Dokary_Liga
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.ahalAnew,n.altynAsyr,n.merw,],
     2021.0: [n.altynAsyr,n.ahalAnew,n.sagadam,],
     2020.0: [n.altynAsyr,n.ahalAnew,n.sagadam,],
@@ -731,6 +797,9 @@ Map<String,dynamic> mapAsia = {
   },
 
   leagueName.uzbekistao : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.pakhtakor,n.navbahor,n.nasafqarshi,n.agmk,n.qizilqum,         ],
     2021.0: [n.pakhtakor,n.sogdiyona,n.agmk,n.nasafqarshi,n.bunyodkor,       ],
     2020.0: [n.pakhtakor,n.nasafqarshi,n.agmk,n.bunyodkor,n.kokand,          ],
@@ -766,6 +835,9 @@ Map<String,dynamic> mapAsia = {
 
   leagueName.taiwan : {
     //https://en.wikipedia.org/wiki/Taiwan_Football_Premier_League
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.tainancity,n.taichung,n.taipower,],
     2021.0: [n.tainancity,n.taipower,n.taichung,],
     2020.0: [n.tainancity,n.taipower,n.taichung,],
@@ -775,6 +847,9 @@ Map<String,dynamic> mapAsia = {
   },
 
   leagueName.vietna : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [n.hanoi,n.haiphong,n.topenland,n.viettel],
     2021.0: [],
     2020.0: [n.viettel,n.hanoi,n.saigon,n.thanquangnihh],
@@ -829,8 +904,6 @@ Map<String,dynamic> mapAsia = {
     1971.0: [],
     1970.0: [],
   },
-
-
 
 
 };
