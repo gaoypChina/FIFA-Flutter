@@ -1,10 +1,13 @@
 import 'dart:math';
 
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/mata_mata/knockout_international.dart';
+import 'package:fifa/classes/mata_mata/knockout_stage.dart';
 import 'package:fifa/classes/match/confronto.dart';
-import 'package:fifa/classes/functions/name.dart';
+import 'package:fifa/classes/match/result_dict.dart';
 import 'package:fifa/classes/simulate/match_simulation.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/league_names.dart';
 
 class MundialFinal{
@@ -33,20 +36,11 @@ class MundialFinal{
       saveResults();
   }
 
-  Club finalistName(String leagueInternational){
+  Club finalistName(String competitionName){
     //Procura na liga ou na libertadores qual dos dois foi o campeao
-    int idaVolta = 0;
-    List finalists = List.from(globalInternationalMataMataClubsID[leagueInternational][Name().finale]);
-    int clubIndex1 = finalists[0];
-    int goal1 = globalInternationalMataMataGoals[leagueInternational][Name().finale][clubIndex1][idaVolta];
+    Confronto confronto = KnockoutInternational().getConfronto(competitionName, KnockoutStage().keyFinal, ResultDict().keyIda, 1);
 
-    int clubIndex2 = finalists[1];
-    int goal2 = globalInternationalMataMataGoals[leagueInternational][Name().finale][clubIndex2][idaVolta];
-    if(goal1 > goal2){
-      return Club(index: clubIndex1);
-    }else{
-      return Club(index: clubIndex2);
-    }
+    return Club(index: clubsAllNameList.indexOf(confronto.winnerName));
   }
 
   void simulateScore(){

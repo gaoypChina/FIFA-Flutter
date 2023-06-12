@@ -92,6 +92,7 @@ class _TableInternationalState extends State<TableInternational>  with TickerPro
                       child: TabBar(
                         isScrollable: true,
                         controller: _tabController,
+                        indicatorColor: AppColors().green,
                         unselectedLabelColor: Colors.white54,
                         tabs: [
                           Tab(text: Translation(context).text.classification),

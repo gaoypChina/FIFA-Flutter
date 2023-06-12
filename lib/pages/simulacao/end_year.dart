@@ -6,6 +6,7 @@ import 'package:fifa/classes/functions/name.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/mata_mata/mata_mata_class.dart';
+import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/mundial.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
@@ -229,8 +230,10 @@ Widget mundial(){
 }
 
 Widget finale(String internationalLeagueName){
+
   MataMata data = MataMata();
-  data.getData(internationalLeagueName, Name().finale,0, 0);
+  Confronto confronto = data.getData(internationalLeagueName, Name().finale,0, 0);
+
   return GestureDetector(
     onTap: (){
       Navigator.push(context,MaterialPageRoute(builder: (context) => TableInternational(leagueInternational: internationalLeagueName)));
@@ -242,9 +245,9 @@ Widget finale(String internationalLeagueName){
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(FIFAImages().campeonatoLogo(internationalLeagueName),height: 35,width:35,),
-            Images().getEscudoWidget(data.clubName1,30,30),
+            Images().getEscudoWidget(confronto.clubName1,30,30),
             const Text('x',style: EstiloTextoBranco.text14),
-            Images().getEscudoWidget(data.clubName2,30,30)
+            Images().getEscudoWidget(confronto.clubName2,30,30)
           ],
         ),
       ],

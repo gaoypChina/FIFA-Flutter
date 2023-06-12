@@ -11,12 +11,17 @@ class Name{
   String mundial = 'Mundial';
 
   showTranslated(BuildContext context, String word){
-    if(word == groupsPhase){word = Translation(context).text.groupStage;}
-    if(word == oitavas){word = Translation(context).text.oitavas;}
-    if(word == quartas){word = Translation(context).text.quartas;}
-    if(word == semifinal){word = Translation(context).text.semi;}
-    if(word == finale){word = Translation(context).text.finale;}
-    if(word == qualify){word = Translation(context).text.qualify;}
+    Map<String, String> mapTranslation = {
+      groupsPhase: Translation(context).text.groupStage,
+      oitavas: Translation(context).text.oitavas,
+      quartas: Translation(context).text.quartas,
+      semifinal: Translation(context).text.semi,
+      finale: Translation(context).text.finale,
+      qualify: Translation(context).text.qualify,
+    };
+    if (mapTranslation.containsKey(word)){
+      return mapTranslation[word];
+    }
     return word;
   }
 }

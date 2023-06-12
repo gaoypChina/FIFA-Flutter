@@ -3906,7 +3906,7 @@ class ClubName{
   String firpo = "CD Luis Ángel Firpo";
   String isidro = "Isidro Metapán";
   String juvOlimpica = "Juventud Olímpica";
-  String santaTecla = "Santa Tecla";
+  String santatecla = "Santa Tecla";
   String sansalvador = "San Salvador";
   //GUATEMALA
   String auroraGUA = "Aurora Guatemala";

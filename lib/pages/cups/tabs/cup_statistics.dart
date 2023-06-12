@@ -1,4 +1,4 @@
-import 'package:fifa/classes/cup_classification.dart';
+import 'package:fifa/classes/mata_mata/cup_classification.dart';
 import 'package:fifa/classes/functions/order_list.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/player_stats_keys.dart';

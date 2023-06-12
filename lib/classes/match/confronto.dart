@@ -5,6 +5,7 @@ class Confronto{
 
   late String clubName1;
   late String clubName2;
+  late String winnerName;
   late int clubID1;
   late int clubID2;
   late int goal1;
@@ -37,12 +38,14 @@ class Confronto{
 
     if(goal1 > goal2){
       result = victory;
+      winnerName = clubName1;
     }
     if(goal1 == goal2){
       result = draw;
     }
     if(goal2 > goal1){
       result = loss;
+      winnerName = clubName2;
     }
   }
 
@@ -50,6 +53,19 @@ class Confronto{
     hasPenaltis = true;
     this.penaltis1 = penaltis1;
     this.penaltis2 = penaltis2;
+
+    if(penaltis1 > penaltis2){
+      result = victory;
+      winnerName = clubName1;
+    }
+    if(penaltis1 == penaltis2){
+      result = draw;
+    }
+    if(penaltis1 > penaltis2){
+      result = loss;
+      winnerName = clubName2;
+    }
+
   }
 
 

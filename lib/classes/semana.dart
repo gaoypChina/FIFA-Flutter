@@ -1,4 +1,4 @@
-import 'package:fifa/classes/cup_classification.dart';
+import 'package:fifa/classes/mata_mata/cup_classification.dart';
 import 'package:fifa/classes/functions/name.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:flutter/cupertino.dart';

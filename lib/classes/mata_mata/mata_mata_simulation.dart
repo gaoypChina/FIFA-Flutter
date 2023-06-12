@@ -1,5 +1,5 @@
 
-import 'package:fifa/classes/functions/internat_league_manipulation.dart';
+import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/simulate/match_simulation.dart';
 
@@ -14,24 +14,28 @@ class MataMataSimulation{
     My myClass = My();
     MataMata mataMata = MataMata();
     for (int i = 0; i < internationalLeagueNames.length; i++) {
-      String internationalName = InternationalLeagueManipulation().funcGetInternationalLeagueNameFromIndex(internationalLeagueIndex: i);
+      String internationalName = internationalLeagueNames[i];
 
       int matchRowsTotal = mataMata.getMatchRows();
       int phaseIdaVolta = mataMata.getPhaseIdaVolta(semana); //jogo de ida ou volta
-      for (int matchRows = 0; matchRows<matchRowsTotal; matchRows++) {
+      for (int matchRows = 0; matchRows < matchRowsTotal; matchRows++) {
         //PEGA OS TIMES QUE VÃO JOGAR
         mataMata = MataMata();
-        mataMata.getData(internationalName, mataMata.getSemanaPhase(semana),matchRows, phaseIdaVolta);
-        Club club1 = Club(index: mataMata.clubID1, clubDetails: false);
-        Club club2 = Club(index: mataMata.clubID2, clubDetails: false);
+        Confronto confronto = mataMata.getData(internationalName, mataMata.getSemanaPhase(semana), matchRows, phaseIdaVolta);
+        Club club1 = Club(index: confronto.clubID1, clubDetails: false);
+        Club club2 = Club(index: confronto.clubID2, clubDetails: false);
+
         if((club1.index != myClass.clubID && club2.index != myClass.clubID) || simulMyMatch){
         //SIMULA A PARTIDA EM SI
         MatchSimulation(club1, club2);
         //Se a final terminar empatada simula de novo -> PENALTIS
-        if(semanaFinal.contains(semana) && mataMata.goal1 == mataMata.goal2){
-          while(semanaFinal.contains(semana) && mataMata.goal1 == mataMata.goal2){
+        if(semanaFinal.contains(semana)){
+          confronto = mataMata.getData(internationalName, mataMata.getSemanaPhase(semana), matchRows, phaseIdaVolta);
+          while(semanaFinal.contains(semana) && confronto.goal1 == confronto.goal2){
+            //TODO: REFAZER, PORQUE ACABA REJOGANDO A PARTIDA E SALVA OS STATS DOS JOGADORES 2X
             MatchSimulation(club1, club2);
-            mataMata.getData(internationalName, mataMata.getSemanaPhase(semana),matchRows, phaseIdaVolta);
+            //SALVA O PLACAR
+            confronto = mataMata.getData(internationalName, mataMata.getSemanaPhase(semana), matchRows, phaseIdaVolta);
           }
         }
 
@@ -43,30 +47,6 @@ class MataMataSimulation{
 
   }
 
-  void setGoals(int clubID1, int clubID2, int goal1, int goal2){
-
-    int phaseIdaVolta = MataMata().getPhaseIdaVolta(semana);
-    String weekPhase = MataMata().getSemanaPhase(semana);
-
-    String internationalName = Club(index: clubID1).internationalLeagueNamePlaying;
-    //CRIA MAP SE NÃO EXISTIR
-    if(globalInternationalMataMataGoals[internationalName] == null){
-      globalInternationalMataMataGoals[internationalName] = {};
-    }
-    if(globalInternationalMataMataGoals[internationalName][weekPhase] == null){
-      globalInternationalMataMataGoals[internationalName][weekPhase] = {};
-    }
-    if(globalInternationalMataMataGoals[internationalName][weekPhase][clubID1] == null){
-      globalInternationalMataMataGoals[internationalName][weekPhase][clubID1] = [-1,-1];
-    }
-    if(globalInternationalMataMataGoals[internationalName][weekPhase][clubID2] == null){
-      globalInternationalMataMataGoals[internationalName][weekPhase][clubID2] = [-1,-1];
-    }
-
-    //SALVA VARIAVEL
-    globalInternationalMataMataGoals[internationalName][weekPhase][clubID1][phaseIdaVolta] = goal1;
-    globalInternationalMataMataGoals[internationalName][weekPhase][clubID2][phaseIdaVolta] = goal2;
-  }
 
 
 }

@@ -1344,7 +1344,7 @@ Map<String,dynamic> mapEstaduais = {
     2007.0: [n.brasiliense,n.ceilandia,n.gama,],
     2006.0: [n.brasiliense,n.gama,n.luziania,n.ceilandia,],
     2005.0: [n.brasiliense,n.ceilandia,n.paranoa,n.gama,],
-    2004.0: [n.brasiliense,n.gama,n.gama,n.ceilandia,],
+    2004.0: [n.brasiliense,n.cfz,n.gama,n.ceilandia,],
     2003.0: [n.gama,n.brasiliense,n.cfz,n.luziania,],
     2002.0: [n.cfz,n.gama,n.brasiliense,n.bandeirante,],
     2001.0: [n.gama,n.brasiliense,],

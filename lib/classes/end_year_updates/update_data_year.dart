@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/cup_classification.dart';
+import 'package:fifa/classes/mata_mata/cup_classification.dart';
 import 'package:fifa/classes/end_year_updates/aposentadoria.dart';
 import 'package:fifa/classes/functions/fim_campeonato_local.dart';
 import 'package:fifa/classes/historic/historic_club_year.dart';
@@ -56,7 +56,7 @@ saveHistoricalData(){
 
   saveLeagueResults();
   saveInternationalLeagueResults();
-  resetInternationalGoalsData();
+  resetInternationalMataMataData();
   HistoricMyPlayers().saveMyClubData(My());
   saveBestPlayers();
 }
@@ -74,16 +74,16 @@ saveInternationalLeagueResults(){
   Map allLeaguesClassification = {};
   int nInternationalLeagues = InternationalLeagueManipulation().funcNInternationalLeagues();
   for(int i=0;i<nInternationalLeagues;i++){
-    String internationalLeagueName = InternationalLeagueManipulation().funcGetInternationalLeagueNameFromIndex(internationalLeagueIndex: i);
+    String internationalLeagueName = internationalLeagueNames[i];
     List clubsIDs = International(internationalLeagueName).getClassification();
     allLeaguesClassification[internationalLeagueName] = clubsIDs;
   }
   //salva o resultado final
   globalHistoricInternationalClassification[ano] = allLeaguesClassification;
-  globalHistoricInternationalGoalsAll[ano] = globalInternationalMataMataGoals;
+  globalHistoricInternationalGoalsAll[ano] = globalInternationalMataMata;
 }
-resetInternationalGoalsData(){
-  globalInternationalMataMataGoals = {};
+resetInternationalMataMataData(){
+  globalInternationalMataMata = {};
 }
 
 saveBestPlayers(){

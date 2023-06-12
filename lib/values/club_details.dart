@@ -4873,7 +4873,7 @@ class ClubDetails{
       'Estádio Sergio Torres Rivera',10000,1923,_country.elsalvador,64.4,[],{}];
     map[n.isidro] = [ClubColors(Colors.white,Colors.blue),pattern.solid,Coordinates(14.332095, -89.44904),
       'Jorge "Calero" Suárez',2000,2000,_country.elsalvador,63.2,[],{}];
-    map[n.santaTecla] = [ClubColors(Colors.green,Colors.blue),pattern.solid,Coordinates(13.6717297, -89.29938447),
+    map[n.santatecla] = [ClubColors(Colors.green,Colors.blue),pattern.solid,Coordinates(13.6717297, -89.29938447),
       'Estádio Las Delicias',10000,2007,_country.elsalvador,62.0,[],{}];
     //GUATEMALA
     map[n.auroraGUA] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),

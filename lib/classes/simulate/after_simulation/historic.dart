@@ -2,7 +2,6 @@
 import 'package:fifa/classes/chaves.dart';
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/classes/mata_mata/mata_mata_simulation.dart';
 import 'package:fifa/classes/simulate/my_match/my_match_simulation.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
@@ -73,7 +72,4 @@ class SaveMatchHistoric{
     }
   }
 
-  setHistoricGoalsMataMataInternational(String internationalName, int clubID1, int clubID2,int goal1, int goal2){
-    MataMataSimulation().setGoals(clubID1, clubID2, goal1, goal2);
-  }
 }

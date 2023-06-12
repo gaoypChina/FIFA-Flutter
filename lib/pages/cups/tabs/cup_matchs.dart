@@ -1,11 +1,12 @@
 import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/cup_classification.dart';
+import 'package:fifa/classes/mata_mata/cup_classification.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/mata_mata/knockout_stage.dart';
 import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/match/result_dict.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/background_color/match_x_testyle.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -19,6 +20,7 @@ Widget cupPhaseWidget(BuildContext context, String cupName){
   List<String> listCupPhases = KnockoutStage().listPhases();
 
   My my = My();
+
   return SingleChildScrollView(
     child: Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4.0),
@@ -51,10 +53,14 @@ Widget cupPhaseWidget(BuildContext context, String cupName){
   );
 }
 
-Widget cupPhaseColumn(BuildContext context,  String cupName, String phaseName, String idaOrVoltaKey, My my){
+Widget cupPhaseColumn(BuildContext context,  String competitionName, String phaseKeyName, String idaOrVoltaKey, My my){
 
+  Map matchs = {};
   try {
-    Map matchs = CupClassification().getPhaseResults(cupName, phaseName, idaOrVoltaKey);
+    matchs = CupClassification().getPhaseResults(competitionName, phaseKeyName, idaOrVoltaKey);
+  }catch(e){
+    return Container();
+  }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,44 +70,34 @@ Widget cupPhaseColumn(BuildContext context,  String cupName, String phaseName, S
             ? const SizedBox(height: 4)
             : const SizedBox(height: 12),
 
-        Text(phaseName + " - " + idaOrVoltaKey,style: EstiloTextoBranco.negrito16),
+        Text(phaseKeyName + " - " + idaOrVoltaKey,style: EstiloTextoBranco.negrito16),
         const SizedBox(height: 4),
         for(int i=1; i<=matchs.length; i++)
           cupMatchRow(
               context,
-              matchs[i],
+              CupClassification().getConfrontoFromMapMatch(matchs[i]),
               my)
       ],
     );
-  }catch(e){
-    return Container();
-  }
 
 }
 
-Widget cupMatchRow(BuildContext context, Map match, My my){
-
-  Confronto confronto = Confronto(
-    clubName1: match[ResultDict().keyTeamName1],
-    clubName2: match[ResultDict().keyTeamName2],
-  );
-
-  if(match.containsKey(ResultDict().keyGol1)){
-    confronto.setGoals(goal1: match[ResultDict().keyGol1], goal2: match[ResultDict().keyGol2]);
-  }
-
-  if(match.containsKey(ResultDict().keyPenalti1)){
-    confronto.setPenalties(penaltis1: match[ResultDict().keyPenalti1], penaltis2: match[ResultDict().keyPenalti2]);
-  }
+Widget cupMatchRow(BuildContext context, Confronto confronto, My my){
 
   String teamNameA = confronto.clubName1;
   String teamNameB = confronto.clubName2;
   double imageSize = 30;
 
-  TextStyle style1 = matchStyle1(confronto.goal1, confronto.goal2, 14);
-  TextStyle style2 = matchStyle2(confronto.goal1, confronto.goal2, 14);
-  TextStyle style10 = matchStyle1(confronto.goal1, confronto.goal2, 22);
-  TextStyle style20 = matchStyle2(confronto.goal1, confronto.goal2, 22);
+  TextStyle style1 = EstiloTextoBranco.text14;
+  TextStyle style2 = EstiloTextoBranco.text14;
+  TextStyle style10 = EstiloTextoBranco.text22;
+  TextStyle style20 = EstiloTextoBranco.text22;
+  if(confronto.hasGoals){
+    style1 = matchStyle1(confronto.goal1, confronto.goal2, 14);
+    style2 = matchStyle2(confronto.goal1, confronto.goal2, 14);
+    style10 = matchStyle1(confronto.goal1, confronto.goal2, 22);
+    style20 = matchStyle2(confronto.goal1, confronto.goal2, 22);
+  }
 
   return Container(
     margin: const EdgeInsets.symmetric(vertical: 4),

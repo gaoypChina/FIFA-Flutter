@@ -1,4 +1,4 @@
-import 'package:fifa/classes/cup_classification.dart';
+import 'package:fifa/classes/mata_mata/cup_classification.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/mata_mata/knockout_stage.dart';
@@ -64,8 +64,8 @@ import 'package:flutter/material.dart';
                             Container(
                                 height: 70,width: 70,
                                 alignment: Alignment.bottomRight,
-                                child: globalCup[cupName]!.containsKey(CupClassification().keyChampion)
-                                    ? Images().getEscudoWidget(globalCup[cupName]![CupClassification().keyChampion], 40, 40)
+                                child: CupClassification().hasChampion(cupName)
+                                    ? Images().getEscudoWidget(globalCup[cupName]![KnockoutStage().keyChampion], 40, 40)
                                     : Container(),
                             ),
                           ],
@@ -99,35 +99,23 @@ import 'package:flutter/material.dart';
   }
 
 
-Widget matchBoxCup(String cupName, String phaseName, int matchNumber){
-  Map resultsIda = {};
-  Map resultsVolta = {};
+Widget matchBoxCup(String cupName, String phaseKeyName, int matchNumber){
+  bool hasData = false;
   late Confronto confrontoIda;
   late Confronto confrontoVolta;
   try{
-    resultsIda = CupClassification().getPhaseMatchData(cupName, phaseName, ResultDict().keyIda, matchNumber);
-    resultsVolta = CupClassification().getPhaseMatchData(cupName, phaseName, ResultDict().keyVolta, matchNumber);
-    confrontoIda = Confronto(clubName1: resultsIda[ResultDict().keyTeamName1], clubName2: resultsIda[ResultDict().keyTeamName2]);
-    confrontoVolta = Confronto(clubName1: resultsVolta[ResultDict().keyTeamName1], clubName2: resultsVolta[ResultDict().keyTeamName2]);
-
-    if(resultsIda.containsKey(ResultDict().keyGol1)){
-      confrontoIda.setGoals(goal1: resultsIda[ResultDict().keyGol1], goal2: resultsIda[ResultDict().keyGol2]);
-    }
-    if(resultsVolta.containsKey(ResultDict().keyGol1)){
-      confrontoVolta.setGoals(goal1: resultsVolta[ResultDict().keyGol2], goal2: resultsVolta[ResultDict().keyGol1]);
-    }
-    if(resultsVolta.containsKey(ResultDict().keyPenalti1)){
-      confrontoVolta.setPenalties(penaltis1: resultsVolta[ResultDict().keyPenalti2], penaltis2: resultsVolta[ResultDict().keyPenalti1]);
-    }
+    hasData = true;
+    confrontoIda = CupClassification().getConfronto(cupName, phaseKeyName, ResultDict().keyIda, matchNumber);
+    confrontoVolta = CupClassification().getConfronto(cupName, phaseKeyName, ResultDict().keyVolta, matchNumber);
   }catch(e){
-      //Não tem o confronto da fase
+    hasData = false;
   }
     return Container(
       height: 85,
       width: 72,
       padding: const EdgeInsets.all(4),
       color: AppColors().greyTransparent,
-      child: resultsIda.isNotEmpty ? showMatchBoxClubs(confrontoIda, confrontoVolta) : Container(),
+      child: hasData ? showMatchBoxClubs(confrontoIda, confrontoVolta) : Container(),
     );
 }
 

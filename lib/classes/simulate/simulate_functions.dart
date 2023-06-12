@@ -1,16 +1,16 @@
+import 'package:fifa/classes/chaves.dart';
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/cup_classification.dart';
 import 'package:fifa/classes/functions/internat_league_manipulation.dart';
 import 'package:fifa/classes/historic/historic_my_tranfers.dart';
 import 'package:fifa/classes/historic_positions_this_year.dart';
 import 'package:fifa/classes/international_league.dart';
 import 'package:fifa/classes/league.dart';
+import 'package:fifa/classes/mata_mata/cup_classification.dart';
+import 'package:fifa/classes/mata_mata/knockout_international.dart';
 import 'package:fifa/classes/mata_mata/mata_mata_class.dart';
-import 'package:fifa/classes/mata_mata/mata_mata_simulation.dart';
 import 'package:fifa/classes/match/result_dict.dart';
 import 'package:fifa/classes/mundial.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/classes/chaves.dart';
 import 'package:fifa/classes/simulate/after_simulation/historic.dart';
 import 'package:fifa/classes/simulate/match_simulation.dart';
 import 'package:fifa/global_variables.dart';
@@ -38,7 +38,7 @@ class Simulate{
       internationalMatchsGroups(simulMyMatch);
     }
     else if(Semana(semana).isJogoMataMataInternacional) {
-      MataMataSimulation().simulateMatchs(simulMyMatch);
+      internationalKnockout(simulMyMatch);
     }
     else if(Semana(semana).isJogoMundial) {
       MundialFinal data = MundialFinal();
@@ -46,10 +46,17 @@ class Simulate{
     }
 
     //classified teams cup
-    CupClassification().nextPhaseClassified();
+    if(semanasJogosCopas.contains(semana)) {
+      CupClassification().nextPhaseClassified();
+    }
+
+    if(semanasMataMataInternacionais.contains(semana)){
+      KnockoutInternational().nextPhaseClassified();
+    }
 
     //APÓS A SIMULAÇÃO
     updateWeek();
+
 
     setTeamsInternational();
 
@@ -65,7 +72,7 @@ class Simulate{
     Negotiation().updateOffers();
   }
 
-  startVariables(){
+  void startVariables(){
       globalMatchGoalScorerIDMy = [];
       globalMatchGoalScorerIDAdv = [];
       globalMatchGoalsMinutesMy = [];
@@ -78,7 +85,8 @@ class Simulate{
       globalJogadoresMatchHealth = List.filled(globalMaxPlayersPermitted, 1.0);
       globalJogadoresMatchGrade = List.filled(globalMaxPlayersPermitted, 6.0);
   }
-  updateWeek(){
+
+  void updateWeek(){
     semana++;
     //Atualiza a rodada do campeonato
     if(Semana(semana).isJogoCampeonatoNacional) {
@@ -86,7 +94,7 @@ class Simulate{
     }
   }
 
-  setTeamsInternational(){
+  void setTeamsInternational(){
     //Define times oitavas
     if(semana == semanaOitavas.first) {
       MataMata().defineClubsOitavas();
@@ -102,7 +110,7 @@ class Simulate{
     }
   }
 
-  nationalMatchs(bool simulMyMatch){
+  void nationalMatchs(bool simulMyMatch){
       int myClubID = globalMyClubID;
       int myCampeonatoID = My().leagueID;
       for (int i = 0; i < leaguesListRealIndex.length; i++) {
@@ -134,7 +142,7 @@ class Simulate{
 
   }
 
-  cupMatchs(bool simulMyMatch){
+  void cupMatchs(bool simulMyMatch){
 
     List cupNames = CupClassification().getAllCupNames();
 
@@ -146,7 +154,6 @@ class Simulate{
         String phaseName = CupClassification().getPhaseKeyName(semana);
         String idaOrVoltaKey = CupClassification().getIdaOrVoltaKey(phaseName, semana);
         matchMap = CupClassification().getPhaseResults(cupName, phaseName, idaOrVoltaKey);
-
 
         for (int nConfronto = 1; nConfronto <= matchMap.length; nConfronto++) {
           Club club1 = Club(index: clubsAllNameList.indexOf(matchMap[nConfronto][ResultDict().keyTeamName1]), clubDetails: false);
@@ -163,16 +170,43 @@ class Simulate{
 
   }
 
-  internationalMatchsGroups(bool simulMyMatch) {
+  void internationalKnockout(bool simulMyMatch){
+
+    for (int i = 0; i < internationalLeagueNames.length; i++) {
+      String competitionName = internationalLeagueNames[i];
+      Map matchMap = {};
+      //IF PHASE INSIDE LEAGUE EXISTS
+      try {
+        String phaseName = KnockoutInternational().getPhaseKeyName(semana);
+        String idaOrVoltaKey = KnockoutInternational().getIdaOrVoltaKey(phaseName, semana);
+        matchMap = KnockoutInternational().getPhaseResults(competitionName, phaseName, idaOrVoltaKey);
+
+        for (int nConfronto = 1; nConfronto <= matchMap.length; nConfronto++) {
+          Club club1 = Club(index: clubsAllNameList.indexOf(matchMap[nConfronto][ResultDict().keyTeamName1]), clubDetails: false);
+          Club club2 = Club(index: clubsAllNameList.indexOf(matchMap[nConfronto][ResultDict().keyTeamName2]), clubDetails: false);
+          MatchSimulation match = MatchSimulation(club1, club2);
+          //SALVA O PLACAR
+          globalInternationalMataMata[competitionName]![phaseName][idaOrVoltaKey][nConfronto] = ResultDict().saveGoals(matchMap[nConfronto], match.variableGol1, match.variableGol2);
+        }
+
+      }catch(e){
+        //COPA NÃO TEM ESSA FASE
+      }
+    }
+
+  }
+
+
+  void internationalMatchsGroups(bool simulMyMatch) {
     for(int i=0; i<InternationalLeagueManipulation().funcNInternationalLeagues();i++){
       internationalMatchsGroupsLeague(
           simulMyMatch,
-          InternationalLeagueManipulation().funcGetInternationalLeagueNameFromIndex(internationalLeagueIndex: i)
+          internationalLeagueNames[i]
       );
     }
   }
 
-  internationalMatchsGroupsLeague(bool simulMyMatch, String internationalName){
+  void internationalMatchsGroupsLeague(bool simulMyMatch, String internationalName){
     int myClubID = My().clubID;
     InternationalLeague internationalLeague = InternationalLeague();
       //PRA CHAMPIONS E PARA A LIBERTADORES

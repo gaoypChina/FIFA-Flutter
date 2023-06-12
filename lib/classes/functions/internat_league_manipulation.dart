@@ -29,9 +29,6 @@ class InternationalLeagueManipulation{
   int funcGetInternationalLeagueIndex({required String internationalLeagueName}) {
     return internationalLeagueNames.indexOf(internationalLeagueName);
   }
-  String funcGetInternationalLeagueNameFromIndex({required int internationalLeagueIndex}) {
-    return internationalLeagueNames[internationalLeagueIndex];
-  }
 
   int funcNInternationalLeagues(){
     return internationalLeagueNames.length;

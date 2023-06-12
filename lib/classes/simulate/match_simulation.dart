@@ -1,16 +1,13 @@
 import 'dart:math';
 
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/historic/total_victories.dart';
-import 'package:fifa/classes/mata_mata/mata_mata_simulation.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/simulate/player_variables/cards_injury_selection.dart';
 import 'package:fifa/classes/simulate/after_simulation/set_points.dart';
 import 'package:fifa/classes/simulate/player_variables/match_selection.dart';
 import 'package:fifa/classes/simulate/player_variables/origin/grade.dart';
 import 'package:fifa/classes/simulate/player_variables/update_player_variables.dart';
-import 'package:fifa/global_variables.dart';
 
 
 class MatchSimulation{
@@ -49,24 +46,24 @@ class MatchSimulation{
 
     //Salva no historico do treinador se eu simulo a partida
     if(clubClass1.name == My().clubName){
-      if(variableGol1>variableGol2){
+      if(variableGol1 > variableGol2){
         TotalVictories().add1Victory();
       }
-      if(variableGol1==variableGol2){
+      if(variableGol1 == variableGol2){
         TotalVictories().add1Draw();
       }
-      if(variableGol1<variableGol2){
+      if(variableGol1 < variableGol2){
         TotalVictories().add1Loss();
       }
     }
     if(clubClass2.name == My().clubName){
-      if(variableGol2>variableGol1){
+      if(variableGol2 > variableGol1){
         TotalVictories().add1Victory();
       }
-      if(variableGol2==variableGol1){
+      if(variableGol2 == variableGol1){
         TotalVictories().add1Draw();
       }
-      if(variableGol2<variableGol1){
+      if(variableGol2 < variableGol1){
         TotalVictories().add1Loss();
       }
     }
@@ -100,11 +97,6 @@ class MatchSimulation{
 
     //SOMA OS PONTOS
     SetPoints().set(clubClass1.index,clubClass2.index,variableGol1,variableGol2);
-
-    //Se for mata-mata
-    if(Semana(semana).isJogoMataMataInternacional){
-      MataMataSimulation().setGoals(clubClass1.index, clubClass2.index, variableGol1, variableGol2);
-    }
 
   }
 

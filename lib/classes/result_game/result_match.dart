@@ -1,5 +1,5 @@
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/cup_classification.dart';
+import 'package:fifa/classes/mata_mata/cup_classification.dart';
 import 'package:fifa/classes/match/result_dict.dart';
 import 'package:fifa/classes/mundial.dart';
 import 'package:fifa/classes/result_game/result_game_internacional.dart';
@@ -125,7 +125,7 @@ class ResultMatch{
 
     competitionName = getCup(club.leagueName);
 
-    Map match = CupClassification().getCupClubMatchMap(competitionName, week, club.name);
+    Map match = CupClassification().getClubMatchMap(competitionName, week, club.name);
 
     if(match.isNotEmpty){
       hasAdversary = true;

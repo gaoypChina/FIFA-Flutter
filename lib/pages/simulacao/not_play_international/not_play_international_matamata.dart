@@ -1,5 +1,6 @@
 import 'package:fifa/classes/functions/name.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/mata_mata/mata_mata_class.dart';
 import 'package:fifa/global_variables.dart';
@@ -86,14 +87,14 @@ TableRow groupTitleMataMata(int phaseRows){
 }
 TableRow groupRowMataMata(int matchRow,String internationalLeagueName, int phaseIdaVolta, int weekShow){
   MataMata data = MataMata();
-  data.getData(internationalLeagueName, data.getSemanaPhase(weekShow),matchRow, phaseIdaVolta);
+  Confronto confronto = data.getData(internationalLeagueName, data.getSemanaPhase(weekShow),matchRow, phaseIdaVolta);
 
   //print(data.clubName1);
   //print('GOL: ${data.goal1} x ${data.goal2}');
-  String teamNameA = data.clubName1;
-  String teamNameB = data.clubName2;
-  int golsA = data.goal1;
-  int golsB = data.goal2;
+  String teamNameA = confronto.clubName1;
+  String teamNameB = confronto.clubName2;
+  int golsA = confronto.goal1;
+  int golsB = confronto.goal2;
   TextStyle style1 = matchStyle1(golsA, golsB, 14);
   TextStyle style2 = matchStyle2(golsA, golsB, 14);
   My my = My();

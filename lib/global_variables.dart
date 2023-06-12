@@ -46,17 +46,15 @@ List<int> semanaOitavas = [semanasJogosInternacionais[6],semanasJogosInternacion
     semanaSemi = [semanasJogosInternacionais[10],semanasJogosInternacionais[11]],
     semanaFinal = [semanasJogosInternacionais[12]],
     semanaMundial = [semanasJogosCopas.length-2+semanasJogosInternacionais.length+semanasJogosNacionais.length+1];
-//List<int> semanasJogosInternacionais = [for(var i=semanasJogosNacionais.last+1; i<=semanasJogosNacionais.last+13; i++) i];
 
+//List<int> semanasJogosInternacionais = [1,2,3,4,5,6, 7,8, 9,10, 11,12, 13];
 List<int> semanasJogosInternacionais = [8,10,12, 18,20,22, 31,32,  37,38, 40,41, 44];
-//3,5,7,10,12,14,  18,20, 23,25, 28,29, 32
 
 List semanasGruposInternacionais = semanasJogosInternacionais.take(6).toList();
 List<int> semanasMataMataInternacionais = semanaOitavas+semanaQuartas+semanaSemi+semanaFinal;
 
-//List<int> semanasJogosNacionais = [for(var i=1; i<=globalNMaxRodadasNacional; i++) i];
+//List<int> semanasJogosNacionais = [14,15,16,17,18, 19,20,21,22,23, 24,26,29,30,33,  36,39,42,43];
 List<int> semanasJogosNacionais = [5,6,7,9,11, 13,15,17,19,21, 23,26,29,30,33,  36,39,42,43];
-//1,2,4,6,8, 9,11,13,15,16, 17,19,21,22,24, 26,27,30,31
 List semanasJogosCopas = [-1,0, 1,2, 3,4, 14,16, 24,25, 27,28, 34,35]; //-1,0,...,12 FASE128 NAO EXISTE
 int globalUltimaSemana = semanaMundial.last+1;
 
@@ -74,9 +72,10 @@ Map<int,String> weekRealDays = {
   31: "16/11",  32: "20/11",  33: "23/11",
   34: "27/11",  35: "30/11",  36: "04/12",
   37: "07/12",  38: "11/12",  39: "15/12",
-  40: "18/12",  41: "21/12",  42: "04/01",
-  43: "08/01",  44: "11/01",  45: "15/01",
-  46: "18/01",  47: "22/01",  48: "25/01",
+  40: "18/12",  41: "21/12",
+  42: "07/01",  43: "10/01",  44: "14/01",
+  45: "17/01",  46: "21/01",  47: "24/01",
+  48: "28/01",  49: "31/01",
 };
 
 //HISTORIC
@@ -161,11 +160,12 @@ int globalNumberClubsTotal = 0;
 
 ///////////////////////////
 //CHAMPIONS E LIBERTADORES
-Map globalInternationalMataMataClubsID = {};
-Map globalInternationalMataMataGoals = {};
+Map globalInternationalMataMata = {};
 
 //Clubs IDs: Champions, Libertadores, Europa League e SulAmericana
 Map globalInternational = {};
+
+
 
 ///////////////////////////
 //INTERNACIONAL - NOVO FORMATO

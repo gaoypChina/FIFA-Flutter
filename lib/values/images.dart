@@ -1307,7 +1307,7 @@ String imageLogo(String timeFoto) {
     map[_name.fas] = 'fas';
     map[_name.firpo] = 'firpo';
     map[_name.isidro] = 'isidro metapan';
-    map[_name.santaTecla] = 'santa tecla';
+    map[_name.santatecla] = 'santa tecla';
     //GUATEMALA
     map[_name.antiguaGuatemala] = 'antigua';
     map[_name.comunicaciones] = 'comunicaciones';

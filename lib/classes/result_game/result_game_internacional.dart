@@ -1,4 +1,5 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/mata_mata/mata_mata_class.dart';
 import 'package:fifa/classes/table_matchs_control.dart';
@@ -77,25 +78,25 @@ class ResultGameInternacional{
       for(int matchRow=0; matchRow<nmatchs; matchRow++){
         try{
           MataMata mataMata = MataMata();
-          mataMata.getData(competitionName, weekClass.semanaStr, matchRow, idaVolta);
-          isAlreadyPlayed = mataMata.isAlreadyPlayed;
-          if(mataMata.clubID1 == clubID){
+          Confronto confronto = mataMata.getData(competitionName, weekClass.semanaStr, matchRow, idaVolta);
+          isAlreadyPlayed = confronto.hasGoals;
+          if(confronto.clubID1 == clubID){
             visitante = false;
-            clubID2 = mataMata.clubID2;
+            clubID2 = confronto.clubID2;
             clubName2 = Club(index: clubID2).name;
             if(isAlreadyPlayed){
-              gol1 = mataMata.goal1;
-              gol2 = mataMata.goal2;
+              gol1 = confronto.goal1;
+              gol2 = confronto.goal2;
             }
             hasAdversary = true;
           }
-          if(mataMata.clubID2 == clubID){
+          if(confronto.clubID2 == clubID){
             visitante = true;
-            clubID2 = mataMata.clubID1;
+            clubID2 = confronto.clubID1;
             clubName2 = Club(index: clubID2).name;
             if(isAlreadyPlayed){
-              gol1 = mataMata.goal2;
-              gol2 = mataMata.goal1;
+              gol1 = confronto.goal2;
+              gol2 = confronto.goal1;
             }
             hasAdversary = true;
           }
