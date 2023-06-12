@@ -1,3 +1,4 @@
+import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/data_graphics.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/countries/words.dart';
@@ -5,13 +6,13 @@ import 'package:fifa/classes/countries/countries_continents.dart';
 import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
 import 'package:fifa/pages/historic/leagues_historic.dart';
+import 'package:fifa/pages/historic/real_classification.dart';
 import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/back_button.dart';
-import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:fifa/widgets/league_selection_row.dart';
 import 'package:fifa/widgets/stars.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +32,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
   String selectedCountry = Words.country.brazil;
   ClubDetails clubDetails = ClubDetails();
   Iterable keysIterable = ClubDetails().map.keys;
+
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
@@ -71,26 +73,13 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
 
           Column(
             children: [
+
+              //APPBAR
               Container(
                 color: appBarMyClubColor(),
-                child: Row(
-                  children: [
-                    backButtonText(context, 'Lista de Clubes'),
-                    const Spacer(),
-                    Padding(
-                      padding: const EdgeInsets.only(top:20.0),
-                      child: IconButton(onPressed: (){
-                        Map map = getLeagueNationalityMap();
-                        String choosenLeagueName = map.keys.firstWhere((k) => map[k] == selectedCountry, orElse: () => null);
-                        Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricLeague(choosenLeagueName: choosenLeagueName)));
-                      }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
-                    ),
-                    Padding(padding:const EdgeInsets.only(top:18),
-                        child: Text(showList.length.toString(),style: EstiloTextoBranco.text20)),
-                    const SizedBox(width: 8),
-                  ],
-                ),
+                child: appBarButtons(showList),
               ),
+
               Expanded(
                 child: Scrollbar(
                   child: ListView.builder(
@@ -100,6 +89,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                   ),
                 ),
               ),
+
               selectCountryRow(),
 
             ],
@@ -111,6 +101,36 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Widget appBarButtons(Iterable showList){
+    return Row(
+      children: [
+
+        backButtonText(context, 'Lista de Clubes'),
+        const Spacer(),
+
+        Padding(
+          padding: const EdgeInsets.only(top: 20),
+          child: GestureDetector(
+            onTap:(){
+              navigatorPush(context, RealClassificationPage(choosenCountryName: selectedCountry));
+            },
+            child: const Icon(Icons.table_chart,color:Colors.white,size: 32),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top:20.0),
+          child: IconButton(onPressed: (){
+            Map map = getLeagueNationalityMap();
+            String choosenLeagueName = map.keys.firstWhere((k) => map[k] == selectedCountry, orElse: () => null);
+            Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricLeague(choosenLeagueName: choosenLeagueName)));
+          }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
+        ),
+        Padding(padding:const EdgeInsets.only(top:18),
+            child: Text(showList.length.toString(),style: EstiloTextoBranco.text20)),
+        const SizedBox(width: 8),
+      ],
+    );
+  }
   Widget clubRow(String clubName){
     DataGraphics dataGraphics = DataGraphics();
     dataGraphics.getDataNotPlayabale(clubName, ClubDetails().getCountry(clubName), ClubDetails().getState(clubName));
@@ -244,21 +264,6 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
             );
           }
       ),
-    );
-  }
-  Widget countrySelection(String country){
-    return PressableButton(
-      onTap: (){
-        selectedCountry = country;
-        setState((){});
-      },
-      child: Center(
-          child: Container(
-            height: 60,
-            color: country == selectedCountry ? Colors.green : Colors.transparent,
-           padding: const EdgeInsets.symmetric(horizontal: 2.0,vertical: 10),
-            child: funcFlagsList(country, 40, 50),
-      )),
     );
   }
 

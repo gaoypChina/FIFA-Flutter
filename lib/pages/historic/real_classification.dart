@@ -15,7 +15,8 @@ import 'package:html/parser.dart' as parser;
 import 'package:http/http.dart' as http;
 
 class RealClassificationPage extends StatefulWidget {
-  const RealClassificationPage({Key? key}) : super(key: key);
+  final String choosenCountryName;
+  const RealClassificationPage({Key? key, required this.choosenCountryName}) : super(key: key);
 
   @override
   State<RealClassificationPage> createState() => _RealClassificationPageState();

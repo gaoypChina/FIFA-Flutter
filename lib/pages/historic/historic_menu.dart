@@ -1,3 +1,4 @@
+import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
@@ -14,6 +15,7 @@ import 'package:fifa/pages/map/choose_continent_page.dart';
 import 'package:fifa/pages/map/map_exploration.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/back_button.dart';
@@ -34,7 +36,9 @@ class _HistoricMenuState extends State<HistoricMenu> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
+
     double imageSize = 50;
+
     return Scaffold(
       body: Stack(
         children: [
@@ -138,7 +142,9 @@ class _HistoricMenuState extends State<HistoricMenu> {
                           box(
                               'Tabela Real',
                               Icon(Icons.line_weight,color: Colors.white, size: imageSize),
-                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => const RealClassificationPage()));}
+                                  (){
+                                navigatorPush(context, RealClassificationPage(choosenCountryName: ClubDetails().getCountry(My().clubName)));
+                              }
                           ),
                         ],
                       ),
