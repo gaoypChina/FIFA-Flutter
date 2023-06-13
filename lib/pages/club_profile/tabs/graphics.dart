@@ -85,8 +85,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
                   totalTrophyWidget(widget.club, dataGraphics),
 
                   histogram(dataGraphics.data, _tooltipBehavior2, "Nacional"),
-                  histogram(dataGraphics.dataInternational, _tooltipBehavior3,
-                      "Internacional"),
+                  histogram(dataGraphics.dataInternational, _tooltipBehavior3, "Internacional"),
 
                 ],
               ),
@@ -103,9 +102,11 @@ class _ClubGraphicsState extends State<ClubGraphics> {
 ////////////////////////////////////////////////////////////////////////////
   Widget histogram(List<ClassificationData> dataGraphics,
       TooltipBehavior _tooltipbehave, String title) {
-    dataGraphics.removeWhere((element) => element.position >= 32);
 
-    if (dataGraphics.isNotEmpty) {
+    List<ClassificationData> dataGraphicsHist = List.from(dataGraphics);
+    dataGraphicsHist.removeWhere((element) => element.position >= 32);
+
+    if (dataGraphicsHist.isNotEmpty) {
       return Container(
         height: 200,
         margin: const EdgeInsets.symmetric(vertical: 4),
@@ -117,7 +118,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
             primaryXAxis: NumericAxis(labelStyle: EstiloTextoBranco.text12),
             primaryYAxis: NumericAxis(labelStyle: EstiloTextoBranco.text12),
             series: <ChartSeries>[
-              histogramSeries(dataGraphics, widget.club.colors.primaryColor)
+              histogramSeries(dataGraphicsHist, widget.club.colors.primaryColor)
             ]
         ),
       );
@@ -137,10 +138,6 @@ class _ClubGraphicsState extends State<ClubGraphics> {
 
   Widget graphics(DataGraphics dataGraphics) {
 
-    //print("$keyYear $position");
-    print("plot");
-    print(dataGraphics.dataInternational.length);
-    print(dataGraphics.data.length);
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Container(

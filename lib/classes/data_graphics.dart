@@ -110,13 +110,13 @@ class DataGraphics{
 
 
     //historico internacional
-    defineHistoricInternational(clubName,internationalLeagueName);
+    defineHistoricInternational(clubName, internationalLeagueName);
     participationsInternational();
     calculatePointsInternational();
 
     //historico mundial
     defineHistoricMundial(clubName);
-    pointsTotal = pointsNational+pointsInternational+pointsmundial;
+    pointsTotal = pointsNational + pointsInternational + pointsmundial;
   }
   void getData(Club club){
     //Posição Ano Atual
@@ -141,6 +141,7 @@ class DataGraphics{
     defineHistoricInternational(club.name,club.internationalLeagueName);
     participationsInternational();
     calculatePointsInternational();
+    print(dataInternational.length);
 
     //historico mundial
     defineHistoricMundial(club.name);
