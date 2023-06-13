@@ -1,10 +1,9 @@
-import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/chaves.dart';
+import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/international_league.dart';
 import 'package:fifa/classes/match/confronto.dart';
-import 'package:fifa/values/clubs_all_names_list.dart';
-import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/values/league_names.dart';
 
 class MatchResultInternational{

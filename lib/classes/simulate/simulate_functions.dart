@@ -29,7 +29,7 @@ class Simulate{
     customToast('Simulate Matchs...');
     //SIMULA PARTIDAS
     if(Semana(semana).isJogoCampeonatoNacional) {
-      //nationalMatchs(simulMyMatch);
+      nationalMatchs(simulMyMatch);
     }
     else if(Semana(semana).isJogoCopa) {
       cupMatchs(simulMyMatch);

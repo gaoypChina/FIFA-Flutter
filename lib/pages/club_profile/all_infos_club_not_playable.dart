@@ -200,21 +200,19 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
 
   Widget historicTab(){
     return Padding(
-      padding: const EdgeInsets.all(4.0),
+      padding: const EdgeInsets.only(top: 4.0, left: 4, right:4),
       child: Column(
           children: [
             SizedBox(
               height: 300,
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    clubdetails.getState(widget.clubName).isNotEmpty
-                        ? heatMapPositions('Estadual',dataGraphics.dataEstadual)
-                        : Container(),
-                    heatMapPositions('Nacional',dataGraphics.data),
-                    heatMapPositions('Internacional',dataGraphics.dataInternational),
-                  ],
-                ),
+              child: Column(
+                children: [
+                  clubdetails.getState(widget.clubName).isNotEmpty
+                      ? heatMapPositions('Estadual',dataGraphics.dataEstadual)
+                      : Container(),
+                  heatMapPositions('Nacional',dataGraphics.data),
+                  heatMapPositions('Internacional',dataGraphics.dataInternational),
+                ],
               ),
             ),
 
@@ -480,13 +478,12 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
         SizedBox(
           height: 210,
           child: ListView.builder(
-            padding: EdgeInsets.zero,
-            shrinkWrap: true,
-            itemCount: (anoInicial - 1950).floor(),
-            itemBuilder: (BuildContext context, int index) {
-              double year = anoInicial - index - 1;
-              return peryearRow(year);
-            },
+              padding: EdgeInsets.zero,
+              itemCount: (anoInicial - 1950).floor(),
+              itemBuilder: (BuildContext context, int index) {
+                double year = anoInicial - index - 1;
+                return peryearRow(year);
+              },
           ),
         ),
       ],

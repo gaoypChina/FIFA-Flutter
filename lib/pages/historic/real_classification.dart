@@ -35,8 +35,18 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
   @override
   void initState() {
     super.initState();
-    choosenLeagueName = widget.choosenCountryName;
+    String getKeyFromValue(Map map, String value) {
+      for (var entry in map.entries) {
+        if (entry.value == value) {
+          return entry.key;
+        }
+      }
+      return LeagueOfficialNames().inglaterra1;// Value not found in the map
+    }
+
     getUrls();
+    choosenLeagueName = getKeyFromValue(getLeagueNationalityMap(), widget.choosenCountryName);
+    getLeagueTable(urls[choosenLeagueName]);
 }
   getUrls(){
     urls = {
@@ -202,12 +212,13 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
           clubName = clubName.replaceFirst(" (O)","").replaceFirst(" (P)","").replaceFirst(" (X)","");
           clubName = clubName.replaceFirst(" (A)","").replaceFirst(" (C)","").replaceFirst(" (Q)","");
           clubName = clubName.replaceFirst(" (S)","").replaceFirst(" (T)","").replaceFirst(" (Z)","");
+          clubName = clubName.replaceFirst(" (O, P)","");
           clubName = clubName.replaceFirst(" (C, Q)","").replaceFirst(" (T, Y)","").replaceFirst(" (C, P)","");
           clubName = clubName.replaceFirst("[a]","").replaceFirst("[b]","").replaceFirst("[c]","").replaceFirst("[d]","").replaceFirst("[e]","");
           clubName = getAppClubName(clubName, choosenLeagueName, n);
 
-          lined[5] = lined[5].toString().replaceFirst("[a]","").replaceFirst("[b]","").replaceFirst("[c]","").replaceFirst("[d]","").replaceFirst("[e]","");
-          lined[6] = lined[6].toString().replaceFirst("[a]","").replaceFirst("[b]","").replaceFirst("[c]","").replaceFirst("[d]","").replaceFirst("[e]","");
+          lined[5] = lined[5].toString().replaceFirst("[a]","").replaceFirst("[b]","").replaceFirst("[c]","").replaceFirst("[d]","").replaceFirst("[e]","").replaceFirst("[f]","");
+          lined[6] = lined[6].toString().replaceFirst("[a]","").replaceFirst("[b]","").replaceFirst("[c]","").replaceFirst("[d]","").replaceFirst("[e]","").replaceFirst("[f]","");
           lined[5] = int.parse(lined[5].toString());
           lined[6] = int.parse(lined[6].toString());
 

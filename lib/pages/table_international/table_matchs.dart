@@ -1,11 +1,10 @@
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/global_variables.dart';
 import 'package:fifa/classes/table_matchs_control.dart';
-import 'package:fifa/theme/colors.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/background_color/match_x_testyle.dart';
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/background_image/backimage_international_league.dart';
