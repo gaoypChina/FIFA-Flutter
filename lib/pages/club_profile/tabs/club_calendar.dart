@@ -7,6 +7,7 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
+import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:flutter/material.dart';
 
 class ClubCalendar extends StatefulWidget {
@@ -62,7 +63,7 @@ Widget calendarRow(int week){
     Semana semanaClass = Semana(week);
     CalendarResult calendarResult = CalendarResult(semanaLocal: week, club: widget.club);
 
-    return GestureDetector(
+    return PressableButton(
       onTap: (){
         clickClubProfilePage(context, Club(index: calendarResult.show.clubID2));
       },

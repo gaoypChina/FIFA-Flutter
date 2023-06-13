@@ -934,7 +934,7 @@ class ClubName{
   String storm = "Storm";
   String strindheim = "Strindheim";
   String stromsgodset = "Strømsgodset";
-  String strommen = "strommen";
+  String strommen = "Strommen";
   String tonsberg = "Eik-Tønsberg";
   String tromso = "Tromsø IL";
   String osturnforening = "Os Turnforening";

@@ -1,5 +1,6 @@
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/classes/table_matchs_control.dart';
@@ -112,15 +113,22 @@ class _TableMatchsState extends State<TableMatchs> {
     );
   }
   TableRow groupRow(int groupNumber, int nConfronto){
-    MatchResultInternational match = MatchResultInternational(rodadaNumber: rodadaShow-1,groupNumber: groupNumber, nConfronto: nConfronto, competitionName: leagueInternational);
 
+    MatchResultInternational match = MatchResultInternational(
+                                          rodadaNumber: rodadaShow-1,
+                                          groupNumber: groupNumber,
+                                          nConfronto: nConfronto,
+                                          competitionName: leagueInternational
+                                      );
 
     String teamNameA = match.confronto.clubName1;
     String teamNameB =  match.confronto.clubName2;
-    int golsA = match.confronto.goal1;
-    int golsB = match.confronto.goal2;
-    TextStyle style1 = matchStyle1(golsA, golsB, 16);
-    TextStyle style2 = matchStyle2(golsA, golsB, 16);
+    TextStyle style1 = EstiloTextoBranco.text16;
+    TextStyle style2 = EstiloTextoBranco.text16;
+    if(match.confronto.hasGoals){
+      style1 = matchStyle1(match.confronto.goal1, match.confronto.goal1, 16);
+      style2 = matchStyle2(match.confronto.goal1, match.confronto.goal2, 16);
+    }
 
     return  TableRow(
       children: [
@@ -133,9 +141,9 @@ class _TableMatchsState extends State<TableMatchs> {
         match.confronto.hasGoals
             ? Row(
             children: [
-              Text(golsA.toString(),style: style1),
+              Text(match.confronto.goal1.toString(),style: style1),
               const Text('x',style: EstiloTextoBranco.text16),
-              Text(golsB.toString(),style: style2),
+              Text(match.confronto.goal2.toString(),style: style2),
             ],
           )
             : const Center(child: Text('x',style: EstiloTextoBranco.text16)),

@@ -28,21 +28,21 @@ class ResultMatch{
   String placar = '';
   Color backgroundColor = AppColors().greyTransparent;
 
-  printar(){
+  void printar(){
     print("WEEK: $weekLocal hasAdversary: $hasAdversary isAlreadyPlayed: $isAlreadyPlayed");
     if(hasAdversary) {
       print("TIME1: ${club.name} TIME2: $clubName2");
     }
   }
 
-  setDefault(int weekLocal){
+  void setDefault(int weekLocal){
     this.weekLocal = weekLocal;
     isAlreadyPlayed = false;
     hasAdversary = false;
     competitionName = LeagueOfficialNames().resto;
   }
 
-  fromResultGameNacional(ResultGameNacional show){
+  void fromResultGameNacional(ResultGameNacional show){
     isAlreadyPlayed = show.isAlreadyPlayed;
     hasAdversary = show.hasAdversary;
     visitante = show.visitante;
@@ -61,7 +61,7 @@ class ResultMatch{
     backgroundColor = show.backgroundColor;
   }
 
-  fromResultGameInternacional(ResultGameInternacional show){
+  void fromResultGameInternacional(ResultGameInternacional show){
     isAlreadyPlayed = show.isAlreadyPlayed;
     hasAdversary = show.hasAdversary;
     visitante = show.visitante;
@@ -80,23 +80,31 @@ class ResultMatch{
     backgroundColor = show.backgroundColor;
   }
 
-  fromMundial(int week, Club club, MundialFinal mundialFinal){
+  void fromMundial(int week, Club club, MundialFinal mundialFinal){
 
-    //THE TEAM WILL PLAY THE FINAL?
-    if(mundialFinal.confronto.clubID1 == club.index) {
+    try {
+      mundialFinal.getResults(ano);
       hasAdversary = true;
-      club = Club(index: mundialFinal.confronto.clubID1);
-      clubID = mundialFinal.confronto.clubID1;
-      clubName2 = mundialFinal.confronto.clubName2;
-      clubID2 = mundialFinal.confronto.clubID2;
-    }else if(mundialFinal.confronto.clubID2 == club.index){
-      hasAdversary = true;
-      club = Club(index: mundialFinal.confronto.clubID2);
-      clubID = mundialFinal.confronto.clubID2;
-      clubName2 = mundialFinal.confronto.clubName1;
-      clubID2 = mundialFinal.confronto.clubID1;
-    }else{
+    }catch(e){
       hasAdversary = false;
+    }
+    //THE TEAM WILL PLAY THE FINAL?
+    if(hasAdversary){
+      if(mundialFinal.confronto.clubID1 == club.index) {
+        hasAdversary = true;
+        club = Club(index: mundialFinal.confronto.clubID1);
+        clubID = mundialFinal.confronto.clubID1;
+        clubName2 = mundialFinal.confronto.clubName2;
+        clubID2 = mundialFinal.confronto.clubID2;
+      }else if(mundialFinal.confronto.clubID2 == club.index){
+        hasAdversary = true;
+        club = Club(index: mundialFinal.confronto.clubID2);
+        clubID = mundialFinal.confronto.clubID2;
+        clubName2 = mundialFinal.confronto.clubName1;
+        clubID2 = mundialFinal.confronto.clubID1;
+      }else{
+        hasAdversary = false;
+      }
     }
 
 
@@ -118,7 +126,7 @@ class ResultMatch{
     competitionName = LeagueOfficialNames().mundial;
   }
 
-  fromCopa(int week, Club club){
+  void fromCopa(int week, Club club){
 
     hasAdversary = false;
     isAlreadyPlayed = false;

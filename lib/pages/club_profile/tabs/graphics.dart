@@ -49,6 +49,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
+
     _tooltipBehavior = TooltipBehavior(enable: true);
     _tooltipBehavior2 = TooltipBehavior(enable: true);
     _tooltipBehavior3 = TooltipBehavior(enable: true);
@@ -59,7 +60,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
           Images().getWallpaper(),
 
           Padding(
-            padding: const EdgeInsets.all(6.0),
+            padding: const EdgeInsets.only(top:6.0, left: 6, right: 6),
             child: SingleChildScrollView(
               child: Column(
                 children: [
@@ -135,6 +136,11 @@ class _ClubGraphicsState extends State<ClubGraphics> {
   }
 
   Widget graphics(DataGraphics dataGraphics) {
+
+    //print("$keyYear $position");
+    print("plot");
+    print(dataGraphics.dataInternational.length);
+    print(dataGraphics.data.length);
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Container(
@@ -183,11 +189,10 @@ class _ClubGraphicsState extends State<ClubGraphics> {
               name: widget.club.name,
               dataSource: dataGraphics.dataInternational,
               enableTooltip: true,
-              xValueMapper: (ClassificationData data, _) =>
-                  data.year.toInt().toString(),
+              xValueMapper: (ClassificationData data, _) => data.year.toInt().toString(),
               //ano.0 -> ano
               yValueMapper: (ClassificationData data, _) => data.position,
-              //dataLabelSettings:const DataLabelSettings(isVisible : true,color: Colors.white),
+              dataLabelSettings:const DataLabelSettings(isVisible : true,color: Colors.white),
               markerSettings: const MarkerSettings(
                   isVisible: true,
                   height: 4,

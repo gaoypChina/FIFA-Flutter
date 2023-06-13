@@ -35,6 +35,7 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
   @override
   void initState() {
     super.initState();
+    choosenLeagueName = widget.choosenCountryName;
     getUrls();
 }
   getUrls(){
@@ -282,16 +283,6 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    LeagueSelectionRow(
-                        choosenLeagueName: choosenLeagueName,
-                        leaguesListRealIndex: leaguesListRealIndex,
-                        onTap: (String leagueName){
-                          choosenLeagueName = leagueName;
-                          getLeagueTable(urls[choosenLeagueName]);
-                          setState(() {});
-                        }
-                    ),
-
                     for(String leagueName in LeagueOfficialNames().getAllLeagueNames())
                       countryFlagsSelectionBottomWidget2(
                           leagueName: leagueName,

@@ -78,7 +78,7 @@ class DataGraphics{
   //TOTAL
   double pointsTotal = 0;
 
-  getDataNotPlayabale(String clubName, String country, [String state = '']){
+  void getDataNotPlayabale(String clubName, String country, [String state = '']){
     //GET LEAGUE NAME
     Map leagueNationality = getLeagueNationalityMap();
     leagueNationality.forEach((key, value) {
@@ -118,7 +118,7 @@ class DataGraphics{
     defineHistoricMundial(clubName);
     pointsTotal = pointsNational+pointsInternational+pointsmundial;
   }
-  getData(Club club){
+  void getData(Club club){
     //Posição Ano Atual
     currentPosition = Classification(leagueIndex: club.leagueID).getClubPosition(club.index);
     //novas temporadas ligas
@@ -132,6 +132,10 @@ class DataGraphics{
 
     calculatePoints();
 
+    //historico copas
+    defineHistoricCups(club.name);
+    participationsCups();
+
     //historico internacional
     defineSimulationClassificationInternational(club);
     defineHistoricInternational(club.name,club.internationalLeagueName);
@@ -141,11 +145,12 @@ class DataGraphics{
     //historico mundial
     defineHistoricMundial(club.name);
     pointsTotal = pointsNational+pointsInternational+pointsmundial;
+    print(dataInternational.length);
 
   }
 
 
-  defineSimulationClassification(Club club){
+  void defineSimulationClassification(Club club){
     //Posição anos simulados
     for(double year=ano-1; year>=anoInicial; year--){
       try {
@@ -160,7 +165,7 @@ class DataGraphics{
       }
     }
   }
-  defineHistoricClassification(String clubName, String leaguename){
+  void defineHistoricClassification(String clubName, String leaguename){
 
     //NOME DAS DIVISÕES
     List<String> divisionLeagueNames = Divisions().leagueDivisionsStructure(leaguename);
@@ -213,7 +218,7 @@ class DataGraphics{
     ifHistoricDataDontExist(data);
   }
 
-  ifHistoricDataDontExist(List<ClassificationData> data){
+  void ifHistoricDataDontExist(List<ClassificationData> data){
     //CRIA UM ARRAY COM VALORES NEUTROS PARA MOSTRAR ALGUM GRAFICO
     if(data.isEmpty){
       for(double year=1; year<10; year++) {
@@ -222,19 +227,19 @@ class DataGraphics{
     }
   }
 
-  addTitlesCount(int position){
+  void addTitlesCount(int position){
     if(position == 1){
       nTitulos ++;
     }
   }
 
-  add2ndDivisionCount(int position){
+  void add2ndDivisionCount(int position){
     if(position >= 21){
       n2ndivision ++;
     }
   }
 
-  addGxCount(int position){
+  void addGxCount(int position){
     if(position <= 2){
       g2Years ++;
     }
@@ -260,7 +265,7 @@ class DataGraphics{
     return averagePosition;
   }
 
-  calculatePoints(){
+  void calculatePoints(){
     for(ClassificationData classificationData in data){
       pointsNational += classificationData.position;
     }
@@ -333,7 +338,7 @@ class DataGraphics{
   /////////////////////////////////////////////////////////////////////////////
   // INTERNATIONAL
   ////////////////////////////////////////////////////////////////////////////
-  defineSimulationClassificationInternational(Club club){
+  void defineSimulationClassificationInternational(Club club){
     for(int i=ano-1; i>=anoInicial; i--){
       String internationalLeague = club.internationalLeagueName;
       List finalClassificationIDs = HistoricChampionsLeague().get32finalClassificationIDs(i, internationalLeague);
@@ -347,7 +352,7 @@ class DataGraphics{
     }
   }
 
-  defineHistoricInternational(String clubName, String internationalLeagueName){
+  void defineHistoricInternational(String clubName, String internationalLeagueName){
 
     //para cada ano
     for(var keyYear in mapChampions(internationalLeagueName).keys) {
@@ -362,7 +367,7 @@ class DataGraphics{
 
   }
 
-  participationsInternational(){
+  void participationsInternational(){
     for(ClassificationData classificationData in dataInternational){
       if(classificationData.position<33){
         participationInternational++;
@@ -385,7 +390,7 @@ class DataGraphics{
     }
   }
 
-  calculatePointsInternational(){
+  void calculatePointsInternational(){
     pointsInternational = 0;
       for(ClassificationData classificationData in dataInternational){
         pointsInternational += classificationData.position*2;
@@ -413,7 +418,7 @@ class DataGraphics{
 /////////////////////////////////////////////////////////////////////////////
 // MUNDIAL
 ////////////////////////////////////////////////////////////////////////////
-  defineHistoricMundial(String clubName){
+  void defineHistoricMundial(String clubName){
     pointsmundial = 0;
     //para cada ano
     for(var keyYear in mapChampions(LeagueOfficialNames().mundial).keys) {

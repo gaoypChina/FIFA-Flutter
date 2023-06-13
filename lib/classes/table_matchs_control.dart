@@ -18,27 +18,22 @@ class MatchResultInternational{
       List chave = Chaves().obterChave(semanaDoJogo, 0);
           int chaveConfronto = chave[nConfronto * 2];
 
+
+      int indexAdv04 = Chaves().chaveIndexAdvCampeonato(semanaDoJogo, 0, chaveConfronto)[0];
           try{
             confronto.clubID1 = InternationalLeague().getClub(competitionName, 4 * groupNumber + chaveConfronto);
+            confronto.clubID2 = InternationalLeague().getClub(competitionName, (4 * groupNumber) + indexAdv04);
+            confronto = Confronto(
+              clubName1: Club(index: confronto.clubID1).name,
+              clubName2: Club(index: confronto.clubID2).name,
+            );
           }catch(e){
             //CASO SEJA O PRIMEIRO ANO
-            confronto.clubName1 = getClubName(competitionName, 4 * groupNumber + chaveConfronto);
-            confronto.clubID1 = clubsAllNameList.indexOf(confronto.clubName1);
+            confronto = Confronto(
+              clubName1: getClubName(competitionName, 4 * groupNumber + chaveConfronto),
+              clubName2: getClubName(competitionName, 4 * groupNumber + indexAdv04),
+            );
           }
-
-          int indexAdv04 = Chaves().chaveIndexAdvCampeonato(semanaDoJogo, 0, chaveConfronto)[0];
-
-
-    try{
-      confronto.clubID2 = InternationalLeague().getClub(competitionName, (4 * groupNumber) + indexAdv04);
-    }catch(e){
-      //CASO SEJA O PRIMEIRO ANO
-      confronto.clubName2 = getClubName(competitionName, 4 * groupNumber + indexAdv04);
-      confronto.clubID2 = clubsAllNameList.indexOf(confronto.clubName2);
-    }
-      confronto.clubName1 = Club(index: confronto.clubID1).name;
-      confronto.clubName2 = Club(index: confronto.clubID2).name;
-
 
     try{
       confronto.setGoals(

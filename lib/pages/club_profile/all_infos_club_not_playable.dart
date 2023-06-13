@@ -102,44 +102,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
                 ),
 
                 //HEADER
-                Container(
-                  padding: const EdgeInsets.only(left: 8.0,top: 8),
-                  color: clubdetails.getColors(widget.clubName).primaryColor.withOpacity(0.3),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Column(
-                        children: [
-                          Images().getEscudoWidget(widget.clubName,80,80),
-                          starsWidgetFromOverall(clubdetails.getOverall(widget.clubName)),
-                        ],
-                      ),
-                      Images().getUniformWidget(widget.clubName,100,100),
-                      SizedBox(
-                        width: Sized(context).width*0.34,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                funcFlagsList(clubdetails.getCountry(widget.clubName), 35, 50),
-                                clubState.isNotEmpty ? funcFlagsList(clubdetails.getState(widget.clubName), 35, 50) : Container(),
-                              ],
-                            ),
-                            Text(clubdetails.getFoundationYear(widget.clubName).toString(),style: EstiloTextoBranco.text16),
-                            Row(
-                              children: [
-                                Expanded(child: Text(clubdetails.getStadium(widget.clubName),maxLines: 2, overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14)),
-                              ],
-                            ),
-                            Text(clubdetails.getStadiumCapacityPointFormat(widget.clubName),style: EstiloTextoBranco.text16),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                header(),
 
                 Container(
                   height: 30,
@@ -178,9 +141,51 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Widget header(){
+    return Container(
+      padding: const EdgeInsets.only(left: 8.0,top: 8),
+      color: clubdetails.getColors(widget.clubName).primaryColor.withOpacity(0.3),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Column(
+            children: [
+              Images().getEscudoWidget(widget.clubName,80,80),
+              starsWidgetFromOverall(clubdetails.getOverall(widget.clubName)),
+            ],
+          ),
+          Images().getUniformWidget(widget.clubName,100,100),
+          SizedBox(
+            width: Sized(context).width*0.34,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    funcFlagsList(clubdetails.getCountry(widget.clubName), 35, 50),
+                    clubState.isNotEmpty ? funcFlagsList(clubdetails.getState(widget.clubName), 35, 50) : Container(),
+                  ],
+                ),
+                Text(clubdetails.getFoundationYear(widget.clubName).toString(),style: EstiloTextoBranco.text16),
+                Row(
+                  children: [
+                    Expanded(child: Text(clubdetails.getStadium(widget.clubName),maxLines: 2, overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14)),
+                  ],
+                ),
+                Text(clubdetails.getStadiumCapacityPointFormat(widget.clubName),style: EstiloTextoBranco.text16),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget graphicsTab(){
     return Column(
       children: [
+
         dataGraphics.data.isNotEmpty ? graphics(dataGraphics) : Container(),
 
         trophy(dataGraphics),
@@ -192,6 +197,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
       ],
     );
   }
+
   Widget historicTab(){
     return Padding(
       padding: const EdgeInsets.all(4.0),
@@ -225,7 +231,9 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
       scrollDirection: Axis.horizontal,
       child: Container(
         height: 260,
-        width: dataGraphics.dataInternational.length * 35 + 50,
+        width:  dataGraphics.dataInternational.length > dataGraphics.data.length
+            ? dataGraphics.dataInternational.length * 35 + 50
+            : dataGraphics.data.length * 35 + 50,
         color: AppColors().greyTransparent,
         child: SfCartesianChart(
           tooltipBehavior: _tooltipBehavior,
@@ -235,6 +243,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
             labelStyle: EstiloTextoBranco.text12,
           ),
           series: <ChartSeries>[
+
             // Initialize line series
             //CAMPEONATO NACIONAL
             LineSeries<ClassificationData, String>(
@@ -262,8 +271,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
                   : data.year.toInt().toString(),
               //ano.0 -> ano
               yValueMapper: (ClassificationData data, _) => data.position,
-              dataLabelSettings: const DataLabelSettings(
-                  isVisible: true, color: Colors.white),
+              dataLabelSettings: const DataLabelSettings(isVisible: true, color: Colors.white),
               markerSettings: const MarkerSettings(
                   isVisible: true,
                   height: 4,

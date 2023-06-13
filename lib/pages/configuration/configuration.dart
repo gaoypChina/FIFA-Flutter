@@ -4,6 +4,8 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/configuration/controller/configuration_state.dart';
 import 'package:fifa/pages/configuration/leagues_configuration.dart';
+import 'package:fifa/theme/colors.dart';
+import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:fifa/widgets/popup/popup_change_clubs.dart';
 import 'package:fifa/widgets/popup/popup_initial_money.dart';
 import 'package:fifa/widgets/popup/poup_edit.dart';
@@ -23,7 +25,7 @@ class Configuration extends StatefulWidget {
 class _ConfigurationState extends State<Configuration> {
 
   ConfigurationState config = ConfigurationState();
-  double spaceBetweenWidgets = 16;
+  double spaceBetweenWidgets = 8;
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
@@ -39,7 +41,7 @@ class _ConfigurationState extends State<Configuration> {
             backButtonText(context, 'Configurações', true),
 
             Container(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(top:8.0, left: 8, right: 8),
               margin: const EdgeInsets.only(top: 70),
               child: SingleChildScrollView(
                 child: Column(
@@ -58,8 +60,6 @@ class _ConfigurationState extends State<Configuration> {
                     SizedBox(height: spaceBetweenWidgets),
                     turns(config),
                     SizedBox(height: spaceBetweenWidgets),
-                    playersOverallCheckbox(),
-                    SizedBox(height: spaceBetweenWidgets),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
@@ -76,6 +76,8 @@ class _ConfigurationState extends State<Configuration> {
                     allowInjuries(config),
                     SizedBox(height: spaceBetweenWidgets),
                     imagesReal(config),
+                    SizedBox(height: spaceBetweenWidgets),
+                    playersOverallCheckbox(),
                     policyPrivacy(),
                     SizedBox(height: spaceBetweenWidgets),
                     userTerms(),
@@ -94,7 +96,7 @@ class _ConfigurationState extends State<Configuration> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
   Widget coachName(){
-    return           GestureDetector(
+    return PressableButton(
       onTap:(){
         popupEdit(
             context: context,
@@ -128,7 +130,7 @@ class _ConfigurationState extends State<Configuration> {
 
   Widget difficulty(){
     return
-      GestureDetector(
+      PressableButton(
         onTap:(){
           DificuldadeClass().addDificulty();
           setState(() {});
@@ -187,7 +189,7 @@ Widget soundEffects(ConfigurationState config){
   }
 
   Widget initialMoney(){
-    return GestureDetector(
+    return PressableButton(
       onTap: (){
         popUpInitialMoney(
             context: context,
@@ -209,7 +211,7 @@ Widget soundEffects(ConfigurationState config){
 
 
   Widget nTeamsClassified(){
-    return GestureDetector(
+    return PressableButton(
         onTap:(){
           customToast(Translation(context).text.inDevelopment);
           Navigator.push(context,MaterialPageRoute(builder: (context) => const LeaguesConfiguration()));
@@ -230,7 +232,7 @@ Widget soundEffects(ConfigurationState config){
   }
 
   Widget changeClubs(){
-    return GestureDetector(
+    return PressableButton(
       onTap:(){
         popUpChangeClub(originalContext: context);
       },
@@ -250,119 +252,103 @@ Widget soundEffects(ConfigurationState config){
   }
 
   Widget allowCards(ConfigurationState config){
-    return Row(
-        children: [
-          SizedBox(
-            width: 200,
-            child: Text(Translation(context).text.allowCards,style: EstiloTextoBranco.negrito16),
-          ),
-
-          const Spacer(),
-          Switch(
-              value: config.hasCards,
-              onChanged: (value) {
-                customToast(Translation(context).text.inDevelopment);
-                setState(() {
-                  config.changeCardsState();
-                });
-              }),
-        ]
-    );
+    return defaultSlider(
+        Translation(context).text.allowCards,
+        config.hasCards,
+            (value) {
+              customToast(Translation(context).text.inDevelopment);
+              setState(() {
+                config.changeCardsState();
+              });
+        });
   }
   Widget allowInjuries(ConfigurationState config){
-    return Row(
-        children: [
-          SizedBox(
-            width: 200,
-            child: Text(Translation(context).text.allowInjuries,style: EstiloTextoBranco.negrito16),
-          ),
-          const Spacer(),
-          Switch(
-              value: config.hasInjuries,
-              onChanged: (value) {
-                customToast(Translation(context).text.inDevelopment);
-                setState(() {
-                  config.changeInjuryState();
-                });
-              }),
-        ]
-    );
+    return defaultSlider(
+        Translation(context).text.allowInjuries,
+        config.hasInjuries,
+            (value) {
+              customToast(Translation(context).text.inDevelopment);
+              setState(() {
+                config.changeInjuryState();
+              });
+        });
   }
 
   Widget imagesReal(ConfigurationState config){
-    return Row(
-        children: [
-          const SizedBox(
-            width: 200,
-            child: Text("Imagens Reais",style: EstiloTextoBranco.negrito16),
-          ),
-
-          const Spacer(),
-          Switch(
-              value: config.showRealImages,
-              onChanged: (value) {
-                setState(() {
-                  config.changeShowRealImagesState();
-                });
-              }),
-        ]
-    );
+    return defaultSlider(
+        'Imagens Reais',
+        config.showRealImages,
+            (value) {
+          setState(() {
+            config.changeShowRealImagesState();
+          });
+        });
   }
   Widget playersOverallCheckbox(){
-    return Column(
-      children: [
-        const Text('Overall das equipes',style: EstiloTextoBranco.negrito16),
-        for(int i=0;i<config.names.length;i++)
-        CheckboxListTile(
-          title: Text(config.names[i],style: EstiloTextoBranco.negrito16),
-          value: config.states[i],
-          onChanged: (newValue) {
-            if(newValue == true){
-              config.setStates(i);
-            }
-              setState(() {});
-          },
-          controlAffinity: ListTileControlAffinity.leading,  //  <-- leading Checkbox
-        ),
-      ],
+    return Container(
+      color: AppColors().greyTransparent,
+      padding: const EdgeInsets.all(4),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text('Overall das equipes',style: EstiloTextoBranco.negrito16),
+          for(int i=0;i<config.names.length;i++)
+          CheckboxListTile(
+            title: Text(config.names[i],style: EstiloTextoBranco.negrito16),
+            value: config.states[i],
+            onChanged: (newValue) {
+              if(newValue == true){
+                config.setStates(i);
+              }
+                setState(() {});
+            },
+            controlAffinity: ListTileControlAffinity.leading,  //  <-- leading Checkbox
+          ),
+        ],
+      ),
     );
   }
   Widget randomizePlayers(){
-    return Row(
-      children: [
-        const SizedBox(
-          width: 200,
-          child: Text('Jogadores em times aleatórios',style: EstiloTextoBranco.negrito16),
-        ),
-        const Spacer(),
-        Switch(
-            value: config.randomizePlayers,
-            onChanged: (value) {
-              setState(() {
-                config.changeRandomizePlayersState();
-              });
-            }),
-      ],
-    );
+    return defaultSlider(
+        'Jogadores em times aleatórios',
+        config.randomizePlayers,
+            (value) {
+          setState(() {
+            config.changeRandomizePlayersState();
+          });
+        });
   }
   Widget seeProbability(){
-    return Row(
-      children: [
-        SizedBox(
-          width: 200,
-          child: Text(Translation(context).text.seeProbability,style: EstiloTextoBranco.negrito16),
-        ),
-        const Spacer(),
-        Switch(
-            value: config.seeProbability,
-            onChanged: (value) {
+    return defaultSlider(
+        Translation(context).text.seeProbability,
+        config.seeProbability,
+            (value) {
               setState(() {
                 config.changeSeeProbabilityState();
               });
-            }),
-      ],
+            });
+  }
+
+  Widget defaultSlider(String title, bool value, Function(bool) onChanged){
+    return Container(
+      padding: const EdgeInsets.all(4),
+      color: AppColors().greyTransparent,
+      child: Row(
+        children: [
+          SizedBox(
+            width: 200,
+            child: Text(title,style: EstiloTextoBranco.negrito16),
+          ),
+          const Spacer(),
+          Switch(
+              value: value,
+              onChanged: onChanged,
+          ),
+        ],
+      ),
     );
   }
+
   Widget policyPrivacy(){
     return Column(
       children: [
@@ -379,7 +365,7 @@ Widget soundEffects(ConfigurationState config){
   Widget userTerms(){
     return Column(
       children: [
-        GestureDetector(
+        PressableButton(
             onTap:(){
               config.openTerms();
             },
@@ -392,7 +378,7 @@ Widget soundEffects(ConfigurationState config){
   Widget tutorial(){
     return Column(
       children: [
-        GestureDetector(
+        PressableButton(
           onTap:(){
             bottomSheet('Jogo muito louco');
           },

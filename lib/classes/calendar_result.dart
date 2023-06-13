@@ -4,6 +4,7 @@ import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/result_game/result_game_internacional.dart';
 import 'package:fifa/classes/result_game/result_game_nacional.dart';
 import 'package:fifa/classes/result_game/result_match.dart';
+import 'package:fifa/global_variables.dart';
 
 class CalendarResult{
   ResultMatch show = ResultMatch();
