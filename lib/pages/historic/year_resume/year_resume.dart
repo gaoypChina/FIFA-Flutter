@@ -300,7 +300,7 @@ Widget resumeLeague(String leagueName){
         child: InkWell(
           onTap: (){
             if(int.parse(selectedYear) == ano){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableNacional(choosenLeagueIndex: leaguesIndexFromName[leagueName])));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableNacional(chosenLeagueIndex: leaguesIndexFromName[leagueName])));
             }else{
                 bottomSheetShowLeagueClassification(context, classificationNames);
             }

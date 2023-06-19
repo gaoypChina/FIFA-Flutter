@@ -141,12 +141,10 @@ class DataGraphics{
     defineHistoricInternational(club.name,club.internationalLeagueName);
     participationsInternational();
     calculatePointsInternational();
-    print(dataInternational.length);
 
     //historico mundial
     defineHistoricMundial(club.name);
     pointsTotal = pointsNational+pointsInternational+pointsmundial;
-    print(dataInternational.length);
 
   }
 

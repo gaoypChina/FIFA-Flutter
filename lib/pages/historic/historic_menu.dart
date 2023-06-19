@@ -1,5 +1,4 @@
 import 'package:fifa/classes/click_navigator/click_club.dart';
-import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
@@ -13,12 +12,14 @@ import 'package:fifa/pages/historic/real_classification.dart';
 import 'package:fifa/pages/historic/year_resume/year_resume.dart';
 import 'package:fifa/pages/map/choose_continent_page.dart';
 import 'package:fifa/pages/map/map_exploration.dart';
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/back_button.dart';
+import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:flutter/material.dart';
 
 class HistoricMenu extends StatefulWidget {
@@ -62,7 +63,7 @@ class _HistoricMenuState extends State<HistoricMenu> {
                           box(
                               'Nacional',
                               Image.asset(FIFAImages().campeonatoLogo(My().campeonatoName),height: imageSize,),
-                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricLeague(choosenLeagueName: My().getLeagueName())));
+                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricLeague(chosenLeagueName: My().getLeagueName())));
                               }
                           ),
                           box(
@@ -143,7 +144,7 @@ class _HistoricMenuState extends State<HistoricMenu> {
                               'Tabela Real',
                               Icon(Icons.line_weight,color: Colors.white, size: imageSize),
                                   (){
-                                navigatorPush(context, RealClassificationPage(choosenCountryName: ClubDetails().getCountry(My().clubName)));
+                                navigatorPush(context, RealClassificationPage(chosenCountryName: ClubDetails().getCountry(My().clubName)));
                               }
                           ),
                         ],
@@ -165,33 +166,29 @@ class _HistoricMenuState extends State<HistoricMenu> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
 Widget box(String text, Widget centralWidget, Function function){
-    Club club = Club(index: My().clubID);
     return Container(
       margin: const EdgeInsets.all(4),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: (){
-            function();
-          },
-          child: Container(
-            height: 100,
-            width: Sized(context).width*0.45,
-            decoration: BoxDecoration(
-              color: club.colors.primaryColor.withOpacity(0.2),
-              borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-              border: Border.all(
-                width: 2.0,
-                color: club.colors.secondColor,
-              ),
+      child: PressableButton(
+        onTap: (){
+          function();
+        },
+        child: Container(
+          height: 100,
+          width: Sized(context).width*0.45,
+          decoration: BoxDecoration(
+            color: AppColors().greyTransparent,
+            borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+            border: Border.all(
+              width: 1.0,
+              color: AppColors().green,
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                centralWidget,
-                Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.negrito16),
-              ],
-            ),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              centralWidget,
+              Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.negrito16),
+            ],
           ),
         ),
       ),

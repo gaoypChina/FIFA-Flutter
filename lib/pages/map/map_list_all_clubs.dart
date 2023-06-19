@@ -112,7 +112,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
           padding: const EdgeInsets.only(top: 20),
           child: GestureDetector(
             onTap:(){
-              navigatorPush(context, RealClassificationPage(choosenCountryName: selectedCountry));
+              navigatorPush(context, RealClassificationPage(chosenCountryName: selectedCountry));
             },
             child: const Icon(Icons.table_chart,color:Colors.white,size: 32),
           ),
@@ -121,8 +121,8 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
           padding: const EdgeInsets.only(top:20.0),
           child: IconButton(onPressed: (){
             Map map = getLeagueNationalityMap();
-            String choosenLeagueName = map.keys.firstWhere((k) => map[k] == selectedCountry, orElse: () => null);
-            Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricLeague(choosenLeagueName: choosenLeagueName)));
+            String chosenLeagueName = map.keys.firstWhere((k) => map[k] == selectedCountry, orElse: () => null);
+            Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricLeague(chosenLeagueName: chosenLeagueName)));
           }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
         ),
         Padding(padding:const EdgeInsets.only(top:18),
@@ -188,22 +188,20 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                                     ),
                                     Row(
                                       children: [
+                                        funcFlagsList(clubDetails.getCountry(clubName), 15, 25),
+                                        const SizedBox(width: 16),
+                                        Text(clubDetails.getFoundationYear(clubName).toString(),style: EstiloTextoBranco.text16),
+                                        const SizedBox(width: 16),
                                         SizedBox(
                                           height: 30,
                                           width: 30,
-                                          child: Stack(
+                                          child: dataGraphics.nTitulos > 0 ? Stack(
                                             children: [
                                               const Opacity(opacity:0.7, child: Icon(Icons.star,color: Colors.amber,size: 30)),
                                               Center(child: Text(dataGraphics.nTitulos.toString(),style: EstiloTextoBranco.negrito14)),
                                             ],
-                                          ),
+                                          ) : Container(),
                                         ),
-                                        const SizedBox(width: 16),
-                                        funcFlagsList(clubDetails.getCountry(clubName), 15, 25),
-                                        const SizedBox(width: 16),
-                                        Text(clubDetails.getFoundationYear(clubName).toString(),style: EstiloTextoBranco.text16),
-
-
 
                                       ],
                                     ),
@@ -248,7 +246,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
 
   Widget selectCountryRow(){
     return Container(
-      height: 60,
+      height: 55,
       decoration: blackDecoration(),
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
@@ -256,7 +254,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
           itemBuilder: (c, i) {
             return countryFlagsSelectionBottomWidget(
               country: countryOptions[i],
-              choosenCountryName: selectedCountry,
+              chosenCountryName: selectedCountry,
               onTap: () {
                 selectedCountry = countryOptions[i];
                 setState(() {});

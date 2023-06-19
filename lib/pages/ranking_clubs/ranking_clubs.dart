@@ -36,7 +36,7 @@ class _RankingClubsPageState extends State<RankingClubsPage> with TickerProvider
 
   bool isLoaded = false;
   String continent = "";
-  String choosenLeagueName = "";
+  String chosenLeagueName = "";
 
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
@@ -50,8 +50,8 @@ class _RankingClubsPageState extends State<RankingClubsPage> with TickerProvider
     rankingClubs.organizeRanking();
     continent = Club(index: myClub.clubID,calcInternationalLeaguePlaying:false).continent;
     rankingClubs.organizeContinentalRanking(continent);
-    choosenLeagueName = myClub.getLeagueName();
-    rankingClubs.organizeNationalRanking(choosenLeagueName);
+    chosenLeagueName = myClub.getLeagueName();
+    rankingClubs.organizeNationalRanking(chosenLeagueName);
 
     _tabController = TabController(vsync: this, length: 4);
     isLoaded=true;
@@ -154,11 +154,11 @@ class _RankingClubsPageState extends State<RankingClubsPage> with TickerProvider
 
         type==1 ? selectContinent()
         : type==2 ? LeagueSelectionRow(
-            choosenLeagueName: choosenLeagueName,
+            chosenLeagueName: chosenLeagueName,
             leaguesListRealIndex: leaguesListRealIndex,
             onTap: (String leagueName){
-              choosenLeagueName = leagueName;
-              rankingClubs.organizeNationalRanking(choosenLeagueName);
+              chosenLeagueName = leagueName;
+              rankingClubs.organizeNationalRanking(chosenLeagueName);
               setState(() {});
             }
         )

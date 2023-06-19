@@ -21,7 +21,7 @@ class _CupMainState extends State<CupMain> with TickerProviderStateMixin{
 
   late TabController _tabController;
   Map<int, League> leaguesMap = {};
-  late String choosenLeagueName;
+  late String chosenLeagueName;
 
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
@@ -39,7 +39,7 @@ class _CupMainState extends State<CupMain> with TickerProviderStateMixin{
       leaguesMap[leagueID] = League(index: leaguesListRealIndex[i]);
     }
     //initial value
-    choosenLeagueName = leaguesMap[My().leagueID]!.name;
+    chosenLeagueName = leaguesMap[My().leagueID]!.name;
   }
 
 ////////////////////////////////////////////////////////////////////////////
@@ -47,7 +47,7 @@ class _CupMainState extends State<CupMain> with TickerProviderStateMixin{
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    String cupName = getCup(choosenLeagueName);
+    String cupName = getCup(chosenLeagueName);
 
     return DefaultTabController(
       length: 3,
@@ -93,10 +93,10 @@ class _CupMainState extends State<CupMain> with TickerProviderStateMixin{
                 //SELECT LEAGUE
 
                 LeagueSelectionRow(
-                    choosenLeagueName: choosenLeagueName,
+                    chosenLeagueName: chosenLeagueName,
                     leaguesListRealIndex: leaguesListRealIndex,
                     onTap: (String leagueName){
-                      choosenLeagueName = leagueName;
+                      chosenLeagueName = leagueName;
                       setState(() {});
                     }
                 ),

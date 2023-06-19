@@ -42,7 +42,7 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
 
   List listAll = [];
   List listShow = [];
-  late int choosenPlayerID;
+  late int chosenPlayerID;
   late Club club;
 
 ////////////////////////////////////////////////////////////////////////////
@@ -231,7 +231,7 @@ TableRow playersRow(int i){
         //POSIÇÃO
         InkWell(
             onTap:(){
-              choosenPlayerID = playerID;
+              chosenPlayerID = playerID;
               popupText(Translation(context).text.changePosition,player.position,'Position');
             },
             child: positionContainer(player.position),
@@ -241,7 +241,7 @@ TableRow playersRow(int i){
         InkWell(
             onTap:(){
               PopupConfig popupConfig = PopupConfig();
-              popupConfig.choosenPlayerID = playerID;
+              popupConfig.chosenPlayerID = playerID;
               popUpChangePlayerClub(originalContext: context, popupConfig: popupConfig );
 
               Timer.periodic(const Duration(milliseconds: 100), (timer) {
@@ -257,7 +257,7 @@ TableRow playersRow(int i){
         //NATIONALITY
         InkWell(
             onTap:(){
-              choosenPlayerID = playerID;
+              chosenPlayerID = playerID;
               popUpEditNationality(
                   context: context,
                   player: player,
@@ -273,7 +273,7 @@ TableRow playersRow(int i){
           margin: const EdgeInsets.only(left: 8.0),
           child: InkWell(
             onTap:(){
-              choosenPlayerID = playerID;
+              chosenPlayerID = playerID;
               popupText(Translation(context).text.changePlayersName,player.name,'Name');
             },
             child: SizedBox(
@@ -290,7 +290,7 @@ TableRow playersRow(int i){
           margin: const EdgeInsets.symmetric(horizontal: 2),
           child: InkWell(
               onTap:(){
-                choosenPlayerID = playerID;
+                chosenPlayerID = playerID;
                 popupNumber(player.age,'Idade');
 
               },
@@ -304,7 +304,7 @@ TableRow playersRow(int i){
           margin: const EdgeInsets.symmetric(horizontal: 2),
           child: InkWell(
               onTap:(){
-                choosenPlayerID = playerID;
+                chosenPlayerID = playerID;
                 popupNumber(globalJogadoresOverall[playerID],'Overall');
               },
               child: Center(child: Text(player.overall.toStringAsFixed(0),style: EstiloTextoPreto.text16))),
@@ -346,12 +346,12 @@ popupText(String title,String variableString, String whichData){
       maxNcharacters: 22,
       functionOK: (value){
          if(whichData=='Position' && positions[EsquemaTatico().e442].containsKey(value)) {
-            globalJogadoresPosition[choosenPlayerID] = value;
+            globalJogadoresPosition[chosenPlayerID] = value;
          }else if(whichData=='Position' && !positions[EsquemaTatico().e442].containsKey(value)){
             customToast(Translation(context).text.invalidPosition);
           }
 
-        if(whichData=='Name') globalJogadoresName[choosenPlayerID] = value;
+        if(whichData=='Name') globalJogadoresName[chosenPlayerID] = value;
 
             setState(() {});
 
@@ -367,8 +367,8 @@ popupNumber(dynamic number, String whichData){
         maxNcharacters: 22,
         functionOK: (valueStr){
           int value = int.parse(valueStr);
-          if(whichData=='Idade' && value<45 && value>=16) globalJogadoresAge[choosenPlayerID] = value;
-          if(whichData=='Overall' && value<100 && value>40) globalJogadoresOverall[choosenPlayerID] = value;
+          if(whichData=='Idade' && value<45 && value>=16) globalJogadoresAge[chosenPlayerID] = value;
+          if(whichData=='Overall' && value<100 && value>40) globalJogadoresOverall[chosenPlayerID] = value;
           setState(() {});
         }
     );

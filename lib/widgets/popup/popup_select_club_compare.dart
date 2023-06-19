@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 
 
 class PopupSelectClub{
-  int choosenLeagueIndex = 1;
+  int chosenLeagueIndex = 1;
   bool popupClosed = false;
   late Club newClub;
 }
@@ -22,12 +22,12 @@ popUpSelectClub({required BuildContext originalContext,required PopupSelectClub 
     String leagueName = League(index: leagueID).getName();
     return GestureDetector(
       onTap: (){
-        popupConfig.choosenLeagueIndex = leagueID;
+        popupConfig.chosenLeagueIndex = leagueID;
         setState((){});
       },
       child: Container(
         padding: const EdgeInsets.all(2),
-        color: popupConfig.choosenLeagueIndex == leagueID ? Colors.redAccent: Colors.white54,
+        color: popupConfig.chosenLeagueIndex == leagueID ? Colors.redAccent: Colors.white54,
         child: Image.asset(FIFAImages().campeonatoLogo(leagueName),height: 50,width: 50,),
       ),
     );
@@ -51,7 +51,7 @@ popUpSelectClub({required BuildContext originalContext,required PopupSelectClub 
 
   Widget selectClubWidget(BuildContext context, Function setState){
 
-    List clubsIDs = League(index: popupConfig.choosenLeagueIndex).getAllClubsIDList();
+    List clubsIDs = League(index: popupConfig.chosenLeagueIndex).getAllClubsIDList();
     return  Container(
       height: 310,
       width: 250,

@@ -113,7 +113,7 @@ class _MenuState extends State<Menu> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
 
-                          expandedButton("Nacional",club, TableNacional(choosenLeagueIndex: myClass.leagueID)),
+                          expandedButton("Nacional",club, TableNacional(chosenLeagueIndex: myClass.leagueID)),
                           expandedButton(Translation(context).text.myClub,club, const MyTeam()),
                           ]),
 

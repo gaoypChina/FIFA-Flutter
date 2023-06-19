@@ -23,21 +23,21 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class TableNacional extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
-  final int choosenLeagueIndex;
-  const TableNacional({Key? key, required this.choosenLeagueIndex}) : super(key: key);
+  final int chosenLeagueIndex;
+  const TableNacional({Key? key, required this.chosenLeagueIndex}) : super(key: key);
   @override
   _TableNacionalState createState() => _TableNacionalState();
 }
 
 class _TableNacionalState extends State<TableNacional>  with TickerProviderStateMixin  {
 
-  late String choosenLeagueName;
+  late String chosenLeagueName;
   League myLeague = League(index: My().leagueID);
   late int rodadaMatch = myLeague.nClubs-1;
   Map leaguesMap = {};
 
   late TabController _tabController;
-  int choosenIcon = 2;
+  int chosenIcon = 2;
 
 
   late GoogleMapController googleMapController;
@@ -56,7 +56,7 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
   doThisOnLaunch() {
     _tabController = TabController(vsync: this, length: 2);
     //INDEX INICIAL
-    choosenLeagueName = League(index: widget.choosenLeagueIndex).name;
+    chosenLeagueName = League(index: widget.chosenLeagueIndex).name;
     //rodada inicial mostrada
     if(rodada < myLeague.nClubs-1){
       rodadaMatch = rodada;
@@ -138,19 +138,19 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
                       child: Row(
                         children: [
                           backButton(context),
-                          Image.asset(FIFAImages().campeonatoLogo(choosenLeagueName),height: 32,width: 32),
+                          Image.asset(FIFAImages().campeonatoLogo(chosenLeagueName),height: 32,width: 32),
                           const SizedBox(width: 8),
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(choosenLeagueName,textAlign:TextAlign.center,style: EstiloTextoBranco.negrito16),
+                              Text(chosenLeagueName,textAlign:TextAlign.center,style: EstiloTextoBranco.negrito16),
                               Text('${Translation(context).text.matchWeek} ' + rodada.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.text16),
                             ],
                           ),
                           const Spacer(),
                           ButtonBorderGreen(
                             onTap: (){
-                              navigatorPush(context, HistoricLeague(choosenLeagueName: choosenLeagueName));
+                              navigatorPush(context, HistoricLeague(chosenLeagueName: chosenLeagueName));
                             }, child: Text(ano.toString(), style: EstiloTextoBranco.text14)
                           ),
                         ],
@@ -173,7 +173,7 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
                       child: TabBarView(
                         controller: _tabController,
                         children: [
-                          fullTable(choosenLeagueName),
+                          fullTable(chosenLeagueName),
                           rowStatistics(),
                         ],
                       ),
@@ -187,11 +187,11 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
               Container(
                 padding: EdgeInsets.only(top:Sized(context).height- 50),
                 child: LeagueSelectionRow(
-                    choosenLeagueName: choosenLeagueName,
+                    chosenLeagueName: chosenLeagueName,
                     leaguesListRealIndex: leaguesListRealIndex,
                     onTap: (String leagueName){
-                      choosenLeagueName = leagueName;
-                      // getClubsMarkers(googleMapController, leaguesMap[choosenLeagueName]);
+                      chosenLeagueName = leagueName;
+                      // getClubsMarkers(googleMapController, leaguesMap[chosenLeagueName]);
                       setState(() {});
                     }
                 ),
@@ -210,8 +210,8 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
     return SingleChildScrollView(
       child: Column(
         children: [
-          tabelaClassificacaoWidget(context,leaguesMap[choosenLeagueName]),
-          //mapLeagueClubs(leaguesMap[choosenLeagueName]),
+          tabelaClassificacaoWidget(context,leaguesMap[chosenLeagueName]),
+          //mapLeagueClubs(leaguesMap[chosenLeagueName]),
         ],
       ),
     );
@@ -236,7 +236,7 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
         zoom: 4.0,
         ),
         onMapCreated: (GoogleMapController googleMapControllerLocal){
-          getClubsMarkers(googleMapControllerLocal,leaguesMap[choosenLeagueName]);
+          getClubsMarkers(googleMapControllerLocal,leaguesMap[chosenLeagueName]);
         },
         markers: Set<Marker>.of(_markersShow),
       ),
@@ -253,12 +253,12 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
         Expanded(
           child: Container(
             color: AppColors().greyTransparent,
-            child: choosenIcon==2 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueName], 0)
-                : choosenIcon==3 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueName], 1)
-                : choosenIcon==4 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueName], 2)
-                : choosenIcon==5 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueName], 3)
-                : choosenIcon==6 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueName], 4)
-                : choosenIcon==7 ? wYellowRedCardWidget(context, leaguesMap[choosenLeagueName], 5)
+            child: chosenIcon==2 ? wYellowRedCardWidget(context, leaguesMap[chosenLeagueName], 0)
+                : chosenIcon==3 ? wYellowRedCardWidget(context, leaguesMap[chosenLeagueName], 1)
+                : chosenIcon==4 ? wYellowRedCardWidget(context, leaguesMap[chosenLeagueName], 2)
+                : chosenIcon==5 ? wYellowRedCardWidget(context, leaguesMap[chosenLeagueName], 3)
+                : chosenIcon==6 ? wYellowRedCardWidget(context, leaguesMap[chosenLeagueName], 4)
+                : chosenIcon==7 ? wYellowRedCardWidget(context, leaguesMap[chosenLeagueName], 5)
                 : Container(),
           ),
         ),
@@ -293,7 +293,7 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
       color: Colors.transparent,
       child: InkWell(
         onTap: (){
-          choosenIcon = optionNumber;
+          chosenIcon = optionNumber;
           setState((){});
         },
         child: Container(
@@ -302,7 +302,7 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
           decoration: BoxDecoration(
             color: AppColors().greyTransparent,
             border: Border.all(
-              color: choosenIcon == optionNumber ? Colors.white : AppColors().greyTransparent,
+              color: chosenIcon == optionNumber ? Colors.white : AppColors().greyTransparent,
               width: 1.0,
             ),
           ),
@@ -313,11 +313,11 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
   }
   Widget componentTable(int optionNumber){
     return Container(
-      color: choosenIcon==optionNumber ? Colors.teal : Colors.transparent,
+      color: chosenIcon==optionNumber ? Colors.teal : Colors.transparent,
       padding: const  EdgeInsets.all(2),
       child: GestureDetector(
         onTap:(){
-          choosenIcon = optionNumber;
+          chosenIcon = optionNumber;
           setState(() {});
         },
         child: const Icon(Icons.table_chart, color: Colors.white, size:50),
@@ -326,9 +326,9 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
   }
 Widget matchsWidget(){
 
-  League choosenLeagueClass = leaguesMap[choosenLeagueName];
-  if(rodadaMatch >= choosenLeagueClass.nClubs-1){
-    rodadaMatch = choosenLeagueClass.nClubs-1;
+  League chosenLeagueClass = leaguesMap[chosenLeagueName];
+  if(rodadaMatch >= chosenLeagueClass.nClubs-1){
+    rodadaMatch = chosenLeagueClass.nClubs-1;
   }
   return Container(
     color: AppColors().greyTransparent,
@@ -351,7 +351,7 @@ Widget matchsWidget(){
 
             GestureDetector(
                 onTap:(){
-                  if(rodadaMatch<choosenLeagueClass.getNTeams()-1) {
+                  if(rodadaMatch<chosenLeagueClass.getNTeams()-1) {
                     rodadaMatch ++;
                   }
                   setState(() {});
@@ -363,7 +363,7 @@ Widget matchsWidget(){
           ],
         ),
 
-        wMatchsTable(rodadaMatch, leaguesMap[choosenLeagueName]),
+        wMatchsTable(rodadaMatch, leaguesMap[chosenLeagueName]),
 
       ],
     ),

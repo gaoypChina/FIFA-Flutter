@@ -739,7 +739,7 @@ Map getLeagueNationalityMap(){
     leagueName.serraleoa: Words.country.sierraLeone,
     leagueName.somalia: Words.country.somalia,
     leagueName.sudao: Words.country.sudan,
-    leagueName.sudaosul: Words.country.sudan,
+    leagueName.sudaosul: Words.country.southSudan,
     leagueName.swazilandia: Words.country.swaziland,
     leagueName.tanzania: Words.country.tanzania,
     leagueName.togo: Words.country.togo,

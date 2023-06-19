@@ -488,7 +488,7 @@ class ClubName{
   String nice = "Nice";
   String om= "Olympique Marselha";
   String psg = "PSG";
-  String reims = "Reims";
+  String reims = "Stade de Reims";
   String rennes = "Rennes";
   String saintetienne= "Saint-Etienne";
   String metz = "Metz";

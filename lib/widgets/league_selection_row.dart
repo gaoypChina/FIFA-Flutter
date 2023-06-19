@@ -7,47 +7,47 @@ import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:flutter/material.dart';
 
-Widget countryFlagsSelectionBottomWidget({required String country, required String choosenCountryName,required Function() onTap}) {
+Widget countryFlagsSelectionBottomWidget({required String country, required String chosenCountryName,required Function() onTap}) {
 
   return PressableButton(
     onTap: onTap,
     child: Container(
       padding: EdgeInsets.symmetric(
-        vertical:  choosenCountryName == country ? 7.5 : 12.5,
-        horizontal: choosenCountryName == country ? 3.5 : 6,
+        vertical:  chosenCountryName == country ? 7.5 : 12.5,
+        horizontal: chosenCountryName == country ? 3.5 : 6,
       ),
-      color: choosenCountryName == country ? AppColors().green : AppColors().greyTransparent,
+      color: chosenCountryName == country ? AppColors().green : AppColors().greyTransparent,
       child: funcFlagsList(
           country,
-          choosenCountryName == country ? 35 : 25,
-          choosenCountryName == country ? 45 : 40),
+          chosenCountryName == country ? 35 : 25,
+          chosenCountryName == country ? 45 : 40),
     ),
   );
 }
 
-Widget countryFlagsSelectionBottomWidget2({required String leagueName, required String choosenLeagueName, required Function() onTap}) {
+Widget countryFlagsSelectionBottomWidget2({required String leagueName, required String chosenLeagueName, required Function() onTap}) {
   return PressableButton(
     onTap: onTap,
     child: Container(
       padding: EdgeInsets.symmetric(
-        vertical:  choosenLeagueName == leagueName ? 7.5 : 12.5,
-        horizontal: choosenLeagueName == leagueName ? 3.5 : 6,
+        vertical:  chosenLeagueName == leagueName ? 7.5 : 12.5,
+        horizontal: chosenLeagueName == leagueName ? 3.5 : 6,
       ),
-      color: choosenLeagueName == leagueName ? AppColors().green : AppColors().greyTransparent,
+      color: chosenLeagueName == leagueName ? AppColors().green : AppColors().greyTransparent,
       child: funcFlagsList(
           getCountryFromLeague(leagueName),
-          choosenLeagueName == leagueName ? 35 : 25,
-          choosenLeagueName == leagueName ? 45 : 40),
+          chosenLeagueName == leagueName ? 35 : 25,
+          chosenLeagueName == leagueName ? 45 : 40),
     ),
   );
 }
 
 class LeagueSelectionRow extends StatelessWidget {
-  final String choosenLeagueName;
+  final String chosenLeagueName;
   final List leaguesListRealIndex;
   final Function(String) onTap;
   const LeagueSelectionRow({Key? key,
-    required this.choosenLeagueName, required this.leaguesListRealIndex, required this.onTap
+    required this.chosenLeagueName, required this.leaguesListRealIndex, required this.onTap
   }) : super(key: key);
 
   @override
@@ -74,12 +74,12 @@ class LeagueSelectionRow extends StatelessWidget {
       child: Container(
         height: 50,
         padding: const EdgeInsets.symmetric(horizontal: 4),
-        color: choosenLeagueName == leagueName ? AppColors().green : AppColors().greyTransparent,
+        color: chosenLeagueName == leagueName ? AppColors().green : AppColors().greyTransparent,
         child: Center(child:
           Image.asset(
             FIFAImages().campeonatoLogo(leagueName),
-            height: choosenLeagueName == leagueName ? 48 : 36,
-            width: choosenLeagueName == leagueName ? 48 : 40,
+            height: chosenLeagueName == leagueName ? 48 : 36,
+            width: chosenLeagueName == leagueName ? 48 : 40,
           )
         ),
       ),

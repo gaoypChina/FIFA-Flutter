@@ -91,14 +91,14 @@ class HistoricMyTransfers{
 
     //FILTER
     double maxPrice = 0;
-    HighestSellBuy choosenPlayer = HighestSellBuy();
+    HighestSellBuy chosenPlayer = HighestSellBuy();
     for (HighestSellBuy highestSellBuy in highestSellBuyList) {
       if(highestSellBuy.maxPrice > maxPrice){
         maxPrice = highestSellBuy.maxPrice;
-        choosenPlayer = highestSellBuy;
+        chosenPlayer = highestSellBuy;
       }
     }
 
-    return choosenPlayer;
+    return chosenPlayer;
   }
 }

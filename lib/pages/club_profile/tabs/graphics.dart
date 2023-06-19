@@ -69,7 +69,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
 
                   InkWell(
                     onTap: (){
-                      navigatorPush(context, TableNacional(choosenLeagueIndex: widget.club.leagueID));
+                      navigatorPush(context, TableNacional(chosenLeagueIndex: widget.club.leagueID));
                     },
                     child: Container(
                         color: AppColors().greyTransparent,

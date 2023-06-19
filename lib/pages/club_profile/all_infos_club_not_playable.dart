@@ -5,6 +5,8 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/classes/data_graphics.dart';
 import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:fifa/pages/historic/historic_best_players.dart';
+import 'package:fifa/pages/historic/leagues_historic.dart';
+import 'package:fifa/pages/historic/real_classification.dart';
 import 'package:fifa/theme/background_color/background_classification.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -52,7 +54,8 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
 
     dataGraphics.getDataNotPlayabale(widget.clubName, clubCountry, clubState);
     }catch(e){
-      //O CLUBE NÃO TEM INFORMAÇÕES NO CLUB DETAILS, Portanto não tem o que mostrar nessa página
+      //THE CLUB HAS NO INFORMATION IN THE CLUB DETAILS
+      // Therefore there is nothing to show on this page
       Navigator.pop(context);
     }
 
@@ -68,11 +71,13 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
+
     _tooltipBehavior = TooltipBehavior(enable: true);
     bool isPlayableClub = false;
     if(clubsAllNameList.contains(widget.clubName)){
       isPlayableClub = true;
     }
+
   return DefaultTabController(
     length: 3,
     child: Scaffold(
@@ -91,6 +96,18 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
                     children: [
                       backButtonText(context, widget.clubName),
                       const Spacer(),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 20),
+                        child: GestureDetector(
+                          onTap:(){
+                            Map map = getLeagueNationalityMap();
+                            String chosenLeagueName = map.keys.firstWhere((k) => map[k] == clubCountry, orElse: () => null);
+                            Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricLeague(chosenLeagueName: chosenLeagueName)));
+                          },
+                          child: const Icon(Icons.table_chart,color:Colors.white,size: 32),
+                        ),
+                      ),
+                      const SizedBox(width: 8),
                       isPlayableClub ? Padding(
                         padding: const EdgeInsets.only(top:20.0),
                         child: IconButton(onPressed: (){
@@ -141,6 +158,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+
   Widget header(){
     return Container(
       padding: const EdgeInsets.only(left: 8.0,top: 8),
@@ -183,18 +201,35 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
   }
 
   Widget graphicsTab(){
-    return Column(
-      children: [
+    return SingleChildScrollView(
+      child: Column(
+        children: [
 
-        dataGraphics.data.isNotEmpty ? graphics(dataGraphics) : Container(),
+          dataGraphics.data.isNotEmpty ? graphics(dataGraphics) : Container(),
 
-        trophy(dataGraphics),
+          trophy(dataGraphics),
 
-        totalTrophyWidget(widget.clubName, dataGraphics),
+          totalTrophyWidget(widget.clubName, dataGraphics),
 
-        predictions(dataGraphics.data),
+          predictions(dataGraphics.data),
 
-      ],
+          Container(
+              color: AppColors().greyTransparent,
+              margin: const EdgeInsets.only(top:4, left: 4, right: 4),
+              padding: const EdgeInsets.all(4),
+              child: Column(
+                children: [
+                  const Text("Classificação Atual:",style: EstiloTextoBranco.negrito18),
+                  SizedBox(
+                    height: 400,
+                      child: RealTableWidget(chosenCountryName: clubCountry),
+                  ),
+                ],
+              ),
+          ),
+
+        ],
+      ),
     );
   }
 
@@ -600,10 +635,10 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
     for (int i = 0; i < values.length; i++) {
       soma += values[i] * (values.length-i);
     }
-    //DA Ainda mais peso pros anos recentes
-    soma += values[0]*15;
-    soma += values[1]*5;
-    soma += values[2]*2;
+    //more weight for recent years
+    soma += values[0] * 15;
+    soma += values[1] * 5;
+    soma += values[2] * 2;
     value = soma ~/ values.length;
     value = value ~/ 9;
     return value;

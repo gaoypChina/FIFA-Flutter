@@ -425,7 +425,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
   Widget weekMatchRow(int numeroDoConfronto){
 
     TableNational tableNational = TableNational(
-        choosenLeagueIndex: myClass.leagueID,
+        chosenLeagueIndex: myClass.leagueID,
         leagueClass: leagueClass,
         rodadaMatch: rodada,
         numeroDoConfronto: numeroDoConfronto

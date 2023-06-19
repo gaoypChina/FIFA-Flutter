@@ -211,6 +211,7 @@ class CountryNames {
   String get southAfrica => 'South Africa';
   String get southKorea => 'South Korea';
   String get sudan => 'Sudan';
+  String get southSudan => 'South Sudan';
   String get suriname => 'Suriname';
   String get spain => 'Spain';
   String get srilanka => 'Sri Lanka';

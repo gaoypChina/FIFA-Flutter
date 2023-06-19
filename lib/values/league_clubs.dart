@@ -91,13 +91,13 @@ Map clubNameMapImmutable = {
   },
   LeagueOfficialNames().espanha1 : {
     0: clubName.almeria,1: clubName.athleticbilbao,2: clubName.atleticomadrid,3: clubName.barcelona,
-    4: clubName.cadiz,5: clubName.celtavigo,6: clubName.eibar,7: clubName.elche,
-    8: clubName.espanyol,9: clubName.getafe,10: clubName.mallorca,11: clubName.osasuna,
+    4: clubName.cadiz,5: clubName.celtavigo,6: clubName.elche,7: clubName.espanyol,
+    8: clubName.getafe,9: clubName.girona,10: clubName.mallorca,11: clubName.osasuna,
     12: clubName.rayovallecano,13: clubName.realbetis,14: clubName.realmadrid,15: clubName.realsociedad,
     16: clubName.sevilla,17: clubName.valencia,18: clubName.valladolid,19: clubName.villareal,
   },
   LeagueOfficialNames().espanha2 : {
-    0: clubName.alaves,1: clubName.girona,2: clubName.granada,3: clubName.ibiza,
+    0: clubName.alaves,1: clubName.eibar,2: clubName.granada,3: clubName.ibiza,
     4: clubName.lacoruna,5: clubName.laspalmas,6: clubName.leganes,7: clubName.levante,
     8: clubName.malaga,9: clubName.sportinggijon,10: clubName.tenerife,11: clubName.zaragoza,
   },

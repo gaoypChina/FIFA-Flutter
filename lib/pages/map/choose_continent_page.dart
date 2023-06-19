@@ -1,10 +1,8 @@
-import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/countries/countries_continents.dart';
-import 'package:fifa/classes/my.dart';
+import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/pages/map/map_list_all_clubs.dart';
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
-import 'package:fifa/values/club_details.dart';
 import 'package:fifa/widgets/button/back_button.dart';
 import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:flutter/material.dart';
@@ -39,6 +37,7 @@ class _ChooseContinentPageState extends State<ChooseContinentPage> {
 
           Column(
             children: [
+
               backButtonText(context,'Choose Continent', true),
 
               const SizedBox(height: 20),
@@ -75,16 +74,15 @@ class _ChooseContinentPageState extends State<ChooseContinentPage> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
   Widget menuButtonExpanded(String text, Function() function){
-    ClubColors myColors = Club(index: My().clubID).colors;
     return  Container(
-      margin: const EdgeInsets.all(4),
+      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 12),
       decoration: BoxDecoration(
-        color: myColors.primaryColor.withOpacity(0.4),
+        color: AppColors().greyTransparent,
         border: Border.all(
           width: 2.0,
-          color: myColors.secondColor,
+          color: AppColors().green,
         ),
-        borderRadius: const BorderRadius.all(Radius.circular(20.0)),
+        borderRadius: const BorderRadius.all(Radius.circular(10.0)),
       ),
       child: Row(
         children: [

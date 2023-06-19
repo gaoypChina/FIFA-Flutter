@@ -19,7 +19,7 @@ Widget wMatchsTable(int rodadaMatch, League leagueClass){
       children: [
         for(int i=0; i<(leagueClass.getNTeams()/2);i++)
           wRowMatchesVersus(TableNational(
-              choosenLeagueIndex: leagueClass.index,
+              chosenLeagueIndex: leagueClass.index,
               leagueClass: leagueClass,
               rodadaMatch: rodadaMatch,
               numeroDoConfronto: i*2
