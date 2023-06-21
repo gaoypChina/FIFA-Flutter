@@ -4,7 +4,6 @@ import 'package:fifa/classes/simulate/player_variables/origin/goal.dart';
 
 class GoalAssistsSelection{
   ////////////////////////////////////////////
-  //GOALS E ASSISTENCIAS NACIONAIS
   goalsAssistsNational(Club clubClass){
     int playerID = Goal().setGoals(clubClass);
     Goal().saveGoalsNational(playerID);
@@ -12,7 +11,6 @@ class GoalAssistsSelection{
     Assists().saveAssistsNational(playerID);
   }
 
-  //GOALS E ASSISTENCIAS INTERNACIONAIS
   goalsAssistsInternational(Club clubClass){
     int playerID = Goal().setGoals(clubClass);
     Goal().saveGoalsInternational(playerID);
@@ -21,7 +19,6 @@ class GoalAssistsSelection{
     Assists().saveAssistsInternational(playerID);
   }
 
-  //GOALS E ASSISTENCIAS CUP
   goalsAssistsCup(Club clubClass){
     int playerID = Goal().setGoals(clubClass);
     Goal().saveGoalsCup(playerID);

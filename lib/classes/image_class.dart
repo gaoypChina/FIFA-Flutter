@@ -45,11 +45,14 @@ class Images{
     }
   }
 
+  Widget getLeagueLogo(String leagueName, [double _height=50.0, double _width=50.0]){
+    return Image.asset(FIFAImages().campeonatoLogo(leagueName),height: _height,width: _width);
+  }
 
   String getStadium(String clubName){
     return 'assets/clubs/${FIFAImages().imageLogo(clubName)}0.jpg';
   }
-  Widget getStadiumWidget(String clubName,[double _height=50.0, double _width=50.0]){
+  Widget getStadiumWidget(String clubName, [double _height=50.0, double _width=50.0]){
       return Image.asset(Images().getStadium(clubName),height: _height,width: _width,fit: BoxFit.fill,
       errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
         //Se o clube não tiver a imagem do estadio

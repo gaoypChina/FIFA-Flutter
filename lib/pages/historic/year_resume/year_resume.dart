@@ -4,9 +4,12 @@ import 'package:fifa/classes/historic/historic_champions_league.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/countries/flags_list.dart';
+import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/historic/year_resume/widgets/current_leagues_resume.dart';
 import 'package:fifa/pages/table/table_nacional.dart';
-import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/theme/colors.dart';
+import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/historic_champions/historic_champions.dart';
 import 'package:fifa/values/images.dart';
@@ -14,6 +17,7 @@ import 'package:fifa/values/league_divisions.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/back_button.dart';
 import 'package:fifa/widgets/bottom_sheet/bottom_sheet_league_classification.dart';
+import 'package:fifa/widgets/button/dropdown_button.dart';
 import 'package:flutter/material.dart';
 
 class YearResume extends StatefulWidget {
@@ -50,18 +54,24 @@ class _YearResumeState extends State<YearResume> {
 
           Column(
             children: [
-                  backButtonText(context, 'Resumo do ano', true),
 
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+              Container(
+                color: ClubDetails().getColors(My().clubName).primaryColor.withOpacity(0.3),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    dropDownButton(),
+                    backButtonText(context, 'Resumo do ano', false),
+                    const Spacer(),
+                    Container(
+                      padding: const EdgeInsets.only(top: 30.0),
+                      child: dropDownButton(
+                          selectedYearStr: selectedYear,
+                          possibleYears: possibleYears,
+                          setStateFunc: (value){
+                            selectedYear = value.toString();
+                            setState(() {});
+                          }),
+                    ),
 
-                    int.parse(selectedYear) < anoInicial
-                        ?  internationalChampionsWidgetDetail(LeagueOfficialNames().mundial)
-                        : Container(),
                   ],
                 ),
               ),
@@ -76,11 +86,14 @@ class _YearResumeState extends State<YearResume> {
               int.parse(selectedYear) >= anoInicial ? Expanded(
                 child: GridView.builder(
                     gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                        maxCrossAxisExtent: 200,
-                      childAspectRatio: 2.8,
+                        maxCrossAxisExtent: 400,
+                      childAspectRatio: 5,
                     ),
                   itemCount: leaguesListRealIndex.length,
-                  itemBuilder: (c,index)=> resumeLeague(League(index: leaguesListRealIndex[index]).name)
+                  itemBuilder: (c,index)=> CurrentLeagueResume(
+                                                selectedYear: selectedYear,
+                                                leagueName: League(index: leaguesListRealIndex[index]).name
+                                    )
               ),
               ) : Expanded(
                 child: SingleChildScrollView(
@@ -169,69 +182,48 @@ class _YearResumeState extends State<YearResume> {
 
   }
 
-  Widget dropDownButton(){
-    return                   Container(
-      decoration: BoxDecoration(
-        color:Colors.white, //background_color color of dropdown button
-        border: Border.all(color: Colors.black38, width:2), //border of dropdown button
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal:10.0,vertical: 4),
-        child: DropdownButton<String>(
-          value: selectedYear,
-          style: const TextStyle(fontSize: 18, color: Colors.white),
-          iconEnabledColor: Colors.black, //Icon color
-          underline: Container(), //empty line
-          dropdownColor: Colors.white,
-          items: possibleYears.map((value) {
-            return DropdownMenuItem(
-              child: Text(value,style: EstiloTextoPreto.text16),
-              value: value,
-            );
-          }).toList(),
-          onChanged: (value) {
-            setState(() {});
-            selectedYear = value.toString();
-          },
-        ),
-      ),
-    );
-  }
-
 
 Widget internationalChampionsSelection(){
   LeagueOfficialNames leagueOfficialNames = LeagueOfficialNames();
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Row(
-        children: [
-          internationalChampionsWidgetDetail(leagueOfficialNames.championsLeague),
-          internationalChampionsWidgetDetail(leagueOfficialNames.libertadores),
-        ],
-      ),
-      Row(
-        children: [
-          internationalChampionsWidgetDetail(leagueOfficialNames.europaLeagueOficial),
-          internationalChampionsWidgetDetail(leagueOfficialNames.copaSulAmericana),
-          internationalChampionsWidgetDetail(leagueOfficialNames.pequenaTaca),
-        ],
-      ),
-      Row(
-        children: [
-          internationalChampionsWidgetDetail(leagueOfficialNames.concacaf),
-          internationalChampionsWidgetDetail(leagueOfficialNames.asia),
-          internationalChampionsWidgetDetail(leagueOfficialNames.africa),
+  return Container(
+    color: AppColors().greyTransparent,
+    width: Sized(context).width,
+    child: Container(
+      margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
 
-          internationalChampionsWidgetDetail(leagueOfficialNames.cupwinners),
-          internationalChampionsWidgetDetail(leagueOfficialNames.latina),
-          internationalChampionsWidgetDetail(leagueOfficialNames.rioSP),
-          internationalChampionsWidgetDetail(leagueOfficialNames.copaNordeste),
-        ],
-      )
+            Row(
+              children: [
 
-    ],
+                internationalChampionsWidgetDetail(leagueOfficialNames.mundial),
+                const SizedBox(width: 16),
+                internationalChampionsWidgetDetail(leagueOfficialNames.championsLeague),
+                internationalChampionsWidgetDetail(leagueOfficialNames.libertadores),
+                const SizedBox(width: 16),
+
+                internationalChampionsWidgetDetail(leagueOfficialNames.europaLeagueOficial),
+                internationalChampionsWidgetDetail(leagueOfficialNames.copaSulAmericana),
+
+                internationalChampionsWidgetDetail(leagueOfficialNames.pequenaTaca),
+                internationalChampionsWidgetDetail(leagueOfficialNames.concacaf),
+                internationalChampionsWidgetDetail(leagueOfficialNames.asia),
+                internationalChampionsWidgetDetail(leagueOfficialNames.africa),
+
+                internationalChampionsWidgetDetail(leagueOfficialNames.cupwinners),
+                internationalChampionsWidgetDetail(leagueOfficialNames.latina),
+                internationalChampionsWidgetDetail(leagueOfficialNames.rioSP),
+                internationalChampionsWidgetDetail(leagueOfficialNames.copaNordeste),
+              ],
+            ),
+
+          ],
+        ),
+      ),
+    ),
   );
 }
 Widget internationalChampionsWidgetDetail(String internationalLeagueName){
@@ -262,7 +254,7 @@ Widget internationalChampionsWidgetDetail(String internationalLeagueName){
       onTap: (){
         bottomSheetShowLeagueClassification(context, clubsID);
       },
-      child: Row(
+      child: Column(
           children: [
             Image.asset(FIFAImages().campeonatoLogo(internationalLeagueName),height: 40,width: 40),
             Images().getEscudoWidget(team1,40,40),
@@ -273,84 +265,5 @@ Widget internationalChampionsWidgetDetail(String internationalLeagueName){
   );
 }
 
-Widget resumeLeague(String leagueName){
-    List classification = [];
-    if(int.parse(selectedYear) < ano ){
-      classification = globalHistoricLeagueClassification[int.parse(selectedYear)][leagueName];
-    }else{
-      classification = Classification(leagueIndex: leaguesIndexFromName[leagueName]).classificationClubsIndexes;
-    }
-
-
-    List classificationNames = [];
-    for (var clubID in classification) { classificationNames.add(clubsAllNameList[clubID]); }
-
-
-
-    return Container(
-      margin: const EdgeInsets.all(2),
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.white,
-          width: 1, //                   <--- border width here
-        ),
-      ),
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: (){
-            if(int.parse(selectedYear) == ano){
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => TableNacional(chosenLeagueIndex: leaguesIndexFromName[leagueName])));
-            }else{
-                bottomSheetShowLeagueClassification(context, classificationNames);
-            }
-            },
-          child: Stack(
-            children: [
-
-              SizedBox(
-                width: Sized(context).width*0.45,
-                child: Center(
-                  child: SizedBox(
-                    height: 70,width: 90,
-                    child: Opacity(
-                      opacity: 0.2,
-                      child: AspectRatio(
-                        aspectRatio: 350 / 451,
-                        child: Container(
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                fit: BoxFit.fitWidth,
-                                alignment: FractionalOffset.center,
-                                image: AssetImage(FIFAImages().campeonatoLogo(leagueName)),
-                              )
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-
-              Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    const SizedBox(width: 10),
-                    classificationNames.isNotEmpty ? Images().getEscudoWidget(classificationNames[0],45,45) : Container(),
-                    classificationNames.length>=2 ? Images().getEscudoWidget(classificationNames[1],30,30) : Container(),
-                    classificationNames.length>=3 ? Images().getEscudoWidget(classificationNames[2],20,20) : Container(),
-                    classificationNames.length>=4 ? Images().getEscudoWidget(classificationNames[3],20,20) : Container(),
-                    classificationNames.length>=5 ? Images().getEscudoWidget(classificationNames[4],20,20) : Container(),
-                    const SizedBox(width: 10),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
 
 }
