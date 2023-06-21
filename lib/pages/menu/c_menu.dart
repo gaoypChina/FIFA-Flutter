@@ -2,10 +2,9 @@ import 'package:fifa/classes/coach/coach_best_results.dart';
 import 'package:fifa/classes/functions/check_internet.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/match/adversario.dart';
 import 'package:fifa/classes/match/confronto.dart';
-import 'package:fifa/classes/result_game/result_game_nacional.dart';
+import 'package:fifa/classes/result_game/result_match.dart';
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/simulate/simulate_functions.dart';
 import 'package:fifa/global_variables.dart';
@@ -214,38 +213,6 @@ class _MenuState extends State<Menu> {
 ////////////////////////////////////////////////////////////////////////////
 //                               FUNCTIONS                                //
 ////////////////////////////////////////////////////////////////////////////
-  simulateFunction() async{
-
-    //SIMULA JOGOS
-    Simulate().startVariables();
-    await Simulate().simulateWeek(simulMyMatch: true);
-
-    //**Só funciona se ja tiver simulado todos os outros jogos
-    //TODO: SÓ CONTA RESULTADO DAS LIGAS NACIONAIS
-    //Tem uma dependencia pelo ResultGameNacional
-    if(Semana(semanasJogosNacionais[rodada-1]).isJogoCampeonatoNacional){
-      int nRodadasMyLeague =  League(index: myClass.leagueID).nClubs-1;
-      ResultGameNacional show = ResultGameNacional(
-          rodadaLocal: rodada >= nRodadasMyLeague  ? nRodadasMyLeague : rodada,
-          club: Club(index: myClass.clubID)
-      );
-      Confronto confronto = Confronto(
-          clubName1: myClass.clubName,
-          clubName2: adversario.clubName,
-      );
-      confronto.setGoals(goal1: show.gol1, goal2: show.gol2);
-      CoachBestResults coachBestResults = CoachBestResults();
-      coachBestResults.updateSequence(confronto);
-    }
-
-    customToast('Done');
-    if(semana > globalUltimaSemana){
-      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const EndYear()));
-    }else{
-      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Menu()));
-    }
-
-  }
 
   popupexpectativaCall(){
     if(semana == testInitRodada){

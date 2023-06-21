@@ -4,6 +4,7 @@ import 'package:fifa/classes/match/result_dict.dart';
 import 'package:fifa/classes/mundial.dart';
 import 'package:fifa/classes/result_game/result_game_internacional.dart';
 import 'package:fifa/classes/result_game/result_game_nacional.dart';
+import 'package:fifa/classes/semana.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/background_color/background_score.dart';
 import 'package:fifa/theme/colors.dart';
@@ -20,10 +21,11 @@ class ResultMatch{
   late int weekLocal;
   late int clubID;
   late Club club;
+  late String clubName1;
   late String clubName2;
   late int clubID2;
-  int gol1 = 0;
-  int gol2 = 0;
+  int goal1 = -1;
+  int goal2 = -1;
   int victoryDrawLoss310 = 0;
   String placar = '';
   Color backgroundColor = AppColors().greyTransparent;
@@ -42,6 +44,65 @@ class ResultMatch{
     competitionName = LeagueOfficialNames().resto;
   }
 
+  void convertResultGames(dynamic show){
+    competitionName = show.competitionName;
+    weekLocal = show.weekLocal;
+    visitante = show.visitante;
+    clubID = show.clubID;
+    club = show.club;
+    clubName1 = show.clubName1;
+    clubName2 = show.clubName2;
+    clubID2 = show.clubID2;
+    goal1 = show.goal1;
+    goal2 = show.goal2;
+    victoryDrawLoss310 = show.victoryDrawLoss310;
+    placar = show.placar;
+    backgroundColor = show.backgroundColor;
+    hasAdversary = show.hasAdversary;
+    isAlreadyPlayed = show.isAlreadyPlayed;
+  }
+
+  void getWeekResult(Semana weekLocal, Club club){
+
+    if(weekLocal.isJogoCampeonatoNacional){
+      ResultGameNacional show = ResultGameNacional(
+          rodadaLocal: weekLocal.rodadaNacional,
+          club: club
+      );
+      if(show.hasAdversary){
+        convertResultGames(show);
+      }
+
+    }else if(weekLocal.isJogoCopa){
+      ResultMatch show = ResultMatch();
+      show.fromCopa(weekLocal.week, club);
+      if(show.hasAdversary){
+        convertResultGames(show);
+      }
+
+    }else if(weekLocal.isJogoCampeonatoInternacional){
+      ResultGameInternacional show = ResultGameInternacional(
+          weekLocal: weekLocal.week,
+          club: club,
+          competitionName: club.internationalLeagueNamePlaying
+      );
+      if(show.hasAdversary){
+        convertResultGames(show);
+      }
+
+    }else if(weekLocal.isJogoMataMataInternacional){
+      ResultGameInternacional show = ResultGameInternacional(
+          weekLocal: weekLocal.week,
+          club: club,
+          competitionName: club.internationalLeagueNamePlaying
+      );
+      if(show.hasAdversary){
+        convertResultGames(show);
+      }
+    }
+
+  }
+
   void fromResultGameNacional(ResultGameNacional show){
     isAlreadyPlayed = show.isAlreadyPlayed;
     hasAdversary = show.hasAdversary;
@@ -53,8 +114,8 @@ class ResultMatch{
       club = show.club;
       clubName2 = show.clubName2;
       clubID2 = show.clubID2;
-      gol1 = show.gol1;
-      gol2 = show.gol2;
+      goal1 = show.goal1;
+      goal2 = show.goal2;
       placar = show.placar;
     }
     victoryDrawLoss310 = show.victoryDrawLoss310;
@@ -72,8 +133,8 @@ class ResultMatch{
       club = show.club;
       clubName2 = show.clubName2;
       clubID2 = show.clubID2;
-      gol1 = show.gol1;
-      gol2 = show.gol2;
+      goal1 = show.goal1;
+      goal2 = show.goal2;
       placar = show.placar;
     }
     victoryDrawLoss310 = show.victoryDrawLoss310;
@@ -114,11 +175,11 @@ class ResultMatch{
       isAlreadyPlayed = true;
     }
     if(isAlreadyPlayed){
-      gol1 = mundialFinal.confronto.goal1;
-      gol2 = mundialFinal.confronto.goal2;
-      placar = gol1.toString() + ' x '+ gol2.toString();
-      victoryDrawLoss310 = getVictoryDrawLoss310(gol1, gol2);
-      backgroundColor = colorResultBackground(gol1, gol2);
+      goal1 = mundialFinal.confronto.goal1;
+      goal2 = mundialFinal.confronto.goal2;
+      placar = goal1.toString() + ' x '+ goal2.toString();
+      victoryDrawLoss310 = getVictoryDrawLoss310(goal1, goal2);
+      backgroundColor = colorResultBackground(goal1, goal2);
     }
 
     visitante = false;
@@ -139,37 +200,52 @@ class ResultMatch{
       hasAdversary = true;
 
       if(match[ResultDict().keyTeamName1] == club.name){
-        club = club;
+        this.club = club;
+        clubName1 = match[ResultDict().keyTeamName1];
         clubID = club.index;
+
         clubName2 = match[ResultDict().keyTeamName2];
         clubID2 = clubsAllNameList.indexOf(clubName2);
 
         if(match.containsKey(ResultDict().keyGol1)) {
-          gol1 = match[ResultDict().keyGol1];
-          gol2 = match[ResultDict().keyGol2];
+          goal1 = match[ResultDict().keyGol1];
+          goal2 = match[ResultDict().keyGol2];
         }
       }else if(match[ResultDict().keyTeamName2] == club.name){
-        String clubName = match[ResultDict().keyTeamName1];
-        clubID = clubsAllNameList.indexOf(clubName);
-        club = Club(index: clubID);
-        clubName2 = club.name;
+        clubName1 = match[ResultDict().keyTeamName1];
+        clubID = clubsAllNameList.indexOf(clubName1);
+        this.club = Club(index: clubID);
+
+        clubName2 = match[ResultDict().keyTeamName2];
         clubID2 = club.index;
         visitante = true;
+
         if(match.containsKey(ResultDict().keyGol1)) {
-          gol1 = match[ResultDict().keyGol2];
-          gol2 = match[ResultDict().keyGol1];
+          goal1 = match[ResultDict().keyGol1];
+          goal2 = match[ResultDict().keyGol2];
         }
       }
 
       if(match.containsKey(ResultDict().keyGol1)){
-        placar = gol1.toString() + ' x '+ gol2.toString();
-        victoryDrawLoss310 = getVictoryDrawLoss310(gol1, gol2);
-        backgroundColor = colorResultBackground(gol1, gol2);
+        placar = goal1.toString() + ' x '+ goal2.toString();
+        victoryDrawLoss310 = getVictoryDrawLoss310(goal1, goal2);
+        backgroundColor = colorResultBackground(goal1, goal2);
         isAlreadyPlayed = true;
       }
     }
 
     weekLocal = week;
 
+  }
+
+  void invertTeams(){
+    String aux = clubName1;clubName1 = clubName2;clubName2 = aux;
+    int auxInt = clubID;clubID = clubID2;clubID2 = auxInt;
+    if(isAlreadyPlayed){
+        auxInt = goal1;goal1 = goal2;goal2 = auxInt;
+        placar = goal1.toString() + ' x '+ goal2.toString();
+        victoryDrawLoss310 = getVictoryDrawLoss310(goal1, goal2);
+        backgroundColor = colorResultBackground(goal1, goal2);
+    }
   }
 }

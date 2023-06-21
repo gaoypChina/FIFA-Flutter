@@ -9,6 +9,7 @@ import 'package:fifa/classes/match/adversario.dart';
 import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/result_game/result_game_nacional.dart';
+import 'package:fifa/classes/result_game/result_match.dart';
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/simulate/simulate_functions.dart';
 import 'package:fifa/global_variables.dart';
@@ -213,22 +214,22 @@ simulateFunction(Adversario adversario, My myClass) async{
   //**Só funciona se ja tiver simulado todos os outros jogos
   //TODO: SÓ CONTA RESULTADO DAS LIGAS NACIONAIS
   //Tem uma dependencia pelo ResultGameNacional
-  if(Semana(semanasJogosNacionais[rodada-1]).isJogoCampeonatoNacional){
-    int nRodadasMyLeague =  League(index: myClass.leagueID).nClubs-1;
-    ResultGameNacional show = ResultGameNacional(
-        rodadaLocal: rodada >= nRodadasMyLeague  ? nRodadasMyLeague : rodada,
-        club: Club(index: myClass.clubID)
-    );
-    Confronto confronto = Confronto(
-        clubName1: myClass.clubName,
-        clubName2: adversario.clubName,
-    );
-    confronto.setGoals(goal1: show.gol1, goal2: show.gol2);
+
+  ResultMatch resultMatch = ResultMatch();
+  resultMatch.getWeekResult(Semana(semana-1), Club(index: myClass.clubID));
+  if(resultMatch.isAlreadyPlayed) {
+    Confronto confronto = Confronto(clubName1: resultMatch.clubName1, clubName2: resultMatch.clubName2);
+    confronto.setGoals(goal1: resultMatch.goal1, goal2: resultMatch.goal2);
+
+    customToast("${confronto.clubName1} ${confronto.goal1} x ${confronto.goal2} ${confronto.clubName2}");
 
     CoachBestResults coachBestResults = CoachBestResults();
     coachBestResults.updateSequence(confronto);
+
+  }else{
+    customToast('Done');
   }
 
-  customToast('Done');
+
 
 }

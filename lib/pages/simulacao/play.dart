@@ -226,7 +226,7 @@ Widget gameVelocitySlider(){
       }else if(semana == globalUltimaSemana){
         Navigator.of(context).push(MaterialPageRoute(builder: (context) => const EndYear()));
       }else{
-        Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => AfterPlay(adversarioClubID: widget.adversarioClubID,visitante: widget.visitante,gol1:myMatchSimulation.meuGolMarcado,gol2:myMatchSimulation.meuGolSofrido)));
+        Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => AfterPlay(adversarioClubID: widget.adversarioClubID,visitante: widget.visitante,goal1:myMatchSimulation.meuGolMarcado,goal2:myMatchSimulation.meuGolSofrido)));
       }
 
       //SIMULA OUTRAS PARTIDAS

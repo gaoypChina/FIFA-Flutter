@@ -9,8 +9,8 @@ class TableNational{
   late League leagueClass;
   late int rodadaMatch;
   late bool showGoals;
-  int gol1=0;
-  int gol2=0;
+  int goal1=0;
+  int goal2=0;
   String teamName1 = "";
   String teamName2 = "";
 
@@ -28,8 +28,8 @@ class TableNational{
   if(showGoals) {
     try {
       List results = globalHistoricLeagueGoalsAll[rodadaMatch][chosenLeagueIndex];
-      gol1 = results[chaveClub1];
-      gol2 = results[chaveClub2];
+      goal1 = results[chaveClub1];
+      goal2 = results[chaveClub2];
     }catch(e){
       showGoals = false;
     }

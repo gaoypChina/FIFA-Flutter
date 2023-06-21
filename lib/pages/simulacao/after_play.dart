@@ -37,10 +37,10 @@ class PlayerGrade{
 class AfterPlay extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
   final int adversarioClubID;
-  final int gol1;
-  final int gol2;
+  final int goal1;
+  final int goal2;
   final bool visitante;
-  const AfterPlay({Key? key, required this.adversarioClubID, required this.visitante, required this.gol1, required this.gol2}) : super(key: key);
+  const AfterPlay({Key? key, required this.adversarioClubID, required this.visitante, required this.goal1, required this.goal2}) : super(key: key);
 
   @override
   State<AfterPlay> createState() => _AfterPlayState();
@@ -202,8 +202,8 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
                 : Image.asset(FIFAImages().campeonatoLogo(myClass.getMyInternationalLeague()),height: 35,width: 35),
             Text(textRodada,style: EstiloTextoBranco.text16),
             widget.visitante
-                ? Text(widget.gol2.toString() +'X'+ widget.gol1.toString() ,style: EstiloTextoBranco.text30)
-                : Text(widget.gol1.toString()  +'X'+ widget.gol2.toString() ,style: EstiloTextoBranco.text30),
+                ? Text(widget.goal2.toString() +'X'+ widget.goal1.toString() ,style: EstiloTextoBranco.text30)
+                : Text(widget.goal1.toString()  +'X'+ widget.goal2.toString() ,style: EstiloTextoBranco.text30),
           ],
         ),
 
@@ -218,7 +218,7 @@ Widget goalsWidget(){
   List<GoalMyMatch> goals = [];
   List<GoalMyMatch> goals1 = [];
   List<GoalMyMatch> goals2 = [];
-  for(int i=0; i < widget.gol1;i++){
+  for(int i=0; i < widget.goal1;i++){
     if(!widget.visitante){
       GoalMyMatch goal1 = GoalMyMatch();
       goal1.getMyGoal(i);
@@ -229,7 +229,7 @@ Widget goalsWidget(){
       goals2.add(goal2);
     }
   }
-  for(int i=0; i< widget.gol2;i++){
+  for(int i=0; i< widget.goal2;i++){
     if(widget.visitante){
       GoalMyMatch goal1 = GoalMyMatch();
       goal1.getAdvGoal(i);
@@ -432,8 +432,8 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
         rodadaMatch: rodada,
         numeroDoConfronto: numeroDoConfronto
     );
-    TextStyle style1 = matchStyle1(tableNational.gol1, tableNational.gol2, 14);
-    TextStyle style2 = matchStyle2(tableNational.gol1, tableNational.gol2, 14);
+    TextStyle style1 = matchStyle1(tableNational.goal1, tableNational.goal2, 14);
+    TextStyle style2 = matchStyle2(tableNational.goal1, tableNational.goal2, 14);
 
     return Container(
       margin: const EdgeInsets.only(bottom: 4),
@@ -449,7 +449,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
                     color:(myClass.clubName == tableNational.teamName1) ?Colors.purple:Colors.transparent,
                     child: Text(tableNational.teamName1,style:style1)),
                 Images().getEscudoWidget(tableNational.teamName1,25,25),
-                Text(tableNational.gol1.toString(),style:style1),
+                Text(tableNational.goal1.toString(),style:style1),
               ],
             ),
           ),
@@ -460,7 +460,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text(tableNational.gol2.toString(),style:style2),
+                Text(tableNational.goal2.toString(),style:style2),
                 Images().getEscudoWidget(tableNational.teamName2,25,25),
                 Container(
                     padding: const EdgeInsets.all(1),

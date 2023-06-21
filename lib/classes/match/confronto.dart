@@ -31,6 +31,14 @@ class Confronto{
 
   }
 
+  void printar(){
+    if(hasGoals){
+      print("$clubName1 $goal1 x $goal2 $clubName2");
+    }else{
+      print("$clubName1 x $clubName2");
+    }
+  }
+
   void setGoals({required int goal1,required int goal2}){
     hasGoals = true;
     this.goal1 = goal1;
@@ -66,6 +74,23 @@ class Confronto{
       winnerName = clubName2;
     }
 
+  }
+
+  void invertTeams(){
+    String aux = clubName1;clubName1 = clubName2;clubName2 = aux;
+    int auxInt = clubID1;clubID1 = clubID2;clubID2 = auxInt;
+    if(hasGoals){
+    auxInt = goal1;goal1 = goal2;goal2 = auxInt;
+      if(result == victory){
+        result = loss;
+      }
+      else if(result == loss){
+        result = victory;
+      }
+    }
+    if(hasPenaltis){
+      auxInt = penaltis1;penaltis1 = penaltis2;penaltis2 = auxInt;
+    }
   }
 
 

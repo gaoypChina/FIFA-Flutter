@@ -30,8 +30,8 @@ Widget wMatchsTable(int rodadaMatch, League leagueClass){
 }
 
 TableRow wRowMatchesVersus(TableNational tableNational) {
-  TextStyle style1 = matchStyle1(tableNational.gol1, tableNational.gol2, 14);
-  TextStyle style2 = matchStyle2(tableNational.gol1, tableNational.gol2, 14);
+  TextStyle style1 = matchStyle1(tableNational.goal1, tableNational.goal2, 14);
+  TextStyle style2 = matchStyle2(tableNational.goal1, tableNational.goal2, 14);
 
   My my = My();
   return TableRow(
@@ -41,10 +41,10 @@ TableRow wRowMatchesVersus(TableNational tableNational) {
           child: Text(tableNational.teamName1,textAlign:TextAlign.end,style: style1)),
       Images().getEscudoWidget(tableNational.teamName1,22,22),
       (tableNational.showGoals)
-          ? Text(tableNational.gol1.toString(),textAlign:TextAlign.center,style: style1) : Container(),
+          ? Text(tableNational.goal1.toString(),textAlign:TextAlign.center,style: style1) : Container(),
       const Text('x',style: EstiloTextoBranco.text16,textAlign: TextAlign.center,),
       (tableNational.showGoals)
-          ? Text(tableNational.gol2.toString(),textAlign: TextAlign.center,style: style2) : Container(),
+          ? Text(tableNational.goal2.toString(),textAlign: TextAlign.center,style: style2) : Container(),
       Images().getEscudoWidget(tableNational.teamName2,22,22),
       Container(
           color: tableNational.teamName2 == my.clubName ? Colors.teal : Colors.transparent,

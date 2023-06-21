@@ -100,6 +100,9 @@ class _CalendarState extends State<Calendar> {
       ResultMatch show = ResultMatch();
       show.fromCopa(weekLocal.week, myClub);
       if(show.hasAdversary) {
+        if(show.clubName2 == myClub.name){
+          show.invertTeams();
+        }
         return wCalendarAdvBox(context, weekLocal.week, show);
       }else{
         return wCalendarNotPlayWidget(

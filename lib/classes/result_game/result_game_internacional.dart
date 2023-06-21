@@ -15,10 +15,11 @@ class ResultGameInternacional{
   bool visitante = false;
   late int clubID;
   late Club club;
+  late String clubName1;
   late String clubName2;
   late int clubID2;
-  int gol1 = 0;
-  int gol2 = 0;
+  int goal1 = 0;
+  int goal2 = 0;
   int victoryDrawLoss310 = 0;
   String placar = '';
   Color backgroundColor = AppColors().greyTransparent;
@@ -35,6 +36,7 @@ class ResultGameInternacional{
   ResultGameInternacional({required this.weekLocal, required this.club, required this.competitionName}){
 
     Semana weekClass = Semana(weekLocal);
+    clubName1 = club.name;
     clubID = club.index;
     //FASE DE GRUPOS
     //Check every group if myTeam Is Playing
@@ -47,7 +49,8 @@ class ResultGameInternacional{
               rodadaNumber: rodadaNumber,
               groupNumber: groupNumber,
               nConfronto: nConfronto,
-              competitionName: competitionName);
+              competitionName: competitionName
+          );
 
           isAlreadyPlayed = matchResultInternational.confronto.hasGoals;
           //SE SOU O TIME 1
@@ -85,8 +88,8 @@ class ResultGameInternacional{
             clubID2 = confronto.clubID2;
             clubName2 = Club(index: clubID2).name;
             if(isAlreadyPlayed){
-              gol1 = confronto.goal1;
-              gol2 = confronto.goal2;
+              goal1 = confronto.goal1;
+              goal2 = confronto.goal2;
             }
             hasAdversary = true;
           }
@@ -95,14 +98,14 @@ class ResultGameInternacional{
             clubID2 = confronto.clubID1;
             clubName2 = Club(index: clubID2).name;
             if(isAlreadyPlayed){
-              gol1 = confronto.goal2;
-              gol2 = confronto.goal1;
+              goal1 = confronto.goal2;
+              goal2 = confronto.goal1;
             }
             hasAdversary = true;
           }
 
           if(isAlreadyPlayed){
-            placar = gol1.toString() + ' x '+ gol2.toString();
+            placar = goal1.toString() + ' x '+ goal2.toString();
           }else{
             placar = '';
           }
@@ -123,8 +126,8 @@ class ResultGameInternacional{
         backgroundColor = Colors.black87;
         victoryDrawLoss310 = -1;
       }else{
-        backgroundColor = colorResultBackground(gol1,gol2);
-        victoryDrawLoss310 = getVictoryDrawLoss310(gol1, gol2);
+        backgroundColor = colorResultBackground(goal1,goal2);
+        victoryDrawLoss310 = getVictoryDrawLoss310(goal1, goal2);
       }
     }
 
@@ -134,11 +137,11 @@ class ResultGameInternacional{
     visitante = false;
     clubID2 = matchResultInternational.confronto.clubID2;
     clubName2 = Club(index: clubID2).name;
-    gol1 = matchResultInternational.confronto.goal1;
-    gol2 = matchResultInternational.confronto.goal2;
     hasAdversary = true;
-    if(isAlreadyPlayed){
-      placar = gol1.toString() + ' x '+ gol2.toString();
+    if(matchResultInternational.confronto.hasGoals){
+      goal1 = matchResultInternational.confronto.goal1;
+      goal2 = matchResultInternational.confronto.goal2;
+      placar = goal1.toString() + ' x '+ goal2.toString();
     }else{
       placar = '';
     }
@@ -147,14 +150,15 @@ class ResultGameInternacional{
     visitante = true;
     clubID2 = matchResultInternational.confronto.clubID1;
     clubName2 = Club(index: clubID2).name;
-    gol1 = matchResultInternational.confronto.goal2;
-    gol2 = matchResultInternational.confronto.goal1;
-    hasAdversary = true;
-    if(isAlreadyPlayed){
-      placar = gol1.toString() + ' x '+ gol2.toString();
+
+    if(matchResultInternational.confronto.hasGoals){
+      goal1 = matchResultInternational.confronto.goal2;
+      goal2 = matchResultInternational.confronto.goal1;
+      placar = goal1.toString() + ' x '+ goal2.toString();
     }else{
       placar = '';
     }
+
   }
 
 
