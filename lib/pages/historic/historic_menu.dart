@@ -85,7 +85,7 @@ class _HistoricMenuState extends State<HistoricMenu> {
                               'Jogadores',
                               Image.asset('assets/icons/generic_user.png',height: imageSize,),
                                   (){
-                                if(ano>anoInicial){
+                                if(ano> anoInicial){
                                   Navigator.push(context,MaterialPageRoute(builder: (context) => const PlayersHistoric()));
                                 }else{
                                   customToast('Sem dados. Jogue 1 temporada completa');

@@ -224,6 +224,7 @@ simulateFunction(Adversario adversario, My myClass) async{
         clubName2: adversario.clubName,
     );
     confronto.setGoals(goal1: show.gol1, goal2: show.gol2);
+
     CoachBestResults coachBestResults = CoachBestResults();
     coachBestResults.updateSequence(confronto);
   }

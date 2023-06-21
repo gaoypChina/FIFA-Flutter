@@ -85,7 +85,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                   child: ListView.builder(
                       padding: EdgeInsets.zero,
                       itemCount: showList.length,
-                      itemBuilder: (c,i)=>clubRow(showList.elementAt(i))
+                      itemBuilder: (c,i) => clubRow(showList.elementAt(i))
                   ),
                 ),
               ),

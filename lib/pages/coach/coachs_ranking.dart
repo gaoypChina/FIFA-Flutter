@@ -25,7 +25,7 @@ class _CoachRankingState extends State<CoachRanking> {
     organizarRanking();
     super.initState();
   }
-  organizarRanking() async {
+  void organizarRanking() async {
     await controller.getStoredDataList();
     setState(() {});
   }

@@ -1,4 +1,3 @@
-import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/historic/historic_champions_league.dart';
 import 'package:fifa/classes/image_class.dart';
@@ -7,12 +6,10 @@ import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/historic/year_resume/widgets/current_leagues_resume.dart';
-import 'package:fifa/pages/table/table_nacional.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/historic_champions/historic_champions.dart';
-import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_divisions.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/back_button.dart';
@@ -55,26 +52,7 @@ class _YearResumeState extends State<YearResume> {
           Column(
             children: [
 
-              Container(
-                color: ClubDetails().getColors(My().clubName).primaryColor.withOpacity(0.3),
-                child: Row(
-                  children: [
-                    backButtonText(context, 'Resumo do ano', false),
-                    const Spacer(),
-                    Container(
-                      padding: const EdgeInsets.only(top: 30.0),
-                      child: dropDownButton(
-                          selectedYearStr: selectedYear,
-                          possibleYears: possibleYears,
-                          setStateFunc: (value){
-                            selectedYear = value.toString();
-                            setState(() {});
-                          }),
-                    ),
-
-                  ],
-                ),
-              ),
+              appBar(),
 
               int.parse(selectedYear) < anoInicial ?  SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -121,6 +99,29 @@ class _YearResumeState extends State<YearResume> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Widget appBar(){
+    return Container(
+      color: ClubDetails().getColors(My().clubName).primaryColor.withOpacity(0.3),
+      child: Row(
+        children: [
+          backButtonText(context, 'Resumo do ano', false),
+          const Spacer(),
+          Container(
+            padding: const EdgeInsets.only(top: 30.0),
+            child: dropDownButton(
+                selectedYearStr: selectedYear,
+                possibleYears: possibleYears,
+                setStateFunc: (value){
+                  selectedYear = value.toString();
+                  setState(() {});
+                }),
+          ),
+
+        ],
+      ),
+    );
+  }
+
   Widget leagueHistoric(String leagueName){
     List classificationNames = [];
     try {
@@ -227,6 +228,7 @@ Widget internationalChampionsSelection(){
   );
 }
 Widget internationalChampionsWidgetDetail(String internationalLeagueName){
+
     late String team1;
     late String team2;
     late List clubsID;
@@ -247,7 +249,6 @@ Widget internationalChampionsWidgetDetail(String internationalLeagueName){
     }
 
 
-
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 3.0),
     child: GestureDetector(
@@ -256,7 +257,7 @@ Widget internationalChampionsWidgetDetail(String internationalLeagueName){
       },
       child: Column(
           children: [
-            Image.asset(FIFAImages().campeonatoLogo(internationalLeagueName),height: 40,width: 40),
+            Images().getLeagueLogo(internationalLeagueName, 40, 40),
             Images().getEscudoWidget(team1,40,40),
             Images().getEscudoWidget(team2,20,20),
           ],

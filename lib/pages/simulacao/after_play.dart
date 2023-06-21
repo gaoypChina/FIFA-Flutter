@@ -247,14 +247,16 @@ Widget goalsWidget(){
     return
         Column(
           children: [
-            for(int i=0; i<goals.length;i++)
+            for(int i=0; i<goals.length; i++)
               goalRow(goals[i], goals2.contains(goals[i])),
           ],
         );
 }
 
 Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
-    double paddingSize = 6;
+
+  double paddingSize = 6;
+
   return
     Row(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -366,7 +368,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
         child: ListView.builder(
             padding: EdgeInsets.zero,
             itemCount: classificationClubsIndexes.length,
-            itemBuilder: (c,i)=>classificationRow(i, classificationClubsIndexes[i])
+            itemBuilder: (c,i) => classificationRow(i, classificationClubsIndexes[i])
         ),
       );
   }

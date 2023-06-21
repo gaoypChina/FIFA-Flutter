@@ -98,7 +98,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                         for(int year=ano-1;year>=anoInicial;year--)
                           yearRow(year),
 
-                        for(int year=ano-1;year>ano-(anoInicial-1950)-1;year--)
+                        for(int year=ano-1;year> ano-(anoInicial-1950)-1;year--)
                           yearRowPast(year),
                       ],
                     ),
@@ -110,7 +110,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                       for(int year=ano-1;year>=anoInicial;year--)
                         yearRow(year),
 
-                      for(int year=ano-1;year>ano-(anoInicial-1950)-1;year--)
+                      for(int year=ano-1;year> ano-(anoInicial-1950)-1;year--)
                         yearRowPast(year),
                     ],
                   ),

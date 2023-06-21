@@ -86,25 +86,26 @@ class CoachBestResults{
     }
   }
   saveCoachResultsVictory(Confronto confronto){
-    My my = My();
+    print("Best");
+    print('${confronto.goal1}x${confronto.goal2}');
     globalHistoricCoachResults['maxVictory'] = '${confronto.goal1}x${confronto.goal2}';
-    globalHistoricCoachResults['maxVictoryClubID'] = my.clubID;
+    globalHistoricCoachResults['maxVictoryClubID'] = confronto.clubID1;
     globalHistoricCoachResults['maxVictoryClubAdvID'] = confronto.clubID2;
   }
   saveCoachResultsLoss(Confronto confronto){
-    My my = My();
+    print("Loss");
+    print('${confronto.goal1}x${confronto.goal2}');
     globalHistoricCoachResults['maxLoss'] = '${confronto.goal1}x${confronto.goal2}';
-    globalHistoricCoachResults['maxLossClubID'] = my.clubID;
+    globalHistoricCoachResults['maxLossClubID'] = confronto.clubID1;
     globalHistoricCoachResults['maxLossClubAdvID'] = confronto.clubID2;
   }
   updateMaxSequenceVictory(Confronto confronto){
     if(confronto.result == confronto.victory){
       globalHistoricCoachResults['actualSequenceVictory']++;
       updateVariables();
-      if(actualSequenceVictory>maxSequenceVictory){
-        My my = My();
+      if(actualSequenceVictory > maxSequenceVictory){
         globalHistoricCoachResults['maxSequenceVictory']++;
-        globalHistoricCoachResults['maxSequenceVictoryClubID'] = my.clubID;
+        globalHistoricCoachResults['maxSequenceVictoryClubID'] = confronto.clubID1;
       }
     }else{
       globalHistoricCoachResults['actualSequenceVictory'] = 0;
@@ -115,10 +116,9 @@ class CoachBestResults{
     if(confronto.result == confronto.victory || confronto.result == confronto.draw){
       globalHistoricCoachResults['actualSequenceNoLosses']++;
       updateVariables();
-      if(actualSequenceNoLosses>maxSequenceNoLosses) {
-        My my = My();
+      if(actualSequenceNoLosses > maxSequenceNoLosses) {
         globalHistoricCoachResults['maxSequenceNoLosses']++;
-        globalHistoricCoachResults['maxSequenceNoLossesClubID'] = my.clubID;
+        globalHistoricCoachResults['maxSequenceNoLossesClubID'] = confronto.clubID1;
       }
     }else{
       globalHistoricCoachResults['actualSequenceNoLosses'] = 0;

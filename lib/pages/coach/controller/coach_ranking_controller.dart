@@ -1,16 +1,19 @@
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/database/local_database/shared_preferences.dart';
 import 'package:fifa/global_variables.dart';
+
 class CoachRankingIndividual{
+
   late String name;
   late String date;
   late int simulationYear;
   late String clubName;
   late int points;
 
-  printData(){
+  void printData(){
     print(name + points.toString()+ date+clubName+simulationYear.toString());
   }
+
 }
 
 
@@ -35,12 +38,12 @@ class CoachRankingController{
 
   }
 
-  getIndividualSavedData(String element){
+  void getIndividualSavedData(String element){
     List variables = element.split('#');
     savedCoachsListSeparated.add(variables);
   }
 
-  listToClassCoach(List variables){
+  void listToClassCoach(List variables){
     coach.name = variables[0];
     coach.date = variables[1];
     coach.simulationYear = int.parse(variables[2]);
@@ -48,7 +51,7 @@ class CoachRankingController{
     coach.points = int.parse(variables[4]);
   }
 
-  orderSavedData() {
+  void orderSavedData() {
     for (int i = 0; i < savedCoachsListSeparated.length; i++) {
       for (int k = i + 1; k < savedCoachsListSeparated.length; k++) {
         //Compare points
@@ -65,7 +68,7 @@ class CoachRankingController{
 
 
   //SAVE DATA
-  saveData() async{
+  void saveData() async{
     savedCoachsList = await SharedPreferenceHelper().getCoachRanking() ?? [];
 
     coach.name = globalCoachName;

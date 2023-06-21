@@ -73,13 +73,13 @@ class KnockoutInternational extends KnockoutStage{
           int goal1 = matchMapIda[ResultDict().keyGol1] + matchMapVolta[ResultDict().keyGol2];
           int goal2 = matchMapIda[ResultDict().keyGol2] + matchMapVolta[ResultDict().keyGol1];
 
-          if(goal1>goal2){
+          if(goal1 > goal2){
             winnerName = team1;
           }
-          else if(goal1<goal2){
+          else if(goal1 < goal2){
             winnerName = team2;
             //PENALTY
-          }else if(goal1==goal2){
+          }else if(goal1 == goal2){
 
             List resultPenalties = setPenalties(team1, team2);
             winnerName = resultPenalties[0];

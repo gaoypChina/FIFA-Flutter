@@ -57,8 +57,8 @@ class OptionsClubs{
         club = Club(index: clubID);
         club.getChaveLeague();
         if(!teams.any((element) => element.index == clubID)
-            && club.getOverall()<myClub.getOverall()+3
-             && club.getOverall()>myClub.getOverall()-4){
+            && club.getOverall() < myClub.getOverall()+3
+             && club.getOverall() > myClub.getOverall()-4){
           clubHasLeague = true;
         }
       }catch(e){

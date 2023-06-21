@@ -22,7 +22,7 @@ popUpExpectativa({required BuildContext context}){
   //TEMPORADA PASSADA
   String expLastSeason = '${Translation(context).text.lastSeason.toUpperCase()}: ';
   late HistoricClubYear myClubData;
-  if(ano>anoInicial){
+  if(ano> anoInicial){
     myClubData = HistoricClubYear(ano-1);
     //TEXTO DO POPUP
     String result = ' ${Translation(context).text.result}: ${myClubData.leaguePosition}º';
@@ -75,7 +75,7 @@ popUpExpectativa({required BuildContext context}){
               ],
             ),
             //RESULTADO DA TEMPORADA ANTERIOR
-            ano>anoInicial
+            ano> anoInicial
                 ? Text('\n$expLastSeason', style: EstiloTextoPreto.text14)
                 : Container(),
           ],
