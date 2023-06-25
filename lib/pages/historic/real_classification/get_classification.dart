@@ -283,7 +283,7 @@ class RealClassification{
     map["Süd Tirol"] = n.sudtirol;
     map["Südtirol"] = n.sudtirol;
     map["Venezia"] = n.venezia;
-
+    //ESPANHA
     map["Alavés"] = n.alaves;
     map["Andorra"] = n.andorra;
     map["Atlético Madrid"] = n.atleticomadrid;
@@ -294,7 +294,7 @@ class RealClassification{
     map["Sporting Gijón"] = n.sportinggijon;
     map["Villarreal B"] = n.villarrealB;
     map["Zaragoza"] = n.zaragoza;
-
+    //FRANÇA
     map["Annecy"] = n.annecy;
     map["Brest"] = n.brest;
     map["Laval"] = n.lavallois;
@@ -302,6 +302,8 @@ class RealClassification{
     map["Nîmes"] = n.nimes;
     map["Niort"] = n.chamois;
     map["Paris Saint-Germain"] = n.psg;
+    map["Reims"] = n.reims;
+    map["Stade de Reims"] = n.reims;
     map["Marseille"] = n.om;
     map["Pau"] = n.pau;
     map["Rodez"] = n.rodez;

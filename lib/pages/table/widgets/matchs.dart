@@ -13,7 +13,7 @@ Widget wMatchsTable(int rodadaMatch, League leagueClass){
     color: AppColors().greyTransparent,
     child: Table(
       columnWidths:
-      (rodadaMatch<=rodada)
+      (rodadaMatch <= rodada)
           ? const {0: FractionColumnWidth(.36),6: FractionColumnWidth(.36)}
           : const {0: FractionColumnWidth(.36),2: FractionColumnWidth(.0),4: FractionColumnWidth(.0),6: FractionColumnWidth(.36)},
       children: [
@@ -30,10 +30,11 @@ Widget wMatchsTable(int rodadaMatch, League leagueClass){
 }
 
 TableRow wRowMatchesVersus(TableNational tableNational) {
+
   TextStyle style1 = matchStyle1(tableNational.goal1, tableNational.goal2, 14);
   TextStyle style2 = matchStyle2(tableNational.goal1, tableNational.goal2, 14);
-
   My my = My();
+
   return TableRow(
     children: [
       Container(

@@ -307,7 +307,7 @@ class PlayerPastClubs{
   map['Maicon'] = {      2001:n.cruzeiro,2004:n.monaco,2006:n.inter,20012:n.mancity,2013:n.roma,2017:n.avai,2018:n.radium,2019:n.criciuma,2020:n.vilanova,2021:retired};
   map['Maldini'] = {     1984:n.milan,2009:retired};
   map['Malouda'] = {     1996:n.chateauroux,2000:n.guingamp,2003:n.lyon,2007:n.chelsea,2013:n.trabzonspor,2014:n.metz,2015:n.odisha,2017:retired};
-  map['Manfred Kaltz'] = {1971:n.hamburgo,1989:n.mullhouse,1990:n.hamburgo,1991:retired};
+  map['Manfred Kaltz'] = {1971:n.hamburgo,1989:n.mulhouse,1990:n.hamburgo,1991:retired};
   map['Maradona'] = {    1976:n.argentinojuniors,1981:n.bocajuniors,1982:n.barcelona,1984:n.napoli,1992:n.sevilla,1993:n.newells,1995:n.bocajuniors, 1997:retired};
   map['Marcelinho Carioca'] = {1988:n.flamengo,1994:n.corinthians,1997:n.valencia,1998:n.corinthians,2001:n.santos,2002:n.gambaOsaka,2003:n.vasco,2004:n.ajaccio,2005:n.brasiliense,2006:n.corinthians,2007:n.santoandre,2010:retired};
   map['Marcelo Gallardo'] = {1993:n.riverplate,1999:n.monaco,2003:n.riverplate,2007:n.psg,2008:n.dcunited,2009:n.riverplate,2010:n.nacional,2011:retired};

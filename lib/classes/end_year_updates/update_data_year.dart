@@ -50,7 +50,7 @@ void funcUpdateDataAfterSeason(){
 }
 
 //HISTORICO
-saveHistoricalData(){
+void saveHistoricalData(){
   //TIMES DAS COPAS
   CupClassification().setClubs();
 
@@ -61,7 +61,7 @@ saveHistoricalData(){
   HistoricMyPlayers().saveMyClubData(My());
   saveBestPlayers();
 }
-saveLeagueResults(){
+void saveLeagueResults(){
   Map allLeaguesClassification = {};
   for(int i=0;i<nLeaguesTotal;i++){
     int leagueID = leaguesListRealIndex[i];
@@ -71,7 +71,7 @@ saveLeagueResults(){
   //salva o resultado final
   globalHistoricLeagueClassification[ano] = allLeaguesClassification;
 }
-saveInternationalLeagueResults(){
+void saveInternationalLeagueResults(){
   Map allLeaguesClassification = {};
   int nInternationalLeagues = InternationalLeagueManipulation().funcNInternationalLeagues();
   for(int i=0;i<nInternationalLeagues;i++){
@@ -83,14 +83,14 @@ saveInternationalLeagueResults(){
   globalHistoricInternationalClassification[ano] = allLeaguesClassification;
   globalHistoricInternationalGoalsAll[ano] = globalInternationalMataMata;
 }
-saveCupResults(){
+void saveCupResults(){
   globalHistoricCup[ano] = globalCup;
 }
-resetInternationalMataMataData(){
+void resetInternationalMataMataData(){
   globalInternationalMataMata = {};
 }
 
-saveBestPlayers(){
+void saveBestPlayers(){
   List best = [];
   List bestID = [];
   List topScorers = [];
@@ -110,7 +110,7 @@ saveBestPlayers(){
   TopScorers().orderAndSave(topScorers, topScorersID);
   TopPlayersOVR().orderAndSave(best, bestID);
 }
-resetOnLoadData(){
+void resetOnLoadData(){
   //Reseta só antes de carregar o database
   //Jogadores
   globalJogadoresIndex = [];
@@ -142,9 +142,10 @@ resetOnLoadData(){
 
 }
 
-resetData(){
-  semana = testInitRodada;//testInitRodada = variavel global
-  rodada = testInitRodada;//testInitRodada = variavel global
+void resetData(){
+
+  semana = testInitRodada; //testInitRodada = variavel global
+  rodada = testInitRodada; //testInitRodada = variavel global
   alreadyChangedClubThisSeason = false;
 
   Negotiation().resetNegotiatedPlayers();
@@ -152,6 +153,8 @@ resetData(){
   //Zera Status dos jogadores
   globalJogadoresHealth = List.filled(globalMaxPlayersPermitted, 1.0);
   globalJogadoresMoral = List.filled(globalMaxPlayersPermitted, globalJogadoresMoralNames[Random().nextInt(globalJogadoresMoralNames.length)]);
+
+  resetHistoric();
 
   globalLeaguePlayers = {
     PlayerStatsKeys().keyPlayerMatchs: List.filled(globalMaxPlayersPermitted, 0),
@@ -181,6 +184,28 @@ resetData(){
   globalClubsInternationalPoints = List.filled(globalMaxClubsPermitted, 0);
   globalClubsInternationalGM = List.filled(globalMaxClubsPermitted, 0);
   globalClubsInternationalGS = List.filled(globalMaxClubsPermitted, 0);
+
+}
+
+void resetHistoric(){
+
+  globalHistoricLeagueGoalsAll = {};
+  globalHistoricLeagueGoalsLastRodada = {};
+
+  globalHistoricLeagueGoalsAll = {};
+  globalHistoricLeagueGoalsLastRodada = {};
+
+  globalHistoricInternationalGoalsAll = {};
+
+  globalHistoricLeagueClassification = {};
+  globalHistoricInternationalClassification = {};
+  globalHistoricCup = {};
+  globalHistoricClassification = {'Mundial': {}};
+
+  globalHistoricMyClub = {};
+  globalHistoricBestPlayers = {};
+  globalHistoricTopScorers = {};
+  globalHistoricCoachResults = {};
 
 }
 
@@ -226,7 +251,7 @@ void atualizaStatusJogadores(){
   newClubClass.getOverall();
 }
 
-saveCoachPoints(){
+void saveCoachPoints(){
   int expectativa = My().getLastYearExpectativa();
   int classificacao = HistoricClubYear(ano).leaguePosition;
   double multiplicationFactor = (expectativa+1)/(classificacao+1); //Ex: 10/3  12/5
