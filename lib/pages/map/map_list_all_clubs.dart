@@ -122,7 +122,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
           child: IconButton(onPressed: (){
             Map map = getLeagueNationalityMap();
             String chosenLeagueName = map.keys.firstWhere((k) => map[k] == selectedCountry, orElse: () => null);
-            Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricLeague(chosenLeagueName: chosenLeagueName)));
+            navigatorPush(context, HistoricLeague(chosenLeagueName: chosenLeagueName));
           }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
         ),
         Padding(padding:const EdgeInsets.only(top:18),
@@ -132,12 +132,14 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
     );
   }
   Widget clubRow(String clubName){
+
     DataGraphics dataGraphics = DataGraphics();
     dataGraphics.getDataNotPlayabale(clubName, ClubDetails().getCountry(clubName), ClubDetails().getState(clubName));
+
     return GestureDetector(
       onTap: (){
           //showClubMap(clubName);
-        Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfileNotPlayable(clubName: clubName)));
+        navigatorPush(context, ClubProfileNotPlayable(clubName: clubName));
         },
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 8),

@@ -34,7 +34,7 @@ class AddRandomPlayer{
 
   List<String> listRandomNames(){
     if(club.nationality == Words.country.england
-    || club.nationality == Words.country.unitedStates
+    || club.nationality == Words.country.unitedstates
         || club.nationality == Words.country.canada
         || club.nationality == Words.country.scotland
         || club.nationality == Words.country.wales){

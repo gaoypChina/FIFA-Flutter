@@ -2557,7 +2557,7 @@ class ClubName{
   String albaniatabak = "Albania Tabak";
   String albpetrol = "Albpetrol Patos";
   String apolonia = "Apolonia Fier";
-  String besa = "Besa";
+  String besa = "Besa Kavaje";
   String beselidhja = "Besëlidhja Lezhë";
   String burreli = "Burreli";
   String bylis = "Bylis";
@@ -4900,7 +4900,7 @@ class ClubName{
   String brunswick = "Brunswick Juventus";
   String carlton = "Carlton";
   String maccabiHakoah = "Maccabi Hakoah Sydney City";
-  String newZealandKnights = "New Zealand Knights";
+  String newzealandKnights = "New Zealand Knights";
   String wollongongWolves = "Wollongong Wolves";
   String southMelbourne = "South Melbourne";
   String melbourneKnights = "Melbourne Knights";

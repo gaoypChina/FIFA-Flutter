@@ -95,7 +95,7 @@ class LeagueOfficialNames{
   String bolivia = 'Campeonato boliviano';
 
   String mexico = 'Liga MX';String estadosUnidos = 'MLS';String canada = 'Liga Canada';
-  String costaRica = 'Liga Costa Rica';String honduras = 'Liga Honduras';String elsalvador = 'Liga El Salvador';
+  String costarica = 'Liga Costa Rica';String honduras = 'Liga Honduras';String elsalvador = 'Liga El Salvador';
   String nicaragua = 'Liga Nicaragua';String guatemala = 'Liga Guatemala';String panama = 'Liga Panamá';
   String belize = 'Liga Belize';
   String jamaica = 'Liga Jamaica';String cuba = 'Liga Cuba';String haiti = 'Liga Haiti';
@@ -265,7 +265,7 @@ class LeagueOfficialNames{
       paraguai, peru, uruguai, venezuela,
 
       estadosUnidos, mexico,
-      costaRica, elsalvador, guatemala, honduras, nicaragua, panama,
+      costarica, elsalvador, guatemala, honduras, nicaragua, panama,
       jamaica, haiti, repdominicana, suriname, trinidad,
 
       bangladesh, camboja, china, coreiaSul, coreiaNorte,
@@ -570,7 +570,7 @@ Map getLeagueNationalityMap(){
     leagueName.suica: Words.country.switzerland,
     leagueName.austria: Words.country.austria,
     leagueName.polonia: Words.country.poland,
-    leagueName.repTcheca: Words.country.czechRepublic,
+    leagueName.repTcheca: Words.country.czechrepublic,
     leagueName.eslovenia: Words.country.slovenia,
     leagueName.eslovaquia: Words.country.slovakia,
     leagueName.turquiaGrecia: Words.country.turkey,
@@ -628,9 +628,9 @@ Map getLeagueNationalityMap(){
 
     //AMERICA DO NORTE
     leagueName.mexico: Words.country.mexico,
-    leagueName.estadosUnidos: Words.country.unitedStates,
+    leagueName.estadosUnidos: Words.country.unitedstates,
     leagueName.canada: Words.country.canada,
-    leagueName.costaRica: Words.country.costaRica,
+    leagueName.costarica: Words.country.costarica,
     leagueName.guatemala: Words.country.guatemala,
     leagueName.haiti: Words.country.haiti,
     leagueName.honduras: Words.country.honduras,
@@ -642,14 +642,14 @@ Map getLeagueNationalityMap(){
     leagueName.panama: Words.country.panama,
     leagueName.repdominicana: Words.country.dominicanRepublic,
     leagueName.suriname: Words.country.suriname,
-    leagueName.trinidad: Words.country.trinidadTobago,
+    leagueName.trinidad: Words.country.trinidadtobago,
     leagueName.bahamas: Words.country.bahamas,
     leagueName.granada: Words.country.grenada,
     leagueName.barbados: Words.country.barbados,
 
     //ASIA
     leagueName.china: Words.country.china,
-    leagueName.coreiaSul: Words.country.southKorea,
+    leagueName.coreiaSul: Words.country.southkorea,
     leagueName.japao: Words.country.japan,
     leagueName.coreiaNorte: Words.country.northKorea,
 
@@ -658,7 +658,7 @@ Map getLeagueNationalityMap(){
     leagueName.turcomenistao: Words.country.turkmenistan,
     leagueName.quirguistao: Words.country.kyrgyzstan,
 
-    leagueName.arabia: Words.country.southArabia,
+    leagueName.arabia: Words.country.southarabia,
     leagueName.bahrein: Words.country.bahrein,
     leagueName.qatar: Words.country.qatar,
     leagueName.eau: Words.country.uae,
@@ -694,7 +694,7 @@ Map getLeagueNationalityMap(){
 
     //OCEANIA
     leagueName.australia: Words.country.australia,
-    leagueName.novazelandia: Words.country.newZealand,
+    leagueName.novazelandia: Words.country.newzealand,
     leagueName.fiji: Words.country.fiji,
     leagueName.papua: Words.country.papua,
     leagueName.samoa: Words.country.samoa,
@@ -712,7 +712,7 @@ Map getLeagueNationalityMap(){
     leagueName.botswana: Words.country.botswana,
     leagueName.burkina: Words.country.burkina,
     leagueName.burundi: Words.country.burundi,
-    leagueName.caboverde: Words.country.capeVerde,
+    leagueName.caboverde: Words.country.capeverde,
     leagueName.camaroes: Words.country.cameroon,
     leagueName.chade: Words.country.chad,
     leagueName.costamarfim: Words.country.ivorycoast,
@@ -747,7 +747,7 @@ Map getLeagueNationalityMap(){
     leagueName.uganda: Words.country.uganda,
     leagueName.zambia: Words.country.zambia,
     leagueName.zimbabwe: Words.country.zimbabwe,
-    leagueName.africaSul: Words.country.southAfrica,
+    leagueName.africaSul: Words.country.southafrica,
 
 
 

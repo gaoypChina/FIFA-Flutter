@@ -137,9 +137,6 @@ class _FieldDraggableState extends State<FieldDraggable> {
                   ),
                 ),
 
-                Text('${Translation(context).text.avgAge}: '+myClub.getAverageAge().toStringAsFixed(2), style: EstiloTextoBranco.text14),
-                Text('${Translation(context).text.player}: '+myClub.nJogadores.toString(), style: EstiloTextoBranco.text14),
-
                 //ANALISE DO ELENCO
                 analiseElenco(context, myClub),
 

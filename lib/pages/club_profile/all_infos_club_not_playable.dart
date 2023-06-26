@@ -8,6 +8,7 @@ import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:fifa/pages/historic/historic_best_players.dart';
 import 'package:fifa/pages/historic/leagues_historic.dart';
 import 'package:fifa/pages/historic/real_classification.dart';
+import 'package:fifa/pages/historic/real_classification/get_classification.dart';
 import 'package:fifa/theme/background_color/background_classification.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -202,8 +203,12 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
   }
 
   Widget graphicsTab(){
-
-    String leagueName = Club(index: clubsAllNameList.indexOf(widget.clubName)).leagueName;
+    late String leagueName;
+    try{
+      leagueName = Club(index: clubsAllNameList.indexOf(widget.clubName)).leagueName;
+    }catch(e){
+      leagueName = RealClassification().getLeagueFromCountryName(clubCountry);
+    }
 
     return SingleChildScrollView(
       child: Column(

@@ -276,7 +276,7 @@ Map<String,dynamic> mapNorthAmerica = {
     2009.0: [n.belize,],
   },
 
-  leagueName.costaRica : {
+  leagueName.costarica : {
     //2024.0: [],
     2023.0: [],
     2022.0: [n.saprissa,n.herediano,],

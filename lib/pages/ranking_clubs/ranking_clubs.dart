@@ -170,8 +170,9 @@ class _RankingClubsPageState extends State<RankingClubsPage> with TickerProvider
 
   Widget selectContinent(){
     return Container(
-      color: Colors.white.withOpacity(0.7),
+      color: AppColors().greyTransparent,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           continentSelection(Continents().europa),
           continentSelection(Continents().americaSul),

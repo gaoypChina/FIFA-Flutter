@@ -26,8 +26,8 @@ Map<String,dynamic> mapOceania = {
     2010.0: [n.sydneyFC,n.melbournevictory,n.goldCoast,n.wellingtonphoenix,n.perth,  n.newcastlejets,n.queensland,n.centralcoast,n.brisbane,n.adelaide],
     2009.0: [n.melbournevictory,n.adelaide,n.brisbane,n.centralcoast,         n.sydneyFC,n.wellingtonphoenix,n.perth,n.newcastlejets],
     2008.0: [n.newcastlejets,n.centralcoast,n.sydneyFC,n.brisbane,            n.melbournevictory,n.adelaide,n.perth,n.wellingtonphoenix],
-    2007.0: [n.melbournevictory,n.adelaide,n.newcastlejets,n.sydneyFC,       n.brisbane,n.centralcoast,n.perth,n.newZealandKnights],
-    2006.0: [n.sydneyFC,n.centralcoast,n.adelaide,n.newcastlejets,           n.perth,n.brisbane,n.melbournevictory,n.newZealandKnights],
+    2007.0: [n.melbournevictory,n.adelaide,n.newcastlejets,n.sydneyFC,       n.brisbane,n.centralcoast,n.perth,n.newzealandKnights],
+    2006.0: [n.sydneyFC,n.centralcoast,n.adelaide,n.newcastlejets,           n.perth,n.brisbane,n.melbournevictory,n.newzealandKnights],
     2005.0: [],
     //National_Soccer_League
     2004.0: [n.perth,n.parramattaPower,n.adelaide,n.marconiStallions,n.southMelbourne],

@@ -42,23 +42,23 @@ class _ChooseContinentPageState extends State<ChooseContinentPage> {
 
               const SizedBox(height: 20),
 
-              menuButtonExpanded(Continents().europa,(){
-                Navigator.push(context,MaterialPageRoute(builder: (context) => MapListAllClubs(continent: Continents().europa)));
-              }),
-              menuButtonExpanded(Continents().americaSul,(){
-                Navigator.push(context,MaterialPageRoute(builder: (context) => MapListAllClubs(continent: Continents().americaSul)));
-              }),
-              menuButtonExpanded(Continents().asia,(){
-                Navigator.push(context,MaterialPageRoute(builder: (context) => MapListAllClubs(continent: Continents().asia)));
+              menuButtonExpanded(Continents().oceania,(){
+                Navigator.push(context,MaterialPageRoute(builder: (context) =>  MapListAllClubs(continent: Continents().oceania)));
               }),
               menuButtonExpanded(Continents().africa,(){
                 Navigator.push(context,MaterialPageRoute(builder: (context) => MapListAllClubs(continent: Continents().africa)));
               }),
+              menuButtonExpanded(Continents().asia,(){
+                Navigator.push(context,MaterialPageRoute(builder: (context) => MapListAllClubs(continent: Continents().asia)));
+              }),
               menuButtonExpanded(Continents().americaNorte,(){
                     Navigator.push(context,MaterialPageRoute(builder: (context) =>  MapListAllClubs(continent: Continents().americaNorte)));
               }),
-              menuButtonExpanded(Continents().oceania,(){
-                Navigator.push(context,MaterialPageRoute(builder: (context) =>  MapListAllClubs(continent: Continents().oceania)));
+              menuButtonExpanded(Continents().americaSul,(){
+                Navigator.push(context,MaterialPageRoute(builder: (context) => MapListAllClubs(continent: Continents().americaSul)));
+              }),
+              menuButtonExpanded(Continents().europa,(){
+                Navigator.push(context,MaterialPageRoute(builder: (context) => MapListAllClubs(continent: Continents().europa)));
               }),
 
             ],

@@ -120,11 +120,16 @@ class _ConfigurationState extends State<Configuration> {
   }
 
   Widget language(){
-    return Row(
-      children: [
-        Expanded(child: Text(Translation(context).text.languageSelection,style: EstiloTextoBranco.negrito16)),
-        Text(Translation(context).text.language,style: EstiloTextoBranco.text16),
-      ],
+    return PressableButton(
+      onTap: (){
+
+      },
+      child: Row(
+        children: [
+          Expanded(child: Text(Translation(context).text.languageSelection,style: EstiloTextoBranco.negrito16)),
+          Text(Translation(context).text.language,style: EstiloTextoBranco.text16),
+        ],
+      ),
     );
   }
 
@@ -375,43 +380,8 @@ Widget soundEffects(ConfigurationState config){
     );
   }
 
-  Widget tutorial(){
-    return Column(
-      children: [
-        PressableButton(
-          onTap:(){
-            bottomSheet('Jogo muito louco');
-          },
-          child: const Text('Tutorial',style: EstiloTextoBranco.negrito16),
-        ),
-      ],
-    );
-  }
 
-  bottomSheet(String text){
-    return showModalBottomSheet<void>(
-        context: context,
-        builder: (BuildContext context) {
-          return Container(
-            height: 200,
-            color: Colors.greenAccent,
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Center(child: Text(text,textAlign: TextAlign.center)),
-                  ),
-                ],
-              ),
-            ),
-          );
-        });
-  }
-
-  Widget test(){
+  Widget textWidget(){
     return Column(
       children: [
         GestureDetector(

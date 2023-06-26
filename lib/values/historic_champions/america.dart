@@ -545,7 +545,7 @@ Map<String,dynamic> mapAmerica = {
     //2025.0: [],
     //2024.0: [],
     2023.0: [],
-    2022.0: [n.bolivar,n.thestrongest,],
+    2022.0: [n.bolivar,n.thestrongest,n.blooming,n.palmaflor,   n.nacionalpotosi,n.royalpari,n.orientepetrolero,n.alwaysready,  n.guabira,n.univvinto,n.jorge,n.realsantacruz,n.indPetrolero,n.realtomayapo,n.aurora,n.sucre],
     2021.0: [n.indPetrolero,n.alwaysready,n.thestrongest,n.bolivar,n.royalpari,    n.orientepetrolero,n.jorge,n.guabira,n.palmaflor,n.nacionalpotosi,     n.realsantacruz,n.aurora,n.realtomayapo,n.blooming,n.realpotosi,n.sanJoseBOL],
     2020.0: [n.alwaysready,n.thestrongest,n.bolivar,n.royalpari,n.jorge,           n.guabira,n.nacionalpotosi,n.palmaflor,n.blooming,n.orientepetrolero,  n.aurora,n.realpotosi,n.realsantacruz,n.sanJoseBOL],
     2019.0: [n.bolivar,n.thestrongest,n.nacionalpotosi,n.blooming,n.sanJoseBOL,    n.jorge,n.orientepetrolero,n.guabira,n.alwaysready,n.realpotosi,       n.royalpari,n.sportboys,n.aurora,n.destroyers],

@@ -48,7 +48,7 @@ class CountryNames {
   String get albania => 'Albania';
   String get algeria => 'Algeria';
   String get andorra => 'Andorra';
-  String get antiguaBarbuda => 'Antigua and Barbuda';
+  String get antiguabarbuda => 'Antigua and Barbuda';
   String get argentina => 'Argentina';
   String get armenia => 'Armenia';
   String get aruba => 'Aruba';
@@ -73,7 +73,7 @@ class CountryNames {
   String get bulgaria => 'Bulgaria';
   String get burkina => 'Burkina Faso';
   String get burundi => 'Burundi';
-  String get capeVerde => 'Cape Verde';
+  String get capeverde => 'Cape Verde';
   String get cameroon => 'Cameroon';
   String get cambodia => 'Cambodia';
   String get canada => 'Canada';
@@ -85,12 +85,12 @@ class CountryNames {
   String get colombia => 'Colombia';
   String get comoros => 'Comoros';
   String get congo => 'Congo';
-  String get costaRica => 'Costa Rica';
+  String get costarica => 'Costa Rica';
   String get croatia => 'Croatia';
   String get cuba => 'Cuba';
   String get curacao => 'Curacao';
   String get cyprus => 'Cyprus';
-  String get czechRepublic => 'Czech Republic';
+  String get czechrepublic => 'Czech Republic';
   String get denmark => 'Denmark';
   String get djibouti => 'Djibouti';
   String get dominica => 'Dominica';
@@ -116,7 +116,7 @@ class CountryNames {
   String get grenada => 'Grenada';
   String get guatemala => 'Guatemala';
   String get guinea => 'Guinea';
-  String get guineaBissau => 'Guinea Bissau';
+  String get guineabissau => 'Guinea Bissau';
   String get guineaEquatorial => 'Equatorial Guinea';
   String get guyana => 'Guyana';
   String get haiti => 'Haiti';
@@ -172,7 +172,7 @@ class CountryNames {
   String get nauru => 'Nauru';
   String get nepal => 'Nepal';
   String get netherlands => 'Netherlands';
-  String get newZealand => 'New Zealand';
+  String get newzealand => 'New Zealand';
   String get nicaragua => 'Nicaragua';
   String get niger => 'Niger';
   String get nigeria => 'Nigeria';
@@ -207,9 +207,9 @@ class CountryNames {
   String get singapore => 'Singapore';
   String get slovakia => 'Slovakia';
   String get slovenia => 'Slovenia';
-  String get southArabia => 'South Arabia';
-  String get southAfrica => 'South Africa';
-  String get southKorea => 'South Korea';
+  String get southarabia => 'South Arabia';
+  String get southafrica => 'South Africa';
+  String get southkorea => 'South Korea';
   String get sudan => 'Sudan';
   String get southSudan => 'South Sudan';
   String get suriname => 'Suriname';
@@ -226,7 +226,7 @@ class CountryNames {
   String get timor => 'East Timor';
   String get togo => 'Togo';
   String get tonga => 'Tonga';
-  String get trinidadTobago => 'Trinidad and Tobago';
+  String get trinidadtobago => 'Trinidad and Tobago';
   String get tunisia => 'Tunisia';
   String get turkey => 'Turkey';
   String get turkmenistan => 'Turkmenistan';
@@ -234,7 +234,7 @@ class CountryNames {
   String get uganda => 'Uganda';
   String get ukraine => 'Ukraine';
   String get uae => 'United Arab Emirates';
-  String get unitedStates => 'United States';
+  String get unitedstates => 'United States';
   String get uruguay => 'Uruguay';
   String get uzbekistan => 'Uzbekistan';
   String get vanuatu => 'Vanuatu';
@@ -249,32 +249,32 @@ class CountryNames {
 
 CountryNames word = Words.country;
 List<String> globalCountryNames = [
-  word.albania,word.algeria,word.andorra,word.angola,word.antiguaBarbuda,word.argentina,word.armenia,
+  word.albania,word.algeria,word.andorra,word.angola,word.antiguabarbuda,word.argentina,word.armenia,
   word.austria,word.australia,word.azerbaijan,
   word.bahrein,word.bahamas,word.barbados,word.bangladesh,word.belize,word.belarus,word.belgium,word.benin,word.bolivia,
   word.bosnia,word.botswana,word.brazil,word.brunei,word.bulgaria,word.burkina,word.burundi,
-  word.cameroon,word.centralAfrica,word.colombia,word.costaRica,word.comoros,word.congo,word.congoRD,
-  word.chad,word.china,word.cyprus,word.chile,word.canada,word.capeVerde,word.croatia,word.cuba,word.czechRepublic,
+  word.cameroon,word.centralAfrica,word.colombia,word.costarica,word.comoros,word.congo,word.congoRD,
+  word.chad,word.china,word.cyprus,word.chile,word.canada,word.capeverde,word.croatia,word.cuba,word.czechrepublic,
   word.denmark,word.djibouti,word.dominicanRepublic,
   word.ecuador,word.egypt,word.england,word.estonia,word.ethiopia,
   word.finland,word.france,
-  word.gabon,word.gambia,word.georgia,word.germany,word.ghana,word.greece,word.guinea,word.guineaBissau,word.guineaEquatorial,
+  word.gabon,word.gambia,word.georgia,word.germany,word.ghana,word.greece,word.guinea,word.guineabissau,word.guineaEquatorial,
   word.honduras,word.hungary,
   word.iceland,word.india,word.indonesia,word.iraq,word.iran,word.ireland,word.italy,word.ivorycoast,
   word.jamaica,word.japan,
   word.kazakhstan,word.kenya,word.kosovo,word.kyrgyzstan,
   word.latvia,word.lebanon,word.liberia,word.lithuania,word.luxembourg,
   word.macedonia,word.madagascar,word.morocco,word.mexico,word.moldova,word.montenegro,word.mongolia,
-  word.namibia,word.nepal,word.netherlands,word.newZealand,word.nicaragua,word.nigeria,word.northernIreland,word.norway,
+  word.namibia,word.nepal,word.netherlands,word.newzealand,word.nicaragua,word.nigeria,word.northernIreland,word.norway,
   word.oman,
   word.panama,word.papua,word.paraguay,word.peru,word.poland,word.portugal,word.philippines,word.puertoRico,
   word.qatar,
   word.romania,word.russia,word.rwanda,
   word.sanMarino,word.stKitts,word.scotland,word.senegal,word.serbia,word.slovakia,word.slovenia,word.somalia,
-  word.southArabia,word.southKorea,word.southAfrica,word.spain,word.sudan,
+  word.southarabia,word.southkorea,word.southafrica,word.spain,word.sudan,
   word.suriname,word.sweden,word.switzerland,word.syria,
-  word.tajikistan,word.tanzania,word.thailand,word.togo,word.trinidadTobago,word.tunisia,word.turkey,word.turkmenistan,
-  word.uganda,word.ukraine,word.uae,word.unitedStates,word.uruguay,word.uzbekistan,
+  word.tajikistan,word.tanzania,word.thailand,word.togo,word.trinidadtobago,word.tunisia,word.turkey,word.turkmenistan,
+  word.uganda,word.ukraine,word.uae,word.unitedstates,word.uruguay,word.uzbekistan,
   word.venezuela,word.vietnam,
   word.wales,
   word.zambia,word.zimbabwe,
