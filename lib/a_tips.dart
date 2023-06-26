@@ -128,6 +128,9 @@ LeagueOfficialNames leagueName = LeagueOfficialNames();
 Map<String,dynamic> zzzzzzzzz = {
 
   leagueName.cazaquistao : {
+    //2025.0: [],
+    //2024.0: [],
+    2023.0: [],
     2022.0: [],
     2021.0: [],
     2020.0: [],

@@ -9,7 +9,7 @@ Map<String,dynamic> mapAfrica = {
 
   leagueName.egito : {
     //2024.0: [],
-    2023.0: [],
+    2023.0: [n.alahly,n.pyramids,n.future,n.zamalek,n.almokawloonalarab,n.pharco,n.alittihadalexandriaclub,n.almasry,n.enppi,n.smouha,n.nationalbankofegypt,n.ceramicacleopatra,n.ismaily,n.talaeaelgaish,n.aswan,n.ghazlelmahalla,n.eldakhleya,n.haraselhodoud],
     2022.0: [n.zamalek,n.pyramids,n.alahly,n.talaeaelgaish,n.future,n.smouha,n.nationalbankofegypt,n.pharco,n.enppi,n.almokawloonalarab,n.ismaily,n.alittihadalexandriaclub,n.almasry,n.ceramicacleopatra,n.ghazlelmahalla,n.elgouna,n.easterncompany,n.misrelmakasa],
     2021.0: [n.zamalek,n.alahly,n.pyramids,n.smouha,n.almasry,n.enppi,n.alittihadalexandriaclub,n.talaeaelgaish,n.almokawloonalarab,n.ceramicacleopatra,n.ismaily,n.elgouna,n.misrelmakasa,n.nationalbankofegypt,n.ghazlelmahalla,n.wadidegla,n.elentagelharby,n.aswan],
     2020.0: [n.alahly,n.zamalek,n.pyramids,n.almokawloonalarab,n.smouha,n.enppi,n.almasry,n.elentagelharby,n.misrelmakasa,n.alittihadalexandriaclub,n.ismaily,n.talaeaelgaish,n.elgouna,n.aswan,n.wadidegla,n.haraselhodoud,n.tanta,n.zed],
@@ -106,7 +106,7 @@ Map<String,dynamic> mapAfrica = {
     2007.0: [n.alittihadLIB,],
     2006.0: [n.alittihadLIB,],
     2005.0: [n.alittihadLIB,],
-    2004.0: [],
+    2004.0: [n.alolympique,],
     2003.0: [n.alittihadLIB,],
     2002.0: [n.alittihadLIB,],
     2001.0: [n.almadina,],
@@ -127,7 +127,7 @@ Map<String,dynamic> mapAfrica = {
     1986.0: [n.alittihadLIB,],
     1985.0: [n.aldhahra],
     1984.0: [n.tripoliLIB,],
-    1983.0: [],
+    1983.0: [n.almadina,],
     1982.0: [],
     1981.0: [],
     1980.0: [],
@@ -154,7 +154,7 @@ Map<String,dynamic> mapAfrica = {
     //https://www.rsssf.org/tablesm/maro98.html
     //2025.0: [],
     //2024.0: [],
-    2023.0: [],
+    2023.0: [n.farrabat,n.wydad,n.fusrabat,n.safi,n.rajacasablanca,          n.berkane,n.hassaniaAgadir,n.uniontouarga,n.soualem,n.maghreb, n.moulodiaoujda,n.chababmoh,n.irtanger,n.khouribga,n.difaa],
     2022.0: [n.wydad,n.rajacasablanca,n.farrabat,n.maghreb,n.fusrabat,       n.berkane,n.safi,n.difaa,n.soualem,n.khouribga],
     2021.0: [n.wydad,n.rajacasablanca,n.farrabat,n.berkane,n.moulodiaoujda,  n.hassaniaAgadir,n.maghreb,n.irtanger,n.fusrabat,n.chababmoh,  ],
     2020.0: [n.rajacasablanca,n.wydad,n.berkane,n.fusrabat,n.moulodiaoujda,  n.farrabat,n.maghreb,n.hassaniaAgadir,n.ouedzem,n.youssoufia,  ],
@@ -226,7 +226,7 @@ Map<String,dynamic> mapAfrica = {
   leagueName.tunisia : {
     //2025.0: [],
     //2024.0: [],
-    2023.0: [],
+    2023.0: [n.etoilesahel,n.esperance,n.clubafricain,n.monastir,n.benguerdane,n.olympiquebeja,n.sfaxien,n.tataouine,n.stadetunisien,n.bizertin,n.soliman,n.metlaoui,n.sidibouzid,n.hammamsousse,n.croissantchebbien,n.rejiche],
     2022.0: [n.esperance,n.monastir,n.sfaxien,n.clubafricain,n.etoilesahel,n.benguerdane],
     2021.0: [n.esperance,n.etoilesahel,n.benguerdane,n.soliman,n.sfaxien,n.rejiche,n.clubafricain,n.tataouine,n.metlaoui,n.monastir,n.bizertin,n.olympiquebeja,n.stadetunisien,n.jskairouan],
     2020.0: [n.esperance,n.sfaxien,n.monastir,n.etoilesahel,n.clubafricain,n.stadetunisien,n.benguerdane,n.chebba,n.soliman,n.tataouine,n.metlaoui,n.bizertin,n.hammamlif,n.jskairouan],
@@ -296,7 +296,7 @@ Map<String,dynamic> mapAfrica = {
   leagueName.argelia : {
     //2025.0: [],
     //2024.0: [],
-    2023.0: [],
+    2023.0: [n.belouizdad,n.csconstantine,n.usmalger,n.essetif,n.mcalger,n.mcelbayadh,n.usmkhenchela,n.jssaoura,n.mcoran,n.asochlef,n.jskabylie,n.usbiskra,n.ncmagra,n.rcarbaa,n.paradouac,n.chelghoumlaid],
     2022.0: [n.belouizdad,n.jskabylie,n.jssaoura,n.usmalger,n.csconstantine,n.paradouac,n.essetif,n.mcalger,n.asochlef,n.usbiskra,n.mcoran,n.chelghoumlaid,n.ncmagra,n.rcarbaa,n.olympiquedemedea,n.nahusseindey,n.rcrelizane,n.widaddetlemcen],
     2021.0: [n.belouizdad,n.essetif,n.jssaoura,n.usmalger,n.jskabylie,n.mcoran,n.mcalger,n.csconstantine,n.ncmagra,n.olympiquedemedea,n.paradouac,n.nahusseindey,n.rcrelizane,n.usbiskra,n.widaddetlemcen,n.asochlef,n.asainmlila,n.usmbelabbes,n.cabordjbouarreridj,n.jsmskikda],
     2020.0: [n.belouizdad,n.mcalger,n.essetif,n.jskabylie,n.csconstantine,n.usmalger,n.jssaoura,n.asainmlila,n.mcoran,n.paradouac,n.usmbelabbes,n.asochlef,n.cabordjbouarreridj,n.usbiskra,n.nahusseindey,n.ncmagra],
@@ -369,7 +369,7 @@ Map<String,dynamic> mapAfrica = {
   leagueName.africaSul : {
     //2025.0: [],
     //2024.0: [],
-    2023.0: [],
+    2023.0: [n.mamelodi,n.orlandopirates,n.supersport,n.capetown,n.kaizer,       n.stellenbosch,n.morokaSwallows,n.goldenarrows,n.tsgalaxy,            n.royalAM,n.amazulu,n.richardsbay,n.chippa,n.maritzburg,n.marumo],
     2022.0: [n.mamelodi,n.capetown,n.royalAM,n.stellenbosch,n.kaizer,            n.orlandopirates,n.amazulu,n.supersport,n.goldenarrows,n.marumo,      n.sekhukhune,n.maritzburg,n.tsgalaxy,n.chippa,n.morokaSwallows,n.baroka],
     2021.0: [n.mamelodi,n.amazulu,n.orlandopirates,n.goldenarrows,n.supersport,  n.morokaSwallows,n.capetown,n.kaizer,n.tsgalaxy,n.baroka,             n.royalAM,n.marumo,n.maritzburg,n.stellenbosch,n.chippa,n.blackLeopards],
     2020.0: [n.mamelodi,n.kaizer,n.orlandopirates,n.bidvestWits,n.supersport,    n.capetown,n.maritzburg,n.royalAM,n.highlandspark,n.stellenbosch,     n.chippa,n.goldenarrows,n.amazulu,n.baroka,n.blackLeopards,n.polokwane],
@@ -401,7 +401,7 @@ Map<String,dynamic> mapAfrica = {
   leagueName.angola : {
     //2025.0: [],
     //2024.0: [],
-    2023.0: [],
+    2023.0: [n.petroluanda,n.agosto,n.sagradaesperanca,],
     2022.0: [n.petroluanda,n.agosto,n.sagradaesperanca,],
     2021.0: [n.sagradaesperanca,n.petroluanda,n.agosto,],
     2020.0: [],

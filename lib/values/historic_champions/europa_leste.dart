@@ -161,7 +161,7 @@ Map<String,dynamic> mapEuropaLeste = {
   leagueName.belarus : {
     //2025.0: [],
     //2024.0: [],
-    2023.0: [],
+    2023.0: [n.nemangrodno,n.dinamominsk,n.torpedozhodino,n.slaviamozyr,n.islochminskraion,n.bate,n.slutsk,n.smorgon,n.minsk,n.gomel,n.naftannovopolotsk,n.dinamobrest,n.shakhtyorsoligorsk,n.belshinabobruisk,n.energetikbguminsk],
     2022.0: [n.shakhtyorsoligorsk,n.energetikbguminsk,n.bate,n.dinamominsk,n.islochminskraion,n.minsk,n.gomel,n.torpedozhodino,n.nemangrodno,n.slaviamozyr,n.slutsk,n.belshinabobruisk,n.dinamobrest,n.arsenaldzerzhinsk,n.vitebsk,n.dneprmogilev],
     2021.0: [n.shakhtyorsoligorsk,n.bate,n.dinamominsk,n.gomel,n.rukhbrest,n.dinamobrest,n.vitebsk,n.torpedozhodino,n.slutsk,n.islochminskraion,n.nemangrodno,n.minsk,n.energetikbguminsk,n.slaviamozyr,n.smorgon,n.sputnikrechitsa],
     2020.0: [n.shakhtyorsoligorsk,n.bate,n.torpedozhodino,n.dinamobrest,n.nemangrodno,n.dinamominsk,n.islochminskraion,n.rukhbrest,n.slaviamozyr,n.energetikbguminsk,n.minsk,n.vitebsk,n.gorodeya,n.slutsk,n.belshinabobruisk,n.smolevichi],
@@ -197,7 +197,7 @@ Map<String,dynamic> mapEuropaLeste = {
   leagueName.bosnia : {
     //2025.0: [],
     //2024.0: [],
-    2023.0: [],
+    2023.0: [n.zrinjski,n.borac,n.zeljeznicar,n.sarajevo,n.siroki,  n.velezMostar,n.tuzla,n.igmankonjic,n.slogameridian,n.posusje,n.leotar,n.slobodatuzla],
     2022.0: [n.zrinjski,n.tuzla,n.borac,],
     2021.0: [n.borac,n.sarajevo,n.velezMostar,],
     2020.0: [n.sarajevo,n.zeljeznicar,n.zrinjski,],
@@ -569,7 +569,7 @@ Map<String,dynamic> mapEuropaLeste = {
     //https://en.wikipedia.org/wiki/Football_Superleague_of_Kosovo
     //2025.0: [],
     //2024.0: [],
-    2023.0: [],
+    2023.0: [n.ballkani,n.drita,n.gjilani,n.prishtina,n.malisheva,n.llapi,n.ferizaj,n.trepca89,n.drenica],
     2022.0: [n.ballkani,n.drita,n.gjilani,n.llapi,n.prishtina,n.drenica,n.dukagjini,n.malisheva,n.ulpiana,n.feronikeli],
     2021.0: [n.prishtina,n.drita,n.ballkani,n.gjilani,n.llapi,n.drenica,n.feronikeli,n.trepca89,n.arberia,n.besapeje],
     2020.0: [n.drita,n.gjilani,n.ballkani,n.prishtina,n.feronikeli,n.llapi,n.trepca89,n.drenica,n.flamurtariKOS,n.ferizaj,n.vushtrria,n.dukagjini],

@@ -660,6 +660,7 @@ class ClubName{
   String degraafschap = "De Graafschap";
   String denhaag = "ADO Den Haag";
   String denbosch = "Den Bosch";
+  String dhc = "DHC Delft";
   String dordrecht = "Dordrecht";
   String emmen = "FC Emmen";
   String eindhoven = "FC Eindhoven";
@@ -3981,6 +3982,7 @@ class ClubName{
   String hondurasprogreso = "Honduras Progreso";
   String marathon = "Marathón";
   String motagua = "Motagua";
+  String olancho = "Olancho";
   String platenseHON = "Platense-HON";
   String realminas = "Real de Minas";
   String sociedadHON = "Real Sociedad-HON";
@@ -5148,6 +5150,7 @@ class ClubName{
   String benikhalled = "Beni-Khalled";
   String bizertin = "Bizertin";
   String chebba = "Chebba";
+  String croissantchebbien = "Croissant Chebbien";
   String clubafricain = "Club Africain";
   String transports = "CO Transports";
   String djerba = "Djerba";
@@ -5169,7 +5172,7 @@ class ClubName{
   String olympiquebeja = "Olympique Béja";
   String olympiquedukef = "Olympique du Kef";
   String monastir = "US Monastir";
-  String rejiche = "Rejiche";
+  String rejiche = "Avenir de Rejiche";
   String sfaxien = "Sfaxien";
   String sidibouzid = "Sidi Bouzid";
   String sfax = "Sfax Railway Sports";
