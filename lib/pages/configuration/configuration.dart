@@ -78,6 +78,7 @@ class _ConfigurationState extends State<Configuration> {
                     imagesReal(config),
                     SizedBox(height: spaceBetweenWidgets),
                     playersOverallCheckbox(),
+                    SizedBox(height: spaceBetweenWidgets),
                     policyPrivacy(),
                     SizedBox(height: spaceBetweenWidgets),
                     userTerms(),
@@ -96,123 +97,82 @@ class _ConfigurationState extends State<Configuration> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
   Widget coachName(){
-    return PressableButton(
-      onTap:(){
-        popupEdit(
-            context: context,
-            title: Translation(context).text.coachName,
-            variable: config.coachName,
-            isStringType: true,
-            maxNcharacters: 30,
-            functionOK: (value){
-              config.coachName = value;
-              setState(() {});
-            });
-      },
-      child: Row(
-        children: [
-          Expanded(child: Text(Translation(context).text.coachName,style: EstiloTextoBranco.negrito16)),
-          Text(config.coachName,style: EstiloTextoBranco.text16),
-          const SizedBox(width: 20),
-        ],
-      ),
+    return pressOption(
+        Translation(context).text.coachName,
+        config.coachName,
+            () {
+              popupEdit(
+                  context: context,
+                  title: Translation(context).text.coachName,
+                  variable: config.coachName,
+                  isStringType: true,
+                  maxNcharacters: 30,
+                  functionOK: (value){
+                    config.coachName = value;
+                    setState(() {});
+                  });
+            }
     );
   }
 
   Widget language(){
-    return PressableButton(
-      onTap: (){
-
-      },
-      child: Row(
-        children: [
-          Expanded(child: Text(Translation(context).text.languageSelection,style: EstiloTextoBranco.negrito16)),
-          Text(Translation(context).text.language,style: EstiloTextoBranco.text16),
-        ],
-      ),
+    return pressOption(
+        Translation(context).text.languageSelection,
+        Translation(context).text.language,
+            () {}
     );
   }
 
   Widget difficulty(){
-    return
-      PressableButton(
-        onTap:(){
-          DificuldadeClass().addDificulty();
-          setState(() {});
-        },
-        child: SizedBox(
-          width: Sized(context).width,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text(Translation(context).text.difficulty,style: EstiloTextoBranco.negrito16),
-              const Spacer(),
-              Text(DificuldadeClass().getNameTranslated(context),style: EstiloTextoBranco.underline14),
-            ],
-          ),
-        ),
-      );
-}
-
-Widget soundEffects(ConfigurationState config){
-
-    return Row(
-      children: [
-        Expanded(child: Text(Translation(context).text.soundEffects,style: EstiloTextoBranco.negrito16)),
-
-        Switch(
-        value: config.hasSoundEffect,
-        onChanged: (value) {
-          setState(() {
-            customToast(Translation(context).text.inDevelopment);
-            config.hasSoundEffect = value;
-            globalHasSoundEffects = !globalHasSoundEffects;
-          });
-      }),
-      ]
-    );
-}
-
-
-  Widget turns(ConfigurationState config){
-    return Row(
-        children: [
-          Expanded(
-              child: Text(Translation(context).text.turnsN,style: EstiloTextoBranco.negrito16),
-          ),
-
-          Switch(
-              value: config.turnIdaEVolta,
-              onChanged: (value) {
-                customToast(Translation(context).text.inDevelopment);
-                setState(() {
-                  config.changeTurnSwitchState();
-                });
-              }),
-        ]
+    return pressOption(
+        Translation(context).text.difficulty,
+        DificuldadeClass().getNameTranslated(context),
+            () {DificuldadeClass().addDificulty();}
     );
   }
 
   Widget initialMoney(){
-    return PressableButton(
-      onTap: (){
-        popUpInitialMoney(
-            context: context,
-            function: (value){
-              config.initialMoney = value.initialMoney;
-            }
-        );
-        },
-      child: Row(
-        children: [
-          Expanded(child: Text(Translation(context).text.initialMoney,style: EstiloTextoBranco.negrito16)),
-          config.initialMoney>0
-              ? Text(config.initialMoney.toString(),style: EstiloTextoBranco.underline14)
-              : Text(Translation(context).text.standard,style: EstiloTextoBranco.underline14),
-        ],
-      ),
+    return pressOption(
+        Translation(context).text.initialMoney,
+        config.initialMoney>0 ? config.initialMoney.toString() : Translation(context).text.standard,
+            () {
+          popUpInitialMoney(
+                context: context,
+                function: (value){
+                  config.initialMoney = value.initialMoney;
+                }
+            );
+        }
     );
   }
+
+
+Widget soundEffects(ConfigurationState config){
+    return  defaultSlider(
+        Translation(context).text.soundEffects,
+        config.hasSoundEffect,
+            (value) {
+              setState(() {
+                customToast(Translation(context).text.inDevelopment);
+                config.hasSoundEffect = value;
+                globalHasSoundEffects = !globalHasSoundEffects;
+              });
+        });
+}
+
+
+  Widget turns(ConfigurationState config){
+    return defaultSlider(
+        Translation(context).text.turnsN,
+        config.turnIdaEVolta,
+            (value) {
+              customToast(Translation(context).text.inDevelopment);
+              setState(() {
+                config.changeTurnSwitchState();
+              });
+        });
+  }
+
 
 
   Widget nTeamsClassified(){
@@ -334,6 +294,26 @@ Widget soundEffects(ConfigurationState config){
             });
   }
 
+
+  Widget policyPrivacy(){
+    return pressOption(
+        Translation(context).text.userTerms,
+        "",
+            () {config.openPrivacyPolicy();}
+    );
+  }
+
+  Widget userTerms(){
+    return pressOption(
+              Translation(context).text.userTerms,
+              "",
+              () {config.openTerms();}
+      );
+  }
+
+  //////////////////////////////////////////////////////////////////////////
+  // DEFAULT COMPONENTS
+
   Widget defaultSlider(String title, bool value, Function(bool) onChanged){
     return Container(
       padding: const EdgeInsets.all(4),
@@ -346,51 +326,37 @@ Widget soundEffects(ConfigurationState config){
           ),
           const Spacer(),
           Switch(
-              value: value,
-              onChanged: onChanged,
+            value: value,
+            onChanged: onChanged,
           ),
         ],
       ),
     );
   }
 
-  Widget policyPrivacy(){
-    return Column(
-      children: [
-        GestureDetector(
+  Widget pressOption(String title, String variable, Function() onTap){
+    return
+      Container(
+        color: AppColors().greyTransparent,
+        child: PressableButton(
           onTap:(){
-            config.openPrivacyPolicy();
+            setState(() {});
           },
-          child: Text(Translation(context).text.userTerms,style: EstiloTextoBranco.negrito16),
+          child: Container(
+            width: Sized(context).width,
+            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(title,style: EstiloTextoBranco.negrito16),
+                const Spacer(),
+                Text(variable,style: EstiloTextoBranco.underline14),
+              ],
+            ),
+          ),
         ),
-      ],
-    );
+      );
   }
 
-  Widget userTerms(){
-    return Column(
-      children: [
-        PressableButton(
-            onTap:(){
-              config.openTerms();
-            },
-            child: Text(Translation(context).text.userTerms,style: EstiloTextoBranco.negrito16),
-        ),
-      ],
-    );
-  }
-
-
-  Widget textWidget(){
-    return Column(
-      children: [
-        GestureDetector(
-          onTap:() async{
-          },
-          child: const Text('Test',style: EstiloTextoBranco.negrito16),
-        ),
-      ],
-    );
-  }
 
 }

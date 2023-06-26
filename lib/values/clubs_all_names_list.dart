@@ -6,6 +6,7 @@ ClubName clubName = ClubName();
 // CLUBS
 //A ordem vai ser a dos "IDs" no jogo
 List<String> clubsAllNameList = [
+  //england
   clubName.arsenal,  clubName.astonvilla,  clubName.chelsea,  clubName.crystalpalace,
   clubName.everton,  clubName.leeds,  clubName.leicester,  clubName.liverpool,
   clubName.mancity,  clubName.manutd,  clubName.newcastle,  clubName.tottenham,
@@ -21,7 +22,7 @@ List<String> clubsAllNameList = [
   clubName.bristol,clubName.prestonnorthend,clubName.bolton,clubName.luton,
   clubName.cardiffcity,clubName.rotherham,clubName.ipswich,clubName.coventry,
   clubName.peterborough,clubName.blackpool,clubName.sheffieldwednesday,clubName.wigan,
-  //italia
+  //italy
   clubName.atalanta,  clubName.bologna,  clubName.cremonese,  clubName.fiorentina,
   clubName.genoa,  clubName.inter,  clubName.juventus,  clubName.milan,
   clubName.lazio,  clubName.napoli,  clubName.roma,  clubName.salernitana,
@@ -32,7 +33,7 @@ List<String> clubsAllNameList = [
   clubName.monza,clubName.palermo,clubName.parma,clubName.perugia,
   clubName.pisa,clubName.spal,clubName.spezia,clubName.venezia,
   clubName.ascoli,clubName.frosinone,clubName.como,clubName.reggina,
-  //espanha
+  //spain
   clubName.athleticbilbao,  clubName.atleticomadrid,  clubName.barcelona,  clubName.celtavigo,
   clubName.espanyol,  clubName.getafe,  clubName.granada,  clubName.levante,
   clubName.osasuna,  clubName.realbetis,  clubName.realmadrid,  clubName.realsociedad,
@@ -43,7 +44,7 @@ List<String> clubsAllNameList = [
   clubName.zaragoza,clubName.malaga,clubName.mallorca,clubName.rayovallecano,
   clubName.sportinggijon,clubName.tenerife,clubName.elche,clubName.leganes,
   clubName.eibar,
-  //alemanha
+  //germany
   clubName.moenchengladbach,  clubName.dortmund,  clubName.bayernmunique,  clubName.leverkusen,
   clubName.koln,  clubName.eintrachtfrankfurt,  clubName.freiburg,  clubName.hamburgo,
   clubName.augsburg,  clubName.herthaberlim,  clubName.hoffenheim,  clubName.rbleipzig,
@@ -52,7 +53,7 @@ List<String> clubsAllNameList = [
   clubName.arminiabiefeld,clubName.bochum,clubName.darmstadt,clubName.dynamodresden,
   clubName.kaiserslautern,clubName.mainz05,clubName.fortunadusseldorf,clubName.nurnberg,
   clubName.hannover96,clubName.paderborn,clubName.stpauli,clubName.unionberlin,
-  //frança
+  //france
   clubName.angers,clubName.bordeaux,  clubName.lille,  clubName.lyon,
   clubName.montpellier,  clubName.nantes,  clubName.nice,  clubName.om,
   clubName.psg,  clubName.reims,  clubName.rennes,  clubName.saintetienne,
@@ -66,7 +67,7 @@ List<String> clubsAllNameList = [
   clubName.benfica,  clubName.porto,  clubName.sporting,  clubName.braga,
   clubName.boavista,clubName.maritimo,clubName.portimonense,clubName.vitoriaguimaraes,
   clubName.coimbra,clubName.famalicao,clubName.gilvicente,clubName.belenenses,
-  //holanda
+  //netherlands
   clubName.ajax,  clubName.feyenoord,  clubName.psv,clubName.az,
   clubName.twente,clubName.utrecht,clubName.vitesse,clubName.heerenveen,
   //turquia-grecia
@@ -95,6 +96,7 @@ List<String> clubsAllNameList = [
   clubName.steauabucuresti,clubName.maccabitelaviv,
 
   //////////////////////////////////////////////////////
+  //brasil
   clubName.palmeiras,  clubName.botafogo,  clubName.atleticomg,  clubName.atleticopr,
   clubName.bahia,  clubName.bragantino,  clubName.cruzeiro,  clubName.corinthians,
   clubName.flamengo,  clubName.fluminense,  clubName.fortaleza,  clubName.gremio,
@@ -136,19 +138,19 @@ List<String> clubsAllNameList = [
   clubName.americadecali,  clubName.atleticonacional, clubName.deportivocali,  clubName.junior,
   clubName.imedellin,  clubName.oncecaldas, clubName.millonarios,  clubName.santafe,
   clubName.tolima,
-  //equador
+  //ecuador
   clubName.idelvalle, clubName.aucas,
   clubName.barcelonaequ,  clubName.emelec,  clubName.ldu,
   //venezuela
   clubName.caracas,clubName.tachira,clubName.laguaira,
   clubName.metropolitanos,clubName.monagas,clubName.estudiantesmerida,
 
-  //MÉXICO
+  //Mexico
   clubName.americamex,  clubName.chivas, clubName.cruzazul,  clubName.monterrey,
   clubName.pachuca,  clubName.pumas, clubName.tigres,  clubName.toluca,
   clubName.tijuana,  clubName.santoslaguna, clubName.puebla,  clubName.necaxa,
   clubName.atlas,  clubName.queretaro, clubName.leon,  clubName.juarez,
-
+  //USA
   clubName.atlanta,  clubName.columbuscrew, clubName.dcunited,  clubName.fcdallas,
   clubName.coloradorapids, clubName.chicago, clubName.austin, clubName.charlotte,
   clubName.houston,
@@ -157,20 +159,25 @@ List<String> clubsAllNameList = [
   clubName.philadelphia, clubName.portland,  clubName.seattle,  clubName.kansas,
   clubName.toronto,  clubName.vancouver, clubName.montreal,
 
+  //Central America
   clubName.saprissa,clubName.olimpiaHON,
   ///////////////////////////////////////////
+  //Asia
   clubName.pohang, clubName.fcseoul, clubName.ulsan,
   clubName.shandong,  clubName.shanghaisipg,
   clubName.kashimaantlers,  clubName.urawareddiamonds, clubName.visselkobe,  clubName.kawasakifrontale,
 
+  //Middle East
   clubName.aljazira,  clubName.jeonbuk, clubName.alnassr,
   clubName.alain,clubName.alwahda, clubName.alshabab,
   clubName.alsadd,  clubName.alduhail, clubName.alrayyan,
   clubName.alhilal,clubName.alIttihad,
   clubName.persepolis,
 
+  //oceania
   clubName.melbournevictory,clubName.sydneyFC,clubName.auckland,
 
+  //africa
   clubName.alahly, clubName.zamalek,clubName.rajacasablanca,clubName.wydad,
   clubName.esperance, clubName.essetif,
   clubName.belouizdad, clubName.omdurman,

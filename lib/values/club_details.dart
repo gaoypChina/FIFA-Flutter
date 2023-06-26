@@ -132,6 +132,11 @@ class ClubDetails{
 
     ClubName n = ClubName();
 
+    map[n.legends] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(0, 0),
+      'Estádio Lenda',0,2023,_country.somalia,86.7,[],{}];
+    map[n.realgalatics] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(0, 0),
+      'Estádio Galático',0,2023,_country.somalia,86.7,[],{}];
+
     //https://query.wikidata.org/#SELECT%20%3Fclub%20%3FclubLabel%20%3Fvenue%20%3FvenueLabel%20%3Fcoordinates%0AWHERE%0A%7B%0A%09%3Fclub%20wdt%3AP31%20wd%3AQ476028%20.%0A%09%3Fclub%20wdt%3AP115%20%3Fvenue%20.%0A%09%3Fvenue%20wdt%3AP625%20%3Fcoordinates%20.%0A%09SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22pt%22%20%7D%0A%7D
     map[n.arsenal] = [ClubColors(Colors.red,Colors.white),pattern.sleeves,Coordinates(51.555,-0.108611),
       'Estádio Emirates',60704,1886,_country.england,80.2,[n.tottenham,n.chelsea],{}];
