@@ -1,39 +1,16 @@
-import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/chaves.dart';
 import 'package:fifa/classes/league.dart';
+import 'package:fifa/classes/result_game/result_match.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/background_color/background_score.dart';
-import 'package:fifa/theme/colors.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:flutter/material.dart';
 
-class ResultGameNacional{
+class ResultGameNacional extends ResultMatch{
 
-  late String competitionName;
-  bool isAlreadyPlayed = false;
-  bool hasAdversary = true;
-  late int weekLocal;
-  bool visitante = false;
-  late int clubID;
-  late Club club;
-  late String clubName1;
-  late String clubName2;
-  late int clubID2;
-  int goal1 = 0;
-  int goal2 = 0;
-  int victoryDrawLoss310 = 0;
-  String placar = '';
-  Color backgroundColor = AppColors().greyTransparent;
+  ResultGameNacional({required int rodadaLocal, required club}){
 
-  printar(){
-    print("WEEK: $weekLocal hasAdversary: $hasAdversary isAlreadyPlayed: $isAlreadyPlayed");
-    if(hasAdversary) {
-      print("TIME1: ${club.name} TIME2: $clubName2");
-    }
-  }
-
-  ResultGameNacional({required int rodadaLocal, required this.club}){
-
+    this.club = club;
     competitionName = club.leagueName;
     weekLocal = semanasJogosNacionais[rodadaLocal-1];
     List list = Chaves().chaveIndexAdvCampeonato(weekLocal,club.leagueID, club.getChaveLeague());//index 0-16

@@ -1,3 +1,4 @@
+import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/countries/flags_list.dart';
@@ -201,6 +202,9 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
   }
 
   Widget graphicsTab(){
+
+    String leagueName = Club(index: clubsAllNameList.indexOf(widget.clubName)).leagueName;
+
     return SingleChildScrollView(
       child: Column(
         children: [
@@ -222,7 +226,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
                   const Text("Classificação Atual:",style: EstiloTextoBranco.negrito18),
                   SizedBox(
                     height: 400,
-                      child: RealTableWidget(chosenCountryName: clubCountry),
+                      child: RealTableWidget(chosenLeagueName: leagueName),
                   ),
                 ],
               ),

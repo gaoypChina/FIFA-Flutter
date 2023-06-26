@@ -60,6 +60,7 @@ class _ClubCalendarState extends State<ClubCalendar> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
 Widget calendarRow(int week){
+
     Semana semanaClass = Semana(week);
     CalendarResult calendarResult = CalendarResult(semanaLocal: week, club: widget.club);
 
@@ -73,6 +74,7 @@ Widget calendarRow(int week){
         padding: const EdgeInsets.all(4),
         child: Row(
           children: [
+
             Image.asset(FIFAImages().campeonatoLogo(calendarResult.show.competitionName),height:30,width: 30,),
 
             const SizedBox(width: 8),

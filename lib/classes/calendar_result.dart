@@ -15,23 +15,26 @@ class CalendarResult{
           rodadaLocal: week.rodadaNacional,
           club: club
       );
-      show.fromResultGameNacional(resultGameNacional);
+      show = resultGameNacional;
     }
 
     else if (week.isJogoCampeonatoInternacional) {
-      ResultGameInternacional resultGameInternacional = ResultGameInternacional(
+      ResultGameInternational resultGameInternational = ResultGameInternational(
           weekLocal: semanaLocal,
           club: club,
           competitionName: club.internationalLeagueNamePlaying
       );
 
-      show.fromResultGameInternacional(resultGameInternacional);
+      show = resultGameInternational;
 
     }else if(week.isJogoMundial){
       MundialFinal mundial = MundialFinal();
       show.fromMundial(semanaLocal, club, mundial);
     }else if(week.isJogoCopa){
       show.fromCopa(semanaLocal, club);
+      if(show.hasAdversary && club.name == show.clubName2){
+        show.invertTeams();
+      }
     }
     else{
       show.setDefault(semanaLocal);

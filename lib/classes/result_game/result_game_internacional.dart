@@ -1,40 +1,21 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/match/confronto.dart';
+import 'package:fifa/classes/result_game/result_match.dart';
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/mata_mata/mata_mata_class.dart';
 import 'package:fifa/classes/table_matchs_control.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/background_color/background_score.dart';
-import 'package:fifa/theme/colors.dart';
 import 'package:flutter/material.dart';
 
-class ResultGameInternacional{
+class ResultGameInternational extends ResultMatch{
 
-  late String competitionName;
-  late int weekLocal;
-  bool visitante = false;
-  late int clubID;
-  late Club club;
-  late String clubName1;
-  late String clubName2;
-  late int clubID2;
-  int goal1 = 0;
-  int goal2 = 0;
-  int victoryDrawLoss310 = 0;
-  String placar = '';
-  Color backgroundColor = AppColors().greyTransparent;
-  bool hasAdversary = false;
-  bool isAlreadyPlayed = false;
+  ResultGameInternational({required weekLocal, required club, required competitionName}){
 
-  printar(){
-    print("WEEK: $weekLocal hasAdversary: $hasAdversary isAlreadyPlayed: $isAlreadyPlayed");
-    if(hasAdversary) {
-      print("TIME1: ${club.name} TIME2: $clubName2");
-    }
-  }
-
-  ResultGameInternacional({required this.weekLocal, required this.club, required this.competitionName}){
-
+    hasAdversary = false;
+    this.weekLocal = weekLocal;
+    this.competitionName = competitionName;
+    this.club = club;
     Semana weekClass = Semana(weekLocal);
     clubName1 = club.name;
     clubID = club.index;

@@ -12,7 +12,7 @@ import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:flutter/material.dart';
 
-class ResultMatch{
+class ResultMatch {
 
   late String competitionName;
   bool isAlreadyPlayed = false;
@@ -80,8 +80,8 @@ class ResultMatch{
         convertResultGames(show);
       }
 
-    }else if(weekLocal.isJogoCampeonatoInternacional){
-      ResultGameInternacional show = ResultGameInternacional(
+    }else if(weekLocal.isJogoCampeonatoInternacional || weekLocal.isJogoMataMataInternacional){
+      ResultGameInternational show = ResultGameInternational(
           weekLocal: weekLocal.week,
           club: club,
           competitionName: club.internationalLeagueNamePlaying
@@ -90,56 +90,10 @@ class ResultMatch{
         convertResultGames(show);
       }
 
-    }else if(weekLocal.isJogoMataMataInternacional){
-      ResultGameInternacional show = ResultGameInternacional(
-          weekLocal: weekLocal.week,
-          club: club,
-          competitionName: club.internationalLeagueNamePlaying
-      );
-      if(show.hasAdversary){
-        convertResultGames(show);
-      }
     }
 
   }
 
-  void fromResultGameNacional(ResultGameNacional show){
-    isAlreadyPlayed = show.isAlreadyPlayed;
-    hasAdversary = show.hasAdversary;
-    visitante = show.visitante;
-    weekLocal = show.weekLocal;
-    competitionName = show.competitionName;
-    if(hasAdversary) {
-      clubID = show.clubID;
-      club = show.club;
-      clubName2 = show.clubName2;
-      clubID2 = show.clubID2;
-      goal1 = show.goal1;
-      goal2 = show.goal2;
-      placar = show.placar;
-    }
-    victoryDrawLoss310 = show.victoryDrawLoss310;
-    backgroundColor = show.backgroundColor;
-  }
-
-  void fromResultGameInternacional(ResultGameInternacional show){
-    isAlreadyPlayed = show.isAlreadyPlayed;
-    hasAdversary = show.hasAdversary;
-    visitante = show.visitante;
-    weekLocal = show.weekLocal;
-    competitionName = show.competitionName;
-    if(hasAdversary){
-      clubID = show.clubID;
-      club = show.club;
-      clubName2 = show.clubName2;
-      clubID2 = show.clubID2;
-      goal1 = show.goal1;
-      goal2 = show.goal2;
-      placar = show.placar;
-    }
-    victoryDrawLoss310 = show.victoryDrawLoss310;
-    backgroundColor = show.backgroundColor;
-  }
 
   void fromMundial(int week, Club club, MundialFinal mundialFinal){
 

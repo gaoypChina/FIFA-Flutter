@@ -53,8 +53,7 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
               appBarWidgets(),
 
               Expanded(
-                  child: RealTableWidget(
-                        chosenCountryName: getLeagueNationalityMap()[chosenLeagueName]),
+                  child: RealTableWidget(chosenLeagueName: chosenLeagueName),
               ),
 
               SingleChildScrollView(
@@ -107,8 +106,9 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
             padding: const EdgeInsets.only(top:20.0),
             child: IconButton(onPressed: (){
               navigatorPush(context, HistoricLeague(chosenLeagueName: chosenLeagueName));
-            }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
-          )
+            }, icon: const Icon(Icons.open_in_browser,color: Colors.white,size: 32,)),
+          ),
+
         ],
       ),
     );
@@ -119,8 +119,8 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
 
 
 class RealTableWidget extends StatefulWidget {
-  final String chosenCountryName;
-  const RealTableWidget({Key? key, required this.chosenCountryName}) : super(key: key);
+  final String chosenLeagueName;
+  const RealTableWidget({Key? key, required this.chosenLeagueName}) : super(key: key);
 
   @override
   State<RealTableWidget> createState() => _RealTableWidgetState();
@@ -130,7 +130,6 @@ class _RealTableWidgetState extends State<RealTableWidget> {
 
   RealClassification realClassification = RealClassification();
 
-  String chosenLeagueName = "";
   bool hasClassification = true;
 
   ////////////////////////////////////////////////////////////////////////////
@@ -154,8 +153,7 @@ class _RealTableWidgetState extends State<RealTableWidget> {
     realClassification.getUrls();
 
     try {
-      chosenLeagueName = realClassification.getLeagueFromCountryName(widget.chosenCountryName);
-      await realClassification.getLeagueTable(chosenLeagueName);
+      await realClassification.getLeagueTable(widget.chosenLeagueName);
     }catch(e){
       hasClassification = false;
     }
@@ -221,7 +219,7 @@ class _RealTableWidgetState extends State<RealTableWidget> {
             Images().getEscudoWidget(clubName, 36, 36),
             Container(width: 4),
             SizedBox(
-              width: Sized(context).width*0.42,
+              width: Sized(context).width*0.41,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -231,8 +229,8 @@ class _RealTableWidgetState extends State<RealTableWidget> {
               ),
             ),
             SizedBox(
-                width: 30,
-                child: Text(data['points'],style: EstiloTextoBranco.negrito16)),
+                width: 28,
+                child: Center(child: Text(data['points'],style: EstiloTextoBranco.negrito14))),
             Container(width: 2),
             Text('${data['matchs']} ${data['win']} ${data['draw']} ${data['loss']}    ${data['GM']}  ${data['GS']}  ${data['SG']}',style: EstiloTextoBranco.text10),
 

@@ -112,7 +112,7 @@ class _CalendarState extends State<Calendar> {
         );
       }
     }else if(weekLocal.isJogoCampeonatoInternacional){
-      ResultGameInternacional show = ResultGameInternacional(
+      ResultGameInternational show = ResultGameInternational(
           weekLocal: weekLocal.week,
           club: myClub,
           competitionName: myTeamClass.playingInternational
@@ -128,7 +128,7 @@ class _CalendarState extends State<Calendar> {
       }
 
     }else if(weekLocal.isJogoMataMataInternacional){
-      ResultGameInternacional show = ResultGameInternacional(
+      ResultGameInternational show = ResultGameInternational(
           weekLocal: weekLocal.week,
           club: myClub,
           competitionName: myTeamClass.playingInternational
