@@ -408,7 +408,7 @@ Map<String,dynamic> mapCopas = {
      //2024.0: [],
     2023.0: [n.porto,n.braga,n.famalicao,n.nacionalMadeira,],
     2022.0: [n.porto,n.tondela,n.sporting,n.mafra,],
-    2021.0: [n.braga,n.benfica,n.braga,n.estoril,],
+    2021.0: [n.braga,n.benfica,n.porto,n.estoril,],
     2020.0: [n.porto,n.benfica,n.viseu,n.famalicao,],
     2019.0: [n.sporting,n.porto,n.benfica,n.braga,],
     2018.0: [n.aves,n.sporting,n.caldas,n.porto,],

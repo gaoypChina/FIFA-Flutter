@@ -1,3 +1,4 @@
+import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/functions/esquemas_taticos.dart';
 import 'package:fifa/classes/image_class.dart';
@@ -43,6 +44,7 @@ class _MyTeamState extends State<MyTeam> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
+
     my = My();
     myClub = Club(index: my.clubID);
 
@@ -58,67 +60,9 @@ class _MyTeamState extends State<MyTeam> {
                   children: [
 
                     //APPBAR
-                    Container(
-                      color: myClub.colors.primaryColor.withOpacity(0.3),
-                      child: Row(
-                        children: [
-                          backButtonText(context, myClub.name),
-                          const Spacer(),
-                          Padding(
-                            padding: const EdgeInsets.only(top:20.0),
-                            child: IconButton(onPressed: (){
-                              Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfileNotPlayable(clubName: myClub.name)));
-                            }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
-                          ),
-                        ],
-                      ),
-                    ),
+                    appBar(),
 
-                    //HEADER
-                    Container(
-                      color: myClub.colors.primaryColor.withOpacity(0.3),
-                      child: Row(
-                        children: [
-                          //Escudo da Equipe
-                          Images().getMyEscudo(size: 80),
-
-                          const SizedBox(width: 8),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
-                                  children: [
-                                    Text(myClub.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.negrito22),
-                                    const SizedBox(width: 4),
-                                    const Text('Valor:',style: EstiloTextoBranco.text12),
-                                    Text(' \$' + myClub.getClubValue().toStringAsFixed(2),style: EstiloTextoBranco.negrito14),
-                                  ],
-                                ),
-                                starsWidgetFromOverall(myClub.getOverall()),
-
-                                ],
-                            ),
-                          ),
-
-                          Column(
-                            children: [
-                              //MUDAR ESQUEMA TATICO
-                              customButtonContinue(
-                                  title: my.esquemaTatico,
-                                  function: (){
-                                    EsquemaTatico().changeMyEsquema();
-                                    setState(() {});
-                                  }
-                              ),
-                            ],
-                          ),
-
-
-
-                        ],
-                      ),
-                    ),
+                    header(),
 
                     Container(
                       height: 30,
@@ -158,6 +102,75 @@ class _MyTeamState extends State<MyTeam> {
           ),
       ),
     );
+  }
+
+  Widget appBar(){
+    return Container(
+      color: myClub.colors.primaryColor.withOpacity(0.3),
+      child: Row(
+        children: [
+
+          backButtonText(context, myClub.name),
+
+          //OPEN CLUB PROFILE 2
+          const Spacer(),
+          Padding(
+            padding: const EdgeInsets.only(top:20.0),
+            child: IconButton(onPressed: (){
+              navigatorPush(context, ClubProfileNotPlayable(clubName: myClub.name));
+            }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
+          ),
+
+        ],
+      ),
+    );
+  }
+
+  Widget header(){
+    return                     //HEADER
+      Container(
+        color: myClub.colors.primaryColor.withOpacity(0.3),
+        child: Row(
+          children: [
+            //Escudo da Equipe
+            Images().getMyEscudo(size: 70),
+
+            const SizedBox(width: 8),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Text(myClub.getOverall().toStringAsFixed(2), style: EstiloTextoBranco.negrito22),
+                      const SizedBox(width: 4),
+                      const Text('Valor:',style: EstiloTextoBranco.text12),
+                      Text(' \$' + myClub.getClubValue().toStringAsFixed(2),style: EstiloTextoBranco.negrito14),
+                    ],
+                  ),
+                  starsWidgetFromOverall(myClub.getOverall()),
+
+                ],
+              ),
+            ),
+
+            Column(
+              children: [
+                //MUDAR ESQUEMA TATICO
+                customButtonContinue(
+                    title: my.esquemaTatico,
+                    function: (){
+                      EsquemaTatico().changeMyEsquema();
+                      setState(() {});
+                    }
+                ),
+              ],
+            ),
+
+
+          ],
+        ),
+      );
   }
 
   notifyParent(){

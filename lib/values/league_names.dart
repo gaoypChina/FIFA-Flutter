@@ -300,7 +300,8 @@ class LeagueOfficialNames{
 
       recopaeuropa, recopasula,
 
-      englandCup, italyCup, spainCup, germanyCup, franceCup, portugalCup, russiaCup,
+      englandCup, italyCup, spainCup, germanyCup, franceCup,
+      portugalCup, netherlandsCup, turkeyCup, russiaCup,
       brazilCup,
 
 
@@ -794,6 +795,7 @@ Map getLeagueNationalityMap(){
     leagueName.spainCup: leagueName.spainCup,
     leagueName.germanyCup: leagueName.germanyCup,
     leagueName.franceCup: leagueName.franceCup,
+    leagueName.netherlandsCup: leagueName.netherlandsCup,
     leagueName.portugalCup: leagueName.portugalCup,
     leagueName.russiaCup: leagueName.russiaCup,
     leagueName.turkeyCup: leagueName.turkeyCup,

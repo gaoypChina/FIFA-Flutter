@@ -403,6 +403,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
   }
 
   Widget weekMatchs(){
+
     int nteamsLeague = leagueClass.getNTeams();
 
     return Container(
@@ -429,7 +430,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
     TableNational tableNational = TableNational(
         chosenLeagueIndex: myClass.leagueID,
         leagueClass: leagueClass,
-        rodadaMatch: rodada,
+        rodadaMatch: rodada-1,
         numeroDoConfronto: numeroDoConfronto
     );
     TextStyle style1 = matchStyle1(tableNational.goal1, tableNational.goal2, 14);

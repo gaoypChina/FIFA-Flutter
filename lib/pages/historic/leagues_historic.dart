@@ -89,10 +89,11 @@ class _HistoricLeagueState extends State<HistoricLeague> {
               //TABELA
               nTeamsSelected>0 ? Expanded(
                 child: nTeamsSelected>1 ? SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
+                  scrollDirection: Axis.horizontal,
                   child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
+                    scrollDirection: Axis.vertical,
                     child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
 
                         for(int year=ano-1;year>=anoInicial;year--)
@@ -118,7 +119,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
               ) : Container(),
 
               ////////////////////////////////////
-              //SELECT LEAGUE
+              //SELECT LEAGUE BOTTOM
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(

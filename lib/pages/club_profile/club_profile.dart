@@ -89,7 +89,7 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                       child: Row(
                         children: [
                           //Escudo da Equipe
-                          Images().getEscudoWidget(clubClass.name,80,80),
+                          Images().getEscudoWidget(clubClass.name,70,70),
 
                           const SizedBox(width: 8),
                           Expanded(

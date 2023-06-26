@@ -43,9 +43,9 @@ class _HistoricPlayersBestPageState extends State<HistoricBestPlayersPage> {
             children: [
               Expanded(
                 child: SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
+                  scrollDirection: Axis.horizontal,
                   child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
+                    scrollDirection: Axis.vertical,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
