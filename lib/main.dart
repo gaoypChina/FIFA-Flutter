@@ -1,5 +1,5 @@
 import 'package:fifa/classes/simulate/my_match/counter.dart';
-import 'package:fifa/pages/home/b_home.dart';
+import 'package:fifa/pages/home/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';

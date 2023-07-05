@@ -144,10 +144,7 @@ Widget negotiationRow(Jogador player, int startNegotiationWeek){
                     Row(
                       children: [
                         Expanded(child: Text(player.name, overflow: TextOverflow.fade, style: EstiloTextoBranco.negrito16)),
-                        Container(
-                          padding: const EdgeInsets.all(4),
-                            child: Text(status,style: TextStyle(color: mapStatus[status], fontSize: 16))
-                        ),
+
                       ],
                     ),
 
@@ -159,12 +156,7 @@ Widget negotiationRow(Jogador player, int startNegotiationWeek){
                             Text("Salário: \$"+player.salaryK.toStringAsFixed(3)+'k',style: EstiloTextoBranco.text10),
                           ],
                         ),
-                        Column(
-                          children: [
-                            const Icon(Icons.compare_arrows, color: Colors.white, size: 30),
-                            Text("Week" + Negotiation().getWeek(playerID).toString(),style: EstiloTextoBranco.text14),
-                          ],
-                        ),
+                        const Icon(Icons.compare_arrows, color: Colors.white, size: 30),
                         Column(
                           children: [
                             Text("\$"+Negotiation().getPrice(playerID).toStringAsFixed(3)+'mi',style: EstiloTextoBranco.text12),

@@ -224,7 +224,9 @@ Widget rowClub(int ranking, Club club){
       onTap:(){
         Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: club.index)));
       },
-      child: Padding(
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+        color: colorBackground.withOpacity(0.3),
         padding: const EdgeInsets.symmetric(vertical: 8.0),
         child: Row(
           children: [
@@ -233,17 +235,13 @@ Widget rowClub(int ranking, Club club){
                 padding: const EdgeInsets.only(left: 4.0),
                 child: Text((ranking+1).toString()+'º',textAlign:TextAlign.center,style: EstiloTextoBranco.text14)
             ),
-            const SizedBox(width: 2),
+            const SizedBox(width: 8),
             funcFlagsList(club.nationality, 15, 22),
-            const SizedBox(width: 2),
+            const SizedBox(width: 4),
             Images().getEscudoWidget(club.name,32,32),
-            const SizedBox(width: 2),
+            const SizedBox(width: 8),
             Expanded(
-              child: Container(
-                color: colorBackground,
-                  padding: const EdgeInsets.all(4),
-                  child: Text(club.name,style: EstiloTextoBranco.text20)
-              ),
+              child: Text(club.name,style: EstiloTextoBranco.text16),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 6.0,right: 28),

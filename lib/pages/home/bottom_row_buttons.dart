@@ -25,9 +25,6 @@ Widget wHomeBottomRowButtons(BuildContext context, int clubID){
       SizedBox(width: Sized(context).width*0.22,
           child: configurations(context)
       ),
-      SizedBox(width: Sized(context).width*0.22,
-          child: moreOptions(context)
-      ),
     ],
   );
 }
@@ -125,27 +122,6 @@ Widget configurations(BuildContext context){
   ));
 }
 
-Widget moreOptions(BuildContext context){
-  return
-    Material(
-      color: Colors.transparent,
-      child: InkWell(
-      customBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-      onTap: (){
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Tournament()));
-      },
-      child: Container(
-        padding: const EdgeInsets.all(4),
-        decoration: decoratorHomeButtons(),
-        child: Column(
-          children: const [
-            Icon(Icons.add,color:Colors.white,size:40),
-            Text('More',style: EstiloTextoBranco.text12)
-          ],
-        ),
-      ),
-    ));
-}
 
 BoxDecoration decoratorHomeButtons(){
   return BoxDecoration(

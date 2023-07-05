@@ -2,8 +2,8 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/home/choose_team.dart';
 import 'package:fifa/pages/save/controller/save_controller.dart';
-import 'package:fifa/pages/home/b_home.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/widgets/button/button_border_green.dart';
 import 'package:fifa/widgets/popup/popup_ok_cancel.dart';
@@ -109,7 +109,7 @@ class _ChooseSaveState extends State<ChooseSave> {
             function: () async{
               await saveController.updateData(gameSaveNumber);
               updateLayout();
-              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const HomePage()));
+              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => const ChooseTeam()));
             });
       },
       child: Container(

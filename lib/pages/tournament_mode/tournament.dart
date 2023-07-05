@@ -9,6 +9,7 @@ import 'package:fifa/pages/ball_sim/ball_simulation.dart';
 import 'package:fifa/pages/simulacao/play.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/back_button.dart';
@@ -69,7 +70,32 @@ class _TournamentState extends State<Tournament> {
         children: [
               backButtonText(context, 'Amistoso', true),
 
-              Images().getStadiumWidget(club1.name, 200, Sized(context).width),
+              SizedBox(
+                width: Sized(context).width,
+                child: Stack(
+                  children: [
+                    Images().getStadiumWidget(club1.name, 240, Sized(context).width),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: Container(
+                                padding: const EdgeInsets.all(8),
+                                color: AppColors().greyTransparent,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(club1.stadiumName,style: EstiloTextoBranco.text14),
+                                    Text(club1.stadiumSize.toStringAsFixed(0),style: EstiloTextoBranco.text16),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                  ],
+                ),
+              ),
+
               const SizedBox(height: 20),
               //LIGAS
               Row(
@@ -97,18 +123,25 @@ class _TournamentState extends State<Tournament> {
               tactics(),
           ],),
 
-          menuButton('Play Match',(){
-            funcChangeClub(club1.name,leaguesListRealIndex[posicaoPais1]);
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) => Play(adversarioClubID: club2.index, visitante: false, isSingleMatch: true)));
-          }),
+          Row(
+            children: [
 
-          menuButton('Simulate Match',(){
-            funcChangeClub(club1.name,leaguesListRealIndex[posicaoPais1]);
-            Adversario adv = Adversario();
-            adv.clubName = club2.name;
-            adv.clubID = club2.index;
-            navigatorPush(context, GamePage(adversario: adv));
-            }),
+              menuButton('Simulate Match',(){
+                funcChangeClub(club1.name,leaguesListRealIndex[posicaoPais1]);
+                Adversario adv = Adversario();
+                adv.clubName = club2.name;
+                adv.clubID = club2.index;
+                navigatorPush(context, GamePage(adversario: adv));
+              }),
+
+              menuButton('Play Match',(){
+                funcChangeClub(club1.name,leaguesListRealIndex[posicaoPais1]);
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Play(adversarioClubID: club2.index, visitante: false, isSingleMatch: true)));
+              }),
+
+            ],
+          )
+
         ]),
 
         )
@@ -126,8 +159,8 @@ Widget menuButton(String text, Function() function){
     decoration: BoxDecoration(
       color: AppColors().greyTransparent,
       border: Border.all(
-        width: 2.0,
-        color: Colors.green,
+        width: 1,
+        color: AppColors().green,
       ),
       borderRadius: const BorderRadius.all(Radius.circular(15.0)),
     ),

@@ -11,11 +11,7 @@ import 'package:flutter/material.dart';
 Widget wMatchsTable(int rodadaMatch, League leagueClass){
   return       Container(
     color: AppColors().greyTransparent,
-    child: Table(
-      columnWidths:
-      (rodadaMatch <= rodada)
-          ? const {0: FractionColumnWidth(.36),6: FractionColumnWidth(.36)}
-          : const {0: FractionColumnWidth(.36),2: FractionColumnWidth(.0),4: FractionColumnWidth(.0),6: FractionColumnWidth(.36)},
+    child: Column(
       children: [
         for(int i=0; i<(leagueClass.getNTeams()/2);i++)
           wRowMatchesVersus(TableNational(
@@ -29,27 +25,75 @@ Widget wMatchsTable(int rodadaMatch, League leagueClass){
   );
 }
 
-TableRow wRowMatchesVersus(TableNational tableNational) {
+Widget wRowMatchesVersus(TableNational tableNational) {
 
   TextStyle style1 = matchStyle1(tableNational.goal1, tableNational.goal2, 14);
   TextStyle style2 = matchStyle2(tableNational.goal1, tableNational.goal2, 14);
   My my = My();
+  BoxDecoration backgroundColor1 = BoxDecoration();
+  BoxDecoration backgroundColor2 = BoxDecoration();
+  if(tableNational.teamName1 == my.clubName){
+    backgroundColor1 = BoxDecoration(
+      gradient: LinearGradient(
+        colors: [Colors.transparent, Colors.teal[800]!, Colors.teal[700]!],
+        begin: Alignment.centerLeft,
+        end: Alignment.centerRight,
+      ),
+    );
+  }else if(tableNational.teamName2 == my.clubName){
+    backgroundColor2 = BoxDecoration(
+      gradient: LinearGradient(
+        colors: [Colors.transparent, Colors.teal[800]!, Colors.teal[700]!],
+        begin: Alignment.centerRight,
+        end: Alignment.centerLeft,
+      ),
+    );
+  }
 
-  return TableRow(
-    children: [
-      Container(
-        color: tableNational.teamName1 == my.clubName ? Colors.teal : Colors.transparent,
-          child: Text(tableNational.teamName1,textAlign:TextAlign.end,style: style1)),
-      Images().getEscudoWidget(tableNational.teamName1,22,22),
-      (tableNational.showGoals)
-          ? Text(tableNational.goal1.toString(),textAlign:TextAlign.center,style: style1) : Container(),
-      const Text('x',style: EstiloTextoBranco.text16,textAlign: TextAlign.center,),
-      (tableNational.showGoals)
-          ? Text(tableNational.goal2.toString(),textAlign: TextAlign.center,style: style2) : Container(),
-      Images().getEscudoWidget(tableNational.teamName2,22,22),
-      Container(
-          color: tableNational.teamName2 == my.clubName ? Colors.teal : Colors.transparent,
-          child: Text(tableNational.teamName2,textAlign:TextAlign.start,style: style2)),
-    ],
+  return Container(
+    child: Row(
+      children: [
+        Expanded(
+          child: Container(
+            decoration: backgroundColor1,
+            padding: const EdgeInsets.all(2.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(tableNational.teamName1,textAlign:TextAlign.end,style: style1),
+                const SizedBox(width: 4),
+                Images().getEscudoWidget(tableNational.teamName1,22,22),
+              ],
+            ),
+          ),
+        ),
+
+        const SizedBox(width: 4),
+        (tableNational.showGoals)
+            ? Text(tableNational.goal1.toString(),textAlign:TextAlign.center,style: style1) : Container(),
+
+        const SizedBox(width: 4),
+        const Text('x',style: EstiloTextoBranco.text16,textAlign: TextAlign.center,),
+        const SizedBox(width: 4),
+
+        (tableNational.showGoals)
+            ? Text(tableNational.goal2.toString(),textAlign: TextAlign.center,style: style2) : Container(),
+        const SizedBox(width: 4),
+
+        Expanded(
+          child: Container(
+            decoration: backgroundColor2,
+            padding: const EdgeInsets.all(2.0),
+            child: Row(
+              children: [
+                Images().getEscudoWidget(tableNational.teamName2,22,22),
+                const SizedBox(width: 4),
+                Text(tableNational.teamName2,textAlign:TextAlign.start,style: style1),
+              ],
+            ),
+          ),
+        ),
+      ],
+    ),
   );
 }

@@ -1,5 +1,6 @@
 import 'package:fifa/classes/click_navigator/click_club.dart';
-import 'package:fifa/pages/home/b_home.dart';
+import 'package:fifa/pages/home/choose_team.dart';
+import 'package:fifa/pages/home/homepage.dart';
 import 'package:fifa/pages/negotiation/negotiation_list.dart';
 import 'package:fifa/pages/save/choose_save.dart';
 import 'package:fifa/pages/train/train.dart';
@@ -12,7 +13,7 @@ Widget close(BuildContext context){
         onTap:(){
           navigatorPush(context, const HomePage());
         },
-        child: const Icon(Icons.close,color:Colors.red,size: 50)
+        child: const Icon(Icons.close, color:Colors.red,size: 50)
     ),
   );
 }

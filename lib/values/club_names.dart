@@ -2,7 +2,8 @@
 class ClubName{
 
   String legends = "Legends";
-  String realgalatics = "Real Galatics";
+  String galatics = "Galatics";
+  String veterans = "Veterans";
 
   String arsenal = "Arsenal";
   String astonvilla = "Aston Villa";

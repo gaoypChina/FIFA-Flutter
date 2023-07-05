@@ -2,6 +2,11 @@
 import 'package:fifa/values/club_names.dart';
 
 ClubName clubName = ClubName();
+
+List<String> clubsNotPlayable = [
+  clubName.legends, clubName.galatics, clubName.veterans,
+];
+
 ///////////////////////////
 // CLUBS
 //A ordem vai ser a dos "IDs" no jogo
@@ -184,4 +189,6 @@ List<String> clubsAllNameList = [
   clubName.mamelodi,  clubName.orlandopirates,  clubName.kaizer,
   clubName.mazembe, clubName.agosto,  clubName.cotonsport,
 
+  //outros
+  clubName.galatics, clubName.legends,
 ];

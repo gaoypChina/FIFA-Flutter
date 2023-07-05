@@ -13,6 +13,7 @@ import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/values/league_names.dart';
+import 'package:fifa/widgets/button/back_button.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/widgets/loader.dart';
 import 'package:flutter/material.dart';
@@ -20,14 +21,14 @@ import 'package:flutter/material.dart';
 import '../../classes/league.dart';
 import '../menu/c_menu.dart';
 
-class HomePage extends StatefulWidget {
+class ChooseTeam extends StatefulWidget {
   //NECESSARY VARIABLES WHEN CALLING THIS CLASS
-  const HomePage({Key? key}) : super(key: key);
+  const ChooseTeam({Key? key}) : super(key: key);
   @override
-  _HomePageState createState() => _HomePageState();
+  _ChooseTeamState createState() => _ChooseTeamState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _ChooseTeamState extends State<ChooseTeam> {
 
   double buttonSize = 60;
 
@@ -101,7 +102,9 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: [
 
-                  const SizedBox(height: 70),
+                  backButtonText(context,'Create new carrer'),
+
+                  const SizedBox(height: 10),
 
                   title(),
 

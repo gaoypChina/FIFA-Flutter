@@ -1,6 +1,7 @@
 import 'package:fifa/classes/calendar_result.dart';
 import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
@@ -61,6 +62,7 @@ class _ClubCalendarState extends State<ClubCalendar> {
 ////////////////////////////////////////////////////////////////////////////
 Widget calendarRow(int week){
 
+    double heightSize = 50;
     Semana semanaClass = Semana(week);
     CalendarResult calendarResult = CalendarResult(semanaLocal: week, club: widget.club);
 
@@ -69,41 +71,59 @@ Widget calendarRow(int week){
         clickClubProfilePage(context, Club(index: calendarResult.show.clubID2));
       },
       child: Container(
+        height: heightSize,
         color: calendarResult.show.backgroundColor,
         margin: const EdgeInsets.symmetric(vertical: 4),
-        padding: const EdgeInsets.all(4),
-        child: Row(
+        child: Stack(
           children: [
 
-            Image.asset(FIFAImages().campeonatoLogo(calendarResult.show.competitionName),height:30,width: 30,),
-
-            const SizedBox(width: 8),
-            Column(
-              children: [
-                calendarResult.show.visitante
-                    ? Text(Translation(context).text.away.toUpperCase(),style: EstiloTextoBranco.text12)
-                    : Text(Translation(context).text.home.toUpperCase(),style: EstiloTextoBranco.text12),
-                Text(calendarResult.show.placar,style: EstiloTextoBranco.text16),
-              ],
-            ),
-            const SizedBox(width: 8),
-
-            calendarResult.show.hasAdversary
-                ? Images().getEscudoWidget(calendarResult.show.clubName2,30,30)
+            calendarResult.show.hasAdversary && calendarResult.show.visitante
+                ? Opacity(opacity: 0.3, child: Images().getStadiumWidget(calendarResult.show.clubName2,heightSize,Sized(context).width))
                 : Container(),
-            const SizedBox(width: 8),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+
+            Container(
+              padding: const EdgeInsets.all(4),
+              child: Row(
                 children: [
 
-                  Text(semanaClass.semanaCalendarStr,style: EstiloTextoBranco.text12),
+                  Image.asset(FIFAImages().campeonatoLogo(calendarResult.show.competitionName),height:30,width: 30,),
+
+                  const SizedBox(width: 8),
+                  Column(
+                    children: [
+                      calendarResult.show.visitante
+                          ? Text(Translation(context).text.away.toUpperCase(),style: EstiloTextoBranco.text12)
+                          : Text(Translation(context).text.home.toUpperCase(),style: EstiloTextoBranco.text12),
+                      Text(calendarResult.show.placar,style: EstiloTextoBranco.text16),
+                    ],
+                  ),
+                  const SizedBox(width: 8),
+
                   calendarResult.show.hasAdversary
-                      ? Text(calendarResult.show.clubName2,style: EstiloTextoBranco.text16)
+                      ? Images().getEscudoWidget(calendarResult.show.clubName2,30,30)
+                      : Container(),
+                  const SizedBox(width: 8),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+
+                        Text(semanaClass.semanaCalendarStr,style: EstiloTextoCinza.text12),
+                        calendarResult.show.hasAdversary
+                            ? Text(calendarResult.show.clubName2,style: EstiloTextoBranco.text16)
+                            : Container(),
+
+                      ],
+                    ),
+
+                  const Spacer(),
+
+                  calendarResult.show.hasAdversary
+                      ? Images().getUniformWidget(calendarResult.show.clubName2,30,30)
                       : Container(),
 
                 ],
               ),
-
+            ),
           ],
         ),
       ),

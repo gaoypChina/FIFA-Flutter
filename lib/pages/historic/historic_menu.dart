@@ -126,7 +126,7 @@ class _HistoricMenuState extends State<HistoricMenu> {
                           box(
                               'Mapa',
                               Icon(Icons.map,color: Colors.white, size: imageSize),
-                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => const MapExploration()));
+                                  (){Navigator.push(context,MaterialPageRoute(builder: (context) => MapExploration(clubName: My().clubName)));
                               }
                           ),
                           box(

@@ -143,7 +143,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
         },
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 8),
-        margin: const EdgeInsets.symmetric(vertical: 2),
+        margin: const EdgeInsets.symmetric(vertical: 4),
         color: clubDetails.getColors(clubName).primaryColor.withOpacity(0.2),
         child: Stack(
               children: [
@@ -176,7 +176,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                         children: [
                           Row(
                             children: [
-                              Images().getEscudoWidget(clubName,50,50),
+                              Images().getEscudoWidget(clubName,60,60),
 
                               const SizedBox(width: 12),
                               Expanded(
@@ -207,6 +207,9 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
 
                                       ],
                                     ),
+
+                                    starsWidgetFromOverall(clubDetails.getOverall(clubName)),
+
                                   ],
                                 ),
                               )
@@ -219,7 +222,6 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                               Expanded(child: Text(clubDetails.getStadium(clubName),maxLines: 2,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14)),
                             ],
                           ),
-                          starsWidgetFromOverall(clubDetails.getOverall(clubName)),
                         ],
                       ),
                     ),
@@ -227,15 +229,10 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                   ],
                 ),
 
-                //ESTADIO
-                if (FIFAImages().imageLogo(clubName) != 'generic') Padding(
-                  padding: const EdgeInsets.only(left:250, top: 5),
-                  child: Images().getStadiumWidget(clubName,90,140),
-                ) else Container(),
 
                 //UNIFORME
                 Padding(
-                    padding: const EdgeInsets.only(left:265,top: 10),
+                    padding: const EdgeInsets.only(left:275,top: 10),
                     child: Images().getUniformWidget(clubName, 80, 100)
                 ),
 

@@ -88,15 +88,15 @@ Widget cupMatchRow(BuildContext context, Confronto confronto, My my){
   String teamNameB = confronto.clubName2;
   double imageSize = 30;
 
-  TextStyle style1 = EstiloTextoBranco.text14;
-  TextStyle style2 = EstiloTextoBranco.text14;
-  TextStyle style10 = EstiloTextoBranco.text22;
-  TextStyle style20 = EstiloTextoBranco.text22;
+  TextStyle styleName1 = EstiloTextoBranco.text14;
+  TextStyle styleName2 = EstiloTextoBranco.text14;
+  TextStyle styleGoal1 = EstiloTextoBranco.text20;
+  TextStyle styleGoal2 = EstiloTextoBranco.text20;
   if(confronto.hasGoals){
-    style1 = matchStyle1(confronto.goal1, confronto.goal2, 14);
-    style2 = matchStyle2(confronto.goal1, confronto.goal2, 14);
-    style10 = matchStyle1(confronto.goal1, confronto.goal2, 22);
-    style20 = matchStyle2(confronto.goal1, confronto.goal2, 22);
+    styleName1 = matchStyle1(confronto.goal1, confronto.goal2, 14);
+    styleName2 = matchStyle2(confronto.goal1, confronto.goal2, 14);
+    styleGoal1 = matchStyle1(confronto.goal1, confronto.goal2, 18);
+    styleGoal2 = matchStyle2(confronto.goal1, confronto.goal2, 18);
   }
 
   return Container(
@@ -114,12 +114,11 @@ Widget cupMatchRow(BuildContext context, Confronto confronto, My my){
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Images().getUniformWidget(teamNameA,imageSize,imageSize),
                     Expanded(
                       child: Container(
                           padding: const EdgeInsets.all(4),
                           color: teamNameA == my.clubName ? Colors.green : Colors.transparent,
-                          child: Text(teamNameA,textAlign:TextAlign.end,style: style1)),
+                          child: Text(teamNameA,textAlign:TextAlign.end,style: styleName1)),
                     ),
                     Images().getEscudoWidget(teamNameA,imageSize,imageSize),
                   ],
@@ -135,9 +134,9 @@ Widget cupMatchRow(BuildContext context, Confronto confronto, My my){
             confronto.hasGoals
                 ? Row(
                 children: [
-                  Text(' '+ confronto.goal1.toString(),style: style10),
+                  Text(' '+ confronto.goal1.toString(),style: styleGoal1),
                   const Text(' x ',style: EstiloTextoBranco.text22),
-                  Text(confronto.goal2.toString()+' ',style: style20)
+                  Text(confronto.goal2.toString()+' ',style: styleGoal2)
                 ],
               )
                 : const Text('  X  ',textAlign:TextAlign.start,style: EstiloTextoBranco.text22),
@@ -159,10 +158,10 @@ Widget cupMatchRow(BuildContext context, Confronto confronto, My my){
                           child: Container(
                             padding: const EdgeInsets.all(4),
                             color: teamNameB == my.clubName ? Colors.green : Colors.transparent,
-                            child: Text(teamNameB,style: style2),
+                            child: Text(teamNameB,style: styleName2),
                           ),
                         ),
-                        Images().getUniformWidget(teamNameB,imageSize,imageSize),
+
                       ],
                     ),
                   ),

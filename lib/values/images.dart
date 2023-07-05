@@ -101,7 +101,7 @@ String imageLogo(String timeFoto) {
 
     Map map = {};
     map[_name.legends] = 'legends';
-    map[_name.realgalatics] = 'real galatics';
+    map[_name.galatics] = 'real galatics';
 
     map[_name.arsenal] = 'arsenal';
     map[_name.astonvilla] = 'astonvilla';

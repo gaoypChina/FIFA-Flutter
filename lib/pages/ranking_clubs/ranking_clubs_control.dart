@@ -22,6 +22,7 @@ class RankingClubsControl{
     for (var leagueID in leaguesListRealIndex) {//element: 0-70
       //Search name by index;
       String leagueName = leaguesIndexFromName.keys.firstWhere((k) => leaguesIndexFromName[k] == leagueID, orElse: () => null);
+
       Map allClubsMap = clubNameMap[leagueName];
       //Filtra os clubes da liga
       List allClubsNameList = allClubsMap.values.toList();
@@ -31,12 +32,17 @@ class RankingClubsControl{
       for(int i=0; i < allClubsNameList.length; i++) {
         int clubID = clubsAllNameList.indexOf(allClubsNameList[i]);
         Club clubClass = Club(index: clubID);
-        clubs.add(clubClass);
-        double ovr = clubClass.getOverall();
-        clubsOVR.add(ovr);
-        copyClubsName.add(clubClass.name);
 
-        leagueNames[leagueName] = leagueNames[leagueName]! + ovr;
+        // If the team is not legendary
+        if (!clubsNotPlayable.contains(clubClass.name)){
+          clubs.add(clubClass);
+          double ovr = clubClass.getOverall();
+          clubsOVR.add(ovr);
+          copyClubsName.add(clubClass.name);
+
+          leagueNames[leagueName] = leagueNames[leagueName]! + ovr;
+        }
+
       }
 
       leagueNames[leagueName] = leagueNames[leagueName]! / allClubsNameList.length;

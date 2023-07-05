@@ -5,6 +5,7 @@ import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
+import 'package:fifa/widgets/number_circle.dart';
 import 'package:flutter/material.dart';
 
 import '../popup/popup_player_info.dart';
@@ -15,11 +16,16 @@ Widget rowPlayer(BuildContext context, Jogador player, int result, String value)
       popUpOkShowPlayerInfos(context: context, playerID: player.index, funcSetState: (){});
     },
     child: Container(
+      width: Sized(context).width,
       margin: const EdgeInsets.symmetric(vertical: 2),
+      padding: const EdgeInsets.symmetric(horizontal: 4),
       child: Row(
         children: [
-          SizedBox(width: 35,child: Center(child: Text(result.toString()+"° ",style: EstiloTextoBranco.text14))),
+
+          numberCircle(result, 30),
+          const SizedBox(width: 4),
           positionContainer(player.position,size: 30,style: EstiloTextoPreto.text12),
+          const SizedBox(width: 4),
           PlayerCircle(player: player, scale: 1.0, hasPosition: false),
           SizedBox(width: 40,child: Text(value,textAlign: TextAlign.center,style: EstiloTextoBranco.negrito16)),
 

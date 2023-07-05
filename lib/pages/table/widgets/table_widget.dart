@@ -6,6 +6,7 @@ import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/theme/background_color/color_class_table.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/widgets/number_circle.dart';
 import 'package:flutter/material.dart';
 
 import '../../../theme/colors.dart';
@@ -38,7 +39,7 @@ Widget tabelaClassificacaoWidget(BuildContext context,League league){
         color: AppColors().greyTransparent,
         child: Table(
           columnWidths: const {
-            0: FractionColumnWidth(.06),
+            0: FractionColumnWidth(.07),
             1: FractionColumnWidth(.07),
             2: FractionColumnWidth(.4),
             7: FractionColumnWidth(.1)
@@ -66,7 +67,7 @@ TableRow rowTableNacionalLayout(BuildContext context, int position, int indexClu
 
   return TableRow(
     children: [
-      Center(child: Text((position+1).toString()+'°',style: EstiloTextoBranco.text14)),
+      numberCircle(position+1, 30),
       GestureDetector(
         onTap: (){
           clickClubProfilePage(context,clubClass);

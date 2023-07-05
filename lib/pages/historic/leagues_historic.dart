@@ -5,6 +5,7 @@ import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
+import 'package:fifa/values/club_details.dart';
 import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:fifa/widgets/league_selection_row.dart';
 import 'package:fifa/theme/colors.dart';
@@ -71,20 +72,27 @@ class _HistoricLeagueState extends State<HistoricLeague> {
               ),
               const SizedBox(height: 8),
 
-              nTeamsSelected == 0 ? Column(
-                children: [
-                  for(int i = 1950; i<anoInicial;i+=10)
-                    Row(
-                      children: [
-                        Text(i.toString(),style: EstiloTextoBranco.text14,),
-                        rowChampions(i),
-                        Text((i+9).toString(),style: EstiloTextoBranco.text14,),
-                      ],
-                    )
-                ],
+              nTeamsSelected == 0 ? Container(
+                color: AppColors().greyTransparent,
+                margin: const EdgeInsets.all(4),
+                padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
+                child: Column(
+                  children: [
+                    for(int i = 1950; i<anoInicial;i+=10)
+                      Row(
+                        children: [
+                          Text(i.toString(),style: EstiloTextoBranco.text14,),
+                          rowChampions(i),
+                          Text((i+9).toString(),style: EstiloTextoBranco.text14,),
+                        ],
+                      )
+                  ],
+                ),
               ) : Container(),
 
-              nTeamsSelected == 0 ? tableBestClubs() : Container(),
+              nTeamsSelected == 0 
+                  ? tableBestClubs() 
+                  : Container(),
 
               //TABELA
               nTeamsSelected>0 ? Expanded(
@@ -428,14 +436,32 @@ class _HistoricLeagueState extends State<HistoricLeague> {
     List teams = orderClubsRanking();
 
     return Expanded(
-      child: SingleChildScrollView(
-          child: Column(
-            children: [
-              for (String name in teams)
-                clubHistoric(name,clubNames.indexOf(name))
-            ],
-          ),
+      child: Container(
+        color: AppColors().greyTransparent,
+        margin: const EdgeInsets.only(top: 4, left: 4, right: 4),
+        padding: const EdgeInsets.all(4),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text("Best Clubs", style: EstiloTextoBranco.negrito16),
+                const Text("1º  2º  3º  4º  5º 6º  7º  8º 9º 10º ", style: EstiloTextoBranco.negrito14),
+              ],
+            ),
+            Expanded(
+              child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      for (String name in teams)
+                        clubHistoric(name,clubNames.indexOf(name))
+                    ],
+                  ),
+                ),
+            ),
+          ],
         ),
+      ),
     );
   }
   Widget clubHistoric(String clubName, int index){
@@ -444,15 +470,20 @@ class _HistoricLeagueState extends State<HistoricLeague> {
       onTap: (){
         clickClub(clubName);
       },
-      child: Row(
-        children: [
-          const SizedBox(width: 4),
-          Images().getEscudoWidget(clubName,30,30),
-          const SizedBox(width: 4),
-          SizedBox(width:130,child: Text(clubName,style: EstiloTextoBranco.negrito14)),
-          for (int i=0;i<10;i++)
-            SizedBox(width:20,child: Text(" "+positions[i].toString(),style: EstiloTextoBranco.text14)),
-        ],
+      child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 4),
+        padding: const EdgeInsets.symmetric(vertical: 2),
+        color: ClubDetails().getColors(clubName).primaryColor.withOpacity(0.2),
+        child: Row(
+          children: [
+            const SizedBox(width: 4),
+            Images().getEscudoWidget(clubName,30,30),
+            const SizedBox(width: 4),
+            SizedBox(width:130,child: Text(clubName,style: EstiloTextoBranco.negrito14)),
+            for (int i=0;i<10;i++)
+              SizedBox(width:20,child: Text(" "+positions[i].toString(),style: EstiloTextoBranco.text14)),
+          ],
+        ),
       ),
     );
   }

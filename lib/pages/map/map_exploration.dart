@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/countries/words.dart';
 import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/global_variables.dart';
@@ -17,7 +16,9 @@ import 'package:geocoding/geocoding.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapExploration extends StatefulWidget {
-  const MapExploration({Key? key}) : super(key: key);
+
+  final String clubName;
+  const MapExploration({Key? key, required this.clubName}) : super(key: key);
 
   @override
   State<MapExploration> createState() => _MapExplorationState();
@@ -184,7 +185,7 @@ class _MapExplorationState extends State<MapExploration> {
                 compassEnabled: false,
 
                 initialCameraPosition: CameraPosition(
-                  target: LatLng(clubDetails.getCoordinate(My().clubName).latitude, clubDetails.getCoordinate(My().clubName).longitude),
+                  target: LatLng(clubDetails.getCoordinate(widget.clubName).latitude, clubDetails.getCoordinate(widget.clubName).longitude),
                   zoom: 6.0,
                 ),
                 onMapCreated: getClubsLocation,
@@ -455,7 +456,7 @@ class _MapExplorationState extends State<MapExploration> {
             width: 120,
             child: DropdownButton<String>(
               isExpanded: true,
-              value: clubDetails.getCountry(My().clubName),
+              value: clubDetails.getCountry(widget.clubName),
               items: finalResultCountries,
               onChanged: (Object? nationality) {
                 _markersShow = List.from(_markers);

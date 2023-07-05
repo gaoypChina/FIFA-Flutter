@@ -1,10 +1,12 @@
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/click_navigator/click_club.dart';
+import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/table/table_nacional.dart';
 import 'package:fifa/theme/colors.dart';
+import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
@@ -87,7 +89,15 @@ class CurrentLeagueResume extends StatelessWidget {
                         ? Container(
                             color: AppColors().greyTransparent,
                             padding: const EdgeInsets.all(4),
-                            child: Images().getEscudoWidget(classificationNames[0],50,50))
+                            child: Stack(
+                              children: [
+                                Images().getEscudoWidget(classificationNames[0],50,50),
+                                Positioned(
+                                    right:0, bottom:0,
+                                    child: funcFlagsList(ClubDetails().getCountry(classificationNames[0]), 12, 18)
+                                ),
+                              ],
+                            ))
                         : Container(),
                     classificationNames.length>=2 ? Images().getEscudoWidget(classificationNames[1],35,35) : Container(),
                     classificationNames.length>=3 ? Images().getEscudoWidget(classificationNames[2],25,25) : Container(),

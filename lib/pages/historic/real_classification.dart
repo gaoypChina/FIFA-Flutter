@@ -12,6 +12,7 @@ import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/bottom_sheet/bottom_sheet_league_classification.dart';
 import 'package:fifa/widgets/button/back_button.dart';
 import 'package:fifa/widgets/league_selection_row.dart';
+import 'package:fifa/widgets/number_circle.dart';
 import 'package:flutter/material.dart';
 
 class RealClassificationPage extends StatefulWidget {
@@ -205,7 +206,7 @@ class _RealTableWidgetState extends State<RealTableWidget> {
     String clubName = data['team'];
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 6),
-      color: ClubDetails().getColors(clubName).primaryColor.withOpacity(0.5),
+      color: ClubDetails().getColors(clubName).primaryColor.withOpacity(0.3),
       child: GestureDetector(
         onTap: (){
           clickClub(context: context, clubName: clubName);
@@ -213,27 +214,21 @@ class _RealTableWidgetState extends State<RealTableWidget> {
         child: Row(
           children: [
             Container(width: 4),
-            SizedBox(
-                width: 30,
-                child: Text((index + 1).toString(),style: EstiloTextoBranco.negrito18)),
+            numberCircle(index + 1, 30),
+            Container(width: 4),
             Images().getEscudoWidget(clubName, 36, 36),
             Container(width: 4),
-            SizedBox(
-              width: Sized(context).width*0.41,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(clubName, style: EstiloTextoBranco.text14),
-                  Text('OVR: ${ClubDetails().getOverall(clubName).toStringAsFixed(1)}',style: EstiloTextoBranco.negrito14),
-                ],
-              ),
+            Expanded(
+              child: Text(clubName, style: EstiloTextoBranco.text14),
             ),
             SizedBox(
                 width: 28,
                 child: Center(child: Text(data['points'],style: EstiloTextoBranco.negrito14))),
             Container(width: 2),
-            Text('${data['matchs']} ${data['win']} ${data['draw']} ${data['loss']}    ${data['GM']}  ${data['GS']}  ${data['SG']}',style: EstiloTextoBranco.text10),
-
+            Container(
+                width: 130,
+                child: Text('${data['matchs']} ${data['win']} ${data['draw']} ${data['loss']}    ${data['GM']}  ${data['GS']}  ${data['SG']}',style: EstiloTextoBranco.text12)),
+            Container(width: 4),
           ],
         ),
       ),
