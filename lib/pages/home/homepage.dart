@@ -56,7 +56,8 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       buttonRow(
                           "New Carrer",
-                          'assets/clubs/sadd0.jpg',
+                          'assets/icons/home_coach.png',
+                          120,
                               (){
                             navigatorPush(context, const ChooseTeam());
                           }
@@ -64,30 +65,35 @@ class _HomePageState extends State<HomePage> {
 
                       buttonRow(
                           "Load Game",
-                          'assets/clubs/newcastle0.jpg',
+                          'assets/icons/home_mourinho.png',
+                          80,
                               (){navigatorPush(context, const ChooseSave());}
                       ),
 
                       buttonRow(
                           "Friendly Match",
-                          'assets/clubs/sunderland0.jpg',
+                          'assets/icons/home_match.png',
+                          80,
                               (){navigatorPush(context, const Tournament());}
                       ),
                       buttonRow(
                           "Classification",
-                          'assets/clubs/nantes0.jpg',
+                          'assets/icons/home_table.png',
+                          80,
                               (){navigatorPush(context, RealClassificationPage(chosenCountryName: const CountryNames().england));}
                       ),
 
                       buttonRow(
                           "List of Clubs",
-                          'assets/clubs/santos0.jpg',
+                          'assets/icons/home_clubs.png',
+                          80,
                               (){navigatorPush(context, const ChooseContinentPage());}
                       ),
 
                       buttonRow(
                           "Maps",
-                          'assets/clubs/jorge0.jpg',
+                          'assets/icons/home_map.png',
+                              80,
                               (){navigatorPush(context, MapExploration(clubName: ClubName().arsenal));}
                       ),
                     ],
@@ -119,15 +125,15 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-Widget buttonRow(String title, String imageName, Function() onTap){
+Widget buttonRow(String title, String imageName, double height, Function() onTap){
     return Container(
-      height: 80,
+      height: height,
       margin: const EdgeInsets.all(8),
       decoration: BoxDecoration(
         color: AppColors().greyTransparent,
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
-          width: 2,color: AppColors().green
+          width: 1,color: AppColors().green
         ),
       ),
       child: PressableButton(
@@ -135,7 +141,7 @@ Widget buttonRow(String title, String imageName, Function() onTap){
         child: Stack(
           children: [
             Container(
-              width: Sized(context).width,
+              width: Sized(context).width*0.8,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
               ),

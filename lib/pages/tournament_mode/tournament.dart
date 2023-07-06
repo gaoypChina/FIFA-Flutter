@@ -11,6 +11,7 @@ import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/images.dart';
+import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/back_button.dart';
 import 'package:flutter/material.dart';
@@ -41,8 +42,12 @@ class _TournamentState extends State<Tournament> {
   void initState() {
     super.initState();
   }
+  Map getCloneMap(Map data) {
+    return data.map((k, v) => MapEntry(k, v is Map ? getCloneMap(v) : v));
+  }
   Club getClub(int posicaoPais, int posicao){
     int indexLeague = leaguesListRealIndex[posicaoPais];
+    clubNameMap = getCloneMap(clubNameMapImmutable); //Mapa sem mudar mapa original
     League leagueClass = League(index: indexLeague);
     int clubID = leagueClass.getClubRealID(posicao);
     Club club = Club(index: clubID);
@@ -54,8 +59,8 @@ class _TournamentState extends State<Tournament> {
   @override
   Widget build(BuildContext context) {
 
-    club1 = getClub(posicaoPais1,posicao1);
-    club2 = getClub(posicaoPais2,posicao2);
+    club1 = getClub(posicaoPais1, posicao1);
+    club2 = getClub(posicaoPais2, posicao2);
 
     return Scaffold(
         body:  Stack(

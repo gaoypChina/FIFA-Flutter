@@ -229,10 +229,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
               child: Column(
                 children: [
                   const Text("Classificação Atual:",style: EstiloTextoBranco.negrito18),
-                  SizedBox(
-                    height: 400,
-                      child: RealTableWidget(chosenLeagueName: leagueName),
-                  ),
+                  SizedBox(height:400, child: RealTableWidget(chosenLeagueName: leagueName)),
                 ],
               ),
           ),
@@ -249,14 +246,17 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
           children: [
             SizedBox(
               height: 300,
-              child: Column(
-                children: [
-                  clubdetails.getState(widget.clubName).isNotEmpty
-                      ? heatMapPositions('Estadual',dataGraphics.dataEstadual)
-                      : Container(),
-                  heatMapPositions('Nacional',dataGraphics.data),
-                  heatMapPositions('Internacional',dataGraphics.dataInternational),
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    clubdetails.getState(widget.clubName).isNotEmpty
+                        ? heatMapPositions('Estadual',dataGraphics.dataEstadual)
+                        : Container(),
+                    heatMapPositions('Nacional',dataGraphics.data),
+                    heatMapPositions('Internacional',dataGraphics.dataInternational),
+                    heatMapPositions('Copa',dataGraphics.dataCups),
+                  ],
+                ),
               ),
             ),
 
