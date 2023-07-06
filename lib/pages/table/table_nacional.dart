@@ -265,16 +265,19 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
 
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              componentButton(2, FilterPlayersTitle().artilheiros),
-              componentButton(5, FilterPlayersTitle().assists),
-              componentButton(6, FilterPlayersTitle().bestPlayer),
-              componentButton(7, FilterPlayersTitle().cleanSheets),
-              componentButton(3, FilterPlayersTitle().yellowCards),
-              componentButton(4, FilterPlayersTitle().redCards),
-            ],
+          child: Container(
+            margin: const EdgeInsets.symmetric(vertical: 4),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                componentButton(2, FilterPlayersTitle().artilheiros),
+                componentButton(5, FilterPlayersTitle().assists),
+                componentButton(6, FilterPlayersTitle().bestPlayer),
+                componentButton(7, FilterPlayersTitle().cleanSheets),
+                componentButton(3, FilterPlayersTitle().yellowCards),
+                componentButton(4, FilterPlayersTitle().redCards),
+              ],
+            ),
           ),
         ),
         const SizedBox(height: 8),
@@ -301,12 +304,17 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
           margin: const EdgeInsets.all(4),
           decoration: BoxDecoration(
             color: AppColors().greyTransparent,
+            borderRadius: const BorderRadius.all(Radius.circular(4.0)),
             border: Border.all(
-              color: chosenIcon == optionNumber ? Colors.white : AppColors().greyTransparent,
+              color: chosenIcon == optionNumber ? AppColors().green : AppColors().greyTransparent,
               width: 1.0,
             ),
           ),
-          child: Text(title, style: EstiloTextoBranco.text16),
+          child: Text(title,
+                      style: chosenIcon == optionNumber
+                              ? EstiloTextoVerdee.text16
+                              : EstiloTextoBranco.text16
+            ),
         ),
       ),
     );

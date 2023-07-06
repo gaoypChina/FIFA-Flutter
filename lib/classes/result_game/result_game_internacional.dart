@@ -39,7 +39,7 @@ class ResultGameInternational extends ResultMatch{
             ifMyTeamIsLocal(matchResultInternational);
           }
           //SE SOU O TIME 2
-          if(matchResultInternational.confronto.clubID2 == clubID){
+          else if(matchResultInternational.confronto.clubID2 == clubID){
             ifMyTeamIsVisitor(matchResultInternational);
           }
         }
@@ -74,7 +74,7 @@ class ResultGameInternational extends ResultMatch{
             }
             hasAdversary = true;
           }
-          if(confronto.clubID2 == clubID){
+          else if(confronto.clubID2 == clubID){
             visitante = true;
             clubID2 = confronto.clubID1;
             clubName2 = Club(index: clubID2).name;
@@ -131,6 +131,7 @@ class ResultGameInternational extends ResultMatch{
     visitante = true;
     clubID2 = matchResultInternational.confronto.clubID1;
     clubName2 = Club(index: clubID2).name;
+    hasAdversary = true;
 
     if(matchResultInternational.confronto.hasGoals){
       goal1 = matchResultInternational.confronto.goal2;

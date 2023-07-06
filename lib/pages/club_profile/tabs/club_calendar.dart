@@ -63,7 +63,7 @@ class _ClubCalendarState extends State<ClubCalendar> {
 Widget calendarRow(int week){
 
     double heightSize = 50;
-    Semana semanaClass = Semana(week);
+    Semana weekClass = Semana(week);
     CalendarResult calendarResult = CalendarResult(semanaLocal: week, club: widget.club);
 
     return PressableButton(
@@ -107,7 +107,7 @@ Widget calendarRow(int week){
                     crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
 
-                        Text(semanaClass.semanaCalendarStr,style: EstiloTextoCinza.text12),
+                        Text(weekClass.semanaCalendarStr,style: EstiloTextoCinza.text12),
                         calendarResult.show.hasAdversary
                             ? Text(calendarResult.show.clubName2,style: EstiloTextoBranco.text16)
                             : Container(),

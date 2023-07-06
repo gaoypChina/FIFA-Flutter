@@ -298,7 +298,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
                 if(value==clubCountry){
                   leagueName = key;
                   List classificationNames = mapChampions(leagueName)[year];
-                  bottomSheetShowLeagueClassification(context, classificationNames);
+                  bottomSheetShowLeagueClassification(context, classificationNames, leagueName);
                 }});
               },
               xAxisName: Translation(context).text.years,
@@ -329,7 +329,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
               onPointLongPress: (ChartPointDetails tapDetails) {
                 int year = ano - tapDetails.pointIndex! - 1;
                 List classificationNames = mapChampions(dataGraphics.internationalLeagueName)[year];
-                bottomSheetShowLeagueClassification(context, classificationNames);
+                bottomSheetShowLeagueClassification(context, classificationNames, dataGraphics.internationalLeagueName);
               },
               color: Colors.green,
               xAxisName: Translation(context).text.years,
@@ -560,7 +560,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
               if(value==clubCountry){
                 leagueName = key;
                 List classificationNames = mapChampions(leagueName)[year];
-                bottomSheetShowLeagueClassification(context, classificationNames);
+                bottomSheetShowLeagueClassification(context, classificationNames, leagueName);
               }
             });
           },child: positionColor(national,40)),

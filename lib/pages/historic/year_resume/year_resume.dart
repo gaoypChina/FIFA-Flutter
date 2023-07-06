@@ -151,7 +151,7 @@ class _YearResumeState extends State<YearResume> {
           const SizedBox(width: 10),
           GestureDetector(
             onTap: (){
-              bottomSheetShowLeagueClassification(context, classificationNames);
+              bottomSheetShowLeagueClassification(context, classificationNames, leagueName);
             },
             child: Row(
               children: [
@@ -253,7 +253,7 @@ Widget internationalChampionsWidgetDetail(String internationalLeagueName){
     padding: const EdgeInsets.symmetric(horizontal: 3.0),
     child: GestureDetector(
       onTap: (){
-        bottomSheetShowLeagueClassification(context, clubsID);
+        bottomSheetShowLeagueClassification(context, clubsID, internationalLeagueName);
       },
       child: Column(
           children: [

@@ -311,11 +311,11 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                 String clubName = Club(index: clubID).name;
                 classificationNames.add(clubName);
               }
-              bottomSheetShowLeagueClassification(context, classificationNames);
+              bottomSheetShowLeagueClassification(context, classificationNames, chosenLeagueName, year);
             }else{
 
               List classificationNames = mapChampions(chosenLeagueName)[year];
-              bottomSheetShowLeagueClassification(context, classificationNames);
+              bottomSheetShowLeagueClassification(context, classificationNames, chosenLeagueName, year);
             }
           },
           child: SizedBox(width:24, child: Images().getEscudoWidget(clubName,24,24)));

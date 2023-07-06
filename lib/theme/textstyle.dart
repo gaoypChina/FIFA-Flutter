@@ -257,7 +257,13 @@ abstract class EstiloTextoVermelho {
   );
 }
 
-
+abstract class EstiloTextoVerdee {
+  static const TextStyle text16 = TextStyle(
+    color: Colors.lightGreenAccent,
+    fontFamily: 'Roboto',
+    fontSize: 16,
+  );
+}
 abstract class EstiloTextoVerde {
   static const TextStyle text40 = TextStyle(
     color: Colors.green,

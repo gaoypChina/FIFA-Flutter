@@ -45,13 +45,15 @@ class PlayerCircle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     ClubColors clubColors = ClubDetails().getColors(player.clubName);
+
     return Stack(
       children: [
         Container(
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            border: Border.all(color: clubColors.secondColor, width: 1.0),
+            border: Border.all(color: clubColors.secondColor, width: 2.0),
           ),
           child: ClipOval(
             child: Container(

@@ -3,13 +3,20 @@ import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
-Future bottomSheetShowLeagueClassification(BuildContext context, List classificationNames){
+Future bottomSheetShowLeagueClassification(BuildContext context, List classificationNames, String title, [int year=0]){
   return showModalBottomSheet(
       barrierColor: Colors.transparent,
       context: context, builder: (c){
     return SingleChildScrollView(
         child: Column(
           children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(title, style: EstiloTextoPreto.negrito16),
+                year>0 ? Text(" " + year.toString(), style: EstiloTextoPreto.negrito16) : Container(),
+              ],
+            ),
             for(int i=0; i<classificationNames.length;i++)
               rowClub(context, classificationNames[i], i+1)
           ],

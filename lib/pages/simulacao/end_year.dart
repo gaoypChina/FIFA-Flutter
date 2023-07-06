@@ -191,6 +191,7 @@ Widget champions(){
 Widget leagueChampion(int leagueID){
   List classificationIndexes = Classification(leagueIndex: leagueID).classificationClubsIndexes;
   int championID = classificationIndexes.first;
+  Club clubChampion = Club(index: championID);
     return
         //Image.asset(FIFAImages().campeonatoLogo(Club(index: championID).leagueName),height:40,width: 40,),
         GestureDetector(
@@ -199,10 +200,10 @@ Widget leagueChampion(int leagueID){
               for (int clubID in classificationIndexes) {
                 names.add(Club(index: clubID).name);
               }
-              bottomSheetShowLeagueClassification(context, names);
+              bottomSheetShowLeagueClassification(context, names, clubChampion.leagueName);
         },child: Padding(
           padding: const EdgeInsets.all(4.0),
-          child: Images().getEscudoWidget(Club(index: championID).name,40,40),
+          child: Images().getEscudoWidget(clubChampion.name,40,40),
         )
         );
 }

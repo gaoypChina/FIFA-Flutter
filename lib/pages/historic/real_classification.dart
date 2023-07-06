@@ -98,7 +98,7 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
             child: GestureDetector(
               onTap:(){
                 List classificationNames = mapChampions(chosenLeagueName)[ano-1];
-                bottomSheetShowLeagueClassification(context, classificationNames);
+                bottomSheetShowLeagueClassification(context, classificationNames, chosenLeagueName, ano-1);
               },
               child: const Icon(Icons.table_chart,color:Colors.white,size: 32),
             ),
@@ -169,23 +169,18 @@ class _RealTableWidgetState extends State<RealTableWidget> {
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Container(width: Sized(context).width*0.18),
-            Container(width: Sized(context).width*0.42),
+            const Spacer(),
             const Text("Pts",style: EstiloTextoBranco.negrito14),
             Container(width: Sized(context).width*0.02),
-            const Text("J",style: EstiloTextoBranco.negrito14),
-            Container(width: Sized(context).width*0.01),
-            const Text("V",style: EstiloTextoBranco.negrito14),
-            Container(width: Sized(context).width*0.01),
-            const Text("E",style: EstiloTextoBranco.negrito14),
-            Container(width: Sized(context).width*0.01),
-            const Text("D",style: EstiloTextoBranco.negrito14),
-            Container(width: Sized(context).width*0.01),
-            const Text("GM",style: EstiloTextoBranco.text12),
-            Container(width: Sized(context).width*0.005),
-            const Text("GS",style: EstiloTextoBranco.text12),
-            Container(width: Sized(context).width*0.005),
-            const Text("SG",style: EstiloTextoBranco.text12),
+            const SizedBox(width: 18, child: Text("J", textAlign: TextAlign.center, style: EstiloTextoBranco.text12)),
+            const SizedBox(width: 18, child: Text("V", textAlign: TextAlign.center, style: EstiloTextoBranco.text12)),
+            const SizedBox(width: 18, child: Text("E", textAlign: TextAlign.center, style: EstiloTextoBranco.text12)),
+            const SizedBox(width: 18, child: Text("D", textAlign: TextAlign.center, style: EstiloTextoBranco.text12)),
+            const SizedBox(width: 4, child: Text("|", textAlign: TextAlign.center, style: EstiloTextoCinza.text16)),
+            const SizedBox(width: 20, child: Text("GM", textAlign: TextAlign.center, style: EstiloTextoBranco.text12)),
+            const SizedBox(width: 20, child: Text("GS", textAlign: TextAlign.center, style: EstiloTextoBranco.text12)),
+            const SizedBox(width: 20, child: Text("SG", textAlign: TextAlign.center, style: EstiloTextoBranco.text12)),
+            Container(width: 4),
           ],
         ),
         Expanded(
@@ -225,10 +220,19 @@ class _RealTableWidgetState extends State<RealTableWidget> {
                 width: 28,
                 child: Center(child: Text(data['points'],style: EstiloTextoBranco.negrito14))),
             Container(width: 2),
-            SizedBox(
-                width: 130,
-                child: Text('${data['matchs']} ${data['win']} ${data['draw']} ${data['loss']}    ${data['GM']}  ${data['GS']}  ${data['SG']}',style: EstiloTextoBranco.text12)),
-            Container(width: 4),
+            Row(
+              children: [
+                SizedBox(width:18, child: Text(data['matchs'], textAlign: TextAlign.center, style: EstiloTextoBranco.text12)),
+                SizedBox(width:18, child: Text(data['win'], textAlign: TextAlign.center, style: EstiloTextoBranco.text12)),
+                SizedBox(width:18, child: Text(data['draw'], textAlign: TextAlign.center, style: EstiloTextoBranco.text12)),
+                SizedBox(width:18, child: Text(data['loss'], textAlign: TextAlign.center, style: EstiloTextoBranco.text12)),
+                const SizedBox(width: 4, child: Text("|", textAlign: TextAlign.center, style: EstiloTextoCinza.text16)),
+                SizedBox(width:20, child: Text(data['GM'], textAlign: TextAlign.center, style: EstiloTextoBranco.text12)),
+                SizedBox(width:20, child: Text(data['GS'], textAlign: TextAlign.center, style: EstiloTextoBranco.text12)),
+                SizedBox(width:20, child: Text(data['SG'], textAlign: TextAlign.center, style: EstiloTextoBranco.text12)),
+                Container(width: 4),
+              ],
+            ),
           ],
         ),
       ),

@@ -48,7 +48,7 @@ class CurrentLeagueResume extends StatelessWidget {
             if(int.parse(selectedYear) == ano){
               navigatorPush(context, TableNacional(chosenLeagueIndex: leaguesIndexFromName[leagueName]));
             }else{
-              bottomSheetShowLeagueClassification(context, classificationNames);
+              bottomSheetShowLeagueClassification(context, classificationNames, leagueName);
             }
           },
           child: Stack(
