@@ -1,5 +1,4 @@
 import 'package:fifa/classes/click_navigator/click_club.dart';
-import 'package:fifa/pages/home/choose_team.dart';
 import 'package:fifa/pages/home/homepage.dart';
 import 'package:fifa/pages/negotiation/negotiation_list.dart';
 import 'package:fifa/pages/save/choose_save.dart';

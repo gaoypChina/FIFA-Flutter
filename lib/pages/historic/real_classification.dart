@@ -225,7 +225,7 @@ class _RealTableWidgetState extends State<RealTableWidget> {
                 width: 28,
                 child: Center(child: Text(data['points'],style: EstiloTextoBranco.negrito14))),
             Container(width: 2),
-            Container(
+            SizedBox(
                 width: 130,
                 child: Text('${data['matchs']} ${data['win']} ${data['draw']} ${data['loss']}    ${data['GM']}  ${data['GS']}  ${data['SG']}',style: EstiloTextoBranco.text12)),
             Container(width: 4),

@@ -1,21 +1,30 @@
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/functions/emoji.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/widgets/number_circle.dart';
 import 'package:flutter/material.dart';
 
 Widget wMenuClassification(BuildContext context, My myClass){
+
   return Container(
     color: AppColors().greyTransparent,
     padding: const EdgeInsets.all(4),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('${Translation(context).text.expectation}: ' + myClass.getLastYearExpectativa().toString()+'º',
-            style: EstiloTextoBranco.text16
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Text('${Translation(context).text.expectation}: ' + myClass.getLastYearExpectativa().toString()+'º',
+                style: EstiloTextoBranco.text16
+            ),
+            Text("   " + getMyEmoji(myClass),style: EstiloTextoBranco.negrito18),
+          ],
         ),
         classification3(myClass.clubID, myClass.leagueID),
       ],
@@ -45,16 +54,18 @@ Widget rowClassification(int position, Club club,  myClass){
       myClass.getLastYearExpectativa() == position-1
           ? const Text('............................................................................................',style: EstiloTextoBranco.negrito6)
           : Container(),
-      Row(
-        children: [
-          SizedBox(width:25,child: Text(position.toString()+'º',style: EstiloTextoBranco.text14)),
-          SizedBox(width:22,child: Center(child: Text(club.leaguePoints.toString(),style: EstiloTextoBranco.negrito14))),
-          Images().getEscudoWidget(club.name,18,18),
-          Container(
-              width:100,
-              color: club.name == myClass.clubName ? Colors.teal : Colors.transparent,
-              child: Text(club.name,style: EstiloTextoBranco.text12,)),
-        ],
+      Container(
+        color: club.name == myClass.clubName ? AppColors().myTeam : Colors.transparent,
+        child: Row(
+          children: [
+            numberCircle(position, 24),
+            SizedBox(width:22,child: Center(child: Text(club.leaguePoints.toString(),style: EstiloTextoBranco.negrito14))),
+            Images().getEscudoWidget(club.name,20,20),
+            SizedBox(
+                width:100,
+                child: Text(club.name,style: EstiloTextoBranco.text12,)),
+          ],
+        ),
       ),
     ],
   );

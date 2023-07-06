@@ -8,6 +8,8 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/home/bottom_row_buttons.dart';
 import 'package:fifa/pages/home/logo_kit_stack.dart';
 import 'package:fifa/pages/negotiation/negotiation_class.dart';
+import 'package:fifa/theme/colors.dart';
+import 'package:fifa/theme/decoration/box_shadow.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
@@ -113,83 +115,99 @@ class _ChooseTeamState extends State<ChooseTeam> {
                   ////////////
                   //PAIS
                   ////////////
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 8),
+                    padding: const EdgeInsets.symmetric(vertical: 4),
+                    decoration: BoxDecoration(
+                      color: AppColors().greyTransparent,
+                      boxShadow: boxShadowApp(),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
 
-                      Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: leftButton(onTap: (){
-                              if(posicaoPais>0) {
-                                posicaoPais --;
-                                posicao = 0;
-                              }else{
-                                posicaoPais = leaguesListRealIndex.length-1;
-                                posicao = 0;
-                              }
-                            }),
-                          ),
-
-                          rightButton(
-                              onTap: (){
-                                if(posicaoPais< leaguesListRealIndex.length-1) {
-                                  posicaoPais ++;
+                        Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: leftButton(onTap: (){
+                                if(posicaoPais>0) {
+                                  posicaoPais --;
                                   posicao = 0;
                                 }else{
-                                  posicaoPais = 0;
+                                  posicaoPais = leaguesListRealIndex.length-1;
                                   posicao = 0;
                                 }
                               }),
-                        ],
-                      ),
+                            ),
+
+                            rightButton(
+                                onTap: (){
+                                  if(posicaoPais< leaguesListRealIndex.length-1) {
+                                    posicaoPais ++;
+                                    posicao = 0;
+                                  }else{
+                                    posicaoPais = 0;
+                                    posicao = 0;
+                                  }
+                                }),
+                          ],
+                        ),
 
 
-                      leagueLogoAndName(),
-                    ],
+                        leagueLogoAndName(),
+                      ],
+                    ),
                   ),
 
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 16),
                   /////////////////////////////////////////
                   //TIME
                   /////////////////////////////////////////
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 8),
+                    padding: const EdgeInsets.symmetric(vertical: 4),
+                    decoration: BoxDecoration(
+                      color: AppColors().greyTransparent,
+                      boxShadow: boxShadowApp(),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
 
-                      Column(
-                        children: [
+                        Column(
+                          children: [
 
-                          Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: leftButton(onTap: (){
-                              if(posicao>0) {
-                                posicao --;
+                            Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: leftButton(onTap: (){
+                                if(posicao>0) {
+                                  posicao --;
+                                }else{
+                                  posicao = nLeagueTeams-1;
+                                }
+                              }),
+                            ),
+
+                            rightButton(onTap: (){
+                              if(posicao<nLeagueTeams-1) {
+                                posicao ++;
                               }else{
-                                posicao = nLeagueTeams-1;
+                                posicao = 0;
                               }
                             }),
-                          ),
 
-                          rightButton(onTap: (){
-                            if(posicao<nLeagueTeams-1) {
-                              posicao ++;
-                            }else{
-                              posicao = 0;
-                            }
-                          }),
+                          ],
+                        ),
 
-                        ],
-                      ),
+                        //ESCUDO E UNIFORME
+                        loaded ? wHomeClubLogoAndKitStack(context, club) : SizedBox(
+                          height: 200+40,
+                          width: 200,
+                        child:  loader()),
 
-                      //ESCUDO E UNIFORME
-                      loaded ? wHomeClubLogoAndKitStack(context, club) : SizedBox(
-                        height: 200+40,
-                        width: 200,
-                      child:  loader()),
-
-                    ],
+                      ],
+                    ),
                   ),
 
 

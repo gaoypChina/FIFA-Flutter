@@ -140,13 +140,13 @@ Widget buttonRow(String title, String imageName, double height, Function() onTap
         onTap: onTap,
         child: Stack(
           children: [
-            Container(
-              width: Sized(context).width*0.8,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: Image.asset(imageName, fit: BoxFit.fill,),
-              ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: SizedBox(
+                width: Sized(context).width*0.8,
+                child: Image.asset(imageName, fit: BoxFit.fill,),
+                ),
+            ),
 
               Align(
                 alignment: Alignment.centerRight,

@@ -30,3 +30,10 @@ BoxDecoration decorationGreen(){
     borderRadius: const BorderRadius.all(Radius.circular(4)),
   );
 }
+
+BoxDecoration decorationGreenOff(){
+  return BoxDecoration(
+    color: AppColors().greyTransparent,
+    borderRadius: const BorderRadius.all(Radius.circular(4)),
+  );
+}

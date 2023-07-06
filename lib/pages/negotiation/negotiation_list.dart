@@ -69,7 +69,7 @@ class _NegotiationListPageState extends State<NegotiationListPage> {
 ////////////////////////////////////////////////////////////////////////////
 
 Widget negotiationRow(Jogador player, int startNegotiationWeek){
-    String status = Negotiation().getStatus(player.index);
+    //String status = Negotiation().getStatus(player.index);
     int playerID = player.index;
 
     String type = Negotiation().getType(playerID);
@@ -80,12 +80,12 @@ Widget negotiationRow(Jogador player, int startNegotiationWeek){
       Negotiation().typeRent: Colors.orange,
     };
 
-    Map mapStatus = {
-      Negotiation().negotiating: Colors.lightBlue,
-      Negotiation().accepted: Colors.green,
-      Negotiation().rejected: Colors.orange,
-      Negotiation().cancelled: Colors.red,
-    };
+    //Map mapStatus = {
+    //  Negotiation().negotiating: Colors.lightBlue,
+    //  Negotiation().accepted: Colors.green,
+    //  Negotiation().rejected: Colors.orange,
+    //  Negotiation().cancelled: Colors.red,
+    //};
 
     return Container(
       margin: const EdgeInsets.all(8),

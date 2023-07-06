@@ -3,7 +3,6 @@ import 'package:fifa/database/local_database/shared_preferences.dart';
 import 'package:fifa/database/select_database.dart';
 import 'package:fifa/pages/configuration/configuration.dart';
 import 'package:fifa/pages/configuration/customize_players.dart';
-import 'package:fifa/pages/tournament_mode/tournament.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
