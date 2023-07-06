@@ -6,6 +6,7 @@ import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/theme/background_color/color_class_table.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/widgets/arrow_table.dart';
 import 'package:fifa/widgets/number_circle.dart';
 import 'package:flutter/material.dart';
 
@@ -72,7 +73,16 @@ TableRow rowTableNacionalLayout(BuildContext context, int position, int indexClu
         onTap: (){
           clickClubProfilePage(context,clubClass);
           },
-          child: Images().getEscudoWidget(clubClass.name,26,26)),
+          child: Stack(
+            children: [
+              Positioned.fill(
+                child: CustomPaint(
+                  painter: ArrowSquarePainter(colorArrow: clubClass.colors.primaryColor.withOpacity(0.6)),
+                ),
+              ),
+              Images().getEscudoWidget(clubClass.name,26,26),
+            ],
+          )),
       GestureDetector(
         onTap: (){
           clickClubProfilePage(context,clubClass);
