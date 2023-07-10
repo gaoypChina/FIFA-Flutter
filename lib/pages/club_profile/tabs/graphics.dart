@@ -14,6 +14,7 @@ import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/values/league_trophy_image.dart';
 import 'package:fifa/widgets/bottom_sheet/bottom_sheet_titles.dart';
+import 'package:fifa/widgets/trophy.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -113,7 +114,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
         color: AppColors().greyTransparent,
         child: SfCartesianChart(
             tooltipBehavior: _tooltipbehave,
-            title: ChartTitle(text: 'Histograma ' + title,
+            title: ChartTitle(text: 'Histograma ' + title, alignment: ChartAlignment.near,
                 textStyle: EstiloTextoBranco.negrito14),
             primaryXAxis: NumericAxis(labelStyle: EstiloTextoBranco.text12),
             primaryYAxis: NumericAxis(labelStyle: EstiloTextoBranco.text12),
@@ -138,70 +139,79 @@ class _ClubGraphicsState extends State<ClubGraphics> {
 
   Widget graphics(DataGraphics dataGraphics) {
 
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Container(
-        height: 260,
-        width: dataGraphics.dataInternational.length > dataGraphics.data.length
-            ? dataGraphics.dataInternational.length * 35 + 50
-            : dataGraphics.data.length * 35 + 50,
-        color: AppColors().greyTransparent,
-        child: SfCartesianChart(
-          tooltipBehavior: _tooltipBehavior,
-          //https://pub.dev/documentation/syncfusion_flutter_charts/latest/charts/SfCartesianChart-class.html?utm_source=pubdev&utm_medium=listing&utm_campaign=flutter-charts-pubdev
-          // Initialize category axis
-          primaryXAxis: CategoryAxis(
-            labelStyle: EstiloTextoBranco.text12,
+    return Container(
+      color: AppColors().greyTransparent,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: SizedBox(
+              height: 260,
+              width: dataGraphics.dataInternational.length > dataGraphics.data.length
+                  ? dataGraphics.dataInternational.length * 35 + 50
+                  : dataGraphics.data.length * 35 + 50,
+              child: SfCartesianChart(
+                title: ChartTitle(text: 'Historic', alignment: ChartAlignment.near,
+                    textStyle: EstiloTextoBranco.negrito14),
+                tooltipBehavior: _tooltipBehavior,
+                //https://pub.dev/documentation/syncfusion_flutter_charts/latest/charts/SfCartesianChart-class.html?utm_source=pubdev&utm_medium=listing&utm_campaign=flutter-charts-pubdev
+                // Initialize category axis
+                primaryXAxis: CategoryAxis(
+                  labelStyle: EstiloTextoBranco.text12,
+                ),
+                series: <ChartSeries>[
+                  // Initialize line series
+                  LineSeries<ClassificationData, String>(
+                    xAxisName: Translation(context).text.years,
+                    yAxisName: Translation(context).text.position,
+                    name: widget.club.name,
+                    dataSource: dataGraphics.data,
+                    enableTooltip: true,
+                    xValueMapper: (ClassificationData data, _) =>
+                    //Para mostrar apertura e clausura
+                    data.year.toString().substring(5) == '5'
+                        ? data.year.toString() //ano.5 -> ano.5
+                        : data.year.toInt().toString(),
+                    //ano.0 -> ano
+                    yValueMapper: (ClassificationData data, _) => data.position,
+                    dataLabelSettings: const DataLabelSettings(
+                        isVisible: true, color: Colors.white),
+                    markerSettings: const MarkerSettings(
+                        isVisible: true,
+                        height: 4,
+                        width: 4,
+                        borderWidth: 3,
+                        borderColor: Colors.white
+                    ),
+                  ),
+
+                  LineSeries<ClassificationData, String>(
+                    color: Colors.red,
+                    xAxisName: Translation(context).text.years,
+                    yAxisName: Translation(context).text.position,
+                    name: widget.club.name,
+                    dataSource: dataGraphics.dataInternational,
+                    enableTooltip: true,
+                    xValueMapper: (ClassificationData data, _) => data.year.toInt().toString(),
+                    //ano.0 -> ano
+                    yValueMapper: (ClassificationData data, _) => data.position,
+                    dataLabelSettings:const DataLabelSettings(isVisible : true,color: Colors.white),
+                    markerSettings: const MarkerSettings(
+                        isVisible: true,
+                        height: 4,
+                        width: 4,
+                        borderWidth: 3,
+                        borderColor: Colors.white
+                    ),
+                  ),
+
+
+                ],
+              ),
+            ),
           ),
-          series: <ChartSeries>[
-            // Initialize line series
-            LineSeries<ClassificationData, String>(
-              xAxisName: Translation(context).text.years,
-              yAxisName: Translation(context).text.position,
-              name: widget.club.name,
-              dataSource: dataGraphics.data,
-              enableTooltip: true,
-              xValueMapper: (ClassificationData data, _) =>
-              //Para mostrar apertura e clausura
-              data.year.toString().substring(5) == '5'
-                  ? data.year.toString() //ano.5 -> ano.5
-                  : data.year.toInt().toString(),
-              //ano.0 -> ano
-              yValueMapper: (ClassificationData data, _) => data.position,
-              dataLabelSettings: const DataLabelSettings(
-                  isVisible: true, color: Colors.white),
-              markerSettings: const MarkerSettings(
-                  isVisible: true,
-                  height: 4,
-                  width: 4,
-                  borderWidth: 3,
-                  borderColor: Colors.white
-              ),
-            ),
-
-            LineSeries<ClassificationData, String>(
-              color: Colors.red,
-              xAxisName: Translation(context).text.years,
-              yAxisName: Translation(context).text.position,
-              name: widget.club.name,
-              dataSource: dataGraphics.dataInternational,
-              enableTooltip: true,
-              xValueMapper: (ClassificationData data, _) => data.year.toInt().toString(),
-              //ano.0 -> ano
-              yValueMapper: (ClassificationData data, _) => data.position,
-              dataLabelSettings:const DataLabelSettings(isVisible : true,color: Colors.white),
-              markerSettings: const MarkerSettings(
-                  isVisible: true,
-                  height: 4,
-                  width: 4,
-                  borderWidth: 3,
-                  borderColor: Colors.white
-              ),
-            ),
-
-
-          ],
-        ),
+        ],
       ),
     );
   }
@@ -308,17 +318,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
               bottomSheetShowTitles(
                   context, club.leagueName, dataGraphics.data);
             },
-            child: Column(
-              children: [
-                Text(Translation(context).text.titles,
-                    style: EstiloTextoBranco.text16),
-                Image.asset(
-                    'assets/trophy/${getTrophyImage(club.leagueName)}.png',
-                    height: 50, width: 50),
-                Text(dataGraphics.nTitulos.toString(),
-                    style: EstiloTextoBranco.text20),
-              ],
-            ),
+            child: TrophyWidget(name: club.leagueName, qntd: dataGraphics.nTitulos, scale: 0.8),
           ),
 
           //TITULOS INTERNACIONAIS
@@ -327,17 +327,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
               bottomSheetShowTitles(context, club.internationalLeagueName,
                   dataGraphics.dataInternational);
             },
-            child: Column(
-              children: [
-                Text(Translation(context).text.titles,
-                    style: EstiloTextoBranco.text16),
-                Image.asset('assets/trophy/${getTrophyImage(
-                    club.internationalLeagueName)}.png',
-                    height: 50, width: 50),
-                Text(dataGraphics.nTitulosInternational.toString(),
-                    style: EstiloTextoBranco.text20),
-              ],
-            ),
+            child: TrophyWidget(name: club.internationalLeagueName, qntd: dataGraphics.nTitulosInternational, scale: 0.8),
           ),
 
           //TITULOS MUNDIAIS
@@ -346,17 +336,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
               bottomSheetShowTitles(context, LeagueOfficialNames().mundial,
                   dataGraphics.dataMundial);
             },
-            child: Column(
-              children: [
-                Text(Translation(context).text.titles,
-                    style: EstiloTextoBranco.text16),
-                Image.asset('assets/trophy/${getTrophyImage(
-                    LeagueOfficialNames().mundial)}.png', height: 50,
-                    width: 50),
-                Text(dataGraphics.nTitulosMundial.toString(),
-                    style: EstiloTextoBranco.text20),
-              ],
-            ),
+            child: TrophyWidget(name: LeagueOfficialNames().mundial, qntd: dataGraphics.nTitulosMundial, scale: 0.8),
           ),
 
 
@@ -383,11 +363,12 @@ class _ClubGraphicsState extends State<ClubGraphics> {
       margin: const EdgeInsets.all(4),
       padding: const EdgeInsets.all(4),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Histórico de posição ' + ano.toString(),
-              style: EstiloTextoBranco.negrito18),
 
           SfCartesianChart(
+            title: ChartTitle(text: 'Histórico de posição ' + ano.toString(), alignment: ChartAlignment.near,
+                textStyle: EstiloTextoBranco.negrito14),
             //https://pub.dev/documentation/syncfusion_flutter_charts/latest/charts/SfCartesianChart-class.html?utm_source=pubdev&utm_medium=listing&utm_campaign=flutter-charts-pubdev
             // Initialize category axis
             primaryXAxis: CategoryAxis(

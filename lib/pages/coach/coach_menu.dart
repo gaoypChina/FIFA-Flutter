@@ -23,8 +23,8 @@ import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
-import 'package:fifa/values/league_trophy_image.dart';
 import 'package:fifa/widgets/button/back_button.dart';
+import 'package:fifa/widgets/trophy.dart';
 import 'package:flutter/material.dart';
 import 'package:pie_chart/pie_chart.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -206,50 +206,19 @@ Widget coachAchievements(BuildContext context){
 
 
 Widget trophyWidget(BuildContext context, int i) {
+
   late String name;
-  late String image;
   late int qntd;
 
   if(i==0){
-    name = Translation(context).text.nationalChampionship;
-    image = getTrophyImage(My().campeonatoName);
+    name = My().campeonatoName;
     qntd = HistoricFunctions().myLeagueTitles();
   }
-  if(i==1){
-    name = Translation(context).text.internationalChampionship;
-    image = getTrophyImage(My().getMyInternationalLeague());
+  else if(i==1){
+    name = My().getMyInternationalLeague();
     qntd = HistoricFunctions().myInternationalTitle();
   }
-  return Container(
-    height: 160,
-    width: 120,
-    color: AppColors().greyTransparent,
-    child: Stack(
-      children: [
-        //LOGO DE FUNDO OPACA
-        SizedBox(
-          height: 200,width: 200,
-          child: Opacity(
-            opacity: 0.4,
-            child: Container(
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                    fit: BoxFit.fitHeight,
-                    alignment: FractionalOffset.center,
-                    image: AssetImage('assets/trophy/$image.png')),
-                  )
-              ),
-            ),
-          ),
-        Center(child: Text(name,textAlign:TextAlign.center,style: EstiloTextoBranco.text14)),
-        Padding(
-          padding: const EdgeInsets.only(top: 110, left: 50),
-          child: Text(qntd.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.negrito40),
-        ),
-
-      ],
-    ),
-  );
+  return TrophyWidget(name: name, qntd: qntd, scale: 1);
   }
 
 

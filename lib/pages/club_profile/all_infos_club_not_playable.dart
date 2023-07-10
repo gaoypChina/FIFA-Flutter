@@ -21,6 +21,7 @@ import 'package:fifa/widgets/button/back_button.dart';
 import 'package:fifa/widgets/bottom_sheet/bottom_sheet_league_classification.dart';
 import 'package:fifa/widgets/bottom_sheet/bottom_sheet_titles.dart';
 import 'package:fifa/widgets/stars.dart';
+import 'package:fifa/widgets/trophy.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -224,11 +225,12 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
 
           Container(
               color: AppColors().greyTransparent,
-              margin: const EdgeInsets.only(top:4, left: 4, right: 4),
+              margin: const EdgeInsets.only(top:8, left: 4, right: 4),
               padding: const EdgeInsets.all(4),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text("Classificação Atual:",style: EstiloTextoBranco.negrito18),
+                  const Text("Classificação Atual",style: EstiloTextoBranco.negrito18),
                   SizedBox(height:400, child: RealTableWidget(chosenLeagueName: leagueName)),
                 ],
               ),
@@ -278,6 +280,9 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
             : dataGraphics.data.length * 35 + 50,
         color: AppColors().greyTransparent,
         child: SfCartesianChart(
+
+          title: ChartTitle(text: 'Historic', alignment: ChartAlignment.near,
+              textStyle: EstiloTextoBranco.negrito14),
           tooltipBehavior: _tooltipBehavior,
           //https://pub.dev/documentation/syncfusion_flutter_charts/latest/charts/SfCartesianChart-class.html?utm_source=pubdev&utm_medium=listing&utm_campaign=flutter-charts-pubdev
           // Initialize category axis
@@ -358,16 +363,27 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
   Widget trophy(DataGraphics dataGraphics){
     return Container(
       color: AppColors().greyTransparent,
-      padding: const EdgeInsets.all(4),
-      margin: const EdgeInsets.symmetric(vertical:4),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      padding: const EdgeInsets.all(8),
+      width: Sized(context).width,
+      margin: const EdgeInsets.symmetric(vertical:8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          dataGraphics.dataEstadual.isNotEmpty ? trophyColumn("Estadual", dataGraphics.dataEstadual, dataGraphics.nTitulosEstadual) : Container(),
-          trophyColumn(dataGraphics.cupName, dataGraphics.dataCups, dataGraphics.nTitulosCups),
-          trophyColumn(dataGraphics.leagueName, dataGraphics.data, dataGraphics.nTitulos),
-          trophyColumn(dataGraphics.internationalLeagueName, dataGraphics.dataInternational, dataGraphics.nTitulosInternational),
-          trophyColumn(LeagueOfficialNames().mundial, dataGraphics.dataMundial, dataGraphics.nTitulosMundial),
+          const Text("Trophies", style: EstiloTextoBranco.negrito16),
+          const SizedBox(height: 4),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                dataGraphics.dataEstadual.isNotEmpty ? trophyColumn("Estadual", dataGraphics.dataEstadual, dataGraphics.nTitulosEstadual) : Container(),
+                trophyColumn(dataGraphics.cupName, dataGraphics.dataCups, dataGraphics.nTitulosCups),
+                trophyColumn(dataGraphics.leagueName, dataGraphics.data, dataGraphics.nTitulos),
+                trophyColumn(dataGraphics.internationalLeagueName, dataGraphics.dataInternational, dataGraphics.nTitulosInternational),
+                trophyColumn(LeagueOfficialNames().mundial, dataGraphics.dataMundial, dataGraphics.nTitulosMundial),
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -378,18 +394,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
       onTap:(){
         bottomSheetShowTitles(context, leagueName, classificationData);
       },
-      child: SizedBox(
-        width: 70,
-        height: 130,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(leagueName.toString(), style: EstiloTextoBranco.text12),
-            Images().getTrophy(leagueName,60,60),
-            Text(titles.toString(), style: EstiloTextoBranco.text20),
-          ],
-        ),
-      ),
+      child: TrophyWidget(name: leagueName, qntd: titles, scale: 0.8)
     );
   }
 
@@ -398,84 +403,80 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
       width: Sized(context).width,
       color: AppColors().greyTransparent,
       margin: const EdgeInsets.all(4),
-      padding: const EdgeInsets.all(4),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+      padding: const EdgeInsets.all(8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-
-          //G-2
-          Column(
+          const Text("Years", style: EstiloTextoBranco.negrito16),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              const Text('G-2', style: EstiloTextoBranco.text14),
-              Text(Translation(context).text.years,
-                  style: EstiloTextoBranco.text14),
-              const SizedBox(height: 6),
-              Text(dataGraphics.g2Years.toString(),
-                  style: EstiloTextoBranco.text20),
+
+              //G-2
+              Column(
+                children: [
+                  const Text('G-2', style: EstiloTextoBranco.text14),
+                  const SizedBox(height: 6),
+                  Text(dataGraphics.g2Years.toString(),
+                      style: EstiloTextoBranco.text20),
+                ],
+              ),
+
+              //G-4
+              Column(
+                children: [
+                  const Text('G-4', style: EstiloTextoBranco.text14),
+                  const SizedBox(height: 6),
+                  Text(dataGraphics.g4Years.toString(),
+                      style: EstiloTextoBranco.text20),
+                ],
+              ),
+
+              //G-10
+              Column(
+                children: [
+                  const Text('G-10', style: EstiloTextoBranco.text14),
+                  const SizedBox(height: 6),
+                  Text(dataGraphics.g10Years.toString(),
+                      style: EstiloTextoBranco.text20),
+                ],
+              ),
+
+              //1ªDIVISÃO
+              Column(
+                children: [
+                  const Text('1ªDivisão', style: EstiloTextoBranco.text14),
+                  const SizedBox(height: 6),
+                  Text(dataGraphics.n1ndivision.toString(),
+                      style: EstiloTextoBranco.text20),
+                ],
+              ),
+
+              //2ªDIVISÃO
+              Column(
+                children: [
+                  Text(Translation(context).text.division2,
+                      style: EstiloTextoBranco.text14),
+                  const SizedBox(height: 6),
+                  Text(dataGraphics.n2ndivision.toString(),
+                      style: EstiloTextoBranco.text20),
+                ],
+              ),
+
+              Column(
+                children: [
+                  Text(Translation(context).text.average,
+                      style: EstiloTextoBranco.text14),
+                  Text(Translation(context).text.last10Years,
+                      style: EstiloTextoBranco.text14),
+                  const SizedBox(height: 6),
+                  Text(dataGraphics.averagePosition10years.toString() + 'º',
+                      style: EstiloTextoBranco.text20),
+                ],
+              ),
+
             ],
           ),
-
-          //G-4
-          Column(
-            children: [
-              const Text('G-4', style: EstiloTextoBranco.text14),
-              Text(Translation(context).text.years,
-                  style: EstiloTextoBranco.text14),
-              const SizedBox(height: 6),
-              Text(dataGraphics.g4Years.toString(),
-                  style: EstiloTextoBranco.text20),
-            ],
-          ),
-
-          //G-10
-          Column(
-            children: [
-              const Text('G-10', style: EstiloTextoBranco.text14),
-              Text(Translation(context).text.years,
-                  style: EstiloTextoBranco.text14),
-              const SizedBox(height: 6),
-              Text(dataGraphics.g10Years.toString(),
-                  style: EstiloTextoBranco.text20),
-            ],
-          ),
-
-          //1ªDIVISÃO
-          Column(
-            children: [
-              const Text('1ªDivisão', style: EstiloTextoBranco.text14),
-              Text(Translation(context).text.years,
-                  style: EstiloTextoBranco.text14),
-              const SizedBox(height: 6),
-              Text(dataGraphics.n1ndivision.toString(),
-                  style: EstiloTextoBranco.text20),
-            ],
-          ),
-
-          //2ªDIVISÃO
-          Column(
-            children: [
-              Text(Translation(context).text.division2,
-                  style: EstiloTextoBranco.text14),
-              Text(Translation(context).text.years,
-                  style: EstiloTextoBranco.text14),
-              const SizedBox(height: 6),
-              Text(dataGraphics.n2ndivision.toString(),
-                  style: EstiloTextoBranco.text20),
-            ],
-          ),
-
-          Column(
-            children: [
-              Text(Translation(context).text.average,
-                  style: EstiloTextoBranco.text14),
-              Text(Translation(context).text.last10Years,
-                  style: EstiloTextoBranco.text14),
-              const SizedBox(height: 6),
-              Text(dataGraphics.averagePosition10years.toString() + 'º',
-                  style: EstiloTextoBranco.text20),
-            ],
-          ),
-
         ],
       ),
     );
@@ -628,7 +629,9 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
     return Container(
       width: Sized(context).width-8,
       color: AppColors().greyTransparent,
+      padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text("Predição", style: EstiloTextoBranco.negrito16),
           const SizedBox(height: 8),

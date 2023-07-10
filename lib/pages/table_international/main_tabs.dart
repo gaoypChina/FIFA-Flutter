@@ -8,6 +8,7 @@ import 'package:fifa/pages/table_international/table_brackets.dart';
 import 'package:fifa/pages/table_international/table_international_scorers.dart';
 import 'package:fifa/pages/table_international/table_mata_mata.dart';
 import 'package:fifa/pages/table_international/table_matchs.dart';
+import 'package:fifa/theme/decoration/my_team_gradient.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
@@ -154,13 +155,14 @@ class _TableInternationalState extends State<TableInternational>  with TickerPro
     );
   }
   Widget groupStageTable(){
+
     My my = My();
+
     return Container(
           color: AppColors().greyTransparent,
           child: SingleChildScrollView(
             padding: EdgeInsets.zero,
-            child: Table(
-              columnWidths: const{0: FractionColumnWidth(.05),1: FractionColumnWidth(.05),2: FractionColumnWidth(.4)},
+            child: Column(
               children: [
                 for (int groupNumber = 0; groupNumber < 8; groupNumber++)
                   for (int i = 0; i < 5; i++)
@@ -174,7 +176,7 @@ class _TableInternationalState extends State<TableInternational>  with TickerPro
         );
   }
 
-TableRow groupTitle(int groupNumber){
+  Widget groupTitle(int groupNumber){
     String groupLetter = 'A';
     if(groupNumber==1){groupLetter='B';}
     if(groupNumber==2){groupLetter='C';}
@@ -183,51 +185,82 @@ TableRow groupTitle(int groupNumber){
     if(groupNumber==5){groupLetter='F';}
     if(groupNumber==6){groupLetter='G';}
     if(groupNumber==7){groupLetter='H';}
-    return TableRow(
-      children: [
-        const Text('',style: EstiloTextoBranco.text16),
-        const Text('',style: EstiloTextoBranco.text16),
-        SizedBox(
-          width: 200,
-          child: Text('\n${Translation(context).text.group} ' + groupLetter,style: EstiloTextoBranco.negrito16),
-        ),
-        const Text('\nPTS ',style: EstiloTextoCinza.text16),
-        const Text('\n GM ',style: EstiloTextoCinza.text16),
-        const Text('\n GS ',style: EstiloTextoCinza.text16),
-        const Text('\n SG ',style: EstiloTextoCinza.text16),
-        const Text('\nOVR ',style: EstiloTextoCinza.text16),
-      ],
+    return Container(
+      margin: const EdgeInsets.only(top: 16),
+      child: Row(
+        children: [
+          Expanded(child: Text('${Translation(context).text.group} ' + groupLetter,style: EstiloTextoBranco.negrito16)),
+          const Text('PTS ',style: EstiloTextoCinza.text16),
+          const Text(' GM ',style: EstiloTextoCinza.text16),
+          const Text(' GS ',style: EstiloTextoCinza.text16),
+          const Text(' SG ',style: EstiloTextoCinza.text16),
+          const Text('OVR ',style: EstiloTextoCinza.text16),
+        ],
+      ),
     );
   }
-  TableRow groupRow(int i, int index032, My my){
-    int clubIndex = clubsID[index032];
-    Club clubClass = Club(index: clubIndex);
-    int saldoGols = clubClass.internationalGM - clubClass.internationalGS;
+  Widget groupRow(int position, int index032, My my){
 
-    return  TableRow(
-      children: [
-        numberCircle(i, 25),
-        //Escudo
-        Images().getEscudoWidget(clubClass.name,25,25),
-        GestureDetector(
-          onTap:(){
-            clickClubProfilePage(context, clubClass);
-          },
-          child: Container(
-            color: clubClass.name == my.clubName
-                ? Colors.green
-                : i==1 || i==2 ? Colors.deepPurple
-                      : Colors.transparent,
-            padding: const EdgeInsets.all(2.0),
-            child: Text(clubClass.name,style: EstiloTextoBranco.text16),
+    int clubIndex = clubsID[index032];
+    Club clubClass = Club(index: clubIndex, clubDetails: false);
+    String clubName = clubClass.name;
+    int points = clubClass.internationalPoints;
+    int golsMarcados = clubClass.internationalGM;
+    int golsSofridos = clubClass.internationalGS;
+    int saldo = golsMarcados - golsSofridos;
+    double overall = clubClass.getOverall();
+
+    TextStyle textStyle = EstiloTextoBranco.text14;
+    TextStyle textStyle2 = EstiloTextoBranco.text16;
+    TextStyle textStyle3 = EstiloTextoBranco.negrito14;
+    bool isMyClub = false;
+    if(clubClass.name == my.clubName){
+      isMyClub = true;
+      textStyle = EstiloTextoVerdee.text14;
+      textStyle2 = EstiloTextoVerdee.text16;
+      textStyle3 = EstiloTextoVerdee.negrito14;
+    }
+
+    return  Container(
+      decoration: isMyClub
+          ? BoxDecoration(gradient: gradientMyTeam(true))
+          : position==1 || position==2 ? BoxDecoration(gradient: gradientTeam(Colors.purple))
+                                    : const BoxDecoration(),
+      child: Row(
+        children: [
+
+          Stack(
+            children: [
+              Row(
+                children: [
+                  numberCircle(position, 30),
+                  Images().getEscudoWidget(clubClass.name,26,26),
+                  const SizedBox(width: 4),
+                ],
+              )
+            ],
           ),
-        ),
-        Text(' ${clubClass.internationalPoints.toString()}',style: EstiloTextoBranco.negrito14),
-        Text(clubClass.internationalGM.toString(),style: EstiloTextoBranco.text14),
-        Text(clubClass.internationalGS.toString(),style: EstiloTextoBranco.text14),
-        Text(saldoGols.toString(),style: EstiloTextoBranco.text14),
-        Text(clubClass.getOverall().toStringAsFixed(2),style: EstiloTextoBranco.text14),
-      ],
+          const SizedBox(width: 4),
+          GestureDetector(
+            onTap: (){
+              clickClubProfilePage(context,clubClass);
+            },
+            child: Container(
+                width: 170,
+                height: 28,
+                padding: const EdgeInsets.all(4),
+                margin: const EdgeInsets.all(1),
+                child: Text(clubName, style: textStyle2)
+            ),
+          ),
+          SizedBox(width: 30, child: Center(child: Text(points.toString(),style: textStyle3))),
+          SizedBox(width: 30, child: Center(child: Text(golsMarcados.toString(),style: textStyle))),
+          SizedBox(width: 30, child: Center(child: Text(golsSofridos.toString(),style: textStyle))),
+          SizedBox(width: 30, child: Center(child: Text(saldo.toString(),style: textStyle))),
+          Text(overall.toStringAsFixed(2),style: textStyle),
+
+        ],
+      ),
     );
   }
 ////////////////////////////////////////////////////////////////////////////
