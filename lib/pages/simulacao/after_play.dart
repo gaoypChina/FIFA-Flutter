@@ -15,6 +15,7 @@ import 'package:fifa/classes/table/table_matchs_control.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/pages/simulacao/not_play_international/not_play_international_matamata.dart';
+import 'package:fifa/pages/table/widgets/table_widget.dart';
 import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/background_color/color_grade.dart';
 import 'package:fifa/theme/colors.dart';
@@ -141,20 +142,6 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
                     ],
                   ),
                 ),
-                Row(
-                  children: [
-                    bestPlayerBox('Melhor Jogador', Jogador(index: playerGrade.id),playerGrade.grade.toStringAsFixed(1)),
-                    Expanded(child: classification()),
-                  ],
-                ),
-
-                weekClass.isJogoCampeonatoNacional
-                    ? weekMatchs()
-                    : weekClass.isJogoCopa ? Container()
-                    : weekClass.isJogoMundial ? Container()
-                    : weekClass.isJogoGruposInternacional
-                      ? tableWidget()
-                      : tableWidgetMataMata(),
 
                 customButtonContinue(
                   title: Translation(context).text.nextMatchWeek,
@@ -203,8 +190,8 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
                 : Image.asset(FIFAImages().campeonatoLogo(myClass.getMyInternationalLeague()),height: 35,width: 35),
             Text(textRodada,style: EstiloTextoBranco.text16),
             widget.visitante
-                ? Text(widget.goal2.toString() +'X'+ widget.goal1.toString() ,style: EstiloTextoBranco.text30)
-                : Text(widget.goal1.toString()  +'X'+ widget.goal2.toString() ,style: EstiloTextoBranco.text30),
+                ? Text(widget.goal2.toString() + 'X' + widget.goal1.toString() ,style: EstiloTextoBranco.text30)
+                : Text(widget.goal1.toString() + 'X' + widget.goal2.toString() ,style: EstiloTextoBranco.text30),
           ],
         ),
 
@@ -250,6 +237,16 @@ Widget goalsWidget(){
           children: [
             for(int i=0; i<goals.length; i++)
               goalRow(goals[i], goals2.contains(goals[i])),
+
+            classification(),
+
+            weekClass.isJogoCampeonatoNacional
+                ? weekMatchs()
+                : weekClass.isJogoCopa ? Container()
+                : weekClass.isJogoMundial ? Container()
+                : weekClass.isJogoGruposInternacional
+                ? tableWidget()
+                : tableWidgetMataMata(),
           ],
         );
 }
@@ -278,30 +275,40 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
 }
 
   Widget playerStatistics(){
-    return SingleChildScrollView(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Column(
-            children: [
-              for(int i=0;i<11;i++)
-                playerRow(Jogador(index: !widget.visitante ? myClubClass.escalacao[i] : adversarioClubClass.escalacao[i])),
-            ],
-          ),
+    return Column(
+      children: [
 
-          Column(
+        SingleChildScrollView(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              for(int i=0;i<11;i++)
-                playerRow(Jogador(index: widget.visitante ? myClubClass.escalacao[i] : adversarioClubClass.escalacao[i])),
+              Column(
+                children: [
+                  for(int i=0;i<11;i++)
+                    playerRow(Jogador(index: !widget.visitante ? myClubClass.escalacao[i] : adversarioClubClass.escalacao[i])),
+                ],
+              ),
+
+              Column(
+                children: [
+                  for(int i=0;i<11;i++)
+                    playerRow(Jogador(index: widget.visitante ? myClubClass.escalacao[i] : adversarioClubClass.escalacao[i])),
+                ],
+              ),
             ],
           ),
-        ],
-      ),
+        ),
+
+        bestPlayerBox('Melhor Jogador', Jogador(index: playerGrade.id),playerGrade.grade.toStringAsFixed(1)),
+
+      ],
     );
   }
   Widget playerRow(Jogador player){
+
     Match match = Match(playerID: player.index);
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: Row(
@@ -320,7 +327,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
   }
   Widget classification(){
       return Container(
-        height: 5*36,
+        height: 5*44,
         color: AppColors().greyTransparent,
         margin: const EdgeInsets.all(4),
         child: Column(
@@ -332,8 +339,9 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
                 Container(width:30),
                 const Expanded(child: Text('Nome',style:EstiloTextoBranco.text14)),
                 const SizedBox(width:30,child: Text('PTS',style:EstiloTextoBranco.text14)),
-                const SizedBox(width:25,child: Text('GM',style:EstiloTextoBranco.text14)),
-                const SizedBox(width:25,child: Text('GS',style:EstiloTextoBranco.text14)),
+                const SizedBox(width:30,child: Text('GM',style:EstiloTextoBranco.text14)),
+                const SizedBox(width:30,child: Text('GS',style:EstiloTextoBranco.text14)),
+                const SizedBox(width:25,child: Text('SG',style:EstiloTextoBranco.text14)),
                 const SizedBox(width:30,child: Text('OVR',style:EstiloTextoBranco.text14)),
                 const SizedBox(width:10)
               ],
@@ -364,12 +372,12 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
 
     return             //CONTENT
       Container(
-        height: 5*25,
+        height: 5*35,
         margin: const EdgeInsets.all(4),
         child: ListView.builder(
             padding: EdgeInsets.zero,
             itemCount: classificationClubsIndexes.length,
-            itemBuilder: (c,i) => classificationRow(i, classificationClubsIndexes[i])
+            itemBuilder: (c,i) => rowTableNacionalLayout(context, i, classificationClubsIndexes[i], League(index: My().leagueID))
         ),
       );
   }
@@ -415,7 +423,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
         children: [
           Text('Rodada '+(weekClass.rodadaNacional).toString(),style: EstiloTextoBranco.negrito16),
               Container(
-                height: 5*30,
+                height: 5*34,
                 margin: const EdgeInsets.all(4),
                 child: ListView.builder(
                     padding: EdgeInsets.zero,
@@ -442,7 +450,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
     return Container(
       color: AppColors().greyTransparent,
       margin: const EdgeInsets.all(4),
-      height: 5*30,
+      height: 5*34,
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -489,7 +497,7 @@ Widget tableWidgetMataMata(){
   return Container(
     color: AppColors().greyTransparent,
     margin: const EdgeInsets.all(4),
-    height: 5*30,
+    height: 5*34,
     child: SingleChildScrollView(
       child: Column(
         children: [

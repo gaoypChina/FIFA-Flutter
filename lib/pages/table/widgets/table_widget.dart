@@ -1,6 +1,7 @@
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
@@ -74,6 +75,7 @@ Widget rowTableNacionalLayout(BuildContext context, int position, int indexClub,
       clickClubProfilePage(context,clubClass);
     },
     child: Container(
+      width: Sized(context).width,
       decoration: isMyClub
           ? BoxDecoration(gradient: gradientMyTeam(true))
           : BoxDecoration(gradient: gradientTeam(backgroundColor)),
@@ -92,16 +94,17 @@ Widget rowTableNacionalLayout(BuildContext context, int position, int indexClub,
             ],
           ),
           const SizedBox(width: 4),
-          GestureDetector(
-            onTap: (){
-              clickClubProfilePage(context,clubClass);
-            },
-            child: Container(
-                width: 170,
-                height: 28,
-                padding: const EdgeInsets.all(4),
-                margin: const EdgeInsets.all(1),
-                child: Text(clubName, style: textStyle2)
+          Expanded(
+            child: GestureDetector(
+              onTap: (){
+                clickClubProfilePage(context,clubClass);
+              },
+              child: Container(
+                  height: 28,
+                  padding: const EdgeInsets.all(4),
+                  margin: const EdgeInsets.all(1),
+                  child: Text(clubName, style: textStyle2)
+              ),
             ),
           ),
           SizedBox(width: 30, child: Center(child: Text(points.toString(),style: textStyle3))),
