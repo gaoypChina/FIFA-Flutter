@@ -6,6 +6,7 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
+import 'package:fifa/widgets/button/button_list_row.dart';
 import 'package:fifa/widgets/player_templates/row_player_stats.dart';
 import 'package:flutter/material.dart';
 
@@ -26,19 +27,27 @@ class _CupStatisticsState extends State<CupStatistics> {
     return Column(
         children: [
 
-          const SizedBox(height: 6),
+
+          statisticsBox(context, typeSelected),
+
+          const SizedBox(height: 4),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
                 for (String type in FilterPlayersTitle().getList())
-                  buttonSelection(type)
+                  buttonListRow(
+                    type,
+                    typeSelected,
+                    (String title){
+                      typeSelected = title;
+                      setState((){});
+                    },
+                  ),
               ],
             ),
           ),
-          const SizedBox(height: 6),
-
-          statisticsBox(context, typeSelected),
+          const SizedBox(height: 4),
         ],
     );
   }
@@ -128,30 +137,6 @@ class _CupStatisticsState extends State<CupStatistics> {
     );
   }
 
-
-  Widget buttonSelection(String title){
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: (){
-          typeSelected = title;
-          setState((){});
-        },
-        child: Container(
-          padding: const EdgeInsets.all(2),
-          margin: const EdgeInsets.all(2),
-          decoration: BoxDecoration(
-            color: AppColors().greyTransparent,
-            border: Border.all(
-              color: typeSelected == title ? Colors.white : AppColors().greyTransparent,
-              width: 1.0,
-            ),
-          ),
-          child: Text(title, style: EstiloTextoBranco.text16),
-        ),
-      ),
-    );
-  }
 }
 
 

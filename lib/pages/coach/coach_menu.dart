@@ -111,7 +111,7 @@ class _CoachMenuState extends State<CoachMenu> {
                       color: AppColors().greyTransparent,
                       width: Sized(context).width,
                       padding: const EdgeInsets.all(8),
-                      margin: const EdgeInsets.all(8),
+                      margin: const EdgeInsets.symmetric(vertical: 8),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -126,14 +126,14 @@ class _CoachMenuState extends State<CoachMenu> {
 
 
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         sequenceWidget(Translation(context).text.biggestVictory, coachBestResults.maxVictory, coachBestResults.maxVictoryClubID,coachBestResults.maxVictoryClubAdvID),
                         sequenceWidget(Translation(context).text.biggestDefeat, coachBestResults.maxLoss, coachBestResults.maxLossClubID,coachBestResults.maxLossClubAdvID),
                       ],
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         sequenceWidget(Translation(context).text.sequenceNoDefeats, coachBestResults.maxSequenceNoLosses.toString(), coachBestResults.maxSequenceNoLossesClubID),
                         sequenceWidget(Translation(context).text.sequenceVictories,coachBestResults.maxSequenceVictory.toString(), coachBestResults.maxSequenceVictoryClubID),
@@ -142,7 +142,7 @@ class _CoachMenuState extends State<CoachMenu> {
 
 
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         signWidget('Contratação mais cara',HistoricMyTransfers().buyKeyword),
                         signWidget('Venda mais cara',HistoricMyTransfers().sellKeyword),
@@ -342,7 +342,7 @@ Widget expectationBar(){
     );
 }
 Widget buttonMoreMoney(){
-    return           GestureDetector(
+    return ButtonBorderGreen4(
         onTap: (){
           popUpAskMoney(
               context: context,
@@ -350,11 +350,7 @@ Widget buttonMoreMoney(){
               overall: Club(index: my.clubID).getOverall(),
               functionSetState: (){setState((){});}
           );
-        },child: Container(
-        color: AppColors().greyTransparent,
-        padding: const EdgeInsets.all(4),
-        margin: const EdgeInsets.all(4),
-        child: const Text('Pedir Dinheiro',style: EstiloTextoBranco.text16))
+        },child: const Text('Pedir Dinheiro',style: EstiloTextoBranco.text16)
     );
 }
 Widget sequenceWidget(String text, String value, int clubID, [int? advClubID]){
@@ -362,9 +358,9 @@ Widget sequenceWidget(String text, String value, int clubID, [int? advClubID]){
     decoration: BoxDecoration(
       color: AppColors().greyTransparent,
     ),
-    width: 170,
+    width: Sized(context).width*0.45,
     padding: const EdgeInsets.all(4),
-    margin: const EdgeInsets.all(4),
+    margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
     child: Column(
       children: [
         Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.negrito14),
@@ -395,9 +391,9 @@ Widget signWidget(String text, String keyword){
     decoration: BoxDecoration(
       color: AppColors().greyTransparent,
     ),
-    width: 170,
+    width: Sized(context).width*0.45,
     padding: const EdgeInsets.all(4),
-    margin: const EdgeInsets.all(4),
+    margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
     child: GestureDetector(
       onTap: (){
         popUpOkShowPlayerInfos(context: context, playerID: player.index, funcSetState: (){setState(() {});});
@@ -461,7 +457,7 @@ Widget financeWidget(){
     return Container(
       width: Sized(context).width,
       color: AppColors().greyTransparent,
-      margin: const EdgeInsets.symmetric(horizontal: 16),
+      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       padding: const EdgeInsets.all(4),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

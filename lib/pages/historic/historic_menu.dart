@@ -167,17 +167,17 @@ class _HistoricMenuState extends State<HistoricMenu> {
 ////////////////////////////////////////////////////////////////////////////
 Widget box(String text, Widget centralWidget, Function function){
     return Container(
-      margin: const EdgeInsets.all(4),
+      margin: const EdgeInsets.all(8),
       child: PressableButton(
         onTap: (){
           function();
         },
         child: Container(
           height: 100,
-          width: Sized(context).width*0.45,
+          width: Sized(context).width*0.44,
           decoration: BoxDecoration(
             color: AppColors().greyTransparent,
-            borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+            borderRadius: const BorderRadius.all(Radius.circular(2.0)),
             border: Border.all(
               width: 1.0,
               color: AppColors().green,

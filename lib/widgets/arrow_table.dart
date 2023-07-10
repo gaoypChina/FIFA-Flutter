@@ -11,17 +11,17 @@ class ArrowSquarePainter extends CustomPainter {
       ..color = colorArrow
       ..style = PaintingStyle.fill;
 
-    double maxHeight =  size.height*0.75;
+    double maxHeight =  size.height*1.2;
     final arrowPath = Path();
     arrowPath.moveTo(size.width*0.9, 0);
-    arrowPath.lineTo(size.width*1.2, maxHeight/2);
+    arrowPath.lineTo(size.width*1, maxHeight/2);
     arrowPath.lineTo(size.width*0.9, maxHeight);
     arrowPath.close();
 
     final squarePath = Path();
     squarePath.addRect(Rect.fromLTRB(
       0,
-      0,
+      (size.height-maxHeight)/2,
       size.width*0.9,
       maxHeight,
     ));

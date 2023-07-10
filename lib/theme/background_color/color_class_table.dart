@@ -1,5 +1,4 @@
 import 'package:fifa/classes/league.dart';
-import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/functions/nteams_int_league.dart';
 import 'package:fifa/values/league_divisions.dart';
 import 'package:fifa/values/league_names.dart';
@@ -63,8 +62,6 @@ Color colorBackgroundNationalTable(int position, League league, String teamName)
     if(position==league.nClubs-2){backgroundColor = Colors.red;}
     if(position==league.nClubs-1){backgroundColor = Colors.red;}
   }
-
-  if(teamName==My().clubName){backgroundColor = Colors.teal;}
 
   return backgroundColor;
 }

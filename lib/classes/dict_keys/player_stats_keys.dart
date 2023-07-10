@@ -20,4 +20,8 @@ class FilterPlayersTitle{
     return [artilheiros, assists, bestPlayer, cleanSheets];
   }
 
+  getListFull(){
+    return [artilheiros, assists, bestPlayer, cleanSheets, redCards, yellowCards];
+  }
+
 }

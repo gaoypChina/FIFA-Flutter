@@ -8,6 +8,7 @@ import 'package:fifa/classes/match/result_dict.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/theme/background_color/match_x_testyle.dart';
 import 'package:fifa/theme/colors.dart';
+import 'package:fifa/theme/decoration/my_team_gradient.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
@@ -111,17 +112,21 @@ Widget cupMatchRow(BuildContext context, Confronto confronto, My my){
               onTap: (){
                 clickClubProfilePage(context, Club(index: confronto.clubID1));
                 },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Expanded(
-                      child: Container(
-                          padding: const EdgeInsets.all(4),
-                          color: teamNameA == my.clubName ? Colors.green : Colors.transparent,
-                          child: Text(teamNameA,textAlign:TextAlign.end,style: styleName1)),
-                    ),
-                    Images().getEscudoWidget(teamNameA,imageSize,imageSize),
-                  ],
+                child: Container(
+                  decoration: teamNameA == my.clubName
+                      ? BoxDecoration(gradient: gradientMyTeam(false))
+                      : const BoxDecoration(),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Expanded(
+                        child: Container(
+                            padding: const EdgeInsets.all(4),
+                            child: Text(teamNameA,textAlign:TextAlign.end,style: styleName1)),
+                      ),
+                      Images().getEscudoWidget(teamNameA,imageSize,imageSize),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -141,7 +146,9 @@ Widget cupMatchRow(BuildContext context, Confronto confronto, My my){
               )
                 : const Text('  X  ',textAlign:TextAlign.start,style: EstiloTextoBranco.text22),
 
-            confronto.hasPenaltis ? Text("Pen:" + confronto.penaltis1.toString()+"x"+confronto.penaltis2.toString(),style: EstiloTextoBranco.text10) : Container(),
+            confronto.hasPenaltis
+                ? Text("Pen:" + confronto.penaltis1.toString()+"x"+confronto.penaltis2.toString(),style: EstiloTextoBranco.text10)
+                : Container(),
           ],
         ),
 
@@ -151,18 +158,22 @@ Widget cupMatchRow(BuildContext context, Confronto confronto, My my){
                     onTap: (){
                       clickClubProfilePage(context, Club(index: confronto.clubID2));
                     },
-                    child: Row(
-                      children: [
-                        Images().getEscudoWidget(teamNameB,imageSize,imageSize),
-                        Expanded(
-                          child: Container(
-                            padding: const EdgeInsets.all(4),
-                            color: teamNameB == my.clubName ? Colors.green : Colors.transparent,
-                            child: Text(teamNameB,style: styleName2),
+                    child: Container(
+                      decoration: teamNameB == my.clubName
+                          ? BoxDecoration(gradient: gradientMyTeam(true))
+                          : const BoxDecoration(),
+                      child: Row(
+                        children: [
+                          Images().getEscudoWidget(teamNameB,imageSize,imageSize),
+                          Expanded(
+                            child: Container(
+                              padding: const EdgeInsets.all(4),
+                              child: Text(teamNameB,style: styleName2),
+                            ),
                           ),
-                        ),
 
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),

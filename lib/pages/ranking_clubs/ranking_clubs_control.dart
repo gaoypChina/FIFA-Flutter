@@ -2,6 +2,7 @@ import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/theme/custom_toast.dart';
+import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/values/league_divisions.dart';
@@ -31,7 +32,7 @@ class RankingClubsControl{
       customToast('LOADING: $leagueName');
       for(int i=0; i < allClubsNameList.length; i++) {
         int clubID = clubsAllNameList.indexOf(allClubsNameList[i]);
-        Club clubClass = Club(index: clubID);
+        Club clubClass = Club(index: clubID, clubDetails: false, calcInternationalLeaguePlaying: false);
 
         // If the team is not legendary
         if (!clubsNotPlayable.contains(clubClass.name)){
@@ -71,8 +72,10 @@ class RankingClubsControl{
   }
 
   organizeContinentalRanking(String continent){
+    customToast('Ordering continents');
+    ClubDetails clubDetails = ClubDetails();
     copyClubsContinental = List.from(clubs);
-    copyClubsContinental.removeWhere((club) => !club.continent.contains(continent));
+    copyClubsContinental.removeWhere((club) => !clubDetails.getContinent(club.name).contains(continent));
   }
 
   organizeNationalRanking(String leagueName){

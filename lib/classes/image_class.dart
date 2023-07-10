@@ -34,7 +34,7 @@ class Images{
   Widget getUniformWidget(String clubName,[double _height=50.0, double _width=50.0]){
     String name = FIFAImages().imageLogo(clubName);
     if(name != 'generic'){
-      return Image.asset('assets/clubs/${name}1.png',height: _height,width: _width,
+      return Image.asset('assets/clubs/${name}1.png',height: _height, width: _width,
       errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
         //Se o clube tem logo, mas não tiver a imagem do uniforme
         return UniformCustom(clubName,(_height/50)*0.45).kit();

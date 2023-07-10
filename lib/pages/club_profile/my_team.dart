@@ -1,9 +1,9 @@
 import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/club.dart';
-import 'package:fifa/classes/functions/esquemas_taticos.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/pages/club_profile/all_infos_club.dart';
 import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
+import 'package:fifa/pages/club_profile/compare.dart';
 import 'package:fifa/pages/club_profile/tabs/club_calendar.dart';
 import 'package:fifa/pages/club_profile/tabs/field_draggable.dart';
 import 'package:fifa/pages/club_profile/tabs/geral.dart';
@@ -11,7 +11,7 @@ import 'package:fifa/pages/club_profile/tabs/graphics.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/back_button.dart';
-import 'package:fifa/widgets/button/button_continue.dart';
+import 'package:fifa/widgets/button/button_border_green.dart';
 import 'package:fifa/widgets/stars.dart';
 import 'package:flutter/material.dart';
 
@@ -154,19 +154,12 @@ class _MyTeamState extends State<MyTeam> {
               ),
             ),
 
-            Column(
-              children: [
-                //MUDAR ESQUEMA TATICO
-                customButtonContinue(
-                    title: my.esquemaTatico,
-                    function: (){
-                      EsquemaTatico().changeMyEsquema();
-                      setState(() {});
-                    }
-                ),
-              ],
+            ButtonBorderGreen4(
+                onTap: (){
+                  navigatorPush(context, Compare(club: myClub));
+                },
+                child: const Text("Comparar", style: EstiloTextoBranco.text16)
             ),
-
 
           ],
         ),

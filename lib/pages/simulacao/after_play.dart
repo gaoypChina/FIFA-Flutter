@@ -411,7 +411,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
       margin: const EdgeInsets.all(4),
       child: Column(
         children: [
-          Text('Rodada '+(rodada-1).toString(),style: EstiloTextoBranco.negrito16),
+          Text('Rodada '+(weekClass.rodadaNacional).toString(),style: EstiloTextoBranco.negrito16),
               Container(
                 height: 5*30,
                 margin: const EdgeInsets.all(4),
@@ -430,7 +430,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
     TableNational tableNational = TableNational(
         chosenLeagueIndex: myClass.leagueID,
         leagueClass: leagueClass,
-        rodadaMatch: rodada-1,
+        rodadaMatch: weekClass.rodadaNacional,
         numeroDoConfronto: numeroDoConfronto
     );
     TextStyle style1 = matchStyle1(tableNational.goal1, tableNational.goal2, 14);

@@ -15,10 +15,10 @@ Widget wHomeClubLogoAndKitStack(BuildContext context, Club club){
         child: Stack(
           children: [
             //Image.asset(Images().getStadium(club.name),height: imageSize,width: imageSize,fit: BoxFit.fill,),
-            //Escudo
+            //Escudo*0.9 para aparecer as bordas do escudo
             GestureDetector(onTap:(){
               Navigator.of(context).push(MaterialPageRoute(builder: (context) => ClubProfileNotPlayable(clubName: club.name)));
-            },child: Images().getEscudoWidget(club.name,imageSize,imageSize)),
+            },child: Images().getEscudoWidget(club.name,imageSize*0.9,imageSize*0.9)),
             //Uniforme
             Container(
               alignment: Alignment.bottomRight,

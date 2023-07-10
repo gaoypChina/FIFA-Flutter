@@ -1,3 +1,5 @@
+import 'package:fifa/classes/countries/flags_list.dart';
+import 'package:fifa/classes/countries/words.dart';
 import 'package:fifa/classes/functions/dificuldade.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
@@ -25,13 +27,15 @@ class Configuration extends StatefulWidget {
 class _ConfigurationState extends State<Configuration> {
 
   ConfigurationState config = ConfigurationState();
-  double spaceBetweenWidgets = 8;
+  double spaceBetweenWidgets = 16;
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
+
     config.setInitialCheckboxState(context);
+
     return Scaffold(
       body: Container(
         decoration: Images().getWallpaperContainerDecoration(),
@@ -47,42 +51,87 @@ class _ConfigurationState extends State<Configuration> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+
                     SizedBox(height: spaceBetweenWidgets),
-                    coachName(),
+                    Container(
+                      margin: const EdgeInsets.symmetric(vertical: 8),
+                      child: const Text("Geral", style: EstiloTextoBranco.text16),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: AppColors().greyTransparent,
+                        borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                      ),
+                      child: Column(
+                        children: [
+                          language(),
+                          divisoria(),
+                          difficulty(),
+                          divisoria(),
+                          coachName(),
+                        ],
+                      ),
+                    ),
+
+
                     SizedBox(height: spaceBetweenWidgets),
-                    language(),
+
+                    Container(
+                      margin: const EdgeInsets.symmetric(vertical: 8),
+                      child: const Text("Gameplay", style: EstiloTextoBranco.text16),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: AppColors().greyTransparent,
+                        borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                      ),
+                      child: Column(
+                        children: [
+                          initialMoney(),
+                          divisoria(),
+                          nTeamsClassified(),
+                          divisoria(),
+                          changeClubs(),
+                          divisoria(),
+                          soundEffects(config),
+                          divisoria(),
+                          turns(config),
+                          divisoria(),
+                          randomizePlayers(),
+                          divisoria(),
+                          seeProbability(),
+                          divisoria(),
+                          allowCards(config),
+                          divisoria(),
+                          allowInjuries(config),
+                          divisoria(),
+                          imagesReal(config),
+                          divisoria(),
+                          playersOverallCheckbox(),
+                        ],
+                      ),
+                    ),
+
+
                     SizedBox(height: spaceBetweenWidgets),
-                    difficulty(),
-                    SizedBox(height: spaceBetweenWidgets),
-                    initialMoney(),
-                    SizedBox(height: spaceBetweenWidgets),
-                    soundEffects(config),
-                    SizedBox(height: spaceBetweenWidgets),
-                    turns(config),
-                    SizedBox(height: spaceBetweenWidgets),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        nTeamsClassified(),
-                        changeClubs(),
-                      ],),
-                    SizedBox(height: spaceBetweenWidgets),
-                    randomizePlayers(),
-                    SizedBox(height: spaceBetweenWidgets),
-                    seeProbability(),
-                    SizedBox(height: spaceBetweenWidgets),
-                    allowCards(config),
-                    SizedBox(height: spaceBetweenWidgets),
-                    allowInjuries(config),
-                    SizedBox(height: spaceBetweenWidgets),
-                    imagesReal(config),
-                    SizedBox(height: spaceBetweenWidgets),
-                    playersOverallCheckbox(),
-                    SizedBox(height: spaceBetweenWidgets),
-                    policyPrivacy(),
-                    SizedBox(height: spaceBetweenWidgets),
-                    userTerms(),
-                    SizedBox(height: spaceBetweenWidgets),
+                    Container(
+                      margin: const EdgeInsets.symmetric(vertical: 8),
+                      child: const Text("Terms and Conditions", style: EstiloTextoBranco.text16),
+                    ),
+
+                    Container(
+                      decoration: BoxDecoration(
+                        color: AppColors().greyTransparent,
+                        borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+                      ),
+                      child: Column(
+                        children: [
+                          policyPrivacy(),
+                          divisoria(),
+                          userTerms(),
+                        ],
+                      ),
+                    ),
                     //test(),
                   ],
                 ),
@@ -96,9 +145,16 @@ class _ConfigurationState extends State<Configuration> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Widget divisoria(){
+    return SizedBox(
+        width: Sized(context).width*0.9,
+        child: Divider(color: AppColors().grey1)
+    );
+  }
   Widget coachName(){
     return pressOption(
         Translation(context).text.coachName,
+        "Seu nome de treinador",
         config.coachName,
             () {
               popupEdit(
@@ -115,17 +171,11 @@ class _ConfigurationState extends State<Configuration> {
     );
   }
 
-  Widget language(){
-    return pressOption(
-        Translation(context).text.languageSelection,
-        Translation(context).text.language,
-            () {}
-    );
-  }
 
   Widget difficulty(){
     return pressOption(
         Translation(context).text.difficulty,
+        "Dificuldade da simulação, transferências e obtenção de recursos",
         DificuldadeClass().getNameTranslated(context),
             () {DificuldadeClass().addDificulty();}
     );
@@ -134,6 +184,7 @@ class _ConfigurationState extends State<Configuration> {
   Widget initialMoney(){
     return pressOption(
         Translation(context).text.initialMoney,
+        "Dinheiro no inicio da carreira",
         config.initialMoney>0 ? config.initialMoney.toString() : Translation(context).text.standard,
             () {
           popUpInitialMoney(
@@ -150,6 +201,7 @@ class _ConfigurationState extends State<Configuration> {
 Widget soundEffects(ConfigurationState config){
     return  defaultSlider(
         Translation(context).text.soundEffects,
+        "Permitir o uso de efeitos sonoros",
         config.hasSoundEffect,
             (value) {
               setState(() {
@@ -164,6 +216,7 @@ Widget soundEffects(ConfigurationState config){
   Widget turns(ConfigurationState config){
     return defaultSlider(
         Translation(context).text.turnsN,
+        "Ligas com partidas de ida e volta",
         config.turnIdaEVolta,
             (value) {
               customToast(Translation(context).text.inDevelopment);
@@ -176,49 +229,53 @@ Widget soundEffects(ConfigurationState config){
 
 
   Widget nTeamsClassified(){
-    return PressableButton(
-        onTap:(){
+    return textArrow(
+      'Configurar Campeonatos',
+      "Mudar número de clubes na liga, mudar quantidade de rebaixados e mais...",
+        (){
           customToast(Translation(context).text.inDevelopment);
           Navigator.push(context,MaterialPageRoute(builder: (context) => const LeaguesConfiguration()));
-        },
-      child: Container(
-        height: 80,
-        width: Sized(context).width*0.4,
-        padding: const EdgeInsets.all(6),
-        decoration: const BoxDecoration(
-          color: Colors.black38,
-          borderRadius: BorderRadius.all(
-              Radius.circular(5.0) //                 <--- border radius here
-          ),
-        ),
-        child: const Center(child: Text('Configurar Campeonatos',textAlign: TextAlign.center,style: EstiloTextoBranco.negrito16)),
-      ),
+          },
     );
   }
 
   Widget changeClubs(){
-    return PressableButton(
-      onTap:(){
-        popUpChangeClub(originalContext: context);
-      },
-      child: Container(
-        height: 80,
-        width: Sized(context).width*0.4,
-        padding: const EdgeInsets.all(6),
-        decoration: const BoxDecoration(
-          color: Colors.black38,
-          borderRadius: BorderRadius.all(
-              Radius.circular(5.0) //                 <--- border radius here
-          ),
-        ),
-        child: Center(child: Text(Translation(context).text.changeClubs,textAlign: TextAlign.center,style: EstiloTextoBranco.negrito16)),
-      ),
+    return textArrow(
+        Translation(context).text.changeClubs,
+        "Mudar times dos campeonatos",
+          (){popUpChangeClub(originalContext: context);},
     );
   }
 
+  Widget textArrow(String title, String subtitle, Function() function){
+    return PressableButton(
+      onTap: function,
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+        child: Row(
+          children: [
+            SizedBox(
+              width: Sized(context).width*0.6,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(title,style: EstiloTextoBranco.negrito16),
+                  Text(subtitle,style: EstiloTextoCinza.text12),
+                ],
+              ),
+            ),
+            const Spacer(),
+            const Icon(Icons.arrow_forward_ios_rounded, color: Colors.white, size: 25),
+            const SizedBox(width: 16),
+          ],
+        ),
+      ),
+    );
+  }
   Widget allowCards(ConfigurationState config){
     return defaultSlider(
         Translation(context).text.allowCards,
+        "Permitir o uso de cartões amarelos e vermelhos",
         config.hasCards,
             (value) {
               customToast(Translation(context).text.inDevelopment);
@@ -230,6 +287,7 @@ Widget soundEffects(ConfigurationState config){
   Widget allowInjuries(ConfigurationState config){
     return defaultSlider(
         Translation(context).text.allowInjuries,
+        "Permitir a ocorrência de lesões",
         config.hasInjuries,
             (value) {
               customToast(Translation(context).text.inDevelopment);
@@ -242,6 +300,7 @@ Widget soundEffects(ConfigurationState config){
   Widget imagesReal(ConfigurationState config){
     return defaultSlider(
         'Imagens Reais',
+        "Usar logos oficiais de clubes e campeonatos",
         config.showRealImages,
             (value) {
           setState(() {
@@ -251,8 +310,7 @@ Widget soundEffects(ConfigurationState config){
   }
   Widget playersOverallCheckbox(){
     return Container(
-      color: AppColors().greyTransparent,
-      padding: const EdgeInsets.all(4),
+      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -276,6 +334,7 @@ Widget soundEffects(ConfigurationState config){
   Widget randomizePlayers(){
     return defaultSlider(
         'Jogadores em times aleatórios',
+        "Sortear os jogadores em times aleatórios",
         config.randomizePlayers,
             (value) {
           setState(() {
@@ -286,6 +345,7 @@ Widget soundEffects(ConfigurationState config){
   Widget seeProbability(){
     return defaultSlider(
         Translation(context).text.seeProbability,
+        "Ver as probabilidades durante a simulação da partida",
         config.seeProbability,
             (value) {
               setState(() {
@@ -299,6 +359,7 @@ Widget soundEffects(ConfigurationState config){
     return pressOption(
         Translation(context).text.userTerms,
         "",
+        "",
             () {config.openPrivacyPolicy();}
     );
   }
@@ -307,6 +368,7 @@ Widget soundEffects(ConfigurationState config){
     return pressOption(
               Translation(context).text.userTerms,
               "",
+              "",
               () {config.openTerms();}
       );
   }
@@ -314,15 +376,22 @@ Widget soundEffects(ConfigurationState config){
   //////////////////////////////////////////////////////////////////////////
   // DEFAULT COMPONENTS
 
-  Widget defaultSlider(String title, bool value, Function(bool) onChanged){
+  Widget defaultSlider(String title, String subtitle, bool value, Function(bool) onChanged){
     return Container(
-      padding: const EdgeInsets.all(4),
-      color: AppColors().greyTransparent,
+      padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
       child: Row(
         children: [
+
           SizedBox(
-            width: 200,
-            child: Text(title,style: EstiloTextoBranco.negrito16),
+            width: Sized(context).width*0.6,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title,style: EstiloTextoBranco.negrito16),
+                const SizedBox(height: 4),
+                Text(subtitle,style: EstiloTextoCinza.text12),
+              ],
+            ),
           ),
           const Spacer(),
           Switch(
@@ -334,29 +403,70 @@ Widget soundEffects(ConfigurationState config){
     );
   }
 
-  Widget pressOption(String title, String variable, Function() onTap){
+  Widget pressOption(String title, String subtitle,String variable, Function() onTap){
     return
-      Container(
-        color: AppColors().greyTransparent,
-        child: PressableButton(
-          onTap:(){
-            setState(() {});
-          },
-          child: Container(
-            width: Sized(context).width,
-            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(title,style: EstiloTextoBranco.negrito16),
-                const Spacer(),
-                Text(variable,style: EstiloTextoBranco.underline14),
-              ],
-            ),
+      PressableButton(
+        onTap:(){
+          onTap();
+          setState(() {});
+        },
+        child: Container(
+          width: Sized(context).width,
+          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: Sized(context).width*0.6,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(title,style: EstiloTextoBranco.negrito16),
+                    const SizedBox(height: 4),
+                    subtitle.isNotEmpty ? Text(subtitle,style: EstiloTextoCinza.text12) : Container(),
+                  ],
+                ),
+              ),
+              const Spacer(),
+              Text(variable,style: EstiloTextoBranco.underline14),
+            ],
           ),
         ),
       );
   }
 
+  Widget language(){
+
+    String flagName = const CountryNames().unitedstates;
+
+    return
+      PressableButton(
+        onTap:(){
+          setState(() {});
+        },
+        child: Container(
+          width: Sized(context).width,
+          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(
+                width: Sized(context).width*0.6,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(Translation(context).text.languageSelection,style: EstiloTextoBranco.negrito16),
+                    const SizedBox(height: 4),
+                    const Text("Idioma padrão do aplicativo", style: EstiloTextoCinza.text12),
+                  ],
+                ),
+              ),
+              const Spacer(),
+              ClipOval(child: funcFlagsList(flagName, 30, 30)),
+            ],
+          ),
+        ),
+      );
+  }
 
 }

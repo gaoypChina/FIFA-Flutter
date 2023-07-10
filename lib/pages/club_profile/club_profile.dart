@@ -1,3 +1,4 @@
+import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/data_graphics.dart';
@@ -14,6 +15,8 @@ import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/widgets/button/back_button.dart';
+import 'package:fifa/widgets/button/button_border_green.dart';
+import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:fifa/widgets/stars.dart';
 import 'package:flutter/material.dart';
 
@@ -105,7 +108,15 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                                     Text(' \$' + clubClass.getClubValue().toStringAsFixed(2),style: EstiloTextoBranco.negrito14),
                                   ],
                                 ),
-                                starsWidgetFromOverall(clubClass.getOverall()),compare(),
+                                starsWidgetFromOverall(clubClass.getOverall()),
+
+                                ButtonBorderGreen4(
+                                    onTap: (){
+                                        navigatorPush(context, Compare(club: clubClass));
+                                        },
+                                    child: const Text("Comparar", style: EstiloTextoBranco.text16)
+                                ),
+
                               ],
                             ),
                           ),
@@ -179,20 +190,17 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
   }
 
   Widget compare(){
-    return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: (){
-          Navigator.push(context,MaterialPageRoute(builder: (context) => Compare(club: clubClass)));
-        },
-        child: Container(
-          decoration: BoxDecoration(
-            color: AppColors().greyTransparent,
-            border: Border.all(color: AppColors().green, width: 1),
-          ),
-          padding: const EdgeInsets.all(4.0),
-          child: const Text('Comparar',style: EstiloTextoBranco.text16),
+    return PressableButton(
+      onTap: (){
+        navigatorPush(context, Compare(club: clubClass));
+      },
+      child: Container(
+        decoration: BoxDecoration(
+          color: AppColors().greyTransparent,
+          border: Border.all(color: AppColors().green, width: 1),
         ),
+        padding: const EdgeInsets.all(4.0),
+        child: const Text('Comparar', style: EstiloTextoBranco.text16),
       ),
     );
   }

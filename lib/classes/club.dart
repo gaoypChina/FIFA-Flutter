@@ -40,7 +40,7 @@ class Club{
   late int internationalGM;
   late int internationalGS;
 
-  Club({required this.index,bool hasPlayers = false,bool clubDetails = true, bool calcInternationalLeaguePlaying = true}) {
+  Club({required this.index,bool hasPlayers = false, bool clubDetails = true, bool calcInternationalLeaguePlaying = true}) {
     name = clubsAllNameList[index];
     picture = FIFAImages().imageLogo(name);
     jogadores = hasPlayers ? [] : getJogadores();

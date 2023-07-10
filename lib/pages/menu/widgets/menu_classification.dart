@@ -4,6 +4,7 @@ import 'package:fifa/classes/functions/emoji.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/theme/colors.dart';
+import 'package:fifa/theme/decoration/my_team_gradient.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/number_circle.dart';
@@ -55,7 +56,7 @@ Widget rowClassification(int position, Club club,  myClass){
           ? const Text('............................................................................................',style: EstiloTextoBranco.negrito6)
           : Container(),
       Container(
-        color: club.name == myClass.clubName ? AppColors().myTeam : Colors.transparent,
+        decoration: club.name == myClass.clubName ? BoxDecoration(gradient: gradientMyTeam(true)) : const BoxDecoration(),
         child: Row(
           children: [
             numberCircle(position, 24),

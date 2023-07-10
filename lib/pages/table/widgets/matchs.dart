@@ -4,10 +4,12 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/tabela_national.dart';
 import 'package:fifa/theme/background_color/match_x_testyle.dart';
 import 'package:fifa/theme/colors.dart';
+import 'package:fifa/theme/decoration/my_team_gradient.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
 
 Widget wMatchsTable(int rodadaMatch, League leagueClass){
+  My my = My();
   return       Container(
     color: AppColors().greyTransparent,
     child: Column(
@@ -18,34 +20,25 @@ Widget wMatchsTable(int rodadaMatch, League leagueClass){
               leagueClass: leagueClass,
               rodadaMatch: rodadaMatch,
               numeroDoConfronto: i*2
-          )),
+          ), my),
       ],
     ),
   );
 }
 
-Widget wRowMatchesVersus(TableNational tableNational) {
+Widget wRowMatchesVersus(TableNational tableNational, My my) {
 
   TextStyle style1 = matchStyle1(tableNational.goal1, tableNational.goal2, 14);
   TextStyle style2 = matchStyle2(tableNational.goal1, tableNational.goal2, 14);
-  My my = My();
   BoxDecoration backgroundColor1 = const BoxDecoration();
   BoxDecoration backgroundColor2 = const BoxDecoration();
   if(tableNational.teamName1 == my.clubName){
     backgroundColor1 = BoxDecoration(
-      gradient: LinearGradient(
-        colors: [Colors.transparent, Colors.teal[800]!, Colors.teal[700]!],
-        begin: Alignment.centerLeft,
-        end: Alignment.centerRight,
-      ),
+      gradient: gradientMyTeam(false),
     );
   }else if(tableNational.teamName2 == my.clubName){
     backgroundColor2 = BoxDecoration(
-      gradient: LinearGradient(
-        colors: [Colors.transparent, Colors.teal[800]!, Colors.teal[700]!],
-        begin: Alignment.centerRight,
-        end: Alignment.centerLeft,
-      ),
+      gradient: gradientMyTeam(true),
     );
   }
 

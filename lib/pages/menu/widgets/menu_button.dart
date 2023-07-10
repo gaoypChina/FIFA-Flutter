@@ -11,7 +11,7 @@ Widget wMenuButton(String text, Club club, Function() function){
         width: 2.0,
         color: club.colors.secondColor,
       ),
-      borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+      borderRadius: const BorderRadius.all(Radius.circular(4.0)),
     ),
     child: Material(
       color: Colors.transparent,

@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                       buttonRow(
                           "New Carrer",
                           'assets/icons/home_coach.png',
-                          120,
+                          160,
                               (){
                             navigatorPush(context, const ChooseTeam());
                           }
@@ -132,9 +132,6 @@ Widget buttonRow(String title, String imageName, double height, Function() onTap
       decoration: BoxDecoration(
         color: AppColors().greyTransparent,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(
-          width: 1,color: AppColors().green
-        ),
       ),
       child: PressableButton(
         onTap: onTap,
@@ -152,7 +149,7 @@ Widget buttonRow(String title, String imageName, double height, Function() onTap
                 alignment: Alignment.centerRight,
                 child: Container(
                   width: Sized(context).width,
-                  height: 150,
+                  height: height,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
                     gradient: const LinearGradient(

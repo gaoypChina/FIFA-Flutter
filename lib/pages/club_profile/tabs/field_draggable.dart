@@ -75,6 +75,19 @@ class _FieldDraggableState extends State<FieldDraggable> {
 
                           const Spacer(),
 
+                          //MUDAR ESQUEMA TATICO
+                          button(
+                              title: my.esquemaTatico,
+                              function: (){
+                                EsquemaTatico().changeMyEsquema();
+                                my = My();
+                                widget.notifyParent();
+                                setState(() {});
+                              }
+                          ),
+
+                          const Spacer(),
+
                           //FILTER SELECTION
                           SizedBox(
                             width: 50,

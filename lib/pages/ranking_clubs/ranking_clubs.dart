@@ -1,9 +1,14 @@
+import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/classes/functions/func_number_clubs_total.dart';
+import 'package:fifa/pages/table/table_nacional.dart';
+import 'package:fifa/theme/custom_toast.dart';
+import 'package:fifa/values/club_details.dart';
+import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:fifa/widgets/league_selection_row.dart';
 import 'package:fifa/pages/ranking_clubs/ranking_clubs_control.dart';
 import 'package:fifa/theme/colors.dart';
@@ -52,6 +57,7 @@ class _RankingClubsPageState extends State<RankingClubsPage> with TickerProvider
     rankingClubs.organizeContinentalRanking(continent);
     chosenLeagueName = myClub.getLeagueName();
     rankingClubs.organizeNationalRanking(chosenLeagueName);
+    customToast('DONE');
 
     _tabController = TabController(vsync: this, length: 4);
     isLoaded=true;
@@ -236,7 +242,7 @@ Widget rowClub(int ranking, Club club){
                 child: Text((ranking+1).toString()+'º',textAlign:TextAlign.center,style: EstiloTextoBranco.text14)
             ),
             const SizedBox(width: 8),
-            funcFlagsList(club.nationality, 15, 22),
+            funcFlagsList(ClubDetails().getCountry(club.name), 15, 22),
             const SizedBox(width: 4),
             Images().getEscudoWidget(club.name,32,32),
             const SizedBox(width: 8),
@@ -286,22 +292,27 @@ Widget rowClub(int ranking, Club club){
 
   Widget rowLeague(int ranking, Map<String, double> listLeagues){
     String leagueName = listLeagues.keys.elementAt(ranking);
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4),
-      padding: const EdgeInsets.all(4),
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(5)),
-        color: AppColors().greyTransparent,
-      ),
-      child: Row(
-        children: [
-          Image.asset(FIFAImages().campeonatoLogo(leagueName),width: 50,height: 50,),
-          const SizedBox(width: 8),
-          Text(leagueName,style: EstiloTextoBranco.text16),
-          const Spacer(),
-          Text(listLeagues[leagueName]!.toStringAsFixed(2),style: EstiloTextoBranco.negrito16),
-          const SizedBox(width: 30),
-        ],
+    return PressableButton(
+      onTap: (){
+        navigatorPush(context, TableNacional(chosenLeagueIndex: leaguesIndexFromName[leagueName]));
+      },
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4),
+        padding: const EdgeInsets.all(4),
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.all(Radius.circular(5)),
+          color: AppColors().greyTransparent,
+        ),
+        child: Row(
+          children: [
+            Image.asset(FIFAImages().campeonatoLogo(leagueName),width: 50,height: 50,),
+            const SizedBox(width: 8),
+            Text(leagueName,style: EstiloTextoBranco.text16),
+            const Spacer(),
+            Text(listLeagues[leagueName]!.toStringAsFixed(2),style: EstiloTextoBranco.negrito16),
+            const SizedBox(width: 30),
+          ],
+        ),
       ),
     );
   }

@@ -7,6 +7,7 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/background_image/backimage_international_league.dart';
+import 'package:fifa/widgets/button/button_list_row.dart';
 import 'package:fifa/widgets/player_templates/row_player_stats.dart';
 import 'package:flutter/material.dart';
 
@@ -52,7 +53,6 @@ class _TableInternationalScorersState extends State<TableInternationalScorers> {
             Column(
                 children: [
 
-                  selectType(),
                   //TABELA
                   Expanded(
                     child: Container(
@@ -74,6 +74,8 @@ class _TableInternationalScorersState extends State<TableInternationalScorers> {
                     ),
                   ),
 
+                  selectType(),
+
 
                 ]),
 
@@ -85,39 +87,26 @@ class _TableInternationalScorersState extends State<TableInternationalScorers> {
 ////////////////////////////////////////////////////////////////////////////
   Widget selectType(){
     return Container(
-      height: 30,
       margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 4),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: Row(
           children: [
             for (String type in FilterPlayersTitle().getList())
-              buttonSelection(type)
+              buttonListRow(
+                type,
+                typeSelected,
+                (String title){
+                  typeSelected = title;
+                  setState((){});
+              },
+              )
           ],
         ),
       ),
     );
   }
-  Widget buttonSelection(String title){
-    return GestureDetector(
-      onTap: (){
-        typeSelected = title;
-        setState((){});
-      },
-      child: Container(
-        padding: const EdgeInsets.all(2),
-        margin: const EdgeInsets.all(2),
-        decoration: BoxDecoration(
-          color: AppColors().greyTransparent,
-          border: Border.all(
-            color: typeSelected == title ? Colors.white : AppColors().greyTransparent,
-            width: 1.0,
-          ),
-        ),
-        child: Text(title, style: EstiloTextoBranco.text16),
-      ),
-    );
-  }
+
   String playerStats(String title, Jogador player){
     String value = "";
     if(title == FilterPlayersTitle().bestPlayer){ value =  player.gradeInt.toStringAsFixed(1);}
@@ -132,7 +121,7 @@ class _TableInternationalScorersState extends State<TableInternationalScorers> {
 
     return Column(
       children: [
-        for(int i=0; i < 100 && i < listPlayers.length; i++)
+        for(int i=0; i < 50 && i < listPlayers.length; i++)
           rowPlayer(context, Jogador(index: listPlayers[i]), i+1, playerStats(typeSelected, Jogador(index: listPlayers[i]))),
       ],
     );

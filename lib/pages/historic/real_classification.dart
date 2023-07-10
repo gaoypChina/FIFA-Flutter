@@ -4,13 +4,17 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/historic/leagues_historic.dart';
 import 'package:fifa/pages/historic/real_classification/get_classification.dart';
+import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
+import 'package:fifa/theme/decoration/my_team_gradient.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/historic_champions/historic_champions.dart';
 import 'package:fifa/values/league_names.dart';
+import 'package:fifa/widgets/arrow_table.dart';
 import 'package:fifa/widgets/bottom_sheet/bottom_sheet_league_classification.dart';
 import 'package:fifa/widgets/button/back_button.dart';
+import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:fifa/widgets/league_selection_row.dart';
 import 'package:fifa/widgets/number_circle.dart';
 import 'package:flutter/material.dart';
@@ -198,20 +202,41 @@ class _RealTableWidgetState extends State<RealTableWidget> {
   }
 
   Widget rowTile(BuildContext context, int index, Map data){
+
     String clubName = data['team'];
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 6),
-      color: ClubDetails().getColors(clubName).primaryColor.withOpacity(0.3),
-      child: GestureDetector(
-        onTap: (){
-          clickClub(context: context, clubName: clubName);
-        },
+    ClubColors clubColors = ClubDetails().getColors(clubName);
+
+    return PressableButton(
+      onTap: (){
+        clickClub(context: context, clubName: clubName);
+      },
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 6),
+        decoration: BoxDecoration(
+            gradient: gradientTeam(clubColors.primaryColor)
+        ),
         child: Row(
           children: [
-            Container(width: 4),
-            numberCircle(index + 1, 30),
-            Container(width: 4),
-            Images().getEscudoWidget(clubName, 36, 36),
+            Stack(
+              children: [
+
+                Positioned.fill(
+                  child: CustomPaint(
+                    painter: ArrowSquarePainter(colorArrow: AppColors().greyTransparent),
+                  ),
+                ),
+
+                Row(
+                  children: [
+                    Container(width: 4),
+                    numberCircle(index + 1, 30),
+                    Container(width: 4),
+                    Images().getEscudoWidget(clubName, 32, 32),
+                    Container(width: 4),
+                  ],
+                )
+              ],
+            ),
             Container(width: 4),
             Expanded(
               child: Text(clubName, style: EstiloTextoBranco.text14),

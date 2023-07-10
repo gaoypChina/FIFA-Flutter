@@ -15,6 +15,7 @@ import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/background_image/backimage_international_league.dart';
+import 'package:fifa/widgets/number_circle.dart';
 import 'package:flutter/material.dart';
 
 class TableInternational extends StatefulWidget {
@@ -97,8 +98,8 @@ class _TableInternationalState extends State<TableInternational>  with TickerPro
                         tabs: [
                           Tab(text: Translation(context).text.classification),
                           Tab(text: Translation(context).text.matchs),
-                          Tab(text: Translation(context).text.knockoutStage),
                           const Tab(text: 'Brackets'),
+                          Tab(text: Translation(context).text.knockoutStage),
                           Tab(text: Translation(context).text.topScorers),
                         ],
                       ),
@@ -110,8 +111,8 @@ class _TableInternationalState extends State<TableInternational>  with TickerPro
                         children: [
                           groupStageTable(),
                           TableMatchs(leagueInternational: leagueInternational),
-                          TableMataMata(leagueInternational: leagueInternational),
                           interBrackets(context, leagueInternational),
+                          TableMataMata(leagueInternational: leagueInternational),
                           TableInternationalScorers(leagueInternational: leagueInternational),
                         ],
                       ),
@@ -153,6 +154,7 @@ class _TableInternationalState extends State<TableInternational>  with TickerPro
     );
   }
   Widget groupStageTable(){
+    My my = My();
     return Container(
           color: AppColors().greyTransparent,
           child: SingleChildScrollView(
@@ -165,7 +167,7 @@ class _TableInternationalState extends State<TableInternational>  with TickerPro
                     if (i == 0)
                       groupTitle(groupNumber)
                     else
-                      groupRow(i,4*groupNumber+(i-1))
+                      groupRow(i,4*groupNumber+(i-1), my)
               ],
             ),
           ),
@@ -197,17 +199,16 @@ TableRow groupTitle(int groupNumber){
       ],
     );
   }
-  TableRow groupRow(int i, int index032){
+  TableRow groupRow(int i, int index032, My my){
     int clubIndex = clubsID[index032];
     Club clubClass = Club(index: clubIndex);
-    My my = My();
     int saldoGols = clubClass.internationalGM - clubClass.internationalGS;
 
     return  TableRow(
       children: [
-        Text(i.toString()+'º',style: EstiloTextoBranco.text16),
+        numberCircle(i, 25),
         //Escudo
-        Images().getEscudoWidget(clubClass.name,20,20),
+        Images().getEscudoWidget(clubClass.name,25,25),
         GestureDetector(
           onTap:(){
             clickClubProfilePage(context, clubClass);

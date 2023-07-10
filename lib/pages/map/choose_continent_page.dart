@@ -82,7 +82,7 @@ class _ChooseContinentPageState extends State<ChooseContinentPage> {
           width: 2.0,
           color: AppColors().green,
         ),
-        borderRadius: const BorderRadius.all(Radius.circular(10.0)),
+        borderRadius: const BorderRadius.all(Radius.circular(2.0)),
       ),
       child: Row(
         children: [

@@ -23,6 +23,27 @@ class ButtonBorderGreen extends StatelessWidget {
   }
 }
 
+class ButtonBorderGreen4 extends StatelessWidget {
+  final Function()? onTap;
+  final Widget child;
+  const ButtonBorderGreen4({Key? key, required this.onTap, required this.child}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        margin: const EdgeInsets.all(4),
+        decoration: decorationGreen(),
+        child: PressableButton(
+            onTap: onTap,
+            child: Container(
+              padding: const EdgeInsets.all(4),
+              child: child,
+            )
+        )
+    );
+  }
+}
+
 BoxDecoration decorationGreen(){
   return BoxDecoration(
     color: AppColors().greyTransparent,

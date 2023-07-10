@@ -36,21 +36,21 @@ Widget fieldGameplay442(Club club){
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       //ATACANTES
-      playerWidgetRow([players[9],players[10]],club.name),
+      playerWidgetRow([players[9],players[10]]),
       //MEIAS
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          playerWidgetMatch(players[7],club.name),
-          playerWidgetMatch(players[8],club.name),
+          playerWidgetMatch(players[7]),
+          playerWidgetMatch(players[8]),
         ],
       ),
       //VOLANTES
-      playerWidgetRow([players[5],players[6]],club.name),
+      playerWidgetRow([players[5],players[6]]),
       //ZAGUEIROS
-      playerWidgetRow([players[1],players[2],players[3],players[4]],club.name),
+      playerWidgetRow([players[1],players[2],players[3],players[4]]),
       //GOLEIRO
-      playerWidgetRow([players[0]],club.name),
+      playerWidgetRow([players[0]]),
 
     ],
   );
@@ -64,15 +64,15 @@ Widget fieldGameplay433(Club club){
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       //ATACANTES
-      playerWidgetRow([players[8],players[9],players[10]],club.name),
+      playerWidgetRow([players[8],players[9],players[10]]),
       //MEIAS
-      playerWidgetRow([players[7]],club.name),
+      playerWidgetRow([players[7]]),
       //VOLANTES
-      playerWidgetRow([players[5],players[6]],club.name),
+      playerWidgetRow([players[5],players[6]]),
       //ZAGUEIROS
-      playerWidgetRow([players[1],players[2],players[3],players[4]],club.name),
+      playerWidgetRow([players[1],players[2],players[3],players[4]]),
       //GOLEIRO
-      playerWidgetRow([players[0]],club.name),
+      playerWidgetRow([players[0]]),
     ],
   );
 }
@@ -84,21 +84,21 @@ Widget fieldGameplay343(Club club){
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       //ATACANTES
-      playerWidgetRow([players[8],players[9],players[10]],club.name),
+      playerWidgetRow([players[8],players[9],players[10]]),
       //MEIAS
       Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          playerWidgetMatch(players[6],club.name),
-          playerWidgetMatch(players[7],club.name),
+          playerWidgetMatch(players[6]),
+          playerWidgetMatch(players[7]),
         ],
       ),
       //VOLANTES
-      playerWidgetRow([players[4],players[5]],club.name),
+      playerWidgetRow([players[4],players[5]]),
       //ZAGUEIROS
-      playerWidgetRow([players[1],players[2],players[3]],club.name),
+      playerWidgetRow([players[1],players[2],players[3]]),
       //GOLEIRO
-      playerWidgetRow([players[0]],club.name),
+      playerWidgetRow([players[0]]),
     ],
   );
 }
@@ -110,15 +110,15 @@ Widget fieldGameplay451(Club club){
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       //ATACANTES
-      playerWidgetRow([players[10]],club.name),
+      playerWidgetRow([players[10]]),
       //MEIAS
-      playerWidgetRow([players[7],players[8],players[9]],club.name),
+      playerWidgetRow([players[7],players[8],players[9]]),
       //VOLANTES
-      playerWidgetRow([players[5],players[6]],club.name),
+      playerWidgetRow([players[5],players[6]]),
       //ZAGUEIROS
-      playerWidgetRow([players[1],players[2],players[3],players[4]],club.name),
+      playerWidgetRow([players[1],players[2],players[3],players[4]]),
       //GOLEIRO
-      playerWidgetRow([players[0]],club.name),
+      playerWidgetRow([players[0]]),
     ],
   );
 }
@@ -130,25 +130,25 @@ Widget fieldGameplay541(Club club){
     mainAxisAlignment: MainAxisAlignment.spaceAround,
     children: [
       //ATACANTES
-      playerWidgetRow([players[10]],club.name),
+      playerWidgetRow([players[10]]),
       //MEIAS
-      playerWidgetRow([players[7],players[8]],club.name),
+      playerWidgetRow([players[7],players[8]]),
       //VOLANTES
-      playerWidgetRow([players[5],players[6]],club.name),
+      playerWidgetRow([players[5],players[6]]),
       //ZAGUEIROS
-      playerWidgetRow([players[1],players[2],players[3],players[4],players[5]],club.name),
+      playerWidgetRow([players[1],players[2],players[3],players[4],players[5]]),
       //GOLEIRO
-      playerWidgetRow([players[0]],club.name),
+      playerWidgetRow([players[0]]),
     ],
   );
 }
-Widget playerWidgetRow(List playersID, String clubName){
+Widget playerWidgetRow(List playersID){
   if(playersID.length==1) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        playerWidgetMatch(playersID[0],clubName),
+        playerWidgetMatch(playersID[0]),
       ],
     );
   }
@@ -157,8 +157,8 @@ Widget playerWidgetRow(List playersID, String clubName){
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        playerWidgetMatch(playersID[0],clubName),
-        playerWidgetMatch(playersID[1],clubName),
+        playerWidgetMatch(playersID[0]),
+        playerWidgetMatch(playersID[1]),
       ],
     );
   }
@@ -167,9 +167,9 @@ Widget playerWidgetRow(List playersID, String clubName){
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        playerWidgetMatch(playersID[0],clubName),
-        playerWidgetMatch(playersID[1],clubName),
-        playerWidgetMatch(playersID[2],clubName),
+        playerWidgetMatch(playersID[0]),
+        playerWidgetMatch(playersID[1]),
+        playerWidgetMatch(playersID[2]),
       ],
     );
   }
@@ -178,10 +178,10 @@ Widget playerWidgetRow(List playersID, String clubName){
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        playerWidgetMatch(playersID[0],clubName),
-        playerWidgetMatch(playersID[1],clubName),
-        playerWidgetMatch(playersID[2],clubName),
-        playerWidgetMatch(playersID[3],clubName),
+        playerWidgetMatch(playersID[0]),
+        playerWidgetMatch(playersID[1]),
+        playerWidgetMatch(playersID[2]),
+        playerWidgetMatch(playersID[3]),
       ],
     );
   }
@@ -190,11 +190,11 @@ Widget playerWidgetRow(List playersID, String clubName){
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        playerWidgetMatch(playersID[0],clubName),
-        playerWidgetMatch(playersID[1],clubName),
-        playerWidgetMatch(playersID[2],clubName),
-        playerWidgetMatch(playersID[3],clubName),
-        playerWidgetMatch(playersID[4],clubName),
+        playerWidgetMatch(playersID[0]),
+        playerWidgetMatch(playersID[1]),
+        playerWidgetMatch(playersID[2]),
+        playerWidgetMatch(playersID[3]),
+        playerWidgetMatch(playersID[4]),
       ],
     );
   }
@@ -203,7 +203,7 @@ Widget playerWidgetRow(List playersID, String clubName){
   }
 }
 
-Widget playerWidgetMatch(int jogadorIndex, String clubName){
+Widget playerWidgetMatch(int jogadorIndex){
 
   Match matchClass = Match(playerID: jogadorIndex);
   Jogador jogadorClass = Jogador(index: jogadorIndex);
@@ -216,6 +216,7 @@ Widget playerWidgetMatch(int jogadorIndex, String clubName){
   double healthBar = matchClass.health;
   double imageSize = 38;
   double headSize = 22;
+  double widthSize = imageSize+headSize;
   double bottomBarWidth = imageSize+38;
 
   if(injury || redCard){healthBar=0;}
@@ -224,7 +225,7 @@ Widget playerWidgetMatch(int jogadorIndex, String clubName){
     children: [
       SizedBox(
         height: imageSize+headSize-5,
-        width: imageSize,
+        width: widthSize,
         child: Stack(
           children: [
             //Uniforme
@@ -233,17 +234,19 @@ Widget playerWidgetMatch(int jogadorIndex, String clubName){
               child: (injury || redCard)
                     ? Opacity(
                         opacity: 0.4,
-                        child: Images().getUniformWidget(clubName,imageSize,imageSize)
+                        child: Images().getUniformWidget(jogadorClass.clubName,imageSize+12,imageSize)
                     )
-                : Images().getUniformWidget(clubName,imageSize,imageSize),
+                : Container(
+                  alignment: Alignment.topCenter,
+                  child: Images().getUniformWidget(jogadorClass.clubName, imageSize+12,imageSize)),
             ),
 
             //GOL
             Container(
               alignment: Alignment.topRight,
               child: Container(
-                height: 12,
-                width: 12,
+                height: 10,
+                width: 6,
                 margin: const EdgeInsets.all(4),
                 color: yellowCard ? Colors.yellow : redCard ? Colors.red : Colors.transparent,
               ),
@@ -256,6 +259,7 @@ Widget playerWidgetMatch(int jogadorIndex, String clubName){
                   )
                 : Container(),
 
+            //HEAD
             Container(
                 alignment: Alignment.topCenter,
                 child: globalHasInternet

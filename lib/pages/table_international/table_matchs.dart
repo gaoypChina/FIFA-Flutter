@@ -5,6 +5,7 @@ import 'package:fifa/classes/table_matchs_control.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/background_color/match_x_testyle.dart';
 import 'package:fifa/theme/colors.dart';
+import 'package:fifa/theme/decoration/my_team_gradient.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/background_image/backimage_international_league.dart';
@@ -21,7 +22,6 @@ class TableMatchs extends StatefulWidget {
 class _TableMatchsState extends State<TableMatchs> {
 
   My my = My();
-  String leagueInternational = '';
   int rodadaShow = semanasGruposInternacionais.contains(semana)
                     ? semanasGruposInternacionais.indexOf(semana)+1
                     : semana > semanasGruposInternacionais.last
@@ -39,13 +39,13 @@ class _TableMatchsState extends State<TableMatchs> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    leagueInternational = widget.leagueInternational;
+
     return Scaffold(
 
       body:  Stack(
           children: [
 
-            backgroundInternationalLeague(leagueInternational),
+            backgroundInternationalLeague(widget.leagueInternational),
 
             Column(
                 children: [
@@ -79,8 +79,7 @@ class _TableMatchsState extends State<TableMatchs> {
 
       for (int groupNumber = 0; groupNumber < 8; groupNumber++)
         for (int nConfronto = -1; nConfronto < 2; nConfronto++) //Tem linha com título
-          Table(
-            columnWidths: const{0: FractionColumnWidth(.35),4: FractionColumnWidth(.35)},
+          Column(
             children: [
               if (nConfronto == -1)
                 groupTitle(groupNumber)
@@ -92,7 +91,7 @@ class _TableMatchsState extends State<TableMatchs> {
     );
   }
 
-  TableRow groupTitle(int groupNumber){
+  Row groupTitle(int groupNumber){
     String groupLetter = 'A';
     if(groupNumber==1){groupLetter='B';}
     if(groupNumber==2){groupLetter='C';}
@@ -101,7 +100,7 @@ class _TableMatchsState extends State<TableMatchs> {
     if(groupNumber==5){groupLetter='F';}
     if(groupNumber==6){groupLetter='G';}
     if(groupNumber==7){groupLetter='H';}
-    return TableRow(
+    return Row(
       children: [
         Text('\n${Translation(context).text.group} ' + groupLetter,style: EstiloTextoBranco.negrito16),
         Container(),
@@ -111,13 +110,14 @@ class _TableMatchsState extends State<TableMatchs> {
       ],
     );
   }
-  TableRow groupRow(int groupNumber, int nConfronto){
+
+  Row groupRow(int groupNumber, int nConfronto){
 
     MatchResultInternational match = MatchResultInternational(
                                           rodadaNumber: rodadaShow-1,
                                           groupNumber: groupNumber,
                                           nConfronto: nConfronto,
-                                          competitionName: leagueInternational
+                                          competitionName: widget.leagueInternational
                                       );
 
     String teamNameA = match.confronto.clubName1;
@@ -129,13 +129,24 @@ class _TableMatchsState extends State<TableMatchs> {
       style2 = matchStyle2(match.confronto.goal1, match.confronto.goal2, 16);
     }
 
-    return  TableRow(
+    return  Row(
       children: [
-        Container(
-          color: teamNameA == my.clubName ? Colors.green : Colors.transparent,
-            child: Text(teamNameA,textAlign: TextAlign.right,style: style1)),
-        //Escudo
-        Images().getEscudoWidget(teamNameA,20,20),
+        Expanded(
+          child: Container(
+            decoration: teamNameA == my.clubName
+                ? BoxDecoration(gradient: gradientMyTeam(false))
+                : const BoxDecoration(),
+            child: Row(
+              children: [
+                const Spacer(),
+                Text(teamNameA,style: style1),
+                const SizedBox(width: 4),
+                Images().getEscudoWidget(teamNameA,20,20),
+                const SizedBox(width: 4),
+              ],
+            ),
+          ),
+        ),
 
         match.confronto.hasGoals
             ? Row(
@@ -145,14 +156,25 @@ class _TableMatchsState extends State<TableMatchs> {
               Text(match.confronto.goal2.toString(),style: style2),
             ],
           )
-            : const Center(child: Text('x',style: EstiloTextoBranco.text16)),
+            : const Center(child: Text('   x   ',style: EstiloTextoBranco.text16)),
 
-        //Escudo
-        Images().getEscudoWidget(teamNameB,20,20),
+        //TEAM 2
+        Expanded(
+          child: Container(
+            decoration: teamNameB == my.clubName
+                ? BoxDecoration(gradient: gradientMyTeam(true))
+                : const BoxDecoration(),
+            child: Row(
+              children: [
+                const SizedBox(width: 4),
+                Images().getEscudoWidget(teamNameB,20,20),
+                const SizedBox(width: 4),
+                Text(teamNameB,style: style2),
+              ],
+            ),
+          ),
+        ),
 
-        Container(
-            color: teamNameB == my.clubName ? Colors.green : Colors.transparent,
-            child: Text(teamNameB,style: style2)),
       ],
     );
   }
