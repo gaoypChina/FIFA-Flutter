@@ -54,6 +54,7 @@ class FIFAImages{
     map[l.recopaeuropa] = 'international/recopa europa';
     map[l.recopasula] = 'international/recopa sula';
 
+    //* Mudar em flagslist.dart tambem
     map[l.englandCup] = 'cup/england';
     map[l.italyCup] = 'cup/italy';
     map[l.spainCup] = 'cup/spain';

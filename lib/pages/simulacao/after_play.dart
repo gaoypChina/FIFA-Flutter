@@ -10,21 +10,21 @@ import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/match/goal_my_match.dart';
 import 'package:fifa/classes/match/match.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/classes/tabela_national.dart';
-import 'package:fifa/classes/table_matchs_control.dart';
+import 'package:fifa/classes/table/tabela_national.dart';
+import 'package:fifa/classes/table/table_matchs_control.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/pages/simulacao/not_play_international/not_play_international_matamata.dart';
 import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/background_color/color_grade.dart';
 import 'package:fifa/theme/colors.dart';
-import 'package:fifa/theme/background_color/match_x_testyle.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/best_player_box/best_player_box.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
+import 'package:fifa/widgets/match_row.dart';
 import 'package:flutter/material.dart';
 
 class PlayerGrade{
@@ -381,7 +381,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
         SizedBox(width:25,child: Text((position+1).toString()+'º',style:EstiloTextoBranco.text14)),
         Images().getEscudoWidget(clubClass.name,25,25),
         Expanded(
-            child: Container(color:(clubClass.name==myClass.clubName) ? Colors.purple : Colors.transparent,
+            child: Container(color:(clubClass.name==myClass.clubName) ? Colors.teal : Colors.transparent,
             padding:const EdgeInsets.all(1),
             child: Text(clubClass.name,style:EstiloTextoBranco.text12))),
         SizedBox(width:25,
@@ -405,6 +405,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
   Widget weekMatchs(){
 
     int nteamsLeague = leagueClass.getNTeams();
+    My my = My();
 
     return Container(
       color: AppColors().greyTransparent,
@@ -418,58 +419,17 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
                 child: ListView.builder(
                     padding: EdgeInsets.zero,
                     itemCount: (nteamsLeague/2).round(),
-                    itemBuilder: (c,i)=>weekMatchRow(i*2)
+                    itemBuilder: (c,i)=>matchRowWidget(
+                        TableNational(
+                          chosenLeagueIndex: myClass.leagueID,
+                          leagueClass: leagueClass,
+                          rodadaMatch: weekClass.rodadaNacional,
+                          matchNumber: i*2
+                        ).confronto,
+                        my
+                    )
                 ),
               ),
-        ],
-      ),
-    );
-  }
-  Widget weekMatchRow(int numeroDoConfronto){
-
-    TableNational tableNational = TableNational(
-        chosenLeagueIndex: myClass.leagueID,
-        leagueClass: leagueClass,
-        rodadaMatch: weekClass.rodadaNacional,
-        numeroDoConfronto: numeroDoConfronto
-    );
-    TextStyle style1 = matchStyle1(tableNational.goal1, tableNational.goal2, 14);
-    TextStyle style2 = matchStyle2(tableNational.goal1, tableNational.goal2, 14);
-
-    return Container(
-      margin: const EdgeInsets.only(bottom: 4),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Flexible(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Container(
-                    padding: const EdgeInsets.all(1),
-                    color:(myClass.clubName == tableNational.teamName1) ?Colors.purple:Colors.transparent,
-                    child: Text(tableNational.teamName1,style:style1)),
-                Images().getEscudoWidget(tableNational.teamName1,25,25),
-                Text(tableNational.goal1.toString(),style:style1),
-              ],
-            ),
-          ),
-
-          const SizedBox(width:15, child: Text('x',textAlign:TextAlign.center,style:EstiloTextoBranco.text14)),
-
-          Flexible(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(tableNational.goal2.toString(),style:style2),
-                Images().getEscudoWidget(tableNational.teamName2,25,25),
-                Container(
-                    padding: const EdgeInsets.all(1),
-                    color:(myClass.clubName == tableNational.teamName2) ?Colors.purple:Colors.transparent,
-                    child: Text(tableNational.teamName2,style:style2)),
-              ],
-            ),
-          ),
         ],
       ),
     );

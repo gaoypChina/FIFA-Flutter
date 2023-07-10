@@ -16,8 +16,12 @@ Image funcFlagsList(String country, double _height, double _width){
       country == LeagueOfficialNames().germanyCup ||
       country == LeagueOfficialNames().franceCup ||
       country == LeagueOfficialNames().portugalCup ||
+      country == LeagueOfficialNames().netherlandsCup ||
+      country == LeagueOfficialNames().scotlandCup ||
+      country == LeagueOfficialNames().belgiumCup ||
       country == LeagueOfficialNames().russiaCup ||
       country == LeagueOfficialNames().turkeyCup ||
+      country == LeagueOfficialNames().mexicoCup ||
       country == LeagueOfficialNames().brazilCup){
     code = Image.asset(FIFAImages().campeonatoLogo(country), fit: BoxFit.fill,width: _width-10,height: _height);
   }

@@ -487,7 +487,7 @@ Map<String,dynamic> mapCopas = {
     1945.0: [n.sporting,n.olhanense],
   },
 
-  leagueName.netherlandsCup : {
+  leagueName.netherlandsCup: {
     //2025.0: [],
     //2024.0: [],
     2023.0: [n.psv,n.ajax,],

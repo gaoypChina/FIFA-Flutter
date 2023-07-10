@@ -1,7 +1,7 @@
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/classes/table_matchs_control.dart';
+import 'package:fifa/classes/table/table_matchs_control.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/background_color/match_x_testyle.dart';
 import 'package:fifa/theme/colors.dart';
@@ -9,6 +9,7 @@ import 'package:fifa/theme/decoration/my_team_gradient.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/background_image/backimage_international_league.dart';
+import 'package:fifa/widgets/match_row.dart';
 import 'package:flutter/material.dart';
 
 class TableMatchs extends StatefulWidget {
@@ -74,6 +75,9 @@ class _TableMatchsState extends State<TableMatchs> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
   Widget tableWidget() {
+
+    My my = My();
+
     return Column(
       children: [
 
@@ -84,7 +88,14 @@ class _TableMatchsState extends State<TableMatchs> {
               if (nConfronto == -1)
                 groupTitle(groupNumber)
               else
-                groupRow(groupNumber,nConfronto)
+                matchRowWidget(
+                    MatchResultInternational(
+                      rodadaNumber: rodadaShow-1,
+                      groupNumber: groupNumber,
+                      nConfronto: nConfronto,
+                      competitionName: widget.leagueInternational
+                  ).confronto,
+                  my)
             ],
           )
       ],
@@ -107,74 +118,6 @@ class _TableMatchsState extends State<TableMatchs> {
         Container(),
         Container(),
         Container(),
-      ],
-    );
-  }
-
-  Row groupRow(int groupNumber, int nConfronto){
-
-    MatchResultInternational match = MatchResultInternational(
-                                          rodadaNumber: rodadaShow-1,
-                                          groupNumber: groupNumber,
-                                          nConfronto: nConfronto,
-                                          competitionName: widget.leagueInternational
-                                      );
-
-    String teamNameA = match.confronto.clubName1;
-    String teamNameB =  match.confronto.clubName2;
-    TextStyle style1 = EstiloTextoBranco.text16;
-    TextStyle style2 = EstiloTextoBranco.text16;
-    if(match.confronto.hasGoals){
-      style1 = matchStyle1(match.confronto.goal1, match.confronto.goal1, 16);
-      style2 = matchStyle2(match.confronto.goal1, match.confronto.goal2, 16);
-    }
-
-    return  Row(
-      children: [
-        Expanded(
-          child: Container(
-            decoration: teamNameA == my.clubName
-                ? BoxDecoration(gradient: gradientMyTeam(false))
-                : const BoxDecoration(),
-            child: Row(
-              children: [
-                const Spacer(),
-                Text(teamNameA,style: style1),
-                const SizedBox(width: 4),
-                Images().getEscudoWidget(teamNameA,20,20),
-                const SizedBox(width: 4),
-              ],
-            ),
-          ),
-        ),
-
-        match.confronto.hasGoals
-            ? Row(
-            children: [
-              Text(match.confronto.goal1.toString(),style: style1),
-              const Text('x',style: EstiloTextoBranco.text16),
-              Text(match.confronto.goal2.toString(),style: style2),
-            ],
-          )
-            : const Center(child: Text('   x   ',style: EstiloTextoBranco.text16)),
-
-        //TEAM 2
-        Expanded(
-          child: Container(
-            decoration: teamNameB == my.clubName
-                ? BoxDecoration(gradient: gradientMyTeam(true))
-                : const BoxDecoration(),
-            child: Row(
-              children: [
-                const SizedBox(width: 4),
-                Images().getEscudoWidget(teamNameB,20,20),
-                const SizedBox(width: 4),
-                Text(teamNameB,style: style2),
-              ],
-            ),
-          ),
-        ),
-
       ],
     );
   }

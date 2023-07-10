@@ -3,7 +3,7 @@ import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/result_game/result_match.dart';
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/mata_mata/mata_mata_class.dart';
-import 'package:fifa/classes/table_matchs_control.dart';
+import 'package:fifa/classes/table/table_matchs_control.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/background_color/background_score.dart';
 import 'package:flutter/material.dart';

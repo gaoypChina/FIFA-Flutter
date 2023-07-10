@@ -192,8 +192,8 @@ class LeagueOfficialNames{
   String englandCup = 'FA Cup';String italyCup = 'Coppa Italia';String spainCup = 'Copa del Rey';
   String germanyCup = 'DFB Pokal';String franceCup = 'Coupe de France';
   String portugalCup = 'Taça de Portugal';String turkeyCup = 'Turkiye Kupasi';
-  String russiaCup = 'Copa da Rússia'; String netherlandsCup = 'Copa da Holanda';
-  String belgiumCup = 'Copa da Bélgica'; String scotlandCup = 'Copa da Escócia';
+  String russiaCup = 'Russian Cup'; String netherlandsCup = 'Copa KNVB';
+  String belgiumCup = 'Belgian Cup'; String scotlandCup = 'Scottish Cup';
   String ligaEuropaCup = 'Copa da Europa';String eastEuropeCup = 'Leste Europeu Copa';
 
   String brazilCup = 'Copa do Brasil';String argentinaCup = 'Copa Argentina';
@@ -205,7 +205,7 @@ class LeagueOfficialNames{
   String othersCup = 'Outros Cup';
 
   //SELEÇÕES
-  String copamundo = "Copa do Mundo";
+  String copamundo = "World Cup";
   String eurocopa = "Eurocopa";
   String copaamerica = "Copa América";
   String copaafrica = "Copa Africa";
@@ -797,8 +797,9 @@ Map getLeagueNationalityMap(){
     leagueName.franceCup: leagueName.franceCup,
     leagueName.netherlandsCup: leagueName.netherlandsCup,
     leagueName.portugalCup: leagueName.portugalCup,
-    leagueName.russiaCup: leagueName.russiaCup,
     leagueName.turkeyCup: leagueName.turkeyCup,
+    leagueName.russiaCup: leagueName.russiaCup,
+
     leagueName.brazilCup: leagueName.brazilCup,
   };
 }
