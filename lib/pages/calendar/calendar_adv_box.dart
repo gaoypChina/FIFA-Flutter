@@ -1,9 +1,13 @@
+import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/club_profile/club_profile.dart';
+import 'package:fifa/pages/menu/c_menu.dart';
+import 'package:fifa/pages/menu/widgets/play_button.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:flutter/material.dart';
 
 Widget wCalendarAdvBox(BuildContext context, int semanaLocal, show){
@@ -11,11 +15,11 @@ Widget wCalendarAdvBox(BuildContext context, int semanaLocal, show){
     color: Colors.transparent,
     child: InkWell(
       onTap: () {
-        Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: show.clubID2)));
+        navigatorPush(context, ClubProfile(clubID: show.clubID2));
       },
       child: Container(
         width: 120,
-        height: 127,
+        height: 140,
         color: show.backgroundColor,
         child: Column(
           children: [
@@ -50,6 +54,13 @@ Widget wCalendarAdvBox(BuildContext context, int semanaLocal, show){
                 textAlign: TextAlign.center),
             Text('${show.placar}',
                 style: EstiloTextoBranco.negrito16, textAlign: TextAlign.center),
+            semanaLocal >= semana ? InkWell(
+              onTap:(){
+                simulateManyWeeksFunction(semanaLocal);
+                navigatorReplace(context, const Menu());
+              },
+              child: const Icon(Icons.timer,color: Colors.white,size: 25),
+            ) : Container(),
           ],
         ),
       ),
@@ -57,17 +68,31 @@ Widget wCalendarAdvBox(BuildContext context, int semanaLocal, show){
   );
 }
 
-Widget wCalendarNotPlayWidget(int semanaLocal,String title, [String? imageName]){
-  return Container(
-    width: 120,
-    height: 127,
-    color: semana > semanaLocal ? Colors.black87 : Colors.black38,
-    child: Column(
-      children: [
-        Text(title, textAlign: TextAlign.center,style: EstiloTextoBranco.text16),
-        const SizedBox(height: 10),
-        imageName != null ? Image.asset(imageName,height: 70, width: 70) : Container(),
-      ],
+Widget wCalendarNotPlayWidget(BuildContext context, int semanaLocal, String title, [String? imageName]){
+  return PressableButton(
+    onTap: () async{
+      simulateManyWeeksFunction(semanaLocal);
+      navigatorReplace(context, const Menu());
+    },
+    child: Container(
+      width: 120,
+      height: 140,
+      color: semana > semanaLocal ? Colors.black87 : Colors.black38,
+      child: Column(
+        children: [
+          Text(title, textAlign: TextAlign.center,style: EstiloTextoBranco.text16),
+          const SizedBox(height: 10),
+          imageName != null ? Image.asset(imageName,height: 70, width: 70) : Container(),
+          const Spacer(),
+          semanaLocal >= semana ? InkWell(
+            onTap:(){
+              simulateManyWeeksFunction(semanaLocal);
+              navigatorReplace(context, const Menu());
+            },
+            child: const Icon(Icons.timer,color: Colors.white,size: 25),
+          ) : Container(),
+        ],
+      ),
     ),
   );
 }

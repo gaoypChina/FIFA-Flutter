@@ -90,6 +90,7 @@ class _CalendarState extends State<Calendar> {
         return wCalendarAdvBox(context, weekLocal.week, show);
       }else{
         return wCalendarNotPlayWidget(
+          context,
           weekLocal.week,
           weekLocal.semanaCalendarStr,
           Images().getMyLeagueLogo(),
@@ -106,6 +107,7 @@ class _CalendarState extends State<Calendar> {
         return wCalendarAdvBox(context, weekLocal.week, show);
       }else{
         return wCalendarNotPlayWidget(
+            context,
             weekLocal.week,
             weekLocal.getTranslated(context),
             Images().getMyCupLogo()
@@ -121,6 +123,7 @@ class _CalendarState extends State<Calendar> {
         return wCalendarAdvBox(context, weekLocal.week, show);
       }else{
         return wCalendarNotPlayWidget(
+            context,
             weekLocal.week,
             weekLocal.getTranslated(context),
             Images().getMyInternationalLeagueLogo()
@@ -137,6 +140,7 @@ class _CalendarState extends State<Calendar> {
         return wCalendarAdvBox(context, weekLocal.week, show);
       }else{
         return wCalendarNotPlayWidget(
+            context,
             weekLocal.week,
             weekLocal.getTranslated(context),
             Images().getMyInternationalLeagueLogo()
@@ -145,12 +149,13 @@ class _CalendarState extends State<Calendar> {
 
     }else if(weekLocal.isJogoMundial){
       return wCalendarNotPlayWidget(
+          context,
           weekLocal.week,
           weekLocal.getTranslated(context),
           Images().getMundialLogo()
       );
     }
-    return wCalendarNotPlayWidget(weekLocal.week, '');
+    return wCalendarNotPlayWidget(context, weekLocal.week, '');
   }
 
 
