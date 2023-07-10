@@ -243,11 +243,12 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
 
   Widget historicTab(){
     return Padding(
-      padding: const EdgeInsets.only(top: 4.0, left: 4, right:4),
+      padding: const EdgeInsets.only(top: 4, left: 4, right:4),
       child: Column(
           children: [
-            SizedBox(
-              height: 300,
+            Container(
+              height: 310,
+              color: AppColors().greyTransparent,
               child: SingleChildScrollView(
                 child: Column(
                   children: [
@@ -262,7 +263,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
               ),
             ),
 
-            peryear(),
+            byYear(),
 
           ],
         ),
@@ -483,19 +484,22 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
   }
 
   Widget heatMapPositions(String name, List<ClassificationData> dataClassificationList){
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(name+': ',style: EstiloTextoBranco.negrito16,),
-        for(int i = 1950; i<anoInicial;i+=10)
-          Row(
-            children: [
-              Text(i.toString(),style: EstiloTextoBranco.text14,),
-              rowChampions(i,dataClassificationList),
-              Text((i+9).toString(),style: EstiloTextoBranco.text14,),
-            ],
-          ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(4),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(name,style: EstiloTextoBranco.negrito16,),
+          for(int i = 1950; i<anoInicial;i+=10)
+            Row(
+              children: [
+                Text(i.toString(),style: EstiloTextoBranco.text14,),
+                rowChampions(i,dataClassificationList),
+                Text((i+9).toString(),style: EstiloTextoBranco.text14,),
+              ],
+            ),
+        ],
+      ),
     );
   }
 
@@ -512,26 +516,31 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
   }
 
 
-  Widget peryear(){
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const SizedBox(height: 6),
-        const Text('Desempenho por ano',style: EstiloTextoBranco.negrito16,),
-        const SizedBox(height: 6),
-        const Text('   ANO   EST         COPA         NAC           INT',style: EstiloTextoBranco.text16,),
-        SizedBox(
-          height: 210,
-          child: ListView.builder(
-              padding: EdgeInsets.zero,
-              itemCount: (anoInicial - 1950).floor(),
-              itemBuilder: (BuildContext context, int index) {
-                double year = anoInicial - index - 1;
-                return peryearRow(year);
-              },
+  Widget byYear(){
+    return Container(
+      color: AppColors().greyTransparent,
+      margin: const EdgeInsets.only(top: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 4),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(height: 8),
+          const Text('Desempenho por ano',style: EstiloTextoBranco.negrito16,),
+          const SizedBox(height: 8),
+          const Text('   ANO   EST         COPA         NAC           INT',style: EstiloTextoBranco.text16,),
+          SizedBox(
+            height: Sized(context).height-596,
+            child: ListView.builder(
+                padding: EdgeInsets.zero,
+                itemCount: (anoInicial - 1950).floor(),
+                itemBuilder: (BuildContext context, int index) {
+                  double year = anoInicial - index - 1;
+                  return peryearRow(year);
+                },
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 

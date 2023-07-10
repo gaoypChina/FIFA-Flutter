@@ -81,11 +81,17 @@ class _CoachMenuState extends State<CoachMenu> {
                       color: AppColors().greyTransparent,
                       padding: const EdgeInsets.all(8),
                       margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          trophyWidget(context,0),
-                          trophyWidget(context,1),
+                          const Text("Trophy", style: EstiloTextoBranco.negrito16),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              trophyWidget(context,0),
+                              trophyWidget(context,1),
+                            ],
+                          ),
                         ],
                       ),
                     ),
@@ -94,11 +100,17 @@ class _CoachMenuState extends State<CoachMenu> {
                       color: AppColors().greyTransparent,
                       padding: const EdgeInsets.all(8),
                       margin: const EdgeInsets.all(8),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          pieChart(coachHistoricData.dataPieChartMap(context)),
-                          victoryDrawLoses('%',coachHistoricData.pointsPercentage.toStringAsFixed(1)),
+                          const Text("Performance", style: EstiloTextoBranco.negrito16),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              pieChart(coachHistoricData.dataPieChartMap(context)),
+                              victoryDrawLoses('%',coachHistoricData.pointsPercentage.toStringAsFixed(1)),
+                            ],
+                          ),
                         ],
                       ),
                     ),
@@ -111,12 +123,13 @@ class _CoachMenuState extends State<CoachMenu> {
                       color: AppColors().greyTransparent,
                       width: Sized(context).width,
                       padding: const EdgeInsets.all(8),
-                      margin: const EdgeInsets.symmetric(vertical: 8),
+                      margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
                         children: [
 
-                          Text(Translation(context).text.pastTeams,style: EstiloTextoBranco.text16),
+                          Text(Translation(context).text.pastTeams,style: EstiloTextoBranco.negrito16),
 
                           for(int year=anoInicial;year<ano;year++)
                             yearRow(year,context),
@@ -252,7 +265,7 @@ Widget expectations(){
       color: AppColors().greyTransparent,
       width: Sized(context).width,
       padding: const EdgeInsets.all(8),
-      margin: const EdgeInsets.all(8),
+      margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -263,7 +276,7 @@ Widget expectations(){
               buttonMoreMoney(),
             ],
           ),
-          const SizedBox(height: 6),
+          const SizedBox(height:4),
           Padding(
             padding: const EdgeInsets.all(6.0),
             child: Row(
@@ -275,7 +288,7 @@ Widget expectations(){
             ),
           ),
           Padding(
-          padding: const EdgeInsets.all(6.0),
+          padding: const EdgeInsets.all(4.0),
           child: Row(
             children: [
               Image.asset(Images().getMyInternationalLeagueLogo(),height: 25,width: 25),
@@ -285,12 +298,11 @@ Widget expectations(){
           ),
           ),
 
-          const SizedBox(height: 12),
+          const SizedBox(height: 8),
           const Text('Desempenho',style: EstiloTextoBranco.negrito18),
-          const SizedBox(height: 6),
+          const SizedBox(height: 8),
 
           expectationBar(),
-
 
 
         ],
@@ -332,7 +344,7 @@ Widget sequenceWidget(String text, String value, int clubID, [int? advClubID]){
     margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
     child: Column(
       children: [
-        Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.negrito14),
+        Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.negrito16),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 6.0),
           child: Row(

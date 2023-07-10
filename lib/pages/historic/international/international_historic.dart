@@ -1,6 +1,7 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/functions/name.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/match/result_dict.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
@@ -14,6 +15,7 @@ import 'package:fifa/values/historic_champions/historic_champions.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/back_button.dart';
+import 'package:fifa/widgets/match_row.dart';
 import 'package:flutter/material.dart';
 
 
@@ -295,44 +297,19 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
       ) {
     Map map = globalHistoricInternationalGoalsAll[ano][internationalLeague][phase][idaVolta][nMatch];
 
-    String clubName1 = map[ResultDict().keyTeamName1];
-    int goal1 = map[ResultDict().keyGol1];
-
-    String clubName2 = map[ResultDict().keyTeamName2];
-    int goal2 = map[ResultDict().keyGol2];
-
-    return Padding(
-      padding: const EdgeInsets.all(1.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Images().getEscudoWidget(clubName1, 25, 25),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(clubName1, style: EstiloTextoBranco.text14),
-              ],
-            ),
-          ),
-          Text(' $goal1 x $goal2 ', style: EstiloTextoBranco.text14),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text('$clubName2 ', style: EstiloTextoBranco.text14),
-              ],
-            ),
-          ),
-          Images().getEscudoWidget(clubName2, 25, 25),
-        ],
-      ),
+    Confronto confronto = Confronto(
+        clubName1: map[ResultDict().keyTeamName1],
+        clubName2: map[ResultDict().keyTeamName2]
     );
+    confronto.setGoals(goal1: map[ResultDict().keyGol1], goal2: map[ResultDict().keyGol2]);
+
+    return matchRowWidget(confronto, My());
   }
 
-  Widget groupsClassificationColumnSimulation(int ano,
-      String internationalLeagueName) {
+  Widget groupsClassificationColumnSimulation(int ano, String internationalLeagueName) {
+
     List clubsID = globalHistoricInternationalClassification[ano][internationalLeagueName];
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [

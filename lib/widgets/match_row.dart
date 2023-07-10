@@ -70,7 +70,7 @@ Widget matchRowWidget(Confronto confronto, My my) {
             children: [
               Images().getEscudoWidget(confronto.clubName2,22,22),
               const SizedBox(width: 4),
-              Text(confronto.clubName2,textAlign:TextAlign.start,style: style1),
+              Text(confronto.clubName2,textAlign:TextAlign.start,style: style2),
             ],
           ),
         ),

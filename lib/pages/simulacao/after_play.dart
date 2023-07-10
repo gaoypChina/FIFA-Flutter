@@ -25,6 +25,7 @@ import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/best_player_box/best_player_box.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/widgets/match_row.dart';
+import 'package:fifa/widgets/number_circle.dart';
 import 'package:flutter/material.dart';
 
 class PlayerGrade{
@@ -378,7 +379,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
 
     return Row(
       children: [
-        SizedBox(width:25,child: Text((position+1).toString()+'º',style:EstiloTextoBranco.text14)),
+        numberCircle(position+1, 25),
         Images().getEscudoWidget(clubClass.name,25,25),
         Expanded(
             child: Container(color:(clubClass.name==myClass.clubName) ? Colors.teal : Colors.transparent,
@@ -437,23 +438,23 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
 
 
   Widget tableWidget() {
+    My my = My();
     return Container(
       color: AppColors().greyTransparent,
       margin: const EdgeInsets.all(4),
       height: 5*30,
       child: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
             for (int groupNumber = 0; groupNumber < 8; groupNumber++)
               for (int nConfronto = -1; nConfronto < 2; nConfronto++) //Tem linha com título
-                Table(
-                  columnWidths: const{0: FractionColumnWidth(.35),4: FractionColumnWidth(.35)},
+                Column(
                   children: [
                     if (nConfronto == -1)
                       groupTitle(groupNumber)
                     else
-                      groupRow(groupNumber,nConfronto)
+                      groupRow(groupNumber,nConfronto, my)
                   ],
                 )
           ],
@@ -462,7 +463,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
     );
   }
 
-  TableRow groupTitle(int groupNumber){
+  Widget groupTitle(int groupNumber){
     String groupLetter = 'A';
     if(groupNumber==1){groupLetter='B';}
     if(groupNumber==2){groupLetter='C';}
@@ -471,45 +472,17 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
     if(groupNumber==5){groupLetter='F';}
     if(groupNumber==6){groupLetter='G';}
     if(groupNumber==7){groupLetter='H';}
-    return TableRow(
-      children: [
-        Text('\n${Translation(context).text.group} ' + groupLetter,style: EstiloTextoBranco.text16),
-        Container(),
-        Container(),
-        Container(),
-        Container(),
-      ],
-    );
+    return Text('\n${Translation(context).text.group} ' + groupLetter, style: EstiloTextoBranco.negrito16);
   }
-  TableRow groupRow(int groupNumber, int nConfronto){
-    MatchResultInternational match = MatchResultInternational(rodadaNumber: semanasGruposInternacionais.indexOf(semana-1),groupNumber: groupNumber, nConfronto: nConfronto, competitionName: myClass.getMyInternationalLeague());
-    My my = My();
-
-    String teamNameA = match.confronto.clubName1;
-    String teamNameB =  match.confronto.clubName2;
-    int golsA = match.confronto.goal1;
-    int golsB = match.confronto.goal2;
-
-    return  TableRow(
-      children: [
-        Container(
-            color: teamNameA == my.clubName ? Colors.green : Colors.transparent,
-            child: Text(teamNameA,textAlign: TextAlign.right,style: EstiloTextoBranco.text16)),
-        //Escudo
-        Images().getEscudoWidget(teamNameA,20,20),
-
-        match.confronto.hasGoals
-            ? Text(golsA.toString()+'x'+golsB.toString(),style: EstiloTextoBranco.text16)
-            : const Center(child: Text('x',style: EstiloTextoBranco.text16)),
-
-        //Escudo
-        Images().getEscudoWidget(teamNameB,20,20),
-
-        Container(
-            color: teamNameB == my.clubName ? Colors.green : Colors.transparent,
-            child: Text(teamNameB,style: EstiloTextoBranco.text16)),
-      ],
-    );
+  Widget groupRow(int groupNumber, int nConfronto, My my){
+    return  matchRowWidget(
+        MatchResultInternational(
+            rodadaNumber: semanasGruposInternacionais.indexOf(semana-1),
+            groupNumber: groupNumber,
+            nConfronto: nConfronto,
+            competitionName: myClass.getMyInternationalLeague()
+        ).confronto,
+        my);
   }
 
 Widget tableWidgetMataMata(){

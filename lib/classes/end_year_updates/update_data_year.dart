@@ -134,6 +134,16 @@ void resetOnLoadData(){
   //Reset Histórico de posições
   HistoricPositionsThisYear().resetGlobal();
 
+  globalHistoricLeagueClassification = {};
+  globalHistoricInternationalClassification = {};
+  globalHistoricCup = {};
+  globalHistoricClassification = {'Mundial': {}};
+
+  globalHistoricMyClub = {};
+  globalHistoricBestPlayers = {};
+  globalHistoricTopScorers = {};
+  globalHistoricCoachResults = {};
+
   //RESET CHAMPIONS LEAGUE, LIBERTADORES etc data
   if(ano == anoInicial) {
     InternationalLeague().resetAll();
@@ -153,8 +163,6 @@ void resetData(){
   //Zera Status dos jogadores
   globalJogadoresHealth = List.filled(globalMaxPlayersPermitted, 1.0);
   globalJogadoresMoral = List.filled(globalMaxPlayersPermitted, globalJogadoresMoralNames[Random().nextInt(globalJogadoresMoralNames.length)]);
-
-  resetHistoric();
 
   globalLeaguePlayers = {
     PlayerStatsKeys().keyPlayerMatchs: List.filled(globalMaxPlayersPermitted, 0),
@@ -185,28 +193,11 @@ void resetData(){
   globalClubsInternationalGM = List.filled(globalMaxClubsPermitted, 0);
   globalClubsInternationalGS = List.filled(globalMaxClubsPermitted, 0);
 
-}
-
-void resetHistoric(){
-
-  globalHistoricLeagueGoalsAll = {};
   globalHistoricLeagueGoalsLastRodada = {};
 
   globalHistoricLeagueGoalsAll = {};
-  globalHistoricLeagueGoalsLastRodada = {};
 
   globalHistoricInternationalGoalsAll = {};
-
-  globalHistoricLeagueClassification = {};
-  globalHistoricInternationalClassification = {};
-  globalHistoricCup = {};
-  globalHistoricClassification = {'Mundial': {}};
-
-  globalHistoricMyClub = {};
-  globalHistoricBestPlayers = {};
-  globalHistoricTopScorers = {};
-  globalHistoricCoachResults = {};
-
 }
 
 

@@ -131,7 +131,10 @@ class Simulate{
             //Se não for meu jogo simula ou se for simulação
             if (myCampeonatoID != leagueIndex ||
                 (myClubID != indexTeam1 && myClubID != indexTeam2) || simulMyMatch) {
-              MatchSimulation match = MatchSimulation(Club(index: indexTeam1,clubDetails: false), Club(index: indexTeam2,clubDetails: false));
+              MatchSimulation match = MatchSimulation(
+                                        Club(index: indexTeam1, clubDetails: false, calcInternationalLeaguePlaying: false),
+                                        Club(index: indexTeam2,clubDetails: false, calcInternationalLeaguePlaying: false),
+              );
               //SALVA O PLACAR NO HISTÓRICO
               SaveMatchHistoric().setHistoricGoalsLeague(leagueIndex, chaveClub1, chaveClub2,match.variableGol1,match.variableGol2);
             }
