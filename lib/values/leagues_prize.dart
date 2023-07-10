@@ -1,10 +1,11 @@
 import 'package:fifa/classes/functions/dificuldade.dart';
+import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/league_names.dart';
 
-void premiacao(My myClass){
+void premiacao(My myClass, Confronto confronto){
 
   LeagueOfficialNames l = LeagueOfficialNames();
   String leagueName = myClass.campeonatoName;
@@ -56,10 +57,15 @@ void premiacao(My myClass){
       if(semanaOitavas.contains(rodada) || semanaQuartas.contains(rodada)) premio=4.0;
       if(semanaSemi.contains(rodada) || semanaFinal.contains(rodada)) premio=5.0;
     }
-    else if(myClass.getMyInternationalLeague() == l.libertadores){
+    else if(myClass.getMyInternationalLeague() == l.libertadores || myClass.getMyInternationalLeague() == l.europaLeagueOficial){
       premio=2;
       if(semanaOitavas.contains(rodada) || semanaQuartas.contains(rodada)) premio=2.5;
       if(semanaSemi.contains(rodada) || semanaFinal.contains(rodada)) premio=3.2;
+    }
+    else if(myClass.getMyInternationalLeague() == l.copaSulAmericana){
+      premio=1;
+      if(semanaOitavas.contains(rodada) || semanaQuartas.contains(rodada)) premio=1.5;
+      if(semanaSemi.contains(rodada) || semanaFinal.contains(rodada)) premio=2.5;
     }
     else if(myClass.getMyInternationalLeague() == l.resto){
       premio=1.5;
@@ -68,8 +74,16 @@ void premiacao(My myClass){
     }
   }
 
-  if(globalMyLeagueLastResults.last==1){premio=(premio/2);}
-  if(globalMyLeagueLastResults.last==0){premio=(premio/3);}
+  //IF DRAW OR LOSS
+  if(confronto.hasGoals){
+    if(confronto.goal1 == confronto.goal2){
+      premio=(premio/2);
+    }
+    if(confronto.goal1 < confronto.goal2){
+      premio=(premio/3);
+    }
+  }
 
+  //SAVE GLOBALLY
   globalMyMoney += premio * DificuldadeClass().getDificuldadeMultiplicationValue();
 }

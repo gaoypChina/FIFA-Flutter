@@ -202,4 +202,5 @@ class ResultMatch {
         backgroundColor = colorResultBackground(goal1, goal2);
     }
   }
+
 }

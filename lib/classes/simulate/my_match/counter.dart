@@ -1,4 +1,5 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/simulate/after_simulation/historic.dart';
@@ -66,7 +67,9 @@ class CounterMatch extends ChangeNotifier{
     if(!finishedMatch){
       myMatchSimulation.endMatch(); //set vitoria, empate ou derrota
 
-      premiacao(myClass); //dinheiro
+      Confronto confronto = Confronto(clubName1: myMatchSimulation.myClubClass.name, clubName2: myMatchSimulation.adversarioClubClass.name);
+      confronto.setGoals(goal1: myMatchSimulation.meuGolMarcado, goal2: myMatchSimulation.meuGolSofrido);
+      premiacao(myClass, confronto); //dinheiro
 
       //update poe +1 match pros meus jogadores
       UpdatePlayerVariableMatch().update(myClubClass);

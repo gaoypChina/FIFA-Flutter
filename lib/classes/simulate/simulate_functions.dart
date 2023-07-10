@@ -27,20 +27,21 @@ class Simulate{
     //Antes de usar -> use o startVariables se for jogar a partida
 
     customToast('Simulate Matchs...');
+    Semana week = Semana(semana);
     //SIMULA PARTIDAS
-    if(Semana(semana).isJogoCampeonatoNacional) {
+    if(week.isJogoCampeonatoNacional) {
       nationalMatchs(simulMyMatch);
     }
-    else if(Semana(semana).isJogoCopa) {
+    else if(week.isJogoCopa) {
       cupMatchs(simulMyMatch);
     }
-    else if(Semana(semana).isJogoGruposInternacional){
+    else if(week.isJogoGruposInternacional){
       internationalMatchsGroups(simulMyMatch);
     }
-    else if(Semana(semana).isJogoMataMataInternacional) {
+    else if(week.isJogoMataMataInternacional) {
       internationalKnockout(simulMyMatch);
     }
-    else if(Semana(semana).isJogoMundial) {
+    else if(week.isJogoMundial) {
       MundialFinal data = MundialFinal();
       data.simulate();
     }
@@ -60,7 +61,7 @@ class Simulate{
     setTeamsInternational();
 
     //Save position map
-    if(Semana(semana).isJogoCampeonatoNacional){
+    if(week.isJogoCampeonatoNacional){
       HistoricPositionsThisYear().setGlobal();
     }
 

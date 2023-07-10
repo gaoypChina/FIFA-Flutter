@@ -20,6 +20,7 @@ import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/values/leagues_prize.dart';
 import 'package:flutter/material.dart';
 
 import '../../calendar/calendar.dart';
@@ -217,10 +218,6 @@ Future simulateFunction(Adversario adversario, My myClass) async{
   Simulate().startVariables();
   await Simulate().simulateWeek(simulMyMatch: true);
 
-  //**Só funciona se ja tiver simulado todos os outros jogos
-  //TODO: SÓ CONTA RESULTADO DAS LIGAS NACIONAIS
-  //Tem uma dependencia pelo ResultGameNacional
-
   ResultMatch resultMatch = ResultMatch();
   resultMatch.getWeekResult(Semana(semana-1), Club(index: myClass.clubID));
   if(resultMatch.isAlreadyPlayed) {
@@ -228,6 +225,8 @@ Future simulateFunction(Adversario adversario, My myClass) async{
     confronto.setGoals(goal1: resultMatch.goal1, goal2: resultMatch.goal2);
 
     customToast("${confronto.clubName1} ${confronto.goal1} x ${confronto.goal2} ${confronto.clubName2}");
+
+    premiacao(My(), confronto);
 
     CoachBestResults coachBestResults = CoachBestResults();
     coachBestResults.updateSequence(confronto);
