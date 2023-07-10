@@ -27,13 +27,13 @@ class MataMataSimulation{
 
         if((club1.index != myClass.clubID && club2.index != myClass.clubID) || simulMyMatch){
         //SIMULA A PARTIDA EM SI
-        MatchSimulation(club1, club2);
+        MatchSimulation(club1, club2, myClass);
         //Se a final terminar empatada simula de novo -> PENALTIS
         if(semanaFinal.contains(semana)){
           confronto = mataMata.getData(internationalName, mataMata.getSemanaPhase(semana), matchRows, phaseIdaVolta);
           while(semanaFinal.contains(semana) && confronto.goal1 == confronto.goal2){
             //TODO: REFAZER, PORQUE ACABA REJOGANDO A PARTIDA E SALVA OS STATS DOS JOGADORES 2X
-            MatchSimulation(club1, club2);
+            MatchSimulation(club1, club2, myClass);
             //SALVA O PLACAR
             confronto = mataMata.getData(internationalName, mataMata.getSemanaPhase(semana), matchRows, phaseIdaVolta);
           }

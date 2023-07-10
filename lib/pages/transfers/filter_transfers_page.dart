@@ -5,6 +5,24 @@ import 'package:fifa/widgets/button/back_button.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:flutter/material.dart';
 
+class FilterTransfersController{
+  late String title;
+  late RangeValues values;
+  late double min;
+  late double max;
+
+  FilterTransfersController({required this.title, required this.values}){
+    min = values.start;
+    max = values.end;
+  }
+
+  void updateValue(RangeValues newValues){
+    values = newValues;
+  }
+
+}
+
+
 class FilterTransfersPage extends StatefulWidget {
   const FilterTransfersPage({Key? key}) : super(key: key);
 
@@ -14,8 +32,11 @@ class FilterTransfersPage extends StatefulWidget {
 
 class _FilterTransfersPageState extends State<FilterTransfersPage> {
 
+  FilterTransfersController ageControl = FilterTransfersController(title: "Age", values: const RangeValues(18, 50));
+  FilterTransfersController ovrControl = FilterTransfersController(title: "Overall", values: const RangeValues(30, 100));
+  FilterTransfersController priceControl = FilterTransfersController(title: "Price", values: const RangeValues(0, 400));
 
-  ////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
   @override
@@ -38,9 +59,9 @@ class _FilterTransfersPageState extends State<FilterTransfersPage> {
             children: [
               backButtonText(context,'Filter Transfers Page'),
 
-              chooseSlider("Age", 0, 25),
-              chooseSlider("Overall", 0, 25),
-              chooseSlider("Price", 0, 25),
+              chooseSlider(ageControl),
+              chooseSlider(ovrControl),
+              chooseSlider(priceControl),
 
               customButtonContinue(
                   title: "Filter",
@@ -59,21 +80,33 @@ class _FilterTransfersPageState extends State<FilterTransfersPage> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-Widget chooseSlider(String title, int min, int max){
+Widget chooseSlider(FilterTransfersController controller){
 
     return Container(
       color: AppColors().greyTransparent,
       padding: const EdgeInsets.all(8),
-      child: Row(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Column(
+          Text(controller.title, style: EstiloTextoBranco.negrito16),
+          RangeSlider(
+            values: controller.values,
+            min: controller.min,
+            max: controller.max,
+            onChanged: (RangeValues newValue){
+              setState(() {
+                controller.values = newValue;
+              });
+            },
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Text(title, style: EstiloTextoBranco.text20),
-
-              Text("Min: " + min.toStringAsFixed(0), style: EstiloTextoBranco.text20),
-              Text("Max: " + max.toStringAsFixed(0), style: EstiloTextoBranco.text20),
+              Text("Min: " + controller.values.start.toStringAsFixed(0), style: EstiloTextoBranco.text14),
+              Text("Max: " + controller.values.end.toStringAsFixed(0), style: EstiloTextoBranco.text14),
             ],
           ),
+
         ],
       ),
     );

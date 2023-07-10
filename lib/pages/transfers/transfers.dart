@@ -1,3 +1,4 @@
+import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
@@ -5,6 +6,7 @@ import 'package:fifa/classes/countries/words.dart';
 import 'package:fifa/pages/transfers/controller/filter_players.dart';
 import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/transfers/filter_transfers_page.dart';
 import 'package:fifa/widgets/popup/popup_player_info.dart';
 import 'package:fifa/theme/background_color/background_age.dart';
 import 'package:fifa/theme/background_color/background_overall.dart';
@@ -241,7 +243,6 @@ class _TransfersState extends State<Transfers> {
                           child: Column(
                             children: [
                               Image.asset('assets/icons/assists.png',height: 40, width: 40),
-                              Text(Translation(context).text.position,style: EstiloTextoBranco.text14),
                             ],
                           ),
                         ),
@@ -260,10 +261,15 @@ class _TransfersState extends State<Transfers> {
                             showModalBottomSheet(isScrollControlled: true,context: context,
                                 builder: (context) {return maxMinSelectionWidget();});
                           },
-                          child: const Icon(Icons.filter_alt, size: 35, color: Colors.white),
+                          child: const Icon(Icons.filter_alt, size: 30, color: Colors.white),
                         ),
 
-                        const SizedBox(width: 20),
+                        GestureDetector(
+                          onTap: () {
+                            navigatorPush(context, const FilterTransfersPage());
+                          },
+                          child: const Icon(Icons.change_circle, size: 25, color: Colors.white),
+                        ),
 
 
                       ],

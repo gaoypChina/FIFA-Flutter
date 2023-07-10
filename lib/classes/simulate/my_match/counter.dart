@@ -66,7 +66,7 @@ class CounterMatch extends ChangeNotifier{
     if(!finishedMatch){
       myMatchSimulation.endMatch(); //set vitoria, empate ou derrota
 
-      premiacao(); //dinheiro
+      premiacao(myClass); //dinheiro
 
       //update poe +1 match pros meus jogadores
       UpdatePlayerVariableMatch().update(myClubClass);

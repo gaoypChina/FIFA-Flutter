@@ -32,7 +32,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
-  csv: ^5.0.1
+  csv: ^5.0.2
   draggable_scrollbar: ^0.1.0
   file_picker: ^4.6.1
   flutter_lints: ^1.0.4 #Sempre 1.0.4

@@ -19,7 +19,7 @@ class MatchSimulation{
     print("TIME1: ${clubClass1.name} TIME2 ${clubClass1.name}");
   }
 
-  MatchSimulation(Club clubClass1,Club clubClass2){
+  MatchSimulation(Club clubClass1, Club clubClass2, My my){
 
     Grade().reset();
 
@@ -27,15 +27,21 @@ class MatchSimulation{
     CardsInjury().setMinus1InjuryRedYellowCardAllTeam(clubClass1);
     CardsInjury().setMinus1InjuryRedYellowCardAllTeam(clubClass2);
 
-    matchSimulationResult(clubClass1,clubClass2);
+    int whichIsMyClub = 0;
+    if(clubClass1.name == my.clubName){
+      whichIsMyClub = 1;
+    }else if(clubClass2.name == my.clubName){
+        whichIsMyClub = 2;
+    }
+    matchSimulationResult(clubClass1, clubClass2, whichIsMyClub);
 
-    matchSimulationAfter(clubClass1,clubClass2);
+    matchSimulationAfter(clubClass1, clubClass2);
 
   }
 
   ///////////////////////////////////////////////////////////////
   //////////////////////////////////////////////////////////////
-  matchSimulationResult(Club clubClass1, Club clubClass2){
+  matchSimulationResult(Club clubClass1, Club clubClass2, int whichIsMyClub){
 
     //PLACAR DO JOGO
     double ovr1 = clubClass1.getOverall();
@@ -45,7 +51,7 @@ class MatchSimulation{
     variableGol2 = goalsList.last;
 
     //Salva no historico do treinador se eu simulo a partida
-    if(clubClass1.name == My().clubName){
+    if(whichIsMyClub == 1){
       if(variableGol1 > variableGol2){
         TotalVictories().add1Victory();
       }
@@ -56,7 +62,7 @@ class MatchSimulation{
         TotalVictories().add1Loss();
       }
     }
-    if(clubClass2.name == My().clubName){
+    if(whichIsMyClub == 2){
       if(variableGol2 > variableGol1){
         TotalVictories().add1Victory();
       }

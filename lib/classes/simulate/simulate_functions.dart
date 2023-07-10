@@ -111,6 +111,7 @@ class Simulate{
 
   void nationalMatchs(bool simulMyMatch){
       int myClubID = globalMyClubID;
+      My my = My();
       int myCampeonatoID = My().leagueID;
       for (int i = 0; i < leaguesListRealIndex.length; i++) {
         int leagueIndex = leaguesListRealIndex[i];
@@ -134,6 +135,7 @@ class Simulate{
               MatchSimulation match = MatchSimulation(
                                         Club(index: indexTeam1, clubDetails: false, calcInternationalLeaguePlaying: false),
                                         Club(index: indexTeam2,clubDetails: false, calcInternationalLeaguePlaying: false),
+                                        my
               );
               //SALVA O PLACAR NO HISTÓRICO
               SaveMatchHistoric().setHistoricGoalsLeague(leagueIndex, chaveClub1, chaveClub2,match.variableGol1,match.variableGol2);
@@ -147,7 +149,7 @@ class Simulate{
   void cupMatchs(bool simulMyMatch){
 
     List cupNames = CupClassification().getAllCupNames();
-
+    My my = My();
     for (int i = 0; i < cupNames.length; i++) {
       String cupName = cupNames[i];
       Map matchMap = {};
@@ -160,7 +162,7 @@ class Simulate{
         for (int nConfronto = 1; nConfronto <= matchMap.length; nConfronto++) {
           Club club1 = Club(index: clubsAllNameList.indexOf(matchMap[nConfronto][ResultDict().keyTeamName1]), clubDetails: false);
           Club club2 = Club(index: clubsAllNameList.indexOf(matchMap[nConfronto][ResultDict().keyTeamName2]), clubDetails: false);
-          MatchSimulation match = MatchSimulation(club1,club2);
+          MatchSimulation match = MatchSimulation(club1,club2, my);
           //SALVA O PLACAR
           globalCup[cupName]![phaseName][idaOrVoltaKey][nConfronto] = ResultDict().saveGoals(matchMap[nConfronto], match.variableGol1, match.variableGol2);
         }
@@ -174,6 +176,7 @@ class Simulate{
 
   void internationalKnockout(bool simulMyMatch){
 
+    My my = My();
     for (int i = 0; i < internationalLeagueNames.length; i++) {
       String competitionName = internationalLeagueNames[i];
       Map matchMap = {};
@@ -186,7 +189,7 @@ class Simulate{
         for (int nConfronto = 1; nConfronto <= matchMap.length; nConfronto++) {
           Club club1 = Club(index: clubsAllNameList.indexOf(matchMap[nConfronto][ResultDict().keyTeamName1]), clubDetails: false);
           Club club2 = Club(index: clubsAllNameList.indexOf(matchMap[nConfronto][ResultDict().keyTeamName2]), clubDetails: false);
-          MatchSimulation match = MatchSimulation(club1, club2);
+          MatchSimulation match = MatchSimulation(club1, club2, my);
           //SALVA O PLACAR
           globalInternationalMataMata[competitionName]![phaseName][idaOrVoltaKey][nConfronto] = ResultDict().saveGoals(matchMap[nConfronto], match.variableGol1, match.variableGol2);
         }
@@ -209,7 +212,7 @@ class Simulate{
   }
 
   void internationalMatchsGroupsLeague(bool simulMyMatch, String internationalName){
-    int myClubID = My().clubID;
+    My my = My();
     InternationalLeague internationalLeague = InternationalLeague();
       //PRA CHAMPIONS E PARA A LIBERTADORES
       List chave = Chaves().obterChave(semana, 0);
@@ -219,8 +222,12 @@ class Simulate{
           int indexTeam1 = internationalLeague.getClub(internationalName, 4 * groupNumber + chaveConfronto);
           int indexAdv04 = Chaves().chaveIndexAdvCampeonato(semana, 0, chaveConfronto)[0];
           int indexTeam2 = internationalLeague.getClub(internationalName, 4 * groupNumber + indexAdv04);
-          if(indexTeam1 != myClubID && indexTeam2 != myClubID || simulMyMatch) {
-            MatchSimulation match = MatchSimulation(Club(index: indexTeam1,clubDetails: false), Club(index: indexTeam2,clubDetails: false));
+          if(indexTeam1 != my.clubID && indexTeam2 != my.clubID || simulMyMatch) {
+            MatchSimulation match = MatchSimulation(
+                                      Club(index: indexTeam1,clubDetails: false),
+                                      Club(index: indexTeam2,clubDetails: false),
+                                      my
+            );
             //SALVA O PLACAR NO HISTÓRICO
             SaveMatchHistoric().setHistoricGoalsGruposInternational(internationalName,indexTeam1,indexTeam2, match.variableGol1,match.variableGol2);
           }

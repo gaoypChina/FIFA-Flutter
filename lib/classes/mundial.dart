@@ -5,6 +5,7 @@ import 'package:fifa/classes/mata_mata/knockout_international.dart';
 import 'package:fifa/classes/mata_mata/knockout_stage.dart';
 import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/match/result_dict.dart';
+import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/simulate/match_simulation.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
@@ -39,7 +40,7 @@ class MundialFinal{
 
   void simulateScore(){
 
-    MatchSimulation match = MatchSimulation(Club(index: confronto.clubID1), Club(index: confronto.clubID2));
+    MatchSimulation match = MatchSimulation(Club(index: confronto.clubID1), Club(index: confronto.clubID2), My());
     confronto.setGoals(goal1: match.variableGol1, goal2: match.variableGol2);
 
     if(confronto.goal1 == confronto.goal2){

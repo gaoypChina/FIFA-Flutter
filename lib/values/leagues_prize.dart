@@ -4,11 +4,12 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/values/league_names.dart';
 
-void premiacao(){
-  My myClass = My();
+void premiacao(My myClass){
+
   LeagueOfficialNames l = LeagueOfficialNames();
-  double premio=0;
   String leagueName = myClass.campeonatoName;
+  double premio=0;
+
   if(Semana(semana).isJogoCampeonatoNacional){
     Map prizesMap = {
       l.inglaterra1: 2.2,
