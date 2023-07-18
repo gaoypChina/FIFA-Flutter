@@ -181,17 +181,13 @@ class RealClassification{
 
     for (dynamic lined in lines){
       if(lined[0].isNotEmpty){
-        String clubName = lined[0].replaceFirst(" (Y)","").replaceFirst(" (J)","").replaceFirst(" (R)","");
-        clubName = clubName.replaceFirst(" (O)","").replaceFirst(" (P)","").replaceFirst(" (X)","");
-        clubName = clubName.replaceFirst(" (A)","").replaceFirst(" (C)","").replaceFirst(" (Q)","");
-        clubName = clubName.replaceFirst(" (S)","").replaceFirst(" (T)","").replaceFirst(" (Z)","");
-        clubName = clubName.replaceFirst(" (O, P)","");
-        clubName = clubName.replaceFirst(" (C, Q)","").replaceFirst(" (T, Y)","").replaceFirst(" (C, P)","");
-        clubName = clubName.replaceFirst("[a]","").replaceFirst("[b]","").replaceFirst("[c]","").replaceFirst("[d]","").replaceFirst("[e]","");
+        String clubName = lined[0];
+        clubName = clubName.split('(')[0].trim();
+        clubName = clubName.split('[')[0].trim();
         clubName = getAppClubName(clubName, chosenLeagueName, LeagueOfficialNames());
 
-        lined[5] = lined[5].toString().replaceFirst("[a]","").replaceFirst("[b]","").replaceFirst("[c]","").replaceFirst("[d]","").replaceFirst("[e]","").replaceFirst("[f]","");
-        lined[6] = lined[6].toString().replaceFirst("[a]","").replaceFirst("[b]","").replaceFirst("[c]","").replaceFirst("[d]","").replaceFirst("[e]","").replaceFirst("[f]","");
+        lined[5] = lined[5].toString().split('[')[0].trim();
+        lined[6] = lined[6].toString().split('[')[0].trim();
         lined[5] = int.parse(lined[5].toString());
         lined[6] = int.parse(lined[6].toString());
 
@@ -204,7 +200,7 @@ class RealClassification{
           'GM': lined[5].toString(),
           'GS': lined[6].toString(),
           'SG': (lined[5]-lined[6]).toString(),
-          'points': lined[8].toString().replaceFirst("[a]","").replaceFirst("[b]","").replaceFirst("[c]","").replaceFirst("[d]",""),
+          'points': lined[8].toString().split('[')[0].trim(),
         });
       }
     }

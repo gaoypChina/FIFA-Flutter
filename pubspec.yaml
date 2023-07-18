@@ -109,9 +109,6 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-      - family: Risque
-        fonts:
-          - asset: assets/fonts/Risque-Regular.ttf
       - family: Rowdies
         fonts:
           - asset: assets/fonts/Rowdies-Regular.ttf

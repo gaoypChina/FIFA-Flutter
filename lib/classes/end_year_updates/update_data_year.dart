@@ -127,6 +127,8 @@ void resetOnLoadData(){
   globalHistoricInternationalClassification = {};
   globalHistoricCup = {};
   globalHistoricClassification = {'Mundial':{}};
+  globalHistoricLeagueGoalsAll = {};
+  globalHistoricInternationalGoalsAll = {};
 
   //ZERA DADOS DE TRANSFERENCIAS
   HistoricMyTransfers().resetGlobalVariable();
@@ -138,6 +140,7 @@ void resetOnLoadData(){
   globalHistoricInternationalClassification = {};
   globalHistoricCup = {};
   globalHistoricClassification = {'Mundial': {}};
+
 
   globalHistoricMyClub = {};
   globalHistoricBestPlayers = {};
@@ -195,9 +198,6 @@ void resetData(){
 
   globalHistoricLeagueGoalsLastRodada = {};
 
-  globalHistoricLeagueGoalsAll = {};
-
-  globalHistoricInternationalGoalsAll = {};
 }
 
 

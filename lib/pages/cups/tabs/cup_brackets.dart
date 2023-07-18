@@ -112,7 +112,7 @@ Widget matchBoxCup(String cupName, String phaseKeyName, int matchNumber){
   }
     return Container(
       height: 85,
-      width: 72,
+      width: 74,
       padding: const EdgeInsets.all(4),
       color: AppColors().greyTransparent,
       child: hasData ? showMatchBoxClubs(confrontoIda, confrontoVolta) : Container(),
@@ -125,6 +125,7 @@ Widget showMatchBoxClubs(Confronto confrontoIda,Confronto confrontoVolta){
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Images().getEscudoWidget(confrontoIda.clubName1,imageSize,imageSize),
             Images().getEscudoWidget(confrontoIda.clubName2,imageSize,imageSize),

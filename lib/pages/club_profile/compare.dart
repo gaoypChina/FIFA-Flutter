@@ -117,38 +117,46 @@ class _CompareState extends State<Compare> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
 
-        Column(
-          children: [
+        Flexible(
+          child: Column(
+            children: [
 
-            Row(
-              children: [
-                Container(
-                  height: 10,width: 10,
-                  decoration: const BoxDecoration(
-                    color: Colors.blue,
-                    shape: BoxShape.circle,
+              Row(
+                children: [
+                  Container(
+                    height: 10,width: 10,
+                    decoration: const BoxDecoration(
+                      color: Colors.blue,
+                      shape: BoxShape.circle,
+                    ),
                   ),
-                ),
-                Text(club.name,style: EstiloTextoBranco.text16),
-              ],
-            ),
+                  Expanded(
+                    child: Text(club.name,
+                        overflow: TextOverflow.fade,
+                        softWrap: false,
+                        style: EstiloTextoBranco.text16),
+                  ),
+                ],
+              ),
 
-            Row(
-              children: [
-
-                Images().getEscudoWidget(club.name,50,50),
-
-                Column(
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text(club.getOverall().toStringAsFixed(1),style: EstiloTextoBranco.text20),
-                    funcFlagsList(club.nationality, 15, 25),
-                    changeClub(isClubLeft: true),
+
+                    Images().getEscudoWidget(club.name,50,50),
+
+                    Column(
+                      children: [
+                        Text(club.getOverall().toStringAsFixed(1),style: EstiloTextoBranco.text20),
+                        funcFlagsList(club.nationality, 15, 25),
+                      ],
+                    ),
+
                   ],
                 ),
-
-              ],
-            ),
-          ],
+              changeClub(isClubLeft: true),
+            ],
+          ),
         ),
 
         Column(
@@ -158,36 +166,44 @@ class _CompareState extends State<Compare> {
           ],
         ),
         //TIME 2
-        Column(
-          children: [
-            Row(
-              children: [
-                Container(
-                  height: 10,width: 10,
-                  decoration: const BoxDecoration(
-                    color: Colors.red,
-                    shape: BoxShape.circle,
+        Flexible(
+          child: Column(
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    height: 10,width: 10,
+                    decoration: const BoxDecoration(
+                      color: Colors.red,
+                      shape: BoxShape.circle,
+                    ),
                   ),
-                ),
-                Text(club2.name,style: EstiloTextoBranco.text16),
-              ],
-            ),
-            Row(
-              children: [
+                  Expanded(
+                    child: Text(club2.name,
+                        overflow: TextOverflow.fade,
+                        softWrap: false,
+                        style: EstiloTextoBranco.text16),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    children: [
+                      Text(club2.getOverall().toStringAsFixed(1),style: EstiloTextoBranco.text20),
+                      funcFlagsList(club2.nationality, 15, 25),
+                    ],
+                  ),
 
-                Column(
-                  children: [
-                    Text(club2.getOverall().toStringAsFixed(1),style: EstiloTextoBranco.text20),
-                    funcFlagsList(club2.nationality, 15, 25),
-                    changeClub(isClubLeft: false),
-                  ],
-                ),
+                  Images().getEscudoWidget(club2.name,50,50),
 
-                Images().getEscudoWidget(club2.name,50,50),
-
-              ],
-            ),
-          ],
+                ],
+              ),
+              changeClub(isClubLeft: false),
+            ],
+          ),
         ),
       ],
     );
@@ -320,8 +336,8 @@ class _CompareState extends State<Compare> {
     return Container(
       width: Sized(context).width*0.9,
       color: AppColors().greyTransparent,
-      margin: const EdgeInsets.all(4),
-      padding: const EdgeInsets.all(4),
+      margin: const EdgeInsets.all(8),
+      padding: const EdgeInsets.all(8),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -331,11 +347,11 @@ class _CompareState extends State<Compare> {
           Row(
             children: [
               Images().getTrophy(club.leagueName,100,100),
-              Text(dataGraphicsCompare.nTitulos.toString(),style: EstiloTextoBranco.text20),
+              Text(dataGraphicsCompare.nTitulos.toString(),style: EstiloTextoBranco.negrito20),
 
               Expanded(child: Text(Translation(context).text.titles,textAlign:TextAlign.center,style: EstiloTextoBranco.text16)),
 
-              Text(dataGraphics.nTitulos.toString(),style: EstiloTextoBranco.text20),
+              Text(dataGraphics.nTitulos.toString(),style: EstiloTextoBranco.negrito20),
               Images().getTrophy(club2.leagueName,100,100),
             ],
           ),
@@ -389,11 +405,11 @@ class _CompareState extends State<Compare> {
           Row(
             children: [
               Image.asset('assets/trophy/${getTrophyImage(club.internationalLeagueName)}.png',height: 100,width: 100),
-              Text(dataGraphicsCompare.nTitulosInternational.toString(),style: EstiloTextoBranco.text20),
+              Text(dataGraphicsCompare.nTitulosInternational.toString(),style: EstiloTextoBranco.negrito20),
 
               Expanded(child: Text(Translation(context).text.titles,textAlign:TextAlign.center,style: EstiloTextoBranco.text16)),
 
-              Text(dataGraphics.nTitulosInternational.toString(),style: EstiloTextoBranco.text20),
+              Text(dataGraphics.nTitulosInternational.toString(),style: EstiloTextoBranco.negrito20),
               Image.asset('assets/trophy/${getTrophyImage(club2.internationalLeagueName)}.png',height: 100,width: 100),
             ],
           ),
@@ -615,11 +631,11 @@ class _CompareState extends State<Compare> {
           Row(
             children: [
               Image.asset('assets/trophy/${getTrophyImage(LeagueOfficialNames().mundial)}.png',height: 100,width: 100),
-              Text(dataGraphicsCompare.nTitulosMundial.toString(),style: EstiloTextoBranco.text20),
+              Text(dataGraphicsCompare.nTitulosMundial.toString(),style: EstiloTextoBranco.negrito20),
 
               Expanded(child: Text(Translation(context).text.titles,textAlign:TextAlign.center,style: EstiloTextoBranco.text16)),
 
-              Text(dataGraphics.nTitulosMundial.toString(),style: EstiloTextoBranco.text20),
+              Text(dataGraphics.nTitulosMundial.toString(),style: EstiloTextoBranco.negrito20),
               Image.asset('assets/trophy/${getTrophyImage(LeagueOfficialNames().mundial)}.png',height: 100,width: 100),
             ],
           ),

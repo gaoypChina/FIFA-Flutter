@@ -66,10 +66,10 @@ class Confronto{
       result = victory;
       winnerName = clubName1;
     }
-    if(penaltis1 == penaltis2){
+    else if(penaltis1 == penaltis2){
       result = draw;
     }
-    if(penaltis1 > penaltis2){
+    else if(penaltis1 < penaltis2){
       result = loss;
       winnerName = clubName2;
     }

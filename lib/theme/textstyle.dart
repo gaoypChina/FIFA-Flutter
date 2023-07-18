@@ -85,12 +85,6 @@ abstract class EstiloTextoBranco {
     color: Colors.white,
     fontSize: 8,
   );
-    static const TextStyle negrito6 = TextStyle(
-  fontFamily: 'Roboto',
-    color: Colors.white,
-    fontSize: 6,
-      fontWeight: FontWeight.bold,
-  );
   static const TextStyle negrito40 = TextStyle(
     color: Colors.white,
     fontFamily: 'Roboto',
@@ -101,6 +95,12 @@ abstract class EstiloTextoBranco {
     color: Colors.white,
     fontFamily: 'Roboto',
     fontSize: 22,
+    fontWeight: FontWeight.bold,
+  );
+  static const TextStyle negrito20 = TextStyle(
+    color: Colors.white,
+    fontFamily: 'Roboto',
+    fontSize: 20,
     fontWeight: FontWeight.bold,
   );
   static const TextStyle negrito18 = TextStyle(
@@ -119,6 +119,12 @@ abstract class EstiloTextoBranco {
     color: Colors.white,
     fontFamily: 'Roboto',
     fontSize: 14,
+    fontWeight: FontWeight.bold,
+  );
+  static const TextStyle negrito6 = TextStyle(
+    fontFamily: 'Roboto',
+    color: Colors.white,
+    fontSize: 6,
     fontWeight: FontWeight.bold,
   );
   static const TextStyle underline16 = TextStyle(

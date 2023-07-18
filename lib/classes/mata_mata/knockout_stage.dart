@@ -37,7 +37,7 @@ class KnockoutStage{
       confronto.setGoals(goal1: results[ResultDict().keyGol1], goal2: results[ResultDict().keyGol2]);
     }
     if(results.containsKey(ResultDict().keyPenalty1)){
-      confronto.setPenalties(penaltis1: results[ResultDict().keyPenalty2], penaltis2: results[ResultDict().keyPenalty1]);
+      confronto.setPenalties(penaltis1: results[ResultDict().keyPenalty1], penaltis2: results[ResultDict().keyPenalty2]);
     }
     return confronto;
   }

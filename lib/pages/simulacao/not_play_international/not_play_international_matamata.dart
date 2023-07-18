@@ -4,6 +4,7 @@ import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/mata_mata/mata_mata_class.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/table_international/table_brackets.dart';
 import 'package:fifa/theme/background_color/match_x_testyle.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:flutter/material.dart';
@@ -12,15 +13,11 @@ import 'package:flutter/material.dart';
 
     return SingleChildScrollView(
       child: Column(
-          children: [
-                Column(
-                children: [
-                  for(int phaseStage = 0; phaseStage < 7; phaseStage++)
-                    phaseTableMataMataWidget(internationalLeagueName,semana,phaseStage)
-                ],
-              ),
-          ],
-        ),
+        mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        interBrackets(context, My().getMyInternationalLeague()),
+      ],
+      ),
     );
   }
 
@@ -87,8 +84,18 @@ TableRow groupTitleMataMata(int phaseRows){
 }
 TableRow groupRowMataMata(int matchRow,String internationalLeagueName, int phaseIdaVolta, int weekShow){
   MataMata data = MataMata();
-  Confronto confronto = data.getData(internationalLeagueName, data.getSemanaPhase(weekShow),matchRow, phaseIdaVolta);
-
+  late Confronto confronto;
+  try{
+    confronto = data.getData(internationalLeagueName, data.getSemanaPhase(weekShow),matchRow, phaseIdaVolta);
+  }catch(e){
+    return TableRow(children: [
+      Container(),
+      Container(),
+      Container(),
+      Container(),
+      Container(),
+    ]);
+  }
   //print(data.clubName1);
   //print('GOL: ${data.goal1} x ${data.goal2}');
   String teamNameA = confronto.clubName1;

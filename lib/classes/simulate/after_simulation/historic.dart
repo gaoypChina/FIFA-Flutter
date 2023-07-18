@@ -53,13 +53,16 @@ class SaveMatchHistoric{
     if(Semana(semana).isJogoCampeonatoInternacional){
       int rodadaAtual = semanasGruposInternacionais.indexOf(semana);
       try{ //Se existir
-        goalsList = globalHistoricInternationalGoalsAll[internationalName][rodadaAtual];//pega as infos da minha partida tambem
+        goalsList = globalHistoricInternationalGoalsAll[ano][internationalName][rodadaAtual];//pega as infos da minha partida tambem
       }catch(e){
-        //print("VARIAVEL -globalHistoricInternationalGoalsAll- AINDA NÃO FOI INICIALIZADA");
-        if(globalHistoricInternationalGoalsAll[internationalName] == null){
-          globalHistoricInternationalGoalsAll[internationalName] = {};
+        print("VARIAVEL -globalHistoricInternationalGoalsAll- AINDA NÃO FOI INICIALIZADA");
+        if(globalHistoricInternationalGoalsAll[ano] == null){
+          globalHistoricInternationalGoalsAll[ano] = {};
         }
-        globalHistoricInternationalGoalsAll[internationalName][rodadaAtual] = List.filled(clubsAllNameList.length, 0);
+        if(globalHistoricInternationalGoalsAll[ano][internationalName] == null){
+          globalHistoricInternationalGoalsAll[ano][internationalName] = {};
+        }
+        globalHistoricInternationalGoalsAll[ano][internationalName][rodadaAtual] = List.filled(clubsAllNameList.length, 0);
 
       }
       //LISTA COM GOLS DAQUELA CAMPEONATO, QUE É SOBRESCRITA A CADA CAMPEONATO
@@ -67,7 +70,7 @@ class SaveMatchHistoric{
       goalsList[clubID2] = goal2;
 
       //SALVA OS GOLS DO CAMPEONATO NA RODADA
-      globalHistoricInternationalGoalsAll[internationalName][rodadaAtual] = List.from(goalsList);
+      globalHistoricInternationalGoalsAll[ano][internationalName][rodadaAtual] = List.from(goalsList);
 
     }
   }

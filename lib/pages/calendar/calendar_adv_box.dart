@@ -19,7 +19,7 @@ Widget wCalendarAdvBox(BuildContext context, int semanaLocal, show){
       },
       child: Container(
         width: 120,
-        height: 140,
+        height: 144,
         color: show.backgroundColor,
         child: Column(
           children: [
@@ -54,12 +54,17 @@ Widget wCalendarAdvBox(BuildContext context, int semanaLocal, show){
                 textAlign: TextAlign.center),
             Text('${show.placar}',
                 style: EstiloTextoBranco.negrito16, textAlign: TextAlign.center),
-            semanaLocal >= semana ? InkWell(
-              onTap:(){
-                simulateManyWeeksFunction(semanaLocal);
-                navigatorReplace(context, const Menu());
-              },
-              child: const Icon(Icons.timer,color: Colors.white,size: 25),
+            semanaLocal >= semana ? Column(
+              children: [
+                InkWell(
+                  onTap:(){
+                    simulateManyWeeksFunction(semanaLocal);
+                    navigatorReplace(context, const Menu());
+                  },
+                  child: const Icon(Icons.timer,color: Colors.white,size: 25),
+                ),
+                const SizedBox(height: 4),
+              ],
             ) : Container(),
           ],
         ),
@@ -76,7 +81,7 @@ Widget wCalendarNotPlayWidget(BuildContext context, int semanaLocal, String titl
     },
     child: Container(
       width: 120,
-      height: 140,
+      height: 144,
       color: semana > semanaLocal ? Colors.black87 : Colors.black38,
       child: Column(
         children: [
@@ -84,12 +89,17 @@ Widget wCalendarNotPlayWidget(BuildContext context, int semanaLocal, String titl
           const SizedBox(height: 10),
           imageName != null ? Image.asset(imageName,height: 70, width: 70) : Container(),
           const Spacer(),
-          semanaLocal >= semana ? InkWell(
-            onTap:(){
-              simulateManyWeeksFunction(semanaLocal);
-              navigatorReplace(context, const Menu());
-            },
-            child: const Icon(Icons.timer,color: Colors.white,size: 25),
+          semanaLocal >= semana ? Column(
+            children: [
+              InkWell(
+                onTap:(){
+                  simulateManyWeeksFunction(semanaLocal);
+                  navigatorReplace(context, const Menu());
+                },
+                child: const Icon(Icons.timer,color: Colors.white,size: 25),
+              ),
+              const SizedBox(height: 4),
+            ],
           ) : Container(),
         ],
       ),

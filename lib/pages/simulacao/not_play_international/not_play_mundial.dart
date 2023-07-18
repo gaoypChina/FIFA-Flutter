@@ -12,7 +12,9 @@ Widget notPlayMundial(BuildContext context){
   return SingleChildScrollView(
     child: Column(
       children: [
+        const SizedBox(height: 16),
         Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().mundial),height: 50,width: 50),
+        const SizedBox(height: 8),
         Text(Translation(context).text.finale, style: EstiloTextoBranco.negrito22),
         row(My()),
       ],
@@ -30,33 +32,52 @@ Widget row(My myclass){
 
     String teamNameA = data.confronto.clubName1;
     String teamNameB = data.confronto.clubName2;
-    double imageSize = 25;
+    double imageSize = 36;
 
     return  Column(
       children: [
+
+        const SizedBox(height: 16),
+
         Row(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
 
-            Container(
-                color: teamNameA == myclass.clubName ? Colors.green : Colors.transparent,
-                child: Text(teamNameA,textAlign:TextAlign.end,style: EstiloTextoBranco.text14)),
-            //Escudo
-            Images().getEscudoWidget(teamNameA,imageSize,imageSize),
-
-            //confronto.goal1 >= 0
-            //    ? Text(' '+ confronto.goal1.toString()+'x'+confronto.goal2.toString()+' ',style: EstiloTextoBranco.text14)
-            //    : const Text('X',textAlign:TextAlign.center,style: EstiloTextoBranco.text14),
-            //Escudo
-            Images().getEscudoWidget(teamNameB,imageSize,imageSize),
-
-            Container(
-              color: teamNameB == myclass.clubName ? Colors.green : Colors.transparent,
-              child: Text(teamNameB,style: EstiloTextoBranco.text14),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Container(
+                      color: teamNameA == myclass.clubName ? Colors.green : Colors.transparent,
+                      child: Text(teamNameA,textAlign:TextAlign.end,style: EstiloTextoBranco.text14)),
+                  const SizedBox(width: 8),
+                  Images().getEscudoWidget(teamNameA,imageSize,imageSize),
+                ],
+              ),
             ),
+            //Escudo
+
+            const SizedBox(width: 16),
+
+            //Escudo
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Images().getEscudoWidget(teamNameB,imageSize,imageSize),
+                  const SizedBox(width: 8),
+
+                  Container(
+                  color: teamNameB == myclass.clubName ? Colors.green : Colors.transparent,
+                    child: Text(teamNameB,style: EstiloTextoBranco.text14)
+                  ),
+                ],
+              ),
+            ),
+
 
           ],
         ),
+        const SizedBox(height: 16),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

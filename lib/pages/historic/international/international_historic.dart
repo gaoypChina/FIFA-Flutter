@@ -324,7 +324,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                       i % 4 == 0
                           ? Text(
                           '${Translation(context).text.group} ${(i / 4 + 1)
-                              .floor()}', style: EstiloTextoBranco.text16)
+                              .floor()}', style: EstiloTextoBranco.negrito16)
                           : Container(),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -332,13 +332,14 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                           Images().getEscudoWidget(
                               Club(index: clubsID[i]).name, 25, 25),
                           Container(
-                            width: 140,
+                            width: 150,
+                            padding: const EdgeInsets.all(4.0),
                             color: Club(index: clubsID[i]).name == My().clubName
                                 ? Colors.teal
                                 : i % 4 == 0 || i % 4 == 1 ? Colors.deepPurple
                                 : Colors.transparent,
                             child: Text(Club(index: clubsID[i]).name,
-                                style: EstiloTextoBranco.text16),
+                                style: EstiloTextoBranco.text14),
                           ),
                         ],
                       ),
@@ -361,20 +362,21 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                       i % 4 == 0
                           ? Text(
                           '${Translation(context).text.group} ${(i / 4 + 1)
-                              .floor()}', style: EstiloTextoBranco.text16)
+                              .floor()}', style: EstiloTextoBranco.negrito16)
                           : Container(),
                       Row(
                         children: [
                           Images().getEscudoWidget(
                               Club(index: clubsID[i]).name, 25, 25),
                           Container(
-                            width: 140,
+                            width: 150,
+                            padding: const EdgeInsets.all(4.0),
                             color: Club(index: clubsID[i]).name == My().clubName
                                 ? Colors.teal
                                 : i % 4 == 0 || i % 4 == 1 ? Colors.deepPurple
                                 : Colors.transparent,
                             child: Text(Club(index: clubsID[i]).name,
-                                style: EstiloTextoBranco.text16),
+                                style: EstiloTextoBranco.text14),
                           ),
                         ],
                       ),

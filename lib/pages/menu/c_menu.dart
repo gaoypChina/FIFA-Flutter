@@ -86,103 +86,106 @@ class _MenuState extends State<Menu> {
                       stops: const [0.2, 0.5, 1],
                     )
                 ),
-                child: Column(
-                  children: [
+                child: Center(
+                  child: Column(
+                    children: [
 
-                    const SizedBox(height: 40),
+                      const SizedBox(height: 40),
 
-                    wHomeHeader(context, myClass, club),
+                      wHomeHeader(context, myClass, club),
 
-                    //BOTÕES
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
+                      //BOTÕES
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
 
-                          wPlayButton(context, club, adversario, Semana(semana)),
+                            wPlayButton(context, club, adversario, Semana(semana)),
 
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
 
-                          expandedButton("Nacional",club, TableNacional(chosenLeagueIndex: myClass.leagueID)),
-                          expandedButton(Translation(context).text.myClub,club, const MyTeam()),
+                            expandedButton("Nacional",club, TableNacional(chosenLeagueIndex: myClass.leagueID)),
+                            expandedButton(Translation(context).text.myClub,club, const MyTeam()),
+                            ]),
+
+
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: [
+
+                                  expandedButton(Translation(context).text.international,club, TableInternational(leagueInternational: myClass.getMyInternationalLeague())),
+
+                                  expandedButton(Translation(context).text.coach,club, const CoachMenu()),
+
+                                ]),
+
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: [
+                                  expandedButton("Copa",club, const CupMain()),
+                                  Expanded(
+                                    child: wMenuButton(Translation(context).text.ranking,club,(){
+                                      customToast(Translation(context).text.loading);
+                                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RankingClubsPage()))
+                                          .then((value) {setState(() {});});
+                                    }),
+                                  ),
+                                ]),
+                            Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: [
+                                  expandedButton(Translation(context).text.historic,club, const HistoricMenu()),
+                                  expandedButton(Translation(context).text.transfers,club, const Transfers()),
+                                ]),
+
+
                           ]),
-
-
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-
-                                expandedButton(Translation(context).text.international,club, TableInternational(leagueInternational: myClass.getMyInternationalLeague())),
-
-                                expandedButton(Translation(context).text.coach,club, const CoachMenu()),
-
-                              ]),
-
-                          Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                expandedButton("Copa",club, const CupMain()),
-                                Expanded(
-                                  child: wMenuButton(Translation(context).text.ranking,club,(){
-                                    customToast(Translation(context).text.loading);
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RankingClubsPage()))
-                                        .then((value) {setState(() {});});
-                                  }),
-                                ),
-                              ]),
-                          Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
-                                expandedButton(Translation(context).text.historic,club, const HistoricMenu()),
-                                expandedButton(Translation(context).text.transfers,club, const Transfers()),
-                              ]),
-
-
-                        ]),
-                    ),
-
-                    //CALENDARIO E CLASSIFICAÇÃO
-
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-
-                        //wMenuCalendarIcon(context, semana, adversario),
-                        //wLast5Matchs(context),
-                        wMenuClassification(context, myClass),
-                    ]),
-
-
-                    //ESTÁDIO
-                    const Spacer(),
-
-
-                    Container(
-                      color: AppColors().greyTransparent,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-
-                         //Image.asset(Images().getMyStadium(),height:  double.maxFinite, width: double.maxFinite,fit: BoxFit.fill,),
-
-                          close(context),
-
-                          negotiationButton(context),
-
-                          save(context),
-
-                                  //train(context)
-                        ],
                       ),
-                    ),
+
+                      //CALENDARIO E CLASSIFICAÇÃO
+
+                      Expanded(
+                        child: SingleChildScrollView(
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+
+                              //wMenuCalendarIcon(context, semana, adversario),
+                              //wLast5Matchs(context),
+                              wMenuClassification(context, myClass),
+
+                          ]),
+                        ),
+                      ),
+
+
+                      Container(
+                        color: AppColors().greyTransparent,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+
+                           //Image.asset(Images().getMyStadium(),height:  double.maxFinite, width: double.maxFinite,fit: BoxFit.fill,),
+
+                            close(context),
+
+                            negotiationButton(context),
+
+                            save(context),
+
+                                    //train(context)
+                          ],
+                        ),
+                      ),
 
 
 
-                  ],
+                    ],
+                  ),
                 ),
               ),
 

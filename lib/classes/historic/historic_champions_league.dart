@@ -1,6 +1,8 @@
 import 'package:fifa/classes/functions/name.dart';
 import 'package:fifa/classes/functions/internat_league_manipulation.dart';
+import 'package:fifa/classes/match/result_dict.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/values/clubs_all_names_list.dart';
 
 class HistoricChampionsLeague{
 
@@ -26,10 +28,18 @@ class HistoricChampionsLeague{
 
   List getFinalClubsIDOrdered(int year, String leagueName){
     Map map = globalHistoricInternationalGoalsAll[year][leagueName][Name().finale];
-    List clubs2IDOrdered = map.keys.toList();
-    //Ve quem ganhou a final
-    if (map[clubs2IDOrdered.last][0] > map[clubs2IDOrdered.first][1]) {
-      clubs2IDOrdered = [clubs2IDOrdered.last, clubs2IDOrdered.first];
+    //Final Result
+    map = map[ResultDict().keyIda][1];
+
+    List clubs2IDOrdered = [];
+    if(map[ResultDict().keyGol1] > map[ResultDict().keyGol2]){
+      int clubID1 = clubsAllNameList.indexOf(map[ResultDict().keyTeamName1]);
+      int clubID2 = clubsAllNameList.indexOf(map[ResultDict().keyTeamName2]);
+      clubs2IDOrdered = [clubID1, clubID2];
+    }else{
+      int clubID1 = clubsAllNameList.indexOf(map[ResultDict().keyTeamName2]);
+      int clubID2 = clubsAllNameList.indexOf(map[ResultDict().keyTeamName1]);
+      clubs2IDOrdered = [clubID1, clubID2];
     }
     return clubs2IDOrdered;
   }

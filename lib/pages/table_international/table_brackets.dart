@@ -113,7 +113,7 @@ Widget matchBox(String competitionName, String phaseKeyName, int matchNumber){
 
   return Container(
     height: 85,
-    width: 72,
+    width: 74,
     padding: const EdgeInsets.all(4),
     color: AppColors().greyTransparent,
     child: hasData ? showMatchBoxClubs(confrontoIda, confrontoVolta) : Container(),

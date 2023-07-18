@@ -1,4 +1,5 @@
 import 'package:fifa/classes/classification.dart';
+import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/end_year_updates/update_data_year.dart';
 import 'package:fifa/classes/expectativa.dart';
@@ -270,10 +271,10 @@ onContinueButton() async{
   funcUpdateDataAfterSeason();
 
   if(keepCoach){
-    Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Menu()));
+    navigatorReplace(context, const Menu());
   }else{
     customToast('Você foi demitido. Escolha um novo clube');
-    Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const ChangeClub()));
+    navigatorReplace(context, const ChangeClub(isFired: false));
   }
 
 }

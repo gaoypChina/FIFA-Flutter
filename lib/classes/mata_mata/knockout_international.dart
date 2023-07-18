@@ -85,8 +85,8 @@ class KnockoutInternational extends KnockoutStage{
             winnerName = resultPenalties[0];
             int penalty1 = resultPenalties[1];
             int penalty2 = resultPenalties[2];
-            //SAVE PENALTY - penaly order inverted, because é salvo no map da volta
-            saveClassifiedAfterPenalties(competitionName, phaseName, nMatch, ResultDict().savePenaltis(matchMapVolta, penalty2, penalty1));
+
+            saveClassifiedAfterPenalties(competitionName, phaseName, nMatch, ResultDict().savePenaltis(matchMapVolta, penalty1, penalty2));
 
           }
 
@@ -100,7 +100,7 @@ class KnockoutInternational extends KnockoutStage{
       }else{
         // In the final there is only 1 match
         if(phaseName == KnockoutStage().keyFinal) {
-          Confronto confronto = getConfronto(competitionName, phaseName, idaOrVoltaKey, 1);
+          Confronto confronto = getConfronto(competitionName, phaseName, ResultDict().keyIda, 1);
           // SE A FINAL FOR PARA OS PENALTIS
           if(confronto.goal1==confronto.goal2){
             Map matchMapIda = getPhaseMatchData(competitionName, phaseName, ResultDict().keyIda, 1);
@@ -111,7 +111,7 @@ class KnockoutInternational extends KnockoutStage{
             //SAVE PENALTY
             saveClassifiedAfterPenalties(competitionName, phaseName, 1, ResultDict().savePenaltis(matchMapIda, penalty1, penalty2));
 
-            confronto = getConfronto(competitionName, phaseName, idaOrVoltaKey, 1);
+            confronto = getConfronto(competitionName, phaseName, ResultDict().keyIda, 1);
           }
           //SAVE CHAMPION NAME
           saveChampionName(competitionName, confronto.winnerName);

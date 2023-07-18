@@ -238,6 +238,7 @@ Widget goalsWidget(){
             for(int i=0; i<goals.length; i++)
               goalRow(goals[i], goals2.contains(goals[i])),
 
+            const Spacer(),
             classification(),
 
             weekClass.isJogoCampeonatoNacional
@@ -327,12 +328,13 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
   }
   Widget classification(){
       return Container(
-        height: 5*44,
         color: AppColors().greyTransparent,
         margin: const EdgeInsets.all(4),
         child: Column(
           children: [
+            const SizedBox(height: 8),
             const Text('Classificação',style: EstiloTextoBranco.negrito16),
+            const SizedBox(height: 8),
             //TITLE
             Row(
               children: [

@@ -13,8 +13,8 @@ import 'package:flutter/material.dart';
 import '../menu/c_menu.dart';
 
 class ChangeClub extends StatefulWidget {
-  //NECESSARY VARIABLES WHEN CALLING THIS CLASS
-  const ChangeClub({Key? key}) : super(key: key);
+  final bool isFired;
+  const ChangeClub({Key? key, required this.isFired}) : super(key: key);
   @override
   _ChangeClubState createState() => _ChangeClubState();
 }
@@ -40,7 +40,9 @@ class _ChangeClubState extends State<ChangeClub> {
               Column(
                 children: [
 
-                  backButtonText(context, Translation(context).text.changeClub, true),
+                  widget.isFired
+                      ? Container()
+                      : backButtonText(context, Translation(context).text.changeClub, true),
 
                   Container(
                     color: AppColors().greyTransparent,

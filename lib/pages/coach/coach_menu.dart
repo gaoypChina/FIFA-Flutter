@@ -1,4 +1,5 @@
 import 'package:fifa/classes/classification.dart';
+import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/data_graphics.dart';
 import 'package:fifa/classes/expectativa.dart';
@@ -192,7 +193,7 @@ Widget changeClub(BuildContext context){
       onTap: (){
         customToast(Translation(context).text.loading);
         if(!alreadyChangedClubThisSeason){
-          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ChangeClub()));
+          navigatorPush(context, const ChangeClub(isFired: false));
         }else{
           customToast(Translation(context).text.alreadyChangedYourClub);
         }

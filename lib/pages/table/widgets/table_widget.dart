@@ -87,13 +87,13 @@ Widget rowTableNacionalLayout(BuildContext context, int position, int indexClub,
               Row(
                 children: [
                   numberCircle(position+1, 30),
+                  const SizedBox(width: 4),
                   Images().getEscudoWidget(clubClass.name,26,26),
                   const SizedBox(width: 4),
                 ],
               )
             ],
           ),
-          const SizedBox(width: 4),
           Expanded(
             child: GestureDetector(
               onTap: (){

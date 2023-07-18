@@ -33,13 +33,14 @@ class _NotPlayState extends State<NotPlay> {
 
     int leagueIndex = My().leagueID;
     League league = League(index: leagueIndex);
+    Semana weekClass = Semana(semana);
     String weekName = Semana(semana).semanaAlternativeStr;
 
     return Scaffold(
         body:  Stack(
             children: [
 
-              backgroundTournament(Semana(semana),My()),
+              backgroundTournament(weekClass,My()),
 
               Column(
                 children: [
@@ -49,13 +50,13 @@ class _NotPlayState extends State<NotPlay> {
                   const SizedBox(height: 10),
                   //TABELA
                   Expanded(
-                      child: Semana(semana).isJogoCampeonatoNacional
+                      child: weekClass.isJogoCampeonatoNacional
                           ? tabelaClassificacaoWidget(context,league)
-                          : Semana(semana).isJogoCopa
+                          : weekClass.isJogoCopa
                             ? tabelaClassificacaoWidget(context,league)
-                            : Semana(semana).isJogoGruposInternacional
+                            : weekClass.isJogoGruposInternacional
                               ? notPlayShowInternationalGroups(context, league.internationalLeagueNameWhenNotPlay)
-                              : Semana(semana).isJogoMataMataInternacional
+                              : weekClass.isJogoMataMataInternacional
                                 ? notPlayShowInternationalMataMata(context,league.internationalLeagueNameWhenNotPlay)
                                 : notPlayMundial(context),
                   ),
