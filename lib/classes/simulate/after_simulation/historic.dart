@@ -55,7 +55,7 @@ class SaveMatchHistoric{
       try{ //Se existir
         goalsList = globalHistoricInternationalGoalsAll[ano][internationalName][rodadaAtual];//pega as infos da minha partida tambem
       }catch(e){
-        print("VARIAVEL -globalHistoricInternationalGoalsAll- AINDA NÃO FOI INICIALIZADA");
+        //print("VARIAVEL -globalHistoricInternationalGoalsAll- AINDA NÃO FOI INICIALIZADA");
         if(globalHistoricInternationalGoalsAll[ano] == null){
           globalHistoricInternationalGoalsAll[ano] = {};
         }

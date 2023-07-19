@@ -155,14 +155,14 @@ Map<String,dynamic> mapNorthAmerica = {
   leagueName.bahamas : {
     //https://en.wikipedia.org/wiki/BFA_Senior_League
     //2024.0: [],
-    2023.0: [],
+    2023.0: [n.westernwar,],
     2022.0: [],
     2021.0: [],
     2020.0: [],
-    2019.0: [n.dynamosBAH,],
-    2018.0: [n.ubahamas,],
-    2017.0: [n.westernwar,],
-    2016.0: [n.bears,],
+    2019.0: [n.dynamosBAH,n.cavalierBAH,n.bears,n.westernwar,],
+    2018.0: [n.ubahamas,n.westernwar,n.bears,n.dynamosBAH,],
+    2017.0: [n.westernwar,n.bears,n.dynamosBAH,],
+    2016.0: [n.bears,n.westernwar,],
     2015.0: [n.westernwar,],
     2014.0: [n.lyfordcay,],
     2013.0: [n.bears,],
@@ -277,10 +277,14 @@ Map<String,dynamic> mapNorthAmerica = {
   },
 
   leagueName.costarica : {
+    //https://en.wikipedia.org/wiki/Liga_FPD
     //2024.0: [],
     2023.0: [],
+    2022.5: [n.saprissa,n.alajuelense,],
     2022.0: [n.saprissa,n.herediano,],
+    2021.5: [n.cartagines,n.alajuelense,],
     2021.0: [n.herediano,n.saprissa,],
+    2020.5: [n.saprissa,n.herediano,],
     2020.0: [n.alajuelense,n.herediano,],
     2019.0: [n.herediano,n.alajuelense,],
     2018.0: [n.herediano,n.saprissa,],
@@ -356,9 +360,10 @@ Map<String,dynamic> mapNorthAmerica = {
   },
 
   leagueName.cuba : {
+    //https://en.wikipedia.org/wiki/Campeonato_Nacional_de_F%C3%BAtbol_de_Cuba
     //2024.0: [],
     2023.0: [],
-    2022.0: [],
+    2022.0: [n.artemisa,],
     2021.0: [],
     2020.0: [],
     2019.0: [n.santiagoCuba,],

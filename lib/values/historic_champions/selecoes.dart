@@ -178,6 +178,7 @@ Map<String,dynamic> mapSelecoes = {
 
   //COPA OURO
   leagueName.copaconcacaf : {
+    2023.0: [w.mexico,w.panama,w.jamaica,w.panama,],
     2021.0: [w.unitedstates,w.mexico,w.canada,w.qatar,],
     2019.0: [w.mexico,w.unitedstates,w.haiti,w.jamaica,],
     2017.0: [w.unitedstates,w.jamaica,w.costarica,w.mexico,],
@@ -195,5 +196,17 @@ Map<String,dynamic> mapSelecoes = {
     1993.0: [w.mexico,w.unitedstates,w.costarica,w.jamaica,],
     1991.0: [w.unitedstates,w.honduras,w.mexico,w.costarica,],
   },
+
+  //COPA DO MUNDO FEMININA
+    leagueName.copamundoFem : {
+      2019.0: [w.unitedstates,w.netherlands,w.sweden,w.england,],
+      2015.0: [w.unitedstates,w.japan,w.england,w.germany,],
+      2011.0: [w.japan,w.unitedstates,w.sweden,w.france,],
+      2007.0: [w.germany,w.brazil,w.unitedstates,w.norway,],
+      2003.0: [w.germany,w.sweden,w.unitedstates,w.canada,],
+      1999.0: [w.unitedstates,w.china,w.brazil,w.norway,],
+      1995.0: [w.norway,w.germany,w.unitedstates,w.china,],
+      1991.0: [w.unitedstates,w.norway,w.sweden,w.germany,],
+    },
 
 };

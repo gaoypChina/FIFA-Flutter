@@ -50,7 +50,7 @@ Widget wCalendarAdvBox(BuildContext context, int semanaLocal, show){
                 style: EstiloTextoBranco.text10, textAlign: TextAlign.center),
             Text(show.clubName2,
                 overflow: TextOverflow.fade,
-                style: EstiloTextoBranco.text14,
+                style: show.clubName2.length>16 ? EstiloTextoBranco.text12 : EstiloTextoBranco.text14,
                 textAlign: TextAlign.center),
             Text('${show.placar}',
                 style: EstiloTextoBranco.negrito16, textAlign: TextAlign.center),

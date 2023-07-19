@@ -38,6 +38,7 @@ class _ChangeClubState extends State<ChangeClub> {
               Images().getWallpaper(),
 
               Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
 
                   widget.isFired
@@ -105,7 +106,8 @@ Widget clubWidget(Club club){
             decoration: decorationGreen(),
             child: Column(
               children: [
-                Images().getEscudoWidget(clubClassification.clubName,130,130),
+                Images().getEscudoWidget(clubClassification.clubName,124,124),
+                const SizedBox(height: 8),
                 Text(clubClassification.clubName,textAlign:TextAlign.center,style: EstiloTextoBranco.negrito22),
                 Text('${Translation(context).text.position}: '+clubClassification.posicaoTabela.toString()+'º',style: EstiloTextoBranco.text14)
               ],

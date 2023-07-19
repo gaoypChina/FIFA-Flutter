@@ -35,17 +35,16 @@ class MatchResultInternational{
           }
 
     try{
+      confronto.hasGoals = true;
       confronto.setGoals(
-          goal1: globalHistoricInternationalGoalsAll[competitionName][rodadaNumber][confronto.clubID1],
-          goal2: globalHistoricInternationalGoalsAll[competitionName][rodadaNumber][confronto.clubID2],
+          goal1: InternationalLeague().getGoal(competitionName, rodadaNumber, confronto.clubID1),
+          goal2: InternationalLeague().getGoal(competitionName, rodadaNumber, confronto.clubID2),
       );
     }catch(e){
       //print('Significa que a variavel foi chamada em uma rodada que ainda nao foi simulada');
+      confronto.hasGoals = false;
     }
 
-    if(semanaDoJogo < semana) {
-      confronto.hasGoals = true;
-    }
   }
 
 

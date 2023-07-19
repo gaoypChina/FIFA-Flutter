@@ -51,12 +51,13 @@ class _TableMataMataState extends State<TableMataMata> {
                       child: Container(
                           color: AppColors().greyTransparent,
                           height: Sized(context).height*0.9,
-                          width: Sized(context).width*0.9,
+                          margin: const EdgeInsets.symmetric(horizontal: 8),
+                          padding: const EdgeInsets.all(4),
                           child: SingleChildScrollView(
                               child:
                               Column(
                                 children: [
-                                  for(int phaseStage = 0; phaseStage < 7; phaseStage++)
+                                  for(int phaseStage = 6; phaseStage >=0; phaseStage--)
                                     phaseTableWidget(phaseStage)
                                 ],
                               ),
@@ -88,33 +89,36 @@ class _TableMataMataState extends State<TableMataMata> {
         phaseIdaVolta = ResultDict().keyVolta;
       }
 
-      //Quando não está no matamata
-      if(semana < semanaOitavas.first){
-        return Container();
-      }
       //Quando já está no matamata
-      if(semana < semanaOitavas.first && phaseStage>=2){
+      //Nao mostra quando
+      //Depois oitavas
+      if((semana > semanaOitavas.first && phaseStage<2) ||
+          (semana > semanaOitavas.last && phaseStage<4) ||
+          (semana > semanaQuartas.first && phaseStage<4) ||
+          (semana > semanaQuartas.last && phaseStage<6) ||
+          (semana > semanaSemi.first && phaseStage<6) ||
+          (semana > semanaSemi.last && phaseStage<8)
+      ){
+        //show row
+      }else{
         return Container();
       }
-      if(semana < semanaQuartas.first && phaseStage>=4){
-        return Container();
-      }
-      if(semana < semanaSemi.first && phaseStage==6){
-        return Container();
-      }
-      return Column(
-        children: [
-          for (int i = 0; i <= phaseRows; i++)
-            Table(
-              columnWidths: const{0: FractionColumnWidth(.35),4: FractionColumnWidth(.35)},
-              children: [
-                if (i == 0)
-                  groupTitle(phaseRows)
-                else
-                  groupRow(i, phaseIdaVolta, weekShow)
-              ],
-            ),
-        ],
+      return Padding(
+        padding: const EdgeInsets.only(bottom: 8.0),
+        child: Column(
+          children: [
+            for (int i = 0; i <= phaseRows; i++)
+              Table(
+                columnWidths: const{0: FractionColumnWidth(.35),4: FractionColumnWidth(.35)},
+                children: [
+                  if (i == 0)
+                    groupTitle(phaseRows)
+                  else
+                    groupRow(i, phaseIdaVolta, weekShow)
+                ],
+              ),
+          ],
+        ),
       );
   }
 
@@ -139,7 +143,20 @@ class _TableMataMataState extends State<TableMataMata> {
   TableRow groupRow(int matchRow, String phaseIdaVolta, int weekShow){
 
     String phaseName = KnockoutInternational().getPhaseKeyName(weekShow);
-    Confronto confronto = KnockoutInternational().getConfronto(leagueInternational, phaseName, phaseIdaVolta, matchRow);
+    late Confronto confronto;
+    try{
+      confronto = KnockoutInternational().getConfronto(leagueInternational, phaseName, phaseIdaVolta, matchRow);
+    }catch(e){
+      return TableRow(
+        children: [
+          Container(),
+          Container(),
+          Container(),
+          Container(),
+          Container(),
+        ]
+      );
+    }
 
     //print(confronto.clubName1);
     //print('GOL: ${confronto.goal1} x ${confronto.goal2}');

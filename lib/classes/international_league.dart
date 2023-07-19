@@ -71,6 +71,9 @@ class InternationalLeague{
     globalInternational[internationalName][clubsIDkey][position2] = aux;
   }
 
+  getGoal(String internationalName, int rodadaNumber, int clubID){
+    return globalHistoricInternationalGoalsAll[ano][internationalName][rodadaNumber][clubID];
+  }
 
   ////////////////////////////////////////////////////////
   // GET

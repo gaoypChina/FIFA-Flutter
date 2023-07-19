@@ -274,7 +274,7 @@ onContinueButton() async{
     navigatorReplace(context, const Menu());
   }else{
     customToast('Você foi demitido. Escolha um novo clube');
-    navigatorReplace(context, const ChangeClub(isFired: false));
+    navigatorReplace(context, const ChangeClub(isFired: true));
   }
 
 }

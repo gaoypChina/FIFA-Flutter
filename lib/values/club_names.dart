@@ -4070,6 +4070,7 @@ class ClubName{
   String verdes = "Verdes FC";
 
   //CUBA
+  String artemisa = "Artemisa";
   String camaguey = "Camagüey";
   String ciegoavila = "Ciego de Ávila";
   String cienfuegos = "Cienfuegos";

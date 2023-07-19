@@ -22,7 +22,8 @@ class LeagueOfficialNames{
   String espanha1 = 'La Liga';  String espanha2 = 'La Liga 2';
   String franca1 = 'Ligue 1'; String franca2 = 'Ligue 2';
   String alemanha1 = 'Bundesliga';  String alemanha2 = 'Bundesliga 2';String alemanhaOriental = 'DDR-Oberliga';
-  String portugal = 'Liga Portugal Bwin'; String turquiaGrecia = 'Liga Greco-Turca';
+  String portugal = 'Liga Portugal Bwin'; String portugal2 = 'Liga Portugal 2 Bwin';
+  String turquiaGrecia = 'Liga Greco-Turca';
   String holanda = 'Eredivisie';
   String escocia = 'Scottish Premiership';
   String belgica = 'Jupiler Pro League';
@@ -206,6 +207,7 @@ class LeagueOfficialNames{
 
   //SELEÇÕES
   String copamundo = "World Cup";
+  String copamundoFem = "Woman World Cup";
   String eurocopa = "Eurocopa";
   String copaamerica = "Copa América";
   String copaafrica = "Copa Africa";

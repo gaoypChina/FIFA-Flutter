@@ -57,7 +57,7 @@ void saveHistoricalData(){
   saveLeagueResults();
   saveInternationalLeagueResults();
   saveCupResults();
-  resetInternationalMataMataData();
+  globalInternationalMataMata = {};
   HistoricMyPlayers().saveMyClubData(My());
   saveBestPlayers();
 }
@@ -85,9 +85,6 @@ void saveInternationalLeagueResults(){
 }
 void saveCupResults(){
   globalHistoricCup[ano] = globalCup;
-}
-void resetInternationalMataMataData(){
-  globalInternationalMataMata = {};
 }
 
 void saveBestPlayers(){
@@ -129,6 +126,7 @@ void resetOnLoadData(){
   globalHistoricClassification = {'Mundial':{}};
   globalHistoricLeagueGoalsAll = {};
   globalHistoricInternationalGoalsAll = {};
+  globalInternationalMataMata = {};
 
   //ZERA DADOS DE TRANSFERENCIAS
   HistoricMyTransfers().resetGlobalVariable();

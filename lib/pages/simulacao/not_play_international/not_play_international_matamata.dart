@@ -15,7 +15,7 @@ import 'package:flutter/material.dart';
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        interBrackets(context, My().getMyInternationalLeague()),
+        interBrackets(context, internationalLeagueName),
       ],
       ),
     );

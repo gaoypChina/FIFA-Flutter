@@ -38,6 +38,9 @@ class _TableMundialState extends State<TableMundial> {
     for(int year=anoInicial;year<ano;year++){
       dataFinal.getResults(year);
       Confronto confronto = dataFinal.confronto;
+      if(confronto.winnerName == confronto.clubName2){
+        confronto.invertTeams();
+      }
       results[double.parse(year.toString())] = [confronto.clubName1,confronto.clubName2];
     }
     List keysOrdered = results.keys.toList();
