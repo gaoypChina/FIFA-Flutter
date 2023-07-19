@@ -163,9 +163,11 @@ class Simulate{
         for (int nConfronto = 1; nConfronto <= matchMap.length; nConfronto++) {
           Club club1 = Club(index: clubsAllNameList.indexOf(matchMap[nConfronto][ResultDict().keyTeamName1]), clubDetails: false);
           Club club2 = Club(index: clubsAllNameList.indexOf(matchMap[nConfronto][ResultDict().keyTeamName2]), clubDetails: false);
-          MatchSimulation match = MatchSimulation(club1,club2, my);
-          //SALVA O PLACAR
-          globalCup[cupName]![phaseName][idaOrVoltaKey][nConfronto] = ResultDict().saveGoals(matchMap[nConfronto], match.variableGol1, match.variableGol2);
+          if(club1.name != my.clubName && club2.name != my.clubName || simulMyMatch){
+            MatchSimulation match = MatchSimulation(club1,club2, my);
+            //SALVA O PLACAR
+            globalCup[cupName]![phaseName][idaOrVoltaKey][nConfronto] = ResultDict().saveGoals(matchMap[nConfronto], match.variableGol1, match.variableGol2);
+          }
         }
 
       }catch(e){
@@ -190,10 +192,12 @@ class Simulate{
         for (int nConfronto = 1; nConfronto <= matchMap.length; nConfronto++) {
           Club club1 = Club(index: clubsAllNameList.indexOf(matchMap[nConfronto][ResultDict().keyTeamName1]), clubDetails: false);
           Club club2 = Club(index: clubsAllNameList.indexOf(matchMap[nConfronto][ResultDict().keyTeamName2]), clubDetails: false);
-          MatchSimulation match = MatchSimulation(club1, club2, my);
-          //SALVA O PLACAR
-          globalInternationalMataMata[competitionName]![phaseName][idaOrVoltaKey][nConfronto] = ResultDict().saveGoals(matchMap[nConfronto], match.variableGol1, match.variableGol2);
-        }
+          if(club1.name != my.clubName && club2.name != my.clubName || simulMyMatch){
+            MatchSimulation match = MatchSimulation(club1, club2, my);
+            //SALVA O PLACAR
+            globalInternationalMataMata[competitionName]![phaseName][idaOrVoltaKey][nConfronto] = ResultDict().saveGoals(matchMap[nConfronto], match.variableGol1, match.variableGol2);
+            }
+          }
 
       }catch(e){
         //COPA NÃO TEM ESSA FASE

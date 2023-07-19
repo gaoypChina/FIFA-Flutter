@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/coach/coach_best_results.dart';
 import 'package:fifa/classes/semana.dart';
@@ -222,11 +223,16 @@ Widget gameVelocitySlider(){
 
       bool ultimaRodadaLeague = (rodada==nRodadas && semanasJogosNacionais[nRodadas-1] == semana);
       if(ultimaRodadaLeague){
-        Navigator.push(context,MaterialPageRoute(builder: (context) => const FimCampeonato()));
+        navigatorPush(context, const FimCampeonato());
       }else if(semana == globalUltimaSemana){
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const EndYear()));
+        navigatorPush(context, const EndYear());
       }else{
-        Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => AfterPlay(adversarioClubID: widget.adversarioClubID,visitante: widget.visitante,goal1:myMatchSimulation.meuGolMarcado,goal2:myMatchSimulation.meuGolSofrido)));
+        navigatorReplace(context, AfterPlay(
+                                    adversarioClubID: widget.adversarioClubID,
+                                    visitante: widget.visitante,
+                                    goal1:myMatchSimulation.meuGolMarcado,
+                                    goal2:myMatchSimulation.meuGolSofrido)
+                      );
       }
 
       //SIMULA OUTRAS PARTIDAS
