@@ -1,5 +1,7 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/mata_mata/knockout_international.dart';
 import 'package:fifa/classes/match/confronto.dart';
+import 'package:fifa/classes/match/result_dict.dart';
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/simulate/after_simulation/historic.dart';
@@ -90,6 +92,15 @@ class CounterMatch extends ChangeNotifier{
       SaveMatchHistoric().setHistoricGoalsLeagueMy(myMatchSimulation);
     }else if(Semana(semana).isJogoGruposInternacional){
       SaveMatchHistoric().setHistoricGoalsGruposInternational(myClass.getMyInternationalLeague(), myClass.clubID, adversarioClubClass.index,myMatchSimulation.meuGolMarcado, myMatchSimulation.meuGolSofrido);
+    }else if(Semana(semana).isJogoGruposInternacional){
+      //SALVA O PLACAR
+      String phaseName = KnockoutInternational().getPhaseKeyName(semana);
+      String idaOrVoltaKey = KnockoutInternational().getIdaOrVoltaKey(phaseName, semana);
+      Map results = KnockoutInternational().getPhaseResults(myClass.getMyInternationalLeague(), phaseName, idaOrVoltaKey);
+      print(results);
+      globalInternationalMataMata[myClass.getMyInternationalLeague()]![phaseName][idaOrVoltaKey][5] = ResultDict().saveGoals(results, myMatchSimulation.meuGolMarcado, myMatchSimulation.meuGolSofrido);
+    }else if(Semana(semana).isJogoCopa){
+      //TODO SAVE PLAY RESULT COPA
     }
   }
 }

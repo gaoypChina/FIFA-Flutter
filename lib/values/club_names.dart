@@ -5388,6 +5388,17 @@ class ClubName{
   String stadeDAbidjan = "Stade d'Abidjan";
   String stella = "Stella Club d'Adjamé";
   String tanda = "Tanda";
+  //DJIBOUTI
+  String boreh = "Boreh";
+  String gendarmerieDJI = "Gendarmerie Nationale";
+  String securiteDJI = "Force Nationale Securité";
+  String armeeDJI = "Forces Armées Djiboutiennes";
+  String policeDJI = "Force Nationale de Police";
+  String asport = "AS Port";
+  String artasolar = "AS Arta/Solar7";
+  String grsiaf = "GR / SIAF";
+  String immobiliere = "Société Immobiliére de Djibouti";
+  String telecomDJI = "ASAS Djibouti Télécom";
   //ETHIOPIA
   String asmara = "Asmara Brewery";
   String awassa = "Awassa City";
@@ -5447,22 +5458,77 @@ class ClubName{
   String tusker = "Tusker";
   String ulinzi = "Ulinzi Stars";
   String utalii = "Utalii FC";
+  //LESOTHO
+  String arsenalLES = "Arsenal Lesotho";
+  String bantu = "Bantu";
+  String defenseLES = "Lesotho Defence Force";
+  String correctionalLES = "Lesotho Correctional Services";
+  String likhopo = "Likhopo";
+  String linare = "Linare";
+  String lioli = "Lioli";
+  String majantja = "Majantja";
+  String matlama = "Matlama";
+  String maserubrothers = "Maseru Brothers";
+  String romarovers = "Roma Rovers";
+
+  //LIBERIA
+  String blackstar = "Black Star";
+  String juniorpro = "Junior Professional";
+  String invincibleeleven = "Invincible Eleven";
+  String nimbautd = "Nimba United";
+  String liscr = "LISCR";
+  String mightybarrolle = "Mighty Barrolle";
+  String npaanchors = "NPA Anchors";
+  String barrackyoung = "Barrack Young Controllers";
+  String lprcoilers = "LPRC Oilers";
+  String stjosephwarriors = "Saint Joseph Warriors";
+  String watanga = "Watanga FC";
   //MADAGASCAR
   String adema = "AS Adema";
   String ajesaia = "Ajesaia";
   String antanarivo = "DSA Antananarivo";
   String cnapsSport = "CNaPS Sport";
   String ecoredipharm = "Ecoredipharm";
-  String fortior = "fortior";
+  String fortior = "Fortior";
   String fosa = "Fosa Juniors";
   String japanactuels = "Japan Actuel's FC";
   String uscafoot = "USCA Foot";
   //MALAWI
-  String bakiliBullets = "Bakili Bullets";
+  String blueeagles = "Blue Eagles";
+  String nyasabullets = "Nyasa Big Bullets";
+  String escom = "ESCOM United";
+  String admarc = "ADMARC Tigers";
+  String mafco = "MAFCO Salima";
+  String mdc = "MDC United";
+  String moyale = "Moyale Barracks";
+  String mightywanderers = "Mighty Wanderers";
+  String civoutd = "Civo United";
+  String kamuzubarracks = "Kamuzu Barracks";
+  String silverstrikers = "Silver Strikers";
   //MALI
+  String bakaridjan = "Bakaridjan";
   String djoliba = "Djoliba";
+  String korofina = "Korofina";
+  String kita = "US Kita";
+  String onzecreateurs = "Onze Créateurs de Niaréla";
   String realbamako = "Real Bamako";
   String stademalien = "Stade Malien";
+  String yeelen = "Yeelen Olympique";
+  //MAURICIO
+  String cerclejoachim = "Cercle de Joachim";
+  String curepipe = "Curepipe Starlight";
+  String dodo = "Dodo";
+  String fauconflacq = "Faucon Flacq";
+  String firebrigade = "Fire Brigade";
+  String hinducadets = "Hindu Cadets";
+  String pamplemousses = "Pamplemousses";
+  String policeMAU = "Police Club";
+  String portlouis = "Port-Louis 2000";
+  String olympiquemoka = "Olympique de Moka";
+  String racingMAU = "Racing Club";
+  String scouts = "Scouts Club";
+  String sunrise = "Sunrise";
+  String grse = "GRSE Wanderers";
   //MAURITANIA
   String concorde = "Concorde";
   String gardenationale = "Garde Nationale";
@@ -5496,6 +5562,22 @@ class ClubName{
   String liverpoolNAM = "Liverpool NAM";
   String orlandopiratesNAM = "Orlando Pirates NAM";
   String ramblers = "Ramblers";
+  //NIGER
+  String douanesNIG = "AS Douanes";
+  String asfan = "AS FAN";
+  String asfnis = "AS FNIS";
+  String asgnn = "AS GNN";
+  String aspoliceNIG = "AS Police";
+  String espoirNIG = "Espoir FC";
+  String gendarmerie = "Gendarmerie";
+  String jangorzo = "Jangorzo";
+  String niamey = "Niamey";
+  String nigelec = "Nigelec";
+  String olympicNIG = "Olympic FC";
+  String sahel = "Sahel";
+  String sonidep = "AS SONIDEP";
+  String tenere = "JS du Ténéré";
+  String zumunta = "Zumunta AC";
   //NIGERIA
   String akwa = "Akwa United";
   String bayelsa = "Bayelsa United";
@@ -5554,6 +5636,25 @@ class ClubName{
   String portautonome = "UCST Port Autonome";
   String suneor = "ASC SUNEOR";
   String teungueth = "Teungueth";
+  //SERRA LEOA
+  String borangers = "Bo Rangers";
+  String diamondstars = "Diamond Stars";
+  String eastendlions = "East End Lions";
+  String freetownutd = "Freetown United";
+  String kallon = "Kallon";
+  String mightyblackpool = "Mighty Blackpool";
+  String oldedwardians = "Old Edwardians";
+  String portsauthority = "Ports Authority";
+  String realrepublicans = "Real Republicans";
+  String sierrafisheries = "Sierra Fisheries";
+  //SEYCHELLES
+  String ansereunion = "Anse Réunion";
+  String cotedor = "Côte d'Or";
+  String lapasse = "La Passe";
+  String montfleuri = "Foresters Mont Fleuri";
+  String redstarSEY = "Red Star";
+  String stlouissuns = "Saint-Louis Suns";
+  String stmichel = "St Michel United";
   //SOMALIA
   String alba = "Alba";
   String dekedaha = "Dekedaha";
@@ -5563,8 +5664,9 @@ class ClubName{
   String hoga = "Hoga";
   String horseed = "Horseed";
   String lavori = "Lavori Publici";
-  String merca = "Merca New Supplies";
-  String mogadishu = "Mogadishu";
+  String mercanewsupplies = "Merca New Supplies";
+  String mogadishumunicipality = "Mogadishu Municipality";
+  String mogadishucity = "Mogadishu City"; //Banadir
   String portsauthorith = "Ports Authority";
   String printing = "Printing Agency";
   String somalipolice = "Somali National Police";
@@ -5573,6 +5675,7 @@ class ClubName{
   String omdurman = "Al-Hilal Omdurman";
   String almerrikh = "Al-Merrikh";
   String almourada = "Al-Mourada";
+  String hayalarab = "Hay Al-Arab";
   //SUAZILANDIA
   String mbabane = "Mbabane Swallows";
   //TANZANIA

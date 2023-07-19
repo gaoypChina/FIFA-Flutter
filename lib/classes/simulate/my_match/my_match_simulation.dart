@@ -236,27 +236,37 @@ class MyMatchSimulation{
 
     }else if(Semana(semana).isJogoCampeonatoInternacional){
       if (meuGolMarcado > meuGolSofrido) {
-        globalClubsInternationalPoints[myClass.clubID] += 3;
+        if(Semana(semana).isJogoGruposInternacional){
+          globalClubsInternationalPoints[myClass.clubID] += 3;
+        }
         globalMyLeagueLastResults.add(3);
         totalVictories.add1Victory();
       }
       //EMPATE
       if (meuGolMarcado == meuGolSofrido) {
-        globalClubsInternationalPoints[myClass.clubID] += 1;
-        globalClubsInternationalPoints[adversarioClubClass.index] += 1;
+        if(Semana(semana).isJogoGruposInternacional){
+          globalClubsInternationalPoints[myClass.clubID] += 1;
+          globalClubsInternationalPoints[adversarioClubClass.index] += 1;
+        }
         globalMyLeagueLastResults.add(1);
         totalVictories.add1Draw();
       }
       //DERROTA
       if (meuGolMarcado < meuGolSofrido) {
-        globalClubsInternationalPoints[adversarioClubClass.index] += 3;
+        if(Semana(semana).isJogoGruposInternacional){
+          globalClubsInternationalPoints[adversarioClubClass.index] += 3;
+        }
         globalMyLeagueLastResults.add(0);
         totalVictories.add1Loss();
       }
-      globalClubsInternationalGM[myClass.clubID] += meuGolMarcado;
-      globalClubsInternationalGS[myClass.clubID] += meuGolSofrido;
-      globalClubsInternationalGM[adversarioClubClass.index] += meuGolSofrido;
-      globalClubsInternationalGS[adversarioClubClass.index] += meuGolMarcado;
+
+      if(Semana(semana).isJogoGruposInternacional){
+        globalClubsInternationalGM[myClass.clubID] += meuGolMarcado;
+        globalClubsInternationalGS[myClass.clubID] += meuGolSofrido;
+        globalClubsInternationalGM[adversarioClubClass.index] += meuGolSofrido;
+        globalClubsInternationalGS[adversarioClubClass.index] += meuGolMarcado;
+      }
+
     }else if(Semana(semana).isJogoCopa || Semana(semana).isJogoMundial){
       if (meuGolMarcado > meuGolSofrido) {
         globalMyLeagueLastResults.add(3);

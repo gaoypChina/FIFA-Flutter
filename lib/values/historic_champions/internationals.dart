@@ -297,7 +297,7 @@ Map<String, dynamic> mapInternationals = {
     2007.0: [n.etoilesahel,n.alahly,n.omdurman,                          n.asecmimosas,n.jskabylie,n.farrabat,n.esperance],
     2006.0: [n.alahly,n.sfaxien,n.asecmimosas,n.orlandopirates,      n.enyimba,n.asantekotoko,n.jskabylie,n.heartsoak],
     2005.0: [n.alahly,n.etoilesahel,n.zamalek,n.rajacasablanca,      n.enyimba,n.asecmimosas,n.esperance,n.capetownAjax],
-    2004.0: [n.enyimba,n.etoilesahel,n.esperance,n.jeannedarc,       n.usmalger,n.africaSports,n.bakiliBullets,n.supersport],
+    2004.0: [n.enyimba,n.etoilesahel,n.esperance,n.jeannedarc,       n.usmalger,n.africaSports,n.nyasabullets,n.supersport],
     2003.0: [n.enyimba,n.ismaily,n.usmalger,n.esperance,            n.simba,n.canonYaounde,n.asecmimosas,n.aviacao],
     2002.0: [n.zamalek,n.rajacasablanca,n.mazembe,n.asecmimosas,    n.esperance,n.jeannedarc,n.alahly,n.costasol],
     2001.0: [n.alahly,n.mamelodi,n.esperance,n.petroluanda,         n.asecmimosas,n.juliusberger,n.mazembe,n.belouizdad],
