@@ -20,10 +20,7 @@ class TableMatchs extends StatefulWidget {
 class _TableMatchsState extends State<TableMatchs> {
 
   My my = My();
-  int rodadaShow = semanasGruposInternacionais.contains(semana)
-                    ? semanasGruposInternacionais.indexOf(semana)+1
-                    : semana > semanasGruposInternacionais.last
-                      ? 6 : 1;
+  int rodadaShow = 1;
 
   ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
@@ -31,6 +28,21 @@ class _TableMatchsState extends State<TableMatchs> {
   @override
   void initState() {
     super.initState();
+    if(semana > semanasGruposInternacionais.first){
+      rodadaShow = findIndexNextGreater(semanasGruposInternacionais.cast<int>(), semana);
+    }
+    if(semana > semanasGruposInternacionais.last){
+      rodadaShow = 6;
+    }
+  }
+  int findIndexNextGreater(List<int> list, int x) {
+    for (int i = 0; i < list.length; i++) {
+      if (list[i] > x) {
+        return i+1; //rodadaShow starts at 1
+      }
+    }
+    // If no value is greater than x, return -1 or any other value to indicate not found.
+    return 1;
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //

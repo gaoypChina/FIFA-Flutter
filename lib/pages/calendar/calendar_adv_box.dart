@@ -18,12 +18,13 @@ Widget wCalendarAdvBox(BuildContext context, int semanaLocal, show){
         navigatorPush(context, ClubProfile(clubID: show.clubID2));
       },
       child: Container(
-        width: 120,
-        height: 144,
+        width: 122,
+        height: 148,
         color: show.backgroundColor,
         child: Column(
           children: [
-            Text(Semana(semanaLocal).getTranslated(context),style: EstiloTextoBranco.text16),
+            const SizedBox(height: 4),
+            Text(Semana(semanaLocal).getTranslated(context),style: EstiloTextoBranco.negrito14),
             SizedBox(
               height: 45,
               width: 80,
@@ -80,12 +81,13 @@ Widget wCalendarNotPlayWidget(BuildContext context, int semanaLocal, String titl
       navigatorReplace(context, const Menu());
     },
     child: Container(
-      width: 120,
-      height: 144,
+      width: 122,
+      height: 148,
       color: semana > semanaLocal ? Colors.black87 : Colors.black38,
       child: Column(
         children: [
-          Text(title, textAlign: TextAlign.center,style: EstiloTextoBranco.text16),
+          const SizedBox(height: 4),
+          Text(title, textAlign: TextAlign.center,style: EstiloTextoBranco.negrito14),
           const SizedBox(height: 10),
           imageName != null ? Image.asset(imageName,height: 70, width: 70) : Container(),
           const Spacer(),

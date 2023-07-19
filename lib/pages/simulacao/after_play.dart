@@ -16,6 +16,7 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/pages/simulacao/not_play_international/not_play_international_matamata.dart';
 import 'package:fifa/pages/table/widgets/table_widget.dart';
+import 'package:fifa/pages/table_international/main_tabs.dart';
 import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/background_color/color_grade.dart';
 import 'package:fifa/theme/colors.dart';
@@ -371,6 +372,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
     }else{
       classificationClubsIndexes = Classification(leagueIndex: myClass.getLeagueID()).classificationClubsIndexes;
     }
+    My my = My();
 
     return             //CONTENT
       Container(
@@ -379,7 +381,9 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
         child: ListView.builder(
             padding: EdgeInsets.zero,
             itemCount: classificationClubsIndexes.length,
-            itemBuilder: (c,i) => rowTableNacionalLayout(context, i, classificationClubsIndexes[i], League(index: My().leagueID))
+            itemBuilder: (c,i) => weekClass.isJogoCampeonatoInternacional
+                ? groupInternationalRow(context, i+1, classificationClubsIndexes[i], my)
+                : rowTableNacionalLayout(context, i, classificationClubsIndexes[i], League(index: my.leagueID))
         ),
       );
   }

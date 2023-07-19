@@ -169,7 +169,7 @@ class _TableInternationalState extends State<TableInternational>  with TickerPro
                     if (i == 0)
                       groupTitle(groupNumber)
                     else
-                      groupRow(i,4*groupNumber+(i-1), my)
+                      groupInternationalRow(context, i, clubsID[4*groupNumber+(i-1)], my)
               ],
             ),
           ),
@@ -199,9 +199,10 @@ class _TableInternationalState extends State<TableInternational>  with TickerPro
       ),
     );
   }
-  Widget groupRow(int position, int index032, My my){
 
-    int clubIndex = clubsID[index032];
+}
+  Widget groupInternationalRow(BuildContext context, int position, clubIndex, My my){
+
     Club clubClass = Club(index: clubIndex, clubDetails: false);
     String clubName = clubClass.name;
     int points = clubClass.internationalPoints;
@@ -246,13 +247,13 @@ class _TableInternationalState extends State<TableInternational>  with TickerPro
               clickClubProfilePage(context,clubClass);
             },
             child: Container(
-                width: 170,
                 height: 28,
                 padding: const EdgeInsets.all(4),
                 margin: const EdgeInsets.all(1),
                 child: Text(clubName, style: textStyle2)
             ),
           ),
+          const Spacer(),
           SizedBox(width: 30, child: Center(child: Text(points.toString(),style: textStyle3))),
           SizedBox(width: 30, child: Center(child: Text(golsMarcados.toString(),style: textStyle))),
           SizedBox(width: 30, child: Center(child: Text(golsSofridos.toString(),style: textStyle))),
@@ -267,5 +268,3 @@ class _TableInternationalState extends State<TableInternational>  with TickerPro
 //                               FUNCTIONS                                //
 ////////////////////////////////////////////////////////////////////////////
 
-
-}

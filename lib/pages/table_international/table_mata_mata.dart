@@ -1,15 +1,13 @@
 import 'package:fifa/classes/functions/name.dart';
 import 'package:fifa/classes/functions/size.dart';
-import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/mata_mata/knockout_international.dart';
-import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/match/result_dict.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/theme/colors.dart';
-import 'package:fifa/theme/background_color/match_x_testyle.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/background_image/backimage_international_league.dart';
+import 'package:fifa/widgets/match_row.dart';
 import 'package:flutter/material.dart';
 
 class TableMataMata extends StatefulWidget {
@@ -92,11 +90,11 @@ class _TableMataMataState extends State<TableMataMata> {
       //Quando já está no matamata
       //Nao mostra quando
       //Depois oitavas
-      if((semana > semanaOitavas.first && phaseStage<2) ||
+      if((semana >= semanaOitavas.first && phaseStage<2) ||
           (semana > semanaOitavas.last && phaseStage<4) ||
-          (semana > semanaQuartas.first && phaseStage<4) ||
+          (semana >= semanaQuartas.first && phaseStage<4) ||
           (semana > semanaQuartas.last && phaseStage<6) ||
-          (semana > semanaSemi.first && phaseStage<6) ||
+          (semana >= semanaSemi.first && phaseStage<6) ||
           (semana > semanaSemi.last && phaseStage<8)
       ){
         //show row
@@ -108,13 +106,18 @@ class _TableMataMataState extends State<TableMataMata> {
         child: Column(
           children: [
             for (int i = 0; i <= phaseRows; i++)
-              Table(
-                columnWidths: const{0: FractionColumnWidth(.35),4: FractionColumnWidth(.35)},
+              Column(
                 children: [
                   if (i == 0)
                     groupTitle(phaseRows)
                   else
-                    groupRow(i, phaseIdaVolta, weekShow)
+                    matchRowWidget(
+                        KnockoutInternational().getConfronto(
+                            leagueInternational,
+                            KnockoutInternational().getPhaseKeyName(weekShow),
+                            phaseIdaVolta,
+                            i),
+                        My())
                 ],
               ),
           ],
@@ -122,84 +125,18 @@ class _TableMataMataState extends State<TableMataMata> {
       );
   }
 
-  TableRow groupTitle(int phaseRows){
+  Row groupTitle(int phaseRows){
 
     String stageName = Name().oitavas;
     if(phaseRows==4){stageName=Name().quartas;}
     if(phaseRows==2){stageName=Name().semifinal;}
     if(phaseRows==1){stageName=Name().finale;}
 
-    return TableRow(
+    return Row(
       children: [
         Text(stageName,style: EstiloTextoBranco.negrito16),
-        Container(),
-        Container(),
-        Container(),
-        Container(),
       ],
     );
   }
-
-  TableRow groupRow(int matchRow, String phaseIdaVolta, int weekShow){
-
-    String phaseName = KnockoutInternational().getPhaseKeyName(weekShow);
-    late Confronto confronto;
-    try{
-      confronto = KnockoutInternational().getConfronto(leagueInternational, phaseName, phaseIdaVolta, matchRow);
-    }catch(e){
-      return TableRow(
-        children: [
-          Container(),
-          Container(),
-          Container(),
-          Container(),
-          Container(),
-        ]
-      );
-    }
-
-    //print(confronto.clubName1);
-    //print('GOL: ${confronto.goal1} x ${confronto.goal2}');
-    String teamNameA = confronto.clubName1;
-    String teamNameB = confronto.clubName2;
-    late int golsA;
-    late int golsB;
-    TextStyle style1 = EstiloTextoBranco.text14;
-    TextStyle style2 = EstiloTextoBranco.text14;
-    if (confronto.hasGoals){
-      golsA = confronto.goal1;
-      golsB = confronto.goal2;
-      style1 = matchStyle1(golsA, golsB, 14);
-      style2 = matchStyle2(golsA, golsB, 14);
-    }
-    My my = My();
-
-    return  TableRow(
-      children: [
-        Container(
-          color: teamNameA == my.clubName ? Colors.green : Colors.transparent,
-            child: Text(teamNameA,textAlign:TextAlign.end,style: style1)),
-        //Escudo
-        Images().getEscudoWidget(teamNameA,20,20),
-
-        confronto.hasGoals
-            ? Row(
-          children: [
-            Text(" " + golsA.toString(),style: style1),
-            const Text('x',style: EstiloTextoBranco.text16),
-            Text(golsB.toString() + " ",style: style2),
-          ],
-        ) : const Text('X',textAlign:TextAlign.center,style: EstiloTextoBranco.text14),
-        //Escudo
-        Images().getEscudoWidget(teamNameB,20,20),
-
-        Container(
-          color: teamNameB == my.clubName ? Colors.green : Colors.transparent,
-            child: Text(teamNameB,style: style2),
-        ),
-      ],
-    );
-  }
-
 
 }
