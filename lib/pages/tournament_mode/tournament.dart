@@ -319,79 +319,85 @@ Widget clubLogoAndKitStack(int selection, Club club, int posicaoPais){
   double imageSize = 130;
   return  Container(
     height: 170,
+    width: Sized(context).width,
     color: AppColors().greyTransparent,
     padding: const EdgeInsets.all(4),
-    child: Column(
+    child: Stack(
       children: [
-        SizedBox(
-          height: imageSize,
-          width: imageSize,
-          child: Stack(
-            children: [
-              //Image.asset(Images().getStadium(club.name),height: 200,width: 200,fit: BoxFit.fill,),
-              //Escudo
-              Images().getEscudoWidget(club.name, imageSize, imageSize),
-              //Uniforme
-              Container(
-                  alignment: Alignment.bottomRight,
-                  child: Images().getUniformWidget(club.name, imageSize/2, imageSize/2)
-              ),
-
-              Row(
+        Column(
+          children: [
+            SizedBox(
+              height: imageSize,
+              width: imageSize,
+              child: Stack(
                 children: [
-                  SizedBox(height: imageSize,width: imageSize*0.5,
-                    child: InkWell(onTap: (){
-                      if(selection == 1){
-                        if(posicao1>0) {
-                          posicao1 --;
-                        }else{
-                          posicao1 = League(index: indexLeague).nClubs-1;
-                        }
-                      }
-
-                      else{
-                        if(posicao2>0) {
-                          posicao2 --;
-                        }else{
-                          posicao2 = League(index: indexLeague).nClubs-1;
-                        }
-                      }
-
-                      setState(() {});
-                    }),
+                  //Image.asset(Images().getStadium(club.name),height: 200,width: 200,fit: BoxFit.fill,),
+                  //Escudo
+                  Images().getEscudoWidget(club.name, imageSize, imageSize),
+                  //Uniforme
+                  Container(
+                      alignment: Alignment.bottomRight,
+                      child: Images().getUniformWidget(club.name, imageSize/2, imageSize/2)
                   ),
-                  SizedBox(height: imageSize,width: imageSize*0.5,
-                    child: InkWell(onTap: (){
 
-                      if(selection == 1){
-                        if(posicao1 < League(index: indexLeague).nClubs-1) {
-                          posicao1 ++;
-                        }else{
-                          posicao1 = 0;
-                        }
-                      }
-
-                      else{
-                        if(posicao2 < League(index: indexLeague).nClubs-1) {
-                          posicao2 ++;
-                        }else{
-                          posicao2 = 0;
-                        }
-                      }
-
-                      setState(() {});
-                    }),
-                  ),
                 ],
               ),
-            ],
-          ),
+            ),
+
+            SizedBox(width:Sized(context).width,
+                child: Text(club.name,overflow: TextOverflow.clip,textAlign:TextAlign.center,style:EstiloTextoBranco.negrito22)
+            ),
+
+          ],
         ),
 
+        Row(
+          children: [
+            Expanded(
+              child: InkWell(onTap: (){
+                if(selection == 1){
+                  if(posicao1>0) {
+                    posicao1 --;
+                  }else{
+                    posicao1 = League(index: indexLeague).nClubs-1;
+                  }
+                }
 
-        SizedBox(width:Sized(context).width,
-            child: Text(club.name,overflow: TextOverflow.clip,textAlign:TextAlign.center,style:EstiloTextoBranco.negrito22)
-          ),
+                else{
+                  if(posicao2>0) {
+                    posicao2 --;
+                  }else{
+                    posicao2 = League(index: indexLeague).nClubs-1;
+                  }
+                }
+
+                setState(() {});
+              }),
+            ),
+            Expanded(
+              child: InkWell(onTap: (){
+
+                if(selection == 1){
+                  if(posicao1 < League(index: indexLeague).nClubs-1) {
+                    posicao1 ++;
+                  }else{
+                    posicao1 = 0;
+                  }
+                }
+
+                else{
+                  if(posicao2 < League(index: indexLeague).nClubs-1) {
+                    posicao2 ++;
+                  }else{
+                    posicao2 = 0;
+                  }
+                }
+
+                setState(() {});
+              }),
+            ),
+          ],
+        ),
 
       ],
     ),

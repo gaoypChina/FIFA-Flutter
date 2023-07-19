@@ -4,6 +4,7 @@ import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/back_button.dart';
+import 'package:fifa/widgets/number_circle.dart';
 import 'package:flutter/material.dart';
 
 class CoachRanking extends StatefulWidget {
@@ -76,9 +77,10 @@ class _CoachRankingState extends State<CoachRanking> {
     return Row(
         children: [
           const SizedBox(width: 40),
+          SizedBox(width: 60,child: Text(Translation(context).text.points,style: EstiloTextoBranco.negrito16)),
           Text(Translation(context).text.name,style: EstiloTextoBranco.negrito16),
           const Spacer(),
-          Text(Translation(context).text.points,style: EstiloTextoBranco.negrito16),
+          const Text("Date",style: EstiloTextoBranco.negrito16),
           const SizedBox(width: 8),
         ],
     );
@@ -88,12 +90,13 @@ class _CoachRankingState extends State<CoachRanking> {
     controller.listToClassCoach(list);
     return Container(
         margin: const EdgeInsets.all(4),
+        padding: const EdgeInsets.symmetric(vertical: 4),
         child: Row(
       children: [
-        SizedBox(
-          width: 35,
-          child: Center(child: Text((i+1).toString()+'º',style: EstiloTextoBranco.text16)),
-        ),
+          numberCircle(i+1, 35),
+          const SizedBox(width: 8),
+          SizedBox(width:45, child: Center(child: Text(controller.coach.points.toString(),style: EstiloTextoBranco.negrito16))),
+          const SizedBox(width: 8),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -106,13 +109,8 @@ class _CoachRankingState extends State<CoachRanking> {
               )
             ],
           ),
-        const Spacer(),
-        Column(
-          children: [
-            Text(controller.coach.points.toString(),style: EstiloTextoBranco.negrito16),
-            Text(controller.coach.date,style: EstiloTextoBranco.text12),
-          ],
-        )
+          const Spacer(),
+          Text(controller.coach.date,style: EstiloTextoBranco.text12),
       ],
     )
     );

@@ -174,13 +174,15 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                       children: [
                         const SizedBox(width: 8),
                         Text(Translation(context).text.pos3,style: EstiloTextoBranco.negrito16),
-                        const SizedBox(width: 90),
-                        SizedBox(width:170,
+                        const SizedBox(width: 80),
+                        SizedBox(width:174,
                             child: Text(Translation(context).text.name.toUpperCase(),style: EstiloTextoBranco.negrito16)
                         ),
-                        Text(Translation(context).text.age3,style: EstiloTextoBranco.negrito16),
-                        const SizedBox(width: 5),
-                        Text(Translation(context).text.ovr3,style: EstiloTextoBranco.negrito16),
+                        Text(Translation(context).text.age3,style: EstiloTextoBranco.negrito14),
+                        const SizedBox(width: 2),
+                        Text(Translation(context).text.ovr3,style: EstiloTextoBranco.negrito14),
+                        const SizedBox(width: 4),
+                        const Text("DEL",style: EstiloTextoBranco.negrito14),
                       ],
                     ),
                   ),
@@ -196,8 +198,8 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                               0: FractionColumnWidth(.09),
                               1: FractionColumnWidth(.1),
                               2: FractionColumnWidth(.08),
-                              3: FractionColumnWidth(.5),
-                              6: FractionColumnWidth(.07),
+                              3: FractionColumnWidth(.48),
+                              6: FractionColumnWidth(.1),
                               7: FractionColumnWidth(.001),//container to create vertical spacing
                             },
                             children: [
@@ -278,7 +280,7 @@ TableRow playersRow(int i){
             },
             child: SizedBox(
                 width: 200,
-                child: Text(player.name,style: EstiloTextoBranco.text16)
+                child: Text(player.name,style: EstiloTextoBranco.text14)
             ),
           ),
         ),
@@ -324,7 +326,7 @@ TableRow playersRow(int i){
                 }
             );
           },
-          child: const Center(child: Icon(Icons.close,color: Colors.red),),
+          child: const Center(child: Icon(Icons.delete_outline,color: Colors.white),),
         ),
 
         Container(
