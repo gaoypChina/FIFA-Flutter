@@ -102,6 +102,7 @@ class LeagueOfficialNames{
   String jamaica = 'Liga Jamaica';String cuba = 'Liga Cuba';String haiti = 'Liga Haiti';
   String repdominicana = 'Liga Rep. Dominicana';
   String suriname = 'Liga Suriname';
+  String guiana = 'Liga Guiana';
   String bahamas = 'Liga Bahamas';  String trinidad = 'Liga Trinidad';
   String barbados = 'Liga Barbados'; String granada = 'Liga Granada';
 
@@ -185,6 +186,7 @@ class LeagueOfficialNames{
   String fiji = 'Liga Fiji';
   String papua = 'Liga Papua';
   String samoa = 'Liga Samoa';
+  String taiti = 'Liga Tahiti';
   String timor = 'Liga Timor-Leste';
 
   String outros = 'Outros';
@@ -643,6 +645,7 @@ Map getLeagueNationalityMap(){
     leagueName.nicaragua: Words.country.nicaragua,
     leagueName.panama: Words.country.panama,
     leagueName.repdominicana: Words.country.dominicanRepublic,
+    leagueName.guiana: Words.country.guyana,
     leagueName.suriname: Words.country.suriname,
     leagueName.trinidad: Words.country.trinidadtobago,
     leagueName.bahamas: Words.country.bahamas,
@@ -703,6 +706,7 @@ Map getLeagueNationalityMap(){
     leagueName.fiji: Words.country.fiji,
     leagueName.papua: Words.country.papua,
     leagueName.samoa: Words.country.samoa,
+    leagueName.taiti: Words.country.tahiti,
     leagueName.timor: Words.country.timor,
 
     //AFRICA

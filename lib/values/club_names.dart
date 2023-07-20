@@ -4128,8 +4128,19 @@ class ClubName{
   String aiglon = "L'Aiglon du Lamentin";
   //GUADALUPE
   String moulien = "Moulien";
-  //GUIANA
+  //GUIANA FRANCESA
   String guayanais = "Guayanais";
+  //GUIANA
+  String guyanadefense = "Guyana Defence Force";
+  String alphautd = "Alpha United";
+  String milerock = "Milerock";
+  String pele = "Pele FC";
+  String frutaconquerors = "Fruta Conquerors";
+  String santosgeorge = "Santos Georgetown";
+  String slingerz = "Slingerz";
+  String toppxx = "Topp XX";
+  String westerntigers = "Western Tigers";
+  String realvictoriakings = "Real Victoria Kings";
   //PORTO RICO
   String puertoRico = "Puerto Rico Islanders";
   //REP. DOMINICANA
@@ -5020,6 +5031,54 @@ class ClubName{
   String nadroga = "Nadroga";
   String rewa = "Rewa";
   String suva = "Suva";
+  //PAPUA
+  String bestapng = "Besta PNG United";
+  String easternstars = "Eastern Stars";
+  String gellehills = "Gelle Hills";
+  String gulfkomara = "Gulf Komara";
+  String hekariutd = "Hekari United";
+  String laecity = "Lae City";
+  String madang = "Madang FC";
+  String morobe = "Morobe FC";
+  String morobewawens = "Morobe Wawens";
+  String portmoresby = "Port Moresby";
+  String rapatona = "Rapatona";
+  String vitiaz = "Vitiaz United";
+  //SAMOA
+  String alafua = "Alafua";
+  String cruzazulSAMOA = "Cruz Azul";
+  String kiwi = "Kiwi";
+  String goldstarsogi = "Golstar Sogi";
+  String lupeolesoaga = "Lupe Ole Soaga";
+  String moataa = "Moata'a";
+  String mouala = "Mouala United";
+  String sinamoga = "Sinamoga";
+  String stricklandbrothers = "Strickland Brothers Lepea";
+  String titavi = "Titavi";
+  String vaivasetai = "Vaivase-Tai";
+  //TAHITI
+  String arue = "AS Arue";
+  String centralsport = "AS Central Sport";
+  String dragon = "AS Dragon";
+  String excelsiorTAHITI = "AS Excelsior";
+  String jeunestahiti = " AS Jeunes Tahitiens";
+  String feipi = "AS Fei Pi";
+  String manuura = "AS Manu-Ura";
+  String pirae = "AS Pirae";
+  String asptt = "AS PTT";
+  String pueu = "AS Pueu";
+  String taiarapu = "AS Taiarapu";
+  String tamariipunaruu = "AS Tamarii Punaruu";
+  String tefana = "AS Tefana";
+  String tiaretahiti = "Tiare Tahiti";
+  String venus = "AS Vénus";
+  //TIMOR
+  String boavistaTIMOR = "Boavista Timor Leste";
+  String fimasporting = "Fima Sporting";
+  String karketudili = "Karketu Dili";
+  String lalenok = "Lalenok United";
+  String laularabenfica = "Sport Laulara e Benfica";
+
 
   //////////////////////////////////////////////////////////////////////////////
   //AFRICA

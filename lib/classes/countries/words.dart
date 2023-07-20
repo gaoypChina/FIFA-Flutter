@@ -221,6 +221,7 @@ class CountryNames {
   String get syria => 'Syria';
   String get tajikistan => 'Tajikistan';
   String get taiwan => 'Taiwan';
+  String get tahiti => 'Tahiti';
   String get tanzania => 'Tanzania';
   String get thailand => 'Thailand';
   String get timor => 'East Timor';
