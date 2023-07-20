@@ -6664,7 +6664,7 @@ class ClubDetails{
     map[n.stGeorge] = [ClubColors(Colors.yellow,Colors.red),pattern.solid,Coordinates(9.0132947, 38.7565828),
       'Addis Ababa Stadium',24000,1935,_country.ethiopia,64.6,[],{}];
     //GABON
-    map[n.cercleMberi] = [ClubColors(Colors.white,Colors.green),pattern.solid,Coordinates(0.392741994, 9.452454156),
+    map[n.cerclemberi] = [ClubColors(Colors.white,Colors.green),pattern.solid,Coordinates(0.392741994, 9.452454156),
       'Stade Omar-Bongo',41000,1962,_country.gabon,63.2,[],{}];
     map[n.mangasport] = [ClubColors(Colors.greenAccent,Colors.yellow),pattern.solid,Coordinates(-1.55915389, 13.2272941),
       'Stade Henri Sylvoz',4000,1962,_country.gabon,63.2,[],{}];

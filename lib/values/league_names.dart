@@ -172,7 +172,7 @@ class LeagueOfficialNames{
   String somalia = 'Liga Somália';
   String sudao = 'Liga Sudão';
   String sudaosul = 'Liga Sudão Sul';
-  String swazilandia = 'Liga Swazilandia';
+  String eswatini = 'Liga Eswatini';
   String tanzania = 'Liga Tanzania';
   String togo = 'Liga Togo';
   String uganda = 'Liga Uganda';
@@ -743,7 +743,7 @@ Map getLeagueNationalityMap(){
     leagueName.somalia: Words.country.somalia,
     leagueName.sudao: Words.country.sudan,
     leagueName.sudaosul: Words.country.southSudan,
-    leagueName.swazilandia: Words.country.swaziland,
+    leagueName.eswatini: Words.country.swaziland,
     leagueName.tanzania: Words.country.tanzania,
     leagueName.togo: Words.country.togo,
     leagueName.uganda: Words.country.uganda,
