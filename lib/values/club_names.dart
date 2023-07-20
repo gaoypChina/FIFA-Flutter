@@ -4234,17 +4234,26 @@ class ClubName{
   String rangersHK = "Rangers HK";
   String rf = "R&F";
   String seiko = "Seiko";
+  String singtao = "Sing Tao";
   String southchina = "South China";
+  String southerndistrict = "Southern District";
   String sunhei = "Sun Hei";
   String taipo = "Tai Po";
+  String tungwah = "Tung Wah";
+  String tuenmun = "Tuen Mun";
+  String yeehope = "Yee Hope";
   String yuenlong = "Yuen Long";
   //TAIWAN
+  String flyingcamel = "Flying Camel";
+  String taipeicollege = "National Taiwan University of Sport";
   String hangyuen = "Hang Yuen";
+  String nstc = "NSTC";
+  String mingchuan = "Ming Chuan University";
+  String taipeibank = "Taipei City Bank";
   String tainancity = "Tainan City";
   String taichung = "Taichung Futuro";
   String taipower = "Tai Power";
   String tatung = "Tatung";
-
 
   //JAPAO
   String albirex = "Albirex Niigata";
@@ -4322,6 +4331,24 @@ class ClubName{
   String uttarbaridhara = "Uttar Baridhara SC";
   //BRUNEI
   String bruneidpmm = "Brunei DMPP";
+  String indera = "Indera SC";
+  String jerudong = "Jerudong FC";
+  String kotaranger = "Kota Ranger";
+  String najip = "Najip I-Team";
+  String kasuka = "Kasuka FC";
+  String aksebersatu = "AKSE Bersatu";
+  String wijaya = "Wijaya FC";
+  String msabdb = "MS ABDB FT";
+  //BUTAO
+  String paro = "Paro";
+  String drukpol = "Druk Pol";
+  String drukutd = "Druk United";
+  String terton = "Terton";
+  String thimphu = "Thimphu";
+  String thimphucity = "Thimphu City";
+  String transportutd = "Transport United";
+  String ugyen = "Ugyen Academy";
+  String yeedzin = "Yeedzin";
   //CAMBOJA
   String angkor = "Angkor TAIGER";
   String boeungKet = "Boeung Ket";
@@ -4431,8 +4458,11 @@ class ClubName{
   String selangor = "Selangor";
   String terengganu = "Terengganu";
   //MALDIVES
+  String eaglesmale = "Eagles Malé";
   String maziya = "Maziya S&RC";
   String newradiant = "New Radiant";
+  String tcsports = "TC Sports";
+  String valenciaMALD = "Club Valencia";
   //MONGOLIA
   String athletic220 = "Athletic 220";
   String erchim = "Khaan Khuns-Erchim";
@@ -4489,6 +4519,21 @@ class ClubName{
   String stallionLaguna = "Stallion Laguna";
   String unitedCity = "United City";
   String paf = "Phillippine Air Force";
+  //SRI LANKA
+  String saunders = "Saunders";
+  String defendersSRI = "Defenders";
+  String bluestar = "Blue Star";
+  String colombo = "Colombo";
+  String airforceSRI = "Defenders";
+  String donboscoSRI = "Don Bosco SC";
+  String javalane = "Java Lane SC";
+  String mataracity = "Matara City";
+  String negambo = "Negambo Youth";
+  String oldbens = "Old Bens SC";
+  String pettah = "Pettah Unnited";
+  String ratnam = "Ratnam";
+  String renown = "Renown";
+  String solidSRI = "Solid SC";
   // TAILANDIA
   String bangkok = "Bangkok United";
   String bangkokBank = "Bangkok Bank"; //1955-2008
@@ -4535,6 +4580,13 @@ class ClubName{
   String viettel = "Viettel";
 
   //ORIENTE MÉDIO
+  //AFEGANISTÃO
+  String maiwandatalan = "Maiwand Atalan";
+  String oqabanhindukush = "Oqaban Hindukush";
+  String shaheenasmayee = "Shaheen Asmayee";
+  String simorghalborz = "Simorgh Alborz";
+  String spingharbazan = "Spin Ghar Bazan";
+  String toofanharirod = "Toofan Harirod";
   //ARABIA SAUDITA
   String abha = "Abha";
   String alainARA = "Al Ain Saudi";
@@ -4788,8 +4840,21 @@ class ClubName{
   String wapda = "WAPDA";
   String wohaib = "Wohaib";
   //PALESTINE
-  String shababAlKhalil = "Shabab Al-Khalil";
   String hilalAlQuds = "Hilal Al-Quds";
+  String jabalalmukaber = "Jabal Al-Mukaber Club";
+  String markazbalata = "Markaz Balata";
+  String markazshabab = "Markaz Shabab Al-Am'ari";
+  String markaztulkarem = "Markaz Tulkarem";
+  String shababaldhahiriya = "Shabab Al-Dhahiriya";
+  String shababAlKhalil = "Shabab Al-Khalil";
+  String tarajiwadi = "Taraji Wadi Al-Nes";
+  //PALESTINE GAZA
+  String alahligaza = "Al-Ahli Gaza";
+  String alsaadaqah = "Al-Sadaqah";
+  String shujaiyya = "Al-Ittihad Shuja'iyya";
+  String khadamatrafah = "Khadamat Rafah";
+  String shababrafah = "Shabab Rafah";
+  String shababkhanyunes = "Shabab Khan Yunes";
   //SYRIA
   String alfutowa = "Al-Fotuwa";
   String alhurriya = "Al-Hurriya";
@@ -4805,6 +4870,22 @@ class ClubName{
   String jableh = "Jableh";
   String hutteen = "Hutteen";
   String tishreen = "Tishreen";
+  //YEMEN
+  String ahlisana = "Al-Ahli San'a";
+  String ittihadibb = "Al-Ittihad Ibb";
+  String hilalalsahili = "Al-Hilal Al-Sahili";
+  String orubazabid = "Al-Oruba Zabid";
+  String shaabhadramaut = "Al-Sha'ab Hadramaut";
+  String shaabibb = "Al-Sha'ab Ibb";
+  String saqrtaizz = "Al-Saqr Ta'izz";
+  String shulaaden = "Al-Shula Aden";
+  String tilaladen = "Al-Tilal Aden";
+  String taliaataizz = "Al-Tali'aa Taizz";
+  String yarmukalrawda = "Al Yarmuk Al Rawda";
+  String wehdaaden = "Al-Wehda Aden";
+  String wehdasanaa = "Al-Wehda Sanaa";
+  String fahman = "Fahman";
+  String hassanabyan = "Hassan Abyan";
 
   //ASIA CENTRAL
   //KYRGYSTAN

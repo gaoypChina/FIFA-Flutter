@@ -122,10 +122,10 @@ class LeagueOfficialNames{
   String butao = 'Liga Butão'; String srilanka = "Liga Sri Lanka";
   String tailandia = 'Liga Tailandia'; String vietna = 'Liga Vietnã'; String camboja = 'Liga Camboja';
   String indonesia = 'Liga Indonesia'; String filipinas = 'Liga Filipinas'; String laos = 'Liga Laos';
-  String myanmar = 'Liga Myanmar';
+  String myanmar = 'Liga Myanmar';String maldivas = 'Liga Maldivas';
   String malasia = 'Liga Malásia'; String cingapura = 'Liga Cingapura';
   String paquistao = 'Liga Paquistão'; String afeganistao = 'Liga Afeganistao';
-  String palestina = 'Liga Palestina';
+  String palestina = 'Liga Palestina West Bank';String palestinagaza = 'Liga Palestina-Gaza';
   String taiwan = 'Liga Taiwan'; String hongkong = 'Liga Hong Kong';
   String brunei = 'Liga Brunei';
 
@@ -670,6 +670,8 @@ Map getLeagueNationalityMap(){
     leagueName.kuwait: Words.country.kuwait,
     leagueName.libano: Words.country.lebanon,
     leagueName.oman: Words.country.oman,
+    leagueName.palestina: Words.country.palestine,
+    leagueName.palestinagaza: Words.country.palestine,
     leagueName.siria: Words.country.syria,
 
     leagueName.india: Words.country.india,
@@ -686,6 +688,7 @@ Map getLeagueNationalityMap(){
     leagueName.indonesia: Words.country.indonesia,
     leagueName.laos: Words.country.laos,
     leagueName.malasia: Words.country.malaysia,
+    leagueName.maldivas: Words.country.maldives,
     leagueName.cingapura: Words.country.singapore,
     leagueName.myanmar: Words.country.myanmar,
     leagueName.filipinas: Words.country.philippines,
@@ -709,6 +712,7 @@ Map getLeagueNationalityMap(){
     leagueName.tunisia: Words.country.tunisia,
     leagueName.marrocos: Words.country.morocco,
 
+    leagueName.africaSul: Words.country.southafrica,
     leagueName.angola: Words.country.angola,
     leagueName.benin: Words.country.benin,
     leagueName.botswana: Words.country.botswana,
@@ -717,12 +721,13 @@ Map getLeagueNationalityMap(){
     leagueName.caboverde: Words.country.capeverde,
     leagueName.camaroes: Words.country.cameroon,
     leagueName.chade: Words.country.chad,
-    leagueName.costamarfim: Words.country.ivorycoast,
     leagueName.comores: Words.country.comoros,
     leagueName.congo: Words.country.congo,
     leagueName.congoRD: Words.country.congoRD,
+    leagueName.costamarfim: Words.country.ivorycoast,
     leagueName.djibouti: Words.country.djibouti,
     leagueName.etiopia: Words.country.ethiopia,
+    leagueName.eritreia: Words.country.eritrea,
     leagueName.gabao: Words.country.gabon,
     leagueName.gambia: Words.country.gambia,
     leagueName.guine: Words.country.guinea,
@@ -730,6 +735,7 @@ Map getLeagueNationalityMap(){
     leagueName.liberia: Words.country.liberia,
     leagueName.madagascar: Words.country.madagascar,
     leagueName.mali: Words.country.mali,
+    leagueName.mauricio: Words.country.mauritius,
     leagueName.mauritania: Words.country.mauritania,
     leagueName.mocambique: Words.country.mozambique,
     leagueName.namibia: Words.country.namibia,
@@ -749,7 +755,6 @@ Map getLeagueNationalityMap(){
     leagueName.uganda: Words.country.uganda,
     leagueName.zambia: Words.country.zambia,
     leagueName.zimbabwe: Words.country.zimbabwe,
-    leagueName.africaSul: Words.country.southafrica,
 
 
 
