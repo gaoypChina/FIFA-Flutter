@@ -14,6 +14,14 @@ abstract class EstiloRisque {
   );
 }
 
+abstract class EstiloRajdhani {
+  static const TextStyle text22 = TextStyle(
+    fontFamily: 'Radjhani',
+    color: Colors.black,
+    fontSize: 22,
+  );
+}
+
 abstract class EstiloRowdies {
   static const TextStyle titleWhite = TextStyle(
     fontFamily: 'Rowdies',

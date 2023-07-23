@@ -278,15 +278,15 @@ class LeagueOfficialNames{
       nepal, tailandia, taiwan, vietna,
 
       arabia, bahrein, eau, iran, iraque,
-      jordania, kuwait, libano, oman, qatar, siria,
+      jordania, kuwait, iemen, libano, oman, qatar, siria,
       quirguistao, tadjiquistao, turcomenistao, uzbekistao,
 
-      australia, fiji, novazelandia,
+      australia, fiji, novazelandia, taiti,
 
       argelia, egito, libya, marrocos, tunisia,
       africaSul, angola, botswana, caboverde, camaroes,
       centralAfrica, congo, congoRD, costamarfim, etiopia,
-      guine, madagascar, mali, mauritania, mocambique,
+      gabao, guine, madagascar, mali, mauritania, mocambique,
       namibia, nigeria, quenia,
       ruanda, senegal, sudao, tanzania, togo,
       uganda, zambia, zimbabwe,

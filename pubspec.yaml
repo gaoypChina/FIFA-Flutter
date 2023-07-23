@@ -114,6 +114,11 @@ flutter:
           - asset: assets/fonts/Rowdies-Regular.ttf
           - asset: assets/fonts/Rowdies-Bold.ttf
             weight: 700
+      - family: Rajdhani
+        fonts:
+          - asset: assets/fonts/Rajdhani-Medium.ttf
+          - asset: assets/fonts/Rajdhani-Bold.ttf
+            weight: 700
 
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
