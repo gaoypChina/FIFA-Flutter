@@ -59,10 +59,11 @@ class ResultGameInternational extends ResultMatch{
       else if(weekClass.isJogoSemifinalInternacional){nmatchs = 2;}
       else if(weekClass.isJogoFinalInternacional){nmatchs = 1;}
 
-      for(int matchRow=0; matchRow<nmatchs; matchRow++){
+      for(int matchRow=1; matchRow<=nmatchs; matchRow++){
         try{
           MataMata mataMata = MataMata();
           Confronto confronto = mataMata.getData(competitionName, weekClass.semanaStr, matchRow, idaVolta);
+          confronto.printar();
           isAlreadyPlayed = confronto.hasGoals;
           if(confronto.clubID1 == clubID){
             visitante = false;

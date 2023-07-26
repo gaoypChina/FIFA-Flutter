@@ -203,8 +203,9 @@ class _HistoricLeagueState extends State<HistoricLeague> {
 
     return Column(
       children: [
-        Text(year.toString(),style: EstiloTextoBranco.negrito16),
 
+        Text(year.toString(),style: EstiloTextoBranco.negrito16),
+        SizedBox(height: 8),
         for(int i=0;i<nRows;i++)
           validacaoSimulation(year,i),
 
@@ -248,6 +249,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
         return Column(
           children: [
             Text(ano.toString(),style: EstiloTextoBranco.negrito16),
+            SizedBox(height: 8),
             classificationRow(position,clubName),
             const SizedBox(height: 6),
           ],
@@ -452,10 +454,10 @@ class _HistoricLeagueState extends State<HistoricLeague> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Text("Best Clubs", style: EstiloTextoBranco.negrito16),
-                Spacer(),
+                const Spacer(),
                 for (int i=1;i<=10;i++)
                   SizedBox(width:19.3,child: Text(i.toString()+"º",style: EstiloTextoBranco.negrito14)),
-                SizedBox(width: 8),
+                const SizedBox(width: 8),
               ],
             ),
             Expanded(

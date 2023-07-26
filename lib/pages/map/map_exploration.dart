@@ -332,7 +332,7 @@ class _MapExplorationState extends State<MapExploration> {
                 Text(clubDetails.getStadiumCapacity(club.name).toString()),
                 const Spacer(),
                 funcFlagsList(clubDetails.getCountry(club.name), 15, 25),
-                dataGraphics.nTitulos > 0 ? Container(
+                dataGraphics.nTitulos > 0 ? SizedBox(
                   height: 32,
                   width: 30,
                   child: Stack(
@@ -396,7 +396,7 @@ class _MapExplorationState extends State<MapExploration> {
                 Text(clubDetails.getStadiumCapacity(clubName).toString()),
                 const Spacer(),
                 funcFlagsList(clubDetails.getCountry(clubName), 15, 25),
-                dataGraphics.nTitulos > 0 ? Container(
+                dataGraphics.nTitulos > 0 ? SizedBox(
                   height: 32,
                   width: 30,
                   child: Stack(

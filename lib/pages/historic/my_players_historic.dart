@@ -131,11 +131,15 @@ Widget header(){
               setState(() {});
             }),
 
-        Row(
-          children: [
-            Images().getEscudoWidget(isActualYear ? club.name : myClubData.clubName,50,50),
-            Images().getUniformWidget(isActualYear ? club.name: myClubData.clubName,60,60),
-          ],
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 14),
+          decoration: blackDecoration(),
+          child: Row(
+            children: [
+              Images().getEscudoWidget(isActualYear ? club.name : myClubData.clubName,60,60),
+              Images().getUniformWidget(isActualYear ? club.name: myClubData.clubName,60,60),
+            ],
+          ),
         ),
         Container(
           padding: const EdgeInsets.all(8),

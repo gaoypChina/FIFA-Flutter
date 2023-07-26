@@ -1,3 +1,4 @@
+import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/mata_mata/cup_classification.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
@@ -5,8 +6,10 @@ import 'package:fifa/classes/mata_mata/knockout_stage.dart';
 import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/match/result_dict.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:flutter/material.dart';
 
 
@@ -20,18 +23,18 @@ import 'package:flutter/material.dart';
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                matchBoxCup(cupName, KnockoutStage().keyOitavas, 1),
-                matchBoxCup(cupName, KnockoutStage().keyOitavas, 2),
-                matchBoxCup(cupName, KnockoutStage().keyOitavas, 3),
-                matchBoxCup(cupName, KnockoutStage().keyOitavas, 4),
+                matchBoxCup(context, cupName, KnockoutStage().keyOitavas, 1),
+                matchBoxCup(context, cupName, KnockoutStage().keyOitavas, 2),
+                matchBoxCup(context, cupName, KnockoutStage().keyOitavas, 3),
+                matchBoxCup(context, cupName, KnockoutStage().keyOitavas, 4),
               ],
             ),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                matchBoxCup(cupName, KnockoutStage().keyQuartas, 1),
-                matchBoxCup(cupName, KnockoutStage().keyQuartas, 2),
+                matchBoxCup(context, cupName, KnockoutStage().keyQuartas, 1),
+                matchBoxCup(context, cupName, KnockoutStage().keyQuartas, 2),
               ],
             ),
 
@@ -45,9 +48,9 @@ import 'package:flutter/material.dart';
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        matchBoxCup(cupName, KnockoutStage().keySemifinal, 1),
+                        matchBoxCup(context, cupName, KnockoutStage().keySemifinal, 1),
                         const SizedBox(height: 8),
-                        matchBoxCup(cupName, KnockoutStage().keySemifinal, 2),
+                        matchBoxCup(context, cupName, KnockoutStage().keySemifinal, 2),
                       ],
                     ),
                   ),
@@ -57,7 +60,7 @@ import 'package:flutter/material.dart';
                     child: Row(
                       children: [
                         const Spacer(),
-                        matchBoxCup(cupName, KnockoutStage().keyFinal, 1),
+                        matchBoxCup(context, cupName, KnockoutStage().keyFinal, 1),
                         Stack(
                           children: [
                             Images().getTrophy(cupName,70,70),
@@ -81,17 +84,17 @@ import 'package:flutter/material.dart';
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                matchBoxCup(cupName, KnockoutStage().keyQuartas, 3),
-                matchBoxCup(cupName, KnockoutStage().keyQuartas, 4),
+                matchBoxCup(context, cupName, KnockoutStage().keyQuartas, 3),
+                matchBoxCup(context, cupName, KnockoutStage().keyQuartas, 4),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                matchBoxCup(cupName, KnockoutStage().keyOitavas, 5),
-                matchBoxCup(cupName, KnockoutStage().keyOitavas, 6),
-                matchBoxCup(cupName, KnockoutStage().keyOitavas, 7),
-                matchBoxCup(cupName, KnockoutStage().keyOitavas, 8),
+                matchBoxCup(context, cupName, KnockoutStage().keyOitavas, 5),
+                matchBoxCup(context, cupName, KnockoutStage().keyOitavas, 6),
+                matchBoxCup(context, cupName, KnockoutStage().keyOitavas, 7),
+                matchBoxCup(context, cupName, KnockoutStage().keyOitavas, 8),
               ],
             ),
           ],
@@ -99,7 +102,7 @@ import 'package:flutter/material.dart';
   }
 
 
-Widget matchBoxCup(String cupName, String phaseKeyName, int matchNumber){
+Widget matchBoxCup(BuildContext context, String cupName, String phaseKeyName, int matchNumber){
   bool hasData = false;
   late Confronto confrontoIda;
   late Confronto confrontoVolta;
@@ -115,11 +118,11 @@ Widget matchBoxCup(String cupName, String phaseKeyName, int matchNumber){
       width: 74,
       padding: const EdgeInsets.all(4),
       color: AppColors().greyTransparent,
-      child: hasData ? showMatchBoxClubs(confrontoIda, confrontoVolta) : Container(),
+      child: hasData ? showMatchBoxClubs(context, confrontoIda, confrontoVolta) : Container(),
     );
 }
 
-Widget showMatchBoxClubs(Confronto confrontoIda,Confronto confrontoVolta){
+Widget showMatchBoxClubs(BuildContext context, Confronto confrontoIda,Confronto confrontoVolta){
   double imageSize = 32;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -127,8 +130,18 @@ Widget showMatchBoxClubs(Confronto confrontoIda,Confronto confrontoVolta){
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Images().getEscudoWidget(confrontoIda.clubName1,imageSize,imageSize),
-            Images().getEscudoWidget(confrontoIda.clubName2,imageSize,imageSize),
+            PressableButton(
+              onTap: (){
+                navigatorPush(context, ClubProfile(clubID: confrontoIda.clubID1));
+              },
+                child: Images().getEscudoWidget(confrontoIda.clubName1,imageSize,imageSize)
+            ),
+            PressableButton(
+                onTap: (){
+                  navigatorPush(context, ClubProfile(clubID: confrontoIda.clubID2));
+                },
+                child: Images().getEscudoWidget(confrontoIda.clubName2,imageSize,imageSize)
+            ),
           ],
         ),
         confrontoIda.hasGoals

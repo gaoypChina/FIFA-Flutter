@@ -1,9 +1,11 @@
+import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/mundial.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
@@ -12,6 +14,7 @@ import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/background_image/backimage_international_league.dart';
 import 'package:fifa/widgets/button/back_button.dart';
+import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:flutter/material.dart';
 
 class TableMundial extends StatefulWidget {
@@ -123,14 +126,18 @@ class _TableMundialState extends State<TableMundial> {
 
           funcFlagsList(ClubDetails().getCountry(clubName1), 15, 25),
           const SizedBox(width: 4),
-          Images().getEscudoWidget(clubName1,40,40),
+          PressableButton(onTap:(){
+            navigatorPush(context, ClubProfileNotPlayable(clubName: clubName1));
+          },child: Images().getEscudoWidget(clubName1,40,40)),
 
           const Padding(
             padding: EdgeInsets.all(8.0),
             child: Text('X',textAlign:TextAlign.center,style: EstiloTextoBranco.text14),
           ),
 
-          Images().getEscudoWidget(clubName2,40,40),
+          PressableButton(onTap:(){
+            navigatorPush(context, ClubProfileNotPlayable(clubName: clubName2));
+          },child: Images().getEscudoWidget(clubName2,40,40)),
           const SizedBox(width: 4),
           funcFlagsList(ClubDetails().getCountry(clubName2), 15, 25),
         ],

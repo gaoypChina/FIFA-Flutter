@@ -119,7 +119,7 @@ class _MyTeamState extends State<MyTeam> {
             padding: const EdgeInsets.only(top:20.0),
             child: IconButton(onPressed: (){
               navigatorPush(context, ClubProfileNotPlayable(clubName: myClub.name));
-            }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
+            }, icon: const Icon(Icons.outbond_outlined,color: Colors.white,size: 32,)),
           ),
 
         ],

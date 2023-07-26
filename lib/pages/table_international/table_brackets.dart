@@ -20,18 +20,18 @@ Widget interBrackets(BuildContext context, String competitionName){
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          matchBox(competitionName, KnockoutStage().keyOitavas, 1),
-          matchBox(competitionName, KnockoutStage().keyOitavas, 2),
-          matchBox(competitionName, KnockoutStage().keyOitavas, 3),
-          matchBox(competitionName, KnockoutStage().keyOitavas, 4),
+          matchBox(context, competitionName, KnockoutStage().keyOitavas, 1),
+          matchBox(context, competitionName, KnockoutStage().keyOitavas, 2),
+          matchBox(context, competitionName, KnockoutStage().keyOitavas, 3),
+          matchBox(context, competitionName, KnockoutStage().keyOitavas, 4),
         ],
       ),
 
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          matchBox(competitionName, KnockoutStage().keyQuartas, 1),
-          matchBox(competitionName, KnockoutStage().keyQuartas, 2),
+          matchBox(context, competitionName, KnockoutStage().keyQuartas, 1),
+          matchBox(context, competitionName, KnockoutStage().keyQuartas, 2),
         ],
       ),
 
@@ -45,9 +45,9 @@ Widget interBrackets(BuildContext context, String competitionName){
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  matchBox(competitionName, KnockoutStage().keySemifinal, 1),
+                  matchBox(context, competitionName, KnockoutStage().keySemifinal, 1),
                   const SizedBox(height: 8),
-                  matchBox(competitionName, KnockoutStage().keySemifinal, 2),
+                  matchBox(context, competitionName, KnockoutStage().keySemifinal, 2),
                 ],
               ),
             ),
@@ -57,7 +57,7 @@ Widget interBrackets(BuildContext context, String competitionName){
               child: Row(
                 children: [
                   const Spacer(),
-                  matchBox(competitionName, KnockoutStage().keyFinal, 1),
+                  matchBox(context, competitionName, KnockoutStage().keyFinal, 1),
                   Stack(
                     children: [
                       Images().getTrophy(competitionName,70,70),
@@ -81,24 +81,24 @@ Widget interBrackets(BuildContext context, String competitionName){
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          matchBox(competitionName, KnockoutStage().keyQuartas, 3),
-          matchBox(competitionName, KnockoutStage().keyQuartas, 4),
+          matchBox(context, competitionName, KnockoutStage().keyQuartas, 3),
+          matchBox(context, competitionName, KnockoutStage().keyQuartas, 4),
         ],
       ),
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          matchBox(competitionName, KnockoutStage().keyOitavas, 5),
-          matchBox(competitionName, KnockoutStage().keyOitavas, 6),
-          matchBox(competitionName, KnockoutStage().keyOitavas, 7),
-          matchBox(competitionName, KnockoutStage().keyOitavas, 8),
+          matchBox(context, competitionName, KnockoutStage().keyOitavas, 5),
+          matchBox(context, competitionName, KnockoutStage().keyOitavas, 6),
+          matchBox(context, competitionName, KnockoutStage().keyOitavas, 7),
+          matchBox(context, competitionName, KnockoutStage().keyOitavas, 8),
         ],
       ),
     ],
   );
 }
 
-Widget matchBox(String competitionName, String phaseKeyName, int matchNumber){
+Widget matchBox(BuildContext context, String competitionName, String phaseKeyName, int matchNumber){
 
   bool hasData = false;
   late Confronto confrontoIda;
@@ -116,6 +116,6 @@ Widget matchBox(String competitionName, String phaseKeyName, int matchNumber){
     width: 74,
     padding: const EdgeInsets.all(4),
     color: AppColors().greyTransparent,
-    child: hasData ? showMatchBoxClubs(confrontoIda, confrontoVolta) : Container(),
+    child: hasData ? showMatchBoxClubs(context, confrontoIda, confrontoVolta) : Container(),
   );
 }

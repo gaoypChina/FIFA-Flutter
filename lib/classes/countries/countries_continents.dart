@@ -8,6 +8,7 @@ class Continents{
   String asia = 'Ásia';
   String africa = 'África';
   String oceania = 'Oceania';
+  String notExist = 'World';
 
   funcCountryContinents(String country){
 
@@ -212,7 +213,7 @@ class Continents{
     if(continentMap.containsKey(country)){
       return continentMap[country];
     }else{
-      return oceania;
+      return notExist;
     }
 
   }

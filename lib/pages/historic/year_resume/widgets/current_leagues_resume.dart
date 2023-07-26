@@ -34,12 +34,10 @@ class CurrentLeagueResume extends StatelessWidget {
 
 
     return Container(
-      margin: const EdgeInsets.all(2),
+      margin: const EdgeInsets.all(4),
       decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.white,
-          width: 1, //                   <--- border width here
-        ),
+        color: AppColors().greyTransparent,
+        borderRadius: BorderRadius.circular(8),
       ),
       child: Material(
         color: Colors.transparent,

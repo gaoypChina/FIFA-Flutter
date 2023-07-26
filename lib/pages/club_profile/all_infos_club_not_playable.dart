@@ -107,7 +107,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
                             String chosenLeagueName = map.keys.firstWhere((k) => map[k] == clubCountry, orElse: () => null);
                             Navigator.push(context,MaterialPageRoute(builder: (context) => HistoricLeague(chosenLeagueName: chosenLeagueName)));
                           },
-                          child: const Icon(Icons.table_chart,color:Colors.white,size: 32),
+                          child: const Icon(Icons.history,color:Colors.white,size: 32),
                         ),
                       ),
                       const SizedBox(width: 8),
@@ -115,7 +115,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
                         padding: const EdgeInsets.only(top:20.0),
                         child: IconButton(onPressed: (){
                              Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: clubsAllNameList.indexOf(widget.clubName))));
-                        }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
+                        }, icon: const Icon(Icons.outbond_outlined,color: Colors.white,size: 32,)),
                       ) : Container(),
                     ],
                   ),
@@ -487,9 +487,9 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
           for(int i = 1950; i<anoInicial;i+=10)
             Row(
               children: [
-                Container(width:30, child: Text(i.toString(),style: EstiloTextoBranco.text14,)),
+                SizedBox(width:30, child: Text(i.toString(),style: EstiloTextoBranco.text14,)),
                 rowChampions(i,dataClassificationList),
-                Container(width:30, child: Text((i+9).toString(),style: EstiloTextoBranco.text14,)),
+                SizedBox(width:30, child: Text((i+9).toString(),style: EstiloTextoBranco.text14,)),
               ],
             ),
         ],
@@ -550,7 +550,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
       child: Row(
         children: [
           const SizedBox(width: 10),
-          Container(width:30, child: Text(year.floor().toString(),style: EstiloTextoBranco.text14,)),
+          SizedBox(width:30, child: Text(year.floor().toString(),style: EstiloTextoBranco.text14,)),
           const SizedBox(width: 10),
           positionColor(estadual,40),
           const SizedBox(width: 10),

@@ -80,7 +80,7 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                             padding: const EdgeInsets.only(top:20.0),
                             child: IconButton(onPressed: (){
                               Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfileNotPlayable(clubName:clubClass.name)));
-                            }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
+                            }, icon: const Icon(Icons.outbond_outlined,color: Colors.white,size: 32,)),
                           )
                         ],
                       ),

@@ -1,3 +1,4 @@
+import 'package:fifa/classes/countries/countries_continents.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/historic/historic_champions_league.dart';
 import 'package:fifa/classes/image_class.dart';
@@ -145,40 +146,52 @@ class _YearResumeState extends State<YearResume> {
     }catch(e){
       //print('COPA $leagueName não tem histórico de classificação nesse ano);
     }
+    String countryName = getCountryFromLeague(leagueName);
 
-    return Row(
-        children: [
-          const SizedBox(width: 10),
-          GestureDetector(
-            onTap: (){
-              bottomSheetShowLeagueClassification(context, classificationNames, leagueName);
-            },
-            child: Row(
+    return Container(
+      margin: const EdgeInsets.all(4),
+      padding: const EdgeInsets.symmetric(vertical: 4),
+      decoration: BoxDecoration(
+        color: AppColors().greyTransparent,
+        borderRadius: BorderRadius.circular(8),
+      ),
+      child: Row(
+          children: [
+            const SizedBox(width: 10),
+            GestureDetector(
+              onTap: (){
+                bottomSheetShowLeagueClassification(context, classificationNames, leagueName);
+              },
+              child: Row(
+                children: [
+
+                  Images().getContinentLogo(Continents().funcCountryContinents(countryName), 20, 20),
+                  const SizedBox(width: 8),
+                  funcFlagsList(countryName, 18, 26),
+                  const SizedBox(width: 8),
+                  classificationNames.isNotEmpty ? Images().getEscudoWidget(classificationNames[0],45,45) : Container(),
+                  const SizedBox(width: 8),
+                  classificationNames.length>=2 ? Images().getEscudoWidget(classificationNames[1],30,30) : Container(),
+                  classificationNames.length>=3 ? Images().getEscudoWidget(classificationNames[2],20,20) : Container(),
+                  classificationNames.length>=4 ? Images().getEscudoWidget(classificationNames[3],20,20) : Container(),
+                  const SizedBox(width: 12),
+                  classificationNames.length>=5 ? Images().getEscudoWidget(classificationNames[4],20,20) : Container(),
+                  classificationNames.length>=6 ? Images().getEscudoWidget(classificationNames[5],20,20) : Container(),
+                  classificationNames.length>=7 ? Images().getEscudoWidget(classificationNames[6],20,20) : Container(),
+                  classificationNames.length>=8 ? Images().getEscudoWidget(classificationNames[7],20,20) : Container(),
+                ],
+              ),
+            ),
+            const Spacer(),
+            Row(
               children: [
-                funcFlagsList(getCountryFromLeague(leagueName), 20, 30),
-                const SizedBox(width: 10),
-                classificationNames.isNotEmpty ? Images().getEscudoWidget(classificationNames[0],45,45) : Container(),
-                const SizedBox(width: 10),
-                classificationNames.length>=2 ? Images().getEscudoWidget(classificationNames[1],30,30) : Container(),
-                classificationNames.length>=3 ? Images().getEscudoWidget(classificationNames[2],20,20) : Container(),
-                classificationNames.length>=4 ? Images().getEscudoWidget(classificationNames[3],20,20) : Container(),
-                const SizedBox(width: 20),
-                classificationNames.length>=5 ? Images().getEscudoWidget(classificationNames[4],20,20) : Container(),
-                classificationNames.length>=6 ? Images().getEscudoWidget(classificationNames[5],20,20) : Container(),
-                classificationNames.length>=7 ? Images().getEscudoWidget(classificationNames[6],20,20) : Container(),
-                classificationNames.length>=8 ? Images().getEscudoWidget(classificationNames[7],20,20) : Container(),
+                cupClassification.isNotEmpty ? Images().getEscudoWidget(cupClassification[0],40,40) : Container(),
+                cupClassification.length>=2 ? Images().getEscudoWidget(cupClassification[1],20,20) : Container(),
               ],
             ),
-          ),
-          const Spacer(),
-          Row(
-            children: [
-              cupClassification.isNotEmpty ? Images().getEscudoWidget(cupClassification[0],40,40) : Container(),
-              cupClassification.length>=2 ? Images().getEscudoWidget(cupClassification[1],20,20) : Container(),
-            ],
-          ),
-          const SizedBox(width: 10),
-        ],
+            const SizedBox(width: 8),
+          ],
+      ),
     );
 
   }
@@ -250,7 +263,7 @@ Widget internationalChampionsWidgetDetail(String internationalLeagueName){
 
 
   return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 3.0),
+    padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 4),
     child: GestureDetector(
       onTap: (){
         bottomSheetShowLeagueClassification(context, clubsID, internationalLeagueName);
@@ -258,7 +271,9 @@ Widget internationalChampionsWidgetDetail(String internationalLeagueName){
       child: Column(
           children: [
             Images().getLeagueLogo(internationalLeagueName, 40, 40),
+            const SizedBox(height: 8),
             Images().getEscudoWidget(team1,40,40),
+            const SizedBox(height: 4),
             Images().getEscudoWidget(team2,20,20),
           ],
         ),

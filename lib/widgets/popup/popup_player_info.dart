@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/historic/historic_my_tranfers.dart';
@@ -8,6 +9,7 @@ import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:fifa/pages/negotiation/negotiation_class.dart';
 import 'package:fifa/theme/background_color/background_age.dart';
 import 'package:fifa/theme/background_color/background_position.dart';
@@ -77,7 +79,12 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
                           ],
                         )),
                         //Escudo da Equipe
-                        Images().getEscudoWidget(jogador.clubName,70,70),
+                        GestureDetector(
+                            onTap: (){
+                              navigatorPush(context, ClubProfile(clubID: jogador.clubID));
+                            },
+                            child: Images().getEscudoWidget(jogador.clubName,70,70)
+                        ),
                         const SizedBox(width: 8),
                       ],
                     ),

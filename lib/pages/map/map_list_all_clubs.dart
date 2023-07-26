@@ -113,7 +113,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
             onTap:(){
               navigatorPush(context, RealClassificationPage(chosenCountryName: selectedCountry));
             },
-            child: const Icon(Icons.table_chart,color:Colors.white,size: 32),
+            child: const Icon(Icons.table_chart_outlined,color:Colors.white,size: 32),
           ),
         ),
         Padding(
@@ -122,7 +122,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
             Map map = getLeagueNationalityMap();
             String chosenLeagueName = map.keys.firstWhere((k) => map[k] == selectedCountry, orElse: () => null);
             navigatorPush(context, HistoricLeague(chosenLeagueName: chosenLeagueName));
-          }, icon: const Icon(Icons.outbond_rounded,color: Colors.white,size: 32,)),
+          }, icon: const Icon(Icons.history,color: Colors.white,size: 32,)),
         ),
         Padding(padding:const EdgeInsets.only(top:18),
             child: Text(showList.length.toString(),style: EstiloTextoBranco.text20)),

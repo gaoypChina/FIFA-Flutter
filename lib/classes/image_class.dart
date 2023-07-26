@@ -158,7 +158,10 @@ class Images{
     if (continent == Continents().oceania) {
       return  Image.asset('assets/continents/oceania.png',height: _height,width: _width);
     }
-    return  Image.asset('assets/continents/europe.png',height: _height,width: _width);
+    if (continent == Continents().notExist) {
+      return  Image.asset('assets/continents/world.png',height: _height,width: _width);
+    }
+    return  Image.asset('assets/continents/world.png',height: _height,width: _width);
   }
 
 }

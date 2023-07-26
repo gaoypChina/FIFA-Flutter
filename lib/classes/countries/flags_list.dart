@@ -23,7 +23,7 @@ Image funcFlagsList(String country, double _height, double _width){
       country == LeagueOfficialNames().turkeyCup ||
       country == LeagueOfficialNames().mexicoCup ||
       country == LeagueOfficialNames().brazilCup){
-    code = Image.asset(FIFAImages().campeonatoLogo(country), fit: BoxFit.fill,width: _width-10,height: _height);
+    code = Image.asset(FIFAImages().campeonatoLogo(country), fit: BoxFit.fill,width: _width-5,height: _height);
   }
   if(country == LeagueOfficialNames().copaNordeste ||
       country == LeagueOfficialNames().copaVerde ||
@@ -33,14 +33,14 @@ Image funcFlagsList(String country, double _height, double _width){
       country == LeagueOfficialNames().europaLeagueOficial ||
       country == LeagueOfficialNames().copaSulAmericana ||
       country == LeagueOfficialNames().concacaf){
-    code = Image.asset(FIFAImages().campeonatoLogo(country), fit: BoxFit.fill,width: _width-10,height: _height);
+    code = Image.asset(FIFAImages().campeonatoLogo(country), fit: BoxFit.fill,width: _width-5,height: _height);
   }
 
   if(country == LeagueOfficialNames().recopasula ||
       country == LeagueOfficialNames().recopaeuropa ||
       country == LeagueOfficialNames().recopabrasil
   ){
-    code = Image.asset(FIFAImages().campeonatoLogo(country), fit: BoxFit.fill,width: _width-10,height: _height);
+    code = Image.asset(FIFAImages().campeonatoLogo(country), fit: BoxFit.fill,width: _width-5,height: _height);
   }
   
   if(country == Words.country.urss){code = Image.asset('assets/flags/urss.png', fit: BoxFit.fill,width: _width,height: _height);}
