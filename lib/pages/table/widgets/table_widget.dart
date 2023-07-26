@@ -95,23 +95,18 @@ Widget rowTableNacionalLayout(BuildContext context, int position, int indexClub,
             ],
           ),
           Expanded(
-            child: GestureDetector(
-              onTap: (){
-                clickClubProfilePage(context,clubClass);
-              },
-              child: Container(
-                  height: 28,
-                  padding: const EdgeInsets.all(4),
-                  margin: const EdgeInsets.all(1),
-                  child: Text(clubName, style: textStyle2)
-              ),
+            child: Container(
+                height: 28,
+                padding: const EdgeInsets.all(4),
+                margin: const EdgeInsets.all(1),
+                child: Text(clubName, style: textStyle2)
             ),
           ),
           SizedBox(width: 30, child: Center(child: Text(points.toString(),style: textStyle3))),
           SizedBox(width: 30, child: Center(child: Text(golsMarcados.toString(),style: textStyle))),
           SizedBox(width: 30, child: Center(child: Text(golsSofridos.toString(),style: textStyle))),
           SizedBox(width: 30, child: Center(child: Text(saldo.toString(),style: textStyle))),
-          Text(overall.toStringAsFixed(2),style: textStyle),
+          SizedBox(width: 36, child: Text(overall.toStringAsFixed(2),style: textStyle)),
 
         ],
       ),

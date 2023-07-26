@@ -1647,7 +1647,7 @@ String imageLogo(String timeFoto) {
     map[_name.mindelense] = 'mindelense';
     map[_name.sptClubePraia] = 'spt clube praia';
     //CONGO
-    map[_name.diablesNoirs] = 'diables noirs';
+    map[_name.diablesnoirs] = 'diables noirs';
     map[_name.otoho] = 'otoho';
     map[_name.talangai] = 'talangai';
     //RD CONGO
@@ -1672,7 +1672,7 @@ String imageLogo(String timeFoto) {
     map[_name.sanPedro] = 'san pedro';
     //KENYA
     map[_name.kakamega] = 'kakamega';
-    map[_name.gorMahia] = 'gor mahia';
+    map[_name.gormahia] = 'gor mahia';
     map[_name.mathare] = 'mathare';
     map[_name.tusker] = 'tusker';
     map[_name.ulinzi] = 'ulinzi';

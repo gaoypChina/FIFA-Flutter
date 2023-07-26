@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
 
               const SizedBox(height: 70),
               title(),
-              const SizedBox(height: 30),
+              const SizedBox(height: 8),
 
               Expanded(
                 child: SingleChildScrollView(
@@ -163,7 +163,7 @@ Widget buttonRow(String title, String imageName, double height, Function() onTap
                   child: Text(
                     title,
                     textAlign: TextAlign.end,
-                    style: EstiloTextoBranco.negrito22
+                    style: EstiloRajdhani.hometitle,
                   ),
                 ),
             ),

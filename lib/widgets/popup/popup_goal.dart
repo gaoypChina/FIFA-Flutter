@@ -10,7 +10,7 @@ popUpGoal({required BuildContext context,required int milis, required Jogador sc
     builder: (BuildContext context) {
       // retorna um objeto do tipo Dialog
       return AlertDialog(
-        title: const Text('GOAL',style: EstiloRisque.text22),
+        title: const Text('GOAL',style: EstiloTextoPreto.text22),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -37,7 +37,7 @@ popUpGoal({required BuildContext context,required int milis, required Jogador sc
               ],
             ),
 
-            Text(milis.toString()+"'",style: EstiloRisque.text22),
+            Text(milis.toString()+"'",style: EstiloTextoPreto.text22),
 
           ],
         ),

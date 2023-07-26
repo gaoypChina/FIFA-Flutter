@@ -4,6 +4,7 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/pages/cups/tabs/cup_brackets.dart';
 import 'package:fifa/pages/cups/tabs/cup_matchs.dart';
 import 'package:fifa/pages/cups/tabs/cup_statistics.dart';
+import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/league_selection_row.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/values/league_names.dart';
@@ -67,6 +68,7 @@ class _CupMainState extends State<CupMain> with TickerProviderStateMixin{
                   child: TabBar(
                     controller: _tabController,
                     indicatorColor: AppColors().green,
+                    labelStyle: EstiloRajdhani.tabbar,
                     tabs: const [
                       Tab(text: 'Partidas'),
                       Tab(text: 'Brackets'),

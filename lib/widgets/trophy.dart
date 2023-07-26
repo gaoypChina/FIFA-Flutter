@@ -41,7 +41,7 @@ class TrophyWidget extends StatelessWidget {
             padding: EdgeInsets.only(top: _height*0.25),
             child: Text(name, textAlign:TextAlign.center, style: TextStyle(
               color: Colors.white,
-              fontFamily: 'Roboto',
+              fontFamily: 'Rajdhani',
               fontSize: 14*scale,
             )
             ),

@@ -19,7 +19,7 @@ Widget wMenuButton(String text, Club club, Function() function){
           onTap: function,
           child: Padding(
               padding: const EdgeInsets.all(10),
-              child: Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.text22))),
+              child: Text(text,textAlign:TextAlign.center,style: EstiloRajdhani.menubuttons))),
     ),
   );
 }

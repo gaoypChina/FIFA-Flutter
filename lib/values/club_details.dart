@@ -6344,7 +6344,7 @@ class ClubDetails{
       'Stade 1er Novembre',22000,1946,_country.algeria,66.2,[],{}];
     map[n.rckouba] = [ClubColors(Colors.green,Colors.white),pattern.stripes3,Coordinates(0, 0),
       'Mohamed Benhaddad Stadium',10000,1945,_country.algeria,51.8,[],{}];
-    map[n.gcrmascara] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(0,0),
+    map[n.mascara] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(0,0),
       'The African Unity Stadium',22000,1925,_country.algeria,49.6,[],{}];
     map[n.mcalger] = [ClubColors(Colors.green,Colors.red),pattern.horStripes2,Coordinates(36.75986425, 2.99499536),
       'Estádio 5 de Julho de 1962',76000,1921,_country.algeria,69.2,[],{}];
@@ -6611,9 +6611,9 @@ class ClubDetails{
     map[n.usca] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
       '',0,0,_country.centralAfrica,50.0,[],{}];
     //CONGO
-    map[n.caraBrazaville] = [ClubColors(Colors.red,Colors.black),pattern.sleeves,Coordinates(-4.27381489, 15.24904533),
+    map[n.carabrazaville] = [ClubColors(Colors.red,Colors.black),pattern.sleeves,Coordinates(-4.27381489, 15.24904533),
       'Stade Alphonse Massemba-Débat',33037,1935,_country.congo,57.7,[],{}];
-    map[n.diablesNoirs] = [ClubColors(Colors.black,Colors.yellow),pattern.solid,Coordinates(-4.27254194, 15.24862744),
+    map[n.diablesnoirs] = [ClubColors(Colors.black,Colors.yellow),pattern.solid,Coordinates(-4.27254194, 15.24862744),
       'Stade Alphonse Massemba-Débat',33037,1950,_country.congo,64.2,[],{}];
     map[n.etoilecongo] = [ClubColors(Colors.yellow,Colors.green),pattern.solid,Coordinates(-4.272841, 15.24845),
       'Stade Alphonse Massemba-Débat',33037,0,_country.congo,60.7,[],{}];
@@ -6687,7 +6687,7 @@ class ClubDetails{
     //KHENYA
     map[n.kakamega] = [ClubColors(Colors.yellow,Colors.green,Colors.green),pattern.stripeCrest,Coordinates(0.28970512, 34.7605814),
       'Bukhungu Stadium',10000,2010,_country.kenya,65.1,[],{}];
-    map[n.gorMahia] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(-1.294090, 36.842290),
+    map[n.gormahia] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(-1.294090, 36.842290),
       'City Stadium',15000,1968,_country.kenya,63.6,[],{}];
     map[n.leopardsQUE] = [ClubColors(Colors.blue,Colors.white),pattern.horStripes3,Coordinates(-1.30396442, 36.8244987),
       'Nyayo National Stadium Nairobi',15000,1964,_country.kenya,62.6,[],{}];

@@ -15,13 +15,13 @@ Widget wHomeBottomRowButtons(BuildContext context, int clubID){
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
     children:[
-      SizedBox(width: Sized(context).width*0.22,
+      SizedBox(width: Sized(context).width*0.24,
           child: const DatabaseButton()
       ),
-      SizedBox(width: Sized(context).width*0.22,
+      SizedBox(width: Sized(context).width*0.24,
           child: editClub(context, clubID)
       ),
-      SizedBox(width: Sized(context).width*0.22,
+      SizedBox(width: Sized(context).width*0.24,
           child: configurations(context)
       ),
     ],
@@ -69,8 +69,8 @@ class _DatabaseButtonState extends State<DatabaseButton> {
           children: [
             const Icon(Icons.file_upload_outlined,color:Colors.white,size:40),
             globalSaveNumber==0
-                ? const Text('Database: 0',style: EstiloTextoBranco.text12)
-                : Text('Database: ' + globalSaveNumber.toString(),style: EstiloTextoBranco.text12),
+                ? const Text('Database: 0',style: EstiloRajdhani.button)
+                : Text('Database: ' + globalSaveNumber.toString(),style: EstiloRajdhani.button),
           ],
         ),
       ),
@@ -93,7 +93,7 @@ Widget editClub(BuildContext context, int clubID){
           child: Column(
             children: [
               const Icon(Icons.edit,color:Colors.white,size:40),
-              Text(Translation(context).text.editTeam,style: EstiloTextoBranco.text12)
+              Text(Translation(context).text.editTeam,style: EstiloRajdhani.button)
             ],
           ),
         ),
@@ -114,11 +114,12 @@ Widget configurations(BuildContext context){
       child: Column(
         children: [
           const Icon(Icons.miscellaneous_services,color:Colors.white,size:40),
-          Text(Translation(context).text.configuration,style: EstiloTextoBranco.text12),
+          Text(Translation(context).text.configuration,style: EstiloRajdhani.button),
         ],
       ),
     ),
-  ));
+  ),
+  );
 }
 
 

@@ -118,7 +118,6 @@ flutter:
         fonts:
           - asset: assets/fonts/Rajdhani-Medium.ttf
           - asset: assets/fonts/Rajdhani-Bold.ttf
-            weight: 700
 
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic

@@ -128,6 +128,7 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
                   child: TabBar(
                     controller: _tabController,
                     indicatorColor: AppColors().primary,
+                    labelStyle: EstiloRajdhani.tabbar,
                     tabs: [
                       Tab(text: Translation(context).text.timeline),
                       Tab(text: Translation(context).text.players),

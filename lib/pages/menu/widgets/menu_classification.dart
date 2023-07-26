@@ -1,6 +1,7 @@
 import 'package:fifa/classes/classification.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/functions/emoji.dart';
+import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/theme/colors.dart';
@@ -14,19 +15,25 @@ Widget wMenuClassification(BuildContext context, My myClass){
 
   return Container(
     color: AppColors().greyTransparent,
+    width: Sized(context).width*0.6,
     padding: const EdgeInsets.all(4),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('${Translation(context).text.expectation}: ' + myClass.getLastYearExpectativa().toString()+'º',
-                style: EstiloTextoBranco.text16
+            Row(
+              children: [
+                Text('${Translation(context).text.expectation}: ',style: EstiloRajdhani.listtext),
+                Text(myClass.getLastYearExpectativa().toString()+'º',style: EstiloRajdhani.listtitle),
+            ],
             ),
-            Text("   " + getMyEmoji(myClass),style: EstiloTextoBranco.negrito18),
+            Text(getMyEmoji(myClass),style: EstiloRajdhani.listtitle),
           ],
         ),
+        const SizedBox(height: 8),
         classification3(myClass.clubID, myClass.leagueID),
       ],
     ),
@@ -60,11 +67,12 @@ Widget rowClassification(int position, Club club,  myClass){
         child: Row(
           children: [
             numberCircle(position, 24),
-            SizedBox(width:22,child: Center(child: Text(club.leaguePoints.toString(),style: EstiloTextoBranco.negrito14))),
+            SizedBox(width:22,child: Center(child: Text(club.leaguePoints.toString(),style: EstiloRajdhani.listtitle))),
             Images().getEscudoWidget(club.name,20,20),
+            const SizedBox(width: 4),
             SizedBox(
                 width:100,
-                child: Text(club.name,style: EstiloTextoBranco.text12,)),
+                child: Text(club.name,style: EstiloRajdhani.medium)),
           ],
         ),
       ),

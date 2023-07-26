@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
 Widget backButton(BuildContext context){
   return IconButton(
           onPressed: (){Navigator.pop(context);},
-          icon: const Icon(Icons.arrow_back_ios,color: Colors.white,size: 30));
+          icon: const Icon(Icons.arrow_back_ios,color: Colors.white,size: 30)
+  );
 }
 
 Widget backButtonText(BuildContext context, String text, [bool hasColor=false]){
@@ -20,7 +21,7 @@ Widget backButtonText(BuildContext context, String text, [bool hasColor=false]){
       children: [
         const SizedBox(width: 8),
         backButton(context),
-        Text(text,style: EstiloTextoBranco.text22),
+        Text(text,style: EstiloRajdhani.text22),
       ],
     ),
   );

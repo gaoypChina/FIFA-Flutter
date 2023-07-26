@@ -96,6 +96,7 @@ class _TableInternationalState extends State<TableInternational>  with TickerPro
                         controller: _tabController,
                         indicatorColor: AppColors().green,
                         unselectedLabelColor: Colors.white54,
+                        labelStyle: EstiloRajdhani.tabbar,
                         tabs: [
                           Tab(text: Translation(context).text.classification),
                           Tab(text: Translation(context).text.matchs),
@@ -194,7 +195,7 @@ class _TableInternationalState extends State<TableInternational>  with TickerPro
           const Text(' GM ',style: EstiloTextoCinza.text16),
           const Text(' GS ',style: EstiloTextoCinza.text16),
           const Text(' SG ',style: EstiloTextoCinza.text16),
-          const Text('OVR ',style: EstiloTextoCinza.text16),
+          const Text(' OVR ',style: EstiloTextoCinza.text16),
         ],
       ),
     );
@@ -235,13 +236,13 @@ class _TableInternationalState extends State<TableInternational>  with TickerPro
               Row(
                 children: [
                   numberCircle(position, 30),
+                  const SizedBox(width: 4),
                   Images().getEscudoWidget(clubClass.name,26,26),
                   const SizedBox(width: 4),
                 ],
               )
             ],
           ),
-          const SizedBox(width: 4),
           GestureDetector(
             onTap: (){
               clickClubProfilePage(context,clubClass);
@@ -258,7 +259,7 @@ class _TableInternationalState extends State<TableInternational>  with TickerPro
           SizedBox(width: 30, child: Center(child: Text(golsMarcados.toString(),style: textStyle))),
           SizedBox(width: 30, child: Center(child: Text(golsSofridos.toString(),style: textStyle))),
           SizedBox(width: 30, child: Center(child: Text(saldo.toString(),style: textStyle))),
-          Text(overall.toStringAsFixed(2),style: textStyle),
+          SizedBox(width: 32, child: Text(overall.toStringAsFixed(2),style: textStyle)),
 
         ],
       ),

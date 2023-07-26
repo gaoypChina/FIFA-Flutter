@@ -621,11 +621,11 @@ class _TransfersState extends State<Transfers> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(player.name, style: TextStyle(color: nameColor,fontFamily: 'Roboto',fontSize: 16,)),
+                Text(player.name, style: TextStyle(color: nameColor,fontFamily: 'Rajdhani',fontSize: 16,)),
                 Row(
                   children: [
                     funcFlagsList(player.nationality, 7, 10),
-                    Text(player.nationality, style: TextStyle(color: nameColor,fontFamily: 'Roboto',fontSize: 10,)),
+                    Text(player.nationality, style: TextStyle(color: nameColor,fontFamily: 'Rajdhani',fontSize: 10,)),
                   ],
                 ),
               ],
@@ -697,11 +697,11 @@ class _TransfersState extends State<Transfers> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(player.name, style: TextStyle(color: nameColor,fontFamily: 'Roboto',fontSize: 16,)),
+                Text(player.name, style: TextStyle(color: nameColor,fontFamily: 'Rajdhani',fontSize: 16,)),
                 Row(
                   children: [
                     funcFlagsList(player.nationality, 7, 10),
-                    Text(player.nationality, style: TextStyle(color: nameColor,fontFamily: 'Roboto',fontSize: 10,)),
+                    Text(player.nationality, style: TextStyle(color: nameColor,fontFamily: 'Rajdhani',fontSize: 10,)),
                   ],
                 ),
               ],

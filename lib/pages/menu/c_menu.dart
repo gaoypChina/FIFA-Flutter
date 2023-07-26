@@ -149,18 +149,12 @@ class _MenuState extends State<Menu> {
 
                       Expanded(
                         child: SingleChildScrollView(
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-
-                              //wMenuCalendarIcon(context, semana, adversario),
-                              //wLast5Matchs(context),
-                              wMenuClassification(context, myClass),
-
-                          ]),
+                          child: wMenuClassification(context, myClass),
                         ),
                       ),
+                      //wMenuCalendarIcon(context, semana, adversario),
+                      //wLast5Matchs(context),
+
 
 
                       Container(

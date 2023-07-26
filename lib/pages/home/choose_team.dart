@@ -106,11 +106,11 @@ class _ChooseTeamState extends State<ChooseTeam> {
 
                   backButtonText(context,'Create new carrer'),
 
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 8),
 
                   title(),
 
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 8),
 
                   ////////////
                   //PAIS
@@ -211,12 +211,12 @@ class _ChooseTeamState extends State<ChooseTeam> {
                   ),
 
 
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 24),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: continueButton(),
                   ),
-                  const SizedBox(height: 28),
+                  const SizedBox(height: 24),
 
                   wHomeBottomRowButtons(context, clubID),
 
@@ -289,7 +289,7 @@ class _ChooseTeamState extends State<ChooseTeam> {
         //LOGO CAMPEONATO
         Image.asset(FIFAImages().campeonatoLogo(leagueName),height: 160,width: 160),
         const SizedBox(height: 8),
-        Text(leagueName,style:EstiloTextoBranco.text16),
+        Text(leagueName,style:EstiloRajdhani.bold22),
       ],
     );
   }

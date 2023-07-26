@@ -14,7 +14,7 @@ Widget numberCircle(int value, double size){
       backgroundColor: Colors.transparent,
       child: Text(
         (value).toString()+"º",
-        style: EstiloTextoBranco.text14,
+        style: EstiloRajdhani.medium,
       ),
     ),
   );

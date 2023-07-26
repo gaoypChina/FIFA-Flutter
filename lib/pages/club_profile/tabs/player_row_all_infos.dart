@@ -77,7 +77,7 @@ class PlayerRowAllInfos extends StatelessWidget {
       },
       child: Text(player.name, style: TextStyle(
         color: nameColor,
-        fontFamily: 'Roboto',
+        fontFamily: 'Rajdhani',
         fontSize: 16,
       )),
     );

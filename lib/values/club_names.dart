@@ -5193,7 +5193,7 @@ class ClubName{
   String essetif = "ES Sétif";
   String esmbelabbes = "ESM Bel-Abbès";
   String esmguelma = "ESM Guelma";
-  String gcrmascara = "GCR Mascara";
+  String mascara = "GCR Mascara";
   String chelghoumlaid = "Chelghoum Laïd";
   String hamraannaba = "Hamra Annaba";
   String irsaha = "IR Saha";
@@ -5525,12 +5525,12 @@ class ClubName{
   String zilimadjou  = "Zilimadjou";
   //CONGO
   String aspolice = "AS police";
-  String caraBrazaville = "Cara Brazzaville";
+  String carabrazaville = "Cara Brazzaville";
   String cheminots = "AS Cheminots";
-  String diablesNoirs = "Diables Noirs";
+  String diablesnoirs = "Diables Noirs";
   String etoilecongo = "Étoile du Congo";
   String kotoko = "Kotoko MFOA";
-  String interclub = "Inter Club Brazzville";
+  String interclub = "Inter Club Brazzaville";
   String lamancha = "La Mancha";
   String leopardsCON = "AC Léopards";
   String mokanda = "Vita Club Mokanda";
@@ -5661,9 +5661,10 @@ class ClubName{
   //KHENYA
   String bandare = "Bandare";
   String feisal = "Feisal";
-  String gorMahia = "Gor Mahia";
+  String gormahia = "Gor Mahia";
   String kakamega = "Kakamega Homeboyz";
   String leopardsQUE = "Leopards";
+  String luounion = "Luo Union";
   String mathare = "Mathare United";
   String nakuru = "Nakuru";
   String oserian = "Oserian";
@@ -5828,6 +5829,7 @@ class ClubName{
   String shootingstars = "Shooting Stars";
   String sunshinestars = "Sunshine Stars";
   String udoji = "Udoji United";
+  String watercorporation = "Water Corporation";
   String warriwolves = "Warri Wolves";
   String wikki = "Wikki Tourist";
   //RWANDA
@@ -5849,6 +5851,7 @@ class ClubName{
   String ndiambour = "Ndiambour";
   String ouakam = "Ouakam";
   String pikine = "Pikine";
+  String policeSEN = "ASF Police";
   String portautonome = "UCST Port Autonome";
   String suneor = "ASC SUNEOR";
   String teungueth = "Teungueth";
@@ -5933,9 +5936,11 @@ class ClubName{
   String togolais = "Dynamic Togolais";
   String togoport = "Togo-Port";
   //UGANDA
+  String coffeutd = "Coffee United";
   String express = "Express FC";
   String kampala = "Kampala Capital City";
   String nilebreweries = "Nile Breweries";
+  String maroons = "Maroons";
   String uganda = "Uganda Revenue Authority SC";
   String villa = "Villa";
   String vipers = "Vipers SC";

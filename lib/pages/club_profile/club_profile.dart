@@ -155,6 +155,7 @@ class _ClubProfileState extends State<ClubProfile> with TickerProviderStateMixin
                         unselectedLabelColor: Colors.white54,
                         labelColor: clubClass.colors.secondColor,
                         indicatorColor: clubClass.colors.secondColor,
+                        labelStyle: EstiloRajdhani.tabbar,
                         tabs: [
                           Tab(text: Translation(context).text.cast),
                           Tab(text: Translation(context).text.allInfos),

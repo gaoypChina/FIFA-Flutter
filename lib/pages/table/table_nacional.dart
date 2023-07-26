@@ -163,6 +163,7 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
                       child: TabBar(
                         indicatorColor: AppColors().green,
                         controller: _tabController,
+                        labelStyle: EstiloRajdhani.tabbar,
                         tabs: const [
                           Tab(text: "Tabela"),
                           Tab(text: "Estatísticas"),

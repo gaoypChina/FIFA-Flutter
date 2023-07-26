@@ -17,6 +17,7 @@ import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/back_button.dart';
+import 'package:fifa/widgets/number_circle.dart';
 import 'package:flutter/material.dart';
 import 'package:draggable_scrollbar/draggable_scrollbar.dart';
 import '../../classes/countries/countries_continents.dart';
@@ -93,6 +94,7 @@ class _RankingClubsPageState extends State<RankingClubsPage> with TickerProvider
                       color: appBarMyClubColor(),
                       child: TabBar(
                         indicatorColor: AppColors().green,
+                        labelStyle: EstiloRajdhani.tabbar,
                         controller: _tabController,
                         tabs: [
                           Tab(text: Translation(context).text.rankingGlobalClubs),
@@ -236,22 +238,19 @@ Widget rowClub(int ranking, Club club){
         padding: const EdgeInsets.symmetric(vertical: 8.0),
         child: Row(
           children: [
-            Container(
-                width:35,
-                padding: const EdgeInsets.only(left: 4.0),
-                child: Text((ranking+1).toString()+'º',textAlign:TextAlign.center,style: EstiloTextoBranco.text14)
-            ),
+            const SizedBox(width: 4),
+            numberCircle(ranking+1, 35),
             const SizedBox(width: 8),
             funcFlagsList(ClubDetails().getCountry(club.name), 15, 22),
             const SizedBox(width: 4),
             Images().getEscudoWidget(club.name,32,32),
             const SizedBox(width: 8),
             Expanded(
-              child: Text(club.name,style: EstiloTextoBranco.text16),
+              child: Text(club.name,style: EstiloRajdhani.listtext),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 6.0,right: 28),
-              child: Text(overall.toStringAsFixed(2),style: EstiloTextoBranco.negrito16),
+              child: Text(overall.toStringAsFixed(2),style: EstiloRajdhani.listtitle),
             ),
           ],
         ),
@@ -305,12 +304,13 @@ Widget rowClub(int ranking, Club club){
         ),
         child: Row(
           children: [
-            Image.asset(FIFAImages().campeonatoLogo(leagueName),width: 50,height: 50,),
             const SizedBox(width: 8),
-            Text(leagueName,style: EstiloTextoBranco.text16),
+            Image.asset(FIFAImages().campeonatoLogo(leagueName),width: 50,height: 50,),
+            const SizedBox(width: 16),
+            Text(leagueName,style: EstiloRajdhani.listtext),
             const Spacer(),
-            Text(listLeagues[leagueName]!.toStringAsFixed(2),style: EstiloTextoBranco.negrito16),
-            const SizedBox(width: 30),
+            Text(listLeagues[leagueName]!.toStringAsFixed(2),style: EstiloRajdhani.listtitle),
+            const SizedBox(width: 16),
           ],
         ),
       ),

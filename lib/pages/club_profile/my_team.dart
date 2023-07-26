@@ -71,6 +71,7 @@ class _MyTeamState extends State<MyTeam> {
                         unselectedLabelColor: Colors.white54,
                         labelColor: myClub.colors.secondColor,
                         indicatorColor: myClub.colors.secondColor,
+                        labelStyle: EstiloRajdhani.tabbar,
                         tabs: [
                           Tab(text: Translation(context).text.cast),
                           Tab(text: Translation(context).text.allInfos),

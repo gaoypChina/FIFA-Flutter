@@ -158,7 +158,7 @@ Widget insideButton(String title, Club club, Function() function){
         ),
         borderRadius: const BorderRadius.all(Radius.circular(10.0)),
       ),
-      child: Text(title,textAlign:TextAlign.center,style: EstiloTextoBranco.text20),
+      child: Text(title,textAlign:TextAlign.center,style: EstiloRajdhani.menubuttons),
     ),
   );
 }

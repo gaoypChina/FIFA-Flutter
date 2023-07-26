@@ -19,22 +19,51 @@ Widget wHomeHeader(BuildContext context, My myClass, Club myClub){
       Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(width:180,child: Text(myClass.clubName,textAlign: TextAlign.center,style: EstiloTextoBranco.negrito22)),
-          Text('${Translation(context).text.year}: ${Semana(semana).realDate} ${Translation(context).text.week}: '+ semana.toString(),style: EstiloTextoBranco.negrito14),
+          SizedBox(width:180,child: Text(myClass.clubName,textAlign: TextAlign.center,style: EstiloRajdhani.bold22)),
+          Text('${Translation(context).text.year}: ${Semana(semana).realDate}',style: EstiloTextoBranco.text12),
+          Text('${Translation(context).text.week}: '+ semana.toString(),style: EstiloTextoBranco.text12),
           const SizedBox(height: 8),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-                Text('${Translation(context).text.money}: ',style: EstiloTextoBranco.text14),
-              Text('\$'+ myClass.money.toStringAsFixed(2)+'mi',style: EstiloTextoBranco.negrito16),
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      const Icon(Icons.monetization_on_outlined, color: Colors.white, size: 16),
+                      Text(Translation(context).text.money,style: EstiloRajdhani.medium),
+                    ],
+                  ),
+                  Text('\$'+ myClass.money.toStringAsFixed(2)+'mi',style: EstiloRajdhani.listtitle),
+                ],
+              ),
+              const SizedBox(width: 8),
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      const Icon(Icons.star, color: Colors.white, size: 16),
+                      Text(Translation(context).text.ovr3,style: EstiloRajdhani.medium),
+                    ],
+                  ),
+                  Text(Club(index: myClass.clubID).getOverall().toStringAsFixed(2), style: EstiloRajdhani.listtitle),
+                ],
+              ),
+              const SizedBox(width: 8),
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      const Icon(Icons.leaderboard_outlined, color: Colors.white, size: 16),
+                      Text(Translation(context).text.difficulty,style: EstiloRajdhani.medium),
+                    ],
+                  ),
+                  Text(DificuldadeClass().getNameTranslated(context), style: EstiloRajdhani.listtitle),
+                ],
+              ),
             ],
           ),
-          Row(
-            children: [
-              Text('${Translation(context).text.ovr3}: ',style: EstiloTextoBranco.text14),
-              Text(Club(index: myClass.clubID).getOverall().toStringAsFixed(2), style: EstiloTextoBranco.negrito18),
-            ],
-          ),
-          Text('${Translation(context).text.difficulty}: '+DificuldadeClass().getNameTranslated(context),style: EstiloTextoBranco.text14),
+
         ],
       ),
 

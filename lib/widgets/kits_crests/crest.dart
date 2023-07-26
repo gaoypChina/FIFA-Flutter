@@ -49,7 +49,7 @@ class CrestWidgets{
       child: Center(
           child: Text(clubName[0],
               style: TextStyle(
-                fontFamily: 'Roboto',
+                fontFamily: 'Rajdhani',
                 color: clubColors.secondColor,
                 fontSize: _height*0.6,
               ))),
@@ -67,7 +67,7 @@ class CrestWidgets{
           child: Center(
               child: Text(clubName[0],
               style: TextStyle(
-                fontFamily: 'Roboto',
+                fontFamily: 'Rajdhani',
                 color: clubColors.secondColor,
                 fontSize: _height*0.6,
               ))),

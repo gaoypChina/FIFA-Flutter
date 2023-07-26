@@ -60,6 +60,7 @@ class _LeaguesConfigurationState extends State<LeaguesConfiguration> with Ticker
                       child: TabBar(
                         controller: controller.tabController,
                         indicatorColor: AppColors().green,
+                        labelStyle: EstiloRajdhani.tabbar,
                         tabs: const [
                           Tab(text: 'nºtimes/nº rebaixados'),
                           Tab(text: 'Internacional'),
