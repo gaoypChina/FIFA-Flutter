@@ -189,6 +189,12 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   Widget yearRow(int year){
     int nRows = nTeamsSelected;
 
+    try{
+      leaguesIndexFromName[chosenLeagueName];
+    }catch(e){
+      return Container();
+    }
+
     League league = League(index: leaguesIndexFromName[chosenLeagueName]);
     results = mapChampions(league.name);
     if(league.nClubs < nTeamsSelected){
@@ -444,9 +450,12 @@ class _HistoricLeagueState extends State<HistoricLeague> {
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Text("Best Clubs", style: EstiloTextoBranco.negrito16),
-                Text("1º  2º  3º  4º  5º 6º  7º  8º 9º 10º ", style: EstiloTextoBranco.negrito14),
+              children: [
+                const Text("Best Clubs", style: EstiloTextoBranco.negrito16),
+                Spacer(),
+                for (int i=1;i<=10;i++)
+                  SizedBox(width:19.3,child: Text(i.toString()+"º",style: EstiloTextoBranco.negrito14)),
+                SizedBox(width: 8),
               ],
             ),
             Expanded(

@@ -4,6 +4,7 @@ import 'package:fifa/pages/negotiation/negotiation_class.dart';
 import 'package:fifa/pages/negotiation/negotiation_offer.dart';
 import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/colors.dart';
+import 'package:fifa/theme/decoration/black_decoration.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/widgets/button/back_button.dart';
@@ -111,7 +112,7 @@ Widget negotiationRow(Jogador player, int startNegotiationWeek){
             }
         },
         child: Container(
-          padding: const EdgeInsets.all(4),
+          padding: const EdgeInsets.all(8),
           child: Row(
             children: [
               Stack(
@@ -128,10 +129,15 @@ Widget negotiationRow(Jogador player, int startNegotiationWeek){
                     ),
                   ),
                   //OVR
-                  Text(player.overall.toString(), style: EstiloTextoBranco.negrito22),
+                  Container(
+                      padding: const EdgeInsets.only(top:40),
+                      child: Container(
+                          decoration: blackDecoration(),
+                          child: Text(player.overall.toString(), style: EstiloTextoBranco.negrito22))
+                  ),
                   //POSITION
                   Padding(
-                    padding: const EdgeInsets.only(top:50,left:35),
+                    padding: const EdgeInsets.only(top:50,left:45),
                     child: positionContainer(player.position)
                   )
                 ],
@@ -143,24 +149,19 @@ Widget negotiationRow(Jogador player, int startNegotiationWeek){
                   children: [
                     Row(
                       children: [
-                        Expanded(child: Text(player.name, overflow: TextOverflow.fade, style: EstiloTextoBranco.negrito16)),
+                        Expanded(
+                            child: Text(player.name, overflow: TextOverflow.fade, style: EstiloTextoBranco.negrito20)),
 
                       ],
                     ),
 
                     Row(
                       children: [
-                        Column(
-                          children: [
-                            Text("Valor: \$"+player.price.toStringAsFixed(3)+'mi',style: EstiloTextoBranco.text10),
-                            Text("Salário: \$"+player.salaryK.toStringAsFixed(3)+'k',style: EstiloTextoBranco.text10),
-                          ],
-                        ),
                         const Icon(Icons.compare_arrows, color: Colors.white, size: 30),
                         Column(
                           children: [
-                            Text("\$"+Negotiation().getPrice(playerID).toStringAsFixed(3)+'mi',style: EstiloTextoBranco.text12),
-                            Text("\$"+Negotiation().getSalary(playerID).toStringAsFixed(3)+'k',style: EstiloTextoBranco.text12),
+                            Text("\$"+Negotiation().getPrice(playerID).toStringAsFixed(2)+' mi',style: EstiloTextoBranco.text12),
+                            Text("\$"+Negotiation().getSalary(playerID).toStringAsFixed(3)+' k',style: EstiloTextoBranco.text12),
                           ],
                         ),
                         const SizedBox(width: 8),

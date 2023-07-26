@@ -187,7 +187,7 @@ Widget box(String text, Widget centralWidget, Function function){
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               centralWidget,
-              Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.negrito16),
+              Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.text20),
             ],
           ),
         ),

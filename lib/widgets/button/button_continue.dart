@@ -22,7 +22,7 @@ customButtonContinue({required String title, required Function()? function}) {
           children: [
             Text(
               title,
-              style: EstiloTextoBranco.text22,
+              style: EstiloTextoBranco.negrito22,
             ),
           ],
         ),

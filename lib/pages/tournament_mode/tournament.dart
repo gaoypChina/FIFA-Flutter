@@ -318,7 +318,7 @@ Widget clubLogoAndKitStack(int selection, Club club, int posicaoPais){
   int indexLeague = leaguesListRealIndex[posicaoPais];
   double imageSize = 130;
   return  Container(
-    height: 170,
+    height: 172,
     width: Sized(context).width,
     color: AppColors().greyTransparent,
     padding: const EdgeInsets.all(4),

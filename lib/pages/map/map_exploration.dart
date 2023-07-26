@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/data_graphics.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/countries/words.dart';
@@ -285,13 +286,13 @@ class _MapExplorationState extends State<MapExploration> {
 
       try{
         Club club = Club(index: clubsAllNameList.indexOf(clubName));
-        Future.delayed(const Duration(seconds: 3), () {
+        Future.delayed(const Duration(seconds: 5), () {
           Navigator.pop(c);
         });
         return bottomSheetClub(club,city);
       }catch(e){
         //Se o clube não é jogavel
-        Future.delayed(const Duration(seconds: 3), () {
+        Future.delayed(const Duration(seconds: 5), () {
           Navigator.pop(c);
         });
         return bottomSheetGenericClub(clubName,city);
@@ -301,6 +302,9 @@ class _MapExplorationState extends State<MapExploration> {
   }
 
   Widget bottomSheetClub(Club club, String city) {
+
+    DataGraphics dataGraphics = DataGraphics();
+    dataGraphics.getDataNotPlayabale(club.name, ClubDetails().getCountry(club.name), ClubDetails().getState(club.name));
 
     return GestureDetector(
       onTap: () async{
@@ -324,12 +328,28 @@ class _MapExplorationState extends State<MapExploration> {
                 Text(clubDetails.getStadiumCapacity(club.name).toString()),
                 const Spacer(),
                 funcFlagsList(clubDetails.getCountry(club.name), 15, 25),
+                dataGraphics.nTitulos > 0 ? Container(
+                  height: 32,
+                  width: 30,
+                  child: Stack(
+                    children: [
+                      const Opacity(opacity:0.7, child: Icon(Icons.star,color: Colors.amber,size: 30)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Center(child: Text(dataGraphics.nTitulos.toString(),style: EstiloTextoBranco.negrito14)),
+                        ],
+                      ),
+                    ],
+                  ),
+                ) : Container(),
               ],
             ),
             Row(
               children: [
-                Images().getEscudoWidget(club.name,25,25),
-                Text(club.name,style: EstiloTextoPreto.text20,),
+                Images().getEscudoWidget(club.name,50,50),
+                Images().getUniformWidget(club.name, 50, 50),
+                Text(club.name,style: EstiloTextoPreto.negrito20,),
               ],
             ),
             Row(
@@ -347,6 +367,10 @@ class _MapExplorationState extends State<MapExploration> {
   }
 
   bottomSheetGenericClub(String clubName, String city){
+
+    DataGraphics dataGraphics = DataGraphics();
+    dataGraphics.getDataNotPlayabale(clubName, ClubDetails().getCountry(clubName), ClubDetails().getState(clubName));
+
     return GestureDetector(
       onTap: () {
         //Zoom
@@ -368,18 +392,36 @@ class _MapExplorationState extends State<MapExploration> {
                 Text(clubDetails.getStadiumCapacity(clubName).toString()),
                 const Spacer(),
                 funcFlagsList(clubDetails.getCountry(clubName), 15, 25),
+                dataGraphics.nTitulos > 0 ? Container(
+                  height: 32,
+                  width: 30,
+                  child: Stack(
+                    children: [
+                      const Opacity(opacity:0.7, child: Icon(Icons.star,color: Colors.amber,size: 30)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Center(child: Text(dataGraphics.nTitulos.toString(),style: EstiloTextoBranco.negrito14)),
+                        ],
+                      ),
+                    ],
+                  ),
+                ) : Container(),
               ],
             ),
             Row(
               children: [
                 Images().getEscudoWidget(clubName),
-                Text(clubName,style: EstiloTextoPreto.text20,),
+                Images().getUniformWidget(clubName, 50, 50),
+                const SizedBox(width: 8),
+                Text(clubName,style: EstiloTextoPreto.negrito20,),
                 const Spacer(),
                 Text(clubDetails.getFoundationYear(clubName).toString()),
               ],
             ),
 
             Text(city),
+
 
           ],
         ),
