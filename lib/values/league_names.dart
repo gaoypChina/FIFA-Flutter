@@ -672,6 +672,7 @@ Map getLeagueNationalityMap(){
     leagueName.jordania: Words.country.jordan,
     leagueName.kuwait: Words.country.kuwait,
     leagueName.libano: Words.country.lebanon,
+    leagueName.iemen: Words.country.yemen,
     leagueName.oman: Words.country.oman,
     leagueName.palestina: Words.country.palestine,
     leagueName.palestinagaza: Words.country.palestine,

@@ -313,7 +313,7 @@ class _FieldDraggableState extends State<FieldDraggable> {
                         opacity: 0.4,
                         child: Images().getMyUniform(height: imageSize-15,width: imageSize+15)
                     )
-                        : globalHasInternet 
+                        : globalHasInternet
                           ? Images().getPlayerPictureWidget(player, imageSize-15, imageSize-15)
                           : Images().getMyUniform(height: imageSize-15,width: imageSize+15),
                   ),
@@ -328,12 +328,14 @@ class _FieldDraggableState extends State<FieldDraggable> {
                   Container(
                     alignment: Alignment.bottomRight,
                     child: Container(
-                        padding: const EdgeInsets.all(3.0),
+                        height: 22,
+                        width: 22,
+                        padding: const EdgeInsets.symmetric(vertical: 2.0),
                         decoration: BoxDecoration(
                           color: colorBackground,
                           shape: BoxShape.circle,
                         ),
-                        child: Text(circleShow,style: EstiloTextoPreto.text14)),
+                        child: Center(child: Text(circleShow,style: EstiloTextoPreto.text14))),
                   ),
 
                   //POSIÇÃO

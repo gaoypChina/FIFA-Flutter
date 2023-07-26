@@ -99,7 +99,7 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
                   ),
                   const SizedBox(height: 6),
                   Container(
-                    height: 120,
+                    height: 122,
                     margin: const EdgeInsets.all(4),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,

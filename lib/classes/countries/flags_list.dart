@@ -256,6 +256,7 @@ Image funcFlagsList(String country, double _height, double _width){
   else if(country == Words.country.suriname){code = Image.asset('icons/flags/png/sr.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.taiwan){code = Image.asset('icons/flags/png/tw.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.timor){code = Image.asset('icons/flags/png/tl.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
+  else if(country == Words.country.tahiti){code = Image.asset('icons/flags/png/pf.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.tajikistan){code = Image.asset('icons/flags/png/tj.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.tanzania){code = Image.asset('icons/flags/png/tz.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}
   else if(country == Words.country.thailand){code = Image.asset('icons/flags/png/th.png', package: 'country_icons',fit: BoxFit.fill,width: _width,height: _height,);}

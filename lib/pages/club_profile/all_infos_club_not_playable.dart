@@ -171,13 +171,12 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
         children: [
           Column(
             children: [
-              Images().getEscudoWidget(widget.clubName,80,80),
-              starsWidgetFromOverall(clubdetails.getOverall(widget.clubName)),
+              Images().getEscudoWidget(widget.clubName,75,75),
+              starsWidgetFromOverall(clubdetails.getOverall(widget.clubName),20),
             ],
           ),
           Images().getUniformWidget(widget.clubName,100,100),
           SizedBox(
-            width: Sized(context).width*0.34,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -189,12 +188,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
                   ],
                 ),
                 Text(clubdetails.getFoundationYear(widget.clubName).toString(),style: EstiloTextoBranco.text16),
-                Row(
-                  children: [
-                    Expanded(child: Text(clubdetails.getStadium(widget.clubName),maxLines: 2, overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14)),
-                  ],
-                ),
-                Text(clubdetails.getStadiumCapacityPointFormat(widget.clubName),style: EstiloTextoBranco.text16),
+
               ],
             ),
           ),
@@ -247,7 +241,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
       child: Column(
           children: [
             Container(
-              height: 310,
+              height: 315,
               color: AppColors().greyTransparent,
               child: SingleChildScrollView(
                 child: Column(
@@ -493,9 +487,9 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
           for(int i = 1950; i<anoInicial;i+=10)
             Row(
               children: [
-                Text(i.toString(),style: EstiloTextoBranco.text14,),
+                Container(width:30, child: Text(i.toString(),style: EstiloTextoBranco.text14,)),
                 rowChampions(i,dataClassificationList),
-                Text((i+9).toString(),style: EstiloTextoBranco.text14,),
+                Container(width:30, child: Text((i+9).toString(),style: EstiloTextoBranco.text14,)),
               ],
             ),
         ],
@@ -527,9 +521,9 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
           const SizedBox(height: 8),
           const Text('Desempenho por ano',style: EstiloTextoBranco.negrito16,),
           const SizedBox(height: 8),
-          const Text('   ANO   EST         COPA         NAC           INT',style: EstiloTextoBranco.text16,),
+          const Text('   ANO     EST          COPA         NAC            INT',style: EstiloTextoBranco.text16,),
           SizedBox(
-            height: Sized(context).height-596,
+            height: Sized(context).height-616,
             child: ListView.builder(
                 padding: EdgeInsets.zero,
                 itemCount: (anoInicial - 1950).floor(),
@@ -556,7 +550,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
       child: Row(
         children: [
           const SizedBox(width: 10),
-          Text(year.floor().toString(),style: EstiloTextoBranco.text14,),
+          Container(width:30, child: Text(year.floor().toString(),style: EstiloTextoBranco.text14,)),
           const SizedBox(width: 10),
           positionColor(estadual,40),
           const SizedBox(width: 10),

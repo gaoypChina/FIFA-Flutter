@@ -118,7 +118,8 @@ class _TableMundialState extends State<TableMundial> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(year.toString()+': ',textAlign:TextAlign.center,style: EstiloTextoBranco.negrito18),
+          Text(year.toString(),textAlign:TextAlign.center,style: EstiloTextoBranco.negrito18),
+          const SizedBox(width: 16),
 
           funcFlagsList(ClubDetails().getCountry(clubName1), 15, 25),
           const SizedBox(width: 4),

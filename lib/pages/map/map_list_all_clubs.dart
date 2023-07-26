@@ -149,9 +149,9 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
 
                 //LOGO DE FUNDO OPACA
                 SizedBox(
-                  height: 100,width: 150,
+                  height: 108,width: 300,
                   child: Opacity(
-                    opacity: 0.2,
+                    opacity: 0.1,
                     child: AspectRatio(
                       aspectRatio: 350 / 451,
                       child: Container(
@@ -168,73 +168,88 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                 ),
 
 
-                Row(
-                  children: [
-                    Expanded(
-                      child: Column(
-                        children: [
-                          Row(
-                            children: [
-                              Images().getEscudoWidget(clubName,60,60),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 4),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.only(left: 16.0),
+                              child: Row(
+                                children: [
+                                  Column(
+                                    children: [
+                                      Images().getEscudoWidget(clubName,70,70),
+                                      const SizedBox(height: 4),
+                                      Padding(
+                                        padding: const EdgeInsets.only(left: 0.0),
+                                        child: starsWidgetFromOverall(clubDetails.getOverall(clubName),18.0),
+                                      ),
+                                    ],
+                                  ),
 
-                              const SizedBox(width: 12),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Row(
+                                  const SizedBox(width: 8),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Expanded(child: Text(clubName,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.negrito18)),
-                                      ],
-                                    ),
-                                    Row(
-                                      children: [
-                                        funcFlagsList(clubDetails.getCountry(clubName), 15, 25),
-                                        const SizedBox(width: 16),
-                                        Text(clubDetails.getFoundationYear(clubName).toString(),style: EstiloTextoBranco.text16),
-                                        const SizedBox(width: 16),
-                                        SizedBox(
-                                          height: 30,
-                                          width: 30,
-                                          child: dataGraphics.nTitulos > 0 ? Stack(
-                                            children: [
-                                              const Opacity(opacity:0.7, child: Icon(Icons.star,color: Colors.amber,size: 30)),
-                                              Center(child: Text(dataGraphics.nTitulos.toString(),style: EstiloTextoBranco.negrito14)),
-                                            ],
-                                          ) : Container(),
+                                        Row(
+                                          children: [
+                                            Expanded(child: Text(clubName,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.negrito20)),
+                                          ],
                                         ),
+                                        const SizedBox(height: 4),
+                                        Text(clubDetails.getFoundationYear(clubName).toString(),style: EstiloTextoBranco.text16),
+                                        Text(clubDetails.getStadium(clubName),maxLines: 2,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14),
+                                        Text('(${clubDetails.getStadiumCapacityPointFormat(clubName).toString()}) ',style: EstiloTextoBranco.text16),
 
                                       ],
                                     ),
+                                  ),
+                                ],
+                              ),
+                            ),
 
-                                    starsWidgetFromOverall(clubDetails.getOverall(clubName)),
 
-                                  ],
-                                ),
-                              )
-                            ],
-                          ),
 
-                          Row(
-                            children: [
-                              Text('(${clubDetails.getStadiumCapacityPointFormat(clubName).toString()}) ',style: EstiloTextoBranco.text16),
-                              Expanded(child: Text(clubDetails.getStadium(clubName),maxLines: 2,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14)),
-                            ],
-                          ),
-                        ],
+
+                          ],
+                        ),
                       ),
-                    ),
 
-                  ],
+                    ],
+                  ),
                 ),
 
 
                 //UNIFORME
                 Padding(
                     padding: const EdgeInsets.only(left:275,top: 10),
-                    child: Images().getUniformWidget(clubName, 80, 100)
+                    child: Images().getUniformWidget(clubName, 90, 110)
+                ),
+                Padding(
+                    padding: const EdgeInsets.only(left:340,top: 80),
+                    child: funcFlagsList(clubDetails.getCountry(clubName), 15, 25),
                 ),
 
+
+                SizedBox(
+                  height: 32,
+                  width: 30,
+                  child: dataGraphics.nTitulos > 0 ? Stack(
+                    children: [
+                      const Opacity(opacity:0.7, child: Icon(Icons.star,color: Colors.amber,size: 30)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Center(child: Text(dataGraphics.nTitulos.toString(),style: EstiloTextoBranco.negrito14)),
+                        ],
+                      ),
+                    ],
+                  ) : Container(),
+                ),
 
               ],
             ),
