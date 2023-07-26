@@ -221,12 +221,14 @@ class _StaticFieldState extends State<StaticField> {
                   Container(
                     alignment: Alignment.bottomRight,
                     child: Container(
-                          padding: const EdgeInsets.all(3.0),
+                        height: 22,
+                        width: 22,
+                        padding: const EdgeInsets.symmetric(vertical: 2.0),
                         decoration: BoxDecoration(
                           color: colorBackground,
                           shape: BoxShape.circle,
                         ),
-                          child: Text(circleShow,style: EstiloTextoPreto.text14)),
+                          child: Center(child: Text(circleShow,style: EstiloTextoPreto.text14))),
                     ),
 
 

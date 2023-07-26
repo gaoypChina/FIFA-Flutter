@@ -12,6 +12,7 @@ import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/widgets/button/back_button.dart';
+import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -120,13 +121,13 @@ class _MapExplorationState extends State<MapExploration> {
                   const Spacer(),
                   showTimeline ?
                       playTimeline ? Container(
-                    margin: const EdgeInsets.only(top:30.0),
-                    child: GestureDetector(
-                      onTap: (){
-                        playTimeline = false;
-                        setState((){});
-                      },
-                      child: const Icon(Icons.pause,size:35,color:Colors.white),
+                      margin: const EdgeInsets.only(top:30.0),
+                        child: GestureDetector(
+                        onTap: (){
+                          playTimeline = false;
+                          setState((){});
+                        },
+                        child: const Icon(Icons.pause,size:35,color:Colors.white),
                     ),
                   ) : Container(
                         margin: const EdgeInsets.only(top:30.0),
@@ -147,7 +148,9 @@ class _MapExplorationState extends State<MapExploration> {
                       children: [
 
                         //MOSTRAR ANO
-                        showTimeline ? Text(yearTimeline.toString(),style: EstiloTextoBranco.text14,) : Container(),
+                        showTimeline
+                            ? Text(yearTimeline.toString(),style: EstiloTextoBranco.text14,)
+                            : Container(),
 
                         //TIMELINE BUTTON
                         GestureDetector(
@@ -163,6 +166,7 @@ class _MapExplorationState extends State<MapExploration> {
                       ],
                     ),
                   ),
+                  const SizedBox(width: 8),
                   Container(
                     margin: const EdgeInsets.only(top:30.0),
                     child: GestureDetector(
@@ -248,7 +252,7 @@ class _MapExplorationState extends State<MapExploration> {
   }
 
   Widget buttonZoomOut(){
-    return GestureDetector(
+    return PressableButton(
       onTap: (){
         CameraUpdate zoom = CameraUpdate.zoomTo(5);
         controller.moveCamera(zoom);
@@ -263,7 +267,7 @@ class _MapExplorationState extends State<MapExploration> {
     );
   }
   Widget buttonZoomMedium(){
-    return GestureDetector(
+    return PressableButton(
       onTap: (){
         CameraUpdate zoom = CameraUpdate.zoomTo(8);
         controller.moveCamera(zoom);

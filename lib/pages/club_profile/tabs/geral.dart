@@ -110,7 +110,7 @@ class _ClubGeralInfosPageState extends State<ClubGeralInfosPage> {
     return SizedBox(
       height: 300,
       child: GoogleMap(
-        mapType: MapType.satellite,
+        mapType: MapType.hybrid,
         tiltGesturesEnabled: false,
         indoorViewEnabled: false,
         rotateGesturesEnabled: false,

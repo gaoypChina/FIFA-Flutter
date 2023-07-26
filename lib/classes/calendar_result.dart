@@ -27,14 +27,14 @@ class CalendarResult{
 
       show = resultGameInternational;
 
-    }else if(week.isJogoMundial){
-      MundialFinal mundial = MundialFinal();
-      show.fromMundial(semanaLocal, club, mundial);
     }else if(week.isJogoCopa){
       show.fromCopa(semanaLocal, club);
       if(show.hasAdversary && club.name == show.clubName2){
         show.invertTeams();
       }
+    }else if(week.isJogoMundial){
+      MundialFinal mundial = MundialFinal();
+      show.fromMundial(semanaLocal, club, mundial);
     }
     else{
       show.setDefault(semanaLocal);

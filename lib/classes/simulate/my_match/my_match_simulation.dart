@@ -81,7 +81,6 @@ class MyMatchSimulation{
   funcQuemfezgol(int clubMyorAdv){
 
     int quemfez = Goal().funcQuemfezgol();
-    
 
     //Procura o nome do jogador na lista de todos os jogadores e adiciona um gol pra ele
     late int playerID;
@@ -97,7 +96,10 @@ class MyMatchSimulation{
       globalLeaguePlayers[PlayerStatsKeys().keyPlayerGoals]![playerID]++;
     }else if(Semana(semana).isJogoCampeonatoInternacional){
       globalInternationalPlayers[PlayerStatsKeys().keyPlayerGoals]![playerID]++;
+    }else if(Semana(semana).isJogoCopa){
+      globalCupPlayers[PlayerStatsKeys().keyPlayerGoals]![playerID]++;
     }
+
     globalJogadoresMatchGoals[playerID]++;
     globalJogadoresCarrerGoals[playerID]++;
 
@@ -117,6 +119,8 @@ class MyMatchSimulation{
         globalLeaguePlayers[PlayerStatsKeys().keyPlayerAssists]![playerID]++;
       }else if(Semana(semana).isJogoCampeonatoInternacional){
         globalInternationalPlayers[PlayerStatsKeys().keyPlayerAssists]![playerID]++;
+      }else if(Semana(semana).isJogoCopa){
+        globalCupPlayers[PlayerStatsKeys().keyPlayerAssists]![playerID]++;
       }
       globalJogadoresMatchAssists[playerID]++;
       globalJogadoresCarrerAssists[playerID]++;

@@ -42,6 +42,9 @@ class ResultMatch {
     isAlreadyPlayed = false;
     hasAdversary = false;
     competitionName = LeagueOfficialNames().resto;
+    if(weekLocal < semana){
+      backgroundColor = Colors.black87;
+    }
   }
 
   void convertResultGames(dynamic show){
@@ -122,13 +125,14 @@ class ResultMatch {
       }
     }
 
-
-    if(week <= semanaMundial.first){
+    if(week < semana){
       isAlreadyPlayed = false;
+      backgroundColor = Colors.black87;
     }else{
       isAlreadyPlayed = true;
     }
-    if(isAlreadyPlayed){
+
+    if(hasAdversary){
       goal1 = mundialFinal.confronto.goal1;
       goal2 = mundialFinal.confronto.goal2;
       placar = goal1.toString() + ' x '+ goal2.toString();
@@ -149,6 +153,10 @@ class ResultMatch {
     competitionName = getCup(club.leagueName);
 
     Map match = CupClassification().getClubMatchMap(competitionName, week, club.name);
+
+    if(week < semana){
+      backgroundColor = Colors.black87;
+    }
 
     if(match.isNotEmpty){
       hasAdversary = true;
@@ -186,6 +194,7 @@ class ResultMatch {
         backgroundColor = colorResultBackground(goal1, goal2);
         isAlreadyPlayed = true;
       }
+
     }
 
     weekLocal = week;

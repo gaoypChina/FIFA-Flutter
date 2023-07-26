@@ -1,4 +1,5 @@
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/mata_mata/cup_classification.dart';
 import 'package:fifa/classes/mata_mata/knockout_international.dart';
 import 'package:fifa/classes/match/confronto.dart';
 import 'package:fifa/classes/match/result_dict.dart';
@@ -92,15 +93,33 @@ class CounterMatch extends ChangeNotifier{
       SaveMatchHistoric().setHistoricGoalsLeagueMy(myMatchSimulation);
     }else if(Semana(semana).isJogoGruposInternacional){
       SaveMatchHistoric().setHistoricGoalsGruposInternational(myClass.getMyInternationalLeague(), myClass.clubID, adversarioClubClass.index,myMatchSimulation.meuGolMarcado, myMatchSimulation.meuGolSofrido);
-    }else if(Semana(semana).isJogoGruposInternacional){
+    }else if(Semana(semana).isJogoMataMataInternacional){
       //SALVA O PLACAR
       String phaseName = KnockoutInternational().getPhaseKeyName(semana);
       String idaOrVoltaKey = KnockoutInternational().getIdaOrVoltaKey(phaseName, semana);
-      Map results = KnockoutInternational().getPhaseResults(myClass.getMyInternationalLeague(), phaseName, idaOrVoltaKey);
-      print(results);
-      globalInternationalMataMata[myClass.getMyInternationalLeague()]![phaseName][idaOrVoltaKey][5] = ResultDict().saveGoals(results, myMatchSimulation.meuGolMarcado, myMatchSimulation.meuGolSofrido);
+      Map matchsMap = KnockoutInternational().getPhaseResults(myClass.getMyInternationalLeague(), phaseName, idaOrVoltaKey);
+      int matchNumber = KnockoutInternational().getKeyNumberFromTeamName(matchsMap, myClass.clubName);
+      Map result = matchsMap[matchNumber];
+      if(result[ResultDict().keyTeamName1]==myClass.clubName){
+        result = ResultDict().saveGoals(result, myMatchSimulation.meuGolMarcado, myMatchSimulation.meuGolSofrido);
+      }else{
+        result = ResultDict().saveGoals(result, myMatchSimulation.meuGolSofrido, myMatchSimulation.meuGolMarcado);
+      }
+      globalInternationalMataMata[myClass.getMyInternationalLeague()]![phaseName][idaOrVoltaKey][matchNumber] = result;
     }else if(Semana(semana).isJogoCopa){
       //TODO SAVE PLAY RESULT COPA
+      String cupName = myClass.cupName;
+      String phaseName = CupClassification().getPhaseKeyName(semana);
+      String idaOrVoltaKey = CupClassification().getIdaOrVoltaKey(phaseName, semana);
+      Map matchsMap = CupClassification().getPhaseResults(cupName, phaseName, idaOrVoltaKey);
+      int matchNumber = CupClassification().getKeyNumberFromTeamName(matchsMap, myClass.clubName);
+      Map result = matchsMap[matchNumber];
+      if(result[ResultDict().keyTeamName1]==myClass.clubName){
+        result = ResultDict().saveGoals(result, myMatchSimulation.meuGolMarcado, myMatchSimulation.meuGolSofrido);
+      }else{
+        result = ResultDict().saveGoals(result, myMatchSimulation.meuGolSofrido, myMatchSimulation.meuGolMarcado);
+      }
+      globalCup[cupName]![phaseName][idaOrVoltaKey][matchNumber] = result;
     }
   }
 }

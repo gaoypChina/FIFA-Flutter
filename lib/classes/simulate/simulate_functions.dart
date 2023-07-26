@@ -113,7 +113,7 @@ class Simulate{
   void nationalMatchs(bool simulMyMatch){
       int myClubID = globalMyClubID;
       My my = My();
-      int myCampeonatoID = My().leagueID;
+      int myCampeonatoID = my.leagueID;
       for (int i = 0; i < leaguesListRealIndex.length; i++) {
         int leagueIndex = leaguesListRealIndex[i];
         League leagueSelected = League(index: leagueIndex);

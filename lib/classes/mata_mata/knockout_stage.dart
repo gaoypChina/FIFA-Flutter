@@ -23,6 +23,16 @@ class KnockoutStage{
     return [key128round, key64round, key32round, keyOitavas, keyQuartas, keySemifinal, keyFinal];
   }
 
+  int getKeyNumberFromTeamName(Map map, String teamName) {
+    for (var entry in map.entries) {
+      if (entry.value[ResultDict().keyTeamName1] == teamName
+          || entry.value[ResultDict().keyTeamName2] == teamName) {
+        return entry.key;
+      }
+    }
+    throw Exception('Team not found in the map.');
+  }
+
   void getPhaseResults(String competitionName, String phaseKeyName, String idaOrVoltaKey){
   }
 
