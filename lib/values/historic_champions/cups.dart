@@ -255,7 +255,7 @@ Map<String,dynamic> mapCopas = {
     2018.0: [n.psg,n.vendee,        n.caen,n.chamblyoise, n.strasbourg,n.om,n.lens,n.lyon,],
     2017.0: [n.psg,n.angers,        n.monaco,n.guingamp,  n.bordeaux,n.avranches,n.lille,n.frejus],
     2016.0: [n.psg,n.om,            n.lorient,n.sochaux,  n.gazelec,n.nantes,n.saintetienne,n.granville,],
-    2015.0: [n.psg,n.auxerre,       n.auxerre,n.guingamp, n.boulogne,n.monaco,n.brest,n.concarneau,],
+    2015.0: [n.psg,n.auxerre,       n.saintetienne,n.guingamp, n.boulogne,n.monaco,n.brest,n.concarneau,],
     2014.0: [n.guingamp,n.rennes,   n.monaco,n.angers,    n.moulins,n.cannes,n.lens,n.lille,],
     2013.0: [n.bordeaux,n.evian,    n.troyes,n.lorient,   n.nancy,n.saintetienne,n.psg,n.lens,],
     2012.0: [n.lyon,n.quevilly,    n.gazelec,n.rennes,    n.psg,n.valenciennes,n.montpellier,n.om, ],

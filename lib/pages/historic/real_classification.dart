@@ -104,14 +104,14 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
                 List classificationNames = mapChampions(chosenLeagueName)[ano-1];
                 bottomSheetShowLeagueClassification(context, classificationNames, chosenLeagueName, ano-1);
               },
-              child: const Icon(Icons.table_chart,color:Colors.white,size: 32),
+              child: const Icon(Icons.table_chart_outlined,color:Colors.white,size: 32),
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(top:20.0),
             child: IconButton(onPressed: (){
               navigatorPush(context, HistoricLeague(chosenLeagueName: chosenLeagueName));
-            }, icon: const Icon(Icons.open_in_browser,color: Colors.white,size: 32,)),
+            }, icon: const Icon(Icons.history_outlined,color: Colors.white,size: 32,)),
           ),
 
         ],

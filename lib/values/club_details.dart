@@ -2541,7 +2541,7 @@ class ClubDetails{
     map[n.jurmala] = [ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(56.9495508, 23.6100709),
       'Slokas Stadium',2500,2007,_country.latvia,58.6,[],{}];
     map[n.liepaja] = [ClubColors(Colors.red,Colors.white),pattern.stripes4,Coordinates(56.954951357, 24.1588003),
-      'Daugava Stadium',5083,2014,_country.latvia,61.3,[],{}];
+      'Daugava Stadium',5083,1949,_country.latvia,61.3,[],{}];
     map[n.mettalu] = [ClubColors(Colors.green,Colors.white),pattern.sleeves,Coordinates(0,0),
       'Daugava Stadium',10461,2006,_country.latvia,64.2,[],{}];
     map[n.rigafc] = [ClubColors(Colors.lightBlueAccent,Colors.white),pattern.solid,Coordinates(56.961413, 24.116308),
@@ -2669,7 +2669,7 @@ class ClubDetails{
     map[n.loksofia] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(42.737672, 23.314724),
       'Lokomotiv Stadium',22000,1929,_country.bulgaria,66.5,[],{}];
     map[n.ludogorets] = [ClubColors(darkgreen,Colors.black),pattern.solid,Coordinates(43.5344062, 26.5281217),
-      'Ludogorets Arena',12500,1940,_country.bulgaria,75.6,[],{}];
+      'Ludogorets Arena',12500,1945,_country.bulgaria,75.6,[],{}];
     map[n.minyorpernik] = [ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
       '',0,0,_country.bulgaria,50.0,[],{}];
     map[n.pirinblagoevgrad] = [ClubColors(darkgreen,Colors.white),pattern.solid,Coordinates(42.13986306666101, 24.76452971093658),
@@ -3954,6 +3954,8 @@ class ClubDetails{
       'Antônio David Farina',4720,1992,_country.brazil,50.0,[],{},_country.rs];
     map[n.uruguaiana] = [ClubColors(Colors.black,Colors.yellow),pattern.solid,Coordinates(0,0),
       'Felisberto Fagundes Filho',1500,1912,_country.brazil,50.0,[],{},_country.rs];
+    map[n.ypirangaRS] = [ClubColors(Colors.yellow,Colors.green),pattern.stripes2,Coordinates(-27.65131147, -52.26477924),
+      'Colosso da Lagoa',22000,1924,_country.brazil,50.0,[],{},_country.rs];
 //SC
     map[n.altovale] = [ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(0,0),
       'Alfredo João Krieck',8000,1960,_country.brazil,50.0,[],{},_country.sc];
@@ -4117,8 +4119,6 @@ class ClubDetails{
       'Antônio Lins Ribeiro Guimarães',14913,1914,_country.brazil,50.0,[],{},_country.sp];
     map[n.uniaoSaoJoao] = [ClubColors(darkgreen,Colors.white),pattern.solid,Coordinates(-22.3591769, -47.3406513),
       'Hermínio Ometto',16096,1981,_country.brazil,50.0,[],{},_country.sp];
-    map[n.ypirangaRS] = [ClubColors(Colors.yellow,Colors.green),pattern.stripes2,Coordinates(-27.65131147, -52.26477924),
-      'Colosso da Lagoa',22000,1924,_country.brazil,50.0,[],{},_country.rs];
     map[n.xvjau] = [ClubColors(Colors.green,Colors.yellow),pattern.solid,Coordinates(-22.296089, -48.57224110487209),
       'Zezinho Magalhães',12978,1924,_country.brazil,50.0,[],{},_country.sp];
     map[n.xvpiracicaba] = [ClubColors(Colors.black,Colors.white),pattern.horStripes2,Coordinates(-22.7294362, -47.636847),

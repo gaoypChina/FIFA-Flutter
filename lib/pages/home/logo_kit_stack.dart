@@ -1,7 +1,6 @@
 import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
 import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/widgets/stars.dart';

@@ -112,7 +112,7 @@ Widget matchBox(BuildContext context, String competitionName, String phaseKeyNam
   }
 
   return Container(
-    height: 85,
+    height: 89,
     width: 74,
     padding: const EdgeInsets.all(4),
     color: AppColors().greyTransparent,

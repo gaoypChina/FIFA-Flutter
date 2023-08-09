@@ -114,7 +114,7 @@ Widget matchBoxCup(BuildContext context, String cupName, String phaseKeyName, in
     hasData = false;
   }
     return Container(
-      height: 85,
+      height: 89,
       width: 74,
       padding: const EdgeInsets.all(4),
       color: AppColors().greyTransparent,

@@ -191,4 +191,6 @@ List<String> clubsAllNameList = [
 
   //outros
   clubName.galatics, clubName.legends,
+  clubName.arsenal03,
+  clubName.palmeiras99,
 ];

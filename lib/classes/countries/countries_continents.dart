@@ -186,6 +186,7 @@ class Continents{
       Words.country.sudan: africa,
       Words.country.suriname: americaNorte,
       Words.country.taiwan: asia,
+      Words.country.tahiti: oceania,
       Words.country.timor: oceania,
       Words.country.tajikistan: asia,
       Words.country.tanzania: africa,

@@ -194,4 +194,12 @@ Map<String,dynamic> mapOtherLeagues = {
     1961.0: [n.brasov,n.levskisofia,],
   },
 
+
+  leagueName.balticleague : {
+    2011.0: [n.skonto,n.ventspils,],
+    2010.0: [n.ventspils,n.suduva,],
+    2009.0: [],
+    2008.0: [n.fbkkaunas,n.skonto,],
+    2007.0: [n.liepaja,n.ventspils,],
+  },
 };

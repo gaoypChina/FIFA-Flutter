@@ -152,6 +152,26 @@ Map<String,dynamic> mapNorthAmerica = {
     1969.0: [n.kansasspurs,n.atlantachiefs,n.dallastornado,n.baltimorebays,n.stlouisstars],
   },
 
+  leagueName.canada : {
+    //2024.0: [],
+    2023.0: [n.vancouver,n.montreal,n.pacific,n.forge,     n.yorkutd,n.toronto,n.tssrovers,n.atlottawa,],
+    2022.0: [n.vancouver,n.toronto,n.yorkutd,n.montreal,],
+    2021.0: [n.montreal,n.toronto,n.forge,n.pacific,       n.halifax,n.yorkutd,n.valour,n.cavalry,],
+    2020.0: [n.toronto,n.forge,n.montreal,n.halifax,       n.vancouver,n.cavalry,n.pacific,],
+    2019.0: [n.montreal,n.toronto,n.cavalry,n.ottawa,      n.yorkutd,n.vancouver,n.halifax,],
+    2018.0: [n.toronto,n.vancouver,n.ottawa,n.montreal,],
+    2017.0: [n.toronto,n.montreal,n.ottawa,n.vancouver,],
+    2016.0: [n.toronto,n.vancouver,n.montreal,n.ottawa,],
+    2015.0: [n.vancouver,n.montreal,n.edmontonfc,n.toronto,],
+    2014.0: [n.montreal,n.toronto,n.edmontonfc,n.toronto,],
+    2013.0: [n.montreal,n.vancouver,n.toronto,n.edmontonfc,],
+    2012.0: [n.toronto,n.vancouver,n.montreal,n.edmontonfc,],
+    2011.0: [n.toronto,n.vancouver,n.edmontonfc,n.montreal,],
+    2010.0: [n.toronto,n.vancouver,n.montreal,],
+    2009.0: [n.toronto,n.vancouver,n.montreal,],
+    2008.0: [n.montreal,n.toronto,n.vancouver,],
+  },
+
   leagueName.bahamas : {
     //https://en.wikipedia.org/wiki/BFA_Senior_League
     //2024.0: [],

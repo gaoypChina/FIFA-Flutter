@@ -5,6 +5,12 @@ class ClubName{
   String galatics = "Galatics";
   String veterans = "Veterans";
 
+  String arsenal03 = "Arsenal 2003";
+  String palmeiras99 = "Palmeiras 1999";
+
+  /////////////
+  //Europe
+
   String arsenal = "Arsenal";
   String astonvilla = "Aston Villa";
   String chelsea = "Chelsea";
@@ -3951,9 +3957,16 @@ class ClubName{
   String washington = "Washington Diplomats"; //EXTINTO
 
   //CANANDA
+  String atlottawa = "Atletico Ottawa";
   String cavalry = "Cavalry";
+  String edmontonfc = "Edmonton FC";
   String forge = "Forge FC";
+  String halifax = "Halifax Wanderers";
+  String ottawa = "Ottawa Fury";
   String pacific = "Pacific";
+  String valour = "Valour";
+  String tssrovers = "TSS Rovers";
+  String yorkutd = "York United";
 
   //COSTA RICA
   String saprissa = "Saprissa";
@@ -4024,7 +4037,7 @@ class ClubName{
   String walterferreti = "Walter Ferreti";
   //PANAMA
   String chorrillo = "Chorrillo";
-  String independienteChorrera = "Independiente de La Chorrera";
+  String independienteChorrera = "Ind. de La Chorrera";
   String tauro = "Tauro-PAN";
   String arabeunido = "Árabe Unido";
   String alianzaPAN = "Alianza FC";

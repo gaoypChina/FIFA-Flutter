@@ -231,14 +231,13 @@ Widget playerWidgetMatch(int jogadorIndex){
             //Uniforme
             Container(
               margin: EdgeInsets.only(top: headSize-5),
+              alignment: Alignment.topCenter,
               child: (injury || redCard)
                     ? Opacity(
                         opacity: 0.4,
                         child: Images().getUniformWidget(jogadorClass.clubName,imageSize+12,imageSize)
                     )
-                : Container(
-                  alignment: Alignment.topCenter,
-                  child: Images().getUniformWidget(jogadorClass.clubName, imageSize+12,imageSize)),
+                : Images().getUniformWidget(jogadorClass.clubName, imageSize+12,imageSize),
             ),
 
             //GOL

@@ -9,14 +9,31 @@ class TransferParameters {
   int ascOrDescMoney = 0;
   String filteredPosition = '';
   String filteredCountry = '';
+  String filteredLeague = '';
+  String filteredTeam = '';
   int page = 0;
 
-  TextEditingController maxAge = TextEditingController();
-  TextEditingController minAge = TextEditingController();
-  TextEditingController maxOVR = TextEditingController();
-  TextEditingController minOVR = TextEditingController();
-  TextEditingController maxPrice = TextEditingController();
-  TextEditingController minPrice = TextEditingController();
+  FilterTransfersController ageControl = FilterTransfersController(title: "Age", values: const RangeValues(18, 50));
+  FilterTransfersController ovrControl = FilterTransfersController(title: "Overall", values: const RangeValues(30, 100));
+  FilterTransfersController priceControl = FilterTransfersController(title: "Price", values: const RangeValues(0, 400));
+
+}
+
+class FilterTransfersController{
+  late String title;
+  late RangeValues values;
+  late double min;
+  late double max;
+
+  FilterTransfersController({required this.title, required this.values}){
+    min = values.start;
+    max = values.end;
+  }
+
+  void updateValue(RangeValues newValues){
+    values = newValues;
+  }
+
 }
 
 class FilterPlayers{
@@ -185,23 +202,18 @@ class FilterPlayers{
     if (transferParameters.filteredCountry.isNotEmpty) {
       copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).nationality != transferParameters.filteredCountry);
     }
-    if (transferParameters.minAge.text.isNotEmpty) {
-      copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).age < int.parse(transferParameters.minAge.text));
-    }
-    if (transferParameters.maxAge.text.isNotEmpty) {
-      copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).age > int.parse(transferParameters.maxAge.text));
-    }
-    if (transferParameters.minPrice.text.isNotEmpty) {
-      copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).price < int.parse(transferParameters.minPrice.text));
-    }
-    if (transferParameters.maxPrice.text.isNotEmpty) {
-      copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).price > int.parse(transferParameters.maxPrice.text));
-    }
-    if (transferParameters.minOVR.text.isNotEmpty) {
-      copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).overall < int.parse(transferParameters.minOVR.text));
-    }
-    if (transferParameters.maxOVR.text.isNotEmpty) {
-      copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).overall > int.parse(transferParameters.maxOVR.text));
-    }
+
+    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).age < transferParameters.ageControl.min);
+
+    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).age > transferParameters.ageControl.max);
+
+    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).price < transferParameters.priceControl.min);
+
+    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).price > transferParameters.priceControl.max);
+
+    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).overall < transferParameters.ovrControl.min);
+
+    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).overall > transferParameters.ovrControl.max);
+
   }
 }

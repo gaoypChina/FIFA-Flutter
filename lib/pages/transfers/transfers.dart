@@ -21,10 +21,9 @@ import 'package:flutter/material.dart';
 
 import '../../classes/my.dart';
 
-
 class Transfers extends StatefulWidget {
-  //NECESSARY VARIABLES WHEN CALLING THIS CLASS
-  const Transfers({Key? key}) : super(key: key);
+  final TransferParameters transferParameters;
+  const Transfers({Key? key, required this.transferParameters}) : super(key: key);
   @override
   _TransfersState createState() => _TransfersState();
 }
@@ -55,8 +54,6 @@ class _TransfersState extends State<Transfers> {
   @override
   Widget build(BuildContext context) {
     double bottomSize = MediaQuery.of(context).viewInsets.bottom; //=0 SEM O TECLADO +-160 com o teclado
-
-
 
     showRows = 0;
     return Scaffold(
@@ -240,11 +237,7 @@ class _TransfersState extends State<Transfers> {
                                   return filterByPositionWidget();
                                 });
                           },
-                          child: Column(
-                            children: [
-                              Image.asset('assets/icons/assists.png',height: 40, width: 40),
-                            ],
-                          ),
+                          child: const Icon(Icons.games_outlined, size: 30, color: Colors.white),
                         ),
 
                         GestureDetector(
@@ -252,23 +245,26 @@ class _TransfersState extends State<Transfers> {
                             showModalBottomSheet(isScrollControlled: true,context: context,
                                 builder: (context) {return filterByCountry();});
                           },
-                          child: const Icon(Icons.flag, size: 35, color: Colors.white),
-                        ),
-
-                        const SizedBox(width: 20),
-                        GestureDetector(
-                          onTap: () {
-                            showModalBottomSheet(isScrollControlled: true,context: context,
-                                builder: (context) {return maxMinSelectionWidget();});
-                          },
-                          child: const Icon(Icons.filter_alt, size: 30, color: Colors.white),
+                          child: const Icon(Icons.flag_outlined, size: 35, color: Colors.white),
                         ),
 
                         GestureDetector(
                           onTap: () {
-                            navigatorPush(context, const FilterTransfersPage());
+                            Navigator.of(context).push(
+                                MaterialPageRoute(builder: (context) => FilterTransfersPage(transferParameters: filterPlayers.transferParameters))
+                            ).then((value) {
+                              filterPlayers.transferParameters = value;
+                              customToast("Filtering Players");
+                              print(value.ageControl.min);
+                              filterPlayers.filterByAge();
+                              filterPlayers.filterByCountry();
+                              filterPlayers.filterByOVR();
+                              filterPlayers.filterByPrice();
+                              filterPlayers.filterByPosition();
+                              setState((){});
+                            });
                           },
-                          child: const Icon(Icons.change_circle, size: 25, color: Colors.white),
+                          child: const Icon(Icons.change_circle_outlined, size: 30, color: Colors.white),
                         ),
 
 
@@ -364,134 +360,7 @@ class _TransfersState extends State<Transfers> {
     );
   }
 
- Widget maxMinSelectionWidget() {
-    return Container(
-      height: 280 + 240,
-      padding: const EdgeInsets.only(bottom: 240), //size of keyboard
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(Translation(context).text.filter, style: EstiloTextoPreto.text16),
-              ),
-              const SizedBox(height: 16),
-              Row(
-                children: [
-                  SizedBox(
-                    width: 100,
-                    child: Text(Translation(context).text.age.toUpperCase(), style: EstiloTextoPreto.text16),
-                  ),
-                  Column(
-                    children: [
-                      Text(Translation(context).text.min.toUpperCase(), style: EstiloTextoPreto.text14),
-                      widgetTextField(filterPlayers.transferParameters.minAge,autofocus:true),
-                    ],
-                  ),
-                  const SizedBox(width: 16),
-                  Column(
-                    children: [
-                      Text(Translation(context).text.max.toUpperCase(), style: EstiloTextoPreto.text14),
-                      widgetTextField(filterPlayers.transferParameters.maxAge),
-                    ],
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  SizedBox(
-                    width: 100,
-                      child: Text(Translation(context).text.overall.toUpperCase(), style: EstiloTextoPreto.text16),
-                  ),
-                  Column(
-                    children: [
-                      Text(Translation(context).text.min.toUpperCase(), style: EstiloTextoPreto.text14),
-                      widgetTextField(filterPlayers.transferParameters.minOVR),
-                    ],
-                  ),
-                  const SizedBox(width: 16),
-                  Column(
-                    children: [
-                      Text(Translation(context).text.max.toUpperCase(), style: EstiloTextoPreto.text14),
-                      widgetTextField(filterPlayers.transferParameters.maxOVR),
-                    ],
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  SizedBox(
-                    width: 100,
-                    child: Text(Translation(context).text.price.toUpperCase(), style: EstiloTextoPreto.text16),
-                  ),
-                  Column(
-                    children: [
-                      Text(Translation(context).text.min.toUpperCase(), style: EstiloTextoPreto.text14),
-                      widgetTextField(filterPlayers.transferParameters.minPrice),
-                    ],
-                  ),
-                  const SizedBox(width: 16),
-                  Column(
-                    children: [
-                      Text(Translation(context).text.max.toUpperCase(), style: EstiloTextoPreto.text14),
-                      widgetTextField(filterPlayers.transferParameters.maxPrice),
-                    ],
-                  ),
-                ],
-              ),
 
-              const Spacer(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  GestureDetector(
-                      onTap:(){
-                        filterPlayers.transferParameters.minAge=TextEditingController();
-                        filterPlayers.transferParameters.maxAge=TextEditingController();
-                        filterPlayers.transferParameters.minOVR=TextEditingController();
-                        filterPlayers.transferParameters.maxOVR=TextEditingController();
-                        filterPlayers.transferParameters.minPrice=TextEditingController();
-                        filterPlayers.transferParameters.maxPrice=TextEditingController();
-                        Navigator.pop(context);
-                        setState(() {});
-                      },
-                      child: Text(Translation(context).text.reset, style: EstiloTextoPreto.text16)),
-                  GestureDetector(
-                      onTap:(){
-                        filterPlayers.filterByPosition();
-                        setState(() {});
-                        Navigator.pop(context);
-                      },
-                      child: const Text('OK', style: EstiloTextoPreto.text16)),
-                ],
-              ),
-              const SizedBox(height: 20),
-            ]),
-      ),
-    );
-  }
-
-  Widget widgetTextField(TextEditingController controller,{bool autofocus = false}) {
-    return Container(
-      height: 30,
-      width: 50,
-      decoration: BoxDecoration(
-        border: Border.all(
-          width: 1.0,
-          color: Colors.grey,
-        ),
-      ),
-      margin: const EdgeInsets.only(left: 4),
-      child: TextField(
-        autofocus: autofocus,
-        textAlign: TextAlign.center,
-          controller: controller,
-          keyboardType: TextInputType.number,
-          decoration: const InputDecoration(border: InputBorder.none,),
-          ),
-    );
-  }
 
   Widget playersRowTitle1() {
     return Container(

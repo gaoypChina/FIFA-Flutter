@@ -242,7 +242,10 @@ Map clubNameMapImmutable = {
     4: clubName.sherifftiraspol, 5: clubName.arsenalsarandi,6: clubName.tigre,7: clubName.patronato,
     8:clubName.voltaredonda, 9:clubName.jorge, 10:clubName.saprissa,11:clubName.olimpiaHON,
     12:clubName.charlotte, 13:clubName.montreal, 14:clubName.toronto, 15:clubName.vancouver,
-    16:clubName.alshabab, 17:clubName.auckland, 18:clubName.legends, 19:clubName.galatics,
+    16:clubName.alshabab, 17:clubName.auckland,
+  },
+  LeagueOfficialNames().lendas : {
+    0:clubName.legends, 1:clubName.galatics, 2:clubName.palmeiras99, 3:clubName.arsenal03,
   },
 
 };

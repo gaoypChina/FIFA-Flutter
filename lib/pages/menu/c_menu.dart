@@ -15,6 +15,7 @@ import 'package:fifa/pages/menu/widgets/stadium_buttons.dart';
 import 'package:fifa/pages/ranking_clubs/ranking_clubs.dart';
 import 'package:fifa/pages/table/table_nacional.dart';
 import 'package:fifa/pages/table_international/main_tabs.dart';
+import 'package:fifa/pages/transfers/controller/filter_players.dart';
 import 'package:fifa/pages/transfers/transfers.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
@@ -138,7 +139,7 @@ class _MenuState extends State<Menu> {
                                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                                 children: [
                                   expandedButton(Translation(context).text.historic,club, const HistoricMenu()),
-                                  expandedButton(Translation(context).text.transfers,club, const Transfers()),
+                                  expandedButton(Translation(context).text.transfers,club, Transfers(transferParameters: TransferParameters())),
                                 ]),
 
 

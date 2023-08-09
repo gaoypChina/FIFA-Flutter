@@ -42,6 +42,7 @@ class FIFAImages{
     map[l.asia] = 'asia league';
     map[l.africa] = 'africa league';
     map[l.outros] = 'others';
+    map[l.lendas] = 'lendas';
 
     map[l.championsLeague] = 'international/champions';
     map[l.libertadores] = 'international/libertadores';
@@ -74,6 +75,7 @@ class FIFAImages{
     map[l.asiaCup] = 'cup/asia';
     map[l.africaCup] = 'cup/africa';
     map[l.othersCup] = 'cup/generic';
+    map[l.lendasCup] = 'cup/generic';
 
     map[l.latina] = 'rest';
     map[l.latina] = 'others/copa latina';

@@ -152,6 +152,7 @@ class LeagueOfficialNames{
   String etiopia = 'Liga Etiópia';
   String eritreia = 'Liga Eritréia';
   String gabao = 'Liga Gabão';
+  String gana = 'Liga Gana';
   String gambia = 'Liga Gambia';
   String guine = 'Liga Guiné';
   String lesoto = 'Liga Lesoto';
@@ -190,6 +191,7 @@ class LeagueOfficialNames{
   String timor = 'Liga Timor-Leste';
 
   String outros = 'Outros';
+  String lendas = 'Liga Lendas';
 
   //COPAS
   String englandCup = 'FA Cup';String italyCup = 'Coppa Italia';String spainCup = 'Copa del Rey';
@@ -206,6 +208,8 @@ class LeagueOfficialNames{
   String mexicoCup = 'Copa MX';String usaCup = 'MLS Cup';
   String asiaCup = 'Asia Cup';String africaCup = 'África Cup';
   String othersCup = 'Outros Cup';
+  String lendasCup = 'Lendas Cup';
+
 
   //SELEÇÕES
   String copamundo = "World Cup";
@@ -238,6 +242,7 @@ class LeagueOfficialNames{
   String intertoto = 'Copa Intertoto';
   String cupwinners = 'UEFA Cup Winners Cup';
   String palmamallorca = 'Troféu de Palma de Mallorca';
+  String balticleague = 'Baltic League';
 
 
 
@@ -358,7 +363,7 @@ List internationalLeagueNames = [
 //ID<50 -> Champions League
 //ID<70 -> Libertadores
 List leaguesListRealIndex = [
-  1,2,3,5,6, 7,8,  9,10,11,12,15,25,16, 20,21,    50,51,52,53, 60,61,62,   70,71,  80, 85, 90
+  1,2,3,5,6, 7,8,  9,10,11,12,15,25,16, 20,21,    50,51,52,53, 60,61,62,   70,71,  80, 85, 90, 91
 ];
 
 
@@ -390,7 +395,7 @@ List leagueNames = [
   LeagueOfficialNames().argentina,LeagueOfficialNames().mercosul,LeagueOfficialNames().colombia,
   LeagueOfficialNames().mexico,LeagueOfficialNames().estadosUnidos,
   LeagueOfficialNames().asia,LeagueOfficialNames().orienteMedio,LeagueOfficialNames().africa,
-  LeagueOfficialNames().outros,
+  LeagueOfficialNames().outros,LeagueOfficialNames().lendas,
 ];
 
 Map leaguesIndexFromName = {
@@ -433,6 +438,7 @@ Map leaguesIndexFromName = {
   LeagueOfficialNames().orienteMedio: 81,
   LeagueOfficialNames().africa: 85,
   LeagueOfficialNames().outros: 90,
+  LeagueOfficialNames().lendas: 91,
 };
 
 Map nTeamsRelegated = {
@@ -528,6 +534,7 @@ String getCup(String leagueNameIn){
     leagueName.orienteMedio: leagueName.asiaCup,
     leagueName.africa: leagueName.africaCup,
     leagueName.outros: leagueName.othersCup,
+    leagueName.lendas: leagueName.lendasCup,
   };
 
   return cupsFromLeagues[leagueNameIn] ?? leagueName.othersCup;
