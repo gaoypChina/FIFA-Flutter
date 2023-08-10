@@ -13,7 +13,6 @@ import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:flutter/material.dart';
 
-
 class FilterTransfersPage extends StatefulWidget {
   final TransferParameters transferParameters;
   const FilterTransfersPage({Key? key, required this.transferParameters}) : super(key: key);
@@ -83,9 +82,9 @@ class _FilterTransfersPageState extends State<FilterTransfersPage> {
                   }
               ),
 
-              chooseSlider(transferParameters.ageControl, (RangeValues newValue){transferParameters.ageControl.values = newValue;}),
-              chooseSlider(transferParameters.ovrControl, (RangeValues newValue){transferParameters.ovrControl.values = newValue;}),
-              chooseSlider(transferParameters.priceControl, (RangeValues newValue){transferParameters.priceControl.values = newValue;}),
+              chooseSlider(transferParameters.ageControl, (RangeValues newValue){transferParameters.ageControl.values = newValue;}, false),
+              chooseSlider(transferParameters.ovrControl, (RangeValues newValue){transferParameters.ovrControl.values = newValue;}, false),
+              chooseSlider(transferParameters.priceControl, (RangeValues newValue){transferParameters.priceControl.values = newValue;}, true),
 
               const Spacer(),
               customButtonContinue(
@@ -129,8 +128,13 @@ class _FilterTransfersPageState extends State<FilterTransfersPage> {
       ),
     );
   }
-Widget chooseSlider(FilterTransfersController controller, Function(RangeValues newValue) onChanged){
-
+Widget chooseSlider(FilterTransfersController controller, Function(RangeValues newValue) onChanged, bool isPrice){
+  double minValue = controller.values.start;
+  double maxValue = controller.values.end;
+  if(isPrice){
+    minValue = controller.mapPriceScale(controller.values.start);
+    maxValue = controller.mapPriceScale(controller.values.end);
+  }
     return Container(
       color: AppColors().greyTransparent,
       padding: const EdgeInsets.all(8),
@@ -142,7 +146,7 @@ Widget chooseSlider(FilterTransfersController controller, Function(RangeValues n
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(controller.title, style: EstiloTextoBranco.negrito16),
-              Text(controller.values.start.toStringAsFixed(0) + " - " + controller.values.end.toStringAsFixed(0), style: EstiloTextoBranco.text20),
+              Text(minValue.toStringAsFixed(isPrice ? 1 : 0) + " - " + maxValue.toStringAsFixed(isPrice ? 1 : 0), style: EstiloTextoBranco.text20),
             ],
           ),
           RangeSlider(

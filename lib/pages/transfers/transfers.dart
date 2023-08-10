@@ -241,29 +241,20 @@ class _TransfersState extends State<Transfers> {
 
                         GestureDetector(
                           onTap: () {
-                            showModalBottomSheet(isScrollControlled: true,context: context,
-                                builder: (context) {return filterByCountry();});
-                          },
-                          child: const Icon(Icons.flag_outlined, size: 35, color: Colors.white),
-                        ),
-
-                        GestureDetector(
-                          onTap: () {
                             Navigator.of(context).push(
                                 MaterialPageRoute(builder: (context) => FilterTransfersPage(transferParameters: filterPlayers.transferParameters))
                             ).then((value) {
-                              filterPlayers.transferParameters = value;
-                              customToast("Filtering Players");
-                              print(value.ageControl.min);
-                              filterPlayers.filterByAge();
-                              filterPlayers.filterByCountry();
-                              filterPlayers.filterByOVR();
-                              filterPlayers.filterByPrice();
-                              filterPlayers.filterByPosition();
-                              setState((){});
+                              if(value != null) {
+                                filterPlayers.transferParameters = value;
+                                filterPlayers.transferParameters.priceControl.fromRangeValues();
+                                filterPlayers.transferParameters.priceControl.printar();
+                                customToast("Filtering Players");
+                                filterPlayers.filterByPosition();
+                                setState(() {});
+                              }
                             });
                           },
-                          child: const Icon(Icons.change_circle_outlined, size: 30, color: Colors.white),
+                          child: const Icon(Icons.change_circle_outlined, size: 35, color: Colors.white),
                         ),
 
 

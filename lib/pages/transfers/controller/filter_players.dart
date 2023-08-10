@@ -30,9 +30,26 @@ class FilterTransfersController{
     max = values.end;
   }
 
+  void printar(){
+    print("start: ${values.start}    end:${values.end}");
+  }
+
   void updateValue(RangeValues newValues){
     values = newValues;
   }
+
+  double mapPriceScale(double value) {
+    double adjValue = value*value*value*0.00001;
+    return adjValue;
+  }
+
+  void fromRangeValues(){
+    values = RangeValues(
+        mapPriceScale(values.start),
+        mapPriceScale(values.end)
+    );
+  }
+
 
 }
 
@@ -203,17 +220,17 @@ class FilterPlayers{
       copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).nationality != transferParameters.filteredCountry);
     }
 
-    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).age < transferParameters.ageControl.min);
+    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).age < transferParameters.ageControl.values.start);
 
-    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).age > transferParameters.ageControl.max);
+    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).age > transferParameters.ageControl.values.end);
 
-    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).price < transferParameters.priceControl.min);
+    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).price < transferParameters.priceControl.values.start);
 
-    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).price > transferParameters.priceControl.max);
+    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).price > transferParameters.priceControl.values.end);
 
-    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).overall < transferParameters.ovrControl.min);
+    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).overall < transferParameters.ovrControl.values.start);
 
-    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).overall > transferParameters.ovrControl.max);
+    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).overall > transferParameters.ovrControl.values.end);
 
   }
 }
