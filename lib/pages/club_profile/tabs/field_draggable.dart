@@ -45,117 +45,75 @@ class _FieldDraggableState extends State<FieldDraggable> {
       body: Stack(
         children: [
           Images().getWallpaper(),
-          SingleChildScrollView(
-            child: Column(
-              children: [
+          Column(
+            children: [
 
-                //Widget do campo
-                Stack(
-                  children: [
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
 
-                    fieldWidget(),
+                      //Widget do campo
+                      fieldWidget(),
 
-                    //AUTO ORGANIZE BUTTON
-                    Container(
-                      padding: const EdgeInsets.only(top:300),
-                      margin: const EdgeInsets.symmetric(horizontal: 4),
-                      child: Row(
-                        children: [
-                          SizedBox(
-                              width: 140,
-                              child: button(title: 'Auto-organize',
-                                  function: (){
-                                    setState(() {});
-                                    myClub.optimizeBestSquadClub();
-                                    globalMyJogadores = myClub.escalacao;
-                                    widget.notifyParent();
-                                    my = My();
-                                  })
-                          ),
-
-                          const Spacer(),
-
-                          //MUDAR ESQUEMA TATICO
-                          button(
-                              title: my.esquemaTatico,
-                              function: (){
-                                EsquemaTatico().changeMyEsquema();
-                                my = My();
-                                widget.notifyParent();
-                                setState(() {});
-                              }
-                          ),
-
-                          const Spacer(),
-
-                          //FILTER SELECTION
-                          SizedBox(
-                            width: 50,
-                            child: buttonIcon(
-                                widget: const Icon(Icons.filter_alt_rounded, color: Colors.white,),
-                                function: (){bottomSheetFilterOptions(context);}
-                            ),
-                          ),
-                        ],
+                      Container(
+                          width: Sized(context).width,
+                          color: AppColors().greyTransparent,
+                          child: Row(
+                            children: [
+                              Text('${Translation(context).text.substitutes}:', style: EstiloTextoBranco.negrito16),
+                              const Spacer(),
+                              Column(
+                                children: [
+                                  Text('${Translation(context).text.avgAge}: ' + myClub.getAverageAge().toStringAsFixed(2), style: EstiloTextoBranco.text14),
+                                  Text('${Translation(context).text.player}: ' + myClub.nJogadores.toString(), style: EstiloTextoBranco.text14),
+                                ],
+                              ),
+                            ],
+                          )
                       ),
-                    )
 
-
-                  ],
-                ),
-
-                const SizedBox(height: 4),
-                Container(
-                    width: Sized(context).width,
-                    color: AppColors().greyTransparent,
-                    child: Row(
-                      children: [
-                        Text('${Translation(context).text.substitutes}:', style: EstiloTextoBranco.negrito16),
-                        const Spacer(),
-                        Column(
-                          children: [
-                            Text('${Translation(context).text.avgAge}: ' + myClub.getAverageAge().toStringAsFixed(2), style: EstiloTextoBranco.text14),
-                            Text('${Translation(context).text.player}: ' + myClub.nJogadores.toString(), style: EstiloTextoBranco.text14),
-                          ],
+                      Container(
+                        height: 90,
+                        color: AppColors().greyTransparent,
+                        child: ListView.builder(
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            itemCount:  myClub.nJogadores>11 ? myClub.nJogadores> 18 ? 7 : myClub.nJogadores -11 : 0,
+                            itemBuilder: (BuildContext context, int index) {
+                              index = index+11;
+                              return dragPlayerSelection(index);
+                            }
                         ),
-                      ],
-                    )
-                ),
+                      ),
 
-                Container(
-                  height: 90,
-                  color: AppColors().greyTransparent,
-                  child: ListView.builder(
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      itemCount:  myClub.nJogadores>11 ? myClub.nJogadores> 18 ? 7 : myClub.nJogadores -11 : 0,
-                      itemBuilder: (BuildContext context, int index) {
-                        index = index+11;
-                        return dragPlayerSelection(index);
-                      }
+                      Container(
+                        height: 90,
+                        color: AppColors().greyTransparent,
+                        child: ListView.builder(
+                            shrinkWrap: true,
+                            scrollDirection: Axis.horizontal,
+                            itemCount: myClub.nJogadores>18 ? myClub.nJogadores-18 : 0,
+                            itemBuilder: (BuildContext context, int index) {
+                              index = index+18;
+                              return dragPlayerSelection(index);
+                            }
+                        ),
+                      ),
+
+                      //ANALISE DO ELENCO
+                      analiseElenco(context, myClub),
+
+                      const SizedBox(height: 60),
+                    ],
                   ),
                 ),
+              ),
 
-                Container(
-                  height: 90,
-                  color: AppColors().greyTransparent,
-                  child: ListView.builder(
-                      shrinkWrap: true,
-                      scrollDirection: Axis.horizontal,
-                      itemCount: myClub.nJogadores>18 ? myClub.nJogadores-18 : 0,
-                      itemBuilder: (BuildContext context, int index) {
-                        index = index+18;
-                        return dragPlayerSelection(index);
-                      }
-                  ),
-                ),
+              //AUTO ORGANIZE BUTTON
+              optionButtons(myClub),
 
-                //ANALISE DO ELENCO
-                analiseElenco(context, myClub),
-
-                const SizedBox(height: 60),
-              ],
-            ),
+            ],
           ),
         ],
       ),
@@ -179,6 +137,50 @@ class _FieldDraggableState extends State<FieldDraggable> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
+  Widget optionButtons(Club myClub){
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 4),
+      child: Row(
+        children: [
+          SizedBox(
+              width: 140,
+              child: button(title: 'Auto-organize',
+                  function: (){
+                    setState(() {});
+                    myClub.optimizeBestSquadClub();
+                    globalMyJogadores = myClub.escalacao;
+                    widget.notifyParent();
+                    my = My();
+                  })
+          ),
+
+          const Spacer(),
+
+          //MUDAR ESQUEMA TATICO
+          button(
+              title: my.esquemaTatico,
+              function: (){
+                EsquemaTatico().changeMyEsquema();
+                my = My();
+                widget.notifyParent();
+                setState(() {});
+              }
+          ),
+
+          const Spacer(),
+
+          //FILTER SELECTION
+          SizedBox(
+            width: 50,
+            child: buttonIcon(
+                widget: const Icon(Icons.filter_alt_rounded, color: Colors.white,),
+                function: (){bottomSheetFilterOptions(context);}
+            ),
+          ),
+        ],
+      ),
+    );
+  }
   Future bottomSheetFilterOptions(BuildContext context){
 
     //FILTRAR POR TÓPICOS
