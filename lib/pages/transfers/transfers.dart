@@ -1,7 +1,6 @@
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
-import 'package:fifa/classes/countries/words.dart';
 import 'package:fifa/pages/transfers/controller/filter_players.dart';
 import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/global_variables.dart';
@@ -52,56 +51,53 @@ class _TransfersState extends State<Transfers> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    double bottomSize = MediaQuery.of(context).viewInsets.bottom; //=0 SEM O TECLADO +-160 com o teclado
 
     showRows = 0;
     return Scaffold(
-        resizeToAvoidBottomInset: false, //Evita um overlay quando o layout é maior que a tela
         body: Container(
           decoration: Images().getWallpaperContainerDecoration(),
-          child: Stack(
-              children: [
-            Column(
-              children: [
-                Container(
-                  color: appBarMyClubColor(),
-                  child: Row(
-                    children: [
-                      backButtonText(context, Translation(context).text.transfers),
-                      const Spacer(),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 28.0,right: 4),
-                        child: RichText(
-                          text: TextSpan(
-                            children: <TextSpan>[
-                              TextSpan(
-                                  text: '${Translation(context).text.money}: ', style: EstiloTextoBranco.text16),
-                              TextSpan(
-                                  text: '\$ ${My().money.toStringAsFixed(2)} mi',
-                                  style: EstiloTextoVerde.text20),
-                            ],
-                          ),
+          child: Column(
+            children: [
+              Container(
+                color: appBarMyClubColor(),
+                child: Row(
+                  children: [
+                    backButtonText(context, Translation(context).text.transfers),
+                    const Spacer(),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 28.0,right: 4),
+                      child: RichText(
+                        text: TextSpan(
+                          children: <TextSpan>[
+                            TextSpan(
+                                text: '${Translation(context).text.money}: ', style: EstiloTextoBranco.text16),
+                            TextSpan(
+                                text: '\$ ${My().money.toStringAsFixed(2)} mi',
+                                style: EstiloTextoVerde.text20),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
+              ),
 
-                Container(
-                  color: appBarMyClubColor(),
-                  padding: const EdgeInsets.all(8.0),
-                  child: searchNameBar(),
-                ),
+              Container(
+                color: appBarMyClubColor(),
+                padding: const EdgeInsets.all(8.0),
+                child: searchNameBar(),
+              ),
 
-                //titulo da tabela
-                showMatchsGoalsAssists
-                    ? playersRowTitle2()
-                    : playersRowTitle1(),
-                //TABELA
-                Container(
-                  height: bottomSize > 0 ? Sized(context).height*0.3 : Sized(context).height*0.62,
-                  color: AppColors().greyTransparent,
-                  padding: const EdgeInsets.symmetric(horizontal: 6),
+              //titulo da tabela
+              showMatchsGoalsAssists
+                  ? playersRowTitle2()
+                  : playersRowTitle1(),
+              //TABELA
+              Container(
+                height: Sized(context).height-271,
+                color: AppColors().greyTransparent,
+                padding: const EdgeInsets.symmetric(horizontal: 6),
+                child: Expanded(
                   child: SingleChildScrollView(
                     controller: _scrollController,
                     child: Table(
@@ -123,63 +119,74 @@ class _TransfersState extends State<Transfers> {
                     ),
                   ),
                 ),
-                //FILTRAR
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Column(
-                      children: [
-                        localButton(
-                            title: Translation(context).text.age.toUpperCase(),
-                            function: () {
-                              filterPlayers.setAge();
-                              setState(() {});
-                            }),
-                        localButton(
-                            title: Translation(context).text.overall.toUpperCase(),
-                            function: () {
-                              filterPlayers.setOverall();
-                              setState(() {});
-                            }),
-                        localButton(
-                            title: Translation(context).text.price.toUpperCase(),
-                            function: () {
-                              filterPlayers.setPrice();
-                              setState(() {});
-                            }),
-                      ],
-                    ),
+              ),
+              const SizedBox(height: 8),
+              //FILTRAR
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
 
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
 
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
+                      Row(
+                        children: [
+                          buttonSquareSelection(
+                              primaryColor: AppColors().green,
+                              secondColor: Colors.black,
+                              conditionWhenTrue: showMatchsGoalsAssists == false,
+                              height: 20, width: 40,
+                              function: (){showMatchsGoalsAssists = false;setState((){});}
+                          ),
+                          const SizedBox(width: 4),
+                          buttonSquareSelection(
+                              primaryColor: AppColors().green,
+                              secondColor: Colors.black,
+                              conditionWhenTrue: showMatchsGoalsAssists == true,
+                              height: 20, width: 40,
+                              function: (){showMatchsGoalsAssists = true;setState((){});}
+                          ),
+                        ],
+                      ),
 
-                        Row(
-                          children: [
-                            buttonSquareSelection(
-                                primaryColor: AppColors().green,
-                                secondColor: Colors.black,
-                                conditionWhenTrue: showMatchsGoalsAssists == false,
-                                height: 20, width: 40,
-                                function: (){showMatchsGoalsAssists = false;setState((){});}
-                            ),
-                            const SizedBox(width: 4),
-                            buttonSquareSelection(
-                                primaryColor: AppColors().green,
-                                secondColor: Colors.black,
-                                conditionWhenTrue: showMatchsGoalsAssists == true,
-                                height: 20, width: 40,
-                                function: (){showMatchsGoalsAssists = true;setState((){});}
-                            ),
-                          ],
-                        ),
+                      const SizedBox(height: 8),
 
-                        const SizedBox(height: 12),
-
-                        Row(
+                      Container(
+                        color: AppColors().greyTransparent,
+                        width: Sized(context).width,
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
+
+                            GestureDetector(
+                              onTap: () {
+                                sortByBottomSheet();
+                              },
+                              child: const Icon(Icons.sort_by_alpha, size: 30, color: Colors.white),
+                            ),
+
+
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(
+                                    MaterialPageRoute(builder: (context) => FilterTransfersPage(transferParameters: filterPlayers.transferParameters))
+                                ).then((value) {
+                                  if(value != null) {
+                                    filterPlayers.transferParameters = value;
+                                    filterPlayers.transferParameters.priceControl.fromRangeValues();
+                                    customToast("Filtering Players");
+                                    filterPlayers.filterByPosition();
+                                    setState(() {});
+                                  }
+                                });
+                              },
+                              child: const Icon(Icons.filter_alt_outlined, size: 35, color: Colors.white),
+                            ),
+
+                            const SizedBox(width: 2),
 
                             //BOTAO ESQUERDA
                             GestureDetector(
@@ -197,10 +204,9 @@ class _TransfersState extends State<Transfers> {
                                 );
                                 setState(() {});
                               },
-                              child: Image.asset('assets/icons/button_left.png',width: 50),
+                              child: Image.asset('assets/icons/button_left.png',width: 45),
                             ),
 
-                            const SizedBox(width: 20),
                             //BOTAO ESQUERDA
                             GestureDetector(
                               onTap: () {
@@ -215,154 +221,91 @@ class _TransfersState extends State<Transfers> {
                                 );
                                 setState(() {});
                               },
-                              child: Image.asset('assets/icons/button_right.png',width: 50),
+                              child: Image.asset('assets/icons/button_right.png',width: 45),
                             ),
 
                           ],
                         ),
+                      ),
 
 
-                      ],
-                    ),
+                    ],
+                  ),
 
+                ],
+              ),
 
-                    Column(
-                      children: [
-
-                        GestureDetector(
-                          onTap: () {
-                            showModalBottomSheet(context: context,
-                                builder: (context) {
-                                  return filterByPositionWidget();
-                                });
-                          },
-                          child: const Icon(Icons.games_outlined, size: 30, color: Colors.white),
-                        ),
-
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.of(context).push(
-                                MaterialPageRoute(builder: (context) => FilterTransfersPage(transferParameters: filterPlayers.transferParameters))
-                            ).then((value) {
-                              if(value != null) {
-                                filterPlayers.transferParameters = value;
-                                filterPlayers.transferParameters.priceControl.fromRangeValues();
-                                filterPlayers.transferParameters.priceControl.printar();
-                                customToast("Filtering Players");
-                                filterPlayers.filterByPosition();
-                                setState(() {});
-                              }
-                            });
-                          },
-                          child: const Icon(Icons.change_circle_outlined, size: 35, color: Colors.white),
-                        ),
-
-
-                      ],
-                    ),
-
-                  ],
-                ),
-
-              ],
-            ),
-
-          ]),
+            ],
+          ),
         ));
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-  Widget filterByPositionWidget(){
-    return SizedBox(
-      height: 200,
-      child: Column(
-        children: [
-          Padding(
+  Future sortByBottomSheet(){
+    return showModalBottomSheet(context: context,
+        builder: (context) {
+          return Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Text(Translation(context).text.positionsFilter,style: EstiloTextoPreto.text16),
-          ),
-          SizedBox(
-            height: 150,
-            child: Wrap(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
-                for(String positionName in globalAllPositions)
-                  bottomSheetButton(position: positionName),
+                Row(
+                  children: const [
+                    Text("Sort by",style: EstiloTextoPreto.negrito16),
+                  ],
+                ),
+                const SizedBox(height: 4),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    localButton(
+                        title: Translation(context).text.age.toUpperCase(),
+                        function: () {
+                          customToast("Sorting...");
+                          filterPlayers.setAge();
+                          Navigator.pop(context);
+                          setState(() {});
+                        }),
+                    localButton(
+                        title: Translation(context).text.overall.toUpperCase(),
+                        function: () {
+                          customToast("Sorting...");
+                          filterPlayers.setOverall();
+                          Navigator.pop(context);
+                          setState(() {});
+                        }),
+                    localButton(
+                        title: Translation(context).text.price.toUpperCase(),
+                        function: () {
+                          customToast("Sorting...");
+                          filterPlayers.setPrice();
+                          Navigator.pop(context);
+                          setState(() {});
+                        }),
+                  ],
+                ),
               ],
             ),
-          ),
-        ],
-      ),
-    );
+          );
+        });
   }
 
-  Widget filterByCountry() {
-    return Container(
-      padding: const EdgeInsets.all(8),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(Translation(context).text.countryFilter,style: EstiloTextoPreto.text16),
-          SizedBox(
-            height: Sized(context).height/3,
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  for(String name in globalCountryNames)
-                    countryRow(name),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-  Widget countryRow(String name){
-    return Container(
-      color: filterPlayers.transferParameters.filteredCountry == name ? Colors.green.shade200 : Colors.transparent,
-      child: GestureDetector(
-        onTap: (){
-          Navigator.pop(context);
-          if (filterPlayers.transferParameters.filteredCountry == name) {
-            filterPlayers.transferParameters.filteredCountry = "";
-          } else {
-            filterPlayers.transferParameters.filteredCountry = name;
-          }
-          filterPlayers.filterByCountry();
-          customToast(Translation(context).text.loading);
-          setState(() {});
-        },
-        child: Container(
-          margin: const EdgeInsets.symmetric(vertical: 6),
-          child: Row(
-            children: [
-              funcFlagsList(name, 25, 35),
-              const SizedBox(width: 8),
-              SizedBox(
-                  width: Sized(context).width-100,
-                  child: Text(name,style: EstiloTextoPreto.text16),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
 
 
 
   Widget playersRowTitle1() {
     return Container(
       color: AppColors().greyTransparent,
+      padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
         children: [
           const SizedBox(width: 5),
-          Text(Translation(context).text.pos3, style: EstiloTextoBranco.text16),
+          Text(Translation(context).text.pos3, style: EstiloTextoBranco.negrito16),
           const SizedBox(width: 11),
           SizedBox(
-              width: 200,
-              child: Text(Translation(context).text.player, style: EstiloTextoBranco.text16)),
+              width: 206,
+              child: Text(Translation(context).text.player, style: EstiloTextoBranco.negrito16)),
           GestureDetector(
               onTap: () {
                 filterPlayers.setAge();
@@ -370,7 +313,7 @@ class _TransfersState extends State<Transfers> {
               },
               child: Row(
                 children: [
-                  Text(Translation(context).text.age3, style: EstiloTextoBranco.text16),
+                  Text(Translation(context).text.age3, style: EstiloTextoBranco.negrito16),
                   filterPlayers.transferParameters.ascOrDescAge > 0
                       ? filterPlayers.transferParameters.ascOrDescAge == 2
                           ? const Icon(Icons.arrow_drop_up,
@@ -380,7 +323,7 @@ class _TransfersState extends State<Transfers> {
                       : Container(),
                 ],
               )),
-          const SizedBox(width: 5),
+          const SizedBox(width: 6),
           GestureDetector(
               onTap: () {
                 filterPlayers.setOverall();
@@ -388,7 +331,7 @@ class _TransfersState extends State<Transfers> {
               },
               child: Row(
                 children: [
-                  Text(Translation(context).text.ovr3, style: EstiloTextoBranco.text16),
+                  Text(Translation(context).text.ovr3, style: EstiloTextoBranco.negrito16),
                   filterPlayers.transferParameters.ascOrDescOVR > 0
                       ? filterPlayers.transferParameters.ascOrDescOVR == 2
                           ? const Icon(Icons.arrow_drop_up,
@@ -398,7 +341,7 @@ class _TransfersState extends State<Transfers> {
                       : Container(),
                 ],
               )),
-          const SizedBox(width: 25),
+          const SizedBox(width: 20),
           GestureDetector(
               onTap: () {
                 filterPlayers.setPrice();
@@ -406,7 +349,7 @@ class _TransfersState extends State<Transfers> {
               },
               child: Row(
                 children: [
-                  const Text(' \$ ', style: EstiloTextoBranco.text16),
+                  const Text(' \$ ', style: EstiloTextoBranco.negrito16),
                   filterPlayers.transferParameters.ascOrDescMoney > 0
                       ? filterPlayers.transferParameters.ascOrDescMoney == 2
                           ? const Icon(Icons.arrow_drop_up,
@@ -424,19 +367,20 @@ class _TransfersState extends State<Transfers> {
   Widget playersRowTitle2() {
     return Container(
       color: AppColors().greyTransparent,
+      padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
         children: [
           const SizedBox(width: 5),
-          Text(Translation(context).text.pos3, style: EstiloTextoBranco.text16),
+          Text(Translation(context).text.pos3, style: EstiloTextoBranco.negrito16),
           const SizedBox(width: 10),
           SizedBox(
-              width: 210,
-              child: Text(Translation(context).text.player, style: EstiloTextoBranco.text16)),
-          Text(Translation(context).text.playedP, style: EstiloTextoBranco.text16),
+              width: 216,
+              child: Text(Translation(context).text.player, style: EstiloTextoBranco.negrito16)),
+          Text(Translation(context).text.playedP, style: EstiloTextoBranco.negrito16),
           const SizedBox(width: 25),
-          Text(Translation(context).text.goalsG, style: EstiloTextoBranco.text16),
+          Text(Translation(context).text.goalsG, style: EstiloTextoBranco.negrito16),
           const SizedBox(width: 44),
-          Text(Translation(context).text.assistsA, style: EstiloTextoBranco.text16),
+          Text(Translation(context).text.assistsA, style: EstiloTextoBranco.negrito16),
         ],
       ),
     );
@@ -468,7 +412,7 @@ class _TransfersState extends State<Transfers> {
           //Text(player.index.toString(), style: EstiloTextoBranco.text16),
           GestureDetector(
             onTap: () {
-              //comprar  jogador
+              customToast("opening profile");
               popUpOkShowPlayerInfos(
                   context: context,
                   playerID: player.index,
@@ -484,6 +428,7 @@ class _TransfersState extends State<Transfers> {
                 Row(
                   children: [
                     funcFlagsList(player.nationality, 7, 10),
+                    const SizedBox(width: 4),
                     Text(player.nationality, style: TextStyle(color: nameColor,fontFamily: 'Rajdhani',fontSize: 10,)),
                   ],
                 ),
@@ -594,7 +539,7 @@ class _TransfersState extends State<Transfers> {
   Widget searchNameBar() {
     return Container(
       decoration: BoxDecoration(
-        color: AppColors().greyTransparent,
+        color: AppColors().greyTransparent2,
         border: Border.all(
           width: 2.0,
           color: Colors.white,
@@ -660,36 +605,6 @@ class _TransfersState extends State<Transfers> {
     );
   }
 
-  bottomSheetButton({required String position}) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(8, 16, 8, 8),
-      child: GestureDetector(
-        onTap: () {
-          Navigator.pop(context);
-          if (filterPlayers.transferParameters.filteredPosition == position) {
-            filterPlayers.transferParameters.filteredPosition = "";
-          } else {
-            filterPlayers.transferParameters.filteredPosition = position;
-          }
-          filterPlayers.filterByPosition();
-          customToast(Translation(context).text.loading);
-          setState(() {});
-        },
-        child: Container(
-          decoration: BoxDecoration(
-            color: filterPlayers.transferParameters.filteredPosition == position
-                ? Colors.green
-                : Colors.black,
-            borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(position, style: EstiloTextoBranco.text16),
-          ),
-        ),
-      ),
-    );
-  }
 
   onSearchString(){
     filterPlayers.copyJogadoresID = List.from(globalJogadoresIndex);

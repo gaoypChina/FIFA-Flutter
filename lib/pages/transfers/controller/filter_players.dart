@@ -40,6 +40,9 @@ class FilterTransfersController{
 
   double mapPriceScale(double value) {
     double adjValue = value*value*value*0.00001;
+    if(adjValue>max){
+      adjValue=max;
+    }
     return adjValue;
   }
 
@@ -218,6 +221,9 @@ class FilterPlayers{
     }
     if (transferParameters.filteredCountry.isNotEmpty) {
       copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).nationality != transferParameters.filteredCountry);
+    }
+    if (transferParameters.filteredTeam.isNotEmpty) {
+      copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).clubName != transferParameters.filteredTeam);
     }
 
     copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).age < transferParameters.ageControl.values.start);

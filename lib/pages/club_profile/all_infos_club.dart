@@ -1,6 +1,7 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
+import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/club_profile/tabs/player_row_all_infos.dart';
 import 'package:fifa/theme/background_color/background_age.dart';
@@ -24,7 +25,6 @@ class _AllInfosClubState extends State<AllInfosClub> {
 
   double buttonSize = 50;
   int selection = 0;
-  List<String> items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
 
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -140,14 +140,17 @@ class _AllInfosClubState extends State<AllInfosClub> {
         }),
         onReorder: (oldIndex, newIndex) {
 
+          if(widget.club.name == My().clubName){
             if (newIndex > oldIndex) {
               newIndex -= 1;
             }
             final item = widget.club.escalacao.removeAt(oldIndex);
             widget.club.escalacao.insert(newIndex, item);
 
-          final item2 = globalMyJogadores.removeAt(oldIndex);
-          globalMyJogadores.insert(newIndex, item2);
+            final item2 = globalMyJogadores.removeAt(oldIndex);
+            globalMyJogadores.insert(newIndex, item2);
+          }
+
 
             setState(() {});
         },

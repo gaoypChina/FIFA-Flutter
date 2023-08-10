@@ -1,8 +1,11 @@
+import 'dart:async';
+
 import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/classes/countries/words.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/my.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/transfers/controller/filter_players.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
@@ -11,6 +14,7 @@ import 'package:fifa/theme/translation.dart';
 import 'package:fifa/widgets/button/back_button.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
 import 'package:fifa/widgets/button/pressable_button.dart';
+import 'package:fifa/widgets/popup/popup_select_club_compare.dart';
 import 'package:flutter/material.dart';
 
 class FilterTransfersPage extends StatefulWidget {
@@ -54,39 +58,52 @@ class _FilterTransfersPageState extends State<FilterTransfersPage> {
 
               backButtonText(context,'Filter Transfers Page'),
 
-              button("País",
-                  transferParameters.filteredCountry.isNotEmpty
-                      ? Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 5.0),
-                        child: funcFlagsList(transferParameters.filteredCountry, 30, 40),
-                      )
-                      : const Icon(Icons.shield_outlined, color: Colors.white, size: 40),
-                    (){
-                      showModalBottomSheet(isScrollControlled: true,context: context,
-                          builder: (context) {return filterByCountry(context);});
-                },
-              ),
-              button("Liga",
-                  transferParameters.filteredLeague.isNotEmpty
-                      ? Images().getLeagueLogo(my.campeonatoName, 40,40)
-                      : const Icon(Icons.shield_outlined, color: Colors.white, size: 40),
-                  (){
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      button("Nacionalidade",
+                        transferParameters.filteredCountry.isNotEmpty
+                            ? Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 5.0),
+                          child: funcFlagsList(transferParameters.filteredCountry, 30, 40),
+                        )
+                            : const Icon(Icons.shield_outlined, color: Colors.white, size: 40),
+                            (){
+                          showModalBottomSheet(isScrollControlled: true,context: context,
+                              builder: (context) {return filterByCountry(context);});
+                        },
+                      ),
+                      button("Time",
+                          transferParameters.filteredTeam.isNotEmpty
+                              ? Images().getEscudoWidget(transferParameters.filteredTeam, 40,40)
+                              : const Icon(Icons.shield_outlined, color: Colors.white, size: 40),
+                              (){
+                                PopupSelectClub popupConfig = PopupSelectClub();
+                                popUpSelectClub(originalContext: context, popupConfig: popupConfig);
+                                Timer.periodic(const Duration(milliseconds: 100), (timer) {
+                                  if (popupConfig.popupClosed) {
+                                    setState((){});
+                                    transferParameters.filteredTeam = popupConfig.newClub.name;
+                                    transferParameters.filteredLeague = popupConfig.newClub.leagueName;
+                                    timer.cancel();
+                                  }
+                                });
+                          }
+                      ),
 
-                  },
-              ),
-              button("Time",
-                  transferParameters.filteredTeam.isNotEmpty
-                      ? Images().getEscudoWidget(my.clubName, 40,40)
-                      : const Icon(Icons.shield_outlined, color: Colors.white, size: 40),
-                (){
-                  }
+                      chooseSlider(transferParameters.ageControl, (RangeValues newValue){transferParameters.ageControl.values = newValue;}, false),
+                      chooseSlider(transferParameters.ovrControl, (RangeValues newValue){transferParameters.ovrControl.values = newValue;}, false),
+                      chooseSlider(transferParameters.priceControl, (RangeValues newValue){transferParameters.priceControl.values = newValue;}, true),
+
+                      filterPosition(),
+                    ],
+                  ),
+                ),
               ),
 
-              chooseSlider(transferParameters.ageControl, (RangeValues newValue){transferParameters.ageControl.values = newValue;}, false),
-              chooseSlider(transferParameters.ovrControl, (RangeValues newValue){transferParameters.ovrControl.values = newValue;}, false),
-              chooseSlider(transferParameters.priceControl, (RangeValues newValue){transferParameters.priceControl.values = newValue;}, true),
 
-              const Spacer(),
+
               customButtonContinue(
                   title: "Filter",
                   function: (){
@@ -107,9 +124,65 @@ class _FilterTransfersPageState extends State<FilterTransfersPage> {
 ////////////////////////////////////////////////////////////////////////////
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
-  Widget button(String title, Widget imageWidget, Function() onTap){
+  Widget filterPosition(){
     return Container(
       color: AppColors().greyTransparent,
+      margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: const [
+                Text("Position",style: EstiloTextoBranco.negrito16),
+              ],
+            ),
+          ),
+          Wrap(
+              children: [
+                for(String positionName in globalAllPositions)
+                  positionsBox(position: positionName, transferParameters: transferParameters),
+              ],
+            ),
+
+        ],
+      ),
+    );
+  }
+  Widget positionsBox({required String position, required TransferParameters transferParameters}) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
+      child: GestureDetector(
+        onTap: () {
+          if (transferParameters.filteredPosition == position) {
+            transferParameters.filteredPosition = "";
+          } else {
+            transferParameters.filteredPosition = position;
+          }
+          setState(() {});
+        },
+        child: Container(
+          decoration: BoxDecoration(
+            color: transferParameters.filteredPosition == position
+                ? Colors.green
+                : Colors.black,
+            borderRadius: const BorderRadius.all(Radius.circular(5.0)),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(position, style: EstiloTextoBranco.text16),
+          ),
+        ),
+      ),
+    );
+  }
+  Widget button(String title, Widget imageWidget, Function() onTap){
+    return Container(
+      decoration: BoxDecoration(
+        color: AppColors().greyTransparent,
+        border: Border.all(color: AppColors().green, width: 1),
+      ),
       margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
       child: PressableButton(
         onTap: (){
