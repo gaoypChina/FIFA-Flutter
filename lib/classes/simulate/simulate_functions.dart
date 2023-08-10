@@ -224,9 +224,9 @@ class Simulate{
       for (int groupNumber = 0; groupNumber < 8; groupNumber++) {
         for (int nConfronto = 0; nConfronto < 4 / 2; nConfronto++) {
           int chaveConfronto = chave[nConfronto * 2];
-          int indexTeam1 = internationalLeague.getClub(internationalName, 4 * groupNumber + chaveConfronto);
+          int indexTeam1 = internationalLeague.getClubID(internationalName, 4 * groupNumber + chaveConfronto);
           int indexAdv04 = Chaves().chaveIndexAdvCampeonato(semana, 0, chaveConfronto)[0];
-          int indexTeam2 = internationalLeague.getClub(internationalName, 4 * groupNumber + indexAdv04);
+          int indexTeam2 = internationalLeague.getClubID(internationalName, 4 * groupNumber + indexAdv04);
           if(indexTeam1 != my.clubID && indexTeam2 != my.clubID || simulMyMatch) {
             MatchSimulation match = MatchSimulation(
                                       Club(index: indexTeam1,clubDetails: false),

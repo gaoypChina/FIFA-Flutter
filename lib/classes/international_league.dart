@@ -81,7 +81,7 @@ class InternationalLeague{
   List getClubs(String internationalName){
     return globalInternational[internationalName][clubsIDkey];
   }
-  int getClub(String internationalName, int position){
+  int getClubID(String internationalName, int position){
     return globalInternational[internationalName][clubsIDkey][position];
   }
   int searchClub(String internationalName, int clubID){

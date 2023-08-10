@@ -20,11 +20,11 @@ class MatchResultInternational{
 
       int indexAdv04 = Chaves().chaveIndexAdvCampeonato(semanaDoJogo, 0, chaveConfronto)[0];
           try{
-            confronto.clubID1 = InternationalLeague().getClub(competitionName, 4 * groupNumber + chaveConfronto);
-            confronto.clubID2 = InternationalLeague().getClub(competitionName, (4 * groupNumber) + indexAdv04);
+            int clubID1 = InternationalLeague().getClubID(competitionName, 4 * groupNumber + chaveConfronto);
+            int clubID2 = InternationalLeague().getClubID(competitionName, (4 * groupNumber) + indexAdv04);
             confronto = Confronto(
-              clubName1: Club(index: confronto.clubID1).name,
-              clubName2: Club(index: confronto.clubID2).name,
+              clubName1: Club(index: clubID1).name,
+              clubName2: Club(index: clubID2).name,
             );
           }catch(e){
             //CASO SEJA O PRIMEIRO ANO

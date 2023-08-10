@@ -189,9 +189,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   Widget yearRow(int year){
     int nRows = nTeamsSelected;
 
-    try{
-      leaguesIndexFromName[chosenLeagueName];
-    }catch(e){
+    if(!leaguesIndexFromName.containsKey(chosenLeagueName)){
       return Container();
     }
 

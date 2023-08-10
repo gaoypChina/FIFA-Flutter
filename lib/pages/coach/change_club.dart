@@ -101,12 +101,12 @@ Widget clubWidget(Club club){
                 Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => const Menu()));
               },
           child: Container(
-          height: 220,width: 170,
+          height: 220,width: 180,
           padding: const EdgeInsets.symmetric(vertical: 8.0),
             decoration: decorationGreen(),
             child: Column(
               children: [
-                Images().getEscudoWidget(clubClassification.clubName,124,124),
+                Images().getEscudoWidget(clubClassification.clubName,115,115),
                 const SizedBox(height: 8),
                 Text(clubClassification.clubName,textAlign:TextAlign.center,style: EstiloTextoBranco.negrito22),
                 Text('${Translation(context).text.position}: '+clubClassification.posicaoTabela.toString()+'º',style: EstiloTextoBranco.text14)

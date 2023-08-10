@@ -64,7 +64,7 @@ class _TableMatchsState extends State<TableMatchs> {
                   Expanded(
                     child: Container(
                         color: AppColors().greyTransparent,
-                        width: Sized(context).width*0.94,
+                        width: Sized(context).width*0.95,
                         child: SingleChildScrollView(
                             padding: EdgeInsets.zero,
                             child: tableWidget()
@@ -106,12 +106,12 @@ class _TableMatchsState extends State<TableMatchs> {
                   ).confronto,
                   my)
             ],
-          )
+          ),
       ],
     );
   }
 
-  Row groupTitle(int groupNumber){
+  Widget groupTitle(int groupNumber){
     String groupLetter = 'A';
     if(groupNumber==1){groupLetter='B';}
     if(groupNumber==2){groupLetter='C';}
@@ -123,10 +123,6 @@ class _TableMatchsState extends State<TableMatchs> {
     return Row(
       children: [
         Text('\n${Translation(context).text.group} ' + groupLetter,style: EstiloTextoBranco.negrito16),
-        Container(),
-        Container(),
-        Container(),
-        Container(),
       ],
     );
   }

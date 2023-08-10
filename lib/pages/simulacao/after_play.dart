@@ -248,7 +248,7 @@ Widget goalsWidget(){
 
             weekClass.isJogoCampeonatoNacional
                 ? weekMatchs()
-                : weekClass.isJogoCopa ? Container(height: 10*34, child: cupPhaseWidget(context, My().cupName))
+                : weekClass.isJogoCopa ? SizedBox(height: 10*34, child: cupPhaseWidget(context, My().cupName))
                 : weekClass.isJogoMundial ? Container()
                 : weekClass.isJogoGruposInternacional
                 ? tableWidget()

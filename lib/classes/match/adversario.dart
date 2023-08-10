@@ -88,7 +88,7 @@ class Adversario{
     }
     int indexAdv032 = 4 * myClass.getMyClubInternationalGroup() + indexAdv;
     if (myClass.playingInternational.isNotEmpty) {
-      clubID = InternationalLeague().getClub(myClass.playingInternational, indexAdv032);
+      clubID = InternationalLeague().getClubID(myClass.playingInternational, indexAdv032);
     }
     clubName = Club(index: clubID).name;
     List clubsID = International(myClass.getMyInternationalLeague()).getClassification();
