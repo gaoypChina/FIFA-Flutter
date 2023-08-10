@@ -2,9 +2,12 @@ import 'package:fifa/classes/calendar_result.dart';
 import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/functions/size.dart';
+import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/menu/c_menu.dart';
+import 'package:fifa/pages/menu/widgets/play_button.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
@@ -94,7 +97,7 @@ Widget calendarRow(int week){
                       calendarResult.show.visitante
                           ? Text(Translation(context).text.away.toUpperCase(),style: EstiloTextoBranco.text12)
                           : Text(Translation(context).text.home.toUpperCase(),style: EstiloTextoBranco.text12),
-                      Text(calendarResult.show.placar,style: EstiloTextoBranco.text16),
+                      Text(calendarResult.show.placar,style: EstiloTextoBranco.negrito18),
                     ],
                   ),
                   const SizedBox(width: 8),
@@ -107,9 +110,9 @@ Widget calendarRow(int week){
                     crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
 
-                        Text(weekClass.semanaCalendarStr,style: EstiloTextoCinza.text12),
+                        Text(weekClass.semanaCalendarStr,style: EstiloTextoBranco.text12),
                         calendarResult.show.hasAdversary
-                            ? Text(calendarResult.show.clubName2,style: EstiloTextoBranco.text16)
+                            ? Text(calendarResult.show.clubName2,style: EstiloTextoBranco.negrito16)
                             : Container(),
 
                       ],
@@ -120,6 +123,18 @@ Widget calendarRow(int week){
                   calendarResult.show.hasAdversary
                       ? Images().getUniformWidget(calendarResult.show.clubName2,30,30)
                       : Container(),
+
+                  widget.club.name == My().clubName ? InkWell(
+                    onTap:(){
+                      simulateManyWeeksFunction(week);
+                      navigatorReplace(context, const Menu());
+                    },
+                    child: const Padding(
+                      padding: EdgeInsets.only(left: 4.0),
+                      child: Icon(Icons.timer_outlined,color: Colors.white,size: 25),
+                    ),
+                  ) : Container(),
+
 
                 ],
               ),

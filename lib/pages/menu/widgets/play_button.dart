@@ -11,7 +11,9 @@ import 'package:fifa/classes/result_game/result_match.dart';
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/simulate/simulate_functions.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/calendar/calendar_adv_box.dart';
 import 'package:fifa/pages/club_profile/club_profile.dart';
+import 'package:fifa/pages/club_profile/tabs/club_calendar.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/pages/simulacao/end_year.dart';
 import 'package:fifa/pages/simulacao/not_play.dart';
@@ -105,7 +107,7 @@ Widget wPlayButton(BuildContext context, Club club, Adversario adversario, Seman
                         GestureDetector(
                           onTap: (){
                             customToast("Abrindo Calendário");
-                            Navigator.push(context,MaterialPageRoute(builder: (context) => const Calendar()));
+                            Navigator.push(context,MaterialPageRoute(builder: (context) => CalendarPage(club: club)));
                           },
                           child: const Opacity(opacity:0.8,child: Icon(Icons.calendar_month,size:80,color: Colors.white)),
                         ),

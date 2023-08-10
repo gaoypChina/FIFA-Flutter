@@ -1,16 +1,53 @@
 import 'package:fifa/classes/click_navigator/click_club.dart';
+import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/club_profile/club_profile.dart';
+import 'package:fifa/pages/club_profile/tabs/club_calendar.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/pages/menu/widgets/play_button.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/widgets/button/back_button.dart';
 import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:flutter/material.dart';
 
+class CalendarPage extends StatefulWidget {
+  final Club club;
+  const CalendarPage({Key? key, required this.club}) : super(key: key);
+
+  @override
+  State<CalendarPage> createState() => _CalendarPageState();
+}
+
+class _CalendarPageState extends State<CalendarPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          Images().getWallpaper(),
+          Column(
+            children: [
+              backButtonText(context, "Calendar", true),
+              Expanded(child: ClubCalendar(club: widget.club)),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
 Widget wCalendarAdvBox(BuildContext context, int semanaLocal, show){
+  //OLD CALENDAR LAYOUT
   return Material(
     color: Colors.transparent,
     child: InkWell(
