@@ -247,8 +247,9 @@ Map clubNameMapImmutable = {
   LeagueOfficialNames().lendas : {
     0:clubName.legends, 1:clubName.galatics, 2:clubName.veterans, 3:clubName.santos62,
     4: clubName.flamengo81, 5: clubName.napoli89, 6: clubName.palmeiras99,7: clubName.boca03,
-    8: clubName.arsenal03, 9: clubName.juventus03, 10: clubName.real04, 11: clubName.milan05,
-    12: clubName.barcelona06, 13: clubName.chelsea08, 14: clubName.inter09, 15: clubName.manutd09,
+    8: clubName.arsenal03, 9: clubName.juventus03, 10: clubName.real04, 11: clubName.porto04,
+    12: clubName.milan05, 13: clubName.barcelona06, 14: clubName.chelsea08, 15: clubName.manutd09,
+    16: clubName.inter09,17: clubName.dortmund13,
   },
 
 };

@@ -1,11 +1,10 @@
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
-import 'package:fifa/classes/countries/flags_list.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/club_profile/tabs/player_row_all_infos.dart';
 import 'package:fifa/theme/background_color/background_age.dart';
 import 'package:fifa/theme/background_color/background_overall.dart';
-import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
@@ -25,6 +24,7 @@ class _AllInfosClubState extends State<AllInfosClub> {
 
   double buttonSize = 50;
   int selection = 0;
+  List<String> items = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
 
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -108,15 +108,19 @@ class _AllInfosClubState extends State<AllInfosClub> {
   }
 
   Widget displayRows(int option){
-    return         Expanded(
-      child: ListView.builder(
-        itemCount: widget.club.escalacao.length,
+
+    return Expanded(
+      child: ReorderableListView(
         padding: EdgeInsets.zero,
-        itemBuilder: (BuildContext context, int i) {
-          Jogador player = Jogador(index: widget.club.escalacao[i]);
-          return  PlayerRowAllInfos(
-              row: i,
-              playerIndex: widget.club.escalacao[i],
+        children: List.generate(
+            widget.club.escalacao.length, (index) {
+          Jogador player = Jogador(index: widget.club.escalacao[index]);
+          return ListTile(
+            key: Key('$index'), // Unique key for each item
+              contentPadding: EdgeInsets.zero,
+            title: PlayerRowAllInfos(
+              row: index,
+              playerIndex: widget.club.escalacao[index],
               option: option,
               child: SizedBox(
                 width: 140,
@@ -128,14 +132,29 @@ class _AllInfosClubState extends State<AllInfosClub> {
                     : option == 5 ? playersStatsWidgetCards(player)
                     : Container(),
               ),
-            notifyParent: (){
-              widget.notifyParent();
-            },
+              notifyParent: (){
+                widget.notifyParent();
+              },
+            )
           );
+        }),
+        onReorder: (oldIndex, newIndex) {
+
+            if (newIndex > oldIndex) {
+              newIndex -= 1;
+            }
+            final item = widget.club.escalacao.removeAt(oldIndex);
+            widget.club.escalacao.insert(newIndex, item);
+
+          final item2 = globalMyJogadores.removeAt(oldIndex);
+          globalMyJogadores.insert(newIndex, item2);
+
+            setState(() {});
         },
       ),
     );
   }
+
   Widget tableWidget0(){
     return Column(
       children: <Widget>[
@@ -235,49 +254,6 @@ class _AllInfosClubState extends State<AllInfosClub> {
   }
 
 
-  Widget playerRow(int row, int playerIndex, int option){
-    Jogador player = Jogador(index: playerIndex);
-    Color background = Colors.transparent;
-    if(row<11){
-      background = Colors.black;
-    }
-    return Container(
-      decoration: BoxDecoration(
-        color: background,
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 2.0),
-        child: Row(
-          children: [
-            funcFlagsList(player.nationality, 20, 30),
-            const SizedBox(width: 5),
-            Stack(
-              children: [
-                Images().getPlayerPictureWidget(player, 36, 36),
-                Padding(
-                  padding: const EdgeInsets.only(top: 28.0, left: 18),
-                  child: positionContainer(player.position, size:20, style:EstiloTextoBranco.text8),
-                ),
-              ],
-            ),
-            //playerNameWidget(player),
-            const Spacer(),
-            SizedBox(
-              width: 140,
-              child: option == 0 ? playersStatsWidget0(player)
-                  : option == 1 ? playersStatsWidgetLeague(player)
-                  : option == 2 ? playersStatsWidgetCups(player)
-                  : option == 3 ? playersStatsWidgetInternational(player)
-                  : option == 4 ? playersStatsWidgetCarrer(player)
-                  : option == 5 ? playersStatsWidgetCards(player)
-                  : Container(),
-            ),
-
-          ],
-        ),
-      ),
-    );
-  }
 
 
 
