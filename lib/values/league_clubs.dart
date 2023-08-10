@@ -227,7 +227,7 @@ Map clubNameMapImmutable = {
   LeagueOfficialNames().asia : {
     0: clubName.shanghaisipg,1: clubName.shandong,2: clubName.kashimaantlers,3: clubName.kawasakifrontale,
     4: clubName.urawareddiamonds,5: clubName.visselkobe,6: clubName.jeonbuk,7: clubName.pohang,
-    8: clubName.alhilal,9: clubName.alIttihad,10: clubName.alnassr,11: clubName.alrayyan,
+    8: clubName.alhilal,9: clubName.alittihad,10: clubName.alnassr,11: clubName.alrayyan,
     12: clubName.alsadd,13: clubName.alduhail,14: clubName.alain,15: clubName.aljazira,
     16:clubName.alwahda,17:clubName.persepolis,18: clubName.ulsan,19: clubName.fcseoul,
   },
@@ -239,13 +239,16 @@ Map clubNameMapImmutable = {
   },
   LeagueOfficialNames().outros : {
     0: clubName.bate, 1: clubName.cluj,2: clubName.gent,3: clubName.lechpoznan,
-    4: clubName.sherifftiraspol, 5: clubName.arsenalsarandi,6: clubName.tigre,7: clubName.patronato,
+    4: clubName.sherifftiraspol, 5: clubName.arsenalsarandi, 6: clubName.tigre,7: clubName.patronato,
     8:clubName.voltaredonda, 9:clubName.jorge, 10:clubName.saprissa,11:clubName.olimpiaHON,
     12:clubName.charlotte, 13:clubName.montreal, 14:clubName.toronto, 15:clubName.vancouver,
     16:clubName.alshabab, 17:clubName.auckland,
   },
   LeagueOfficialNames().lendas : {
-    0:clubName.legends, 1:clubName.galatics, 2:clubName.palmeiras99, 3:clubName.arsenal03,
+    0:clubName.legends, 1:clubName.galatics, 2:clubName.veterans, 3:clubName.santos62,
+    4: clubName.flamengo81, 5: clubName.napoli89, 6: clubName.palmeiras99,7: clubName.boca03,
+    8: clubName.arsenal03, 9: clubName.juventus03, 10: clubName.real04, 11: clubName.milan05,
+    12: clubName.barcelona06, 13: clubName.chelsea08, 14: clubName.inter09, 15: clubName.manutd09,
   },
 
 };

@@ -235,7 +235,7 @@ class RealClassification{
     if(name == "Libertad" && leagueName == l.equador) return n.libertadEQU;
     if(name == "Portuguesa" && leagueName == l.venezuela) return n.portuguesaven;
     if(name == "Olympic" && leagueName==l.uzbekistao) return n.olympictashkent;
-    if(name == "Al-Ittihad" && leagueName==l.arabia) return n.alIttihad;
+    if(name == "Al-Ittihad" && leagueName==l.arabia) return n.alittihad;
     if(name == "Al-Shabab" && leagueName==l.arabia) return n.alshabab;
     if(name == "Al-Ahli" && leagueName==l.bahrein) return n.alahliBAH;
     if(name == "Al-Shabab" && leagueName==l.bahrein) return n.alshababBAH;

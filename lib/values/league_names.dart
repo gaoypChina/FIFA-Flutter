@@ -243,6 +243,7 @@ class LeagueOfficialNames{
   String cupwinners = 'UEFA Cup Winners Cup';
   String palmamallorca = 'Troféu de Palma de Mallorca';
   String balticleague = 'Baltic League';
+  String arabcup = 'Arab Champions Cup';
 
 
 

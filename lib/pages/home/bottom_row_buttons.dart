@@ -11,22 +11,36 @@ import 'package:flutter/material.dart';
 
 import '../../global_variables.dart';
 
-Widget wHomeBottomRowButtons(BuildContext context, int clubID){
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    children:[
-      SizedBox(width: Sized(context).width*0.24,
-          child: const DatabaseButton()
-      ),
-      SizedBox(width: Sized(context).width*0.24,
-          child: editClub(context, clubID)
-      ),
-      SizedBox(width: Sized(context).width*0.24,
-          child: configurations(context)
-      ),
-    ],
-  );
+class HomeBottomRowButtons extends StatelessWidget {
+  final BuildContext context;
+  final int clubID;
+  final VoidCallback refreshCallback;
+  const HomeBottomRowButtons({
+    Key? key, // Add the key parameter
+    required this.context,
+    required this.clubID,
+    required this.refreshCallback,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children:[
+        SizedBox(width: Sized(context).width*0.24,
+            child: const DatabaseButton()
+        ),
+        SizedBox(width: Sized(context).width*0.24,
+            child: editClub(context, clubID)
+        ),
+        SizedBox(width: Sized(context).width*0.24,
+            child: ConfigurationButton(refreshCallback: refreshCallback)
+        ),
+      ],
+    );
+  }
 }
+
 
 class DatabaseButton extends StatefulWidget {
   const DatabaseButton({Key? key}) : super(key: key);
@@ -52,12 +66,9 @@ class _DatabaseButtonState extends State<DatabaseButton> {
       await SharedPreferenceHelper().savesharedSaveNumber(globalSaveNumber);
 
       customToast('${Translation(context).text.loading} Database $globalSaveNumber...');
-      try {
-      await SelectDatabase().load();
+
+        await SelectDatabase().load();
         sucessLoadingDatabase = true;
-      }catch(e){
-        customToast('Erro no carregamento do Database $globalSaveNumber');
-      }
       }
 
     setState(() {});
@@ -100,26 +111,33 @@ Widget editClub(BuildContext context, int clubID){
       ));
 }
 
-Widget configurations(BuildContext context){
-  return Material(
+
+class ConfigurationButton extends StatelessWidget {
+  final VoidCallback refreshCallback;
+  const ConfigurationButton({Key? key, required this.refreshCallback}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
       color: Colors.transparent,
       child: InkWell(
-          customBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-      onTap: (){
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Configuration()));
-      },
-      child: Container(
-      padding: const EdgeInsets.all(4),
-      decoration: decoratorHomeButtons(),
-      child: Column(
-        children: [
-          const Icon(Icons.miscellaneous_services,color:Colors.white,size:40),
-          Text(Translation(context).text.configuration,style: EstiloRajdhani.button),
-        ],
+        customBorder: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+        onTap: () async{
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const Configuration())).then((value) => refreshCallback());
+        },
+        child: Container(
+          padding: const EdgeInsets.all(4),
+          decoration: decoratorHomeButtons(),
+          child: Column(
+            children: [
+              const Icon(Icons.miscellaneous_services,color:Colors.white,size:40),
+              Text(Translation(context).text.configuration,style: EstiloRajdhani.button),
+            ],
+          ),
+        ),
       ),
-    ),
-  ),
-  );
+    );
+  }
 }
 
 

@@ -4,6 +4,8 @@ import 'package:fifa/database/csv/read_csv.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/classes/functions/open_url.dart';
 import 'package:fifa/theme/translation.dart';
+import 'package:fifa/values/clubs_all_names_list.dart';
+import 'package:fifa/values/league_names.dart';
 import 'package:flutter/material.dart';
 
 class ConfigurationState{
@@ -50,6 +52,19 @@ class ConfigurationState{
   }
   changeInjuryState(){
     hasInjuries = !hasInjuries;
+  }
+  removeLegendsClub(){
+    clubsAllNameListCopy = [...clubsAllNameList];
+    leaguesListRealIndexCopy = [...leaguesListRealIndex];
+    leagueNamesCopy = [...leagueNames];
+    clubsAllNameList.removeWhere((clubName) => clubsNotPlayable.contains(clubName));
+    leaguesListRealIndex.removeWhere((element) => element==91);
+    leagueNames.removeWhere((element) => element==LeagueOfficialNames().lendas);
+  }
+  applyLegendsClub(){
+    clubsAllNameList = clubsAllNameListCopy;
+    leaguesListRealIndex = leaguesListRealIndexCopy;
+    leagueNames = leagueNamesCopy;
   }
   changeRandomizePlayersState(){
     globalRandomizePlayers = !globalRandomizePlayers;

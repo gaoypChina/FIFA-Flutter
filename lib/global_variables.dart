@@ -32,6 +32,7 @@ bool globalAllEqualOverall = false;
 bool globalRandomPlayersOverall = false;
 bool globalSeeProbabilities = true;
 bool globalRandomizePlayers = false;
+bool globalLegendClubs = true;
 double globalInitialMoney = 0;
 
 double pi = 3.14159265359;
@@ -78,6 +79,11 @@ Map<int,String> weekRealDays = {
   48: "28/01",  49: "31/01",
 };
 
+//COPY
+List<String> clubsAllNameListCopy = [];
+List leaguesListRealIndexCopy = [];
+List leagueNamesCopy = [];
+
 //HISTORIC
 Map globalHistoricLeagueGoalsAll = {};
 Map globalHistoricLeagueGoalsLastRodada = {};
@@ -118,8 +124,8 @@ Map globalNegotiation = {};
 
 //Jogadores
 //ALL Players Data
-int globalMaxPlayersPermitted = 20000;
-int globalMaxClubsPermitted = 500;
+int globalMaxPlayersPermitted = 21000;
+int globalMaxClubsPermitted = 520;
 
 List globalJogadoresIndex = [];
 List globalJogadoresName = [];

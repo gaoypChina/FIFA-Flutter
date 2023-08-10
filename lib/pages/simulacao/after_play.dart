@@ -13,6 +13,7 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/table/tabela_national.dart';
 import 'package:fifa/classes/table/table_matchs_control.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/cups/tabs/cup_matchs.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/pages/simulacao/not_play_international/not_play_international_matamata.dart';
 import 'package:fifa/pages/table/widgets/table_widget.dart';
@@ -241,11 +242,13 @@ Widget goalsWidget(){
               goalRow(goals[i], goals2.contains(goals[i])),
 
             const Spacer(),
-            classification(),
+            weekClass.isJogoCampeonatoNacional || weekClass.isJogoCampeonatoInternacional
+                ? classification()
+                : Container(),
 
             weekClass.isJogoCampeonatoNacional
                 ? weekMatchs()
-                : weekClass.isJogoCopa ? Container()
+                : weekClass.isJogoCopa ? Container(height: 10*34, child: cupPhaseWidget(context, My().cupName))
                 : weekClass.isJogoMundial ? Container()
                 : weekClass.isJogoGruposInternacional
                 ? tableWidget()

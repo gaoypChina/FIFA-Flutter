@@ -6,14 +6,11 @@ import 'package:flutter/material.dart';
 Widget playersPerPosition(Club club){
   return Container(
     margin: const EdgeInsets.symmetric(vertical: 6),
-    child: SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        children: [
-          for(int i=0;i<club.nPlayersPerPositions().keys.length;i++)
-            positionsCount(club.nPlayersPerPositions().keys.elementAt(i),club.nPlayersPerPositions().values.elementAt(i)),
-        ],
-      ),
+    child: Row(
+      children: [
+        for(int i=0;i<club.nPlayersPerPositions().keys.length;i++)
+          positionsCount(club.nPlayersPerPositions().keys.elementAt(i),club.nPlayersPerPositions().values.elementAt(i)),
+      ],
     ),
   );
 }

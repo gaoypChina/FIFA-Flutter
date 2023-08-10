@@ -1431,7 +1431,7 @@ String imageLogo(String timeFoto) {
     map[_name.alettifaq] = 'al ettifaq';
     map[_name.alhilal] = 'al hilal';
     map[_name.alfateh] = 'al fateh';
-    map[_name.alIttihad] = 'al ittihad';
+    map[_name.alittihad] = 'al ittihad';
     map[_name.alnassr] = 'al nassr';
     map[_name.alraed] = 'al raed';
     map[_name.alshabab] = 'al shabab';

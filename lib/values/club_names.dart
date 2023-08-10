@@ -5,8 +5,47 @@ class ClubName{
   String galatics = "Galatics";
   String veterans = "Veterans";
 
+  String real61 = "Real Madrid 1961";
+  String benfica63 = "Benfica 1963";
+  String inter65 = "Inter 1965";
+  String ajax71 = "Ajax 1971";
+  String juventus85 = "Juventus 1985";
+  String napoli89 = "Napoli 1989";
+  String milan90 = "Milan 1990";
+  String ajax95 = "Ajax 1995";
+  String manutd99 = "Man Utd 1999";
+  String bayern01 = "Bayern M. 2001";
   String arsenal03 = "Arsenal 2003";
+  String juventus03 = "Juventus 2003";
+  String porto04 = "Porto 2004";
+  String real04 = "Real Madrid 2004";
+  String liverpool05 = "Liverpool 2005";
+  String milan05 = "Milan 2005";
+  String barcelona06 = "Barcelona 2006";
+  String chelsea08 = "Chelsea 2008";
+  String manutd09 = "Man Utd 2009";
+  String inter09 = "Inter 2009";
+  String dortmund13 = "Dortmund 2013";
+  String bayern13 = "Bayern M. 2013";
+
+  String penarol61 = "Peñarol 1961";
+  String botafogo62 = "Botafogo 1962";
+  String santos62 = "Santos 1962";
+  String independiente74 = "Independiente 1974";
+  String flamengo81 = "Flamengo 1981";
+  String gremio83 = "Grêmio 1983";
+  String river96 = "River Plate 1996";
   String palmeiras99 = "Palmeiras 1999";
+  String corinthians00 = "Corinthians 2000";
+  String vasco2000 = "Vasco 2000";
+  String cruzeiro03 = "Cruzeiro 2003";
+  String boca03 = "Boca Juniors 2003";
+  String saopaulo05 = "São Paulo 2005";
+  String internacional06 = "Internacional 2006";
+  String palmeiras08 = "Palmeiras 2008";
+  String santos11 = "Santos 2011";
+  String corinthians12 = "Corinthians 2012";
+  String atleticomg13 = "Atlético-MG 2013";
 
   /////////////
   //Europe
@@ -4623,14 +4662,14 @@ class ClubName{
   String alkhaleej = "Al-Khaleej";
   String alFaisalyARABIA = "Al-Faisaly";
   String alhazem = "Al Hazem";
-  String alIttihad = "Al Ittihad";
+  String alittihad = "Al Ittihad";
   String alshabab = "Al Shabab";
   String alettifaq = "Al Ettifaq";
   String alfateh = "Al Fateh";
   String alfayha = "Al Fayha";
   String alnahda = "Al Nahda";
   String alnajma = "Al Najma Sport Club";
-  String alQadisiya = "Al Qadisiya";
+  String alqadisiya = "Al Qadisiya";
   String alraed = "Al Raed";
   String alrawdhah = "Al Rawdhah";
   String alriad = "Al Riyadh";

@@ -97,7 +97,7 @@ class _CustomizePlayersState extends State<CustomizePlayers> {
                                       children: [
                                         Text(club.name,style: EstiloTextoBranco.negrito22),
                                         //N Jogadores
-                                        Text('${Translation(context).text.player}: ${club.jogadores.length.toString()}',style: EstiloTextoBranco.text16),
+                                        Text('Players: ${club.jogadores.length.toString()}',style: EstiloTextoBranco.text16),
                                       ],
                                     ),
 

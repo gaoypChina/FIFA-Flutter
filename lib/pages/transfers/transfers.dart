@@ -1,4 +1,3 @@
-import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';

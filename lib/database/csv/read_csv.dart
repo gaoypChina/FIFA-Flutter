@@ -39,51 +39,54 @@ class ReadCSV{
 
     List clubIDs = [];
     for(int line=1;line<_data.length;line++){
-      String club = _data[line][0];
-      String name = _data[line][1].toString();
-      String position = _data[line][2].toString();//VOLMCZAG =>VOL
-      int age = int.parse(_data[line][3].toString().substring(0,2));
-      int overall = int.parse(_data[line][4].toString().substring(0,2));
-      String nationality = _data[line][5].toString();
-      String imagePlayer = _data[line][6].toString();
+      if(_data[line].length>5) {
+        String club = _data[line][0];
+        String name = _data[line][1].toString();
+        String position = _data[line][2].toString(); //VOLMCZAG =>VOL
+        int age = int.parse(_data[line][3].toString().substring(0, 2));
+        int overall = int.parse(_data[line][4].toString().substring(0, 2));
+        String nationality = _data[line][5].toString();
+        String imagePlayer = _data[line][6].toString();
 
-      //REMOVE L form last character
-      if(name[name.length-1]=='L'){name = name.substring(0, name.length - 1);}
-      //CORRIGE A POSIÇÃO
-      position = correctPlayerPostion(position);
-
-      //VARIAVEIS GLOBAIS
-      int clubIndex = clubsAllNameList.indexOf(club);
-      if(clubIndex >= 0) { //se o clube existir e estiver cadastrado certo
-        
-        PlayerBasicInfo playerBasicInfo = PlayerBasicInfo();
-        playerBasicInfo.clubID = clubIndex;
-        playerBasicInfo.playerID = indexJog;
-        playerBasicInfo.name = name;
-        playerBasicInfo.position = position;
-        playerBasicInfo.age = age;
-        playerBasicInfo.overall = overall;
-        playerBasicInfo.nationality = nationality;
-        playerBasicInfo.imageUrl = imagePlayer;
-        if(playerBasicInfo.imageUrl == "wiki/missing_player.jpg"
-              || playerBasicInfo.imageUrl.contains("header/default.jpg?lm=1")){
-          playerBasicInfo.imageUrl = "/notfound_0_120.png";
+        //REMOVE L form last character
+        if (name[name.length - 1] == 'L') {
+          name = name.substring(0, name.length - 1);
         }
-        playerBasicInfo.imageUrl = correctImageUrl(playerBasicInfo.imageUrl);
+        //CORRIGE A POSIÇÃO
+        position = correctPlayerPostion(position);
+
+        //VARIAVEIS GLOBAIS
+        int clubIndex = clubsAllNameList.indexOf(club);
+        if (clubIndex >= 0) { //se o clube existir e estiver cadastrado certo
+
+          PlayerBasicInfo playerBasicInfo = PlayerBasicInfo();
+          playerBasicInfo.clubID = clubIndex;
+          playerBasicInfo.playerID = indexJog;
+          playerBasicInfo.name = name;
+          playerBasicInfo.position = position;
+          playerBasicInfo.age = age;
+          playerBasicInfo.overall = overall;
+          playerBasicInfo.nationality = nationality;
+          playerBasicInfo.imageUrl = imagePlayer;
+          if (playerBasicInfo.imageUrl == "wiki/missing_player.jpg"
+              || playerBasicInfo.imageUrl.contains("header/default.jpg?lm=1")) {
+            playerBasicInfo.imageUrl = "/notfound_0_120.png";
+          }
+          playerBasicInfo.imageUrl = correctImageUrl(playerBasicInfo.imageUrl);
 
 
-        limitNPlayers(clubIDs,playerBasicInfo, clubIndex);
+          limitNPlayers(clubIDs, playerBasicInfo, clubIndex);
 
-        //test jogadores importados
-        // if(club == ClubName().arsenal){
-        // print('JOGADOR: $indexJog $name $position $overall $nationality $imagePlayer       ...$club ${clubIndex.toString()}');
-        // }
-      }else{
-        //ERRO NA IMPORTAÇÃO DO TIME
-        //Provavelmente falta adicionar o nome do clube em: clubsAllNameList
-        //print('ERRO IMPORTAÇÃO JOGADOR: $name $club ${clubIndex.toString()}');
+          //test jogadores importados
+          //if(club == "Boca Juniors 2003"){
+          //print('JOGADOR: $indexJog ${name.padRight(22)} $position $overall ${nationality.padRight(16)} $imagePlayer       ...$club id:${clubIndex.toString()}');
+          //}
+        } else {
+          //ERRO NA IMPORTAÇÃO DO TIME
+          //Provavelmente falta adicionar o nome do clube em: clubsAllNameList
+          //print('ERRO IMPORTAÇÃO JOGADOR: $name $club ${clubIndex.toString()}');
+        }
       }
-
     }
   }
 

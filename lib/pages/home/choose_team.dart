@@ -86,6 +86,10 @@ class _ChooseTeamState extends State<ChooseTeam> {
   @override
   Widget build(BuildContext context) {
 
+    if(posicaoPais >= leaguesListRealIndex.length) {
+      posicaoPais = 0;
+      posicao = 0;
+    }
     indexLeague = leaguesListRealIndex[posicaoPais];
     League leagueClass = League(index: indexLeague);
     leagueName = leagueClass.name;
@@ -218,7 +222,11 @@ class _ChooseTeamState extends State<ChooseTeam> {
                   ),
                   const SizedBox(height: 24),
 
-                  wHomeBottomRowButtons(context, clubID),
+                  HomeBottomRowButtons(
+                      context: context, clubID: clubID,
+                      refreshCallback: (){
+                        setState((){});
+                      }),
 
 
                 ],

@@ -3,9 +3,7 @@ import 'package:fifa/values/club_names.dart';
 
 ClubName clubName = ClubName();
 
-List<String> clubsNotPlayable = [
-  clubName.legends, clubName.galatics, clubName.veterans,
-];
+List<String> clubsNotPlayable = clubsAllNameList.sublist(clubsAllNameList.length - 14);
 
 ///////////////////////////
 // CLUBS
@@ -176,7 +174,7 @@ List<String> clubsAllNameList = [
   clubName.aljazira,  clubName.jeonbuk, clubName.alnassr,
   clubName.alain,clubName.alwahda, clubName.alshabab,
   clubName.alsadd,  clubName.alduhail, clubName.alrayyan,
-  clubName.alhilal,clubName.alIttihad,
+  clubName.alhilal,clubName.alittihad,
   clubName.persepolis,
 
   //oceania
@@ -190,7 +188,20 @@ List<String> clubsAllNameList = [
   clubName.mazembe, clubName.agosto,  clubName.cotonsport,
 
   //outros
-  clubName.galatics, clubName.legends,
+  clubName.galatics, clubName.legends, clubName.veterans,
+
+  clubName.napoli89,
   clubName.arsenal03,
+  clubName.juventus03,
+  clubName.real04,
+  clubName.milan05,
+  clubName.barcelona06,
+  clubName.chelsea08,
+  clubName.manutd09,
+  clubName.inter09,
+
+  clubName.santos62,
+  clubName.flamengo81,
   clubName.palmeiras99,
+  clubName.boca03,
 ];

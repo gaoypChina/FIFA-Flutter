@@ -3,6 +3,7 @@ import 'package:fifa/classes/countries/words.dart';
 import 'package:fifa/classes/functions/dificuldade.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/database/select_database.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/configuration/controller/configuration_state.dart';
 import 'package:fifa/pages/configuration/leagues_configuration.dart';
@@ -100,6 +101,8 @@ class _ConfigurationState extends State<Configuration> {
                           randomizePlayers(),
                           divisoria(),
                           seeProbability(),
+                          divisoria(),
+                          legends(config),
                           divisoria(),
                           allowCards(config),
                           divisoria(),
@@ -271,6 +274,23 @@ Widget soundEffects(ConfigurationState config){
         ),
       ),
     );
+  }
+  Widget legends(ConfigurationState config){
+    return defaultSlider(
+        "Times lendários",
+        "Permitir o uso de times lendários",
+        globalLegendClubs,
+            (value) {
+          setState(() {
+            globalLegendClubs = !globalLegendClubs;
+            if (!globalLegendClubs){
+              config.removeLegendsClub();
+            }else{
+              config.applyLegendsClub();
+              SelectDatabase().load();
+            }
+          });
+        });
   }
   Widget allowCards(ConfigurationState config){
     return defaultSlider(

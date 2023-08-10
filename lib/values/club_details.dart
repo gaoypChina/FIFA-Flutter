@@ -120,7 +120,9 @@ class ClubDetails{
     }
   }
 
+
   ClubDetails(){
+
     var _country = Words.country;
     Color darkblue = const Color(0xFF001050);
     Color darkgreen = const Color(0xFF0B5700);
@@ -131,13 +133,6 @@ class ClubDetails{
     ClubPattern pattern = ClubPattern();
 
     ClubName n = ClubName();
-
-    map[n.legends] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(0, 0),
-      'Estádio Lenda',0,2023,_country.somalia,86.7,[],{}];
-    map[n.galatics] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(0, 0),
-      'Estádio Galático',0,2023,_country.somalia,86.7,[],{}];
-    map[n.veterans] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(0, 0),
-      'Estádio Veterans',0,2023,_country.somalia,86.7,[],{}];
 
     //https://query.wikidata.org/#SELECT%20%3Fclub%20%3FclubLabel%20%3Fvenue%20%3FvenueLabel%20%3Fcoordinates%0AWHERE%0A%7B%0A%09%3Fclub%20wdt%3AP31%20wd%3AQ476028%20.%0A%09%3Fclub%20wdt%3AP115%20%3Fvenue%20.%0A%09%3Fvenue%20wdt%3AP625%20%3Fcoordinates%20.%0A%09SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22pt%22%20%7D%0A%7D
     map[n.arsenal] = [ClubColors(Colors.red,Colors.white),pattern.sleeves,Coordinates(51.555,-0.108611),
@@ -351,7 +346,7 @@ class ClubDetails{
       'Stadio Olimpico',73261,1900,_country.italy,79.6,[n.roma],{}];
     map[n.lecce] = [ClubColors(Colors.yellow,Colors.red),pattern.stripes2,Coordinates(40.3654579445129, 18.20937082941416),
       'Via del Mare',36285,1908,_country.italy,71.3,[],{}];
-    map[n.napoli] = [ClubColors(Colors.blueAccent,Colors.white),pattern.solid,Coordinates(40.827967,14.193008),
+    map[n.napoli] = [ClubColors(Colors.lightBlueAccent,Colors.white),pattern.solid,Coordinates(40.827967,14.193008),
       'Diego Armando Maradona',54726,1926,_country.italy,81.55,[n.juventus],{}];
     map[n.roma] = [ClubColors(grena,Colors.orange),pattern.solid,Coordinates(41.9339,12.454),
       'Stadio Olimpico',73261,1900,_country.italy,80.0,[n.lazio],{}];
@@ -5771,7 +5766,7 @@ class ClubDetails{
       'King Fahd Stadium',67000,1957,_country.southarabia,74.6,[],{}];
     map[n.alkhaleej] = [ClubColors(Colors.yellow,Colors.green),pattern.solid,Coordinates(0,0),
       'Prince Nayef bin Abdulaziz Stadium',10000,1945,_country.southarabia,61.3,[],{}];
-    map[n.alIttihad] = [ClubColors(Colors.black,Colors.yellow),pattern.stripes3,Coordinates(21.44662735, 39.2524137),
+    map[n.alittihad] = [ClubColors(Colors.black,Colors.yellow),pattern.stripes3,Coordinates(21.44662735, 39.2524137),
       'Prince Abdullah Al-Faisal Stadium',27000,1927,_country.southarabia,72.5,[],{}];
     map[n.alnahda] = [ClubColors(darkblue,Colors.black),pattern.sleeves,Coordinates(0,0),
       'Prince Mohamed bin Fahd Stadium',26000,1949,_country.southarabia,61.6,[],{}];
@@ -5779,7 +5774,7 @@ class ClubDetails{
       '',0,0,_country.southarabia,50.0,[],{}];
     map[n.alnassr] = [ClubColors(Colors.yellow,Colors.blue),pattern.solid,Coordinates(21.76355015, 39.164367968),
       'Universitário Rei Saud',25000,1955,_country.southarabia,73.1,[],{}];
-    map[n.alQadisiya] = [ClubColors(Colors.yellow,Colors.blue),pattern.solid,Coordinates(26.36978679702696, 50.20531143365966),
+    map[n.alqadisiya] = [ClubColors(Colors.yellow,Colors.blue),pattern.solid,Coordinates(26.36978679702696, 50.20531143365966),
       'Príncipe Saud bin Jalawi Stadium',15000,1967,_country.southarabia,65.3,[],{}];
     map[n.alraed] = [ClubColors(Colors.red,Colors.grey),pattern.solid,Coordinates(26.3795, 43.948),
       'King Abdullah Sports City Stadium',30000,1954,_country.southarabia,67.1,[],{}];
@@ -6956,6 +6951,39 @@ class ClubDetails{
       '',0,0,_country.zimbabwe,50.0,[],{}];
     map[n.platinum] = [ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(-20.306090, 30.0568275),
       'Mandava',15000,1995,_country.zimbabwe,65.2,[],{}];
+
+
+    // LEGENDS
+    map[n.legends] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(0, 0),
+      'Estádio Lenda',0,2023,_country.ocean,86.7,[],{}];
+    map[n.galatics] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(0, 0),
+      'Estádio Galático',0,2023,_country.ocean,86.7,[],{}];
+    map[n.veterans] = [ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(0, 0),
+      'Estádio Veterans',0,2023,_country.ocean,86.7,[],{}];
+
+    map[n.real61] = map[n.realmadrid];
+    map[n.benfica63] = map[n.benfica];
+    map[n.napoli89] = map[n.napoli];
+    map[n.manutd99] = map[n.manutd];
+    map[n.arsenal03] = map[n.arsenal];
+    map[n.real04] = map[n.realmadrid];
+    map[n.porto04] = map[n.porto];
+    map[n.barcelona06] = map[n.barcelona];
+    map[n.chelsea08] = map[n.chelsea];
+    map[n.juventus03] = map[n.juventus];
+    map[n.milan05] = map[n.milan];
+    map[n.inter09] = map[n.inter];
+    map[n.manutd09] = map[n.manutd];
+    map[n.dortmund13] = map[n.dortmund];
+
+    map[n.santos62] = map[n.santos];
+    map[n.flamengo81] = map[n.flamengo];
+    map[n.gremio83] = map[n.gremio];
+    map[n.river96] = map[n.riverplate];
+    map[n.palmeiras99] = map[n.palmeiras];
+    map[n.corinthians00] = map[n.corinthians];
+    map[n.boca03] = map[n.bocajuniors];
+    map[n.saopaulo05] = map[n.saopaulo];
   }
 
 }

@@ -230,8 +230,8 @@ Widget playerWidgetMatch(int jogadorIndex){
           children: [
             //Uniforme
             Container(
-              margin: EdgeInsets.only(top: headSize-5),
-              alignment: Alignment.topCenter,
+              margin: EdgeInsets.only(top: headSize-6),
+              alignment: Alignment.center,
               child: (injury || redCard)
                     ? Opacity(
                         opacity: 0.4,

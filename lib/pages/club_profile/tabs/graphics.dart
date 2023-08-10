@@ -57,6 +57,7 @@ class _ClubGraphicsState extends State<ClubGraphics> {
     return Scaffold(
       body: Stack(
         children: [
+
           Images().getWallpaper(),
 
           Padding(
