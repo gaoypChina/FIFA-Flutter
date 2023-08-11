@@ -1143,7 +1143,6 @@ class ClubName{
   String ponnistus = "Helsingin Ponnistus";
   String kemikings = "Kemi Kings";
   String helsingfors = "Helsingfors";
-  String hifk = "HIFK Helsinki";
   String hps = "Helsingin Palloseura";
   String kaja = "Kajaanin Palloilijat";
   String kemin = "Kemin Into";
@@ -1168,7 +1167,7 @@ class ClubName{
   String pyrkiva = "Pyrkivä Turku";
   String pskemi = "PS Kemi";
   String pk35 = "Pallokerho-35";
-  String rops = "Rovaniemen Palloseura";
+  String rops = "Rovaniemen";
   String ru38 = "RU-38 Pori";
   String tampere = "Tampere United";
   String tapa = "TaPa";
@@ -1241,9 +1240,7 @@ class ClubName{
   String skala = "Skála";
   String sumbavb = "SumbaVB";
   String suduroy = "Suðuroy";
-  String tb = "Tvøroyrar Bóltfelag";
-  String tbtvoroyri = "TB Tvøroyri";
-  String tbfcsuduroyroyn = "TBFC SuðuroyRoyn";
+  String tbtvoroyri = "Tvøroyrar Bóltfelag";
   String vbvagur = "Vágs Bóltfelag";
   String vikingurgota = "Víkingur Gøta";
 
@@ -2780,6 +2777,7 @@ class ClubName{
   String balkan = "Balkan";
   String bashkimi = "Bashkimi";
   String belasica = "Belasica";
+  String brerastrumica = "Brera Strumica";
   String borec = "Borec";
   String bregalnica = "Bregalnica";
   String bregalnicadelchevo = "Bregalnica Delchevo";
@@ -2796,7 +2794,7 @@ class ClubName{
   String kumanovo = "Kumanovo";
   String ljuboten = "Ljuboten";
   String madjarisolidarnost = "Madjari Solidarnost";
-  String makedonija = "Makedonija  Gjorče Petrov";
+  String makedonija = "Makedonija GP";
   String metalurgMAC = "Metalurg";
   String milano = "Milano";
   String mladostcarevdvor = "Mladost Carev Dvor";
@@ -2820,6 +2818,7 @@ class ClubName{
   String tikvesh = "Tikvesh";
   String vardar = "FK Vardar";
   String vardarski = "Vardarski";
+  String voska = "Voska Sport";
   String vellazerimi = "Vëllazërimi";
   //MALTA
   String balzan = "Balzan";
@@ -4060,6 +4059,7 @@ class ClubName{
   String municipal = "Municipal";
   String suchitepequez = "Suchitepéquez";
   String xelaju = "Xelajú";
+  String xinabajul = "Deportivo Xinabajul";
   String depGuastatoya = "Deportivo Guastatoya";
   //HONDURAS
   String olimpiaHON = "Olimpia-HON";
@@ -4082,10 +4082,12 @@ class ClubName{
   String americamanagua = "América Managuá";
   String bufalos = "Búfalos";
   String depsantacecilia = "Deportivo Santa Cecilia";
+  String depocotal = "Deportivo Ocotal";
   String diriangen = "Diriangén";
   String juvmanagua = "Juventus Managua";
   String masaya = "Deportivo Masaya";
   String managua = "Managua";
+  String matagalpa = "Matagalpa";
   String realEsteli = "Real Estelí";
   String uca = "UCA";
   String walterferreti = "Walter Ferreti";
@@ -4096,6 +4098,7 @@ class ClubName{
   String arabeunido = "Árabe Unido";
   String alianzaPAN = "Alianza FC";
   String plazaAmador = "Plaza Amador";
+  String santagema = "Santa Gema";
   String sanfranciscoPAN = "San Francisco";
   String sanMiguelito = "San Miguelito";
 
@@ -4130,6 +4133,7 @@ class ClubName{
 
   //BELIZE
   String altitude = "Altitude";
+  String benque = "Benque D.C. United";
   String bandits = "Belmopan Bandits";
   String belize = "Belize Defense Force";
   String placencia = "Placencia";
@@ -4143,6 +4147,7 @@ class ClubName{
   String cienfuegos = "Cienfuegos";
   String ciudadhabana = "Ciudad de La Habana";
   String holguin = "Holguín";
+  String guantanamo = "Guantánamo";
   String lahabana = "La Habana";
   String pinardelrio = "Pinar del Rio";
   String santiagoCuba = "Santiago de Cuba";

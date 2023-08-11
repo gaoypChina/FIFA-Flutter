@@ -45,7 +45,6 @@ class _FilterTransfersPageState extends State<FilterTransfersPage> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    My my = My();
 
     return Scaffold(
       body: Stack(

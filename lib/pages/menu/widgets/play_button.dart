@@ -13,7 +13,6 @@ import 'package:fifa/classes/simulate/simulate_functions.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/calendar/calendar_adv_box.dart';
 import 'package:fifa/pages/club_profile/club_profile.dart';
-import 'package:fifa/pages/club_profile/tabs/club_calendar.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/pages/simulacao/end_year.dart';
 import 'package:fifa/pages/simulacao/not_play.dart';
@@ -24,8 +23,6 @@ import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/leagues_prize.dart';
 import 'package:flutter/material.dart';
-
-import '../../calendar/calendar.dart';
 
 Widget wPlayButton(BuildContext context, Club club, Adversario adversario, Semana week){
 
