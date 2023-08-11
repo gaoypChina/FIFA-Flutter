@@ -26,7 +26,7 @@ class RealClassification{
       n.portugal: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Primeira_Liga", 3],
       n.turquiaGrecia: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_S%C3%BCper_Lig", 3],
       n.albania: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Kategoria_Superiore", 4],
-      n.andorra: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Primera_Divisi%C3%B3", 1],
+      n.andorra: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Primera_Divisi%C3%B3", 1],
       n.armenia: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Armenian_Premier_League", 3],
       n.austria: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Austrian_Football_Bundesliga", 3],
       n.azerbaijao: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Azerbaijan_Premier_League", 6],
@@ -39,34 +39,34 @@ class RealClassification{
       n.croacia: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Croatian_Football_League", 5],
       n.dinamarca: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Danish_Superliga", 3],
       n.escocia: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Scottish_Premiership", 3],
-      n.eslovenia: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Slovenian_PrvaLiga", 3],
+      n.eslovenia: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Slovenian_PrvaLiga", 2],
       n.eslovaquia: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Slovak_First_Football_League", 4],
       n.estonia: ["https://en.wikipedia.org/wiki/2023_Meistriliiga", 3],
       n.georgia: ["https://en.wikipedia.org/wiki/2023_Erovnuli_Liga", 2],
       n.finlandia: ["https://en.wikipedia.org/wiki/2023_Veikkausliiga", 1],
-      n.gibraltar: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Gibraltar_Football_League", 4],
+      n.gibraltar: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Gibraltar_Football_League", 4],
       n.grecia: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Super_League_Greece", 3],
       n.hungria: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Nemzeti_Bajnoks%C3%A1g_I", 4],
       n.ilhasfaroe: ["https://en.wikipedia.org/wiki/2023_Faroe_Islands_Premier_League", 1],
       n.irlanda: ["https://en.wikipedia.org/wiki/2023_League_of_Ireland_Premier_Division", 3],
-      n.irlandanorte: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_NIFL_Premiership", 1],
+      n.irlandanorte: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_NIFL_Premiership", 1],
       n.islandia: ["https://en.wikipedia.org/wiki/2023_Besta_deild_karla", 1],
       n.israel: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Israeli_Premier_League", 5],
-      n.kosovo: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Football_Superleague_of_Kosovo", 2],
+      n.kosovo: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Football_Superleague_of_Kosovo", 2],
       n.letonia: ["https://en.wikipedia.org/wiki/2023_Latvian_Higher_League", 1],
       n.lituania: ["https://en.wikipedia.org/wiki/2023_A_Lyga", 3],
-      n.luxemburgo: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Luxembourg_National_Division", 1],
-      n.macedonia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Macedonian_First_Football_League", 3],
-      n.malta: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Maltese_Premier_League", 4],
-      n.moldova: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Moldovan_Super_Liga", 4],
-      n.montenegro: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Montenegrin_First_League", 2],
+      n.luxemburgo: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Luxembourg_National_Division", 1],
+      n.macedonia: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Macedonian_First_Football_League", 2],
+      n.malta: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Maltese_Premier_League", 4],
+      n.moldova: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Moldovan_Super_Liga", 4],
+      n.montenegro: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Montenegrin_First_League", 2],
       n.noruega: ["https://en.wikipedia.org/wiki/2023_Eliteserien", 3],
-      n.paisgales: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Cymru_Premier", 3],
+      n.paisgales: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Cymru_Premier", 3],
       n.polonia: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Ekstraklasa", 5],
       n.repTcheca: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Czech_First_League", 3],
       n.romenia: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_SuperLiga", 3],
       n.russia: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Russian_Premier_League", 3],
-      n.saomarino: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Campionato_Sammarinese_di_Calcio", 1],
+      n.saomarino: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Campionato_Sammarinese_di_Calcio", 1],
       n.servia: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Serbian_SuperLiga", 4],
       n.suecia: ["https://en.wikipedia.org/wiki/2023_Allsvenskan", 3],
       n.suica: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Swiss_Super_League", 3],
@@ -88,17 +88,17 @@ class RealClassification{
       n.mexico: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Liga_MX_season", 18],
       n.estadosUnidos: ["https://en.wikipedia.org/wiki/2023_Major_League_Soccer_season", 5],
 
-      n.australia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_A-League_Men", 4],
+      n.australia: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_A-League_Men", 4],
 
-      n.arabia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Saudi_Professional_League", 4],
-      n.bahrein: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Bahraini_Premier_League", 0],
-      n.eau: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_UAE_Pro_League", 4],
-      n.iran: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Persian_Gulf_Pro_League", 5],
-      n.iraque: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Iraqi_Premier_League", 2],
-      n.kuwait: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Kuwaiti_Premier_League", 0],
-      n.libano: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Lebanese_Premier_League", 2],
-      n.qatar: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Qatar_Stars_League", 3],
-      n.siria: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Syrian_Premier_League", 3],
+      n.arabia: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Saudi_Professional_League", 4],
+      n.bahrein: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Bahraini_Premier_League", 2],
+      n.eau: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_UAE_Pro_League", 4],
+      n.iran: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Persian_Gulf_Pro_League", 6],
+      n.iraque: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Iraqi_Premier_League", 2],
+      n.kuwait: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Kuwaiti_Premier_League", 0],
+      n.libano: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Lebanese_Premier_League", 2],
+      n.qatar: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Qatar_Stars_League", 3],
+      n.siria: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Syrian_Premier_League", 3],
 
       n.uzbekistao: ["https://en.wikipedia.org/wiki/2023_Uzbekistan_Super_League", 3],
 
@@ -107,20 +107,20 @@ class RealClassification{
       n.coreiaSul: ["https://en.wikipedia.org/wiki/2023_K_League_1", 4],
       n.japao: ["https://en.wikipedia.org/wiki/2023_J1_League", 4],
       //n.filipinas: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Philippines_Football_League", 4],
-      n.india: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Indian_Super_League", 4],
-      n.indonesia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Liga_1_(Indonesia)", 4],
+      n.india: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Indian_Super_League", 4],
+      n.indonesia: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Liga_1_(Indonesia)", 4],
       n.malasia: ["https://en.wikipedia.org/wiki/2023_Malaysia_Super_League", 6],
       n.nepal: ["https://en.wikipedia.org/wiki/2023_Martyr%27s_Memorial_A-Division_League", 4],
-      n.tailandia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Thai_League_1", 5],
+      n.tailandia: ["https://en.wikipedia.org/wiki/2024%E2%80%9324_Thai_League_1", 5],
       n.vietna: ["https://en.wikipedia.org/wiki/2023_V.League_1", 5],
 
-      n.argelia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Algerian_Ligue_Professionnelle_1", 4],
-      n.egito: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Egyptian_Premier_League", 4],
-      n.marrocos: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Botola", 5],
-      n.tunisia: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Tunisian_Ligue_Professionnelle_1", 7],
-      n.angola: ["https://en.wikipedia.org/wiki/2021%E2%80%9322_Girabola", 0],
-      n.africaSul: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_South_African_Premier_Division", 2],
-      n.nigeria: ["https://en.wikipedia.org/wiki/2022%E2%80%9323_Nigeria_Professional_Football_League", 0],
+      n.argelia: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Algerian_Ligue_Professionnelle_1", 4],
+      n.egito: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Egyptian_Premier_League", 3],
+      n.marrocos: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Botola", 5],
+      n.tunisia: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Tunisian_Ligue_Professionnelle_1", 8],
+      n.angola: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Girabola", 0],
+      n.africaSul: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_South_African_Premier_Division", 3],
+      n.nigeria: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Nigeria_Professional_Football_League", 0],
 
     };
   }
@@ -179,6 +179,7 @@ class RealClassification{
       lines.add(currentLine);
     }
 
+    print(lines);
     for (dynamic lined in lines){
       if(lined[0].isNotEmpty){
         String clubName = lined[0];
@@ -390,6 +391,7 @@ class RealClassification{
     map["GOŠK Gabela"] = n.gabela;
     map["Sloboda Tuzla"] = n.slobodatuzla;
     map["Zrinjski Mostar"] = n.zrinjski;
+    map["Posušje"] = n.posusje;
     map["Tuzla City"] = n.tuzla;
     //BULGARIA
     map["Beroe"] = n.beroe;
@@ -402,9 +404,13 @@ class RealClassification{
     map["Tobol"] = n.tobol;
     //CROACIA
     map["Lokomotiva"] = n.lokzagreb;
+    map["Rudeš"] = n.rudes;
     //CHIPRE
     map["Omonia"] = n.omonianicosia;
     map["Karmiotissa"] = n.karmiotissa;
+    map["Pafos FC"] = n.pafos;
+    map["Othellos Athienou"] = n.othellosathienou;
+    map["Karmiotissa FC"] = n.karmiotissa;
     //DINAMARCA
     map["AaB"] = n.aalborg;
     map["AGF"] = n.aarhus;
@@ -420,6 +426,7 @@ class RealClassification{
     map["St Johnstone"] = n.stjohnstone;
     //ESLOVAQUIA
     map["Žilina"] = n.zilina;
+    map["Košice"] = n.kosice;
     //ESLOVENIA
     map["Bravo"] = n.bravo;
     map["Domžale"] = n.domzale;
@@ -464,6 +471,7 @@ class RealClassification{
     map["ÍF"] = n.iffuglafjordur;
     map["KÍ"] = n.kiklaksvik;
     map["07 Vestur"] = n.vestur;
+    map["TB Tvøroyri"] = n.tbtvoroyri;
     map["Víkingur"] = n.vikingurgota;
     //IRLANDA
     map["Derry City"] = n.derrycity;
@@ -498,6 +506,9 @@ class RealClassification{
     map["Sileks"] = n.sileks;
     map["Makedonija G.P."] = n.makedonija;
     map["Rabotnicki"] = n.rabotnicki;
+    map["Rabotnički"] = n.rabotnicki;
+    map["Vardar"] = n.vardar;
+    map["AP Brera"] = n.brerastrumica;
     //MALTA
     map["Gżira United"] = n.gziraunited;
     map["Ħamrun Spartans"] = n.hamrunspartans;
@@ -514,9 +525,11 @@ class RealClassification{
     //NORUEGA
     map["Odd"] = n.oddgrenland;
     map["Sandefjord"] = n.sandefjord;
+    map["Sarpsborg"] = n.sarpsborg;
     map["Tromsø"] = n.tromso;
     map["Vålerenga"] = n.valerenga;
     //PAIS DE GALES
+    map["Barry Town United"] = n.barrytown;
     map["Newtown"] = n.newtown;
     map["Cardiff Metropolitan University"] = n.cardiffuni;
     //POLONIA
@@ -596,6 +609,8 @@ class RealClassification{
     //SUICA
     map["Grasshopper"] = n.grasshoppers;
     map["Zürich"] = n.zurich;
+    map["Yverdon-Sport"] = n.yverdon;
+    map["Lausanne-Sport"] = n.lausanne;
     //UCRANIA
     map["Dynamo Kyiv"] = n.dinamokiev;
 
@@ -700,6 +715,7 @@ class RealClassification{
     map["Suwon Samsung Bluewings"] = n.suwonsamsung;
     //INDIA
     map["ATK Mohun Bagan"] = n.mohunbagan;
+    map["Mohun Bagan SG"] = n.mohunbagan;
     map["Bengaluru"] = n.bengaluru;
     map["East Bengal"] = n.eastbengal;
     map["Goa"] = n.goa;
@@ -814,11 +830,15 @@ class RealClassification{
     map["Ittihad Tanger"] = n.irtanger;
     map["SCC Mohammédia"] = n.chababmoh;
     map["Raja CA"] = n.rajacasablanca;
+    map["MAS Fès"] = n.maghreb;
     map["MC Oujda"] = n.moulodiaoujda;
+    map["Olympic Safi"] = n.safi;
     map["Olympic Club de Safi"] = n.safi;
     map["Jeunesse Sportive Soualem"] = n.soualem;
+    map["MA Tétouan"] = n.moghrebtetouan;
     map["Moghreb Tétouan"] = n.moghrebtetouan;
     map["Wydad AC"] = n.wydad;
+    map["RCA Zemamra"] = n.zemamra;
     //TUNISIA
     map["Olympique Béja"] = n.olympiquebeja;
     map["US Ben Guerdane"] = n.benguerdane;

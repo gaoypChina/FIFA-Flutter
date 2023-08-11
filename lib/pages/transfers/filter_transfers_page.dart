@@ -4,7 +4,6 @@ import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/classes/countries/words.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/transfers/controller/filter_players.dart';
 import 'package:fifa/theme/colors.dart';

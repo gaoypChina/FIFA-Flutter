@@ -121,8 +121,6 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
 }
 
 
-
-
 class RealTableWidget extends StatefulWidget {
   final String chosenLeagueName;
   const RealTableWidget({Key? key, required this.chosenLeagueName}) : super(key: key);
@@ -159,6 +157,7 @@ class _RealTableWidgetState extends State<RealTableWidget> {
 
     try {
       await realClassification.getLeagueTable(widget.chosenLeagueName);
+      hasClassification = true;
     }catch(e){
       hasClassification = false;
     }

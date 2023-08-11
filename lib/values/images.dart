@@ -844,7 +844,7 @@ String imageLogo(String timeFoto) {
     map[_name.steauabucuresti] = 'steaua bucareste';
     map[_name.arad] = 'uta arad';
     //MACEDONIA
-    map[_name.akademijapandev] = 'pandev';
+    map[_name.brerastrumica] = 'brera strumica';
     map[_name.makedonija] = 'makedonija';
     map[_name.pobeda] = 'pobeda';
     map[_name.rabotnicki] = 'rabotnicki';
