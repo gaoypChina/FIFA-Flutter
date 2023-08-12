@@ -5138,21 +5138,21 @@ class ClubName{
   String titavi = "Titavi";
   String vaivasetai = "Vaivase-Tai";
   //TAHITI
-  String arue = "AS Arue";
-  String centralsport = "AS Central Sport";
-  String dragon = "AS Dragon";
-  String excelsiorTAHITI = "AS Excelsior";
-  String jeunestahiti = " AS Jeunes Tahitiens";
-  String feipi = "AS Fei Pi";
-  String manuura = "AS Manu-Ura";
-  String pirae = "AS Pirae";
+  String arue = "Arue";
+  String centralsport = "Central Sport";
+  String dragon = "Dragon";
+  String excelsiorTAHITI = "Excelsior";
+  String jeunestahiti = " Jeunes Tahitiens";
+  String feipi = "Fei Pi";
+  String manuura = "Manu-Ura";
+  String pirae = "Pirae";
   String asptt = "AS PTT";
-  String pueu = "AS Pueu";
-  String taiarapu = "AS Taiarapu";
-  String tamariipunaruu = "AS Tamarii Punaruu";
-  String tefana = "AS Tefana";
+  String pueu = "Pueu";
+  String taiarapu = "Taiarapu";
+  String tamariipunaruu = "Tamarii Punaruu";
+  String tefana = "Tefana";
   String tiaretahiti = "Tiare Tahiti";
-  String venus = "AS Vénus";
+  String venus = "Vénus";
   //TIMOR
   String boavistaTIMOR = "Boavista Timor Leste";
   String fimasporting = "Fima Sporting";

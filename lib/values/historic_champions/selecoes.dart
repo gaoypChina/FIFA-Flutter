@@ -199,6 +199,7 @@ Map<String,dynamic> mapSelecoes = {
 
   //COPA DO MUNDO FEMININA
     leagueName.copamundoFem : {
+      //2023.0: [w.spain,w.sweden,w.england,w.australia,],
       2019.0: [w.unitedstates,w.netherlands,w.sweden,w.england,],
       2015.0: [w.unitedstates,w.japan,w.england,w.germany,],
       2011.0: [w.japan,w.unitedstates,w.sweden,w.france,],

@@ -128,7 +128,7 @@ class LeagueOfficialNames{
   String paquistao = 'Liga Paquistão'; String afeganistao = 'Liga Afeganistao';
   String palestina = 'Liga Palestina West Bank';String palestinagaza = 'Liga Palestina-Gaza';
   String taiwan = 'Liga Taiwan'; String hongkong = 'Liga Hong Kong';
-  String brunei = 'Liga Brunei';
+  String brunei = 'Liga Brunei'; String mongolia = 'Liga Mongolia';
 
   String egito = 'Liga Egito';
   String argelia = 'Liga Argelia';
@@ -696,11 +696,13 @@ Map getLeagueNationalityMap(){
     leagueName.paquistao: Words.country.pakistan,
     leagueName.afeganistao: Words.country.afghanistan,
 
+    leagueName.brunei: Words.country.brunei,
     leagueName.camboja: Words.country.cambodia,
     leagueName.indonesia: Words.country.indonesia,
     leagueName.laos: Words.country.laos,
     leagueName.malasia: Words.country.malaysia,
     leagueName.maldivas: Words.country.maldives,
+    leagueName.mongolia: Words.country.mongolia,
     leagueName.cingapura: Words.country.singapore,
     leagueName.myanmar: Words.country.myanmar,
     leagueName.filipinas: Words.country.philippines,

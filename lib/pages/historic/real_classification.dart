@@ -160,6 +160,7 @@ class _RealTableWidgetState extends State<RealTableWidget> {
       hasClassification = true;
     }catch(e){
       hasClassification = false;
+      customToast("No data available");
     }
     setState(() {});
   }
