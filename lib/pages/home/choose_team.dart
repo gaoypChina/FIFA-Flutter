@@ -242,10 +242,10 @@ class _ChooseTeamState extends State<ChooseTeam> {
   Widget title(){
     return Stack(
       children: const [
-        Text('FSIM 2023',style: EstiloRowdies.titleWhite),
+        Text('FSIM 2024',style: EstiloRowdies.titleWhite),
         Padding(
           padding: EdgeInsets.only(left:2.0,top: 1),
-          child: Text('FSIM 2023',style: EstiloRowdies.titleGreen),
+          child: Text('FSIM 2024',style: EstiloRowdies.titleGreen),
         ),
       ],
     );

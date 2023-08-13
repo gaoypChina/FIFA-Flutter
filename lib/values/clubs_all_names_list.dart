@@ -65,6 +65,7 @@ List<String> clubsAllNameList = [
   clubName.auxerre,clubName.ajaccio,clubName.brest,clubName.caen,
   clubName.clermont,clubName.dijon,clubName.lorient,clubName.nimes,
   clubName.strasbourg,clubName.troyes,clubName.parisfc,clubName.bastia,
+  clubName.lehavre,clubName.guingamp,
 
   //portugal
   clubName.benfica,  clubName.porto,  clubName.sporting,  clubName.braga,
@@ -122,7 +123,7 @@ List<String> clubsAllNameList = [
   clubName.voltaredonda,
 
   //argentina
-  clubName.argentinojuniors,  clubName.arsenalsarandi,  clubName.banfield,  clubName.bocajuniors,
+  clubName.argentinojuniors,  clubName.banfield,  clubName.bocajuniors,
   clubName.colon,  clubName.defensayjusticia,  clubName.estudiantes,  clubName.independiente,
   clubName.lanus,  clubName.newells,  clubName.racing,  clubName.riverplate,
   clubName.rosario,  clubName.sanlorenzo,  clubName.talleres,  clubName.velez,
@@ -132,8 +133,9 @@ List<String> clubsAllNameList = [
   //MERCOSUL
   clubName.penarol,  clubName.nacional,  clubName.danubio,
   clubName.olimpia,  clubName.libertad,clubName.cerroporteno,clubName.guaraniPAR,
-  clubName.univcatolica, clubName.colocolo,  clubName.lau, clubName.palestino,
-  clubName.bolivar, clubName.thestrongest,clubName.alwaysready,
+  clubName.univcatolica, clubName.colocolo,  clubName.lau,
+  clubName.palestino,clubName.huachipato, clubName.unionespanola,
+  clubName.bolivar, clubName.thestrongest,
   clubName.sportingcristal,  clubName.cienciano, clubName.alianzalima,clubName.universitario,
   clubName.jorge,clubName.melgar,clubName.orientepetrolero,
 

@@ -11,8 +11,6 @@ class FIFAImages{
 
     Map map = {};
     map[l.inglaterra1] = 'premierleague';
-    map[l.inglaterra1] = 'premierleague';
-    map[l.inglaterra1] = 'premierleague';
     map[l.inglaterra2] = 'championship';
     map[l.inglaterra3] = 'inglaterra3';
     map[l.italia1] = 'italia1';

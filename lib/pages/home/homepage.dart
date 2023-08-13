@@ -11,6 +11,7 @@ import 'package:fifa/pages/tournament_mode/tournament.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_names.dart';
+import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:flutter/material.dart';
 
@@ -30,6 +31,14 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
+    doThisOnLaunch();
+  }
+  Map getCloneMap(Map data) {
+    return data.map((k, v) => MapEntry(k, v is Map ? getCloneMap(v) : v));
+  }
+  doThisOnLaunch() async {
+    //RESETA LISTA ORIGINAL A MOSTRAR CLUBES
+    clubNameMap = getCloneMap(clubNameMapImmutable); //Mapa sem mudar mapa original
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
@@ -116,10 +125,10 @@ class _HomePageState extends State<HomePage> {
   Widget title(){
     return Stack(
       children: const [
-        Text('FSIM 2023',style: EstiloRowdies.titleWhite),
+        Text('FSIM 2024',style: EstiloRowdies.titleWhite),
         Padding(
           padding: EdgeInsets.only(left:2.0,top: 1),
-          child: Text('FSIM 2023',style: EstiloRowdies.titleGreen),
+          child: Text('FSIM 2024',style: EstiloRowdies.titleGreen),
         ),
       ],
     );
@@ -127,49 +136,51 @@ class _HomePageState extends State<HomePage> {
 
 Widget buttonRow(String title, String imageName, double height, Function() onTap){
     return Container(
-      height: height,
       margin: const EdgeInsets.all(8),
-      decoration: BoxDecoration(
-        color: AppColors().greyTransparent,
-        borderRadius: BorderRadius.circular(8),
-      ),
       child: PressableButton(
         onTap: onTap,
-        child: Stack(
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8.0),
-              child: SizedBox(
-                width: Sized(context).width*0.8,
-                child: Image.asset(imageName, fit: BoxFit.fill,),
-                ),
-            ),
+        child: Container(
+          height: height,
+          decoration: BoxDecoration(
+            color: AppColors().greyTransparent,
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Stack(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
+                child: SizedBox(
+                  width: Sized(context).width*0.8,
+                  child: Image.asset(imageName, fit: BoxFit.fill,),
+                  ),
+              ),
 
-              Align(
-                alignment: Alignment.centerRight,
-                child: Container(
-                  width: Sized(context).width,
-                  height: height,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    gradient: const LinearGradient(
-                      begin: Alignment.bottomLeft,
-                      end: Alignment.topRight,
-                      stops: [0.5, 0.65],
-                      colors: [Colors.transparent, Colors.black],
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: Container(
+                    width: Sized(context).width,
+                    height: height,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      gradient: const LinearGradient(
+                        begin: Alignment.bottomLeft,
+                        end: Alignment.topRight,
+                        stops: [0.5, 0.65],
+                        colors: [Colors.transparent, Colors.black],
+                      ),
+                    ),
+                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 8),
+                    child: Text(
+                      title,
+                      textAlign: TextAlign.end,
+                      style: EstiloRajdhani.hometitle,
                     ),
                   ),
-                  padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 8),
-                  child: Text(
-                    title,
-                    textAlign: TextAlign.end,
-                    style: EstiloRajdhani.hometitle,
-                  ),
-                ),
-            ),
+              ),
 
-          ],
-        )
+            ],
+          ),
+        ),
       ),
     );
 }

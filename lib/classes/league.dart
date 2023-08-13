@@ -50,6 +50,7 @@ class League{
     return allClubsName.indexOf(clubName);
   }
   List getAllClubsNameList(){
+    print(clubNameMap);
     Map allClubsMap = clubNameMap[name];
     List allClubs = allClubsMap.values.toList();
     return allClubs;

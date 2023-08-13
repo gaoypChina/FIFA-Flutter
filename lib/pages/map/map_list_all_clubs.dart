@@ -30,7 +30,6 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
   List<String> countryOptions = [];
   String selectedCountry = Words.country.brazil;
   ClubDetails clubDetails = ClubDetails();
-  Iterable keysIterable = ClubDetails().map.keys;
 
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
@@ -41,18 +40,19 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
     super.initState();
   }
   getFlagsList(){
+    Continents continents = Continents();
     clubDetails.map.forEach((clubName, value) {
       String countryName = clubDetails.getCountry(clubName);
       if(!countryOptions.contains(countryName)){
-        if(Continents().funcCountryContinents(countryName) == widget.continent){
+        if(continents.funcCountryContinents(countryName) == widget.continent){
           countryOptions.add(countryName);
         }
       }
     });
-    setState((){});
     countryOptions.sort();
     selectedCountry = countryOptions.first;
     setState((){});
+
   }
 
 ////////////////////////////////////////////////////////////////////////////
@@ -61,9 +61,11 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
   @override
   Widget build(BuildContext context) {
     //Filtra os clubes do país
-
+    Iterable keysIterable = clubDetails.map.keys;
     Iterable showList = keysIterable.where((clubName) => selectedCountry == clubDetails.getCountry(clubName));
     showList = showList.where((clubName) => clubDetails.getCoordinate(clubName).latitude != 0);
+
+    DataGraphics dataGraphics = DataGraphics();
 
     return Scaffold(
       body: Stack(
@@ -84,7 +86,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                   child: ListView.builder(
                       padding: EdgeInsets.zero,
                       itemCount: showList.length,
-                      itemBuilder: (c,i) => clubRow(showList.elementAt(i))
+                      itemBuilder: (c,i) => clubRow(showList.elementAt(i), clubDetails, dataGraphics)
                   ),
                 ),
               ),
@@ -130,10 +132,9 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
       ],
     );
   }
-  Widget clubRow(String clubName){
+  Widget clubRow(String clubName, ClubDetails clubDetails, DataGraphics dataGraphics){
 
-    DataGraphics dataGraphics = DataGraphics();
-    dataGraphics.getDataNotPlayabale(clubName, ClubDetails().getCountry(clubName), ClubDetails().getState(clubName));
+    dataGraphics.getDataNotPlayabale(clubName, clubDetails.getCountry(clubName), clubDetails.getState(clubName));
 
     return GestureDetector(
       onTap: (){
@@ -213,8 +214,6 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                             ),
 
 
-
-
                           ],
                         ),
                       ),
@@ -222,7 +221,6 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                     ],
                   ),
                 ),
-
 
                 //UNIFORME
                 Padding(
@@ -233,7 +231,6 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                     padding: const EdgeInsets.only(left:340,top: 80),
                     child: funcFlagsList(clubDetails.getCountry(clubName), 15, 25),
                 ),
-
 
                 SizedBox(
                   height: 32,

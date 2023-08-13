@@ -2110,7 +2110,7 @@ class ClubName{
   String interskonto = "Interskonto";
   String jaunibariga = "Jaunība Riga";
   String jelgava = "Jelgava";
-  String jurmala = "Spartaks Jurmala";
+  String jurmala = "Jurmala";
   String jurnieks = "Jurnieks";
   String kompardaugava = "Kompar-Daugava";
   String kvadrats = "Kvadrats";
@@ -5141,12 +5141,12 @@ class ClubName{
   String arue = "Arue";
   String centralsport = "Central Sport";
   String dragon = "Dragon";
-  String excelsiorTAHITI = "Excelsior";
+  String excelsiorTAHITI = "AS Excelsior";
   String jeunestahiti = " Jeunes Tahitiens";
   String feipi = "Fei Pi";
   String manuura = "Manu-Ura";
   String pirae = "Pirae";
-  String asptt = "AS PTT";
+  String asptt = "PTT";
   String pueu = "Pueu";
   String taiarapu = "Taiarapu";
   String tamariipunaruu = "Tamarii Punaruu";

@@ -84,20 +84,20 @@ class _ChooseContinentPageState extends State<ChooseContinentPage> {
         ),
         borderRadius: const BorderRadius.all(Radius.circular(2.0)),
       ),
-      child: Row(
-        children: [
-          const SizedBox(width: 8),
-          Images().getContinentLogo(text),
-          Expanded(
-            child: PressableButton(
-                onTap: function,
-                child: Padding(
-                      padding: const EdgeInsets.all(12),
-                      child: Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.text22)
-                )
+      child: PressableButton(
+        onTap: function,
+        child: Row(
+          children: [
+            const SizedBox(width: 8),
+            Images().getContinentLogo(text),
+            Expanded(
+              child: Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: Text(text,textAlign:TextAlign.center,style: EstiloTextoBranco.text22)
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
