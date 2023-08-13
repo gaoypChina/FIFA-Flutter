@@ -12,6 +12,7 @@ import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/widgets/button/pressable_button.dart';
+import 'package:fifa/widgets/popup/popup_simulation.dart';
 import 'package:flutter/material.dart';
 
 class ClubCalendar extends StatefulWidget {
@@ -24,6 +25,7 @@ class ClubCalendar extends StatefulWidget {
 
 class _ClubCalendarState extends State<ClubCalendar> {
 
+  final ScrollController _controller = ScrollController(initialScrollOffset: semana.ceilToDouble()*50);
   ///////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
@@ -45,6 +47,7 @@ class _ClubCalendarState extends State<ClubCalendar> {
           Padding(
             padding: const EdgeInsets.only(top: 8.0, left: 8, right: 8),
             child: SingleChildScrollView(
+              controller: _controller,
               child: Column(
                 children: [
                   for(int i=1;i<globalUltimaSemana;i++)
@@ -69,77 +72,85 @@ Widget calendarRow(int week){
     Semana weekClass = Semana(week);
     CalendarResult calendarResult = CalendarResult(semanaLocal: week, club: widget.club);
 
-    return PressableButton(
-      onTap: (){
-        clickClubProfilePage(context, Club(index: calendarResult.show.clubID2));
-      },
-      child: Container(
-        height: heightSize,
-        color: calendarResult.show.backgroundColor,
-        margin: const EdgeInsets.symmetric(vertical: 4),
-        child: Stack(
-          children: [
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 4),
+      child: PressableButton(
+        onTap: (){
+          clickClubProfilePage(context, Club(index: calendarResult.show.clubID2));
+        },
+        child: Container(
+          height: heightSize,
+          color: calendarResult.show.backgroundColor,
+          child: Stack(
+            children: [
 
-            calendarResult.show.hasAdversary && calendarResult.show.visitante
-                ? Opacity(opacity: 0.3, child: Images().getStadiumWidget(calendarResult.show.clubName2,heightSize,Sized(context).width))
-                : Container(),
+              calendarResult.show.hasAdversary && calendarResult.show.visitante
+                  ? Opacity(opacity: 0.3, child: Images().getStadiumWidget(calendarResult.show.clubName2,heightSize,Sized(context).width))
+                  : Container(),
 
-            Container(
-              padding: const EdgeInsets.all(4),
-              child: Row(
-                children: [
+              Container(
+                padding: const EdgeInsets.all(4),
+                child: Row(
+                  children: [
 
-                  Image.asset(FIFAImages().campeonatoLogo(calendarResult.show.competitionName),height:30,width: 30,),
+                    Image.asset(FIFAImages().campeonatoLogo(calendarResult.show.competitionName),height:30,width: 30,),
 
-                  const SizedBox(width: 8),
-                  Column(
-                    children: [
-                      calendarResult.show.visitante
-                          ? Text(Translation(context).text.away.toUpperCase(),style: EstiloTextoBranco.text12)
-                          : Text(Translation(context).text.home.toUpperCase(),style: EstiloTextoBranco.text12),
-                      Text(calendarResult.show.placar,style: EstiloTextoBranco.negrito18),
-                    ],
-                  ),
-                  const SizedBox(width: 8),
-
-                  calendarResult.show.hasAdversary
-                      ? Images().getEscudoWidget(calendarResult.show.clubName2,30,30)
-                      : Container(),
-                  const SizedBox(width: 8),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    const SizedBox(width: 8),
+                    Column(
                       children: [
-
-                        Text(weekClass.semanaCalendarStr,style: EstiloTextoBranco.text12),
-                        calendarResult.show.hasAdversary
-                            ? Text(calendarResult.show.clubName2,style: EstiloTextoBranco.negrito16)
-                            : Container(),
-
+                        calendarResult.show.visitante
+                            ? Text(Translation(context).text.away.toUpperCase(),style: EstiloTextoBranco.text12)
+                            : Text(Translation(context).text.home.toUpperCase(),style: EstiloTextoBranco.text12),
+                        Text(calendarResult.show.placar,style: EstiloTextoBranco.negrito18),
                       ],
                     ),
+                    const SizedBox(width: 8),
 
-                  const Spacer(),
+                    calendarResult.show.hasAdversary
+                        ? Images().getEscudoWidget(calendarResult.show.clubName2,30,30)
+                        : Container(),
+                    const SizedBox(width: 8),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
 
-                  calendarResult.show.hasAdversary
-                      ? Images().getUniformWidget(calendarResult.show.clubName2,30,30)
-                      : Container(),
+                          Text(weekClass.semanaCalendarStr,style: EstiloTextoBranco.text12),
+                          calendarResult.show.hasAdversary
+                              ? Text(calendarResult.show.clubName2,style: EstiloTextoBranco.negrito16)
+                              : Container(),
 
-                  widget.club.name == My().clubName ? InkWell(
-                    onTap:(){
-                      simulateManyWeeksFunction(week);
-                      navigatorReplace(context, const Menu());
-                    },
-                    child: const Padding(
-                      padding: EdgeInsets.only(left: 4.0),
-                      child: Icon(Icons.timer_outlined,color: Colors.white,size: 25),
-                    ),
-                  ) : Container(),
+                        ],
+                      ),
+
+                    const Spacer(),
+
+                    calendarResult.show.hasAdversary
+                        ? Images().getUniformWidget(calendarResult.show.clubName2,30,30)
+                        : Container(),
+
+                    widget.club.name == My().clubName && week >= semana? InkWell(
+                      onTap:(){
+                        popUpSimulation(context: context,
+                            week: week,
+                            name: weekClass.semanaCalendarStr,
+                            function: (){
+                              simulateManyWeeksFunction(context,week);
+                              navigatorReplace(context, const Menu());
+                              setState((){});
+                        });
+                      },
+                      child: const Padding(
+                        padding: EdgeInsets.only(left: 4.0),
+                        child: Icon(Icons.timer_outlined,color: Colors.white,size: 25),
+                      ),
+                    ) : Container(),
 
 
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

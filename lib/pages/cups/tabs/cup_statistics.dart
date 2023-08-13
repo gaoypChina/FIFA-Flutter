@@ -75,11 +75,7 @@ class _CupStatisticsState extends State<CupStatistics> {
       String playerClubName = clubsAllNameList[globalJogadoresClubIndex[index]];
       if(allClubsCup.contains(playerClubName)) {
         if(title == FilterPlayersTitle().bestPlayer){
-          double points = (globalCupPlayers[PlayerStatsKeys().keyPlayerGoals]![index]*2
-                        + globalCupPlayers[PlayerStatsKeys().keyPlayerAssists]![index]
-                        + globalCupPlayers[PlayerStatsKeys().keyPlayerCleanSheets]![index]*1.5
-                    ).toDouble();
-          points = points/ (globalCupPlayers[PlayerStatsKeys().keyPlayerMatchs]![index]+1);
+          double points = Jogador(index: index).gradeCup;
           copyVariableList.add(points);
           players.add(index);
         }else if(title == FilterPlayersTitle().cleanSheets){

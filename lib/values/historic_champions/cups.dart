@@ -730,7 +730,7 @@ Map<String,dynamic> mapCopas = {
     2022.0: [n.patronato,n.talleres,],
     2021.0: [],
     2020.0: [n.bocajuniors,n.talleres,],
-    2019.0: [n.riverplate,n.centralCordoba,],
+    2019.0: [n.riverplate,n.centralcordoba,],
     2018.0: [n.rosario,n.gimnasia,],
     2017.0: [n.riverplate,n.atleticotucuman,],
     2016.0: [n.riverplate,n.rosario,],

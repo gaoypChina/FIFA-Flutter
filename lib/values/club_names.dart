@@ -3530,7 +3530,7 @@ class ClubName{
   String barracas = "Barracas Central";
   String belgrano = "Belgrano";
   String bocajuniors = "Boca Juniors";
-  String centralCordoba = "Central Córdoba";
+  String centralcordoba = "Central Córdoba";
   String centralNorte = "Central Norte";
   String chacarita = "Chacarita Juniors";
   String chaco = "Chaco For Ever";

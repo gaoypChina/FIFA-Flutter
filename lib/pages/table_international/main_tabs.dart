@@ -102,7 +102,7 @@ class _TableInternationalState extends State<TableInternational>  with TickerPro
                           Tab(text: Translation(context).text.matchs),
                           const Tab(text: 'Brackets'),
                           Tab(text: Translation(context).text.knockoutStage),
-                          Tab(text: Translation(context).text.topScorers),
+                          const Tab(text: "Top Players"),
                         ],
                       ),
                     ),

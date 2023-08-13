@@ -13,6 +13,7 @@ class FilterPlayersTitle{
   String assists = "Assistências";
   String bestPlayer = "Melhor Jogador";
   String cleanSheets = "Clean Sheets";
+  String golsSofridos = "Gols Sofridos";
   String redCards = "Cartões Vermelhos";
   String yellowCards = "Cartões Amarelos";
 
@@ -21,7 +22,8 @@ class FilterPlayersTitle{
   }
 
   getListFull(){
-    return [artilheiros, assists, bestPlayer, cleanSheets, redCards, yellowCards];
+    // NOT USED
+    return [artilheiros, assists, bestPlayer, cleanSheets, golsSofridos, redCards, yellowCards];
   }
 
 }

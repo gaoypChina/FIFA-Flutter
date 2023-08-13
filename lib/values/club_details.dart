@@ -6266,7 +6266,7 @@ class ClubDetails{
     map[n.bocajuniors] = [
       ClubColors(Colors.blue,Colors.yellow),pattern.oneHorStripe,Coordinates(-34.6350100, -58.3649280),
       'La Bombonera',54000,1905,_c.argentina,75.8,[n.riverplate],{}];
-    map[n.centralCordoba] = [
+    map[n.centralcordoba] = [
       ClubColors(Colors.black,Colors.white),pattern.stripes3,Coordinates(-27.765766, -64.26963233),
       'Único Madre de Ciudades',30000,1919,_c.argentina,66.7,[],{}];
     map[n.chacarita] = [

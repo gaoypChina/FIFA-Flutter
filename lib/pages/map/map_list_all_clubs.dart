@@ -65,7 +65,6 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
     Iterable showList = keysIterable.where((clubName) => selectedCountry == clubDetails.getCountry(clubName));
     showList = showList.where((clubName) => clubDetails.getCoordinate(clubName).latitude != 0);
 
-    DataGraphics dataGraphics = DataGraphics();
 
     return Scaffold(
       body: Stack(
@@ -86,7 +85,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
                   child: ListView.builder(
                       padding: EdgeInsets.zero,
                       itemCount: showList.length,
-                      itemBuilder: (c,i) => clubRow(showList.elementAt(i), clubDetails, dataGraphics)
+                      itemBuilder: (c,i) => clubRow(showList.elementAt(i), clubDetails)
                   ),
                 ),
               ),
@@ -132,8 +131,9 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
       ],
     );
   }
-  Widget clubRow(String clubName, ClubDetails clubDetails, DataGraphics dataGraphics){
+  Widget clubRow(String clubName, ClubDetails clubDetails){
 
+    DataGraphics dataGraphics = DataGraphics();
     dataGraphics.getDataNotPlayabale(clubName, clubDetails.getCountry(clubName), clubDetails.getState(clubName));
 
     return GestureDetector(

@@ -1071,7 +1071,7 @@ String imageLogo(String timeFoto) {
     map[_name.belgrano] = 'belgrano';
     map[_name.bocajuniors] = 'bocajuniors';
     map[_name.chacarita] = 'chacarita';
-    map[_name.centralCordoba] = 'central cordoba';
+    map[_name.centralcordoba] = 'central cordoba';
     map[_name.colon] = 'colon';
     map[_name.defensayjusticia] = 'defensa';
     map[_name.estudiantes] = 'estudiantes';

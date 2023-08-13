@@ -145,7 +145,6 @@ List globalJogadoresCarrerCleanSheets = List.filled(globalMaxPlayersPermitted, 0
 List globalJogadoresCarrerGolsSofridos = List.filled(globalMaxPlayersPermitted, 0);
 List globalJogadoresYellowCard = [];
 List globalJogadoresRedCard = [];
-List globalJogadoresGrades = [];
 List globalJogadoresInjury = [];
 List globalJogadoresMoralNames = ['Excelent','Good','Average','Bad','Terrible'];
 

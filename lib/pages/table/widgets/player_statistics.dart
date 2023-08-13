@@ -12,10 +12,11 @@ Widget wYellowRedCardWidget(BuildContext context, League league, int goalOrYello
 
   String playerStats(String title, Jogador player){
     String value = "";
-    if(title == FilterPlayersTitle().bestPlayer){ value =  player.grade.toStringAsFixed(1);}
+    if(title == FilterPlayersTitle().bestPlayer){ value =  player.gradeLeague.toStringAsFixed(1);}
     if(title == FilterPlayersTitle().artilheiros){ value =  player.goalsLeague.toString();}
     if(title == FilterPlayersTitle().assists){ value =  player.assistsLeague.toString();}
     if(title == FilterPlayersTitle().cleanSheets){ value =  player.cleanSheetsLeague.toString();}
+    if(title == FilterPlayersTitle().golsSofridos){ value =  player.golsSofridosLeague.toString();}
     if(title == FilterPlayersTitle().redCards){ value =  player.redCard.toString();}
     if(title == FilterPlayersTitle().yellowCards){ value =  player.yellowCard.toString();}
     return value;
@@ -28,6 +29,7 @@ Widget wYellowRedCardWidget(BuildContext context, League league, int goalOrYello
     3: FilterPlayersTitle().assists,
     4: FilterPlayersTitle().bestPlayer,
     5: FilterPlayersTitle().cleanSheets,
+    6: FilterPlayersTitle().golsSofridos,
   };
   String title = map[goalOrYellowOrRed];
 

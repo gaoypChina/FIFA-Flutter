@@ -70,7 +70,7 @@ Widget wPlayButton(BuildContext context, Club club, Adversario adversario, Seman
 
                         const SizedBox(height: 10),
                         insideButton("Simular", club, ()async{
-                          await simulateFunction(adversario, My());
+                          await simulateFunction(context, adversario, My());
                           if(semana > globalUltimaSemana){
                             Navigator.of(context).push(MaterialPageRoute(builder: (context) => const EndYear()));
                           }else{
@@ -203,15 +203,15 @@ playFunction(BuildContext context,Adversario adversario){
   }
 }
 
-void simulateManyWeeksFunction(int semanaLocal) async{
+void simulateManyWeeksFunction(BuildContext context, int semanaLocal) async{
   for(int i=semana; i<=semanaLocal; i++){
     Adversario adversario = Adversario();
     adversario.getAdversario();
-    await simulateFunction(adversario, My());
+    await simulateFunction(context, adversario, My());
   }
 }
 
-Future simulateFunction(Adversario adversario, My myClass) async{
+Future simulateFunction(BuildContext context, Adversario adversario, My myClass) async{
 
   //SIMULA JOGOS
   Simulate().startVariables();
@@ -231,9 +231,8 @@ Future simulateFunction(Adversario adversario, My myClass) async{
     coachBestResults.updateSequence(confronto);
 
   }else{
-    customToast('Done');
+    customToast("Simulating matchs");
   }
-
 
 
 }

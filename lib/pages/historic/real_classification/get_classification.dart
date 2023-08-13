@@ -179,7 +179,6 @@ class RealClassification{
       lines.add(currentLine);
     }
 
-    print(lines);
     for (dynamic lined in lines){
       if(lined[0].isNotEmpty){
         String clubName = lined[0];
@@ -628,7 +627,7 @@ class RealClassification{
     map["Ypiranga"] = n.ypirangaRS;
     //ARGENTINA
     map["Estudiantes (LP)"] = n.estudiantes;
-    map["Central Córdoba (SdE)"] = n.centralCordoba;
+    map["Central Córdoba (SdE)"] = n.centralcordoba;
     map["Gimnasia y Esgrima (LP)"] = n.gimnasia;
     map["Instituto"] = n.instituto;
     map["Unión"] = n.unionsantafe;

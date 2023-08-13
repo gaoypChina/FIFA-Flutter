@@ -8,7 +8,6 @@ import 'package:fifa/pages/map/choose_continent_page.dart';
 import 'package:fifa/pages/map/map_exploration.dart';
 import 'package:fifa/pages/save/choose_save.dart';
 import 'package:fifa/pages/tournament_mode/tournament.dart';
-import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_names.dart';
 import 'package:fifa/values/league_clubs.dart';
@@ -136,51 +135,47 @@ class _HomePageState extends State<HomePage> {
 
 Widget buttonRow(String title, String imageName, double height, Function() onTap){
     return Container(
+      height: height,
       margin: const EdgeInsets.all(8),
-      child: PressableButton(
-        onTap: onTap,
-        child: Container(
-          height: height,
-          decoration: BoxDecoration(
-            color: AppColors().greyTransparent,
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Stack(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(8.0),
-                child: SizedBox(
-                  width: Sized(context).width*0.8,
-                  child: Image.asset(imageName, fit: BoxFit.fill,),
-                  ),
-              ),
+      child: Stack(
+        children: [
 
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Container(
-                    width: Sized(context).width,
-                    height: height,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      gradient: const LinearGradient(
-                        begin: Alignment.bottomLeft,
-                        end: Alignment.topRight,
-                        stops: [0.5, 0.65],
-                        colors: [Colors.transparent, Colors.black],
-                      ),
-                    ),
-                    padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 8),
-                    child: Text(
-                      title,
-                      textAlign: TextAlign.end,
-                      style: EstiloRajdhani.hometitle,
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8.0),
+            child: SizedBox(
+              width: Sized(context).width*0.8,
+              child: Image.asset(imageName, fit: BoxFit.fill,),
+              ),
+          ),
+
+          PressableButton(
+            onTap: onTap,
+            borderRadiusValue: 8,
+            child: Align(
+                alignment: Alignment.centerRight,
+                child: Container(
+                  width: Sized(context).width,
+                  height: height,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    gradient: const LinearGradient(
+                      begin: Alignment.bottomLeft,
+                      end: Alignment.topRight,
+                      stops: [0.5, 0.65],
+                      colors: [Colors.transparent, Colors.black],
                     ),
                   ),
-              ),
-
-            ],
+                  padding: const EdgeInsets.symmetric(horizontal: 8,vertical: 8),
+                  child: Text(
+                    title,
+                    textAlign: TextAlign.end,
+                    style: EstiloRajdhani.hometitle,
+                  ),
+                ),
+            ),
           ),
-        ),
+
+        ],
       ),
     );
 }

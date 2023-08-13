@@ -93,13 +93,12 @@ class _TransfersState extends State<Transfers> {
                   ? playersRowTitle2()
                   : playersRowTitle1(),
               //TABELA
-              Container(
-                height: Sized(context).height-271,
-                color: AppColors().greyTransparent,
-                padding: const EdgeInsets.symmetric(horizontal: 6),
-                child: Expanded(
-                  child: SingleChildScrollView(
-                    controller: _scrollController,
+              Expanded(
+                child: SingleChildScrollView(
+                  controller: _scrollController,
+                  child: Container(
+                    color: AppColors().greyTransparent,
+                    padding: const EdgeInsets.symmetric(horizontal: 6),
                     child: Table(
                       columnWidths: const {
                         0: FractionColumnWidth(.08),

@@ -27,7 +27,7 @@ class _PreMatchState extends State<PreMatch> {
 
   bool visitante = false;
   My myClass = My();
-  Club myClubClass = Club(index: My().clubID);
+  late Club myClubClass;
 
   late Club adversarioClubClass;
 
@@ -36,6 +36,7 @@ class _PreMatchState extends State<PreMatch> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
+    myClubClass = Club(index: myClass.clubID);
     adversarioClubClass = Club(index: widget.adversarioClubID);
     super.initState();
   }
@@ -49,11 +50,13 @@ class _PreMatchState extends State<PreMatch> {
       body: Stack(
         children: [
 
-          backgroundTournament(Semana(semana),My()),
+          backgroundTournament(Semana(semana),myClass),
 
           Column(
             children: [
+
               backButtonText(context,'Pre Match'),
+
               const Text('Simular',style: EstiloTextoBranco.text16),
 
               header(),
@@ -79,13 +82,14 @@ class _PreMatchState extends State<PreMatch> {
 ////////////////////////////////////////////////////////////////////////////
   Widget header(){
     String textRodada = '';
-    if(Semana(semana).isJogoCampeonatoNacional) {
+    Semana weekClass = Semana(semana);
+    if(weekClass.isJogoCampeonatoNacional) {
       textRodada = '${Translation(context).text.matchWeek} ' + rodada.toString() + '/' + (League(index: myClass.leagueID).getNTeams()-1).toString();
     }else{
       textRodada = Name().groupsPhase;
-      if(Semana(semana).isJogoGruposInternacional){textRodada += ' ${Semana(semana).rodadaGroupInternational}'; }
+      if(weekClass.isJogoGruposInternacional){textRodada += ' ${weekClass.rodadaGroupInternational}'; }
       else{
-        textRodada = Semana(semana).semanaStr;
+        textRodada = weekClass.semanaStr;
       }
     }
     return Row(
@@ -96,7 +100,7 @@ class _PreMatchState extends State<PreMatch> {
 
         Column(
           children: [
-            Semana(semana).isJogoCampeonatoNacional
+            weekClass.isJogoCampeonatoNacional
                 ? Image.asset(FIFAImages().campeonatoLogo(myClass.campeonatoName),height: 30,width: 30)
                 : Image.asset(FIFAImages().campeonatoLogo(myClass.getMyInternationalLeague()),height: 35,width: 35),
             Text(textRodada,style: EstiloTextoBranco.text16),

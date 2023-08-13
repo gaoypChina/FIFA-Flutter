@@ -63,7 +63,7 @@ class ResultGameInternational extends ResultMatch{
         try{
           MataMata mataMata = MataMata();
           Confronto confronto = mataMata.getData(competitionName, weekClass.semanaStr, matchRow, idaVolta);
-          confronto.printar();
+
           isAlreadyPlayed = confronto.hasGoals;
           if(confronto.clubID1 == clubID){
             visitante = false;
@@ -88,8 +88,6 @@ class ResultGameInternational extends ResultMatch{
 
           if(isAlreadyPlayed){
             placar = goal1.toString() + ' x '+ goal2.toString();
-          }else{
-            placar = '';
           }
 
         }catch(e){
@@ -104,9 +102,10 @@ class ResultGameInternational extends ResultMatch{
     }
 
     if(isAlreadyPlayed) {
-      if(placar.isEmpty || !hasAdversary){
+      if(!hasAdversary){
         backgroundColor = Colors.black87;
         victoryDrawLoss310 = -1;
+        placar = '';
       }else{
         backgroundColor = colorResultBackground(goal1,goal2);
         victoryDrawLoss310 = getVictoryDrawLoss310(goal1, goal2);

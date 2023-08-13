@@ -358,9 +358,9 @@ Widget nota(Jogador jogador){
     children: [
       const Text('Nota',style: EstiloTextoBranco.negrito22),
       Container(
-          color: colorGradeBackground(jogador.grade),
+          color: colorGradeBackground(jogador.gradeLeague),
           padding: const EdgeInsets.all(2),
-          child: Text(jogador.grade.toStringAsFixed(1),style: EstiloTextoPreto.negrito20)),
+          child: Text(jogador.gradeLeague.toStringAsFixed(1),style: EstiloTextoPreto.negrito20)),
     ],
   );
 }

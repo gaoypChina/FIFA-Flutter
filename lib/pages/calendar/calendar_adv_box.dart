@@ -96,7 +96,7 @@ Widget wCalendarAdvBox(BuildContext context, int semanaLocal, show){
               children: [
                 InkWell(
                   onTap:(){
-                    simulateManyWeeksFunction(semanaLocal);
+                    simulateManyWeeksFunction(context,semanaLocal);
                     navigatorReplace(context, const Menu());
                   },
                   child: const Icon(Icons.timer,color: Colors.white,size: 25),
@@ -114,7 +114,7 @@ Widget wCalendarAdvBox(BuildContext context, int semanaLocal, show){
 Widget wCalendarNotPlayWidget(BuildContext context, int semanaLocal, String title, [String? imageName]){
   return PressableButton(
     onTap: () async{
-      simulateManyWeeksFunction(semanaLocal);
+      simulateManyWeeksFunction(context,semanaLocal);
       navigatorReplace(context, const Menu());
     },
     child: Container(
@@ -132,7 +132,7 @@ Widget wCalendarNotPlayWidget(BuildContext context, int semanaLocal, String titl
             children: [
               InkWell(
                 onTap:(){
-                  simulateManyWeeksFunction(semanaLocal);
+                  simulateManyWeeksFunction(context, semanaLocal);
                   navigatorReplace(context, const Menu());
                 },
                 child: const Icon(Icons.timer,color: Colors.white,size: 25),

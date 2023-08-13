@@ -260,6 +260,7 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
                 : chosenIcon==5 ? wYellowRedCardWidget(context, leaguesMap[chosenLeagueName], 3)
                 : chosenIcon==6 ? wYellowRedCardWidget(context, leaguesMap[chosenLeagueName], 4)
                 : chosenIcon==7 ? wYellowRedCardWidget(context, leaguesMap[chosenLeagueName], 5)
+                : chosenIcon==8 ? wYellowRedCardWidget(context, leaguesMap[chosenLeagueName], 6)
                 : Container(),
           ),
         ),
@@ -275,6 +276,7 @@ class _TableNacionalState extends State<TableNacional>  with TickerProviderState
                 componentButton(5, FilterPlayersTitle().assists),
                 componentButton(6, FilterPlayersTitle().bestPlayer),
                 componentButton(7, FilterPlayersTitle().cleanSheets),
+                componentButton(8, FilterPlayersTitle().golsSofridos),
                 componentButton(3, FilterPlayersTitle().yellowCards),
                 componentButton(4, FilterPlayersTitle().redCards),
               ],

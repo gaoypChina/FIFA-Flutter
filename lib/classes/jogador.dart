@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:fifa/classes/dict_keys/player_stats_keys.dart';
 import 'package:fifa/classes/functions/esquemas_taticos.dart';
 import 'package:fifa/global_variables.dart';
@@ -32,7 +34,7 @@ class Jogador{
   late int redCard;
   late int yellowCard;
   late int injury;
-  late double grade;
+  late double gradeLeague;
   late double gradeAvg;
 
   late int matchsInternational;
@@ -87,14 +89,14 @@ class Jogador{
       assistsLeague = globalLeaguePlayers[PlayerStatsKeys().keyPlayerAssists]![index];
       cleanSheetsLeague = globalLeaguePlayers[PlayerStatsKeys().keyPlayerCleanSheets]![index];
       golsSofridosLeague = globalLeaguePlayers[PlayerStatsKeys().keyPlayerGolsSofridos]![index];
-      grade = (goalsLeague*2+assistsLeague+cleanSheetsLeague*1.5)/(matchsLeague+1);
+      gradeLeague = getGrade(goalsLeague,assistsLeague,cleanSheetsLeague,golsSofridosLeague,matchsLeague);
     }catch(e){
       matchsLeague = 0;
       goalsLeague = 0;
       assistsLeague = 0;
       cleanSheetsLeague = 0;
       golsSofridosLeague = 0;
-      grade = 0.0;
+      gradeLeague = 0.0;
     }
     try{
       matchsInternational = globalInternationalPlayers[PlayerStatsKeys().keyPlayerMatchs]![index];
@@ -102,7 +104,7 @@ class Jogador{
       assistsInternational = globalInternationalPlayers[PlayerStatsKeys().keyPlayerAssists]![index];
       cleanSheetsInternational = globalInternationalPlayers[PlayerStatsKeys().keyPlayerCleanSheets]![index];
       golsSofridosInternational = globalInternationalPlayers[PlayerStatsKeys().keyPlayerGolsSofridos]![index];
-      gradeInt = (goalsInternational*2+assistsInternational+cleanSheetsInternational*1.5)/(matchsInternational+1);
+      gradeInt = getGrade(goalsInternational,assistsInternational,cleanSheetsInternational,golsSofridosInternational,matchsInternational);
     }catch(e){
       matchsInternational = 0;
       goalsInternational = 0;
@@ -118,7 +120,7 @@ class Jogador{
       assistsCup = globalCupPlayers[PlayerStatsKeys().keyPlayerAssists]![index];
       cleanSheetsCup = globalCupPlayers[PlayerStatsKeys().keyPlayerCleanSheets]![index];
       golsSofridosCup = globalCupPlayers[PlayerStatsKeys().keyPlayerGolsSofridos]![index];
-      gradeCup = (goalsCup*2+assistsCup+cleanSheetsCup*1.5)/(matchsCup+1);
+      gradeCup = getGrade(goalsCup,assistsCup,cleanSheetsCup,golsSofridosCup,matchsCup);
     }catch(e){
       matchsCup = 0;
       goalsCup = 0;
@@ -139,8 +141,7 @@ class Jogador{
     cleanSheetsCarrer = globalJogadoresCarrerCleanSheets[index];
     golsSofridosCarrer = globalJogadoresCarrerGolsSofridos[index];
     moral = globalJogadoresMoral[index];
-    grade = globalJogadoresGrades[index] ?? 0;
-    gradeAvg = grade/matchsYear;
+    gradeAvg = gradeLeague/matchsYear;
     trainLevel = 0;
   }
 
@@ -148,6 +149,19 @@ class Jogador{
     print('ID: $index NAME: $name CLUBNAME: $clubName OVR: $overall IDADE: $age NATIONALITY: $nationality');
   }
 
+  double getGrade(int goals, int assists, int cleanSheets, int golsSofridos, int matchs){
+    double grade = 0;
+    if (matchs>0){
+      grade = (goals*5 + assists*2 + cleanSheets*7 - golsSofridos) / matchs;
+    }
+    grade *= 0.75;
+    grade = 2 * ((1 / (1 + exp(-grade)))-0.5); //Sigmoid from 0-1
+    grade = 10 * grade;
+    if (grade>10){
+      grade = 10;
+    }
+    return grade;
+  }
   String resumeName(){
     try{
       List split = name.split(' ');

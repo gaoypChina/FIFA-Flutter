@@ -13,11 +13,11 @@ class Grade{
 
   notMy(Club clubClass,int jogPOS){
     int playerID = clubClass.escalacao[jogPOS];
-    double randomNum = 5+Random().nextInt(40)/10;
-    globalJogadoresGrades[playerID] = randomNum;
-    if(globalJogadoresMatchGrade[playerID]>10){
-      globalJogadoresMatchGrade[playerID] = 10;
-    }
+    //double randomNum = 5+Random().nextInt(40)/10;
+    //globalJogadoresGrades[playerID] = randomNum;
+    //if(globalJogadoresMatchGrade[playerID]>10){
+    //  globalJogadoresMatchGrade[playerID] = 10;
+    //}
   }
 
 
