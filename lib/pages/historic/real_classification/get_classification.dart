@@ -746,7 +746,7 @@ class RealClassification{
     //TAILANDIA
     map["Lamphun Warriors"] = n.lamphun;
     map["BG Pathum United"] = n.pathum;
-    map["Port"] = n.portFC;
+    map["Port"] = n.portfc;
     map["PT Prachuap"] = n.prachuap;
     map["Ratchaburi"] = n.ratchaburi;
     map["Sukhotai"] = n.sukhothai;

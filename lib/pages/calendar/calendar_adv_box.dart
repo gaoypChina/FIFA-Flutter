@@ -95,8 +95,8 @@ Widget wCalendarAdvBox(BuildContext context, int semanaLocal, show){
             semanaLocal >= semana ? Column(
               children: [
                 InkWell(
-                  onTap:(){
-                    simulateManyWeeksFunction(context,semanaLocal);
+                  onTap:() async{
+                    await simulateManyWeeksFunction(context,semanaLocal);
                     navigatorReplace(context, const Menu());
                   },
                   child: const Icon(Icons.timer,color: Colors.white,size: 25),

@@ -203,7 +203,7 @@ playFunction(BuildContext context,Adversario adversario){
   }
 }
 
-void simulateManyWeeksFunction(BuildContext context, int semanaLocal) async{
+Future simulateManyWeeksFunction(BuildContext context, int semanaLocal) async{
   for(int i=semana; i<=semanaLocal; i++){
     Adversario adversario = Adversario();
     adversario.getAdversario();

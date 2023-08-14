@@ -133,10 +133,10 @@ Widget calendarRow(int week){
                         popUpSimulation(context: context,
                             week: week,
                             name: weekClass.semanaCalendarStr,
-                            function: (){
-                              simulateManyWeeksFunction(context,week);
+                            function: () async{
+                              await simulateManyWeeksFunction(context,week);
+                              Navigator.pop(context);
                               navigatorReplace(context, const Menu());
-                              setState((){});
                         });
                       },
                       child: const Padding(

@@ -3,7 +3,6 @@ import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/functions/order_list.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/values/clubs_all_names_list.dart';
 
 List organizarVariavelLeague(League league, int goalOrYellowOrRed) {
   //Oraganiza em ordem lista de artilheiros, cartoes amarelos ou cartoes amarelos

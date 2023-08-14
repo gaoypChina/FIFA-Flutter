@@ -97,7 +97,7 @@ class Adversario{
   }
 
   void getMataMataInternationalAdversario(int semana){
-      Map resultMap = KnockoutInternational().getClubMatchMap(myClass.internationalLeagueName, semana, myClass.clubName);
+      Map resultMap = KnockoutInternational().getClubMatchMap(myClass.getMyInternationalLeague(), semana, myClass.clubName);
 
       if(resultMap.isNotEmpty){
         Confronto confronto = KnockoutInternational().getConfrontoFromMapMatch(resultMap);

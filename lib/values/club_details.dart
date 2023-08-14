@@ -7657,7 +7657,7 @@ class ClubDetails{
     map[n.petrotrin] = [
       ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
       '',0,0,_c.trinidadtobago,50.0,[],{}];
-    map[n.police] = [
+    map[n.policeTT] = [
       ClubColors(Colors.blue,Colors.black),pattern.solid,Coordinates(10.30349244, -61.4417926),
       'Manny Ramjohn Stadium',10000,1975,_c.trinidadtobago,57.3,[],{}];
     map[n.stAnnRangers] = [
@@ -7823,13 +7823,13 @@ class ClubDetails{
     map[n.avispa] = [
       ClubColors(Colors.black,Colors.grey),pattern.solid,Coordinates(33.5859820, 130.460848),
       'Best Denki Stadium',22563,1982,_c.japan,68.6,[],{}];
-    map[n.cerezoOsaka] = [
+    map[n.cerezoosaka] = [
       ClubColors(Colors.pink,Colors.black),pattern.solid,Coordinates(34.61412159, 135.5185547),
       'Estádio Nagai',47000,1957,_c.japan,71.7,[],{}];
-    map[n.fcTokyo] = [
+    map[n.fctokyo] = [
       ClubColors(Colors.blue,Colors.red),pattern.stripes2,Coordinates(35.664162, 139.527388),
       'Ajinomoto Stadium',50100,1999,_c.japan,70.4,[],{}];
-    map[n.gambaOsaka] = [
+    map[n.gambaosaka] = [
       ClubColors(Colors.blue,Colors.black),pattern.stripes2,Coordinates(34.802526,135.538278),
       'Suita Stadium',39694,1980,_c.japan,72.4,[],{}];
     map[n.jefUnited] = [
@@ -7841,7 +7841,7 @@ class ClubDetails{
     map[n.kashimaantlers] = [
       ClubColors(Colors.red,Colors.grey),pattern.solid,Coordinates(35.992503, 140.64383881),
       'Kashima Soccer Stadium',40728,1994,_c.japan,72.6,[],{}];
-    map[n.kashiwaReysol] = [
+    map[n.kashiwareysol] = [
       ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(35.8485972, 139.975101733),
       'Hitachi Kashiwa Soccer Stadium',15900,1940,_c.japan,71.7,[],{}];
     map[n.kawasakifrontale] = [
@@ -7871,7 +7871,7 @@ class ClubDetails{
     map[n.sapporo] = [
       ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(43.0151545, 141.4096851),
       'Sapporo Dome',41484,1939,_c.japan,68.4,[],{}];
-    map[n.shimizuSPulse] = [
+    map[n.shimizuspulse] = [
       ClubColors(Colors.orange,Colors.white),pattern.solid,Coordinates(34.7430896, 137.9709125),
       'Shizuoka Stadium',51349,1991,_c.japan,68.7,[],{}];
     map[n.shonanbellmare] = [
@@ -7895,7 +7895,7 @@ class ClubDetails{
     map[n.visselkobe] = [
       ClubColors(grena,Colors.white),pattern.solid,Coordinates(34.65734782, 135.1696),
       'Estádio Kobe Wing',30182,1966,_c.japan,74.0,[],{}];
-    map[n.yokohamaFC] = [
+    map[n.yokohamafc] = [
       ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(35.46916, 139.603706),
       'Mitsuzawa Stadium',15046,1999,_c.japan,70.4,[],{}];
     map[n.flugels] = [
@@ -7954,7 +7954,7 @@ class ClubDetails{
     map[n.seongnam] = [
       ClubColors(Colors.black,Colors.white),pattern.solid,Coordinates(37.4101435, 127.1213833),
       'Tancheon Sports Complex',16146,1989,_c.southkorea,66.7,[],{}];
-    map[n.suwonFC] = [
+    map[n.suwonfc] = [
       ClubColors(Colors.red,darkblue),pattern.stripes2,Coordinates(37.29781725789677, 127.01108810563669),
       'Suwon Sports Complex',11808,2016,_c.southkorea,63.1,[],{}];
     map[n.suwonsamsung] = [
@@ -7990,7 +7990,7 @@ class ClubDetails{
     map[n.bangkok] = [
       ClubColors(Colors.red,Colors.black),pattern.solid,Coordinates(14.06813405, 100.599042),
       'Thammasat Stadium',25000,1988,_c.thailand,50.0,[],{}];
-    map[n.bangkokBank] = [
+    map[n.bangkokbank] = [
       ClubColors(Colors.pink,Colors.black),pattern.solid,Coordinates(0,0),
       'Bangkok Bank Ground',2000,1955,_c.thailand,50.0,[],{}];
     map[n.buriram] = [
@@ -8020,7 +8020,7 @@ class ClubDetails{
     map[n.nakhon] = [
       ClubColors(Colors.orange,Colors.black),pattern.solid,Coordinates(14.92710584, 102.0494550),
       '80th Birthday Stadium',24641,1999,_c.thailand,50.0,[],{}];
-    map[n.nongbuaPitchaya] = [
+    map[n.nongbuapitchaya] = [
       ClubColors(Colors.purpleAccent,Colors.blue),pattern.solid,Coordinates(17.1942153, 102.43564512),
       'Pitchaya Stadium',6000,2010,_c.thailand,50.0,[],{}];
     map[n.pattaya] = [
@@ -8032,7 +8032,7 @@ class ClubDetails{
     map[n.prachuap] = [
       ClubColors(Colors.orange,Colors.black),pattern.solid,Coordinates(11.81750065, 99.7886435),
       'Sam Ao Stadium',5000,2009,_c.thailand,50.0,[],{}];
-    map[n.portFC] = [
+    map[n.portfc] = [
       ClubColors(Colors.blue,Colors.orange),pattern.divided,Coordinates(13.7151569, 100.55962713),
       'PAT Stadium',8000,1967,_c.thailand,50.0,[],{}];
     map[n.policetero] = [
@@ -8041,10 +8041,10 @@ class ClubDetails{
     map[n.ratchaburi] = [
       ClubColors(Colors.orange,Colors.white),pattern.solid,Coordinates(13.52162906, 99.7698381),
       'Mitr Phol Stadium',10000,2004,_c.thailand,50.0,[],{}];
-    map[n.thaiAirForce] = [
+    map[n.airforceTHAI] = [
       ClubColors(darkblue,Colors.white),pattern.solid,Coordinates(0,0),
       'Thupatemi Stadium',25000,1937,_c.thailand,54.0,[],{}];
-    map[n.samutPrakan] = [
+    map[n.samutprakan] = [
       ClubColors(Colors.blue,Colors.lightGreenAccent),pattern.horStripes2,Coordinates(13.5792926, 100.7946855),
       'Samut Prakarn SAT Stadium',5100,2019,_c.thailand,50.0,[],{}];
     map[n.sukhothai] = [
@@ -9045,16 +9045,16 @@ class ClubDetails{
 
     //ASIA CENTRAL
     //KYRGYSTAN
-    map[n.algaBishkek] = [
+    map[n.algabishkek] = [
       ClubColors(Colors.red,Colors.blue),pattern.solid,Coordinates(42.8387036, 74.59046472),
       'Dynamo Stadion',10000,1947,_c.kyrgyzstan,60.3,[],{}];
-    map[n.abdyshAtaKant] = [
+    map[n.abdyshatakant] = [
       ClubColors(Colors.lightBlueAccent,Colors.white),pattern.sleeves,Coordinates(42.8804125, 74.5978947),
       'Sportkompleks Abdysh-Ata',3000,1992,_c.kyrgyzstan,62.0,[],{}];
     map[n.alay] = [
       ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(40.5210113, 72.8044473),
       'Suyumbayev Stadion',11200,1967,_c.kyrgyzstan,63.2,[],{}];
-    map[n.dordoiBishkek] = [
+    map[n.dordoibishkek] = [
       ClubColors(Colors.blue,Colors.yellow),pattern.solid,Coordinates(42.8891419, 74.6099425),
       'Stadion Dordoi',3000,1997,_c.kyrgyzstan,65.1,[],{}];
     //TAJIKISTAN

@@ -4260,7 +4260,7 @@ class ClubName{
   String joepublic = "Joe Public";
   String northeaststars = "North East Stars";
   String petrotrin = "United Petrotrin";
-  String police = "Police FC";
+  String policeTT = "Police FC";
   String stAnnRangers = "St. Ann's Rangers";
   String ttec = "T&TEC";
   String trintoc = "United Petrotrin";
@@ -4349,12 +4349,12 @@ class ClubName{
   //JAPAO
   String albirex = "Albirex Niigata";
   String avispa = "Avispa Fukuoka";
-  String cerezoOsaka = "Cerezo Osaka";
-  String fcTokyo = "FC Tokyo";
-  String gambaOsaka = "Gamba Osaka";
+  String cerezoosaka = "Cerezo Osaka";
+  String fctokyo = "FC Tokyo";
+  String gambaosaka = "Gamba Osaka";
   String jefUnited = "JEF United";
   String jubiloiwata = "Jubilo Iwata";
-  String kashiwaReysol = "Kashiwa Reysol";
+  String kashiwareysol = "Kashiwa Reysol";
   String kawasakifrontale = "Kawasaki Frontale";
   String kashimaantlers = "Kashima Antlers";
   String kyoto = "Kyoto Sanga";
@@ -4365,7 +4365,7 @@ class ClubName{
   String omiyaardija = "Omyia Ardija";
   String sapporo = "Hokkaido Consadole Sapporo";
   String sagantosu = "Sagan Tosu";
-  String shimizuSPulse = "Shimizu S-Pulse";
+  String shimizuspulse = "Shimizu S-Pulse";
   String shonanbellmare = "Shonan Bellmare";
   String tokushima = "Tokushima Vortis";
   String tokyoVerdy = "Tokyo Verdy";
@@ -4375,7 +4375,7 @@ class ClubName{
   String visselkobe = "Vissel Kobe";
   String yamagata = "Montedio Yamagata";
   String yokohamamarinos = "Yokohama F. Marinos";
-  String yokohamaFC = "Yokohama FC";
+  String yokohamafc = "Yokohama FC";
   String flugels = "Yokohama Flügels"; //Merged 1998 to form Yokohama F. Marinos
   //COREIA
   String busan = "Busan";
@@ -4398,7 +4398,7 @@ class ClubName{
   String sangju = "Sangju Sangmu";
   String seongnam = "Seongnam";
   String suwonsamsung = "Suwon Samsung";
-  String suwonFC = "Suwon FC";
+  String suwonfc = "Suwon FC";
   String ulsan = "Ulsan Hyundai";
   String koreaTungsten = "Korea Tungsten Company";//EXTINTO
   String rokArmy = "ROK Army";//EXTINTO
@@ -4424,12 +4424,14 @@ class ClubName{
   String bruneidpmm = "Brunei DMPP";
   String indera = "Indera SC";
   String jerudong = "Jerudong FC";
+  String kualabelait = "Kuala Belait";
   String kotaranger = "Kota Ranger";
   String najip = "Najip I-Team";
   String kasuka = "Kasuka FC";
   String aksebersatu = "AKSE Bersatu";
   String wijaya = "Wijaya FC";
   String msabdb = "MS ABDB FT";
+  String msppdb = "MS PPDB";
   //BUTAO
   String paro = "Paro";
   String drukpol = "Druk Pol";
@@ -4627,29 +4629,53 @@ class ClubName{
   String renown = "Renown";
   String solidSRI = "Solid SC";
   // TAILANDIA
+  String armyTHAI = "Army United";
   String bangkok = "Bangkok United";
-  String bangkokBank = "Bangkok Bank"; //1955-2008
+  String bcc = "Bangkok Christian College";
+  String bangkokbank = "Bangkok Bank"; //1955-2008
+  String krungthaibank = "Krung Thai Bank"; //1977-2009
+  String bbcu = "BBCU";
   String buriram = "Buriram United";
   String chainat = "Chainat Hornbill";
   String chiangrai = "Chiangrai United";
+  String chiangmai = "Chiangmai United";
   String chonburi = "Chonburi";
+  String customsutd = "Customs United";
   String khonkaen = "Khonkaen United";
   String lampang = "Lampang";
   String lamphun = "Lamphun Warriors";
   String muangthong = "Muangthong United";
   String nakhon = "Nakhon Ratchasima";
-  String nongbuaPitchaya = "Nongbua Pitchaya";
+  String nakhonpathom = "Nakhon Pathom";
+  String nongbuapitchaya = "Nongbua Pitchaya";
   String pattaya = "Pattaya United";
   String pathum = "Pathum United";
-  String portFC = "Port FC";
+  String navyTHAI = "Navy FC";
+  String policeTHAI = "INSEE Police";
+  String portfc = "Port FC";
   String prachuap = "Prachuap";
+  String rajvithi = "Raj-Vithi";
   String ratchaburi = "Ratchaburi Mitr Phol";
-  String thaiAirForce = "Royal Thai Air Force";
-  String samutPrakan = "Samut Prakan City";
+  String rayong = "Rayong";
+  String rajpracha = "Rajpracha";
+  String rbac = "RBAC";
+  String airforceTHAI = "Royal Thai Air Force";
+  String samutprakan = "Samut Prakan City"; //FROM PATTAYA UNITED
+  String samutsongkhram = "Samut Songkhram";
+  String saraburi = "Saraburi United";
+  String supersamut = "Super Power Samut Prakan";
   String sinthana = "Sinthana";
+  String sisaket = "Sisaket";
+  String songkhla = "Songkhla";
   String sukhothai = "Sukhothai";
   String suphanburi = "Suphanburi";
+  String thaihonda = "Thai Honda";
+  String thawiwatthana = "Thawiwatthana";
+  String tot = "Tot Sport";
+  String trat = "Trat";
   String thai = "Thai Farmers Bank"; //1987-2000
+  String ttm = "TTM";
+  String ubon = "Ubon United";
   String policetero = "Police Tero";
   //VIETNA
   String becamex = "Becamex Binh Duong";
@@ -4981,12 +5007,18 @@ class ClubName{
 
   //ASIA CENTRAL
   //KYRGYSTAN
-  String algaBishkek = "Alga Bishkek";
-  String abdyshAtaKant = "Abdysh-Ata Kant";
-  String alay = "Alay";
+  String alatoo = "Ala Too";
+  String aldierkurshab = "Aldier Kurshab";
+  String algabishkek = "Alga Bishkek";
+  String abdyshatakant = "Abdysh-Ata Kant";
+  String alay = "Alay Osh";
   String dinamobishkek = "Dinamo MVD Bishkek";
+  String dordoibishkek = "Dordoi Bishkek";
+  String neftchikochkorata = "Neftchi Kochkorata";
+  String karabalta = "Kara-Balta";
   String kantoil = "Kant-Oil";
-  String dordoiBishkek = "Dordoi Bishkek";
+  String kgutd = "KG United";
+  String ilbirs = "Ilbirs Bishkek";
   String metallurgkadamjay = "Metallurg Kadamjay";
   String zhashtyk = "Zhashtyk-Ak-Altyn Kara-Suu";
   //TAJIKISTAN
@@ -5022,6 +5054,7 @@ class ClubName{
   String bunyodkor = "Bunyodkor";
   String buxoro = "Buxoro";
   String dustlik = "Dustlik";
+  String kaganat = "Kaganat";
   String kokand = "Kokand 1912";
   String loktashkent = "Lokomotiv Tashkent";
   String metallurg = "Metallurg Bekabad";

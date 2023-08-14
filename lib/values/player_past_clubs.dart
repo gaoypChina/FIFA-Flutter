@@ -158,7 +158,7 @@ class PlayerPastClubs{
   map['Ambrosini'] = {   1994:n.cesena,1995:n.milan,1997:n.vicenza,1998:n.milan,2013:n.fiorentina,2014:retired};
   map['Amoroso'] = {     1992:n.tokyoVerdy,1993:n.guarani,1996:n.flamengo,1997:n.udinese,1999:n.parma,2001:n.dortmund,2004:n.malaga,2005:n.saopaulo,2006:n.corinthians,2007:n.gremio,2008:n.aris,2009:n.guarani,2010:retired};
   map['Andreas Brehme'] = {1981:n.kaiserslautern,1986:n.bayernmunique,1988:n.inter,1992:n.zaragoza,1993:n.kaiserslautern,1998:retired};
-  map['Arce'] = {        1989:n.cerroporteno,1995:n.gremio,1998:n.palmeiras,2003:n.gambaOsaka,2004:n.libertad,2006:n.octubre12,2007:retired};
+  map['Arce'] = {        1989:n.cerroporteno,1995:n.gremio,1998:n.palmeiras,2003:n.gambaosaka,2004:n.libertad,2006:n.octubre12,2007:retired};
   map['Ariel Ortega'] = {1991:n.riverplate,1996:n.valencia,1998:n.sampdoria,1999:n.parma,2000:n.riverplate,2002:n.fenerbahce,2004:n.newells,2006:n.riverplate,2008:n.independiente,2009:n.riverplate,2011:n.allboys,2012:retired};
   map['Ashley Cole'] = { 1999:n.crystalpalace,2000:n.arsenal,2006:n.chelsea,2014:n.roma,2016:n.lagalaxy,2019:n.derbycount,2020:retired};
   map['Asprilla'] = {    1988:n.cucuta,1989:n.atleticonacional,1992:n.parma,1996:n.newcastle,1998:n.parma,1999:n.palmeiras,2000:n.fluminense,2001:n.atlante,2002:n.atleticonacional,2003:n.lau,2004:retired};
@@ -184,7 +184,7 @@ class PlayerPastClubs{
   map['Cambiasso'] = {   1998:n.independiente,2001:n.riverplate,2002:n.realmadrid,2004:n.inter,2014:n.leicester,2015:n.olympiacos,2017:retired};
   map['Cannavaro'] = {   1992:n.napoli,1995:n.parma,2002:n.inter,2004:n.juventus,2006:n.realmadrid,2009:n.juventus,2010:n.alahli,2011:retired};
   map['Cañizares'] = {   1988:n.realmadridB,1990:n.elche,1991:n.merida,1992:n.celtavigo,1994:n.realmadrid,1998:n.valencia,2008:retired};
-  map['Careca'] = {      1978:n.guarani,1983:n.saopaulo,1987:n.napoli,1994:n.kashiwaReysol,1997:n.santos,1998:retired};
+  map['Careca'] = {      1978:n.guarani,1983:n.saopaulo,1987:n.napoli,1994:n.kashiwareysol,1997:n.santos,1998:retired};
   map['Carlinhos Bala'] = {1999:n.santacruz,2001:n.nautico,2002:n.beiramar,2004:n.santacruz,2006:n.cruzeiro,2007:n.sport,2009:n.nautico,2010:n.atleticogo,2011:n.sport,2012:n.santacruz,2013:n.crb,2014:n.fast,2015:n.americaPE,2016:n.altos,2017:n.freipaulistano,2018:retired};
   map['Carlos Mozer'] = {1980:n.flamengo,1987:n.benfica,1989:n.om,1992:n.benfica,1995:n.kashimaantlers,1996:retired};
   map['Casillas'] = {    1999:n.realmadridB,2000:n.realmadrid,2015:n.porto,2020:retired};
@@ -208,11 +208,11 @@ class PlayerPastClubs{
   map['Des Bremmer'] = { 1972:n.hibernian,1979:n.astonvilla,1984:n.birmigham,1989:n.fulham,1990:n.walsall,1991:n.stafford,1992:retired};
   map['Dida'] = {        1992:n.vitoria,1994:n.cruzeiro,1999:n.corinthians,2002:n.milan,2012:n.portuguesa,2013:n.gremio,2014:n.internacional,2015:retired};
   map['Didier Deschamps'] = {1985:n.nantes,1989:n.om,1990:n.bordeaux,1991:n.om,1994:n.juventus,1999:n.chelsea,2000:n.valencia,2001:retired};
-  map['Diego Forlán'] = {1997:n.independiente,2002:n.manutd,2004:n.villareal,2007:n.atleticomadrid,2011:n.inter,2012:n.internacional,2014:n.cerezoOsaka,2015:n.penarol,2016:n.mumbai,2017:n.kitchee,2018:retired};
+  map['Diego Forlán'] = {1997:n.independiente,2002:n.manutd,2004:n.villareal,2007:n.atleticomadrid,2011:n.inter,2012:n.internacional,2014:n.cerezoosaka,2015:n.penarol,2016:n.mumbai,2017:n.kitchee,2018:retired};
   map['Dino Zoff'] = {   1961:n.udinese,1963:n.mantova,1967:n.napoli,1972:n.juventus,1983:retired};
   map['Dirceu Lopes'] = {1964:n.cruzeiro,1977:n.fluminense,1979:n.uberlandia,1980:n.democrataGV,1982:retired};
   map['Djalma Santos'] = {1948:n.portuguesa,1959:n.palmeiras,1968:n.atleticopr,1972:retired};
-  map['Djalminha'] = {   1989:n.flamengo,1993:n.guarani,1994:n.shimizuSPulse,1995:n.guarani,1996:n.palmeiras,1997:n.lacoruna,2002:n.austria,2003:n.lacoruna,2004:retired};
+  map['Djalminha'] = {   1989:n.flamengo,1993:n.guarani,1994:n.shimizuspulse,1995:n.guarani,1996:n.palmeiras,1997:n.lacoruna,2002:n.austria,2003:n.lacoruna,2004:retired};
   map['Dodô'] = {        1992:n.nacionalSP,1994:n.fluminense,1995:n.saopaulo,1999:n.santos,2001:n.botafogo,2002:n.palmeiras,2003:n.ulsan,2005:n.goias,2006:n.botafogo,2008:n.fluminense,2010:n.vasco,2011:n.portuguesa,2012:retired};
   map['Drogba'] = {      1998:n.lemans,2002:n.guingamp,2003:n.om,2004:n.chelsea,2012:n.shanghaishenhua,2013:n.galatasaray,2014:n.chelsea,2015:n.montreal,2017:n.phoenix,2018:retired};
   map['Dunga'] = {       1983:n.internacional,1984:n.corinthians,1986:n.santos,1986.5:n.vasco,1987:n.pisa,1988:n.fiorentina,1992:n.pescara,1993:n.stuttgart,1995:n.jubiloiwata,1999:n.internacional,2000:retired};
@@ -309,7 +309,7 @@ class PlayerPastClubs{
   map['Malouda'] = {     1996:n.chateauroux,2000:n.guingamp,2003:n.lyon,2007:n.chelsea,2013:n.trabzonspor,2014:n.metz,2015:n.odisha,2017:retired};
   map['Manfred Kaltz'] = {1971:n.hamburgo,1989:n.mulhouse,1990:n.hamburgo,1991:retired};
   map['Maradona'] = {    1976:n.argentinojuniors,1981:n.bocajuniors,1982:n.barcelona,1984:n.napoli,1992:n.sevilla,1993:n.newells,1995:n.bocajuniors, 1997:retired};
-  map['Marcelinho Carioca'] = {1988:n.flamengo,1994:n.corinthians,1997:n.valencia,1998:n.corinthians,2001:n.santos,2002:n.gambaOsaka,2003:n.vasco,2004:n.ajaccio,2005:n.brasiliense,2006:n.corinthians,2007:n.santoandre,2010:retired};
+  map['Marcelinho Carioca'] = {1988:n.flamengo,1994:n.corinthians,1997:n.valencia,1998:n.corinthians,2001:n.santos,2002:n.gambaosaka,2003:n.vasco,2004:n.ajaccio,2005:n.brasiliense,2006:n.corinthians,2007:n.santoandre,2010:retired};
   map['Marcelo Gallardo'] = {1993:n.riverplate,1999:n.monaco,2003:n.riverplate,2007:n.psg,2008:n.dcunited,2009:n.riverplate,2010:n.nacional,2011:retired};
   map['Marchena'] = {    1997:n.sevilla,2000:n.benfica,2001:n.valencia,2010:n.villareal,2012:n.lacoruna,2015:retired};
   map['Marco Tardelli'] = {1972:n.pisa,1974:n.como,1975:n.juventus,1985:n.inter,1987:n.stgallen,1988:retired};
@@ -398,7 +398,7 @@ class PlayerPastClubs{
   map['Schweinsteiger'] = {2002:n.bayernmunique,2015:n.manutd,2017:n.chicago,2019:retired};
   map['Sneijder'] = {    2002:n.ajax,2007:n.realmadrid,2009:n.inter,2013:n.galatasaray,2017:n.nice,2018:n.algharafa,2019:retired};
   map['Stankovic'] = {   1995:n.estrelavermelha,1998:n.lazio,2004:n.inter,2013:retired};
-  map['Stoichkov'] = {   1984:n.cskasofia,1990:n.barcelona,1995:n.parma,1996:n.barcelona,1998:n.cskasofia,1999:n.kashiwaReysol,2000:n.chicago,2003:n.dcunited,2004:retired};
+  map['Stoichkov'] = {   1984:n.cskasofia,1990:n.barcelona,1995:n.parma,1996:n.barcelona,1998:n.cskasofia,1999:n.kashiwareysol,2000:n.chicago,2003:n.dcunited,2004:retired};
   map['Stojanović'] = {  1982:n.estrelavermelha,1991:n.royalAntwerp,1997:retired};
   map['Taffarel'] = {    1985:n.internacional,1990:n.parma,1993:n.reggiana,1995:n.atleticomg,1998:n.galatasaray,2001:n.parma};
   map['Tevez'] = {       2001:n.bocajuniors,2005:n.corinthians,2006:n.westham,2007:n.manutd,2009:n.mancity,2013:n.juventus,2015:n.bocajuniors,2017:n.shanghaishenhua,2018:n.bocajuniors,2021:retired};

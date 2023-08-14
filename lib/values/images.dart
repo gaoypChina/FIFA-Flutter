@@ -1355,7 +1355,7 @@ String imageLogo(String timeFoto) {
     map[_name.transvaal] = 'transvaal';
     //TRINIDAD TOBAGO
     map[_name.defenseforce] = 'defense force';
-    map[_name.police] = 'police';
+    map[_name.policeTT] = 'police';
 
     //////////////////////////////////////////////////////////////////////////////////
     //CHINA
@@ -1384,14 +1384,14 @@ String imageLogo(String timeFoto) {
     //JAPAN
     map[_name.albirex] = 'albirex';
     map[_name.avispa] = 'avispa';
-    map[_name.cerezoOsaka] = 'cerezo osaka';
-    map[_name.gambaOsaka] = 'gamba osaka';
-    map[_name.fcTokyo] = 'fc tokyo';
+    map[_name.cerezoosaka] = 'cerezo osaka';
+    map[_name.gambaosaka] = 'gamba osaka';
+    map[_name.fctokyo] = 'fc tokyo';
     map[_name.hiroshima] = 'hiroshima';
     map[_name.jefUnited] = 'jef united';
     map[_name.jubiloiwata] = 'jubilo iwata';
     map[_name.kashimaantlers] = 'kashima';
-    map[_name.kashiwaReysol] = 'kashiwa reysol';
+    map[_name.kashiwareysol] = 'kashiwa reysol';
     map[_name.kyoto] = 'kyoto';
     map[_name.kawasakifrontale] = 'kawasaki frontale';
     map[_name.nagoya] = 'nagoya';
@@ -1399,13 +1399,13 @@ String imageLogo(String timeFoto) {
     map[_name.oitatrinita] = 'oita trinita';
     map[_name.sagantosu] = 'sagan';
     map[_name.sapporo] = 'sapporo';
-    map[_name.shimizuSPulse] = 'shimizu';
+    map[_name.shimizuspulse] = 'shimizu';
     map[_name.shonanbellmare] = 'shonan';
     map[_name.tokyoVerdy] = 'tokyo verdy';
     map[_name.urawareddiamonds] = 'urawa';
     map[_name.vegaltaSendai] = 'vegalta';
     map[_name.visselkobe] = 'vissel_kobe';
-    map[_name.yokohamaFC] = 'yokohama fc';
+    map[_name.yokohamafc] = 'yokohama fc';
     map[_name.yokohamamarinos] = 'yokohama';
     //SOUTH KOREA
     map[_name.busan] = 'busan';
@@ -1465,13 +1465,13 @@ String imageLogo(String timeFoto) {
     //TAILANDIA
     map[_name.buriram] = 'buriram united';
     map[_name.bangkok] = 'bangkok';
-    map[_name.bangkokBank] = 'bangkok bank';
+    map[_name.bangkokbank] = 'bangkok bank';
     map[_name.chiangrai] = 'chiangrai';
     map[_name.chonburi] = 'chonburi';
     map[_name.muangthong] = 'muangthong';
     map[_name.pathum] = 'pathum';
     map[_name.policetero] = 'police tero';
-    map[_name.portFC] = 'portfc';
+    map[_name.portfc] = 'portfc';
     map[_name.ratchaburi] = 'ratchaburi';
     //INDIA
     map[_name.bengaluru] = 'bengaluru';
@@ -1525,8 +1525,8 @@ String imageLogo(String timeFoto) {
     map[_name.alRamtha] = 'al ramtha';
     map[_name.alWehdat] = 'al wehdat';
     //QUIRGUISTÃO
-    map[_name.algaBishkek] = 'alga bishkek';
-    map[_name.dordoiBishkek] = 'dordoi bishkek';
+    map[_name.algabishkek] = 'alga bishkek';
+    map[_name.dordoibishkek] = 'dordoi bishkek';
     //KUWAIT
     map[_name.alarabiKUW] = 'al arabi kuwait';
     map[_name.alkuwait] = 'al kuwait';

@@ -16,7 +16,7 @@ Map<String,dynamic> mapAmerica = {
   leagueName.brasil1 : {
     //2025.0: [],
     //2024.0: [],
-    2023.0: [n.botafogo,n.flamengo,n.palmeiras,n.gremio,n.fluminense,n.bragantino,n.saopaulo,n.internacional,n.cruzeiro,n.fortaleza,n.atleticomg,n.cuiaba,n.corinthians,n.bahia,n.santos,n.goias,n.coritiba,n.vasco,n.americamg],
+    2023.0: [n.botafogo,n.flamengo,n.palmeiras,n.gremio,n.fluminense,n.atleticopr,n.bragantino,n.saopaulo,n.internacional,n.cruzeiro,n.fortaleza,n.atleticomg,n.cuiaba,n.corinthians,n.bahia,n.santos,n.goias,n.coritiba,n.vasco,n.americamg],
     2022.0: [n.palmeiras,n.internacional,n.fluminense,n.corinthians,n.flamengo,n.atleticopr,n.atleticomg,n.fortaleza,n.saopaulo,n.americamg,  n.botafogo,n.santos,n.goias,n.bragantino,n.coritiba,n.cuiaba,n.ceara,n.avai,n.atleticogo,n.juventude],
     2021.0: [n.atleticomg,n.flamengo,n.palmeiras,n.fortaleza,n.corinthians,n.bragantino,n.fluminense,n.americamg,n.atleticogo,n.santos, n.ceara,n.internacional,n.saopaulo,n.atleticopr,n.cuiaba,n.juventude,n.gremio,n.bahia,n.sport,n.chapecoense],
     2020.0: [n.flamengo,n.internacional,n.atleticomg,n.saopaulo,n.fluminense,n.palmeiras,n.gremio,n.santos,n.atleticopr,n.bragantino,  n.ceara,n.corinthians,n.atleticogo,n.bahia,n.sport,n.fortaleza,n.vasco,n.goias,n.coritiba,n.botafogo],
