@@ -3075,6 +3075,7 @@ class ClubName{
   String brusque = "Brusque";
   String cabofriense = "Cabofriense";
   String cachoeiro = "Cachoeiro"; //ES
+  String caete = "Caeté"; //PARA
   String cai = "CA Itapemirim"; //ES
   String cajazeirense = "Atl. Cajazeirense"; //PB
   String caicara = "Caiçara";
@@ -3207,6 +3208,7 @@ class ClubName{
   String gremioanapolis = "Grêmio Anápolis";
   String novorizontino = "Grêmio Novorizontino";
   String guajara = "Guajará"; //RO
+  String guapore = "Guaporé"; //RO
   String guarapari = "Guarapari"; //ES
   String guaranyAP = "Guarany AP"; //ES
   String palhoca = "Guarani de Palhoça"; //SC
@@ -3225,6 +3227,7 @@ class ClubName{
   String imperatriz = "Imperatriz";
   String independenteAP = "Independente-AP"; //AP
   String independenteBA = "Independente-BA"; //BA
+  String independentePA = "Independente-PA"; //PA
   String independencia = "Independência";
   String inhumas = "Inhumas"; //GO
   String interLimeira = "Inter de Limeira";
@@ -3314,6 +3317,7 @@ class ClubName{
   String nacionalPB = "Nacional PB";
   String nauticoRR = "Naútico-RR";
   String naviraiense = "Naviraiense"; //MS
+  String nauas = "Nauas"; //ACRE
   String noroeste = "Noroeste";
   String novaandradina = "Nova Andradina"; //MS
   String novaiguacu = "Nova Iguaçu";
@@ -3380,7 +3384,8 @@ class ClubName{
   String rabello = "Rabello"; //DF
   String radium = "Radium"; //SP
   String remo = "Remo";
-  String realArquimedes = "Real Arquimedes"; //RO
+  String realRR = "Real-RR";
+  String realarquimedes = "Real Arquimedes"; //RO
   String realbrasilia = "Real Brasília"; //DF
   String realNoroeste = "Real Noroeste-ES";
   String renner = "Renner"; //RS
@@ -3418,7 +3423,9 @@ class ClubName{
   String saocristovao = "São Cristóvão"; //RJ
   String saodomingosAL = "São Domingos-AL"; //AL
   String saodomingosSE = "São Domingos-SE"; //SE
+  String saofranciscoAC = "São Francisco-AC";
   String saofranciscoRR = "São Francisco-RR";
+  String saofranciscoPA = "São Francisco-PA";
   String saogabriel = "São Gabriel";
   String saogoncaloRN = "São Gonçalo-RN"; //RN
   String saojose = "São José-SP";
@@ -3461,6 +3468,7 @@ class ClubName{
   String sousa = "Sousa PB";
   String sparta = "Sparta"; //TO
   String sulamerica = "Sul América"; //AM
+  String tapajos = "Tapajós"; //PA
   String taubate = "Taubaté";
   String taquaritinga = "Taquaritinga";
   String taguatinga = "Taguatinga";
@@ -4522,12 +4530,20 @@ class ClubName{
   String sriwijaya = "Sriwijaya";
   //LAOS
   String chanthabouly = "Chanthabouly";
+  String cscchampa = "CSC Champa";
+  String easternstarLAOS = "Eastern Star";
+  String ezra = "Ezra";
+  String evoutd = "Evo United";
+  String friendsdev = "Friends Development FC";
   String hoanganh = "Hoang Anh Attapeu";
   String lanexang = "Lanexang";
   String laoamerican = "Lao American College";
   String laoarmy = "Lao Army";
   String laobank = "Lao Bank";
   String laopolice = "Lao Police";
+  String luangprabang = "Luang Prabang United";
+  String master7 = "Master 7";
+  String nuol = "National University of Laos";
   String vientianefc = "Vientiane FC";
   String shbvientiane = "SHB Vientiane";
   String youngElephants = "Young Elephants";
@@ -4585,17 +4601,22 @@ class ClubName{
   String sobaeksu = "Sobaeksu";
   String sonbong = "Sonbong";
   //NEPAL
+  String boysunion = "Boys Union Club";
   String churchboys = "Church Boys United";
   String friendsclub = "Friends Club";
   String jawalakhel = "Jawalakhel";
   String khumaltar = "Khumaltar";
   String himalayansherpa = "Himalayan Sherpa Club";
   String machhindra = "Machhindra";
+  String mahendrapolice = "Mahendra Police Club ";
   String manangMarshyangdi = "Manang Marshyangdi";
   String himalayan = "Himalayan Sherpa Club";
   String nepalapf = "Nepal APF";
+  String nepalarmedpolice = "Nepal Armed Police";
   String nepalPolice = "Nepal Police";
+  String nepalarmy = "Nepal Army Club";
   String newroad = "New Road Team";
+  String ranipokhari  = "Ranipokhari Corner Team";
   String satdobatoyouth = "Satdobato Youth";
   String sankata = "Sankata";
   String threestar = "Three Star Club";
@@ -5050,11 +5071,16 @@ class ClubName{
   String yedigen = "Ýedigen Ashgabat";
   //UZBEQUISTAN
   String agmk = "AGMK Olmaliq";
+  String academiatashkent = "Academia Tashkent";
   String andijon = "Andijon";
+  String atlaschi = "Atlaschi";
   String bunyodkor = "Bunyodkor";
   String buxoro = "Buxoro";
+  String dinamosamarqand = "Dinamo Samarqand";
   String dustlik = "Dustlik";
+  String guliston = "Guliston";
   String kaganat = "Kaganat";
+  String kosonsoy = "Kosonsoy";
   String kokand = "Kokand 1912";
   String loktashkent = "Lokomotiv Tashkent";
   String metallurg = "Metallurg Bekabad";
@@ -5063,13 +5089,22 @@ class ClubName{
   String nasafqarshi = "Nasaf Qarshi";
   String navbahor = "Navbahor Namangan";
   String neftchifargona = "Neftchi Fargona";
+  String obod = "Obod";
   String olympictashkent = "Olympic Tashkent";
   String pakhtakor = "Pakhtakor";
   String qizilqum = "Qizilqum";
+  String sementchi = "Sementchi Kuvasoy";
+  String shurtanguzar = "Shurtan Guzar";
   String sogdiyona = "Sogdiyona Jizzakh";
-  String surkhon = "Surkhon";
+  String surkhon = "Surkhon Termez";
+  String traktortashkent = "Traktor Tashkent";
+  String tupolang = "Tupolang Sariosiyo";
   String turon = "Turon";
-
+  String uzdongjoo = "Uz-Dong-Joo";
+  String vobkent = "Vobkent";
+  String yangiyer = "Yangiyer";
+  String xorazm = "Xorazm Urganch";
+  String zarafshon = "Zarafshon Navoi";
 
   //////////////////////////////////////////////////////////////////////////////
   //OCEANIA

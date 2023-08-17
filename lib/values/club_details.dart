@@ -5831,7 +5831,7 @@ class ClubDetails{
     map[n.progressoRR] = [
       ClubColors(darkgreen,Colors.white),pattern.solid,Coordinates(0,0),
       'Municipal de Mucajaí',1000,0,_c.brazil,50.0,[],{},_c.rr];
-    map[n.realArquimedes] = [
+    map[n.realarquimedes] = [
       ClubColors(Colors.black,Colors.red),pattern.stripes2,Coordinates(0,0),
       'Gentil Valério',2500,2011,_c.brazil,50.0,[],{},_c.rr];
     map[n.saoraimundoRR] = [

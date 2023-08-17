@@ -10,11 +10,9 @@ Atlético Madrid,João Félix,ATA ATA,22,81,Portugal,/242/444/23_180.png,
 Manchester City,M. Kovačić,MC VOL,28,82,Croatia,/207/410/23_180.png,
 Manchester City,Mason Mount,MEI PD MC,23,81,England,/233/064/23_180.png,
 Chelsea,E. Fernández,MC VOL,21,84,Argentina,/247/090/23_180.png,
-Real Madrid,Kepa,GOL,27,81,Spain,/206/585/23_180.png,
 Chelsea,H. Ziyech,PD MEI,29,82,Morocco,/208/670/23_180.png,
 Olympique Marselha,P. Aubameyang,ATA,33,81,Gabon,/188/567/23_180.png,
 Chelsea,B. Chilwell,LE,25,83,England,/229/984/23_180.png,
-Milan,C. Pulisic,PE PD ME,23,80,United States,/227/796/23_180.png,
 Atlético Madrid,Azpilicueta,ZAG LD LD,32,82,Spain,/184/432/23_180.png,
 Chelsea,D. Zakaria,VOL MC,25,80,Switzerland,/229/261/23_180.png,
 Chelsea,Cucurella,LE ZAG,23,80,Spain,/239/231/23_180.png,
@@ -22,7 +20,6 @@ Chelsea,W. Fofana,ZAG,21,79,France,/248/695/23_180.png,
 Chelsea,C. Gallagher,MC,22,78,England,/238/216/23_180.png,
 Chelsea,B. Badiashile,ZAG,21,78,France,/242/578/23_180.png,
 Chelsea,N. Madueke,PD MD,20,77,England,/254/796/23_180.png,
-Milan,R. Loftus-Cheek,MC VOL MD,26,77,England,/213/666/23_180.png,
 Chelsea,M. Gusto,LD,19,76,France,/259/307/23_180.png,
 Chelsea,C. Hudson-Odoi,ME MEI MD,21,76,England,/240/740/23_180.png,
 Chelsea,T. Chalobah,ZAG LD VOL,22,76,England,/230/918/23_180.png,
@@ -2008,6 +2005,7 @@ Barcelona,Aleix Garrido,MC,18,62,Spain,/275/126/23_180.png,
 Barcelona,Fabio Blanco,PD,18,62,Spain,/262/954/23_180.png,
 Barcelona,Álex Valle,LE,18,61,Spain,/273/875/23_180.png,
 Barcelona,C. Riad,ZAG,19,61,Morocco,/258/490/23_180.png,
+Real Madrid,Kepa,GOL,27,81,Spain,/206/585/23_180.png,
 Real Madrid,J. Bellingham,MC,19,85,England,/252/371/23_180.png,
 Real Madrid,T. Courtois,GOL,30,90,Belgium,/192/119/23_180.png,
 Real Madrid,L. Modrić,MC,36,88,Croatia,/177/003/23_180.png,
@@ -2018,7 +2016,6 @@ Real Madrid,Vinícius Jr.,PE,21,86,Brazil,/238/794/23_180.png,
 Real Madrid,D. Alaba,ZAG LE,30,86,Austria,/197/445/23_180.png,
 Real Madrid,Éder Militão,ZAG,24,85,Brazil,/240/130/23_180.png,
 Real Madrid,Carvajal,LD,30,84,Spain,/204/963/23_180.png,
-PSG,Marco Asensio,PD,26,83,Spain,/220/834/23_180.png,
 Real Madrid,A. Tchouaméni,VOL MC,22,83,France,/241/637/23_180.png,
 Real Madrid,Rodrygo,PD PE ATA,21,83,Brazil,/243/812/23_180.png,
 Real Madrid,F. Mendy,LE,27,83,France,/228/618/23_180.png,
@@ -2127,7 +2124,6 @@ Sevilla,Pedro Ortiz,MC MEI,21,62,Spain,/264/175/23_180.png,
 Sevilla,Alberto Flores,GOL,18,61,Spain,/272/427/23_180.png,
 Sevilla,Adrián González,GOL,22,61,Spain,/271/488/23_180.png,
 Sevilla,Carlos Álvarez,MEI MD ME,18,61,Spain,/274/209/23_180.png,
-Real Betis,Canales,MD MEI ME,31,84,Spain,/190/286/23_180.png,
 Real Betis,N. Fekir,MEI,28,84,France,/216/594/23_180.png,
 Real Betis,Borja Iglesias,ATA,29,82,Spain,/224/179/23_180.png,
 Real Betis,William Carvalho,VOL MEI,30,81,Portugal,/207/566/23_180.png,
@@ -2163,7 +2159,6 @@ Real Betis,Kevin Carlos,ATA,21,63,Spain,/252/386/23_180.png,
 Real Betis,Fran Delgado,LD MD,20,62,Spain,/264/164/23_180.png,
 Real Betis,Manu Morillo,ATA MD ME,18,62,Spain,/264/166/23_180.png,
 Valencia,Gayà,LE LE,27,82,Spain,/211/688/23_180.png,
-Boca Juniors,E. Cavani,ATA,35,81,Uruguay,/179/813/23_180.png,
 Valencia,Gabriel Paulista,ZAG,31,80,Brazil,/201/305/23_180.png,
 Valencia,G. Mamardashvili,GOL,21,79,Georgia,/262/621/23_180.png,
 Valencia,Samu Castillejo,MD,27,76,Spain,/210/617/23_180.png,
@@ -2180,7 +2175,6 @@ Valencia,I. Moriba,MC,19,73,Guinea,/259/233/23_180.png,
 Valencia,Jaume,GOL,31,73,Spain,/220/604/23_180.png,
 Valencia,Toni Lato,LE LE ME,24,73,Spain,/232/008/23_180.png,
 Valencia,Marcos André,ATA,25,72,Brazil,/252/084/23_180.png,
-Milan,Y. Musah,MC MD VOL,19,72,United States,/253/177/23_180.png,
 Valencia,Herrerín,GOL,34,72,Spain,/193/152/23_180.png,
 Valencia,C. Özkacar,ZAG,21,71,Turkey,/258/396/23_180.png,
 Valencia,Jesús Vázquez,LE LE ME,19,71,Spain,/260/082/23_180.png,
@@ -2205,7 +2199,6 @@ Villarreal,F. Coquelin,MC ME MD,31,80,France,/189/271/23_180.png,
 Villarreal,E. Capoue,MC VOL,33,80,France,/178/213/23_180.png,
 Villarreal,J. Foyth,LD ZAG VOL,24,79,Argentina,/237/221/23_180.png,
 Villarreal,Yeremy Pino,MD ME ATA,19,79,Spain,/259/377/23_180.png,
-Milan,S. Chukwueze,MD PD,23,79,Nigeria,/246/172/23_180.png,
 Villarreal,B. Dia,ATA PE ATA,25,79,Senegal,/246/242/23_180.png,
 Villarreal,Morales,ATA ME,34,79,Spain,/216/475/23_180.png,
 Villarreal,Pedraza,LE,26,78,Spain,/228/302/23_180.png,
@@ -2503,6 +2496,7 @@ Valladolid,B. Akinsola,MD ME,19,61,Nigeria,/275/487/23_180.png,
 Mallorca,V. Muriqi,ATA,28,79,Kosovo,/223/710/23_180.png,
 Mallorca,Pablo Maffeo,LD LE,24,78,Spain,/221/342/23_180.png,
 Mallorca,P. Rajković,GOL,26,78,Serbia,/241/727/23_180.png,
+PSG,Marco Asensio,PD,26,83,Spain,/220/834/23_180.png,
 PSG,Lee Kang In,ME ATA MEI,21,77,South Korea,/243/780/23_180.png,
 Mallorca,Dani Rodríguez,MD ME MC,34,77,Spain,/198/451/23_180.png,
 Mallorca,Jaume Costa,LE,34,76,Spain,/193/171/23_180.png,
@@ -3184,9 +3178,15 @@ Lazio,Gonzalez,PE PD,19,69,Paraguay,/273/934/23_180.png,
 Lazio,E. Cicerelli,PE PD MD,27,65,Italy,/241/165/23_180.png,
 Lazio,M. Adamonis,GOL,25,64,Lithuania,/233/691/23_180.png,
 Lazio,Mario Gila,ZAG,21,64,Spain,/268/804/23_180.png,
+Milan,M. Sportiello,GOL,30,76,Italy,/216/065/23_180.png,
+Milan,T. Reijnders,MC,23,76,Netherlands,/240/638/23_180.png,
 Milan,M. Maignan,GOL,26,87,France,/215/698/23_180.png,
 Milan,T. Hernández,LE ME,24,85,France,/232/656/23_180.png,
 Milan,F. Tomori,ZAG,24,84,England,/232/756/23_180.png,
+Milan,S. Chukwueze,MD PD,23,79,Nigeria,/246/172/23_180.png,
+Milan,Y. Musah,MC MD VOL,19,72,United States,/253/177/23_180.png,
+Milan,C. Pulisic,PE PD ME,23,80,United States,/227/796/23_180.png,
+Milan,R. Loftus-Cheek,MC VOL MD,26,77,England,/213/666/23_180.png,
 Newcastle,S. Tonali,VOL MC,22,84,Italy,/241/096/23_180.png,
 Milan,Rafael Leão,PE ATA ATA,23,84,Portugal,/241/721/23_180.png,
 Milan,O. Giroud,ATA,35,83,France,/178/509/23_180.png,
@@ -3200,7 +3200,7 @@ Milan,A. Saelemaekers,PD MD,23,78,Belgium,/242/664/23_180.png,
 Milan,Junior Messias,PD MD,31,78,Brazil,/240/938/23_180.png,
 Milan,A. Florenzi,LD MD,31,78,Italy,/203/551/23_180.png,
 Milan,M. Thiaw,ZAG,20,77,Germany,/256/261/23_180.png,
-Milan,C. De Ketelaere,MEI ATA,21,76,Belgium,/251/470/23_180.png,
+Atalanta,C. De Ketelaere,MEI ATA,21,76,Belgium,/251/470/23_180.png,
 Milan,T. Pobega,MC,22,76,Italy,/252/060/23_180.png,
 Milan,D. Origi,ATA PE,27,75,Belgium,/213/135/23_180.png,
 Milan,C. Tătărușanu,GOL,36,75,Romania,/201/325/23_180.png,
@@ -3219,7 +3219,6 @@ Roma,P. Dybala,ATA MEI,28,86,Argentina,/211/110/23_180.png,
 Roma,C. Smalling,ZAG,32,83,England,/189/881/23_180.png,
 Roma,L. Pellegrini,MEI MC ATA,26,83,Italy,/228/251/23_180.png,
 Roma,G. Mancini,ZAG,26,82,Italy,/229/582/23_180.png,
-Roma,Ibañez,ZAG,23,81,Brazil,/247/257/23_180.png,
 Roma,L. Spinazzola,LE ME,29,81,Italy,/202/884/23_180.png,
 Roma,T. Abraham,ATA,24,81,England,/231/352/23_180.png,
 Roma,N. Matić,VOL MC,33,80,Serbia,/191/202/23_180.png,
@@ -3267,7 +3266,6 @@ Atalanta,J. Boga,ME PE ATA,25,77,Ivory Coast,/224/422/23_180.png,
 Atalanta,M. Demiral,ZAG,24,77,Turkey,/238/160/23_180.png,
 Atalanta,J. Mæhle,LE ME MD,25,77,Denmark,/234/678/23_180.png,
 Atalanta,A. Miranchuk,ATA MEI,26,77,Russia,/214/092/23_180.png,
-Milan,M. Sportiello,GOL,30,76,Italy,/216/065/23_180.png,
 Atalanta,J. Palomino,ZAG,32,76,Argentina,/217/196/23_180.png,
 Atalanta,Éderson,MC MEI,22,75,Brazil,/266/866/23_180.png,
 Atalanta,G. Scalvini,ZAG,18,73,Italy,/265/188/23_180.png,
@@ -7041,7 +7039,6 @@ AZ Alkmaar,M. Ryan,GOL,30,78,Australia,/199/005/23_180.png,
 AZ Alkmaar,V. Pavlidis,ATA,23,78,Greece,/229/188/23_180.png,
 AZ Alkmaar,J. Karlsson,PE,23,77,Sweden,/231/836/23_180.png,
 AZ Alkmaar,J. Clasie,VOL MC,31,76,Netherlands,/199/422/23_180.png,
-Milan,T. Reijnders,MC,23,76,Netherlands,/240/638/23_180.png,
 AZ Alkmaar,D. Mihailovic,MEI MC ATA,23,76,United States,/237/496/23_180.png,
 AZ Alkmaar,Y. Sugawara,LD PD,22,75,Japan,/242/916/23_180.png,
 AZ Alkmaar,R. Bazoer,MC VOL ZAG,25,75,Netherlands,/212/269/23_180.png,
@@ -10215,7 +10212,7 @@ Palmeiras,Dudu,PE MEI,31,80,Brazil,wiki/41517.png,
 Palmeiras,Weverton,GOL,35,81,Brazil,wiki/47936.png,
 Palmeiras,Gustavo Gomez,ZAG,30,83,Paraguay,wiki/50937.png,
 Palmeiras,Raphael Veiga,MEI MC,28,81,Brazil,wiki/87006.png,
-Palmeiras,Rony Barbosa,ATA MEI,28,79,Brazil,wiki/99213.png,
+Palmeiras,Rony,ATA MEI,28,79,Brazil,wiki/99213.png,
 Palmeiras,Marcos Rocha,MD LD ZAG,34,79,Brazil,wiki/41184.png,
 Palmeiras,Murilo Cerqueira,ZAG,26,79,Brazil,wiki/90543.png,
 Palmeiras,Artur Guimaraes,PD MEI,25,78,Brazil,wiki/94127.png,
@@ -10225,7 +10222,6 @@ Palmeiras,Luan Garcia,ZAG,30,76,Brazil,wiki/61630.png,
 Palmeiras,Eduard Atuesta,MC MEI MD,26,75,Colombia,wiki/89399.png,
 Palmeiras,Gabriel Menino,MC LD,22,77,Brazil,wiki/103732.png,
 Palmeiras,Jose Manuel Lopez,ATA,22,75,Argentina,wiki/109574.png,
-Boca Juniors,Miguel Merentiel,ATA ATA,27,76,Uruguay,wiki/89614.png,
 Palmeiras,Jailson Siqueira,VOL,27,75,Brazil,wiki/87110.png,
 Palmeiras,Marcelo Lomba,GOL,36,75,Brazil,wiki/43625.png,
 Palmeiras,Breno Lopes,ATA PE,27,75,Brazil,wiki/108485.png,
@@ -11246,7 +11242,7 @@ Vasco,Dimitri Payet,ATA ATA,36,81,France,wiki/15164.png,
 Vasco,Rodrigues Jair,MC MD,28,79,Brazil,wiki/77163.png,
 Vasco,Gary Medel,VOL ZAG,36,76,Chile,wiki/23933.png,
 Vasco,Pereira Maicon,ZAG,34,77,Brazil,wiki/34945.png,
-Vasco,Alex Teixeira,ATA ATA,33,77,Brazil,wiki/32901.png,
+Vasco,Alex Teixeira,ATA ATA,33,76,Brazil,wiki/32901.png,
 Vasco,Leo Pele,MD LE LE,27,75,Brazil,wiki/90538.png,
 Vasco,Lucas Piton,MD MC PE ZAG,22,77,Italy,wiki/102302.png,
 Vasco,Luca Orellano,ATA ATA,23,77,Argentina,wiki/104675.png,
@@ -11263,7 +11259,7 @@ Vasco,Gabriel Dias,MD MC LD,29,74,Brazil,wiki/75053.png,
 Vasco,Junio Jefferson,MD LE ZAG,26,74,Brazil,wiki/89446.png,
 Vasco,Manuel Capasso,ZAG,27,74,Argentina,wiki/115294.png,
 Vasco,Antonio Serginho,PE ATA,28,73,Brazil,wiki/111613.png,
-Vasco,Pablo Vegetti,ATA,34,72,Argentina,wiki/74273.png,
+Vasco,Pablo Vegetti,ATA,34,76,Argentina,wiki/74273.png,
 Vasco,Patrick de Lucca,MD MC LD,23,72,Brazil,wiki/113096.png,
 Vasco,Quaresma Ivan,GOL,26,72,Brazil,wiki/82278.png,
 Vasco,Paulo Henrique,MD MC PD ZAG,27,71,Brazil,wiki/114567.png,
@@ -12162,7 +12158,7 @@ River Plate,T. Galván,MEI MC,22,66,Argentina,/262/240/23_180.png,
 River Plate,F. Peña,ZAG VOL,21,66,Argentina,/264/323/23_180.png,
 River Plate,F. Londoño,ATA MEI,21,65,Colombia,/266/725/23_180.png,
 River Plate,F. Alfonso,MEI MC,20,64,Argentina,/273/866/23_180.png,
-Boca Juniors,A. Rossi,GOL,26,79,Argentina,/227/275/23_180.png,
+Boca Juniors,E. Cavani,ATA,35,81,Uruguay,/179/813/23_180.png,
 Boca Juniors,S. Villa,PE PD,26,78,Colombia,/233/959/23_180.png,
 Boca Juniors,M. Rojo,ZAG,32,78,Argentina,/201/862/23_180.png,
 Boca Juniors,M. Retegui,ATA,23,77,Italy,/241/850/23_180.png,
@@ -15300,11 +15296,11 @@ LA Galaxy,J. Perez,MD,19,54,Mexico,/256/039/23_180.png,
 Los Angeles FC,G. Chiellini,ZAG,37,81,Italy,/138/956/23_180.png,
 Los Angeles FC,C. Vela,PD PE ATA,33,81,Mexico,/169/416/23_180.png,
 Los Angeles FC,D. Bouanga,ME ATA MD,27,76,Gabon,/225/951/23_180.png,
-Los Angeles FC,Ilie Sánchez,VOL ZAG MC,31,74,Spain,/199/562/23_180.png,
-Los Angeles FC,M. Crépeau,GOL,28,73,Canada,/213/536/23_180.png,
-Los Angeles FC,J. Cifuentes,MC,23,72,Ecuador,/255/137/23_180.png,
-Los Angeles FC,K. Acosta,MC VOL,26,72,United States,/213/209/23_180.png,
-Los Angeles FC,A. Long,ZAG,29,72,United States,/222/123/23_180.png,
+Los Angeles FC,Ilie Sánchez,VOL ZAG MC,31,75,Spain,/199/562/23_180.png,
+Los Angeles FC,M. Crépeau,GOL,28,74,Canada,/213/536/23_180.png,
+Los Angeles FC,J. Cifuentes,MC,23,73,Ecuador,/255/137/23_180.png,
+Los Angeles FC,K. Acosta,MC VOL,26,73,United States,/213/209/23_180.png,
+Los Angeles FC,A. Long,ZAG,29,73,United States,/222/123/23_180.png,
 Los Angeles FC,D. Palacios,LE,22,72,Ecuador,/245/065/23_180.png,
 Los Angeles FC,S. Biuk,ME PE,19,71,Croatia,/262/585/23_180.png,
 Los Angeles FC,J. Murillo,ZAG LD,28,71,Colombia,/219/546/23_180.png,
@@ -17083,10 +17079,11 @@ Al Fateh,O. Al Othman,PD ATA,19,51,South Arabia,/263/766/23_180.png,
 Al Fateh,A. Al Jassim,PD ATA,21,51,South Arabia,/271/087/23_180.png,
 Al Fateh,A. Al Julaydan,LD,18,51,South Arabia,/275/128/23_180.png,
 Al Fateh,M. Al Khadrawi,VOL ZAG,21,50,South Arabia,/259/703/23_180.png,
-Al Ahli Saudi,Roberto Firmino,ATA ATA,31,84,Brazil,wiki/44009.png,
+Al Ahli Saudi,Ibañez,ZAG,23,81,Brazil,/247/257/23_180.png,
+Al Ahli Saudi,Roberto Firmino,ATA ATA,31,83,Brazil,wiki/44009.png,
 Al Ahli Saudi,Riyad Mahrez,PD MEI,32,84,Algeria,wiki/58616.png,
 Al Ahli Saudi,Franck Kessie,MC MEI MD,26,83,Ivory Coast,wiki/77442.png,
-Al Ahli Saudi,Édouard Mendy,GOL,31,82,Senegal,wiki/59322.png,
+Al Ahli Saudi,Édouard Mendy,GOL,31,83,Senegal,wiki/59322.png,
 Al Ahli Saudi,Roger Ibañez,ZAG,24,82,Brazil,wiki/94623.png,
 Al Ahli Saudi,Allan Saint-Maximin,ATA ATA,26,81,France,wiki/69634.png,
 Al Ahli Saudi,Ezgjan Alioski,LE MC MEI ZAG,31,78,North Macedonia,wiki/52841.png,
@@ -18950,34 +18947,34 @@ AS Vita,Éric Kabw,ATA,22,64,Burkina Faso,header/873072-1679613634.jpg?lm=1
 AS Vita,Manace Mbed,ATA,23,64,Burkina Faso,header/default.jpg?lm=1
 AS Vita,Heritier ImanaHeritier Ima,PE,21,63,Burkina Faso,header/default.jpg?lm=1
 AS Vita,Elliass Diand,PD,22,63,Burkina Faso,header/default.jpg?lm=1
-Al-Hilal Omdurman,Ali Abdallah Abu-Eshrei,GOL,34,74,Sudan,header/703304-1641024506.png?lm=1
-Al-Hilal Omdurman,Walieldin KhidirWalieldin Khid,MC,27,73,Sudan,header/615575-1641024997.png?lm=1
+Al-Hilal Omdurman,Ali Abdallah Abu-Eshrei,GOL,34,72,Sudan,header/703304-1641024506.png?lm=1
+Al-Hilal Omdurman,Walieldin Khidir,MC,27,71,Sudan,header/615575-1641024997.png?lm=1
 Al-Hilal Omdurman,Atthar Eltahi,LD,26,72,Sudan,header/default.jpg?lm=1
 Al-Hilal Omdurman,Ishag AdamIshag Ad,GOL,24,71,Sudan,header/490313-1644177050.jpeg?lm=1
 Al-Hilal Omdurman,Altayeb Abake,ZAG,32,71,Sudan,header/752485-1641024786.png?lm=1
 Al-Hilal Omdurman,Telal Adil Ahme,MC,26,71,Sudan,header/default.jpg?lm=1
 Al-Hilal Omdurman,Hassan Mutwaki,MC,26,71,Sudan,header/490346-1645285162.png?lm=1
-Al-Hilal Omdurman,Abdul Ajagu,MEI,30,71,Sudan,header/131664-1473747370.jpg?lm=1
-Al-Hilal Omdurman,Gerald Phiri Junio,MEI,30,71,Sudan,header/376901-1644176956.jpeg?lm=1
-Al-Hilal Omdurman,David Abagn,MEI,24,71,Sudan,header/default.jpg?lm=1
-Al-Hilal Omdurman,Makabi Lilep,PD,25,71,Sudan,header/default.jpg?lm=1
-Al-Hilal Omdurman,Waleed Bakhet Hami,ATA,24,71,Sudan,header/426968-1641024724.png?lm=1
-Al-Hilal Omdurman,Ousmane Diou,ZAG,26,70,Sudan,header/1099722-1676126111.jpg?lm=1
+Al-Hilal Omdurman,Abdul Ajagu,MEI,30,68,Sudan,header/131664-1473747370.jpg?lm=1
+Al-Hilal Omdurman,Gerald Phiri Junio,MEI,30,70,Sudan,header/376901-1644176956.jpeg?lm=1
+Al-Hilal Omdurman,David Abagn,MEI,24,69,Sudan,header/default.jpg?lm=1
+Al-Hilal Omdurman,Makabi Lilep,PD,25,66,Sudan,header/default.jpg?lm=1
+Al-Hilal Omdurman,Waleed Bakhet Hami,ATA,24,68,Sudan,header/426968-1641024724.png?lm=1
+Al-Hilal Omdurman,Ousmane Diou,ZAG,26,67,Sudan,header/1099722-1676126111.jpg?lm=1
 Al-Hilal Omdurman,Abdelrazig Ome,MEI,29,70,Sudan,header/741509-1641024563.png?lm=1
 Al-Hilal Omdurman,Yasir MozamilYasir Mozam,PD,31,70,Sudan,header/634394-1645285173.jpeg?lm=1
 Al-Hilal Omdurman,Mohamed Abuaagl,MC,30,70,Sudan,header/407781-1641024525.png?lm=1
-Al-Hilal Omdurman,Mohamed Abdelrahma,ATA,29,70,Sudan,header/315077-1641025037.png?lm=1
-Al-Hilal Omdurman,Fabrice Ngom,MC,29,70,Sudan,header/569209-1646818338.jpg?lm=1
-Al-Hilal Omdurman,Anas Saee,ATA,24,69,Sudan,header/default.jpg?lm=1
-Al-Hilal Omdurman,Claude Singon,MC,28,69,Sudan,header/default.jpg?lm=1
-Al-Hilal Omdurman,Mwafag Siddi,LD,26,69,Sudan,header/714871-1644177100.jpeg?lm=1
-Al-Hilal Omdurman,Lassine Keit,LE,25,69,Sudan,header/default.jpg?lm=1
-Al-Hilal Omdurman,Mohamed Saeed Ahme,ZAG,25,69,Sudan,header/863246-1641024692.png?lm=1
-Al-Hilal Omdurman,Salaheldin AdilSalaheldin Ad,VOL,28,67,Sudan,header/634396-1641024750.png?lm=1
-Al-Hilal Omdurman,Ibrahim Imor,LE,23,67,Sudan,header/577355-1589172950.jpg?lm=1
-Al-Hilal Omdurman,Mohamed AboojaMohamed Aboo,GOL,23,66,Sudan,header/490356-1641025029.png?lm=1
-Al-Hilal Omdurman,Ahmed WadahAhmed Wad,ZAG,23,66,Sudan,header/740331-1641024989.png?lm=1
-Al-Hilal Omdurman,Emad AlsiniEmad Alsi,ZAG,30,66,Sudan,header/default.jpg?lm=1
+Al-Hilal Omdurman,Mohamed Abdelrahma,ATA,29,65,Sudan,header/315077-1641025037.png?lm=1
+Al-Hilal Omdurman,Fabrice Ngom,MC,29,64,Sudan,header/569209-1646818338.jpg?lm=1
+Al-Hilal Omdurman,Anas Saee,ATA,24,62,Sudan,header/default.jpg?lm=1
+Al-Hilal Omdurman,Claude Singon,MC,28,65,Sudan,header/default.jpg?lm=1
+Al-Hilal Omdurman,Mwafag Siddi,LD,26,66,Sudan,header/714871-1644177100.jpeg?lm=1
+Al-Hilal Omdurman,Lassine Keit,LE,25,66,Sudan,header/default.jpg?lm=1
+Al-Hilal Omdurman,Mohamed Saeed Ahme,ZAG,25,67,Sudan,header/863246-1641024692.png?lm=1
+Al-Hilal Omdurman,Salaheldin AdilSalaheldin Ad,VOL,28,65,Sudan,header/634396-1641024750.png?lm=1
+Al-Hilal Omdurman,Ibrahim Imor,LE,23,63,Sudan,header/577355-1589172950.jpg?lm=1
+Al-Hilal Omdurman,Mohamed AboojaMohamed Aboo,GOL,23,62,Sudan,header/490356-1641025029.png?lm=1
+Al-Hilal Omdurman,Ahmed WadahAhmed Wad,ZAG,23,64,Sudan,header/740331-1641024989.png?lm=1
+Al-Hilal Omdurman,Emad AlsiniEmad Alsi,ZAG,30,65,Sudan,header/default.jpg?lm=1
 Al-Hilal Omdurman,Iassa Iass,LD,23,65,Sudan,header/default.jpg?lm=1
 Al-Hilal Omdurman,Faris AbdallaFaris Abdal,LE,29,65,Sudan,header/281666-1641025006.png?lm=1
 Al-Hilal Omdurman,Steven Ebuel,LD,22,64,Sudan,header/908915-1626956624.jpeg?lm=1

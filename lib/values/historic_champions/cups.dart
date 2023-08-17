@@ -675,7 +675,7 @@ Map<String,dynamic> mapCopas = {
      //https://www.bolanaarea.com/copa_do_brasil_2007.htm
      //2025.0: [],
      //2024.0: [],
-     //2023.0: [],
+      2023.0: [n.saopaulo,n.flamengo,n.corinthians,n.gremio,      ],
       2022.0: [n.flamengo,n.corinthians,n.saopaulo,n.fluminense,  n.atleticogo,n.americamg,n.atleticopr,n.fortaleza, n.ceara,n.santos,n.atleticomg,n.palmeiras,n.cruzeiro,n.goias,n.botafogo,n.bahia,               ],
       2021.0: [n.atleticomg, n.atleticopr,n.fortaleza,n.flamengo, n.saopaulo,n.gremio,n.santos,n.fluminense,         n.bahia,n.atleticogo,n.juazeirense,n.crb,n.vitoria,n.vasco,n.criciuma,n.abc,                   ],
       2020.0: [n.palmeiras, n.gremio,n.americamg,n.saopaulo,      n.ceara,n.internacional,n.flamengo,n.cuiaba,       n.botafogo,n.atleticogo,n.juventude,n.fortaleza,n.corinthians,n.santos,n.atleticopr,n.bragantino, ],
