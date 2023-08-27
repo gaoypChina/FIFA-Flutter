@@ -1456,7 +1456,7 @@ String imageLogo(String timeFoto) {
     map[_name.shababalahli] = 'shabab al ahli';
     //BAHREIN
     map[_name.alhidd] = 'al hidd';
-    map[_name.almuharraq] = 'al muharraq';
+    map[_name.muharraq] = 'al muharraq';
     map[_name.alriffa] = 'al riffa';
     map[_name.manama] = 'manama';
     //PHILLIPINES

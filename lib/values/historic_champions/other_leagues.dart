@@ -234,7 +234,7 @@ Map<String,dynamic> mapOtherLeagues = {
     1996.0: [n.alahly,n.rajacasablanca,n.alnassr,n.shababrafah,],
     1995.0: [n.alhilal,n.esperance,n.alnassr,n.belouizdad,],
     1994.0: [n.alhilal,n.alittihad,n.jskabylie,n.bizertin,],
-    1993.0: [n.esperance,n.almuharraq,n.widaddetlemcen,n.alqadsia],
+    1993.0: [n.esperance,n.muharraq,n.widaddetlemcen,n.alqadsia],
     1992.0: [n.alshabab,n.alarabi,n.ismaily,n.alFaisalyJORD,],
     1991.0: [],
     1990.0: [],

@@ -8597,7 +8597,7 @@ class ClubDetails{
     map[n.alkhaldiya] = [
       ClubColors(Colors.yellow,Colors.black),pattern.solid,Coordinates(26.1536, 50.5435),
       'Bahrain National Stadium',24000,2020,_c.bahrein,63.0,[],{}];
-    map[n.almuharraq] = [
+    map[n.muharraq] = [
       ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(26.25750173, 50.62779),
       'Al Muharraq Stadium',20000,1928,_c.bahrein,68.7,[],{}];
     map[n.alnasrBAH] = [
@@ -8643,7 +8643,7 @@ class ClubDetails{
     map[n.alettifaq] = [
       ClubColors(Colors.red,Colors.grey),pattern.solid,Coordinates(26.426514, 50.114128),
       'Prince Mohamed bin Fahd Stadium',26000,1945,_c.southarabia,68.4,[],{}];
-    map[n.alFaisalyARABIA] = [
+    map[n.alfaisaly] = [
       ClubColors(grena,Colors.white),pattern.solid,Coordinates(25.88693735, 45.36807),
       'Al Majma\'ah Sports City',7000,1954,_c.southarabia,66.3,[],{}];
     map[n.alfateh] = [
@@ -8999,7 +8999,7 @@ class ClubDetails{
       ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(31.8476340, 35.23024420),
       'Faisal Al-Husseini International',12500,1972,_c.palestine,61.2,[],{}];
     //SYRIA
-    map[n.alfutowa] = [
+    map[n.alfotuwa] = [
       ClubColors(Colors.blue,Colors.white),pattern.solid,Coordinates(0, 0),
       'Deir ez-Zor Municipal Stadium',13000,1930,_c.syria,57.7,[],{}];
     map[n.alhurriya] = [
@@ -10325,7 +10325,7 @@ class ClubDetails{
     map[n.asfosa] = [
       ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
       '',0,0,_c.togo,50.0,[],{}];
-    map[n.askoKara] = [
+    map[n.askokara] = [
       ClubColors(Colors.yellow,Colors.black),pattern.oneHorStripe,Coordinates(9.5726839, 1.179215596),
       'Stade Municipal Kara',10000,1974,_c.togo,62.0,[],{}];
     map[n.etoilefilante] = [

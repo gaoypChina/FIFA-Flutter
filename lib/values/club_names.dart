@@ -4734,17 +4734,21 @@ class ClubName{
   String alnassr = "Al Nassr";
   String alahli = "Al Ahli";
   String alansarARABIA = "Al Ansar ARABIA";
+  String aljabalain = "Al Jabalain";
   String alhilal = "Al Hilal";
   String alkhaleej = "Al-Khaleej";
-  String alFaisalyARABIA = "Al-Faisaly";
+  String alkawkb = "Al Kawkb";
+  String alfaisaly = "Al-Faisaly";
   String alhazem = "Al Hazem";
   String alittihad = "Al Ittihad";
   String alshabab = "Al Shabab";
   String alettifaq = "Al Ettifaq";
   String alfateh = "Al Fateh";
   String alfayha = "Al Fayha";
+  String alhazm = "Al Hazm";
   String alnahda = "Al Nahda";
   String alnajma = "Al Najma Sport Club";
+  String alorobah = "Al Orobah";
   String alqadisiya = "Al Qadisiya";
   String alraed = "Al Raed";
   String alrawdhah = "Al Rawdhah";
@@ -4752,10 +4756,13 @@ class ClubName{
   String alshoulla = "Al Shoulla";
   String altaawoun = "Al Taawoun";
   String altai = "Al Tai";
+  String alwatani = "Al Watani";
   String alwehda = "Al Wehda";
   String damac = "Damac";
+  String hajer = "Hajer";
   String najran = "Najran";
   String ohod = "Ohod";
+  String sdoos = "Sdoos Club";
   //EAU
   String alain = "Al Ain-EAU";
   String albataeh = "Al Bataeh";
@@ -4803,19 +4810,27 @@ class ClubName{
   String ummsalal = "Umm Salal";
   //BAHREIN
   String alhala = "Al-Hala";
+  String alhilalBAH = "Al-Hilal BAH";
   String alhidd = "Al-Hidd";
   String alkhaldiya = "Al-Khaldiya";
-  String almuharraq = "Al-Muharraq";
-  String alahliBAH = "Al Ahli-BAH";
+  String muharraq = "Al-Muharraq";
+  String alahliBAH = "Al Ahli Manama";
   String alnasrBAH = "Al-Nasr QAT";
   String alriffa = "Al-Riffa";
   String alshababBAH = "Al-Shabab Bahrein";
+  String altadamun = "Al-Tadamun";
   String bahrain = "Bahrain";
+  String besaitin = "Besaitin";
   String budaiya = "Budaiya";
+  String busaiteen = "Busaiteen Club";
   String eastriffa = "East Riffa";
+  String essatown = "Essa Town";
+  String jadhafs = "Jadhafs";
   String malkiya = "Malkiya";
   String manama = "Manama";
+  String qalali = "Qalali";
   String sitra = "Sitra";
+  String westriffa = "West Riffa";
   //IRÃ
   String abobargheahvaz = "Ab O' Barghe Ahvaz";
   String aboumoslem = "Aboumoslem";
@@ -4941,6 +4956,7 @@ class ClubName{
   String akhaaaley = "Akhaa Ahli Aley";
   String alahed = "Al-Ahed";
   String alansar = "Al Ansar";
+  String nabisheet = "Al Nabi Sheet";
   String alsafa = "Al-Safa";
   String bourj = "Bourj";
   String chababghazieh = "Chabab Ghazieh";
@@ -4948,6 +4964,7 @@ class ClubName{
   String homenetmen = "Homenetmen";
   String racingbeirut = "Racing Beirut";
   String sagesse = "Sagesse";
+  String shababbourj = "Shabab Bourj";
   String shababsahel = "Shabab Sahel";
   String salamzgharta = "Salam Zgharta";
   String tadamonsour = "Tadamon Sour";
@@ -4995,7 +5012,7 @@ class ClubName{
   String shababrafah = "Shabab Rafah";
   String shababkhanyunes = "Shabab Khan Yunes";
   //SYRIA
-  String alfutowa = "Al-Fotuwa";
+  String alfotuwa = "Al-Fotuwa";
   String alhurriya = "Al-Hurriya";
   String alittihadSYR = "Al-Ittihad Aleppo";
   String aljaish = "Al-Jaish";
@@ -6075,7 +6092,7 @@ class ClubName{
   String agaza = "Agaza";
   String anges = "Anges";
   String asfosa = "ASFOSA Lomé";
-  String askoKara = "ASKO Kara";
+  String askokara = "ASKO Kara";
   String douaneslome = "Douanes de Lomé";
   String doumbe = "Doumbé";
   String etoilefilante = "Étoile Filante";
