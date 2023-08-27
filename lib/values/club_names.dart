@@ -3948,7 +3948,7 @@ class ClubName{
   String charlotte = "Charlotte FC";
   String chicago = "Chicago Fire";
   String chivasUSA = "Chivas USA";
-  String cincinnati = "Cincinnati FC";
+  String cincinnati = "Cincinnati";
   String coloradorapids = "Colorado Rapids";
   String switchbacks = "Colorado Springs Switchbacks";
   String columbuscrew = "Columbus Crew";
@@ -3973,7 +3973,7 @@ class ClubName{
   String memphis = "Memphis 901";
   String minnesota = "Minnesota United";
   String montreal = "Montreal Impact";
-  String nashville = "Nashville SC";
+  String nashville = "Nashville";
   String nerevolution = "NE Revolution";
   String nycity = "NY City";
   String nycosmos = "NY Cosmos";
@@ -4732,7 +4732,7 @@ class ClubName{
   String aladalah = "Al Adalah";
   String albatin = "Al Batin";
   String alnassr = "Al Nassr";
-  String alahli = "Al Ahli";
+  String alahli = "Al Ahli Saudi";
   String alansarARABIA = "Al Ansar ARABIA";
   String aljabalain = "Al Jabalain";
   String alhilal = "Al Hilal";

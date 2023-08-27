@@ -40,6 +40,7 @@ class FIFAImages{
     map[l.asia] = 'asia league';
     map[l.africa] = 'africa league';
     map[l.outros] = 'others';
+    map[l.outros2] = 'others2';
     map[l.lendas] = 'lendas';
 
     map[l.championsLeague] = 'international/champions';

@@ -191,6 +191,7 @@ class LeagueOfficialNames{
   String timor = 'Liga Timor-Leste';
 
   String outros = 'Outros';
+  String outros2 = 'Outros2';
   String lendas = 'Liga Lendas';
 
   //COPAS
@@ -208,6 +209,7 @@ class LeagueOfficialNames{
   String mexicoCup = 'Copa MX';String usaCup = 'MLS Cup';
   String asiaCup = 'Asia Cup';String africaCup = 'África Cup';
   String othersCup = 'Outros Cup';
+  String othersCup2 = 'Outros Cup 2';
   String lendasCup = 'Lendas Cup';
 
 
@@ -364,7 +366,7 @@ List internationalLeagueNames = [
 //ID<50 -> Champions League
 //ID<70 -> Libertadores
 List leaguesListRealIndex = [
-  1,2,3,5,6, 7,8,  9,10,11,12,15,25,16, 20,21,    50,51,52,53, 60,61,62,   70,71,  80, 85, 90, 91
+  1,2,3,5,6, 7,8,  9,10,11,12,15,25,16, 20,21,    50,51,52,53, 60,61,62,   70,71,  80, 85, 90, 91, 92
 ];
 
 
@@ -396,7 +398,7 @@ List leagueNames = [
   LeagueOfficialNames().argentina,LeagueOfficialNames().mercosul,LeagueOfficialNames().colombia,
   LeagueOfficialNames().mexico,LeagueOfficialNames().estadosUnidos,
   LeagueOfficialNames().asia,LeagueOfficialNames().orienteMedio,LeagueOfficialNames().africa,
-  LeagueOfficialNames().outros,LeagueOfficialNames().lendas,
+  LeagueOfficialNames().outros,LeagueOfficialNames().outros2,LeagueOfficialNames().lendas,
 ];
 
 Map leaguesIndexFromName = {
@@ -439,7 +441,8 @@ Map leaguesIndexFromName = {
   LeagueOfficialNames().orienteMedio: 81,
   LeagueOfficialNames().africa: 85,
   LeagueOfficialNames().outros: 90,
-  LeagueOfficialNames().lendas: 91,
+  LeagueOfficialNames().outros2: 91,
+  LeagueOfficialNames().lendas: 92,
 };
 
 Map nTeamsRelegated = {
@@ -535,6 +538,7 @@ String getCup(String leagueNameIn){
     leagueName.orienteMedio: leagueName.asiaCup,
     leagueName.africa: leagueName.africaCup,
     leagueName.outros: leagueName.othersCup,
+    leagueName.outros2: leagueName.othersCup2,
     leagueName.lendas: leagueName.lendasCup,
   };
 

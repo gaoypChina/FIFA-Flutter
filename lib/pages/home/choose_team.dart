@@ -5,6 +5,7 @@ import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/database/select_database.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/configuration/controller/configuration_state.dart';
 import 'package:fifa/pages/home/bottom_row_buttons.dart';
 import 'package:fifa/pages/home/logo_kit_stack.dart';
 import 'package:fifa/pages/negotiation/negotiation_class.dart';
@@ -58,8 +59,13 @@ class _ChooseTeamState extends State<ChooseTeam> {
     return data.map((k, v) => MapEntry(k, v is Map ? getCloneMap(v) : v));
   }
   doThisOnLaunch() async {
+
     //RESETA LISTA ORIGINAL A MOSTRAR CLUBES
     clubNameMap = getCloneMap(clubNameMapImmutable); //Mapa sem mudar mapa original
+
+    ConfigurationState config = ConfigurationState();
+    config.setLegends();
+
     //Pontos do treinador zera
     globalCoachPoints = 0;
 

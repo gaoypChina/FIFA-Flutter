@@ -32,7 +32,7 @@ bool globalAllEqualOverall = false;
 bool globalRandomPlayersOverall = false;
 bool globalSeeProbabilities = true;
 bool globalRandomizePlayers = false;
-bool globalLegendClubs = true;
+bool globalLegendClubs = false;
 double globalInitialMoney = 0;
 
 double pi = 3.14159265359;

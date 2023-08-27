@@ -240,10 +240,13 @@ Map clubNameMapImmutable = {
   },
   LeagueOfficialNames().outros : {
     0: clubName.bate, 1: clubName.cluj,2: clubName.gent,3: clubName.lechpoznan,
-    4: clubName.sherifftiraspol, 5: clubName.unionespanola, 6: clubName.tigre,7: clubName.patronato,
-    8:clubName.voltaredonda, 9:clubName.jorge, 10:clubName.saprissa,11:clubName.olimpiaHON,
-    12:clubName.charlotte, 13:clubName.montreal, 14:clubName.toronto, 15:clubName.vancouver,
-    16:clubName.alshabab, 17:clubName.auckland,
+    4: clubName.sherifftiraspol, 5: clubName.voltaredonda, 6: clubName.patronato,7: clubName.tigre,
+    8:clubName.jorge, 9:clubName.unionespanola,
+  },
+  LeagueOfficialNames().outros2 : {
+    0:clubName.saprissa, 1:clubName.olimpiaHON,2:clubName.cincinnati, 3:clubName.charlotte,
+    4:clubName.nashville, 5:clubName.montreal, 6:clubName.toronto, 7:clubName.vancouver,
+    8:clubName.auckland, 9:clubName.alshabab, 10:clubName.alahli, 11:clubName.shanghaishenhua,
   },
   LeagueOfficialNames().lendas : {
     0:clubName.legends, 1:clubName.galatics, 2:clubName.veterans, 3:clubName.santos62,

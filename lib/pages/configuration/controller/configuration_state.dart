@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:fifa/database/csv/read_csv.dart';
+import 'package:fifa/database/select_database.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/classes/functions/open_url.dart';
 import 'package:fifa/theme/translation.dart';
@@ -53,12 +54,21 @@ class ConfigurationState{
   changeInjuryState(){
     hasInjuries = !hasInjuries;
   }
+
+  setLegends(){
+    if (!globalLegendClubs){
+      removeLegendsClub();
+    }else{
+      applyLegendsClub();
+      SelectDatabase().load();
+    }
+  }
   removeLegendsClub(){
     clubsAllNameListCopy = [...clubsAllNameList];
     leaguesListRealIndexCopy = [...leaguesListRealIndex];
     leagueNamesCopy = [...leagueNames];
     clubsAllNameList.removeWhere((clubName) => clubsNotPlayable.contains(clubName));
-    leaguesListRealIndex.removeWhere((element) => element==91);
+    leaguesListRealIndex.removeWhere((element) => element==92);
     leagueNames.removeWhere((element) => element==LeagueOfficialNames().lendas);
   }
   applyLegendsClub(){

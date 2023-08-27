@@ -283,12 +283,7 @@ Widget soundEffects(ConfigurationState config){
             (value) {
           setState(() {
             globalLegendClubs = !globalLegendClubs;
-            if (!globalLegendClubs){
-              config.removeLegendsClub();
-            }else{
-              config.applyLegendsClub();
-              SelectDatabase().load();
-            }
+            config.setLegends();
           });
         });
   }

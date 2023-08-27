@@ -3,7 +3,7 @@ import 'package:fifa/values/club_names.dart';
 
 ClubName clubName = ClubName();
 
-List<String> clubsNotPlayable = clubsAllNameList.sublist(clubsAllNameList.length - 14);
+List<String> clubsNotPlayable = clubsAllNameList.sublist(clubsAllNameList.length - 18);
 
 ///////////////////////////
 // CLUBS
@@ -158,7 +158,7 @@ List<String> clubsAllNameList = [
   //USA
   clubName.atlanta,  clubName.columbuscrew, clubName.dcunited,  clubName.fcdallas,
   clubName.coloradorapids, clubName.chicago, clubName.austin, clubName.charlotte,
-  clubName.houston,
+  clubName.houston, clubName.nashville, clubName.cincinnati,
   clubName.intermiami,  clubName.losangelesfc, clubName.lagalaxy,  clubName.minnesota,
   clubName.nerevolution,  clubName.nycity, clubName.nyredbulls,  clubName.orlando,
   clubName.philadelphia, clubName.portland,  clubName.seattle,  clubName.kansas,
@@ -169,7 +169,7 @@ List<String> clubsAllNameList = [
   ///////////////////////////////////////////
   //Asia
   clubName.pohang, clubName.fcseoul, clubName.ulsan,
-  clubName.shandong,  clubName.shanghaisipg,
+  clubName.shandong,  clubName.shanghaisipg, clubName.shanghaishenhua,
   clubName.kashimaantlers,  clubName.urawareddiamonds, clubName.visselkobe,  clubName.kawasakifrontale,
 
   //Middle East
@@ -177,7 +177,7 @@ List<String> clubsAllNameList = [
   clubName.alain,clubName.alwahda, clubName.alshabab,
   clubName.alsadd,  clubName.alduhail, clubName.alrayyan,
   clubName.alhilal,clubName.alittihad,
-  clubName.persepolis,
+  clubName.persepolis, clubName.alahli,clubName.persepolis,
 
   //oceania
   clubName.melbournevictory,clubName.sydneyFC,clubName.auckland,
