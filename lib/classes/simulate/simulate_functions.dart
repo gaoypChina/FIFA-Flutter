@@ -77,6 +77,8 @@ class Simulate{
       globalMatchGoalScorerIDAdv = [];
       globalMatchGoalsMinutesMy = [];
       globalMatchGoalsMinutesAdv = [];
+      globalMatchAssistsIDMy = [];
+      globalMatchAssistsIDAdv = [];
       globalJogadoresMatchGoals = List.filled(globalMaxPlayersPermitted, 0);
       globalJogadoresMatchAssists = List.filled(globalMaxPlayersPermitted, 0);
       globalJogadoresMatchRedCards = List.filled(globalMaxPlayersPermitted, 0);

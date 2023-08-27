@@ -2,7 +2,6 @@ import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/countries/words.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/pages/configuration/controller/configuration_state.dart';
 import 'package:fifa/pages/historic/real_classification.dart';
 import 'package:fifa/pages/home/choose_team.dart';
 import 'package:fifa/pages/map/choose_continent_page.dart';

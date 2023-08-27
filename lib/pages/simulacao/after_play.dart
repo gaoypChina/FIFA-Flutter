@@ -238,10 +238,17 @@ Widget goalsWidget(){
     return
         Column(
           children: [
-            for(int i=0; i<goals.length; i++)
-              goalRow(goals[i], goals2.contains(goals[i])),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    for(int i=0; i<goals.length; i++)
+                      goalRow(goals[i], goals2.contains(goals[i])),
+                  ],
+                ),
+              ),
+            ),
 
-            const Spacer(),
             weekClass.isJogoCampeonatoNacional || weekClass.isJogoCampeonatoInternacional
                 ? classification()
                 : Container(),
@@ -262,20 +269,40 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
   double paddingSize = 6;
 
   return
-    Row(
-      mainAxisAlignment: MainAxisAlignment.start,
+    Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        visitante ? Container(width: Sized(context).width*0.50-1) : Container(),
-        visitante ? Container(width: 1,height:18,color: Colors.white): Container(),
-        Container(padding: EdgeInsets.only(left: paddingSize)),
-        Image.asset('assets/icons/bola.png',height:15,width: 15),
-        Text(goalMyMatch.minute.toString()+'\'  ',style: EstiloTextoBranco.text14),
-        SizedBox(width:135,
-            child: Text(goalMyMatch.playerName,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14),
-          ),
-          const Spacer(),
-          !visitante ? Container(width: 1,height:18,color: Colors.white): Container(),
-          !visitante ? Container(width: Sized(context).width*0.5) : Container(),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            visitante ? Container(width: Sized(context).width*0.50-1) : Container(),
+            visitante ? Container(width: 1,height:18,color: Colors.white): Container(),
+            Container(padding: EdgeInsets.only(left: paddingSize)),
+            Image.asset('assets/icons/bola.png',height:15,width: 15),
+            Text(goalMyMatch.minute.toString()+'\'  ',style: EstiloTextoBranco.text14),
+            SizedBox(width:135,
+                child: Text(goalMyMatch.playerName,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14),
+              ),
+              const Spacer(),
+              !visitante ? Container(width: 1,height:18,color: Colors.white): Container(),
+              !visitante ? Container(width: Sized(context).width*0.5) : Container(),
+          ],
+        ),
+        goalMyMatch.playerNameAssist.isNotEmpty ? Row(
+          children: [
+            visitante ? Container(width: Sized(context).width*0.50-1) : Container(),
+            visitante ? Container(width: 1,height:18,color: Colors.white): Container(),
+            Container(padding: EdgeInsets.only(left: paddingSize)),
+            Image.asset('assets/icons/assists.png',height:15,width: 15),
+            SizedBox(width: 23),
+            SizedBox(width:135,
+              child: Text(goalMyMatch.playerNameAssist,overflow: TextOverflow.ellipsis,style: EstiloTextoCinza.text14),
+            ),
+            const Spacer(),
+            !visitante ? Container(width: 1,height:18,color: Colors.white): Container(),
+            !visitante ? Container(width: Sized(context).width*0.5) : Container(),
+          ],
+        ) : Container(),
       ],
     );
 }

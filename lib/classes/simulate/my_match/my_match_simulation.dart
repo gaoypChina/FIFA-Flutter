@@ -113,8 +113,8 @@ class MyMatchSimulation{
 
       //Procura o nome do jogador na lista de todos os jogadores e adiciona uma assistencia pra ele
       late int playerID;
-      if(clubMyorAdv==1){playerID=myClass.jogadores[quemfez];}
-      if(clubMyorAdv==2){playerID=adversarioEscalacao[quemfez];}
+      if(clubMyorAdv==1){playerID=myClass.jogadores[quemfez];globalMatchAssistsIDMy.add(playerID);}
+      if(clubMyorAdv==2){playerID=adversarioEscalacao[quemfez];globalMatchAssistsIDAdv.add(playerID);}
       if(Semana(semana).isJogoCampeonatoNacional){
         globalLeaguePlayers[PlayerStatsKeys().keyPlayerAssists]![playerID]++;
       }else if(Semana(semana).isJogoCampeonatoInternacional){
@@ -125,8 +125,13 @@ class MyMatchSimulation{
       globalJogadoresMatchAssists[playerID]++;
       globalJogadoresCarrerAssists[playerID]++;
 
-
       Grade().assistMyMatch(playerID);
+    }else{
+      if(clubMyorAdv==1){
+        globalMatchAssistsIDMy.add(-1);
+      }else{
+        globalMatchAssistsIDAdv.add(-1);
+      }
     }
   }
 

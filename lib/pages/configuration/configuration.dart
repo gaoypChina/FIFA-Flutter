@@ -3,7 +3,6 @@ import 'package:fifa/classes/countries/words.dart';
 import 'package:fifa/classes/functions/dificuldade.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
-import 'package:fifa/database/select_database.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/configuration/controller/configuration_state.dart';
 import 'package:fifa/pages/configuration/leagues_configuration.dart';

@@ -35,9 +35,12 @@ Widget goalWidgetRow(int i,bool isMy){
       children: [
         Image.asset('assets/icons/bola.png',height:15,width: 15),
         Text(goalMyMatch.minute.toString()+'\'  ',style: EstiloTextoBranco.text14),
-        SizedBox(width:135,
-            child: Text(goalMyMatch.playerName,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text14)
+        SizedBox(width:70,
+            child: Text(goalMyMatch.playerName,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text12)
         ),
+        goalMyMatch.playerNameAssist.isNotEmpty ? SizedBox(width:70,
+            child: Text(", "+goalMyMatch.playerNameAssist,overflow: TextOverflow.ellipsis,style: EstiloTextoBranco.text10)
+        ) : Container(width:70),
       ],
     );
 
