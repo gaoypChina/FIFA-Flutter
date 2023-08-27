@@ -5615,6 +5615,7 @@ class ClubName{
   //BURUNDI
   String atlolympic = "Athlético Olympic";
   String aiglenoir = "Aigle Noir";
+  String bujamuru = "Bujamuru";
   String espoir = "Espoir";
   String flambeaueast = "Flambeau de I'Est";
   String flambeaucentre = "Flambeau du Centre";
@@ -5784,6 +5785,7 @@ class ClubName{
   //GABON
   String angesGAB = "Anges";
   String bitam = "Bitam";
+  String bendje = "CS Bendje";
   String cerclemberi = "Cercle Mbéri Sportif";
   String jacportgentil = "JAC Port-Gentil";
   String usmlibreville = "USM Libreville";
@@ -5812,13 +5814,21 @@ class ClubName{
   String wallidan = "Wallidan";
   String whitephantoms = "White Phantoms";
   //GANA
+  String aduanastars = "Aduana Stars";
   String asantekotoko = "Asante Kotoko";
   String ashantiGold = "Ashanti Gold";
   String berekum = "Berekum Chelsea";
+  String goldfields = "Goldfields";
   String greatOlympics = "Great Olympics";
   String heartsoak = "Hearts Of Oak";
+  String medeama = "Medeama";
+  String ebusuadwarfs = "Ebusua Dwarfs";
   String obuasi = "Obuasi Goldfields";
+  String realrepublicansGAN = "Real Republicans";
+  String sekondielevenwise = "Sekondi Eleven Wise";
+  String sekondi = "Sekondi Hasaacas";
   String tamale = "Real Tamale United";
+  String waallstars = "Wa All Stars";
   //GUINÉ
   String asfag = "ASFAG";
   String fello = "Fello Star";
@@ -6068,6 +6078,7 @@ class ClubName{
   String almalakia = "Al-Malakia";
   String atlabara = "Atlabara";
   String wausalaam = "Wau Salaam";
+  String salaambor = "Salaam FC Bor";
   //SUAZILANDIA
   String mbabane = "Mbabane Swallows";
   //TANZANIA

@@ -294,7 +294,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
             visitante ? Container(width: 1,height:18,color: Colors.white): Container(),
             Container(padding: EdgeInsets.only(left: paddingSize)),
             Image.asset('assets/icons/assists.png',height:15,width: 15),
-            SizedBox(width: 23),
+            const SizedBox(width: 23),
             SizedBox(width:135,
               child: Text(goalMyMatch.playerNameAssist,overflow: TextOverflow.ellipsis,style: EstiloTextoCinza.text14),
             ),
