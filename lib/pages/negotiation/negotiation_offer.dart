@@ -1,22 +1,16 @@
-import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/negotiation/negotiation_class.dart';
-import 'package:fifa/theme/background_color/background_age.dart';
-import 'package:fifa/theme/background_color/background_position.dart';
-import 'package:fifa/theme/background_color/background_moral.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
-import 'package:fifa/theme/painter/colorize_image.dart';
-import 'package:fifa/theme/painter/trapezoid.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/widgets/button/back_button.dart';
 import 'package:fifa/widgets/button/button_design.dart';
-import 'package:fifa/widgets/popup/popup_player_info.dart';
+import 'package:fifa/widgets/player_card.dart';
 import 'package:flutter/material.dart';
 
 class NegotiationOfferPage extends StatefulWidget {
@@ -82,7 +76,7 @@ class _NegotiationOfferPageState extends State<NegotiationOfferPage> {
                     child: Column(
                       children: [
 
-                        playerCard(clubColors),
+                        playerCard(context, clubColors, widget.player),
 
                         myFinanceBalance(),
 
@@ -233,116 +227,7 @@ class _NegotiationOfferPageState extends State<NegotiationOfferPage> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
 
-Widget playerCard(ClubColors clubColors){
-    double _heightCard = 120;
-  return
-    Container(
-      decoration: BoxDecoration(
-        color: AppColors().greyTransparent,
-        border: Border.all(color: clubColors.secondColor, width:2),
-      ),
-      child: Column(
-        children: [
-          SizedBox(
-            height: _heightCard,
-            width: Sized(context).width,
-            child: Stack(
-              children: [
 
-                ColorizedImage(
-                  imagePath: 'assets/icons/background.png',
-                  color: clubColors.primaryColor,
-                  height: _heightCard,
-                  width: Sized(context).width,
-                ),
-
-                Align(alignment:Alignment.center,child: Images().getPlayerPictureWidget(widget.player,_heightCard,_heightCard)),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(widget.player.overall.toString(),style: EstiloTextoBranco.negrito40),
-                ),
-                //FLAG
-                Padding(
-                  padding: EdgeInsets.only(top:_heightCard*0.8, left:(Sized(context).width-16)/2+20),
-                  child: funcFlagsList(widget.player.nationality, 30, 35),
-                ),
-                //TRAPEZOIDE
-                Padding(
-                  padding: const EdgeInsets.only(right:60.0),
-                  child: Align(alignment:Alignment.topRight,
-                    child: CustomPaint(
-                      painter: TrapezoidPainter(color:clubColors.secondColor,sizeObject: 20),
-                    ),),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right:70.0),
-                  child: Align(alignment:Alignment.topRight,
-                    child: CustomPaint(
-                      painter: TrapezoidPainter(color:clubColors.primaryColor,sizeObject: 20),
-                    ),),
-                ),
-
-                //ESCUDO
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5.0,horizontal: 10),
-                  child: Align(alignment:Alignment.topRight,child: Images().getEscudoWidget(widget.player.clubName,55,55)),
-                ),
-
-                //POSITION
-                Padding(
-                    padding: EdgeInsets.only(top:_heightCard*0.82, left:(Sized(context).width-16)/2-70),
-                    child: positionContainer(widget.player.position, size: 50, style: EstiloTextoBranco.text16)),
-
-                //IDADE
-                Padding(
-                  padding: EdgeInsets.only(top:_heightCard*0.5),
-                  child: Row(
-                    children: [
-                      const Text("Idade", style: EstiloTextoBranco.negrito16),
-                      const SizedBox(width: 10),
-                      ageContainer(widget.player.age),
-                    ],
-                  ),
-                ),
-
-                //MORAL
-                Padding(
-                  padding: EdgeInsets.only(top:_heightCard*0.8),
-                  child: Row(
-                    children: [
-                      const Text("Moral", style: EstiloTextoBranco.negrito16),
-                      const SizedBox(width: 8),
-                      moralContainer(widget.player.moral),
-                    ],
-                  ),
-                ),
-
-                Padding(
-                    padding: EdgeInsets.only(top:_heightCard*0.6, left: Sized(context).width*0.7),
-                    child: lesoesCartoes(context, widget.player),
-                )
-
-              ],
-            ),
-          ),
-
-          //NOME
-          Container(
-            color: clubColors.primaryColor.withOpacity(0.7),
-            padding: const EdgeInsets.symmetric(vertical: 8),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(widget.player.name,style: EstiloTextoBranco.negrito18),
-              ],
-            ),
-          ),
-
-
-        ],
-      ),
-    );
-}
 
 
 Widget myFinanceBalance(){

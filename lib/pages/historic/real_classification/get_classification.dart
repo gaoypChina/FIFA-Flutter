@@ -692,6 +692,7 @@ class RealClassification{
     map["CF Montréal"] = n.montreal;
     map["Minnesota United FC"] = n.minnesota;
     map["New England Revolution"] = n.nerevolution;
+    map["Nashville SC"] = n.nashville;
     map["New York City FC"] = n.nycity;
     map["New York Red Bulls"] = n.nyredbulls;
     map["Orlando City SC"] = n.orlando;
@@ -770,15 +771,19 @@ class RealClassification{
     map["Surkhon"] = n.surkhon;
 
     //ARABIA SAUDITA
+    map["Al-Ahli"] = n.alahli;
     map["Al-Adalah"] = n.aladalah;
     map["Al-Batin"] = n.albatin;
     map["Al-Ettifaq"] = n.alettifaq;
     map["Al-Fateh"] = n.alfateh;
     map["Al-Fayha"] = n.alfayha;
+    map["Al-Hazem"] = n.alhazem;
     map["Al-Hilal"] = n.alhilal;
     map["Al-Khaleej"] = n.alkhaleej;
     map["Al-Nassr"] = n.alnassr;
+    map["Al-Okhdood"] = n.alokhdood;
     map["Al-Raed"] = n.alraed;
+    map["Al-Riyadh"] = n.alriad;
     map["Al-Tai"] = n.altai;
     map["Al-Taawoun"] = n.altaawoun;
     map["Al-Wehda"] = n.alwehda;

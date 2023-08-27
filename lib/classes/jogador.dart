@@ -131,7 +131,7 @@ class Jogador{
     }
 
     matchsYear = matchsInternational+matchsLeague+matchsCup;
-    goalsYear = goalsInternational+goalsLeague+goalsLeague;
+    goalsYear = goalsInternational+goalsLeague+goalsCup;
     assistsYear = assistsInternational+assistsLeague+assistsCup;
     cleanSheetsYear = cleanSheetsInternational + cleanSheetsLeague+cleanSheetsCup;
     golsSofridosYear = golsSofridosInternational + golsSofridosLeague+golsSofridosCup;

@@ -40,7 +40,7 @@ class MyMatchSimulation{
     //Define a probabilidade de marcar gol GM e de sofrer gol GS
     funcPosturaTime(posturaDoTimeClass, overallMy, overallAdversario);
 
-    int gol = Random().nextInt(800);
+    int gol = Random().nextInt(1000);
 
     //EU FAÇO O GOL
     if(gol<=probGM) {
@@ -51,7 +51,7 @@ class MyMatchSimulation{
     }else{
       //Os dois times não podem fazer gol no mesmo minuto
       //Ex: GM: 20 GS:15 e nº= 8
-      gol = Random().nextInt(900);
+      gol = Random().nextInt(1000);
       funcGolAdversario(gol);
     }
 

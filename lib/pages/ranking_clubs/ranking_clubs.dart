@@ -228,31 +228,33 @@ Widget rowClub(int ranking, Club club){
     //Cor de Fundo
     Color colorBackground = colorRankingClubs(club);
 
-    return GestureDetector(
-      onTap:(){
-        Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: club.index)));
-      },
-      child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-        color: colorBackground.withOpacity(0.3),
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
-        child: Row(
-          children: [
-            const SizedBox(width: 4),
-            numberCircle(ranking+1, 35),
-            const SizedBox(width: 8),
-            funcFlagsList(ClubDetails().getCountry(club.name), 15, 22),
-            const SizedBox(width: 4),
-            Images().getEscudoWidget(club.name,32,32),
-            const SizedBox(width: 8),
-            Expanded(
-              child: Text(club.name,style: EstiloRajdhani.listtext),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 6.0,right: 28),
-              child: Text(overall.toStringAsFixed(2),style: EstiloRajdhani.listtitle),
-            ),
-          ],
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      color: colorBackground.withOpacity(0.3),
+      child: PressableButton(
+        onTap:(){
+          Navigator.push(context,MaterialPageRoute(builder: (context) => ClubProfile(clubID: club.index)));
+        },
+        child: Container(
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          child: Row(
+            children: [
+              const SizedBox(width: 4),
+              numberCircle(ranking+1, 35),
+              const SizedBox(width: 8),
+              funcFlagsList(ClubDetails().getCountry(club.name), 15, 22),
+              const SizedBox(width: 4),
+              Images().getEscudoWidget(club.name,32,32),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(club.name,style: EstiloRajdhani.listtext),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 6.0,right: 28),
+                child: Text(overall.toStringAsFixed(2),style: EstiloRajdhani.listtitle),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -291,27 +293,29 @@ Widget rowClub(int ranking, Club club){
 
   Widget rowLeague(int ranking, Map<String, double> listLeagues){
     String leagueName = listLeagues.keys.elementAt(ranking);
-    return PressableButton(
-      onTap: (){
-        navigatorPush(context, TableNacional(chosenLeagueIndex: leaguesIndexFromName[leagueName]));
-      },
-      child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4),
-        padding: const EdgeInsets.all(4),
-        decoration: BoxDecoration(
-          borderRadius: const BorderRadius.all(Radius.circular(5)),
-          color: AppColors().greyTransparent,
-        ),
-        child: Row(
-          children: [
-            const SizedBox(width: 8),
-            Image.asset(FIFAImages().campeonatoLogo(leagueName),width: 50,height: 50,),
-            const SizedBox(width: 16),
-            Text(leagueName,style: EstiloRajdhani.listtext),
-            const Spacer(),
-            Text(listLeagues[leagueName]!.toStringAsFixed(2),style: EstiloRajdhani.listtitle),
-            const SizedBox(width: 16),
-          ],
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 4),
+      decoration: BoxDecoration(
+        borderRadius: const BorderRadius.all(Radius.circular(5)),
+        color: AppColors().greyTransparent,
+      ),
+      child: PressableButton(
+        onTap: (){
+          navigatorPush(context, TableNacional(chosenLeagueIndex: leaguesIndexFromName[leagueName]));
+        },
+        child: Container(
+          padding: const EdgeInsets.all(4),
+          child: Row(
+            children: [
+              const SizedBox(width: 8),
+              Image.asset(FIFAImages().campeonatoLogo(leagueName),width: 50,height: 50,),
+              const SizedBox(width: 16),
+              Text(leagueName,style: EstiloRajdhani.listtext),
+              const Spacer(),
+              Text(listLeagues[leagueName]!.toStringAsFixed(2),style: EstiloRajdhani.listtitle),
+              const SizedBox(width: 16),
+            ],
+          ),
         ),
       ),
     );

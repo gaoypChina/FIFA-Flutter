@@ -2645,7 +2645,7 @@ Map<String,dynamic> mapAfrica = {
     //https://www.rsssf.org/tablest/tanzchamp.html
     //2025.0: [],
     //2024.0: [],
-    2023.0: [n.yanga,n.simba,],
+    2023.0: [n.yanga,n.simba,n.azam,],
     2022.0: [n.yanga,n.simba,n.azam,],
     2021.0: [n.simba,n.yanga,n.azam,],
     2020.0: [n.simba,n.yanga,n.azam,],

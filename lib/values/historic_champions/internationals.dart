@@ -84,7 +84,8 @@ Map<String, dynamic> mapInternationals = {
 
   leagueName.libertadores : {
     //2024.0: [],
-    //2023.0: [n.flamengo,n.palmeiras,n.bocajuniors,n.internacional,    n.pereira,n.bolivar,n.fluminese,n.atleticonacional,                    n.olimpia,n.racing,n.atleticopr,n.idelvalle,n.argentinojuniors,n.nacional,n.atleticomg,n.riverplate,        n.imedellin,n.sportingcristal,n.corinthians,n.libertad,n.colocolo,n.nublense,n.barcelonaequ,          n.thestrongest,n.monagas,n.melgar,n.aucas,n.alianzalima,n.liverpoolURU,n.cerroporteno,n.metropolitanos,],
+    2023.0: [],
+    //2023.0: [n.fluminese,n.palmeiras,n.bocajuniors,n.internacional,    n.pereira,n.bolivar,n.olimpia,n.racing,                    n.flamengo,n.atleticonacional,n.atleticopr,n.idelvalle,n.argentinojuniors,n.nacional,n.atleticomg,n.riverplate,        n.imedellin,n.sportingcristal,n.corinthians,n.libertad,n.colocolo,n.nublense,n.barcelonaequ,          n.thestrongest,n.monagas,n.melgar,n.aucas,n.alianzalima,n.liverpoolURU,n.cerroporteno,n.metropolitanos,],
     2022.0: [n.flamengo,n.atleticopr,n.velez,n.palmeiras,             n.atleticomg,n.estudiantes,n.talleres,n.corinthians,             n.riverplate,n.cerroporteno,n.bocajuniors,n.fortaleza,n.colon,n.tolima,n.libertad,n.emelec,                  n.olimpia,n.deportivocali,n.idelvalle,n.nacional,n.colocolo,n.tachira,n.thestrongest,n.univcatolica,    n.caracas,n.bragantino,n.penarol,n.alwaysready,n.sportingcristal,n.americamg,n.alianzalima,n.indPetrolero],
     2021.0: [n.palmeiras,n.flamengo,n.atleticomg,n.barcelonaequ,      n.saopaulo,n.olimpia,n.riverplate,n.fluminense,                  n.cerroporteno,n.bocajuniors,n.racing,n.velez,n.univcatolica,n.defensayjusticia,n.argentinojuniors,n.internacional,  n.idelvalle,n.tachira,n.santos,n.junior,n.sportingcristal,n.nacional,n.ldu,n.americadecali,        n.universitario,n.alwaysready,n.thestrongest,n.santafe,n.rentistas,n.atleticonacional,n.lacalera,n.laguaira],
     2020.0: [n.palmeiras,n.santos,n.riverplate,n.bocajuniors,         n.libertad,n.gremio,n.nacional,n.racing,                         n.ldu,n.atleticopr,n.flamengo,n.delfin,n.idelvalle,n.jorge,n.guaraniPAR,n.internacional,                     n.junior,n.bolivar,n.penarol,n.saopaulo,n.univcatolica,n.estudiantesmerida,n.defensayjusticia,n.caracas,        n.barcelonaequ,n.tigre,n.colocolo,n.binacional,n.americadecali,n.alianzalima,n.olimpia,n.imedellin],
@@ -216,7 +217,7 @@ Map<String, dynamic> mapInternationals = {
   leagueName.asia : {
     //2025.0: [],
     //2024.0: [],
-    //2023.0: [],
+    2023.0: [],
     2022.0: [n.urawareddiamonds,n.alhilal,n.alduhail,n.jeonbuk,        n.pathum,n.foolad,n.visselkobe,n.alshabab,            n.alrayyan,n.nasafqarshi,n.alfaisaly,n.shababalahli,n.yokohamamarinos,n.daegu,n.johordarul,n.kitchee],
     2021.0: [n.alhilal,n.pohang,n.alnassr,n.ulsan,                     n.persepolis,n.nagoya,n.alwahda,n.jeonbuk],
     2020.0: [n.ulsan,n.persepolis,n.alnassr,n.visselkobe,              n.beijingguoan,n.pakhtakor,n.suwonsamsung,n.alahli],

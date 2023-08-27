@@ -105,7 +105,7 @@ List globalBalance = [];
 
 Map<int,List> globalRankingClubs = {2000:[]}; //Agiliza a organização do ranking de clubes
 //MATCH SIMULATION
-double globalMatchVelocity = 250;
+double globalMatchVelocity = 150;
 int globalMatchSubstitutionsLeft = 3;
 List globalMatchGoalScorerIDMy = [];
 List globalMatchGoalScorerIDAdv = [];

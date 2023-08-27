@@ -44,7 +44,7 @@ class _PlayState extends State<Play> {
 
   late Timer _timer;
   late CounterMatch counterMatch;
-  double maxSliderDistance = 300;
+  double maxSliderDistance = 320;
 
   late PosturaDoTimeClass posturaDoTime;
   late MyMatchSimulation myMatchSimulation;

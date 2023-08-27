@@ -225,7 +225,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text("Classificação Atual",style: EstiloTextoBranco.negrito18),
-                  SizedBox(height:400, child: RealTableWidget(chosenLeagueName: leagueName)),
+                  SizedBox(height:400, child: RealTableWidget(chosenLeagueName: RealClassification().getLeagueFromCountryName(clubCountry))),
                 ],
               ),
           ),

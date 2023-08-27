@@ -8653,8 +8653,8 @@ class ClubDetails{
       ClubColors(Colors.orange,Colors.blue),pattern.solid,Coordinates(0,0),
       'King Salman Sport City Stadium',1953,7000,_c.southarabia,61,7,[],{}];
     map[n.alhazem] = [
-      ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
-      '',0,0,_c.southarabia,50.0,[],{}];
+      ClubColors(Colors.yellow,vinho),pattern.solid,Coordinates(0,0),
+      'Al-Hazem Club Stadium',8000,1957,_c.southarabia,65.0,[],{}];
     map[n.alhilal] = [
       ClubColors(darkblue,Colors.white),pattern.solid,Coordinates(24.78903170, 46.8395937),
       'King Fahd Stadium',67000,1957,_c.southarabia,74.6,[],{}];
@@ -8673,6 +8673,9 @@ class ClubDetails{
     map[n.alnassr] = [
       ClubColors(Colors.yellow,Colors.blue),pattern.solid,Coordinates(21.76355015, 39.164367968),
       'Universitário Rei Saud',25000,1955,_c.southarabia,73.1,[],{}];
+    map[n.alokhdood] = [
+      ClubColors(Colors.lightBlue,Colors.white),pattern.sleeves,Coordinates(0,0),
+      'Prince Hathloul bin Abdul Aziz',12000,1976,_c.southarabia,62.5,[],{}];
     map[n.alqadisiya] = [
       ClubColors(Colors.yellow,Colors.blue),pattern.solid,Coordinates(26.36978679702696, 50.20531143365966),
       'Príncipe Saud bin Jalawi Stadium',15000,1967,_c.southarabia,65.3,[],{}];

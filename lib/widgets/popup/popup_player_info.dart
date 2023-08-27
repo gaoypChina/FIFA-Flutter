@@ -1,18 +1,14 @@
 import 'dart:math';
 
-import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/club.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/historic/historic_my_tranfers.dart';
 import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/classes/my.dart';
-import 'package:fifa/classes/countries/flags_list.dart';
 import 'package:fifa/global_variables.dart';
-import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:fifa/pages/negotiation/negotiation_class.dart';
 import 'package:fifa/theme/background_color/background_age.dart';
-import 'package:fifa/theme/background_color/background_position.dart';
 import 'package:fifa/theme/background_color/color_grade.dart';
 import 'package:fifa/theme/background_color/background_moral.dart';
 import 'package:fifa/theme/colors.dart';
@@ -21,8 +17,10 @@ import 'package:fifa/theme/translation.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/background_color/background_overall.dart';
 import 'package:fifa/theme/textstyle.dart';
+import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
+import 'package:fifa/widgets/player_card.dart';
 import 'package:fifa/widgets/player_templates/health_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -43,6 +41,7 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
   Jogador jogador = Jogador(index: playerID);
   ActionTransfer actionTransfer = ActionTransfer(context);
   isBuyOrSell(jogador, actionTransfer);
+  ClubColors clubColors = ClubDetails().getColors(jogador.clubName);
 
       // retorna um objeto do tipo Dialog
       return showModalBottomSheet<void>(
@@ -54,41 +53,8 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  
-                  Container(
-                    margin: const EdgeInsets.all(4),
-                    decoration: blackDecoration(),
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          height: 110,width: 100,
-                          child: Stack(
-                            children: [
-                              Images().getPlayerPictureWidget(jogador,95,90),
-                              Container(alignment: Alignment.bottomRight,child: funcFlagsList(jogador.nationality, 20,30)),
-                              Container(alignment: Alignment.bottomLeft,child: positionContainer(jogador.position,size: 60,style: EstiloTextoPreto.text16)),
-                            ],
-                          ),
-                        ),
-                        const SizedBox(width: 6),
-                        Expanded(
-                         child: Column(
-                          children: [
-                            Text(jogador.name,style: EstiloTextoBranco.negrito22),
-                            mainStatus(context,jogador),
-                          ],
-                        )),
-                        //Escudo da Equipe
-                        GestureDetector(
-                            onTap: (){
-                              navigatorPush(context, ClubProfile(clubID: jogador.clubID));
-                            },
-                            child: Images().getEscudoWidget(jogador.clubName,70,70)
-                        ),
-                        const SizedBox(width: 8),
-                      ],
-                    ),
-                  ),
+
+                  playerCard(context, clubColors, jogador),
 
                   const SizedBox(height: 6),
                   Container(
@@ -99,19 +65,15 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         healthWithTitle(context, jogador),
-                        lesoesCartoes(context, jogador),
                         nota(jogador),
                       ],
                     ),
                   ),
-                  const SizedBox(height: 6),
                   Container(
-                    height: 122,
                     margin: const EdgeInsets.all(4),
-                    child: Row(
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        carrerStats(context,jogador),
                         thisSeasonStats(context,jogador),
                       ],
                     ),
@@ -214,71 +176,40 @@ Widget healthWithTitle(BuildContext context, Jogador player){
     ],
   );
 }
-Widget carrerStats(BuildContext context, Jogador player){
-  return Container(
-    width: Sized(context).width*0.35,
-    padding: const EdgeInsets.all(4),
-    decoration: blackDecoration(),
-    child: Column(
-      children: [
-
-        const Text('Carreira', style: EstiloTextoBranco.negrito18),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-
-            Column(
-              children: [
-                const Text('Jogos', style: EstiloTextoBranco.text12),
-                Text(player.matchsCarrer.toString(), style: EstiloTextoBranco.text16),
-              ],
-            ),
-            Column(
-              children: [
-                Image.asset('assets/icons/bola.png',height: 15,width: 15),
-                Text(player.goalsCarrer.toString(), style: EstiloTextoBranco.text16),
-              ],
-            ),
-            Column(
-              children: [
-                Image.asset('assets/icons/assists.png',height: 15,width: 15),
-                Text(player.assistsCarrer.toString(), style: EstiloTextoBranco.text16),
-              ],
-            ),
-          ],
-        ),
-
-      ],
-    ),
-  );
-}
 
 Widget thisSeasonStats(BuildContext context, Jogador jogador){
   return Container(
-    width: Sized(context).width*0.6,
     padding: const EdgeInsets.all(4),
     decoration: blackDecoration(),
     child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
 
-        const Text('Essa temporada', style: EstiloTextoBranco.negrito18),
+        const Padding(
+          padding: EdgeInsets.only(left:16.0),
+          child: Text('Stats', style: EstiloTextoBranco.negrito18),
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Column(
               children: [
-                const Text('', style: EstiloTextoBranco.text12),
+                Container(),
                 Image.asset(FIFAImages().campeonatoLogo(Club(index: jogador.clubID).leagueName),height: 25,width: 25),
                 Image.asset(FIFAImages().campeonatoLogo(getCup(Club(index: jogador.clubID).leagueName)),height: 25,width: 25),
                 Image.asset(FIFAImages().campeonatoLogo(Club(index: jogador.clubID).internationalLeagueName),height: 25,width: 25),
+                const Text("Year", style: EstiloTextoBranco.text14),
+                const Text("Carrer", style: EstiloTextoBranco.text14),
               ],
             ),
             Column(
               children: [
-                const Text('Jogos', style: EstiloTextoBranco.text12),
+                const Text('Jogos', style: EstiloTextoBranco.text14),
                 Text(jogador.matchsLeague.toString(), style: EstiloTextoBranco.text16),
                 Text(jogador.matchsCup.toString(), style: EstiloTextoBranco.text16),
                 Text(jogador.matchsInternational.toString(), style: EstiloTextoBranco.text16),
+                Text(jogador.matchsYear.toString(), style: EstiloTextoBranco.text16),
+                Text(jogador.matchsCarrer.toString(), style: EstiloTextoBranco.text16),
               ],
             ),
             Column(
@@ -287,6 +218,8 @@ Widget thisSeasonStats(BuildContext context, Jogador jogador){
                 Text(jogador.goalsLeague.toString(), style: EstiloTextoBranco.text16),
                 Text(jogador.goalsCup.toString(), style: EstiloTextoBranco.text16),
                 Text(jogador.goalsInternational.toString(), style: EstiloTextoBranco.text16),
+                Text(jogador.goalsYear.toString(), style: EstiloTextoBranco.text16),
+                Text(jogador.goalsCarrer.toString(), style: EstiloTextoBranco.text16),
               ],
             ),
             Column(
@@ -295,6 +228,8 @@ Widget thisSeasonStats(BuildContext context, Jogador jogador){
                 Text(jogador.assistsLeague.toString(), style: EstiloTextoBranco.text16),
                 Text(jogador.assistsCup.toString(), style: EstiloTextoBranco.text16),
                 Text(jogador.assistsInternational.toString(), style: EstiloTextoBranco.text16),
+                Text(jogador.assistsYear.toString(), style: EstiloTextoBranco.text16),
+                Text(jogador.assistsCarrer.toString(), style: EstiloTextoBranco.text16),
               ],
             ),
           ],
@@ -354,9 +289,9 @@ Widget value(BuildContext context,Jogador jogador){
 }
 
 Widget nota(Jogador jogador){
-  return                       Column(
+  return Row(
     children: [
-      const Text('Nota',style: EstiloTextoBranco.negrito22),
+      const Text('Nota ',style: EstiloTextoBranco.negrito22),
       Container(
           color: colorGradeBackground(jogador.gradeLeague),
           padding: const EdgeInsets.all(2),

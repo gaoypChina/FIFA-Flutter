@@ -4741,6 +4741,7 @@ class ClubName{
   String alfaisaly = "Al-Faisaly";
   String alhazem = "Al Hazem";
   String alittihad = "Al Ittihad";
+  String alokhdood = "Al-Okhdood";
   String alshabab = "Al Shabab";
   String alettifaq = "Al Ettifaq";
   String alfateh = "Al Fateh";

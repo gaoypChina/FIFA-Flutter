@@ -1,3 +1,4 @@
+import 'package:fifa/classes/jogador.dart';
 import 'package:fifa/global_variables.dart';
 
 class GoalMyMatch{
@@ -11,20 +12,24 @@ class GoalMyMatch{
   void getMyGoal(int i){
     minute = globalMatchGoalsMinutesMy[i];
     playerID = globalMatchGoalScorerIDMy[i];
-    playerName = globalJogadoresName[playerID];
+    Jogador jogador = Jogador(index: playerID);
+    playerName = jogador.resumeName();
     playerIDAssist = globalMatchAssistsIDMy[i];
     if(playerIDAssist>0){
-      playerNameAssist = globalJogadoresName[playerIDAssist];
+      jogador.name = globalJogadoresName[playerIDAssist];
+      playerNameAssist = jogador.resumeName();
     }
     clubID = globalJogadoresClubIndex[playerID];
   }
   void getAdvGoal(int i){
     minute = globalMatchGoalsMinutesAdv[i];
     playerID = globalMatchGoalScorerIDAdv[i];
-    playerName = globalJogadoresName[playerID];
+    Jogador jogador = Jogador(index: playerID);
+    playerName = jogador.resumeName();
     playerIDAssist = globalMatchAssistsIDAdv[i];
     if(playerIDAssist>0){
-      playerNameAssist = globalJogadoresName[playerIDAssist];
+      jogador.name = globalJogadoresName[playerIDAssist];
+      playerNameAssist = jogador.resumeName();
     }
     clubID = globalJogadoresClubIndex[playerID];
   }
