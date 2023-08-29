@@ -4,6 +4,7 @@ class PlayerStatsKeys{
   String keyPlayerAssists = "Player Assists";
   String keyPlayerCleanSheets = "Player Clean Sheets";
   String keyPlayerGolsSofridos = "Player Gols Sofridos";
+  String keyPlayerGrade = "Player Grade";
 }
 
 

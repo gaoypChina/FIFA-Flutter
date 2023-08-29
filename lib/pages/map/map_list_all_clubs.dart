@@ -12,6 +12,7 @@ import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/back_button.dart';
+import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:fifa/widgets/league_selection_row.dart';
 import 'package:fifa/widgets/stars.dart';
 import 'package:flutter/material.dart';
@@ -136,7 +137,7 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
     DataGraphics dataGraphics = DataGraphics();
     dataGraphics.getDataNotPlayabale(clubName, clubDetails.getCountry(clubName), clubDetails.getState(clubName));
 
-    return GestureDetector(
+    return PressableButton(
       onTap: (){
           //showClubMap(clubName);
         navigatorPush(context, ClubProfileNotPlayable(clubName: clubName));

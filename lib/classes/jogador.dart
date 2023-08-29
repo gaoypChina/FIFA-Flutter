@@ -89,6 +89,7 @@ class Jogador{
       assistsLeague = globalLeaguePlayers[PlayerStatsKeys().keyPlayerAssists]![index];
       cleanSheetsLeague = globalLeaguePlayers[PlayerStatsKeys().keyPlayerCleanSheets]![index];
       golsSofridosLeague = globalLeaguePlayers[PlayerStatsKeys().keyPlayerGolsSofridos]![index];
+      //gradeLeague = globalLeaguePlayers[PlayerStatsKeys().keyPlayerGrade]![index];
       gradeLeague = getGrade(goalsLeague,assistsLeague,cleanSheetsLeague,golsSofridosLeague,matchsLeague);
     }catch(e){
       matchsLeague = 0;
@@ -104,6 +105,7 @@ class Jogador{
       assistsInternational = globalInternationalPlayers[PlayerStatsKeys().keyPlayerAssists]![index];
       cleanSheetsInternational = globalInternationalPlayers[PlayerStatsKeys().keyPlayerCleanSheets]![index];
       golsSofridosInternational = globalInternationalPlayers[PlayerStatsKeys().keyPlayerGolsSofridos]![index];
+      //gradeInt = globalInternationalPlayers[PlayerStatsKeys().keyPlayerGrade]![index];
       gradeInt = getGrade(goalsInternational,assistsInternational,cleanSheetsInternational,golsSofridosInternational,matchsInternational);
     }catch(e){
       matchsInternational = 0;
@@ -120,6 +122,7 @@ class Jogador{
       assistsCup = globalCupPlayers[PlayerStatsKeys().keyPlayerAssists]![index];
       cleanSheetsCup = globalCupPlayers[PlayerStatsKeys().keyPlayerCleanSheets]![index];
       golsSofridosCup = globalCupPlayers[PlayerStatsKeys().keyPlayerGolsSofridos]![index];
+      //gradeCup = globalCupPlayers[PlayerStatsKeys().keyPlayerGrade]![index];
       gradeCup = getGrade(goalsCup,assistsCup,cleanSheetsCup,golsSofridosCup,matchsCup);
     }catch(e){
       matchsCup = 0;

@@ -51,7 +51,7 @@ class MyMatchSimulation{
     }else{
       //Os dois times não podem fazer gol no mesmo minuto
       //Ex: GM: 20 GS:15 e nº= 8
-      gol = Random().nextInt(1000);
+      gol = Random().nextInt(850);
       funcGolAdversario(gol);
     }
 

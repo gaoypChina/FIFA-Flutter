@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:fifa/classes/club.dart';
+import 'package:fifa/classes/dict_keys/player_stats_keys.dart';
+import 'package:fifa/classes/semana.dart';
 import 'package:fifa/global_variables.dart';
 
 class Grade{
@@ -11,13 +13,24 @@ class Grade{
   }
 
 
-  notMy(Club clubClass,int jogPOS){
+  simulateGrade(Club clubClass,int jogPOS){
     int playerID = clubClass.escalacao[jogPOS];
-    //double randomNum = 5+Random().nextInt(40)/10;
-    //globalJogadoresGrades[playerID] = randomNum;
-    //if(globalJogadoresMatchGrade[playerID]>10){
-    //  globalJogadoresMatchGrade[playerID] = 10;
-    //}
+    double randomNum = 5+Random().nextInt(40)/10;
+    double grade = randomNum;
+    if(grade > 10){
+      grade = 10;
+    }
+
+    if(Semana(semana).isJogoCampeonatoNacional){
+      saveNational(playerID, grade);
+    }
+    if(Semana(semana).isJogoCampeonatoInternacional) {
+      saveInternational(playerID, grade);
+    }
+    if(Semana(semana).isJogoCopa){
+      saveCup(playerID, grade);
+    }
+
   }
 
 
@@ -33,10 +46,6 @@ class Grade{
     return playerID;
   }
 
-
-  reset(){
-    globalJogadoresMatchGrade = List.filled(globalMaxPlayersPermitted, 6.0);
-  }
 
   goalMyMatch(int playerID){
     add(playerID, 1.2);
@@ -54,11 +63,40 @@ class Grade{
   add(int playerID,double value){
     if(playerID>=0) {
       globalJogadoresMatchGrade[playerID] += value;
-      if(globalJogadoresMatchGrade[playerID]>10){
+      if(globalJogadoresMatchGrade[playerID] > 10){
         globalJogadoresMatchGrade[playerID] = 10;
       }
     }
   }
 
+  saveNational(int playerID, double grade){
+      int nMatchs = globalLeaguePlayers[PlayerStatsKeys().keyPlayerMatchs]![playerID];
+      double total = globalLeaguePlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] * (nMatchs-1).toDouble();
+      if(nMatchs>0){
+        globalLeaguePlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] = (total + grade)/nMatchs;
+      }else{
+        globalLeaguePlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] = 0;
+      }
+  }
+
+  saveInternational(int playerID, double grade){
+    int nMatchs = globalInternationalPlayers[PlayerStatsKeys().keyPlayerMatchs]![playerID];
+    double total = globalInternationalPlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] * (nMatchs-1).toDouble();
+    if(nMatchs>0){
+      globalInternationalPlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] = (total + grade)/nMatchs;
+    }else{
+      globalInternationalPlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] = 0;
+    }
+  }
+
+  saveCup(int playerID, double grade){
+    int nMatchs = globalCupPlayers[PlayerStatsKeys().keyPlayerMatchs]![playerID];
+    double total = globalCupPlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] * (nMatchs-1).toDouble();
+    if(nMatchs>0){
+      globalInternationalPlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] = (total + grade)/nMatchs;
+    }else{
+      globalInternationalPlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] = 0;
+    }
+  }
 
 }

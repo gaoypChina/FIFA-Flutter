@@ -63,8 +63,7 @@ class CardsInjury{
       } else if (prob <= 250) {
         YellowCard().notMy(clubClass,jogPOS);
       }
-
-     Grade().notMy(clubClass, jogPOS);
+     Grade().simulateGrade(clubClass, jogPOS);
     }
   }
 

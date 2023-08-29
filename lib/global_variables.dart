@@ -175,12 +175,12 @@ Map globalInternational = {};
 //INTERNACIONAL - NOVO FORMATO
 Map globalInternationalMataMata = {};
 
-Map<String, List<int>> globalLeaguePlayers = {};
-Map<String, List<int>> globalInternationalPlayers = {};
+Map<String, List> globalLeaguePlayers = {};
+Map<String, List> globalInternationalPlayers = {};
 
 //COPA
 Map<String, Map<String, dynamic>> globalCup = {};
-Map<String, List<int>> globalCupPlayers = {};
+Map<String, List> globalCupPlayers = {};
 
 /////////////////////
 //POSITIONS

@@ -171,6 +171,7 @@ void resetData(){
     PlayerStatsKeys().keyPlayerAssists: List.filled(globalMaxPlayersPermitted, 0),
     PlayerStatsKeys().keyPlayerCleanSheets: List.filled(globalMaxPlayersPermitted, 0),
     PlayerStatsKeys().keyPlayerGolsSofridos: List.filled(globalMaxPlayersPermitted, 0),
+    PlayerStatsKeys().keyPlayerGrade: List.filled(globalMaxPlayersPermitted, 6),
   };
 
   globalInternationalPlayers = {

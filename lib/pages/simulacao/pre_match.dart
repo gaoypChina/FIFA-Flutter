@@ -5,6 +5,7 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/league.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/pages/club_profile/tabs/field_static.dart';
 import 'package:fifa/pages/simulacao/play.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/theme/translation.dart';
@@ -12,6 +13,7 @@ import 'package:fifa/values/images.dart';
 import 'package:fifa/widgets/button/back_button.dart';
 import 'package:fifa/widgets/background_image/backimage_international_league.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
+import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:flutter/material.dart';
 
 class PreMatch extends StatefulWidget {
@@ -61,6 +63,18 @@ class _PreMatchState extends State<PreMatch> {
 
               header(),
 
+              SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      field(myClubClass.index),
+                      field(adversarioClubClass.index),
+                    ],
+                  ),
+              ),
+
+              substitutions(),
+
               customButtonContinue(
                 title: Translation(context).text.nextMatchWeek,
                 function: () {
@@ -81,8 +95,10 @@ class _PreMatchState extends State<PreMatch> {
 //                               WIDGETS                                  //
 ////////////////////////////////////////////////////////////////////////////
   Widget header(){
+
     String textRodada = '';
     Semana weekClass = Semana(semana);
+
     if(weekClass.isJogoCampeonatoNacional) {
       textRodada = '${Translation(context).text.matchWeek} ' + rodada.toString() + '/' + (League(index: myClass.leagueID).getNTeams()-1).toString();
     }else{
@@ -92,6 +108,7 @@ class _PreMatchState extends State<PreMatch> {
         textRodada = weekClass.semanaStr;
       }
     }
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
@@ -114,4 +131,17 @@ class _PreMatchState extends State<PreMatch> {
       ],
     );
   }
+
+  Widget field(int clubID){
+    return StaticField(clubID: clubID,hasReserves: true);
+  }
+
+  Widget substitutions(){
+    return PressableButton(
+        onTap: (){},
+        child: const Text("Substituições", style: EstiloTextoBranco.text16),
+    );
+  }
+
 }
+

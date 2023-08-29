@@ -27,8 +27,10 @@ import 'package:fifa/values/images.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/best_player_box/best_player_box.dart';
 import 'package:fifa/widgets/button/button_continue.dart';
+import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:fifa/widgets/match_row.dart';
 import 'package:fifa/widgets/number_circle.dart';
+import 'package:fifa/widgets/popup/popup_player_info.dart';
 import 'package:flutter/material.dart';
 
 class PlayerGrade{
@@ -344,17 +346,22 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.0),
-      child: Row(
-        children: [
-            const SizedBox(width: 2),
-            positionContainer(player.position),
-            Images().getPlayerPictureWidget(player,25,25),
-            SizedBox(width:100,child: Text(player.name,style: EstiloTextoBranco.text12)),
-            const SizedBox(width: 4),
-            Container(
-                height:18,width:25,color:colorGradeBackground(match.grade.floorToDouble()),
-                child: Center(child: Text(match.grade.toStringAsFixed(1),style: EstiloTextoPreto.text12))),
-        ],
+      child: PressableButton(
+        onTap:(){
+          popUpOkShowPlayerInfos(context: context, playerID: player.index, funcSetState: (){});
+        },
+        child: Row(
+          children: [
+              const SizedBox(width: 2),
+              positionContainer(player.position),
+              Images().getPlayerPictureWidget(player,25,25),
+              SizedBox(width:100,child: Text(player.name,style: EstiloTextoBranco.text12)),
+              const SizedBox(width: 4),
+              Container(
+                  height:18,width:25,color:colorGradeBackground(match.grade.floorToDouble()),
+                  child: Center(child: Text(match.grade.toStringAsFixed(1),style: EstiloTextoPreto.text12))),
+          ],
+        ),
       ),
     );
   }

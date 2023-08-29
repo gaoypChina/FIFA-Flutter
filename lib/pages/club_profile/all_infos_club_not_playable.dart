@@ -198,9 +198,23 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
   }
 
   Widget graphicsTab(){
-    late String leagueName;
+    String leagueName = RealClassification().getLeagueFromCountryName(clubCountry);
     try{
+      //Resolve o problemas das 2divisoes
       leagueName = Club(index: clubsAllNameList.indexOf(widget.clubName)).leagueName;
+      //Resolve os times em ligas internacionais
+      if(leagueName==LeagueOfficialNames().asia
+          || leagueName==LeagueOfficialNames().africa
+          || leagueName==LeagueOfficialNames().resto
+          || leagueName==LeagueOfficialNames().europaLeagueOficial
+          || leagueName==LeagueOfficialNames().holanda
+          || leagueName==LeagueOfficialNames().turquiaGrecia
+          || leagueName==LeagueOfficialNames().mercosul
+          || leagueName==LeagueOfficialNames().merconorte
+          || leagueName==LeagueOfficialNames().outros
+          || leagueName==LeagueOfficialNames().outros2){
+        leagueName = RealClassification().getLeagueFromCountryName(clubCountry);
+      }
     }catch(e){
       leagueName = RealClassification().getLeagueFromCountryName(clubCountry);
     }
@@ -225,7 +239,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text("Classificação Atual",style: EstiloTextoBranco.negrito18),
-                  SizedBox(height:400, child: RealTableWidget(chosenLeagueName: RealClassification().getLeagueFromCountryName(clubCountry))),
+                  SizedBox(height:400, child: RealTableWidget(chosenLeagueName: leagueName)),
                 ],
               ),
           ),

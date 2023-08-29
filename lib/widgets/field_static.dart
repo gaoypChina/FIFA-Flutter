@@ -267,7 +267,7 @@ Widget playerWidgetMatch(int jogadorIndex){
             ),
 
 
-            Text(matchClass.grade.toStringAsFixed(1),style: EstiloTextoBranco.text12),
+            Text(matchClass.grade.toStringAsFixed(1),style: EstiloTextoBranco.negrito14),
 
           ],
         ),

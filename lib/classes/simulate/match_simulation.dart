@@ -6,7 +6,6 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/simulate/player_variables/cards_injury_selection.dart';
 import 'package:fifa/classes/simulate/after_simulation/set_points.dart';
 import 'package:fifa/classes/simulate/player_variables/match_selection.dart';
-import 'package:fifa/classes/simulate/player_variables/origin/grade.dart';
 import 'package:fifa/classes/simulate/player_variables/update_player_variables.dart';
 
 
@@ -21,7 +20,6 @@ class MatchSimulation{
 
   MatchSimulation(Club clubClass1, Club clubClass2, My my){
 
-    Grade().reset();
 
     //REMOVE (-1) CARTOES AMARELOS E VERMELHOS E LESOES
     CardsInjury().setMinus1InjuryRedYellowCardAllTeam(clubClass1);
