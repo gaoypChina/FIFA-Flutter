@@ -130,6 +130,7 @@ class CupClassification extends KnockoutStage{
       PlayerStatsKeys().keyPlayerAssists: List.filled(globalMaxPlayersPermitted, 0),
       PlayerStatsKeys().keyPlayerCleanSheets: List.filled(globalMaxPlayersPermitted, 0),
       PlayerStatsKeys().keyPlayerGolsSofridos: List.filled(globalMaxPlayersPermitted, 0),
+      PlayerStatsKeys().keyPlayerGrade: List.filled(globalMaxPlayersPermitted, 0),
     };
     return mapa;
   }
@@ -157,7 +158,6 @@ class CupClassification extends KnockoutStage{
   Map getPhaseMatchData(String competitionName, String phaseKeyName, String idaOrVoltaKey, int matchNumber){
     return globalCup[competitionName]![phaseKeyName][idaOrVoltaKey][matchNumber];
   }
-
 
 
   List<String> getAllCupNames(){

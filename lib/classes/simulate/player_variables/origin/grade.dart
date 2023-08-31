@@ -71,8 +71,8 @@ class Grade{
 
   saveNational(int playerID, double grade){
       int nMatchs = globalLeaguePlayers[PlayerStatsKeys().keyPlayerMatchs]![playerID];
-      double total = globalLeaguePlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] * (nMatchs-1).toDouble();
       if(nMatchs>0){
+      double total = globalLeaguePlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] * (nMatchs-1).toDouble() ?? 0;
         globalLeaguePlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] = (total + grade)/nMatchs;
       }else{
         globalLeaguePlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] = 0;
@@ -81,9 +81,9 @@ class Grade{
 
   saveInternational(int playerID, double grade){
     int nMatchs = globalInternationalPlayers[PlayerStatsKeys().keyPlayerMatchs]![playerID];
-    double total = globalInternationalPlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] * (nMatchs-1).toDouble();
     if(nMatchs>0){
-      globalInternationalPlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] = (total + grade)/nMatchs;
+    double total = globalInternationalPlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] * (nMatchs-1).toDouble();
+    globalInternationalPlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] = (total + grade)/nMatchs;
     }else{
       globalInternationalPlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] = 0;
     }
@@ -91,11 +91,11 @@ class Grade{
 
   saveCup(int playerID, double grade){
     int nMatchs = globalCupPlayers[PlayerStatsKeys().keyPlayerMatchs]![playerID];
-    double total = globalCupPlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] * (nMatchs-1).toDouble();
     if(nMatchs>0){
-      globalInternationalPlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] = (total + grade)/nMatchs;
+      double total = globalCupPlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] * (nMatchs-1).toDouble();
+      globalCupPlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] = (total + grade)/nMatchs;
     }else{
-      globalInternationalPlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] = 0;
+      globalCupPlayers[PlayerStatsKeys().keyPlayerGrade]![playerID] = 0;
     }
   }
 

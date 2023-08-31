@@ -1,6 +1,7 @@
 import 'package:fifa/classes/functions/name.dart';
 import 'package:fifa/classes/semana.dart';
 import 'package:fifa/classes/league.dart';
+import 'package:fifa/pages/cups/tabs/cup_matchs.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/classes/my.dart';
 import 'package:fifa/classes/simulate/simulate_functions.dart';
@@ -53,7 +54,7 @@ class _NotPlayState extends State<NotPlay> {
                       child: weekClass.isJogoCampeonatoNacional
                           ? tabelaClassificacaoWidget(context,league)
                           : weekClass.isJogoCopa
-                            ? tabelaClassificacaoWidget(context,league)
+                            ? cupPhaseWidget(context, My().cupName)
                             : weekClass.isJogoGruposInternacional
                               ? notPlayShowInternationalGroups(context, league.internationalLeagueNameWhenNotPlay)
                               : weekClass.isJogoMataMataInternacional

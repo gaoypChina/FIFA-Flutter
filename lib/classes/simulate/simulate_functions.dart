@@ -169,6 +169,7 @@ class Simulate{
             MatchSimulation match = MatchSimulation(club1,club2, my);
             //SALVA O PLACAR
             globalCup[cupName]![phaseName][idaOrVoltaKey][nConfronto] = ResultDict().saveGoals(matchMap[nConfronto], match.variableGol1, match.variableGol2);
+
           }
         }
 

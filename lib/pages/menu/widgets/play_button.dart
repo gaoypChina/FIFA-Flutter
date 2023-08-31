@@ -16,7 +16,6 @@ import 'package:fifa/pages/club_profile/club_profile.dart';
 import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/pages/simulacao/end_year.dart';
 import 'package:fifa/pages/simulacao/not_play.dart';
-import 'package:fifa/pages/simulacao/play.dart';
 import 'package:fifa/pages/simulacao/pre_match.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
