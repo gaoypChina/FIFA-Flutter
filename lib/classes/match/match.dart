@@ -1,6 +1,6 @@
 import 'package:fifa/global_variables.dart';
 
-class Match{
+class MatchStats{
 
   late int playerID;
   late int goals;
@@ -11,7 +11,7 @@ class Match{
   late double health;
   late double grade;
 
-  Match({required this.playerID}){
+  MatchStats({required this.playerID}){
     goals = globalJogadoresMatchGoals[playerID];
     assists = globalJogadoresMatchAssists[playerID];
     redCard = globalJogadoresMatchRedCards[playerID];

@@ -12,6 +12,16 @@ import 'package:flutter/material.dart';
 
 class Images{
 
+  Widget getWeekCompetitionLogo(My myClass){
+    if (Semana(semana).isJogoCampeonatoNacional){
+      return Image.asset(FIFAImages().campeonatoLogo(myClass.campeonatoName),height: 35,width: 35);
+    }else if (Semana(semana).isJogoCopa){
+      return Image.asset(FIFAImages().campeonatoLogo(myClass.cupName),height: 35,width: 35);
+    }else if (Semana(semana).isJogoCampeonatoNacional){
+      return Image.asset(FIFAImages().campeonatoLogo(myClass.getMyInternationalLeague()),height: 35,width: 35);
+    }
+    return Container();
+  }
 
   String getEscudo(String clubName){
       return 'assets/clubs/${FIFAImages().imageLogo(clubName)}.png';

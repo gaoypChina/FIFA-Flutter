@@ -372,11 +372,12 @@ class _FieldDraggableState extends State<FieldDraggable> {
   }
 
   Widget fieldWidget(){
-    if(My().esquemaTatico == EsquemaTatico().e442) return fieldGameplay442();
-    if(My().esquemaTatico == EsquemaTatico().e433) return fieldGameplay433();
-    if(My().esquemaTatico == EsquemaTatico().e343) return fieldGameplay343();
-    if(My().esquemaTatico == EsquemaTatico().e451) return fieldGameplay451();
-    if(My().esquemaTatico == EsquemaTatico().e541) return fieldGameplay541();
+    My my = My();
+    if(my.esquemaTatico == EsquemaTatico().e442) return fieldGameplay442();
+    if(my.esquemaTatico == EsquemaTatico().e433) return fieldGameplay433();
+    if(my.esquemaTatico == EsquemaTatico().e343) return fieldGameplay343();
+    if(my.esquemaTatico == EsquemaTatico().e451) return fieldGameplay451();
+    if(my.esquemaTatico == EsquemaTatico().e541) return fieldGameplay541();
 
     return Container();
   }

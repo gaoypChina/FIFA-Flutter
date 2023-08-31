@@ -256,7 +256,9 @@ class _StaticFieldState extends State<StaticField> {
 
 
   Widget fieldGameplay442(){
+
     List jogadoresTitulares = jogadoresOrganizados;
+
     return fieldSizeWidget(
       Column(
         children: [

@@ -7,6 +7,7 @@ import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/coach/coach_menu.dart';
 import 'package:fifa/pages/cups/cup_main.dart';
 import 'package:fifa/pages/historic/historic_menu.dart';
+import 'package:fifa/pages/menu/test_button.dart';
 import 'package:fifa/pages/menu/widgets/header.dart';
 import 'package:fifa/pages/menu/widgets/menu_button.dart';
 import 'package:fifa/pages/menu/widgets/menu_classification.dart';
@@ -167,7 +168,6 @@ class _MenuState extends State<Menu> {
                            //Image.asset(Images().getMyStadium(),height:  double.maxFinite, width: double.maxFinite,fit: BoxFit.fill,),
 
                             close(context),
-
                             negotiationButton(context),
 
                             save(context),

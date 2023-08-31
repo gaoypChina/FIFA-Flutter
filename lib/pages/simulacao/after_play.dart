@@ -89,14 +89,14 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
     int bestPlayerID = 0;
     double highestGrade = 0;
     for(int playerID in myClubClass.escalacao){
-      if(Match(playerID: playerID).grade > highestGrade){
-        highestGrade = Match(playerID: playerID).grade;
+      if(MatchStats(playerID: playerID).grade > highestGrade){
+        highestGrade = MatchStats(playerID: playerID).grade;
         bestPlayerID = playerID;
       }
     }
     for(int playerID in adversarioClubClass.escalacao){
-      if(Match(playerID: playerID).grade > highestGrade){
-        highestGrade = Match(playerID: playerID).grade;
+      if(MatchStats(playerID: playerID).grade > highestGrade){
+        highestGrade = MatchStats(playerID: playerID).grade;
         bestPlayerID = playerID;
       }
     }
@@ -172,38 +172,46 @@ class _AfterPlayState extends State<AfterPlay> with TickerProviderStateMixin {
     String textRodada = '';
     if(weekClass.isJogoCampeonatoNacional) {
       textRodada = '${Translation(context).text.matchWeek} ' + (rodada-1).toString() + '/' + (League(index: myClass.leagueID).getNTeams()-1).toString();
-    }else if(weekClass.isJogoCopa){
-      textRodada = weekClass.semanaStr;
     }else{
       textRodada = Name().groupsPhase;
       if(weekClass.isJogoGruposInternacional){textRodada += ' ${weekClass.rodadaGroupInternational}'; }
-      else if(weekClass.isJogoMataMataInternacional){
+      else{
         textRodada = weekClass.semanaStr;
       }
     }
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        //Escudo time 1
-        Images().getEscudoWidget(name1,80,80),
+    return Container(
+        margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      child: Container(
+      padding: const EdgeInsets.all(4),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(8),
+        color: AppColors().greyTransparent,
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          //Escudo time 1
+          Images().getEscudoWidget(name1,80,80),
 
-        Column(
-          children: [
-            weekClass.isJogoCampeonatoNacional ? Image.asset(FIFAImages().campeonatoLogo(myClubClass.leagueName),height: 30,width: 30)
-                : weekClass.isJogoCopa ? Image.asset(FIFAImages().campeonatoLogo(myClass.cupName),height: 35,width: 35)
-                : weekClass.isJogoMundial ? Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().mundial),height: 35,width: 35)
-                : Image.asset(FIFAImages().campeonatoLogo(myClass.getMyInternationalLeague()),height: 35,width: 35),
-            Text(textRodada,style: EstiloTextoBranco.text16),
-            widget.visitante
-                ? Text(widget.goal2.toString() + 'X' + widget.goal1.toString() ,style: EstiloTextoBranco.text30)
-                : Text(widget.goal1.toString() + 'X' + widget.goal2.toString() ,style: EstiloTextoBranco.text30),
-          ],
-        ),
+          Column(
+            children: [
+              weekClass.isJogoCampeonatoNacional ? Image.asset(FIFAImages().campeonatoLogo(myClubClass.leagueName),height: 30,width: 30)
+                  : weekClass.isJogoCopa ? Image.asset(FIFAImages().campeonatoLogo(myClass.cupName),height: 35,width: 35)
+                  : weekClass.isJogoMundial ? Image.asset(FIFAImages().campeonatoLogo(LeagueOfficialNames().mundial),height: 35,width: 35)
+                  : Image.asset(FIFAImages().campeonatoLogo(myClass.getMyInternationalLeague()),height: 35,width: 35),
+              Text(textRodada,style: EstiloTextoBranco.text16),
+              widget.visitante
+                  ? Text(widget.goal2.toString() + 'X' + widget.goal1.toString() ,style: EstiloTextoBranco.text30)
+                  : Text(widget.goal1.toString() + 'X' + widget.goal2.toString() ,style: EstiloTextoBranco.text30),
+            ],
+          ),
 
-        //Escudo time 2
-        Images().getEscudoWidget(name2,80,80),
+          //Escudo time 2
+          Images().getEscudoWidget(name2,80,80),
 
-      ],
+        ],
+      ),
+      ),
     );
   }
 
@@ -342,7 +350,7 @@ Widget goalRow(GoalMyMatch goalMyMatch, bool visitante){
   }
   Widget playerRow(Jogador player){
 
-    Match match = Match(playerID: player.index);
+    MatchStats match = MatchStats(playerID: player.index);
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.0),

@@ -205,7 +205,7 @@ Widget playerWidgetRow(List playersID){
 
 Widget playerWidgetMatch(int jogadorIndex){
 
-  Match matchClass = Match(playerID: jogadorIndex);
+  MatchStats matchClass = MatchStats(playerID: jogadorIndex);
   Jogador jogadorClass = Jogador(index: jogadorIndex);
 
   String name = jogadorClass.nameResume;

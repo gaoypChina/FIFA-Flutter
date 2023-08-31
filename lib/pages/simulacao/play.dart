@@ -101,7 +101,6 @@ class _PlayState extends State<Play> {
 
     return Scaffold(
 
-        resizeToAvoidBottomInset : false, //Evita um overlay quando o layout é maior que a tela
         body:  Stack(
             children: [
 

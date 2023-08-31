@@ -17,6 +17,7 @@ import 'package:fifa/pages/menu/c_menu.dart';
 import 'package:fifa/pages/simulacao/end_year.dart';
 import 'package:fifa/pages/simulacao/not_play.dart';
 import 'package:fifa/pages/simulacao/play.dart';
+import 'package:fifa/pages/simulacao/pre_match.dart';
 import 'package:fifa/theme/colors.dart';
 import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/theme/textstyle.dart';
@@ -193,11 +194,7 @@ Widget backgroundStadium(BuildContext context, String clubName){
 
 playFunction(BuildContext context,Adversario adversario){
   if(adversario.clubName.isNotEmpty){
-    navigatorReplace(context, Play(
-        adversarioClubID: adversario.clubID,
-        visitante: adversario.visitante,
-        isSingleMatch: false
-    ));
+    navigatorReplace(context, PreMatch(adversarioClubID: adversario.clubID, visitante: adversario.visitante, isSingleMatch: false));
   }else{
     navigatorReplace(context, const NotPlay());
   }

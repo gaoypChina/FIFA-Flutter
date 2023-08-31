@@ -143,8 +143,8 @@ class _SubstitutionState extends State<Substitution> {
           int finalPosition2 = my.jogadores.indexOf(playerTargetID);
 
 
-          Match matchClass1 = Match(playerID: playerIDData);
-          Match matchClass2 = Match(playerID: playerTargetID);
+          MatchStats matchClass1 = MatchStats(playerID: playerIDData);
+          MatchStats matchClass2 = MatchStats(playerID: playerTargetID);
           if(matchClass1.redCard==0 && matchClass2.redCard == 0) {
             //Troca Jogadores
             globalMyJogadores[finalPosition1] = playerTargetID;
@@ -184,7 +184,7 @@ class _SubstitutionState extends State<Substitution> {
     int positionNumber = my.jogadores.indexOf(player.index);
     player.isPlayerInRightPosition(positionNumber);
 
-    Match matchClass = Match(playerID: playerIndex);
+    MatchStats matchClass = MatchStats(playerID: playerIndex);
 
     String name = player.nameResume;
     String position = player.position;
