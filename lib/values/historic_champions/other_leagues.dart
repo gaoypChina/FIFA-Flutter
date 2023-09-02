@@ -61,7 +61,7 @@ Map<String,dynamic> mapOtherLeagues = {
     1996.0: [n.psg,n.rapidwien,],
     1995.0: [n.zaragoza,n.arsenal,],
     1994.0: [n.arsenal,n.parma,],
-    1993.0: [n.parma,n.royalAntwerp,],
+    1993.0: [n.parma,n.royalantwerp,],
     1992.0: [n.werderbremen,n.monaco,],
     1991.0: [n.manutd,n.barcelona,],
     1990.0: [n.sampdoria,n.anderlecht,],

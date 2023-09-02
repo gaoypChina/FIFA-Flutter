@@ -78,14 +78,15 @@ List<String> clubsAllNameList = [
   clubName.galatasaray,  clubName.fenerbahce,  clubName.besiktas,  clubName.istanbulbasaksehir,clubName.trabzonspor,
   clubName.olympiacos,clubName.aek,clubName.paok,clubName.panathinaikos,clubName.apoel,
 
-  clubName.anderlecht,  clubName.brugge,  clubName.standardliege,clubName.genk,clubName.gent,
+  clubName.anderlecht,  clubName.brugge, clubName.standardliege,
+  clubName.genk,clubName.gent,clubName.saintgilloise, clubName.royalantwerp,
   clubName.celtic,  clubName.rangers,
-  clubName.rbsalzburg,  clubName.rapidwien,
+  clubName.rbsalzburg,  clubName.rapidwien,clubName.lasklinz,
   clubName.basel,clubName.youngboys,clubName.zurich,
   clubName.rosenborg,  clubName.malmo, clubName.ifkgoteborg,
   clubName.copenhague,  clubName.midtjylland,
-  clubName.helsinki,clubName.molde,
-  clubName.legiawarszawa,clubName.lechpoznan,
+  clubName.helsinki,clubName.molde, clubName.hacken,
+  clubName.legiawarszawa,clubName.lechpoznan,clubName.rakowczestochowa,
 
   //russia
   clubName.zenit,  clubName.cska,  clubName.krasnodar,  clubName.spartakmoscou,
@@ -97,7 +98,7 @@ List<String> clubsAllNameList = [
   clubName.shakhtardonetsk,  clubName.dinamokiev,
   clubName.spartapraga,  clubName.slaviapraha, clubName.viktoriaplzen,
   clubName.dinamozagreb,clubName.cluj,clubName.slovanbratislava,clubName.ferencvaros,
-  clubName.steauabucuresti,clubName.maccabitelaviv,
+  clubName.steauabucuresti,clubName.maccabitelaviv,clubName.maccabihaifa,
 
   //////////////////////////////////////////////////////
   //brasil

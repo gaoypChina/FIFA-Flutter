@@ -375,7 +375,7 @@ class RealClassification{
     map["Eupen"] = n.kaseupen;
     map["Kortrijk"] = n.kortrijk;
     map["OH Leuven"] = n.leuven;
-    map["Antwerp"] = n.royalAntwerp;
+    map["Antwerp"] = n.royalantwerp;
     map["Seraing"] = n.seraing;
     map["Union SG"] = n.saintgilloise;
     map["Standard Liège"] = n.standardliege;

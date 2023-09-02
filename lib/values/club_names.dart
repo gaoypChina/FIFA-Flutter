@@ -799,7 +799,7 @@ class ClubName{
   String oostende = "Oostende";
   String roeselare = "Roeselare";
   String rhodienne = "Rhodienne-De Hoek";
-  String royalAntwerp = "Royal Antwerp";
+  String royalantwerp = "Royal Antwerp";
   String saintgilloise = "Union Saint-Gilloise";
   String seraing = "RFC Seraing";
   String standardliege = "Standard Liege";
@@ -4732,7 +4732,7 @@ class ClubName{
   String aladalah = "Al Adalah";
   String albatin = "Al Batin";
   String alnassr = "Al Nassr";
-  String alahli = "Al Ahli Saudi";
+  String alahli = "Al Ahli";
   String alansarARABIA = "Al Ansar ARABIA";
   String aljabalain = "Al Jabalain";
   String alhilal = "Al Hilal";

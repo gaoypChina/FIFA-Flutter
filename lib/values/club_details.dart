@@ -1752,7 +1752,7 @@ class ClubDetails{
     map[n.oostende] = [
       ClubColors(Colors.red,Colors.green),pattern.solid,Coordinates(51.2169176, 2.886586),
       'Albertparkstadion',10000,1904,_c.belgium,62.4,[],{}];
-    map[n.royalAntwerp] = [
+    map[n.royalantwerp] = [
       ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(51.23260, 4.47252263),
       'Stadium “BOSUIL“',10000,1880,_c.belgium,67.8,[],{}];
     map[n.liegeois] = [

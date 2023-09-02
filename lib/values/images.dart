@@ -480,7 +480,7 @@ String imageLogo(String timeFoto) {
     map[_name.lierse] = 'lierse';
     map[_name.mechelen] = 'mechelen';
     map[_name.oostende] = 'oostende';
-    map[_name.royalAntwerp] = 'royal';
+    map[_name.royalantwerp] = 'royal antwerp';
     map[_name.standardliege] = 'liege';
     map[_name.sttruidense] = 'st truidense';
     map[_name.saintgilloise] = 'st gilloise';

@@ -407,7 +407,7 @@ class PlayerPastClubs{
   map['Sneijder'] = {    2002:n.ajax,2007:n.realmadrid,2009:n.inter,2013:n.galatasaray,2017:n.nice,2018:n.algharafa,2019:retired};
   map['Stankovic'] = {   1995:n.estrelavermelha,1998:n.lazio,2004:n.inter,2013:retired};
   map['Stoichkov'] = {   1984:n.cskasofia,1990:n.barcelona,1995:n.parma,1996:n.barcelona,1998:n.cskasofia,1999:n.kashiwareysol,2000:n.chicago,2003:n.dcunited,2004:retired};
-  map['Stojanović'] = {  1982:n.estrelavermelha,1991:n.royalAntwerp,1997:retired};
+  map['Stojanović'] = {  1982:n.estrelavermelha,1991:n.royalantwerp,1997:retired};
   map['Taffarel'] = {    1985:n.internacional,1990:n.parma,1993:n.reggiana,1995:n.atleticomg,1998:n.galatasaray,2001:n.parma};
   map['Tevez'] = {       2001:n.bocajuniors,2005:n.corinthians,2006:n.westham,2007:n.manutd,2009:n.mancity,2013:n.juventus,2015:n.bocajuniors,2017:n.shanghaishenhua,2018:n.bocajuniors,2021:retired};
   map['Thienry Henry'] = {1994:n.monaco,1999:n.juventus,2000:n.arsenal,2007:n.barcelona,2010:n.nyredbulls,2014:retired};
