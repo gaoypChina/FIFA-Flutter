@@ -193,7 +193,7 @@ Widget backgroundStadium(BuildContext context, String clubName){
 
 playFunction(BuildContext context,Adversario adversario){
   if(adversario.clubName.isNotEmpty){
-    navigatorReplace(context, PreMatch(adversarioClubID: adversario.clubID, visitante: adversario.visitante, isSingleMatch: false));
+    navigatorPush(context, PreMatch(adversarioClubID: adversario.clubID, visitante: adversario.visitante, isSingleMatch: false));
   }else{
     navigatorReplace(context, const NotPlay());
   }

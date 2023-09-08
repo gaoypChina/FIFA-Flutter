@@ -27,7 +27,7 @@ class FilterTransfersPage extends StatefulWidget {
 class _FilterTransfersPageState extends State<FilterTransfersPage> {
 
   late TransferParameters transferParameters;
-  FilterTransfersController ageControl = FilterTransfersController(title: "Age", values: const RangeValues(18, 50));
+  FilterTransfersController ageControl = FilterTransfersController(title: "Age", values: const RangeValues(15, 50));
   FilterTransfersController ovrControl = FilterTransfersController(title: "Overall", values: const RangeValues(30, 100));
   FilterTransfersController priceControl = FilterTransfersController(title: "Price", values: const RangeValues(0, 400));
 

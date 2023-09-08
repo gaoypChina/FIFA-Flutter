@@ -22,7 +22,7 @@ List defaultEuropaLeagueClubs = [
   clubName.westham,clubName.olympiacos,clubName.freiburg,clubName.slovanbratislava,
   clubName.ajax,clubName.om,clubName.brighton,clubName.aek,
   clubName.rangers,clubName.realbetis,clubName.spartapraga,clubName.apoel,
-  clubName.atalanta,clubName.sporting,clubName.ifkgoteborg,clubName.legiawarszawa,
+  clubName.atalanta,clubName.sporting,clubName.malmo,clubName.rakowczestochowa,
   clubName.liverpool,clubName.lasklinz,clubName.saintgilloise,clubName.toulouse,
   clubName.villareal,clubName.rennes,clubName.maccabihaifa,clubName.panathinaikos,
   clubName.roma,clubName.slaviapraha,clubName.sherifftiraspol,clubName.basel,

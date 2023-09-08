@@ -79,8 +79,22 @@ class _LeaguesConfigurationState extends State<LeaguesConfiguration> {
 
           Text(leagueName,style: EstiloTextoBranco.negrito20),
           Images().getLeagueLogo(leagueName, 50, 50),
-          for (int i=0;i<clubs.length;i++)
-            Images().getEscudoWidget(clubs[i], 25, 25),
+          SizedBox(
+            height: 250,
+            child: GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 5, // Number of columns in the grid
+                crossAxisSpacing: 1, // Spacing between columns
+                mainAxisSpacing: 8,
+                childAspectRatio: MediaQuery.of(context).size.width / (MediaQuery.of(context).size.height / 5),// Spacing between rows
+              ),
+
+              itemCount: clubs.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Images().getEscudoWidget(clubs[index], 25, 25);
+              },
+            ),
+          ),
 
           const Text("Teams", style: EstiloTextoBranco.negrito16),
           Row(

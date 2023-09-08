@@ -69,14 +69,16 @@ Future popUpOkShowPlayerInfos({required BuildContext context, required int playe
                       ],
                     ),
                   ),
+
+                  //STATS
                   Container(
                     margin: const EdgeInsets.all(4),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        thisSeasonStats(context,jogador),
-                      ],
-                    ),
+                    child:
+                        SizedBox(height:110,
+                            child: SingleChildScrollView(
+                                child: thisSeasonStats(context,jogador)
+                            )
+                        ),
                   ),
 
 
@@ -185,51 +187,70 @@ Widget thisSeasonStats(BuildContext context, Jogador jogador){
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
 
-        const Padding(
-          padding: EdgeInsets.only(left:16.0),
-          child: Text('Stats', style: EstiloTextoBranco.negrito18),
-        ),
-        Row(
+        Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Column(
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Container(),
-                Image.asset(FIFAImages().campeonatoLogo(Club(index: jogador.clubID).leagueName),height: 25,width: 25),
-                Image.asset(FIFAImages().campeonatoLogo(getCup(Club(index: jogador.clubID).leagueName)),height: 25,width: 25),
-                Image.asset(FIFAImages().campeonatoLogo(Club(index: jogador.clubID).internationalLeagueName),height: 25,width: 25),
-                const Text("Year", style: EstiloTextoBranco.text14),
-                const Text("Carrer", style: EstiloTextoBranco.text14),
-              ],
-            ),
-            Column(
-              children: [
+                const SizedBox(width: 40, child: Text('Stats', style: EstiloTextoBranco.negrito18)),
                 const Text('Jogos', style: EstiloTextoBranco.text14),
-                Text(jogador.matchsLeague.toString(), style: EstiloTextoBranco.text16),
-                Text(jogador.matchsCup.toString(), style: EstiloTextoBranco.text16),
-                Text(jogador.matchsInternational.toString(), style: EstiloTextoBranco.text16),
-                Text(jogador.matchsYear.toString(), style: EstiloTextoBranco.text16),
-                Text(jogador.matchsCarrer.toString(), style: EstiloTextoBranco.text16),
-              ],
-            ),
-            Column(
-              children: [
                 Image.asset('assets/icons/bola.png',height: 15,width: 15),
-                Text(jogador.goalsLeague.toString(), style: EstiloTextoBranco.text16),
-                Text(jogador.goalsCup.toString(), style: EstiloTextoBranco.text16),
-                Text(jogador.goalsInternational.toString(), style: EstiloTextoBranco.text16),
-                Text(jogador.goalsYear.toString(), style: EstiloTextoBranco.text16),
-                Text(jogador.goalsCarrer.toString(), style: EstiloTextoBranco.text16),
+                Image.asset('assets/icons/assists.png',height: 15,width: 15),
+
               ],
             ),
-            Column(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Image.asset('assets/icons/assists.png',height: 15,width: 15),
+                SizedBox(width: 40, child: Image.asset(FIFAImages().campeonatoLogo(Club(index: jogador.clubID).leagueName),height: 25,width: 25)),
+                Text(jogador.matchsLeague.toString(), style: EstiloTextoBranco.text16),
+                Text(jogador.goalsLeague.toString(), style: EstiloTextoBranco.text16),
                 Text(jogador.assistsLeague.toString(), style: EstiloTextoBranco.text16),
+
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                SizedBox(width: 40, child: Image.asset(FIFAImages().campeonatoLogo(getCup(Club(index: jogador.clubID).leagueName)),height: 25,width: 25)),
+                Text(jogador.matchsCup.toString(), style: EstiloTextoBranco.text16),
+                Text(jogador.goalsCup.toString(), style: EstiloTextoBranco.text16),
                 Text(jogador.assistsCup.toString(), style: EstiloTextoBranco.text16),
+
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                SizedBox(width: 40, child: Image.asset(FIFAImages().campeonatoLogo(Club(index: jogador.clubID).internationalLeagueName),height: 25,width: 25)),
+                Text(jogador.matchsInternational.toString(), style: EstiloTextoBranco.text16),
+                Text(jogador.goalsInternational.toString(), style: EstiloTextoBranco.text16),
                 Text(jogador.assistsInternational.toString(), style: EstiloTextoBranco.text16),
+
+              ],
+            ),
+            const Divider(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                const SizedBox(width: 40, child: Text("Year", style: EstiloTextoBranco.text14)),
+                Text(jogador.matchsCarrer.toString(), style: EstiloTextoBranco.text16),
+                Text(jogador.goalsYear.toString(), style: EstiloTextoBranco.text16),
                 Text(jogador.assistsYear.toString(), style: EstiloTextoBranco.text16),
+
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                SizedBox(width: 40, child: const Text("Carrer", style: EstiloTextoBranco.text14)),
+                Text(jogador.matchsYear.toString(), style: EstiloTextoBranco.text16),
+                Text(jogador.goalsCarrer.toString(), style: EstiloTextoBranco.text16),
                 Text(jogador.assistsCarrer.toString(), style: EstiloTextoBranco.text16),
+
+
               ],
             ),
           ],
@@ -276,7 +297,7 @@ Widget value(BuildContext context,Jogador jogador){
     margin: const EdgeInsets.all(4),
     child: Container(
       decoration: blackDecoration(),
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsets.all(4),
       child: Column(
         children: [
           Text('${Translation(context).text.money}: \$'+My().money.toStringAsFixed(2),style: EstiloTextoBranco.text16),
