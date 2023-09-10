@@ -325,7 +325,7 @@ Map<String, dynamic> mapInternationals = {
     1980.0: [n.canonYaounde,n.dragons,n.douala,n.bendel,            n.mcalger,n.heartsoak,n.policeSEN,n.etoilecongo],
     1979.0: [n.douala,n.heartsoak,n.goree,n.motema,                 n.matlama,n.hafia,n.raccarovers,n.zamalek,],
     1978.0: [n.canonYaounde,n.hafia,n.rangersInt,n.vita,            n.greenbuffaloes,n.silures,n.kampala,n.jskabylie,],
-    1977.0: [n.hafia,n.heartsoak,n.mufulira,n.lome,                 n.watercorporation,n.alahly,n.djoliba,n.mufulira,],
+    1977.0: [n.hafia,n.heartsoak,n.mufulira,n.lome,                 n.watercorporation,n.alahly,n.djoliba,n.mcalger,],
     1976.0: [n.mcalger,n.hafia,n.rangersInt,n.asecmimosas,          n.luounion,n.jaraaf,n.greenbuffaloes,n.asantekotoko,],
     1975.0: [n.hafia,n.rangersInt,n.ghazlelmahalla,n.lome,          n.carabrazaville,n.greenbuffaloes,n.almerrikh,n.asecmimosas,],
     1974.0: [n.carabrazaville,n.ghazlelmahalla,n.simba,n.jeannedarc,n.djoliba,n.leopardsQUE,n.heartsoak,n.asecmimosas,],

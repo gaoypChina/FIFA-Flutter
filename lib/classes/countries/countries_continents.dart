@@ -173,7 +173,7 @@ class Continents{
       Words.country.slovakia: europa,
       Words.country.slovenia: europa,
       Words.country.somalia: africa,
-      Words.country.southarabia: asia,
+      Words.country.saudiarabia: asia,
       Words.country.southafrica: africa,
       Words.country.southkorea: asia,
       Words.country.spain: europa,

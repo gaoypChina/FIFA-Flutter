@@ -949,7 +949,7 @@ Map<String,dynamic> mapEuropaLeste = {
     2004.0: [n.estrelavermelha,n.partizan,n.zeleznik,n.ofkbelgrade,n.smederevo, n.obilic,n.zemun,n.sutjeska,n.vojvodina,n.kula,  n.zeta,],
     2003.0: [n.partizan,n.estrelavermelha,n.ofkbelgrade,n.sutjeska,n.zeleznik,  n.vojvodina,n.obilic,n.zeta,n.kula,n.zemun,      n.smederevo,],
     2002.0: [n.partizan,n.estrelavermelha,n.smederevo,n.obilic,n.zeta,    n.zeleznik,n.rudar,n.vojvodina,n.ofkbelgrade,n.rad,       ],
-    2001.0: [n.estrelavermelha,n.partizan,n.obilic,n.smederevo,n.ofkbelgrade, n.vojvodina,n.sutjeska,n.zeleznik,n.radnickinis,n.cukaricki, n.zemun,n.kula,n.zeta,n.rad,n.buducnost,    n.napredakkrusevac,n.radnickinis],
+    2001.0: [n.estrelavermelha,n.partizan,n.obilic,n.smederevo,n.ofkbelgrade, n.vojvodina,n.sutjeska,n.zeleznik,n.kragujevac,n.cukaricki, n.zemun,n.kula,n.zeta,n.rad,n.buducnost,    n.napredakkrusevac,n.radnickinis],
     2000.0: [n.estrelavermelha,n.partizan,n.obilic,n.rad,n.sutjeska,    n.cukaricki,n.ofkbelgrade,n.zeleznik,n.zemun,n.vojvodina,   n.radnickinis,n.buducnost,n.kragujevac,n.kula],
     1999.0: [n.partizan,n.obilic,n.estrelavermelha,n.vojvodina,n.rad,   ],
     1998.0: [n.obilic,n.estrelavermelha,n.partizan,n.vojvodina,n.rad,   n.zemun,n.kula,n.buducnost,n.proleter,n.zeleznik,n.cukaricki,n.mladostlucani],

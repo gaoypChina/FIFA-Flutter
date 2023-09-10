@@ -288,7 +288,7 @@ Map<String,dynamic> mapCopas = {
     1985.0: [n.monaco,n.psg,       n.lille,n.toulouse,  n.racingParis,n.sochaux,n.saintetienne,n.nantes,],
     1984.0: [n.metz,n.monaco,      n.nantes,n.toulon,   n.cannes,n.mulhouse,n.lens,n.lavallois,],
     1983.0: [n.psg,n.nantes,       n.tours,n.lille,     n.racingParis,n.brest,n.guingamp,n.rouen,],
-    1982.0: [n.psg,n.saintetienne, n.tours,n.bastia,    n.bordeaux,n.toulon,n.lavallois,n.bastia,],
+    1982.0: [n.psg,n.saintetienne, n.tours,n.bastia,    n.bordeaux,n.toulon,n.lavallois,n.valenciennes,],
     1981.0: [n.bastia,n.saintetienne, n.lens,n.strasbourg, n.lille,n.bordeaux,n.montpellier,n.martigues],
     1980.0: [n.monaco,n.orleans,   n.montpellier,n.parisfc, n.sochaux,n.saintetienne,n.angouleme,n.auxerre,],
     1979.0: [n.nantes,n.auxerre,   n.angouleme,n.strasbourg, n.om,n.gueugnon,n.lille,n.avignon,],

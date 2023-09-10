@@ -116,7 +116,7 @@ class CountryNames {
   String get grenada => 'Grenada';
   String get guatemala => 'Guatemala';
   String get guinea => 'Guinea';
-  String get guineabissau => 'Guinea Bissau';
+  String get guineabissau => 'Guinea-Bissau';
   String get guineaEquatorial => 'Equatorial Guinea';
   String get guyana => 'Guyana';
   String get haiti => 'Haiti';
@@ -196,6 +196,7 @@ class CountryNames {
   String get rwanda => 'Rwanda';
   String get stKitts => 'Saint Kitts and Nevis';
   String get stLucia => 'Saint Lucia';
+  String get saotome => 'São Tomé e Príncipe';
   String get samoa => 'Samoa';
   String get sanMarino => 'San Marino';
   String get senegal => 'Senegal';
@@ -207,7 +208,7 @@ class CountryNames {
   String get singapore => 'Singapore';
   String get slovakia => 'Slovakia';
   String get slovenia => 'Slovenia';
-  String get southarabia => 'South Arabia';
+  String get saudiarabia => 'Saudi Arabia';
   String get southafrica => 'South Africa';
   String get southkorea => 'South Korea';
   String get sudan => 'Sudan';
@@ -272,7 +273,7 @@ List<String> globalCountryNames = [
   word.qatar,
   word.romania,word.russia,word.rwanda,
   word.sanMarino,word.stKitts,word.scotland,word.senegal,word.serbia,word.slovakia,word.slovenia,word.somalia,
-  word.southarabia,word.southkorea,word.southafrica,word.spain,word.sudan,
+  word.saudiarabia,word.southkorea,word.southafrica,word.spain,word.sudan,
   word.suriname,word.sweden,word.switzerland,word.syria,
   word.tajikistan,word.tanzania,word.thailand,word.togo,word.trinidadtobago,word.tunisia,word.turkey,word.turkmenistan,
   word.uganda,word.ukraine,word.uae,word.unitedstates,word.uruguay,word.uzbekistan,

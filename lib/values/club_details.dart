@@ -8630,79 +8630,79 @@ class ClubDetails{
     //SOUTH ARABIA
     map[n.abha] = [
       ClubColors(Colors.white,darkblue),pattern.solid,Coordinates(18.310611902481767, 42.59834080282742),
-      'Prince Sultan bin Abdul Aziz Stadium',25000,1966,_c.southarabia,62.3,[],{}];
+      'Prince Sultan bin Abdul Aziz Stadium',25000,1966,_c.saudiarabia,62.3,[],{}];
     map[n.aladalah] = [
       ClubColors(darkblue,vinho),pattern.solid,Coordinates(25.306200245221657, 49.61277241410717),
-      'Prince Abdullah bin Jalawi Stadium',26000,1984,_c.southarabia,62.5,[],{}];
+      'Prince Abdullah bin Jalawi Stadium',26000,1984,_c.saudiarabia,62.5,[],{}];
     map[n.alahli] = [
       ClubColors(Colors.green,Colors.white),pattern.solid,Coordinates(21.446627355, 39.2523386),
-      'Prince Abdullah al-Faisal Stadium',27000,1937,_c.southarabia,69.7,[],{}];
+      'Prince Abdullah al-Faisal Stadium',27000,1937,_c.saudiarabia,69.7,[],{}];
     map[n.albatin] = [
       ClubColors(Colors.lightBlueAccent,Colors.white),pattern.solid,Coordinates(0,0),
-      'Al-Batin Club Stadium',6000,1979,_c.southarabia,58.5,[],{}];
+      'Al-Batin Club Stadium',6000,1979,_c.saudiarabia,58.5,[],{}];
     map[n.alettifaq] = [
       ClubColors(Colors.red,Colors.grey),pattern.solid,Coordinates(26.426514, 50.114128),
-      'Prince Mohamed bin Fahd Stadium',26000,1945,_c.southarabia,68.4,[],{}];
+      'Prince Mohamed bin Fahd Stadium',26000,1945,_c.saudiarabia,68.4,[],{}];
     map[n.alfaisaly] = [
       ClubColors(grena,Colors.white),pattern.solid,Coordinates(25.88693735, 45.36807),
-      'Al Majma\'ah Sports City',7000,1954,_c.southarabia,66.3,[],{}];
+      'Al Majma\'ah Sports City',7000,1954,_c.saudiarabia,66.3,[],{}];
     map[n.alfateh] = [
       ClubColors(Colors.blue,Colors.green),pattern.solid,Coordinates(25.305669, 49.61340246),
-      'Prince Abdullah bin Jalawi Stadium',19550,1958,_c.southarabia,67.2,[],{}];
+      'Prince Abdullah bin Jalawi Stadium',19550,1958,_c.saudiarabia,67.2,[],{}];
     map[n.alfayha] = [
       ClubColors(Colors.orange,Colors.blue),pattern.solid,Coordinates(0,0),
-      'King Salman Sport City Stadium',1953,7000,_c.southarabia,61,7,[],{}];
+      'King Salman Sport City Stadium',1953,7000,_c.saudiarabia,61,7,[],{}];
     map[n.alhazem] = [
       ClubColors(Colors.yellow,vinho),pattern.solid,Coordinates(0,0),
-      'Al-Hazem Club Stadium',8000,1957,_c.southarabia,65.0,[],{}];
+      'Al-Hazem Club Stadium',8000,1957,_c.saudiarabia,65.0,[],{}];
     map[n.alhilal] = [
       ClubColors(darkblue,Colors.white),pattern.solid,Coordinates(24.78903170, 46.8395937),
-      'King Fahd Stadium',67000,1957,_c.southarabia,74.6,[],{}];
+      'King Fahd Stadium',67000,1957,_c.saudiarabia,74.6,[],{}];
     map[n.alkhaleej] = [
       ClubColors(Colors.yellow,Colors.green),pattern.solid,Coordinates(27.503968968526564, 41.69750636375778),
-      'Prince Nayef bin Abdulaziz Stadium',10000,1945,_c.southarabia,61.3,[],{}];
+      'Prince Nayef bin Abdulaziz Stadium',10000,1945,_c.saudiarabia,61.3,[],{}];
     map[n.alittihad] = [
       ClubColors(Colors.black,Colors.yellow),pattern.stripes3,Coordinates(21.44662735, 39.2524137),
-      'Prince Abdullah Al-Faisal Stadium',27000,1927,_c.southarabia,72.5,[],{}];
+      'Prince Abdullah Al-Faisal Stadium',27000,1927,_c.saudiarabia,72.5,[],{}];
     map[n.alnahda] = [
       ClubColors(darkblue,Colors.black),pattern.sleeves,Coordinates(0,0),
-      'Prince Mohamed bin Fahd Stadium',26000,1949,_c.southarabia,61.6,[],{}];
+      'Prince Mohamed bin Fahd Stadium',26000,1949,_c.saudiarabia,61.6,[],{}];
     map[n.alnajma] = [
       ClubColors(Colors.grey,Colors.cyanAccent),pattern.solid,Coordinates(0,0),
-      '',0,0,_c.southarabia,50.0,[],{}];
+      '',0,0,_c.saudiarabia,50.0,[],{}];
     map[n.alnassr] = [
       ClubColors(Colors.yellow,Colors.blue),pattern.solid,Coordinates(21.76355015, 39.164367968),
-      'Universitário Rei Saud',25000,1955,_c.southarabia,73.1,[],{}];
+      'Universitário Rei Saud',25000,1955,_c.saudiarabia,73.1,[],{}];
     map[n.alokhdood] = [
       ClubColors(Colors.lightBlue,Colors.white),pattern.sleeves,Coordinates(0,0),
-      'Prince Hathloul bin Abdul Aziz',12000,1976,_c.southarabia,62.5,[],{}];
+      'Prince Hathloul bin Abdul Aziz',12000,1976,_c.saudiarabia,62.5,[],{}];
     map[n.alqadisiya] = [
       ClubColors(Colors.yellow,Colors.blue),pattern.solid,Coordinates(26.36978679702696, 50.20531143365966),
-      'Príncipe Saud bin Jalawi Stadium',15000,1967,_c.southarabia,65.3,[],{}];
+      'Príncipe Saud bin Jalawi Stadium',15000,1967,_c.saudiarabia,65.3,[],{}];
     map[n.alraed] = [
       ClubColors(Colors.red,Colors.grey),pattern.solid,Coordinates(26.3795, 43.948),
-      'King Abdullah Sports City Stadium',30000,1954,_c.southarabia,67.1,[],{}];
+      'King Abdullah Sports City Stadium',30000,1954,_c.saudiarabia,67.1,[],{}];
     map[n.alriad] = [
       ClubColors(Colors.black,Colors.red),pattern.stripes2,Coordinates(0, 0),
-      'Prince Faisal bin Fahd Stadium',24000,1953,_c.southarabia,61.8,[],{}];
+      'Prince Faisal bin Fahd Stadium',24000,1953,_c.saudiarabia,61.8,[],{}];
     map[n.alshabab] = [
       ClubColors(Colors.white,Colors.orange),pattern.solid,Coordinates(24.78829136, 46.839111),
-      'Estádio Internacional Rei Fahd',75000,1947,_c.southarabia,70.2,[],{}];
+      'Estádio Internacional Rei Fahd',75000,1947,_c.saudiarabia,70.2,[],{}];
     map[n.altaawoun] = [
       ClubColors(Colors.yellow,darkblue),pattern.solid,Coordinates(26.37901905, 43.9477167),
-      'King Abdullah Sport City Stadium',25000,1956,_c.southarabia,68.4,[],{}];
+      'King Abdullah Sport City Stadium',25000,1956,_c.saudiarabia,68.4,[],{}];
     map[n.altai] = [
       ClubColors(Colors.grey,Colors.black),pattern.solid,Coordinates(27.50443671, 41.697737),
-      'Prince Abdul Aziz bin Musa\'ed Stadium',12250,1961,_c.southarabia,65.6,[],{}];
+      'Prince Abdul Aziz bin Musa\'ed Stadium',12250,1961,_c.saudiarabia,65.6,[],{}];
     map[n.alwehda] = [
       ClubColors(Colors.red,Colors.white),pattern.horStripes2,Coordinates(21.485628639631926, 39.97341283681545),
-      'King Abdul Aziz Stadium',38000,1945,_c.southarabia,66.1,[],{}];
+      'King Abdul Aziz Stadium',38000,1945,_c.saudiarabia,66.1,[],{}];
     map[n.damac] = [
       ClubColors(Colors.red,Colors.yellow),pattern.solid,Coordinates(18.3105417, 42.597956),
-      'Prince Sultan bin Abdul Aziz Stadium',20000,1972,_c.southarabia,66.6,[],{}];
+      'Prince Sultan bin Abdul Aziz Stadium',20000,1972,_c.saudiarabia,66.6,[],{}];
     map[n.ohod] = [
       ClubColors(Colors.brown,Colors.orange),pattern.solid,Coordinates(24.662447731029168, 46.73996035875249),
-      'Prince Faisal bin Fahd Stadium',24000,1936,_c.southarabia,60.8,[],{}];
+      'Prince Faisal bin Fahd Stadium',24000,1936,_c.saudiarabia,60.8,[],{}];
     //IRÃ
     map[n.persepolis] = [
       ClubColors(Colors.red,Colors.white),pattern.solid,Coordinates(35.72465, 51.27574),

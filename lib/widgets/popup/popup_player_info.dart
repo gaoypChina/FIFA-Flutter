@@ -245,7 +245,7 @@ Widget thisSeasonStats(BuildContext context, Jogador jogador){
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                SizedBox(width: 40, child: const Text("Carrer", style: EstiloTextoBranco.text14)),
+                const SizedBox(width: 40, child: Text("Carrer", style: EstiloTextoBranco.text14)),
                 Text(jogador.matchsYear.toString(), style: EstiloTextoBranco.text16),
                 Text(jogador.goalsCarrer.toString(), style: EstiloTextoBranco.text16),
                 Text(jogador.assistsCarrer.toString(), style: EstiloTextoBranco.text16),

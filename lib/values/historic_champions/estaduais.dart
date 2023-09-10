@@ -326,7 +326,7 @@ Map<String,dynamic> mapEstaduais = {
     1946.0: [n.riobrancoES,],
   },
 
-  leagueName.gaucho : {
+  leagueName.rs : {
     //2025.0: [],
     //2024.0: [],
     2023.0: [n.gremio,n.caxias,n.internacional,n.ypirangaRS,        n.juventude,n.saojoseRS,n.brasilPelotas,n.novohamburgo,n.avenida,n.saoluizRS,   n.esportivo,n.aimore],
@@ -484,7 +484,7 @@ Map<String,dynamic> mapEstaduais = {
     1950.0: [n.ferroviarioPR,n.coritiba,n.jacarezinho,n.palestra],
   },
 
-  leagueName.santacatarina : {
+  leagueName.sc : {
     //2025.0: [],
     //2024.0: [],
     2023.0: [n.criciuma,n.brusque,n.hercilioluz,n.barraSC,     n.chapecoense,n.avai,n.concordia,n.figueirense,n.joinville,n.marciliodias, n.camboriu,n.atlcatarinense],

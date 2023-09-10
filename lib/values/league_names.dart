@@ -78,7 +78,7 @@ class LeagueOfficialNames{
   String brasil1 = 'Brasileirão';  String brasil2 = 'Brasileirão - Série B';String brasil3 = 'Brasileirão - Série C';
   String brasil4 = 'Brasileirão - Série D';
   String paulistao = 'Paulistão'; String carioca = 'Carioca'; String mineiro = 'Mineiro'; String es = 'Capixaba';
-  String gaucho = 'Gaucho'; String parana = 'Paranaense'; String santacatarina = 'Santa Catarina';
+  String rs = 'Gaucho'; String parana = 'Paranaense'; String sc = 'Santa Catarina';
   String bahia = 'Bahiano';   String pernambuco = 'Pernambucano'; String ceara = 'Cearense';  String potiguar = 'Potiguar';
   String alagoas = 'Alagoano'; String paraiba = 'Paraibano'; String piaui = 'Piaui'; String maranhao = 'Maranhão'; String sergipe = 'Sergipe';
   String goias = 'Goias'; String df = 'Distrito Federal'; String mt = 'Mato Grosso'; String ms = 'Mato Grosso do Sul'; String to = 'Tocantins';
@@ -132,7 +132,7 @@ class LeagueOfficialNames{
 
   String egito = 'Liga Egito';
   String argelia = 'Liga Argelia';
-  String libya = 'Liga Lybia';
+  String libia = 'Liga Libia';
   String marrocos = 'Liga Marrocos';
   String tunisia = 'Liga Tunisia';
   String angola = 'Liga Angola';
@@ -155,6 +155,8 @@ class LeagueOfficialNames{
   String gana = 'Liga Gana';
   String gambia = 'Liga Gambia';
   String guine = 'Liga Guiné';
+  String guineequatorial = 'Liga Guiné-Equatorial';
+  String guinebissau = 'Liga Guiné-Bissau';
   String lesoto = 'Liga Lesoto';
   String liberia = 'Liga Libéria';
   String madagascar = 'Liga Madagascar';
@@ -168,6 +170,7 @@ class LeagueOfficialNames{
   String nigeria = 'Liga Nigeria';
   String quenia = 'Liga Quênia';
   String ruanda = 'Liga Ruanda';
+  String saotome = 'Liga São Tomé e Príncipe';
   String serraleoa = 'Liga Serra Leoa';
   String senegal = 'Liga Senegal';
   String seychelles = 'Liga Seychelles';
@@ -218,10 +221,10 @@ class LeagueOfficialNames{
   String copamundoFem = "Woman World Cup";
   String eurocopa = "Eurocopa";
   String copaamerica = "Copa América";
-  String copaafrica = "Copa Africa";
+  String copaafrica = "Copa África";
   String copaasia = "Copa Ásia";
   String copaconcacaf = "Copa Concacaf";
-  String copaconfederacoes = "Copa Confederacoes";
+  String copaconfederacoes = "Copa das Confederações";
 
   //SUPERCOPAS
   String recopaeuropa = "Supercopa da UEFA";
@@ -291,7 +294,7 @@ class LeagueOfficialNames{
 
       australia, fiji, novazelandia, taiti,
 
-      argelia, egito, libya, marrocos, tunisia,
+      argelia, egito, libia, marrocos, tunisia,
       africaSul, angola, botswana, caboverde, camaroes,
       centralAfrica, congo, congoRD, costamarfim, etiopia,
       gabao, gana, guine, madagascar, mali, mauritania, mocambique,
@@ -300,7 +303,7 @@ class LeagueOfficialNames{
       uganda, zambia, zimbabwe,
 
       paulistao, carioca, mineiro, es,
-      gaucho,parana,santacatarina,
+      rs,parana,sc,
       alagoas, bahia, ceara, maranhao, paraiba, pernambuco, piaui, potiguar, sergipe,
       df, goias, mt, ms, to,
       acre, amapa, amazonas, para, rondonia, roraima,
@@ -675,7 +678,7 @@ Map getLeagueNationalityMap(){
     leagueName.turcomenistao: Words.country.turkmenistan,
     leagueName.quirguistao: Words.country.kyrgyzstan,
 
-    leagueName.arabia: Words.country.southarabia,
+    leagueName.arabia: Words.country.saudiarabia,
     leagueName.bahrein: Words.country.bahrein,
     leagueName.qatar: Words.country.qatar,
     leagueName.eau: Words.country.uae,
@@ -727,7 +730,7 @@ Map getLeagueNationalityMap(){
     //AFRICA
     leagueName.egito: Words.country.egypt,
     leagueName.argelia: Words.country.algeria,
-    leagueName.libya: Words.country.libya,
+    leagueName.libia: Words.country.libya,
     leagueName.tunisia: Words.country.tunisia,
     leagueName.marrocos: Words.country.morocco,
 
@@ -751,6 +754,8 @@ Map getLeagueNationalityMap(){
     leagueName.gambia: Words.country.gambia,
     leagueName.gana: Words.country.ghana,
     leagueName.guine: Words.country.guinea,
+    leagueName.guinebissau: Words.country.guineabissau,
+    leagueName.guineequatorial: Words.country.guineaEquatorial,
     leagueName.lesoto: Words.country.lesoto,
     leagueName.liberia: Words.country.liberia,
     leagueName.madagascar: Words.country.madagascar,
@@ -765,6 +770,7 @@ Map getLeagueNationalityMap(){
     leagueName.ruanda: Words.country.rwanda,
     leagueName.quenia: Words.country.kenya,
     leagueName.senegal: Words.country.senegal,
+    leagueName.saotome: Words.country.saotome,
     leagueName.serraleoa: Words.country.sierraLeone,
     leagueName.somalia: Words.country.somalia,
     leagueName.sudao: Words.country.sudan,
@@ -782,9 +788,9 @@ Map getLeagueNationalityMap(){
     leagueName.carioca: Words.country.rj,
     leagueName.mineiro: Words.country.mg,
     leagueName.es: Words.country.es,
-    leagueName.gaucho: Words.country.rs,
+    leagueName.rs: Words.country.rs,
     leagueName.parana: Words.country.pr,
-    leagueName.santacatarina: Words.country.sc,
+    leagueName.sc: Words.country.sc,
     leagueName.df: Words.country.df,
     leagueName.goias: Words.country.go,
     leagueName.mt: Words.country.mt,

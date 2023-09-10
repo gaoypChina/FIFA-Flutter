@@ -78,7 +78,7 @@ class _LeaguesConfigurationState extends State<LeaguesConfiguration> {
         children: [
 
           Text(leagueName,style: EstiloTextoBranco.negrito20),
-          Images().getLeagueLogo(leagueName, 50, 50),
+          Images().getLeagueLogo(leagueName, 80, 80),
           SizedBox(
             height: 250,
             child: GridView.builder(

@@ -11,7 +11,7 @@ Map<String,dynamic> mapOceania = {
     //2025.0: [],
     //2024.0: [],
     2023.0: [n.centralcoast,n.melbournecity,n.adelaide,n.sydneywanderers,n.sydneyFC,n.wellingtonphoenix,n.westernunited,n.brisbane,n.perth,n.newcastlejets,n.melbournevictory,n.macarthur],
-    2022.0: [n.westernunited,n.melbournecity,n.melbournevictory,n.adelaide,n.centralcoast,n.wellingtonphoenix,n.macarthur,n.sydneyFC,n.newcastlejets,n.sydneywanderers,n.brisbane,n.perth,n.newcastlejets,n.melbournevictory,n.macarthur,],
+    2022.0: [n.westernunited,n.melbournecity,n.melbournevictory,n.adelaide,n.centralcoast,n.wellingtonphoenix,n.macarthur,n.sydneyFC,n.newcastlejets,n.sydneywanderers,n.brisbane,n.perth],
     2021.0: [n.melbournecity,n.sydneyFC,n.macarthur,n.adelaide,      n.centralcoast,n.brisbane,n.wellingtonphoenix,n.sydneywanderers,n.perth,n.westernunited,               n.newcastlejets,n.melbournevictory],
     2020.0: [n.sydneyFC,n.melbournecity,n.perth,n.westernunited,     n.wellingtonphoenix,n.brisbane,n.adelaide,n.newcastlejets,n.sydneywanderers,n.melbournevictory,   n.centralcoast],
     2019.0: [n.sydneyFC,n.perth,n.melbournevictory,n.adelaide,       n.melbournecity,n.wellingtonphoenix,n.newcastlejets,n.sydneywanderers,n.brisbane,n.centralcoast],

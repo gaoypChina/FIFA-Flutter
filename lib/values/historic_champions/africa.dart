@@ -85,7 +85,7 @@ Map<String,dynamic> mapAfrica = {
     1950.0: [n.alahly,n.tersana,n.zamalek,n.ismaily,n.alittihadalexandriaclub,n.portfouad,n.almasry,n.olympicclub,n.alsekkaalhadid,n.younanalexandria],
       },
 
-  leagueName.libya : {
+  leagueName.libia : {
     //2024.0: [],
     2023.0: [n.tripoliLIB,n.benghazi,],
     2022.0: [n.alittihadLIB,],
@@ -431,7 +431,7 @@ Map<String,dynamic> mapAfrica = {
     1996.0: [n.agosto,n.petroluanda,n.sagradaesperanca,],
     1995.0: [n.petroluanda,n.aviacao,n.agosto,],
     1994.0: [n.petroluanda,n.maio,],
-    1993.0: [n.petroluanda,n.maio,n.petroluanda,],
+    1993.0: [n.petroluanda,n.maio,],
     1992.0: [n.agosto,n.aviacao,n.petroluanda,],
     1991.0: [n.agosto,n.sagradaesperanca,n.petroluanda,],
     1990.0: [n.petroluanda,n.maio,n.agosto,],
@@ -1016,7 +1016,7 @@ Map<String,dynamic> mapAfrica = {
     1998.0: [n.motema,n.vita,],
     1997.0: [n.vita,n.motema,],
     1996.0: [n.motema,n.bantous,],
-    1995.0: [n.vita,n.vita,],
+    1995.0: [n.vita,],
     1994.0: [n.motema,n.sangabalende,],
     1993.0: [n.vita,n.bantous,],
     1992.0: [],
@@ -2609,8 +2609,8 @@ Map<String,dynamic> mapAfrica = {
     2005.0: [n.omdurman,n.almerrikh,],
     2004.0: [n.omdurman,n.almerrikh,],
     2003.0: [n.omdurman,n.almerrikh,],
-    2002.0: [n.almerrikh,n.omdurman,n.almerrikh,],
-    2001.0: [n.almerrikh,n.omdurman,n.almerrikh,],
+    2002.0: [n.almerrikh,n.omdurman,],
+    2001.0: [n.almerrikh,n.omdurman,],
     2000.0: [n.almerrikh,n.omdurman,],
     1999.0: [n.omdurman,n.hayalarab,],
     1998.0: [n.omdurman,n.almerrikh,],
