@@ -189,6 +189,7 @@ List<String> clubsAllNameList = [
   clubName.belouizdad, clubName.omdurman,
   clubName.mamelodi,  clubName.orlandopirates,  clubName.kaizer,
   clubName.mazembe, clubName.agosto,  clubName.cotonsport,
+  clubName.simba, clubName.petroluanda,
 
   //outros
   clubName.galatics, clubName.legends, clubName.veterans,

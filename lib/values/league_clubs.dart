@@ -238,6 +238,7 @@ Map clubNameMapImmutable = {
     4: clubName.rajacasablanca,5: clubName.wydad,6: clubName.belouizdad,7: clubName.essetif,
     8: clubName.mazembe,9: clubName.agosto,10:clubName.mamelodi,11:clubName.kaizer,
     12:clubName.orlandopirates,13:clubName.cotonsport, 14: clubName.sydneyFC,15: clubName.melbournevictory,
+    16: clubName.simba,17: clubName.petroluanda,
   },
   LeagueOfficialNames().outros : {
     0: clubName.bate, 1: clubName.cluj,2: clubName.lasklinz,3: clubName.lechpoznan,
