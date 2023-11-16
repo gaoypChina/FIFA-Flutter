@@ -36,20 +36,20 @@ Future<Map<double, dynamic>> mapChampions(String league) async {
 classificationCSV(String league) async{
 
   final String raw = await rootBundle.loadString('assets/csv/classification.csv');
-  List<List<dynamic>> parsed = CsvToListConverter().convert(raw);
+  List<List<dynamic>> parsed = const CsvToListConverter().convert(raw);
   List<List<dynamic>> filteredLists = parsed.where((list) => list[0] == league).toList();
 
 
   Map<double, List<String>> transformedMap = {};
 
   print(filteredLists);
-  filteredLists.forEach((innerList) {
+  for (var innerList in filteredLists) {
     double keyYear = innerList[1]; // Key is the first element of the inner list
     String value = innerList[3]; // Value is the fourth element of the inner list
 
     transformedMap.putIfAbsent(keyYear, () => []); // Initialize an empty list if key doesn't exist
     transformedMap[keyYear]!.add(value); // Add value to the list associated with the key
-  });
+  }
 
   if(transformedMap.isNotEmpty){
     return transformedMap;

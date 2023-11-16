@@ -7,6 +7,7 @@ import 'package:fifa/pages/home/choose_team.dart';
 import 'package:fifa/pages/map/choose_continent_page.dart';
 import 'package:fifa/pages/map/map_exploration.dart';
 import 'package:fifa/pages/save/choose_save.dart';
+import 'package:fifa/pages/tournament_mode/single_match.dart';
 import 'package:fifa/pages/tournament_mode/tournament.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_names.dart';
@@ -75,34 +76,41 @@ class _HomePageState extends State<HomePage> {
                       buttonRow(
                           "Load Game",
                           'assets/icons/home_mourinho.png',
-                          80,
+                          90,
                               (){navigatorPush(context, const ChooseSave());}
                       ),
 
                       buttonRow(
                           "Friendly Match",
                           'assets/icons/home_match.png',
-                          80,
+                          90,
+                              (){navigatorPush(context, const SingleMatch());}
+                      ),
+
+                      buttonRow(
+                          "New\nTournament",
+                          'assets/icons/home_trophy.png',
+                          90,
                               (){navigatorPush(context, const Tournament());}
                       ),
                       buttonRow(
                           "Classification",
                           'assets/icons/home_table.png',
-                          80,
+                          90,
                               (){navigatorPush(context, RealClassificationPage(chosenCountryName: const CountryNames().england));}
                       ),
 
                       buttonRow(
                           "List of Clubs",
                           'assets/icons/home_clubs.png',
-                          80,
+                          90,
                               (){navigatorPush(context, const ChooseContinentPage());}
                       ),
 
                       buttonRow(
                           "Maps",
                           'assets/icons/home_map.png',
-                              80,
+                          90,
                               (){navigatorPush(context, MapExploration(clubName: ClubName().arsenal));}
                       ),
                     ],
