@@ -100,8 +100,9 @@ class _RealClassificationPageState extends State<RealClassificationPage> {
           Padding(
             padding: const EdgeInsets.only(top: 20),
             child: GestureDetector(
-              onTap:(){
-                List classificationNames = mapChampions(chosenLeagueName)[ano-1];
+              onTap:() async{
+                Map map = await  mapChampions(chosenLeagueName);
+                List classificationNames = map[ano-1];
                 bottomSheetShowLeagueClassification(context, classificationNames, chosenLeagueName, ano-1);
               },
               child: const Icon(Icons.table_chart_outlined,color:Colors.white,size: 32),

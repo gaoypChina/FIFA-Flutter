@@ -5840,6 +5840,30 @@ class ClubName{
   String horoya = "Horoya";
   String kaloum = "Kaloum Star";
   String satellite = "Satellite";
+  //GUINÉ-BISSAU
+  String sportingBIS = "Sporting de Bissau";
+  String sportingbafata = "Sporting Bafatá";
+  String benficaBIS = "Benfica de Bissau";
+  String portoBIS = "Porto de Bissau";
+  String atlbissora = "Atlético Bissorã";
+  String balantas = "Os Balantas";
+  String canchungo = "Canchungo";
+  String depmansaba = "Deportivo Mansabá";
+  String ninotristao = "Nino Tristão";
+  String udib = "UDIB";
+  //GUINÉ-EQUATORIAL
+  String akonangui = "Akonangui";
+  String cafesportif = "Café Sportif";
+  String canosport = "Cano Sport";
+  String depmongomo = "Deportivo Mongomo";
+  String leonesvegetarianos = "Leones Vegetarianos";
+  String sonyelanguema = "Sony de Elá Nguema";
+  String renacimiento = "Renacimiento";
+  String dragonGUIEQU = "Dragón";
+  String micomeseng = "Racing de Micomeseng";
+  String atlmalabo = "Atlético Malabo";
+  String realrebola = "Real Rebola";
+
   //KHENYA
   String bandare = "Bandare";
   String feisal = "Feisal";
@@ -6021,6 +6045,21 @@ class ClubName{
   String mukungwa = "Mukungwa";
   String pantheresnoires = "Panthères Noires";
   String rayonsports = "RayonSports";
+  //SAO TOME
+  String vitoriariboque = "Vitória do Riboque";
+  String caixaogrande = "Caixão Grande";
+  String correia = "Correia";
+  String depguadalupe = "Deportivo Guadalupe";
+  String interbombom = "Inter Bom-Bom";
+  String setembro6 = "6 de Setembro";
+  String sportingpraiacruz = "Sporting Praia Cruz";
+  String trindadeTOME = "Trindade FC";
+  String udescai = "UDESCAI";
+  String udra = "UDRA";
+  String andorinha = "Andorinha SC";
+  String bairrosunidos = "Bairros Unidos";
+  String santanafc = "Santana FC";
+
   //SENEGAL
   String casasports = "Casas Sports";
   String douanes = "AS Douanes";

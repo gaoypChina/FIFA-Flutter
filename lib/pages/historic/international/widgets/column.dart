@@ -3,12 +3,11 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/pages/club_profile/all_infos_club_not_playable.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
-import 'package:fifa/values/historic_champions/historic_champions.dart';
 import 'package:flutter/material.dart';
 
-Widget wInternationalHistoricColumn(BuildContext context, String leagueInternational, int year) {
-  Map map = mapChampions(leagueInternational);
-  List list = map[year.toDouble()];
+Widget wInternationalHistoricColumn(BuildContext context, String leagueInternational, Map mapClassifications, int year) {
+  List list = mapClassifications[year.toDouble()];
+
   return Expanded(
     child: ListView.builder(
       itemCount: list.length,

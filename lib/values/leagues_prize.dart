@@ -26,7 +26,7 @@ void premiacao(My myClass, Confronto confronto){
       l.franca2: 0.5,
       l.portugal: 1.6,
       l.holanda: 1.6,
-      l.turquiaGrecia: 1.5,
+      l.turquia: 1.5,
       l.ligaEuropa: 1.4,
       l.lesteEuropeu: 1.4,
       l.brasil1: 1.4,

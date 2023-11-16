@@ -92,11 +92,11 @@ void main() {
       printQuotedMap(l.macedonia);
       printQuotedMap(l.moldova);
       printQuotedMap(l.montenegro);
-      printQuotedMap(l.repTcheca);
+      printQuotedMap(l.reptcheca);
       printQuotedMap(l.romenia);
       printQuotedMap(l.russia);
       printQuotedMap(l.servia);
-      printQuotedMap(l.turquiaGrecia);
+      printQuotedMap(l.turquia);
 
       printQuotedMap(l.coreiaSul);
       printQuotedMap(l.japao);

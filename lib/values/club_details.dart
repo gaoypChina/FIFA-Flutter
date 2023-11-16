@@ -158,7 +158,7 @@ class ClubDetails{
       'Stamford Brigde',41837,1905,_c.england,84.3,[n.tottenham,n.arsenal],{}];
     map[n.everton] = [
       ClubColors(blue,Colors.white),pattern.solid,Coordinates(53.438888888,-2.966388888),
-      '	Goodison Park',39571,1878,_c.england,79.2,[n.liverpool],{}];
+      'Goodison Park',39571,1878,_c.england,79.2,[n.liverpool],{}];
     map[n.fulham] = [
       ClubColors(Colors.white,Colors.black),pattern.solid,Coordinates(51.475,-0.221666666),
       'Craven Cottage',19000,1879,_c.england,74.5,[n.chelsea,n.qpr],{}];

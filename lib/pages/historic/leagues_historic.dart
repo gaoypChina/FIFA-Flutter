@@ -16,6 +16,7 @@ import 'package:fifa/values/league_clubs.dart';
 import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/back_button.dart';
 import 'package:fifa/widgets/bottom_sheet/bottom_sheet_league_classification.dart';
+import 'package:fifa/widgets/loader.dart';
 import 'package:flutter/material.dart';
 
 import '../../values/historic_champions/historic_champions.dart';
@@ -32,25 +33,31 @@ class _HistoricLeagueState extends State<HistoricLeague> {
   late Map<double,dynamic> results;
   late String chosenLeagueName;
   int nTeamsSelected = 0;
+  bool isLoaded = false;
   ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
   @override
-  void initState() {
-    chosenLeagueName = widget.chosenLeagueName;
+  void initState(){
+    init();
     super.initState();
+  }
+  init() async{
+    chosenLeagueName = widget.chosenLeagueName;
+    results = await mapChampions(chosenLeagueName);
+    isLoaded = true;
+    setState((){});
   }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
-    results = mapChampions(chosenLeagueName);
 
     return Scaffold(
         body:  Container(
           decoration: Images().getWallpaperContainerDecoration(),
-          child: Column(
+          child: isLoaded ? Column(
             children: [
 
               backButtonText(context, Translation(context).text.leagueHistoric, true),
@@ -91,7 +98,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
               ) : Container(),
 
               nTeamsSelected == 0 
-                  ? tableBestClubs() 
+                  ? tableBestClubs()
                   : Container(),
 
               //TABELA
@@ -108,7 +115,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                           yearRow(year),
 
                         for(int year=ano-1;year> ano-(anoInicial-1950)-1;year--)
-                          yearRowPast(year),
+                          yearRowPast(year, results),
                       ],
                     ),
                   ),
@@ -120,7 +127,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                         yearRow(year),
 
                       for(int year=ano-1;year> ano-(anoInicial-1950)-1;year--)
-                        yearRowPast(year),
+                        yearRowPast(year, results),
                     ],
                   ),
                 ),
@@ -135,8 +142,9 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                     LeagueSelectionRow(
                         chosenLeagueName: chosenLeagueName,
                         leaguesListRealIndex: leaguesListRealIndex,
-                        onTap: (String leagueName){
+                        onTap: (String leagueName) async{
                           chosenLeagueName = leagueName;
+                          results = await mapChampions(chosenLeagueName);
                           setState(() {});
                         }
                     ),
@@ -144,8 +152,9 @@ class _HistoricLeagueState extends State<HistoricLeague> {
                       countryFlagsSelectionBottomWidget2(
                           leagueName: leagueName,
                           chosenLeagueName: chosenLeagueName,
-                          onTap: () {
+                          onTap: () async{
                                 chosenLeagueName = leagueName;
+                                results = await mapChampions(chosenLeagueName);
                                 setState(() {});
                               }
                       ),
@@ -156,7 +165,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
 
 
             ],
-          ),
+          ) : loaderCircle(),
         )
     );
   }
@@ -194,7 +203,6 @@ class _HistoricLeagueState extends State<HistoricLeague> {
     }
 
     League league = League(index: leaguesIndexFromName[chosenLeagueName]);
-    results = mapChampions(league.name);
     if(league.nClubs < nTeamsSelected){
       nRows = league.nClubs;
     }
@@ -228,19 +236,18 @@ class _HistoricLeagueState extends State<HistoricLeague> {
 
   //////////////////////////////////////////
   //HISTORICOS PASSADOS
-  Widget yearRowPast(int ano){
+  Widget yearRowPast(int ano, Map resultsLeague){
     return Center(
       child: Column(
         children: [
           for(int position=0;position<nTeamsSelected;position++)
-            validacao(position, ano),
+            validacao(position, ano, resultsLeague),
         ],
       ),
     );
   }
-  Widget validacao(int position, int ano){
+  Widget validacao(int position, int ano, Map resultsLeague){
     try {
-      results = mapChampions(chosenLeagueName);
       List yearData = results[ano.toDouble()];
       String clubName = yearData[position];
       if(position==0){
@@ -308,7 +315,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
         clubName = yearData[0];
       }
       return GestureDetector(
-          onTap:(){
+          onTap:() async{
 
             if(year>=anoInicial){
               List classificationNames = [];
@@ -319,8 +326,7 @@ class _HistoricLeagueState extends State<HistoricLeague> {
               }
               bottomSheetShowLeagueClassification(context, classificationNames, chosenLeagueName, year);
             }else{
-
-              List classificationNames = mapChampions(chosenLeagueName)[year];
+              List classificationNames = results[year];
               bottomSheetShowLeagueClassification(context, classificationNames, chosenLeagueName, year);
             }
           },
@@ -355,7 +361,8 @@ class _HistoricLeagueState extends State<HistoricLeague> {
     }catch(e){
       //O CLUBE NÃO É JOGÁVEL
     }
-    mapChampions(chosenLeagueName).forEach((key,value) {
+    Map mapClassification = results;
+    mapClassification.forEach((key,value) {
       for(String name in value){
         if(!clubNames.contains(name)){
           clubNames.add(name);
@@ -364,9 +371,9 @@ class _HistoricLeagueState extends State<HistoricLeague> {
     });
     return clubNames;
   }
-  getClubPositions(String clubName){
+  getClubPositions(String clubName) {
     Map positions = {};
-    mapChampions(chosenLeagueName).forEach((key,value) {
+    results.forEach((key,value) {
       List lista = value;
         if(value.contains(clubName)){
           if(positions[lista.indexOf(clubName)+1] == null){

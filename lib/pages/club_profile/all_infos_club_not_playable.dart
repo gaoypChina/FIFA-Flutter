@@ -50,19 +50,23 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
 
     _tabController = TabController(vsync: this, length: 3);
 
+    getDataGraphics();
+
+    super.initState();
+  }
+  getDataGraphics() async{
     clubState = clubdetails.getState(widget.clubName);
 
     try {
       clubCountry = clubdetails.getCountry(widget.clubName);
 
-    dataGraphics.getDataNotPlayabale(widget.clubName, clubCountry, clubState);
+      await dataGraphics.getDataNotPlayabale(widget.clubName, clubdetails);
+      setState((){});
     }catch(e){
       //THE CLUB HAS NO INFORMATION IN THE CLUB DETAILS
       // Therefore there is nothing to show on this page
       Navigator.pop(context);
     }
-
-    super.initState();
   }
   @override
   void dispose() {
@@ -208,7 +212,7 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
           || leagueName==LeagueOfficialNames().resto
           || leagueName==LeagueOfficialNames().europaLeagueOficial
           || leagueName==LeagueOfficialNames().holanda
-          || leagueName==LeagueOfficialNames().turquiaGrecia
+          || leagueName==LeagueOfficialNames().turquia
           || leagueName==LeagueOfficialNames().mercosul
           || leagueName==LeagueOfficialNames().merconorte
           || leagueName==LeagueOfficialNames().outros
@@ -303,17 +307,22 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
             // Initialize line series
             //CAMPEONATO NACIONAL
             LineSeries<ClassificationData, String>(
-              onPointLongPress: (ChartPointDetails tapDetails) {
+              onPointLongPress: (ChartPointDetails tapDetails) async {
                 int year = ano - tapDetails.pointIndex! - 1;
-                //GET LEAGUE NAME
+
+                // GET LEAGUE NAME
                 Map leagueNationality = getLeagueNationalityMap();
                 late String leagueName;
-                leagueNationality.forEach((key, value) {
-                if(value==clubCountry){
-                  leagueName = key;
-                  List classificationNames = mapChampions(leagueName)[year];
-                  bottomSheetShowLeagueClassification(context, classificationNames, leagueName);
-                }});
+
+                for (var entry in leagueNationality.entries) {
+                  if (entry.value == clubCountry) {
+                    leagueName = entry.key;
+                    Map mapClassifications = await mapChampions(leagueName);
+                    List classificationNames = mapClassifications[year];
+                    bottomSheetShowLeagueClassification(context, classificationNames, leagueName);
+                    break; // Exit the loop once you've found the league name
+                  }
+                }
               },
               xAxisName: Translation(context).text.years,
               yAxisName: Translation(context).text.position,
@@ -340,9 +349,10 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
             // Initialize line series
             //CHAMPIONS LEAGUE
             LineSeries<ClassificationData, String>(
-              onPointLongPress: (ChartPointDetails tapDetails) {
+              onPointLongPress: (ChartPointDetails tapDetails) async{
                 int year = ano - tapDetails.pointIndex! - 1;
-                List classificationNames = mapChampions(dataGraphics.internationalLeagueName)[year];
+                Map map = await mapChampions(dataGraphics.internationalLeagueName);
+                List classificationNames = map[year];
                 bottomSheetShowLeagueClassification(context, classificationNames, dataGraphics.internationalLeagueName);
               },
               color: Colors.green,
@@ -570,14 +580,16 @@ class _ClubProfileNotPlayableState extends State<ClubProfileNotPlayable> with Ti
           const SizedBox(width: 10),
           positionColor(copa,80),
           const SizedBox(width: 10),
-          GestureDetector(onTap:(){
+          GestureDetector(
+              onTap:() {
             //GET LEAGUE NAME
             Map leagueNationality = getLeagueNationalityMap();
             late String leagueName;
-            leagueNationality.forEach((key, value) {
+            leagueNationality.forEach((key, value) async{
               if(value==clubCountry){
                 leagueName = key;
-                List classificationNames = mapChampions(leagueName)[year];
+                Map map = await mapChampions(leagueName);
+                List classificationNames = map[year];
                 bottomSheetShowLeagueClassification(context, classificationNames, leagueName);
               }
             });

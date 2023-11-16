@@ -214,7 +214,7 @@ class _ChooseTeamState extends State<ChooseTeam> {
                         loaded ? wHomeClubLogoAndKitStack(context, club) : SizedBox(
                           height: 200+40,
                           width: 200,
-                        child:  loader()),
+                        child:  loaderCircle()),
 
                       ],
                     ),

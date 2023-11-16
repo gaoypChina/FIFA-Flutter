@@ -23,55 +23,55 @@ class LeagueOfficialNames{
   String franca1 = 'Ligue 1'; String franca2 = 'Ligue 2';
   String alemanha1 = 'Bundesliga';  String alemanha2 = 'Bundesliga 2';String alemanhaOriental = 'DDR-Oberliga';
   String portugal = 'Liga Portugal Bwin'; String portugal2 = 'Liga Portugal 2 Bwin';
-  String turquiaGrecia = 'Liga Greco-Turca';
+  String turquia = 'Liga Greco-Turca';
   String holanda = 'Eredivisie';
-  String escocia = 'Scottish Premiership';
-  String belgica = 'Jupiler Pro League';
-  String irlanda = 'Liga Irlanda';
-  String irlandanorte = 'Liga Irlanda do Norte';
-  String paisgales = 'Liga País de Gales';
-  String suecia = 'Allsvenskan Sweden';
-  String dinamarca = 'Superliga Dinamarquesa';
-  String noruega = 'Liga Norueguesa';
-  String finlandia = 'Liga Finlandesa';
-  String islandia = 'Liga Islandia';
   String austria = 'Liga Austriaca';
-  String suica = 'Super Liga Suíça';
-  String polonia = 'Ekstraklasa';
-  String servia = 'Liga Servia';
-  String grecia = 'Liga Grega';
-  String repTcheca = 'Liga Tcheca';
-  String eslovaquia = 'Liga Eslovaquia';
-  String eslovenia = 'Liga Eslovenia';
-  String croacia = 'Liga Croácia';
-  String bosnia = 'Liga Bosnia';
-  String russia = 'Liga Russa';
-  String ucrania = 'Liga Ucrania';
-  String israel = 'Liga israel';
-  String romenia = 'Liga Romenia';
+  String albania = 'Kategoria Superiore';
+  String andorra = 'Primeira Divisió';
+  String armenia = 'Armenian Premier League';
+  String azerbaijao = 'Azerbaijan Premier League';
+  String belgica = 'Jupiler Pro League';
   String bulgaria = 'Liga Bulgaria';
-  String hungria = 'Liga Hungara';
-  String cazaquistao = 'Super Liga do Cazaquistão';
-  String armenia = 'Liga Armena';
+  String cazaquistao = 'Kazakhstan Premier League';
   String belarus = 'Liga Belarus';
-  String moldova = 'Liga Moldova';
-  String chipre = 'Liga Chipre';
-  String macedonia = 'Liga Macedonia';
-  String albania = 'Liga Albania';
-  String estonia = 'Liga Estônia';
-  String lituania = 'Liga Lituânia';
-  String letonia = 'Liga Letônia';
-  String azerbaijao = 'Liga Azerbaijão';
-  String georgia = 'Liga Geórgia';
-  String montenegro = 'Liga Montenegro';
-  String andorra = 'Liga Andorra';
-  String saomarino = 'Liga São Marino';
+  String bosnia = 'Premier League of Bosnia';
+  String chipre = 'Cypriot First Division';
+  String croacia = 'Croatian Football League';
+  String dinamarca = 'Danish Superliga';
+  String escocia = 'Scottish Premiership';
+  String eslovaquia = 'Slovak First Football League';
+  String eslovenia = 'Slovenian PrvaLiga';
+  String estonia = 'Meistriliiga';
+  String finlandia = 'LVeikkausliiga';
+  String georgia = 'Erovnuli Liga';
   String gibraltar = 'Liga Gibraltar';
+  String grecia = 'Super League Greece';
+  String hungria = 'Nemzeti Bajnokság';
   String ilhasfaroe = 'Liga Ilhas Faroe';
-  String malta = 'Liga Malta';
-  String liechtenstein = 'Liga Liechtenstein';
-  String luxemburgo = 'Liga Luxemburgo';
+  String irlanda = 'Ireland Premier Division';
+  String irlandanorte = 'NIFL Premiership';
+  String islandia = 'Liga Islandia';
+  String israel = 'Liga israel';
   String kosovo = 'Liga Kosovo';
+  String letonia = 'Latvian Higher League';
+  String liechtenstein = 'Liga Liechtenstein';
+  String lituania = 'A Lyga';
+  String luxemburgo = 'Liga Luxemburgo';
+  String malta = 'String Maltese Premier League';
+  String macedonia = 'Macedonian First Football League';
+  String moldova = 'Moldovan Super Liga';
+  String montenegro = 'Montenegrin First League';
+  String noruega = 'Eliteserien';
+  String paisgales = 'Cymru Premier';
+  String polonia = 'Ekstraklasa';
+  String reptcheca = 'Czech First League';
+  String romenia = 'Liga I';
+  String russia = 'Russian Premier League';
+  String saomarino = 'Liga São Marino';
+  String servia = 'Serbian SuperLiga';
+  String suecia = 'Allsvenskan';
+  String suica = 'Swiss Super League';
+  String ucrania = 'Ukrainian Premier League';
 
   String ligaEuropa = 'Liga Europeia';  String lesteEuropeu = 'Leste Europeu';
 
@@ -259,7 +259,7 @@ class LeagueOfficialNames{
      italia1,italia2,
      alemanha1,alemanha2,alemanhaOriental,
      franca1,franca2,
-     holanda, portugal, turquiaGrecia,
+     holanda, portugal, turquia,
 
       albania, andorra, armenia, austria, azerbaijao,
       belgica, belarus, bosnia, bulgaria,
@@ -270,7 +270,7 @@ class LeagueOfficialNames{
       ilhasfaroe, irlanda, irlandanorte, islandia, israel,
       kosovo, liechtenstein, luxemburgo,
       macedonia, malta, moldova, montenegro, noruega,
-      paisgales, polonia, repTcheca, romenia, russia,
+      paisgales, polonia, reptcheca, romenia, russia,
       saomarino, servia, suecia, suica,
       ucrania,
 
@@ -393,7 +393,7 @@ List leagueNames = [
   LeagueOfficialNames().franca1,LeagueOfficialNames().franca2,
   LeagueOfficialNames().alemanha1,LeagueOfficialNames().alemanha2,
   LeagueOfficialNames().portugal,LeagueOfficialNames().holanda,
-  LeagueOfficialNames().turquiaGrecia,
+  LeagueOfficialNames().turquia,
   LeagueOfficialNames().ligaEuropa,LeagueOfficialNames().lesteEuropeu,
 
   LeagueOfficialNames().brasil1,LeagueOfficialNames().brasil2,LeagueOfficialNames().brasil3,
@@ -418,7 +418,7 @@ Map leaguesIndexFromName = {
   LeagueOfficialNames().alemanha1: 11,
   LeagueOfficialNames().alemanha2: 12,
   LeagueOfficialNames().portugal: 15,
-  LeagueOfficialNames().turquiaGrecia: 16,
+  LeagueOfficialNames().turquia: 16,
 
   LeagueOfficialNames().ligaEuropa: 20,
   LeagueOfficialNames().lesteEuropeu: 21,
@@ -471,7 +471,7 @@ Map nTeamsClassified = {
 
   LeagueOfficialNames().portugal: 2,
   LeagueOfficialNames().holanda: 2,
-  LeagueOfficialNames().turquiaGrecia: 2,
+  LeagueOfficialNames().turquia: 2,
 
   LeagueOfficialNames().ligaEuropa: 3,
   LeagueOfficialNames().lesteEuropeu: 3,
@@ -491,7 +491,7 @@ Map nTeamsClassified2 = {
 
   LeagueOfficialNames().portugal: 2,
   LeagueOfficialNames().holanda: 2,
-  LeagueOfficialNames().turquiaGrecia: 3,
+  LeagueOfficialNames().turquia: 3,
 
   LeagueOfficialNames().ligaEuropa: 5,
   LeagueOfficialNames().lesteEuropeu: 5,
@@ -521,7 +521,7 @@ String getCup(String leagueNameIn){
     leagueName.alemanha2: leagueName.germanyCup,
     leagueName.portugal: leagueName.portugalCup,
     leagueName.holanda: leagueName.netherlandsCup,
-    leagueName.turquiaGrecia: leagueName.turkeyCup,
+    leagueName.turquia: leagueName.turkeyCup,
     leagueName.russia: leagueName.russiaCup,
 
     leagueName.ligaEuropa: leagueName.ligaEuropaCup,
@@ -554,7 +554,7 @@ bool leaguePlayInternationalCompetition(String name){
   if(name == leagueOfficialNames.inglaterra1 || name == leagueOfficialNames.espanha1
       || name == leagueOfficialNames.italia1 || name == leagueOfficialNames.franca1
       || name == leagueOfficialNames.alemanha1 || name == leagueOfficialNames.portugal
-      || name == leagueOfficialNames.turquiaGrecia
+      || name == leagueOfficialNames.turquia
       || name == leagueOfficialNames.lesteEuropeu || name == leagueOfficialNames.ligaEuropa
       || name == leagueOfficialNames.brasil1 || name == leagueOfficialNames.argentina
       || name == leagueOfficialNames.mercosul || name == leagueOfficialNames.colombia){
@@ -589,10 +589,10 @@ Map getLeagueNationalityMap(){
     leagueName.suica: Words.country.switzerland,
     leagueName.austria: Words.country.austria,
     leagueName.polonia: Words.country.poland,
-    leagueName.repTcheca: Words.country.czechrepublic,
+    leagueName.reptcheca: Words.country.czechrepublic,
     leagueName.eslovenia: Words.country.slovenia,
     leagueName.eslovaquia: Words.country.slovakia,
-    leagueName.turquiaGrecia: Words.country.turkey,
+    leagueName.turquia: Words.country.turkey,
     leagueName.grecia: Words.country.greece,
     leagueName.suecia: Words.country.sweden,
     leagueName.dinamarca: Words.country.denmark,

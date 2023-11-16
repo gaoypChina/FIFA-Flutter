@@ -123,7 +123,7 @@ class _RankingClubsPageState extends State<RankingClubsPage> with TickerProvider
 
                   ],
                 ),
-              ) : loader(),
+              ) : loaderCircle(),
 
             ]
         )

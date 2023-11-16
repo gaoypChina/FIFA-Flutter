@@ -1,46 +1,68 @@
-import 'package:fifa/values/historic_champions/africa.dart';
-import 'package:fifa/values/historic_champions/america.dart';
-import 'package:fifa/values/historic_champions/asia.dart';
-import 'package:fifa/values/historic_champions/cups.dart';
-import 'package:fifa/values/historic_champions/estaduais.dart';
-import 'package:fifa/values/historic_champions/europa.dart';
-import 'package:fifa/values/historic_champions/europa_leste.dart';
-import 'package:fifa/values/historic_champions/europa_nord_balt.dart';
-import 'package:fifa/values/historic_champions/europa_top_leagues.dart';
-import 'package:fifa/values/historic_champions/internationals.dart';
-import 'package:fifa/values/historic_champions/north_america.dart';
-import 'package:fifa/values/historic_champions/oceania.dart';
-import 'package:fifa/values/historic_champions/oriente_medio.dart';
-import 'package:fifa/values/historic_champions/other_leagues.dart';
+import 'dart:convert';
+import 'package:csv/csv.dart';
+import 'package:flutter/services.dart';
 
-import 'supercopa.dart';
+Future<Map<double, dynamic>> mapChampions(String league) async {
+  List<String> allNames = [
+    "africa", "americasul", "asia", "brasil", "asia_central", "oriente_medio",
+    "europaTOP7", "europa_ocidental", "europa_oriental", "oceania",
+    "internationals", "estaduais", "cups", "recopas", "others",
+    "countries"
+  ];
 
-  Map<double,dynamic> mapChampions(String league){
 
-    Map<String, Map<String, dynamic>> allMaps = {
-      "international": mapInternationals,
-      "europa_top_leagues": mapEuropaTopLeagues,
-      "europa": mapEuropa,
-      "europa_leste": mapEuropaLeste,
-      "europa_nordicos": mapEuropaNordicosBalticos,
-      "america": mapAmerica,
-      "north_america": mapNorthAmerica,
-      "africa": mapAfrica,
-      "asia": mapAsia,
-      "oriente_medio": mapOrienteMedio,
-      "oceania": mapOceania,
-      "estaduais": mapEstaduais,
-      "copas": mapCopas,
-      "other_leagues": mapOtherLeagues,
-      "supercopa": mapSupercopa,
-    };
+    for (String filename in allNames) {
+      Map<String, dynamic> leaguesMap = await loadJsonData(filename);
+      if (leaguesMap.containsKey(league)) {
+        Map<String, dynamic> mapYears = leaguesMap[league]!;
+        // Create a new map with double keys
+        Map<double, dynamic> doubleKeyMap = {};
+        mapYears.forEach((key, value) {
+          // Parse the key to a double
+          double? doubleKey = double.tryParse(key);
 
-      for (Map<String, dynamic> continentMap in allMaps.values) {
-        if (continentMap.containsKey(league)) {
-          return continentMap[league];
-        }
+          if (doubleKey != null) {
+            // Add the entry to the new map with a double key
+            doubleKeyMap[doubleKey] = value;
+          }
+        });
+
+        return doubleKeyMap;
       }
-      return {};
+    }
+  return {};
+}
 
+classificationCSV(String league) async{
+
+  final String raw = await rootBundle.loadString('assets/csv/classification.csv');
+  List<List<dynamic>> parsed = CsvToListConverter().convert(raw);
+  List<List<dynamic>> filteredLists = parsed.where((list) => list[0] == league).toList();
+
+
+  Map<double, List<String>> transformedMap = {};
+
+  print(filteredLists);
+  filteredLists.forEach((innerList) {
+    double keyYear = innerList[1]; // Key is the first element of the inner list
+    String value = innerList[3]; // Value is the fourth element of the inner list
+
+    transformedMap.putIfAbsent(keyYear, () => []); // Initialize an empty list if key doesn't exist
+    transformedMap[keyYear]!.add(value); // Add value to the list associated with the key
+  });
+
+  if(transformedMap.isNotEmpty){
+    return transformedMap;
   }
+}
+
+Future<Map<String, dynamic>> loadJsonData(String filename) async {
+  // Load the JSON file
+  final String jsonString = await rootBundle.loadString('assets/json/$filename.json');
+
+  // Parse the JSON string
+  Map<String, dynamic> jsonData = json.decode(jsonString);
+
+  return jsonData;
+}
 

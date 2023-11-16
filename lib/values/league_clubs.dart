@@ -138,7 +138,7 @@ Map clubNameMapImmutable = {
     12: clubName.royalantwerp, 13: clubName.standardliege,
   },
 
-  LeagueOfficialNames().turquiaGrecia : {
+  LeagueOfficialNames().turquia : {
     0: clubName.olympiacos,1: clubName.aek,2: clubName.paok,3: clubName.panathinaikos,
     4: clubName.besiktas,5: clubName.fenerbahce,6: clubName.galatasaray,7: clubName.istanbulbasaksehir,
     8: clubName.trabzonspor,9: clubName.apoel,10:clubName.maccabihaifa,11:clubName.vardar,
@@ -229,9 +229,9 @@ Map clubNameMapImmutable = {
   LeagueOfficialNames().asia : {
     0: clubName.shanghaisipg,1: clubName.shandong,2: clubName.kashimaantlers,3: clubName.kawasakifrontale,
     4: clubName.urawareddiamonds,5: clubName.visselkobe,6: clubName.jeonbuk,7: clubName.pohang,
-    8: clubName.alhilal,9: clubName.alittihad,10: clubName.alnassr,11: clubName.alrayyan,
-    12: clubName.alsadd,13: clubName.alduhail,14: clubName.alain,15: clubName.aljazira,
-    16:clubName.alwahda,17:clubName.persepolis,18: clubName.ulsan,19: clubName.fcseoul,
+    8: clubName.ulsan,9: clubName.alahli,10: clubName.alhilal,11: clubName.alittihad,
+    12: clubName.alnassr,13: clubName.alrayyan,14: clubName.alsadd,15: clubName.alduhail,
+    16:clubName.alain,17:clubName.aljazira,18: clubName.alwahda,19: clubName.persepolis,
   },
   LeagueOfficialNames().africa : {
     0: clubName.alahly,1: clubName.zamalek,2: clubName.omdurman,3: clubName.esperance,
@@ -247,7 +247,7 @@ Map clubNameMapImmutable = {
   LeagueOfficialNames().outros2 : {
     0:clubName.saprissa, 1:clubName.olimpiaHON,2:clubName.cincinnati, 3:clubName.charlotte,
     4:clubName.nashville, 5:clubName.montreal, 6:clubName.toronto, 7:clubName.vancouver,
-    8:clubName.auckland, 9:clubName.alshabab, 10:clubName.alahli, 11:clubName.shanghaishenhua,
+    8:clubName.auckland, 9:clubName.alshabab, 10:clubName.fcseoul, 11:clubName.shanghaishenhua,
   },
   LeagueOfficialNames().lendas : {
     0:clubName.legends, 1:clubName.galatics, 2:clubName.veterans, 3:clubName.santos62,

@@ -3,13 +3,11 @@ import 'package:fifa/classes/image_class.dart';
 import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_details.dart';
-import 'package:fifa/values/historic_champions/historic_champions.dart';
 import 'package:flutter/material.dart';
 
-Widget wListViewChampions(BuildContext context, String leagueInternational) {
-  Map map = mapChampions(leagueInternational);
+Widget wListViewChampions(BuildContext context, String leagueInternational, Map mapClassifications) {
   List mapKeys = [];
-  map.forEach((key, value) {
+  mapClassifications.forEach((key, value) {
     mapKeys.add(key);
   });
   return
@@ -22,7 +20,7 @@ Widget wListViewChampions(BuildContext context, String leagueInternational) {
             Row(
               children: [
                 //ANO
-                for(double key in map.keys)
+                for(double key in mapClassifications.keys)
                   Container(
                     height: 30,
                     width: 97,
@@ -40,16 +38,16 @@ Widget wListViewChampions(BuildContext context, String leagueInternational) {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
 
-                    for(double key in map.keys)
+                    for(double key in mapClassifications.keys)
                       Container(
                         margin: const EdgeInsets.symmetric(
                             vertical: 4, horizontal: 6),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            for(var position in map[key])
-                              positionListClub(context, map[key],
-                                  map[key].indexOf(position))
+                            for(var position in mapClassifications[key])
+                              positionListClub(context, mapClassifications[key],
+                                  mapClassifications[key].indexOf(position))
                           ],
                         ),
                       )

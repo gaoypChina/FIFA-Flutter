@@ -70,6 +70,7 @@ class FilterPlayers{
     copyJogadoresOVR = List.from(globalJogadoresOverall);
     transferParameters.page = 0;
   }
+
   setOverall() {
     transferParameters.ascOrDescAge = 0;
     transferParameters.ascOrDescMoney = 0;
@@ -77,7 +78,8 @@ class FilterPlayers{
     if (transferParameters.ascOrDescOVR == 3) {
       transferParameters.ascOrDescOVR = 1;
     }
-    filterByPosition();
+    filterByOVR();
+    filterConditions();
   }
 
   setAge() {
@@ -87,7 +89,8 @@ class FilterPlayers{
     if (transferParameters.ascOrDescAge == 3) {
       transferParameters.ascOrDescAge = 1;
     }
-    filterByPosition();
+    filterByAge();
+    filterConditions();
   }
 
   setPrice() {
@@ -97,23 +100,20 @@ class FilterPlayers{
     if (transferParameters.ascOrDescMoney == 3) {
       transferParameters.ascOrDescMoney = 1;
     }
-    filterByPosition();
+    filterByPrice();
+    filterConditions();
   }
-
 
 
   filterByAge() {
     copyJogadoresAge = [];
     for (int playerID=0;playerID < copyJogadoresID.length; playerID++) {
-      Jogador player = Jogador(index: playerID);
-      copyJogadoresAge.add(player.age);
+      copyJogadoresAge.add(globalJogadoresAge[playerID]);
     }
     if (transferParameters.ascOrDescAge == 1) {
-      if (searchString.isNotEmpty) {
-        transferParameters.page = 0;
-      } else {
-        resetCopyLists();
-      }
+
+      resetPage();
+
       List list = Order().listCrescente(
           listA: copyJogadoresAge,
           listB: copyJogadoresID,
@@ -122,11 +122,9 @@ class FilterPlayers{
       copyJogadoresID = List.from(list[1]);
     }
     if (transferParameters.ascOrDescAge == 2) {
-      if (searchString.isNotEmpty) {
-        transferParameters.page = 0;
-      } else {
-        resetCopyLists();
-      }
+
+      resetPage();
+
       List list = Order().listDecrescente(
           listA: copyJogadoresAge,
           listB: copyJogadoresID,
@@ -139,15 +137,13 @@ class FilterPlayers{
   filterByOVR() {
     copyJogadoresOVR = [];
     for (int playerID=0;playerID < copyJogadoresID.length; playerID++) {
-      Jogador player = Jogador(index: playerID);
-      copyJogadoresOVR.add(player.overall);
+      copyJogadoresOVR.add(globalJogadoresOverall[playerID]);
     }
+
     if (transferParameters.ascOrDescOVR == 1) {
-      if (searchString.isNotEmpty) {
-        transferParameters.page = 0;
-      } else {
-        resetCopyLists();
-      }
+
+      resetPage();
+
       List list = Order().listDecrescente(
           listA: copyJogadoresOVR,
           listB: copyJogadoresID,
@@ -156,11 +152,9 @@ class FilterPlayers{
       copyJogadoresID = List.from(list[1]);
     }
     if (transferParameters.ascOrDescOVR == 2) {
-      if (searchString.isNotEmpty) {
-        transferParameters.page = 0;
-      } else {
-        resetCopyLists();
-      }
+
+      resetPage();
+
       List list = Order().listCrescente(
           listA: copyJogadoresOVR,
           listB: copyJogadoresID,
@@ -172,16 +166,16 @@ class FilterPlayers{
 
   filterByPrice() {
     List copyJogadoresPrice = [];
+    Jogador player = Jogador(index: 0);
     for (int playerID=0;playerID < copyJogadoresID.length; playerID++) {
-      Jogador player = Jogador(index: playerID);
+      player.overall = globalJogadoresOverall[playerID];
+      player.price = player.setPreco();
       copyJogadoresPrice.add(player.price);
     }
     if (transferParameters.ascOrDescMoney == 1) {
-      if (searchString.isNotEmpty) {
-        transferParameters.page = 0;
-      } else {
-        resetCopyLists();
-      }
+
+      resetPage();
+
       List list = Order().listDecrescente(
           listA: copyJogadoresPrice,
           listB: copyJogadoresID,
@@ -190,11 +184,9 @@ class FilterPlayers{
       copyJogadoresID = List.from(list[1]);
     }
     if (transferParameters.ascOrDescMoney == 2) {
-      if (searchString.isNotEmpty) {
-        transferParameters.page = 0;
-      } else {
-        resetCopyLists();
-      }
+
+      resetPage();
+
       List list = Order().listCrescente(
           listA: copyJogadoresPrice,
           listB: copyJogadoresID,
@@ -204,18 +196,18 @@ class FilterPlayers{
     }
   }
 
-  filterByCountry(){
-    filterByPosition();
-  }
   filterByPosition() {
-    if (searchString.isNotEmpty) {
-      transferParameters.page = 0;
-    } else {
-      resetCopyLists();
-    }
-    filterByAge();
-    filterByOVR();
-    filterByPrice();
+
+    resetCopyLists();
+
+    setOverall();
+
+    //filterConditions();
+
+  }
+
+  filterConditions(){
+
     if (transferParameters.filteredPosition.isNotEmpty) {
       copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).position != transferParameters.filteredPosition);
     }
@@ -226,17 +218,34 @@ class FilterPlayers{
       copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).clubName != transferParameters.filteredTeam);
     }
 
-    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).age < transferParameters.ageControl.values.start);
+    copyJogadoresID = filterPlayers(copyJogadoresID, transferParameters);
+  }
 
-    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).age > transferParameters.ageControl.values.end);
+  List filterPlayers(List copyJogadoresID, TransferParameters transferParameters) {
+    Jogador jogador = Jogador(index: 0);
+    copyJogadoresID.removeWhere((playerID) {
+      jogador.age = globalJogadoresAge[playerID];
+      jogador.overall = globalJogadoresOverall[playerID];
+      jogador.price = jogador.setPreco();
+      return jogador.age < transferParameters.ageControl.values.start ||
+          jogador.age > transferParameters.ageControl.values.end ||
+          jogador.price < transferParameters.priceControl.values.start ||
+          jogador.price > transferParameters.priceControl.values.end ||
+          jogador.overall < transferParameters.ovrControl.values.start ||
+          jogador.overall > transferParameters.ovrControl.values.end;
+    });
 
-    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).price < transferParameters.priceControl.values.start);
+    return copyJogadoresID;
 
-    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).price > transferParameters.priceControl.values.end);
+  }
 
-    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).overall < transferParameters.ovrControl.values.start);
+  resetPage(){
 
-    copyJogadoresID.removeWhere((playerID) => Jogador(index: playerID).overall > transferParameters.ovrControl.values.end);
+    if (searchString.isNotEmpty) {
+      transferParameters.page = 0;
+    } else {
+      resetCopyLists();
+    }
 
   }
 }

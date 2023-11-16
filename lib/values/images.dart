@@ -23,7 +23,7 @@ class FIFAImages{
     map[l.alemanha2] = 'bundesliga2';
     map[l.portugal] = 'portugal league';
     map[l.holanda] = 'eredivisie';
-    map[l.turquiaGrecia] = 'turquia';
+    map[l.turquia] = 'turquia';
     map[l.ligaEuropa] = 'liga1';
     map[l.lesteEuropeu] = 'leste';
     map[l.brasil1] = 'brasil a';
@@ -1286,6 +1286,8 @@ String imageLogo(String timeFoto) {
     map[_name.orlando] = 'orlando';
     map[_name.portland] = 'portland';
     map[_name.seattle] = 'seattle';
+    map[_name.stlouiscity] = 'st louis';
+    map[_name.nycosmos] = 'ny cosmos';
     map[_name.intermiami] = 'miami';
     map[_name.philadelphia] = 'philadelphia';
     map[_name.toronto] = 'toronto';

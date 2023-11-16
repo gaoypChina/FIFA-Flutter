@@ -17,7 +17,7 @@ Color colorBackgroundNationalTable(int position, League league, String teamName)
   backgroundColor = colorLeague(leagueName,n.alemanha1, n.championsLeague, position, backgroundColor);
   backgroundColor = colorLeague(leagueName,n.portugal, n.championsLeague, position, backgroundColor);
   backgroundColor = colorLeague(leagueName,n.holanda, n.championsLeague, position, backgroundColor);
-  backgroundColor = colorLeague(leagueName,n.turquiaGrecia, n.championsLeague, position, backgroundColor);
+  backgroundColor = colorLeague(leagueName,n.turquia, n.championsLeague, position, backgroundColor);
   backgroundColor = colorLeague(leagueName,n.ligaEuropa, n.championsLeague, position, backgroundColor);
   backgroundColor = colorLeague(leagueName,n.lesteEuropeu, n.championsLeague, position, backgroundColor);
 
@@ -35,7 +35,7 @@ Color colorBackgroundNationalTable(int position, League league, String teamName)
   backgroundColor = colorLeague(leagueName,n.alemanha1, n.europaLeagueOficial, position, backgroundColor);
   backgroundColor = colorLeague(leagueName,n.portugal, n.europaLeagueOficial, position, backgroundColor);
   backgroundColor = colorLeague(leagueName,n.holanda, n.europaLeagueOficial, position, backgroundColor);
-  backgroundColor = colorLeague(leagueName,n.turquiaGrecia, n.europaLeagueOficial, position, backgroundColor);
+  backgroundColor = colorLeague(leagueName,n.turquia, n.europaLeagueOficial, position, backgroundColor);
   backgroundColor = colorLeague(leagueName,n.ligaEuropa, n.europaLeagueOficial, position, backgroundColor);
   backgroundColor = colorLeague(leagueName,n.lesteEuropeu, n.europaLeagueOficial, position, backgroundColor);
 

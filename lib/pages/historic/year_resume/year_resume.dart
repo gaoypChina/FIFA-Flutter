@@ -8,6 +8,7 @@ import 'package:fifa/classes/my.dart';
 import 'package:fifa/global_variables.dart';
 import 'package:fifa/pages/historic/year_resume/widgets/current_leagues_resume.dart';
 import 'package:fifa/theme/colors.dart';
+import 'package:fifa/theme/custom_toast.dart';
 import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/clubs_all_names_list.dart';
 import 'package:fifa/values/historic_champions/historic_champions.dart';
@@ -29,6 +30,8 @@ class _YearResumeState extends State<YearResume> {
 
   List<String> possibleYears = [];
   String selectedYear = anoInicial.toString();
+  Map results = {};
+  Map resultsCup = {};
   ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
 ////////////////////////////////////////////////////////////////////////////
@@ -39,12 +42,65 @@ class _YearResumeState extends State<YearResume> {
     }
     super.initState();
   }
+  Future getClassificationNames() async{
+    for(String leagueName in LeagueOfficialNames().getAllLeagueNames()){
+      customToast("Loading $leagueName");
+      await hasHistoric(leagueName);
+    }
+    setState((){});
+  }
+  Future hasHistoric(String leagueName) async{
+    List classificationNames = [];
+    try {
+      Map map = await mapChampions(leagueName);
+      classificationNames = map[double.parse(selectedYear)];
+      results[leagueName] = classificationNames;
+    }catch(e){
+      //print('LIGA $leagueName não tem histórico de classificação nesse ano);
+    }
+
+    //CUP WINNERS
+    List<String> cupClassification = [];
+    try {
+      if(Divisions().is1stDivision(leagueName)) {
+        String cupName = getCup(leagueName);
+        Map map = await mapChampions(cupName);
+        cupClassification = map[double.parse(selectedYear)];
+        results[cupName] = cupClassification;
+      }
+    }catch(e){
+      //print('COPA $leagueName não tem histórico de classificação nesse ano);
+    }
+
+  }
+  Future<List> internChampions(String internationalLeagueName) async{
+    late String team1;
+    late String team2;
+    late List clubsID;
+
+    if(int.parse(selectedYear) > anoInicial) {
+      clubsID = HistoricChampionsLeague().getFinalClubsIDOrdered(int.parse(selectedYear), internationalLeagueName);
+      team1 = clubsAllNameList[clubsID[0]];
+      team2 = clubsAllNameList[clubsID[1]];
+    }else{
+      try {
+        Map allClassifications = await mapChampions(internationalLeagueName);
+        clubsID = allClassifications[double.parse(selectedYear)];
+        team1 = clubsID[0];
+        team2 = clubsID[1];
+      }catch(e){
+        //
+      }
+    }
+    return [team1, team2];
+  }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
 
   @override
   Widget build(BuildContext context) {
+    print(results);
     return Scaffold(
       body: Stack(
         children: [
@@ -55,10 +111,10 @@ class _YearResumeState extends State<YearResume> {
 
               appBar(),
 
-              int.parse(selectedYear) < anoInicial ?  SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: internationalChampionsSelection(),
-                ) : Container(),
+              //int.parse(selectedYear) < anoInicial ?  SingleChildScrollView(
+              //    scrollDirection: Axis.horizontal,
+              //    child: internationalChampionsSelection(),
+              //  ) : Container(),
 
 
 
@@ -78,8 +134,8 @@ class _YearResumeState extends State<YearResume> {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      for(String leagueName in LeagueOfficialNames().getAllLeagueNames())
-                        leagueHistoric(leagueName)
+                      for(String leagueName in results.keys)
+                        leagueHistoric(leagueName, results[leagueName], results)
                     ],
                   ),
                 ),
@@ -112,8 +168,9 @@ class _YearResumeState extends State<YearResume> {
             child: dropDownButton(
                 selectedYearStr: selectedYear,
                 possibleYears: possibleYears,
-                setStateFunc: (value){
+                setStateFunc: (value) async{
                   selectedYear = value.toString();
+                  await getClassificationNames();
                   setState(() {});
                 }),
           ),
@@ -123,30 +180,16 @@ class _YearResumeState extends State<YearResume> {
     );
   }
 
-  Widget leagueHistoric(String leagueName){
-    List classificationNames = [];
-    try {
-      classificationNames = mapChampions(leagueName)[double.parse(selectedYear)];
-      if(classificationNames.isEmpty){
-        //SE naquele ano a liga nao tem times no historico
-        return Container();
-      }
-    }catch(e){
-      //print('LIGA $leagueName não tem histórico de classificação nesse ano);
-      return Container();
-    }
-
-    //CUP WINNERS
-    List<String> cupClassification = [];
+  Widget leagueHistoric(String leagueName, List classificationNames, Map results) {
+    String countryName = getCountryFromLeague(leagueName);
+    List cupClassification = [];
     try {
       if(Divisions().is1stDivision(leagueName)){
-        String cupName = getCup(leagueName);
-        cupClassification = mapChampions(cupName)[double.parse(selectedYear)];
+        cupClassification = results[getCup(leagueName)];
       }
     }catch(e){
-      //print('COPA $leagueName não tem histórico de classificação nesse ano);
+      cupClassification = [];
     }
-    String countryName = getCountryFromLeague(leagueName);
 
     return Container(
       margin: const EdgeInsets.all(4),
@@ -198,7 +241,9 @@ class _YearResumeState extends State<YearResume> {
 
 
 Widget internationalChampionsSelection(){
-  LeagueOfficialNames leagueOfficialNames = LeagueOfficialNames();
+
+    LeagueOfficialNames leagueOfficialNames = LeagueOfficialNames();
+
   return Container(
     color: AppColors().greyTransparent,
     width: Sized(context).width,
@@ -242,39 +287,19 @@ Widget internationalChampionsSelection(){
 }
 Widget internationalChampionsWidgetDetail(String internationalLeagueName){
 
-    late String team1;
-    late String team2;
-    late List clubsID;
-
-    if(int.parse(selectedYear) > anoInicial) {
-       clubsID = HistoricChampionsLeague().getFinalClubsIDOrdered(int.parse(selectedYear), internationalLeagueName);
-      team1 = clubsAllNameList[clubsID[0]];
-      team2 = clubsAllNameList[clubsID[1]];
-    }else{
-      try {
-        Map allClassifications = mapChampions(internationalLeagueName);
-        clubsID = allClassifications[double.parse(selectedYear)];
-        team1 = clubsID[0];
-        team2 = clubsID[1];
-      }catch(e){
-        return Container();
-      }
-    }
-
-
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 4),
     child: GestureDetector(
       onTap: (){
-        bottomSheetShowLeagueClassification(context, clubsID, internationalLeagueName);
+        //bottomSheetShowLeagueClassification(context, clubsID, internationalLeagueName);
       },
       child: Column(
           children: [
             Images().getLeagueLogo(internationalLeagueName, 40, 40),
             const SizedBox(height: 8),
-            Images().getEscudoWidget(team1,40,40),
+            //Images().getEscudoWidget(team1,40,40),
             const SizedBox(height: 4),
-            Images().getEscudoWidget(team2,20,20),
+            //Images().getEscudoWidget(team2,20,20),
           ],
         ),
     ),

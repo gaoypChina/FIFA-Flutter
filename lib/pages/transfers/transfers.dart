@@ -38,6 +38,7 @@ class _TransfersState extends State<Transfers> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
+    customToast("Organizing Overall");
     filterPlayers.setOverall();
     super.initState();
   }

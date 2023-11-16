@@ -44,7 +44,7 @@ class FimDoCampeonatoLocal{
     setGloballyClubs(leagueClass, leagueName.championsLeague, clubIndexes, leagueName.franca1, 4);
     setGloballyClubs(leagueClass, leagueName.championsLeague, clubIndexes, leagueName.portugal, 2);
     setGloballyClubs(leagueClass, leagueName.championsLeague, clubIndexes, leagueName.holanda, 2);
-    setGloballyClubs(leagueClass, leagueName.championsLeague, clubIndexes, leagueName.turquiaGrecia, 2);
+    setGloballyClubs(leagueClass, leagueName.championsLeague, clubIndexes, leagueName.turquia, 2);
     setGloballyClubs(leagueClass, leagueName.championsLeague, clubIndexes, leagueName.ligaEuropa, 3);
     setGloballyClubs(leagueClass, leagueName.championsLeague, clubIndexes, leagueName.lesteEuropeu, 3);
   }
@@ -153,7 +153,7 @@ class FimDoCampeonatoLocal{
     setGloballyClubs(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.franca1, 3);
     setGloballyClubs(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.portugal, 2);
     setGloballyClubs(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.holanda, 2);
-    setGloballyClubs(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.turquiaGrecia, 3);
+    setGloballyClubs(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.turquia, 3);
     setGloballyClubs(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.ligaEuropa, 5);
     setGloballyClubs(leagueClass, leagueName.europaLeagueOficial, clubIndexes, leagueName.lesteEuropeu, 5);
 

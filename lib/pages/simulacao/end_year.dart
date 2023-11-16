@@ -100,7 +100,7 @@ class _EndYearState extends State<EndYear> {
                   ),
 
                 ],
-              ) : loader(),
+              ) : loaderCircle(),
 
             ]
         )

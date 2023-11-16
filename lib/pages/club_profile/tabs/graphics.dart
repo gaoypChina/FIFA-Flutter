@@ -40,8 +40,12 @@ class _ClubGraphicsState extends State<ClubGraphics> {
 ////////////////////////////////////////////////////////////////////////////
   @override
   void initState() {
-    dataGraphics.getData(widget.club);
+    init();
     super.initState();
+  }
+  init() async{
+    await dataGraphics.getData(widget.club);
+    setState((){});
   }
 
 ////////////////////////////////////////////////////////////////////////////

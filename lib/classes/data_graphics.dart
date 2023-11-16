@@ -4,6 +4,7 @@ import 'package:fifa/classes/historic/historic_club_year.dart';
 import 'package:fifa/classes/historic/historic_champions_league.dart';
 import 'package:fifa/classes/countries/countries_continents.dart';
 import 'package:fifa/global_variables.dart';
+import 'package:fifa/values/club_details.dart';
 import 'package:fifa/values/historic_champions/historic_champions.dart';
 import 'package:fifa/values/league_divisions.dart';
 import 'package:fifa/values/league_names.dart';
@@ -78,7 +79,11 @@ class DataGraphics{
   //TOTAL
   double pointsTotal = 0;
 
-  void getDataNotPlayabale(String clubName, String country, [String state = '']){
+  Future getDataNotPlayabale(String clubName, ClubDetails clubDetails) async{
+
+    String country = clubDetails.getCountry(clubName);
+    String state = clubDetails.getState(clubName);
+
     //GET LEAGUE NAME
     Map leagueNationality = getLeagueNationalityMap();
     leagueNationality.forEach((key, value) {
@@ -92,7 +97,7 @@ class DataGraphics{
     internationalLeagueName = getInternationalLeagueFromContinent(continent);
 
     //historico de campeoes ligas
-    defineHistoricClassification(clubName,leagueName);
+    await defineHistoricClassification(clubName,leagueName);
 
     averagePosition10years = averagePositionCount(data.take(10).toList());
     averagePosition5years = averagePositionCount(data.take(5).toList());
@@ -110,21 +115,22 @@ class DataGraphics{
 
 
     //historico internacional
-    defineHistoricInternational(clubName, internationalLeagueName);
+    await defineHistoricInternational(clubName, internationalLeagueName);
     participationsInternational();
     calculatePointsInternational();
 
     //historico mundial
-    defineHistoricMundial(clubName);
+    await defineHistoricMundial(clubName);
     pointsTotal = pointsNational + pointsInternational + pointsmundial;
+
   }
-  void getData(Club club){
+  Future getData(Club club) async{
     //Posição Ano Atual
     currentPosition = Classification(leagueIndex: club.leagueID).getClubPosition(club.index);
     //novas temporadas ligas
     defineSimulationClassification(club);
     //historico de campeoes ligas
-    defineHistoricClassification(club.name,club.leagueName);
+    await defineHistoricClassification(club.name, club.leagueName);
 
     averagePosition10years = averagePositionCount(data.take(10).toList());
     averagePosition5years = averagePositionCount(data.take(5).toList());
@@ -138,14 +144,13 @@ class DataGraphics{
 
     //historico internacional
     defineSimulationClassificationInternational(club);
-    defineHistoricInternational(club.name,club.internationalLeagueName);
+    await defineHistoricInternational(club.name,club.internationalLeagueName);
     participationsInternational();
     calculatePointsInternational();
 
     //historico mundial
-    defineHistoricMundial(club.name);
+    await defineHistoricMundial(club.name);
     pointsTotal = pointsNational+pointsInternational+pointsmundial;
-
   }
 
 
@@ -164,7 +169,7 @@ class DataGraphics{
       }
     }
   }
-  void defineHistoricClassification(String clubName, String leaguename){
+  Future defineHistoricClassification(String clubName, String leaguename) async{
 
     //NOME DAS DIVISÕES
     List<String> divisionLeagueNames = Divisions().leagueDivisionsStructure(leaguename);
@@ -173,7 +178,8 @@ class DataGraphics{
     //MAPA COM O HISTÓRICO DE CLASSIFICAÇÃO DE CADA DIVISÃO
     List<Map<double,dynamic>> listDivisionsHistoricResults = [];
     for( String division in divisionLeagueNames){
-        listDivisionsHistoricResults.add(mapChampions(division));
+        Map<double, dynamic> mapClassifications = await mapChampions(division);
+        listDivisionsHistoricResults.add(mapClassifications);
     }
 
     //PARA CADA ANO VERIFICA SE O TIME PERTENCE A AQUELA DIVISÃO
@@ -280,12 +286,13 @@ class DataGraphics{
   /////////////////////////////////////////////////////////////////////////////
   // ESTADUAL
   ////////////////////////////////////////////////////////////////////////////
-  void defineHistoricEstadual(String clubName, String state){
+  void defineHistoricEstadual(String clubName, String state) async{
     String stateLeague = getLeagueNationalityMap().keys.firstWhere((k) => getLeagueNationalityMap()[k] == state, orElse: () => null);
 
     //para cada ano
-    for(var keyYear in mapChampions(stateLeague).keys) {
-      List classificationNames = mapChampions(stateLeague)[keyYear];
+    Map mapClassifications = await mapChampions(stateLeague);
+    for(var keyYear in mapClassifications.keys) {
+      List classificationNames = mapClassifications[keyYear];
       //verifica se naquele ano tem o time
       int position = 10;
       if(classificationNames.contains(clubName)){
@@ -309,12 +316,13 @@ class DataGraphics{
   /////////////////////////////////////////////////////////////////////////////
   // COPAS
   ////////////////////////////////////////////////////////////////////////////
-  void defineHistoricCups(String clubName){
+  void defineHistoricCups(String clubName) async{
     cupName = getCup(leagueName);
 
     //para cada ano
-    for(var keyYear in mapChampions(cupName).keys) {
-      List classificationNames = mapChampions(cupName)[keyYear];
+    Map mapClassifications = await mapChampions(cupName);
+    for(var keyYear in mapClassifications.keys) {
+      List classificationNames = mapClassifications[keyYear];
       //verifica se naquele ano tem o time
       int position = 10;
       if(classificationNames.contains(clubName)){
@@ -351,11 +359,12 @@ class DataGraphics{
     }
   }
 
-  void defineHistoricInternational(String clubName, String internationalLeagueName){
+  Future defineHistoricInternational(String clubName, String internationalLeagueName) async{
 
     //para cada ano
-    for(var keyYear in mapChampions(internationalLeagueName).keys) {
-      List classificationNames = mapChampions(internationalLeagueName)[keyYear];
+    Map mapClassifications = await mapChampions(internationalLeagueName);
+    for(var keyYear in mapClassifications.keys) {
+      List classificationNames = mapClassifications[keyYear];
       //verifica se naquele ano tem o time
       int position = 33;
       if(classificationNames.contains(clubName)){
@@ -417,11 +426,12 @@ class DataGraphics{
 /////////////////////////////////////////////////////////////////////////////
 // MUNDIAL
 ////////////////////////////////////////////////////////////////////////////
-  void defineHistoricMundial(String clubName){
+  Future defineHistoricMundial(String clubName) async{
     pointsmundial = 0;
     //para cada ano
-    for(var keyYear in mapChampions(LeagueOfficialNames().mundial).keys) {
-      List classificationNames = mapChampions(LeagueOfficialNames().mundial)[keyYear];
+    Map mapClassifications = await mapChampions(LeagueOfficialNames().mundial);
+    for(var keyYear in mapClassifications.keys) {
+      List classificationNames = mapClassifications[keyYear];
       //verifica se naquele ano tem o time
 
       int position = 8;

@@ -19,7 +19,7 @@ String getTrophyImage(String leagueName){
     l.franca2: 'trophyligue1',
     l.portugal: 'trophyportugal',
     l.holanda: 'trophynetherlands',
-    l.turquiaGrecia: 'trophyturquia',
+    l.turquia: 'trophyturquia',
     l.ligaEuropa: 'trophyeuropaleague',
     l.lesteEuropeu: 'trophyrussia',
     l.brasil1: 'trophybrasileirao',

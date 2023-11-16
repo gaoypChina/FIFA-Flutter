@@ -56,16 +56,21 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
 
   }
 
+  Future<DataGraphics> loadClubData(String clubName) async{
+    DataGraphics dataGraphics = DataGraphics();
+    await dataGraphics.getDataNotPlayabale(clubName, clubDetails);
+    return dataGraphics;
+  }
 ////////////////////////////////////////////////////////////////////////////
 //                               BUILD                                    //
 ////////////////////////////////////////////////////////////////////////////
   @override
   Widget build(BuildContext context) {
+
     //Filtra os clubes do país
     Iterable keysIterable = clubDetails.map.keys;
     Iterable showList = keysIterable.where((clubName) => selectedCountry == clubDetails.getCountry(clubName));
     showList = showList.where((clubName) => clubDetails.getCoordinate(clubName).latitude != 0);
-
 
     return Scaffold(
       body: Stack(
@@ -83,13 +88,32 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
 
               Expanded(
                 child: Scrollbar(
-                  child: ListView.builder(
-                      padding: EdgeInsets.zero,
-                      itemCount: showList.length,
-                      itemBuilder: (c,i) => clubRow(showList.elementAt(i), clubDetails)
+                  child: FutureBuilder<List<DataGraphics>>(
+                    future: Future.wait(showList.map((clubName) => loadClubData(clubName))),
+                    builder: (context, snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      } else if (snapshot.hasError) {
+                        return Text('Error: ${snapshot.error}');
+                      } else {
+                        List<DataGraphics> dataGraphicsList = snapshot.data!;
+                        return ListView.builder(
+                          padding: EdgeInsets.zero,
+                          itemCount: dataGraphicsList.length,
+                          itemBuilder: (context, index) {
+                            DataGraphics dataGraphics = dataGraphicsList[index];
+                            // Create your custom widget to display the club data
+                            return clubRow(showList.elementAt(index), clubDetails, dataGraphics);
+                          },
+                        );
+                      }
+                    },
                   ),
                 ),
               ),
+
 
               selectCountryRow(),
 
@@ -132,10 +156,8 @@ class _MapListAllClubsState extends State<MapListAllClubs> {
       ],
     );
   }
-  Widget clubRow(String clubName, ClubDetails clubDetails){
+  Widget clubRow(String clubName, ClubDetails clubDetails,DataGraphics dataGraphics){
 
-    DataGraphics dataGraphics = DataGraphics();
-    dataGraphics.getDataNotPlayabale(clubName, clubDetails.getCountry(clubName), clubDetails.getState(clubName));
 
     return PressableButton(
       onTap: (){

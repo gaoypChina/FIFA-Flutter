@@ -308,7 +308,7 @@ class _MapExplorationState extends State<MapExploration> {
   Widget bottomSheetClub(Club club, String city) {
 
     DataGraphics dataGraphics = DataGraphics();
-    dataGraphics.getDataNotPlayabale(club.name, ClubDetails().getCountry(club.name), ClubDetails().getState(club.name));
+    dataGraphics.getDataNotPlayabale(club.name, ClubDetails());
 
     return GestureDetector(
       onTap: () async{
@@ -373,7 +373,7 @@ class _MapExplorationState extends State<MapExploration> {
   bottomSheetGenericClub(String clubName, String city){
 
     DataGraphics dataGraphics = DataGraphics();
-    dataGraphics.getDataNotPlayabale(clubName, ClubDetails().getCountry(clubName), ClubDetails().getState(clubName));
+    dataGraphics.getDataNotPlayabale(clubName, ClubDetails());
 
     return GestureDetector(
       onTap: () {

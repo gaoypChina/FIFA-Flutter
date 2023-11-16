@@ -34,6 +34,7 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
   bool isLoaded = false;
   bool isMataMata = true;
   bool isList = false;
+  Map mapClassifications = {};
 
 ////////////////////////////////////////////////////////////////////////////
 //                               INIT                                     //
@@ -41,6 +42,9 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
   @override
   void initState() {
     initialSelectedYear();
+    init();
+    isLoaded = true;
+    setState(() {});
     super.initState();
   }
 
@@ -48,8 +52,9 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
     if (ano <= anoInicial) {
       selectedYear = (anoInicial - 1).toString();
     }
-    isLoaded = true;
-    setState(() {});
+  }
+  init() async{
+    mapClassifications = await mapChampions(leagueInternational);
   }
 
 ////////////////////////////////////////////////////////////////////////////
@@ -58,8 +63,8 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
   @override
   Widget build(BuildContext context) {
     possibleYears = [];
-    Iterable<double> yearsKeys = mapChampions(leagueInternational).keys;
-    for (int year = 0; year <mapChampions(leagueInternational).length; year++) {
+    Iterable yearsKeys = mapClassifications.keys;
+    for (int year = 0; year < mapClassifications.length; year++) {
       possibleYears.add((year + yearsKeys.last.toInt()).toString());
     }
     for (int year = anoInicial; year < ano; year++) {
@@ -94,8 +99,8 @@ class _InternationalHistoricState extends State<InternationalHistoric> {
                     ),
                   ),
                 ),
-              ) : wInternationalHistoricColumn(context, leagueInternational, int.parse(selectedYear))
-                  : wListViewChampions(context, leagueInternational),
+              ) : wInternationalHistoricColumn(context, leagueInternational, mapClassifications, int.parse(selectedYear))
+                  : wListViewChampions(context, leagueInternational, mapClassifications),
 
 
               Container(
