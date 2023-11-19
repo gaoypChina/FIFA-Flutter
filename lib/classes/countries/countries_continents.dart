@@ -10,6 +10,10 @@ class Continents{
   String oceania = 'Oceania';
   String notExist = 'World';
 
+  listContinents(){
+    return [americaSul, americaNorte, europa, asia, africa, oceania];
+  }
+
   funcCountryContinents(String country){
 
     Map continentMap = {

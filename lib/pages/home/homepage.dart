@@ -10,7 +10,7 @@ import 'package:fifa/pages/map/choose_continent_page.dart';
 import 'package:fifa/pages/map/map_exploration.dart';
 import 'package:fifa/pages/save/choose_save.dart';
 import 'package:fifa/pages/tournament_mode/single_match.dart';
-import 'package:fifa/pages/tournament_mode/tournament.dart';
+import 'package:fifa/pages/tournament_mode/tourn1_type.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_names.dart';
 import 'package:fifa/values/league_clubs.dart';
@@ -91,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                       ),
 
                       buttonRow(
-                          "Friendly Match",
+                          "Single Match",
                           'assets/icons/home_match.png',
                           90,
                               (){navigatorPush(context, const SingleMatch());}
