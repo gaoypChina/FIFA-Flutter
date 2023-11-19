@@ -1048,7 +1048,7 @@ class ClubName{
   String halmstads = "Halmstads";
   String hacken = "Häcken";
   String halmia = "Halmia";
-  String helsingborg = "Helsingborg";
+  String helsingborg = "Helsingborgs";
   String hogadal = "Hogadal";
   String holmsund = "Holmsund";
   String jonkopings = "Jönköpings Södra";

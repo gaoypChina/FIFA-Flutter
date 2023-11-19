@@ -79,12 +79,15 @@ Map<int,String> weekRealDays = {
   48: "28/01",  49: "31/01",
 };
 
+
 //COPY
 List<String> clubsAllNameListCopy = [];
 List leaguesListRealIndexCopy = [];
 List leagueNamesCopy = [];
 
 //HISTORIC
+List<List<dynamic>> globalHistoricRealChampions = [];
+
 Map globalHistoricLeagueGoalsAll = {};
 Map globalHistoricLeagueGoalsLastRodada = {};
 

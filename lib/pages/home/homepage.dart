@@ -1,7 +1,9 @@
+import 'package:csv/csv.dart';
 import 'package:fifa/classes/click_navigator/click_club.dart';
 import 'package:fifa/classes/countries/words.dart';
 import 'package:fifa/classes/functions/size.dart';
 import 'package:fifa/classes/image_class.dart';
+import 'package:fifa/pages/historic/leagues_historic.dart';
 import 'package:fifa/pages/historic/real_classification.dart';
 import 'package:fifa/pages/home/choose_team.dart';
 import 'package:fifa/pages/map/choose_continent_page.dart';
@@ -12,8 +14,12 @@ import 'package:fifa/pages/tournament_mode/tournament.dart';
 import 'package:fifa/theme/textstyle.dart';
 import 'package:fifa/values/club_names.dart';
 import 'package:fifa/values/league_clubs.dart';
+import 'package:fifa/values/league_names.dart';
 import 'package:fifa/widgets/button/pressable_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+import '../../global_variables.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -39,6 +45,10 @@ class _HomePageState extends State<HomePage> {
   doThisOnLaunch() async {
     //RESETA LISTA ORIGINAL A MOSTRAR CLUBES
     clubNameMap = getCloneMap(clubNameMapImmutable); //Mapa sem mudar mapa original
+
+    final String raw = await rootBundle.loadString('assets/csv/classification.csv');
+    globalHistoricRealChampions = const CsvToListConverter().convert(raw);
+
   }
 
 ////////////////////////////////////////////////////////////////////////////
@@ -105,6 +115,13 @@ class _HomePageState extends State<HomePage> {
                           'assets/icons/home_clubs.png',
                           90,
                               (){navigatorPush(context, const ChooseContinentPage());}
+                      ),
+
+                      buttonRow(
+                          "Historic",
+                          'assets/icons/home_historic.png',
+                          90,
+                              (){navigatorPush(context, HistoricLeague(chosenLeagueName: LeagueOfficialNames().inglaterra1));}
                       ),
 
                       buttonRow(

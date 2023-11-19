@@ -25,15 +25,15 @@ class LeagueOfficialNames{
   String portugal = 'Liga Portugal Bwin'; String portugal2 = 'Liga Portugal 2 Bwin';
   String turquia = 'Liga Greco-Turca';
   String holanda = 'Eredivisie';
-  String austria = 'Liga Austriaca';
+  String austria = 'Austrian Football Bundesliga';
   String albania = 'Kategoria Superiore';
   String andorra = 'Primeira Divisió';
   String armenia = 'Armenian Premier League';
   String azerbaijao = 'Azerbaijan Premier League';
   String belgica = 'Jupiler Pro League';
-  String bulgaria = 'Liga Bulgaria';
+  String bulgaria = 'Parva Liga';
   String cazaquistao = 'Kazakhstan Premier League';
-  String belarus = 'Liga Belarus';
+  String belarus = 'Belarusian Premier League';
   String bosnia = 'Premier League of Bosnia';
   String chipre = 'Cypriot First Division';
   String croacia = 'Croatian Football League';
@@ -42,22 +42,22 @@ class LeagueOfficialNames{
   String eslovaquia = 'Slovak First Football League';
   String eslovenia = 'Slovenian PrvaLiga';
   String estonia = 'Meistriliiga';
-  String finlandia = 'LVeikkausliiga';
+  String finlandia = 'Veikkausliiga';
   String georgia = 'Erovnuli Liga';
-  String gibraltar = 'Liga Gibraltar';
+  String gibraltar = 'Gibraltar Premier Division';
   String grecia = 'Super League Greece';
   String hungria = 'Nemzeti Bajnokság';
-  String ilhasfaroe = 'Liga Ilhas Faroe';
+  String ilhasfaroe = 'Faroe Islands Premier League';
   String irlanda = 'Ireland Premier Division';
   String irlandanorte = 'NIFL Premiership';
-  String islandia = 'Liga Islandia';
-  String israel = 'Liga israel';
+  String islandia = 'Besta deild karla';
+  String israel = 'Israeli Premier League';
   String kosovo = 'Liga Kosovo';
   String letonia = 'Latvian Higher League';
   String liechtenstein = 'Liga Liechtenstein';
   String lituania = 'A Lyga';
-  String luxemburgo = 'Liga Luxemburgo';
-  String malta = 'String Maltese Premier League';
+  String luxemburgo = 'Luxembourg National Division';
+  String malta = 'Maltese Premier League';
   String macedonia = 'Macedonian First Football League';
   String moldova = 'Moldovan Super Liga';
   String montenegro = 'Montenegrin First League';
@@ -75,142 +75,197 @@ class LeagueOfficialNames{
 
   String ligaEuropa = 'Liga Europeia';  String lesteEuropeu = 'Leste Europeu';
 
-  String brasil1 = 'Brasileirão';  String brasil2 = 'Brasileirão - Série B';String brasil3 = 'Brasileirão - Série C';
-  String brasil4 = 'Brasileirão - Série D';
+  String brasil1 = 'Brasileirão';  String brasil2 = 'Brasileirão - Série B';
+  String brasil3 = 'Brasileirão - Série C'; String brasil4 = 'Brasileirão - Série D';
+
   String paulistao = 'Paulistão'; String carioca = 'Carioca'; String mineiro = 'Mineiro'; String es = 'Capixaba';
   String rs = 'Gaucho'; String parana = 'Paranaense'; String sc = 'Santa Catarina';
   String bahia = 'Bahiano';   String pernambuco = 'Pernambucano'; String ceara = 'Cearense';  String potiguar = 'Potiguar';
   String alagoas = 'Alagoano'; String paraiba = 'Paraibano'; String piaui = 'Piaui'; String maranhao = 'Maranhão'; String sergipe = 'Sergipe';
   String goias = 'Goias'; String df = 'Distrito Federal'; String mt = 'Mato Grosso'; String ms = 'Mato Grosso do Sul'; String to = 'Tocantins';
   String para = 'Para'; String amazonas = 'Amazonas'; String acre = 'Acre'; String amapa = 'Amapa';String rondonia = 'Rondônia';String roraima = 'Roraima';
+
   String argentina = 'Primera División';
   String mercosul = 'Mercosul';
   String merconorte = 'Merconorte';
-  String colombia = 'Merconorte';
-  String uruguai = 'Campeonato uruguaio';
-  String paraguai = 'Campeonato paraguaio';
-  String chile = 'Campeonato chileno';
-  String equador = 'Campeonato equatoriano';
-  String venezuela = 'Campeonato venezuelano';
-  String peru = 'Campeonato peruano';
-  String bolivia = 'Campeonato boliviano';
+  String colombia = 'Categoría Primera A';
+  String uruguai = 'Uruguayan Primera División';
+  String paraguai = 'Paraguayan Primera División';
+  String chile = 'Chilean Primera División';
+  String equador = 'Liga Pro';
+  String venezuela = 'Venezuelan Primera División';
+  String peru = 'Liga 1';
+  String bolivia = 'Bolivian Primera División';
 
-  String mexico = 'Liga MX';String estadosUnidos = 'MLS';String canada = 'Liga Canada';
-  String costarica = 'Liga Costa Rica';String honduras = 'Liga Honduras';String elsalvador = 'Liga El Salvador';
-  String nicaragua = 'Liga Nicaragua';String guatemala = 'Liga Guatemala';String panama = 'Liga Panamá';
-  String belize = 'Liga Belize';
-  String jamaica = 'Liga Jamaica';String cuba = 'Liga Cuba';String haiti = 'Liga Haiti';
+  String mexico = 'Liga MX';
+  String estadosUnidos = 'MLS';
+  String canada = 'Liga Canada';
+  String costarica = 'Liga FPD';
+  String honduras = 'Liga de Fútbol de Honduras';
+  String elsalvador = 'Primera División de El Salvador';
+  String nicaragua = 'Liga Primera de Nicaragua';
+  String guatemala = 'Liga de Fútbol de Guatemala';
+  String panama = 'Liga Panameña de Fútbol';
+  String belize = 'Premier League of Belize';
+  String jamaica = 'Jamaica Premier League';
+  String cuba = 'Campeonato de Fútbol de Cuba';
+  String haiti = 'Ligue Haïtienne';
   String repdominicana = 'Liga Rep. Dominicana';
-  String suriname = 'Liga Suriname';
-  String guiana = 'Liga Guiana';
-  String bahamas = 'Liga Bahamas';  String trinidad = 'Liga Trinidad';
-  String barbados = 'Liga Barbados'; String granada = 'Liga Granada';
+  String suriname = 'SVB Eerste Divisie';
+  String guiana = 'GFF National Super League';
+  String bahamas = 'BFA Senior League';
+  String trinidad = 'TT Premier League';
+  String barbados = 'Liga Barbados';
+  String granada = 'Liga Granada';
 
-  String asia = 'Liga Ásia';  String orienteMedio = 'Liga Oriente Médio';  String africa = 'Liga África';
+  String asia = 'Liga Ásia';
+  String orienteMedio = 'Liga Oriente Médio';
+  String africa = 'Liga África';
 
-  String china = 'Superliga Chinesa';
+  String china = 'Chinese Super League';
   String japao = 'J1-League';
-  String coreiaSul = 'K-League'; String coreiaNorte = 'Liga Coréia do Norte';
-  String arabia = 'Liga Arábia Saudita';
-  String uzbekistao = 'Liga Uzbekistao'; String tadjiquistao = 'Liga Tadjikistan';
-  String quirguistao = 'Liga Quirguistao'; String turcomenistao = 'Liga Turcomenistao';
-  String eau = 'Liga EAU';   String qatar = 'Liga Qatar';String bahrein = 'Liga Bahrein';
-  String iran = 'Liga Iran';   String iraque = 'Liga Iraque'; String kuwait = 'Liga Kuwait';
-  String jordania = 'Liga Jordânia'; String oman = 'Liga Oman';
-  String iemen = "Liga Iêmen";
-  String siria = 'Liga Síria'; String libano = 'Liga Líbano';
-  String india = 'Liga India'; String nepal = 'Liga Nepal'; String bangladesh = 'Liga Bangladesh';
-  String butao = 'Liga Butão'; String srilanka = "Liga Sri Lanka";
-  String tailandia = 'Liga Tailandia'; String vietna = 'Liga Vietnã'; String camboja = 'Liga Camboja';
-  String indonesia = 'Liga Indonesia'; String filipinas = 'Liga Filipinas'; String laos = 'Liga Laos';
-  String myanmar = 'Liga Myanmar';String maldivas = 'Liga Maldivas';
-  String malasia = 'Liga Malásia'; String cingapura = 'Liga Cingapura';
-  String paquistao = 'Liga Paquistão'; String afeganistao = 'Liga Afeganistao';
-  String palestina = 'Liga Palestina West Bank';String palestinagaza = 'Liga Palestina-Gaza';
-  String taiwan = 'Liga Taiwan'; String hongkong = 'Liga Hong Kong';
-  String brunei = 'Liga Brunei'; String mongolia = 'Liga Mongolia';
+  String coreiaSul = 'K-League';
+  String coreiaNorte = 'DPR Korea Football League';
+  String arabia = 'Saudi Premier League';
+  String uzbekistao = 'Uzbekistan Super League';
+  String tadjiquistao = 'Tajikistan Higher League';
+  String quirguistao = 'Kyrgyz Premier League';
+  String turcomenistao = 'Ýokary Liga';
+  String eau = 'UAE Pro League';
+  String qatar = 'Qatar Stars League';
+  String bahrein = 'Bahraini Premier League';
+  String iran = 'Persian Gulf Pro League';
+  String iraque = 'Iraqi Premier League';
+  String kuwait = 'Kuwaiti Premier League';
+  String jordania = 'Jordanian Pro League';
+  String oman = 'Oman Professional League';
+  String iemen = "Yemeni League";
+  String siria = 'Syrian Premier League';
+  String libano = 'Lebanese Premier League';
+  String india = 'Indian Super League';
+  String nepal = 'Nepal Super League';
+  String bangladesh = 'Bangladesh Premier League';
+  String butao = 'Bhutan Premier League';
+  String srilanka = "Sri Lanka Premier League";
+  String tailandia = 'Thai League 1';
+  String vietna = 'V.League 1';
+  String camboja = 'Cambodian Premier League';
+  String indonesia = 'Liga 1 (Indonesia)';
+  String filipinas = 'Philippines Football League';
+  String laos = 'Lao League';
+  String myanmar = 'Myanmar National League';
+  String maldivas = 'Premier League Dhivehi';
+  String malasia = 'Malaysia Super League';
+  String cingapura = 'Singapore Premier League';
+  String paquistao = 'Pakistan Premier League';
+  String afeganistao = 'Afghan Premier League';
+  String palestina = 'Liga Palestina West Bank';
+  String palestinagaza = 'Liga Palestina-Gaza';
+  String taiwan = 'Taiwan Premier League';
+  String hongkong = 'Hong Kong Premier League';
+  String brunei = 'Brunei Super League';
+  String mongolia = 'Mongolian Premier League';
 
-  String egito = 'Liga Egito';
-  String argelia = 'Liga Argelia';
-  String libia = 'Liga Libia';
-  String marrocos = 'Liga Marrocos';
-  String tunisia = 'Liga Tunisia';
-  String angola = 'Liga Angola';
-  String benin = 'Liga Benin';
-  String botswana = 'Liga Botswana';
-  String burundi = 'Liga Burundi';
-  String burkina = 'Liga Burkina Faso';
-  String caboverde = 'Liga Cabo Verde';
-  String camaroes = 'Liga Camaroes';
-  String centralAfrica = 'Liga Rep. Centro-Africana';
-  String chade = 'Liga Chade';
-  String comores = 'Liga Comores';
+  String egito = 'Egyptian Premier League';
+  String argelia = 'Algerian Ligue Professionnelle';
+  String libia = 'Libyan Premier League';
+  String marrocos = 'Botola Pro';
+  String tunisia = 'Tunisian Ligue Professionnelle';
+  String angola = 'Girabola';
+  String benin = 'Benin Premier League';
+  String botswana = 'Botswana Premier League';
+  String burundi = 'Burundi Ligue A';
+  String burkina = 'Burkinabé Premier League';
+  String caboverde = 'Cape Verdean Football Championship';
+  String camaroes = 'Elite One Cameroun';
+  String centralafrica = 'Central African Republic League';
+  String chade = 'Chad Premier League';
+  String comores = 'Comoros Premier League';
   String congo = 'Liga Congo';
-  String congoRD = 'Liga RDCongo';
-  String costamarfim = 'Liga Costa do Marfim';
-  String djibouti = 'Liga Djibouti';
-  String etiopia = 'Liga Etiópia';
-  String eritreia = 'Liga Eritréia';
-  String gabao = 'Liga Gabão';
-  String gana = 'Liga Gana';
-  String gambia = 'Liga Gambia';
+  String congoRD = 'Linafoot';
+  String costamarfim = "Ligue 1 Côte d'Ivoire";
+  String djibouti = 'Djibouti Premier League';
+  String etiopia = 'Ethiopian Premier League';
+  String eritreia = 'Eritrean Premier League';
+  String gabao = 'Gabon Championnat National D1';
+  String gana = 'Ghana Premier League';
+  String gambia = 'GFA League First Division';
   String guine = 'Liga Guiné';
-  String guineequatorial = 'Liga Guiné-Equatorial';
-  String guinebissau = 'Liga Guiné-Bissau';
-  String lesoto = 'Liga Lesoto';
-  String liberia = 'Liga Libéria';
-  String madagascar = 'Liga Madagascar';
-  String malawi = 'Liga Malawi';
-  String mali = 'Liga Mali';
-  String mauritania = 'Liga Mauritânia';
-  String mauricio = 'Liga Ilhas Maurício';
-  String mocambique = 'Liga Mocambique';
-  String namibia = 'Liga Namíbia';
-  String niger = 'Liga Níger';
-  String nigeria = 'Liga Nigeria';
-  String quenia = 'Liga Quênia';
-  String ruanda = 'Liga Ruanda';
-  String saotome = 'Liga São Tomé e Príncipe';
-  String serraleoa = 'Liga Serra Leoa';
-  String senegal = 'Liga Senegal';
-  String seychelles = 'Liga Seychelles';
-  String somalia = 'Liga Somália';
-  String sudao = 'Liga Sudão';
-  String sudaosul = 'Liga Sudão Sul';
-  String eswatini = 'Liga Eswatini';
-  String tanzania = 'Liga Tanzania';
-  String togo = 'Liga Togo';
-  String uganda = 'Liga Uganda';
-  String zambia = 'Liga Zambia';
-  String zimbabwe = 'Liga Zimbabwe';
-  String africaSul = 'Liga África do Sul';
+  String guineequatorial = 'Equatoguinean Primera División';
+  String guinebissau = 'Campeonato da Guiné-Bissau';
+  String lesoto = 'Lesotho Premier League';
+  String liberia = 'Liberian First Division';
+  String madagascar = 'Malagasy Pro League';
+  String malawi = 'Super League of Malawi';
+  String mali = 'Malian Première Division';
+  String mauritania = 'Super D1';
+  String mauricio = 'Mauritian Premier League';
+  String mocambique = 'Moçambola';
+  String namibia = 'Namibia Premier League';
+  String niger = 'Super Ligue (Niger)';
+  String nigeria = 'Nigeria Football League';
+  String quenia = 'Kenyan Premier League';
+  String ruanda = 'Rwanda Premier League';
+  String saotome = 'São Tomé and Príncipe Championship';
+  String serraleoa = 'Sierra Leone Premier League';
+  String senegal = 'Ligue 1 (Senegal)';
+  String seychelles = 'Seychelles Premier League';
+  String somalia = 'Somali First Division';
+  String sudao = 'Sudan Premier League';
+  String sudaosul = 'South Sudan Premier League';
+  String eswatini = 'Premier League of Eswatini';
+  String tanzania = 'Tanzanian Premier League';
+  String togo = 'Togolese Championnat National';
+  String uganda = 'Uganda Premier League';
+  String zambia = 'Zambia Super League';
+  String zimbabwe = 'Zimbabwe Premier Soccer League';
+  String africasul = 'South African Premier Division';
 
   String australia = 'A-League';
-  String novazelandia = 'Liga Nova Zelândia';
-  String fiji = 'Liga Fiji';
-  String papua = 'Liga Papua';
-  String samoa = 'Liga Samoa';
-  String taiti = 'Liga Tahiti';
-  String timor = 'Liga Timor-Leste';
+  String novazelandia = 'New Zealand National League';
+  String fiji = 'Fiji Premier League';
+  String kiribati = 'Kiribati National Championship';
+  String micronesia = 'Micronesia League';
+  String nauru = 'Nauru League';
+  String palau = 'Palau Soccer League';
+  String papua = 'Papua New Guinea Soccer League';
+  String solomonislands = 'Telekom S-League';
+  String samoa = 'Samoa National League';
+  String tonga = 'Tonga Major League';
+  String taiti = 'Tahiti Ligue 1';
+  String timor = 'Liga Futebol Timor-Leste';
+  String tuvalu = 'Tuvalu A-Division';
+  String vanuatu = 'Port Vila Football League';
 
   String outros = 'Outros';
   String outros2 = 'Outros2';
   String lendas = 'Liga Lendas';
 
   //COPAS
-  String englandCup = 'FA Cup';String italyCup = 'Coppa Italia';String spainCup = 'Copa del Rey';
-  String germanyCup = 'DFB Pokal';String franceCup = 'Coupe de France';
-  String portugalCup = 'Taça de Portugal';String turkeyCup = 'Turkiye Kupasi';
-  String russiaCup = 'Russian Cup'; String netherlandsCup = 'Copa KNVB';
-  String belgiumCup = 'Belgian Cup'; String scotlandCup = 'Scottish Cup';
-  String ligaEuropaCup = 'Copa da Europa';String eastEuropeCup = 'Leste Europeu Copa';
+  String englandCup = 'FA Cup';
+  String italyCup = 'Coppa Italia';
+  String spainCup = 'Copa del Rey';
+  String germanyCup = 'DFB Pokal';
+  String franceCup = 'Coupe de France';
+  String portugalCup = 'Taça de Portugal';
+  String turkeyCup = 'Turkiye Kupasi';
+  String russiaCup = 'Russian Cup';
+  String netherlandsCup = 'Copa KNVB';
+  String belgiumCup = 'Belgian Cup';
+  String scotlandCup = 'Scottish Cup';
+  String ligaEuropaCup = 'Copa da Europa';
+  String eastEuropeCup = 'Leste Europeu Copa';
 
-  String brazilCup = 'Copa do Brasil';String argentinaCup = 'Copa Argentina';
-  String mercosulCup = 'Copa America';String merconorteCup = 'Copa Merconorte';
+  String brazilCup = 'Copa do Brasil';
+  String argentinaCup = 'Copa Argentina';
+  String mercosulCup = 'Copa America';
+  String merconorteCup = 'Copa Merconorte';
   String colombiaCup = 'Copa Colombia';
 
-  String mexicoCup = 'Copa MX';String usaCup = 'MLS Cup';
-  String asiaCup = 'Asia Cup';String africaCup = 'África Cup';
+  String mexicoCup = 'Copa MX';
+  String usaCup = 'MLS Cup';
+  String asiaCup = 'Asia Cup';
+  String africaCup = 'África Cup';
   String othersCup = 'Outros Cup';
   String othersCup2 = 'Outros Cup 2';
   String lendasCup = 'Lendas Cup';
@@ -295,8 +350,8 @@ class LeagueOfficialNames{
       australia, fiji, novazelandia, taiti,
 
       argelia, egito, libia, marrocos, tunisia,
-      africaSul, angola, botswana, caboverde, camaroes,
-      centralAfrica, congo, congoRD, costamarfim, etiopia,
+      africasul, angola, botswana, caboverde, camaroes,
+      centralafrica, congo, congoRD, costamarfim, etiopia,
       gabao, gana, guine, madagascar, mali, mauritania, mocambique,
       namibia, nigeria, quenia,
       ruanda, senegal, sudao, tanzania, togo,
@@ -734,7 +789,7 @@ Map getLeagueNationalityMap(){
     leagueName.tunisia: Words.country.tunisia,
     leagueName.marrocos: Words.country.morocco,
 
-    leagueName.africaSul: Words.country.southafrica,
+    leagueName.africasul: Words.country.southafrica,
     leagueName.angola: Words.country.angola,
     leagueName.benin: Words.country.benin,
     leagueName.botswana: Words.country.botswana,
@@ -766,7 +821,7 @@ Map getLeagueNationalityMap(){
     leagueName.namibia: Words.country.namibia,
     leagueName.niger: Words.country.niger,
     leagueName.nigeria: Words.country.nigeria,
-    leagueName.centralAfrica: Words.country.centralAfrica,
+    leagueName.centralafrica: Words.country.centralAfrica,
     leagueName.ruanda: Words.country.rwanda,
     leagueName.quenia: Words.country.kenya,
     leagueName.senegal: Words.country.senegal,

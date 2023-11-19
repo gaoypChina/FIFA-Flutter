@@ -1,8 +1,8 @@
 import 'dart:convert';
-import 'package:csv/csv.dart';
+import 'package:fifa/global_variables.dart';
 import 'package:flutter/services.dart';
 
-Future<Map<double, dynamic>> mapChampions(String league) async {
+Future<Map<double, dynamic>> mapChampionsJSON(String league) async {
   List<String> allNames = [
     "africa", "americasul", "asia", "brasil", "asia_central", "oriente_medio",
     "europaTOP7", "europa_ocidental", "europa_oriental", "oceania",
@@ -33,27 +33,36 @@ Future<Map<double, dynamic>> mapChampions(String league) async {
   return {};
 }
 
-classificationCSV(String league) async{
+Future<Map<double, dynamic>> mapChampions(String league) async {
 
-  final String raw = await rootBundle.loadString('assets/csv/classification.csv');
-  List<List<dynamic>> parsed = const CsvToListConverter().convert(raw);
-  List<List<dynamic>> filteredLists = parsed.where((list) => list[0] == league).toList();
-
+  List<List<dynamic>> filteredLists = globalHistoricRealChampions.where((list) => list[0] == league).toList();
 
   Map<double, List<String>> transformedMap = {};
 
-  print(filteredLists);
   for (var innerList in filteredLists) {
-    double keyYear = innerList[1]; // Key is the first element of the inner list
-    String value = innerList[3]; // Value is the fourth element of the inner list
+
+    double keyYear = innerList[1];
+    String clubName = innerList[3];
 
     transformedMap.putIfAbsent(keyYear, () => []); // Initialize an empty list if key doesn't exist
-    transformedMap[keyYear]!.add(value); // Add value to the list associated with the key
+    transformedMap[keyYear]!.add(clubName); // Add value to the list associated with the key
+
+  }
+  // Sort keys in descending order
+  List<double> sortedKeys = transformedMap.keys.toList()..sort((a, b) => b.compareTo(a));
+
+  // Access map elements using sorted keys
+  Map<double, List<String>> transformedMapOrdered = {};
+  for (double key in sortedKeys) {
+    transformedMapOrdered[key] = transformedMap[key]!;
   }
 
-  if(transformedMap.isNotEmpty){
-    return transformedMap;
+  if(transformedMapOrdered.isNotEmpty){
+    return transformedMapOrdered;
+  }else{
+    return {};
   }
+
 }
 
 Future<Map<String, dynamic>> loadJsonData(String filename) async {

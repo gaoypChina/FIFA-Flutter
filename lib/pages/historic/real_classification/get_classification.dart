@@ -119,7 +119,7 @@ class RealClassification{
       n.marrocos: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Botola", 5],
       n.tunisia: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Tunisian_Ligue_Professionnelle_1", 8],
       n.angola: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Girabola", 0],
-      n.africaSul: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_South_African_Premier_Division", 3],
+      n.africasul: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_South_African_Premier_Division", 3],
       n.nigeria: ["https://en.wikipedia.org/wiki/2023%E2%80%9324_Nigeria_Professional_Football_League", 0],
 
     };

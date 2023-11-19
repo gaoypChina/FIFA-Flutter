@@ -31,7 +31,7 @@ class CrestWidgets{
     }catch(e){
       clubColors = ClubColors(Colors.grey,Colors.white);
       LinearGradient pattern = clubPattern.getGradient(ClubPattern().solid, clubColors);
-      return crestCircular(clubName,pattern);
+      return crestCircular(clubName, pattern);
     }
   }
 
